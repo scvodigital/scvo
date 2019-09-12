@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0",
     "start": "npm run clear-build && ./node_modules/.bin/webpack --watch",
-    "publish": "npm start && export GOOGLE_APPLICATION_CREDENTIALS=\"service-accounts/gcs.json\" && node publish.js",
+    "publish": "./node_modules/.bin/webpack && export GOOGLE_APPLICATION_CREDENTIALS=\"secrets.json\" && node publish.js",
     "clear-build": "rm -rf build/**",
     "deploy": "npm version patch && git push && git checkout production && git pull && git pull origin development && git push && git checkout development"
   },
