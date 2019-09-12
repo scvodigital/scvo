@@ -4,9 +4,12 @@ UPSTREAM=${1:-'@{u}'}
 LOCAL=$(git rev-parse @)
 REMOTE=$(git rev-parse "$UPSTREAM")
 BASE=$(git merge-base @ "$UPSTREAM")
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-if [ $(git rev-parse --abbrev-ref HEAD) != \"development\" ]; then
-  echo "Cannot deploy: You can only deploy from the 'development' branch"
+if [ $BRANCH != "development" ]; then
+  echo "CANNOT DEPLOY: You can only deploy from the 'development' branch"
+elif [[ `git status --porcelain` ]]; then
+  echo "CANNOT DEPLOY: There are local changes"
 elif [ $LOCAL = $REMOTE ]; then
   echo "DEPLOYING"
 
@@ -21,11 +24,9 @@ elif [ $LOCAL = $REMOTE ]; then
   # git push
   # git checkout development
 elif [ $LOCAL = $BASE ]; then
-  echo "Cannot deploy: Need to pull"
+  echo "CANNOT DEPLOY: Need to pull"
 elif [ $REMOTE = $BASE ]; then
-  echo "Cannot deploy: Need to push"
-elif [[ `git status --porcelain` ]]; then
-  echo "Cannot deploy: There are local changes"
+  echo "CANNOT DEPLOY: Need to push"
 else
-  echo "Cannot deploy: Diverged"
+  echo "CANNOT DEPLOY: Diverged"
 fi
