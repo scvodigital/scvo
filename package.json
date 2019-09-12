@@ -8,7 +8,10 @@
     "start": "npm run clear-build && ./node_modules/.bin/webpack --watch",
     "publish": "./node_modules/.bin/webpack && export GOOGLE_APPLICATION_CREDENTIALS=\"secrets.json\" && node publish.js",
     "clear-build": "rm -rf build/**",
-    "deploy": "npm version patch && git push && git checkout production && git pull && git pull origin development && git push && git checkout development"
+    "deploy": "npm run encrypt-secret && npm run bump version && npm run push-to-prod",
+    "encrypt-secret": "travis encrypt-file secret.json --add --force && git add secret.json.enc .travis.yml && git commit -m \"Updated secret.json\" && git push",
+    "bump-version": "npm version patch && git push",
+    "push-to-prod": "git checkout production && git pull && git pull origin development && git push && git checkout development"
   },
   "repository": {
     "type": "git",
