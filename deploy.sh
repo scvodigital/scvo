@@ -23,6 +23,9 @@ elif [ $LOCAL = $REMOTE ]; then
   git pull origin development
   git push
   git checkout development
+  echo "Giving Travis a chance to start"
+  sleep 20
+  travis logs
 elif [ $LOCAL = $BASE ]; then
   echo "CANNOT DEPLOY: Need to pull"
 elif [ $REMOTE = $BASE ]; then
