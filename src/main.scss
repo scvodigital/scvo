@@ -3513,11 +3513,11 @@ table.membership-fees.wp-block-table {
     margin: 0;
     padding: 0 $unit/2 $unit/2;
     li .mdc-card__action {
-      // line-height: 1.96rem;
-      width: 100%;
-      // margin-bottom: $unit/2;
       display: inline;
-      line-height: 2rem;
+      // margin-bottom: $unit/2;
+      // line-height: 1.96rem;
+      line-height: 36px;
+      width: 100%;
     }
     li .mdc-card__action.mdc-button {
       display: inline-block;
