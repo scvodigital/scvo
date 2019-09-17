@@ -1,0 +1,16 @@
+{{#if @root.data.supplimentaryResponses.author_profile.hits.hits.[0] ~}}
+{{#with @root.data.supplimentaryResponses.author_profile.hits.hits.[0]._source ~}}
+<title>Posts by {{{name_full}}} – SCVO</title>
+<meta property="og:title" content="Posts by {{{name_full}}} – SCVO" data-dynamic="true">
+{{#ifAny og_image ../og_image ~}}
+<meta property="og:image" content="{{default og_image ../og_image}}" data-dynamic="true">
+{{/ifAny ~}}
+{{#ifAny og_summary description ../og_summary ../description ~}}
+<meta property="og:summary" content="{{default og_summary (default ../og_summary (default description ../description))}}" data-dynamic="true">
+<meta name="description" content="{{default description (default ../description (default og_summary ../og_summary))}}" data-dynamic="true">
+{{/ifAny ~}}
+{{/with ~}}
+{{else}}
+<title>Scottish Council for Voluntary Organisations – SCVO</title>
+<meta property="og:title" content="Scottish Council for Voluntary Organisations – SCVO" data-dynamic="true">
+{{/if ~}}

@@ -1,0 +1,66 @@
+{
+  "size": 0,
+  "_source": false,
+  "query": {
+    "bool": {
+      "must": [
+        {{#if @root.request.params.query.city ~}}
+        {{#compare @root.request.params.query.city "!==" "all" ~}}
+        {
+          "term": {
+            "city_slug": "{{@root.request.params.query.city}}"
+          }
+        },
+        {{/compare ~}}
+        {{/if ~}}
+        {{#if @root.request.params.query.department ~}}
+        {{#compare @root.request.params.query.department "!==" "all" ~}}
+        {
+          "term": {
+            "department_slug": "{{@root.request.params.query.department}}"
+          }
+        },
+        {{/compare ~}}
+        {{/if ~}}
+        {
+          "term": {
+            "is_active": true
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "query": {
+      "terms": {
+        "field": "department",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 1000
+      },
+      "aggs": {
+        "staff": {
+          "top_hits": {
+            "size": 1000,
+            "sort": {
+              "name_last": "asc"
+            },
+            "_source": {
+              "includes": [
+                "Id",
+                "name_full",
+                "job_title",
+                "city",
+                "work_phone",
+                "twitter",
+                "linkedin",
+                "email"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

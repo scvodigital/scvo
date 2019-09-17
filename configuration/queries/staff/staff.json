@@ -1,0 +1,35 @@
+{
+  "size": 1,
+  "_source": [
+    "Id",
+    "og_image",
+    "profile",
+    "name_full",
+    "job_title",
+    "organisation",
+    "directorate",
+    "department",
+    "city",
+    "about",
+    "email",
+    "twitter",
+    "linkedin",
+    "work_phone"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "is_active": true
+          }
+        },
+        {
+          "term": {
+            "Id": "{{@root.request.params.id}}"
+          }
+        }
+      ]
+    }
+  }
+}

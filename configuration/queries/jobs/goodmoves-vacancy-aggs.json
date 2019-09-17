@@ -1,0 +1,49 @@
+{
+  "size": 0,
+  "_source": false,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "active": true
+          }
+        },
+        {
+          "term": {
+            "vacancy_status": "vacancy-open"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "sectors": {
+      "terms": {
+        "field": "sectors",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
+    "roles": {
+      "terms": {
+        "field": "roles",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
+    "statuses": {
+      "terms": {
+        "field": "role_status",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    }
+  }
+}

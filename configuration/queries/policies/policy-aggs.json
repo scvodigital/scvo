@@ -1,0 +1,15 @@
+{
+  "size": 0,
+  "_source": false,
+  "aggs": {
+    "types": {
+      "terms": {
+        "field": "policy_topics",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    }
+  }
+}

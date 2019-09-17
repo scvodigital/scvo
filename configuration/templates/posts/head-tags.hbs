@@ -1,0 +1,27 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+{{#ifAny title og_title ~}}
+<title>{{{default title og_title}}} – SCVO</title>
+<meta property="og:title" content="{{{default title og_title}}} – SCVO" data-dynamic="true">
+{{else}}
+<title>Scottish Council for Voluntary Organisations – SCVO</title>
+<meta property="og:title" content="Scottish Council for Voluntary Organisations – SCVO" data-dynamic="true">
+{{/ifAny ~}}
+<meta property="og:image" content="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/logos/scvo-logo-square.png" data-dynamic="true">
+<meta property="og:image:width" content="190" data-dynamic="true">
+<meta property="og:image:height" content="190" data-dynamic="true">
+<meta property="og:type" content="article" data-dynamic="true">
+{{#ifAny og_summary description ../og_summary ../description ~}}
+<meta property="og:summary" content="{{stripTags (regexReplace (default og_summary (default ../og_summary (default description ../description))) '\r|\n' 'gi' '')}}" data-dynamic="true">
+<meta name="description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}" data-dynamic="true">
+{{/ifAny ~}}
+{{#if rendered.json_ld ~}}
+<script type="application/ld+json" data-dynamic="true">
+{{{rendered.json_ld}}}
+</script>
+{{/if ~}}
+{{/with ~}}
+{{else}}
+<title>Scottish Council for Voluntary Organisations – SCVO</title>
+<meta property="og:title" content="Scottish Council for Voluntary Organisations – SCVO" data-dynamic="true">
+{{/if ~}}

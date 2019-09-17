@@ -1,0 +1,11 @@
+<div class="progress-bar">
+  <div class="progress-label" style="width:{{progress}}%">
+    <div class="progress-label-text{{#compare progress 100}} text-center{{/compare}}">
+      {{#compare progress "<" 100 ~}}
+      {{progress}}% complete
+      {{else}}
+      Checkup complete
+      {{/compare ~}}
+    </div>
+  </div>
+</div>

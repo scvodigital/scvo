@@ -1,0 +1,9 @@
+{{~#if (any @root.errors)~}}
+  {{~#if @root.errors.[0].error.response.body~}}
+    {{{safeStringify @root.errors.[0].error.response.body}}}
+  {{~else~}}
+    {{{safeStringify (default @root.errors "Something bad happened")}}}
+  {{~/if~}}
+{{~else~}}
+  {{{safeStringify @root.data.proxy.request}}}
+{{~/if~}}

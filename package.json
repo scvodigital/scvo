@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"No tests specified\" && exit 0",
-    "start": "npm run clear-build && ./node_modules/.bin/webpack --watch",
-    "build": "npm run clear-build && ./node_modules/.bin/webpack",
-    "publish": "npm run build && export GOOGLE_APPLICATION_CREDENTIALS=\"secrets.json\" && node publish.js",
+    "start": "npm run clear-build && LIBRARY=SCVO webpack --watch --env=dev",
+    "build": "npm run clear-build && LIBRARY=SCVO webpack --env=prod",
+    "publish": "npm run build && GOOGLE_APPLICATION_CREDENTIALS=\"secret.json\" SITE=scvo node publish.js",
     "clear-build": "rm -rf build/**",
     "deploy": "./deploy.sh"
   },
@@ -30,6 +30,7 @@
     "@babel/plugin-transform-runtime": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/runtime": "^7.3.4",
+    "@scvo/common": "git+https://github.com/scvodigital/common.git",
     "autoprefixer": "^9.1.5",
     "babel-loader": "^8.0.5",
     "babel-preset-es2015": "^6.24.1",

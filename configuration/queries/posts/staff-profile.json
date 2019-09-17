@@ -1,0 +1,17 @@
+{
+  "size": 1,
+  "_source": [
+    "Id",
+    "og_image",
+    "profile",
+    "about",
+    "name_full",
+    "job_title",
+    "organisation_name"
+  ],
+  "query": {
+    "term": {
+      "Id": "{{@root.data.primaryResponse.hits.hits.[0]._source.author_sfid}}"
+    }
+  }
+}

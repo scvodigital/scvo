@@ -1,0 +1,31 @@
+[
+  {{#each @root.data.get_data}}
+    {
+      "Name": {{{stringify
+        (concat 
+          this.[1] "-"
+          @root.data.dates.startDate "-"
+          (truncate this.[2] 40 suffix="")
+        )
+      }}},
+      "Name__c": {{{stringify
+        (concat 
+          this.[1] "-"
+          @root.data.dates.startDate "-"
+          (truncate this.[2] 40 suffix="")
+        )
+      }}},
+      "Month__c": {{{stringify @root.data.dates.startDate}}},
+      {{#if (contains (split "full,list,map,related-job,search-result" ",") this.[2])}}
+      "Hits__c": {{{stringify this.[3]}}},
+      {{else}}
+      "Hits__c": {{{stringify this.[3]}}},
+      {{/if}}
+      "Hit_Type__c": {{{stringify this.[2]}}},
+      "Source__c": {{{stringify (default @root.route.metaData.domain "goodmoves.com" )}}},
+      {{#compare this.[0] "goodmoves-vacancy"}}
+        "Vacancy__c": {{{stringify this.[1]}}}
+      {{/compare}}
+    }{{#unless @last}},{{/unless}}
+  {{/each}}
+]

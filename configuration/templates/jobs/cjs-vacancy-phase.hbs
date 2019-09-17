@@ -1,0 +1,52 @@
+<div class="cjs-vacancy-search">
+  <div class="container-fluid">
+    <ul class="breadcrumbs">
+      <li><a href="/">Home</a></li>
+      <li><a href="/jobs">Jobs</a></li>
+      <li><a href="/jobs/community-jobs-scotland">Community Jobs Scotland</a></li>
+      <li>Vacancies</li>
+    </ul>
+  </div>
+  {{> headers_splash headerTextOverride="CJS vacancies" typeOverride="page"}}
+  <div class="container-fluid page-content">
+    <div class="mdc-layout-grid full">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone content page-content">
+          <p>
+            Community Jobs Scotland (CJS) creates work opportunities for young unemployed people within voluntary sector organisations throughout Scotland.
+          </p>
+          <p>
+            CJS is targeted at more vulnerable young people and in particular, is focused on groups of young people who are more disadvantaged in the labour market.
+          </p>
+          {{#if @root.data.auth ~}}
+          {{else}}
+          <p>
+            If you work for SDS or JCP please <a href="/jobs/community-jobs-scotland/vacancies/sign-in">sign in</a>.
+          </p>
+          {{/if ~}}
+
+          <h2>Start your search using the following links</h2>
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                <h3><a href="/jobs/community-jobs-scotland/vacancies/p19v">16–29 year olds</a></h3>
+                <p>
+                  The following vacancies are only open to vulnerable unemployed 16 to 29 year olds, including <strong>carers, early service leavers (armed forces), care experienced, disabled, and young people with convictions</strong> and <strong>who are not</strong> on Specialist Employability Support (SES)
+                  {{!-- <a href="/jobs/community-jobs-scotland/vacancies/p19v">Search</a> --}}
+                </p>
+              </div>
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+                <h3><a href="/jobs/community-jobs-scotland/vacancies/p52">16–29 year olds (part-time)</a></h3>
+                <p>
+                  The following vacancies are only open to vulnerable unemployed 16 to 29 year olds, including <strong>carers, early service leavers (armed forces), care experienced, disabled, and young people with convictions</strong> who are not able to sustain 25 hours of work per week and <strong>who are not</strong> on Specialist Employability Support (SES).
+                  {{!-- <a href="/jobs/community-jobs-scotland/vacancies/p52">Search</a> --}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{> footers_cjs}}
+      </div>
+    </div>
+  </div>
+</div>

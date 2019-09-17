@@ -1,0 +1,93 @@
+{
+  "size": {{#compare @root.request.params.query.view "===" "map"}}1000{{else}}10{{/compare}},
+  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 10}},
+  "_source": [
+    "Id",
+    "slug",
+    "title",
+    "title_slug",
+    "organisation.name",
+    "organisation.id",
+    "organisation.name_slug",
+    "geo_coords",
+    "rendered.scvo_list"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}}
+        {
+          "geo_distance": {
+            "distance": "{{default @root.request.params.query.distance "80.4672"}}km",
+            "geo_coords": {
+              "lat": {{@root.request.params.query.lat}},
+              "lon": {{@root.request.params.query.lng}}
+            }
+          }
+        },
+        {{/ifAll ~}}
+        {{#if @root.request.params.query.job_number ~}}
+        {
+          "term": {
+            "job_number": "{{@root.request.params.query.job_number}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.sector ~}}
+        {
+          "term": {
+            "sector_slug": "{{@root.request.params.query.sector}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.region ~}}
+        {
+          "term": {
+            "region_slug": "{{@root.request.params.query.region}}"
+          }
+        },
+        {{/if ~}}
+        {
+          "term": {
+            "status": "Subbed"
+          }
+        },
+        {
+          "term" : {
+            "cjs_lookup": "{{#compare @root.request.params.phase "aag"}}AA PH8{{else}}{{#compare @root.request.params.phase "p52"}}CJS PH9 PT 78wks{{else}}CJS PH9{{/compare}}{{/compare}}"
+          }
+        }
+      ],
+      "must": [
+        {{#if @root.request.params.query.q ~}}
+        {
+          "query_string": {
+            "query": {{{stringify (default @root.request.params.query.q "")}}},
+            "default_field": "text_bag",
+            "default_operator": "AND",
+            "analyzer": "snowball"
+          }
+        }
+        {{/if ~}}
+      ]
+    }
+  },
+  "sort": [
+    {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}}
+    {
+      "_geo_distance": {
+        "geo_coords": {
+          "lat": {{@root.request.params.query.lat}},
+          "lon": {{@root.request.params.query.lng}}
+        },
+        "order": "asc",
+        "unit": "km",
+        "mode": "min",
+        "distance_type": "arc"
+      }
+    }
+    {{else}}
+    "_score"
+    {{/ifAll ~}}
+  ]
+}

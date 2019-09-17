@@ -1,0 +1,78 @@
+{
+  "size": 0,
+  "_source": false,
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        }
+      ],
+      "must": [
+        {
+          "range" : {
+            "date_start" : {
+              "gte" : "now/d"
+            }
+          }
+        }
+      ],
+      "should": [
+        {
+          "term": {
+            "team": "events"
+          }
+        },
+        {
+          "term": {
+            "team": "digital"
+          }
+        },
+        {
+          "term": {
+            "team": "policy"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "aggs": {
+    "types": {
+      "terms": {
+        "field": "course_type",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
+    "months": {
+      "terms": {
+        "field": "month",
+        "order": {
+          "date": "asc"
+        },
+        "size": 10000
+      },
+      "aggs": {
+         "date": {
+            "max": {
+               "field": "date_start"
+            }
+         }
+      }
+    },
+    "locations": {
+      "terms": {
+        "field": "city",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    }
+  }
+}

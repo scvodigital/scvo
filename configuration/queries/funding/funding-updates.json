@@ -1,0 +1,29 @@
+{
+  "size": 1000,
+  "_source": [
+    "title",
+    "rendered.scvo_list"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "range": {
+            "date_last_important_activity": {
+              "gte": "{{firstItem (split (atob request.params.range) '-')}}",
+              "lte": "{{lastItem (split (atob request.params.range) '-')}}"
+            }
+          }
+        },
+        {
+          "term": {
+            "fund_status_slug": "open"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "date_last_important_activity": "desc"
+  }
+}

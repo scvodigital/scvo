@@ -1,0 +1,73 @@
+{
+  "name": "cjs_job_search",
+  "pattern": "/jobs/community-jobs-scotland/vacancies/:phase",
+  "debug": false,
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../data/elasticsearch-index.txt}",
+          "type": "cjs-vacancy",
+          "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-search"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "types",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "cjs-vacancy",
+            "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-aggs"
+          },
+          {
+            "name": "splash",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-media",
+            "template": ">context.metaData.handlebars.queries.pages_splash"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-search-head-tags",
+              "body": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-search",
+              "foot": ""
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

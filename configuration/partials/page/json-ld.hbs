@@ -1,0 +1,31 @@
+<script type="application/ld+json" data-dynamic="true">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "headline": "{{title}}",
+  "image": "https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/logos/scvo-logo.jpg",
+  "author": "{{author_name_full}}",
+  "editor": "Ann Rowe",
+  "genre": "News",
+  {{#if categories ~}}
+  "keywords": "{{join categories ", "}}",
+  {{/if ~}}
+  "publisher": {
+    "@type": "Organization",
+    "name": "Scottish Council for Voluntary Organisations",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/logos/scvo-logo.jpg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://scvo.org/{{replace slug "_" "/"}}"
+  },
+  "datePublished": "{{momentFormat (moment publish_on 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
+  "dateCreated": "{{momentFormat (moment publish_on 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
+  "dateModified": "{{momentFormat (moment date_last_indexed 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
+  "description": {{{stringify (concat '' (truncate description 280))}}},
+  "articleBody": {{{stringify (concat '' content)}}}
+}
+</script>

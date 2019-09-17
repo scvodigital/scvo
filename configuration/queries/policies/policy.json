@@ -1,0 +1,12 @@
+{
+  "size": 1,
+  "_source": [
+    "title",
+    "*"
+  ],
+  "query": {
+    "term": {
+      "slug": "p_policy_{{@root.request.params.slug}}"
+    }
+  }
+}

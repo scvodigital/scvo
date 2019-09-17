@@ -1,0 +1,29 @@
+{{#json}}
+  {{{json key='blah' value='test'}}},
+  {{#each (split 'i,am,a,test' ',')}}
+    {{{json key=(concat 'dynamic-' @index) value=this}}},
+  {{/each}}
+  {{#json key='an-array' type='array'}}
+    'First',
+    {{#each (split 'i,am,a,test' ',')}}
+      {{{stringify this}}},
+    {{/each}}
+    'Last',
+  {{/json}},
+  {{{json key='another-array' value=(split 'i,am,a,test' ',')}}},
+  {{#json key='big-string' type='string'}}
+    <html>
+
+    <head>
+      <title>I'm a title with "quotes"</title>
+    </head>
+
+    </html>
+  {{/json}},
+  {{#json key='json-string' type='string'}}
+    {{#json}}
+      {{{json key='i' value='am some nested json'}}},
+      {{{json key='another-array' value=(split 'i,am,a,test' ',')}}},
+    {{/json}}
+  {{/json}}
+{{/json}}

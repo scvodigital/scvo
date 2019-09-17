@@ -1,0 +1,42 @@
+{{#if categories ~}}
+{{#compare categories.[0] "!==" "Uncategorised" ~}}
+<div class="post-info-item post-info-categories">
+  {{!-- <span class="far fa-tag{{#equalsLength categories 1}}{{else}}s{{/equalsLength}}" aria-hidden="true"></span> --}}
+  Posted in
+  <ul class="inline-list">
+    {{#each categories ~}}
+    <li>
+      {{#compare (itemAt ../categories_slug @index) "press-releases" ~}}
+      <a href="/press-media">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+      {{else}}
+      {{#compare (itemAt ../categories_slug @index) "credit-union-news" ~}}
+      <a href="/credit-union/important-news">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+      {{else}}
+      {{#compare (itemAt ../categories_slug @index) "posts" ~}}
+      <a href="/blogs">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+      {{else}}
+      {{#compare (itemAt ../categories_slug @index) "uncategorised" ~}}
+      {{else}}
+      <a href="/post/categories/{{itemAt ../categories_slug @index}}">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+      {{/compare ~}}
+      {{/compare ~}}
+      {{/compare ~}}
+      {{/compare ~}}
+    </li>
+    {{/each ~}}
+  </ul>
+</div>
+{{/compare ~}}
+{{/if ~}}
+{{#if post_tags ~}}
+<div class="post-info-item post-info-tags">
+  <span class="far fa-{{inflect (length (arrayify post_tags)) 'tag' 'tags'}}" aria-hidden="true"></span>
+  <ul class="inline-list">
+    {{#each post_tags ~}}
+    <li>
+      <a href="/post/tags/{{itemAt ../post_tags_slug @index}}">{{{this}}}</a>
+    </li>
+    {{/each ~}}
+  </ul>
+</div>
+{{/if ~}}

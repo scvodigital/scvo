@@ -1,0 +1,70 @@
+{{#if query_params ~}}
+  {{#each (keyValue query_params) ~}}
+  <input type="hidden" name="{{key}}" value="{{value}}" />
+  {{/each ~}}
+{{else}}
+  {{#if @root.request.body ~}}
+    {{#if @root.request.body.scores-organisation_type ~}}
+      <input type="hidden" name="organisation_type" value="{{@root.request.body.scores-organisation_type}}" />
+    {{/if ~}}
+    {{#if @root.request.body.section-1-score ~}}
+      <input type="hidden" name="section-1-score" value="{{@root.request.body.section-1-score}}" />
+    {{/if ~}}
+    {{#if @root.request.body.section-2-score ~}}
+      <input type="hidden" name="section-2-score" value="{{@root.request.body.section-2-score}}" />
+    {{/if ~}}
+    {{#if @root.request.body.section-3-score ~}}
+      <input type="hidden" name="section-3-score" value="{{@root.request.body.section-3-score}}" />
+    {{/if ~}}
+    {{#if @root.request.body.section-4-score ~}}
+      <input type="hidden" name="section-4-score" value="{{@root.request.body.section-4-score}}" />
+    {{/if ~}}
+    {{#if @root.request.body.section-5-score ~}}
+      <input type="hidden" name="section-5-score" value="{{@root.request.body.section-5-score}}" />
+    {{/if ~}}
+    {{#ifAny @root.request.body.scores @root.request.body.scores-q1 ~}}
+      <input type="hidden" name="{{section}}-score" value="{{add
+          (add
+            (add
+              (sumArray
+                (arrayify @root.request.body.scores)
+              )
+              (sumArray
+                (arrayify @root.request.body.scores-q1)
+              )
+            )
+            (add
+              (sumArray
+                (arrayify @root.request.body.scores-q2)
+              )
+              (sumArray
+                (arrayify @root.request.body.scores-q3)
+              )
+            )
+          )
+          (add
+            (sumArray
+              (arrayify @root.request.body.scores-q4)
+            )
+            (sumArray
+              (arrayify @root.request.body.scores-q5)
+            )
+          )}}" />
+    {{else}}
+      <input type="hidden" name="{{section}}-score" value="0" />
+    {{/ifAny ~}}
+    {{!-- {{#compare section "section-6" ~}}
+      <input type="hidden" name="income_band" value="{{@root.request.body.scores-income_band}}" />
+      <input type="hidden" name="topic" value="{{@root.request.body.scores-topic}}" />
+    {{else}}
+      {{#if @root.request.body.income_band ~}}
+        <input type="hidden" name="income_band" value="{{@root.request.body.income_band}}" />
+      {{/if ~}}
+      {{#if @root.request.body.topic ~}}
+        <input type="hidden" name="topic" value="{{@root.request.body.topic}}" />
+      {{/if ~}}
+    {{/compare ~}} --}}
+  {{else}}
+    <input type="hidden" name="{{section}}-score" value="0" />
+  {{/if ~}}
+{{/if ~}}

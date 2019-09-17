@@ -1,0 +1,42 @@
+{
+  "size": 20,
+  "from": {{multiply (subtract (default request.params.query.page 1) 1) 20}},
+  "_source": [
+    "Id",
+    "title",
+    "title_slug",
+    "closing_date",
+    "location",
+    "description_short",
+    "slug"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "organisation.charity_number": "SC003558"
+          }
+        },
+        {
+          "term": {
+            "country_slug": "scotland"
+          }
+        },
+        {
+          "term": {
+            "active": true
+          }
+        },
+        {
+          "term": {
+            "vacancy_status": "vacancy-open"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "closing_date": "asc"
+  }
+}

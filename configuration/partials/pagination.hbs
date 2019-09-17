@@ -1,0 +1,35 @@
+{{#compare paging.totalPages ">" 1 ~}}
+<ul class="pagination inline-list">
+  {{#if firstLastNavigation ~}}
+  <li class="{{#if paging.prevPage}}{{else}}disabled{{/if}}">
+    <a class="pagination-arrow" href="{{@root.request.params.uri.pathname}}?{{{querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null page=1 json=false}}}">
+      <i class="far fa-fw fa-chevron-double-left"></i>
+    </a>
+  </li>
+  {{/if ~}}
+  <li class="{{#if paging.prevPage}}{{else}}disabled{{/if}}">
+    <a class="pagination-arrow" href="{{@root.request.params.uri.pathname}}?{{{querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null page=paging.prevPage json=false}}}">
+      <i class="far fa-fw fa-chevron-left"></i>
+    </a>
+  </li>
+  {{#each paging.pageRange ~}}
+  <li class="{{#compare ../paging.currentPage "===" this.pageNumber}}current-page {{/compare}}pagination-distance-{{this.distance}}">
+    <a class="pagination-page" href="{{@root.request.params.uri.pathname}}?{{{querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null page=this.pageNumber json=false}}}">
+      {{this.pageNumber}}
+    </a>
+  </li>
+  {{/each ~}}
+  <li class="{{#if paging.nextPage}}{{else}}disabled{{/if}}">
+    <a class="pagination-arrow" href="{{@root.request.params.uri.pathname}}?{{{querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null page=paging.nextPage json=false}}}">
+      <i class="far fa-fw fa-chevron-right"></i>
+    </a>
+  </li>
+  {{#if firstLastNavigation ~}}
+  <li class="{{#if paging.nextPage}}{{else}}disabled{{/if}}">
+    <a class="pagination-arrow" href="{{@root.request.params.uri.pathname}}?{{{querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null page=paging.totalPages json=false}}}">
+      <i class="far fa-fw fa-chevron-double-right"></i>
+    </a>
+  </li>
+  {{/if ~}}
+</ul>
+{{/compare ~}}

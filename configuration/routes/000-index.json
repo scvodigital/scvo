@@ -1,0 +1,79 @@
+{
+  "name": "index",
+  "pattern": "/",
+  "tasks": [
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "featured",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-page,scvo-post",
+            "template": ">context.metaData.handlebars.queries.pages_home"
+          },
+          {
+            "name": "goodmoves_latest",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.jobs_home-goodmoves-vacancy-list"
+          },
+          {
+            "name": "blogs_latest",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_home-blog-post-list"
+          },
+          {
+            "name": "press_latest",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_home-press-list"
+          },
+          {
+            "name": "tfn_latest",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "tfn-legacy-post-news,tfn-legacy-feature",
+            "template": ">context.metaData.handlebars.queries.posts_home-tfn-post-list"
+          },
+          {
+            "name": "splash",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-media",
+            "template": ">context.metaData.handlebars.queries.pages_splash"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "body": ">context.metaData.handlebars.templates.pages_home",
+              "foot": ""
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

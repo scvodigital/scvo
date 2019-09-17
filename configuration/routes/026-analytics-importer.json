@@ -1,0 +1,51 @@
+{
+  "name": "analytics-importer",
+  "pattern": "/analytics-importer",
+  "debug": true,
+  "tasks": [
+    {
+      "name": "dates",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": ">context.metaData.handlebars.templates.utilities_ga-dates",
+        "parseJson": "true"
+      }
+    },
+    {
+      "name": "get_data",
+      "taskModule": "gaGet",
+      "config": {
+        "connection": "goodmoves",
+        "parameters": ">context.metaData.handlebars.templates.utilities_ga-goodmoves-params"
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "import",
+      "taskModule": "salesforceBulk",
+      "renderer": "handlebars",
+      "config": {
+        "connection": "scvoProduction",
+        "recordsTemplate": ">context.metaData.handlebars.templates.utilities_ga-transform",
+        "bulkOptions": {
+          "extIdField": "Name__c",
+          "concurrencyMode": "Parallel"
+        },
+        "type": "View_Count__c",
+        "operation": "upsert"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": "{{{stringify (default @root.data.import (default @root.errors 'nope'))}}}",
+        "parseJson": "true"
+      }
+    }
+  ]
+}

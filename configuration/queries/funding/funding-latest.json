@@ -1,0 +1,20 @@
+{
+  "size": 6,
+  "_source": [
+    "rendered.scvo_gist"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "fund_status_slug": "open"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "date_last_important_activity": "desc"
+  }
+}

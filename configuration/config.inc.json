@@ -1,0 +1,33 @@
+{
+  "domains": [
+    "scvo.local",
+    "127.0.0.1",
+    "localhost",
+    "test.scvo.org"
+  ],
+  "routes": [
+    "{:./routes/*.json}"
+  ],
+  "metaData": {
+    "assetsVersion": "{:../package.json@version}",
+    "assetsBase": "https://storage.googleapis.com/scvo-assets/test/scvo/",
+    "title": "SCVO",
+    "menus": "{:./data/menus.json}",
+    "handlebars": {
+      "partials": {
+        "{$./partials/**/*.*}": "includeRelativePath=false&regexExpression=(-)&regexOptions=gi&regexReplace=_"
+      },
+      "templates": {
+        "{$./templates/**/*.*}": ""
+      },
+      "layouts": {
+        "{$./layouts/**/*.*}": ""
+      },
+      "queries": {
+        "{$./queries/**/*.*}": ""
+      }
+    },
+    "commonTasks": "{:./data/common-tasks.json}",
+    "elasticsearchUrl": "{$./data/elasticsearch-url.txt}"
+  }
+}

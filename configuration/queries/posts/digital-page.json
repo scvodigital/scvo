@@ -1,0 +1,47 @@
+{
+  "size": 4,
+  "_source": [
+    "rendered.scvo_gist",
+    "description"
+  ],
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must_not": [
+            {
+              "term": {
+                "hide_in_results": true
+              }
+            },
+            {
+              "term": {
+                "hide_from_search": "1"
+              }
+            }
+          ],
+          "must": {
+            "match_all": {}
+          }
+          {{#if @root.data.primaryResponse.hits.hits.[0] ~}},
+          "should": [
+            {
+              "terms": {
+                "categories_id": [
+                  {{join @root.data.primaryResponse.hits.hits.[0]._source.categories_id}}
+                ]
+              }
+            }
+          ],
+          "minimum_should_match": 1
+          {{/if ~}}
+        }
+      },
+      "random_score": {},
+      "score_mode": "sum"
+    }
+  },
+  "sort": {
+    "publish_on": "desc"
+  }
+}

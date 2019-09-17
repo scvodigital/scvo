@@ -1,0 +1,91 @@
+{
+  "size": 10,
+  "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
+  "_source": [
+    "Id",
+    "title",
+    "title_slug",
+    "closing_date",
+    "location",
+    "description_short",
+    "organisation.slug",
+    "organisation.name",
+    "organisation.id",
+    "organisation.name_slug",
+    "slug"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {{#if request.params.query.q}}
+        {
+          "query_string": {
+            "query": {{{stringify (default request.params.query.q "")}}},
+            "default_field": "text_bag",
+            "default_operator": "AND",
+            "analyzer": "snowball"
+          }
+        },
+        {{/if}}
+        {{#if request.params.query.sector}}
+        {
+          "term": {
+            "sectors": "{{request.params.query.sector}}"
+          }
+        },
+        {{/if}}
+        {{#if request.params.query.role}}
+        {
+          "term": {
+            "roles": "{{request.params.query.role}}"
+          }
+        },
+        {{/if}}
+        {{#if request.params.query.status}}
+        {
+          "term": {
+            "role_status": "{{request.params.query.status}}"
+          }
+        },
+        {{/if}}
+        {{#if request.params.query.minimum_salary}}
+        {
+          "range": {
+            "salary_min": {
+              "gte": "{{request.params.query.minimum_salary}}"
+            }
+          }
+        },
+        {{/if}}
+        {
+          "term": {
+            "country_slug": "scotland"
+          }
+        },
+        {
+          "term": {
+            "active": true
+          }
+        },
+        {
+          "term": {
+            "vacancy_status": "vacancy-open"
+          }
+        }
+      ],
+      "should": [
+        {
+          "term": {
+            "top_job": {
+              "value": true,
+              "boost": 50
+            }
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "_score": "desc"
+  }
+}

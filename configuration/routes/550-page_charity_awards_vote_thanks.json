@@ -1,0 +1,14 @@
+{
+  "name": "vote_charity_awards_thanks",
+  "pattern": "/scottish-charity-awards/vote-2019/*category/*vote/thanks",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/scottish-charity-awards",
+        "statusCode": 301
+      }
+    }
+  ]
+}

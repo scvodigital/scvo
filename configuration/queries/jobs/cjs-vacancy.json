@@ -1,0 +1,32 @@
+{
+  "size": 1,
+  "_source": [
+    "rendered.scvo_full",
+    "organisation",
+    "supervisor",
+    "application_arrangements",
+    "application_notes",
+    "job_number",
+    "sub_title",
+    "Id",
+    "title_slug",
+    "title"
+  ],
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "Id": "{{@root.request.params.id}}"
+          }
+        },
+        {
+          "term": {
+            "slug": "{{@root.request.params.id}}"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}

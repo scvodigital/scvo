@@ -1,0 +1,34 @@
+<div class="splash-image splash-image-{{default typeOverride @root.data.primaryResponse.hits.hits.[0]._type}}">
+  <div class="splash-overlay splash-overlay-full">
+    <div class="container-fluid">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
+            <h1 class="header-text">
+              <span class="header-text-banner">
+                {{#if @root.request.params.query.section ~}}
+                {{#with (getProperty @root.route.metaData.governanceCheckup (concat "section-" @root.request.params.query.section)) ~}}
+                {{#if title ~}}
+                {{{title}}}
+                {{#if sub_title ~}}
+                <span class="mdc-typography--caption">
+                  {{{sub_title}}}
+                </span>
+                {{/if ~}}
+                {{else}}
+                404: Not found
+                {{/if ~}}
+                {{/with ~}}
+                {{else}}
+                {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+                {{{title}}}
+                {{/with ~}}
+                {{/if ~}}
+              </span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

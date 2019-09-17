@@ -1,0 +1,53 @@
+{{#ifAll
+  (compare @root.request.cookies.charity_awards_already_voted @root.request.params.vote)
+  (any @root.data.goodhq.hits.hits)}}
+{
+  "_source": [
+    "Id",
+    "slug",
+    "available_from",
+    "themes",
+    "themes_slugs",
+    "date_last_modified",
+    "description",
+    "goodhq_organisation.image_url",
+    "geo_coords",
+    "advertised_areas",
+    "geo",
+    "postcode",
+    "volunteersearch_type",
+    "volunteersearch_type_slugs",
+    "organisation_slug",
+    "organisation_name",
+    "organisation_aims_and_objectives",
+    "title",
+    "activities",
+    "activities_slugs",
+    "opportunity_contact_email"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "terms": {
+            "organisation_charity_number": {{{stringify (pluck @root.data.goodhq.hits.hits "_source.charity_number")}}}
+          }
+        },
+        {
+          "range": {
+            "date_last_modified": {
+              "gt": "now-12M"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+{{else}}
+{
+  "query": {
+    "match_none": {}
+  }
+}
+{{/ifAll}}

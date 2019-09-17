@@ -1,0 +1,21 @@
+{
+  "size": 1,
+  "_source": [
+    "sfid",
+    "about",
+    "og_image",
+    "name_full",
+    "job_title",
+    "organisation_name",
+    "rendered.json_ld"
+  ],
+  "query": {
+    {{#if @root.request.params.author_slug ~}}
+    "term": {
+      "slug": "p_author_{{@root.request.params.author_slug}}"
+    }
+    {{else}}
+    "match_none": {}
+    {{/if ~}}
+  }
+}

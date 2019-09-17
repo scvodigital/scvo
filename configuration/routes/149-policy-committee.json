@@ -1,0 +1,14 @@
+{
+  "name": "redirect_policy_committee",
+  "pattern": "/policy-research/policy-committee",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/policy-research/policy-forum",
+        "statusCode": 301
+      }
+    }
+  ]
+}

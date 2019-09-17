@@ -1,0 +1,26 @@
+<h3 class="mdc-card__title mdc-card__title--large">
+  <a href="https://goodmoves.com/vacancy/{{source.Id}}/{{source.title_slug}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{{source.title}}}</a>
+</h3>
+<p class="mdc-typography--body1">
+  {{#ifAll source.organisation.slug source.organisation.name ~}}
+  <span class="far fa-building fa-fw" title="Organisation"></span>
+  <a href="https://goodmoves.com/organisation/{{source.organisation.id}}/{{source.organisation.slug_name}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{source.organisation.name}}</a>
+  <br />
+  {{/ifAll ~}}
+  {{#if source.location ~}}
+  <span class="far fa-map-marker-alt fa-fw" title="Location"></span>
+  {{source.location}}<br />
+  {{/if ~}}
+  {{#if source.closing_date ~}}
+  <span class="far fa-calendar-alt fa-fw" title="Closing date"></span>
+  Closing {{momentFormat (moment source.closing_date 'x') 'dddd Do MMMM YYYY'}}
+  {{/if ~}}
+</ul>
+{{#if source.description_short ~}}
+<p class="mdc-typography--body1">
+  {{{source.description_short}}}
+</p>
+{{/if ~}}
+<p class="mdc-typography--body1">
+  <a href="https://goodmoves.com/vacancy/{{source.Id}}/{{source.title_slug}}?utm_source=scvo&utm_campaign=search&utm_medium=website">Find out more &amp; apply</a>
+</p>

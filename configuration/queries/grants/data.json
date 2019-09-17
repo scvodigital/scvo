@@ -1,0 +1,34 @@
+{
+  "size": 10000,
+  "_source": [
+    "rendered.threesixtygiving"
+  ],
+  "query": {
+    "bool": {
+      "must": {
+        "match_all": {}
+      },
+      "should": [
+        {
+          "exists": {
+            "field": "amount_requested_total"
+          }
+        },
+        {
+          "exists": {
+            "field": "amount_requested"
+          }
+        },
+        {
+          "exists": {
+            "field": "amount_awarded"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "sort": {
+    "recipient_name": "asc"
+  }
+}

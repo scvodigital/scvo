@@ -1,0 +1,57 @@
+{
+  "size": 1000,
+  "from": 0,
+  "_source": [
+    "geo_coords",
+    "organisation.name",
+    "organisation.id",
+    "organisation.name_slug",
+    "slug",
+    "Id",
+    "title_slug",
+    "title"
+  ],
+  "query": {
+    "bool": {
+      "minimum_should_match": "1",
+      "should": [
+        {
+          "bool": {
+            "must": [
+              {
+                "term": {
+                  "_type": {
+                    "value" : "goodmoves-vacancy"
+                  }
+                }
+              },
+              {
+                "term": {
+                  "vacancy_status": "vacancy-open"
+                }
+              },
+              {
+                "term": {
+                  "country_slug": "scotland"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "bool": {
+            "must": [
+              {
+                "term": {
+                  "_type": {
+                    "value" : "cjs-vacancy"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

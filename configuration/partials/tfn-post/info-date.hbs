@@ -1,0 +1,6 @@
+{{#if date_published}}
+<div class="post-info-item post-info-date">
+  <span class="far fa-calendar-edit" aria-hidden="true"></span>
+  {{momentFormat (moment date_published 'x') 'Do MMMM YYYY'}}
+</div>
+{{/if}}

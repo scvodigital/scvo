@@ -1,0 +1,50 @@
+<div class="page">
+  <div class="container-fluid">
+    <ul class="breadcrumbs" aria-hidden="true">
+      <li><a href="/">Home</a></li>
+      <li><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
+      <li><a href="/scottish-charity-awards/finalists-2019">Vote</a></li>
+      <li>{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</li>
+    </ul>
+  </div>
+  {{> headers_splash_charity_awards title=(getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title"))}}
+  <div class="container-fluid">
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone content page-content">
+          <p class="v-margin-full">
+            {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".description")}}}
+          </p>
+
+          {{#each @root.data.primaryResponse.hits.hits ~}}
+          {{#with _source ~}}
+          <div class="{{@root.request.params.category}} support mdc-card v-margin-full">
+            <section class="mdc-card__primary">
+              <h1 class="mdc-card__title mdc-card__title--large">
+                <a href="{{@root.request.url.path}}/{{slug}}">{{{title}}}</a>
+              </h1>
+            </section>
+            <section class="mdc-card__supporting-text">
+              {{#if image_url}}
+                <img src="{{image_url}}" style="max-width:200px;" class="pull-right l-margin-full hide-sm">
+              {{/if}}
+              {{{truncate (stripTags (default og_summary content)) 280}}}
+            </section>
+            <section class="mdc-card__actions"><a href="{{@root.request.url.path}}/{{slug}}">Find out more</a></section>
+          </div>
+          {{/with ~}}
+          {{/each ~}}
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone sidebar page-sidebar">
+          {{> menus_charity_awards}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  gtag('event', 'charity-awards-2019-hit', {
+    event_category: 'category',
+    event_label: {{{stringify (default @root.request.params.category 'unknown')}}}
+  });
+</script>

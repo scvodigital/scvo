@@ -1,0 +1,54 @@
+{
+  "size": 10,
+  "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
+  "_source": [
+    "title",
+    "publish_on",
+    "path",
+    "description_truncated",
+    "is_press_release",
+    "author_slug",
+    "author_name_full",
+    "staff_profile",
+    "og_image",
+    "categories",
+    "categories_slug",
+    "post_tags",
+    "post_tags_slug",
+    "rendered.rss"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "term": {
+            "hide_from_search": "1"
+          }
+        },
+        {
+          "term": {
+            "is_press_release": true
+          }
+        }
+      ],
+      "should": [
+        {
+          "terms": {
+            "categories_id": [
+              36
+            ]
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "sort": {
+    "publish_on": "desc"
+  }
+}

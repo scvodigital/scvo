@@ -1,0 +1,27 @@
+[
+{{#eachJoin @root.data.search_data.hits.hits ","}}
+  {
+    "display": {{{stringify _source.display}}},
+    "place": {{{stringify _source.place}}},
+    {{#if _source.region}}
+      "region": {{{stringify _source.region}}},
+    {{/if}}
+    {{#if _source.population}}
+      "population": {{{default stringify _source.population 0}}},
+    {{/if}}
+    {{#if _source.district}}
+      "district": {{{stringify _source.district}}},
+    {{/if}}
+    {{#if _source.ward}}
+      "ward": {{{stringify _source.ward}}},
+    {{/if}}
+    {{#if _source.nuts_3}}
+      "nuts_3": {{{stringify _source.nuts_3}}},
+    {{/if}}
+    {{#if _source.constituency}}
+      "constituency": {{{stringify _source.constituency}}},
+    {{/if}}
+    "point": {{{stringify _source.point}}}
+  }
+{{/eachJoin}}
+]

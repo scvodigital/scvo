@@ -1,0 +1,103 @@
+<div class="page funding-landing">
+  <div class="container-fluid">
+    {{> breadcrumbs}}
+  </div>
+  {{> headers_splash}}
+  <div class="container-fluid">
+    <div class="mdc-layout-grid equal-height support funding linked-cards t-margin-full t-padding">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell equal-height mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone content page-content">
+          <div class="mdc-card">
+            <section class="mdc-card__primary b-margin-none">
+              <h1 class="mdc-card__title mdc-card__title--large">
+                <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website">
+                  <span class="fal fa-fw fa-search-plus fa-2x">&nbsp;</span>
+                  Search for funding
+                </a>
+              </h1>
+            </section>
+            <section class="mdc-card__supporting-text">
+              {{{@root.data.primaryResponse.hits.hits.[0]._source.rendered.scvo_full}}}
+            </section>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell equal-height mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone content page-content">
+          <div class="mdc-card">
+            <section class="mdc-card__primary">
+              <h1 class="mdc-card__title mdc-card__title--large">
+                <a href="https://fundingscotland.com/funder/001b000000SsxRDAAZ/scottish-council-for-voluntary-organisations?utm_source=scvo&utm_campaign=page&utm_medium=website">
+                  <span class="fal fa-fw fa-chart-bar fa-2x">&nbsp;</span>
+                  Funding from SCVO
+                </a>
+              </h1>
+            </section>
+            <section class="mdc-card__supporting-text">
+              <p>We believe in being fully transparent when it comes to the funding opportunities we create/are part of - and we love celebrating the success stories of those who benefit!</p>
+              <p>For details of the funds available right now, and information and evaluation of previously funded projects, see the following pages:</p>
+              {{#each @root.data.supplimentaryResponses.scvo_funds.aggregations.funds.buckets ~}}
+              {{#compare funds.hits.total ">" 0 ~}}
+              <h3>
+                {{#compare key "open"}}
+                Open funds
+                {{else}}
+                Currently closed funds &amp; successful projects
+                {{/compare ~}}
+              </h3>
+              <ul>
+                {{#each funds.hits.hits ~}}
+                {{#with _source ~}}
+                <li><a href="{{replace (replace fund_url "https://scvo.org/" "/") "https://scvo.org.uk/" "/"}}">{{{replace title "SCVO - " ""}}}</a></li>
+                {{/with ~}}
+                {{/each ~}}
+              </ul>
+              {{/compare ~}}
+              {{/each ~}}
+              <p>All our grants data is published openly via the <a href="http://www.threesixtygiving.org/support/standard/">360Giving Standard</a>.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        {{#compare @root.data.supplimentaryResponses.recently_updated_funds.hits.total ">" 0 ~}}
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 related page-related">
+          <h3 class="blogs">Recently updated funds</h3>
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              {{#each @root.data.supplimentaryResponses.recently_updated_funds.hits.hits ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet  mdc-layout-grid__cell--span-4-phone">
+                {{{_source.rendered.scvo_gist}}}
+              </div>
+              {{/each ~}}
+            </div>
+          </div>
+          <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website" class="mdc-button v-margin-full pull-right">Find more</a>
+        </div>
+        {{/compare ~}}
+        {{#compare @root.data.supplimentaryResponses.related_posts.hits.total ">" 0 ~}}
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 related page-related">
+          <h3 class="blogs">Related posts</h3>
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              {{#with @root.data.supplimentaryResponses.related_posts.hits.hits ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet  mdc-layout-grid__cell--span-4-phone">
+                {{{[0]._source.rendered.scvo_gist}}}
+              </div>
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet  mdc-layout-grid__cell--span-4-phone">
+                {{{[1]._source.rendered.scvo_gist}}}
+              </div>
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet  mdc-layout-grid__cell--span-4-phone">
+                {{{[2]._source.rendered.scvo_gist}}}
+              </div>
+              {{/with ~}}
+            </div>
+          </div>
+        </div>
+        {{/compare ~}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> footers_services}}

@@ -1,0 +1,21 @@
+<div class="page">
+  <div class="container-fluid">
+    {{> breadcrumbs}}
+  </div>
+  {{> headers_splash}}
+  <div class="container-fluid">
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone content page-content">
+          <h2>Application form</h2>
+          <iframe src="https://www.surveygizmo.eu/s3/90121626/Digital-Charter-Fund-application-form-save-progress-version?ID={{@root.request.params.query.ID}}" frameborder="0" width="100%" height="500" style="overflow:hidden"></iframe>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone sidebar page-sidebar">
+          {{> menus_digital_participation_charter}}
+        </div>
+        {{> related_posts}}
+      </div>
+    </div>
+  </div>
+  {{> footers_digital}}
+</div>

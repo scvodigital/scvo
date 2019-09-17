@@ -1,0 +1,65 @@
+{
+  "name": "main_search",
+  "pattern": "/search",
+  "tasks": [
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../data/elasticsearch-index.txt}",
+          "type": "scvo-page,scvo-post,scvo-staff,scvo-member,cjs-vacancy,charter-signatory-digitalparticipation,charter-signatory-humanrights,goodmoves-vacancy,fs-fund,goodhq-organisation,goodhq-post,scvo-document-evidence,scvo-event,scvo-grant-charter,scvo-grant-ccrf,scvo-grant-cats,oscr-charity,tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-poll,tfn-legacy-event,tfn-legacy-list,tfn-legacy-feature",
+          "template": ">context.metaData.handlebars.queries.search_search"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "splash",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-media",
+            "template": ">context.metaData.handlebars.queries.pages_splash"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.search_search-head-tags",
+              "body": ">context.metaData.handlebars.templates.search_search",
+              "foot": ""
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

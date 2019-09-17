@@ -1,0 +1,78 @@
+{
+  "name": "page_digital_evolution_checkup_results_legacy",
+  "pattern": "/LEGACY/digital/evolution/check-up/results",
+  "tasks": [
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../data/elasticsearch-index.txt}",
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page",
+          "noResultsRoute": "four_oh_four"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "related_posts",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.pages_posts-related-random"
+          },
+          {
+            "name": "data_averages",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-checkup-onedigital",
+            "template": ">context.metaData.handlebars.queries.data_checkup-onedigital"
+          },
+          {
+            "name": "splash",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-media",
+            "template": ">context.metaData.handlebars.queries.pages_splash"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "body": ">context.metaData.handlebars.templates.pages_digital_evolution-checkup-results",
+              "foot": ""
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

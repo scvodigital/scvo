@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON to HBS</title>
+    <style type="text/css">
+      html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 16px;
+      }
+      textarea {
+        width: 50vw;
+        height: 100vh;
+        border: none;
+        box-sizing: border-box;
+        background-color: #333333;
+        color: #ededed;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        background-image: linear-gradient(#222222 50%, #2a2a2a 50%);
+        background-size: 100% 3rem;
+        background-attachment: local;
+        background-position-y: 10px;
+        padding: 10px;
+        font-family: monospace;
+        resize: none;
+        outline: none;
+        cursor: text;
+      }
+      #input {
+        border-right: 1px solid #cccccc;
+        float: left;
+      }
+      #input::-webkit-scrollbar { width: 0 !important }
+      #output {
+        border-left: 1px solid #cccccc;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="input" autofocus></textarea>
+    <textarea id="output" readonly></textarea>
+    <script>
+      var inputEl = document.getElementById('input');
+      var outputEl = document.getElementById('output');
+      var isSyncingInputScroll = false;
+      var isSyncingOutputScroll = false;
+
+      inputEl.addEventListener('change', convert);
+      inputEl.addEventListener('keyup', convert);
+
+      inputEl.addEventListener('scroll', function() {
+        if (!isSyncingInputScroll) {
+          isSyncingOutputScroll = true;
+          outputEl.scrollTop = inputEl.scrollTop;
+        }
+        isSyncingInputScroll = false;
+      });
+      outputEl.addEventListener('scroll', function() {
+        if (!isSyncingOutputScroll) {
+          isSyncingInputScroll = true;
+          inputEl.scrollTop = outputEl.scrollTop;
+        }
+        isSyncingOutputScroll = false;
+      });
+
+      inputEl.addEventListener('select', function(evt) {
+        console.log('Selected', evt);
+      });
+
+      function convert() {
+        let input = inputEl.value;
+        try {
+          input = JSON.parse(input);
+          input = JSON.stringify(input, null, 2);
+          inputEl.value = input;
+          output.value = input.replace(/^(\s*)(.*?\:\s)?(.*?)\s*(,)?$/gm, function (match, indentation, key, value, trailingComma) {
+            key = key ? ' key=' + key.substr(0, key.length - 2) : '';
+            let line;
+            const type = value.substr(0, 1) === '[' ? ' type="array"' : ''
+
+            switch (value) {
+              case ('{'): case ('['):
+                line = '\{{#json' + key + type + '}}';
+                break;
+              case ('{}'): case ('[]'):
+                line = '\{{#json' + key + type + '}}\{{/json}}';
+                break;
+              case ('}'): case(']'):
+                line = '\{{/json}}';
+                break;
+              default:
+                if (key) {
+                  line = '\{{{json' + key + ' value=' + value + '}}}'
+                } else {
+                  line = value;
+                }
+            }
+
+            return (indentation || '') + line + (trailingComma || '');
+          });
+        } catch(err) {
+          const positionIndex = err.message.indexOf('position');
+          if (positionIndex > -1) {
+            const position = parseInt(err.message.substr(positionIndex + 9), 10);
+            inputEl.selectionStart = position;
+            inputEl.selectionEnd = position;
+          }
+          output.value = err.message + '\n' + err.stack;
+        }
+      }
+    </script>
+  </body>
+</html>

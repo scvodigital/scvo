@@ -1,0 +1,14 @@
+{
+  "name": "board_of_trustees",
+  "pattern": "/board-of-trustees",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/about/board-of-trustees",
+        "statusCode": 302
+      }
+    }
+  ]
+}

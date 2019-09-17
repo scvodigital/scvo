@@ -1,0 +1,8 @@
+{{#unless is_press_release ~}}
+<div class="post-info-item post-info-author">
+  <a href="/post/author/{{author_slug}}" title="Read more by {{author_name_full}}">
+    <img src="{{og_image}}" alt="{{author_name_full}}" class="photo-wee scvo-{{#if staff_profile}}staff{{else}}cms-author{{/if}}-photo-wee" />
+    <span class="underline">{{author_name_full}}</span>
+  </a>
+</div>
+{{/unless ~}}

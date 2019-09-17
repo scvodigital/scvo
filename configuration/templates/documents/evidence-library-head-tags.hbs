@@ -1,0 +1,8 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+<title>Evidence Library – SCVO</title>
+<meta property="og:title" content="Evidence Library – SCVO" data-dynamic="true">
+<link rel="alternate" type="application/rss+xml" title="Posts about {{#each @root.data.primaryResponse.hits.hits.[0]._source.categories_slug}}{{#compare this "===" (lastItem (split @root.request.params.path '_'))}}{{{lookup @root.data.primaryResponse.hits.hits.[0]._source.categories @index}}}{{/compare}}{{/each}} – SCVO" href="https://scvo.org{{@root.request.params.uri.pathname}}?_view=rss" />
+{{else}}
+<title>Scottish Council for Voluntary Organisations – SCVO</title>
+<meta property="og:title" content="Scottish Council for Voluntary Organisations – SCVO" data-dynamic="true">
+{{/if ~}}

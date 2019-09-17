@@ -1,0 +1,38 @@
+{
+  "size": 100,
+  "_source": [
+    "wpid",
+    "slug",
+    "title",
+    "og_title",
+    "og_summary",
+    "content",
+    "category",
+    "text_bag_boost",
+    "image_url",
+    "Id"
+  ],
+  "query": {
+    "bool": {
+      {{#if @root.request.params.category}}
+      "filter": [
+          {
+            "term": {
+              "category": "{{@root.request.params.category}}"
+            }
+          }
+      ],
+      {{/if}}
+      "must_not": [
+        {
+          "term": {
+            "title_sort": ""
+          }
+        }
+      ]
+    }
+  },
+  "sort": [
+    { "title_sort": { "order": "asc" } }
+  ]
+}

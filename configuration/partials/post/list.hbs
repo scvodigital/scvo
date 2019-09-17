@@ -1,0 +1,22 @@
+<li class="list expanded scvo-cms scvo-cms-post scvo-cms-post-{{wpid}} supplimentary-list-item mdc-card">
+  <section class="mdc-card__primary">
+    <div class="supplimentary-list-title">
+      <a href="{{path}}">{{{title}}}</a>
+    </div>
+  </section>
+  <section class="mdc-card__supporting-text">
+    <div class="post-info">
+      {{> post_info_author}}
+      {{> post_info_published}}
+    </div>
+    <div class="post-info">
+      {{> post_info_categories}}
+    </div>
+    {{#if description_truncated ~}}
+    <div class="supplimentary-list-text">
+      {{{truncate description_truncated 280}}}
+      <a href="{{path}}">Read more</a>
+    </div>
+    {{/if ~}}
+  </section>
+</li>

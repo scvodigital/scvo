@@ -1,0 +1,35 @@
+<form action="/policy-research/evidence-library" method="GET" [searchroute]="'evidence_library_document_search'" data-auto-search="true" autocomplete="off">
+  <div class="mdc-text-field mdc-text-field--box mdc-text-field--with-leading-icon" data-mdc-auto-init="MDCTextField">
+    <span class="far fa-search mdc-text-field__icon" tabindex="0" role="button"></span>
+    <input type="text" class="mdc-text-field__input mdc-text-field--fullwidth" name="q" id="evidence-library-keywords" value="{{@root.request.params.query.q}}" placeholder="">
+    <label class="mdc-floating-label" for="q">Keywords</label>
+  </div>
+  <div class="mdc-form-field">
+    <div class="mdc-select" data-mdc-auto-init="MDCSelect">
+      <span class="mdc-select__dropdown-icon"></span>
+      <select class="mdc-select__native-control" id="evidence-library-classification" name="classification">
+        <option value="" {{#if @root.request.params.query.classification}}{{else}}selected{{/if}}></option>
+        {{#each @root.data.supplimentaryResponses.types.aggregations.types.buckets ~}}
+        <option value="{{slugify key}}" {{#compare @root.request.params.query.classification "===" (slugify key)}}selected{{/compare}}>{{key}} ({{doc_count}})</option>
+        {{/each ~}}
+      </select>
+      <label class="mdc-floating-label" for="classification">Category</label>
+      <div class="mdc-line-ripple"></div>
+    </div>
+  </div>
+  <button class="mdc-button mdc-button--raised" type="submit">
+    Search
+  </button>
+</form>
+
+<hr />
+
+<h4>About</h4>
+<p class="b-margin-full">
+  The Evidence Library is a resource for anyone interested in the voluntary sector in Scotland.  Managed by SCVO, the library signposts to research and evidence produced by, or on, the voluntary sector. For further information email: <a href="mailto:research@scvo.org.uk">research@scvo.org.uk</a>
+</p>
+
+<h4>Submit your own research</h4>
+<p class="b-padding-full">
+  Use the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=-ZSUwso6cUqV4siAxaXo-Zv5X-otFddAmqH7h_mpNVVUNkhZOFhWVFpGR0JWWlYwSjRMR1BBS0o0QyQlQCN0PWcu">Voluntary Sector Intelligence Form</a> to submit your own research.
+</p>

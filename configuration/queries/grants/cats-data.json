@@ -1,0 +1,80 @@
+{
+  "size": 10000,
+  "_source": [
+    "amount_requested_total",
+    "amount_requested",
+    "amount_awarded",
+    "date_awarded",
+    "date_started",
+    "description",
+    "title",
+    "Id",
+    "planned_start",
+    "planned_end",
+    "date_last_modified",
+    "recipient_name",
+    "recipient_charity_number",
+    "recipient_id",
+    "call_slug",
+    "recipient_overview",
+    "recipient_address_street",
+    "recipient_address_town",
+    "recipient_address_region",
+    "recipient_address_postcode",
+    "recipient_address_location_coords",
+    "recipient_url",
+    "call"
+  ],
+  "query": {
+    "bool": {
+      "must": {
+        "match_all": {}
+      },
+      "should": [
+        {
+          "bool": {
+            "should": [
+              {
+                "exists": {
+                  "field": "amount_requested_total"
+                }
+              },
+              {
+                "exists": {
+                  "field": "amount_requested"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "exists": {
+                  "field": "date_awarded"
+                }
+              },
+              {
+                "exists": {
+                  "field": "date_started"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        },
+        {
+          "exists": {
+            "field": "recipient_id"
+          }
+        }
+      ],
+      "minimum_should_match": 3
+    }
+  },
+  "sort": {
+    "recipient_name": "asc"
+  }
+}

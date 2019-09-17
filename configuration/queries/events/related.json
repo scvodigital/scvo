@@ -1,0 +1,56 @@
+{
+  "size": 4,
+  "_source": [
+    "rendered.scvo_list"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "match": {
+            "Id": "{{data.primaryResponse.hits.hits.[0]._source.Id}}"
+          }
+        },
+        {
+          "match": {
+            "title": "{{data.primaryResponse.hits.hits.[0]._source.title}}"
+          }
+        }
+      ],
+      "must": [
+        {
+          "simple_query_string": {
+            "query": "{{data.primaryResponse.hits.hits.[0]._source.title}} {{data.primaryResponse.hits.hits.[0]._source.type}} {{data.primaryResponse.hits.hits.[0]._source.trainer}}",
+            "default_operator": "or",
+            "fields": ["text_bag"],
+            "analyzer": "snowball"
+          }
+        },
+        {
+          "range" : {
+            "date_start" : {
+              "gte" : "now/d"
+            }
+          }
+        },
+        {
+          "term": {
+            "team": "events"
+          }
+        },
+        {
+          "range" : {
+            "places_available" : {
+              "gte" : "1"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

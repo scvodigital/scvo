@@ -1,0 +1,19 @@
+{{#elseIfBlock}}
+  {{#elseIf (compare 1 "===" 2)}}
+    I should not be displayed (1 !== 2)
+  {{/elseIf}}
+  {{#elseIf (compare 1 "===" 1)}}
+    {{#elseIfBlock}}
+      {{#elseIf (compare 1 "===" 3)}}
+        I should not be displayed (1 !== 3)
+      {{/elseIf}}
+      {{#elseIf (compare 1 "===" 5)}}
+        I should not be displayed (1 === 5)
+      {{/elseIf}}
+    {{else}}
+      Nothing resolved inner
+    {{/elseIfBlock}}
+  {{/elseIf}}
+{{else}}
+  Nothing resolved
+{{/elseIfBlock}}

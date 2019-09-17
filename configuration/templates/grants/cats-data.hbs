@@ -1,0 +1,108 @@
+{
+  "grants": [
+  {{#each @root.data.primaryResponse.hits.hits}}
+  {{#with _source}}
+  {
+    {{#if amount_requested_total ~}}
+    "amountAppliedFor": {{amount_requested_total}},
+    {{else}}
+    "amountAppliedFor": {{amount_requested}},
+    {{/if ~}}
+    {{#if amount_awarded ~}}
+    "amountAwarded": {{amount_awarded}},
+    {{else}}
+    {{#if amount_requested_total ~}}
+    "amountAwarded": {{amount_requested_total}},
+    {{else}}
+    "amountAwarded": {{amount_requested}},
+    {{/if ~}}
+    {{/if ~}}
+    {{#if date_awarded ~}}
+    "awardDate": "{{momentFormat (moment date_awarded 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if date_started ~}}
+    "awardDate": "{{momentFormat (moment date_started 'x') "YYYY-MM-DD"}}",
+    {{/if ~}}
+    {{/if ~}}
+    "description": {{{stringify (default description "Detailed information not yet available.")}}},
+    "title": {{{stringify title}}},
+    "id": "360G-SCVO-{{Id}}",
+    "currency": "GBP",
+    "plannedDates": [{
+      {{#if planned_start ~}}
+      "startDate": "{{momentFormat (moment planned_start 'x') "YYYY-MM-DD"}}",
+      {{/if ~}}
+      {{#if planned_end ~}}
+      "endDate": "{{momentFormat (moment planned_end 'x') "YYYY-MM-DD"}}",
+      {{/if ~}}
+      "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}"
+    }],
+    "recipientOrganization": [{
+      {{#if recipient_name ~}}
+      "name": {{{stringify recipient_name}}},
+      {{/if ~}}
+      {{#if recipient_charity_number ~}}
+      "id": "GB-SC-{{recipient_charity_number}}",
+      "charityNumber": "{{recipient_charity_number}}"
+      {{else}}
+      "id": "SCVO-{{recipient_id}}-{{call_slug}}"{{/if ~}}{{#if recipient_overview ~}},
+      "description": {{{stringify recipient_overview}}}{{/if ~}}{{#if recipient_address_street ~}},
+      "streetAddress": {{{stringify recipient_address_street}}}{{/if ~}}{{#if recipient_address_town ~}},
+      "addressLocality": {{{stringify recipient_address_town}}}{{/if ~}}{{#if recipient_address_region ~}},
+      "addressRegion": {{{stringify recipient_address_region}}}{{/if ~}}{{#if recipient_address_postcode ~}},
+      "postalCode": "{{recipient_address_postcode}}"{{/if ~}}{{#if recipient_address_location_coords ~}},
+      "location": [{
+        "countryCode": "GB",
+        "geoCode": "{{recipient_address_location.admin_ward}}",
+        "geoCodeType": "WD",
+        "latitude": {{recipient_address_location_coords.lat}},
+        "longitude": {{recipient_address_location_coords.lon}}
+      }]
+      {{/if ~}}
+      {{#if recipient_address_postcode ~}},
+      "addressCountry": "Scotland"{{#if recipient_url ~}}{{/if ~}}
+      {{/if ~}}
+      {{#if recipient_url ~}}
+      {{#compare recipient_url "===" "N/A" ~}}
+      {{else}}
+      {{#if (contains recipient_url "http") ~}}
+      ,"url": "{{recipient_url}}"
+      {{else}}
+      ,"url": "http://{{recipient_url}}"
+      {{/if ~}}
+      {{/compare}}
+      {{/if ~}}
+    }],
+    "fundingOrganization": [{
+      "name": "Scottish Council For Voluntary Organisations",
+      "id": "GB-SC-SC003558",
+      "charityNumber": "SC003558",
+      "department": "Policy",
+      "streetAddress": "Mansfield Traquair, 15 Mansfield Place",
+      "addressLocality": "Edinburgh",
+      "addressRegion": "City of Edinburgh",
+      "postalCode": "EH3 6BB",
+      "addressCountry": "Scotland",
+      "description": "The Scottish Council for Voluntary Organisations is the membership organisation for Scotland's charities, voluntary organisations and social enterprises.",
+      "url": "http://scvo.org",
+      "location": [{
+        "latitude": 55.959611,
+        "longitude": -3.190946
+      }]
+    }],
+    {{#if call ~}}
+    "grantProgramme": [{
+      "code": "scvo-cats-{{call_slug}}",
+      "title": "Carers Act Transformation Support (CATS) Fund - {{call}}",
+      "description": "Funding to help local voluntary sector groups and organisations across Scotland tackle poverty and mitigate against UK government welfare changes.",
+      "url": "https://scvo.org/running-your-organisation/funding/carers-act-transformation-support-fund"
+    }],
+    "fromOpenCall": "Yes",
+    {{/if ~}}
+    "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}",
+    "dataSource": "https://scvo.org/running-your-organisation/funding/community-capacity-resilience-fund/projects/data.json"
+  }{{#unless @last}},{{/unless}}
+  {{/with}}
+  {{/each}}
+  ]
+}

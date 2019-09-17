@@ -1,0 +1,14 @@
+{
+  "name": "goodmoves",
+  "pattern": "/jobs/goodmoves",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "https://goodmoves.com",
+        "statusCode": 302
+      }
+    }
+  ]
+}

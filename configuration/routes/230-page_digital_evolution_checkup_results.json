@@ -1,0 +1,23 @@
+{
+  "name": "page_digital_evolution_checkup_results",
+  "pattern": "/digital/evolution/check-up/results",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "https://digitalcheckup.org/checkup/results{{{@root.request.params.uri.search}}}&area=scotland"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}

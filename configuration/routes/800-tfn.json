@@ -1,0 +1,14 @@
+{
+  "name": "tfn",
+  "pattern": "/tfn",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic",
+        "statusCode": 302
+      }
+    }
+  ]
+}

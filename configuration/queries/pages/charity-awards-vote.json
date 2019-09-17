@@ -1,0 +1,22 @@
+{
+  "size": 1,
+  "_source": [
+    "wpid",
+    "slug",
+    "title",
+    "og_title",
+    "og_summary",
+    "content",
+    "category",
+    "text_bag_boost",
+    "goodhq-xid-1",
+    "goodhq-xid-2",
+    "goodhq-xid-3",
+    "image_url"
+  ],
+  "query": {
+    "term": {
+      "slug": "{{@root.request.params.vote}}"
+    }
+  }
+}

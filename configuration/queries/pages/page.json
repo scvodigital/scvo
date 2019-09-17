@@ -1,0 +1,29 @@
+{
+  "size": 1,
+  "_source": [
+    "wpid",
+    "slug",
+    "title",
+    "sub_title",
+    "og_title",
+    "og_summary",
+    "description",
+    "content",
+    "rendered.scvo_full",
+    "rendered.json_ld",
+    "breadcrumb",
+    "categories_id",
+    "categories_slug",
+    "author",
+    "header_background",
+    "header_text",
+    "hide_overlay",
+    "text_bag_boost",
+    "quotation"
+  ],
+  "query": {
+    "term": {
+      "path": "/{{replace @root.request.params.path '_' '/'}}"
+    }
+  }
+}

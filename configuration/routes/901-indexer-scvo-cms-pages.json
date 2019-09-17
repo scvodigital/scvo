@@ -1,0 +1,28 @@
+{
+  "name": "indexer-scvo-pages",
+  "pattern": "/indexer/scvo-pages",
+  "acceptedVerbs": ["POST", "GET"],
+  "tasks": [
+    {
+      "name": "wordpress",
+      "taskModule": "mysql",
+      "config": {
+        "connectionName": "cms",
+        "queryTemplates": {
+          "pages": ">context.metaData.handlebars.queries.indexer_get-pages"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": "{{{stringify @root.data}}}",
+        "parseJson": true
+      }
+    }
+  ]
+}

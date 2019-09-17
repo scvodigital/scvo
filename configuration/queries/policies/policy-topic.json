@@ -1,0 +1,32 @@
+{
+  "size": 10000,
+  "_source": [
+    "publish_on",
+    "title",
+    "statement",
+    "briefing",
+    "press_release",
+    "additional",
+    "policy_topics",
+    "policy_topics_slugs",
+    "updated",
+    "slug"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {{#if @root.request.params.topic}}
+        {
+          "term": {
+            "policy_topics_slugs": "{{@root.request.params.topic}}"
+          }
+        }
+        {{else}}
+        {
+          "match_none": {}
+        }
+        {{/if}}
+      ]
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "size": 100,
+  "_source": [
+    "date_start",
+    "url"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "match": {
+            "Id": "{{data.primaryResponse.hits.hits.[0]._source.Id}}"
+          }
+        }
+      ],
+      "filter": [
+        {
+          "match_phrase": {
+            "title": "{{data.primaryResponse.hits.hits.[0]._source.title}}"
+          }
+        },
+        {
+          "range" : {
+            "date_start" : {
+              "gte" : "now/d"
+            }
+          }
+        },
+        {
+          "term": {
+            "team": "events"
+          }
+        }
+      ]
+    }
+  }
+}

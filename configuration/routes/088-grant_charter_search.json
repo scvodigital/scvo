@@ -1,0 +1,77 @@
+{
+  "name": "grant_charter_search",
+  "pattern": "/digital/participation/charter-fund/projects",
+  "tasks": [
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../data/elasticsearch-index.txt}",
+          "type": "scvo-grant-charter",
+          "template": ">context.metaData.handlebars.queries.grants_charter-search"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "page",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-page",
+            "template": ">context.metaData.handlebars.queries.pages_page"
+          },
+          {
+            "name": "types",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-grant-charter",
+            "template": ">context.metaData.handlebars.queries.grants_charter-aggs"
+          },
+          {
+            "name": "splash",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-media",
+            "template": ">context.metaData.handlebars.queries.events_splash"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.grants_charter-search-head-tags",
+              "body": ">context.metaData.handlebars.templates.grants_charter-search",
+              "foot": ""
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

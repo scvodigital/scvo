@@ -1,0 +1,8 @@
+{
+  "ids": "ga:89145164",
+  "start-date": {{{stringify @root.data.dates.startDate}}},
+  "end-date": {{{stringify @root.data.dates.endDate}}},
+  "metrics": "ga:totalEvents",
+  "dimensions": "ga:eventCategory,ga:eventLabel,ga:dimension1",
+  "filters": "ga:eventAction==document_hit"
+}

@@ -1,0 +1,5 @@
+{{~#if @root.context.metaData.live~}}
+{{@root.context.metaData.assetsBase}}{{{url}}}?version={{{@root.context.metaData.assetsVersion}}}
+{{~else~}}
+/assets/{{{url}}}
+{{~/if~}}

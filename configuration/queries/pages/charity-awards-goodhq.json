@@ -1,0 +1,32 @@
+{{#compare @root.request.cookies.charity_awards_already_voted @root.request.params.vote}}
+{
+  "_source": [
+      "charity_number",
+      "website",
+      "facebook",
+      "twitter",
+      "linkedin",
+      "instagram",
+      "name",
+      "image_url",
+      "stars",
+      "rendered.goodhq_hearts"
+  ],
+  "query": {
+    "ids": {
+      "type": "goodhq-organisation",
+      "values": [
+        {{{stringify (default @root.data.primaryResponse.hits.hits.[0]._source.goodhq-xid-1 "")}}},
+        {{{stringify (default @root.data.primaryResponse.hits.hits.[0]._source.goodhq-xid-2 "")}}},
+        {{{stringify (default @root.data.primaryResponse.hits.hits.[0]._source.goodhq-xid-3 "")}}}
+      ]
+    }
+  }
+}
+{{else}}
+{
+  "query": {
+    "match_none": {}
+  }
+}
+{{/compare}}

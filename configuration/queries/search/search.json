@@ -1,0 +1,189 @@
+{
+  "size": 10,
+  "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
+  "_source": [
+    "title",
+    "rendered.scvo_search_result"
+  ],
+  "highlight" : {
+    "fields" : {
+      "text_bag": {},
+      "text_bag_boost": {}
+    }
+  },
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "exists": {
+                "field": "rendered.scvo_search_result"
+              }
+              }{{#ifAny request.params.query.type request.params.query.q}},{{/ifAny}}
+              {{#if request.params.query.type}}
+              {
+                "bool": {
+                  "must_not": [
+                    {
+                      "term": {
+                        "hide_in_results": true
+                      }
+                    },
+                    {
+                      "term": {
+                        "hide_from_search": "1"
+                      }
+                    }
+                  ],
+                  "should": [
+                    {{#compare (getType request.params.query.type) "string"}}
+                    {
+                      "term": {
+                        "_type": "{{request.params.query.type}}"
+                      }
+                    },
+                    {{/compare}}
+                    {{#compare (getType request.params.query.type) "array"}}
+                    {{#each request.params.query.type}}
+                    {
+                      "term": {
+                        "_type": "{{this}}"
+                      }
+                    },
+                    {{/each}}
+                    {{/compare}}
+                    {
+                      "match_none": {}
+                    }
+                  ]
+                }
+              }
+              {{#if request.params.query.q}},{{/if}}
+              {{/if}}
+              {{#if request.params.query.q}}
+              {
+                "bool": {
+                  "must_not": [
+                    {
+                      "term": {
+                        "hide_in_results": true
+                      }
+                    }
+                  ],
+                  "should": [
+                    {
+                      "query_string": {
+                        "query": {{{stringify (default request.params.query.q "")}}},
+                        "fields": ["text_bag_boost^10", "text_bag"],
+                        "default_operator": "AND",
+                        "analyzer": "snowball"
+                      }
+                    },
+                    {
+                      "match_phrase": {
+                        "title": {
+                          "query": {{{stringify (default request.params.query.q "")}}},
+                          "boost": 20
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+              {{else}}
+              {{#if request.params.query.type}}
+              {{else}}
+              ,
+              {
+                "bool": {
+                  "should": [
+                    {
+                      "match_none": {}
+                    }
+                  ]
+                }
+              }
+              {{/if}}
+              {{/if}}
+            ]
+            {{#unless request.params.query.type}},
+            "must_not": [
+              {
+                "term": {
+                  "hide_in_results": true
+                }
+              },
+              {
+                "term": {
+                  "hide_from_search": "1"
+                }
+              },
+              {
+                "term": {
+                  "vacancy_status": "vacancy-closed"
+                }
+              },
+              {
+                "term": {
+                  "vacancy_status": "vacancy-inactive"
+                }
+              }
+            ],
+            "should": [
+              {
+                "term" : {
+                  "_type" : {
+                    "value" : "scvo-event",
+                    "boost" : 3.0
+                  }
+                }
+              },
+              {
+                "term" : {
+                  "_type" : {
+                    "value" : "scvo-page",
+                    "boost" : 2.0
+                  }
+                }
+              },
+              {
+                "term" : {
+                  "_type" : {
+                    "value" : "scvo-post",
+                    "boost" : 6.0
+                  }
+                }
+              },
+              {
+                "term" : {
+                  "_type" : {
+                    "value" : "oscr-charity",
+                    "boost" : -5.0
+                  }
+                }
+              }
+            ]
+            {{/unless}}
+          }
+        },
+        "boost_mode": "multiply",
+        "functions": [
+          {
+            "filter": {
+              "term": {
+                "_type": "scvo-post"
+              }
+            },
+            "weight": 3,
+            "gauss": {
+              "publish_on": {
+                "scale": "120d",
+                "decay": 0.1
+              }
+            }
+          }
+        ]
+      }
+    }
+  }

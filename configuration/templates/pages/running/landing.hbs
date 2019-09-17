@@ -1,0 +1,18 @@
+<div class="page">
+  <div class="container-fluid">
+    {{> breadcrumbs}}
+  </div>
+  {{> headers_splash}}
+  <div class="container-fluid">
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 content page-content">
+          {{{@root.data.primaryResponse.hits.hits.[0]._source.rendered.scvo_full}}}
+        </div>
+        {{> related_posts}}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> footers_services}}

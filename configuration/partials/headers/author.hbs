@@ -1,0 +1,9 @@
+<div class="mdc-layout-grid__inner">
+  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1-desktop mdc-layout-grid__cell--span-2-tablet mdc-layout-grid__cell--span-1-phone">
+    <img src="{{og_image}}" alt="{{name_full}}" class="photo-wee scvo-staff-photo-wee" />
+  </div>
+  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-11-desktop mdc-layout-grid__cell--span-6-tablet mdc-layout-grid__cell--span-3-phone">
+    {{default author_name_full name_full}}
+    <span class="mdc-typography--caption">{{job_title}}<span class="organisation"> at {{#if organisation_name}}{{organisation_name}}{{else}}SCVO{{/if}}</span></span>
+  </div>
+</div>

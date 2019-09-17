@@ -1,0 +1,80 @@
+{
+  "size": 5,
+  "_source": [
+    "slug",
+    "title",
+    "rendered.scvo_sidebar_mini"
+  ],
+  "query": {
+    "function_score": {
+      "query": {
+        {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+        "bool": {
+          "must_not": [
+            {
+              "term": {
+                "hide_in_results": true
+              }
+            },
+            {
+              "term": {
+                "hide_from_search": "1"
+              }
+            }
+          ],
+          "must": [
+            {
+              "term": {
+                "is_press_release": false
+              }
+            }
+          ]
+        }
+        {{else}}
+        "match_none": {}
+        {{/if ~}}
+      },
+      "functions": [
+        {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+        {
+          "filter": {
+            "more_like_this" : {
+              "fields" : ["text_bag"],
+              "like" : "{{@root.data.primaryResponse.hits.hits.[0]._source.text_bag_boost}}",
+              "min_term_freq" : 1,
+              "max_query_terms" : 12
+            }
+          },
+          "random_score": {},
+          "weight": 2
+        },
+        {{/if ~}}
+        {
+          "filter": {
+            "terms": {
+              "categories_id": [
+                {{join @root.data.primaryResponse.hits.hits.[0]._source.categories_id}}
+              ]
+            }
+          },
+          "weight": 1
+        },
+        {
+          "filter": {
+            "term": {
+              "_type": "scvo-post"
+            }
+          },
+          "weight": 3,
+          "gauss": {
+            "publish_on": {
+              "scale": "60d",
+              "decay": 0.2
+            }
+          }
+        }
+      ],
+      "score_mode": "sum"
+    }
+  }
+}

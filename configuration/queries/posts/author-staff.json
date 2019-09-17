@@ -1,0 +1,58 @@
+{
+  "size": 3,
+  "_source": [
+    "Id",
+    "path",
+    "author",
+    "author_sfid",
+    "author_slug",
+    "job_title",
+    "organisation_name",
+    "directorate",
+    "department",
+    "slug",
+    "author_name_full",
+    "categories",
+    "categories_id",
+    "categories_slug",
+    "post_tags",
+    "post_tags_slug",
+    "title",
+    "publish_on",
+    "description_truncated"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "term": {
+            "hide_from_search": "1"
+          }
+        }
+      ],
+      "must": [
+        {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+        {
+          "term": {
+            "author_sfid": "{{@root.data.primaryResponse.hits.hits.[0]._source.Id}}"
+          }
+        },
+        {{/if ~}}
+        {
+          "term": {
+            "is_press_release": false
+          }
+        }
+      ]
+    }
+
+  },
+  "sort": {
+    "publish_on": "desc"
+  }
+}

@@ -1,0 +1,42 @@
+<div class="cjs-vacancy">
+  <div class="container-fluid">
+    <ul class="breadcrumbs">
+      <li><a href="/">Home</a></li>
+      <li><a href="/jobs">Jobs</a></li>
+      <li><a href="/jobs/community-jobs-scotland">Community Jobs Scotland</a></li>
+      <li><a href="/jobs/community-jobs-scotland/vacancies">Vacancies</a></li>
+      <li>Sign out</li>
+    </ul>
+  </div>
+  {{> headers_splash headerTextOverride="CJS vacancies" typeOverride="page"}}
+  <div class="container-fluid page-content">
+    <form id="sign-out-form" method="POST" class="sign-out-form">
+      <p class="mdc-typography--title">
+        Signing out&hellip;
+      </p>
+      <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+        <div class="mdc-linear-progress__buffering-dots"></div>
+        <div class="mdc-linear-progress__buffer"></div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+        <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+          <span class="mdc-linear-progress__bar-inner"></span>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function(event) {
+  setTimeout(function() {
+    scvo.auth.sessionCleanup().then(function() {
+      window.setTimeout(function() {
+        window.location.href = '/';
+      }, 1000);
+    }).catch(function(err) {
+      console.error('Error signing out:', err);
+    });
+  }, 1000);
+});
+</script>

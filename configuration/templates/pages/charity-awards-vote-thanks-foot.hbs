@@ -1,0 +1,24 @@
+<script>
+  $(function() {
+    var slug = {{{stringify (default @root.request.params.vote '')}}};
+    var category = {{{stringify (default @root.request.params.category '')}}};
+    var cookie = scvo.getCookie('charity_awards_already_voted');
+
+    if (slug && category) {
+      scvo.setCookie('charity_awards_already_voted', slug, 90);
+      if (!cookie) {
+        gtag('event', 'charity-awards-2019', {
+          event_category: category,
+          event_label: slug
+        });
+      }
+      window.setTimeout(function() {
+        window.location.href = '/scottish-charity-awards/vote-2019/' + category + '/' + slug + '#vote';
+      }, 2000);
+    } else {
+      window.setTimeout(function() {
+        window.location.href = '/scottish-charity-awards/vote-2019';
+      }, 2000);
+    }
+  });
+</script>

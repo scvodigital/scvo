@@ -1,0 +1,17 @@
+{
+  "name": "hbs-test",
+  "pattern": "/hbs-test",
+  "debug": true,
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": ">context.metaData.handlebars.templates.utilities_hbs-test",
+        "contentType": "text/html"
+      }
+    }
+  ]
+}

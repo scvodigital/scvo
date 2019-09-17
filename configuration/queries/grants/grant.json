@@ -1,0 +1,36 @@
+{
+  "size": 1,
+  "_source": [
+    "Id",
+    "title",
+    "rendered.json_ld",
+    "rendered.scvo_full",
+    "recipient_name",
+    "recipient_charity_number",
+    "recipient_overview",
+    "planned_start",
+    "planned_end",
+    "call",
+    "call_slug",
+    "amount_awarded",
+    "amount_requested_total",
+    "amount_requested",
+    "recipient_url",
+    "recipient_twitter",
+    "recipient_facebook",
+    "individuals_supported",
+    "individuals_supported-slugs",
+    "description",
+    "description_alt",
+    "milestone_1_desc",
+    "milestone_2_desc",
+    "milestone_3_desc",
+    "milestone_4_desc",
+    "project_updates"
+  ],
+  "query": {
+    "term": {
+      "slug": "{{request.params.project_slug}}"
+    }
+  }
+}

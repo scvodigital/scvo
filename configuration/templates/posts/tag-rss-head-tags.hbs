@@ -1,0 +1,8 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<title>{{#each post_tags_slug}}{{#compare this @root.request.params.tag_slug}}{{itemAt ../post_tags @index}}{{/compare}}{{/each}} - SCVO</title>
+{{/with ~}}
+{{else}}
+<title>Posts – SCVO</title>
+{{/if ~}}
+<link>https://scvo.org{{{replace (replace @root.request.params.uri.path "&_view=rss" "") "?_view=rss" ""}}}</link>

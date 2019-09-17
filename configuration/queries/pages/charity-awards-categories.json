@@ -1,0 +1,26 @@
+{
+  "size": 0,
+  "_source": false,
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "title_sort": ""
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "categories": {
+      "terms": {
+        "field": "category",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    }
+  }
+}

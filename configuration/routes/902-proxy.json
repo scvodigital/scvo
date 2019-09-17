@@ -1,0 +1,27 @@
+{
+  "name": "proxy",
+  "pattern": "/proxy(/*proxyPath)",
+  "acceptedVerbs": ["POST", "GET", "PUT", "OPTIONS"],
+  "tasks": [
+    {
+      "name": "proxy",
+      "taskModule": "request",
+      "config": {
+        "optionsTemplates": {
+          "request": ">context.metaData.handlebars.templates.utilities_proxy-options"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": ">context.metaData.handlebars.templates.utilities_proxy-response",
+        "parseJson": true
+      }
+    }
+  ]
+}

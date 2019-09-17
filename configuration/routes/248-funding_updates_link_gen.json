@@ -1,0 +1,14 @@
+{
+  "name": "funding_updates_link_gen",
+  "pattern": "/funding/updates/link-generator",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "https://fundingscotland.com/funding/updates/link-generator",
+        "statusCode": 302
+      }
+    }
+  ]
+}

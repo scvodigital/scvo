@@ -1,0 +1,17 @@
+{
+  "name": "json-test",
+  "pattern": "/json-test",
+  "debug": true,
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": ">context.metaData.handlebars.templates.utilities_json-test",
+        "parseJson": true
+      }
+    }
+  ]
+}

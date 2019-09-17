@@ -1,0 +1,14 @@
+{
+  "name": "redirect_young_peoples_guide",
+  "pattern": "/projects-campaigns/i-love-charity/young-peoples-guide",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/projects-campaigns/i-love-charity/guide-to-working-in-the-sector",
+        "statusCode": 301
+      }
+    }
+  ]
+}

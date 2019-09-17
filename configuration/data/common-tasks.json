@@ -1,0 +1,34 @@
+{
+  "authNotRequired": {
+    "name": "auth",
+    "taskModule": "firebaseAuth",
+    "config": {
+      "tokenPath": "request.cookies.cjs_token",
+      "cookieName": "cjs_cookie",
+      "cookieOptions": {
+        "maxAge": 1209600000,
+        "secure": true,
+        "path": "/"
+      },
+      "appName": "cjs",
+      "noTokenRoute": "",
+      "notAuthenticatedRoute": ""
+    }
+  },
+  "authRequired": {
+    "name": "auth",
+    "taskModule": "firebaseAuth",
+    "config": {
+      "tokenPath": "request.cookies.cjs_token",
+      "cookieName": "cjs_cookie",
+      "cookieOptions": {
+        "maxAge": 1209600000,
+        "secure": true,
+        "path": "/"
+      },
+      "appName": "cjs",
+      "noTokenRoute": "cjs_sign_in",
+      "notAuthenticatedRoute": "cjs_sign_in"
+    }
+  }
+}

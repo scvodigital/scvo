@@ -1,0 +1,126 @@
+<div class="staff">
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <div class="container-fluid">
+    <ul class="breadcrumbs">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About SCVO</a></li>
+      <li><a href="/about/staff-team">Staff team</a></li>
+      <li>{{{name_full}}}</li>
+    </ul>
+  </div>
+  <div class="splash-image splash-image-{{@root.data.primaryResponse.hits.hits.[0]._type}}" style="{{> headers_splash_image}}">
+    <div class="splash-overlay{{#if hide_overlay}} splash-overlay-hidden{{/if}}">
+      <div class="container-fluid">
+        <div class="mdc-layout-grid">
+          {{#if header_text ~}}
+          <img src="{{header_text}}" alt="{{title}}" class="header-text" />
+          {{else}}
+          <h1 class="header-text">
+            <span class="header-text-banner">
+              {{> headers_author this}}
+            </span>
+          </h1>
+          {{/if ~}}
+        </div>
+        {{> headers_caption}}
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone content page-content">
+          <div class="full scvo-staff scvo-cms scvo-cms-author">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">
+                <img src="{{profile}}" alt="{{name_full}}" class="photo-full scvo-staff-photo-full" />
+              </div>
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9">
+                <dl class="inline-dl">
+                  {{#if job_title}}
+                  <dt>
+                    Job title
+                  </dt>
+                  <dd>
+                    {{job_title}}
+                    {{#compare directorate department}}
+                    {{#compare directorate "Directorate"}}
+                    {{else}}
+                    {{#if department}} – <a href="/about/staff-team?department={{slugify department}}">{{department}}</a>{{/if}}
+                    {{/compare}}
+                    {{else}}
+                    {{#if department}} – <a href="/about/staff-team?department={{slugify department}}">{{department}}</a>{{/if}}
+                    {{#if directorate}} ({{directorate}}){{/if}}
+                    {{/compare}}
+                  </dd>
+                  {{/if}}
+                  {{#if city}}
+                  <dt>
+                    City
+                  </dt>
+                  <dd>
+                    <a href="/about/staff-team?city={{slugify city}}">{{city}}</a>
+                  </dd>
+                  {{/if}}
+                  {{#if about}}
+                  <dt>
+                    About
+                  </dt>
+                  <dd>
+                    {{{about}}}
+                  </dd>
+                  {{/if}}
+                  <dt>
+                    Contact
+                  </dt>
+                  <dd>
+                    <ul class="fa-ul">
+                      {{#if email}}
+                      <li><span class="fa-li"><span class="far fa-envelope"></span></span> <a href="mailto:{{email}}">{{email}}</a></li>
+                      {{/if}}
+                      {{#if twitter}}
+                      <li><span class="fa-li"><span class="fab fa-twitter"></span></span> <a href="{{twitter}}">Twitter</a></li>
+                      {{/if}}
+                      {{#if linkedin}}
+                      <li><span class="fa-li"><span class="fab fa-linkedin"></span></span> <a href="{{linkedin}}">LinkedIn</a></li>
+                      {{/if}}
+                      {{#if work_phone}}
+                      <li><span class="fa-li"><span class="fas fa-phone"></span></span> <a href="tel:{{replace work_phone " " ""}}">{{work_phone}}</a></li>
+                      {{/if}}
+                    </ul>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone sidebar page-sidebar">
+          {{> menus_about}}
+        </div>
+        {{#compare @root.data.supplimentaryResponses.author_posts.hits.total ">" 0 ~}}
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 related page-related">
+          <h3 class="blogs">
+            Latest post{{#compare @root.data.supplimentaryResponses.author_posts.hits.total ">" 1}}s{{/compare}}
+            by {{{name_full}}}
+          </h3>
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              {{#each @root.data.supplimentaryResponses.author_posts.hits.hits ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet  mdc-layout-grid__cell--span-4-phone">
+                {{> post_list _source}}
+              </div>
+              {{/each ~}}
+            </div>
+          </div>
+          {{#compare @root.data.supplimentaryResponses.author_posts.hits.total ">" 3 ~}}
+          <p class="v-margin read-more">
+            <a href="/post/author/{{{@root.data.supplimentaryResponses.author_posts.hits.hits.[0]._source.author_slug}}}" class="mdc-button mdc-button--raised">More posts</a>
+          </p>
+          {{/compare ~}}
+        </div>
+        {{/compare ~}}
+      </div>
+    </div>
+  </div>
+  {{/with ~}}
+</div>

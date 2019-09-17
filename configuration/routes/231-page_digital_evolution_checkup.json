@@ -1,0 +1,14 @@
+{
+  "name": "page_digital_evolution_checkup",
+  "pattern": "/digital/evolution/check-up",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "https://digitalcheckup.org",
+        "statusCode": 301
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "liveness_check",
+  "pattern": "/liveness_check",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": "Liveness Check, OK!"
+      }
+    }
+  ]
+}

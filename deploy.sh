@@ -6,23 +6,23 @@ REMOTE=$(git rev-parse "$UPSTREAM")
 BASE=$(git merge-base @ "$UPSTREAM")
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
-if [ $BRANCH != "development" ]; then
+if [ "$BRANCH" != "development" ]; then
   echo "CANNOT DEPLOY: You can only deploy from the 'development' branch"
 elif [[ `git status --porcelain` ]]; then
   echo "CANNOT DEPLOY: There are local changes"
 elif [ $LOCAL = $REMOTE ]; then
   echo "DEPLOYING"
 
-  # travis encrypt-file secret.json --add --force
-  # git add secret.json.enc .travis.yml
-  # git commit -m "Updated secret.json"
-  # npm version patch
-  # git push
-  # git checkout production
-  # git pull
-  # git pull origin development
-  # git push
-  # git checkout development
+  travis encrypt-file secret.json --add --force
+  git add secret.json.enc .travis.yml
+  git commit -m "Updated secret.json"
+  npm version patch
+  git push
+  git checkout production
+  git pull
+  git pull origin development
+  git push
+  git checkout development
 elif [ $LOCAL = $BASE ]; then
   echo "CANNOT DEPLOY: Need to pull"
 elif [ $REMOTE = $BASE ]; then

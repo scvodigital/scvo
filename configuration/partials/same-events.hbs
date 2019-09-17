@@ -1,0 +1,8 @@
+{{#compare @root.data.supplimentaryResponses.same_events.hits.total ">" 0 ~}}
+<h2 class="author">Also on the following {{inflect @root.data.supplimentaryResponses.same_events.hits.total "date" "dates"}}</h2>
+<ul class="supplimentary-list">
+  {{#each @root.data.supplimentaryResponses.same_events.hits.hits ~}}
+  <li><a href="{{_source.url}}">{{{momentFormat (moment _source.date_start "x") "Do MMMM YYYY"}}}</a></li>
+  {{/each ~}}
+</ul>
+{{/compare ~}}

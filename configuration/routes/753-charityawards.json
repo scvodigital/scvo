@@ -1,0 +1,14 @@
+{
+  "name": "charityawards",
+  "pattern": "/charityawards",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/scottish-charity-awards",
+        "statusCode": 302
+      }
+    }
+  ]
+}

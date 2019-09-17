@@ -1,0 +1,56 @@
+{
+  "size": 1,
+  "_source": [
+    "caption",
+    "original_image"
+  ],
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": {
+            "exists": {
+              "field": "categories_id"
+            }
+          },
+          "must_not": {
+            "term": {
+              "original_image": ""
+            }
+          }
+        }
+      },
+      "boost": "5",
+      "functions": [
+        {{#if @root.data.primaryResponse.hits.hits.[0]._source.categories_id ~}}
+        {
+          "filter": {
+            "terms": {
+              "categories_id": [
+                {{join @root.data.primaryResponse.hits.hits.[0]._source.categories_id}}
+              ]
+            }
+          },
+          "random_score": {},
+          "weight": 10
+        },
+        {{/if ~}}
+        {
+          "filter": {
+            "terms": {
+              "categories_id": [
+                586,29,530,26,5,581
+              ]
+            }
+          },
+          "random_score": {},
+          "weight": 2
+        }
+      ],
+      "max_boost": 10,
+      "score_mode": "max",
+      "boost_mode": "multiply",
+      "min_score" : 1
+    }
+  }
+}

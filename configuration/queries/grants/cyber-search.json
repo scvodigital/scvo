@@ -1,0 +1,55 @@
+{
+  "size": 100,
+  "from": 0,
+  "_source": [
+    "title",
+    "recipient_charity_number",
+    "amount_awarded",
+    "date_awarded",
+    "date_contracted",
+    "date_payment_1",
+    "date_payment_2",
+    "date_project_start",
+    "date_project_end",
+    "date_last_modified",
+    "goodhq_organisation.website",
+    "goodhq_organisation.twitter",
+    "goodhq_organisation.facebook",
+    "goodhq_organisation.linkedin",
+    "rendered.json_ld"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "calls": {
+      "terms": {
+        "field": "call",
+        "size": 10000,
+        "order": {
+          "_term": "desc"
+        }
+      },
+      "aggregations": {
+        "grants": {
+          "top_hits": {
+            "size": 100,
+            "sort": [
+              {
+                "recipient_name": {
+                  "order": "asc"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

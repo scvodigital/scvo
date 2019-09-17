@@ -1,0 +1,48 @@
+{
+  "size": 3,
+  "_source": [
+    "Id",
+    "organisation.has_logo",
+    "organisation.logo_url",
+    "organisation.id",
+    "organisation.name_slug",
+    "organisation.name",
+    "organisation.slug",
+    "slug",
+    "title",
+    "title_slug",
+    "closing_date"
+  ],
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": [
+            {
+              "term": {
+                "country_slug": "scotland"
+              }
+            },
+            {
+              "term": {
+                "active": true
+              }
+            },
+            {
+              "term": {
+                "vacancy_status": "vacancy-open"
+              }
+            },
+            {
+              "term": {
+                "top_job": true
+              }
+            }
+          ]
+        }
+      },
+      "random_score": {},
+      "score_mode": "sum"
+    }
+  }
+}

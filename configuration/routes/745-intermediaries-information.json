@@ -1,0 +1,14 @@
+{
+  "name": "intermediaries_information",
+  "pattern": "/intermediaries-information",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/policy-research/intermediaries",
+        "statusCode": 301
+      }
+    }
+  ]
+}

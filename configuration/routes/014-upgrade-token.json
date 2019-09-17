@@ -1,0 +1,30 @@
+{
+  "name": "upgrade_token",
+  "pattern": "/upgrade-token",
+  "tasks": [
+    {
+      "name": "auth",
+      "taskModule": "firebaseGetSession",
+      "config": {
+        "tokenPath": "request.params.query.token",
+        "cookieName": "cjs_cookie",
+        "cookieOptions": {
+          "maxAge": 1209600000,
+          "secure": true,
+          "path": "/"
+        },
+        "appName": "cjs"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": "{{{safeStringify @root.data.auth}}}",
+        "parseJson": true
+      }
+    }
+  ]
+}

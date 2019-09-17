@@ -1,0 +1,20 @@
+{{#if paging.totalResults ~}}
+<div class="search-info">
+  <strong>Total results:</strong> {{addCommas paging.totalResults}} {{#compare paging.totalPages ">" 1}}|
+  <strong>Current page:</strong> {{addCommas paging.currentPage}} of {{addCommas paging.totalPages}}{{/compare}}
+  {{#ifAny (compare @root.route.name "evidence_library_document_search") (compare @root.route.name "post_tag") (compare @root.route.name "post_category") (compare @root.route.name "page_blogs") (compare @root.route.name "page_press") ~}}
+  <a href="{{@root.request.params.uri.pathname}}?_view=rss{{#if @root.request.params.uri.query}}&amp;{{@root.request.params.uri.query}}{{/if}}" class="rss pull-right">
+    <span class="fas fa-rss-square" aria-hidden="true" aria-label="RSS feed"></span>
+  </a>
+  {{/ifAny ~}}
+</div>
+{{else}}
+{{#ifAny phase @root.request.params.query.region @root.request.params.query.sector @root.request.params.query.location @root.request.params.query.job_number @root.request.params.query.q ~}}
+<div class="search-info">
+  No results, please try a different search query
+</div>
+{{/ifAny ~}}
+{{#compare @root.request.params.path "===" "search" ~}}
+{{> useful_links}}
+{{/compare ~}}
+{{/if ~}}

@@ -1,0 +1,138 @@
+<div class="post">
+  <div class="container-fluid">
+    {{> breadcrumbs_posts}}
+  </div>
+  {{> headers_splash}}
+  <div class="container-fluid">
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone content post-content">
+          {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+          <div class="full scvo-cms scvo-cms-post scvo-cms-post-{{wpid}}">
+            <div class="post-info">
+              {{> post_info_author}}
+              {{> post_info_published}}
+              {{> post_info_categories}}
+            </div>
+            {{{replace content "http://cms.scvo.org/" "/"}}}
+          </div>
+          {{/with ~}}
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone sidebar post-sidebar">
+          {{> wee_search title="Search posts" searchPath="/search" searchRoute="main_search" extraParams='{ "type": "scvo-post" }'}}
+          {{#if @root.data.primaryResponse.hits.hits.[0]._source.is_press_release ~}}
+          <ul class="supplimentary-list">
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[0] ~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[1] ~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[2] ~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[3] ~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[4] ~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+          </ul>
+          {{else}}
+          {{#if @root.data.primaryResponse.hits.hits.[0]._source.categories ~}}
+          {{#compare @root.data.supplimentaryResponses.authors_posts.hits.total ">" 0 ~}}
+          {{#compare @root.data.supplimentaryResponses.staff_profile.hits.total ">" 0 ~}}
+          <h3 class="author static-sidebar">
+            More posts by <a href="/post/author/{{@root.data.primaryResponse.hits.hits.[0]._source.author_slug}}">{{@root.data.primaryResponse.hits.hits.[0]._source.author_name_full}}</a>
+          </h3>
+          {{/compare ~}}
+          <ul class="supplimentary-list">
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
+            {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[0]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
+            {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[1]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
+            {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[2]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
+            {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[3]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
+            {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[4]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+          </ul>
+          {{else}}
+          <ul class="supplimentary-list">
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[0]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[1]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[2]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[3]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+            {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
+            {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[4]~}}
+            {{> post_sidebar _source}}
+            {{/with ~}}
+            {{/compare ~}}
+          </ul>
+          {{/compare ~}}
+          {{/if ~}}
+          {{/if ~}}
+        </div>
+      </div>
+      {{#compare @root.data.supplimentaryResponses.tfn_related_posts.hits.total ">" 0 ~}}
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 related post-related post-related-tfn">
+          <h3>Related articles on <a href="http://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Third Force News</a></h3>
+          <div class="mdc-layout-grid">
+            <div class="mdc-layout-grid__inner">
+              {{#each @root.data.supplimentaryResponses.tfn_related_posts.hits.hits ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                {{> tfn_post_gist _source}}
+              </div>
+              {{/each ~}}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/compare ~}}
+    </div>
+  </div>
+</div>
+<script src="{{~>asset_url url='post.js'~}}"></script>

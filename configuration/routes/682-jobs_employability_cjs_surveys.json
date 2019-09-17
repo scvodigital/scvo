@@ -1,0 +1,14 @@
+{
+  "name": "jobs_employability_cjs_surveys",
+  "pattern": "/jobs/community-jobs-scotland/surveys",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/jobs/community-jobs-scotland",
+        "statusCode": 302
+      }
+    }
+  ]
+}

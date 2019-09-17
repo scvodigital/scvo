@@ -1,0 +1,63 @@
+{
+  "name": "page_about_office",
+  "pattern": {
+    "index": "/about/offices",
+    "section": "/about/offices/:slug"
+  },
+  "tasks": [
+    {
+      "name": "bicycles",
+      "taskModule": "request",
+      "renderer": "handlebars",
+      "config": {
+        "options": {
+          "edinburgh": { "url": "https://api.citybik.es/v2/networks/edinburgh-cycle-hire", "json": true },
+          "glasgow": { "url": "https://api.citybik.es/v2/networks/nextbike-glasgow", "json": true }
+        }
+      }
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "splash",
+            "index": "{$../data/elasticsearch-index.txt}",
+            "type": "scvo-media",
+            "template": ">context.metaData.handlebars.queries.pages_splash"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "body": ">context.metaData.handlebars.templates.pages_about-office",
+              "foot": ""
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

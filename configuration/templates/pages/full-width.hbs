@@ -1,0 +1,11 @@
+<div class="page page-full-width">
+  <div class="container-fluid">
+    {{> breadcrumbs}}
+  </div>
+  {{> headers_splash}}
+  <div class="container-fluid">
+    <div class="content page-content">
+      {{{@root.data.primaryResponse.hits.hits.[0]._source.rendered.scvo_full}}}
+    </div>
+  </div>
+</div>

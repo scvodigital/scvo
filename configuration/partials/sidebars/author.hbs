@@ -1,0 +1,13 @@
+<div class="full scvo-cms scvo-cms-author">
+  {{#if profile ~}}
+  <img src="{{profile}}" alt="{{name_full}}" class="photo-full scvo-staff-photo-full" />
+  {{/if ~}}
+  {{#if about ~}}
+  <p>
+    {{{about}}}
+  </p>
+  {{/if ~}}
+  {{#if Id ~}}
+  <a href="/about/staff-team/{{Id}}/{{slugify name_full}}">Contact information</a>
+  {{/if ~}}
+</div>

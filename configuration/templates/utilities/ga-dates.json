@@ -1,0 +1,29 @@
+{
+  "startDate": 
+    {{{stringify 
+      (momentFormat
+        (momentStartOf
+          (moment 
+            @root.request.params.query.date
+            ""
+          )
+          "month"
+        )
+        "YYYY-MM-DD"
+      )
+    }}}
+  ,
+  "endDate": 
+    {{{stringify 
+      (momentFormat
+        (momentEndOf
+          (moment 
+            @root.request.params.query.date
+            ""
+          )
+          "month"
+        )
+        "YYYY-MM-DD"
+      )
+    }}}
+}

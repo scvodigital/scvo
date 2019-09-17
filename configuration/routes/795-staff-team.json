@@ -1,0 +1,14 @@
+{
+  "name": "staff_team",
+  "pattern": "/staff-team",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/about/staff-team",
+        "statusCode": 302
+      }
+    }
+  ]
+}

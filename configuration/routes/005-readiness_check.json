@@ -1,0 +1,15 @@
+{
+  "name": "readiness_check",
+  "pattern": "/readiness_check",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": "Readiness Check, OK!"
+      }
+    }
+  ]
+}

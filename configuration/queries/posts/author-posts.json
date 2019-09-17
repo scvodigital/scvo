@@ -1,0 +1,64 @@
+{
+  "size": 5,
+  "_source": [
+    "Id",
+    "path",
+    "categories_id",
+    "title",
+    "publish_on",
+    "path",
+    "description",
+    "is_press_release",
+    "author_slug",
+    "author_name_full",
+    "categories",
+    "categories_slug",
+    "post_tags",
+    "post_tags_slug"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "term": {
+            "hide_from_search": "1"
+          }
+        }
+      ],
+      "must": [
+        {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+        {
+          "term": {
+            "author": {{@root.data.primaryResponse.hits.hits.[0]._source.author}}
+          }
+        },
+        {{/if ~}}
+        {
+          "term": {
+            "is_press_release": false
+          }
+        }
+      ]
+      {{#if @root.data.primaryResponse.hits.hits.[0] ~}},
+      "should": {
+        "bool": {
+          "must_not": {
+            "match": {
+              "wpid": {{@root.data.primaryResponse.hits.hits.[0]._source.wpid}}
+            }
+          }
+        }
+      },
+      "minimum_should_match": 1
+      {{/if ~}}
+    }
+  },
+  "sort": {
+    "publish_on": "desc"
+  }
+}
