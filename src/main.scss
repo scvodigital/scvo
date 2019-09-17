@@ -3155,6 +3155,15 @@ h1.mdc-typography--title {
   font-size: 2rem;
   margin-bottom: $unit*1.5;
 }
+.cta-content.callout-image.policy-stats {
+  background-color: $mdc-theme-primary;
+  h2 {
+    color: white;
+  }
+  // a:hover .fal {
+  //   font-weight: 400;
+  // }
+}
 .linked-cards {
   .mdc-card__primary {
     padding: 0;
