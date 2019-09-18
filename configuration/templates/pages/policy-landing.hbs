@@ -1,15 +1,13 @@
 <div class="page">
-  <div class="container-fluid">
-    {{> breadcrumbs}}
-  </div>
   {{> headers_splash}}
   <div class="container-fluid content page-content">
+    {{> breadcrumbs}}
     <div class="mdc-layout-grid linked-cards support support-policy v-margin">
       <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
           {{{@root.data.primaryResponse.hits.hits.[0]._source.rendered.scvo_full}}}
         </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
           <div class="mdc-card v-margin">
             <section class="mdc-card__primary">
               <h1 class="mdc-card__title mdc-card__title--large">
@@ -29,6 +27,29 @@
                 </li>
               </ul>
             </section>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          <div class="mdc-card v-margin">
+            <section class="mdc-card__primary">
+              <h1 class="mdc-card__title mdc-card__title--large">
+                <a href="/policy-research/events"><span class="fal fa-fw fa-chalkboard-teacher fa-2x"> </span>Events</a>
+              </h1>
+            </section>
+            <section class="mdc-card__supporting-text">
+              {{#with @root.data.supplimentaryResponses.events_total.hits ~}}
+              {{#compare total ">" 0 ~}}
+              We have {{total}} upcoming event{{#compare total ">" 1}}s{{/compare}}
+              {{else}}
+              We don't have any upcoming events
+              {{/compare ~}}
+            </section>
+            {{#compare total ">" 0 ~}}
+            <section class="mdc-card__actions">
+              <a class="mdc-card__action" href="/policy-research/events">Find out more</a>
+            </section>
+            {{/compare ~}}
+            {{/with ~}}
           </div>
         </div>
       </div>
@@ -84,29 +105,6 @@
           <div class="mdc-card">
             <section class="mdc-card__primary">
               <h1 class="mdc-card__title mdc-card__title--large">
-                <a href="/policy-research/events"><span class="fal fa-fw fa-comments fa-2x"> </span>Events</a>
-              </h1>
-            </section>
-            <section class="mdc-card__supporting-text">
-              {{#with @root.data.supplimentaryResponses.events_total.hits ~}}
-              {{#compare total ">" 0 ~}}
-              We have {{total}} upcoming event{{#compare total ">" 1}}s{{/compare}}
-              {{else}}
-              We don't have any upcoming events
-              {{/compare ~}}
-            </section>
-            {{#compare total ">" 0 ~}}
-            <section class="mdc-card__actions">
-              <a class="mdc-card__action" href="/policy-research/events">Find out more</a>
-            </section>
-            {{/compare ~}}
-            {{/with ~}}
-          </div>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-          <div class="mdc-card">
-            <section class="mdc-card__primary">
-              <h1 class="mdc-card__title mdc-card__title--large">
                 <a href="/policy-research/evidence-library"><span class="fal fa-fw fa-folder-open fa-2x"> </span>Evidence Library</a>
               </h1>
             </section>
@@ -120,7 +118,7 @@
           <div class="mdc-card">
             <section class="mdc-card__primary">
               <h1 class="mdc-card__title mdc-card__title--large">
-                <a href="/policy-research/policy-forum"><span class="fal fa-fw fa-book-heart fa-2x"> </span>Policy Forum</a>
+                <a href="/policy-research/policy-forum"><span class="fal fa-fw fa-comments fa-2x"> </span>Policy Forum</a>
               </h1>
             </section>
             <section class="mdc-card__supporting-text">
@@ -146,6 +144,19 @@
           <div class="mdc-card">
             <section class="mdc-card__primary">
               <h1 class="mdc-card__title mdc-card__title--large">
+                <a href="/policy-research/positive-partnerships"><span class="fal fa-fw fa-handshake-alt fa-2x"> </span>Positive partnerships</a>
+              </h1>
+            </section>
+            <section class="mdc-card__supporting-text">
+              We recently asked our members and those working in charities, voluntary groups and social enterprises across Scotland to share any successful partnership projects they have with the public sector.
+            </section>
+            <section class="mdc-card__actions"><a class="mdc-card__action" href="/policy-research/positive-partnerships">Find out more</a></section>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          <div class="mdc-card">
+            <section class="mdc-card__primary">
+              <h1 class="mdc-card__title mdc-card__title--large">
                 <a href="/policy-research/intermediaries"><span class="fal fa-fw fa-retweet fa-2x"> </span>Intermediaries</a>
               </h1>
             </section>
@@ -159,7 +170,7 @@
           <div class="mdc-card">
             <section class="mdc-card__primary">
               <h1 class="mdc-card__title mdc-card__title--large">
-                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzk1NTg3YmYtODU4Mi00ZjM4LWJiNjgtMjYxMjAxYmY3ZWVhIiwidCI6ImMyOTQ5NGY5LTNhY2EtNGE3MS05NWUyLWM4ODBjNWE1ZThmOSIsImMiOjh9" target="_blank" rel="noopener"><span class="fal fa-fw fa-handshake-alt fa-2x"> </span>SCVO Core Grant Plan 2018-20</a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiYzk1NTg3YmYtODU4Mi00ZjM4LWJiNjgtMjYxMjAxYmY3ZWVhIiwidCI6ImMyOTQ5NGY5LTNhY2EtNGE3MS05NWUyLWM4ODBjNWE1ZThmOSIsImMiOjh9" target="_blank" rel="noopener"><span class="fal fa-fw fa-book-heart fa-2x"> </span>SCVO Core Grant Plan 2018-20</a>
               </h1>
             </section>
             <section class="mdc-card__supporting-text">
