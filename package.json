@@ -7,9 +7,9 @@
     "test": "echo \"No tests specified\" && exit 0",
     "start": "npm run clear-build && LIBRARY=SCVO webpack --watch --env=dev",
     "build": "npm run clear-build && LIBRARY=SCVO webpack --env=prod",
-    "publish": "npm run build && GOOGLE_APPLICATION_CREDENTIALS=\"secret.json\" SITE=scvo node publish.js",
+    "publish": "npm run build && GOOGLE_APPLICATION_CREDENTIALS=\"secret.json\" SITE=scvo node  ./node_modules/@scvo/common/publish.js",
     "clear-build": "rm -rf build/**",
-    "deploy": "./deploy.sh"
+    "deploy": "./node_modules/@scvo/common/deploy.sh"
   },
   "repository": {
     "type": "git",
