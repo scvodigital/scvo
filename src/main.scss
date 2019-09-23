@@ -6170,3 +6170,16 @@ footer.mdc-layout__footer {
     }
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: $mdc-theme-footer-dark;
+  }
+  img {
+    opacity: .75;
+    transition: opacity .5s ease-in-out;
+  }
+  img:hover {
+    opacity: 1;
+  }
+}
