@@ -31,6 +31,7 @@
           </p>
           {{/if ~}}
 
+
           <h3>Application forms</h3>
           <ul class="mdc-list downloads">
             {{#ifAny (compare job_number "9992") (compare job_number "10005") ~}}
@@ -83,6 +84,16 @@
               </span>
             </li>
             {{else}}
+            {{#compare job_number "10497" ~}}
+            <li class="mdc-list-item">
+              <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
+              <span class="mdc-list-item__text">
+                <a href="{{~>asset_url url='cjs/Dean%20and%20Cauvin%20Trust%20CJS%20Application%20Form.docx'~}}" target="_blank" download>
+                  <span class="title">Application Form</span>
+                </a>
+              </span>
+            </li>
+            {{else}}
             {{#compare job_number "8552" ~}}
             <li class="mdc-list-item">
               <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
@@ -127,6 +138,7 @@
                 </a>
               </span>
             </li>
+            {{/compare ~}}
             {{/compare ~}}
             {{/compare ~}}
             {{/compare ~}}
