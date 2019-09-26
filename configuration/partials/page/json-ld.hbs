@@ -25,7 +25,7 @@
   "datePublished": "{{momentFormat (moment publish_on 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
   "dateCreated": "{{momentFormat (moment publish_on 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
   "dateModified": "{{momentFormat (moment date_last_indexed 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
-  "description": {{{stringify (concat '' (truncate description 280))}}},
-  "articleBody": {{{stringify (concat '' content)}}}
+  "description": {{{stringify (concat '' (truncate (striptags description) 280))}}},
+  "articleBody": {{{stringify (concat '' (striptags content))}}}
 }
 </script>
