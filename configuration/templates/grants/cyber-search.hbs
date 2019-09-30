@@ -34,6 +34,13 @@
           <p>
             In the third round of the Cyber Essentials grant scheme, we supported {{grants.hits.total}} organisations to achieve Cyber Essentials accreditation.
           </p>
+          {{else}}
+          {{#compare key "===" "Cyber 4" ~}}
+          <h2>Call 4, 2019</h2>
+          <p>
+            In the fourth round of the Cyber Essentials grant scheme, we supported {{grants.hits.total}} organisations to achieve Cyber Essentials accreditation.
+          </p>
+          {{/compare ~}}
           {{/compare ~}}
           {{/compare ~}}
           {{/compare ~}}
@@ -44,11 +51,19 @@
               {{#each grants.hits.hits ~}}
               {{#with _source ~}}
               {{#compare title "!==" "Community Welfare Test (CO)" ~}}
-              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
                 <div class="mdc-card card scvo-grant scvo-grant-cyber">
                   <section class="mdc-card__primary">
+                    <h2 class="mdc-card__title no-margin">
+                      {{{title}}}
+                    </h2>
+                    {{#if (contains recipient_charity_number "SC") ~}}
+                    <div class="mdc-typography--caption">
+                      Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}">{{recipient_charity_number}}</a>
+                    </div>
+                    {{/if ~}}
                     {{#ifAny goodhq_organisation.website goodhq_organisation.twitter goodhq_organisation.facebook goodhq_organisation.linkedin ~}}
-                    <div class="pull-right">
+                    <div class="v-margin">
                       {{#if goodhq_organisation.website ~}}
                       <a href="{{fixUrl goodhq_organisation.website "http"}}"><span class="far fa-link" aria-hidden="true"></span></a>
                       {{/if ~}}
@@ -63,15 +78,9 @@
                       {{/if ~}}
                     </div>
                     {{/ifAny ~}}
-                    <h2 class="mdc-card__title mdc-card__title--large">
-                      {{{title}}}
-                    </h2>
                   </section>
                   <section class="mdc-card__supporting-text">
                     <p class="mdc-typography--body1">
-                      {{#if (contains recipient_charity_number "SC") ~}}
-                      <span class="mdc-typography--caption">Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}">{{recipient_charity_number}}</a></span><br />
-                      {{/if ~}}
                       {{#if amount_awarded ~}}
                       <strong>Amount awarded:</strong> £{{addCommas amount_awarded}}
                       {{/if ~}}
