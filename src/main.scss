@@ -2793,8 +2793,8 @@ body.the-gathering-2019:not(.post) main {
       }
       a {
         float: none !important;
-        display: inline-block;
-        margin: 0 !important;
+        display: block;
+        margin: 0 auto !important;
         img {
           margin-top: $unit;
         }
