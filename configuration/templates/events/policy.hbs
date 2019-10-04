@@ -39,6 +39,21 @@
                   </div>
                 </div>
                 {{/if ~}}
+                {{#if trainers ~}}
+                <div class="mdc-layout-grid__inner">
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone">
+                    <strong>{{inflect trainers "Trainer" "Trainers"}}</strong>
+                  </div>
+                  <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone">
+                    {{#each trainers ~}}
+                    {{#if Contact__r.Contact_Twitter_Handle__c ~}}
+                    <img src="https://avatars.io/twitter/{{replace Contact__r.Contact_Twitter_Handle__c "@" ""}}/medium" alt="{{Contact__r.Name}}" class="photo-wee" />
+                    {{/if ~}}
+                    {{{Contact__r.Name}}}{{#compare Contact__r.Organisation__c "!==" "Scottish Council for Voluntary Organisations"}} – {{Contact__r.Organisation__c}}{{/compare}}{{#unless @last}}<br />{{/unless}}
+                    {{/each ~}}
+                  </div>
+                </div>
+                {{else}}
                 {{#if trainer ~}}
                 <div class="mdc-layout-grid__inner">
                   <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone">
@@ -48,6 +63,7 @@
                     {{{trainer}}}
                   </div>
                 </div>
+                {{/if ~}}
                 {{/if ~}}
                 {{#if contact_name ~}}
                 <div class="mdc-layout-grid__inner">
@@ -85,9 +101,9 @@
                     <strong>Cost</strong>
                   </div>
                   <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone">
-                    {{#forEach cost_structures ~}}
+                    {{#each cost_structures ~}}
                     {{{Description__c}}} &pound;{{Total_Amount__c}}{{#unless isLast}}, {{/unless}}
-                    {{/forEach ~}}
+                    {{/each ~}}
                   </div>
                 </div>
                 {{else}}

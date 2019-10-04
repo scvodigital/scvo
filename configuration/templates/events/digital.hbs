@@ -83,9 +83,9 @@
                     <strong>Cost</strong>
                   </div>
                   <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone">
-                    {{#forEach cost_structures ~}}
+                    {{#each cost_structures ~}}
                     {{{Description__c}}} &pound;{{Total_Amount__c}}{{#unless isLast}}, {{/unless}}
-                    {{/forEach ~}}
+                    {{/each ~}}
                   </div>
                 </div>
                 {{else}}
@@ -229,7 +229,9 @@
     </div>
 
     {{!-- {{{rendered.scvo_full}}} --}}
+    {{#if rendered.scvo_speakers ~}}
     {{{rendered.scvo_speakers}}}
+    {{/if ~}}
     {{/with ~}}
     {{> related_events}}
   </div>
