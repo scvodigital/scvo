@@ -3,10 +3,16 @@
   "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 10}},
   "_source": [
     "slug",
+    "Id",
     "title",
     "course_type",
     "date_start",
-    "rendered.scvo_list",
+    "path",
+    "course_overview_short",
+    "description_short",
+    "places_available",
+    "city",
+    "course_length",
     "rendered.scvo_gist",
     "rendered.json_ld"
   ],

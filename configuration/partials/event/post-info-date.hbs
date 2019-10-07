@@ -1,0 +1,9 @@
+{{#if date_start ~}}
+<div class="post-info-item post-info-date">
+  <span class="far fa-calendar-alt" aria-hidden="true"></span>
+  {{momentFormat (moment date_start 'x') 'Do MMMM YYYY'}}
+  {{#if course_length ~}}
+  {{#compare course_length '!==' '1 Day'}} ({{course_length}}s){{/compare}}
+  {{/if ~}}
+</div>
+{{/if ~}}

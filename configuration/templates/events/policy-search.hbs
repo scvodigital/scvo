@@ -73,7 +73,9 @@
           {{> search_info paging=@root.data.primaryResponse.pagination}}
 
           {{#each data.primaryResponse.hits.hits ~}}
-          {{{_source.rendered.scvo_list}}}
+          {{#with _source ~}}
+          {{> event_list}}
+          {{/with ~}}
           {{/each ~}}
 
           {{> pagination paging=@root.data.primaryResponse.pagination}}

@@ -1,0 +1,24 @@
+<div class="list scvo-event scvo-event-{{Id}} mdc-card">
+  <section class="mdc-card__primary">
+    <h3 class="mdc-card__title">
+      <a href="{{path}}">{{{title}}}</a>
+    </h3>
+    <div class="post-info">
+      {{> event_post_info_booked}}
+      {{> event_post_info_date}}
+      {{> event_post_info_city}}
+    </div>
+  </section>
+  <section class="mdc-card__supporting-text">
+    <p>
+      {{#if course_overview_short ~}}
+      {{{course_overview_short}}}
+      {{else}}
+      {{#if description_short ~}}
+      {{{description_short}}}
+      {{/if ~}}
+      {{/if ~}}
+      <a href="{{path}}">Read more</a>
+    </p>
+  </section>
+</div>
