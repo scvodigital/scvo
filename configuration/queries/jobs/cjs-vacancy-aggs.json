@@ -11,7 +11,7 @@
         },
         {
           "term" : {
-            "cjs_lookup": "{{#compare request.params.phase "aag"}}AA PH8{{else}}{{#compare request.params.phase "p52"}}CJS PH9 PT 78wks{{else}}CJS PH9{{/compare}}{{/compare}}"
+            "cjs_lookup": "{{#compare request.params.phase 'aag'}}AA PH8{{else}}{{#compare request.params.phase "p52"}}CJS PH9 PT 52wks{{else}}CJS PH9{{/compare}}{{/compare}}"
           }
         }
       ]
