@@ -90,14 +90,14 @@
                       {{!-- #if date_awarded ~}}
                       <strong>Date awarded:</strong> {{momentFormat (moment date_awarded 'x') "Do MMM YYYY"}}
                       {{/if ~ --}}
-                      {{#if date_contracted ~}}<br />
+                      {{!-- {{#if date_contracted ~}}<br />
                       <strong>Contracted:</strong> {{momentFormat (moment date_contracted 'x') "Do MMM YYYY"}}
                       {{/if ~}}
                       {{#if date_payment_1 ~}}<br />
                       <strong>Payment{{#if date_payment_2}} 1{{/if}}:</strong> {{momentFormat (moment date_payment_1 'x') "Do MMM YYYY"}}
                       {{/if ~}}
                       {{#if date_payment_2 ~}}<br />
-                      <strong>Payment{{#if date_payment_1}} 2{{/if}}:</strong> {{momentFormat (moment date_payment_2 'x') "Do MMM YYYY"}}
+                      <strong>Payment{{#if date_payment_1}} 2{{/if}}:</strong> {{momentFormat (moment date_payment_2 'x') "Do MMM YYYY"}} --}}
                       {{/if ~}}
                     </p>
                   </section>
