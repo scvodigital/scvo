@@ -105,10 +105,11 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.posts_head-tags",
-              "body": ">context.metaData.handlebars.templates.posts_post",
-              "foot": ""
-            },
-            "contentType": "text/html"
+              "header": ">context.metaData.handlebars.templates.posts_post-header",
+              "body": ">context.metaData.handlebars.templates.posts_post-body",
+              "sidebar": ">context.metaData.handlebars.templates.posts_post-sidebar",
+              "footer": ">context.metaData.handlebars.templates.posts_post-footer"
+            }
           }
         }
       }
