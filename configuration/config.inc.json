@@ -21,6 +21,8 @@
       "technical": "webhelpdesk@scvo.org.uk"
     },
     "menus": "{:./data/menus.json}",
+    "accountInfoValidation": "{:./data/account-info-validation.json}",
+    "globalGoals": "{:./data/global-goals.json}",
     "handlebars": {
       "partials": {
         "{$./partials/**/*.*}": "includeRelativePath=false&regexExpression=(-)&regexOptions=gi&regexReplace=_"

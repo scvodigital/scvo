@@ -1,0 +1,9 @@
+{
+  "first_name": {"required": true, "maxlength": 64},
+  "last_name": {"required": true, "maxlength": 64},
+  "phone": {"required": false, "type": "number", "maxlength": 15},
+  "organisation_name": {"required": true},
+  "title": {"required": false, "maxlength": 128},
+  "location": {"required": false, "maxlength": 255},
+  "organisation_charity_number": {"required": false, "maxlength": 8}
+}
