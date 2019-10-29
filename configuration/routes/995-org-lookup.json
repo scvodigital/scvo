@@ -1,0 +1,46 @@
+{
+  "name": "org_lookup",
+  "pattern": "/org-lookup",
+  "debug": true,
+  "doNotZip": true,
+  "tasks": [
+    {
+      "name": "search_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "web-content-production",
+          "type": "milo-volunteering-organisation",
+          "template": ">context.metaData.handlebars.queries.utilities_search-org-lookup"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "data"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "data": {
+            "layout": ">context.metaData.handlebars.layouts.data",
+            "parts": {
+              "content": ">context.metaData.handlebars.templates.utilities_search-org-lookup"
+            },
+            "contentType": "application/json; charset=utf-8"
+          }
+        }
+      }
+    }
+  ]
+}

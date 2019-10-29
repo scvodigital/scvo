@@ -162,6 +162,96 @@ a.btn-link:hover {
   background-color: transparent;
 }
 
+#toaster {
+  position: fixed;
+  z-index: 2;
+  bottom: $unit;
+  left: 50%;
+  width: 300px;
+  margin-left: -150px;
+  .btn:hover,
+  a {
+    color: white;
+  }
+  .toast {
+    position: relative;
+    margin-top: $unit/4;
+  }
+  .toast-in {
+    animation: toast-in 0.4s ease-in,
+               toast-out 0.4s ease-in 5.4s;
+    animation-fill-mode: forwards;
+  }
+  .toast-hovered {
+    animation: 0, 0;
+    top: 0;
+    opacity: 1;
+  }
+  .toast-out {
+    animation: toast-out 0.4s ease-in 5s;
+    animation-fill-mode: forwards;
+  }
+  .toast-closed {
+    animation: toast-out 0.4s ease-in;
+    animation-fill-mode: forwards;
+  }
+  @keyframes toast-in {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes toast-out {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    99% {
+      opacity: 0;
+      transform: translateX(60vh);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(9999px);
+      pointer-events: none;
+    }
+  }
+}
+
+.twitter-typeahead {
+  display: block;
+  width: 100%;
+  .tt-input {
+    width: 100%;
+  }
+  .tt-menu {
+    cursor: default;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0.05rem 0.2rem rgba(16,24,58,0.3);
+    width: 100%;
+    h3,
+    h4 {
+      font-size: 1rem;
+      margin: $unit/4 0;
+    }
+    .tt-dataset {
+      // padding: $unit/4 0;
+      h3, div {
+        padding: 0 $unit/4;
+      }
+    }
+    .tt-cursor {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+}
+
 @media screen and (min-width: 961px) {
   .mobile-menu {
     display: none;

@@ -1,0 +1,14 @@
+{{#with @root.data.accountInfo}}
+{{#json}}
+  {{#json key='users' type='array'}}
+    {{#json}}
+      {{#each (keyValue this)}}
+      {{#unless (compare key 'email')}}
+      {{{json key=key value=value}}},
+      {{/unless}}
+      {{/each}}
+      {{{json key='email' value=@root.request.body.email}}}
+    {{/json}},
+  {{/json}}
+{{/json}}
+{{/with}}

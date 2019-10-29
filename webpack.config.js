@@ -11,6 +11,11 @@ module.exports = (env) => {
         from: '**/*',
         to: './build/',
         context: './assets/'
+      },
+      {
+        from: './node_modules/@scvo/common/build/component-manager.*',
+        to: './build/',
+        flatten: true
       }
     ], { debug: 'warning' }),
     new JsonIncWebpackPlugin({

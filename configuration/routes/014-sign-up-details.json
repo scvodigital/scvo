@@ -1,0 +1,39 @@
+{
+  "name": "sign-up-details",
+  "pattern": "/sign-up-details",
+  "debug": true,
+  "errorRoute": "five_hundred",
+  "metaData": {
+    "title": "Sign up"
+  },
+  "tasks": [
+    "context.metaData.commonTasks.authRequired",
+    "context.metaData.commonTasks.getSignUpStatus",
+    "context.metaData.commonTasks.getAccountInfo",
+    "context.metaData.commonTasks.redirectIfApprovalNeeded",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "body": ">context.metaData.handlebars.templates.account_auth_sign-up-details"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+
+  ]
+}

@@ -3,7 +3,7 @@
   "pattern": "/jobs/community-jobs-scotland/vacancies/:phase",
   "debug": false,
   "tasks": [
-    "context.metaData.commonTasks.authNotRequired",
+    "context.metaData.commonTasks.cjsAuthNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
@@ -62,7 +62,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-search-head-tags",
               "body": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-search",
-              "foot": ""
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-footer"
             },
             "contentType": "text/html"
           }

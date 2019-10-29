@@ -1,0 +1,25 @@
+{{#withExtend @root.data.accountInfo type="approval" ~}}
+[
+  {
+    "from": "{{@root.context.metaData.title}} <{{@root.context.metaData.contacts.noreply}}>",
+    "h:sender": "{{@root.context.metaData.title}} <{{@root.context.metaData.contacts.noreply}}>",
+    "h:Reply-To": "{{>support_name}} <{{>support_email_address}}>",
+    "to": "alex.nuttgens@scvo.org.uk",
+    "wouldbe": "{{{verification_email}}}",
+    "o:tag": "{{{type}}}",
+    "o:tracking": true,
+    {{!-- "o:testmode": true, --}}
+    "tag": "{{{type}}}",
+    "id": "{{{type}}}",
+    "connectionName": {{{stringify (getProperty @root.context.metaData.emailSendSettings (concat type '.mailgunConnection'))}}},
+    "subject": "Request for {{@root.context.metaData.title}} account approval",
+    "html":
+    {{~#blockStringify this ~}}
+      {{~>
+      (getProperty @root.context.metaData.emailSendSettings (concat type '.bodyPartial'))
+        this
+      ~}}
+    {{~/blockStringify ~}}
+  }
+]
+{{/withExtend ~}}

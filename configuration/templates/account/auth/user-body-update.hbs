@@ -1,0 +1,25 @@
+{{#withExtend @root.request.body code=(random 0 100000000)}}
+  {{#json}}
+    {{#json key='users' type='array'}}
+      {{#json}}
+        {{#if @root.data.codeRequired}}
+          {{{json key='verification_code' value=code}}},
+          {{{json key='verification_email' value=verification_email}}},
+          {{#json key='verification_url' type="text"}}https://{{@root.request.headers.host}}/user-approval/?code={{code}}&user_id={{external_id}}{{/json}},
+          {{#json key='verification_needed' type="boolean"}}true{{/json}},
+        {{else}}
+          "verification_needed" : false, {{!-- Hack - it's not possible to enter false in the json parser due to a bug --}}
+        {{/if}}
+        {{{json key='first_name' value=first_name}}},
+        {{{json key='last_name' value=last_name}}},
+        {{{json key='postcode' value=postcode}}},
+        {{{json key='external_id' value=external_id}}},
+        {{{json key='phone' value=phone}}},
+        {{{json key='title' value=title}}},
+        {{{json key='email' value=email}}},
+        {{{json key='organisation_name' value=organisation_name}}},
+        {{{json key='charity_number' value=charity_number}}}
+      {{/json}},
+    {{/json}}
+  {{/json}}
+{{/withExtend}}

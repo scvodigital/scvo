@@ -2,7 +2,7 @@
   "name": "cjs_sign_out",
   "pattern": "/jobs/community-jobs-scotland/vacancies/sign-out",
   "tasks": [
-    "context.metaData.commonTasks.authRequired",
+    "context.metaData.commonTasks.cjsAuthRequired",
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
@@ -38,7 +38,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.account_cjs-sign-out"
+              "body": ">context.metaData.handlebars.templates.account_cjs-sign-out",
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-footer"
             },
             "contentType": "text/html"
           }

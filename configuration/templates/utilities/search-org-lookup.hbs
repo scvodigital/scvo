@@ -1,0 +1,17 @@
+[
+  {{#eachJoin @root.data.search_data.hits.hits "," ~}}
+  {
+    "title": {{{stringify _source.title}}},
+    {{#if _source.location_city ~}}
+    "location": {{{stringify _source.location_city}}},
+    {{else}}
+    {{#if _source.location_region ~}}
+    "location": {{{stringify _source.location_region}}},
+    {{else}}
+    "location": "",
+    {{/if ~}}
+    {{/if ~}}
+    "registered_charity_number": {{{stringify _source.registered_charity_number}}}
+  }
+  {{/eachJoin ~}}
+]

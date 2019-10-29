@@ -1,0 +1,32 @@
+{
+  "name": "welcome-email-send",
+  "pattern": "/welcome-email-send",
+  "debug": true,
+  "errorRoute": "five_hundred",
+  "acceptedVerbs": "POST",
+  "defaultParams": {
+    "context": "results"
+  },
+  "tasks": [
+    "context.metaData.commonTasks.authRequired",
+    "context.metaData.commonTasks.getAccountInfo",
+    {
+      "name": "sendEmail",
+      "taskModule": "mailgun",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "parseJson": true,
+        "template": ">context.metaData.handlebars.templates.account_email_welcome"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/approval-required",
+        "statusCode": 302
+      }
+    }
+  ]
+}

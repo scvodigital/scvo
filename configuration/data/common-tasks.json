@@ -1,5 +1,35 @@
 {
   "authNotRequired": {
+		"name": "auth",
+		"taskModule": "firebaseAuth",
+		"config": {
+			"tokenPath": "request.cookies.scvo_token",
+			"cookieName": "scvo_cookie",
+			"cookieOptions": {
+				"maxAge": 1209600000,
+				"secure": true,
+				"path": "/"
+			},
+			"appName": "scvo",
+			"notAuthenticatedRoute": ""
+		}
+	},
+	"authRequired": {
+		"name": "auth",
+		"taskModule": "firebaseAuth",
+		"config": {
+			"tokenPath": "request.cookies.scvo_token",
+			"cookieName": "scvo_cookie",
+			"cookieOptions": {
+				"maxAge": 1209600000,
+				"secure": true,
+				"path": "/"
+			},
+			"appName": "scvo",
+			"notAuthenticatedRoute": "sign_in"
+		}
+	},
+  "cjsAuthNotRequired": {
     "name": "auth",
     "taskModule": "firebaseAuth",
     "config": {
@@ -15,7 +45,7 @@
       "notAuthenticatedRoute": ""
     }
   },
-  "authRequired": {
+  "cjsAuthRequired": {
     "name": "auth",
     "taskModule": "firebaseAuth",
     "config": {
@@ -30,5 +60,79 @@
       "noTokenRoute": "cjs_sign_in",
       "notAuthenticatedRoute": "cjs_sign_in"
     }
-  }
+  },
+  "getSignUpStatus": {
+		"name": "signUpStatus",
+		"taskModule": "firebaseRtbGet",
+		"renderer": "handlebars",
+		"config": {
+			"appName": "scvo",
+			"pathTemplate": "/{{default data.auth.uid 'no-such-read-profile'}}/signup-status",
+			"defaultData": ""
+		}
+	},
+	"getAccountInfoSF": {
+		"name": "accountInfo",
+		"taskModule": "salesforceApex",
+		"renderer": "handlebars",
+    "cache": {
+			"keyProperties": ["$accountInfo"],
+			"partition": "saltire-profiles-{{data.auth.uid}}",
+			"ttl": 3600
+		},
+		"config": {
+			"connection": "scvoAlexSandbox",
+			"output": "data",
+			"method": "GET",
+			"apexClassPath": "/SaltireUser/?user_id={{@root.data.auth.uid}}"
+		}
+	},
+  "getAccountInfo": {
+		"name": "accountInfo",
+		"taskModule": "render",
+		"renderer": "handlebars",
+		"config": {
+			"output": "data",
+			"template": "{\"external_id\":\"test\",\"verification_needed\":false}"
+		}
+	},
+  "fullSignUpRequired": {
+		"name": "signUpReroute",
+		"taskModule": "reroute",
+		"config": {
+			"if": [{
+					"missing": "data.accountInfo.external_id"
+				},
+				"sd-needed",
+				{
+					"if": [{
+							"var": "data.accountInfo.verification_needed"
+						},
+						"approval-required",
+						null
+					]
+				}
+			]
+		}
+	},
+  "redirectIfApprovalNeeded": {
+		"name": "redirectIfPV",
+		"taskModule": "reroute",
+		"config": {
+			"if": [{
+					"var": "data.accountInfo.verification_needed"
+				},
+				"approval-required",
+				null
+			]
+		}
+	},
+  "flushCache": {
+		"name": "flushCache",
+		"taskModule": "cacheFlush",
+		"renderer": "handlebars",
+		"config": {
+			"partition": "saltire-profiles-{{data.auth.uid}}"
+		}
+	}
 }

@@ -1,0 +1,163 @@
+{{#withExtend this hasPostcode=(if @root.data.accountInfo.local_authority true else=false)}}
+
+<div class="form-horizontal form">
+  <input type="hidden" name="email" value="{{@root.data.auth.email}}">
+  {{!--
+  Fake fields are a workaround for chrome autofill getting the wrong fields
+  I don't know man, got it from here https://stackoverflow.com/a/15917221/98587
+  --}}
+  <input style="display:none" type="text" name="fakeusernameremembered"/>
+  <input style="display:none" type="password" name="fakepasswordremembered"/>
+  <div class="form-group">
+    <div class="column col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+      <label class="form-label" for="first_name">First name</label>
+    </div>
+    <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-md-12">
+      <input class="form-input" id="first_name" name="first_name" type="text" value="{{@root.data.accountInfo.first_name}}" placeholder="" autocomplete="nope" data-lpignore="true" data-component="TasksTrigger" data-TasksTrigger="focus-next" {{>form_validation_attributes @root.context.metaData.accountInfoValidation.first_name}}>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="column col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+      <label class="form-label" for="last_name">Last name</label>
+    </div>
+    <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-md-12">
+      <input class="form-input" id="last_name" name="last_name" type="text" value="{{@root.data.accountInfo.last_name}}" placeholder="" autocomplete="nope" data-lpignore="true" data-component="TasksTrigger" data-TasksTrigger="focus-next" {{>form_validation_attributes @root.context.metaData.accountInfoValidation.last_name}}>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="column col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+      <label class="form-label" for="title">Job title</label>
+    </div>
+    <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-md-12">
+      <input class="form-input" id="title" name="title" type="text" value="{{@root.data.accountInfo.title}}" placeholder="" autocomplete="nope" data-lpignore="true" data-component="TasksTrigger" data-TasksTrigger="focus-next" {{>form_validation_attributes @root.context.metaData.accountInfoValidation.title}}>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="column col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+      <label class="form-label" for="phone">Phone number</label>
+    </div>
+    <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-md-12">
+      <input class="form-input" id="phone" name="phone" type="text" value="{{@root.data.accountInfo.phone}}" placeholder="" autocomplete="nope" data-lpignore="true" data-component="TasksTrigger" data-TasksTrigger="focus-next" {{>form_validation_attributes @root.context.metaData.accountInfoValidation.phone}}>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="column col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+      <label for="organisation_name" class="form-label">
+        Organisation
+      </label>
+    </div>
+    <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-md-12">
+      <div data-component="Typeahead" data-Typeahead="typeahead-organisation">
+        <input id="organisation_name" name="organisation_name" class="form-input" placeholder="e.g. A Charity" value="{{@root.data.taskInfo.organisation_name}}" autocomplete="nope" data-lpignore="true" {{>form_validation_attributes @root.context.metaData.taskInfoValidation.organisation_name}}>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="column col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+      <label for="location" class="form-label">
+        Location
+      </label>
+    </div>
+    <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-md-12">
+      <input required id="location" name="location" class="form-input" placeholder="e.g. Edinburgh" value="{{@root.data.taskInfo.location}}" {{>form_validation_attributes @root.context.metaData.taskInfoValidation.location}}>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="column col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+      <label for="organisation_charity_number" class="form-label r-margin">
+        Scottish charity number (optional)
+      </label>
+    </div>
+    <div class="column col-3 col-md-4 col-sm-5 col-xs-6">
+      <div class="input-group">
+        {{!-- <span class="input-group-addon">SC</span> --}}
+        <input autocomplete="nope" id="organisation_charity_number" placeholder="e.g. SC003558" name="organisation_charity_number" class="form-input" value="{{@root.data.taskInfo.organisation_charity_number}}" {{>form_validation_attributes @root.context.metaData.taskInfoValidation.organisation_charity_number}}>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="hidden" name="external_id" value="{{@root.data.auth.uid}}" />
+
+{{{{raw}}}}
+<script data-component-config="typeahead-organisation" type="javascript/blocked">
+{
+  typeaheadOptions: {
+    highlight: true,
+    minlength: 3
+  },
+  datasets: [
+    {
+      name: "org_lookup",
+      display: "title",
+      bloodhound: {
+        datumTokenizer: "objWhitespace",
+        datumTokenizerField: "other",
+        queryTokenizer: "whitespace",
+        remote: {
+          url: "/org-lookup?q=*",
+          wildcard: "*"
+        }
+      }
+    },
+  ],
+  clearIfNothingSelected: false,
+  itemSelectedTasks: [
+    {
+      type: "elementManipulator",
+      config: {
+        ">.tt-input": { value: { __pointer: "metadata.suggestion.title" } },
+        "#location": { value: { __pointer: "metadata.suggestion.location" } },
+        "#organisation_charity_number": { value: { __pointer: "metadata.suggestion.registered_charity_number" } }
+      }
+    },
+    {
+      type: "elementManipulator",
+      config: {
+        ">.tt-menu": { styles: { display: "none !important" } }
+      }
+    }
+  ],
+  nothingSelectedTasks: [
+    {
+      type: "elementManipulator",
+      config: {
+        "#location": { value: "" },
+        "#organisation_charity_number": { value: "" }
+      }
+    }
+    // {
+    //   type: "run",
+    //   config: { code: "metadata.instance.clearSelection()" }
+    // }
+  ]
+}
+</script>
+{{{{/raw}}}}
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var $dobc = $('#date_of_birth_checked');
+    var $dob = $('#date_of_birth');
+    var $v_block = $('#verification')
+    var $v_email = $('#verification_email')
+
+    $dobc.change(function(){
+       var dob = $dobc.val();
+      var compareDate = new Date();
+      var dobTS = Date.parse(dob);
+      compareDate.setFullYear(compareDate.getFullYear() - 13);
+
+      var cdTS = compareDate.getTime();
+      if (dobTS > cdTS) {
+        $v_email.prop('required', true);
+        $v_block.show();
+      } else {
+        $v_email.prop('required', false);
+        $v_block.hide();
+
+      }
+    })
+  })
+</script>
+{{/withExtend}}

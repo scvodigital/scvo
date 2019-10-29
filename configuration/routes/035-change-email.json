@@ -1,0 +1,34 @@
+{
+  "name": "change-email",
+  "pattern": "/change-email",
+  "debug": true,
+  "acceptedVerbs": "POST",
+  "errorRoute": "five_hundred",
+  "tasks": [
+    "context.metaData.commonTasks.authRequired",
+    "context.metaData.commonTasks.getAccountInfo",
+    {
+      "name": "saveEmailData",
+      "taskModule": "salesforceApex",
+      "renderer": "handlebars",
+      "config": {
+        "connection": "scvoAlexSandbox",
+        "output": "data",
+        "method": "POST",
+        "body": ">context.metaData.handlebars.templates.account_auth_update-email-body",
+        "apexClassPath": "/SaltireUser/"
+      }
+    },
+    "context.metaData.commonTasks.flushCache",
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": "{\"id\": \"{{{@root.data.saveEmailData}}}\" }",
+        "output": "body",
+        "parseJson": true
+      }
+    }
+  ]
+}

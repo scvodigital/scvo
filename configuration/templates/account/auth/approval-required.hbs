@@ -1,0 +1,68 @@
+<div class="empty">
+  <div class="empty-icon">
+    <span class="fal fa-users-cog fa-3x"></span>
+  </div>
+  <p class="empty-title h5">
+    {{#compare @root.data.accountInfo.user_type "Volunteer" ~}}
+    Parent or guardian
+    {{else}}
+    Group administrator
+    {{/compare ~}}
+    approval
+  </p>
+  <p class="empty-subtitle">
+    {{#compare @root.data.accountInfo.user_type "Volunteer" ~}}
+    Please ask your parent or guardian to open the link in the email sent to them from the Saltire Awards.
+    {{else}}
+    TSI approval required. An email has been sent to
+    {{#if @root.data.accountInfo.local_authority ~}}
+    {{#with (getProperty @root.context.metaData.tsiList (slugify @root.data.accountInfo.local_authority)) ~}}
+    {{#each contacts ~}}
+    {{#if (regexMatch @root.data.accountInfo.postcode pattern "gi") ~}}
+    {{title}}, the TSI contact for {{#if area}}{{area}}{{else}}{{../local_authority}}{{/if}}.
+    {{/if ~}}
+    {{/each ~}}
+    {{/with ~}}
+    {{/if ~}}
+    {{/compare ~}}
+  </p>
+  <div id="primary-actions" class="empty-action">
+    <a href="/approval-email-send" class="btn btn-primary">Resend email</a>
+    {{#compare @root.data.accountInfo.user_type "Volunteer" ~}}
+    <button onclick="revealForm()" class="btn">Change email address</button>
+    {{/compare ~}}
+  </div>
+  <div class="empty-action">
+    <form id="user-details-form" style="display:none;" method="POST" action="/submit-sign-up-details">
+      {{!-- Please enter the new email address below --}}
+      <input type="hidden" name="signup" value="true">
+      {{#each (getKeys @root.data.accountInfo) ~}}
+      {{#unless (compare this "verification_email") ~}}
+      <input type="hidden" name="{{this}}" value="{{getProperty @root.data.accountInfo this}}">
+      {{/unless ~}}
+      {{/each ~}}
+      <div id="approval" class="columns">
+        <div class="column col-6 col-mx-auto">
+          <div class="form-group">
+            {{!-- <label for="verification_email" class="form-label">
+              <strong>Your parent or guardian's email address</strong>
+            </label> --}}
+            <div class="input-group">
+              <input type="email" id="verification_email" name="verification_email" class="form-input" value="{{@root.data.accountInfo.verification_email}}" {{>form_validation_attributes @root.context.metaData.accountInfoValidation.verification_email}}>
+              <button type="submit" class="btn btn-primary input-group-btn">Update and resend</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function revealForm(){
+    var x = document.getElementById("user-details-form");
+    x.style.display = "block";
+    var y = document.getElementById("primary-actions");
+    y.style.display = "none";
+  }
+</script>

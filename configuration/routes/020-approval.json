@@ -1,0 +1,110 @@
+{
+  "name": "approval",
+  "pattern": "/user-approval",
+  "debug": true,
+  "errorRoute": "five_hundred",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "apexUrl",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/SaltireUser/?user_id={{@root.request.params.query.user_id}}"
+      }
+    },
+    {
+      "name": "accountInfo",
+      "taskModule": "salesforceApex",
+      "renderer": "handlebars",
+      "config": {
+        "connection": "scvoAlexSandbox",
+        "output": "data",
+        "method": "GET",
+        "apexClassPath": ">data.apexUrl"
+      }
+    },
+    {
+      "name": "codeApproved",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": ">context.metaData.handlebars.templates.account_auth_approval-code"
+      }
+    },
+    {
+      "name": "handlePassFail",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "==": [
+              {
+                "var": "data.codeApproved"
+              },
+              "pass"
+            ]
+          },
+          null,
+          "approval-fail"
+        ]
+      }
+    },
+    {
+      "name": "userApproval",
+      "taskModule": "salesforceApex",
+      "renderer": "handlebars",
+      "config": {
+        "connection": "scvoAlexSandbox",
+        "output": "data",
+        "method": "POST",
+        "body": ">context.metaData.handlebars.templates.account_auth_approval-body",
+        "apexClassPath": "/SaltireUserValidate/"
+      }
+    },
+    {
+      "name": "flushOtherCache",
+      "taskModule": "cacheFlush",
+      "renderer": "handlebars",
+      "config": {
+        "partition": "saltire-profiles-{{@root.request.params.query.user_id}}"
+      }
+    },
+    {
+      "name": "sendEmail",
+      "taskModule": "mailgun",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "parseJson": true,
+        "template": ">context.metaData.handlebars.templates.account_email_welcome"
+      }
+    },
+    {
+      "name": "passDestination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "body": ">context.metaData.handlebars.templates.account_auth_approval-pass",
+              "foot": ""
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

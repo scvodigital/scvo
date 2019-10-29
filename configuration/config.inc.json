@@ -11,7 +11,15 @@
   "metaData": {
     "assetsVersion": "{:../package.json@version}",
     "assetsBase": "https://storage.googleapis.com/scvo-assets/test/scvo/",
-    "title": "SCVO",
+    "title": "Saltire Awards",
+    "accountName": "SCVO account",
+    "url": "https://test.saltireawards.scot",
+    "twitter": "scvotweet",
+    "contacts": {
+      "admin": "enquiries@scvo.org.uk",
+      "noreply": "noreply@scvo.org.uk",
+      "technical": "webhelpdesk@scvo.org.uk"
+    },
     "menus": "{:./data/menus.json}",
     "handlebars": {
       "partials": {
@@ -25,6 +33,17 @@
       },
       "queries": {
         "{$./queries/**/*.*}": ""
+      },
+      "frontend": {
+        "tasks": {
+          "{$./frontend/tasks/**/*.*}": ""
+        },
+        "configs": {
+          "{$./frontend/configs/**/*.*}": ""
+        },
+        "partials": {
+          "{$./frontend/partials/**/*.*}": "includeRelativePath=false&regexExpression=(-)&regexOptions=gi&regexReplace=_"
+        }
       }
     },
     "commonTasks": "{:./data/common-tasks.json}",

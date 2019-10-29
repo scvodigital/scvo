@@ -1,5 +1,5 @@
 {
-  "name": "geo-lookup",
+  "name": "geo_lookup",
   "pattern": "/geo-lookup",
   "tasks": [
     {
@@ -14,7 +14,7 @@
           "name": "detailed_results",
           "index": "geo_lookup",
           "type": "postcode,place",
-          "template": ">context.metaData.handlebars.queries.utilities_geo-lookup"
+          "template": ">context.metaData.handlebars.queries.utilities_search-geo-lookup"
         }
       },
       "renderer": "handlebars"

@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Add your details</h2>
+
+  <h3 class="b-margin-full">
+    {{#unless @root.request.params.query.redirect ~}}
+      Thank you for signing up for an SCVO account, please add your details
+    {{else}}
+      In order to use the account features of this site you need to add your details
+    {{/unless ~}}
+  </h3>
+
+  <form id="user-details-form" action="/submit-sign-up-details" method="POST" autocomplete="nope" data-component="TasksTrigger" data-TasksTrigger='{
+    change: { tasks: [ "validate-details-form" ] },
+    keyup: { tasks: [ "validate-details-form" ] },
+    load: { tasks: [ "validate-details-form" ] },
+    submit: { tasks: [ "just-spin" ]}
+  }'>
+    {{> account_details_form_fields}}
+
+    <input type="hidden" name="signup" value="true">
+    {{!-- This will probably have a captcha in it, hence the separation, and weird submit format --}}
+    <div class="columns h-padding">
+      <div class="column col-3 hide-sm"></div>
+      <div class="column col-2">
+        <button id="submit" class="btn btn-primary b-margin-full" type="submit">
+          Submit details
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+{{!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
