@@ -1,0 +1,29 @@
+{
+  "size": 1,
+  "_source": [
+    "title",
+    "alias",
+    "charity_number",
+    "field_of_work",
+    "city",
+    "postcode",
+    "membership_status",
+    "membership_category",
+    "membership_number",
+    "membership_type",
+    "social_persona"
+  ],
+  "query": {
+    "constant_score": {
+      "filter": {
+        "terms": {
+          "charity_number": [
+            {{#each @root.data.milo_search_data.hits.hits ~}}
+            {{{stringify _source.registered_charity_number}}}{{#unless @last}},{{/unless}}
+            {{/each ~}}
+          ]
+        }
+      }
+    }
+  }
+}

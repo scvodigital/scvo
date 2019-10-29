@@ -21,6 +21,13 @@
             "registered_charity_number": "?*"
           }
         }
+      ],
+      "must_not": [
+        {
+          "term": {
+            "registered_charity_number": "SC003558"
+          }
+        }
       ]
     }
   }
