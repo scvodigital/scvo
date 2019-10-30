@@ -1,0 +1,4 @@
+<div class="page">
+  {{> leading_quotation sourcePage=@root.data.primaryResponse.hits.hits.[0]._source}}
+  {{{@root.data.primaryResponse.hits.hits.[0]._source.rendered.scvo_full}}}
+</div>

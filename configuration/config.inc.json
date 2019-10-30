@@ -6,7 +6,7 @@
     "test.scvo.org"
   ],
   "routes": [
-    "{:./routes/*.json}"
+    "{:./routes/**/*.json}"
   ],
   "metaData": {
     "assetsVersion": "{:../package.json@version}",
@@ -20,7 +20,8 @@
       "noreply": "noreply@scvo.org.uk",
       "technical": "webhelpdesk@scvo.org.uk"
     },
-    "menus": "{:./data/menus.json}",
+    "layoutMenus": "{:./data/layout-menus.json}",
+    "sidebarMenus": "{:./data/sidebar-menus.json}",
     "accountInfoValidation": "{:./data/account-info-validation.json}",
     "globalGoals": "{:./data/global-goals.json}",
     "handlebars": {

@@ -25,38 +25,27 @@
                         <span class="far fa-2x fa-search" aria-hidden="true"></span>
                       </button>
                     </div>
-                    <!-- <div class="mdc-form-field">
-                    <select class="mdc-select" role="listbox" name="type">
-                    <option value="" {{#unless @root.request.params.query.type}}selected{{/unless}}>All membership types</option>
-                    {{#each @root.data.supplimentaryResponses.types.aggregations.types.buckets}}
-                    <option value="{{slugify key}}" {{#compare @root.request.params.query.type "===" (slugify key)}}selected{{/compare}}>{{key}} ({{doc_count}})</option>
-                    {{/each}}
-                  </select>
-                </div> -->
-              </form>
-            </section>
+                  </form>
+                </section>
+              </div>
+            </div>
+
+            {{#if @root.request.params.query.q ~}}
+            {{> search_info paging=@root.data.primaryResponse.pagination}}
+            {{else}}
+            <h3>Our members include&hellip;</h3>
+            {{/if ~}}
+
+            {{#each @root.data.primaryResponse.hits.hits ~}}
+            {{{this._source.rendered.scvo_list}}}
+            {{/each ~}}
+
+            {{#ifAny @root.request.params.query.q @root.request.params.query.type ~}}
+            {{> pagination paging=@root.data.primaryResponse.pagination}}
+            {{/ifAny ~}}
           </div>
         </div>
-
-        {{#if @root.request.params.query.q ~}}
-        {{> search_info paging=@root.data.primaryResponse.pagination}}
-        {{else}}
-        <h3>Our members include&hellip;</h3>
-        {{/if ~}}
-
-        {{#each @root.data.primaryResponse.hits.hits ~}}
-        {{{this._source.rendered.scvo_list}}}
-        {{/each ~}}
-
-        {{#ifAny @root.request.params.query.q @root.request.params.query.type ~}}
-        {{> pagination paging=@root.data.primaryResponse.pagination}}
-        {{/ifAny ~}}
-      </div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone sidebar page-sidebar">
-        {{> menus_about}}
       </div>
     </div>
   </div>
-</div>
-</div>
 </div>

@@ -1,0 +1,32 @@
+{
+  "name": "cjs_sign_in",
+  "pattern": "/jobs/community-jobs-scotland/vacancies/sign-in",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    "context.metaData.commonTasks.cjsAuthNotRequired",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "body": ">context.metaData.handlebars.templates.account_cjs-sign-in",
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,800&display=swap');
 
-$primary-color: #A42533;
+$primary-color: #384654;
 $primary-color-light: lighten($primary-color, 30%) !default;
 $primary-color-dark: darken($primary-color, 6%) !default;
 $secondary-color: #B33542;
@@ -26,6 +26,7 @@ $theme-footer-light: #EAECEE;
 $theme-footer-dark: #29333D;
 
 $unit: 1rem;
+$padding: .4rem;
 $link-font-weight: 500;
 $heading-font-weight: 600;
 $badge-font-weight: 800;
@@ -62,7 +63,7 @@ input,
 select,
 textarea,
 body * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
   box-sizing: border-box;
 }
 body::after,
@@ -90,6 +91,19 @@ h5 {
   font-weight: $heading-font-weight;
   letter-spacing: -0.05rem;
 }
+
+body,
+div,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $primary-color;
+}
+
 a,
 .btn,
 .chip,
@@ -98,10 +112,10 @@ strong {
   font-weight: $link-font-weight;
 }
 
-a,
+a:not(.btn),
 a:visited,
 .breadcrumb .breadcrumb-item:not(:last-child) a,
-a:link {
+a:not(.btn):link {
   text-decoration-skip-ink: auto;
   text-decoration: none;
   color: $secondary-color;
@@ -333,24 +347,18 @@ header {
   .mobile-menu-button {
     float: right;
   }
-  .nav {
-    text-align: right;
-    margin: 0;
-    padding: $unit/2 0;
-  }
-  .page-title {
-    padding: 0 195px;
-    h1 {
-      color: white;
-      margin: $unit/2 0;
-      padding-bottom: $unit;
-      text-align: center;
-    }
-  }
 }
-.header {
+header.header {
   .navbar-brand img {
     max-width: 220px;
+    margin-left: -10px;
+  }
+}
+header.toolbar {
+  .site-tab-bar {
+    .btn:first-child {
+      padding-left: 0;
+    }
   }
 }
 
@@ -401,6 +409,103 @@ form.disabled {
   }
 }
 
+.caption {
+  font-size: 92%;
+}
+
+form {
+  position: relative;
+}
+
+.authentication-form {
+  padding: $unit*1.5 0;
+  min-height: 15vh;
+  max-width: 500px !important;
+  margin: 0 auto;
+  position: relative;
+  .middle-line-text {
+    margin: $unit*2 0 $unit*2;
+    border-bottom: 2px solid $gray-color;
+    line-height: 0;
+    text-align: center;
+    vertical-align: middle;
+    span {
+      padding: $unit;
+      color: #555;
+    }
+  }
+  .social .btn {
+    height: $unit*2.5;
+    border: none;
+  }
+  .btn {
+    position: relative;
+    display: block;
+    margin-bottom: $unit/2;
+    width: 100%;
+    color: white;
+    .fa-2x {
+      position: absolute;
+      top: $unit/2;
+      left: $unit/2;
+    }
+    .google-logo {
+      top: .6rem;
+      img {
+        float: left;
+        width: 28px;
+        padding: $unit/4;
+        background: white;
+        border-radius: 3px;
+      }
+    }
+  }
+  #sign-in-message,
+  #sign-up-message,
+  #reset-password-message {
+    display: none;
+    a {
+      font-weight: $heading-font-weight;
+    }
+  }
+}
+#sign-out-form {
+  justify-content: center;
+  align-items: center;
+  .loading {
+    display: flex;
+  }
+}
+form {
+  #active-form-message {
+    display: none;
+    a {
+      font-weight: $heading-font-weight;
+    }
+  }
+}
+
+.menu .menu-item>a:focus,
+.menu .menu-item>a:hover,
+.menu .menu-item>a:active,
+.menu .menu-item>a.active {
+  color: white;
+}
+
+.sidebar {
+  ul.menu {
+    .menu-level-2 {
+      padding-left: $padding*2;
+    }
+    .menu-level-3 {
+      padding-left: $padding*3;
+    }
+    .menu-level-4 {
+      padding-left: $padding*4;
+    }
+  }
+}
+
 @keyframes spin {
   from {
     transform:rotate(0deg);
@@ -423,7 +528,7 @@ footer {
     p,
     h4,
     a {
-      color: white;
+      color: white !important;
     }
     a:hover {
       color: white;

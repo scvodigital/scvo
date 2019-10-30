@@ -1,0 +1,100 @@
+{
+	"main": [{
+			"label": "Running a charity",
+			"path": "/running-a-charity",
+			"route": "^/running-a-charity|^/setting-up-a-charity|^/running-your-organisation"
+		},
+		{
+			"label": "Jobs & employability",
+			"path": "/jobs",
+			"route": "^/jobs"
+		},
+		{
+			"label": "Funding",
+			"path": "/funding",
+			"route": "^/funding"
+		},
+		{
+			"label": "Services",
+			"path": "/services",
+			"route": "^/services|^/credit-union"
+		},
+		{
+			"label": "Projects &#038; campaigns",
+			"path": "/projects-campaigns",
+			"route": "^/projects-campaigns|^/digital|^/open-government"
+		},
+		{
+			"label": "Policy &#038; research",
+			"path": "/policy-research",
+			"route": "^/policy-research"
+		},
+		{
+			"label": "About",
+			"path": "/about",
+			"route": "^/about"
+		},
+		{
+			"label": "Press",
+			"path": "/press-media",
+			"route": "^/press-media"
+		}
+	],
+	"main-upper": [{
+			"label": "About",
+			"path": "/about",
+			"route": "^/about"
+		},
+		{
+			"label": "Join",
+			"path": "/services/membership",
+			"route": "^/join-us"
+		},
+		{
+			"label": "Events",
+			"path": "/events",
+			"route": "^/events"
+		},
+		{
+			"label": "Blogs",
+			"path": "/blogs",
+			"route": "^/blogs"
+		},
+		{
+			"label": "Press",
+			"path": "/press-media",
+			"route": "^/press-media"
+		}
+	],
+  "footer": [{
+			"label": "Transparency &#038; open data",
+			"path": "/transparency-open-data",
+			"route": "^/transparency-open-data$"
+		},
+		{
+			"label": "Accessibility",
+			"path": "/accessibility",
+			"route": "^/accessibility"
+		},
+		{
+			"label": "Privacy",
+			"path": "/privacy",
+			"route": "^/privacy$"
+		},
+		{
+			"label": "Cookies",
+			"path": "/cookies",
+			"route": "^/cookies$"
+		},
+		{
+			"label": "Terms &#038; conditions",
+			"path": "/terms",
+			"route": "^/terms$"
+		},
+		{
+			"label": "Feedback &#038; complaints",
+			"path": "/feedback-complaints",
+			"route": "^/feedback-complaints$"
+		}
+	]
+}

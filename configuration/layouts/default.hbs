@@ -59,14 +59,14 @@ console.log('Request:', {{{regexReplace (regexReplace (stringify request) "(<\/s
 console.log('Context:', {{{regexReplace (regexReplace (stringify context) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
 console.log('Route:', {{{regexReplace (regexReplace (stringify route) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
 console.log('Data:', {{{regexReplace (regexReplace (stringify data) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.menus) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.layoutMenus) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
 {{/ifAny ~}}
 </script>
 
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 <link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/leaflet/leaflet.css'~}}" />
-<link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/fontawesome-pro/css/all.min.css'~}}">
-
-<link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}">
+<link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/fontawesome-pro/css/all.min.css'~}}" />
+<link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}" />
 </head>
 <body class="{{#if request.params.path}}{{replace (replace request.params.path '20-years' 'twenty-years') '_' ' '}}{{else}}home{{/if}}">
   <div class="page">
@@ -94,7 +94,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
       </header>
       <header class="navbar toolbar">
         <section class="navbar-section site-tab-bar">
-          {{#each context.metaData.menus.main ~}}
+          {{#each context.metaData.layoutMenus.main ~}}
           <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route "gi")}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
           {{/each ~}}
         </section>
@@ -133,6 +133,8 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
             </ul>
           </div>
         </section>
+        {{else}}
+        <a class="btn btn-link{{#if (regexMatch ../request.url.pathname '/sign-in' "gi")}} active{{/if}}" href="/sign-in">Members</a>
         {{/if ~}}
       </header>
     </div>
@@ -178,7 +180,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
                 Home
               </a>
             </li>
-            {{#each @root.context.metaData.menus.main ~}}
+            {{#each @root.context.metaData.layoutMenus.main ~}}
             <li class="menu-item">
               <a href="{{stripTrailingSlash path}}" class="l-padding-full {{#if (regexMatch @root.request.url.pathname route 'gi')}}active{{/if}}">
                 {{#if icon ~}}
@@ -188,7 +190,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
               </a>
             </li>
             {{/each ~}}
-            {{#each @root.context.metaData.menus.main-upper ~}}
+            {{#each @root.context.metaData.layoutMenus.main-upper ~}}
             <li class="menu-item">
               <a href="{{stripTrailingSlash path}}" class="l-padding-full {{#if (regexMatch @root.request.url.pathname route 'gi')}}active{{/if}}">
                 {{#if icon ~}}
@@ -198,7 +200,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
               </a>
             </li>
             {{/each ~}}
-            {{#each @root.context.metaData.menus.main-extra ~}}
+            {{#each @root.context.metaData.layoutMenus.main-extra ~}}
             <li class="menu-item">
               <a href="{{stripTrailingSlash path}}" class="l-padding-full {{#if (regexMatch @root.request.url.pathname route 'gi')}}active{{/if}}">
                 {{#if icon ~}}
@@ -216,7 +218,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
     {{#if layoutParts.sidebar ~}}
     <div class="sidebar-present container">
       {{{layoutParts.header}}}
-      <div class="columns col-gapless">
+      <div class="columns">
         <main class="body column col-xs-auto">
           {{{layoutParts.body}}}
         </main>
@@ -239,7 +241,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
         <div class="container">
           <div class="columns">
             <div class="column col-12 col-ml-auto membership">
-              <a href="/services/membership" class="btn btn-primary pull-right">SCVO membership</a>
+              <a href="/services/membership" class="btn btn-primary bg-secondary pull-right">SCVO membership</a>
             </div>
           </div>
           <div class="columns">
@@ -296,7 +298,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
             <div class="column col-3 col-lg-6 col-md-12 help">
               <h4>Help</h4>
               <ul class="">
-                {{#each context.metaData.menus.footer ~}}
+                {{#each context.metaData.layoutMenus.footer ~}}
                 <li class=""><a href="{{path}}">{{{label}}}</a></li>
                 {{/each ~}}
               </ul>
