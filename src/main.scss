@@ -347,6 +347,49 @@ header {
   .mobile-menu-button {
     float: right;
   }
+  .dropdown {
+    text-align: left;
+    .menu {
+      padding: $unit/2 0;
+      left: .4rem;
+      right: .4rem,
+    }
+    .menu .menu-item>a {
+      color: $secondary-color !important;
+    }
+    .menu .menu-item>a.active {
+      background-color: $primary-color !important;
+      color: white !important;
+    }
+    .menu .menu-item>a:focus,
+    .menu .menu-item>a:hover,
+    .menu .menu-item>a:active {
+      background-color: $primary-color-dark !important;
+      color: white !important;
+    }
+  }
+  .dropdown-toggle {
+    padding-right: $unit/4;
+  }
+  .btn.btn-link.my-account {
+    color: $secondary-color !important;
+  }
+  .my-account {
+    background: white !important;
+    border-radius: 2rem;
+    margin-left: $unit/3;
+    .dropdown-toggle {
+      border-color: transparent !important;
+      color: $secondary-color !important;
+    }
+    .dropdown-toggle:focus,
+    .dropdown-toggle:hover {
+      color: $secondary-color-dark !important;
+    }
+  }
+}
+.my-account.dropdown.signed-in {
+  min-width: 240px;
 }
 header.header {
   .navbar-brand img {
