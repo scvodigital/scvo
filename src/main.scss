@@ -115,7 +115,7 @@ strong {
 a:not(.btn),
 a:visited,
 .breadcrumb .breadcrumb-item:not(:last-child) a,
-a:not(.btn):link {
+a:not(.btn) {
   text-decoration-skip-ink: auto;
   text-decoration: none;
   color: $secondary-color;
