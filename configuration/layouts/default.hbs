@@ -334,34 +334,23 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
     </footer>
   </div>
 
-  <script type="text/javascript">
-  var $buoop = {required:{e:-3,f:-3,o:-3,s:-1,c:-3},insecure:true,unsupported:true,api:2018.07 };
-  function $buo_f(){
-    var e = document.createElement("script");
-    e.src = "//browser-update.org/update.min.js";
-    document.body.appendChild(e);
-  };
-  try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-  catch(e){window.attachEvent("onload", $buo_f)}
-  </script>
-
-  {{#each @root.context.metaData.handlebars.frontend.configs}}
+  {{#each @root.context.metaData.handlebars.frontend.configs ~}}
   <script data-component-config="{{@key}}" type="javascript/blocked">
   {{{regexReplace (regexReplace this "^\s*return\s" "igm" "") "([^\\{])({{){2,}" "igm" "$1\\$2"}}}
   </script>
-  {{/each}}
+  {{/each ~}}
 
-  {{#each @root.context.metaData.handlebars.frontend.tasks}}
+  {{#each @root.context.metaData.handlebars.frontend.tasks ~}}
   <script data-task="{{@key}}" type="javascript/blocked">
   {{{regexReplace (regexReplace this "^\s*return\s" "igm" "") "([^\\{])({{){2,}" "igm" "$1\\$2"}}}
   </script>
-  {{/each}}
+  {{/each ~}}
 
-  {{#each @root.context.metaData.handlebars.frontend.partials}}
+  {{#each @root.context.metaData.handlebars.frontend.partials ~}}
   <script data-partial="{{@key}}" type="javascript/blocked">
   {{{this}}}
   </script>
-  {{/each}}
+  {{/each ~}}
 
   <script type="text/javascript" src="{{~>asset_url url='component-manager.js'~}}"></script>
   <script>
