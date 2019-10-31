@@ -5,6 +5,7 @@
     "section": "/projects-campaigns/europe-and-the-third-sector/eu-are-valued/*path"
   },
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
@@ -36,12 +37,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
             "template": ">context.metaData.handlebars.queries.pages_posts-related-random"
-          },
-          {
-            "name": "splash",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-media",
-            "template": ">context.metaData.handlebars.queries.pages_splash"
           }
         ]
       },

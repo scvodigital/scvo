@@ -2,6 +2,7 @@
   "name": "page_map",
   "pattern": "/map",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
@@ -33,12 +34,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy,cjs-vacancy,milo-volunteering-opportunity,scvo-event,goodhq-organisation",
             "template": ">context.metaData.handlebars.queries.main_search_all-locations"
-          },
-          {
-            "name": "splash",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-media",
-            "template": ">context.metaData.handlebars.queries.pages_splash"
           }
         ]
       },

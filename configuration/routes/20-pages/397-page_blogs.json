@@ -3,6 +3,7 @@
   "debug": false,
   "pattern": "/blogs",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

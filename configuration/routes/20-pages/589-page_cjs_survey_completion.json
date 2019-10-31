@@ -2,6 +2,7 @@
   "name": "page_cjs_survey_completion",
   "pattern": "/jobs/community-jobs-scotland/surveys/completion",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

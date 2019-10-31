@@ -96,6 +96,22 @@
 			"template": "{\"external_id\":\"test\",\"verification_needed\":false}"
 		}
 	},
+  "getOrganisationInfo": {
+    "name": "organisationInfo",
+    "taskModule": "elasticsearch",
+    "config": {
+      "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+      "elasticsearchConfig": {
+        "apiVersion": "5.6"
+      },
+      "queryTemplates": {
+        "index": "{$../data/elasticsearch-index.txt}",
+        "type": "scvo-member",
+        "template": ">context.metaData.handlebars.queries.members_explore-organisation"
+      }
+    },
+    "renderer": "handlebars"
+  },
   "fullSignUpRequired": {
 		"name": "signUpReroute",
 		"taskModule": "reroute",

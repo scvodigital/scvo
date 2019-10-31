@@ -1,35 +1,20 @@
 [
-  {{#each @root.data.milo_search_data.hits.hits ~}}
+  {{#each @root.data.search_data.hits.hits ~}}
   {
-    {{#each @root.data.scvo_search_data.hits.hits ~}}
-    {{#compare _source.charity_number ../_source.registered_charity_number ~}}
-      "title": "{{{_source.title}}}",
-      "location": "{{{_source.city}}}",
-      {{#compare _source.membership_status "Active Member" ~}}
-        "scvo_member": true,
-        "membership_type": "{{_source.membership_type}}",
-        "membership_category": "{{_source.membership_category}}",
-        "membership_number": "{{_source.membership_number}}",
-        "field_of_work": "{{{_source.field_of_work}}}",
-        "postcode": "{{_source.postcode}}",
-      {{else}}
-        "scvo_member": false,
-      {{/compare ~}}
+    "title": "{{{_source.title}}}",
+    "location": "{{{_source.city}}}",
+    {{#compare _source.scvo_member.membership_status "Active Member" ~}}
+      "scvo_member": true,
+      "sfid": "{{_source.scvo_member.Id}}",
+      "field_of_work": "{{_source.scvo_member.field_of_work}}",
+      "membership_type": "{{_source.scvo_member.membership_type}}",
+      "membership_category": "{{_source.scvo_member.membership_category}}",
+      "membership_number": "{{_source.scvo_member.membership_number}}",
+      "postcode": "{{_source.scvo_member.postcode}}",
     {{else}}
-      "title": "{{{../_source.title}}}",
       "scvo_member": false,
-      {{#if ../_source.location_city ~}}
-        "location": "{{{../_source.location_city}}}",
-      {{else}}
-        {{#if ../_source.location_region ~}}
-          "location": "{{{../_source.location_region}}}",
-        {{else}}
-          "location": "",
-        {{/if ~}}
-      {{/if ~}}
     {{/compare ~}}
-    "registered_charity_number": "{{default _source.charity_number ../_source.registered_charity_number}}"
-    {{/each ~}}
+    "registered_charity_number": "{{_source.registered_charity_number}}"
   }{{#unless @last}},{{/unless}}
   {{/each ~}}
 ]

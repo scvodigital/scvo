@@ -2,6 +2,7 @@
   "name": "page_about_jobs",
   "pattern": "/about/work-with-us",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

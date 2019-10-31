@@ -17,7 +17,7 @@ return  {
           __doNotCompile: true,
           type: "elementManipulator",
           config: {
-            "#>submit": {
+            "#detail-submit": {
               attributes: {
                 disabled: {
                   __template: `

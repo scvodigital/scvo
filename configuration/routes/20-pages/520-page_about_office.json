@@ -5,6 +5,7 @@
     "section": "/about/offices/:slug"
   },
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "bicycles",
       "taskModule": "request",
@@ -15,25 +16,6 @@
           "glasgow": { "url": "https://api.citybik.es/v2/networks/nextbike-glasgow", "json": true }
         }
       }
-    },
-    {
-      "name": "supplimentaryResponses",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": [
-          {
-            "name": "splash",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-media",
-            "template": ">context.metaData.handlebars.queries.pages_splash"
-          }
-        ]
-      },
-      "renderer": "handlebars"
     },
     {
       "name": "destination",

@@ -4,6 +4,7 @@
     "index": "/credit-union/loan-calculator"
   },
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
@@ -18,25 +19,6 @@
           "template": ">context.metaData.handlebars.queries.pages_page",
           "noResultsRoute": "four_oh_four"
         }
-      },
-      "renderer": "handlebars"
-    },
-    {
-      "name": "supplimentaryResponses",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": [
-          {
-            "name": "splash",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-media",
-            "template": ">context.metaData.handlebars.queries.pages_splash"
-          }
-        ]
       },
       "renderer": "handlebars"
     },

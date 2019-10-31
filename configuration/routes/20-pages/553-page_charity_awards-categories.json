@@ -5,6 +5,7 @@
     "awards-info": "{:../../data/awards-info.json}"
   },
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "search",
       "taskModule": "elasticsearch",
@@ -25,12 +26,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-charityawards",
             "template": ">context.metaData.handlebars.queries.pages_charity-awards-categories"
-          },
-          {
-            "name": "splash",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-media",
-            "template": ">context.metaData.handlebars.queries.pages_splash"
           },
           {
             "name": "finalists",

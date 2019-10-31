@@ -1,0 +1,86 @@
+<div class="columns col-gapless">
+  <div class="column col-9 col-xl-12">
+    <h1>{{@root.route.metaData.title}}</h1>
+
+    {{#with @root.data.organisationInfo.hits.hits.0._source ~}}
+    <h2>{{{title}}}</h2>
+    <p>
+      {{truncate description 280}}
+    </p>
+    <ul class="fa-ul">
+      <li><span class="fa-li"><i class="far fa-address-book"></i></span> SCVO membership number: <strong>{{membership_number}}</strong></li>
+      <li><span class="fa-li"><i class="far fa-person-sign"></i></span> {{membership_category}}</li>
+      <li><span class="fa-li"><i class="far fa-info-square"></i></span> {{membership_type}}</li>
+      <li><span class="fa-li"><i class="far fa-chart-network"></i></span> {{field_of_work}}</li>
+      <li><span class="fa-li"><i class="far fa-map-marker-alt"></i></span> {{geo.admin_ward}}, {{geo.admin_district}} {{postcode}}</li>
+      <li><span class="fa-li"><i class="far fa-link"></i></span> <a href="{{fixUrl website}}">{{website}}</a></li>
+    </ul>
+    {{/with ~}}
+
+    {{#compare @root.data.explore_data.oscr.hits.total ">" 0 ~}}
+    {{#with @root.data.explore_data.oscr.hits.hits.0._source ~}}
+    <h4>OSCR registration</h4>
+    <ul class="fa-ul">
+      <li><span class="fa-li"><i class="far fa-badge-check"></i></span> <a href="https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{charity_number}}">{{charity_number}}</a></li>
+      <li><span class="fa-li"><i class="far fa-check"></i></span> Charity status: {{charity_status}}</li>
+      <li><span class="fa-li"><i class="far fa-info-square"></i></span> Type: {{constitutional_form}}</li>
+      <li><span class="fa-li"><i class="far fa-map-marker-alt"></i></span> {{principal_office_or_trustees_address}}</li>
+      {{!-- <li><span class="fa-li"><i class="far fa-"></i></span> {{activities}}</li> --}}
+      {{!-- <li><span class="fa-li"><i class="far fa-"></i></span> {{split beneficiaries.0 ","}}</li> --}}
+      <li><span class="fa-li"><i class="far fa-money-check-edit"></i></span> Income: £{{addCommas most_recent_year_income}}</li>
+      <li><span class="fa-li"><i class="far fa-money-bill-wave"></i></span> Expenditure: £{{addCommas most_recent_year_expenditure}}</li>
+    </ul>
+    {{/with ~}}
+    {{/compare ~}}
+
+    {{#compare @root.data.explore_data.grants.hits.total ">" 0 ~}}
+    <h4>SCVO funding received</h4>
+    {{#each @root.data.explore_data.grants.hits.hits ~}}
+    {{#with _source ~}}
+    <p>
+      £{{amount_awarded}} on {{day_awarded}}
+    </p>
+    <p>
+      {{truncate description 280}} <a href="/digital/participation/charter-fund/projects/{{slug}}">Read more</a>
+    </p>
+    {{/with ~}}
+    {{/each ~}}
+    {{/compare ~}}
+
+    {{#compare @root.data.explore_data.charters.hits.total ">" 0 ~}}
+    <h4>Charters signed</h4>
+    {{#each @root.data.explore_data.charters.hits.hits ~}}
+    {{#compare _type "charter-signatory-digitalparticipation"}}
+    <h5>Scotland's Digital Participation Charter</h5>
+    {{/compare ~}}
+    {{#with _source ~}}
+    <p>
+      {{truncate description 280}} <a href="https://digitalparticipation.scot/charter/signatories/{{slug}}">Read more</a>
+    </p>
+    {{/with ~}}
+    {{/each ~}}
+    {{/compare ~}}
+
+    {{#compare @root.data.explore_data.vacancies.hits.total ">" 0 ~}}
+    <h4>Jobs advertised</h4>
+    {{#each @root.data.explore_data.vacancies.hits.hits ~}}
+    {{#with _source ~}}
+    <p>
+      <a href="https://goodmoves.com/vacancy/{{Id}}/{{title_slug}}">{{{title}}}</a>
+    </p>
+    {{/with ~}}
+    {{/each ~}}
+    {{/compare ~}}
+
+    {{#compare @root.data.explore_data.volunteering.hits.total ">" 0 ~}}
+    <h4>Volunteering advertised</h4>
+    {{#each @root.data.explore_data.volunteering.hits.hits ~}}
+    {{#with _source ~}}
+    <p>
+
+    </p>
+    {{/with ~}}
+    {{/each ~}}
+    {{/compare ~}}
+  </div>
+</div>

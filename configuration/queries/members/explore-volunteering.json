@@ -1,0 +1,11 @@
+{
+  "size": 10000,
+  "_source": [
+    "*"
+  ],
+  "query": {
+    "term": {
+      "organisation_charity_number": "{{@root.data.organisationInfo.hits.hits.0._source.charity_number}}"
+    }
+  }
+}

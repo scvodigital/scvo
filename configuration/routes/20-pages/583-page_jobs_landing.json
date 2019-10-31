@@ -2,6 +2,7 @@
   "name": "page_jobs_landing",
   "pattern": "/jobs",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
@@ -51,12 +52,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
             "template": ">context.metaData.handlebars.queries.events_soon"
-          },
-          {
-            "name": "splash",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-media",
-            "template": ">context.metaData.handlebars.queries.pages_splash"
           }
         ]
       },

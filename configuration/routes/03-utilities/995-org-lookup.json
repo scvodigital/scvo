@@ -5,7 +5,7 @@
   "doNotZip": true,
   "tasks": [
     {
-      "name": "milo_search_data",
+      "name": "search_data",
       "taskModule": "elasticsearch",
       "config": {
         "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
@@ -14,24 +14,8 @@
         },
         "queryTemplates": {
           "index": "web-content-production",
-          "type": "milo-volunteering-organisation",
-          "template": ">context.metaData.handlebars.queries.utilities_search-milo-org-lookup"
-        }
-      },
-      "renderer": "handlebars"
-    },
-    {
-      "name": "scvo_search_data",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": {
-          "index": "web-content-production",
-          "type": "scvo-member",
-          "template": ">context.metaData.handlebars.queries.utilities_search-scvo-org-lookup"
+          "type": "milo-organisation",
+          "template": ">context.metaData.handlebars.queries.utilities_search-org-lookup"
         }
       },
       "renderer": "handlebars"

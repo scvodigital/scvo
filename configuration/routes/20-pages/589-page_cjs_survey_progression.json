@@ -2,6 +2,7 @@
   "name": "page_cjs_survey_progression",
   "pattern": "/jobs/community-jobs-scotland/surveys/progression",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

@@ -2,6 +2,7 @@
   "name": "page_funding_landing",
   "pattern": "/funding",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

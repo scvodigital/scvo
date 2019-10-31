@@ -2,6 +2,7 @@
   "name": "page_policy",
   "pattern": "/policy-research",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

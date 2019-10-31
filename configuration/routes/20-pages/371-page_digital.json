@@ -2,6 +2,7 @@
   "name": "page_digital",
   "pattern": "/digital",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

@@ -3,6 +3,7 @@
   "debug": false,
   "pattern": "/press-media",
   "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

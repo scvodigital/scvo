@@ -1,0 +1,11 @@
+{
+  "size": 10000,
+  "_source": [
+    "*"
+  ],
+  "query": {
+    "term": {
+      "organisation.id": "{{@root.data.organisationInfo.hits.hits.0._source.Id}}"
+    }
+  }
+}
