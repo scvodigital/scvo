@@ -1,7 +1,7 @@
 {
   "name": "event_search",
   "pattern": "/events",
-  "debug": false,
+  "debug": true,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -55,8 +55,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.events_search-head-tags",
-              "body": ">context.metaData.handlebars.templates.events_search",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.events_search-header",
+              "leftSidebar": ">context.metaData.handlebars.templates.events_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.events_search-body"
             },
             "contentType": "text/html"
           }

@@ -1,0 +1,7 @@
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/events">Events</a></li>
+  <li class="breadcrumb-item">{{{title}}}</li>
+</ul>
+{{/with ~}}

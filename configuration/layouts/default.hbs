@@ -223,26 +223,49 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
       </aside>
     </div>
 
-    {{#if layoutParts.sidebar ~}}
+    {{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
     <div class="sidebar-present container">
       {{{layoutParts.header}}}
       <div class="columns">
+        {{#ifAll layoutParts.leftSidebar layoutParts.rightSidebar ~}}
+        <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
+          {{{layoutParts.leftSidebar}}}
+        </aside>
         <main class="body column col-xs-auto">
           {{{layoutParts.body}}}
         </main>
-        <aside class="sidebar column col-3 col-xl-4 hide-lg">
-          {{{layoutParts.sidebar}}}
+        <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
+          {{{layoutParts.rightSidebar}}}
         </aside>
+        {{else}}
+        {{#if layoutParts.leftSidebar ~}}
+        <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
+          {{{layoutParts.leftSidebar}}}
+        </aside>
+        <main class="body column col-xs-auto">
+          {{{layoutParts.body}}}
+        </main>
+        {{else}}
+        <main class="body column col-xs-auto">
+          {{{layoutParts.body}}}
+        </main>
+        <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
+          {{{layoutParts.rightSidebar}}}
+        </aside>
+        {{/if ~}}
+        {{/ifAll ~}}
       </div>
       {{{layoutParts.footer}}}
     </div>
     {{else}}
     <div class="sidebar-not-present container">
+      {{{layoutParts.header}}}
       <main class="body">
         {{{layoutParts.body}}}
       </main>
+      {{{layoutParts.footer}}}
     </div>
-    {{/if ~}}
+    {{/ifAny ~}}
 
     <footer>
       <div class="footer-main">

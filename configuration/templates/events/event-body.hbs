@@ -1,5 +1,8 @@
-{{> breadcrumbs}}
-
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <h1>{{{title}}}</h1>
+
+{{> event_full}}
 {{/with ~}}
+
+{{> same_events}}
+{{> related_events}}
