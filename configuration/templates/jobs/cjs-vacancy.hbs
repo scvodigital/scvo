@@ -1,12 +1,12 @@
 <div class="cjs-vacancy">
   <div class="container-fluid">
-    <ul class="breadcrumbs">
-      <li><a href="/">Home</a></li>
-      <li><a href="/jobs">Jobs &amp; employability</a></li>
-      <li><a href="/jobs/community-jobs-scotland">Community Jobs Scotland</a></li>
-      <li><a href="/jobs/community-jobs-scotland/vacancies">Vacancies</a></li>
-      <li><a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}">16–29 year olds {{#compare @root.request.params.phase "===" "p52"}}(part-time){{/compare}}</a></li>
-      <li>{{@root.data.primaryResponse.hits.hits.[0]._source.title}}</li>
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/jobs">Jobs &amp; employability</a></li>
+      <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland">Community Jobs Scotland</a></li>
+      <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland/vacancies">Vacancies</a></li>
+      <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}">16–29 year olds {{#compare @root.request.params.phase "===" "p52"}}(part-time){{/compare}}</a></li>
+      <li class="breadcrumb-item">{{@root.data.primaryResponse.hits.hits.[0]._source.title}}</li>
     </ul>
   </div>
   {{> headers_splash sub_title="cjs"}}

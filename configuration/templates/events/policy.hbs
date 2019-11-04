@@ -1,11 +1,11 @@
 <div class="event">
   <div class="container-fluid page-content">
     {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-    <ul class="breadcrumbs">
-      <li><a href="/">Home</a></li>
-      <li><a href="/policy-research">Policy &amp; research</a></li>
-      <li><a href="/policy-research/events">Events</a></li>
-      <li>{{{title}}}</li>
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/policy-research">Policy &amp; research</a></li>
+      <li class="breadcrumb-item"><a href="/policy-research/events">Events</a></li>
+      <li class="breadcrumb-item">{{{title}}}</li>
     </ul>
     {{/with ~}}
   </div>

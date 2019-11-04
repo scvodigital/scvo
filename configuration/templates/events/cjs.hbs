@@ -1,12 +1,12 @@
 <div class="event">
   <div class="container-fluid page-content">
     {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-    <ul class="breadcrumbs">
-      <li><a href="/">Home</a></li>
-      <li><a href="/jobs">Jobs</a></li>
-      <li><a href="/jobs/community-jobs-scotland">Community Jobs Scotland</a></li>
-      <li><a href="{{url}}">Training opportunities</a></li>
-      <li>{{{title}}}</li>
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/jobs">Jobs</a></li>
+      <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland">Community Jobs Scotland</a></li>
+      <li class="breadcrumb-item"><a href="{{url}}">Training opportunities</a></li>
+      <li class="breadcrumb-item">{{{title}}}</li>
     </ul>
     {{/with ~}}
   </div>

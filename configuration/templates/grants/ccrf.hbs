@@ -1,13 +1,13 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <div class="grant-charter">
   <div class="container-fluid">
-    <ul class="breadcrumbs">
-      <li><a href="/">Home</a></li>
-      <li><a href="/running-your-organisation/">Running your organisation</a></li>
-      <li><a href="/running-your-organisation/funding/">Funding</a></li>
-      <li><a href="/running-your-organisation/funding/community-capacity-resilience-fund">Community capacity &amp; resilience fund</a></li>
-      <li><a href="/running-your-organisation/funding/community-capacity-resilience-fund/projects">Projects</a></li>
-      <li>{{{title}}}</li>
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/running-your-organisation/">Running your organisation</a></li>
+      <li class="breadcrumb-item"><a href="/running-your-organisation/funding/">Funding</a></li>
+      <li class="breadcrumb-item"><a href="/running-your-organisation/funding/community-capacity-resilience-fund">Community capacity &amp; resilience fund</a></li>
+      <li class="breadcrumb-item"><a href="/running-your-organisation/funding/community-capacity-resilience-fund/projects">Projects</a></li>
+      <li class="breadcrumb-item">{{{title}}}</li>
     </ul>
   </div>
   {{> headers_splash headerTextOverride=title headerTextCaptionOverride=recipient_name}}

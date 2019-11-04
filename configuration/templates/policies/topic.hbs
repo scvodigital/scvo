@@ -1,10 +1,10 @@
 <div class="page">
   <div class="container-fluid">
-    <ul class="breadcrumbs" aria-hidden="true">
-      <li><a href="/">Home</a></li>
-      <li><a href="/policy-research">Policy &amp; research</a></li>
-      <li><a href="/policy-research/policies">Policies</a></li>
-      <li>
+    <ul class="breadcrumb" aria-hidden="true">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/policy-research">Policy &amp; research</a></li>
+      <li class="breadcrumb-item"><a href="/policy-research/policies">Policies</a></li>
+      <li class="breadcrumb-item">
         {{#each @root.data.primaryResponse.hits.hits.[0]._source.policy_topics_slugs ~}}
         {{#compare this "===" @root.request.params.topic ~}}
         {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.policy_topics @index}}}

@@ -1,13 +1,13 @@
 <div class="page">
   <div class="container-fluid">
-    <ul class="breadcrumbs">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About SCVO</a></li>
-      <li><a href="/about/members">Our members</a></li>
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
+      <li class="breadcrumb-item"><a href="/about/members">Our members</a></li>
       {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-      <li>{{@root.data.primaryResponse.hits.hits.[0]._source.title}}</li>
+      <li class="breadcrumb-item">{{@root.data.primaryResponse.hits.hits.[0]._source.title}}</li>
       {{else}}
-      <li>Member not found</li>
+      <li class="breadcrumb-item">Member not found</li>
       {{/if ~}}
     </ul>
   </div>

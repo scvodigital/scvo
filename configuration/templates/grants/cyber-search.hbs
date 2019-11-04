@@ -1,11 +1,11 @@
 <div class="search grant-search grant-cyber-search">
   <div class="container-fluid">
-    <ul class="breadcrumbs">
-      <li><a href="/">Home</a></li>
-      <li><a href="/digital">Digital</a></li>
-      <li><a href="/digital/evolution">Evolution</a></li>
-      <li><a href="/digital/evolution/cyber-resilience">Cyber Resilience and Cyber Essentials Grants</a></li>
-      <li>{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</li>
+    <ul class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item"><a href="/digital">Digital</a></li>
+      <li class="breadcrumb-item"><a href="/digital/evolution">Evolution</a></li>
+      <li class="breadcrumb-item"><a href="/digital/evolution/cyber-resilience">Cyber Resilience and Cyber Essentials Grants</a></li>
+      <li class="breadcrumb-item">{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</li>
     </ul>
   </div>
   {{> headers_splash}}
