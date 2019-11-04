@@ -56,8 +56,9 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.events_search-head-tags",
               "header": ">context.metaData.handlebars.templates.events_search-header",
-              "leftSidebar": ">context.metaData.handlebars.templates.events_search-sidebar",
-              "body": ">context.metaData.handlebars.templates.events_search-body"
+              "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
+              "rightSidebar": ">context.metaData.handlebars.templates.events_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.events_search-results"
             },
             "contentType": "text/html"
           }

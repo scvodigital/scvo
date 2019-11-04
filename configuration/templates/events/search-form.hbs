@@ -1,0 +1,49 @@
+<form action="/events" method="GET">
+  <div class="form-group has-icon-left">
+    <span class="far fa-search form-icon" tabindex="0"></span>
+    <input type="text" id="events-keywords" name="q" class="form-input" value="{{@root.request.params.query.q}}" placeholder="Keywords">
+    <div class="mdc-line-ripple"></div>
+  </div>
+  {{!-- <h3>Filter</h3> --}}
+  <div class="form-group">
+    <select class="form-select" id="events-course_type" name="course_type">
+      <option value=""{{#if @root.request.params.query.course_type}}{{else}} selected{{/if}}>Event type</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.types.buckets ~}}
+      <option value="{{key}}" {{#compare @root.request.params.query.course_type "===" key}}selected{{/compare}}>{{key}}</option>
+      {{/each ~}}
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="form-select" id="events-month" name="month">
+      <option value=""{{#if @root.request.params.query.month}}{{else}} selected{{/if}}>Month</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.months.buckets ~}}
+      {{#if key ~}}
+      <option value="{{key}}" {{#compare @root.request.params.query.month "===" key}}selected{{/compare}}>{{key}}</option>
+      {{/if ~}}
+      {{/each ~}}
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="form-select" id="events-locations" name="location">
+      <option value=""{{#if @root.request.params.query.location}}{{else}} selected{{/if}}>Location</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.locations.buckets ~}}
+      {{#if key ~}}
+      <option value="{{key}}" {{#compare @root.request.params.query.location "===" key}}selected{{/compare}}>{{key}}</option>
+      {{/if ~}}
+      {{/each ~}}
+    </select>
+  </div>
+  <div class="form-group">
+    <label class="form-checkbox">
+    <input type="checkbox" id="events-free" name="free"{{#if request.params.query.free}} checked{{/if}} />
+    <span class="form-icon"></span> Only free events
+  </div>
+  <div class="form-group">
+    <label class="form-checkbox">
+    <input type="checkbox" id="events-hide_full" name="hide_full"{{#if request.params.query.hide_full}} checked{{/if}} />
+    <span class="form-icon"></span> Hide fully booked events
+  </div>
+  <button class="btn btn-primary" type="submit">
+    Search
+  </button>
+</form>

@@ -1,9 +1,22 @@
 {
   "size": 5,
   "_source": [
-    "slug",
+    "categories_id",
     "title",
-    "rendered.scvo_sidebar_mini"
+    "publish_on",
+    "path",
+    "wpid",
+    "description",
+    "description_truncated",
+    "is_press_release",
+    "author_slug",
+    "author_name_full",
+    "staff_profile",
+    "og_image",
+    "categories",
+    "categories_slug",
+    "post_tags",
+    "post_tags_slug"
   ],
   "query": {
     "function_score": {

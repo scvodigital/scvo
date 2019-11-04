@@ -6,8 +6,8 @@
     {{> post_list _source}}
     {{/each ~}}
   </ul>
-  {{#if @root.data.primaryResponse.hits.hits.[0]._source.categories_slug.[0] ~}}
-  <a class="v-margin btn btn-link" href="/post/categories/{{@root.data.primaryResponse.hits.hits.[0]._source.categories_slug.[0]}}">Read more</a>
-  {{/if ~}}
+  {{!-- {{#if @root.data.primaryResponse.hits.hits.[0]._source.categories_slug.[0] ~}}
+  <a class="v-margin btn btn-link" href="/post/categories/{{@root.data.primaryResponse.hits.hits.[0]._source.categories_slug.[0]}}">More posts</a>
+  {{/if ~}} --}}
 </div>
 {{/compare ~}}

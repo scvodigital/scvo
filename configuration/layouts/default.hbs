@@ -2,7 +2,6 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <base href="/">
   {{{layoutParts.head}}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -190,7 +189,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
             </li>
             {{#each @root.context.metaData.layoutMenus.main ~}}
             <li class="menu-item">
-              <a href="{{stripTrailingSlash path}}" class="l-padding-full {{#if (regexMatch @root.request.url.pathname route 'gi')}}active{{/if}}">
+              <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
                 {{#if icon ~}}
                 <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
                 {{/if ~}}
@@ -200,7 +199,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
             {{/each ~}}
             {{#each @root.context.metaData.layoutMenus.main-upper ~}}
             <li class="menu-item">
-              <a href="{{stripTrailingSlash path}}" class="l-padding-full {{#if (regexMatch @root.request.url.pathname route 'gi')}}active{{/if}}">
+              <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
                 {{#if icon ~}}
                 <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
                 {{/if ~}}
@@ -210,7 +209,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
             {{/each ~}}
             {{#each @root.context.metaData.layoutMenus.main-extra ~}}
             <li class="menu-item">
-              <a href="{{stripTrailingSlash path}}" class="l-padding-full {{#if (regexMatch @root.request.url.pathname route 'gi')}}active{{/if}}">
+              <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
                 {{#if icon ~}}
                 <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
                 {{/if ~}}

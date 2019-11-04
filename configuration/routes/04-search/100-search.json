@@ -35,8 +35,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.search_search-head-tags",
-              "body": ">context.metaData.handlebars.templates.search_search",
-              "foot": ""
+              "rightSidebar": ">context.metaData.handlebars.templates.search_search-form",
+              "body": ">context.metaData.handlebars.templates.search_search-results"
             },
             "contentType": "text/html"
           }

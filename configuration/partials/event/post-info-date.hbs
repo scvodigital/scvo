@@ -2,8 +2,10 @@
 <div class="post-info-item post-info-date">
   <span class="far fa-calendar-alt" aria-hidden="true"></span>
   {{momentFormat (moment date_start 'x') 'Do MMMM YYYY'}}
-  {{#if course_length ~}}
-  {{#compare course_length '!==' '1 Day'}} ({{course_length}}s){{/compare}}
-  {{/if ~}}
+  {{#compare (length course_length) ">" 0 ~}}
+  {{#each course_length ~}}
+  {{#compare this '!==' '1 Day'}} ({{this}}s){{/compare}}
+  {{/each ~}}
+  {{/compare ~}}
 </div>
 {{/if ~}}
