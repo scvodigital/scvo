@@ -25,6 +25,7 @@ $unit: 1rem;
 $padding: .4rem;
 $thick-underline: 2px;
 $border-radius: 4px;
+$base-font-weight: 400;
 $link-font-weight: 600;
 $heading-font-weight: 600;
 $badge-font-weight: 800;
@@ -552,7 +553,7 @@ form.disabled {
 }
 
 .caption {
-  font-size: 92%;
+  font-size: 75%;
 }
 
 form {
