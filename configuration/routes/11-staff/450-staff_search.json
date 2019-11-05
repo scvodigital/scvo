@@ -55,8 +55,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.staff_staff-search-head-tags",
-              "body": ">context.metaData.handlebars.templates.staff_staff-search",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.staff_search-header",
+              "body": ">context.metaData.handlebars.templates.staff_search-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar"
             },
             "contentType": "text/html"
           }
