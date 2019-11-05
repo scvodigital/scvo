@@ -1,0 +1,104 @@
+<div class="columns">
+  <div class="column col-6 col-lg-12">
+    <section class="mdc-card__media"><a href="https://goodmoves.com?utm_source=scvo&utm_campaign=page&utm_medium=website">&nbsp;</a></section>
+    <section class="mdc-card__supporting-text">
+      <h3>
+        Find a job in the voluntary sector
+      </h3>
+      <form action="/jobs/goodmoves/search" method="GET" class="search_form" data-auto-search="true">
+        {{!-- <input type="hidden" name="utm_source" value="scvo" />
+        <input type="hidden" name="utm_campaign" value="page" />
+        <input type="hidden" name="utm_medium" value="website" /> --}}
+        <div class="input-group">
+          <input type="text" class="form-input input-lg" name="q" id="jobs-keywords" placeholder="Keywords" value="{{@root.request.params.query.q}}">
+          <button type="submit" class="btn btn-primary input-group-btn btn-lg" aria-label="Search" alt="Search">
+            <span class="far fa-search" aria-hidden="true" aria-label="Search"></span>
+          </button>
+        </div>
+      </form>
+      <p>
+        Charity jobs in <a href="https://goodmoves.com/jobs-in/aberdeen?utm_source=scvo&utm_campaign=page&utm_medium=website">Aberdeen</a>, <a href="https://goodmoves.com/jobs-in/dundee?utm_source=scvo&utm_campaign=page&utm_medium=website">Dundee</a>, <a href="https://goodmoves.com/jobs-in/edinburgh?utm_source=scvo&utm_campaign=page&utm_medium=website">Edinburgh</a>, <a href="https://goodmoves.com/jobs-in/glasgow?utm_source=scvo&utm_campaign=page&utm_medium=website">Glasgow</a>, <a href="https://goodmoves.com/jobs-in/highland?utm_source=scvo&utm_campaign=page&utm_medium=website">Inverness</a>, <a href="https://goodmoves.com/jobs-in/stirling?utm_source=scvo&utm_campaign=page&utm_medium=website">Stirling</a>, and <a href="https://goodmoves.com/jobs-in/perth-and-kinross?utm_source=scvo&utm_campaign=page&utm_medium=website">Perth</a>. <a href="https://goodmoves.com/browse?utm_source=scvo&utm_campaign=page&utm_medium=website">Browse all jobs</a>.
+      </p>
+    </section>
+    <section class="mdc-card__actions">
+      <a href="https://goodmoves.com/recruitment?utm_source=scvo&utm_campaign=page&utm_medium=website" class="mdc-action">Advertise with us</a>
+    </section>
+  </div>
+  <div class="column col-6 col-lg-12">
+    <div class="mdc-card cjs-brand v-margin">
+      <section class="mdc-card__media"><a href="/jobs/community-jobs-scotland">&nbsp;</a></section>
+      <section class="mdc-card__supporting-text">
+        <h3>Creating jobs in Scotland's voluntary sector for unemployed young people</h3>
+        <p>
+          Community Jobs Scotland works with hundreds of voluntary sector organisations and has supported over 8,000 unemployed young people into work.
+        </p>
+      </section>
+      <section class="mdc-card__actions">
+        <ul>
+          <li><a href="/jobs/community-jobs-scotland" class="mdc-action">Find out more</a></li>
+          <li><a href="/jobs/community-jobs-scotland/vacancies/sign-in" class="mdc-action">JCP & SDS vacancy access</a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div id="detailed-results-container" class="container-content container-map">
+  <div id="map-full" data-map-name="fullMap" data-map-options='{}'></div>
+</div>
+{{#each @root.data.supplimentaryResponses.all_vacancies.hits.hits ~}}
+  {{#if _source.geo_coords ~}}
+    {{#each (arrayify _source.geo_coords) ~}}
+      <marker style="display:none;" data-map="fullMap" data-lat="{{lat}}" data-lng="{{lon}}" data-title="{{../_source.title}}" data-type="{{../_type}}">
+        <div class="map-content map-content-{{../_type}}">
+          <h3 class="mdc-typography--headline6">
+            {{#compare ../_type "===" "goodmoves-vacancy"}}
+              <a href="https://goodmoves.com/vacancy/{{../_source.Id}}/{{../_source.title_slug}}?utm_source=scvo&utm_campaign=page&utm_medium=website" class="mdc-card__action">{{../_source.title}}</a>
+            {{else}}
+              <a href="/jobs/community-jobs-scotland/vacancies/p19v/{{../_source.Id}}/{{../_source.title_slug}}" class="mdc-card__action">{{../_source.title}}</a>
+            {{/compare}}
+          </h3>
+          {{#if ../_source.organisation.name ~}}
+          <div class="mdc-typography--body1 v-margin">
+            {{../_source.organisation.name}}
+          </div>
+          {{/if ~}}
+          <div class="mdc-typography--body2">
+            {{#compare ../_type "===" "goodmoves-vacancy"}}
+              <a href="https://goodmoves.com/vacancy/{{../_source.Id}}/{{../_source.title_slug}}?utm_source=scvo&utm_campaign=page&utm_medium=website" class="mdc-card__action">Find out more on Goodmoves</a>
+            {{else}}
+              <a href="/jobs/community-jobs-scotland/vacancies/p19v/{{../_source.Id}}/{{../_source.title_slug}}" class="mdc-card__action">Find out more</a>
+            {{/compare}}
+          </div>
+        </div>
+      </marker>
+    {{/each ~}}
+  {{/if ~}}
+{{/each ~}}
+<script src="{{~>asset_url url='all-vacancies.js'~}}"></script>
+
+<h2>Top jobs on <strong>good</strong>moves</h2>
+<div class="columns">
+  {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
+  <div class="column col-4 col-lg-6 col-md-12">
+    {{{_source.rendered.scvo_gist}}}
+  </div>
+  {{/each ~}}
+</div>
+<p>
+  <a href="/jobs/search" class="mdc-button mdc-button--raised">Find more jobs</a>
+</p>
+
+{{#compare @root.data.supplimentaryResponses.related_training.hits.total ">" 0 ~}}
+<h2>Our training courses</h2>
+<div class="columns">
+  {{#each @root.data.supplimentaryResponses.related_training.hits.hits ~}}
+  <div class="column col-3 col-lg-4 col-md-6 col-sm-12">
+    {{{_source.rendered.scvo_gist}}}
+  </div>
+  {{/each ~}}
+</div>
+<p>
+  <a href="/events?course_type=Training+Course" class="mdc-button mdc-button--raised">See all courses</a>
+</p>
+{{/compare ~}}

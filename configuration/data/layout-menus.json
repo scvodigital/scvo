@@ -66,6 +66,19 @@
 			"route": "^/press-media"
 		}
 	],
+	"user": [{
+			"label": "Explore",
+			"icon": "file-search",
+			"path": "/explore",
+			"route": "^/explore"
+		},
+		{
+			"label": "My account",
+			"icon": "user-cog",
+			"path": "/account",
+			"route": "^/account"
+		}
+	],
   "footer": [{
 			"label": "Transparency &#038; open data",
 			"path": "/transparency-open-data",

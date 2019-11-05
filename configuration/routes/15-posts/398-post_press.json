@@ -1,6 +1,7 @@
 {
-  "name": "page_jobs_landing",
-  "pattern": "/jobs",
+  "name": "page_press",
+  "debug": false,
+  "pattern": "/press-media",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -30,28 +31,10 @@
         },
         "queryTemplates": [
           {
-            "name": "all_vacancies",
+            "name": "posts",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "goodmoves-vacancy,cjs-vacancy",
-            "template": ">context.metaData.handlebars.queries.jobs_all-vacancies"
-          },
-          {
-            "name": "goodmoves_latest",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "goodmoves-vacancy",
-            "template": ">context.metaData.handlebars.queries.jobs_goodmoves-vacancy-list"
-          },
-          {
-            "name": "cjs_latest",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "cjs-vacancy",
-            "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-list"
-          },
-          {
-            "name": "related_training",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_soon"
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_press"
           }
         ]
       },
@@ -64,17 +47,35 @@
       "config": {
         "logic": {
           "if": [
+            {
+              "in": [
+                "view=rss",
+                {
+                  "var": "request.fullUrl"
+                }
+              ]
+            },
+            "rss",
             "default"
           ]
         },
         "output": "body",
         "layouts": {
+          "rss": {
+            "layout": ">context.metaData.handlebars.layouts.rss",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.posts_tag-rss-head-tags",
+              "body": ">context.metaData.handlebars.templates.posts_tag-rss"
+            },
+            "contentType": "application/rss+xml"
+          },
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_jobs-landing",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.posts_press-header",
+              "body": ">context.metaData.handlebars.templates.posts_press-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.posts_press-sidebar"
             },
             "contentType": "text/html"
           }

@@ -1,5 +1,5 @@
 {{#compare paging.totalPages ">" 1 ~}}
-<ul class="pagination b-margin-full">
+<ul class="pagination v-margin-full">
   {{#if firstLastNavigation ~}}
   <li class="page-item {{#if paging.prevPage}}{{else}}disabled{{/if}}">
     <a class="pagination-arrow" href="{{@root.request.params.uri.pathname}}?{{{querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null page=1 json=false}}}">

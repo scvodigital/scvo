@@ -652,6 +652,11 @@
 				"route": "^/running-your-organisation/funding$"
 			},
 			{
+				"label": "EU exit (Brexit)",
+				"path": "/running-your-organisation/planning-for-eu-exit-brexit",
+				"route": "^/running-your-organisation/planning-for-eu-exit-brexit"
+			},
+			{
 				"label": "KeyStone",
 				"path": "/running-your-organisation/keystone",
 				"route": "^/running-your-organisation/keystone$"
@@ -849,16 +854,20 @@
 		"children": [{
 			"children": [{
 				"children": [{
+						"label": "Introduction",
+						"path": "/running-your-organisation/funding/community-capacity-resilience-fund/introduction-ccrf-round-5",
+						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/introduction-ccrf-round-5$"
+					}, {
 						"label": "Key dates",
 						"path": "/running-your-organisation/funding/community-capacity-resilience-fund/key-dates",
 						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/key-dates$"
 					}, {
-						"label": "Criteria and eligibility",
+						"label": "Criteria & eligibility",
 						"path": "/running-your-organisation/funding/community-capacity-resilience-fund/criteria",
 						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/criteria$"
 					},
 					{
-						"label": "Guidance on completing the application form",
+						"label": "Application form guidance notes",
 						"path": "/running-your-organisation/funding/community-capacity-resilience-fund/guidance",
 						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/guidance$"
 					},
@@ -868,7 +877,7 @@
 						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/project-ideas$"
 					},
 					{
-						"label": "Application form hints and tips",
+						"label": "Hints & tips",
 						"path": "/running-your-organisation/funding/community-capacity-resilience-fund/application-hints-tips",
 						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/application-hints-tips$"
 					},
@@ -876,21 +885,6 @@
 						"label": "Frequently asked questions",
 						"path": "/running-your-organisation/funding/community-capacity-resilience-fund/faqs",
 						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/faqs$"
-					},
-					{
-						"label": "Previously funded projects",
-						"path": "/running-your-organisation/funding/community-capacity-resilience-fund/projects",
-						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/projects$"
-					},
-					{
-						"label": "Project contract",
-						"path": "/running-your-organisation/funding/community-capacity-resilience-fund/project-contract",
-						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund/project-contract$"
-					},
-					{
-						"label": "CCRF Round 2 Evaluation Report (PDF)",
-						"path": "https://storage.googleapis.com/scvo-cms/wp-content/uploads/2018/03/Community-Capacity-Resilience-Fund-Round-2-Report.pdf",
-						"route": "^https://storage.googleapis.com/scvo-cms/wp-content/uploads/2018/03/Community-Capacity-Resilience-Fund-Round-2-Report.pdf$"
 					},
 					{
 						"label": "Apply",

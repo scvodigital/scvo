@@ -1,4 +1,4 @@
-<div class="post-info-item post-info-published post-info-updated"{{#compare publish_on '!==' updated}} aria-label="Post last updated on {{moment updated "Do MMMM YYYY"}}" title="Post last updated on {{moment updated "Do MMMM YYYY"}}"{{/compare}}>
+<div class="post-info-item post-info-published post-info-updated" title="{{#compare (momentFormat (moment publish_on 'x') 'Do MMMM YYYY') '===' (momentFormat (moment updated 'x') 'Do MMMM YYYY')}}Published{{else}}Last updated{{/compare}} on {{momentFormat (moment updated 'x') 'Do MMMM YYYY'}}">
   <span class="far fa-calendar-edit" aria-hidden="true"></span>
   {{momentFormat (moment publish_on "x") "Do MMMM YYYY"}}
 </div>

@@ -1,6 +1,7 @@
 {
-  "name": "page_funding_landing",
-  "pattern": "/funding",
+  "name": "page_blogs",
+  "debug": false,
+  "pattern": "/blogs",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -30,22 +31,10 @@
         },
         "queryTemplates": [
           {
-            "name": "scvo_funds",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "fs-fund",
-            "template": ">context.metaData.handlebars.queries.funding_scvo-funds"
-          },
-          {
-            "name": "recently_updated_funds",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "fs-fund",
-            "template": ">context.metaData.handlebars.queries.funding_funding-latest"
-          },
-          {
-            "name": "related_posts",
+            "name": "posts",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.pages_posts-related-random"
+            "template": ">context.metaData.handlebars.queries.posts_blogs"
           }
         ]
       },
@@ -58,17 +47,35 @@
       "config": {
         "logic": {
           "if": [
+            {
+              "in": [
+                "view=rss",
+                {
+                  "var": "request.fullUrl"
+                }
+              ]
+            },
+            "rss",
             "default"
           ]
         },
         "output": "body",
         "layouts": {
+          "rss": {
+            "layout": ">context.metaData.handlebars.layouts.rss",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.posts_category-rss-head-tags",
+              "body": ">context.metaData.handlebars.templates.posts_category-rss"
+            },
+            "contentType": "application/rss+xml"
+          },
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_funding_landing",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.posts_blog-header",
+              "body": ">context.metaData.handlebars.templates.posts_blog-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.posts_blog-sidebar"
             },
             "contentType": "text/html"
           }

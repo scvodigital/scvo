@@ -1,6 +1,6 @@
 {
-  "name": "page_policy",
-  "pattern": "/policy-research",
+  "name": "page_jobs_landing",
+  "pattern": "/jobs",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -30,28 +30,28 @@
         },
         "queryTemplates": [
           {
-            "name": "latest_briefings",
+            "name": "all_vacancies",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_briefings"
+            "type": "goodmoves-vacancy,cjs-vacancy",
+            "template": ">context.metaData.handlebars.queries.jobs_all-vacancies"
           },
           {
-            "name": "latest_consultation_responses",
+            "name": "goodmoves_latest",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_consultation-responses"
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.jobs_goodmoves-vacancy-list"
           },
           {
-            "name": "latest_research",
+            "name": "cjs_latest",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_reports"
+            "type": "cjs-vacancy",
+            "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-list"
           },
           {
-            "name": "events_total",
+            "name": "related_training",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_policy-total"
+            "template": ">context.metaData.handlebars.queries.events_soon"
           }
         ]
       },
@@ -73,8 +73,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_policy-landing",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_jobs_landing-header",
+              "body": ">context.metaData.handlebars.templates.pages_jobs_landing-body"
             },
             "contentType": "text/html"
           }

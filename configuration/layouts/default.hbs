@@ -78,14 +78,17 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
           </a>
         </section>
         <section class="navbar-section">
-          <form class="search_form" autocomplete="off" action="/search" method="GET">
-            <div class="input-group input-inline">
-              <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">
-              <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
-                <span class="far fa-search" aria-hidden="true"></span>
-              </button>
-            </div>
-          </form>
+          <div class="form-horizontal">
+            <form class="search_form" autocomplete="off" action="/search" method="GET">
+              <div class="input-group input-inline">
+                <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">
+                <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
+                  <span class="far fa-search" aria-hidden="true"></span>
+                </button>
+              </div>
+            </form>
+            <a href="/services/membership" class="btn btn-primary float-right t-margin">Join our community</a>
+          </div>
           <button class="show-lg" data-drawer-target="#mobile-menu" aria-label="Menu" alt="Menu">
             <span class="far fa-fw fa-2x fa-bars"></span>
           </button>
@@ -94,7 +97,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
       <header class="navbar toolbar">
         <section class="navbar-section site-tab-bar">
           {{#each context.metaData.layoutMenus.main ~}}
-          <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route "gi")}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
+          <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
           {{/each ~}}
         </section>
         <section class="navbar-center"></section>
@@ -102,7 +105,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
         {{#if data.auth ~}}
           <div class="dropdown my-account signed-in">
             <div class="btn-group">
-              <a href="#" class="btn dropdown-toggle">
+              <a href="#" class="btn btn-link dropdown-toggle">
                 {{#if @root.data.auth.photoURL ~}}
                   <img src="{{@root.data.auth.photoURL}}" class="avatar avatar-sm" />
                 {{else}}
@@ -113,26 +116,22 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
               </a>
               <ul class="menu">
                 <li class="menu-item">
-                  <a href="/" class="l-padding-full  active">
-                    <span class="far fa-fw fa-home" aria-hidden="true"></span>
+                  <a href="/" class="l-padding">
+                    <span class="far fa-fw fa-home r-margin" aria-hidden="true"></span>
                     Home
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="/explore" class="l-padding-full">
-                    <span class="far fa-fw fa-file-search" aria-hidden="true"></span>
-                    Explore
+                {{#each context.metaData.layoutMenus.user ~}}
+                <li class="menu-item{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}">
+                  <a class="l-padding" href="{{stripTrailingSlash path}}">
+                    <span class="far fa-fw fa-{{icon}} r-margin" aria-hidden="true"></span>
+                    {{{label}}}
                   </a>
                 </li>
+                {{/each ~}}
                 <li class="menu-item">
-                  <a href="/account" class="l-padding-full">
-                    <span class="far fa-fw fa-user-cog" aria-hidden="true"></span>
-                    My account
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="/sign-out" class="l-padding-full" data-component="TasksTrigger" data-taskstrigger="sign-out">
-                    <span class="far fa-fw fa-sign-out-alt" aria-hidden="true"></span>
+                  <a href="/sign-out" class="l-padding" data-component="TasksTrigger" data-taskstrigger="sign-out">
+                    <span class="far fa-fw fa-sign-out-alt r-margin" aria-hidden="true"></span>
                     Sign out
                   </a>
                 </li>
@@ -140,7 +139,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
             </div>
           </div>
         {{else}}
-          <a class="btn btn-link{{#if (regexMatch ../request.url.pathname '/sign-in' "gi")}} active{{/if}}" href="/sign-in">My account</a>
+          <a class="btn btn-link{{#if (regexMatch ../request.url.pathname '/scvo-account' "gi")}} active{{/if}}" href="/scvo-account">My account</a>
         {{/if ~}}
         </section>
       </header>
@@ -271,7 +270,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
         <div class="container">
           <div class="columns">
             <div class="column col-12 col-ml-auto membership">
-              <a href="/services/membership" class="btn btn-primary bg-secondary pull-right">SCVO membership</a>
+              <a href="/services/membership" class="btn btn-primary pull-right">SCVO membership</a>
             </div>
           </div>
           <div class="columns">

@@ -1,7 +1,6 @@
 {
-  "name": "page_blogs",
-  "debug": false,
-  "pattern": "/blogs",
+  "name": "page_policy",
+  "pattern": "/policy-research",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -31,10 +30,28 @@
         },
         "queryTemplates": [
           {
-            "name": "posts",
+            "name": "latest_briefings",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_blogs"
+            "template": ">context.metaData.handlebars.queries.posts_briefings"
+          },
+          {
+            "name": "latest_consultation_responses",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_consultation-responses"
+          },
+          {
+            "name": "latest_research",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_reports"
+          },
+          {
+            "name": "events_total",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-event",
+            "template": ">context.metaData.handlebars.queries.events_policy-total"
           }
         ]
       },
@@ -47,34 +64,17 @@
       "config": {
         "logic": {
           "if": [
-            {
-              "in": [
-                "view=rss",
-                {
-                  "var": "request.fullUrl"
-                }
-              ]
-            },
-            "rss",
             "default"
           ]
         },
         "output": "body",
         "layouts": {
-          "rss": {
-            "layout": ">context.metaData.handlebars.layouts.rss",
-            "parts": {
-              "head": ">context.metaData.handlebars.templates.posts_category-rss-head-tags",
-              "body": ">context.metaData.handlebars.templates.posts_category-rss"
-            },
-            "contentType": "application/rss+xml"
-          },
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.posts_blogs",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_policy-research_landing-header",
+              "body": ">context.metaData.handlebars.templates.pages_policy-research_landing-body"
             },
             "contentType": "text/html"
           }

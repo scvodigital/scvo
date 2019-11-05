@@ -1,6 +1,6 @@
 {
   "name": "sign_in",
-  "pattern": "/sign-in",
+  "pattern": "/scvo-account",
   "debug": true,
   "errorRoute": "five_hundred",
   "metaData": {
@@ -24,7 +24,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.account_auth_sign-in"
+              "body": ">context.metaData.handlebars.templates.account_auth_sign-in-up"
             },
             "contentType": "text/html"
           }
