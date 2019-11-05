@@ -49,6 +49,11 @@ body,
 }
 .page {
   background-color: white;
+  .full {
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 html {
@@ -172,6 +177,30 @@ a.pure-menu-link:hover {
 .chip:hover {
   color: white !important;
   background-color: $secondary-color-dark;
+}
+
+.wp-block-file {
+  margin-bottom: $unit;
+  a,
+  a:hover {
+    font-weight: $base-font-weight;
+    color: black;
+    text-decoration: none;
+  }
+  .wp-block-file__button {
+    font-weight: $heading-font-weight;
+    margin-left: $unit/2;
+    border-radius: $unit;
+    padding: 0 $unit/2;
+    background: #555;
+    color: white !important;
+  }
+  .wp-block-file__button:hover {
+    font-weight: $heading-font-weight;
+    text-decoration: none;
+    background: #222 !important;
+    color: white !important;
+  }
 }
 
 // a.btn:link,

@@ -55,7 +55,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.jobs_scvo-jobs"
+              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar",
+              "body": ">context.metaData.handlebars.templates.jobs_scvo-vacancies"
             },
             "contentType": "text/html"
           }

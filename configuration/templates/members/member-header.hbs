@@ -1,0 +1,12 @@
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
+    <li class="breadcrumb-item"><a href="/about/members">Our members</a></li>
+    {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+    <li class="breadcrumb-item">{{@root.data.primaryResponse.hits.hits.[0]._source.title}}</li>
+    {{else}}
+    <li class="breadcrumb-item">Member not found</li>
+    {{/if ~}}
+  </ul>
+
+  <h1>{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</h1>

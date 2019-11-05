@@ -1,0 +1,26 @@
+<div class="mdc-card search">
+  <section class="mdc-card__primary">
+    <form action="/about/members" method="GET">
+      <div class="input-group">
+        <input type="text" class="form-input" placeholder="Search SCVO's {{addCommas @root.data.supplimentaryResponses.total.hits.total}} member organisations" value="{{@root.request.params.query.q}}" name="q">
+        <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" alt="Search">
+          <span class="far fa-search" aria-hidden="true"></span>
+        </button>
+      </div>
+    </form>
+  </section>
+</div>
+
+{{#if @root.request.params.query.q ~}}
+{{> search_info paging=@root.data.primaryResponse.pagination}}
+{{else}}
+<h4>Our members include&hellip;</h4>
+{{/if ~}}
+
+{{#each @root.data.primaryResponse.hits.hits ~}}
+{{{this._source.rendered.scvo_list}}}
+{{/each ~}}
+
+{{#ifAny @root.request.params.query.q @root.request.params.query.type ~}}
+{{> pagination paging=@root.data.primaryResponse.pagination}}
+{{/ifAny ~}}

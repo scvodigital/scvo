@@ -1,0 +1,5 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{{@root.data.primaryResponse.hits.hits.[0]._source.rendered.scvo_full}}}
+{{else}}
+<h2>Error 404: Member could not be found</h2>
+{{/if ~}}

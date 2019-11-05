@@ -1,15 +1,13 @@
-<div class="container">
-  <div class="content post-content">
-    {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-    <div class="full scvo-cms scvo-cms-post scvo-cms-post-{{wpid}}">
-      <div class="post-info">
-        {{> post_info_author}}
-        {{> post_info_published}}
-        {{> post_info_categories}}
-      </div>
-      {{{replace content "http://cms.scvo.org/" "/"}}}
+<div class="content post-content">
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <div class="full scvo-cms scvo-cms-post scvo-cms-post-{{wpid}}">
+    <div class="post-info">
+      {{> post_info_author}}
+      {{> post_info_published}}
+      {{> post_info_categories}}
     </div>
-    {{/with ~}}
+    {{{replace content "http://cms.scvo.org/" "/"}}}
   </div>
+  {{/with ~}}
 </div>
 <script src="{{~>asset_url url='post.js'~}}"></script>

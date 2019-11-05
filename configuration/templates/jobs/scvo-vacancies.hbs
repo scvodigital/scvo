@@ -1,0 +1,16 @@
+{{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
+
+{{#compare data.supplimentaryResponses.scvo_jobs.hits.total "===" 0 ~}}
+<p>
+  We don't currently have any vacancies but when we do they will appear here automatically.
+</p>
+<p>
+  In the meantime you can search for jobs on
+  <a href="https://goodmoves.com?utm_source=scvo&utm_campaign=page&utm_medium=website"><strong>good</strong>moves</a> and set up email alerts.
+</p>
+{{else}}
+<h2>Current vacancies with SCVO</h2>
+{{#each @root.data.supplimentaryResponses.scvo_jobs.hits.hits ~}}
+{{> goodmoves_search_result source=_source}}
+{{/each ~}}
+{{/compare ~}}

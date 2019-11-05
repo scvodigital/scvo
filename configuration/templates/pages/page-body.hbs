@@ -1,7 +1,15 @@
-<div class="page">
-  {{> leading_quotation sourcePage=@root.data.primaryResponse.hits.hits.[0]._source}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+{{> leading_quotation sourcePage=this}}
 
-  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-  {{{rendered.scvo_full}}}
-  {{/with ~}}
+<div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
+  {{{replace content "http://cms.scvo.org/" "/"}}}
+
+  {{!-- <div class="divider"></div> --}}
+  <div class="page-info">
+    <div class="page-info-item page-info-updated">
+      <span class="far fa-calendar-alt" aria-hidden="true"></span>
+      Page last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
+    </div>
+  </div>
 </div>
+{{/with ~}}
