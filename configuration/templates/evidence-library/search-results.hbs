@@ -1,0 +1,7 @@
+{{> search_info paging=@root.data.primaryResponse.pagination}}
+
+{{#each @root.data.primaryResponse.hits.hits ~}}
+{{{_source.rendered.scvo_list}}}
+{{/each ~}}
+
+{{> pagination paging=@root.data.primaryResponse.pagination}}

@@ -1,6 +1,6 @@
 {
-  "name": "evidence_library_document",
-  "pattern": "/policy-research/evidence-library/:library_slug",
+  "name": "evidence_library_document_search",
+  "pattern": "/policy-research/evidence-library",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -14,8 +14,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-document-evidence",
-          "template": ">context.metaData.handlebars.queries.documents_evidence-library-document",
-          "noResultsRoute": "four_oh_four"
+          "template": ">context.metaData.handlebars.queries.documents_evidence-library-document-search"
         }
       },
       "renderer": "handlebars"
@@ -46,17 +45,35 @@
       "config": {
         "logic": {
           "if": [
+            {
+              "in": [
+                "view=rss",
+                {
+                  "var": "request.fullUrl"
+                }
+              ]
+            },
+            "rss",
             "default"
           ]
         },
         "output": "body",
         "layouts": {
+          "rss": {
+            "layout": ">context.metaData.handlebars.layouts.rss",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.documents_evidence-library-rss-head-tags",
+              "body": ">context.metaData.handlebars.templates.documents_evidence-library-rss"
+            },
+            "contentType": "application/rss+xml"
+          },
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.documents_evidence-library-document",
-              "foot": ""
+              "head": ">context.metaData.handlebars.templates.evidence-library_head-tags",
+              "header": ">context.metaData.handlebars.templates.evidence-library_search-header",
+              "rightSidebar": ">context.metaData.handlebars.templates.evidence-library_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.evidence-library_search-results"
             },
             "contentType": "text/html"
           }

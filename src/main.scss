@@ -94,6 +94,7 @@ h2 {
 h3 {
   font-size: 1.4rem;
 }
+.mdc-card__primary h3,
 .mdc-card__title,
 h4 {
   font-size: 1.2rem;
@@ -105,6 +106,14 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: $heading-font-weight;
   letter-spacing: -0.05rem;
+}
+
+.mdc-card__title {
+  .fa-2x {
+    font-weight: 400 !important;
+    font-size: 1em !important;
+    margin-right: $unit/2;
+  }
 }
 
 .mdc-card {
@@ -124,6 +133,9 @@ h3,
 h4,
 h5 {
   color: $secondary-color;
+}
+p {
+  margin: 0 0 .8rem;
 }
 
 a,
@@ -155,11 +167,26 @@ footer .footer-copyright a:hover {
   border-bottom-color: $theme-footer;
 }
 .mdc-card__title a,
+.mdc-card__primary h3 a,
 a.scvo-logo,
 a.navbar-brand,
 a.avatar,
+a.rss,
+.chip,
 .menu a:not(.btn) {
-  border-bottom: none;
+  border-bottom: none !important;
+}
+.avatar.avatar-sm {
+  margin-right: $unit/5;
+}
+.chip.bg-primary {
+  color: white !important;
+}
+.chip.bg-primary:hover {
+  background-color: $primary-color-dark !important;
+}
+a.rss {
+  color: $warning-color;
 }
 
 a:focus,
@@ -375,7 +402,6 @@ a.pure-menu-link:hover {
       display: none;
     }
   }
-
   @keyframes slide-in { 100% { left: 0 } }
   @keyframes slide-out { 0% { left: 0; } 100% { left: -300px; } }
   @keyframes fade-in { 100% { opacity: 1; } }
@@ -415,6 +441,7 @@ header {
       right: .4rem,
     }
     .menu .menu-item>a {
+      border-radius: 0;
       // color: $primary-color !important;
     }
     .menu .menu-item>a.active {
@@ -522,6 +549,10 @@ header.toolbar {
   }
 }
 
+ul li:first-child,
+ol li:first-child {
+  margin-top: 0;
+}
 .form.disabled,
 form.disabled {
   pointer-events: none;

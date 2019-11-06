@@ -34,7 +34,7 @@
   <ul class="inline-list">
     {{#each post_tags ~}}
     <li>
-      <a href="/post/tags/{{itemAt ../post_tags_slug @index}}">{{{this}}}</a>
+      <a href="/post/tags/{{itemAt ../post_tags_slug @index}}" class="chip bg-primary">{{{this}}}</a>
     </li>
     {{/each ~}}
   </ul>
