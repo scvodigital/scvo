@@ -659,11 +659,14 @@ form {
   }
 }
 
-.menu .menu-item>a:focus,
-.menu .menu-item>a:hover,
 .menu .menu-item>a:active,
 .menu .menu-item>a.active {
   background-color: $primary-color;
+  color: white;
+}
+.menu .menu-item>a:focus,
+.menu .menu-item>a:hover {
+  background-color: $primary-color-dark;
   color: white;
 }
 

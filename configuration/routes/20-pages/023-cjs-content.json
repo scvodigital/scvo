@@ -1,6 +1,6 @@
 {
-  "name": "page_cjs_landing",
-  "pattern": "/jobs/community-jobs-scotland",
+  "name": "page_cjs_content",
+  "pattern": "/jobs/community-jobs-scotland/:section(/:subsection)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -56,7 +56,8 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
               "header": ">context.metaData.handlebars.templates.pages_page-header",
-              "body": ">context.metaData.handlebars.templates.pages_jobs_cjs_landing"
+              "body": ">context.metaData.handlebars.templates.pages_page-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.pages_jobs_cjs_sidebar"
             },
             "contentType": "text/html"
           }
