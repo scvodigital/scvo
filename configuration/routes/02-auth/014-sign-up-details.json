@@ -1,7 +1,7 @@
 {
   "name": "sign-up-details",
-  "pattern": "/sign-up-details",
   "debug": true,
+  "pattern": "/sign-up-details",
   "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.authRequired",
@@ -24,7 +24,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.account_auth_sign-up-details"
+              "body": ">context.metaData.handlebars.templates.account_auth_sign-up-details-body"
             },
             "contentType": "text/html"
           }

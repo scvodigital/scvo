@@ -4,7 +4,6 @@
   "pattern": "/jobs/community-jobs-scotland/vacancies/:phase/:id(/:junk)/apply",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
-    "context.metaData.commonTasks.cjsAuthNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",

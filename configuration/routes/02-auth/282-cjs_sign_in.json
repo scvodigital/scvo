@@ -1,9 +1,9 @@
 {
   "name": "cjs_sign_in",
+  "debug": true,
   "pattern": "/jobs/community-jobs-scotland/vacancies/sign-in",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
-    "context.metaData.commonTasks.cjsAuthNotRequired",
     {
       "name": "destination",
       "taskModule": "renderLayout",

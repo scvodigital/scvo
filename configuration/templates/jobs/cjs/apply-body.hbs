@@ -1,4 +1,4 @@
-{{#if @root.data.cjsAuth ~}}
+{{#if @root.data.auth ~}}
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 {{#if application_arrangements ~}}
 <h3>Referral methods including arrangement details</h3>
@@ -15,11 +15,11 @@
 {{/if ~}}
 
 <h3>Application forms</h3>
-<ul class="mdc-list downloads">
+<ul class="fa-ul downloads">
   {{#ifAny (compare job_number "9992") (compare job_number "10005") ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Application%20form%20for%20cafe%20assistant%20cjs.doc'~}}" target="_blank" download>
         <span class="title">Application Form</span>
       </a>
@@ -27,9 +27,9 @@
   </li>
   {{else}}
   {{#compare job_number "9920" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/9920.doc'~}}" target="_blank" download>
         <span class="title">Application Form</span>
       </a>
@@ -37,9 +37,9 @@
   </li>
   {{else}}
   {{#compare job_number "9100" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Application%20for%20Employment.docx'~}}" target="_blank" download>
         <span class="title">Application Form</span>
       </a>
@@ -47,9 +47,9 @@
   </li>
   {{else}}
   {{#compare job_number "8500" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Admin%20Support%20Worker%20Application%20form%20090818.doc'~}}" target="_blank" download>
         <span class="title">Application Form</span>
       </a>
@@ -57,9 +57,9 @@
   </li>
   {{else}}
   {{#compare job_number "9919" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Admin%20Support%20Worker%20Application%20form%20090818_003.doc'~}}" target="_blank" download>
         <span class="title">Application Form</span>
       </a>
@@ -67,9 +67,9 @@
   </li>
   {{else}}
   {{#compare job_number "8495" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Application%20form%20%20Fundraising%20and%20Events%20worker%20_.doc'~}}" target="_blank" download>
         <span class="title">Application Form</span>
       </a>
@@ -77,9 +77,9 @@
   </li>
   {{else}}
   {{#compare job_number "10497" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Dean%20and%20Cauvin%20Trust%20CJS%20Application%20Form.docx'~}}" target="_blank" download>
         <span class="title">Application Form</span>
       </a>
@@ -87,17 +87,17 @@
   </li>
   {{else}}
   {{#compare job_number "8552" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Application%20Form.docx'~}}" target="_blank" download>
         <span class="title">Application Form</span>
       </a>
     </span>
   </li>
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Guidance%20Notes.docx'~}}" target="_blank" download>
         <span class="title">Guidance Notes</span>
       </a>
@@ -105,26 +105,26 @@
   </li>
   {{else}}
   {{#compare organisation.name "Kibble" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Kibble%20Self%20Declaration%20Form.rtf'~}}" target="_blank" download>
         <span class="title">Kibble Self Declaration Form</span>
       </a>
     </span>
   </li>
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/KibbleWorks%20Application%20Form%20(2015).doc'~}}" target="_blank" download>
         <span class="title">KibbleWorks Application Form</span>
       </a>
     </span>
   </li>
   {{else}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/JCP%20CJS%20Application%20v8.doc'~}}" target="_blank" download>
         <span class="title">JCP CJS Application</span>
       </a>
@@ -140,35 +140,35 @@
   {{/compare ~}}
   {{/ifAny ~}}
   {{#compare @root.request.params.phase "p19v" ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/JCP%20CJS%20Eligibility%20Referral%20R9.doc'~}}" target="_blank" download>
         <span class="title">JCP CJS Eligibility Referral</span>
       </a>
     </span>
   </li>
   {{else}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/CJS%20PT%20Dis%20Eligibility%20Referral%20Form%20v8.2.doc'~}}" target="_blank" download>
         <span class="title">CJS PT Disability Eligibility Referral Form</span>
       </a>
     </span>
   </li>
   {{/compare ~}}
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/Vulnerable%20Group%20criteria.docx'~}}" target="_blank" download>
         <span class="title">Vulnerable Group Criteria</span>
       </a>
     </span>
   </li>
-  <li class="mdc-list-item">
-    <span class="mdc-list-item__graphic far fa-file fa-file-word" aria-hidden="true"></span>
-    <span class="mdc-list-item__text">
+  <li>
+    <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+    <span class="file-download">
       <a href="{{~>asset_url url='cjs/SDS%20CJS%20Elig%20Ref%20Appl%20R9.doc'~}}" target="_blank" download>
         <span class="title">SDS CJS Eligibility Referral Application</span>
       </a>
@@ -180,24 +180,24 @@
 <ul class="fa-ul">
   {{#if supervisor.first_name ~}}
   <li>
-    <span class="fa-li"><i class="far fa-user-alt"></i></span>
+    <span class="fa-li"><span class="far fa-user-alt"></span></span>
     {{{supervisor.first_name}}} {{{supervisor.last_name}}}
   </li>
   {{/if ~}}
   {{#if supervisor.email ~}}
   <li>
-    <span class="fa-li"><i class="far fa-envelope"></i></span>
+    <span class="fa-li"><span class="far fa-envelope"></span></span>
     <a href="mailto:{{{supervisor.email}}}">{{{supervisor.email}}}</a>
   </li>
   {{/if ~}}
   {{#if supervisor.phone ~}}
   <li>
-    <span class="fa-li"><i class="far fa-phone fa-flip-horizontal"></i></span>
+    <span class="fa-li"><span class="far fa-phone fa-flip-horizontal"></span></span>
     {{{supervisor.phone}}}
   </li>
   {{/if ~}}
   <li>
-    <span class="fa-li"><i class="far fa-building"></i></span>
+    <span class="fa-li"><span class="far fa-building"></span></span>
     {{#if organisation.street}}{{{organisation.street}}}, {{/if}}
     {{#if organisation.area_town}}{{{organisation.area_town}}}, {{/if}}
     {{#if organisation.city_county}}{{{organisation.city_county}}}, {{/if}}

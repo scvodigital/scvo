@@ -1,7 +1,7 @@
 {
   "name": "sign_in",
-  "pattern": "/scvo-account",
   "debug": true,
+  "pattern": "/scvo-account",
   "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -21,7 +21,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.account_auth_sign-in-up"
+              "body": ">context.metaData.handlebars.templates.account_auth_sign-in-up-body"
             },
             "contentType": "text/html"
           }
