@@ -1,7 +1,10 @@
 {
   "name": "event",
-  "pattern": "/events/:id(/:junk)",
   "debug": true,
+  "pattern": "/events/:id(/:junk)",
+  "metaData": {
+    "searchUrl": "/events"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -68,8 +71,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.events_search-header",
-              "leftSidebar": ">context.metaData.handlebars.templates.events_search-sidebar",
+              "header": ">context.metaData.handlebars.templates.events_event-header",
+              "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
+              "rightSidebar": ">context.metaData.handlebars.templates.events_search-sidebar",
               "body": ">context.metaData.handlebars.templates.events_event-body"
             },
             "contentType": "text/html"

@@ -1,10 +1,11 @@
-<form action="/events" method="GET">
+<form action="{{default @root.route.metaData.searchUrl '/events'}}" method="GET">
   <div class="form-group has-icon-left">
     <span class="far fa-search form-icon" tabindex="0"></span>
     <input type="text" id="events-keywords" name="q" class="form-input" value="{{@root.request.params.query.q}}" placeholder="Keywords">
     <div class="mdc-line-ripple"></div>
   </div>
   {{!-- <h3>Filter</h3> --}}
+  {{#compare (length @root.data.supplimentaryResponses.types.aggregations.types.buckets) ">" 0 ~}}
   <div class="form-group">
     <select class="form-select" id="events-course_type" name="course_type">
       <option value=""{{#if @root.request.params.query.course_type}}{{else}} selected{{/if}}>Event type</option>
@@ -13,6 +14,8 @@
       {{/each ~}}
     </select>
   </div>
+  {{/compare ~}}
+  {{#compare (length @root.data.supplimentaryResponses.types.aggregations.months.buckets) ">" 0 ~}}
   <div class="form-group">
     <select class="form-select" id="events-month" name="month">
       <option value=""{{#if @root.request.params.query.month}}{{else}} selected{{/if}}>Month</option>
@@ -23,6 +26,8 @@
       {{/each ~}}
     </select>
   </div>
+  {{/compare ~}}
+  {{#ifAll (compare (length @root.data.supplimentaryResponses.types.aggregations.locations.buckets) ">" 0) (compare @root.data.supplimentaryResponses.types.aggregations.locations.buckets.0.key "!==" "") ~}}
   <div class="form-group">
     <select class="form-select" id="events-locations" name="location">
       <option value=""{{#if @root.request.params.query.location}}{{else}} selected{{/if}}>Location</option>
@@ -33,6 +38,7 @@
       {{/each ~}}
     </select>
   </div>
+  {{/ifAll ~}}
   <div class="form-group">
     <label class="form-checkbox">
     <input type="checkbox" id="events-free" name="free"{{#if request.params.query.free}} checked{{/if}} />

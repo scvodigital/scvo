@@ -1,0 +1,13 @@
+{{#if booking_url ~}}
+<iframe src="{{booking_url}}?sfid={{Id}}" frameborder="0" width="100%" height="400" style="overflow:hidden"></iframe>
+{{else}}
+{{!-- <iframe src="https://www.surveygizmo.eu/s3/90064254/Event-Booking-Digital-Events?sfid={{Id}}" frameborder="0" width="100%" height="400" style="overflow:hidden"></iframe> --}}
+<script type="text/javascript" >document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90064254/Event-Booking-Digital-Events?sfid={{Id}}&__output=embedjs&__ref=' + escape(document.location.origin + document.location.pathname) + '" type="text/javascript" ></scr' + 'ipt>');</script><style>.sg-survey{display:none; }</style>
+<p>
+  <strong>The information you provide will be stored in our database to allow us to respond to your booking request. <a href="/privacy/training-and-events" target="_blank">Read our full privacy notice</a>.</strong>
+</p>
+{{else}}
+<p>
+  Error 404: Booking form not found
+</p>
+{{/if ~}}

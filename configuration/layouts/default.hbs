@@ -139,7 +139,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
             </div>
           </div>
         {{else}}
-          <a class="btn btn-link{{#if (regexMatch ../request.url.pathname '/scvo-account' "gi")}} active{{/if}}" href="/scvo-account">My account</a>
+          <a class="btn btn-link{{#if (regexMatch @root.request.url.pathname 'scvo-account' 'gi')}} active{{/if}}" href="/scvo-account">My account</a>
         {{/if ~}}
         </section>
       </header>

@@ -27,6 +27,13 @@
         }
       ],
       "must": [
+        {{#if @root.request.params.query.hide_full ~}}
+        {
+          "exists": {
+            "field": "places_available"
+          }
+        },
+        {{/if ~}}
         {{#if request.params.query.course_type}}
         {
           "term": {

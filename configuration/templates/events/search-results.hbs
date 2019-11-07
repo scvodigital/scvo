@@ -1,9 +1,15 @@
 {{> search_info paging=@root.data.primaryResponse.pagination}}
 
+{{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
 {{#each @root.data.primaryResponse.hits.hits ~}}
 {{#with _source ~}}
 {{> event_list}}
 {{/with ~}}
 {{/each ~}}
+{{else}}
+<p>
+  Error 404: No events could be loaded
+</p>
+{{/compare ~}}
 
 {{> pagination paging=@root.data.primaryResponse.pagination}}

@@ -3,11 +3,16 @@
   "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
     "slug",
+    "Id",
     "title",
     "course_type",
     "date_start",
-    "rendered.scvo_list",
-    "rendered.scvo_gist",
+    "path",
+    "course_overview_short",
+    "description_short",
+    "places_available",
+    "city",
+    "course_length",
     "rendered.json_ld"
   ],
   "query": {
@@ -27,6 +32,13 @@
         }
       ],
       "must": [
+        {{#if @root.request.params.query.hide_full ~}}
+        {
+          "exists": {
+            "field": "places_available"
+          }
+        },
+        {{/if ~}}
         {{#if request.params.query.course_type}}
         {
           "term": {

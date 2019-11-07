@@ -119,7 +119,10 @@ h1, h2, h3, h4, h5, h6,
 .mdc-card {
   margin-bottom: $unit;
   .mdc-card__media {
-    display: none;
+    background-size: cover;
+    background-position: center center;
+    height: auto;
+    background-image: none !important;
   }
 }
 

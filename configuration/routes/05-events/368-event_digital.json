@@ -1,7 +1,10 @@
 {
   "name": "event_digital",
+  "debug": true,
   "pattern": "/digital/events/:id(/:junk)",
-  "debug": false,
+  "metaData": {
+    "searchUrl": "/digital/events"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -62,8 +65,10 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.events_digital",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.events_digital-header",
+              "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
+              "rightSidebar": ">context.metaData.handlebars.templates.events_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.events_event-body"
             },
             "contentType": "text/html"
           }
