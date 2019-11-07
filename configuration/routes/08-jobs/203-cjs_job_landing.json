@@ -1,5 +1,6 @@
 {
   "name": "cjs_job_phase",
+  "debug": true,
   "pattern": "/jobs/community-jobs-scotland/vacancies",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -19,9 +20,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-search-head-tags",
-              "body": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-phase",
-              "footer": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-footer"
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "header": ">context.metaData.handlebars.templates.jobs_cjs_landing-header",
+              "body": ">context.metaData.handlebars.templates.jobs_cjs_landing-body",
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs_footer"
             },
             "contentType": "text/html"
           }

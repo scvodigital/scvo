@@ -1,0 +1,76 @@
+{{#*inline "sector"}}
+{{#if key ~}}
+<option value="{{key}}"{{#compare @root.request.params.query.sector "===" key}} selected{{/compare}}>
+  {{title.key}}
+</option>
+{{/if ~}}
+{{/inline}}
+{{#*inline "region"}}
+{{#if key ~}}
+<option value="{{key}}"{{#compare @root.request.params.query.region "===" key}} selected{{/compare}}>
+  {{title.key}}
+</option>
+{{/if ~}}
+{{/inline}}
+
+<h4>Search vacancies</h4>
+
+<form action="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}" method="GET">
+  <input type="hidden" name="view" value="{{@root.request.params.query.view}}" />
+
+  {{#>components_tab_bar}}
+  {{>components_tab url=(concat "/jobs/community-jobs-scotland/vacancies/" @root.request.params.phase "?" (querystringify @root.request.params.query view="list")) iconClasses="far fa-list fa-fw" label="List" active=(compare @root.request.params.query.view "===" "list")}}
+  {{>components_tab url=(concat "/jobs/community-jobs-scotland/vacancies/" @root.request.params.phase "?" (querystringify @root.request.params.query view="map")) iconClasses="far fa-map-marker-alt fa-fw" label="Map" active=(compare @root.request.params.query.view "===" "map")}}
+  {{/components_tab_bar}}
+
+  <div class="form-group has-icon-left">
+    <span class="far fa-search form-icon" tabindex="0"></span>
+    <input type="text" class="form-input" name="q" id="keywords" data-lpignore="true" value="{{@root.request.params.query.q}}" placeholder="Keywords">
+  </div>
+
+  <div class="form-group input-group has-icon-left">
+    <input type="text" id="{{instance_id}}-location" name="location" class="form-input search-location" value="{{#ifAll @root.request.params.query.lat @root.request.params.query.lng}}{{@root.request.params.query.location}}{{/ifAll}}" placeholder="Location" data-lpignore="true" data-location-search='{
+      "latSelector": "[name=\"lat\"]",
+      "lngSelector": "[name=\"lng\"]",
+      "locationServicesSelector": ".geo-lookup"
+    }' />
+    <span class="far fa-map-marker-alt form-icon geo-lookup" tabindex="0" title="Find my location" role="button" style="pointer-events: initial !important;"></span>
+    <select data-location="location" class="form-select search-distance" id="distance" name="distance">
+      <option value="8.04672"{{#compare @root.request.params.query.distance "8.04672"}} selected{{/compare}}>5 miles</option>
+      <option value="16.09344"{{#compare @root.request.params.query.distance "16.09344"}} selected{{/compare}}>10 miles</option>
+      <option value="40.2336"{{#compare @root.request.params.query.distance "40.2336"}} selected{{/compare}}>25 miles</option>
+      <option value="80.4672"{{#compare @root.request.params.query.distance "80.4672"}} selected{{/compare}}>50 miles</option>
+      <option value="1609.34"{{#compare @root.request.params.query.distance ""}} selected{{/compare}}>no limit</option>
+    </select>
+  </div>
+
+  <input type="hidden" name="lat" value="{{@root.request.params.query.lat}}" id="lat">
+  <input type="hidden" name="lng" value="{{@root.request.params.query.lng}}" id="lng">
+
+  <div class="form-group has-icon-left">
+    <input type="text" class="form-input" name="job_number" id="job_number" data-lpignore="true" value="{{@root.request.params.query.job_number}}" placeholder="Job number">
+    <span class="far fa-hashtag form-icon" tabindex="0"></span>
+  </div>
+
+  <div class="form-group">
+    <select class="form-select" id="sector" name="sector">
+      <option value=""{{#if @root.request.params.query.sector}}{{else}} selected{{/if}}>Sector</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.sectors_slugs.buckets ~}}
+      {{> sector title=(lookup @root.data.supplimentaryResponses.types.aggregations.sectors.buckets @index) slug=key}}
+      {{/each ~}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <select class="form-select" id="region" name="region">
+      <option value=""{{#if @root.request.params.query.region}}{{else}} selected{{/if}}>Region</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.regions_slugs.buckets ~}}
+      {{> region title=(lookup @root.data.supplimentaryResponses.types.aggregations.regions.buckets @index) slug=key}}
+      {{/each ~}}
+    </select>
+  </div>
+
+  <button class="btn btn-primary" type="submit">
+    Search jobs
+  </button>
+</form>

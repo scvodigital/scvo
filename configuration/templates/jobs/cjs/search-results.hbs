@@ -1,0 +1,116 @@
+{{#*inline "sector"}}
+<li class="menu-item">
+  <span class="text">
+    <a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}?sector={{slug}}">{{title.key}}</a>
+  </span>
+  <span class="meta float-right" aria-label="{{doc_count}} vacancies">{{doc_count}}</span>
+</li>
+{{/inline}}
+{{#*inline "region"}}
+<li class="menu-item">
+  <span class="text">
+    <a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}?region={{slug}}">{{title.key}}</a>
+  </span>
+  <span class="meta float-right" aria-label="{{doc_count}} vacancies">{{doc_count}}</span>
+</li>
+{{/inline}}
+
+{{#compare @root.data.supplimentaryResponses.types.hits.total ">" 0 ~}}
+{{#ifAny @root.request.params.query.view @root.request.params.query.q @root.request.params.query.job_number @root.request.params.query.location @root.request.params.query.sector request.params.query.region ~}}
+{{#compare @root.request.params.query.view "===" "map" ~}}
+<div id="detailed-results-container" class="container-content container-map">
+  <div id="map-full" data-map-name="fullMap" data-map-clustered-options='{
+    {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}}
+    "circle": {
+      "lat": {{@root.request.params.query.lat}},
+      "lng": {{@root.request.params.query.lng}},
+      "radius": {{default @root.request.params.query.distance 0}},
+      "color": "#0081BB"
+    }
+    {{/ifAll ~}} }'>
+    {{#each @root.data.primaryResponse.hits.hits ~}}
+    {{#if _source.geo_coords ~}}
+    {{#each (arrayify _source.geo_coords) ~}}
+    <marker style="display:none;" data-map="fullMap" data-lat="{{lat}}" data-lng="{{lon}}" data-title="{{../_source.title}}" data-type="{{../_type}}">
+      {{#with ../_source ~}}
+      <div class="map-content">
+        <h3 class="mdc-typography--headline6">
+          <a href="{{@root.request.url.pathname}}/{{Id}}/{{title_slug}}{{> query_search}}">{{title}}</a>
+        </h3>
+        {{#if organisation.name ~}}
+        <div class="mdc-typography--body1 v-margin">
+          {{organisation.name}}
+        </div>
+        {{/if ~}}
+        <div class="mdc-typography--body2">
+          <a href="{{@root.request.url.pathname}}/{{Id}}/{{title_slug}}{{> query_search}}" class="mdc-card__action">Find out more</a>
+        </div>
+      </div>
+      {{/with ~}}
+    </marker>
+    {{/each ~}}
+    {{/if ~}}
+    {{/each ~}}
+  </div>
+</div>
+{{else}}
+{{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
+{{> search_info paging=@root.data.primaryResponse.pagination}}
+
+{{#each @root.data.primaryResponse.hits.hits ~}}
+{{{_source.rendered.scvo_list}}}
+{{/each ~}}
+
+{{> pagination paging=@root.data.primaryResponse.pagination}}
+{{else}}
+<div class="search-info">
+  {{#if @root.request.params.query.q ~}}
+  No vacancies could be found for your search, please try different keywords.
+  {{else}}
+  {{#if @root.request.params.query.job_number ~}}
+  The job number <strong>{{request.params.query.job_number}}</strong> does not match any current vacancies.
+  {{else}}
+  No current vacancies in the selected category, please check again soon.
+  {{/if ~}}
+  {{/if ~}}
+</div>
+{{/compare ~}}
+{{/compare ~}}
+{{else}}
+<div class="cjs-search-list">
+  <div class="columns">
+    <div class="column col-6 col-md-12">
+      <h2>Sectors</h2>
+      <ul class="list-sector menu">
+        {{#each @root.data.supplimentaryResponses.types.aggregations.sectors_slugs.buckets ~}}
+        {{#if key ~}}
+        {{> sector title=(lookup @root.data.supplimentaryResponses.types.aggregations.sectors.buckets @index) slug=key doc_count=doc_count}}
+        {{/if ~}}
+        {{/each ~}}
+      </ul>
+    </div>
+    <div class="column col-6 col-md-12">
+      <h2>Regions</h2>
+      <ul class="list-region menu">
+        {{#each @root.data.supplimentaryResponses.types.aggregations.regions_slugs.buckets ~}}
+        {{#if key ~}}
+        {{> region title=(lookup @root.data.supplimentaryResponses.types.aggregations.regions.buckets @index) slug=key doc_count=doc_count}}
+        {{/if ~}}
+        {{/each ~}}
+      </ul>
+    </div>
+  </div>
+</div>
+{{/ifAny ~}}
+
+<p class="t-margin-full">
+  Please view the opportunities available but if you cannot see a CJS job that would suit your customer then please contact the CJS team at <a href="mailto:communityjobsscotland@scvo.org.uk">communityjobsscotland@scvo.org.uk</a> with details and we can try and arrange an another opportunity. Read our full <a href="/privacy/community-jobs-scotland" target="_blank" rel="noopener">Privacy Notice</a>.
+</p>
+
+{{> footers_cjs}}
+
+{{else}}
+<h4 class="t-margin-full t-padding-full">
+  Sorry, we have no CJS vacancies available at the moment - please check back soon
+</h4>
+{{/compare ~}}

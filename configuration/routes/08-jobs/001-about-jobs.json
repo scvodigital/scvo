@@ -1,10 +1,9 @@
 {
-  "name": "cjs_job_search",
-  "pattern": "/jobs/community-jobs-scotland/vacancies/:phase",
-  "debug": false,
+  "name": "page_about_jobs",
+  "debug": true,
+  "pattern": "/about/work-with-us",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
-    "context.metaData.commonTasks.cjsAuthNotRequired",
     {
       "name": "primaryResponse",
       "taskModule": "elasticsearch",
@@ -15,8 +14,9 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "cjs-vacancy",
-          "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-search"
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page",
+          "noResultsRoute": "four_oh_four"
         }
       },
       "renderer": "handlebars"
@@ -31,10 +31,10 @@
         },
         "queryTemplates": [
           {
-            "name": "types",
+            "name": "scvo_jobs",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "cjs-vacancy",
-            "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-aggs"
+            "type": "goodmoves-vacancy",
+            "template": ">context.metaData.handlebars.queries.jobs_scvo-jobs"
           }
         ]
       },
@@ -55,9 +55,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-search-head-tags",
-              "body": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-search",
-              "footer": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-footer"
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar",
+              "body": ">context.metaData.handlebars.templates.jobs_scvo-vacancies"
             },
             "contentType": "text/html"
           }

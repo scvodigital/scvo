@@ -1,7 +1,7 @@
 {
-  "name": "cjs_job",
-  "pattern": "/jobs/community-jobs-scotland/vacancies/:phase/:id(/:junk)",
-  "debug": false,
+  "name": "cjs_job_search",
+  "debug": true,
+  "pattern": "/jobs/community-jobs-scotland/vacancies/:phase",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     "context.metaData.commonTasks.cjsAuthNotRequired",
@@ -16,8 +16,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "cjs-vacancy",
-          "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy",
-          "noResultsRoute": "four_oh_four"
+          "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-search"
         }
       },
       "renderer": "handlebars"
@@ -56,9 +55,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.jobs_cjs-vacancy",
-              "footer": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-footer"
+              "head": ">context.metaData.handlebars.templates.jobs_cjs_search-head-tags",
+              "header": ">context.metaData.handlebars.templates.jobs_cjs_search-header",
+              "body": ">context.metaData.handlebars.templates.jobs_cjs_search-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.jobs_cjs_search-sidebar",
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs_footer"
             },
             "contentType": "text/html"
           }
