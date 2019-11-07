@@ -1,8 +1,7 @@
 {
   "name": "delete-user",
-  "pattern": "/delete-user",
-
   "debug": true,
+  "pattern": "/delete-user",
   "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.authRequired",

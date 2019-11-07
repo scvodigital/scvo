@@ -30,7 +30,7 @@
 		}
 	},
   "cjsAuthNotRequired": {
-    "name": "auth",
+    "name": "cjsAuth",
     "taskModule": "firebaseAuth",
     "config": {
       "tokenPath": "request.cookies.cjs_token",
@@ -46,7 +46,7 @@
     }
   },
   "cjsAuthRequired": {
-    "name": "auth",
+    "name": "cjsAuth",
     "taskModule": "firebaseAuth",
     "config": {
       "tokenPath": "request.cookies.cjs_token",

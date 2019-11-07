@@ -5,7 +5,7 @@
   "errorRoute": "five_hundred",
   "tasks": [
     {
-      "name": "auth",
+      "name": "cjsAuth",
       "taskModule": "firebaseGetSession",
       "config": {
         "tokenPath": "request.params.query.token",
@@ -24,7 +24,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "body",
-        "template": "{{{safeStringify @root.data.auth}}}",
+        "template": "{{{safeStringify @root.data.cjsAuth}}}",
         "parseJson": true
       }
     }

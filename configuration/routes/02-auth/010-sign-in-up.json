@@ -3,9 +3,6 @@
   "pattern": "/scvo-account",
   "debug": true,
   "errorRoute": "five_hundred",
-  "metaData": {
-    "title": "Sign in"
-  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

@@ -20,8 +20,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.account_cjs-sign-in",
-              "footer": ">context.metaData.handlebars.templates.jobs_cjs-vacancy-footer"
+              "header": ">context.metaData.handlebars.templates.account_auth_cjs-sign-in-header",
+              "body": ">context.metaData.handlebars.templates.account_auth_cjs-sign-in-body",
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs_footer"
             },
             "contentType": "text/html"
           }

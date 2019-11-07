@@ -3,9 +3,6 @@
   "pattern": "/sign-up-details",
   "debug": true,
   "errorRoute": "five_hundred",
-  "metaData": {
-    "title": "Sign up"
-  },
   "tasks": [
     "context.metaData.commonTasks.authRequired",
     "context.metaData.commonTasks.getSignUpStatus",

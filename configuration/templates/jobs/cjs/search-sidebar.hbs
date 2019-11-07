@@ -18,10 +18,20 @@
 <form action="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}" method="GET">
   <input type="hidden" name="view" value="{{@root.request.params.query.view}}" />
 
-  {{#>components_tab_bar}}
-  {{>components_tab url=(concat "/jobs/community-jobs-scotland/vacancies/" @root.request.params.phase "?" (querystringify @root.request.params.query view="list")) iconClasses="far fa-list fa-fw" label="List" active=(compare @root.request.params.query.view "===" "list")}}
-  {{>components_tab url=(concat "/jobs/community-jobs-scotland/vacancies/" @root.request.params.phase "?" (querystringify @root.request.params.query view="map")) iconClasses="far fa-map-marker-alt fa-fw" label="Map" active=(compare @root.request.params.query.view "===" "map")}}
-  {{/components_tab_bar}}
+  <ul class="tab tab-block b-margin">
+    <li class="tab-item{{#compare @root.request.params.query.view '!==' 'map'}} active{{/compare}}">
+      <a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}?{{querystringify @root.request.params.query view='list'}}">
+        <span class="far fa-list fa-fw"></span>
+        List
+      </a>
+    </li>
+    <li class="tab-item{{#compare @root.request.params.query.view 'map'}} active{{/compare}}">
+      <a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}?{{querystringify @root.request.params.query view='map'}}">
+        <span class="far fa-map-marker-alt fa-fw"></span>
+        Map
+      </a>
+    </li>
+  </ul>
 
   <div class="form-group has-icon-left">
     <span class="far fa-search form-icon" tabindex="0"></span>
