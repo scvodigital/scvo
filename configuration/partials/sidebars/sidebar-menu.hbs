@@ -9,7 +9,7 @@
     {{#if children ~}}
       {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
         <ul class="menu menu-depth-2">
-          {{#if this}}
+          {{#if this ~}}
           {{> childMenu this level=1}}
           {{/if ~}}
           {{#each this.children ~}}
@@ -21,10 +21,10 @@
           {{#if children ~}}
             {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
               <ul class="menu menu-depth-3">
-                {{#if ../this}}
+                {{#if ../this ~}}
                 {{> childMenu ../this level=1}}
                 {{/if ~}}
-                {{#if this}}
+                {{#if this ~}}
                 {{> childMenu this level=2}}
                 {{/if ~}}
                 {{#each this.children ~}}
@@ -36,13 +36,13 @@
                 {{#if children ~}}
                   {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
                     <ul class="menu menu-depth-4">
-                      {{#if ../../this}}
+                      {{#if ../../this ~}}
                       {{> childMenu ../../this level=1}}
                       {{/if ~}}
-                      {{#if ../this}}
+                      {{#if ../this ~}}
                       {{> childMenu ../this level=2}}
                       {{/if ~}}
-                      {{#if this}}
+                      {{#if this ~}}
                       {{> childMenu this level=3}}
                       {{/if ~}}
                       {{#each this.children ~}}
@@ -53,13 +53,13 @@
                     {{#each children ~}}
                       {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
                       <ul class="menu menu-depth-4">
-                        {{#if ../../../this}}
+                        {{#if ../../../this ~}}
                         {{> childMenu ../../../this level=1}}
                         {{/if ~}}
-                        {{#if ../../this}}
+                        {{#if ../../this ~}}
                         {{> childMenu ../../this level=2}}
                         {{/if ~}}
-                        {{#if ../this}}
+                        {{#if ../this ~}}
                         {{> childMenu ../this level=3}}
                         {{/if ~}}
                         {{#each ../this.children ~}}
@@ -72,10 +72,10 @@
                 {{else}}
                   {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
                     <ul class="menu menu-depth-3">
-                      {{#if ../../this}}
+                      {{#if ../../this ~}}
                       {{> childMenu ../../this level=1}}
                       {{/if ~}}
-                      {{#if ../this}}
+                      {{#if ../this ~}}
                       {{> childMenu ../this level=2}}
                       {{/if ~}}
                       {{#each ../this.children ~}}
@@ -89,7 +89,7 @@
           {{else}}
             {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
             <ul class="menu menu-depth-2">
-              {{#if ../this}}
+              {{#if ../this ~}}
               {{> childMenu ../this level=1}}
               {{/if ~}}
               {{#each ../this.children ~}}

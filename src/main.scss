@@ -424,8 +424,8 @@ header {
     text-align: left;
     .menu {
       padding: $unit/2 0;
-      left: .4rem;
-      right: .4rem,
+      left: 0;
+      right: 0,
     }
     .menu .menu-item>a {
       border-radius: 0;
@@ -476,18 +476,15 @@ header.toolbar {
   border-bottom: $thick-underline solid $primary-color;
   .btn {
     color: $secondary-color;
+    border-radius: $border-radius $border-radius 0 0 !important;
   }
-  .site-tab-bar {
-    // .btn:first-child {
-    //   padding-left: 0;
-    // }
-    .btn {
-      border-radius: $border-radius $border-radius 0 0;
-    }
-    .btn.active {
-      background-color: $primary-color;
-      color: white;
-    }
+  .btn:hover,
+  .btn:focus {
+    color: $secondary-color;
+  }
+  .btn.active {
+    background-color: $primary-color;
+    color: white;
   }
 }
 

@@ -105,7 +105,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
         {{#if data.auth ~}}
           <div class="dropdown my-account signed-in">
             <div class="btn-group">
-              <a href="#" class="btn btn-link dropdown-toggle">
+              <a href="#" class="btn btn-link dropdown-toggle{{#each context.metaData.layoutMenus.user}}{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}{{/each}}">
                 {{#if @root.data.auth.photoURL ~}}
                   <img src="{{@root.data.auth.photoURL}}" class="avatar avatar-sm" />
                 {{else}}
