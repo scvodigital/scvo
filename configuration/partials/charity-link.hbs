@@ -1,0 +1,6 @@
+{{~#if (regexMatch (trim charity_number) "^SC[0-9]{6}$" "ig")~}}
+  https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{trim charity_number}}
+{{~/if~}}
+{{~#if (regexMatch (trim charity_number) "^[0-9]+$" "ig")~}}
+  https://beta.charitycommission.gov.uk/charity-details?subid=0&regid={{trim charity_number}}
+{{~/if}}

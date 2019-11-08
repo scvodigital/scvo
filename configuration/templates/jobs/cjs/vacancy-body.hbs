@@ -9,7 +9,7 @@
       <dt>Organisation</dt>
       <dd>
         {{organisation.name}}
-        {{{rendered.cjs_charity_info}}}
+        {{> charity_info charity_number=organisation.charity_number}}
       </dd>
       {{#if job_website ~}}
       <dt>Job website</dt>
