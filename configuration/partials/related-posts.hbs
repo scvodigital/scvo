@@ -4,7 +4,7 @@
   <div class="columns">
     {{#each @root.data.supplimentaryResponses.related_posts.hits.hits ~}}
     <div class="column col-3 col-md-6 col-sm-12">
-      {{{_source.rendered.scvo_gist}}}
+      {{> post_gist _source}}
     </div>
     {{/each ~}}
   </div>

@@ -1,5 +1,100 @@
 {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-{{{@root.data.primaryResponse.hits.hits.[0]._source.rendered.scvo_full}}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<div class="full scvo-member">
+  {{#if og_image ~}}
+  <img src="{{og_image}}" alt="{{title}}" />
+  {{/if ~}}
+  {{!-- <h3>
+    {{title}}
+    {{#if alias}}
+    ({{alias}})
+    {{/if}}
+  </h3> --}}
+  <div class="post-info">
+    <div class="post-info-item">
+      {{#compare membership_category "Grassroots Member"}}
+      <span class="fas fa-heart"></span>
+      Full member
+      {{/compare}}
+      {{#compare membership_category "Associate Member (Individual - Inc TFN)"}}
+      <span class="far fa-heart"></span>
+      Associate member
+      {{/compare}}
+      {{#compare membership_category "Associate Member (Private / Public)"}}
+      <span class="far fa-heart"></span>
+      Associate member
+      {{/compare}}
+      {{#compare membership_category "Full Member"}}
+      <span class="fas fa-heart"></span>
+      Full member
+      {{/compare}}
+      {{#compare membership_category "Associate Member (Individual Exc TFN)"}}
+      <span class="far fa-heart"></span>
+      Associate member
+      {{/compare}}
+      {{#compare membership_category "Associate Member (Vol - Outside Scot)"}}
+      <span class="far fa-heart"></span>
+      Associate member
+      {{/compare}}
+      {{#compare membership_category "Associate Organisation, Network Member (CABx)"}}
+      <span class="far fa-heart"></span>
+      Associate member (other)
+      {{/compare}}
+      {{#compare membership_category "Complimentary Member"}}
+      <span class="far fa-heart"></span>
+      Associate member (other)
+      {{/compare}}
+      {{#compare membership_category "Local Organisation"}}
+      <span class="far fa-heart"></span>
+      Associate member (other)
+      {{/compare}}
+      {{#compare membership_category "National Organisation"}}
+      <span class="far fa-heart"></span>
+      Associate member (other)
+      {{/compare}}
+    </div>
+    {{#if membership_number ~}}
+    <div class="post-info-item">
+      <span class="far fa-certificate"></span>
+      Membership number {{membership_number}}
+    </div>
+    {{/if ~}}
+    {{#if charity_number ~}}
+    <div class="post-info-item">
+      <span class="far fa-badge-check"></span>
+      Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{charity_number}}">{{charity_number}}</a>
+    </div>
+    {{/if ~}}
+  </div>
+
+  {{#if website ~}}
+  {{#compare website '!==' 'http://'}}
+  <p>
+    <strong>Website:</strong>
+    <a href="{{fixUrl website}}">{{website}}</a>
+  </p>
+  {{/compare}}
+  {{/if ~}}
+
+  {{#if twitter ~}}
+  {{#compare twitter '!==' 'http://'}}
+  <p>
+    <strong>Twitter:</strong>
+    <a href="{{fixUrl twitter}}">{{twitter}}</a>
+  </p>
+  {{/compare ~}}
+  {{/if ~}}
+
+  {{#if facebook ~}}
+  {{#compare facebook '!==' 'http://'}}
+  <p>
+    <strong>Facebook:</strong>
+    <a href="{{fixUrl facebook}}">{{facebook}}</a>
+  </p>
+  {{/compare ~}}
+  {{/if ~}}
+</div>
+{{/with ~}}
 {{else}}
 <h2>Error 404: Member could not be found</h2>
 {{/if ~}}

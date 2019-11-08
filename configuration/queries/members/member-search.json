@@ -3,7 +3,8 @@
   "size": 10,
   "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
-    "rendered.scvo_list"
+    "Id",
+    "title"
   ],
   "query": {
     "bool": {
@@ -37,7 +38,8 @@
   "size": 5,
   "from": 0,
   "_source": [
-    "rendered.scvo_list"
+    "Id",
+    "title"
   ],
   "query": {
     "function_score": {

@@ -1,13 +1,19 @@
 {
   "size": 1,
   "_source": [
-    "rendered.scvo_full",
-    "rendered.json_ld",
-    "title"
+    "title",
+    "og_image",
+    "membership_category",
+    "membership_number",
+    "charity_number",
+    "website",
+    "twitter",
+    "facebook",
+    "rendered.json_ld"
   ],
   "query": {
     "term": {
-      "slug": "{{request.params.slug}}"
+      "Id": "{{@root.request.params.member_id}}"
     }
   }
 }

@@ -18,7 +18,12 @@
 {{/if ~}}
 
 {{#each @root.data.primaryResponse.hits.hits ~}}
-{{{this._source.rendered.scvo_list}}}
+{{#with _source ~}}
+<h4><a href="/about/members/{{Id}}/{{slugify title}}">{{{title}}}</a></h4>
+{{!-- <p>
+  <a href="/about/members/{{Id}}/{{slugify title}}">Read more</a>
+</p> --}}
+{{/with ~}}
 {{/each ~}}
 
 {{#ifAny @root.request.params.query.q @root.request.params.query.type ~}}
