@@ -61,8 +61,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_digital_landing",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_digital_landing-header",
+              "body": ">context.metaData.handlebars.templates.pages_digital_landing-body"
             },
             "contentType": "text/html"
           }

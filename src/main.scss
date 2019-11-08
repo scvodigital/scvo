@@ -476,6 +476,9 @@ header.header {
     max-width: 220px;
     margin-left: -10px;
   }
+  .input-inline .form-input {
+    width: 320px;
+  }
 }
 header.toolbar {
   padding-bottom: 0;
@@ -508,6 +511,12 @@ header.toolbar {
       height: auto;
       padding: 0;
     }
+  }
+}
+
+.logos {
+  img {
+    max-width: 100%;
   }
 }
 
