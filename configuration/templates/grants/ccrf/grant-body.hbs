@@ -1,68 +1,62 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <div class="full scvo-grant scvo-grant-cats">
-  {{#if recipient_overview}}
+  {{#if recipient_overview ~}}
   <div>
     {{{markdown recipient_overview}}}
   </div>
-  {{/if}}
+  {{/if ~}}
 
   <ul class="fa-ul">
-    {{#if planned_start}}
-    {{#if planned_end}}
+    {{#if planned_start ~}}
+    {{#if planned_end ~}}
     <li>
-      <span class="fa-li far fa-calendar-alt"></span>
+      <span class="fa-li"><span class="far fa-calendar-alt"></span></span>
       From {{momentFormat (moment planned_start "x") "Do MMMM YYYY"}}
       to {{momentFormat (moment planned_end "x") "Do MMMM YYYY"}}
     </li>
-    {{/if}}
-    {{/if}}
-    {{#if call}}
+    {{/if ~}}
+    {{/if ~}}
+    {{#if call ~}}
     <li>
-      <span class="fa-li far fa-money-bill"></span>
-      {{#if amount_awarded}}
+      <span class="fa-li"><span class="far fa-money-bill"></span></span>
+      {{#if amount_awarded ~}}
       Award: &pound;{{addCommas amount_awarded}} via <a href="/running-your-organisation/funding/carers-act-transformation-support-fund/projects?call={{slugify call}}">{{call}}</a>
       {{else}}
-      {{#if amount_requested_total}}
+      {{#if amount_requested_total ~}}
       Award: &pound;{{addCommas amount_requested_total}} via <a href="/running-your-organisation/funding/carers-act-transformation-support-fund/projects?call={{slugify call}}">{{call}}</a>
       {{else}}
-      {{#if amount_requested}}
+      {{#if amount_requested ~}}
       Award: &pound;{{addCommas amount_requested}} via <a href="/running-your-organisation/funding/carers-act-transformation-support-fund/projects?call={{slugify call}}">{{call}}</a>
-      {{/if}}
-      {{/if}}
-      {{/if}}
+      {{/if ~}}
+      {{/if ~}}
+      {{/if ~}}
     </li>
     {{/if}}
     <li>
-      <span class="fa-li far fa-database"></span>
+      <span class="fa-li"><span class="far fa-database"></span></span>
       <a href="http://grantnav.threesixtygiving.org/grant/360G-SCVO-{{Id}}" target="_blank">Data published on 360Giving</a>
     </li>
     {{#if recipient_charity_number ~}}
     <li>
-      <span class="fa-li far fa-badge-check"></span>
+      <span class="fa-li"><span class="far fa-badge-check"></span></span>
       Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}">{{recipient_charity_number}}</a>
     </li>
     {{/if ~}}
     {{#if recipient_url ~}}
     <li>
-      <span class="fa-li far fa-link"></span>
-      <a href="{{fixUrl recipient_url 'http'}}">
-        {{recipient_url}}
-      </a>
+      <span class="fa-li"><span class="far fa-link"></span></span>
+      <a href="{{fixUrl recipient_url 'http'}}">{{recipient_url}}</a>
     </li>
     {{/if ~}}
     {{#if recipient_twitter ~}}
     <li>
-      <span class="fa-li fab fa-twitter"></span>
-      <a href="{{fixUrl recipient_twitter 'http'}}">
-        Twitter
-      </a>
+      <span class="fa-li"><span class="fab fa-twitter"></span></span>
+      <a href="{{fixUrl recipient_twitter 'http'}}">Twitter</a>
     {{/if ~}}
     {{#if recipient_facebook ~}}
     <li>
-      <span class="fa-li fab fa-facebook"></span>
-      <a href="{{fixUrl recipient_facebook 'http'}}">
-        Facebook
-      </a>
+      <span class="fa-li"><span class="fab fa-facebook"></span></span>
+      <a href="{{fixUrl recipient_facebook 'http'}}">Facebook</a>
     </li>
     {{/if ~}}
   </ul>
