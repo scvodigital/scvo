@@ -520,6 +520,17 @@ header.toolbar {
   }
 }
 
+.event-content {
+  p {
+    u {
+      text-decoration: none;
+    }
+    span {
+      margin-right: $unit/5;
+    }
+  }
+}
+
 .pagination {
   justify-content: center;
 }

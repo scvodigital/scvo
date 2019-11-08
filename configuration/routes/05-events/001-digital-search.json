@@ -1,9 +1,9 @@
 {
-  "name": "event",
+  "name": "event_digital_search",
   "debug": true,
-  "pattern": "/events/:id(/:junk)",
+  "pattern": "/digital/events",
   "metaData": {
-    "searchUrl": "/events"
+    "searchUrl": "/digital/events"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -18,8 +18,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-event",
-          "template": ">context.metaData.handlebars.queries.events_event",
-          "noResultsRoute": "four_oh_four"
+          "template": ">context.metaData.handlebars.queries.events_digital-search"
         }
       },
       "renderer": "handlebars"
@@ -34,22 +33,10 @@
         },
         "queryTemplates": [
           {
-            "name": "related_events",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_related"
-          },
-          {
-            "name": "same_events",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_same"
-          },
-          {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_aggs"
+            "template": ">context.metaData.handlebars.queries.events_digital-aggs"
           }
         ]
       },
@@ -70,11 +57,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.events_event-header",
+              "head": ">context.metaData.handlebars.templates.events_digital_search-head-tags",
+              "header": ">context.metaData.handlebars.templates.events_digital_search-header",
               "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.events_search-sidebar",
-              "body": ">context.metaData.handlebars.templates.events_event-body"
+              "rightSidebar": ">context.metaData.handlebars.templates.events_digital_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.events_search-results"
             },
             "contentType": "text/html"
           }

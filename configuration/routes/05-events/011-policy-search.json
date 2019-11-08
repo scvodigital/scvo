@@ -1,7 +1,10 @@
 {
-  "name": "event_policy_booking",
-  "pattern": "/policy-research/events/:id(/:junk)/book",
-  "debug": false,
+  "name": "event_policy_search",
+  "debug": true,
+  "pattern": "/policy-research/events",
+  "metaData": {
+    "searchUrl": "/policy-research/events"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -15,8 +18,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-event",
-          "template": ">context.metaData.handlebars.queries.events_event",
-          "noResultsRoute": "four_oh_four"
+          "template": ">context.metaData.handlebars.queries.events_policy-search"
         }
       },
       "renderer": "handlebars"
@@ -55,9 +57,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.events_policy-booking",
-              "foot": ""
+              "head": ">context.metaData.handlebars.templates.events_policy_search-head-tags",
+              "header": ">context.metaData.handlebars.templates.events_policy_search-header",
+              "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
+              "rightSidebar": ">context.metaData.handlebars.templates.events_policy_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.events_search-results"
             },
             "contentType": "text/html"
           }

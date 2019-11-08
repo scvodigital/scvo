@@ -1,6 +1,10 @@
 {
-  "name": "event_cjs_search",
-  "pattern": "__DISABLED__/jobs/community-jobs-scotland/training-opportunities",
+  "name": "event_digital",
+  "debug": true,
+  "pattern": "/digital/events/:id(/:junk)",
+  "metaData": {
+    "searchUrl": "/digital/events"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -14,7 +18,8 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-event",
-          "template": ">context.metaData.handlebars.queries.events_search"
+          "template": ">context.metaData.handlebars.queries.events_event",
+          "noResultsRoute": "four_oh_four"
         }
       },
       "renderer": "handlebars"
@@ -29,10 +34,16 @@
         },
         "queryTemplates": [
           {
+            "name": "related_events",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-event",
+            "template": ">context.metaData.handlebars.queries.events_digital-related"
+          },
+          {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_aggs"
+            "template": ">context.metaData.handlebars.queries.events_digital-aggs"
           }
         ]
       },
@@ -53,9 +64,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.events_cjs-search-head-tags",
-              "body": ">context.metaData.handlebars.templates.events_cjs-search",
-              "foot": ""
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "header": ">context.metaData.handlebars.templates.events_digital_event-header",
+              "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
+              "body": ">context.metaData.handlebars.templates.events_event-body"
             },
             "contentType": "text/html"
           }

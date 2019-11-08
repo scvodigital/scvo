@@ -1,10 +1,7 @@
 {
-  "name": "event_policy_search",
-  "debug": true,
-  "pattern": "/policy-research/events",
-  "metaData": {
-    "searchUrl": "/policy-research/events"
-  },
+  "name": "event_booking",
+  "pattern": "/events/:id(/:junk)/book",
+  "debug": false,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -18,7 +15,8 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-event",
-          "template": ">context.metaData.handlebars.queries.events_policy-search"
+          "template": ">context.metaData.handlebars.queries.events_event",
+          "noResultsRoute": "four_oh_four"
         }
       },
       "renderer": "handlebars"
@@ -36,7 +34,7 @@
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_policy-aggs"
+            "template": ">context.metaData.handlebars.queries.events_aggs"
           }
         ]
       },
@@ -57,11 +55,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.events_policy-search-head-tags",
-              "header": ">context.metaData.handlebars.templates.events_policy-search-header",
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "header": ">context.metaData.handlebars.templates.events_training_booking-header",
               "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.events_policy-search-sidebar",
-              "body": ">context.metaData.handlebars.templates.events_search-results"
+              "rightSidebar": ">context.metaData.handlebars.templates.events_training_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.events_training_booking-body"
             },
             "contentType": "text/html"
           }

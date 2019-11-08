@@ -1,9 +1,9 @@
 {
-  "name": "event_policy",
+  "name": "event",
   "debug": true,
-  "pattern": "/policy-research/events/:id(/:junk)",
+  "pattern": "/events/:id(/:junk)",
   "metaData": {
-    "searchUrl": "/policy-research/events"
+    "searchUrl": "/events"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -37,13 +37,19 @@
             "name": "related_events",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_policy-related"
+            "template": ">context.metaData.handlebars.queries.events_related"
+          },
+          {
+            "name": "same_events",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-event",
+            "template": ">context.metaData.handlebars.queries.events_same"
           },
           {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_policy-aggs"
+            "template": ">context.metaData.handlebars.queries.events_aggs"
           }
         ]
       },
@@ -65,9 +71,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.events_policy-search-header",
+              "header": ">context.metaData.handlebars.templates.events_training_event-header",
               "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.events_policy-search-sidebar",
               "body": ">context.metaData.handlebars.templates.events_event-body"
             },
             "contentType": "text/html"

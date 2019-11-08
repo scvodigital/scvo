@@ -1,10 +1,7 @@
 {
-  "name": "event_digital",
-  "debug": true,
-  "pattern": "/digital/events/:id(/:junk)",
-  "metaData": {
-    "searchUrl": "/digital/events"
-  },
+  "name": "event_policy_booking",
+  "pattern": "/policy-research/events/:id(/:junk)/book",
+  "debug": false,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -34,16 +31,10 @@
         },
         "queryTemplates": [
           {
-            "name": "related_events",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_digital-related"
-          },
-          {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_digital-aggs"
+            "template": ">context.metaData.handlebars.queries.events_policy-aggs"
           }
         ]
       },
@@ -65,10 +56,10 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.events_digital-header",
+              "header": ">context.metaData.handlebars.templates.events_policy_booking-header",
               "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.events_search-sidebar",
-              "body": ">context.metaData.handlebars.templates.events_event-body"
+              "rightSidebar": ">context.metaData.handlebars.templates.events_policy_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.events_policy_booking-body"
             },
             "contentType": "text/html"
           }

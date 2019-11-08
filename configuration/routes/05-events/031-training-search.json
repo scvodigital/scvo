@@ -1,6 +1,10 @@
 {
-  "name": "event_cjs_booking",
-  "pattern": "/jobs/community-jobs-scotland/training-opportunities/:event_slug/book",
+  "name": "event_search",
+  "debug": true,
+  "pattern": "/events",
+  "metaData": {
+    "searchUrl": "/events"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -14,8 +18,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-event",
-          "template": ">context.metaData.handlebars.queries.events_event",
-          "noResultsRoute": "four_oh_four"
+          "template": ">context.metaData.handlebars.queries.events_search"
         }
       },
       "renderer": "handlebars"
@@ -54,9 +57,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.events_cjs-booking",
-              "foot": ""
+              "head": ">context.metaData.handlebars.templates.events_training_search-head-tags",
+              "header": ">context.metaData.handlebars.templates.events_training_search-header",
+              "leftSidebar": ">context.metaData.handlebars.templates.events_search-form",
+              "rightSidebar": ">context.metaData.handlebars.templates.events_training_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.events_search-results"
             },
             "contentType": "text/html"
           }
