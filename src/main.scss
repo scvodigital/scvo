@@ -7,7 +7,7 @@ $secondary-color: #0c2133;
 $secondary-color-light: lighten($secondary-color, 30%) !default;
 $secondary-color-dark: darken($secondary-color, 6%) !default;
 $dark-color: #10183A;
-$gray-color: #333E48;
+$gray-color: #c4c9ce;
 $light-color: #fafafa;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
@@ -84,7 +84,7 @@ body *::before {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin: $unit/2 0 $unit;
 }
 .mdc-typography--title,
@@ -149,6 +149,10 @@ strong {
   font-weight: $link-font-weight;
 }
 
+.breadcrumb .breadcrumb-item {
+  color: $secondary-color;
+  font-weight: $link-font-weight;
+}
 a:visited,
 .breadcrumb .breadcrumb-item:not(:last-child) a,
 a:not(.btn) {
@@ -162,9 +166,6 @@ a:hover {
   text-decoration: none;
   color: $primary-color;
   border-bottom-color: $primary-color;
-}
-.breadcrumb-item {
-  font-weight: $link-font-weight;
 }
 footer .footer-main a:hover {
   border-bottom-color: white;
@@ -218,6 +219,53 @@ a.pure-menu-link:hover {
   background-color: $secondary-color-dark;
 }
 
+main,
+aside {
+  a[href^="http://"]::after,
+  a[href^="https://"]::after {
+    font-family: 'Font Awesome\ 5 Pro';
+    content: "\f08e";
+    font-weight: 600;
+    margin-left: $unit/4;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1.2rem;
+    font-size: 70%;
+    top: -0.1rem;
+    position: relative;
+  }
+  a.noext::after,
+  a[href^="https://scvo.org"]::after,
+  a[href^="https://scvo.org.uk"]::after,
+  a[href^="https://storage.googleapis.com"]::after,
+  a[href^="https://www.facebook.com/SCVO1939"]::after,
+  a[href^="https://twitter.com/scvotweet"]::after,
+  a[href^="https://maps.google.co.uk"]::after,
+  a[href^="http://goodhq.org"]::after,
+  a[href^="https://goodhq.org"]::after,
+  a[href^="http://getinvolved.scot"]::after,
+  a[href^="https://getinvolved.scot"]::after,
+  a[href^="http://thirdforcenews.org.uk"]::after,
+  a[href^="https://thirdforcenews.org.uk"]::after,
+  a[href^="http://www.thirdforcenews.org.uk"]::after,
+  a[href^="https://www.thirdforcenews.org.uk"]::after,
+  a[href^="https://scvocreditunion"]::after,
+  a[href^="https://members.scvocreditunion"]::after,
+  a[href^="http://goodmoves"]::after,
+  a[href^="https://goodmoves"]::after,
+  a[href^="http://fundingscotland"]::after,
+  a[href^="https://fundingscotland"]::after {
+    content: "";
+    margin: 0;
+    top: 0;
+    display: none;
+  }
+}
+
 .wp-block-embed {
   margin: 0;
 }
@@ -250,6 +298,7 @@ a.pure-menu-link:hover {
 .input-group {
   .form-input {
     width: auto;
+    border-color: $primary-color;
   }
   .form-select {
     width: fit-content;
@@ -418,8 +467,6 @@ a.pure-menu-link:hover {
 }
 header {
   position: relative;
-  padding-top: $unit/2;
-  padding-bottom: $unit/2;
   .brand {
     float: left;
   }
@@ -461,10 +508,14 @@ header {
     }
   }
 }
+.navbar .navbar-section {
+  align-items: flex-start;
+}
 .my-account.dropdown.signed-in {
   min-width: 240px;
 }
 header.header {
+  padding-top: $unit/2;
   .navbar-brand img {
     max-width: 220px;
     margin-left: -10px;
@@ -474,7 +525,7 @@ header.header {
   }
 }
 header.toolbar {
-  padding-bottom: 0;
+  // padding-top: $unit/2;
   border-bottom: $thick-underline solid $primary-color;
   .btn {
     color: $secondary-color;
@@ -518,8 +569,12 @@ header.toolbar {
     u {
       text-decoration: none;
     }
+    b,
     span {
       margin-right: $unit/5;
+    }
+    a b {
+      margin-right: 0;
     }
   }
 }
@@ -629,6 +684,11 @@ header.toolbar {
       margin-bottom: 0;
     }
   }
+}
+.full .post-info {
+  border-bottom: $thick-underline solid $gray-color;
+  padding-bottom: $unit/4;
+  margin-bottom: $unit/2;
 }
 .post-info {
   .post-info-item {
@@ -864,13 +924,13 @@ footer {
     }
   }
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.22rem;
   }
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.11rem;
   }
   h4 {
     font-size: 1rem;

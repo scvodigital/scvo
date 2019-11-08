@@ -56,7 +56,8 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
               "header": ">context.metaData.handlebars.templates.evidence-library_document-header",
-              "rightSidebar": ">context.metaData.handlebars.templates.evidence-library_search-sidebar",
+              "leftSidebar": ">context.metaData.handlebars.templates.evidence-library_search-form",
+              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar",
               "body": ">context.metaData.handlebars.templates.evidence-library_document-body"
             },
             "contentType": "text/html"

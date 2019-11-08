@@ -1,10 +1,10 @@
-<div class="search">
-  <h2 class="mdc-card__title">{{title}}</h2>
+<div class="search b-margin-full">
+  <h3>{{title}}</h3>
   <form action="{{searchPath}}" method="GET" autocomplete="off">
-    <div class="mdc-textfield mdc-textfield--upgraded">
-      <input type="text" class="mdc-textfield__input" name="q" id="wee-query" value="{{@root.request.params.query.q}}">
-      <button type="submit" class="mdc-toolbar__icon mdc-toolbar__search search-button-large" aria-label="Search" alt="Search">
-        <span class="far fa-2x fa-search" aria-hidden="true"></span>
+    <div class="input-group input-inline">
+      <input type="text" class="form-input" placeholder="Search" id="q" name="q" aria-label="Search keywords" value="{{@root.request.params.query.q}}">
+      <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
+        <span class="far fa-search" aria-hidden="true"></span>
       </button>
     </div>
     {{#each (keyValue (parse extraParams)) ~}}

@@ -539,6 +539,47 @@
 			}
 		]
 	}],
+	"policy": [{
+		"label": "Policy & research",
+		"path": "/policy-research",
+		"route": "^/policy-research$",
+		"children": [{
+				"label": "Events",
+				"path": "/policy-research/events",
+				"route": "^/policy-research/events$"
+			},
+			{
+				"label": "Evidence Library",
+				"path": "/policy-research/evidence-library",
+				"route": "^/policy-research/evidence-library$"
+			},
+			{
+				"label": "Policy Forum",
+				"path": "/policy-research/policy-forum",
+				"route": "^/policy-research/policy-forum$"
+			},
+			{
+				"label": "Policy wiki",
+				"path": "https://wiki.scvo.org",
+				"route": "^/policy-research/wiki$"
+			},
+			{
+				"label": "Positive partnerships",
+				"path": "/policy-research/positive-partnerships",
+				"route": "^/policy-research/positive-partnerships$"
+			},
+			{
+				"label": "Intermediaries",
+				"path": "/policy-research/intermediaries",
+				"route": "^/policy-research/intermediaries$"
+			},
+			{
+				"label": "SCVO Core Grant Plan 2018-20",
+				"path": "https://app.powerbi.com/view?r=eyJrIjoiYzk1NTg3YmYtODU4Mi00ZjM4LWJiNjgtMjYxMjAxYmY3ZWVhIiwidCI6ImMyOTQ5NGY5LTNhY2EtNGE3MS05NWUyLWM4ODBjNWE1ZThmOSIsImMiOjh9",
+				"route": "^/policy-research/core-grant-plan$"
+			}
+		]
+	}],
 	"i-love-charity": [{
 		"label": "Projects &#038; campaigns",
 		"path": "/projects-campaigns",

@@ -1,4 +1,5 @@
 {{> wee_search title="Search posts" searchPath="/search" searchRoute="main_search" extraParams='{ "type": "scvo-post" }'}}
+
 {{#if @root.data.primaryResponse.hits.hits.[0]._source.is_press_release ~}}
 <ul class="supplimentary-list">
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
@@ -31,9 +32,9 @@
 {{#if @root.data.primaryResponse.hits.hits.[0]._source.categories ~}}
 {{#compare @root.data.supplimentaryResponses.authors_posts.hits.total ">" 0 ~}}
 {{#compare @root.data.supplimentaryResponses.staff_profile.hits.total ">" 0 ~}}
-<h3 class="author static-sidebar">
+<h4 class="author static-sidebar">
   More posts by <a href="/post/author/{{@root.data.primaryResponse.hits.hits.[0]._source.author_slug}}">{{@root.data.primaryResponse.hits.hits.[0]._source.author_name_full}}</a>
-</h3>
+</h4>
 {{/compare ~}}
 <ul class="supplimentary-list">
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
