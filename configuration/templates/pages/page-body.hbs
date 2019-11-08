@@ -2,7 +2,7 @@
 {{> leading_quotation sourcePage=this}}
 
 <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
-  {{{replace content "http://cms.scvo.org/" "/"}}}
+  {{{replace (replace (replace content "http://scvo.org.uk/" "") "https://scvo.org.uk/" "") "http://cms.scvo.org/" "/"}}}
 
   {{!-- <div class="divider"></div> --}}
   <div class="page-info v-margin-full b-padding-full text-gray">

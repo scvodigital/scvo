@@ -63,7 +63,7 @@
       "addressCountry": "Scotland"{{#if recipient_url ~}}{{/if ~}}
       {{/if ~}}
       {{#if recipient_url ~}}
-      {{#compare recipient_url "===" "N/A" ~}}
+      {{#compare recipient_url "N/A" ~}}
       {{else}}
       {{#if (contains recipient_url "http") ~}}
       ,"url": "{{recipient_url}}"

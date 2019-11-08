@@ -1,5 +1,6 @@
 {
   "name": "grant_charter_search",
+  "debug": true,
   "pattern": "/digital/participation/charter-fund/projects",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -13,8 +14,8 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-grant-charter",
-          "template": ">context.metaData.handlebars.queries.grants_charter-search"
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page"
         }
       },
       "renderer": "handlebars"
@@ -29,10 +30,10 @@
         },
         "queryTemplates": [
           {
-            "name": "page",
+            "name": "grants",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-page",
-            "template": ">context.metaData.handlebars.queries.pages_page"
+            "type": "scvo-grant-charter",
+            "template": ">context.metaData.handlebars.queries.grants_charter-search"
           },
           {
             "name": "types",
@@ -59,9 +60,9 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.grants_charter-search-head-tags",
-              "body": ">context.metaData.handlebars.templates.grants_charter-search",
-              "foot": ""
+              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "body": ">context.metaData.handlebars.templates.grants_charter_search-results"
             },
             "contentType": "text/html"
           }

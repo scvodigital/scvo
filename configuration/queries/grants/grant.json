@@ -30,7 +30,7 @@
   ],
   "query": {
     "term": {
-      "slug": "{{request.params.project_slug}}"
+      "Id": "{{@root.request.params.project_id}}"
     }
   }
 }

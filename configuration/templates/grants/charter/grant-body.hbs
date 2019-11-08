@@ -1,0 +1,146 @@
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<div class="full scvo-grant scvo-grant-charter">
+  {{#if recipient_name ~}}
+  <h3 class="black-text">{{{recipient_name}}}</h3>
+  {{/if ~}}
+  {{#if recipient_charity_number ~}}
+  <p class="charity-info">
+    Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}">{{recipient_charity_number}}</a>
+  </p>
+  {{/if ~}}
+  {{#if recipient_overview ~}}
+  <div class="black-text">
+    {{{markdown recipient_overview}}}
+  </div>
+  {{/if ~}}
+  <ul class="fa-ul">
+    {{#if planned_start ~}}
+    {{#if planned_end ~}}
+    <li>
+      <span class="fa-li far fa-calendar-alt"></span>
+      From {{momentFormat (moment planned_start 'x') "Do MMMM YYYY"}}
+      to {{momentFormat (moment planned_end 'x') "Do MMMM YYYY"}}
+    </li>
+    {{/if ~}}
+    {{/if ~}}
+    {{#if call ~}}
+    <li>
+      <span class="fa-li fal fa-money-bill"></span>
+      {{#if amount_awarded ~}}
+      Award: &pound;{{addCommas amount_awarded}} via <a href="/digital/participation/charter-fund/projects?call={{slugify call}}">{{call}}</a>
+      {{else}}
+      {{#if amount_requested_total ~}}
+      Award: &pound;{{addCommas amount_requested_total}} via <a href="/digital/participation/charter-fund/projects?call={{slugify call}}">{{call}}</a>
+      {{else}}
+      {{#if amount_requested ~}}
+      Award: &pound;{{addCommas amount_requested}} via <a href="/digital/participation/charter-fund/projects?call={{slugify call}}">{{call}}</a>
+      {{/if ~}}
+      {{/if ~}}
+      {{/if ~}}
+    </li>
+    {{/if ~}}
+
+    {{#if recipient_url ~}}
+    <li>
+      <span class="fa-li far fa-link"></span>
+      <a href="{{fixUrl recipient_url 'http'}}">
+        {{recipient_url}}
+      </a>
+    </li>
+    {{/if ~}}
+    {{#if recipient_twitter ~}}
+    <li>
+      <span class="fa-li fab fa-twitter"></span>
+      <a href="{{fixUrl recipient_twitter 'http'}}">
+        Twitter
+      </a>
+    {{/if ~}}
+    {{#if recipient_facebook ~}}
+    <li>
+      <span class="fa-li fab fa-facebook"></span>
+      <a href="{{fixUrl recipient_facebook 'http'}}">
+        Facebook
+      </a>
+    </li>
+    {{/if ~}}
+  </ul>
+
+  {{#if individuals_supported ~}}
+  {{#compare (length individuals_supported) ">" 0 ~}}
+  <div class="post-info">
+    <div class="post-info-item post-info-categories">
+      <span aria-hidden="true" class="far fa-{{inflect individuals_supported 'tag' 'tags'}}"></span>
+      <ul class="inline-list">
+        {{#each individuals_supported ~}}
+        <li>
+          <a href="/digital/participation/charter-fund/projects/?tag={{slugify this}}" class="chip bg-primary">
+            {{this}}
+          </a>
+        </li>
+        {{/each ~}}
+      </ul>
+    </div>
+  </div>
+  {{/compare ~}}
+  {{/if ~}}
+
+  <p>
+    <a href="http://grantnav.threesixtygiving.org/grant/360G-SCVO-{{Id}}" target="_blank" class="grey-text darken-2">View this data on 360Giving</a>
+  </p>
+
+  <h2 class="project-overview">Project plan</h2>
+  {{#if description ~}}
+  <h3 class="project-overview">Project description</h3>
+  <div class="project-overview">
+    {{{markdown description}}}
+  </div>
+  {{else}}
+  {{#if description_alt ~}}
+  <h3 class="project-overview">Project description</h3>
+  <div class="project-overview">
+    {{{markdown description_alt}}}
+  </div>
+  {{/if ~}}
+  {{/if ~}}
+
+  {{#if milestone_1_desc ~}}
+  <h2 class="project-milestones">Project milestones</h2>
+  <h3 class="project-milestone_1">Phase 1</h3>
+  <div class="project-milestone_1">
+    {{{markdown milestone_1_desc}}}
+  </div>
+  {{/if ~}}
+  {{#if milestone_2_desc ~}}
+  <h3 class="project-milestone_2">Phase 2</h3>
+  <div class="project-milestone_2">
+    {{{markdown milestone_2_desc}}}
+  </div>
+  {{/if ~}}
+  {{#if milestone_3_desc ~}}
+  <h3 class="project-milestone_3">Phase 3</h3>
+  <div class="project-milestone_3">
+    {{{markdown milestone_3_desc}}}
+  </div>
+  {{/if ~}}
+  {{#if milestone_4_desc ~}}
+  <h3 class="project-milestone_4">Phase 4</h3>
+  <div class="project-milestone_4">
+    {{{markdown milestone_4_desc}}}
+  </div>
+  {{/if ~}}
+
+  {{#compare (length project_updates) ">" 0 ~}}
+  <h2 class="project-evaluation">Evaluation</h2>
+  <h3 class="project-updates">Updates</h3>
+  <div class="project-updates">
+    {{#each project_updates ~}}
+    <p>
+      {{{markdown this.Project_Update__c}}}
+    </p>
+    {{/each ~}}
+  </div>
+  {{/compare ~}}
+</div>
+{{/with ~}}
+
+{{> footers_digital}}

@@ -550,6 +550,9 @@ header.toolbar {
   }
 }
 
+.card {
+  border-color: $gray-color;
+}
 .cards.equal-height {
   .column {
     padding-bottom: 0.8rem;
@@ -608,9 +611,9 @@ header.toolbar {
     margin: 0;
     padding: 0;
   }
-  li:not(:last-child) {
-    margin-right: 5px;
-  }
+  // li:not(:last-child) {
+  //   margin-right: 5px;
+  // }
 }
 .inline-dl {
   margin: 0;
@@ -627,8 +630,8 @@ header.toolbar {
     width: 70%;
     p {
       span {
-        margin-left: $unit/5;
-        margin-right: $unit/5;
+        // margin-left: $unit/5;
+        // margin-right: $unit/5;
       }
     }
     table {
@@ -688,7 +691,7 @@ header.toolbar {
     font-weight: $heading-font-weight;
   }
   dd {
-    margin: 0 0 $unit;
+    // margin: 0 0 $unit;
     .mdc-layout-grid__inner:last-child {
       margin-bottom: 0;
     }
@@ -828,6 +831,10 @@ form {
 .menu .menu-item>a:hover {
   background-color: $primary-color-dark;
   color: white;
+}
+
+.fa-ul {
+  margin-left: 1.3333rem;
 }
 
 .sidebar {

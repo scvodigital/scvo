@@ -1,0 +1,112 @@
+<div class="search grant-search grant-cyber-search">
+  {{{replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "http://scvo.org.uk/" "") "https://scvo.org.uk/" "") "http://cms.scvo.org/" "/"}}}
+
+  {{#compare (length @root.data.supplimentaryResponses.grants.aggregations.calls.buckets) ">" "0" ~}}
+  {{#each @root.data.supplimentaryResponses.grants.aggregations.calls.buckets ~}}
+  {{#compare key "===" "Cyber 1" ~}}
+  <h2>Call 1 pilot, 2017</h2>
+  <p>
+    To test the ability of voluntary sector organisations to achieve Cyber Essentials accreditation, a small scale grants programme supported 15 voluntary sector organisations to help cover the application and IT support costs needed to achieve Cyber Essentials accreditation.
+  </p>
+  {{else}}
+  {{#compare key "===" "Cyber 2" ~}}
+  <h2>Call 2, 2019</h2>
+  <p>
+    The Cyber Essentials grant scheme was scaled up to support a further 60 voluntary sector organisations to achieve Cyber Essentials accreditation. {{#compare grants.hits.total "<" 60}}{{grants.hits.total}} have currently been awarded.{{/compare}}
+  </p>
+  {{else}}
+  {{#compare key "===" "Cyber 3" ~}}
+  <h2>Call 3, 2019</h2>
+  <p>
+    In the third round of the Cyber Essentials grant scheme, we supported {{grants.hits.total}} organisations to achieve Cyber Essentials accreditation.
+  </p>
+  {{else}}
+  {{#compare key "===" "Cyber 4" ~}}
+  <h2>Call 4, 2019</h2>
+  <p>
+    In the fourth round of the Cyber Essentials grant scheme, we supported {{grants.hits.total}} organisations to achieve Cyber Essentials accreditation.
+  </p>
+  {{/compare ~}}
+  {{/compare ~}}
+  {{/compare ~}}
+  {{/compare ~}}
+
+  <div class="columns v-margin equal-height">
+    {{#compare grants.hits.total ">" "0" ~}}
+    {{#each grants.hits.hits ~}}
+    {{#with _source ~}}
+    {{#compare title "!==" "Community Welfare Test (CO)" ~}}
+    <div class="column col-3 col-lg-4 col-md-6 col-sm-12 b-margin-full">
+      <div class="x-padding card scvo-grant scvo-grant-cyber">
+        <section class="mdc-card__primary">
+          <h4 class="no-margin">
+            {{{title}}}
+          </h4>
+          {{#if (contains recipient_charity_number "SC") ~}}
+          <div class="mdc-typography--caption">
+            Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}">{{recipient_charity_number}}</a>
+          </div>
+          {{/if ~}}
+          {{#ifAny goodhq_organisation.website goodhq_organisation.twitter goodhq_organisation.facebook goodhq_organisation.linkedin ~}}
+          <div class="v-margin">
+            {{#if goodhq_organisation.website ~}}
+            <a href="{{fixUrl goodhq_organisation.website 'http'}}" class="noext"><span class="far fa-link" aria-hidden="true"></span></a>
+            {{/if ~}}
+            {{#if goodhq_organisation.twitter ~}}
+            <a href="https://twitter.com/{{goodhq_organisation.twitter}}" class="noext"><span class="fab fa-twitter" aria-hidden="true"></span></a>
+            {{/if ~}}
+            {{#if goodhq_organisation.facebook ~}}
+            <a href="{{fixUrl goodhq_organisation.facebook 'http'}}" class="noext"><span class="fab fa-facebook" aria-hidden="true"></span></a>
+            {{/if ~}}
+            {{#if goodhq_organisation.linkedin ~}}
+            <a href="{{fixUrl goodhq_organisation.linkedin 'http'}}" class="noext"><span class="fab fa-linkedin" aria-hidden="true"></span></a>
+            {{/if ~}}
+          </div>
+          {{/ifAny ~}}
+        </section>
+        <section class="mdc-card__supporting-text">
+          <p class="no-margin">
+            {{#if amount_awarded ~}}
+            <strong>Amount awarded:</strong> £{{addCommas amount_awarded}}
+            {{/if ~}}
+            {{!-- #ifAll actual_start actual_end ~}}
+            <strong>Project dates:</strong> {{momentFormat (moment actual_start 'x') "Do MMM YYYY"}} - {{momentFormat (moment actual_end 'x') "Do MMM YYYY"}}<br />
+            {{/ifAll ~ --}}
+            {{!-- #if date_awarded ~}}
+            <strong>Date awarded:</strong> {{momentFormat (moment date_awarded 'x') "Do MMM YYYY"}}
+            {{/if ~ --}}
+            {{!-- {{#if date_contracted ~}}<br />
+            <strong>Contracted:</strong> {{momentFormat (moment date_contracted 'x') "Do MMM YYYY"}}
+            {{/if ~}}
+            {{#if date_payment_1 ~}}<br />
+            <strong>Payment{{#if date_payment_2}} 1{{/if}}:</strong> {{momentFormat (moment date_payment_1 'x') "Do MMM YYYY"}}
+            {{/if ~}}
+            {{#if date_payment_2 ~}}<br />
+            <strong>Payment{{#if date_payment_1}} 2{{/if}}:</strong> {{momentFormat (moment date_payment_2 'x') "Do MMM YYYY"}}
+            {{/if ~}} --}}
+          </p>
+        </section>
+      </div>
+    </div>
+    {{/compare ~}}
+    {{/with ~}}
+    {{/each ~}}
+  </div>
+  {{/compare ~}}
+  {{/each ~}}
+  {{else}}
+  <p>
+    No results could be found, please try a different search.
+  </p>
+  {{/compare ~}}
+  <p>&nbsp;</p>
+
+  <p class="text-centre t-margin-full">
+    <strong style="font-weight:600;">SCVO's Cyber Grant Scheme is funded by the Scottish Government as part of the <a href="https://www.gov.scot/publications/third-sector-action-plan-cyber-resilience-2018-20/">Third Sector Cyber Resilience Action Plan</a></strong>
+  </p>
+  <p class="text-centre b-margin-full">
+    <a href="https://www.gov.scot" class="noext"><img class="alignnone size-full wp-image-23699" src="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2018/01/Scot-Gov-Logo.jpg" alt="Scottish Government" width="300" srcset="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2018/01/Scot-Gov-Logo.jpg 862w, https://storage.googleapis.com/scvo-cms/wp-content/uploads/2018/01/Scot-Gov-Logo-300x55.jpg 300w, https://storage.googleapis.com/scvo-cms/wp-content/uploads/2018/01/Scot-Gov-Logo-768x140.jpg 768w" sizes="(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px"></a>
+  </p>
+</div>
+
+{{> footers_digital}}

@@ -1,5 +1,6 @@
 {
   "name": "grant_charter_data",
+  "debug": true,
   "pattern": "/digital/participation/charter-fund/projects/data.json",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -14,7 +15,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-grant-charter",
-          "template": ">context.metaData.handlebars.queries.grants_data",
+          "template": ">context.metaData.handlebars.queries.grants_charter-data",
           "noResultsRoute": "four_oh_four"
         }
       },

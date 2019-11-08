@@ -1,5 +1,6 @@
 {
   "name": "grant_cyber_search",
+  "debug": true,
   "pattern": "/digital/evolution/cyber-resilience/projects",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -60,8 +61,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.grants_cyber-search",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "body": ">context.metaData.handlebars.templates.grants_cyber_search-results"
             },
             "contentType": "text/html"
           }

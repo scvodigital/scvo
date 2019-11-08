@@ -333,30 +333,30 @@
 						"label": "Charter fund",
 						"path": "/digital/participation/charter-fund",
 						"route": "^/digital/participation/charter-fund$",
-						"children_LATER": [{
+						"secret_children": [{
 								"label": "Call for funding",
 								"path": "/digital/participation/charter-fund/call-for-funding",
-								"route": "_DISABLED_^/digital/participation/charter-fund/call-for-funding$"
+								"route": "^/digital/participation/charter-fund/call-for-funding$"
 							},
 							{
 								"label": "Key criteria",
 								"path": "/digital/participation/charter-fund/call-for-funding/key-criteria",
-								"route": "_DISABLED_^/digital/participation/charter-fund/call-for-funding/key-criteria$"
+								"route": "^/digital/participation/charter-fund/call-for-funding/key-criteria$"
 							},
 							{
 								"label": "FAQs",
 								"path": "/digital/participation/charter-fund/call-for-funding/faqs",
-								"route": "_DISABLED_^/digital/participation/charter-fund/call-for-funding/faqs$"
+								"route": "^/digital/participation/charter-fund/call-for-funding/faqs$"
 							},
 							{
 								"label": "Apply",
 								"path": "/digital/participation/charter-fund/apply",
-								"route": "_DISABLED_^/digital/participation/charter-fund/apply$"
+								"route": "^/digital/participation/charter-fund/apply$"
 							},
 							{
 								"label": "Projects",
 								"path": "/digital/participation/charter-fund/projects",
-								"route": "_DISABLED_^/digital/participation/charter-fund/projects$"
+								"route": "^/digital/participation/charter-fund/projects$"
 							}
 						]
 					},
@@ -766,7 +766,7 @@
 						"label": "Scottish Governance Code & checkup",
 						"path": "/running-your-organisation/governance/scottish-governance-code-checkup",
 						"route": "^/running-your-organisation/governance/scottish-governance-code-checkup$",
-						"hidden_children": [{
+						"secret_children": [{
 								"label": "Start",
 								"path": "/running-your-organisation/governance/checkup/questions",
 								"route": "^/running-your-organisation/governance/checkup/questions"
@@ -897,7 +897,7 @@
 						"route": "^/running-your-organisation/funding/updates$"
 					},
 					{
-						"label": "CCRF",
+						"label": "Community Capacity and Resilience Fund",
 						"path": "/running-your-organisation/funding/community-capacity-resilience-fund",
 						"route": "^/running-your-organisation/funding/community-capacity-resilience-fund$",
 						"children": [{
@@ -941,10 +941,10 @@
 						]
 					},
 					{
-						"label": "CATS",
+						"label": "Carers Act Transformation Support Fund",
 						"path": "/running-your-organisation/funding/carers-act-transformation-support-fund",
 						"route": "^/running-your-organisation/funding/carers-act-transformation-support-fund$",
-						"children": [{
+						"secret_children": [{
 								"label": "Application process",
 								"path": "/running-your-organisation/funding/carers-act-transformation-support-fund/application-process",
 								"route": "^/running-your-organisation/funding/carers-act-transformation-support-fund/application-process$"

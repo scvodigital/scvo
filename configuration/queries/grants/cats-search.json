@@ -2,7 +2,13 @@
   "size": 12,
   "from": {{multiply (subtract (default request.params.query.page 1) 1) 12}},
   "_source": [
-    "rendered.scvo_card",
+    "title",
+    "Id",
+    "recipient_name",
+    "description",
+    "description_alt",
+    "call",
+    "individuals_supported",
     "rendered.json_ld"
   ],
   "query": {

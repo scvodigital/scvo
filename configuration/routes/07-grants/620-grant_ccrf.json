@@ -1,6 +1,7 @@
 {
   "name": "grant_ccrf",
-  "pattern": "/running-your-organisation/funding/community-capacity-resilience-fund/projects/:project_slug",
+  "debug": true,
+  "pattern": "/running-your-organisation/funding/community-capacity-resilience-fund/projects/:project_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -55,8 +56,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.grants_ccrf",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.grants_ccrf_grant-header",
+              "body": ">context.metaData.handlebars.templates.grants_ccrf_grant-body"
             },
             "contentType": "text/html"
           }

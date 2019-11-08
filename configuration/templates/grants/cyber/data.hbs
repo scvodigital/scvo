@@ -1,0 +1,142 @@
+{
+  "grants": [
+  {{#each @root.data.primaryResponse.hits.hits}}
+  {{#with _source}}
+  {
+    {{#if amount_awarded ~}}
+    "amountAwarded": {{amount_awarded}}
+    {{else}}
+    {{#if amount_requested_total ~}}
+    "amountAwarded": {{amount_requested_total}}
+    {{else}}
+    "amountAwarded": {{amount_requested}}
+    {{/if ~}}
+    {{/if ~}}
+    {{#if date_awarded ~}},
+    "awardDate": "{{moment date_awarded "YYYY-MM-DD"}}"
+    {{else}}
+    {{#if actual_start ~}},
+    "awardDate": "{{moment actual_start "YYYY-MM-DD"}}"
+    {{else}}
+    {{#if planned_start ~}},
+    "awardDate": "{{moment planned_start "YYYY-MM-DD"}}"
+    {{else}},
+    "awardDate": "{{moment date_last_modified "YYYY-MM-DD"}}"
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}},
+    "description": {{{stringify (default description "Detailed information not available.")}}},
+    "title": {{{stringify title}}},
+    "id": "360G-SCVO-{{Id}}",
+    "currency": "GBP"
+    {{#if actual_start ~}}
+    {{#if actual_end ~}},
+    "actualDates": [{
+        {{#if actual_start ~}}
+        "startDate": "{{moment actual_start "YYYY-MM-DD"}}",
+        {{/if ~}}
+        {{#if actual_end ~}}
+        "endDate": "{{moment actual_end "YYYY-MM-DD"}}",
+        {{/if ~}}
+        "dateModified": "{{moment date_last_modified "YYYY-MM-DDTHH:mm:ssZ"}}"
+    }]
+    {{/if ~}}
+    {{/if ~}}
+    {{#if planned_start ~}}
+    {{#if planned_end ~}},
+    "plannedDates": [{
+        {{#if planned_start ~}}
+        "startDate": "{{moment planned_start "YYYY-MM-DD"}}"
+        {{/if ~}}
+        {{#if planned_end ~}},
+        "endDate": "{{moment planned_end "YYYY-MM-DD"}}"
+        {{/if ~}},
+        "dateModified": "{{moment date_last_modified "YYYY-MM-DDTHH:mm:ssZ"}}"
+    }]
+    {{/if ~}}
+    {{/if ~}},
+    "recipientOrganization": [{
+        {{#if recipient_name ~}}
+        "name": {{{stringify recipient_name}}},
+        {{/if ~}}
+        {{#if recipient_charity_number ~}}
+        "id": "GB-SC-{{recipient_charity_number}}",
+        "charityNumber": "{{recipient_charity_number}}"
+        {{else}}
+        "id": "SCVO-{{recipient_id}}"
+        {{/if ~}}
+        {{#if recipient_overview ~}},
+        "description": {{{stringify recipient_overview}}}
+        {{/if ~}}
+        {{#if recipient_address_street ~}},
+        "streetAddress": {{{stringify recipient_address_street}}}
+        {{/if ~}}
+        {{#if recipient_address_town ~}},
+        "addressLocality": {{{stringify recipient_address_town}}}
+        {{/if ~}}
+        {{#if recipient_address_region ~}},
+        "addressRegion": {{{stringify recipient_address_region}}}
+        {{/if ~}}
+        {{#if recipient_address_postcode ~}},
+        "postalCode": "{{recipient_address_postcode}}"
+        {{/if ~}}
+        {{#if geo_coords ~}},
+        "location": [{
+            "countryCode": "GB",
+            "geoCode": "{{geo.admin_ward}}",
+            "geoCodeType": "WD",
+            "latitude": {{geo_coords.lat}},
+            "longitude": {{geo_coords.lon}}
+        }]
+        {{/if ~}}
+        {{#if recipient_address_postcode ~}},
+        "addressCountry": "Scotland"
+        {{/if ~}}
+        {{#if recipient_url ~}}
+        {{#startsWith 'http' recipient_url ~}},
+        "url": "{{recipient_url}}"
+        {{else}},
+        "url": "http://{{recipient_url}}"
+        {{/startsWith ~}}
+        {{/if ~}}
+    }]
+    {{#if geo_coords ~}},
+    "beneficiaryLocation": [{
+        "countryCode": "GB",
+        "geoCode": "{{geo.admin_ward}}",
+        "geoCodeType": "WD",
+        "latitude": {{geo_coords.lat}},
+        "longitude": {{geo_coords.lon}}
+    }]
+    {{/if ~}},
+    "fundingOrganization": [{
+        "name": "Scottish Council For Voluntary Organisations",
+        "id": "GB-SC-SC003558",
+        "charityNumber": "SC003558",
+        "department": "Digital",
+        "streetAddress": "Hayweight House, 23 Lauriston Street",
+        "addressLocality": "Edinburgh",
+        "addressRegion": "City of Edinburgh",
+        "postalCode": "EH3 9DQ",
+        "addressCountry": "Scotland",
+        "description": "The Scottish Council for Voluntary Organisations is the membership organisation for Scotland's charities, voluntary organisations and social enterprises.",
+        "url": "http://scvo.org",
+        "location": [{
+            "latitude": 55.945492,
+            "longitude": -3.201152
+        }]
+    }],
+    "grantProgramme": [{
+        "code": "scvo-digital-cyber-essentials",
+        "title": "Cyber Essentials",
+        "description": "We are working with Scottish charities to achieve the following aims: 1. To build commitment from third sector leaders to assess and improve their cyber resilience. 2. To test the ability of third sector organisations to achieve Cyber Essentials accreditation through a small scale ‘grants’ programme of up to £1500 to help cover the application and IT support costs needed to achieve accreditation.",
+        "url": "https://scvo.org/digital/evolution/cyber-resilience"
+    }],
+    "fromOpenCall": "Yes",
+    "dateModified": "{{moment date_last_modified "YYYY-MM-DDTHH:mm:ssZ"}}",
+    "dataSource": "https://scvo.org/digital/evolution/cyber-resilience/projects/data.json"
+  }{{#unless @last}},{{/unless}}
+  {{/with}}
+  {{/each}}
+  ]
+}

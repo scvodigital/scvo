@@ -1,5 +1,6 @@
 {
   "name": "grant_cats_search",
+  "debug": true,
   "pattern": "/running-your-organisation/funding/carers-act-transformation-support-fund/projects",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -13,8 +14,8 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-grant-cats",
-          "template": ">context.metaData.handlebars.queries.grants_cats-search"
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page"
         }
       },
       "renderer": "handlebars"
@@ -29,10 +30,10 @@
         },
         "queryTemplates": [
           {
-            "name": "page",
+            "name": "grants",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-page",
-            "template": ">context.metaData.handlebars.queries.pages_page"
+            "type": "scvo-grant-cats",
+            "template": ">context.metaData.handlebars.queries.grants_cats-search"
           },
           {
             "name": "types",
@@ -60,8 +61,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.grants_cats-search",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "body": ">context.metaData.handlebars.templates.grants_cats_search-results"
             },
             "contentType": "text/html"
           }
