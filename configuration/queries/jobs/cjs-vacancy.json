@@ -1,7 +1,7 @@
 {
   "size": 1,
   "_source": [
-    "rendered.scvo_full",
+    "path",
     "organisation",
     "supervisor",
     "application_arrangements",
@@ -9,8 +9,30 @@
     "job_number",
     "sub_title",
     "Id",
+    "slug",
+    "title",
     "title_slug",
-    "title"
+    "path",
+    "wage_hourly_rate",
+    "total_hours_per_week",
+    "description",
+    "organisation.name",
+    "organisation.description",
+    "organisation.id",
+    "organisation.area_town",
+    "organisation.name_slug",
+    "job_website",
+    "organisation_website_url",
+    "organisation_twitter_url",
+    "organisation_facebook_url",
+    "goodhq_organisation.xid",
+    "working_pattern",
+    "number_of_references",
+    "shifts_rota",
+    "person_specification",
+    "additional",
+    "additional_summary",
+    "pvg_requirements"
   ],
   "query": {
     "bool": {

@@ -535,11 +535,99 @@ header.toolbar {
   }
 }
 .inline-list {
-  margin: 0;
   display: inline;
+  margin: 0;
+  padding: 0;
   li {
-    list-style-type: none;
+    list-style: none;
     display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  li:not(:last-child) {
+    margin-right: 5px;
+  }
+}
+.inline-dl {
+  margin: 0;
+  dt, dd {
+    float: left;
+    margin: 0;
+  }
+  dt {
+    font-weight: $heading-font-weight;
+    clear: both;
+    width: 30%;
+  }
+  dd {
+    width: 70%;
+    p {
+      span {
+        margin-left: $unit/5;
+        margin-right: $unit/5;
+      }
+    }
+    table {
+      th,
+      td {
+        padding-bottom: $unit/2;
+        padding-right: $unit/2;
+        vertical-align: top;
+        text-align: left;
+      }
+      th:last-child,
+      td:last-child {
+        padding-right: 0;
+      }
+    }
+    .fa-ul {
+      margin-left: $unit*1.5;
+      a {
+        word-wrap: break-all;
+      }
+    }
+  }
+}
+.cjs-vacancy-search .inline-dl,
+.cjs-vacancy .inline-dl,
+.staff-team .inline-dl {
+  clear: both;
+  margin: 0;
+  dt, dd {
+    float: left;
+    margin: 0;
+  }
+  dt {
+    clear: both;
+    font-weight: $heading-font-weight;
+    width: 20%;
+  }
+  dd {
+    width: 80%;
+    margin: 0 0 $unit/2;
+    ul {
+      margin: 0 0 0 1.4rem;
+    }
+  }
+}
+.inline-dl.span-2 {
+  clear: both;
+  dt {
+    width: 40%;
+  }
+  dd {
+    width: 60%;
+  }
+}
+.events .inline-dl {
+  dt {
+    font-weight: $heading-font-weight;
+  }
+  dd {
+    margin: 0 0 $unit;
+    .mdc-layout-grid__inner:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 .post-info {

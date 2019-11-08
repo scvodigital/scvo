@@ -58,7 +58,48 @@
 {{> search_info paging=@root.data.primaryResponse.pagination}}
 
 {{#each @root.data.primaryResponse.hits.hits ~}}
-{{{_source.rendered.scvo_list}}}
+{{#with _source ~}}
+<div class="list cjs-job id-{{Id}} mdc-card">
+  <section class="mdc-card__primary">
+    <h3 class="mdc-card__title mdc-card__title--large">
+      <a href="{{path}}">{{{title}}}</a>
+    </h3>
+  </section>
+  <section class="mdc-card__supporting-text">
+    <div class="mdc-layout-grid">
+      <div class="mdc-layout-grid__inner">
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          <dl class="inline-dl span-2">
+            <dt>Organisation</dt>
+            <dd>
+              {{default organisation.name "Not supplied"}}
+            </dd>
+            <dt>Salary (per hour)</dt>
+            <dd>
+              {{default wage_hourly_rate "Not supplied"}}
+            </dd>
+          </dl>
+        </div>
+        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+          <dl class="inline-dl span-2">
+            <dt>Hours (per week)</dt>
+            <dd>
+              {{default total_hours_per_week "Not supplied"}}
+            </dd>
+            <dt>Location</dt>
+            <dd>
+              {{default organisation.area_town "Not supplied"}}
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div class="mdc-typography--body1">
+      {{{description_short}}} <a href="{{path}}">Find out more</a>
+    </div>
+  </section>
+</div>
+{{/with ~}}
 {{/each ~}}
 
 {{> pagination paging=@root.data.primaryResponse.pagination}}
