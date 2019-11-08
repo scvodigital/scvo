@@ -2,7 +2,12 @@
   "size": 10,
   "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
-    "rendered.scvo_list",
+    "Id",
+    "title",
+    "description",
+    "slug",
+    "author_name",
+    "when_posted",
     "rendered.rss",
     "rendered.json_ld"
   ],

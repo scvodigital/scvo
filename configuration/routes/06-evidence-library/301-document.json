@@ -1,5 +1,6 @@
 {
   "name": "evidence_library_document",
+  "debug": true,
   "pattern": "/policy-research/evidence-library/:library_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -14,7 +15,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-document-evidence",
-          "template": ">context.metaData.handlebars.queries.documents_evidence-library-document",
+          "template": ">context.metaData.handlebars.queries.evidence-library_document",
           "noResultsRoute": "four_oh_four"
         }
       },
@@ -33,7 +34,7 @@
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-document-evidence",
-            "template": ">context.metaData.handlebars.queries.documents_evidence-library-document-aggs"
+            "template": ">context.metaData.handlebars.queries.evidence-library_document-aggs"
           }
         ]
       },

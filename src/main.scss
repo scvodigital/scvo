@@ -23,7 +23,8 @@ $bg-color-dark: darken($bg-color, 4%) !default;
 
 $unit: 1rem;
 $padding: .4rem;
-$thick-underline: 2px;
+$thick-line: 2px;
+$thin-line: 0.05rem;
 $border-radius: 4px;
 $base-font-weight: 400;
 $link-font-weight: 600;
@@ -153,13 +154,16 @@ strong {
   color: $secondary-color;
   font-weight: $link-font-weight;
 }
+.divider {
+  border-top-color: $gray-color;
+}
 a:visited,
 .breadcrumb .breadcrumb-item:not(:last-child) a,
 a:not(.btn) {
   text-decoration-skip-ink: auto;
   text-decoration: none;
   color: $primary-color;
-  border-bottom: $thick-underline solid transparent;
+  border-bottom: $thick-line solid transparent;
 }
 .breadcrumb .breadcrumb-item:not(:last-child) a:hover,
 a:hover {
@@ -298,11 +302,16 @@ aside {
 .input-group {
   .form-input {
     width: auto;
-    border-color: $primary-color;
   }
   .form-select {
     width: fit-content;
   }
+}
+.form-group .form-input,
+.input-group .form-input,
+.form-group .form-select,
+.input-group .form-select {
+  border-color: $primary-color;
 }
 
 #toaster {
@@ -526,7 +535,7 @@ header.header {
 }
 header.toolbar {
   // padding-top: $unit/2;
-  border-bottom: $thick-underline solid $primary-color;
+  border-bottom: $thick-line solid $primary-color;
   .btn {
     color: $secondary-color;
     border-radius: $border-radius $border-radius 0 0 !important;
@@ -686,7 +695,7 @@ header.toolbar {
   }
 }
 .full .post-info {
-  border-bottom: $thick-underline solid $gray-color;
+  border-bottom: $thin-line solid $gray-color;
   padding-bottom: $unit/4;
   margin-bottom: $unit/2;
 }
@@ -750,7 +759,7 @@ form {
   position: relative;
   .middle-line-text {
     margin: $unit*2 0 $unit*2;
-    border-bottom: $thick-underline solid $gray-color;
+    border-bottom: $thick-line solid $gray-color;
     line-height: 0;
     text-align: center;
     vertical-align: middle;
@@ -1363,7 +1372,7 @@ footer {
     opacity: 1;
   }
   .menu {
-    border: $thick-underline solid $light-color;
+    border: $thick-line solid $light-color;
   }
 }
 

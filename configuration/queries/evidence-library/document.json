@@ -1,0 +1,23 @@
+{
+  "size": 1,
+  "_source": [
+    "title",
+    "Id",
+    "when_posted",
+    "library_classification",
+    "library_classification_slug",
+    "year_published",
+    "author_name",
+    "comm_org",
+    "description",
+    "files",
+    "weblink_url",
+    "weblink_title",
+    "rendered.json_ld"
+  ],
+  "query": {
+    "term": {
+      "slug": "{{request.params.library_slug}}"
+    }
+  }
+}
