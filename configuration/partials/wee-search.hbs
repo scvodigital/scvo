@@ -1,6 +1,6 @@
-<div class="projects search">
+<div class="search">
   <h2 class="mdc-card__title">{{title}}</h2>
-  <form action="{{searchPath}}" method="GET" [searchroute]="'{{searchRoute}}'" class="search_form" autocomplete="off">
+  <form action="{{searchPath}}" method="GET" autocomplete="off">
     <div class="mdc-textfield mdc-textfield--upgraded">
       <input type="text" class="mdc-textfield__input" name="q" id="wee-query" value="{{@root.request.params.query.q}}">
       <button type="submit" class="mdc-toolbar__icon mdc-toolbar__search search-button-large" aria-label="Search" alt="Search">

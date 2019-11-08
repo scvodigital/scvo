@@ -1,14 +1,12 @@
 {{#compare @root.data.supplimentaryResponses.related_posts.hits.total ">" 0 ~}}
-<div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12 related page-related">
-  <h3 class="blogs">{{default title "Related posts"}}</h3>
-  <div class="mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
-      {{#each @root.data.supplimentaryResponses.related_posts.hits.hits ~}}
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
-        {{{_source.rendered.scvo_gist}}}
-      </div>
-      {{/each ~}}
+<div class="related">
+  <h3>{{default title "Related posts"}}</h3>
+  <div class="columns">
+    {{#each @root.data.supplimentaryResponses.related_posts.hits.hits ~}}
+    <div class="column col-3 col-md-6 col-sm-12">
+      {{{_source.rendered.scvo_gist}}}
     </div>
+    {{/each ~}}
   </div>
 </div>
 {{/compare ~}}

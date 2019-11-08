@@ -1,23 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:400,600,800&display=swap');
 
-$primary-color: #B33542;
+$primary-color: #d43f4f;
 $primary-color-light: lighten($primary-color, 30%) !default;
 $primary-color-dark: darken($primary-color, 10%) !default;
-$secondary-color: #384654;
+$secondary-color: #0c2133;
 $secondary-color-light: lighten($secondary-color, 30%) !default;
 $secondary-color-dark: darken($secondary-color, 6%) !default;
 $dark-color: #10183A;
 $gray-color: #333E48;
-$light-color: #FFFFFF;
+$light-color: #fafafa;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
 $error-color: #f03823;
 
-$theme-footer: #384654;
-$theme-footer-light: #EAECEE;
+$theme-footer: #0c2133;
+$theme-footer-light: #f0f0f0;
 $theme-footer-dark: #29333D;
 
-$bg-color: lighten($theme-footer-light, 2%) !default;
+$bg-color: lighten($theme-footer-light, 1%) !default;
 $bg-color-light: lighten($bg-color, 4%) !default;
 $bg-color-dark: darken($bg-color, 4%) !default;
 
@@ -455,16 +455,9 @@ header {
     color: $secondary-color !important;
   }
   .my-account {
-    background: white !important;
-    border-radius: 2rem;
     margin-left: $unit/3;
     .dropdown-toggle {
       border-color: transparent !important;
-      // color: $primary-color !important;
-    }
-    .dropdown-toggle:focus,
-    .dropdown-toggle:hover {
-      // color: $primary-color-dark !important;
     }
   }
 }
@@ -707,7 +700,7 @@ footer {
   position: relative;
   .footer-main {
     margin-top: $unit*1.5;
-    padding: 0 0 $unit;
+    padding: 0 0 $unit*1.5;
     position: relative;
     .membership {
       margin-top: -($unit*0.8);
@@ -735,7 +728,7 @@ footer {
       margin-left: $unit*1.5;
     }
     h4 {
-      margin-top: $unit;
+      margin-top: $unit/2;
     }
   }
   .footer-copyright {
@@ -1196,6 +1189,7 @@ footer {
 @media (prefers-color-scheme: dark) {
   body,
   .page,
+  .menu,
   .breadcrumb .breadcrumb-item,
   .breadcrumb .breadcrumb-item:not(:first-child)::before,
   .footer-copyright {
@@ -1206,6 +1200,8 @@ footer {
     background: $theme-footer-dark;
   }
   header.toolbar .btn,
+  header.toolbar .btn:hover,
+  header.toolbar .btn:focus,
   footer .footer-copyright p,
   footer .footer-copyright a,
   h1, h2, h3, h4, div, p, li, div, td, th {
@@ -1217,6 +1213,9 @@ footer {
   }
   img:hover {
     opacity: 1;
+  }
+  .menu {
+    border: $thick-underline solid $light-color;
   }
 }
 
