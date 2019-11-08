@@ -1,13 +1,12 @@
 <div class="trustee">
-  <div class="container-fluid">
-    <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="/projects-campaigns">Projects &amp; campaigns</a></li>
-      <li class="breadcrumb-item"><a href="/projects-campaigns/terrific-trustees">Terrific trustees</a></li>
-      <li class="breadcrumb-item"><a href="/projects-campaigns/terrific-trustees/search">Trustee vacancy search</a></li>
-      <li class="breadcrumb-item">{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}} - {{{@root.data.primaryResponse.hits.hits.[0]._source.organisation_name}}}</li>
-    </ul>
-  </div>
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/projects-campaigns">Projects &amp; campaigns</a></li>
+  <li class="breadcrumb-item"><a href="/projects-campaigns/terrific-trustees">Terrific trustees</a></li>
+  <li class="breadcrumb-item"><a href="/projects-campaigns/terrific-trustees/search">Trustee vacancy search</a></li>
+  <li class="breadcrumb-item">{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}} - {{{@root.data.primaryResponse.hits.hits.[0]._source.organisation_name}}}</li>
+</ul>
+
   {{> headers_splash headerTextOverride="Trustee vacancy" typeOverride="page"}}
   <div class="container-fluid">
     <div class="mdc-layout-grid">

@@ -70,8 +70,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.account_explore",
-              "leftSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar"
+              "header": ">context.metaData.handlebars.templates.account_explore-header",
+              "body": ">context.metaData.handlebars.templates.account_explore-body"
             },
             "contentType": "text/html"
           }

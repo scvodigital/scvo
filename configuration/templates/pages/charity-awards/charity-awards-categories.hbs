@@ -1,22 +1,20 @@
 <div class="page">
-  <div class="container-fluid">
-    <ul class="breadcrumb" aria-hidden="true">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
-      <li class="breadcrumb-item">
-        {{#if @root.request.params.category}}
-          <a href="/scottish-charity-awards/finalists-2019">Categories</a>
-        {{else}}
-          Categories
-        {{/if}}
-      </li>
-      {{#if @root.request.params.category}}
-      <li class="breadcrumb-item">
-        {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
-      </li>
-      {{/if}}
-    </ul>
-  </div>
+<ul class="breadcrumb" aria-hidden="true">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
+  <li class="breadcrumb-item">
+    {{#if @root.request.params.category}}
+      <a href="/scottish-charity-awards/finalists-2019">Categories</a>
+    {{else}}
+      Categories
+    {{/if}}
+  </li>
+  {{#if @root.request.params.category}}
+  <li class="breadcrumb-item">
+    {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
+  </li>
+  {{/if}}
+</ul>
   {{> headers_splash_charity_awards title=(
     if @root.request.params.category
       (getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title"))

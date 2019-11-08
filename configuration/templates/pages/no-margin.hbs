@@ -1,7 +1,5 @@
 <div class="page">
-  <div class="container-fluid">
-    {{> breadcrumbs}}
-  </div>
+  {{> breadcrumbs_cms_page}}
   {{> headers_splash}}
   <div class="page-content">
     {{{@root.data.primaryResponse.hits.hits.[0]._source.rendered.scvo_full}}}

@@ -1,8 +1,6 @@
 {{#*inline "to_percentage"}}{{round (multiply (divide (subtract score lower) (subtract upper lower)) 100) "up"}}{{/inline}}
 <div class="page">
-  <div class="container-fluid">
-    {{> breadcrumbs}}
-  </div>
+  {{> breadcrumbs_cms_page}}
   {{> headers_splash headerTextOverride="Digital Check-up Results" headerTextCaptionOverride=@root.request.params.query.web_organisation}}
   <div class="container-fluid">
     {{> leading_quotation sourcePage=@root.data.primaryResponse.hits.hits.[0]._source}}

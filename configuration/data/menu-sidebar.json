@@ -1011,7 +1011,13 @@
 		]
 	}],
 	"services-membership": [{
+		"label": "Services",
+		"path": "/services",
+		"route": "^/services$",
 		"children": [{
+			"label": "Membership",
+			"path": "/services/membership",
+			"route": "^/services/membership$",
 			"children": [{
 					"label": "Member benefits",
 					"path": "/services/membership/benefits",
@@ -1027,16 +1033,13 @@
 					"path": "/services/membership/join-now",
 					"route": "^/services/membership/join-now"
 				}
-			],
-			"label": "Membership",
-			"path": "/services/membership",
-			"route": "^/services/membership$"
-		}],
-		"label": "Services",
-		"path": "/services",
-		"route": "^/services$"
+			]
+		}]
 	}],
 	"setting-up-a-charity": [{
+		"label": "Setting up a charity",
+		"path": "/setting-up-a-charity",
+		"route": "^/setting-up-a-charity$",
 		"children": [{
 				"label": "1. Get started",
 				"path": "/setting-up-a-charity/get-started",
@@ -1082,9 +1085,16 @@
 				"path": "/setting-up-a-charity/frequently-asked-questions",
 				"route": "^/setting-up-a-charity/frequently-asked-questions"
 			}
-		],
-		"label": "Setting up a charity",
-		"path": "/setting-up-a-charity",
-		"route": "^/setting-up-a-charity$"
+		]
+	}],
+	"account": [{
+		"label": "My account",
+		"path": "/account",
+		"route": "^/account|^/sign-up-details|^/scvo-account",
+		"children": [{
+			"label": "Explore",
+			"path": "/explore",
+			"route": "^/explore"
+		}]
 	}]
 }

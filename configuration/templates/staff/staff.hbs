@@ -1,13 +1,12 @@
 <div class="staff">
   {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-  <div class="container-fluid">
-    <ul class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
-      <li class="breadcrumb-item"><a href="/about/staff-team">Staff team</a></li>
-      <li class="breadcrumb-item">{{{name_full}}}</li>
-    </ul>
-  </div>
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
+  <li class="breadcrumb-item"><a href="/about/staff-team">Staff team</a></li>
+  <li class="breadcrumb-item">{{{name_full}}}</li>
+</ul>
+
   <div class="splash-image splash-image-{{@root.data.primaryResponse.hits.hits.[0]._type}}" style="{{> headers_splash_image}}">
     <div class="splash-overlay{{#if hide_overlay}} splash-overlay-hidden{{/if}}">
       <div class="container-fluid">

@@ -2,7 +2,7 @@
   "name": "vote_charity_awards",
   "pattern": "/scottish-charity-awards/finalists-2019/*category/*vote",
   "metaData": {
-    "awards-info": "{:../../data/awards-info.json}"
+    "awards-info": "{:../../data/info-charity-awards.json}"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

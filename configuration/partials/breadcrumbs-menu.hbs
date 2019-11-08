@@ -1,0 +1,91 @@
+{{#*inline "breadcrumb_link" ~}}
+<li class="breadcrumb-item"><a href="{{path}}">{{{label}}}</a></li>
+{{/inline ~}}
+{{#*inline "breadcrumb" ~}}
+<li class="breadcrumb-item">{{{label}}}</li>
+{{/inline ~}}
+
+<ul class="breadcrumb breadcrumb-length-" aria-hidden="true">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+{{#each @root.context.metaData.sidebarMenus ~}}
+  {{#each this ~}}
+    {{#if children ~}}
+      {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+        {{#if this ~}}
+          {{> breadcrumb this level=1}}
+        {{/if ~}}
+      {{else}}
+        {{#each children ~}}
+          {{#if children ~}}
+            {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+              {{#if ../this ~}}
+                {{> breadcrumb_link ../this level=1}}
+              {{/if ~}}
+              {{#if this ~}}
+                {{> breadcrumb this level=2}}
+              {{/if ~}}
+            {{else}}
+              {{#each children ~}}
+                {{#if children ~}}
+                  {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                    {{#if ../../this ~}}
+                      {{> breadcrumb_link ../../this level=1}}
+                    {{/if ~}}
+                    {{#if ../this ~}}
+                      {{> breadcrumb_link ../this level=2}}
+                    {{/if ~}}
+                    {{#if this ~}}
+                      {{> breadcrumb this level=3}}
+                    {{/if ~}}
+                  {{else}}
+                    {{#each children ~}}
+                      {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                        {{#if ../../../this ~}}
+                          {{> breadcrumb_link ../../../this level=1}}
+                        {{/if ~}}
+                        {{#if ../../this ~}}
+                          {{> breadcrumb_link ../../this level=2}}
+                        {{/if ~}}
+                        {{#if ../this ~}}
+                          {{> breadcrumb_link ../this level=3}}
+                        {{/if ~}}
+                        {{#if this ~}}
+                          {{> breadcrumb this level=3}}
+                        {{/if ~}}
+                      {{/if ~}}
+                    {{/each ~}}
+                  {{/if ~}}
+                {{else}}
+                  {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                    {{#if ../../this ~}}
+                      {{> breadcrumb_link ../../this level=1}}
+                    {{/if ~}}
+                    {{#if ../this ~}}
+                      {{> breadcrumb_link ../this level=2}}
+                    {{/if ~}}
+                    {{#if this ~}}
+                      {{> breadcrumb this level=1}}
+                    {{/if ~}}
+                  {{/if ~}}
+                {{/if ~}}
+              {{/each ~}}
+            {{/if ~}}
+          {{else}}
+            {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+              {{#if ../this ~}}
+                {{> breadcrumb_link ../this level=1}}
+              {{/if ~}}
+              {{#if this ~}}
+                {{> breadcrumb this level=1}}
+              {{/if ~}}
+            {{/if ~}}
+          {{/if ~}}
+        {{/each ~}}
+      {{/if ~}}
+    {{else}}
+      {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+        {{> breadcrumb this level=1}}
+      {{/if ~}}
+    {{/if ~}}
+  {{/each ~}}
+{{/each ~}}

@@ -1,7 +1,6 @@
 <div class="page">
-  <div class="container-fluid">
-    {{> breadcrumbs}}
-  </div>
+  {{> breadcrumbs_cms_page}}
+
   {{> headers_splash}}
   <div class="container-fluid">
     {{> leading_quotation sourcePage=@root.data.primaryResponse.hits.hits.[0]._source}}

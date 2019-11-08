@@ -46,8 +46,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_full-width",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "body": ">context.metaData.handlebars.templates.pages_page-body",
+              "footer": ">context.metaData.handlebars.templates.pages_page-footer"
             },
             "contentType": "text/html"
           }

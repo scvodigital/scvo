@@ -1,16 +1,14 @@
 <div class="page search">
-  <div class="container-fluid">
-    <ul class="breadcrumb" aria-hidden="true">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="/policy-research">Policy &amp; research</a></li>
-      {{#unless @root.request.params.query.q ~}}
-      <li class="breadcrumb-item">Policies</li>
-      {{else}}
-      <li class="breadcrumb-item"><a href="/policy-research/policies">Policies</a></li>
-      <li class="breadcrumb-item">Search results</li>
-      {{/unless ~}}
-    </ul>
-  </div>
+<ul class="breadcrumb" aria-hidden="true">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/policy-research">Policy &amp; research</a></li>
+  {{#unless @root.request.params.query.q ~}}
+  <li class="breadcrumb-item">Policies</li>
+  {{else}}
+  <li class="breadcrumb-item"><a href="/policy-research/policies">Policies</a></li>
+  <li class="breadcrumb-item">Search results</li>
+  {{/unless ~}}
+</ul>
   {{> headers_splash}}
   <div class="container-fluid content page-content">
     <div class="mdc-layout-grid">

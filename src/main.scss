@@ -163,6 +163,9 @@ a:hover {
   color: $primary-color;
   border-bottom-color: $primary-color;
 }
+.breadcrumb-item {
+  font-weight: $link-font-weight;
+}
 footer .footer-main a:hover {
   border-bottom-color: white;
 }

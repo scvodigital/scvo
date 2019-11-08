@@ -1,15 +1,14 @@
 <div class="page">
-  <div class="container-fluid">
-    <ul class="breadcrumb" aria-hidden="true">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
-      <li class="breadcrumb-item"><a href="/scottish-charity-awards/vote-2019">Vote</a></li>
-      <li class="breadcrumb-item"><a href="/scottish-charity-awards/vote-2019/{{@root.request.params.category}}">{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</a></li>
-      {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-      <li class="breadcrumb-item">{{{title}}}</li>
-      {{/with ~}}
-    </ul>
-  </div>
+<ul class="breadcrumb" aria-hidden="true">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
+  <li class="breadcrumb-item"><a href="/scottish-charity-awards/vote-2019">Vote</a></li>
+  <li class="breadcrumb-item"><a href="/scottish-charity-awards/vote-2019/{{@root.request.params.category}}">{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</a></li>
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <li class="breadcrumb-item">{{{title}}}</li>
+  {{/with ~}}
+</ul>
+
   {{> headers_splash_charity_awards title=@root.data.primaryResponse.hits.hits.[0]._source.title}}
   <div class="container-fluid">
     <div class="mdc-layout-grid">

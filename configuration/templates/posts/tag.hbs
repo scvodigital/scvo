@@ -1,6 +1,6 @@
 <div class="post-tag">
   <div class="container-fluid">
-    {{> breadcrumbs_posts}}
+    {{> breadcrumbs_cms_post}}
   </div>
   <div class="splash-image splash-image-{{@root.data.primaryResponse.hits.hits.[0]._type}}-tag" style="{{> headers_splash_image}}">
     <div class="splash-overlay{{#if @root.data.primaryResponse.hits.hits.[0]._source.hide_overlay}} splash-overlay-hidden{{/if}}">

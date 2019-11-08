@@ -20,10 +20,10 @@
       "noreply": "noreply@scvo.org.uk",
       "technical": "webhelpdesk@scvo.org.uk"
     },
-    "layoutMenus": "{:./data/layout-menus.json}",
-    "sidebarMenus": "{:./data/sidebar-menus.json}",
-    "accountInfoValidation": "{:./data/account-info-validation.json}",
-    "globalGoals": "{:./data/global-goals.json}",
+    "layoutMenus": "{:./data/menu-layout.json}",
+    "sidebarMenus": "{:./data/menu-sidebar.json}",
+    "accountInfoValidation": "{:./data/info-account-validation.json}",
+    "globalGoals": "{:./data/info-global-goals.json}",
     "handlebars": {
       "partials": {
         "{$./partials/**/*.*}": "includeRelativePath=false&regexExpression=(-)&regexOptions=gi&regexReplace=_"
@@ -49,7 +49,7 @@
         }
       }
     },
-    "commonTasks": "{:./data/common-tasks.json}",
+    "commonTasks": "{:./data/tasks-common.json}",
     "elasticsearchUrl": "{$./data/elasticsearch-url.txt}"
   }
 }

@@ -24,6 +24,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "header": ">context.metaData.handlebars.templates.account_auth_sign-up-details-header",
               "body": ">context.metaData.handlebars.templates.account_auth_sign-up-details-body"
             },
             "contentType": "text/html"
