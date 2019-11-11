@@ -254,7 +254,7 @@
 </section>
 -->
 
-<div class="find-information-on v-margin">
+<div class="find-information-on t-margin-full">
   <div class="container">
     <h2>
       Find information on&hellip;
@@ -263,43 +263,76 @@
       <div class="column col-3 col-md-6 col-sm-12">
         <h4 class="text-center">
           <a href="/setting-up-a-charity" class="no-underline">
-            <div class="icon-rouleaux b-margin" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
+            <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
               <span class="icon fal fa-book fa-fw fa-2x text-primary" aria-hidden="true"></span>
             </div>
-            <span class="underline">Setting up an organisation</span>
+            <span class="t-padding d-block">Setting up an organisation</span>
           </a>
         </h4>
       </div>
       <div class="column col-3 col-md-6 col-sm-12">
         <h4 class="text-center">
           <a href="/funding" class="no-underline">
-            <div class="icon-rouleaux b-margin" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
+            <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
               <span class="icon fal fa-chart-bar fa-fw fa-2x text-primary" aria-hidden="true"></span>
             </div>
-            <span class="underline">Funding for my project</span>
+            <span class="t-padding d-block">Funding for my project</span>
           </a>
         </h4>
       </div>
       <div class="column col-3 col-md-6 col-sm-12">
         <h4 class="text-center">
           <a href="/events" class="no-underline">
-            <div class="icon-rouleaux b-margin" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
+            <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
               <span class="icon fal fa-graduation-cap fa-fw fa-2x text-primary" aria-hidden="true"></span>
             </div>
-            <span class="underline">Training courses &amp; events</span>
+            <span class="t-padding d-block">Training courses &amp; events</span>
           </a>
         </h4>
       </div>
       <div class="column col-3 col-md-6 col-sm-12">
         <h4 class="text-center">
           <a href="/jobs" class="no-underline">
-            <div class="icon-rouleaux b-margin" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
+            <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
               <span class="icon fal fa-handshake fa-fw fa-2x text-primary" aria-hidden="true"></span>
             </div>
-            <span class="underline">Jobs in the sector</span>
+            <span class="t-padding d-block">Jobs in the sector</span>
           </a>
         </h4>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="latest-posts v-padding-full bg-gray">
+  <div class="container columns">
+    <div class="col col-6 col-md-12">
+      <h2>Recent SCVO blog posts</h2>
+      <ul>
+        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[1]._source ~}}
+        <li>
+          <a href="{{replace post_slug '_' '/'}}">{{{title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "YYYY-MM-DD"}}</span>
+        </li>
+        {{/with ~}}
+        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[2]._source ~}}
+        <li>
+          <a href="{{replace post_slug '_' '/'}}">{{{title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "YYYY-MM-DD"}}</span>
+        </li>
+        {{/with ~}}
+        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[3]._source ~}}
+        <li>
+          <a href="{{replace post_slug '_' '/'}}">{{{title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "YYYY-MM-DD"}}</span>
+        </li>
+        {{/with ~}}
+        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[4]._source ~}}
+        <li>
+          <a href="{{replace post_slug '_' '/'}}">{{{title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "YYYY-MM-DD"}}</span>
+        </li>
+        {{/with ~}}
+    </div>
+    <div class="col col-6 col-md-12">
+      <h2>Latest TFN stories</h2>
+
     </div>
   </div>
 </div>

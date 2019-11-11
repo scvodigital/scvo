@@ -70,311 +70,313 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
 <body class="{{#if request.params.path}}{{replace (replace request.params.path '20-years' 'twenty-years') '_' ' '}}{{else}}home{{/if}}">
   {{!-- {{> components_scvo_bar}} --}}
   <div class="page">
-    <div class="upper bg-rouleaux" style="background-image:url('/rouleaux.svg?color=FEF9F9&style=stripes');">
-      <div class="container">
-        <header class="navbar header">
-          <section class="navbar-section">
-            <a href="/" class="navbar-brand" title="Scottish Council for Voluntary Organisations">
-              <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
-            </a>
-          </section>
-          <section class="navbar-section">
-            <div class="form-horizontal hide-lg">
-              <form class="search_form" autocomplete="off" action="/search" method="GET">
-                <div class="input-group input-inline">
-                  <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">
-                  <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
-                    <span class="far fa-search" aria-hidden="true"></span>
-                  </button>
-                </div>
-              </form>
-              <a href="/services/membership" class="btn btn-primary float-right t-margin">Join our community</a>
-            </div>
-            <button class="show-lg btn btn-primary btn-action btn-lg" data-drawer-target="#mobile-menu" aria-label="Menu" alt="Menu">
-              <span class="far fa-fw fa-bars"></span>
-            </button>
-          </section>
-        </header>
-        <header class="navbar toolbar hide-lg">
-          <section class="navbar-section site-tab-bar">
-            {{#each context.metaData.layoutMenus.main ~}}
-            <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
-            {{/each ~}}
-          </section>
-          <section class="navbar-center"></section>
-          <section class="navbar-section">
-          {{#if data.auth ~}}
-            <div class="dropdown my-account signed-in">
-              <div class="btn-group">
-                <a href="#" class="btn btn-link dropdown-toggle{{#each context.metaData.layoutMenus.user}}{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}{{/each}}">
-                  {{#if @root.data.auth.photoURL ~}}
-                    <img src="{{@root.data.auth.photoURL}}" class="avatar avatar-sm" />
-                  {{else}}
-                    <span class="far fa-fw fa-user-circle"></span>
-                  {{/if ~}}
-                  {{default @root.data.auth.email @root.data.auth.displayName}}
-                  <span class="far fa-fw fa-angle-down"></span>
-                </a>
-                <ul class="menu">
-                  <li class="menu-item">
-                    <a href="/" class="l-padding">
-                      <span class="far fa-fw fa-home r-margin" aria-hidden="true"></span>
-                      Home
-                    </a>
-                  </li>
-                  {{#each context.metaData.layoutMenus.user ~}}
-                  <li class="menu-item{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}">
-                    <a class="l-padding" href="{{stripTrailingSlash path}}">
-                      <span class="far fa-fw fa-{{icon}} r-margin" aria-hidden="true"></span>
-                      {{{label}}}
-                    </a>
-                  </li>
-                  {{/each ~}}
-                  <li class="menu-item">
-                    <a href="/sign-out" class="l-padding" data-component="TasksTrigger" data-taskstrigger="sign-out">
-                      <span class="far fa-fw fa-sign-out-alt r-margin" aria-hidden="true"></span>
-                      Sign out
-                    </a>
-                  </li>
-                </ul>
+    <div class="bg-rouleaux"{{#unless layoutParts.fullBody}} style="background-image:url('/rouleaux.svg?color=FEF9F9&style=solid');"{{/unless}}>
+      <div class="upper bg-rouleaux"{{#if layoutParts.fullBody}} style="background-image:url('/rouleaux.svg?color=FEF9F9&style=stripes');"{{/if}}>
+        <div class="container">
+          <header class="navbar header">
+            <section class="navbar-section">
+              <a href="/" class="navbar-brand" title="Scottish Council for Voluntary Organisations">
+                <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+              </a>
+            </section>
+            <section class="navbar-section">
+              <div class="form-horizontal hide-lg">
+                <form class="search_form" autocomplete="off" action="/search" method="GET">
+                  <div class="input-group input-inline">
+                    <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">
+                    <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
+                      <span class="far fa-search" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </form>
+                <a href="/services/membership" class="btn btn-primary float-right t-margin">Join our community</a>
               </div>
-            </div>
-          {{else}}
-            <a class="btn btn-link{{#if (regexMatch @root.request.url.pathname 'scvo-account' 'gi')}} active{{/if}}" href="/scvo-account">My account</a>
-          {{/if ~}}
-          </section>
-        </header>
-      </div>
+              <button class="show-lg btn btn-primary btn-action btn-lg" data-drawer-target="#mobile-menu" aria-label="Menu" alt="Menu">
+                <span class="far fa-fw fa-bars"></span>
+              </button>
+            </section>
+          </header>
+          <header class="navbar toolbar hide-lg">
+            <section class="navbar-section site-tab-bar">
+              {{#each context.metaData.layoutMenus.main ~}}
+              <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
+              {{/each ~}}
+            </section>
+            <section class="navbar-center"></section>
+            <section class="navbar-section">
+            {{#if data.auth ~}}
+              <div class="dropdown my-account signed-in">
+                <div class="btn-group">
+                  <a href="#" class="btn btn-link dropdown-toggle{{#each context.metaData.layoutMenus.user}}{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}{{/each}}">
+                    {{#if @root.data.auth.photoURL ~}}
+                      <img src="{{@root.data.auth.photoURL}}" class="avatar avatar-sm" />
+                    {{else}}
+                      <span class="far fa-fw fa-user-circle"></span>
+                    {{/if ~}}
+                    {{default @root.data.auth.email @root.data.auth.displayName}}
+                    <span class="far fa-fw fa-angle-down"></span>
+                  </a>
+                  <ul class="menu">
+                    <li class="menu-item">
+                      <a href="/" class="l-padding">
+                        <span class="far fa-fw fa-home r-margin" aria-hidden="true"></span>
+                        Home
+                      </a>
+                    </li>
+                    {{#each context.metaData.layoutMenus.user ~}}
+                    <li class="menu-item{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}">
+                      <a class="l-padding" href="{{stripTrailingSlash path}}">
+                        <span class="far fa-fw fa-{{icon}} r-margin" aria-hidden="true"></span>
+                        {{{label}}}
+                      </a>
+                    </li>
+                    {{/each ~}}
+                    <li class="menu-item">
+                      <a href="/sign-out" class="l-padding" data-component="TasksTrigger" data-taskstrigger="sign-out">
+                        <span class="far fa-fw fa-sign-out-alt r-margin" aria-hidden="true"></span>
+                        Sign out
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            {{else}}
+              <a class="btn btn-link{{#if (regexMatch @root.request.url.pathname 'scvo-account' 'gi')}} active{{/if}}" href="/scvo-account">My account</a>
+            {{/if ~}}
+            </section>
+          </header>
+        </div>
 
-      <div class="mobile-menu mobile-menu_closed">
-        <div class="mobile-menu_background" data-component="TasksTrigger" data-TasksTrigger='{
-          click: {
-            tasks: [
-            {
-              type: "elementManipulator",
-              config: {
-                ".mobile-menu": {
-                  removeClass: "mobile-menu_open",
-                  addClass: "mobile-menu_closing"
-                }
-              }
-            },
-            {
-              type: "delay",
-              config: {
-                "500": [
-                {
-                  type: "elementManipulator",
-                  config: {
-                    ".mobile-menu": {
-                      addClass: "mobile-menu_closed",
-                      removeClass: "mobile-menu_closing"
-                    }
+        <div class="mobile-menu mobile-menu_closed">
+          <div class="mobile-menu_background" data-component="TasksTrigger" data-TasksTrigger='{
+            click: {
+              tasks: [
+              {
+                type: "elementManipulator",
+                config: {
+                  ".mobile-menu": {
+                    removeClass: "mobile-menu_open",
+                    addClass: "mobile-menu_closing"
                   }
                 }
-                ]
+              },
+              {
+                type: "delay",
+                config: {
+                  "500": [
+                  {
+                    type: "elementManipulator",
+                    config: {
+                      ".mobile-menu": {
+                        addClass: "mobile-menu_closed",
+                        removeClass: "mobile-menu_closing"
+                      }
+                    }
+                  }
+                  ]
+                }
               }
+              ]
             }
-            ]
-          }
-        }'></div>
-        <aside class="mobile-menu_contents sidebar">
-          <div class="b-margin-full b-padding-full v-padding">
-            <ul class="menu">
-              <li class="menu-item">
-                <a href="/" class="l-padding-full {{#if (regexMatch @root.request.url.pathname '^/$' 'gi')}}active{{/if}}">
-                  <span class="far fa-fw fa-home" aria-hidden="true"></span>
-                  Home
-                </a>
-              </li>
-              {{#each @root.context.metaData.layoutMenus.main ~}}
-              <li class="menu-item">
-                <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                  {{#if icon ~}}
-                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                  {{/if ~}}
-                  {{label}}
-                </a>
-              </li>
-              {{/each ~}}
-              {{#each @root.context.metaData.layoutMenus.main-upper ~}}
-              <li class="menu-item">
-                <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                  {{#if icon ~}}
-                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                  {{/if ~}}
-                  {{label}}
-                </a>
-              </li>
-              {{/each ~}}
-              {{#each @root.context.metaData.layoutMenus.main-extra ~}}
-              <li class="menu-item">
-                <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                  {{#if icon ~}}
-                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                  {{/if ~}}
-                  {{label}}
-                </a>
-              </li>
-              {{/each ~}}
-            </ul>
-          </div>
-        </aside>
-      </div>
-
-      <div class="container">
-        {{{layoutParts.upperBody}}}
-      </div>
-    </div>
-
-    {{#if layoutParts.fullBody ~}}
-    <div class="container">
-      {{{layoutParts.header}}}
-    </div>
-    {{{layoutParts.fullBody}}}
-    <div class="container">
-      {{{layoutParts.footer}}}
-    </div>
-    {{else}}
-    {{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
-    <div class="sidebar-present container">
-      {{{layoutParts.header}}}
-      <div class="columns">
-        {{#ifAll layoutParts.leftSidebar layoutParts.rightSidebar ~}}
-        <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
-          {{{layoutParts.leftSidebar}}}
-        </aside>
-        <main class="body column col-xs-auto">
-          {{{layoutParts.body}}}
-        </main>
-        <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
-          {{{layoutParts.rightSidebar}}}
-        </aside>
-        {{else}}
-        {{#if layoutParts.leftSidebar ~}}
-        <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
-          {{{layoutParts.leftSidebar}}}
-        </aside>
-        <main class="body column col-xs-auto">
-          {{{layoutParts.body}}}
-        </main>
-        {{else}}
-        <main class="body column col-xs-auto">
-          {{{layoutParts.body}}}
-        </main>
-        <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
-          {{{layoutParts.rightSidebar}}}
-        </aside>
-        {{/if ~}}
-        {{/ifAll ~}}
-      </div>
-      {{{layoutParts.footer}}}
-    </div>
-    {{else}}
-    <div class="sidebar-not-present container">
-      {{{layoutParts.header}}}
-      <main class="body">
-        {{{layoutParts.body}}}
-      </main>
-      {{{layoutParts.footer}}}
-    </div>
-    {{/ifAny ~}}
-    {{/if ~}}
-
-    <footer>
-      <div class="footer-main">
-        <div class="container">
-          <div class="columns">
-            <div class="column col-12 col-ml-auto membership">
-              <a href="/services/membership" class="btn btn-primary pull-right">SCVO membership</a>
-            </div>
-          </div>
-          <div class="columns">
-            <div class="column col-3 col-lg-6 col-md-12 contact">
-              <h4>Contact</h4>
-              <ul class="fa-ul">
-                <li>
-                  <span class="fa-li"><span class="fas fa-envelope"></span></span>
-                  <a href="mailto:enquiries@scvo.org.uk">enquiries@scvo.org.uk</a>
+          }'></div>
+          <aside class="mobile-menu_contents sidebar">
+            <div class="b-margin-full b-padding-full v-padding">
+              <ul class="menu">
+                <li class="menu-item">
+                  <a href="/" class="l-padding-full {{#if (regexMatch @root.request.url.pathname '^/$' 'gi')}}active{{/if}}">
+                    <span class="far fa-fw fa-home" aria-hidden="true"></span>
+                    Home
+                  </a>
                 </li>
-                <li>
-                  <span class="fa-li"><span class="fas fa-phone fa-flip-horizontal"></span></span>
-                  <a href="tel:+441314748000">0131 474 8000</a>
+                {{#each @root.context.metaData.layoutMenus.main ~}}
+                <li class="menu-item">
+                  <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                    {{#if icon ~}}
+                    <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                    {{/if ~}}
+                    {{label}}
+                  </a>
                 </li>
-              </ul>
-              <p>
-                Information service helpline
-              </p>
-              <ul class="fa-ul">
-                <li>
-                  <span class="fa-li"><span class="fas fa-phone fa-flip-horizontal"></span></span>
-                  <a href="tel:+448001690022">0800 169 0022</a>
+                {{/each ~}}
+                {{#each @root.context.metaData.layoutMenus.main-upper ~}}
+                <li class="menu-item">
+                  <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                    {{#if icon ~}}
+                    <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                    {{/if ~}}
+                    {{label}}
+                  </a>
                 </li>
-              </ul>
-              <ul class="">
-                <li class=""><a href="/services/membership">Become a member</a></li>
-              </ul>
-            </div>
-            <div class="column col-3 col-lg-6 col-md-12 social">
-              <h4>Social</h4>
-              <ul class="fa-ul">
-                <li>
-                  <span class="fa-li" aria-hidden="true"><span class="fab fa-twitter"></span></span>
-                  <a href="https://twitter.com/scvotweet" rel="noopener">Twitter</a>
+                {{/each ~}}
+                {{#each @root.context.metaData.layoutMenus.main-extra ~}}
+                <li class="menu-item">
+                  <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                    {{#if icon ~}}
+                    <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                    {{/if ~}}
+                    {{label}}
+                  </a>
                 </li>
-                <li>
-                  <span class="fa-li" aria-hidden="true"><span class="fab fa-facebook"></span></span>
-                  <a href="https://www.facebook.com/SCVO1939" rel="noopener">Facebook</a>
-                </li>
-                <li>
-                  <span class="fa-li" aria-hidden="true"><span class="fas fa-heart"></span></span>
-                  <a href="https://goodhq.org/scvo">Good HQ</a>
-                </li>
-                <li>
-                  <span class="fa-li" aria-hidden="true"><span class="fab fa-youtube"></span></span>
-                  <a href="https://www.youtube.com/user/SCVOtv" rel="noopener">YouTube</a>
-                </li>
-                <li>
-                  <span class="fa-li" aria-hidden="true"><span class="fab fa-linkedin"></span></span>
-                  <a href="https://www.linkedin.com/company/scvo" rel="noopener">LinkedIn</a>
-                </li>
-              </ul>
-            </div>
-            <div class="column col-3 col-lg-6 col-md-12 help">
-              <h4>Help</h4>
-              <ul class="">
-                {{#each context.metaData.layoutMenus.footer ~}}
-                <li class=""><a href="{{path}}">{{{label}}}</a></li>
                 {{/each ~}}
               </ul>
             </div>
-            <div class="column col-3 col-lg-6 col-md-12 about">
-              <h4>About</h4>
-              <p>
-                The <strong>Scottish Council for Voluntary Organisations</strong> is the membership organisation for Scotland's charities, voluntary organisations and social enterprises. <a href="/about">Find out more</a>
-              </p>
-            </div>
-          </div>
+          </aside>
         </div>
-      </div>
-      <div class="footer-copyright">
+
         <div class="container">
-          <div class="columns">
-            <div class="copyright column col-8 col-xl-12">
-              <p>
-                &copy; {{momentFormat (moment) "YYYY"}}. The Scottish Council for Voluntary Organisations (SCVO) is a Scottish Charitable Incorporated Organisation.<br />
-                Charity registered in Scotland <a href="https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number=SC003558">SC003558</a>. Registered office Mansfield Traquair Centre, 15 Mansfield Place, Edinburgh EH3 6BB.
-              </p>
+          {{{layoutParts.upperBody}}}
+        </div>
+      </div>
+
+      {{#if layoutParts.fullBody ~}}
+      <div class="container">
+        {{{layoutParts.header}}}
+      </div>
+      {{{layoutParts.fullBody}}}
+      <div class="container">
+        {{{layoutParts.footer}}}
+      </div>
+      {{else}}
+      {{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
+      <div class="sidebar-present container">
+        {{{layoutParts.header}}}
+        <div class="columns">
+          {{#ifAll layoutParts.leftSidebar layoutParts.rightSidebar ~}}
+          <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
+            {{{layoutParts.leftSidebar}}}
+          </aside>
+          <main class="body column col-xs-auto">
+            {{{layoutParts.body}}}
+          </main>
+          <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
+            {{{layoutParts.rightSidebar}}}
+          </aside>
+          {{else}}
+          {{#if layoutParts.leftSidebar ~}}
+          <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
+            {{{layoutParts.leftSidebar}}}
+          </aside>
+          <main class="body column col-xs-auto">
+            {{{layoutParts.body}}}
+          </main>
+          {{else}}
+          <main class="body column col-xs-auto">
+            {{{layoutParts.body}}}
+          </main>
+          <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
+            {{{layoutParts.rightSidebar}}}
+          </aside>
+          {{/if ~}}
+          {{/ifAll ~}}
+        </div>
+        {{{layoutParts.footer}}}
+      </div>
+      {{else}}
+      <div class="sidebar-not-present container">
+        {{{layoutParts.header}}}
+        <main class="body">
+          {{{layoutParts.body}}}
+        </main>
+        {{{layoutParts.footer}}}
+      </div>
+      {{/ifAny ~}}
+      {{/if ~}}
+
+      <footer>
+        <div class="footer-main">
+          <div class="container">
+            <div class="columns">
+              <div class="column col-12 col-ml-auto membership">
+                <a href="/services/membership" class="btn btn-primary pull-right">Join our community</a>
+              </div>
             </div>
-            <div class="logos column col-4 col-ml-auto col-xl-12">
-              <a href="https://scvo.org" class="scvo-logo" title="Scottish Council for Voluntary Organisations">
-                <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
-              </a>
+            <div class="columns">
+              <div class="column col-3 col-lg-6 col-md-12 contact">
+                <h4>Contact</h4>
+                <ul class="fa-ul">
+                  <li>
+                    <span class="fa-li"><span class="fas fa-envelope"></span></span>
+                    <a href="mailto:enquiries@scvo.org.uk">enquiries@scvo.org.uk</a>
+                  </li>
+                  <li>
+                    <span class="fa-li"><span class="fas fa-phone fa-flip-horizontal"></span></span>
+                    <a href="tel:+441314748000">0131 474 8000</a>
+                  </li>
+                </ul>
+                <p>
+                  Information service helpline
+                </p>
+                <ul class="fa-ul">
+                  <li>
+                    <span class="fa-li"><span class="fas fa-phone fa-flip-horizontal"></span></span>
+                    <a href="tel:+448001690022">0800 169 0022</a>
+                  </li>
+                </ul>
+                <ul class="">
+                  <li class=""><a href="/services/membership">Become a member</a></li>
+                </ul>
+              </div>
+              <div class="column col-3 col-lg-6 col-md-12 social">
+                <h4>Social</h4>
+                <ul class="fa-ul">
+                  <li>
+                    <span class="fa-li" aria-hidden="true"><span class="fab fa-twitter"></span></span>
+                    <a href="https://twitter.com/scvotweet" rel="noopener">Twitter</a>
+                  </li>
+                  <li>
+                    <span class="fa-li" aria-hidden="true"><span class="fab fa-facebook"></span></span>
+                    <a href="https://www.facebook.com/SCVO1939" rel="noopener">Facebook</a>
+                  </li>
+                  <li>
+                    <span class="fa-li" aria-hidden="true"><span class="fas fa-heart"></span></span>
+                    <a href="https://goodhq.org/scvo">Good HQ</a>
+                  </li>
+                  <li>
+                    <span class="fa-li" aria-hidden="true"><span class="fab fa-youtube"></span></span>
+                    <a href="https://www.youtube.com/user/SCVOtv" rel="noopener">YouTube</a>
+                  </li>
+                  <li>
+                    <span class="fa-li" aria-hidden="true"><span class="fab fa-linkedin"></span></span>
+                    <a href="https://www.linkedin.com/company/scvo" rel="noopener">LinkedIn</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="column col-3 col-lg-6 col-md-12 help">
+                <h4>Help</h4>
+                <ul class="">
+                  {{#each context.metaData.layoutMenus.footer ~}}
+                  <li class=""><a href="{{path}}">{{{label}}}</a></li>
+                  {{/each ~}}
+                </ul>
+              </div>
+              <div class="column col-3 col-lg-6 col-md-12 about">
+                <h4>About</h4>
+                <p>
+                  The <strong>Scottish Council for Voluntary Organisations</strong> is the membership organisation for Scotland's charities, voluntary organisations and social enterprises. <a href="/about">Find out more</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+        <div class="footer-copyright">
+          <div class="container">
+            <div class="columns">
+              <div class="copyright column col-8 col-xl-12">
+                <p>
+                  &copy; {{momentFormat (moment) "YYYY"}}. The Scottish Council for Voluntary Organisations (SCVO) is a Scottish Charitable Incorporated Organisation.<br />
+                  Charity registered in Scotland <a href="https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number=SC003558">SC003558</a>. Registered office Mansfield Traquair Centre, 15 Mansfield Place, Edinburgh EH3 6BB.
+                </p>
+              </div>
+              <div class="logos column col-4 col-ml-auto col-xl-12">
+                <a href="https://scvo.org" class="scvo-logo" title="Scottish Council for Voluntary Organisations">
+                  <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </div>
 
   {{#each @root.context.metaData.handlebars.frontend.configs ~}}

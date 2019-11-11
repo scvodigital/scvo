@@ -288,7 +288,7 @@ a.rss,
 
 .find-information-on {
   background-color: $primary-color;
-  padding-top: $unit;
+  padding-top: $unit*1.5;
   padding-bottom: $unit;
   a, h2, h3, h4, .icon {
     color: white;
@@ -300,12 +300,23 @@ a.rss,
     opacity: 1;
   }
 }
+.latest-posts {
+  background-color: $gray-color;
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+  }
+  li {
+    margin-left: 0;
+  }
+}
 
 .avatar.avatar-sm {
   margin-right: $unit/5;
 }
 .chip.bg-primary {
   color: white !important;
+  background-color: $primary-color !important;
 }
 .chip.bg-primary:hover {
   background-color: $primary-color-dark !important;
@@ -425,6 +436,9 @@ aside {
 .form-group .form-select,
 .input-group .form-select {
   border-color: $primary-color;
+}
+.input-group.input-inline {
+  width: 100%;
 }
 
 #toaster {

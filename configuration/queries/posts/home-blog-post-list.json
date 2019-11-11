@@ -1,9 +1,10 @@
 {
-  "size": 4,
+  "size": 5,
   "_source": [
-    "header_background",
-    "rendered.scvo_featured",
-    "rendered.scvo_gist"
+    "wpid",
+    "post_slug",
+    "title",
+    "publish_on"
   ],
   "query": {
     "bool": {
