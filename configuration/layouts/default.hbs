@@ -68,159 +68,174 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
 <link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}" />
 </head>
 <body class="{{#if request.params.path}}{{replace (replace request.params.path '20-years' 'twenty-years') '_' ' '}}{{else}}home{{/if}}">
+  {{!-- {{> components_scvo_bar}} --}}
   <div class="page">
-    {{!-- {{> components_scvo_bar}} --}}
-    <div class="container">
-      <header class="navbar header">
-        <section class="navbar-section">
-          <a href="/" class="navbar-brand" title="Scottish Council for Voluntary Organisations">
-            <img src="{{~>asset_url url='images/logos/scvo-inverse.png'~}}" alt="Scottish Council for Voluntary Organisations" />
-          </a>
-        </section>
-        <section class="navbar-section">
-          <div class="form-horizontal hide-lg">
-            <form class="search_form" autocomplete="off" action="/search" method="GET">
-              <div class="input-group input-inline">
-                <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">
-                <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
-                  <span class="far fa-search" aria-hidden="true"></span>
-                </button>
-              </div>
-            </form>
-            <a href="/services/membership" class="btn btn-primary float-right t-margin">Join our community</a>
-          </div>
-          <button class="show-lg btn btn-primary btn-action btn-lg" data-drawer-target="#mobile-menu" aria-label="Menu" alt="Menu">
-            <span class="far fa-fw fa-bars"></span>
-          </button>
-        </section>
-      </header>
-      <header class="navbar toolbar hide-lg">
-        <section class="navbar-section site-tab-bar">
-          {{#each context.metaData.layoutMenus.main ~}}
-          <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
-          {{/each ~}}
-        </section>
-        <section class="navbar-center"></section>
-        <section class="navbar-section">
-        {{#if data.auth ~}}
-          <div class="dropdown my-account signed-in">
-            <div class="btn-group">
-              <a href="#" class="btn btn-link dropdown-toggle{{#each context.metaData.layoutMenus.user}}{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}{{/each}}">
-                {{#if @root.data.auth.photoURL ~}}
-                  <img src="{{@root.data.auth.photoURL}}" class="avatar avatar-sm" />
-                {{else}}
-                  <span class="far fa-fw fa-user-circle"></span>
-                {{/if ~}}
-                {{default @root.data.auth.email @root.data.auth.displayName}}
-                <span class="far fa-fw fa-angle-down"></span>
-              </a>
-              <ul class="menu">
-                <li class="menu-item">
-                  <a href="/" class="l-padding">
-                    <span class="far fa-fw fa-home r-margin" aria-hidden="true"></span>
-                    Home
-                  </a>
-                </li>
-                {{#each context.metaData.layoutMenus.user ~}}
-                <li class="menu-item{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}">
-                  <a class="l-padding" href="{{stripTrailingSlash path}}">
-                    <span class="far fa-fw fa-{{icon}} r-margin" aria-hidden="true"></span>
-                    {{{label}}}
-                  </a>
-                </li>
-                {{/each ~}}
-                <li class="menu-item">
-                  <a href="/sign-out" class="l-padding" data-component="TasksTrigger" data-taskstrigger="sign-out">
-                    <span class="far fa-fw fa-sign-out-alt r-margin" aria-hidden="true"></span>
-                    Sign out
-                  </a>
-                </li>
-              </ul>
+    <div class="upper bg-rouleaux" style="background-image:url('/rouleaux.svg?color=FEF9F9&style=stripes');">
+      <div class="container">
+        <header class="navbar header">
+          <section class="navbar-section">
+            <a href="/" class="navbar-brand" title="Scottish Council for Voluntary Organisations">
+              <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+            </a>
+          </section>
+          <section class="navbar-section">
+            <div class="form-horizontal hide-lg">
+              <form class="search_form" autocomplete="off" action="/search" method="GET">
+                <div class="input-group input-inline">
+                  <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">
+                  <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
+                    <span class="far fa-search" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </form>
+              <a href="/services/membership" class="btn btn-primary float-right t-margin">Join our community</a>
             </div>
-          </div>
-        {{else}}
-          <a class="btn btn-link{{#if (regexMatch @root.request.url.pathname 'scvo-account' 'gi')}} active{{/if}}" href="/scvo-account">My account</a>
-        {{/if ~}}
-        </section>
-      </header>
-    </div>
+            <button class="show-lg btn btn-primary btn-action btn-lg" data-drawer-target="#mobile-menu" aria-label="Menu" alt="Menu">
+              <span class="far fa-fw fa-bars"></span>
+            </button>
+          </section>
+        </header>
+        <header class="navbar toolbar hide-lg">
+          <section class="navbar-section site-tab-bar">
+            {{#each context.metaData.layoutMenus.main ~}}
+            <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
+            {{/each ~}}
+          </section>
+          <section class="navbar-center"></section>
+          <section class="navbar-section">
+          {{#if data.auth ~}}
+            <div class="dropdown my-account signed-in">
+              <div class="btn-group">
+                <a href="#" class="btn btn-link dropdown-toggle{{#each context.metaData.layoutMenus.user}}{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}{{/each}}">
+                  {{#if @root.data.auth.photoURL ~}}
+                    <img src="{{@root.data.auth.photoURL}}" class="avatar avatar-sm" />
+                  {{else}}
+                    <span class="far fa-fw fa-user-circle"></span>
+                  {{/if ~}}
+                  {{default @root.data.auth.email @root.data.auth.displayName}}
+                  <span class="far fa-fw fa-angle-down"></span>
+                </a>
+                <ul class="menu">
+                  <li class="menu-item">
+                    <a href="/" class="l-padding">
+                      <span class="far fa-fw fa-home r-margin" aria-hidden="true"></span>
+                      Home
+                    </a>
+                  </li>
+                  {{#each context.metaData.layoutMenus.user ~}}
+                  <li class="menu-item{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}">
+                    <a class="l-padding" href="{{stripTrailingSlash path}}">
+                      <span class="far fa-fw fa-{{icon}} r-margin" aria-hidden="true"></span>
+                      {{{label}}}
+                    </a>
+                  </li>
+                  {{/each ~}}
+                  <li class="menu-item">
+                    <a href="/sign-out" class="l-padding" data-component="TasksTrigger" data-taskstrigger="sign-out">
+                      <span class="far fa-fw fa-sign-out-alt r-margin" aria-hidden="true"></span>
+                      Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          {{else}}
+            <a class="btn btn-link{{#if (regexMatch @root.request.url.pathname 'scvo-account' 'gi')}} active{{/if}}" href="/scvo-account">My account</a>
+          {{/if ~}}
+          </section>
+        </header>
+      </div>
 
-    <div class="mobile-menu mobile-menu_closed">
-      <div class="mobile-menu_background" data-component="TasksTrigger" data-TasksTrigger='{
-        click: {
-          tasks: [
-          {
-            type: "elementManipulator",
-            config: {
-              ".mobile-menu": {
-                removeClass: "mobile-menu_open",
-                addClass: "mobile-menu_closing"
-              }
-            }
-          },
-          {
-            type: "delay",
-            config: {
-              "500": [
-              {
-                type: "elementManipulator",
-                config: {
-                  ".mobile-menu": {
-                    addClass: "mobile-menu_closed",
-                    removeClass: "mobile-menu_closing"
-                  }
+      <div class="mobile-menu mobile-menu_closed">
+        <div class="mobile-menu_background" data-component="TasksTrigger" data-TasksTrigger='{
+          click: {
+            tasks: [
+            {
+              type: "elementManipulator",
+              config: {
+                ".mobile-menu": {
+                  removeClass: "mobile-menu_open",
+                  addClass: "mobile-menu_closing"
                 }
               }
-              ]
+            },
+            {
+              type: "delay",
+              config: {
+                "500": [
+                {
+                  type: "elementManipulator",
+                  config: {
+                    ".mobile-menu": {
+                      addClass: "mobile-menu_closed",
+                      removeClass: "mobile-menu_closing"
+                    }
+                  }
+                }
+                ]
+              }
             }
+            ]
           }
-          ]
-        }
-      }'></div>
-      <aside class="mobile-menu_contents sidebar">
-        <div class="b-margin-full b-padding-full v-padding">
-          <ul class="menu">
-            <li class="menu-item">
-              <a href="/" class="l-padding-full {{#if (regexMatch @root.request.url.pathname '^/$' 'gi')}}active{{/if}}">
-                <span class="far fa-fw fa-home" aria-hidden="true"></span>
-                Home
-              </a>
-            </li>
-            {{#each @root.context.metaData.layoutMenus.main ~}}
-            <li class="menu-item">
-              <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                {{#if icon ~}}
-                <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                {{/if ~}}
-                {{label}}
-              </a>
-            </li>
-            {{/each ~}}
-            {{#each @root.context.metaData.layoutMenus.main-upper ~}}
-            <li class="menu-item">
-              <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                {{#if icon ~}}
-                <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                {{/if ~}}
-                {{label}}
-              </a>
-            </li>
-            {{/each ~}}
-            {{#each @root.context.metaData.layoutMenus.main-extra ~}}
-            <li class="menu-item">
-              <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                {{#if icon ~}}
-                <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                {{/if ~}}
-                {{label}}
-              </a>
-            </li>
-            {{/each ~}}
-          </ul>
-        </div>
-      </aside>
+        }'></div>
+        <aside class="mobile-menu_contents sidebar">
+          <div class="b-margin-full b-padding-full v-padding">
+            <ul class="menu">
+              <li class="menu-item">
+                <a href="/" class="l-padding-full {{#if (regexMatch @root.request.url.pathname '^/$' 'gi')}}active{{/if}}">
+                  <span class="far fa-fw fa-home" aria-hidden="true"></span>
+                  Home
+                </a>
+              </li>
+              {{#each @root.context.metaData.layoutMenus.main ~}}
+              <li class="menu-item">
+                <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                  {{#if icon ~}}
+                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                  {{/if ~}}
+                  {{label}}
+                </a>
+              </li>
+              {{/each ~}}
+              {{#each @root.context.metaData.layoutMenus.main-upper ~}}
+              <li class="menu-item">
+                <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                  {{#if icon ~}}
+                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                  {{/if ~}}
+                  {{label}}
+                </a>
+              </li>
+              {{/each ~}}
+              {{#each @root.context.metaData.layoutMenus.main-extra ~}}
+              <li class="menu-item">
+                <a href="{{stripTrailingSlash path}}" class="l-padding-full{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                  {{#if icon ~}}
+                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                  {{/if ~}}
+                  {{label}}
+                </a>
+              </li>
+              {{/each ~}}
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <div class="container">
+        {{{layoutParts.upperBody}}}
+      </div>
     </div>
 
+    {{#if layoutParts.fullBody ~}}
+    <div class="container">
+      {{{layoutParts.header}}}
+    </div>
+    {{{layoutParts.fullBody}}}
+    <div class="container">
+      {{{layoutParts.footer}}}
+    </div>
+    {{else}}
     {{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
     <div class="sidebar-present container">
       {{{layoutParts.header}}}
@@ -264,6 +279,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
       {{{layoutParts.footer}}}
     </div>
     {{/ifAny ~}}
+    {{/if ~}}
 
     <footer>
       <div class="footer-main">
@@ -352,7 +368,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
             </div>
             <div class="logos column col-4 col-ml-auto col-xl-12">
               <a href="https://scvo.org" class="scvo-logo" title="Scottish Council for Voluntary Organisations">
-                <img src="{{~>asset_url url='images/logos/scvo.png'~}}" alt="Scottish Council for Voluntary Organisations" />
+                <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
               </a>
             </div>
           </div>

@@ -1,31 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Delius:400,600,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,600,800&display=swap');
 
-$primary-color: #d43f4f;
+$primary-color: #FF595A;
 $primary-color-light: lighten($primary-color, 30%) !default;
 $primary-color-dark: darken($primary-color, 10%) !default;
-$secondary-color: #0c2133;
+$secondary-color: #385665;
 $secondary-color-light: lighten($secondary-color, 30%) !default;
-$secondary-color-dark: darken($secondary-color, 6%) !default;
-$dark-color: #10183A;
-$gray-color: #c4c9ce;
-$light-color: #fafafa;
+$secondary-color-dark: darken($secondary-color, 10%) !default;
+$dark-color: #203139;
+$gray-color: $secondary-color-light;
+$light-color: #FEF9F9;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
 $error-color: #f03823;
 
-$theme-footer: #0c2133;
-$theme-footer-light: #f0f0f0;
-$theme-footer-dark: #29333D;
-
-$bg-color: lighten($theme-footer-light, 1%) !default;
-$bg-color-light: lighten($bg-color, 4%) !default;
-$bg-color-dark: darken($bg-color, 4%) !default;
+$bg-color: #FEF9F9;
+$bg-color-light: #ffffff;
+$bg-color-dark: #D5D8DC;
 
 $unit: 1rem;
 $padding: .4rem;
-$thick-line: 2px;
+$thick-line: 3px;
 $thin-line: 0.05rem;
-$border-radius: 4px;
+$border-radius: 6px;
 $base-font-weight: 400;
 $link-font-weight: 600;
 $heading-font-weight: 600;
@@ -37,6 +33,15 @@ $home-splash-height: 25vh;
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css');
 
+::-moz-selection {
+  color: #fff;
+  background: $primary-color-dark;
+}
+::selection {
+  color: #fff;
+  background: $primary-color-dark;
+}
+
 .container {
   padding: 0 $unit;
   margin: 0 auto;
@@ -44,13 +49,36 @@ $home-splash-height: 25vh;
 }
 body,
 .footer-copyright {
-  background-color: $theme-footer-light;
+  background-color: $bg-color;
 }
 .footer-main {
-  background-color: $theme-footer;
+  background-color: $secondary-color;
 }
+.icon-rouleaux,
+.bg-rouleaux {
+  background-size: $page-width;
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+}
+.icon-rouleaux {
+  background-size: contain;
+  height: $unit*5;
+  opacity: inherit;
+  .icon {
+    line-height: $unit*5;
+    margin-left: $unit/3;
+  }
+}
+@media screen and (max-width: $page-width) {
+  .bg-rouleaux {
+    background-size: 100%;
+  }
+}
+
 .page {
   background-color: white;
+  padding-top: $unit;
   .full {
     img {
       max-width: 100%;
@@ -68,7 +96,7 @@ input,
 select,
 textarea,
 body * {
-  font-family: 'Delius', sans-serif;
+  font-family: 'Lato', sans-serif;
   box-sizing: border-box;
 }
 body::after,
@@ -152,7 +180,15 @@ strong {
 
 .breadcrumb .breadcrumb-item {
   color: $secondary-color;
-  font-weight: $link-font-weight;
+  font-weight: $base-font-weight;
+  a {
+    color: $primary-color !important;
+    font-weight: $base-font-weight;
+  }
+}
+.breadcrumb .breadcrumb-item:not(:first-child)::before {
+  color: $primary-color;
+  content: ">";
 }
 .divider {
   border-top-color: $gray-color;
@@ -160,37 +196,111 @@ strong {
 .divider-vert[data-content]::after {
   font-weight: $heading-font-weight;
 }
+
 a:visited,
 .breadcrumb .breadcrumb-item:not(:last-child) a,
 a:not(.btn) {
   text-decoration-skip-ink: auto;
   text-decoration: none;
-  color: $primary-color;
-  border-bottom: $thick-line solid transparent;
+  color: $secondary-color;
+  // border-bottom: $thick-line solid transparent;
+  background: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: $thick-line $thick-line;
+  transition: background-size .2s, color .2s;
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .breadcrumb .breadcrumb-item:not(:last-child) a:hover,
 a:hover {
   text-decoration: none;
-  color: $primary-color;
-  border-bottom-color: $primary-color;
+  // color: $primary-color;
+  color: white;
+  background-size: $thick-line 50px;
+  // border-bottom-color: $primary-color;
+}
+footer .footer-main a {
+  background: linear-gradient(to bottom, white 0%, white 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: $thick-line $thick-line;
+  transition: background-size .2s, color .2s;
 }
 footer .footer-main a:hover {
-  border-bottom-color: white;
+  // border-bottom-color: white;
+  color: $secondary-color;
+  background-size: $thick-line 50px;
+}
+footer .footer-copyright a {
+  background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: $thick-line $thick-line;
+  transition: background-size .2s, color .2s;
 }
 footer .footer-copyright a:hover {
-  border-bottom-color: $theme-footer;
+  // border-bottom-color: $secondary-color;
+  color: white;
+  background-size: $thick-line 50px;
 }
-.mdc-card__title a,
-.mdc-card__primary h3 a,
+// .mdc-card__title a,
+// .mdc-card__primary h3 a,
+.breadcrumb .breadcrumb-item a,
 .pagination a,
 a.scvo-logo,
+a.no-underline,
 a.navbar-brand,
 a.avatar,
 a.rss,
 .chip,
 .menu a:not(.btn) {
-  border-bottom: none !important;
+  // border-bottom: none !important;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: $primary-color-dark;
+  background: none !important;
 }
+
+.hero {
+  background-color: transparent;
+  padding: 0;
+  .hero-body {
+    padding: 0;
+  }
+  .hero-text {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin: 0;
+    }
+  }
+  .hero-illustration {
+    img {
+      vertical-align: bottom;
+      max-width: 100%;
+    }
+  }
+}
+
+.find-information-on {
+  background-color: $primary-color;
+  padding-top: $unit;
+  padding-bottom: $unit;
+  a, h2, h3, h4, .icon {
+    color: white;
+  }
+  a {
+    opacity: 0.7;
+  }
+  a:hover {
+    opacity: 1;
+  }
+}
+
 .avatar.avatar-sm {
   margin-right: $unit/5;
 }
@@ -463,14 +573,14 @@ aside {
 }
 
 .scvo-tab-bar {
-  background-color: $theme-footer-light;
+  background-color: $gray-color;
   .container-fluid .tab-bar {
     .tab {
-      color: $theme-footer-dark !important;
+      color: $secondary-color !important;
     }
     .tab.active {
       background-color: transparent;
-      border-bottom: $unit/5 solid $theme-footer-dark;
+      border-bottom: $unit/5 solid $secondary-color;
     }
   }
   .navbar-brand img {
@@ -529,8 +639,8 @@ header {
 header.header {
   padding-top: $unit/2;
   .navbar-brand img {
-    max-width: 220px;
-    margin-left: -10px;
+    width: 220px;
+    // margin-left: -10px;
   }
   .input-inline .form-input {
     width: 320px;
@@ -541,7 +651,8 @@ header.toolbar {
   border-bottom: $thick-line solid $primary-color;
   .btn {
     color: $secondary-color;
-    border-radius: $border-radius $border-radius 0 0 !important;
+    // border-radius: $border-radius $border-radius 0 0 !important;
+    border-radius: 0;
   }
   .btn:hover,
   .btn:focus {
@@ -880,11 +991,11 @@ footer {
     p,
     h4,
     a {
-      color: white !important;
-    }
-    a:hover {
       color: white;
     }
+    // a:hover {
+    //   color: white;
+    // }
     p {
       margin: 0;
     }
@@ -909,11 +1020,11 @@ footer {
     }
     p,
     a {
-      color: $theme-footer-dark;
+      color: $secondary-color;
     }
-    a:hover {
-      color: $theme-footer-dark;
-    }
+    // a:hover {
+    //   color: $secondary-color;
+    // }
     p {
       margin: $unit/2 0;
     }
@@ -923,8 +1034,7 @@ footer {
         text-decoration: none;
       }
       .scvo-logo img {
-        max-height: 38px;
-        filter: invert(1);
+        height: 38px;
       }
     }
   }
@@ -1368,7 +1478,7 @@ footer {
     color: white;
   }
   .footer-main {
-    background: $theme-footer-dark;
+    background: $secondary-color;
   }
   header.toolbar .btn,
   header.toolbar .btn:hover,
