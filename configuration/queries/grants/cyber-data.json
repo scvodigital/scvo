@@ -4,12 +4,8 @@
     "amount_requested_total",
     "amount_requested",
     "amount_awarded",
-    "date_awarded",
-    "date_started",
-    "actual_start",
-    "actual_end",
-    "planned_start",
-    "planned_end",
+    "date_contracted",
+    "date_payment_2",
     "description",
     "title",
     "Id",
@@ -19,6 +15,7 @@
     "recipient_name",
     "recipient_charity_number",
     "recipient_id",
+    "call",
     "call_slug",
     "recipient_overview",
     "recipient_address_street",
@@ -26,8 +23,7 @@
     "recipient_address_region",
     "recipient_address_postcode",
     "recipient_address_location_coords",
-    "recipient_url",
-    "call"
+    "recipient_url"
   ],
   "query": {
     "bool": {

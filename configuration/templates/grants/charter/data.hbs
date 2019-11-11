@@ -22,6 +22,18 @@
     {{else}}
     {{#if date_started ~}}
     "awardDate": "{{momentFormat (moment date_started 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if actual_start ~}}
+    "awardDate": "{{momentFormat (moment actual_start 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if planned_start ~}}
+    "awardDate": "{{momentFormat (moment planned_start 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if date_last_modified ~}}
+    "awardDate": "{{momentFormat (moment date_last_modified 'x') "YYYY-MM-DD"}}",
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
     {{/if ~}}
     {{/if ~}}
     "description": {{{stringify (default description "Detailed information not yet available.")}}},
@@ -77,7 +89,7 @@
       "name": "Scottish Council For Voluntary Organisations",
       "id": "GB-SC-SC003558",
       "charityNumber": "SC003558",
-      "department": "Policy",
+      "department": "Digital",
       "streetAddress": "Mansfield Traquair, 15 Mansfield Place",
       "addressLocality": "Edinburgh",
       "addressRegion": "City of Edinburgh",
@@ -92,10 +104,10 @@
     }],
     {{#if call ~}}
     "grantProgramme": [{
-      "code": "scvo-ccrf-{{call_slug}}",
-      "title": "Community Capacity & Resilience Fund - {{call}}",
-      "description": "Funding to help local voluntary sector groups and organisations across Scotland tackle poverty and mitigate against UK government welfare changes.",
-      "url": "https://scvo.org/running-your-organisation/funding/community-capacity-resilience-fund"
+      "code": "scvo-digital-charter-{{call_slug}}",
+      "title": "Charter Fund - {{call}}",
+      "description": "Our Digital Participation Charter Fund, supported by by the Scottish Government, the ERDF and BT, invests in community digital participation projects across Scotland. The projects that we're supporting will enable groups and organisations to digitise content, build digital networks and improve the digital skills of their members, so that they can continue to thrive in the digital world.",
+      "url": "https://scvo.org/digital/participation/charter-fund"
     }],
     "fromOpenCall": "Yes",
     {{/if ~}}

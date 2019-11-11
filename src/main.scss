@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,600,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Delius:400,600,800&display=swap');
 
 $primary-color: #d43f4f;
 $primary-color-light: lighten($primary-color, 30%) !default;
@@ -68,7 +68,7 @@ input,
 select,
 textarea,
 body * {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Delius', sans-serif;
   box-sizing: border-box;
 }
 body::after,
@@ -156,6 +156,9 @@ strong {
 }
 .divider {
   border-top-color: $gray-color;
+}
+.divider-vert[data-content]::after {
+  font-weight: $heading-font-weight;
 }
 a:visited,
 .breadcrumb .breadcrumb-item:not(:last-child) a,
@@ -589,6 +592,10 @@ header.toolbar {
       margin-right: 0;
     }
   }
+}
+
+blockquote {
+  margin-top: 0;
 }
 
 .pagination {
