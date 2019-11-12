@@ -223,13 +223,9 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
       </div>
 
       {{#if layoutParts.fullWidthBody ~}}
-      <div class="container">
-        {{{layoutParts.header}}}
-      </div>
+      {{{layoutParts.header}}}
       {{{layoutParts.fullWidthBody}}}
-      <div class="container">
-        {{{layoutParts.footer}}}
-      </div>
+      {{{layoutParts.footer}}}
       {{else}}
       {{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
       <div class="sidebar-present container">

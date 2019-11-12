@@ -1,0 +1,16 @@
+{{#compare @root.data.supplimentaryResponses.goodmoves_latest.hits.total ">" 0 ~}}
+<div class="goodmoves x-padding-full">
+  <h4>Latest jobs</h4>
+  <ul>
+    {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
+    {{#with _source ~}}
+    <li>
+      <a href="https://goodmoves.com/vacancy/{{Id}}/{{slugify title}}?utm_source=scvo&utm_campaign=list&utm_medium=website">{{{trim title}}} – {{trim organisation.name}}</a>
+      <div class="caption">{{momentFormat (moment closing_date 'x') "Do MMMM YYYY"}}</div>
+    </li>
+    {{/with ~}}
+    {{/each ~}}
+  </ul>
+  <a href="https://goodmoves.com?utm_source=scvo&utm_campaign=list&utm_medium=website">Find more jobs on Goodmoves</a>
+</div>
+{{/compare ~}}

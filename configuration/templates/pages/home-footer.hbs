@@ -1,0 +1,34 @@
+<div class="latest-posts v-padding-full bg-gray">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-6 col-md-12">
+        <h2>Recent SCVO blog posts</h2>
+        <ul>
+          {{#each (split "1,2,3,4" ",") ~}}
+          {{#with (getProperty @root.data.supplimentaryResponses.blogs_latest.hits.hits (concat this '._source')) ~}}
+          <li>
+            <a href="{{replace post_slug '_' '/'}}">{{{trim title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span>
+          </li>
+          {{/with ~}}
+          {{/each ~}}
+      </div>
+      <div class="column col-6 col-md-12">
+        <h2>
+          Latest TFN stories
+          <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin"><span class="caption">Read more on TFN</span></a>
+        </h2>
+        <ul>
+          {{#each (split "1,2,3,4" ",") ~}}
+          {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
+          <li class="clearfix">
+            <a href="{{url}}" class="pull-left r-margin no-underline"><img src="{{image_portrait_small}}" alt="{{{trim title}}}" class="avatar avatar-xl" /></a>
+            <a href="{{url}}">{{{trim title}}}</a>
+            <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
+          </li>
+          {{/with ~}}
+          {{/each ~}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

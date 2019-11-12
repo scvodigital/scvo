@@ -254,6 +254,55 @@
 </section>
 -->
 
+<div class="promoted-content bg-white v-padding-full">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-6 col-md-12">
+
+      </div>
+      <div class="column col-6 col-md-12">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="useful-content v-padding-full">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-4 col-md-12">
+
+      </div>
+      <div class="column col-4 col-md-12">
+
+      </div>
+      <div class="column col-4 col-md-12">
+        <h3>What can we help you with?</h3>
+        <form action="/search" method="GET" autocomplete="off">
+          <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" aria-label="Search SCVO, Goodmoves, TFN, and more" id="q" name="q">
+          <button type="submit" class="mdc-toolbar__icon mdc-toolbar__search search-button-large" aria-label="Search" alt="Search">
+            <span class="far fa-2x fa-search" aria-hidden="true"></span>
+          </button>
+        </form>
+        {{> useful_links}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="services v-padding-full">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-md-12">
+
+      </div>
+      <div class="column col-4 col-md-12">
+        {{> goodmoves_latest_jobs}}
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="latest-content bg-white v-padding-full">
   <div class="container">
     <div class="columns">
@@ -348,75 +397,3 @@
     </div>
   </div>
 </div>
-
-<div class="latest-posts v-padding-full bg-gray">
-  <div class="container columns">
-    <div class="col col-6 col-md-12">
-      <h2>Recent SCVO blog posts</h2>
-      <ul>
-        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[1]._source ~}}
-        <li>
-          <a href="{{replace post_slug '_' '/'}}">{{{title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "YYYY-MM-DD"}}</span>
-        </li>
-        {{/with ~}}
-        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[2]._source ~}}
-        <li>
-          <a href="{{replace post_slug '_' '/'}}">{{{title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "YYYY-MM-DD"}}</span>
-        </li>
-        {{/with ~}}
-        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[3]._source ~}}
-        <li>
-          <a href="{{replace post_slug '_' '/'}}">{{{title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "YYYY-MM-DD"}}</span>
-        </li>
-        {{/with ~}}
-        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[4]._source ~}}
-        <li>
-          <a href="{{replace post_slug '_' '/'}}">{{{title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "YYYY-MM-DD"}}</span>
-        </li>
-        {{/with ~}}
-    </div>
-    <div class="col col-6 col-md-12">
-      <h2>Latest TFN stories</h2>
-
-    </div>
-  </div>
-</div>
-
-<!--
-<section class="latest-content">
-  <div class="container-fluid">
-    <div class="latest-grid mdc-layout-grid">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <h2>
-            Recent SCVO blog posts
-          </h2>
-          {{{@root.data.supplimentaryResponses.blogs_latest.hits.hits.[1]._source.rendered.scvo_gist}}}
-          {{{@root.data.supplimentaryResponses.blogs_latest.hits.hits.[2]._source.rendered.scvo_gist}}}
-          {{{@root.data.supplimentaryResponses.blogs_latest.hits.hits.[3]._source.rendered.scvo_gist}}}
-          <a href="/blogs">Read more SCVO blogs</a>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-          <h2>
-            Latest TFN news
-          </h2>
-          {{#each @root.data.supplimentaryResponses.tfn_latest.hits.hits ~}}
-          {{{_source.rendered.scvo_gist}}}
-          {{/each ~}}
-          <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Read more on TFN</a>
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone no-border">
-          <h2>
-            Top voluntary sector jobs
-          </h2>
-          {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
-          {{>goodmoves_gist _source}}
-          {{/each ~}}
-          <a href="https://goodmoves.com/search?utm_source=scvo&utm_campaign=page&utm_medium=website">See more on <strong>good</strong>moves</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-{{> footers_services}} -->

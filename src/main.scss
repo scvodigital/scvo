@@ -17,6 +17,8 @@ $bg-color: #FEF9F9;
 $bg-color-light: #ffffff;
 $bg-color-dark: #D5D8DC;
 
+$goodmoves-color: rgb(68, 133, 50);
+
 $unit: 1rem;
 $padding: .4rem;
 $thick-line: 3px;
@@ -192,10 +194,14 @@ strong {
   font-weight: 400;
 }
 .divider {
-  border-top-color: $gray-color;
+  border-top-color: $primary-color;
+}
+.divider-vert::before {
+  border-left-color: $primary-color;
 }
 .divider-vert[data-content]::after {
   font-weight: $heading-font-weight;
+  color: $secondary-color;
 }
 
 a:link,
@@ -229,12 +235,17 @@ a:hover {
 .menu .menu-item>a:hover {
   background-color: $primary-color;
 }
+.goodmoves a,
 footer .footer-main a {
   background: linear-gradient(to bottom, white 0%, white 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
   transition: background-size .2s, color .2s;
+}
+.goodmoves a:hover {
+  color: $goodmoves-color;
+  background-size: $thick-line 50px;
 }
 footer .footer-main a:hover {
   // border-bottom-color: white;
@@ -299,7 +310,6 @@ a.rss,
   background: white;
 }
 .find-information-on {
-  background-color: $primary-color;
   padding-top: $unit*1.5;
   padding-bottom: $unit;
   a, h2, h3, h4, .icon {
@@ -316,14 +326,23 @@ a.rss,
     opacity: 1;
   }
 }
+.goodmoves,
 .latest-posts {
-  background-color: $gray-color;
   ul {
     list-style-type: none;
     margin-left: 0;
   }
   li {
     margin-left: 0;
+  }
+}
+.goodmoves {
+  background-color: $goodmoves-color;
+  h4,
+  li,
+  a,
+  div {
+    color: white;
   }
 }
 
@@ -1018,7 +1037,7 @@ form {
 footer {
   position: relative;
   .footer-main {
-    margin-top: $unit*1.5;
+    // margin-top: $unit*1.5;
     padding: 0 0 $unit*1.5;
     position: relative;
     .membership {
