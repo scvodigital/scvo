@@ -74,8 +74,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "upperBody": ">context.metaData.handlebars.templates.pages_home-upper",
-              "fullBody": ">context.metaData.handlebars.templates.pages_home-body"
+              "header": ">context.metaData.handlebars.templates.pages_home-header",
+              "fullWidthBody": ">context.metaData.handlebars.templates.pages_home-body"
             },
             "contentType": "text/html"
           }

@@ -1,6 +1,6 @@
 {{#*inline "childMenu" ~}}
 <li class="menu-item">
-  <a class="menu-level-{{level}}{{#if (regexMatch @root.request.url.pathname route "gi")}} active{{/if}}" href="{{path}}">{{{label}}}</a>
+  <a class="menu-level-{{level}}{{#if (regexMatch @root.request.url.pathname route "gi")}} active{{/if}}" href="{{path}}">{{#switch level}}{{#case 2}}<span class="far fa-angle-right" aria-hidden="true"></span>{{/case}}{{#case 3}}<span class="far fa-angle-double-right" aria-hidden="true"></span>{{/case}}{{#case 4}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{/switch}} {{{label}}}</a>
 </li>
 {{/inline ~}}
 
