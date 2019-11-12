@@ -19,6 +19,12 @@
             "template": ">context.metaData.handlebars.queries.pages_home"
           },
           {
+            "name": "members_total",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-member",
+            "template": ">context.metaData.handlebars.queries.members_member-search-total"
+          },
+          {
             "name": "goodmoves_latest",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",

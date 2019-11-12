@@ -254,6 +254,51 @@
 </section>
 -->
 
+<div class="latest-content t-margin-full">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-4 col-md-12">
+        <h3 class="text-primary">Latest press release</h3>
+        {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
+        <h4>{{{trim title}}}</h4>
+        <p>
+          {{{truncate description 320}}}
+          <a href="{{replace post_slug '_' '/'}}">Read more</a>
+        </p>
+        {{/with ~}}
+      </div>
+      <div class="column col-4 col-md-12">
+        <h3 class="text-primary">
+          Latest blog post
+          <a href="/blogs" class="caption l-margin">See all</a>
+        </h3>
+        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[0]._source ~}}
+        <h4>{{{trim title}}}</h4>
+        <p>
+          {{{truncate description 280}}}
+          <a href="{{replace post_slug '_' '/'}}">Read more</a>
+        </p>
+        <p>
+          <span class="text-primary r-margin">{{{author_name_full}}}</span>
+          {{momentFormat (moment publish_on 'x') 'Do MMMM YYYY'}}
+        </p>
+        {{/with ~}}
+      </div>
+      <div class="column col-4 col-md-12">
+        <h3 class="text-primary">Become a member</h3>
+        <p>
+          Our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members believe that charities, community groups, social enterprises and
+          voluntary organisations help make Scotland a better place; and our shared voice has the power and
+          influence to tackle pressing issues, and create a better future for the people and communities we care about.
+        </p>
+        <p>
+          <a href="/services/membership" class="btn btn-primary btn-lg">SCVO membership</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="find-information-on t-margin-full">
   <div class="container">
     <h2>

@@ -64,7 +64,6 @@ body,
 .icon-rouleaux {
   background-size: contain;
   height: $unit*5;
-  opacity: inherit;
   .icon {
     line-height: $unit*5;
     margin-left: $unit/3;
@@ -295,6 +294,10 @@ a.rss,
   }
   a {
     opacity: 0.7;
+    .icon-rouleaux,
+    span {
+      opacity: inherit;
+    }
   }
   a:hover {
     opacity: 1;
