@@ -207,7 +207,7 @@ strong {
 a:link,
 a:visited,
 .breadcrumb .breadcrumb-item:not(:last-child) a,
-.menu .menu-item>a,
+.sidebar .menu .menu-item>a,
 a:not(.btn) {
   text-decoration-skip-ink: auto;
   text-decoration: none;
@@ -221,8 +221,8 @@ a:not(.btn) {
   padding-top: 4px;
   padding-bottom: 4px;
 }
-.menu .menu-item>a:focus,
-.menu .menu-item>a:hover,
+.sidebar .menu .menu-item>a:focus,
+.sidebar .menu .menu-item>a:hover,
 .breadcrumb .breadcrumb-item:not(:last-child) a:hover,
 a:hover {
   text-decoration: none;
@@ -231,8 +231,8 @@ a:hover {
   background-size: $thick-line 50px;
   // border-bottom-color: $primary-color;
 }
-.menu .menu-item>a:focus,
-.menu .menu-item>a:hover {
+.sidebar .menu .menu-item>a:focus,
+.sidebar .menu .menu-item>a:hover {
   background-color: $primary-color;
 }
 .goodmoves a,
@@ -277,7 +277,7 @@ a.rss,
   // border-bottom: none !important;
   padding-top: 0;
   padding-bottom: 0;
-  color: $primary-color-dark;
+  color: $primary-color;
   background: none !important;
 }
 
@@ -656,6 +656,11 @@ header {
       right: 0;
       .menu-item>a {
         border-radius: 0;
+        background: none;
+      }
+      .menu-item>a:hover {
+        background-color: $primary-color;
+        color: white;
       }
     }
   }

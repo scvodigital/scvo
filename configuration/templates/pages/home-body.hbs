@@ -254,56 +254,7 @@
 </section>
 -->
 
-<div class="promoted-content bg-white v-padding-full">
-  <div class="container">
-    <div class="columns">
-      <div class="column col-6 col-md-12">
-
-      </div>
-      <div class="column col-6 col-md-12">
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="useful-content v-padding-full">
-  <div class="container">
-    <div class="columns">
-      <div class="column col-4 col-md-12">
-
-      </div>
-      <div class="column col-4 col-md-12">
-
-      </div>
-      <div class="column col-4 col-md-12">
-        <h3>What can we help you with?</h3>
-        <form action="/search" method="GET" autocomplete="off">
-          <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" aria-label="Search SCVO, Goodmoves, TFN, and more" id="q" name="q">
-          <button type="submit" class="mdc-toolbar__icon mdc-toolbar__search search-button-large" aria-label="Search" alt="Search">
-            <span class="far fa-2x fa-search" aria-hidden="true"></span>
-          </button>
-        </form>
-        {{> useful_links}}
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="services v-padding-full">
-  <div class="container">
-    <div class="columns">
-      <div class="column col-8 col-md-12">
-
-      </div>
-      <div class="column col-4 col-md-12">
-        {{> goodmoves_latest_jobs}}
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="latest-content bg-white v-padding-full">
+<div class="latest-content bg-white t-padding-full b-padding">
   <div class="container">
     <div class="columns">
       <div class="column col-4 col-md-12">
@@ -343,6 +294,83 @@
         <p>
           <a href="/services/membership" class="btn btn-primary btn-lg">SCVO membership</a>
         </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="promoted-content v-padding-full">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-6 col-md-12">
+
+      </div>
+      <div class="column col-6 col-md-12">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="useful-content v-padding-full">
+  <div class="container">
+    <div class="columns">
+      {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
+      <div class="column col-4 col-md-12">
+        <h3 class="text-primary">
+          Latest news story on <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">TFN</a>
+        </h3>
+        {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
+        <img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" />
+        <p class="t-margin">
+          {{!-- <a href="{{url}}">{{{trim title}}}</a> --}}
+          {{{truncate description 140}}}
+          <a href="{{url}}">Read more</a>
+        </p>
+        {{/with ~}}
+      </div>
+      {{/compare ~}}
+      <div class="column col-4 col-md-12">
+        <h3 class="text-primary">
+          Featured campaign
+        </h3>
+        <div class="featured eu-are-valued">
+          <div class="featured-image h-padding-full" style="background-image:url({{~>asset_url url='images/home/eu-are-valued-bg.jpg'~}}">
+            <a href="/projects-campaigns/eu-are-valued" title="#EUareValued campaign">
+              <img alt="#EUareValued" class="img-responsive" src="{{~>asset_url url='images/home/eu-are-valued-logo.png'~}}" />
+            </a>
+          </div>
+          <p class="t-margin">
+            Here at SCVO, we love charities. We believe every person who works to make a difference to Scottish communities should be valued, and that includes our colleagues who have come from other EU countries to live and work here. Scotland’s voluntary sector is strengthened thanks to their contribution&hellip;
+            <a href="/projects-campaigns/eu-are-valued">Read more</a>
+          </p>
+        </div>
+      </div>
+      <div class="column col-4 col-md-12">
+        <h3 class="text-primary">What can we help you with?</h3>
+        <form class="b-margin-full" autocomplete="off" action="/search" method="GET">
+          <div class="input-group input-inline">
+            <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">
+            <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
+              <span class="far fa-search" aria-hidden="true"></span>
+            </button>
+          </div>
+        </form>
+
+        {{> useful_links}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="services v-padding-full">
+  <div class="container">
+    <div class="columns">
+      <div class="column col-8 col-md-12">
+
+      </div>
+      <div class="column col-4 col-md-12">
+        {{> goodmoves_latest_jobs}}
       </div>
     </div>
   </div>

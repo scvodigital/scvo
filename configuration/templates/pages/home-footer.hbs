@@ -1,6 +1,7 @@
 <div class="latest-posts v-padding-full bg-gray">
   <div class="container">
     <div class="columns">
+      {{#compare @root.data.supplimentaryResponses.blogs_latest.hits.total ">" 0 ~}}
       <div class="column col-6 col-md-12">
         <h2>Recent SCVO blog posts</h2>
         <ul>
@@ -12,6 +13,8 @@
           {{/with ~}}
           {{/each ~}}
       </div>
+      {{/compare ~}}
+      {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
       <div class="column col-6 col-md-12">
         <h2>
           Latest TFN stories
@@ -29,6 +32,7 @@
           {{/each ~}}
         </ul>
       </div>
+      {{/compare ~}}
     </div>
   </div>
 </div>
