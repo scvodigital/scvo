@@ -134,6 +134,7 @@ h4 {
 }
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: $primary-color;
   font-weight: $heading-font-weight;
   letter-spacing: -0.05rem;
 }
@@ -159,12 +160,9 @@ h1, h2, h3, h4, h5, h6,
 body,
 div,
 li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5 {
+td,
+th,
+p {
   color: $secondary-color;
 }
 p {
@@ -312,7 +310,7 @@ a.rss,
 .find-information-on {
   padding-top: $unit*1.5;
   padding-bottom: $unit;
-  a, h2, h3, h4, .icon {
+  a, h2, h3, h4, .icon, .title {
     color: white;
   }
   a {
@@ -864,7 +862,7 @@ blockquote {
   }
 }
 .full .post-info {
-  border-bottom: $thin-line solid $gray-color;
+  border-bottom: $thin-line solid $gray-color-light;
   padding-bottom: $unit/4;
   margin-bottom: $unit/2;
 }

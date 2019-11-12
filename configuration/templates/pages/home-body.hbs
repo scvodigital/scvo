@@ -258,9 +258,9 @@
   <div class="container">
     <div class="columns">
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">Latest press release</h3>
+        <h3>Latest press release</h3>
         {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
-        <h4>{{{trim title}}}</h4>
+        <h4 class="text-secondary">{{{trim title}}}</h4>
         <p>
           {{{truncate description 320}}}
           <a href="{{replace post_slug '_' '/'}}">Read more</a>
@@ -268,12 +268,12 @@
         {{/with ~}}
       </div>
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">
+        <h3>
           Latest blog post
           <a href="/blogs" class="caption l-margin">See all</a>
         </h3>
         {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[0]._source ~}}
-        <h4>{{{trim title}}}</h4>
+        <h4 class="text-secondary">{{{trim title}}}</h4>
         <p>
           {{{truncate description 280}}}
           <a href="{{replace post_slug '_' '/'}}">Read more</a>
@@ -285,7 +285,7 @@
         {{/with ~}}
       </div>
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">Become a member</h3>
+        <h3>Become a member</h3>
         <p>
           Our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members believe that charities, community groups, social enterprises and
           voluntary organisations help make Scotland a better place; and our shared voice has the power and
@@ -317,7 +317,7 @@
     <div class="columns">
       {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">
+        <h3>
           Latest news story on <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">TFN</a>
         </h3>
         {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
@@ -331,7 +331,7 @@
       </div>
       {{/compare ~}}
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">
+        <h3>
           Featured campaign
         </h3>
         <div class="featured eu-are-valued">
@@ -347,7 +347,7 @@
         </div>
       </div>
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">What can we help you with?</h3>
+        <h3>What can we help you with?</h3>
         <form class="b-margin-full" autocomplete="off" action="/search" method="GET">
           <div class="input-group input-inline">
             <input type="text" class="form-input" placeholder="Search SCVO, Goodmoves, TFN, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">

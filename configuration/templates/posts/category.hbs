@@ -1,7 +1,5 @@
 <div class="post-category">
-  <div class="container-fluid">
-    {{> breadcrumbs_cms_post}}
-  </div>
+  {{> breadcrumbs_menu}}
   <div class="splash-image splash-image-{{@root.data.primaryResponse.hits.hits.[0]._type}}-category" style="{{> headers_splash_image}}">
     <div class="splash-overlay{{#if @root.data.primaryResponse.hits.hits.[0]._source.hide_overlay}} splash-overlay-hidden{{/if}}">
       <div class="container-fluid">
