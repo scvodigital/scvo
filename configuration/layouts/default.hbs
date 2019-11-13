@@ -80,14 +80,7 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
           </section>
           <section class="navbar-section">
             <div class="form-horizontal hide-lg">
-              <form class="search_form" autocomplete="off" action="/search" method="GET">
-                <div class="input-group input-inline">
-                  <input type="text" class="form-input" placeholder="Search SCVO, TFN, Goodmoves, and more" id="q" name="q" aria-label="Search keywords" value="{{request.params.query.q}}">
-                  <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
-                    <span class="far fa-search" aria-hidden="true"></span>
-                  </button>
-                </div>
-              </form>
+              {{> site_search}}
               <a href="/services/membership" class="btn btn-primary btn-lg btn-cta float-right t-margin">Join our community</a>
             </div>
             <button class="show-lg btn btn-primary btn-action btn-lg" data-drawer-target="#mobile-menu" aria-label="Menu" alt="Menu">
