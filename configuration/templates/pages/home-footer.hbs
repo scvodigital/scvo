@@ -8,7 +8,8 @@
           {{#each (split "1,2,3,4" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.blogs_latest.hits.hits (concat this '._source')) ~}}
           <li>
-            <a href="{{replace post_slug '_' '/'}}">{{{trim title}}}</a> <span class="caption text-primary">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span>
+            <a href="{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+            &ensp;<span class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span>
           </li>
           {{/with ~}}
           {{/each ~}}
