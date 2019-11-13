@@ -324,6 +324,9 @@ a.rss,
     padding-right: 0;
   }
 }
+.card-footer a.btn-link:first-child {
+  padding-left: 0;
+}
 .promoted-content {
   .card {
     height: 366px;
@@ -331,25 +334,48 @@ a.rss,
     .card-header {
       transition: margin $transition-speed;
     }
-  }
-  .card-header {
-    border-top: $thick-line solid $primary-color;
-    padding-top: $unit*.4;
-  }
-  .card-footer:last-child {
-    padding-bottom: $unit*.4;
-  }
-  .card-header,
-  .card-body,
-  .card-footer {
-    background: $secondary-color;
-    color: white;
-    z-index: 1;
-  }
-  .card-title,
-  .card-title a,
-  .card-subtitle {
-    color: white !important;
+    .card-image {
+      position: relative;
+      .logo {
+        height: 100%;
+        width: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+      .overlay-effect {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity $transition-speed;
+        background-color: rgba(255, 89, 90, 0.2);
+        overflow: hidden;
+      }
+    }
+    .card-header {
+      border-top: $thick-line solid $primary-color;
+      padding-top: $unit*.4;
+    }
+    .card-footer:last-child {
+      padding-bottom: $unit*.4;
+    }
+    .card-header,
+    .card-body,
+    .card-footer {
+      background: $secondary-color;
+      color: white;
+      z-index: 1;
+    }
+    .card-title,
+    .card-title a,
+    .card-subtitle {
+      color: white !important;
+    }
   }
   .card:hover {
     .card-header {
@@ -359,28 +385,9 @@ a.rss,
       opacity: 1;
     }
   }
-  .overlay-effect {
+  .twenty-years .card-image .background {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    transition: opacity $transition-speed;
-    background-color: rgba(255, 89, 90, 0.2);
-    overflow: hidden;
-  }
-  .the-gathering {
-    .card-image {
-      position: relative;
-      .logo {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    }
+    height: 273px;
   }
 }
 @media screen and (max-width: 1400px) {
