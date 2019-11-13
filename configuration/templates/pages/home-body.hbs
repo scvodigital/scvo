@@ -254,46 +254,62 @@
 </section>
 -->
 
-<div class="latest-content bg-white t-padding-full b-padding">
+<div class="latest-content bg-white b-padding">
   <div class="container">
     <div class="columns">
       <div class="column col-4 col-md-12">
-        <h3>Latest press release</h3>
-        {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
-        <h4 class="text-secondary">{{{trim title}}}</h4>
-        <p>
-          {{{truncate description 320}}}
-          <a href="{{replace post_slug '_' '/'}}">Read more</a>
-        </p>
-        {{/with ~}}
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h3">Latest press release</div>
+          </div>
+          <div class="card-body">
+            {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
+            <h4 class="text-secondary">{{{trim title}}}</h4>
+            <p>
+              {{{truncate description 320}}}
+              <a href="{{replace post_slug '_' '/'}}">Read more</a>
+            </p>
+            {{/with ~}}
+          </div>
+        </div>
       </div>
       <div class="column col-4 col-md-12">
-        <h3>
-          Latest blog post
-          <a href="/blogs" class="caption l-margin">See all</a>
-        </h3>
-        {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[0]._source ~}}
-        <h4 class="text-secondary">{{{trim title}}}</h4>
-        <p>
-          {{{truncate description 280}}}
-          <a href="{{replace post_slug '_' '/'}}">Read more</a>
-        </p>
-        <p>
-          <span class="text-primary r-margin">{{{author_name_full}}}</span>
-          {{momentFormat (moment publish_on 'x') 'Do MMMM YYYY'}}
-        </p>
-        {{/with ~}}
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h3">
+              Latest blog post
+              <a href="/blogs" class="caption l-margin">See all</a>
+            </div>
+          </div>
+          <div class="card-body">
+            {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[0]._source ~}}
+            <h4 class="text-secondary">{{{trim title}}}</h4>
+            <p>
+              {{{truncate description 280}}}
+              <a href="{{replace post_slug '_' '/'}}">Read more</a>
+            </p>
+            <p>
+              <span class="text-primary r-margin">{{{author_name_full}}}</span>
+              {{momentFormat (moment publish_on 'x') 'Do MMMM YYYY'}}
+            </p>
+            {{/with ~}}
+          </div>
+        </div>
       </div>
       <div class="column col-4 col-md-12">
-        <h3>Become a member</h3>
-        <p>
-          Our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members believe that charities, community groups, social enterprises and
-          voluntary organisations help make Scotland a better place; and our shared voice has the power and
-          influence to tackle pressing issues, and create a better future for the people and communities we care about.
-        </p>
-        <p>
-          <a href="/services/membership" class="btn btn-primary btn-lg">SCVO membership</a>
-        </p>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h3">Become a member</div>
+          </div>
+          <div class="card-body">
+            Our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members believe that charities, community groups, social enterprises and
+            voluntary organisations help make Scotland a better place; and our shared voice has the power and
+            influence to tackle pressing issues, and create a better future for the people and communities we care about.
+          </div>
+          <div class="card-footer">
+            <a href="/services/membership" class="btn btn-primary btn-lg">SCVO membership</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -303,7 +319,27 @@
   <div class="container">
     <div class="columns">
       <div class="column col-6 col-md-12">
-
+        <div class="card the-gathering">
+          <div class="card-image">
+            <a href="/the-gathering-2020">
+              <img src="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/headers/gathering-2019-header.jpg" class="img-responsive">
+              <img src="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/headers/gathering-2020-logo.svg" class="img-responsive logo">
+              <div class="overlay-effect"></div>
+            </a>
+          </div>
+          <div class="card-header">
+            <div class="card-title h3"><a href="/the-gathering-2020">The Gathering</a></div>
+            <div class="card-subtitle">19th & 20th February 2020</div>
+          </div>
+          <div class="card-body">
+            The Gathering is the largest free voluntary sector event in the UK, a place for all the amazing people working in the voluntary sector to network, showcase what they do and learn from each other.
+          </div>
+          <div class="card-footer">
+            <a href="/the-gathering-2020" class="btn btn-link">Find out more</a>
+            <a href="/the-gathering-2020/host-an-event" class="btn btn-link">Host an event</a>
+            <a href="/the-gathering-2020/book-a-stand" class="btn btn-link">Book a stand</a>
+          </div>
+        </div>
       </div>
       <div class="column col-6 col-md-12">
 

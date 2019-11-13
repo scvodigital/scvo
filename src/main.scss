@@ -217,8 +217,8 @@ a:not(.btn) {
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
   transition: background-size $transition-speed, color $transition-speed, background-color $transition-speed;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 1px;
+  padding-bottom: $thick-line;
 }
 .sidebar .menu .menu-item>a:focus,
 .sidebar .menu .menu-item>a:hover,
@@ -267,6 +267,8 @@ footer .footer-copyright a:hover {
 // .mdc-card__primary h3 a,
 .breadcrumb .breadcrumb-item a,
 .pagination a,
+.promoted-content .card-header .card-title a,
+.promoted-content .card .card-footer a,
 a.scvo-logo,
 a.no-underline,
 a.navbar-brand,
@@ -305,6 +307,127 @@ a.rss,
   }
 }
 
+.card {
+  border: none !important;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: transparent;
+  .card-image:first-child img {
+    border-radius: 0;
+  }
+}
+.latest-content {
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.promoted-content {
+  .card {
+    height: 366px;
+    overflow: hidden;
+    .card-header {
+      transition: margin $transition-speed;
+    }
+  }
+  .card-header {
+    border-top: $thick-line solid $primary-color;
+    padding-top: $unit*.4;
+  }
+  .card-footer:last-child {
+    padding-bottom: $unit*.4;
+  }
+  .card-header,
+  .card-body,
+  .card-footer {
+    background: $secondary-color;
+    color: white;
+    z-index: 1;
+  }
+  .card-title,
+  .card-title a,
+  .card-subtitle {
+    color: white !important;
+  }
+  .card:hover {
+    .card-header {
+      margin-top: -148px;
+    }
+    .overlay-effect {
+      opacity: 1;
+    }
+  }
+  .overlay-effect {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: opacity $transition-speed;
+    background-color: rgba(255, 89, 90, 0.2);
+    overflow: hidden;
+  }
+  .the-gathering {
+    .card-image {
+      position: relative;
+      .logo {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1400px) {
+  .promoted-content .card {
+    height: 26vw;
+  }
+}
+@media screen and (max-width: 1250px) {
+  .promoted-content .card {
+    height: 27vw;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .promoted-content .card {
+    height: 28vw;
+  }
+}
+@media screen and (max-width: 840px) {
+  .promoted-content .card {
+    height: 50vw;
+  }
+}
+@media screen and (max-width: 680px) {
+  .promoted-content .card {
+    height: 52vw;
+  }
+}
+@media screen and (max-width: 560px) {
+  .promoted-content .card {
+    height: 54vw;
+  }
+}
+@media screen and (max-width: 490px) {
+  .promoted-content .card {
+    height: 56vw;
+  }
+}
+@media screen and (max-width: 420px) {
+  .promoted-content .card {
+    height: 58vw;
+  }
+}
+@media screen and (max-width: 340px) {
+  .promoted-content .card {
+    height: 60vw;
+  }
+}
 .bg-white {
   background: white;
 }
@@ -715,9 +838,9 @@ header.toolbar {
   }
 }
 
-.card {
-  border-color: $gray-color;
-}
+// .card {
+//   border-color: $gray-color;
+// }
 .cards.equal-height {
   .column {
     padding-bottom: 0.8rem;
@@ -1104,7 +1227,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 790px) {
+@media screen and (max-width: 840px) {
   html {
     font-size: 18px;
   }
