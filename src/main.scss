@@ -685,10 +685,13 @@ header {
   min-width: 240px;
 }
 header.header {
-  padding-top: $unit/2;
+  // padding-top: $unit/2;
   .navbar-brand img {
-    width: 220px;
+    width: 320px;
     // margin-left: -10px;
+  }
+  .form-horizontal {
+    padding: $unit 0;
   }
   .input-inline .form-input {
     width: 320px;
