@@ -321,10 +321,10 @@
           Latest news story on <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">TFN</a>
         </h3>
         {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
-        <img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" />
+        <a href="{{url}}"><img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" /></a>
         <p class="t-margin">
           {{!-- <a href="{{url}}">{{{trim title}}}</a> --}}
-          {{{truncate description 140}}}
+          {{{truncate description 280}}}
           <a href="{{url}}">Read more</a>
         </p>
         {{/with ~}}

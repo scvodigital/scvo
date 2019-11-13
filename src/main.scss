@@ -30,6 +30,7 @@ $heading-font-weight: 600;
 $badge-font-weight: 800;
 $page-width: 1400px;
 $home-splash-height: 25vh;
+$transition-speed: .2s;
 
 @import "../node_modules/spectre.css/src/spectre";
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
@@ -215,7 +216,7 @@ a:not(.btn) {
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
-  transition: background-size .2s, color .2s, background-color .2s;
+  transition: background-size $transition-speed, color $transition-speed, background-color $transition-speed;
   padding-top: 4px;
   padding-bottom: 4px;
 }
@@ -239,7 +240,7 @@ footer .footer-main a {
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
-  transition: background-size .2s, color .2s;
+  transition: background-size $transition-speed, color $transition-speed;
 }
 .goodmoves a:hover {
   color: $goodmoves-color;
@@ -255,7 +256,7 @@ footer .footer-copyright a {
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
-  transition: background-size .2s, color .2s;
+  transition: background-size $transition-speed, color $transition-speed;
 }
 footer .footer-copyright a:hover {
   // border-bottom-color: $secondary-color;
@@ -314,7 +315,8 @@ a.rss,
     color: white;
   }
   a {
-    opacity: 0.7;
+    opacity: 0.8;
+    transition: opacity $transition-speed;
     .icon-rouleaux,
     .title {
       opacity: inherit;
