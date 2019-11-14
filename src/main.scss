@@ -903,19 +903,9 @@ header.toolbar {
   }
 }
 
-.btn {
-  line-height: 1.6rem;
+.navbar.toolbar .btn {
+  line-height: 1.7rem;
 }
-.btn.input-group-btn {
-  line-height: 1.3rem;
-}
-.btn-sm,
-.btn-lg {
-  line-height: 1.2rem;
-}
-// .card {
-//   border-color: $gray-color;
-// }
 .cards.equal-height {
   .column {
     padding-bottom: 0.8rem;
