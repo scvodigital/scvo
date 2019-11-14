@@ -4,7 +4,10 @@
       <div class="column col-4 col-md-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3 text-primary">Latest press release</div>
+            <div class="card-title h3 text-primary">
+              Latest press release
+              <a href="/press-media" class="caption l-margin">See all</a>
+            </div>
           </div>
           <div class="card-body">
             {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
@@ -79,7 +82,12 @@
       <div class="column col-4 col-md-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3 text-primary">Latest news story on <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">TFN</a></div>
+            <div class="card-title h3 text-primary">
+              Latest news story on TFN
+              <div class="caption">
+                <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">TFN</a>
+              </div>
+            </div>
           </div>
           {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
           <div class="card-image" style="height: 137px; overflow: hidden;">

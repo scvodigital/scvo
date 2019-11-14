@@ -482,6 +482,9 @@ a.no-underline:hover {
 .text-white {
   color: white;
 }
+.text-secondary {
+  color: $secondary-color !important;
+}
 .find-information-on {
   padding-top: $unit*1.5;
   padding-bottom: $unit;
@@ -1299,7 +1302,7 @@ footer {
         text-decoration: none;
       }
       .scvo-logo img {
-        height: 38px;
+        width: 125px;
       }
     }
   }
