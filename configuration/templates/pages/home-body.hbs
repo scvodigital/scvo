@@ -72,39 +72,33 @@
   </div>
 </div>
 
-<div class="useful-content v-padding-full">
+<div class="useful-content">
   <div class="container">
-    <div class="columns">
+    <div class="columns linked-cards">
       {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">
-          Latest news story on <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">TFN</a>
-        </h3>
-        {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
-        <a href="{{url}}"><img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" /></a>
-        <p class="t-margin">
-          {{!-- <a href="{{url}}">{{{trim title}}}</a> --}}
-          {{{truncate description 280}}}
-          <a href="{{url}}">Read more</a>
-        </p>
-        {{/with ~}}
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h3 text-primary">Latest news story on <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">TFN</a></div>
+          </div>
+          {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
+          <div class="card-image" style="height: 137px; overflow: hidden;">
+            <a href="{{url}}"><img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" /></a>
+          </div>
+          <div class="card-body">
+            <p>
+              {{!-- <a href="{{url}}">{{{trim title}}}</a> --}}
+              {{{truncate description 280}}}
+              <a href="{{url}}">Read more</a>
+            </p>
+          </div>
+          {{/with ~}}
+        </div>
       </div>
       {{/compare ~}}
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">
-          Featured campaign
-        </h3>
-        <div class="featured eu-are-valued">
-          <div class="featured-image h-padding-full" style="background-image:url({{~>asset_url url='images/home/eu-are-valued-bg.jpg'~}}">
-            <a href="/projects-campaigns/eu-are-valued" title="#EUareValued campaign">
-              <img alt="#EUareValued" class="img-responsive" src="{{~>asset_url url='images/home/eu-are-valued-logo.png'~}}" />
-            </a>
-          </div>
-          <p class="t-margin">
-            Here at SCVO, we love charities. We believe every person who works to make a difference to Scottish communities should be valued, and that includes our colleagues who have come from other EU countries to live and work here. Scotland’s voluntary sector is strengthened thanks to their contribution&hellip;
-            <a href="/projects-campaigns/eu-are-valued">Read more</a>
-          </p>
-        </div>
+        <h3 class="text-primary">Featured campaign</h3>
+        {{> promoted_eu_are_valued}}
       </div>
       <div class="column col-4 col-md-12">
         <h3 class="text-primary">What can we help you with?</h3>

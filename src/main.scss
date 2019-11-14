@@ -140,6 +140,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: $heading-font-weight;
   letter-spacing: -0.05rem;
+  line-height: 1.2;
   .caption {
     font-size: 70%;
   }
@@ -340,6 +341,26 @@ a.no-underline:hover {
 .card-footer a.btn-link:first-child {
   padding-left: 0;
 }
+.useful-content,
+.promoted-content {
+  .card-image {
+    position: relative;
+    .logo {
+      height: 100%;
+      width: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}
+.useful-content {
+  .card-header {
+    padding-top: 0;
+  }
+}
 .promoted-content {
   .card {
     height: 366px;
@@ -383,6 +404,9 @@ a.no-underline:hover {
       background: $secondary-color;
       color: white;
       z-index: 1;
+    }
+    .card-body {
+      overflow: hidden;
     }
     .card-title,
     .card-title a,
@@ -879,6 +903,9 @@ header.toolbar {
 .btn {
   line-height: 1.6rem;
 }
+.btn.input-group-btn {
+  line-height: 1.3rem;
+}
 .btn-sm,
 .btn-lg {
   line-height: 1.2rem;
@@ -1163,6 +1190,7 @@ form {
     .menu-item>a {
       border-radius: 0;
       padding: 0;
+      margin: 0;
       font-size: 0.95rem;
       display: inline;
     }
@@ -1176,30 +1204,30 @@ form {
       color: white;
     }
   }
-  .menu.menu-depth-2 {
-    padding: 0 .6rem;
-    .menu-item>a {
-      margin: 0 -.6rem;
-    }
-  }
-  .menu.menu-depth-3 {
-    padding: 0 .9rem;
-    .menu-item>a {
-      margin: 0 -.9rem;
-    }
-  }
-  .menu.menu-depth-4 {
-    padding: 0 1.2rem;
-    .menu-item>a {
-      margin: 0 -1.2rem;
-    }
-  }
-  .menu.menu-depth-5 {
-    padding: 0 1.5rem;
-    .menu-item>a {
-      margin: 0 -1.5rem;
-    }
-  }
+  // .menu.menu-depth-2 {
+  //   padding: 0 .6rem;
+  //   .menu-item>a {
+  //     margin: 0 -.6rem;
+  //   }
+  // }
+  // .menu.menu-depth-3 {
+  //   padding: 0 .9rem;
+  //   .menu-item>a {
+  //     margin: 0 -.9rem;
+  //   }
+  // }
+  // .menu.menu-depth-4 {
+  //   padding: 0 1.2rem;
+  //   .menu-item>a {
+  //     margin: 0 -1.2rem;
+  //   }
+  // }
+  // .menu.menu-depth-5 {
+  //   padding: 0 1.5rem;
+  //   .menu-item>a {
+  //     margin: 0 -1.5rem;
+  //   }
+  // }
 }
 
 .fa-ul {
