@@ -6,7 +6,7 @@
           <div class="card-header">
             <div class="card-title h3 text-primary">
               Latest press release
-              <a href="/press-media" class="caption l-margin">See all</a>
+              <a href="/press-media" class="caption l-margin">See more</a>
             </div>
           </div>
           <div class="card-body">
@@ -25,7 +25,7 @@
           <div class="card-header">
             <div class="card-title h3 text-primary">
               Latest blog post
-              <a href="/blogs" class="caption l-margin">See all</a>
+              <a href="/blogs" class="caption l-margin">See more</a>
             </div>
           </div>
           <div class="card-body">
@@ -84,9 +84,7 @@
           <div class="card-header">
             <div class="card-title h3 text-primary">
               Latest news story on TFN
-              <div class="caption">
-                <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">TFN</a>
-              </div>
+              <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">See more</a>
             </div>
           </div>
           {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
@@ -105,7 +103,10 @@
       </div>
       {{/compare ~}}
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">Featured campaign</h3>
+        <h3 class="text-primary">
+          Featured campaign
+          <a href="/projects-campaigns" class="caption l-margin">See more</a>
+        </h3>
         {{> promoted_eu_are_valued}}
       </div>
       <div class="column col-4 col-md-12">
