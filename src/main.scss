@@ -7,7 +7,7 @@ $secondary-color: #385665;
 $secondary-color-light: lighten($secondary-color, 30%) !default;
 $secondary-color-dark: darken($secondary-color, 10%) !default;
 $dark-color: #203139;
-$gray-color: $secondary-color-light;
+$gray-color: #D5D8DC;
 $light-color: #FEF9F9;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
@@ -278,6 +278,7 @@ footer .footer-copyright a:hover {
 .promoted-content .card-header .card-title a,
 .promoted-content .card .card-footer a,
 footer .footer-copyright a.scvo-logo,
+#scvo-tab-bar a,
 a.no-underline,
 a.navbar-brand,
 a.avatar,
@@ -296,6 +297,24 @@ a.btn,
 .breadcrumb .breadcrumb-item a:hover,
 a.no-underline:hover {
   color: $primary-color-dark !important;
+}
+
+#scvo-tab-bar {
+  background-color: $gray-color;
+  height: 40px;
+  .text-link {
+    line-height: 40px;
+    margin-right: $unit*(3/4);
+    color: $secondary-color;
+  }
+  .brand-logo {
+    margin-left: $unit/4;
+    line-height: 38px;
+    width: 90px;
+    img {
+      vertical-align: middle;
+    }
+  }
 }
 
 .hero {
