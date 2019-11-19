@@ -1,1 +1,3 @@
+{{#unless @root.data.primaryResponse.hits.hits.[0]._source.hide_related_posts ~}}
 {{> related_posts}}
+{{/unless ~}}

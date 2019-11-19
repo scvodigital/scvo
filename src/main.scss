@@ -1175,6 +1175,11 @@ form {
   }
 }
 
+.body,
+.sidebar {
+  padding-bottom: $unit*2;
+}
+
 .sidebar {
   .menu {
     box-shadow: none;

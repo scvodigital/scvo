@@ -1,5 +1,6 @@
 {{> wee_search title="Search posts" searchPath="/search" searchRoute="main_search" extraParams='{ "type": "scvo-post" }'}}
 
+{{#unless @root.data.primaryResponse.hits.hits.[0]._source.hide_related_posts ~}}
 {{#if @root.data.primaryResponse.hits.hits.[0]._source.is_press_release ~}}
 <ul class="supplimentary-list">
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
@@ -94,3 +95,4 @@
 {{/compare ~}}
 {{/if ~}}
 {{/if ~}}
+{{/unless ~}}
