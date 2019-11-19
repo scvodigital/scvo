@@ -62,7 +62,7 @@ body,
   background-size: $page-width;
   background-position-x: center;
   background-position-y: top;
-  background-repeat: space;
+  background-repeat: no-repeat;
 }
 .icon-rouleaux {
   background-size: contain;
@@ -87,6 +87,7 @@ body,
     }
   }
 }
+
 
 html {
   overflow: -moz-scrollbars-vertical;
