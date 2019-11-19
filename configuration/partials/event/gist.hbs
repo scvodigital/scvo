@@ -1,16 +1,10 @@
 <div class="gist scvo-event scvo-event-{{Id}} mdc-card">
-  <div class="mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone">
-        <h3 class="mdc-card__title mdc-typography--headline">
-          <a href="{{path}}">{{{trim title}}}</a>
-        </h3>
-        <h4 class="mdc-card__subtitle post-info">
-          {{> event_post_info_booked}}
-          {{> event_post_info_date}}
-          {{> event_post_info_city}}
-        </h4>
-      </div>
-    </div>
+  <h4>
+    <a href="{{path}}">{{{trim title}}}</a>
+  </h4>
+  <div class="post-info">
+    {{> event_post_info_booked}}
+    {{> event_post_info_date}}
+    {{> event_post_info_city}}
   </div>
 </div>
