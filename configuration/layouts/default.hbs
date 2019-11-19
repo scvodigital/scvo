@@ -62,7 +62,8 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
 <body class="{{#if request.params.path}}{{replace (replace request.params.path '20-years' 'twenty-years') '_' ' '}}{{else}}home{{/if}}">
   {{> components_scvo_bar}}
   <div class="page">
-    <div class="bg-rouleaux" style="background-image:url('/rouleaux.svg?color=FEF9F9&style={{itemAt (split 'solid,stripes,dots' ',') (random 0 2)}}');">
+    {{!-- style="background-image:url('/rouleaux.svg?color=FEF9F9&style={{itemAt (split 'solid,stripes,dots' ',') (random 0 2)}}');" --}}
+    <div class="bg-rouleaux" style="background-image:url('/rouleaux.svg?color=FEF9F9&style=solid');">
       <div class="container">
         <header class="navbar header">
           <section class="navbar-section">

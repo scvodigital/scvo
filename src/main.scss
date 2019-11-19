@@ -2,8 +2,8 @@
 
 $primary-color: #FF595A;
 $primary-color-light: lighten($primary-color, 30%) !default;
-$primary-color-dark: darken($primary-color, 10%) !default;
-$secondary-color: #385665;
+$primary-color-dark: #C5143D;
+$secondary-color: #244B5A;
 $secondary-color-light: lighten($secondary-color, 30%) !default;
 $secondary-color-dark: darken($secondary-color, 10%) !default;
 $dark-color: #203139;
@@ -18,6 +18,10 @@ $bg-color-light: #ffffff;
 $bg-color-dark: #D5D8DC;
 
 $goodmoves-color: rgb(68, 133, 50);
+$yellow-color: #FFDB00;
+$green-color: #B0FFC0;
+$blue-color: #45CCE4;
+$lilac-color: #CCBFDF;
 
 $unit: 1rem;
 $padding: .4rem;
@@ -176,8 +180,10 @@ th,
 p {
   color: $secondary-color;
 }
+ul,
+ol,
 p {
-  margin: 0 0 .8rem;
+  margin: 4px 0;
 }
 
 a,
@@ -225,7 +231,7 @@ a:visited,
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
-  transition: background-size $transition-speed, color $transition-speed, background-color $transition-speed;
+  transition: background-size $transition-speed, color $transition-speed;
   padding-top: 1px;
   padding-bottom: $thick-line;
 }
@@ -235,7 +241,7 @@ a:visited,
 a:hover {
   text-decoration: none;
   // color: $primary-color;
-  color: white;
+  // color: white;
   background-size: $thick-line 50px;
   // border-bottom-color: $primary-color;
 }
@@ -272,8 +278,8 @@ footer .footer-copyright a:hover {
   color: white;
   background-size: $thick-line 50px;
 }
-// .mdc-card__title a,
-// .mdc-card__primary h3 a,
+.mdc-card__title a,
+.mdc-card__primary h3 a,
 .breadcrumb .breadcrumb-item a,
 .pagination a,
 .promoted-content .card-header .card-title a,
@@ -554,6 +560,22 @@ a.no-underline:hover {
   .btn-lg:hover {
     background: white;
     color: $primary-color-dark;
+  }
+}
+
+.support {
+  .membership {
+    background-color: $yellow-color;
+    padding: $unit;
+    .card-header {
+      padding-top: 0;
+      a {
+        color: $primary-color-dark;
+      }
+    }
+    .card-footer {
+      padding-bottom: 0;
+    }
   }
 }
 
@@ -1092,10 +1114,14 @@ blockquote {
   }
 }
 
-ul li:first-child,
-ol li:first-child {
+ul li,
+ol li {
   margin-top: 0;
 }
+// ul li:first-child,
+// ol li:first-child {
+//   margin-top: 0;
+// }
 .form.disabled,
 form.disabled {
   pointer-events: none;
@@ -1270,9 +1296,6 @@ footer {
     // margin-top: $unit*1.5;
     padding: 0 0 $unit*1.5;
     position: relative;
-    p {
-      line-height: 1.2;
-    }
     .membership {
       margin-top: -($unit*0.8);
     }
