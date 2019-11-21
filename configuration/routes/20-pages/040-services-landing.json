@@ -1,9 +1,26 @@
 {
-  "name": "home",
+  "name": "page_services_landing",
   "debug": true,
-  "pattern": "/",
+  "pattern": "/services",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page",
+          "noResultsRoute": "four_oh_four"
+        }
+      },
+      "renderer": "handlebars"
+    },
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
@@ -14,28 +31,10 @@
         },
         "queryTemplates": [
           {
-            "name": "members_total",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-member",
-            "template": ">context.metaData.handlebars.queries.members_member-search-total"
-          },
-          {
             "name": "goodmoves_latest",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.jobs_home-goodmoves-vacancy-list"
-          },
-          {
-            "name": "blogs_latest",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_home-blog-post-list"
-          },
-          {
-            "name": "press_latest",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_home-press-list"
           },
           {
             "name": "tfn_latest",
@@ -63,9 +62,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.pages_home-header",
-              "fullWidthBody": ">context.metaData.handlebars.templates.pages_home-body",
-              "footer": ">context.metaData.handlebars.templates.pages_home-footer"
+              "header": ">context.metaData.handlebars.templates.pages_services_landing-header",
+              "body": ">context.metaData.handlebars.templates.pages_services_landing-body"
             },
             "contentType": "text/html"
           }

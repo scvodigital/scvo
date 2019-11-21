@@ -1,0 +1,13 @@
+{{> leading_quotation sourcePage=this}}
+
+<div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
+  {{{replace (replace (replace content "http://scvo.org.uk/" "") "https://scvo.org.uk/" "") "http://cms.scvo.org/" "/"}}}
+
+  {{!-- <div class="divider"></div> --}}
+  <div class="page-info v-margin-full b-padding-full">
+    <div class="page-info-item page-info-updated text-gray">
+      <span class="far fa-calendar-alt" aria-hidden="true"></span>
+      Page last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
+    </div>
+  </div>
+</div>

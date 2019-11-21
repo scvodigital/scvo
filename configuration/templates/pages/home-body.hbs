@@ -4,14 +4,14 @@
       <div class="column col-4 col-md-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3 text-primary">
+            <div class="card-title h3">
               Latest press release
               <a href="/press-media" class="caption l-margin">See more</a>
             </div>
           </div>
           <div class="card-body">
             {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
-            <h4 class="text-secondary">{{{trim title}}}</h4>
+            <h4>{{{trim title}}}</h4>
             <p>
               {{{truncate description 320}}}
               <a href="{{replace post_slug '_' '/'}}">Read more</a>
@@ -23,14 +23,14 @@
       <div class="column col-4 col-md-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3 text-primary">
+            <div class="card-title h3">
               Latest blog post
               <a href="/blogs" class="caption l-margin">See more</a>
             </div>
           </div>
           <div class="card-body">
             {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[0]._source ~}}
-            <h4 class="text-secondary">{{{trim title}}}</h4>
+            <h4>{{{trim title}}}</h4>
             <p>
               {{{truncate description 280}}}
               <a href="{{replace post_slug '_' '/'}}">Read more</a>
@@ -46,7 +46,7 @@
       <div class="column col-4 col-md-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3 text-primary">Become a member</div>
+            <div class="card-title h3">Become a member</div>
           </div>
           <div class="card-body">
             Our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members believe that charities, community groups, social enterprises and
@@ -82,20 +82,21 @@
       <div class="column col-4 col-md-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3 text-primary">
+            <div class="card-title h3">
               Latest news story on TFN
               <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">See more</a>
             </div>
           </div>
           {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
           <div class="card-image" style="height: 137px; overflow: hidden;">
-            <a href="{{url}}"><img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" /></a>
+            <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic"><img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" /></a>
           </div>
           <div class="card-body">
             <p>
-              {{!-- <a href="{{url}}">{{{trim title}}}</a> --}}
+              <h4>{{{trim title}}}</h4>
+              {{!-- <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a> --}}
               {{{truncate description 280}}}
-              <a href="{{url}}">Read more</a>
+              <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Read more</a>
             </p>
           </div>
           {{/with ~}}
@@ -103,14 +104,14 @@
       </div>
       {{/compare ~}}
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">
+        <h3>
           Featured campaign
           <a href="/projects-campaigns" class="caption l-margin">See more</a>
         </h3>
         {{> promoted_eu_are_valued}}
       </div>
       <div class="column col-4 col-md-12">
-        <h3 class="text-primary">What can we help you with?</h3>
+        <h3>What can we help you with?</h3>
         {{> site_search}}
 
         {{> useful_links}}
@@ -147,7 +148,7 @@
         <h4 class="text-center">
           <a href="/setting-up-a-charity" class="no-underline">
             <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
-              <span class="icon fal fa-book fa-fw fa-2x text-primary" aria-hidden="true"></span>
+              <span class="icon fal fa-book fa-fw fa-2x" aria-hidden="true"></span>
             </div>
             <span class="title t-padding d-block">Setting up an organisation</span>
           </a>
@@ -157,7 +158,7 @@
         <h4 class="text-center">
           <a href="/funding" class="no-underline">
             <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
-              <span class="icon fal fa-chart-bar fa-fw fa-2x text-primary" aria-hidden="true"></span>
+              <span class="icon fal fa-chart-bar fa-fw fa-2x" aria-hidden="true"></span>
             </div>
             <span class="title t-padding d-block">Funding for my project</span>
           </a>
@@ -167,7 +168,7 @@
         <h4 class="text-center">
           <a href="/events" class="no-underline">
             <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
-              <span class="icon fal fa-graduation-cap fa-fw fa-2x text-primary" aria-hidden="true"></span>
+              <span class="icon fal fa-graduation-cap fa-fw fa-2x" aria-hidden="true"></span>
             </div>
             <span class="title t-padding d-block">Training courses &amp; events</span>
           </a>
@@ -177,7 +178,7 @@
         <h4 class="text-center">
           <a href="/jobs" class="no-underline">
             <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
-              <span class="icon fal fa-handshake fa-fw fa-2x text-primary" aria-hidden="true"></span>
+              <span class="icon fal fa-handshake fa-fw fa-2x" aria-hidden="true"></span>
             </div>
             <span class="title t-padding d-block">Jobs in the sector</span>
           </a>

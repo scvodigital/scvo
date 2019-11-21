@@ -15,6 +15,11 @@
 			"route": "^/funding"
 		},
 		{
+			"label": "Events",
+			"path": "/events",
+			"route": "^/events"
+		},
+		{
 			"label": "Support services",
 			"path": "/services",
 			"route": "^/services|^/credit-union"
@@ -30,14 +35,19 @@
 			"route": "^/policy-research"
 		},
 		{
-			"label": "About",
-			"path": "/about",
-			"route": "^/about"
-		},
-		{
 			"label": "Press",
 			"path": "/press-media",
 			"route": "^/press-media"
+		},
+		{
+			"label": "Blogs",
+			"path": "/blogs",
+			"route": "^/blogs"
+		},
+		{
+			"label": "About",
+			"path": "/about",
+			"route": "^/about"
 		}
 	],
 	"main-upper": [{

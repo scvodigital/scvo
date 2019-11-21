@@ -6,7 +6,7 @@
     {{#with _source ~}}
     <li>
       <a href="https://goodmoves.com/vacancy/{{Id}}/{{slugify title}}?utm_source=scvo&utm_campaign=list&utm_medium=website">{{{trim title}}} – {{trim organisation.name}}</a>
-      <div class="caption">{{momentFormat (moment closing_date 'x') "Do MMMM YYYY"}}</div>
+      <div class="caption">Closing {{momentFormat (moment closing_date 'x') "Do MMMM YYYY"}}</div>
     </li>
     {{/with ~}}
     {{/each ~}}

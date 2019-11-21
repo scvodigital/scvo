@@ -9,6 +9,7 @@ $secondary-color-dark: darken($secondary-color, 10%) !default;
 $secondary-color-dark-var: 152d36;
 $dark-color: #203139;
 $gray-color: #D5D8DC;
+$gray-color-dark: #9BA5AD;
 $light-color: #FEF9F9;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
@@ -20,9 +21,10 @@ $bg-color-dark: #D5D8DC;
 
 $goodmoves-color: rgb(68, 133, 50);
 $yellow-color: #FFDB00;
-$green-color: #B0FFC0;
+$green-color: #BBFDBC;
 $blue-color: #45CCE4;
-$lilac-color: #CCBFDF;
+$purple-color: #CCBFDF;
+$pink-color: #FEB3B4;
 
 $unit: 1rem;
 $padding: .4rem;
@@ -157,10 +159,19 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .mdc-card__title {
-  .fa-2x {
+  .fa-fw {
     font-weight: 400 !important;
     font-size: 1em !important;
-    margin-right: $unit/2;
+    background-image: url('/rouleaux.svg?color=ffffff&opacity=0.75&style=solid');
+    position: absolute;
+    height: 2.5rem;
+    width: 2.5rem;
+    right: .5rem;
+    top: .5rem;
+    margin-right: 0;
+    color: #f00;
+    line-height: 2.5rem;
+    padding-left: .5rem;
   }
 }
 
@@ -243,7 +254,7 @@ a:visited,
 a:hover {
   text-decoration: none;
   // color: $primary-color;
-  // color: white;
+  color: white;
   background-size: $thick-line 50px;
   // border-bottom-color: $primary-color;
 }
@@ -252,6 +263,7 @@ a:hover {
   background-color: $primary-color;
 }
 .goodmoves-vacancies a,
+.bg-secondary a,
 footer .footer-main a {
   background: linear-gradient(to bottom, white 0%, white 100%);
   background-position: 0 100%;
@@ -263,6 +275,7 @@ footer .footer-main a {
   color: $goodmoves-color;
   background-size: $thick-line 50px;
 }
+.bg-secondary a:hover,
 footer .footer-main a:hover {
   // border-bottom-color: white;
   color: $secondary-color;
@@ -356,10 +369,149 @@ a.no-underline:hover {
   box-shadow: none;
   border-radius: 0;
   background-color: transparent;
+  position: relative;
   .card-image:first-child img {
     border-radius: 0;
   }
 }
+.card.primary,
+.card.secondary,
+.card.yellow,
+.card.blue,
+.card.purple,
+.card.gray,
+.card.green,
+.card.pink {
+  padding: $unit;
+  margin-bottom: $unit;
+  .card-header {
+    padding-top: 0;
+  }
+  .card-footer {
+    padding-bottom: 0;
+  }
+}
+.card.primary {
+  background-color: $primary-color;
+  .card-title .fa-fw {
+    color: $primary-color;
+  }
+  p,
+  div,
+  li,
+  .card-body {
+    color: $secondary-color;
+  }
+  a {
+    color: white;
+  }
+}
+.card.secondary {
+  background-color: $secondary-color;
+  .card-title .fa-fw {
+    color: $secondary-color;
+  }
+  p,
+  div,
+  li,
+  .card-body {
+    color: white;
+  }
+  a {
+    color: $primary-color;
+  }
+}
+.card.yellow {
+  background-color: $yellow-color;
+  .card-title .fa-fw {
+    color: $yellow-color;
+  }
+  p,
+  div,
+  li,
+  .card-body {
+    color: $secondary-color;
+  }
+  a {
+    color: $primary-color-dark;
+  }
+}
+.card.blue {
+  background-color: $blue-color;
+  .card-title .fa-fw {
+    color: $blue-color;
+  }
+  p,
+  div,
+  li,
+  .card-body {
+    color: $secondary-color;
+  }
+  a {
+    color: $secondary-color-dark;
+  }
+}
+.card.purple {
+  background-color: $purple-color;
+  .card-title .fa-fw {
+    color: $purple-color;
+  }
+  p,
+  div,
+  li,
+  .card-body {
+    color: $secondary-color;
+  }
+  a {
+    color: $primary-color;
+  }
+}
+.card.gray {
+  background-color: $gray-color-dark;
+  .card-title .fa-fw {
+    color: $gray-color-dark;
+  }
+  p,
+  div,
+  li,
+  .card-body {
+    color: $secondary-color-dark;
+  }
+  a {
+    color: white;
+  }
+}
+.card.green {
+  background-color: $green-color;
+  .card-title .fa-fw {
+    color: $green-color;
+  }
+  p,
+  div,
+  li,
+  .card-body {
+    color: $secondary-color;
+  }
+  a {
+    color: $primary-color-dark;
+  }
+}
+.card.pink {
+  background-color: $pink-color;
+  .card-title .fa-fw {
+    color: $pink-color;
+  }
+  p,
+  div,
+  li,
+  .card-body {
+    color: $secondary-color;
+  }
+  a {
+    color: $secondary-color-dark;
+  }
+}
+
 .linked-cards,
 .latest-content {
   .card-header,
@@ -516,11 +668,23 @@ a.no-underline:hover {
 .text-secondary {
   color: $secondary-color !important;
 }
+.bg-secondary {
+  p,
+  div,
+  li,
+  td,
+  a {
+    color: white;
+  }
+}
 .find-information-on {
   padding-top: $unit*1.5;
   padding-bottom: $unit;
-  a, h2, h3, h4, .icon, .title {
+  a, h2, h3, h4, .title {
     color: white;
+  }
+  .icon {
+    color: $primary-color;
   }
   a {
     opacity: 0.8;
@@ -535,6 +699,7 @@ a.no-underline:hover {
   }
 }
 .goodmoves-vacancies,
+.tfn-posts,
 .latest-posts {
   ul {
     list-style-type: none;
@@ -562,22 +727,6 @@ a.no-underline:hover {
   .btn-lg:hover {
     background: white;
     color: $primary-color-dark;
-  }
-}
-
-.support {
-  .membership {
-    background-color: $yellow-color;
-    padding: $unit;
-    .card-header {
-      padding-top: 0;
-      a {
-        color: $primary-color-dark;
-      }
-    }
-    .card-footer {
-      padding-bottom: 0;
-    }
   }
 }
 
@@ -959,6 +1108,9 @@ header.toolbar {
   }
 }
 .equal-height {
+  .column {
+    margin-bottom: $unit;
+  }
   .card {
     height: 100%;
   }

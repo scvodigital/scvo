@@ -1,15 +1,15 @@
 {{#if @root.request.params.query.style ~}}
 {{#switch @root.request.params.query.style ~}}
 {{#case "stripes" ~}}
-{{~>images_rouleaux_stripes color=(concat "#" (default (replace @root.request.params.query.color '#' '') 'ffffff'))~}}
+{{~>images_rouleaux_stripes color=(concat "#" (default (replace @root.request.params.query.color '#' '') 'ffffff')) opacity=@root.request.params.query.opacity ~}}
 {{/case ~}}
 {{#case "dots" ~}}
-{{~>images_rouleaux_dots color=(concat "#" (default (replace @root.request.params.query.color '#' '') 'ffffff'))~}}
+{{~>images_rouleaux_dots color=(concat "#" (default (replace @root.request.params.query.color '#' '') 'ffffff')) opacity=@root.request.params.query.opacity ~}}
 {{/case ~}}
 {{#case "solid" ~}}
-{{~>images_rouleaux_solid color=(concat "#" (default (replace @root.request.params.query.color '#' '') 'ffffff'))~}}
+{{~>images_rouleaux_solid color=(concat "#" (default (replace @root.request.params.query.color '#' '') 'ffffff')) opacity=@root.request.params.query.opacity ~}}
 {{/case ~}}
 {{/switch ~}}
 {{else}}
-{{~>images_rouleaux_solid color=(concat "#" (default (replace @root.request.params.query.color '#' '') 'ffffff'))~}}
+{{~>images_rouleaux_solid color=(concat "#" (default (replace @root.request.params.query.color '#' '') 'ffffff')) opacity=@root.request.params.query.opacity ~}}
 {{/if ~}}

@@ -1,0 +1,22 @@
+<div class="columns">
+  <div class="column col-8 col-lg-12">
+    {{> page_full @root.data.primaryResponse.hits.hits.[0]._source}}
+  </div>
+  <div class="column col-4 col-lg-12">
+    <img src="{{~>asset_url url='images/home/scvo_motheroftwo_montage_11.png'~}}" class="img-responsive" />
+
+    <br />
+    {{> goodmoves_latest_jobs}}
+
+    <br />
+    {{> tfn_post_latest_posts}}
+
+    <div class="columns t-margin">
+      <div class="column col-9 col-ml-auto">
+        <div class="divider v-margin-full"></div>
+
+        {{> sidebars_running}}
+      </div>
+    </div>
+  </div>
+</div>
