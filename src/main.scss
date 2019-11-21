@@ -6,6 +6,7 @@ $primary-color-dark: #C5143D;
 $secondary-color: #244B5A;
 $secondary-color-light: lighten($secondary-color, 30%) !default;
 $secondary-color-dark: darken($secondary-color, 10%) !default;
+$secondary-color-dark-var: 152d36;
 $dark-color: #203139;
 $gray-color: #D5D8DC;
 $light-color: #FEF9F9;
@@ -63,6 +64,7 @@ body,
 }
 .icon-rouleaux,
 .bg-rouleaux {
+  background-image:url('/rouleaux.svg?color=#{$light-color}&style=solid');
   background-size: $page-width;
   background-position-x: center;
   background-position-y: top;
@@ -1795,13 +1797,21 @@ footer {
   .footer-main {
     background: $secondary-color;
   }
+  .bg-gray,
+  .bg-white {
+    background: $secondary-color-dark !important;
+  }
+  a:link,
+  a:visited,
   header.toolbar .btn,
   header.toolbar .btn:hover,
   header.toolbar .btn:focus,
   footer .footer-copyright p,
   footer .footer-copyright a,
+  .text-primary,
+  .text-secondary,
   h1, h2, h3, h4, div, p, li, div, td, th {
-    color: white;
+    color: white !important;
   }
   img {
     opacity: .85;
@@ -1812,6 +1822,9 @@ footer {
   }
   .menu {
     border: $thick-line solid $light-color;
+  }
+  .bg-rouleaux {
+    background-image: url('/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid');
   }
 }
 
