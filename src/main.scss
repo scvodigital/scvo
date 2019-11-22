@@ -164,6 +164,7 @@ h1, h2, h3, h4, h5, h6,
   }
 }
 
+.card .card-title,
 .mdc-card__title {
   .fa-fw {
     font-weight: 400 !important;
@@ -316,6 +317,7 @@ footer .footer-copyright a:hover {
   color: white;
   background-size: $thick-line 50px;
 }
+.card .card-title a,
 .mdc-card__title a,
 .mdc-card__primary h3 a,
 .breadcrumb .breadcrumb-item a,

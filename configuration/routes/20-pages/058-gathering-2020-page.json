@@ -1,8 +1,9 @@
 {
-  "name": "page_gathering_2019",
+  "name": "page_gathering_2020",
+  "debug": true,
   "pattern": {
-    "section": "/the-gathering-2019/:section",
-    "subsection": "/the-gathering-2019/:section/:subsection"
+    "section": "/the-gathering-2020/:section",
+    "subsection": "/the-gathering-2020/:section/:subsection"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -39,8 +40,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_gathering-2019",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_gathering_2020-header",
+              "body": ">context.metaData.handlebars.templates.pages_gathering_2020-body"
             },
             "contentType": "text/html"
           }
