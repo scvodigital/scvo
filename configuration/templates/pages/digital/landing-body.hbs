@@ -1,4 +1,4 @@
-<div class="page-content">
+<div class="page-content digital">
   <div class="columns">
     <div class="column col-4 col-lg-6 col-md-12">
       <div class="card card-no-padding participation">
@@ -7,11 +7,11 @@
             <a href="/digital/participation">Participation</a>
           </div>
         </section>
-        <section class="card-image"><a href="/digital/participation">&nbsp;</a></section>
-        <section class="card-body">
+        <section class="card-image" style="background-image:url('https://storage.googleapis.com/scvo-wordpress-media/2019/03/1bc3394a-participation.jpg');"></section>
+        <section class="card-body t-padding">
           Increasing social inclusion by helping people to develop their confidence, motivation and essential digital skills to go online
         </section>
-        <section class="card-footer"><a class="btn btn-link" href="/digital/participation">Find out more</a></section>
+        <section class="card-footer t-padding"><a class="btn btn-link" href="/digital/participation">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
@@ -21,11 +21,11 @@
             <a href="/digital/evolution">Evolution</a>
           </div>
         </section>
-        <section class="card-image"><a href="/digital/evolution">&nbsp;</a></section>
-        <section class="card-body">
+        <section class="card-image" style="background-image:url('https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/banners/call_to_action-crop.jpg');"></section>
+        <section class="card-body t-padding">
           Increasing the capacity of voluntary organisations by supporting their use of digital tools and techniques
         </section>
-        <section class="card-footer"><a class="btn btn-link" href="/digital/evolution">Find out more</a></section>
+        <section class="card-footer t-padding"><a class="btn btn-link" href="/digital/evolution">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
@@ -37,8 +37,8 @@
                 <a href="/digital/events">Events</a>
               </div>
             </section>
-            <section class="card-image"><a href="/digital/events">&nbsp;</a></section>
-            <section class="card-body">
+            <section class="card-image" style="background-image: url('https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/banners/teamdigital-crop.jpg');"></section>
+            <section class="card-body t-padding">
               Upcoming events:
 
               {{#each hits}}
@@ -52,14 +52,14 @@
               {{/each}}
               {{#compare total ">" limit}}
                 <div>
-                  And {{subtract total limit}} more
+                  &hellip;and {{subtract total limit}} more!
                 </div>
               {{/compare}}
 
             </section>
-            <section class="card-footer">
+            <section class="card-footer t-padding">
               {{#compare total ">" 1 ~}}
-              <a class="btn btn-link" href="/digital/events">Find out more</a>
+              <a class="btn btn-link" href="/digital/events">See all events</a>
               {{/compare ~}}
             </section>
           </div>
@@ -71,11 +71,11 @@
               <a href="/digital/participation/reports">Research</a>
             </div>
           </section>
-          <section class="card-image"><a href="/digital/participation/reports">&nbsp;</a></section>
-          <section class="card-body">
+          <section class="card-image" style="background-image: url('https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/banners/digital-resources.jpg');"></section>
+          <section class="card-body t-padding">
             Check out our resource library on developing digital potential
           </section>
-          <section class="card-footer">
+          <section class="card-footer t-padding">
             <a class="btn btn-link" href="/digital/participation/reports">Find out more</a>
           </section>
         </div>
@@ -88,11 +88,11 @@
             <a href="/digital/evolution/senior-leaders">Senior leaders programme</a>
           </div>
         </section>
-        <section class="card-image"><a href="/digital/evolution/senior-leaders">&nbsp;</a></section>
-        <section class="card-body">
+        <section class="card-image" style="background-image:url('https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/banners/senior-leaders-programme.jpg')"></section>
+        <section class="card-body t-padding">
           SCVO are helping voluntary sector leaders grow their skills, confidence and understanding of digital opportunities – find out what it's all about!
         </section>
-        <section class="card-footer"><a class="btn btn-link" href="/digital/evolution/senior-leaders">Find out more</a></section>
+        <section class="card-footer t-padding"><a class="btn btn-link" href="/digital/evolution/senior-leaders">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
@@ -102,11 +102,11 @@
             <a href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">Essential skills</a>
           </div>
         </section>
-        <section class="card-image"><a href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">&nbsp;</a></section>
-        <section class="card-body">
+        <section class="card-image" style="background-image:url('https://storage.googleapis.com/scvo-wordpress-media/2019/03/0f9b1f2c-toolkit.jpg')"></section>
+        <section class="card-body t-padding">
           Test your digital skills with our toolkit
         </section>
-        <section class="card-footer"><a class="btn btn-link" href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">Find out more</a></section>
+        <section class="card-footer t-padding"><a class="btn btn-link" href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">Find out more</a></section>
       </div>
     </div>
     {{#compare @root.data.supplimentaryResponses.related_posts.hits.total ">" 0 ~}}
@@ -117,12 +117,12 @@
             Latest blog
           </div>
         </section>
-        <section class="card-body">
+        <section class="card-body t-padding">
           <ul class="supplimentary-list">
             {{> post_list @root.data.supplimentaryResponses.related_posts.hits.hits.0._source}}
           </ul>
         </section>
-        <section class="card-footer">
+        <section class="card-footer t-padding">
           <a class="btn btn-link" href="/digital/blogs">All digital blog posts</a>
         </section>
       </div>
