@@ -1,0 +1,87 @@
+<div class="columns staff-profile">
+  <div class="column col-9 col-lg-12">
+    {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+    <div class="full scvo-staff scvo-cms scvo-cms-author">
+      <div class="columns">
+        <div class="column col-3 col-md-4">
+          <img src="{{profile}}" alt="{{name_full}}" class="s-rounded" />
+        </div>
+        <div class="column col-9 col-md-8">
+          <dl class="inline-dl">
+            {{#ifAny directorate department ~}}
+            <dt>
+              Department
+            </dt>
+            <dd>
+              {{#compare directorate department}}
+              {{#compare directorate "Directorate"}}
+              {{else}}
+              {{#if department}}<a href="/about/staff-team?department={{slugify department}}">{{department}}</a>{{/if}}
+              {{/compare}}
+              {{else}}
+              {{#if department}}<a href="/about/staff-team?department={{slugify department}}">{{department}}</a>{{/if}}
+              {{#if directorate}} ({{directorate}}){{/if}}
+              {{/compare}}
+            </dd>
+            {{/ifAny ~}}
+            {{#if city ~}}
+            <dt>
+              City
+            </dt>
+            <dd>
+              <a href="/about/staff-team?city={{slugify city}}">{{city}}</a>
+            </dd>
+            {{/if ~}}
+            {{#if about ~}}
+            <dt>
+              About
+            </dt>
+            <dd>
+              {{{about}}}
+            </dd>
+            {{/if ~}}
+            <dt>
+              Contact
+            </dt>
+            <dd>
+              <ul class="fa-ul">
+                {{#if email ~}}
+                <li><span class="fa-li"><span class="far fa-envelope"></span></span> <a href="mailto:{{email}}">{{email}}</a></li>
+                {{/if ~}}
+                {{#if twitter ~}}
+                <li><span class="fa-li"><span class="fab fa-twitter"></span></span> <a href="{{twitter}}">Twitter</a></li>
+                {{/if ~}}
+                {{#if linkedin ~}}
+                <li><span class="fa-li"><span class="fab fa-linkedin"></span></span> <a href="{{linkedin}}">LinkedIn</a></li>
+                {{/if ~}}
+                {{#if work_phone ~}}
+                <li><span class="fa-li"><span class="fas fa-phone"></span></span> <a href="tel:{{replace work_phone " " ""}}">{{work_phone}}</a></li>
+                {{/if ~}}
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+    {{/with ~}}
+  </div>
+  {{#compare @root.data.supplimentaryResponses.author_posts.hits.total ">" 0 ~}}
+  <div class="column col-12 t-margin-full">
+    <h3 class="blogs">
+      Latest {{inflect @root.data.supplimentaryResponses.author_posts.hits.total 'post' 'posts'}}
+    </h3>
+    <div class="columns">
+      {{#each @root.data.supplimentaryResponses.author_posts.hits.hits ~}}
+      <div class="column col-4 col-md-6 col-sm-12">
+        {{> post_list _source}}
+      </div>
+      {{/each ~}}
+    </div>
+    {{#compare @root.data.supplimentaryResponses.author_posts.hits.total ">" 3 ~}}
+    <p class="v-margin read-more">
+      <a href="/post/author/{{{@root.data.supplimentaryResponses.author_posts.hits.hits.[0]._source.author_slug}}}" class="mdc-button mdc-button--raised">More posts</a>
+    </p>
+    {{/compare ~}}
+  </div>
+  {{/compare ~}}
+</div>

@@ -58,13 +58,13 @@
       </div>
       <div class="column col-1 col-xl-2 col-md-3 col-sm-12 contact">
         {{#if twitter ~}}
-        {{!-- <a href="{{#startsWith '@' twitter}}http://twitter.com/{{twitter}}{{else}}{{twitter}}{{/startsWith}}"><span class="fab fa-twitter" aria-hidden="true"></span></a> --}}
+        {{!-- <a href="{{#startsWith '@' twitter}}http://twitter.com/{{twitter}}{{else}}{{twitter}}{{/startsWith}}" class="no-ext no-underline"><span class="fab fa-twitter" aria-hidden="true"></span></a> --}}
         {{/if ~}}
         {{#if linkedin ~}}
-        <a href="{{linkedin}}"><span class="fab fa-linkedin fa-fw" aria-hidden="true"></span></a>
+        <a href="{{linkedin}}" class="no-ext no-underline"><span class="fab fa-linkedin fa-fw" aria-hidden="true"></span></a>
         {{/if ~}}
         {{#if email ~}}
-        <a href="mailto:{{email}}"><span class="far fa-envelope fa-fw" aria-hidden="true"></span></a>
+        <a href="mailto:{{email}}" class="no-ext no-underline"><span class="far fa-envelope fa-fw" aria-hidden="true"></span></a>
         {{/if ~}}
       </div>
     </div>

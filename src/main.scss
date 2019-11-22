@@ -11,6 +11,7 @@ $dark-color: #203139;
 $gray-color: #D5D8DC;
 $gray-color-dark: #9BA5AD;
 $light-color: #FEF9F9;
+$light-color-var: FEF9F9;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
 $error-color: #f03823;
@@ -66,7 +67,7 @@ body,
 }
 .icon-rouleaux,
 .bg-rouleaux {
-  background-image:url('/rouleaux.svg?color=#{$light-color}&style=solid');
+  background-image:url('/rouleaux.svg?color=#{$light-color-var}&style=solid');
   background-size: $page-width;
   background-position-x: center;
   background-position-y: top;
@@ -525,6 +526,10 @@ a.no-underline:hover {
   }
 }
 
+.staff-profile .post-info-author {
+  display: none !important;
+}
+
 .linked-cards,
 .latest-content {
   .card-header,
@@ -798,7 +803,7 @@ aside {
     top: -0.1rem;
     position: relative;
   }
-  a.noext::after,
+  a.no-ext::after,
   a[href^="https://scvo.org"]::after,
   a[href^="https://scvo.org.uk"]::after,
   a[href^="https://storage.googleapis.com"]::after,

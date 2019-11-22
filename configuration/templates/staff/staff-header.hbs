@@ -1,0 +1,11 @@
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
+  <li class="breadcrumb-item"><a href="/about/staff-team">Staff team</a></li>
+  <li class="breadcrumb-item">{{{name_full}}}</li>
+</ul>
+
+<h1>{{{name_full}}}</h1>
+<h2>{{job_title}}</h2>
+{{/with ~}}
