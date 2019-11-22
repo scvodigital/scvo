@@ -7,7 +7,7 @@
 </div>
 {{/inline ~}}
 
-<form action="/search" method="GET" autocomplete="off">
+<form action="/search" method="GET" autocomplete="off" class="v-margin-full">
   <h3>Filters</h3>
   <h4>SCVO</h4>
   {{>filter_checkbox label="Pages" value="scvo-page"}}
@@ -40,7 +40,7 @@
   {{>filter_checkbox label="News posts" value="tfn-legacy-post-news"}}
   {{>filter_checkbox label="Polls" value="tfn-legacy-poll"}}
 
-  <button class="btn btn-primary" type="submit">
+  <button class="btn btn-primary btn-block" type="submit">
     Search
   </button>
 </form>
