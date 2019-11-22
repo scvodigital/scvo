@@ -1,5 +1,6 @@
 {
   "name": "post_author",
+  "debug": true,
   "pattern": "/post/author/:author_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -21,31 +22,6 @@
       "renderer": "handlebars"
     },
     {
-      "name": "supplimentaryResponses",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": [
-          {
-            "name": "author_profile",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-author",
-            "template": ">context.metaData.handlebars.queries.posts_author-profile"
-          },
-          {
-            "name": "staff_profile",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-staff",
-            "template": ">context.metaData.handlebars.queries.posts_staff-profile"
-          }
-        ]
-      },
-      "renderer": "handlebars"
-    },
-    {
       "name": "destination",
       "taskModule": "renderLayout",
       "renderer": "handlebars",
@@ -61,8 +37,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.posts_author-head-tags",
-              "body": ">context.metaData.handlebars.templates.posts_author",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.posts_author-header",
+              "body": ">context.metaData.handlebars.templates.posts_author-body"
             },
             "contentType": "text/html"
           }

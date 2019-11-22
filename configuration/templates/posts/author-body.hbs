@@ -1,0 +1,54 @@
+<div class="post-author columns v-margin">
+  <div class="column col-8 col-lg-9 col-md-12">
+    {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
+    {{#compare @root.data.primaryResponse.hits.total ">" 10 ~}}
+    {{> search_info paging=@root.data.primaryResponse.pagination}}
+    {{/compare ~}}
+    <ul class="supplimentary-list">
+      {{#each @root.data.primaryResponse.hits.hits ~}}
+      {{> post_list _source}}
+      {{/each ~}}
+    </ul>
+    {{> pagination paging=@root.data.primaryResponse.pagination}}
+    {{else}}
+    <p>
+      No posts by this author could be loaded.
+    </p>
+    {{/compare ~}}
+  </div>
+  {{#if @root.data.primaryResponse.hits.hits.[0]._source.staff_profile ~}}
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source.staff_profile ~}}
+  <div class="column col-4 col-lg-3 col-md-12">
+    <div class="author-about static-sidebar">
+      <div class="full scvo-cms scvo-cms-author">
+        {{#if profile ~}}
+        <img src="{{profile}}" alt="{{name_full}}" class="s-rounded p-centered b-margin" />
+        {{/if ~}}
+        {{#if about ~}}
+        <p>
+          {{{about}}}
+        </p>
+        {{/if ~}}
+        {{#if Id ~}}
+        <a href="/about/staff-team/{{Id}}/{{slugify name_full}}">Contact information</a>
+        {{/if ~}}
+      </div>
+    </div>
+  </div>
+  {{/with ~}}
+  {{else}}
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <div class="column col-4 col-lg-3 col-md-12">
+    <div class="author-about static-sidebar">
+      <div class="full scvo-cms scvo-cms-author">
+        {{#if about ~}}
+        <p>
+          {{{about}}}
+        </p>
+        {{/if ~}}
+      </div>
+    </div>
+  </div>
+  {{/with ~}}
+  {{/if ~}}
+</div>

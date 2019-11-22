@@ -3,6 +3,9 @@
   <li class="breadcrumb-item"><a href="/">Home</a></li>
   <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
   <li class="breadcrumb-item"><a href="/about/staff-team">Staff team</a></li>
+  {{#if department ~}}
+  <li class="breadcrumb-item"><a href="/about/staff-team?department={{slugify department}}">{{department}}</a></li>
+  {{/if ~}}
   <li class="breadcrumb-item">{{{name_full}}}</li>
 </ul>
 

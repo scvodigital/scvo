@@ -548,6 +548,8 @@ a.no-underline:hover {
   }
 }
 
+.press-media .post-info-categories,
+.post-author .post-info-author,
 .staff-profile .post-info-author {
   display: none !important;
 }
@@ -1195,6 +1197,7 @@ blockquote {
   margin: 0;
   .supplimentary-list-item {
     list-style-type: none;
+    margin-bottom: $unit;
   }
 }
 .inline-list {

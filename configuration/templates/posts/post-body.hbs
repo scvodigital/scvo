@@ -6,8 +6,7 @@
       {{> post_info_published}}
       {{> post_info_categories}}
     </div>
-    {{{replace content "http://cms.scvo.org/" "/"}}}
+    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" "/"}}}
   </div>
   {{/with ~}}
 </div>
-<script src="{{~>asset_url url='post.js'~}}"></script>

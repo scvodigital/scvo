@@ -1,0 +1,27 @@
+{{#if @root.data.primaryResponse.hits.hits.[0]._source.staff_profile ~}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source.staff_profile ~}}
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item">{{{name_full}}}</li>
+</ul>
+
+{{#if og_image ~}}
+<img src="{{og_image}}" alt="{{name_full}}" class="avatar avatar-xl float-left r-margin-full b-margin-full" />
+{{/if ~}}
+<h1>{{{name_full}}}</h1>
+<h3>{{{job_title}}} at SCVO</h3>
+{{/with ~}}
+{{else}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item">{{{author_name_full}}}</li>
+</ul>
+
+{{#if author_avatar ~}}
+<img src="{{author_avatar}}" alt="{{author_name_full}}" class="avatar avatar-xl float-left r-margin-full b-margin-full" />
+{{/if ~}}
+<h1>{{{author_name_full}}}</h1>
+<h3>{{{author_job_title}}} at {{{author_organisation_name}}}</h3>
+{{/with ~}}
+{{/if ~}}

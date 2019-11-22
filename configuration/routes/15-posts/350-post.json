@@ -34,18 +34,6 @@
         },
         "queryTemplates": [
           {
-            "name": "author_profile",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-author",
-            "template": ">context.metaData.handlebars.queries.posts_author-profile"
-          },
-          {
-            "name": "staff_profile",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-staff",
-            "template": ">context.metaData.handlebars.queries.posts_staff-profile"
-          },
-          {
             "name": "authors_posts",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",

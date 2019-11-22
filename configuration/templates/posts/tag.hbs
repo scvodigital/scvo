@@ -1,27 +1,23 @@
 <div class="post-tag">
-  {{> breadcrumbs_menu}}
-  <div class="splash-image splash-image-{{@root.data.primaryResponse.hits.hits.[0]._type}}-tag" style="{{> headers_splash_image}}">
-    <div class="splash-overlay{{#if @root.data.primaryResponse.hits.hits.[0]._source.hide_overlay}} splash-overlay-hidden{{/if}}">
-      <div class="container-fluid">
-        <div class="mdc-layout-grid">
-          {{#if @root.data.primaryResponse.hits.hits.[0]._source.header_text ~}}
-          <img src="{{@root.data.primaryResponse.hits.hits.[0]._source.header_text}}" alt="{{@root.data.primaryResponse.hits.hits.[0]._source.title}}" class="header-text" />
-          {{else}}
-          <h1 class="header-text">
-            <span class="header-text-banner">
-              {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug ~}}
-              {{#compare this "===" (lastItem (split ../request.params.path '_')) ~}}
-              {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.post_tags @index}}}
-              {{/compare ~}}
-              {{/each ~}}
-            </span>
-          </h1>
-          {{/if ~}}
-        </div>
-        {{> headers_caption}}
-      </div>
-    </div>
-  </div>
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item">
+      {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug ~}}
+      {{#compare this "===" (lastItem (split ../request.params.path '_')) ~}}
+      {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.post_tags @index}}}
+      {{/compare ~}}
+      {{/each ~}}
+    </li>
+  </ul>
+
+  <h1>
+    {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug ~}}
+    {{#compare this "===" (lastItem (split ../request.params.path '_')) ~}}
+    {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.post_tags @index}}}
+    {{/compare ~}}
+    {{/each ~}}
+  </h1>
+
   <div class="container-fluid">
     <div class="mdc-layout-grid v-margin">
       <div class="mdc-layout-grid__inner">
