@@ -1,44 +1,44 @@
 <div class="page-content">
   <div class="columns">
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="mdc-card participation">
-        <section class="mdc-card__primary">
-          <h1 class="mdc-card__title mdc-card__title--large">
+      <div class="card card-no-padding participation">
+        <section class="card-header">
+          <div class="card-title h3">
             <a href="/digital/participation">Participation</a>
-          </h1>
+          </div>
         </section>
-        <section class="mdc-card__media"><a href="/digital/participation">&nbsp;</a></section>
-        <section class="mdc-card__supporting-text">
+        <section class="card-image"><a href="/digital/participation">&nbsp;</a></section>
+        <section class="card-body">
           Increasing social inclusion by helping people to develop their confidence, motivation and essential digital skills to go online
         </section>
-        <section class="mdc-card__actions"><a class="mdc-card__action" href="/digital/participation">Find out more</a></section>
+        <section class="card-footer"><a class="btn btn-link" href="/digital/participation">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="mdc-card evolution">
-        <section class="mdc-card__primary">
-          <h1 class="mdc-card__title mdc-card__title--large">
+      <div class="card card-no-padding evolution">
+        <section class="card-header">
+          <div class="card-title h3">
             <a href="/digital/evolution">Evolution</a>
-          </h1>
+          </div>
         </section>
-        <section class="mdc-card__media"><a href="/digital/evolution">&nbsp;</a></section>
-        <section class="mdc-card__supporting-text">
+        <section class="card-image"><a href="/digital/evolution">&nbsp;</a></section>
+        <section class="card-body">
           Increasing the capacity of voluntary organisations by supporting their use of digital tools and techniques
         </section>
-        <section class="mdc-card__actions"><a class="mdc-card__action" href="/digital/evolution">Find out more</a></section>
+        <section class="card-footer"><a class="btn btn-link" href="/digital/evolution">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
       {{#compare @root.data.supplimentaryResponses.related_events.hits.total ">" 0 ~}}
         {{#withExtend @root.data.supplimentaryResponses.related_events.hits limit=3 ~}}
-          <div class="mdc-card events">
-            <section class="mdc-card__primary">
-              <h1 class="mdc-card__title mdc-card__title--large">
+          <div class="card card-no-padding events">
+            <section class="card-header">
+              <div class="card-title h3">
                 <a href="/digital/events">Events</a>
-              </h1>
+              </div>
             </section>
-            <section class="mdc-card__media"><a href="/digital/events">&nbsp;</a></section>
-            <section class="mdc-card__supporting-text">
+            <section class="card-image"><a href="/digital/events">&nbsp;</a></section>
+            <section class="card-body">
               Upcoming events:
 
               {{#each hits}}
@@ -57,77 +57,76 @@
               {{/compare}}
 
             </section>
-            <section class="mdc-card__actions">
+            <section class="card-footer">
               {{#compare total ">" 1 ~}}
-              <a class="mdc-card__action" href="/digital/events">Find out more</a>
+              <a class="btn btn-link" href="/digital/events">Find out more</a>
               {{/compare ~}}
             </section>
           </div>
         {{/withExtend ~}}
       {{else}}
-        <div class="mdc-card research">
-          <section class="mdc-card__primary">
-            <h1 class="mdc-card__title mdc-card__title--large">
+        <div class="card card-no-padding research">
+          <section class="card-header">
+            <div class="card-title h3">
               <a href="/digital/participation/reports">Research</a>
-            </h1>
+            </div>
           </section>
-          <section class="mdc-card__media"><a href="/digital/participation/reports">&nbsp;</a></section>
-          <section class="mdc-card__supporting-text">
+          <section class="card-image"><a href="/digital/participation/reports">&nbsp;</a></section>
+          <section class="card-body">
             Check out our resource library on developing digital potential
           </section>
-          <section class="mdc-card__actions">
-            <a class="mdc-card__action" href="/digital/participation/reports">Find out more</a>
+          <section class="card-footer">
+            <a class="btn btn-link" href="/digital/participation/reports">Find out more</a>
           </section>
         </div>
       {{/compare ~}}
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="mdc-card senior-leaders">
-        <section class="mdc-card__primary">
-          <h1 class="mdc-card__title mdc-card__title--large">
+      <div class="card card-no-padding senior-leaders">
+        <section class="card-header">
+          <div class="card-title h3">
             <a href="/digital/evolution/senior-leaders">Senior leaders programme</a>
-          </h1>
+          </div>
         </section>
-        <section class="mdc-card__media"><a href="/digital/evolution/senior-leaders">&nbsp;</a></section>
-        <section class="mdc-card__supporting-text">
+        <section class="card-image"><a href="/digital/evolution/senior-leaders">&nbsp;</a></section>
+        <section class="card-body">
           SCVO are helping voluntary sector leaders grow their skills, confidence and understanding of digital opportunities – find out what it's all about!
         </section>
-        <section class="mdc-card__actions"><a class="mdc-card__action" href="/digital/evolution/senior-leaders">Find out more</a></section>
+        <section class="card-footer"><a class="btn btn-link" href="/digital/evolution/senior-leaders">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="mdc-card skills">
-        <section class="mdc-card__primary">
-          <h1 class="mdc-card__title mdc-card__title--large">
+      <div class="card card-no-padding skills">
+        <section class="card-header">
+          <div class="card-title h3">
             <a href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">Essential skills</a>
-          </h1>
+          </div>
         </section>
-        <section class="mdc-card__media"><a href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">&nbsp;</a></section>
-        <section class="mdc-card__supporting-text">
+        <section class="card-image"><a href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">&nbsp;</a></section>
+        <section class="card-body">
           Test your digital skills with our toolkit
         </section>
-        <section class="mdc-card__actions"><a class="mdc-card__action" href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">Find out more</a></section>
+        <section class="card-footer"><a class="btn btn-link" href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">Find out more</a></section>
       </div>
     </div>
+    {{#compare @root.data.supplimentaryResponses.related_posts.hits.total ">" 0 ~}}
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="mdc-card blog latest_content">
-        <section class="mdc-card__primary">
-          <h1 class="mdc-card__title mdc-card__title--large">
-            <a href="/digital/blogs">Latest blog</a>
-          </h1>
+      <div class="card card-no-padding blog latest_content">
+        <section class="card-header">
+          <div class="card-title h3">
+            Latest blog
+          </div>
         </section>
-        {{#with @root.data.supplimentaryResponses.related_posts.hits.hits.0._source ~}}
-        <section class="mdc-card__supporting-text">
-          {{{rendered.scvo_gist}}}
+        <section class="card-body">
+          <ul class="supplimentary-list">
+            {{> post_list @root.data.supplimentaryResponses.related_posts.hits.hits.0._source}}
+          </ul>
         </section>
-        <section class="mdc-card__supporting-text">
-          {{{truncate description "162"}}}
-        </section>
-        {{/with ~}}
-        <section class="mdc-card__actions">
-          <a class="mdc-card__action" href="/digital/blogs">Read more blog posts</a>
+        <section class="card-footer">
+          <a class="btn btn-link" href="/digital/blogs">All digital blog posts</a>
         </section>
       </div>
     </div>
+    {{/compare ~}}
   </div>
 </div>
