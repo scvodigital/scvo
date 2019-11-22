@@ -1,7 +1,7 @@
 <div class="page-content digital">
   <div class="columns">
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="card card-no-padding participation">
+      <div class="card card-no-padding v-margin participation">
         <section class="card-header">
           <div class="card-title h3">
             <a href="/digital/participation">Participation</a>
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="card card-no-padding evolution">
+      <div class="card card-no-padding v-margin evolution">
         <section class="card-header">
           <div class="card-title h3">
             <a href="/digital/evolution">Evolution</a>
@@ -31,7 +31,7 @@
     <div class="column col-4 col-lg-6 col-md-12">
       {{#compare @root.data.supplimentaryResponses.related_events.hits.total ">" 0 ~}}
         {{#withExtend @root.data.supplimentaryResponses.related_events.hits limit=3 ~}}
-          <div class="card card-no-padding events">
+          <div class="card card-no-padding v-margin events">
             <section class="card-header">
               <div class="card-title h3">
                 <a href="/digital/events">Events</a>
@@ -65,7 +65,7 @@
           </div>
         {{/withExtend ~}}
       {{else}}
-        <div class="card card-no-padding research">
+        <div class="card card-no-padding v-margin research">
           <section class="card-header">
             <div class="card-title h3">
               <a href="/digital/participation/reports">Research</a>
@@ -82,7 +82,7 @@
       {{/compare ~}}
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="card card-no-padding senior-leaders">
+      <div class="card card-no-padding v-margin senior-leaders">
         <section class="card-header">
           <div class="card-title h3">
             <a href="/digital/evolution/senior-leaders">Senior leaders programme</a>
@@ -96,7 +96,7 @@
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="card card-no-padding skills">
+      <div class="card card-no-padding v-margin skills">
         <section class="card-header">
           <div class="card-title h3">
             <a href="/digital/participation/skills/scotlands-essential-digital-skills-toolkit">Essential skills</a>
@@ -111,7 +111,7 @@
     </div>
     {{#compare @root.data.supplimentaryResponses.related_posts.hits.total ">" 0 ~}}
     <div class="column col-4 col-lg-6 col-md-12">
-      <div class="card card-no-padding blog latest_content">
+      <div class="card card-no-padding v-margin blog latest_content">
         <section class="card-header">
           <div class="card-title h3">
             Latest blog
