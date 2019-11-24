@@ -22,16 +22,16 @@
           scvo.setCookie('charity_awards_already_voted', slug, 90);
           if (!cookie) {
             console.log('As there was no previous cookie, firing GA event');
-            gtag('event', 'charity-awards-2019', {
+            gtag('event', 'charity-awards-2020', {
               event_category: category,
               event_label: slug
             });
           }
           console.log('Redirecting back to finalist page');
-          window.location.href = '/scottish-charity-awards/vote-2019/' + category + '/' + slug + '#vote';
+          window.location.href = '/scottish-charity-awards/vote-2020/' + category + '/' + slug + '#vote';
         } else {
           console.log('No slug or category specified. Redirecting to main finalist list');
-          window.location.href = '/scottish-charity-awards/vote-2019';
+          window.location.href = '/scottish-charity-awards/vote-2020';
         }
       }
     }, 5000);

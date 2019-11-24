@@ -1,0 +1,52 @@
+{{{@root.data.search.cms.hits.hits.[0]._source.content}}}
+
+<h3>Filter by category</h3>
+
+<div class="mdc-select">
+  <i class="mdc-select__dropdown-icon"></i>
+  <select name="category" id="category" class="mdc-select__native-control" onchange="window.location.href='/scottish-charity-awards/finalists-2020' + (this.value === 'all' ? '' : '/' + this.value)">
+    <option value="all" {{#unless @root.request.params.category}}selected{{/unless}}>Show all</option>
+    {{#each @root.data.search.categories.aggregations.categories.buckets ~}}
+      <option value="{{key}}" {{#compare @root.request.params.category key}}selected{{/compare}}>
+        {{{getProperty @root.route.metaData.awards-info (concat key ".title")}}}
+      </option>
+    {{/each}}
+  </select>
+  <label for="category" class="mdc-floating-label">Pick a category</label>
+  <div class="mdc-line-ripple"></div>
+</div>
+
+<h3>
+  {{#if @root.request.params.category}}
+    Showing {{@root.data.search.finalists.hits.total}} finalists in the
+    {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
+    category
+  {{else}}
+    Showing all {{@root.data.search.finalists.hits.total}} finalists in all categories
+  {{/if}}
+</h3>
+
+{{#each @root.data.search.finalists.hits.hits ~}}
+  {{#with _source ~}}
+    <div class="{{category}} support mdc-card v-margin-full" data-id="{{Id}}">
+      <section class="mdc-card__primary">
+        <h1 class="mdc-card__title mdc-card__title--large mdc-card__title--inline">
+          <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category ".title")}}">
+            {{{getProperty @root.route.metaData.awards-info (concat category ".title")}}}
+          </a>
+          <i class="fas fa-caret-right fa-fw"></i>
+          <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{slug}}" title="Find out more about {{{title}}}">
+            {{{title}}}
+          </a>
+        </h1>
+      </section>
+      <section class="mdc-card__supporting-text">
+        {{#if image_url}}
+          <img src="{{image_url}}" style="max-width:200px;" class="pull-right l-margin-full hide-sm">
+        {{/if}}
+        {{{truncate (stripTags (default og_summary content)) 280}}}
+      </section>
+      <section class="mdc-card__actions"><a href="/scottish-charity-awards/finalists-2020/{{category}}/{{slug}}">Find out more</a></section>
+    </div>
+  {{/with ~}}
+{{/each ~}}

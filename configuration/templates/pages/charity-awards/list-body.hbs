@@ -1,0 +1,28 @@
+<p class="v-margin-full">
+  {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".description")}}}
+</p>
+
+{{#each @root.data.primaryResponse.hits.hits ~}}
+{{#with _source ~}}
+<div class="{{@root.request.params.category}} support mdc-card v-margin-full">
+  <section class="mdc-card__primary">
+    <h1 class="mdc-card__title mdc-card__title--large">
+      <a href="{{@root.request.url.path}}/{{slug}}">{{{title}}}</a>
+    </h1>
+  </section>
+  <section class="mdc-card__supporting-text">
+    {{#if image_url}}
+      <img src="{{image_url}}" style="max-width:200px;" class="pull-right l-margin-full hide-sm">
+    {{/if}}
+    {{{truncate (stripTags (default og_summary content)) 280}}}
+  </section>
+  <section class="mdc-card__actions"><a href="{{@root.request.url.path}}/{{slug}}">Find out more</a></section>
+</div>
+{{/with ~}}
+{{/each ~}}
+<script>
+gtag('event', 'charity-awards-2020-hit', {
+event_category: 'category',
+event_label: {{{stringify (default @root.request.params.category 'unknown')}}}
+});
+</script>

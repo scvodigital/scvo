@@ -1,5 +1,6 @@
 {
   "name": "list_charity_awards",
+  "debug": true,
   "pattern": "/scottish-charity-awards/finalists-2019/*category",
   "metaData": {
     "awards-info": "{:../../data/info-charity-awards.json}"
@@ -39,8 +40,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_charity-awards-list",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_charity-awards_list-header",
+              "body": ">context.metaData.handlebars.templates.pages_charity-awards_list-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.pages_charity-awards_sidebar"
             },
             "contentType": "text/html"
           }

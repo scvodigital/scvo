@@ -1,0 +1,21 @@
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  {{#if image_url}}
+    <div class="pull-right l-margin-full b-margin-full t-margin-full charity-awards-image hide-sm hide-md">
+      <img src="{{image_url}}" />
+    </div>
+  {{/if}}
+  <div class="v-margin-full">
+    {{{content}}}
+  </div>
+  {{#if image_url}}
+    <div class="v-margin-full charity-awards-image hide-lg">
+      <img src="{{image_url}}" />
+    </div>
+  {{/if}}
+{{/with ~}}
+<script>
+  gtag('event', 'charity-awards-2020-hit', {
+    event_category: 'entrant',
+    event_label: {{{stringify (default @root.request.params.vote 'unknown')}}}
+  });
+</script>
