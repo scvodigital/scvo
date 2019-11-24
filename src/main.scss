@@ -317,6 +317,12 @@ footer .footer-copyright a:hover {
   color: white;
   background-size: $thick-line 50px;
 }
+h1 a.caption,
+.h1 a.caption,
+h2 a.caption,
+.h2 a.caption,
+h3 a.caption,
+.h3 a.caption,
 .card .card-title a,
 .mdc-card__title a,
 .mdc-card__primary h3 a,
@@ -341,6 +347,19 @@ a.btn,
 .breadcrumb .breadcrumb-item a {
   background: none !important;
 }
+h1 a.caption:hover,
+.h1 a.caption:hover,
+h2 a.caption:hover,
+.h2 a.caption:hover,
+h3 a.caption:hover,
+.h3 a.caption:hover,
+.card .card-title a:hover,
+.mdc-card__title a:hover,
+.mdc-card__primary h3 a:hover,
+.breadcrumb .breadcrumb-item a:hover,
+.pagination a:hover,
+.promoted-content .card-header .card-title a:hover,
+.promoted-content .card .card-footer a:hover,
 .breadcrumb .breadcrumb-item a:hover,
 a.no-underline:hover {
   color: $primary-color-dark !important;
