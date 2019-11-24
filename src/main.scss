@@ -1018,56 +1018,50 @@ aside {
 }
 
 @media screen and (min-width: 961px) {
+  .mobile-search,
   .mobile-menu {
     display: none;
   }
 }
+
 @media screen and (max-width: 960px) {
+  .mobile-search,
   .mobile-menu {
     display: block;
-    .mobile-menu_background {
-      background-color: #00000033;
+    .mobile-contents {
       position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      z-index: 1;
-      opacity: 0;
-    }
-    .mobile-menu_contents {
-      position: fixed;
-      background-color: #ffffff;
+      background-color: $primary-color;
       height: 100vh;
-      width: 300px;
+      width: 100vw;
       z-index: 1;
-      top: 0;
-      left: -300px;
-      padding: $unit/2 0;
+      bottom: 0;
+      left: 0;
+      padding: $unit;
       z-index: 4;
     }
+    &.mobile-search_open,
     &.mobile-menu_open {
-      .mobile-menu_background {
-        animation: fade-in 0.5s forwards;
+      .mobile-background {
+        animation: fade-in $transition-speed forwards;
       }
-      .mobile-menu_contents {
-        animation: slide-in 0.5s forwards;
+      .mobile-contents {
+        animation: fade-in $transition-speed forwards;
       }
     }
+    &.mobile-search_closing,
     &.mobile-menu_closing {
-      .mobile-menu_background {
-        animation: fade-out 0.5 forwards;
+      .mobile-background {
+        animation: fade-out $transition-speed forwards;
       }
-      .mobile-menu_contents {
-        animation: slide-out 0.5s forwards;
+      .mobile-contents {
+        animation: fade-out $transition-speed forwards;
       }
     }
+    &.mobile-search_closed,
     &.mobile-menu_closed {
       display: none;
     }
   }
-  @keyframes slide-in { 100% { left: 0 } }
-  @keyframes slide-out { 0% { left: 0; } 100% { left: -300px; } }
   @keyframes fade-in { 100% { opacity: 1; } }
   @keyframes fade-out { 0% { opacity: 1; } 100% { opacity: 0; } }
 }
@@ -1092,7 +1086,7 @@ header {
   .brand {
     float: left;
   }
-  .mobile-menu-button {
+  .mobile-header-buttons {
     float: right;
   }
   .dropdown {

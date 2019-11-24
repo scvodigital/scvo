@@ -60,7 +60,9 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
 <link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}" />
 </head>
 <body class="{{#if request.params.path}}{{replace (replace request.params.path '20-years' 'twenty-years') '_' ' '}}{{else}}home{{/if}}">
-  {{> components_scvo_bar}}
+  <div class="hide-lg">
+    {{> components_scvo_bar}}
+  </div>
   <div class="page">
     {{!-- style="background-image:url('/rouleaux.svg?color=FEF9F9&style={{itemAt (split 'solid,stripes,dots' ',') (random 0 2)}}');" --}}
     <div class="bg-rouleaux">
@@ -76,9 +78,44 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
               {{> site_search}}
               <a href="/services/membership" class="btn btn-primary btn-lg btn-cta float-right t-margin">Join our community</a>
             </div>
-            <button class="show-lg btn btn-primary btn-action btn-lg" data-drawer-target="#mobile-menu" aria-label="Menu" alt="Menu">
-              <span class="far fa-fw fa-bars"></span>
-            </button>
+            <div class="mobile-header-buttons show-lg">
+              <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                data-TasksTrigger='{
+                  click: {
+                    tasks: [
+                      {
+                        type: "elementManipulator",
+                        config: {
+                          ".mobile-search": {
+                            "removeClass": "mobile-search_closed mobile-search_closing",
+                            "addClass": "mobile-search_open"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }'>
+                <span class="far fa-search fa-2x" aria-hidden="true"></span>
+              </a>
+              <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                data-TasksTrigger='{
+                  click: {
+                    tasks: [
+                      {
+                        type: "elementManipulator",
+                        config: {
+                          ".mobile-menu": {
+                            "removeClass": "mobile-menu_closed mobile-menu_closing",
+                            "addClass": "mobile-menu_open"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }'>
+                <span class="far fa-bars fa-2x" aria-hidden="true"></span>
+              </a>
+            </div>
           </section>
         </header>
         <header class="navbar toolbar hide-lg">
@@ -132,39 +169,160 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
         </header>
       </div>
 
-      <div class="mobile-menu mobile-menu_closed">
-        <div class="mobile-menu_background" data-component="TasksTrigger" data-TasksTrigger='{
-          click: {
-            tasks: [
-            {
-              type: "elementManipulator",
-              config: {
-                ".mobile-menu": {
-                  removeClass: "mobile-menu_open",
-                  addClass: "mobile-menu_closing"
-                }
-              }
-            },
-            {
-              type: "delay",
-              config: {
-                "500": [
-                {
-                  type: "elementManipulator",
-                  config: {
-                    ".mobile-menu": {
-                      addClass: "mobile-menu_closed",
-                      removeClass: "mobile-menu_closing"
-                    }
+      <div class="mobile-search mobile-search_closed">
+        <aside class="mobile-contents sidebar">
+          <header class="navbar header">
+            <section class="navbar-section">
+              <a href="/" class="navbar-brand" title="Scottish Council for Voluntary Organisations">
+                <img src="{{~>asset_url url='images/logos/scvo-white.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+              </a>
+            </section>
+            <section class="navbar-section">
+              <div class="mobile-header-buttons">
+                <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                data-TasksTrigger='{
+                  click: {
+                    tasks: [
+                      {
+                        type: "elementManipulator",
+                        config: {
+                          ".mobile-search": {
+                            removeClass: "mobile-search_open",
+                            addClass: "mobile-search_closing"
+                          }
+                        }
+                      },
+                      {
+                        type: "delay",
+                        config: {
+                          "200": [
+                            {
+                              type: "elementManipulator",
+                              config: {
+                                ".mobile-search": {
+                                  addClass: "mobile-search_closed",
+                                  removeClass: "mobile-search_closing"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
                   }
+                }'>
+                  <span class="far fa-times fa-2x text-white" aria-hidden="true"></span>
+                </a>
+                <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                  data-TasksTrigger='{
+                    click: {
+                      tasks: [
+                        {
+                          type: "elementManipulator",
+                          config: {
+                            ".mobile-menu": {
+                              "removeClass": "mobile-menu_closed mobile-menu_closing",
+                              "addClass": "mobile-menu_open"
+                            }
+                          }
+                        },
+                        {
+                          type: "elementManipulator",
+                          config: {
+                            ".mobile-search": {
+                              "removeClass": "mobile-search_open",
+                              "addClass": "mobile-search_closed"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }'>
+                  <span class="far fa-bars fa-2x text-white" aria-hidden="true"></span>
+                </a>
+              </div>
+            </section>
+          </header>
+          <div class="b-margin-full b-padding-full v-padding">
+            {{> site_search}}
+          </div>
+        </aside>
+      </div>
+
+      <div class="mobile-menu mobile-menu_closed">
+        <aside class="mobile-contents sidebar">
+          <header class="navbar header">
+            <section class="navbar-section">
+              <a href="/" class="navbar-brand" title="Scottish Council for Voluntary Organisations">
+                <img src="{{~>asset_url url='images/logos/scvo-white.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+              </a>
+            </section>
+            <section class="navbar-section">
+              <div class="mobile-header-buttons">
+                <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                data-TasksTrigger='{
+                  click: {
+                    tasks: [
+                      {
+                        type: "elementManipulator",
+                        config: {
+                          ".mobile-search": {
+                            "removeClass": "mobile-search_closed mobile-search_closing",
+                            "addClass": "mobile-search_open"
+                          }
+                        }
+                      },
+                      {
+                        type: "elementManipulator",
+                        config: {
+                          ".mobile-menu": {
+                            "removeClass": "mobile-menu_open",
+                            "addClass": "mobile-menu_closed"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }'>
+                <span class="far fa-search fa-2x text-white" aria-hidden="true"></span>
+              </a>
+              <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+              data-TasksTrigger='{
+                click: {
+                  tasks: [
+                    {
+                      type: "elementManipulator",
+                      config: {
+                        ".mobile-menu": {
+                          removeClass: "mobile-menu_open",
+                          addClass: "mobile-menu_closing"
+                        }
+                      }
+                    },
+                    {
+                      type: "delay",
+                      config: {
+                        "200": [
+                          {
+                            type: "elementManipulator",
+                            config: {
+                              ".mobile-menu": {
+                                addClass: "mobile-menu_closed",
+                                removeClass: "mobile-menu_closing"
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
                 }
-                ]
-              }
-            }
-            ]
-          }
-        }'></div>
-        <aside class="mobile-menu_contents sidebar">
+              }'>
+              <span class="far fa-times fa-2x text-white" aria-hidden="true"></span>
+            </a>
+          </div>
+        </section>
+      </header>
           <div class="b-margin-full b-padding-full v-padding">
             <ul class="menu">
               <li class="menu-item">
