@@ -55,8 +55,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.pages_page-header",
-              "body": ">context.metaData.handlebars.templates.pages_jobs_cjs_landing"
+              "header": ">context.metaData.handlebars.templates.pages_jobs_cjs_landing-header",
+              "body": ">context.metaData.handlebars.templates.pages_jobs_cjs_landing-body",
+              "footer": ">context.metaData.handlebars.templates.pages_jobs_cjs_footer"
             },
             "contentType": "text/html"
           }
