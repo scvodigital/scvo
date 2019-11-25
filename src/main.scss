@@ -722,6 +722,23 @@ a.no-underline:hover {
     height: 60vw;
   }
 }
+
+.bg-primary {
+  background-color: $primary-color;
+  .input-group {
+    .form-input {
+      background-color: white;
+      border-color: white;
+    }
+    .btn {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
+    }
+    .btn:hover {
+      background-color: $secondary-color-dark;
+    }
+  }
+}
 .bg-white {
   background: white;
 }
@@ -1033,12 +1050,14 @@ aside {
     display: block;
     .mobile-contents {
       position: fixed;
-      background-color: $primary-color;
       height: 100vh;
       width: 100vw;
       z-index: 1;
+      top: 0;
       bottom: 0;
       left: 0;
+      overflow-y: scroll;
+      overflow-x: hidden;
       padding: $unit;
       z-index: 4;
     }
@@ -1091,6 +1110,9 @@ header {
   }
   .mobile-header-buttons {
     float: right;
+    .btn {
+      padding: 0;
+    }
   }
   .dropdown {
     text-align: left;
@@ -1205,6 +1227,21 @@ header.toolbar {
 
 blockquote {
   margin-top: 0;
+}
+
+.col-gapless {
+  .divider-vert {
+    padding: 0;
+  }
+  .divider {
+    width: 100%;
+  }
+}
+.divider[data-content]::after,
+.divider-vert[data-content]::after {
+  background-color: $light-color;
+  color: $secondary-color;
+  font-weight: $heading-font-weight;
 }
 
 .pagination {
@@ -1570,7 +1607,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 960px) {
   html {
     font-size: 18px;
   }
@@ -1651,6 +1688,25 @@ footer {
     th, td {
       display: block;
     }
+  }
+  footer .footer-copyright .logos {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 17px;
+  }
+  .container {
+    padding: 0 $unit/2;
+  }
+  .page {
+    padding-top: $unit/2;
+  }
+  .mobile-search .mobile-contents,
+  .mobile-menu .mobile-contents {
+    padding: $unit/2;
   }
 }
 

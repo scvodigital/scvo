@@ -50,39 +50,20 @@
 			"route": "^/about"
 		}
 	],
-	"main-upper": [{
-			"label": "About",
-			"path": "/about",
-			"route": "^/about"
-		},
-		{
-			"label": "Join",
-			"path": "/services/membership",
-			"route": "^/join-us"
-		},
-		{
-			"label": "Events",
-			"path": "/events",
-			"route": "^/events"
-		},
-		{
-			"label": "Blogs",
-			"path": "/blogs",
-			"route": "^/blogs"
-		},
-		{
-			"label": "Press",
-			"path": "/press-media",
-			"route": "^/press-media"
-		}
-	],
-	"user": [{
+	"user-signed-in": [{
 			"label": "Explore",
 			"icon": "file-search",
 			"path": "/explore",
 			"route": "^/explore"
 		},
 		{
+			"label": "My account",
+			"icon": "user-cog",
+			"path": "/account",
+			"route": "^/account|^/sign-up-details|^/scvo-account"
+		}
+	],
+	"user-not-signed-in": [{
 			"label": "My account",
 			"icon": "user-cog",
 			"path": "/account",
