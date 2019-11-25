@@ -1,0 +1,20 @@
+<div class="card">
+  <section class="card-header">
+    <div class="card-title h3">
+      <span class="fal fa-fw fa-comment-alt-lines fa-2x">&nbsp;</span>
+      {{{title}}}
+    </div>
+  </section>
+  {{#ifAny statement briefing press_release additional ~}}
+  <section class="card-body">
+    <p>
+      {{{statement}}}
+    </p>
+    <p>
+      {{#if briefing}}<a href="{{briefing}}">Briefing</a><br />{{/if}}
+      {{#if press_release}}<a href="{{press_release}}">Press release</a><br />{{/if}}
+      {{#if additional}}<a href="{{additional}}" download>Download</a>{{/if}}
+    </p>
+  </section>
+  {{/ifAny ~}}
+</div>

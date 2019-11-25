@@ -1025,6 +1025,9 @@ aside {
 }
 
 @media screen and (max-width: 960px) {
+  header.header .navbar-brand img {
+    width: 45vw !important;
+  }
   .mobile-search,
   .mobile-menu {
     display: block;

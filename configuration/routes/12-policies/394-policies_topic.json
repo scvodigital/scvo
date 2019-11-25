@@ -37,8 +37,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.policies_topic-head-tags",
-              "body": ">context.metaData.handlebars.templates.policies_topic",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.policies_topic-header",
+              "body": ">context.metaData.handlebars.templates.policies_topic-body"
             },
             "contentType": "text/html"
           }

@@ -1,0 +1,5 @@
+<div class="linked-cards">
+  {{#each @root.data.primaryResponse.hits.hits ~}}
+  {{> policies_full _source}}
+  {{/each ~}}
+</div>

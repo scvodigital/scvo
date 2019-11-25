@@ -1,0 +1,35 @@
+<div class="">
+  <h2>
+    Search SCVO policies
+  </h2>
+  {{> site_search target=@root.request.url.pathname placeholder="Keywords"}}
+</div>
+{{#unless @root.request.params.query.q ~}}
+<div class="cta-content callout-image policy-stats">
+  <div class="">
+    <h2>Browse by topic</h2>
+    <div class="columns">
+      {{#each @root.data.supplimentaryResponses.policies.aggregations.policies.buckets ~}}
+      <div class="column col-3 col-lg-4 col-md-6 col-sm-12">
+        <h3 class="text-centre b-margin-full">
+          <a href="{{@root.request.url.pathname}}/{{slugify (replace key '&amp;' '-')}}" style="display: block;" class="no-underline">
+            {{#each top_policy_hits.hits.hits.0._source.policy_topics ~}}
+            {{#compare this "===" ../key ~}}
+            <span class="fal fa-{{lookup ../top_policy_hits.hits.hits.0._source.policy_topics_icons @index}} fa-4x b-margin"></span><br />
+            {{/compare ~}}
+            {{/each ~}}
+            {{{key}}}
+          </a>
+        </h3>
+      </div>
+      {{/each ~}}
+    </div>
+  </div>
+</div>
+{{else}}
+<div class="">
+  {{#each @root.data.supplimentaryResponses.policies.hits.hits ~}}
+  {{> policies_full _source}}
+  {{/each ~}}
+</div>
+{{/unless ~}}
