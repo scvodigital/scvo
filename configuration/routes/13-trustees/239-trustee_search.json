@@ -1,7 +1,7 @@
 {
   "name": "trustee_search",
   "pattern": "/projects-campaigns/terrific-trustees/search",
-  "debug": false,
+  "debug": true,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -61,8 +61,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.trustees_trustee-search",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.trustees_search-header",
+              "body": ">context.metaData.handlebars.templates.trustees_search-results",
+              "leftSidebar": ">context.metaData.handlebars.templates.trustees_sidebar"
             },
             "contentType": "text/html"
           }
