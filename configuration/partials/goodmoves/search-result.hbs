@@ -1,7 +1,7 @@
-<h3 class="mdc-card__title mdc-card__title--large">
+<h3>
   <a href="https://goodmoves.com/vacancy/{{source.Id}}/{{source.title_slug}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{{source.title}}}</a>
 </h3>
-<p class="mdc-typography--body1">
+<p>
   {{#ifAll source.organisation.slug source.organisation.name ~}}
   <span class="far fa-building fa-fw" title="Organisation"></span>
   <a href="https://goodmoves.com/organisation/{{source.organisation.id}}/{{source.organisation.slug_name}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{source.organisation.name}}</a>
@@ -17,10 +17,10 @@
   {{/if ~}}
 </ul>
 {{#if source.description_short ~}}
-<p class="mdc-typography--body1">
+<p>
   {{{source.description_short}}}
 </p>
 {{/if ~}}
-<p class="mdc-typography--body1">
+<p>
   <a href="https://goodmoves.com/vacancy/{{source.Id}}/{{source.title_slug}}?utm_source=scvo&utm_campaign=search&utm_medium=website">Find out more &amp; apply</a>
 </p>
