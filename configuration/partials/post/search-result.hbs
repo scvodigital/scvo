@@ -1,4 +1,4 @@
-<li class="card card-no-padding list expanded scvo-post scvo-post-{{wpid}} supplimentary-list-item">
+<div class="card card-no-padding search-result expanded scvo-post scvo-post-{{wpid}}">
   <div class="card-header">
     <div class="card-title">
       <a href="{{path}}">{{{title}}}</a>
@@ -13,10 +13,10 @@
       {{> post_info_categories}}
     </div>
     {{#if description_truncated ~}}
-    <div class="supplimentary-list-text">
+    <p>
       {{{truncate description_truncated 280}}}
       <a href="{{path}}">Read more</a>
-    </div>
+    </p>
     {{/if ~}}
   </div>
-</li>
+</div>

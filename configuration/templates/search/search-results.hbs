@@ -1,7 +1,29 @@
 {{> search_info paging=@root.data.primaryResponse.pagination}}
 
-{{#each data.primaryResponse.hits.hits ~}}
-{{> highlight_result}}
+{{#each @root.data.primaryResponse.hits.hits ~}}
+<div class="card search-result {{_type}} {{_type}}-{{_id}} b-margin-full">
+  {{#with _source ~}}
+  <div class="card-header">
+    <div class="card-title h4">
+      {{#ifAny path url ~}}
+      <a href="{{default path url}}">{{{truncate (trim title) 140}}}</a>
+      {{else}}
+      {{{truncate (trim title) 140}}}
+      {{/ifAny ~}}
+    </div>
+  </div>
+  {{#if description ~}}
+  <div class="card-body">
+    {{{truncate description 280}}}
+  </div>
+  {{/if ~}}
+  {{#ifAny path url ~}}
+  <div class="card-footer">
+    <a href="{{default path url}}" class="btn btn-link">Read more</a>
+  </div>
+  {{/ifAny ~}}
+  {{/with ~}}
+</div>
 {{/each ~}}
 
 {{> pagination paging=@root.data.primaryResponse.pagination}}

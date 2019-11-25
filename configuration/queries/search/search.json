@@ -3,12 +3,14 @@
   "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
     "title",
+    "description",
+    "path",
+    "url",
     "rendered.scvo_search_result"
   ],
   "highlight" : {
     "fields" : {
-      "text_bag": {},
-      "text_bag_boost": {}
+      "text_bag": {}
     }
   },
   "query": {
@@ -18,7 +20,7 @@
           "must": [
             {
               "exists": {
-                "field": "rendered.scvo_search_result"
+                "field": "title"
               }
               }{{#ifAny request.params.query.type request.params.query.q}},{{/ifAny}}
               {{#if request.params.query.type}}

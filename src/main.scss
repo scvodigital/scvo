@@ -451,6 +451,12 @@ a.no-underline:hover {
     padding-bottom: 0;
   }
 }
+.card.scvo-page.search-result,
+.card.scvo-post.search-result,
+.card.scvo-document-evidence.search-result,
+.card.scvo-member.search-result,
+.card.scvo-staff.search-result,
+.card.scvo-event.search-result,
 .card.primary {
   background-color: $primary-color;
   .card-title .fa-fw {
@@ -466,6 +472,9 @@ a.no-underline:hover {
     color: white;
   }
 }
+.card.scvo-grant-cyber.search-result,
+.card.scvo-grant-charter.search-result,
+.card.charter-signatory-digitalparticipation.search-result,
 .card.secondary {
   background-color: $secondary-color;
   .card-title .fa-fw {
@@ -496,6 +505,7 @@ a.no-underline:hover {
     color: $primary-color-dark;
   }
 }
+.card.fs-fund.search-result,
 .card.blue {
   background-color: $blue-color;
   .card-title .fa-fw {
@@ -511,6 +521,8 @@ a.no-underline:hover {
     color: $secondary-color-dark;
   }
 }
+.card.goodhq-organisation.search-result,
+.card.goodhq-post.search-result,
 .card.purple {
   background-color: $purple-color;
   .card-title .fa-fw {
@@ -815,6 +827,7 @@ a.no-underline:hover {
     margin-left: 0;
   }
 }
+.goodmoves-vacancy,
 .goodmoves-vacancies {
   background-color: $goodmoves-color;
   h4,

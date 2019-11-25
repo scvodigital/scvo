@@ -1,0 +1,5 @@
+{{#ifAll (contains _source.description "%highlights%") (contains _source.description "%/highlights%") highlight.text_bag ~}}
+{{{regexReplace _source.description "(%highlights%)(.|[\r\n])*?(%/highlights%)" "img" (removeEntities (concat "<p class=\"results-highlights\">&hellip;" (join highlight.text_bag " &hellip; ") " &hellip;</p>"))}}}
+{{else}}
+{{{regexReplace _source.description "(%/?highlights%)" "img" ""}}}
+{{/ifAll ~}}

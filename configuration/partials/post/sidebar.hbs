@@ -1,22 +1,22 @@
-<li class="list sidebar scvo-cms scvo-cms-post scvo-cms-post-{{wpid}} supplimentary-list-item mdc-card">
-  <section class="mdc-card__primary">
-    <div class="supplimentary-list-title">
+<li class="card list sidebar scvo-post scvo-post-{{wpid}} supplimentary-list-item">
+  <div class="card-header">
+    <div class="card-title h5">
       <a href="{{path}}">{{{title}}}</a>
     </div>
-  </section>
-  <section class="mdc-card__supporting-text">
+  </div>
+  <div class="card-body">
     <div class="post-info">
       {{> post_info_published}}
     </div>
-    <div class="supplimentary-list-text">
+    <p>
       {{{truncate description 140}}}
-    </div>
-  </section>
+    </p>
+  </div>
   {{#ifAll categories post_tags ~}}
-  <section class="mdc-card__actions">
+  <div class="card-footer">
     <div class="post-info">
       {{> post_info_categories}}
     </div>
-  </section>
+  </div>
   {{/ifAll ~}}
 </li>
