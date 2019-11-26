@@ -1,0 +1,12 @@
+{{#compare @root.data.supplimentaryResponses.posts.hits.total ">" 0 ~}}
+<ul class="supplimentary-list">
+  {{#each @root.data.supplimentaryResponses.posts.hits.hits ~}}
+  {{> post_list _source}}
+  {{/each ~}}
+</ul>
+{{> pagination paging=@root.data.supplimentaryResponses.posts.pagination}}
+{{else}}
+<p>
+  No digital blog posts could be loaded.
+</p>
+{{/compare ~}}

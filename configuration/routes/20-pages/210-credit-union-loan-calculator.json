@@ -38,8 +38,10 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_credit-union-loan-calculator",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "body": ">context.metaData.handlebars.templates.pages_credit-union_loan-calculator",
+              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.pages_credit-union_footer"
             },
             "contentType": "text/html"
           }
