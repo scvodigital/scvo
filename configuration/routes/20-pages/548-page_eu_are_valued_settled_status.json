@@ -55,8 +55,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_eu-are-valued-settled-status",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "body": ">context.metaData.handlebars.templates.pages_projects-campaigns_eu-are-valued-settled-status",
+              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar"
             },
             "contentType": "text/html"
           }

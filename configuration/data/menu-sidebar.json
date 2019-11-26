@@ -446,35 +446,30 @@
 		"path": "/projects-campaigns",
 		"route": "^/projects-campaigns$",
 		"children": [{
-			"label": "Europe and the Third Sector",
-			"path": "/projects-campaigns/europe-and-the-third-sector",
-			"route": "^/projects-campaigns/europe-and-the-third-sector$",
+			"label": "#EUareValued",
+			"path": "/projects-campaigns/eu-are-valued",
+			"route": "^/projects-campaigns/eu-are-valued$",
 			"children": [{
-				"label": "#EUareValued",
-				"path": "/projects-campaigns/eu-are-valued",
-				"route": "^/projects-campaigns/eu-are-valued$",
-				"children": [{
-						"label": "Background",
-						"path": "/projects-campaigns/eu-are-valued/background",
-						"route": "^/projects-campaigns/eu-are-valued/background"
-					},
-					{
-						"label": "Applying for settled status",
-						"path": "/projects-campaigns/eu-are-valued/applying-for-settled-status",
-						"route": "^/projects-campaigns/eu-are-valued/applying-for-settled-status"
-					},
-					{
-						"label": "Case studies",
-						"path": "/projects-campaigns/eu-are-valued/case-studies",
-						"route": "^/projects-campaigns/eu-are-valued/case-studies"
-					},
-					{
-						"label": "Challenging hate crime",
-						"path": "/projects-campaigns/eu-are-valued/challenging-hate-crime",
-						"route": "^/projects-campaigns/eu-are-valued/challenging-hate-crime"
-					}
-				]
-			}]
+					"label": "Background",
+					"path": "/projects-campaigns/eu-are-valued/background",
+					"route": "^/projects-campaigns/eu-are-valued/background"
+				},
+				{
+					"label": "Applying for settled status",
+					"path": "/projects-campaigns/eu-are-valued/applying-for-settled-status",
+					"route": "^/projects-campaigns/eu-are-valued/applying-for-settled-status"
+				},
+				{
+					"label": "Case studies",
+					"path": "/projects-campaigns/eu-are-valued/case-studies",
+					"route": "^/projects-campaigns/eu-are-valued/case-studies"
+				},
+				{
+					"label": "Challenging hate crime",
+					"path": "/projects-campaigns/eu-are-valued/challenging-hate-crime",
+					"route": "^/projects-campaigns/eu-are-valued/challenging-hate-crime"
+				}
+			]
 		}]
 	}],
 	"gathering-2020": [{

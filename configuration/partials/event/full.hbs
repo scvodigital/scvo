@@ -220,7 +220,7 @@
         </div>
         {{#ifAll event_venue.address_1 event_venue.postcode geo.latitude geo.longitude ~}}
         <div class="column col-12">
-          <a href="https://maps.google.co.uk/?q={{urlencode event_venue.address_1}},%20{{urlencode event_venue.postcode}}">
+          <a href="https://maps.google.co.uk/?q={{urlencode event_venue.address_1}},%20{{urlencode event_venue.postcode}}" class="no-ext no-underline">
             <img src="http://maps.googleapis.com/maps/api/staticmap?center={{geo.latitude}},{{geo.longitude}}&zoom=14&size=420x320&maptype=roadmap&markers={{geo.latitude}},{{geo.longitude}}&key=AIzaSyDSixdiuQklJxhvx0_gsv4xYnjLXTb3G4I" />
           </a>
         </div>

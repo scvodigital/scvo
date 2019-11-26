@@ -451,6 +451,7 @@ a.no-underline:hover {
     padding-bottom: 0;
   }
 }
+.policy-stats,
 .card.scvo-page.search-result,
 .card.scvo-post.search-result,
 .card.scvo-document-evidence.search-result,
@@ -469,6 +470,13 @@ a.no-underline:hover {
     color: $secondary-color;
   }
   a {
+    color: white;
+  }
+}
+.policy-stats {
+  h3,
+  span,
+  p {
     color: white;
   }
 }
@@ -885,6 +893,32 @@ a.pure-menu-link:hover {
   color: white !important;
   background-color: $secondary-color-dark;
 }
+
+.column.hidden {
+  display: none !important;
+}
+form#settled_status {
+  label {
+    vertical-align: top;
+    padding-top: 0.55rem;
+    display: inline-block;
+    cursor: pointer;
+  }
+  p {
+    margin: 0;
+  }
+}
+#settled_status_guide .guide_text {
+  margin-top: $unit/2;
+  border-radius: $unit/5;
+}
+#settled_status_guide .guide_text,
+#settled_status_q_b,
+#settled_status_q_c,
+#settled_status_q_d {
+  display: none;
+}
+
 
 main,
 aside {
