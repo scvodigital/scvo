@@ -1,9 +1,7 @@
 {
-  "name": "page_i_love_charity",
-  "pattern": {
-    "i_love_charity_campaign": "/projects-campaigns/i-love-charity",
-    "i_love_charity_campaign_section": "/projects-campaigns/i-love-charity/:section"
-  },
+  "name": "page_projects_landing",
+  "debug": true,
+  "pattern": "/projects-campaigns",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -39,8 +37,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "body": ">context.metaData.handlebars.templates.pages_i-love-charity",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.pages_projects-campaigns_landing-header",
+              "body": ">context.metaData.handlebars.templates.pages_projects-campaigns_landing-body"
             },
             "contentType": "text/html"
           }
