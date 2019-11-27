@@ -49,7 +49,7 @@ window.showGuide = function() {
   } else if (d == 2) {
     document.getElementById('settled_status_q_e').style.display = 'block';
   }
-  console.log("show "+'guide_'+a+b+c+d+e);
+  // console.log("show "+'guide_'+a+b+c+d+e);
 
   var guide = document.getElementById('guide_'+a+b+c+d+e);
   if (guide) guide.style.display = 'block';
