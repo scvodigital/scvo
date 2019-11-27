@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,600,800&display=swap');
-
 $primary-color: #FF595A;
 $primary-color-light: lighten($primary-color, 30%) !default;
 $primary-color-dark: #C5143D;
@@ -35,11 +33,24 @@ $thin-line: 0.05rem;
 $border-radius: 6px;
 $base-font-weight: 400;
 $link-font-weight: 600;
-$heading-font-weight: 600;
-$badge-font-weight: 800;
+$heading-font-weight: 800;
 $page-width: 1400px;
 $home-splash-height: 25vh;
 $transition-speed: .2s;
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,600,800&display=swap');
+
+@font-face {
+  font-family: 'Asap';
+  src: url('/assets/fonts/Asap-Bold.eot');
+  src: url('/assets/fonts/Asap-Bold.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/Asap-Bold.woff2') format('woff2'),
+       url('/assets/fonts/Asap-Bold.woff') format('woff'),
+       url('/assets/fonts/Asap-Bold.ttf') format('truetype'),
+       url('/assets/fonts/Asap-Bold.svg#Asap-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
 
 @import "../node_modules/spectre.css/src/spectre";
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
@@ -107,8 +118,7 @@ html {
 body,
 input,
 select,
-textarea,
-body * {
+textarea {
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
 }
@@ -156,6 +166,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Asap';
   font-weight: $heading-font-weight;
   letter-spacing: -0.05rem;
   line-height: 1.2;
