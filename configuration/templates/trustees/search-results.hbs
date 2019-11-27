@@ -1,7 +1,0 @@
-{{> search_info paging=@root.data.primaryResponse.pagination}}
-
-{{#each @root.data.primaryResponse.hits.hits ~}}
-{{{_source.rendered.trustee_search_result}}}
-{{/each ~}}
-
-{{> pagination paging=@root.data.primaryResponse.pagination}}

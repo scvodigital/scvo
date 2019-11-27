@@ -15,7 +15,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "goodmoves-vacancy,milo-volunteering-opportunity",
-          "template": ">context.metaData.handlebars.queries.trustees_trustee-search"
+          "template": ">context.metaData.handlebars.queries.jobs_trustee-search"
         }
       },
       "renderer": "handlebars"
@@ -34,12 +34,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-page",
             "template": ">context.metaData.handlebars.queries.pages_page"
-          },
-          {
-            "name": "types",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "goodmoves-vacancy,milo-volunteering-opportunity",
-            "template": ">context.metaData.handlebars.queries.trustees_trustee-aggs"
           }
         ]
       },
@@ -61,9 +55,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.trustees_search-header",
-              "body": ">context.metaData.handlebars.templates.trustees_search-results",
-              "leftSidebar": ">context.metaData.handlebars.templates.trustees_sidebar"
+              "header": ">context.metaData.handlebars.templates.jobs_trustees_search-header",
+              "body": ">context.metaData.handlebars.templates.search_search-results",
+              "leftSidebar": ">context.metaData.handlebars.templates.jobs_trustees_sidebar"
             },
             "contentType": "text/html"
           }

@@ -2,7 +2,11 @@
   "size": 10,
   "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
-    "rendered.trustee_search_result"
+    "Id",
+    "title",
+    "description",
+    "path",
+    "url"
   ],
   "query": {
     "bool": {
