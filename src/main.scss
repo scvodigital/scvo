@@ -164,10 +164,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: $unit/2;
   margin-bottom: 0;
 }
-h1, h2, .h1, .h2 {
+h1, h2, .h1, .h2, .btn.btn-lg {
   font-family: 'Asap';
   font-weight: $heading-font-weight;
   letter-spacing: -0.08rem;
+}
+.btn.btn-lg {
+  font-size: 1.3rem;
+  letter-spacing: -0.02rem;
 }
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {

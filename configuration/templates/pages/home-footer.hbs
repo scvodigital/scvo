@@ -3,10 +3,10 @@
     <div class="columns">
       {{#compare @root.data.supplimentaryResponses.blogs_latest.hits.total ">" 0 ~}}
       <div class="column col-6 col-md-12">
-        <h2>
+        <h3>
           Recent SCVO blog posts
           <a href="/blogs" class="caption l-margin">Read more</a>
-        </h2>
+        </h3>
         <ul>
           {{#each (split "1,2,3,4" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.blogs_latest.hits.hits (concat this '._source')) ~}}
@@ -20,10 +20,10 @@
       {{/compare ~}}
       {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
       <div class="column col-6 col-md-12">
-        <h2>
+        <h3>
           Latest TFN stories
           <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">Read more on TFN</a>
-        </h2>
+        </h3>
         <ul>
           {{#each (split "1,2,3,4" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
