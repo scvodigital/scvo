@@ -1,0 +1,14 @@
+{
+  "name": "benefits-fund",
+  "pattern": "/benefit-take-up-and-income-maximisation-fund-faq",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/funding/benefit-take-up-and-income-maximisation-fund",
+        "statusCode": 301
+      }
+    }
+  ]
+}
