@@ -167,6 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 h1, h2, .h1, .h2, .btn.btn-lg {
   font-family: 'Asap';
   font-weight: $heading-font-weight;
+  font-feature-settings: "ss01" on;
   letter-spacing: -0.08rem;
 }
 .btn.btn-lg {
@@ -850,6 +851,9 @@ a.no-underline:hover {
 .goodmoves-vacancies,
 .tfn-posts,
 .latest-posts {
+  h4 {
+    margin-top: 0;
+  }
   ul {
     list-style-type: none;
     margin-left: 0;
