@@ -40,18 +40,6 @@ $transition-speed: .2s;
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,600,800&display=swap');
 
-@font-face {
-  font-family: 'Asap';
-  src: url('/assets/fonts/Asap-Bold.eot');
-  src: url('/assets/fonts/Asap-Bold.eot?#iefix') format('embedded-opentype'),
-       url('/assets/fonts/Asap-Bold.woff2') format('woff2'),
-       url('/assets/fonts/Asap-Bold.woff') format('woff'),
-       url('/assets/fonts/Asap-Bold.ttf') format('truetype'),
-       url('/assets/fonts/Asap-Bold.svg#Asap-Bold') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-
 @import "../node_modules/spectre.css/src/spectre";
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css');

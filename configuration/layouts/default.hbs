@@ -54,6 +54,20 @@ console.log('Menus:', {{{regexReplace (regexReplace (stringify context.metaData.
 {{/ifAny ~}}
 </script>
 
+<style type="text/css">
+@font-face {
+  font-family: 'Asap';
+  src: url('{{~>asset_url url='fonts/Asap-Bold.eot'~}}');
+  src: url('{{~>asset_url url='fonts/Asap-Bold.eot?#iefix'~}}') format('embedded-opentype'),
+       url('{{~>asset_url url='fonts/Asap-Bold.woff2'~}}') format('woff2'),
+       url('{{~>asset_url url='fonts/Asap-Bold.woff'~}}') format('woff'),
+       url('{{~>asset_url url='fonts/Asap-Bold.ttf'~}}') format('truetype'),
+       url('{{~>asset_url url='fonts/Asap-Bold.svg#Asap-Bold'~}}') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+</style>
+
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 <link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/leaflet/leaflet.css'~}}" />
 <link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/fontawesome-pro/css/all.min.css'~}}" />
