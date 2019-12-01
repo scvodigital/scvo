@@ -22,6 +22,6 @@
 <img src="{{author_avatar}}" alt="{{author_name_full}}" class="avatar avatar-xl float-left r-margin-full b-margin-full" />
 {{/if ~}}
 <h1>{{{author_name_full}}}</h1>
-<h3>{{{author_job_title}}} at {{{author_organisation_name}}}</h3>
+<h3>{{{author_job_title}}}{{#ifAll author_job_title author_organisation_name}} at {{/ifAll ~}}{{{author_organisation_name}}}</h3>
 {{/with ~}}
 {{/if ~}}

@@ -36,7 +36,7 @@ $link-font-weight: 600;
 $heading-font-weight: 800;
 $page-width: 1400px;
 $home-splash-height: 25vh;
-$transition-speed: .2s;
+$transition-speed: .3s;
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,600,800&display=swap');
 
@@ -861,6 +861,9 @@ a.no-underline:hover {
   }
 }
 .scvo-services {
+  h2 {
+    margin-top: 0;
+  }
   .btn-lg {
     background: white;
     border: none;
