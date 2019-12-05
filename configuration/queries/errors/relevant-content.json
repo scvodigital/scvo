@@ -1,8 +1,21 @@
 {
   "size": 6,
   "_source": [
+    "wpid",
+    "slug",
     "title",
-    "rendered.scvo_search_result"
+    "sub_title",
+    "og_title",
+    "og_summary",
+    "description",
+    "content",
+    "rendered.json_ld",
+    "breadcrumb",
+    "categories_id",
+    "categories_slug",
+    "author",
+    "path",
+    "url"
   ],
   "query": {
     "bool": {
@@ -15,7 +28,7 @@
       ],
       "should": [
         {
-          {{#if data.primaryResponse.hits.hits.[0]}}
+          {{#if @root.data.primaryResponse.hits.hits.[0]}}
           "match_none": {}
           {{else}}
           "query_string": {
