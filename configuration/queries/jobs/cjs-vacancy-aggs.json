@@ -9,11 +9,31 @@
             "status": "Subbed"
           }
         },
+        {{#compare @root.request.params.phase 'p52' ~}}
         {
           "term" : {
-            "cjs_lookup": "{{#compare request.params.phase 'aag'}}AA PH8{{else}}{{#compare request.params.phase "p52"}}CJS PH9 PT 52wks{{else}}CJS PH9{{/compare}}{{/compare}}"
+            "cjs_lookup": "CJS PH9 PT 52wks"
           }
         }
+        {{else}}
+        {
+          "bool": {
+            "should": [
+              {
+                "term" : {
+                  "cjs_lookup": "CJS PH9"
+                }
+              },
+              {
+                "term" : {
+                  "cjs_lookup": "CJS PH9 26wks"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+        {{/compare ~}}
       ]
     }
   },
