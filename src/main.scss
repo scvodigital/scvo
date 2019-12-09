@@ -354,12 +354,14 @@ footer .footer-copyright a:hover {
   // background-size: $thick-line 50px;
 }
 .btn.btn-primary {
+  border-color: $primary-color;
   border-bottom-width: $thin-line;
   transition: background $transition-speed, color $transition-speed !important;
 }
 .btn.btn-primary:hover {
   background: white;
   color: $primary-color;
+  border-color: $primary-color;
 }
 .breadcrumb .breadcrumb-item a,
 .pagination a,
@@ -371,7 +373,7 @@ a.no-underline,
 a.navbar-brand,
 a.avatar,
 a.rss,
-.chip {
+a.chip {
   // border-bottom: none !important;
   padding-top: 0;
   padding-bottom: 0;
@@ -386,6 +388,7 @@ a.rss,
 .promoted-content .card-header .card-title a:hover,
 .promoted-content .card .card-footer a:hover,
 .breadcrumb .breadcrumb-item a:hover,
+a.chip.hover,
 a.no-underline:hover {
   color: $primary-color-dark !important;
 }
@@ -690,41 +693,41 @@ a.no-underline:hover {
 }
 .promoted-content {
   .card {
-    height: 366px;
-    overflow: hidden;
-    .card-header {
-      transition: margin $transition-speed;
-    }
-    .card-image {
-      position: relative;
-      .logo {
-        height: 100%;
-        width: auto;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-      }
-      .overlay-effect {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        transition: opacity $transition-speed;
-        background-color: rgba(255, 89, 90, 0.2);
-        overflow: hidden;
-      }
-    }
-    .card-header {
-      border-top: $thick-line solid $primary-color;
-      padding-top: $unit*.4;
-    }
-    .card-footer:last-child {
-      padding-bottom: $unit*.4;
-    }
+//     height: 366px;
+//     overflow: hidden;
+//     .card-header {
+//       transition: margin $transition-speed;
+//     }
+//     .card-image {
+//       position: relative;
+//       .logo {
+//         height: 100%;
+//         width: auto;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         right: 0;
+//         margin: 0 auto;
+//       }
+//       .overlay-effect {
+//         width: 100%;
+//         height: 100%;
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         opacity: 0;
+//         transition: opacity $transition-speed;
+//         background-color: rgba(255, 89, 90, 0.2);
+//         overflow: hidden;
+//       }
+//     }
+//     .card-header {
+//       border-top: $thick-line solid $primary-color;
+//       padding-top: $unit*.4;
+//     }
+//     .card-footer:last-child {
+//       padding-bottom: $unit*.4;
+//     }
     .card-header,
     .card-body,
     .card-footer {
@@ -732,100 +735,101 @@ a.no-underline:hover {
       color: white;
       z-index: 1;
     }
-    .card-body {
-      overflow: hidden;
-    }
+//     .card-body {
+//       overflow: hidden;
+//     }
     .card-title,
     .card-title a,
     .card-subtitle {
       color: white !important;
     }
-  }
-  .card:hover {
-    .card-header {
-      margin-top: -148px;
-    }
-    .overlay-effect {
-      opacity: 1;
-    }
-  }
-  .i-love-charity,
-  .charity-awards,
-  .twenty-years {
-    .card-image .background {
-      width: 100%;
-      height: 273px;
-    }
+//   }
+//   .card:hover {
+//     .card-header {
+//       margin-top: -148px;
+//     }
+//     .overlay-effect {
+//       opacity: 1;
+//     }
+//   }
   }
 }
-@media screen and (max-width: 1400px) {
-  .promoted-content .card {
-    height: 26vw;
+.card.i-love-charity,
+.card.charity-awards,
+.card.twenty-years {
+  .card-image .background {
+    width: 100%;
+    height: 273px;
   }
 }
-@media screen and (max-width: 1250px) {
-  .promoted-content .card {
-    height: 27vw;
-  }
-  .hero .hero-text h1 {
-    font-size: 4rem;
-  }
-}
-@media screen and (max-width: 1100px) {
-  .promoted-content .card {
-    height: 28vw;
-  }
-  .hero .hero-text h1 {
-    font-size: 3.5rem;
-  }
-}
-@media screen and (max-width: 840px) {
-  .promoted-content .card {
-    height: 50vw;
-  }
-  .hero .hero-text h1 {
-    font-size: 3rem;
-    letter-spacing: -0.01rem;
-  }
-}
-@media screen and (max-width: 680px) {
-  .promoted-content .card {
-    height: 52vw;
-  }
-  .hero .hero-text h1 {
-    font-size: 2.5rem;
-  }
-}
-@media screen and (max-width: 560px) {
-  .promoted-content .card {
-    height: 54vw;
-  }
-  .hero .hero-text h1 {
-    font-size: 2rem;
-    letter-spacing: 0;
-  }
-}
-@media screen and (max-width: 490px) {
-  .promoted-content .card {
-    height: 56vw;
-  }
-  .hero .hero-text h1 {
-    font-size: 1.85rem;
-  }
-}
-@media screen and (max-width: 420px) {
-  .promoted-content .card {
-    height: 58vw;
-  }
-  .hero .hero-text h1 {
-    font-size: 1.75rem;
-  }
-}
-@media screen and (max-width: 340px) {
-  .promoted-content .card {
-    height: 60vw;
-  }
-}
+// @media screen and (max-width: 1400px) {
+//   .promoted-content .card {
+//     height: 26vw;
+//   }
+// }
+// @media screen and (max-width: 1250px) {
+//   .promoted-content .card {
+//     height: 27vw;
+//   }
+//   .hero .hero-text h1 {
+//     font-size: 4rem;
+//   }
+// }
+// @media screen and (max-width: 1100px) {
+//   .promoted-content .card {
+//     height: 28vw;
+//   }
+//   .hero .hero-text h1 {
+//     font-size: 3.5rem;
+//   }
+// }
+// @media screen and (max-width: 840px) {
+//   .promoted-content .card {
+//     height: 50vw;
+//   }
+//   .hero .hero-text h1 {
+//     font-size: 3rem;
+//     letter-spacing: -0.01rem;
+//   }
+// }
+// @media screen and (max-width: 680px) {
+//   .promoted-content .card {
+//     height: 52vw;
+//   }
+//   .hero .hero-text h1 {
+//     font-size: 2.5rem;
+//   }
+// }
+// @media screen and (max-width: 560px) {
+//   .promoted-content .card {
+//     height: 54vw;
+//   }
+//   .hero .hero-text h1 {
+//     font-size: 2rem;
+//     letter-spacing: 0;
+//   }
+// }
+// @media screen and (max-width: 490px) {
+//   .promoted-content .card {
+//     height: 56vw;
+//   }
+//   .hero .hero-text h1 {
+//     font-size: 1.85rem;
+//   }
+// }
+// @media screen and (max-width: 420px) {
+//   .promoted-content .card {
+//     height: 58vw;
+//   }
+//   .hero .hero-text h1 {
+//     font-size: 1.75rem;
+//   }
+// }
+// @media screen and (max-width: 340px) {
+//   .promoted-content .card {
+//     height: 60vw;
+//   }
+// }
 
 .bg-primary {
   background-color: $primary-color;
@@ -927,9 +931,12 @@ a.no-underline:hover {
 .chip.bg-primary {
   color: white !important;
   background-color: $primary-color !important;
+  border: $thin-line solid $primary-color;
+  transition: background $transition-speed, color $transition-speed;
 }
 .chip.bg-primary:hover {
-  background-color: $primary-color-dark !important;
+  color: $primary-color !important;
+  background-color: white !important;
 }
 a.rss {
   color: $warning-color;
