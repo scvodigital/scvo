@@ -28,17 +28,20 @@ $pink-color: #FEB3B4;
 
 $unit: 1rem;
 $padding: .4rem;
-$thick-line: 3px;
+$thick-line: 2px;
 $thin-line: 0.05rem;
 $border-radius: 6px;
-$base-font-weight: 400;
-$link-font-weight: 600;
+$heading-font-family: 'Asap';
 $heading-font-weight: 800;
+$heading-link-weight: 600;
+$body-font-weight: 400;
+$body-font-family: 'Lato';
+$body-link-weight: 400;
 $page-width: 1400px;
 $home-splash-height: 25vh;
 $transition-speed: .3s;
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,600,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,600&display=swap');
 
 @import "../node_modules/spectre.css/src/spectre";
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
@@ -101,13 +104,14 @@ body,
 html {
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
+  font-size: 22px;
 }
 
 body,
 input,
 select,
 textarea {
-  font-family: 'Lato', sans-serif;
+  font-family: $body-font-family, sans-serif;
   box-sizing: border-box;
 }
 body::after,
@@ -124,13 +128,14 @@ body *::before {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   margin: $unit/2 0 $unit;
 }
 .mdc-typography--title,
 h2 {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
+.mdc-card__title,
 h3 {
   font-size: 1.4rem;
 }
@@ -138,7 +143,6 @@ h3 {
   margin: $unit 0 0;
 }
 .mdc-card__primary h3,
-.mdc-card__title,
 h4 {
   font-size: 1.2rem;
 }
@@ -149,27 +153,33 @@ h4 {
   font-size: 90%;
 }
 h1, h2, h3, h4, h5, h6 {
-  margin-top: $unit/2;
-  margin-bottom: 0;
-}
-h1, h2, .h1, .h2, .btn.btn-lg {
-  font-family: 'Asap';
-  font-weight: $heading-font-weight;
-  font-feature-settings: "ss01" on;
-  letter-spacing: -0.08rem;
-}
-.btn.btn-lg {
-  font-size: 1.3rem;
-  letter-spacing: -0.02rem;
+  margin-top: $unit;
+  margin-bottom: $unit/2;
+  a {
+    font-weight: $heading-link-weight;
+  }
 }
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: $heading-font-weight;
+  font-weight: $heading-link-weight;
   letter-spacing: -0.05rem;
   line-height: 1.2;
   .caption {
     font-size: 70%;
   }
+}
+h1, .h1, .btn.btn-lg {
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  font-feature-settings: "ss01" on;
+  letter-spacing: -0.08rem;
+}
+.mdc-card__title {
+  font-family: $body-font-family;
+}
+.btn.btn-lg {
+  font-size: 1.1rem;
+  letter-spacing: -0.02rem;
 }
 
 .card .card-title,
@@ -233,18 +243,16 @@ p {
 
 a,
 .btn,
-.chip,
-footer h4,
-strong {
-  font-weight: $link-font-weight;
+.chip {
+  font-weight: $body-link-weight;
 }
 
 .breadcrumb .breadcrumb-item {
   color: $secondary-color;
-  font-weight: $base-font-weight;
+  font-weight: $body-font-weight;
   a {
     color: $primary-color !important;
-    font-weight: $base-font-weight;
+    font-weight: $body-font-weight;
   }
 }
 .breadcrumb .breadcrumb-item:not(:first-child)::before {
@@ -260,92 +268,99 @@ strong {
   border-left-color: $primary-color;
 }
 .divider-vert[data-content]::after {
-  font-weight: $heading-font-weight;
+  font-weight: $heading-link-weight;
   color: $secondary-color;
 }
 
 a:link,
-a:visited,
-.breadcrumb .breadcrumb-item:not(:last-child) a,
-.sidebar .menu .menu-item>a {
-  text-decoration-skip-ink: auto;
+a:visited {
   text-decoration: none;
   color: $secondary-color;
-  // border-bottom: $thick-line solid transparent;
-  background: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: $thick-line $thick-line;
-  transition: background-size $transition-speed, color $transition-speed;
-  padding-top: 1px;
-  padding-bottom: $thick-line;
+  border-bottom: $thick-line solid $secondary-color;
+  // background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
+  // background-position: 0 100%;
+  // background-repeat: repeat-x;
+  // background-size: $thick-line $thick-line;
+  transition: border $transition-speed, color $transition-speed;
+  // padding-top: 1px;
+  // padding-bottom: $thick-line;
+}
+h1 a:link,
+h1 a:visited,
+h2 a:link,
+h2 a:visited,
+h3 a:link,
+h3 a:visited,
+h4 a:link,
+h4 a:visited,
+.sidebar .menu .menu-item>a {
+  // color: $secondary-color;
+  border-bottom: $thick-line solid transparent;
 }
 .sidebar .menu .menu-item>a:focus,
 .sidebar .menu .menu-item>a:hover,
-.breadcrumb .breadcrumb-item:not(:last-child) a:hover,
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
 a:hover {
   text-decoration: none;
-  // color: $primary-color;
-  color: white;
-  background-size: $thick-line 50px;
-  // border-bottom-color: $primary-color;
+  color: $primary-color;
+  background: transparent;
+  // color: white;
+  // background: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%);
+  // background-size: $thick-line $thick-line;
+  border-bottom-color: $primary-color;
 }
 .sidebar .menu .menu-item>a:focus,
 .sidebar .menu .menu-item>a:hover {
-  background-color: $primary-color;
+  // background-color: $primary-color;
 }
 .goodmoves-vacancies a,
 .bg-secondary a,
 footer .footer-main a {
-  background: linear-gradient(to bottom, white 0%, white 100%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: $thick-line $thick-line;
-  transition: background-size $transition-speed, color $transition-speed;
+  color: white;
+  border-bottom: $thick-line solid transparent;
+  // background: linear-gradient(to bottom, white 0%, white 100%);
+  // background-position: 0 100%;
+  // background-repeat: repeat-x;
+  // background-size: $thick-line $thick-line;
+  // transition: background-size $transition-speed, color $transition-speed;
 }
 .goodmoves-vacancies a:hover {
-  color: $goodmoves-color;
-  background-size: $thick-line 50px;
+  color: white;
+  border-bottom: $thick-line solid white;
+  // background-size: $thick-line 50px;
 }
 .bg-secondary a:hover,
 footer .footer-main a:hover {
   // border-bottom-color: white;
-  color: $secondary-color;
-  background-size: $thick-line 50px;
+  color: white;
+  border-bottom: $thick-line solid white;
+  // background-size: $thick-line 50px;
 }
 footer .footer-copyright a {
-  background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
-  background-position: 0 100%;
-  background-repeat: repeat-x;
-  background-size: $thick-line $thick-line;
-  transition: background-size $transition-speed, color $transition-speed;
+  border-bottom: $thick-line solid transparent;
+  // background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
+  // background-position: 0 100%;
+  // background-repeat: repeat-x;
+  // background-size: $thick-line $thick-line;
+  // transition: background-size $transition-speed, color $transition-speed;
 }
 footer .footer-copyright a:hover {
   // border-bottom-color: $secondary-color;
-  color: white;
-  background-size: $thick-line 50px;
+  // color: white;
+  border-bottom: $thick-line solid $secondary-color;
+  // background-size: $thick-line 50px;
 }
 .btn.btn-primary {
-  transition: background $transition-speed !important;
+  border-bottom-width: $thin-line;
+  transition: background $transition-speed, color $transition-speed !important;
 }
-h1 a,
-.h1 a,
-a.h1,
-h2 a,
-.h2 a,
-a.h2,
-h3 a,
-.h3 a,
-a.h3,
-h1 a.caption,
-.h1 a.caption,
-h2 a.caption,
-.h2 a.caption,
-h3 a.caption,
-.h3 a.caption,
-.card .card-title a,
-.mdc-card__title a,
-.mdc-card__primary h3 a,
+.btn.btn-primary:hover {
+  background: white;
+  color: $primary-color;
+}
 .breadcrumb .breadcrumb-item a,
 .pagination a,
 .promoted-content .card-header .card-title a,
@@ -356,26 +371,16 @@ a.no-underline,
 a.navbar-brand,
 a.avatar,
 a.rss,
-a.btn,
 .chip {
   // border-bottom: none !important;
   padding-top: 0;
   padding-bottom: 0;
   color: $primary-color;
-  background: none;
+  border-bottom: none;
 }
 .breadcrumb .breadcrumb-item a {
-  background: none !important;
+  border-bottom: none;
 }
-h1 a.caption:hover,
-.h1 a.caption:hover,
-h2 a.caption:hover,
-.h2 a.caption:hover,
-h3 a.caption:hover,
-.h3 a.caption:hover,
-.card .card-title a:hover,
-.mdc-card__title a:hover,
-.mdc-card__primary h3 a:hover,
 .breadcrumb .breadcrumb-item a:hover,
 .pagination a:hover,
 .promoted-content .card-header .card-title a:hover,
@@ -414,9 +419,9 @@ a.no-underline:hover {
     align-items: center;
     justify-content: left;
     h1 {
-      font-size: 5rem;
+      font-size: 4.5rem;
       letter-spacing: -0.2rem;
-      font-weight: 800;
+      font-weight: $heading-font-weight;
       margin: 0;
     }
   }
@@ -437,6 +442,11 @@ a.no-underline:hover {
   .card-image:first-child img {
     border-radius: 0;
   }
+  // .card-header,
+  // .card-body,
+  // .card-footer {
+  //   padding: $unit*1.5;
+  // }
 }
 .card.card-no-padding {
   .card-header,
@@ -459,13 +469,40 @@ a.no-underline:hover {
 .card.gray,
 .card.green,
 .card.pink {
-  padding: $unit;
+  padding: $unit*1.5 $unit*1.25 $unit*1.25;
   margin-bottom: $unit;
+  border: $thick-line solid transparent !important;
+  transition: background $transition-speed;
   .card-header {
     padding-top: 0;
   }
   .card-footer {
     padding-bottom: 0;
+    .btn-link {
+      border-radius: 0;
+    }
+  }
+  a {
+    border-bottom: $thick-line solid transparent;
+  }
+}
+.card.primary:hover,
+.card.secondary:hover,
+.card.yellow:hover,
+.card.blue:hover,
+.card.purple:hover,
+.card.gray:hover,
+.card.green:hover,
+.card.pink:hover {
+  background-color: white;
+  border-color: $primary-color !important;
+  color: $primary-color;
+  a {
+    color: $primary-color;
+    border-bottom: $thick-line solid $primary-color;
+  }
+  .card-body {
+    color: $secondary-color;
   }
 }
 .policy-stats,
@@ -999,14 +1036,14 @@ aside {
   margin-bottom: $unit;
   a,
   a:hover {
-    font-weight: $base-font-weight;
+    font-weight: $body-font-weight;
     color: black;
     text-decoration: none;
     border: none;
   }
   .wp-block-file__button {
     font-size: 90%;
-    font-weight: $heading-font-weight;
+    font-weight: $heading-link-weight;
     margin-left: $unit/2;
     border-radius: $unit;
     padding: $unit/5 $unit*.4;
@@ -1015,7 +1052,7 @@ aside {
     border: none;
   }
   .wp-block-file__button:hover {
-    font-weight: $heading-font-weight;
+    font-weight: $heading-link-weight;
     text-decoration: none;
     background: $primary-color-dark !important;
     color: white !important;
@@ -1040,7 +1077,7 @@ aside {
 }
 .form-input,
 .form-select {
-  background-color: transparent;
+  background-color: white;
 }
 
 #toaster {
@@ -1280,9 +1317,9 @@ header.toolbar {
   }
 }
 
-.navbar.toolbar .btn {
-  line-height: 1.7rem;
-}
+// .navbar.toolbar .btn {
+//   line-height: 1.7rem;
+// }
 .cards.equal-height {
   .column {
     padding-bottom: 0.8rem;
@@ -1340,7 +1377,7 @@ blockquote {
 .divider-vert[data-content]::after {
   background-color: $light-color;
   color: $secondary-color;
-  font-weight: $heading-font-weight;
+  font-weight: $heading-link-weight;
 }
 
 .pagination {
@@ -1375,7 +1412,7 @@ blockquote {
     margin: 0;
   }
   dt {
-    font-weight: $heading-font-weight;
+    font-weight: $heading-link-weight;
     clear: both;
     width: 30%;
   }
@@ -1419,7 +1456,7 @@ blockquote {
   }
   dt {
     clear: both;
-    font-weight: $heading-font-weight;
+    font-weight: $heading-link-weight;
     width: 20%;
   }
   dd {
@@ -1441,7 +1478,7 @@ blockquote {
 }
 .events .inline-dl {
   dt {
-    font-weight: $heading-font-weight;
+    font-weight: $heading-link-weight;
   }
   dd {
     // margin: 0 0 $unit;
@@ -1513,6 +1550,9 @@ form {
   max-width: 500px !important;
   margin: 0 auto;
   position: relative;
+  h2 {
+    margin-bottom: $unit/2;
+  }
   .middle-line-text {
     margin: $unit*2 0 $unit*2;
     border-bottom: $thick-line solid $gray-color;
@@ -1554,9 +1594,9 @@ form {
   #sign-up-message,
   #reset-password-message {
     display: none;
-    a {
-      font-weight: $heading-font-weight;
-    }
+    // a {
+    //   font-weight: $heading-link-weight;
+    // }
   }
 }
 #sign-out-form {
@@ -1569,9 +1609,9 @@ form {
 form {
   #active-form-message {
     display: none;
-    a {
-      font-weight: $heading-font-weight;
-    }
+    // a {
+    //   font-weight: $heading-link-weight;
+    // }
   }
 }
 
@@ -1589,7 +1629,7 @@ form {
       border-radius: 0;
       padding: 0;
       margin: 0;
-      font-size: 0.95rem;
+      // font-size: 0.95rem;
       display: inline;
     }
     .menu-item>a.menu-level-1 {
@@ -1598,8 +1638,8 @@ form {
     }
     .menu-item>a:active,
     .menu-item>a.active {
-      background-color: $primary-color;
-      color: white;
+      background-color: transparent;
+      // color: white;
     }
   }
   // .menu.menu-depth-2 {
@@ -2220,10 +2260,10 @@ footer {
 // $mobile-nav-height: 58px;
 //
 // $base-font-family:                  "Lato", Helvetica, Arial, sans-serif;
-// $base-font-weight:                  400;
+// $body-font-weight:                  400;
 //
 // $heading-font-family:               "Lato", Helvetica, Arial, sans-serif;
-// $heading-font-weight:               700;
+// $heading-link-weight:               700;
 // $heading-medium-font-weight:        600;
 // $heading-light-font-weight:         400;
 //
@@ -2327,7 +2367,7 @@ footer {
 // .mdc-drawer--temporary .mdc-list-item,
 // .mdc-list {
 //   font-family: $base-font-family, Helvetica, Arial, sans-serif;
-//   font-weight: $base-font-weight;
+//   font-weight: $body-font-weight;
 //   letter-spacing: 0.01rem;
 // }
 // .mdc-card__title,
@@ -2336,7 +2376,7 @@ footer {
 // .mdc-typography--headline,
 // .supplimentary-list-title {
 //   font-family: $heading-font-family, $base-font-family, Helvetica, Arial, sans-serif;
-//   font-weight: $heading-font-weight;
+//   font-weight: $heading-link-weight;
 // }
 // .mdc-drawer--temporary .mdc-list-item {
 //   font-weight: $heading-medium-font-weight;
@@ -2887,7 +2927,7 @@ footer {
 //   margin-bottom: $unit;
 //   a,
 //   a:hover {
-//     font-weight: $base-font-weight;
+//     font-weight: $body-font-weight;
 //     color: black;
 //     text-decoration: none;
 //   }
@@ -3654,7 +3694,7 @@ footer {
 //   // color: white;
 //   padding: $unit 0 $unit*2.5;
 //   h2 {
-//     font-weight: $heading-font-weight;
+//     font-weight: $heading-link-weight;
 //     padding-bottom: $unit;
 //   }
 // }
@@ -3771,7 +3811,7 @@ footer {
 //   h1.header-text {
 //     margin: 0 !important;
 //     // color: #fff;
-//     font-weight: $heading-font-weight;
+//     font-weight: $heading-link-weight;
 //     font-size: 2.9rem;
 //     line-height: 3rem;
 //     letter-spacing: -0.06rem;
@@ -4732,7 +4772,7 @@ footer {
 // .mdc-card__actions {
 //   // padding: $unit/2 $unit $unit;
 //   .mdc-card__action {
-//     font-weight: $heading-font-weight;
+//     font-weight: $heading-link-weight;
 //   }
 //   ul {
 //     width: 100%;
@@ -5413,7 +5453,7 @@ footer {
 //   }
 //   li:before {
 //     content: "\203A" !important;
-//     font-weight: $heading-font-weight;
+//     font-weight: $heading-link-weight;
 //     width: auto;
 //     padding: 0;
 //     margin: 0 $unit/2;
@@ -5423,7 +5463,7 @@ footer {
 //   li.pull-right:before,
 //   li:first-child:before {
 //     content: "" !important;
-//     font-weight: $heading-font-weight;
+//     font-weight: $heading-link-weight;
 //     margin: 0 !important;
 //     width: 0 !important;
 //   }
@@ -5652,10 +5692,10 @@ footer {
 // h4 {
 //   margin-bottom: $unit/2;
 //   font-family: $heading-font-family, $base-font-family, Helvetica, Arial, sans-serif;
-//   font-weight: $heading-font-weight;
+//   font-weight: $heading-link-weight;
 //   b,
 //   strong {
-//     font-weight: $heading-font-weight;
+//     font-weight: $heading-link-weight;
 //   }
 // }
 // p,
@@ -7335,7 +7375,7 @@ footer {
 //   box-shadow: none;
 //   h3 {
 //     color: white;
-//     font-weight: $heading-font-weight;
+//     font-weight: $heading-link-weight;
 //     border-bottom: none;
 //     margin: $unit 0 0;
 //     text-transform: normal;
