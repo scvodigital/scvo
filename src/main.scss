@@ -928,12 +928,14 @@ a.no-underline:hover {
 .avatar.avatar-sm {
   margin-right: $unit/5;
 }
+.wp-block-file__button,
 .chip.bg-primary {
   color: white !important;
   background-color: $primary-color !important;
-  border: $thin-line solid $primary-color;
+  border: $thin-line solid $primary-color !important;
   transition: background $transition-speed, color $transition-speed;
 }
+.wp-block-file__button:hover,
 .chip.bg-primary:hover {
   color: $primary-color !important;
   background-color: white !important;
@@ -1054,15 +1056,10 @@ aside {
     margin-left: $unit/2;
     border-radius: $unit;
     padding: $unit/5 $unit*.4;
-    background: $primary-color;
-    color: white !important;
-    border: none;
   }
   .wp-block-file__button:hover {
     font-weight: $heading-link-weight;
     text-decoration: none;
-    background: $primary-color-dark !important;
-    color: white !important;
   }
 }
 .input-group {
