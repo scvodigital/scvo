@@ -39,7 +39,7 @@ $body-font-family: 'Lato';
 $body-link-weight: 400;
 $page-width: 1400px;
 $home-splash-height: 25vh;
-$transition-speed: .3s;
+$transition-speed: .2s;
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,600&display=swap');
 
@@ -365,8 +365,6 @@ footer .footer-copyright a:hover {
 }
 .breadcrumb .breadcrumb-item a,
 .pagination a,
-.promoted-content .card-header .card-title a,
-.promoted-content .card .card-footer a,
 footer .footer-copyright a.scvo-logo,
 #scvo-tab-bar a,
 a.no-underline,
@@ -385,8 +383,6 @@ a.chip {
 }
 .breadcrumb .breadcrumb-item a:hover,
 .pagination a:hover,
-.promoted-content .card-header .card-title a:hover,
-.promoted-content .card .card-footer a:hover,
 .breadcrumb .breadcrumb-item a:hover,
 a.chip.hover,
 a.no-underline:hover {
@@ -691,6 +687,30 @@ a.no-underline:hover {
     padding-top: 0;
   }
 }
+.card.bg-secondary {
+  color: white;
+  background-color: $secondary-color;
+  div,
+  p,
+  a {
+    color: white;
+  }
+  .card-footer {
+    .btn {
+      height: auto;
+      line-height: auto;
+      padding: 0;
+      margin-right: $unit/3;
+    }
+    .btn-link {
+      border-radius: 0;
+    }
+  }
+  a:hover {
+    color: white;
+    border-bottom-color: white;
+  }
+}
 .promoted-content {
   .card {
 //     height: 366px;
@@ -731,8 +751,6 @@ a.no-underline:hover {
     .card-header,
     .card-body,
     .card-footer {
-      background: $secondary-color;
-      color: white;
       z-index: 1;
     }
 //     .card-body {
