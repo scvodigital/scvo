@@ -1050,19 +1050,29 @@
 			"path": "/services/membership",
 			"route": "^/services/membership$",
 			"children": [{
+					"label": "Membership review",
+					"path": "/services/membership/review",
+					"route": "^/services/membership/review"
+				},
+				{
+					"label": "Membership eligibility",
+					"path": "/services/membership/eligibility",
+					"route": "^/services/membership/eligibility"
+				},
+				{
 					"label": "Member benefits",
 					"path": "/services/membership/benefits",
 					"route": "^/services/membership/benefits"
 				},
 				{
-					"label": "Associate membership",
-					"path": "/services/membership/associate",
-					"route": "^/services/membership/associate"
+					"label": "Join us",
+					"path": "/services/membership/join",
+					"route": "^/services/membership/join"
 				},
 				{
-					"label": "Join now",
-					"path": "/services/membership/join-now",
-					"route": "^/services/membership/join-now"
+					"label": "FAQ",
+					"path": "/services/membership/faq",
+					"route": "^/services/membership/faq"
 				}
 			]
 		}]
