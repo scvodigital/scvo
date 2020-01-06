@@ -45,6 +45,16 @@
 		"path": "/scottish-charity-awards",
 		"route": "^/scottish-charity-awards$",
 		"children": [{
+				"label": "Application forms",
+				"path": "/scottish-charity-awards/apply-2020",
+				"route": "^/scottish-charity-awards/apply-2020"
+			},
+			{
+				"label": "2019 winners",
+				"path": "/scottish-charity-awards/winners-2019",
+				"route": "^/scottish-charity-awards/winners-2019"
+			},
+			{
 				"label": "2018 winners",
 				"path": "/scottish-charity-awards/winners-2018",
 				"route": "^/scottish-charity-awards/winners-2018"
