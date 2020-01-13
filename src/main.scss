@@ -796,12 +796,17 @@ a.no-underline:hover {
 //   }
   }
 }
+.card.the-gathering {
+  .card-image .logo {
+    padding: $unit 0;
+  }
+}
 .card.i-love-charity,
 .card.charity-awards,
 .card.twenty-years {
   .card-image .background {
     width: 100%;
-    height: 273px;
+    height: 134px;
   }
 }
 // @media screen and (max-width: 1400px) {

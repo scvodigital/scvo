@@ -4,12 +4,11 @@
   {{{layoutParts.head}}}
   {{> layout_head}}
 </head>
-<body class="{{#if request.params.path}}{{replace (replace request.params.path '20-years' 'twenty-years') '_' ' '}}{{else}}home{{/if}}">
+<body class="{{#if request.params.path}}{{replace request.params.path '_' ' '}}{{else}}home{{/if}}">
   <div class="hide-lg">
     {{> components_scvo_bar}}
   </div>
   <div class="page">
-    {{!-- style="background-image:url('/rouleaux.svg?color=FEF9F9&style={{itemAt (split 'solid,stripes,dots' ',') (random 0 2)}}');" --}}
     <div class="bg-rouleaux">
       <div class="container">
         <header class="navbar header">
@@ -21,7 +20,7 @@
           <section class="navbar-section">
             <div class="form-horizontal hide-lg">
               {{> site_search_form}}
-              <a href="/services/membership" class="btn btn-primary btn-lg btn-cta float-right t-margin">Join our community</a>
+              {{!-- <a href="/services/membership" class="btn btn-primary btn-lg btn-cta float-right t-margin">Join our community</a> --}}
             </div>
             <div class="mobile-header-buttons show-lg">
               <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
@@ -65,12 +64,12 @@
         </header>
         <header class="navbar toolbar hide-lg">
           <section class="navbar-section site-tab-bar">
-            {{#each context.metaData.layoutMenus.main ~}}
+            {{#each context.metaData.layoutMenus.gathering ~}}
             <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
             {{/each ~}}
           </section>
           <section class="navbar-center"></section>
-          <section class="navbar-section">
+          {{!-- <section class="navbar-section">
           {{#if @root.data.auth ~}}
             <div class="dropdown my-account signed-in">
               <div class="btn-group">
@@ -116,7 +115,7 @@
           </a>
           {{/each ~}}
           {{/if ~}}
-          </section>
+          </section> --}}
         </header>
       </div>
 

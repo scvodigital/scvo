@@ -1,0 +1,70 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+
+Powered by:
+███████╗ ██████╗██╗   ██╗ ██████╗  ██╗   ██████╗  ██████╗ ██╗   ██╗████████╗███████╗██████╗
+██╔════╝██╔════╝██║   ██║██╔═══██╗ ╚██╗  ██╔══██╗██╔═══██╗██║   ██║╚══██╔══╝██╔════╝██╔══██╗
+███████╗██║     ██║   ██║██║   ██║  ╚██╗ ██████╔╝██║   ██║██║   ██║   ██║   █████╗  ██████╔╝
+╚════██║██║     ╚██╗ ██╔╝██║   ██║  ██╔╝ ██╔══██╗██║   ██║██║   ██║   ██║   ██╔══╝  ██╔══██╗
+███████║╚██████╗ ╚████╔╝ ╚██████╔╝ ██╔╝  ██║  ██║╚██████╔╝╚██████╔╝   ██║   ███████╗██║  ██║
+╚══════╝ ╚═════╝  ╚═══╝   ╚═════╝ ╚═╝   ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   ╚══════╝╚═╝  ╚═╝
+
+-->
+
+<link rel="apple-touch-icon" sizes="180x180" href="{{~>asset_url url='images/icons/apple-touch-icon.png'~}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{~>asset_url url='images/icons/favicon-32x32.png'~}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{~>asset_url url='images/icons/favicon-16x16.png'~}}">
+<link rel="manifest" href="{{~>asset_url url='images/icons/site.webmanifest'~}}">
+<link rel="mask-icon" href="{{~>asset_url url='images/icons/safari-pinned-tab.svg'~}}" color="#244B5A">
+<link rel="shortcut icon" href="{{~>asset_url url='images/icons/favicon.ico'~}}">
+<meta name="msapplication-TileColor" content="#244B5A">
+<meta name="msapplication-config" content="{{~>asset_url url='images/icons/browserconfig.xml'~}}">
+<meta name="theme-color" content="#244B5A">
+
+<link rel="search" type="application/opensearchdescription+xml" title="SCVO" href="{{~>asset_url url='opensearch.xml'~}}" />
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-3467930-2"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-3467930-2', { 'send_page_view': true, 'anonymize_ip': true });
+
+{{#each @root.route.primaryResponse.hits.hits ~}}
+gtag('event', 'document_hit', {
+'event_category': '{{_type}}',
+'event_label': '{{_id}}'
+});
+{{/each ~}}
+
+{{#ifAny @root.request.params.query.debug (compare @root.request.url.hostname "scvo.local") ~}}
+console.log('#### DEBUG MODE ON ####');
+console.log('Request:', {{{regexReplace (regexReplace (stringify @root.request) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+console.log('Context:', {{{regexReplace (regexReplace (stringify @root.context) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+console.log('Route:', {{{regexReplace (regexReplace (stringify @root.route) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+console.log('Data:', {{{regexReplace (regexReplace (stringify @root.data) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+console.log('Menus:', {{{regexReplace (regexReplace (stringify @root.context.metaData.layoutMenus) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+{{/ifAny ~}}
+</script>
+
+<style type="text/css">
+@font-face {
+font-family: 'Asap';
+src: url('{{~>asset_url url='fonts/Asap-Bold.eot'~}}');
+src: url('{{~>asset_url url='fonts/Asap-Bold.eot?#iefix'~}}') format('embedded-opentype'),
+     url('{{~>asset_url url='fonts/Asap-Bold.woff2'~}}') format('woff2'),
+     url('{{~>asset_url url='fonts/Asap-Bold.woff'~}}') format('woff'),
+     url('{{~>asset_url url='fonts/Asap-Bold.ttf'~}}') format('truetype'),
+     url('{{~>asset_url url='fonts/Asap-Bold.svg#Asap-Bold'~}}') format('svg');
+font-weight: bold;
+font-style: normal;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+<link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/leaflet/leaflet.css'~}}" />
+<link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/fontawesome-pro/css/all.min.css'~}}" />
+<link type="text/css" rel="stylesheet" href="{{~>asset_url url='main.css'}}" />
