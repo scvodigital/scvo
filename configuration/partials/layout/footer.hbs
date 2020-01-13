@@ -1,0 +1,94 @@
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="columns">
+        <div class="column col-12 col-ml-auto membership">
+          <a href="/services/membership" class="btn btn-primary btn-lg btn-cta pull-right b-margin">Join our community</a>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column col-3 col-lg-6 col-md-12 contact">
+          <h4>Contact</h4>
+          <ul class="fa-ul">
+            <li>
+              <span class="fa-li"><span class="fas fa-envelope"></span></span>
+              <a href="mailto:enquiries@scvo.org.uk">enquiries@scvo.org.uk</a>
+            </li>
+            <li>
+              <span class="fa-li"><span class="fas fa-phone fa-flip-horizontal"></span></span>
+              <a href="tel:+441314748000">0131 474 8000</a>
+            </li>
+          </ul>
+          <p>
+            Information service helpline
+          </p>
+          <ul class="fa-ul">
+            <li>
+              <span class="fa-li"><span class="fas fa-phone fa-flip-horizontal"></span></span>
+              <a href="tel:+448001690022">0800 169 0022</a>
+            </li>
+          </ul>
+          <ul class="">
+            <li class=""><a href="/services/membership">Become a member</a></li>
+          </ul>
+        </div>
+        <div class="column col-3 col-lg-6 col-md-12 social">
+          <h4>Social</h4>
+          <ul class="fa-ul">
+            <li>
+              <span class="fa-li" aria-hidden="true"><span class="fab fa-twitter"></span></span>
+              <a href="https://twitter.com/scvotweet" rel="noopener">Twitter</a>
+            </li>
+            <li>
+              <span class="fa-li" aria-hidden="true"><span class="fab fa-facebook"></span></span>
+              <a href="https://www.facebook.com/SCVO1939" rel="noopener">Facebook</a>
+            </li>
+            <li>
+              <span class="fa-li" aria-hidden="true"><span class="fas fa-heart"></span></span>
+              <a href="https://goodhq.org/scvo">Good HQ</a>
+            </li>
+            <li>
+              <span class="fa-li" aria-hidden="true"><span class="fab fa-youtube"></span></span>
+              <a href="https://www.youtube.com/user/SCVOtv" rel="noopener">YouTube</a>
+            </li>
+            <li>
+              <span class="fa-li" aria-hidden="true"><span class="fab fa-linkedin"></span></span>
+              <a href="https://www.linkedin.com/company/scvo" rel="noopener">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
+        <div class="column col-3 col-lg-6 col-md-12 help">
+          <h4>Help</h4>
+          <ul class="">
+            {{#each @root.context.metaData.layoutMenus.footer ~}}
+            <li class=""><a href="{{path}}">{{{label}}}</a></li>
+            {{/each ~}}
+          </ul>
+        </div>
+        <div class="column col-3 col-lg-6 col-md-12 about">
+          <h4>About</h4>
+          <p>
+            The Scottish Council for Voluntary Organisations is the membership organisation for Scotland's charities, voluntary organisations and social enterprises. <a href="/about">Find out more</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="columns">
+        <div class="copyright column col-10 col-lg-12">
+          <p>
+            &copy; {{momentFormat (moment) "YYYY"}}. The Scottish Council for Voluntary Organisations (SCVO) is a Scottish Charitable Incorporated Organisation.<br />
+            Charity registered in Scotland <a href="https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number=SC003558">SC003558</a>. Registered office Mansfield Traquair Centre, 15 Mansfield Place, Edinburgh EH3 6BB.
+          </p>
+        </div>
+        <div class="logos column col-2 col-ml-auto col-lg-12">
+          <a href="https://scvo.org" class="scvo-logo" title="Scottish Council for Voluntary Organisations">
+            <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

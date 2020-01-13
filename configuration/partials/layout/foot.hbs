@@ -1,0 +1,56 @@
+{{#each @root.context.metaData.handlebars.frontend.configs ~}}
+<script data-component-config="{{@key}}" type="javascript/blocked">
+{{{regexReplace (regexReplace this "^\s*return\s" "igm" "") "([^\\{])({{){2,}" "igm" "$1\\$2"}}}
+</script>
+{{/each ~}}
+
+{{#each @root.context.metaData.handlebars.frontend.tasks ~}}
+<script data-task="{{@key}}" type="javascript/blocked">
+{{{regexReplace (regexReplace this "^\s*return\s" "igm" "") "([^\\{])({{){2,}" "igm" "$1\\$2"}}}
+</script>
+{{/each ~}}
+
+{{#each @root.context.metaData.handlebars.frontend.partials ~}}
+<script data-partial="{{@key}}" type="javascript/blocked">
+{{{this}}}
+</script>
+{{/each ~}}
+
+<script type="text/javascript" src="{{~>asset_url url='component-manager.js'~}}"></script>
+<script>
+var jQuery = $;
+window.firebaseTaskConfig = {
+  upgradeTokenUrl: '/upgrade-token?token={idToken}',
+  cookieName: 'scvo_cookie'
+};
+firebase.initializeApp({
+  "apiKey": "AIzaSyDIUNnyGeZY3sO8gGIf-_2dgO49xKij5zI",
+  "authDomain": "scvo-net.firebaseapp.com",
+  "databaseURL": "https://scvo-net.firebaseio.com",
+  "projectId": "scvo-net",
+  "storageBucket": "scvo-net.appspot.com",
+  "messagingSenderId": "782194712584",
+  "appId": "1:782194712584:web:7adcb6dfdeb22fd13bf1bd"
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#DEEFFB",
+      "text": "#005EB8"
+    },
+    "button": {
+      "background": "#005EB8"
+    }
+  },
+  "theme": "edgeless",
+  "position": "bottom-left",
+  "content": {
+    "message": "We use cookies to track anonymous usage statistics.",
+    "href": "/cookies"
+  }
+});
+</script>
