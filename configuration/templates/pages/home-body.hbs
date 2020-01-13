@@ -36,7 +36,7 @@
               <a href="{{replace post_slug '_' '/'}}">Read more</a>
             </p>
             <p>
-              <span class="text-primary r-margin">{{{author_name_full}}}</span>
+              <span class="text-primary r-margin"><a href="/post/author/{{author_slug}}" class="author">{{{author_name_full}}}</a></span>
               {{momentFormat (moment publish_on 'x') 'Do MMMM YYYY'}}
             </p>
             {{/with ~}}
@@ -92,9 +92,9 @@
             <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic"><img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" /></a>
           </div>
           <div class="card-body">
+            <h4><a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a></h4>
+            {{!-- <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a> --}}
             <p>
-              <h4>{{{trim title}}}</h4>
-              {{!-- <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a> --}}
               {{{truncate description 280}}}
               <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Read more</a>
             </p>
@@ -104,11 +104,17 @@
       </div>
       {{/compare ~}}
       <div class="column col-4 col-md-12">
-        <div class="h3" style="padding-bottom: 0.8rem;">
-          Featured campaign
-          <a href="/projects-campaigns" class="caption l-margin">See more</a>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h3" style="padding-bottom: 0.8rem;">
+              Featured campaign
+              <a href="/projects-campaigns" class="caption l-margin">See more</a>
+            </div>
+            <div class="">
+              {{> promoted_eu_are_valued}}
+            </div>
+          </div>
         </div>
-        {{> promoted_eu_are_valued}}
       </div>
       <div class="column col-4 col-md-12">
         <div class="h3" style="padding-bottom: 0.8rem;">

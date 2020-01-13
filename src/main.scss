@@ -188,7 +188,8 @@ h4 {
   font-size: 90%;
 }
 h1, h2, h3, h4, h5, h6 {
-  margin-top: $unit;
+  margin-top: 0;
+  padding-top: $unit;
   margin-bottom: $unit/2;
   a {
     font-weight: $heading-link-weight;
@@ -405,6 +406,7 @@ footer .footer-copyright a.scvo-logo,
 a.no-underline,
 a.navbar-brand,
 a.avatar,
+a.author,
 a.rss,
 a.chip {
   // border-bottom: none !important;
@@ -475,6 +477,12 @@ a.no-underline:hover {
   position: relative;
   .card-image:first-child img {
     border-radius: 0;
+  }
+  .card-body {
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      padding-top: 0;
+    }
   }
   // .card-header,
   // .card-body,
