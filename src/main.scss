@@ -11,6 +11,7 @@ $gray-color-light: lighten($gray-color, 10%) !default;
 $gray-color-dark: #9BA5AD;
 $light-color: #FEF9F9;
 $light-color-var: FEF9F9;
+$gathering-light-color-var: FEE7E8;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
 $error-color: #f03823;
@@ -86,6 +87,9 @@ body,
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
+}
+.the-gathering-2020 .bg-rouleaux {
+  background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-light-color-var}&style=solid');
 }
 .icon-rouleaux {
   background-size: contain;
