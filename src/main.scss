@@ -58,8 +58,19 @@ $transition-speed: .2s;
 
 .container {
   padding: 0 $unit*2;
+  // padding: 0;
   margin: 0 auto;
   max-width: $page-width;
+  .container {
+    padding: 0;
+  }
+  .page {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    .container {
+      padding: 0 $unit*2;
+    }
+  }
 }
 body,
 .footer-copyright {
