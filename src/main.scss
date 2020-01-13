@@ -88,8 +88,29 @@ body,
   background-position-y: top;
   background-repeat: no-repeat;
 }
-.the-gathering-2020 .bg-rouleaux {
-  background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-light-color-var}&style=solid');
+.the-gathering-2020 {
+  .bg-rouleaux {
+    background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-light-color-var}&style=solid');
+  }
+  .splash-image-header {
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+    .header-logo {
+      height: calc(30vh - 94px);
+      margin: 0 auto;
+      display: block;
+      padding: $unit 0;
+    }
+    .header-text {
+      color: #933062;
+      padding-bottom: $unit;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+  }
 }
 .icon-rouleaux {
   background-size: contain;
@@ -208,11 +229,17 @@ h1, h2, h3, h4, h5, h6,
     font-size: 70%;
   }
 }
-h1, .h1, .btn.btn-lg {
+h1,
+.h1,
+.btn.btn-lg,
+.splash-image-header .header-text {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
   font-feature-settings: "ss01" on;
   letter-spacing: -0.08rem;
+}
+.splash-image-header .header-text {
+  letter-spacing: -0.04rem;
 }
 .mdc-card__title {
   font-family: $body-font-family;
