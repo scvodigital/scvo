@@ -130,21 +130,45 @@ body *::before {
 h1 {
   font-size: 2.3rem;
   margin: $unit/2 0 $unit;
+  font-weight: $heading-font-weight;
+  a {
+    font-weight: $heading-font-weight;
+    border-bottom: none;
+  }
 }
 .mdc-typography--title,
+.card-title.h2,
 h2 {
   font-size: 1.8rem;
+  font-weight: $heading-font-weight;
+  a {
+    font-weight: $heading-font-weight;
+    border-bottom: none;
+  }
 }
 .mdc-card__title,
+.card-title.h3,
 h3 {
   font-size: 1.4rem;
+  font-weight: $heading-font-weight;
+  a {
+    font-weight: $heading-font-weight;
+    border-bottom: none;
+  }
 }
 .staff-list h3 {
   margin: $unit 0 0;
 }
-.mdc-card__primary h3,
+// .mdc-card__primary h3,
+.card-title.h4,
+.card-title,
 h4 {
   font-size: 1.2rem;
+  font-weight: $heading-font-weight;
+  a {
+    font-weight: $heading-font-weight;
+    border-bottom: none !important;
+  }
 }
 .mdc-card__title {
   margin: 0;
