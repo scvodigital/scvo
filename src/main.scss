@@ -820,6 +820,10 @@ a.no-underline:hover {
     height: 134px;
   }
 }
+
+.the-gathering-2020 .sidebar-not-present {
+  background: white;
+}
 // @media screen and (max-width: 1400px) {
 //   .promoted-content .card {
 //     height: 26vw;
@@ -1350,12 +1354,15 @@ header {
 }
 header.header {
   // padding-top: $unit/2;
-  .navbar-brand img {
-    width: 320px;
-    // margin-left: -10px;
+  .navbar-brand {
+    line-height: 1;
+    img {
+      width: 320px;
+      // margin-left: -10px;
+    }
   }
   .form-horizontal {
-    padding: $unit 0;
+    padding: 0;
   }
   .input-inline .form-input {
     width: 320px;
