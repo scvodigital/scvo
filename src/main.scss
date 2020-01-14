@@ -992,7 +992,7 @@ a.no-underline:hover {
 .tfn-posts,
 .latest-posts {
   h4 {
-    margin-top: 0;
+    padding-top: 0;
   }
   ul {
     list-style-type: none;
@@ -1014,7 +1014,7 @@ a.no-underline:hover {
 }
 .scvo-services {
   h2 {
-    margin-top: 0;
+    padding-top: 0;
   }
   .btn-lg {
     background: white;
@@ -1405,7 +1405,7 @@ header.header {
     padding: $unit/2 0 0;
   }
   .input-inline .form-input {
-    width: 320px;
+    width: 350px;
   }
 }
 header.toolbar {
@@ -1870,6 +1870,9 @@ footer {
       clear: both;
       padding: $unit/4 0 0;
     }
+  }
+  .hero .hero-text h1 {
+    font-size: 2.8rem;
   }
   h1 {
     font-size: 1.5rem;
