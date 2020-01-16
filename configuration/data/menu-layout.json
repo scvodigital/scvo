@@ -1,13 +1,18 @@
 {
 	"main": [{
-			"label": "Running a charity",
-			"path": "/running-a-charity",
-			"route": "^/running-a-charity|^/setting-up-a-charity|^/running-your-organisation"
+			"label": "About",
+			"path": "/about",
+			"route": "^/about"
 		},
 		{
-			"label": "Jobs & employability",
-			"path": "/jobs",
-			"route": "^/jobs"
+			"label": "Support &#038; learning",
+			"path": "/support",
+			"route": "^/support"
+		},
+		{
+			"label": "Services",
+			"path": "/services",
+			"route": "^/services"
 		},
 		{
 			"label": "Funding",
@@ -15,39 +20,14 @@
 			"route": "^/funding"
 		},
 		{
-			"label": "Events",
-			"path": "/events",
-			"route": "^/events"
-		},
-		{
-			"label": "Support services",
-			"path": "/services",
-			"route": "^/services|^/credit-union"
-		},
-		{
-			"label": "Projects &#038; campaigns",
-			"path": "/projects-campaigns",
-			"route": "^/projects-campaigns|^/digital|^/open-government"
+			"label": "Jobs & employability",
+			"path": "/jobs",
+			"route": "^/jobs"
 		},
 		{
 			"label": "Policy &#038; research",
-			"path": "/policy-research",
-			"route": "^/policy-research"
-		},
-		{
-			"label": "Press",
-			"path": "/press-media",
-			"route": "^/press-media"
-		},
-		{
-			"label": "Blogs",
-			"path": "/blogs",
-			"route": "^/blogs"
-		},
-		{
-			"label": "About",
-			"path": "/about",
-			"route": "^/about"
+			"path": "/policy",
+			"route": "^/policy"
 		}
 	],
 	"user-signed-in": [{
@@ -72,8 +52,8 @@
 	],
   "footer": [{
 			"label": "Transparency &#038; open data",
-			"path": "/transparency-open-data",
-			"route": "^/transparency-open-data$"
+			"path": "/transparency",
+			"route": "^/transparency$"
 		},
 		{
 			"label": "Accessibility",
@@ -97,8 +77,8 @@
 		},
 		{
 			"label": "Feedback &#038; complaints",
-			"path": "/feedback-complaints",
-			"route": "^/feedback-complaints$"
+			"path": "/feedback",
+			"route": "^/feedback$"
 		}
 	],
 	"gathering": [{

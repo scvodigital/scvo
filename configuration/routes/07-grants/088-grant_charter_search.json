@@ -60,8 +60,8 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.page-header",
               "body": ">context.metaData.handlebars.templates.grants_charter_search-results"
             },
             "contentType": "text/html"

@@ -55,10 +55,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
+              "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.evidence-library_document-header",
               "leftSidebar": ">context.metaData.handlebars.templates.evidence-library_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
               "body": ">context.metaData.handlebars.templates.evidence-library_document-body"
             },
             "contentType": "text/html"

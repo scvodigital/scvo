@@ -19,10 +19,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.jobs_cjs_landing-header",
-              "body": ">context.metaData.handlebars.templates.jobs_cjs_landing-body",
-              "footer": ">context.metaData.handlebars.templates.pages_jobs_cjs_footer"
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.jobs_cjs_vacancies_landing-header",
+              "body": ">context.metaData.handlebars.templates.jobs_cjs_vacancies_landing-body",
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs_footer"
             },
             "contentType": "text/html"
           }

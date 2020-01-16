@@ -72,8 +72,8 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.pages_page-header",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.page-header",
               "body": ">context.metaData.handlebars.templates.posts_press-results",
               "rightSidebar": ">context.metaData.handlebars.templates.posts_press-sidebar"
             },

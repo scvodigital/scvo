@@ -1,0 +1,67 @@
+{
+  "name": "categories_charity_awards",
+  "debug": true,
+  "pattern": "/scottish-charity-awards/finalists-2020(/*category)",
+  "metaData": {
+    "awards-info": "{:../../data/info-charity-awards.json}"
+  },
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "search",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "cms",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-page",
+            "template": ">context.metaData.handlebars.queries.pages_charity-awards-cms"
+          },
+          {
+            "name": "categories",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-charityawards",
+            "template": ">context.metaData.handlebars.queries.pages_charity-awards-categories"
+          },
+          {
+            "name": "finalists",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-charityawards",
+            "template": ">context.metaData.handlebars.queries.pages_charity-awards-list"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.charity-awards_categories-header",
+              "body": ">context.metaData.handlebars.templates.charity-awards_categories-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.charity-awards_sidebar"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

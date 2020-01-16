@@ -36,10 +36,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.members_member-header",
-              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar",
-              "body": ">context.metaData.handlebars.templates.members_member-body"
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.about_members_member-header",
+              "body": ">context.metaData.handlebars.templates.about_members_member-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar"
             },
             "contentType": "text/html"
           }

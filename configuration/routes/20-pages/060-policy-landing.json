@@ -1,6 +1,6 @@
 {
   "name": "page_policy",
-  "pattern": "/policy-research",
+  "pattern": "/policy",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -72,9 +72,9 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.pages_policy-research_landing-header",
-              "fullWidthBody": ">context.metaData.handlebars.templates.pages_policy-research_landing-body"
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.policy_landing-header",
+              "fullWidthBody": ">context.metaData.handlebars.templates.policy_landing-body"
             },
             "contentType": "text/html"
           }

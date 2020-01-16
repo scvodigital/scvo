@@ -62,10 +62,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.pages_home-header",
-              "fullWidthBody": ">context.metaData.handlebars.templates.pages_home-body",
-              "footer": ">context.metaData.handlebars.templates.pages_home-footer"
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.home_landing-header",
+              "fullWidthBody": ">context.metaData.handlebars.templates.home_landing-body",
+              "footer": ">context.metaData.handlebars.templates.home_landing-footer"
             },
             "contentType": "text/html"
           }

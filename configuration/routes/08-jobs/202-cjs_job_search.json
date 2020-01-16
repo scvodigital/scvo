@@ -54,11 +54,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.jobs_cjs_search-head-tags",
-              "header": ">context.metaData.handlebars.templates.jobs_cjs_search-header",
-              "body": ">context.metaData.handlebars.templates.jobs_cjs_search-results",
-              "rightSidebar": ">context.metaData.handlebars.templates.jobs_cjs_search-sidebar",
-              "footer": ">context.metaData.handlebars.templates.pages_jobs_cjs_footer"
+              "head": ">context.metaData.handlebars.templates.jobs_cjs_vacancies_search-head-tags",
+              "header": ">context.metaData.handlebars.templates.jobs_cjs_vacancies_search-header",
+              "body": ">context.metaData.handlebars.templates.jobs_cjs_vacancies_search-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.jobs_cjs_vacancies_search-sidebar",
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs_footer"
             },
             "contentType": "text/html"
           }

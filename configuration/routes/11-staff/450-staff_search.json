@@ -54,10 +54,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.staff_head-tags",
-              "header": ">context.metaData.handlebars.templates.staff_search-header",
-              "body": ">context.metaData.handlebars.templates.staff_search-results",
-              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar"
+              "head": ">context.metaData.handlebars.templates.about_staff_head-tags",
+              "header": ">context.metaData.handlebars.templates.about_staff_search-header",
+              "body": ">context.metaData.handlebars.templates.about_staff_search-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar"
             },
             "contentType": "text/html"
           }

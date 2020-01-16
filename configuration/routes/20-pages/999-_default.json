@@ -55,11 +55,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.pages_head-tags",
-              "header": ">context.metaData.handlebars.templates.pages_page-header",
-              "body": ">context.metaData.handlebars.templates.pages_page-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.pages_page-sidebar",
-              "footer": ">context.metaData.handlebars.templates.pages_page-footer"
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.page-header",
+              "body": ">context.metaData.handlebars.templates.page-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.page-footer"
             },
             "contentType": "text/html"
           }

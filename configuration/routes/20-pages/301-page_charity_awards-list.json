@@ -1,0 +1,53 @@
+{
+  "name": "list_charity_awards",
+  "debug": true,
+  "pattern": "/scottish-charity-awards/finalists-2019/*category",
+  "metaData": {
+    "awards-info": "{:../../data/info-charity-awards.json}"
+  },
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-charityawards",
+          "template": ">context.metaData.handlebars.queries.pages_charity-awards-list",
+          "noResultsRoute": "four_oh_four"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.charity-awards_list-header",
+              "body": ">context.metaData.handlebars.templates.charity-awards_list-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.charity-awards_sidebar"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

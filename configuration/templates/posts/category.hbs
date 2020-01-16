@@ -2,9 +2,9 @@
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item">
-      {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug ~}}
+      {{#each @root.data.primaryResponse.hits.hits.[0]._source.categories_slug ~}}
       {{#compare this "===" (lastItem (split ../request.params.path '_')) ~}}
-      {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.post_tags @index}}}
+      {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.categories @index}}}
       {{/compare ~}}
       {{/each ~}}
     </li>

@@ -1,30 +1,3 @@
-<div class="full">
-  <p>
-    Community Jobs Scotland (CJS) creates work opportunities for young unemployed people within voluntary sector organisations throughout Scotland.
-  </p>
-  <p>
-    CJS is targeted at more vulnerable young people and in particular, is focused on groups of young people who are more disadvantaged in the labour market.
-  </p>
-  {{#if @root.data.auth ~}}
-  {{else}}
-  <p>
-    If you work for SDS or JCP please <a href="/jobs/community-jobs-scotland/vacancies/sign-in">sign in</a>.
-  </p>
-  {{/if ~}}
-
-  <h2>Start your search using the following links</h2>
-  <div class="columns">
-    <div class="column col-6 col-md-12">
-      <h3><a href="/jobs/community-jobs-scotland/vacancies/p19v">16–29 year olds</a></h3>
-      <p>
-        The following vacancies are only open to vulnerable unemployed 16 to 29 year olds, including <strong>carers, early service leavers (armed forces), care experienced, disabled, and young people with convictions</strong> and <strong>who are not</strong> on Specialist Employability Support (SES)
-      </p>
-    </div>
-    <div class="column col-6 col-md-12">
-      <h3><a href="/jobs/community-jobs-scotland/vacancies/p52">16–29 year olds (part-time)</a></h3>
-      <p>
-        The following vacancies are only open to vulnerable unemployed 16 to 29 year olds, including <strong>carers, early service leavers (armed forces), care experienced, disabled, and young people with convictions</strong> who are not able to sustain 25 hours of work per week and <strong>who are not</strong> on Specialist Employability Support (SES).
-      </p>
-    </div>
-  </div>
+<div class="container">
+  {{> page_full @root.data.primaryResponse.hits.hits.[0]._source}}
 </div>
