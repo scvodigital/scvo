@@ -3,25 +3,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" type="image/png" href="https://static.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
-  <meta name="apple-mobile-web-app-title" content="CodePen">
-  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
   <title>TFN latest news</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'>
   <style type="text/css">
   @font-face {
-  font-family: 'Asap';
-  src: url('{{~>asset_url url='fonts/Asap-Bold.eot'~}}');
-  src: url('{{~>asset_url url='fonts/Asap-Bold.eot?#iefix'~}}') format('embedded-opentype'),
-       url('{{~>asset_url url='fonts/Asap-Bold.woff2'~}}') format('woff2'),
-       url('{{~>asset_url url='fonts/Asap-Bold.woff'~}}') format('woff'),
-       url('{{~>asset_url url='fonts/Asap-Bold.ttf'~}}') format('truetype'),
-       url('{{~>asset_url url='fonts/Asap-Bold.svg#Asap-Bold'~}}') format('svg');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Asap';
+    src: url('{{~>asset_url url='fonts/Asap-Bold.eot'~}}');
+    src: url('{{~>asset_url url='fonts/Asap-Bold.eot?#iefix'~}}') format('embedded-opentype'),
+    url('{{~>asset_url url='fonts/Asap-Bold.woff2'~}}') format('woff2'),
+    url('{{~>asset_url url='fonts/Asap-Bold.woff'~}}') format('woff'),
+    url('{{~>asset_url url='fonts/Asap-Bold.ttf'~}}') format('truetype'),
+    url('{{~>asset_url url='fonts/Asap-Bold.svg#Asap-Bold'~}}') format('svg');
+    font-weight: bold;
+    font-style: normal;
   }
   </style>
   <style>
@@ -146,7 +142,7 @@
   }
 
   .owl-carousel .owl-item img.top {
-    width: auto;
+    width: 14vh;
     margin-bottom: 6.48148vh;
   }
   .owl-carousel .owl-item img.footer {
@@ -212,10 +208,10 @@ if (document.location.search.match(/type=embed/gi)) {
     {{#with _source ~}}
     <div class="owl-slide d-flex align-items-center cover" style="background-image: url('{{replace image_wide '__wide' ''}}');">
       <div class="overlay">
-        <img src="http://thirdforcenews.org.uk/images/assets/brand/tfn.png" class="footer" />
+        <img src="{{~>asset_url url='images/logos/tfn-strapline.png'}}" class="footer" />
         <div class="owl-slide-block">
           <div class="owl-slide-text">
-            <img src="http://thirdforcenews.org.uk/images/assets/brand/tfn.png" class="top" />
+            <img src="{{~>asset_url url='images/logos/tfn.png'}}" class="top" />
             <h2 class="owl-slide-animated owl-slide-title">{{{trim title}}}</h2>
             <div class="owl-slide-animated owl-slide-subtitle mb-3 story-summary">
               {{{trim description}}}
@@ -231,73 +227,67 @@ if (document.location.search.match(/type=embed/gi)) {
     {{/each ~}}
     {{/compare ~}}
   </div>
-  <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-30d18ea41045577cdb11c797602d08e0b9c2fa407c8b81058b1c422053ad8041.js"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
   <script id="rendered-js">
   /*JS way for setting height: 100vh to slides' height*/
-  /*const $slides = $(".owl-carousel .owl-slide");
-  $slides.css("height", $(window).height());
-  $(window).resize(() => {
-  $slides.css("height", $(window).height());
-});*/
+  //   const $slides = $(".owl-carousel .owl-slide");
+  //   $slides.css("height", $(window).height());
+  //   $(window).resize(() => {
+  //   $slides.css("height", $(window).height());
+  // });
 
-$(".owl-carousel").on("initialized.owl.carousel", () => {
-  setTimeout(() => {
-    $(".owl-item.active .owl-slide-animated").addClass("is-transitioned");
-  }, 200);
-});
+  $(".owl-carousel").on("initialized.owl.carousel", () => {
+    setTimeout(() => {
+      $(".owl-item.active .owl-slide-animated").addClass("is-transitioned");
+    }, 200);
+  });
 
-const $owlCarousel = $(".owl-carousel").owlCarousel({
-  items: 1,
-  loop: true,
-  nav: false,
-  dots: false,
-  autoplay: true,
-  autoplayTimeout: 8000,
-  navText: [
-    '<svg width="50" height="50" viewBox="0 0 24 24"><path d="M16.67 0l2.83 2.829-9.339 9.175 9.339 9.167-2.83 2.829-12.17-11.996z"/></svg>',
-    '<svg width="50" height="50" viewBox="0 0 24 24"><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"/></svg>' /* icons from https://iconmonstr.com */] });
+  const $owlCarousel = $(".owl-carousel").owlCarousel({
+    items: 1,
+    loop: true,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 8000
+  });
 
+  $owlCarousel.on("changed.owl.carousel", e => {
+    $(".owl-slide-animated").removeClass("is-transitioned");
 
+    const $currentOwlItem = $(".owl-item").eq(e.item.index);
+    $currentOwlItem.find(".owl-slide-animated").addClass("is-transitioned");
 
-    $owlCarousel.on("changed.owl.carousel", e => {
-      $(".owl-slide-animated").removeClass("is-transitioned");
+    const $target = $currentOwlItem.find(".owl-slide-text");
+    doDotsCalculations($target);
+  });
 
-      const $currentOwlItem = $(".owl-item").eq(e.item.index);
-      $currentOwlItem.find(".owl-slide-animated").addClass("is-transitioned");
+  $owlCarousel.on("resize.owl.carousel", () => {
+    setTimeout(() => {
+      setOwlDotsPosition();
+    }, 50);
+  });
 
-      const $target = $currentOwlItem.find(".owl-slide-text");
-      doDotsCalculations($target);
+  /*if there isn't content underneath the carousel*/
+  $owlCarousel.trigger("refresh.owl.carousel");
+
+  setOwlDotsPosition();
+
+  function setOwlDotsPosition() {
+    const $target = $(".owl-item.active .owl-slide-text");
+    doDotsCalculations($target);
+  }
+
+  function doDotsCalculations(el) {
+    const height = el.height();
+    const { top, left } = el.position();
+    const res = height + top + 20;
+
+    $(".owl-carousel .owl-dots").css({
+      top: `${res}px`,
+      left: `${left}px`
     });
-
-    $owlCarousel.on("resize.owl.carousel", () => {
-      setTimeout(() => {
-        setOwlDotsPosition();
-      }, 50);
-    });
-
-    /*if there isn't content underneath the carousel*/
-    //$owlCarousel.trigger("refresh.owl.carousel");
-
-    setOwlDotsPosition();
-
-    function setOwlDotsPosition() {
-      const $target = $(".owl-item.active .owl-slide-text");
-      doDotsCalculations($target);
-    }
-
-    function doDotsCalculations(el) {
-      const height = el.height();
-      const { top, left } = el.position();
-      const res = height + top + 20;
-
-      $(".owl-carousel .owl-dots").css({
-        top: `${res}px`,
-        left: `${left}px` });
-
-      }
-      //# sourceURL=pen.js
-      </script>
-    </body>
-    </html>
+  }
+  </script>
+</body>
+</html>
