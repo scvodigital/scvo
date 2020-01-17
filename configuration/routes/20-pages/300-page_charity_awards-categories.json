@@ -51,12 +51,11 @@
         "output": "body",
         "layouts": {
           "default": {
-            "layout": ">context.metaData.handlebars.layouts.default",
+            "layout": ">context.metaData.handlebars.layouts.awards",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.charity-awards_categories-header",
-              "body": ">context.metaData.handlebars.templates.charity-awards_categories-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.charity-awards_sidebar"
+              "header": ">context.metaData.handlebars.templates.awards_categories-header",
+              "body": ">context.metaData.handlebars.templates.awards_categories-body"
             },
             "contentType": "text/html"
           }

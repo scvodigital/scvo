@@ -37,13 +37,12 @@
         "output": "body",
         "layouts": {
           "default": {
-            "layout": ">context.metaData.handlebars.layouts.default",
+            "layout": ">context.metaData.handlebars.layouts.awards",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.charity-awards_vote-thanks-header",
-              "body": ">context.metaData.handlebars.templates.charity-awards_vote-thanks-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.charity-awards_sidebar",
-              "footer": ">context.metaData.handlebars.templates.charity-awards-vote-thanks-footer"
+              "header": ">context.metaData.handlebars.templates.awards_vote-thanks-header",
+              "body": ">context.metaData.handlebars.templates.awards_vote-thanks-body",
+              "footer": ">context.metaData.handlebars.templates.awards-vote-thanks-footer"
             },
             "contentType": "text/html"
           }

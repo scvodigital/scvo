@@ -12,6 +12,7 @@ $gray-color-dark: #9BA5AD;
 $light-color: #FEF9F9;
 $light-color-var: FEF9F9;
 $gathering-light-color-var: FEE7E8;
+$awards-light-color-var: F9F4F5;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
 $error-color: #f03823;
@@ -112,6 +113,30 @@ body,
     }
   }
 }
+.scottish-charity-awards {
+  .bg-rouleaux {
+    background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$awards-light-color-var}&style=solid');
+  }
+  .splash-image-header {
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    .header-logo {
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+      padding: $unit 0;
+    }
+    .header-text {
+      color: #933062;
+      padding-bottom: $unit;
+      margin: 0 auto;
+      display: block;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+  }
+}
 .icon-rouleaux {
   background-size: contain;
   height: $unit*5;
@@ -148,6 +173,7 @@ input,
 select,
 textarea {
   font-family: $body-font-family, sans-serif;
+  font-feature-settings: "liga" on;
   box-sizing: border-box;
 }
 body::after,
@@ -235,7 +261,7 @@ h1,
 .splash-image-header .header-text {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
-  font-feature-settings: "ss01" on;
+  font-feature-settings: "ss01" on, "liga" on;
   letter-spacing: -0.08rem;
 }
 .splash-image-header .header-text {

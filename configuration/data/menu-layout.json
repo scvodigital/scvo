@@ -81,6 +81,37 @@
 			"route": "^/feedback$"
 		}
 	],
+	"awards": [{
+			"label": "Scottish Charity Awards",
+			"path": "/scottish-charity-awards",
+			"route": "^/scottish-charity-awards$"
+		},
+		{
+			"label": "Application forms",
+			"path": "/scottish-charity-awards/apply-2020",
+			"route": "^/scottish-charity-awards/apply-2020"
+		},
+		{
+			"label": "2019 winners",
+			"path": "/scottish-charity-awards/winners-2019",
+			"route": "^/scottish-charity-awards/winners-2019"
+		},
+		{
+			"label": "2018 winners",
+			"path": "/scottish-charity-awards/winners-2018",
+			"route": "^/scottish-charity-awards/winners-2018"
+		},
+		{
+			"label": "2017 winners",
+			"path": "/scottish-charity-awards/winners-2017",
+			"route": "^/scottish-charity-awards/winners-2017"
+		},
+		{
+			"label": "FAQs",
+			"path": "/scottish-charity-awards/faqs",
+			"route": "^/scottish-charity-awards/faqs"
+		}
+	],
 	"gathering": [{
 			"label": "The Gathering 2020",
 			"path": "/the-gathering-2020",

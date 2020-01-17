@@ -69,13 +69,12 @@
         "output": "body",
         "layouts": {
           "default": {
-            "layout": ">context.metaData.handlebars.layouts.default",
+            "layout": ">context.metaData.handlebars.layouts.awards",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.charity-awards_vote-header",
-              "body": ">context.metaData.handlebars.templates.charity-awards_vote-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.charity-awards_sidebar",
-              "footer": ">context.metaData.handlebars.templates.charity-awards-vote-footer"
+              "header": ">context.metaData.handlebars.templates.awards_vote-header",
+              "body": ">context.metaData.handlebars.templates.awards_vote-body",
+              "footer": ">context.metaData.handlebars.templates.awards-vote-footer"
             },
             "contentType": "text/html"
           }
