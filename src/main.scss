@@ -128,12 +128,16 @@ body,
       padding: $unit 0;
     }
     .header-text {
-      color: #933062;
+      color: #ffffff;
       padding-bottom: $unit;
       margin: 0 auto;
       display: block;
       text-align: center;
       font-size: 1.1rem;
+      a {
+        color: white;
+        border-bottom-color: white;
+      }
     }
   }
 }
