@@ -130,6 +130,19 @@
     width: 100%;
   }
 
+  .owl-carousel .owl-item img.top {
+    width: auto;
+    margin-bottom: 6.48148vh;
+  }
+  .owl-carousel .owl-item img.footer {
+    width: auto;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    padding: 1rem;
+    background-color: rgba(59,157,177,1);
+  }
+
   .owl-slide-text {
     color: white;
     margin: 0 4rem 0 auto;
@@ -179,8 +192,10 @@ if (document.location.search.match(/type=embed/gi)) {
     {{#with _source ~}}
     <div class="owl-slide d-flex align-items-center cover" style="background-image: url('{{replace image_wide '__wide' ''}}');">
       <div class="overlay">
+        <img src="http://thirdforcenews.org.uk/images/assets/brand/tfn.png" class="footer" />
         <div class="owl-slide-block">
           <div class="owl-slide-text">
+            <img src="http://thirdforcenews.org.uk/images/assets/brand/tfn.png" class="top" />
             <h2 class="owl-slide-animated owl-slide-title">{{{trim title}}}</h2>
             <div class="owl-slide-animated owl-slide-subtitle mb-3 story-summary">
               {{{trim description}}}
