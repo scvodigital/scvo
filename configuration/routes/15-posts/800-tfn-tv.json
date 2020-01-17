@@ -16,7 +16,7 @@
           "name": "tfn_latest",
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "tfn-legacy-post-news,tfn-legacy-feature",
-          "template": ">context.metaData.handlebars.queries.posts_home-tfn-post-list"
+          "template": ">context.metaData.handlebars.queries.posts_tv-tfn-post-list"
         }
       },
       "renderer": "handlebars"

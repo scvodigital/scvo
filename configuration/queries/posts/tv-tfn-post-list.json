@@ -1,0 +1,15 @@
+{
+  "size": 10,
+  "_source": [
+    "title",
+    "description",
+    "image_wide",
+    "date_published"
+  ],
+  "query": {
+    "match_all": {}
+  },
+  "sort": {
+    "date_published": "desc"
+  }
+}
