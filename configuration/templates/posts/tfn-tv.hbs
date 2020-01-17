@@ -11,6 +11,19 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'>
+  <style type="text/css">
+  @font-face {
+  font-family: 'Asap';
+  src: url('{{~>asset_url url='fonts/Asap-Bold.eot'~}}');
+  src: url('{{~>asset_url url='fonts/Asap-Bold.eot?#iefix'~}}') format('embedded-opentype'),
+       url('{{~>asset_url url='fonts/Asap-Bold.woff2'~}}') format('woff2'),
+       url('{{~>asset_url url='fonts/Asap-Bold.woff'~}}') format('woff'),
+       url('{{~>asset_url url='fonts/Asap-Bold.ttf'~}}') format('truetype'),
+       url('{{~>asset_url url='fonts/Asap-Bold.svg#Asap-Bold'~}}') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  }
+  </style>
   <style>
   :root {
     --main-white-color: white;
@@ -33,8 +46,9 @@
 
   .cover {
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: -25vw;
   }
 
   .owl-carousel .owl-slide {
@@ -150,20 +164,25 @@
     width: 35vw;
   }
   .owl-slide-text h2 {
-    font-size: 6.11111vh;
+    font-size: 6vh;
+    font-weight: bold;
     line-height: 1.2em;
     margin-top: 0;
-    margin-bottom: 6.48148vh;
+    margin-bottom: 5vh;
+    font-family: 'Asap';
+    font-feature-settings: "ss01" on, "liga" on;
+    letter-spacing: -0.08rem;
   }
   .owl-slide-text .story-summary {
-    font-size: 3.51852vh;
+    font-size: 3.8vh;
     line-height: 1.3;
-    margin-bottom: 8.33333vh;
+    margin-bottom: 8vh;
   }
   .owl-slide-text .story-date {
-    font-size: calc(1vw + 1vh);
-    line-height: 1em;
-    opacity: .5 !important;
+    font-size: 3.8vh;
+    margin-top: 2vh;
+    line-height: 1.3;
+    opacity: .6 !important;
   }
 
   @media screen and (max-width: 575px) {
