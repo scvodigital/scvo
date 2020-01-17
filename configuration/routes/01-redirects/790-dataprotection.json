@@ -1,0 +1,14 @@
+{
+  "name": "dataprotection",
+  "pattern": "/dataprotection",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/running-your-organisation/legislation/data-protection",
+        "statusCode": 302
+      }
+    }
+  ]
+}
