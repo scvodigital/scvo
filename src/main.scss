@@ -30,7 +30,7 @@ $pink-color: #FEB3B4;
 
 $unit: 1rem;
 $padding: .4rem;
-$thick-line: 2px;
+$thick-line: 4px;
 $thin-line: 0.05rem;
 $border-radius: 6px;
 $heading-font-family: 'Asap';
@@ -452,7 +452,7 @@ footer .footer-copyright a:hover {
 }
 .btn.btn-primary {
   border-color: $primary-color;
-  border-bottom-width: $thin-line;
+  border-bottom-width: $thin-line !important;
   transition: background $transition-speed, color $transition-speed !important;
 }
 .btn.btn-primary:hover {
@@ -492,9 +492,15 @@ a.no-underline:hover {
   background-color: $gray-color;
   height: 40px;
   .text-link {
+    display: inline-block;
+    height: 40px;
     line-height: 40px;
+    border-bottom: $thick-line solid transparent;
     margin-right: $unit*(3/4);
     color: $secondary-color;
+  }
+  .text-link:hover {
+    border-bottom: $thick-line solid $secondary-color;
   }
   .brand-logo {
     margin-left: $unit/4;
@@ -1445,11 +1451,11 @@ header.toolbar {
     color: $secondary-color;
     // border-radius: $border-radius $border-radius 0 0 !important;
     border-radius: 0;
+    line-height: 1.1rem;
+    height: 1.5rem;
   }
   .btn:hover,
-  .btn:focus {
-    color: $secondary-color;
-  }
+  .btn:focus,
   .btn.active {
     background-color: $primary-color;
     color: white;
