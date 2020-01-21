@@ -28,6 +28,7 @@
   body {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     width: 100vw;
+    background-color: rgba(59,157,177,1);
   }
 
   * {
@@ -78,7 +79,7 @@
     transition-delay: 0.35s;
   }
 
-  .owl-carousel .owl-slide-cta.is-transitioned {
+  .owl-carousel .owl-slide-date.is-transitioned {
     transition-delay: 0.5s;
   }
 
@@ -216,8 +217,8 @@ if (document.location.search.match(/type=embed/gi)) {
             <div class="owl-slide-animated owl-slide-subtitle mb-3 story-summary">
               {{{trim description}}}
             </div>
-            <div class="owl-slide-animated owl-slide-subtitle mb-3 story-date">
-              {{momentFromNow date_published}}
+            <div class="owl-slide-animated owl-slide-date mb-3 story-date">
+              {{replace (momentFromNow date_published) 'a day ago' 'yesterday'}}
             </div>
           </div>
         </div>
@@ -249,6 +250,7 @@ if (document.location.search.match(/type=embed/gi)) {
     nav: false,
     dots: false,
     autoplay: true,
+    checkVisible: false,
     autoplayTimeout: 8100
   });
 
