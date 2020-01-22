@@ -177,7 +177,6 @@ input,
 select,
 textarea {
   font-family: $body-font-family, sans-serif;
-  font-feature-settings: "liga" on;
   box-sizing: border-box;
 }
 body::after,
@@ -265,8 +264,14 @@ h1,
 .splash-image-header .header-text {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
-  font-feature-settings: "ss01" on, "liga" on;
+  font-feature-settings: "ss01" on;
   letter-spacing: -0.08rem;
+}
+h1.font-default,
+.h1.font-default,
+.btn.btn-lg.font-default,
+.splash-image-header .header-text.font-default {
+  font-feature-settings: "ss01" off;
 }
 .splash-image-header .header-text {
   letter-spacing: -0.04rem;
