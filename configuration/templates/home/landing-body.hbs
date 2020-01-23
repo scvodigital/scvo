@@ -11,10 +11,12 @@
           </div>
           <div class="card-body">
             {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
-            <h4>{{{trim title}}}</h4>
+            <h4>
+              <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+            </h4>
             <p>
               {{{truncate description 320}}}
-              <a href="{{replace post_slug '_' '/'}}">Read more</a>
+              <a href="/{{replace post_slug '_' '/'}}">Read more</a>
             </p>
             {{/with ~}}
           </div>
@@ -30,10 +32,12 @@
           </div>
           <div class="card-body">
             {{#with @root.data.supplimentaryResponses.posts_latest.hits.hits.[0]._source ~}}
-            <h4>{{{trim title}}}</h4>
+            <h4>
+              <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+            </h4>
             <p>
               {{{truncate description 280}}}
-              <a href="{{replace post_slug '_' '/'}}">Read more</a>
+              <a href="/{{replace post_slug '_' '/'}}">Read more</a>
             </p>
             <p>
               <span class="text-primary r-margin"><a href="/post/author/{{author_slug}}" class="author">{{{author_name_full}}}</a></span>
