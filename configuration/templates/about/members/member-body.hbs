@@ -11,48 +11,12 @@
     {{/if}}
   </h3> --}}
   <div class="post-info">
+    {{#if type ~}}
     <div class="post-info-item">
-      {{#compare membership_category "Grassroots Member"}}
-      <span class="fas fa-heart"></span>
-      Full member
-      {{/compare}}
-      {{#compare membership_category "Associate Member (Individual - Inc TFN)"}}
       <span class="far fa-heart"></span>
-      Associate member
-      {{/compare}}
-      {{#compare membership_category "Associate Member (Private / Public)"}}
-      <span class="far fa-heart"></span>
-      Associate member
-      {{/compare}}
-      {{#compare membership_category "Full Member"}}
-      <span class="fas fa-heart"></span>
-      Full member
-      {{/compare}}
-      {{#compare membership_category "Associate Member (Individual Exc TFN)"}}
-      <span class="far fa-heart"></span>
-      Associate member
-      {{/compare}}
-      {{#compare membership_category "Associate Member (Vol - Outside Scot)"}}
-      <span class="far fa-heart"></span>
-      Associate member
-      {{/compare}}
-      {{#compare membership_category "Associate Organisation, Network Member (CABx)"}}
-      <span class="far fa-heart"></span>
-      Associate member (other)
-      {{/compare}}
-      {{#compare membership_category "Complimentary Member"}}
-      <span class="far fa-heart"></span>
-      Associate member (other)
-      {{/compare}}
-      {{#compare membership_category "Local Organisation"}}
-      <span class="far fa-heart"></span>
-      Associate member (other)
-      {{/compare}}
-      {{#compare membership_category "National Organisation"}}
-      <span class="far fa-heart"></span>
-      Associate member (other)
-      {{/compare}}
+      {{type}}
     </div>
+    {{/if ~}}
     {{#if membership_number ~}}
     <div class="post-info-item">
       <span class="far fa-certificate"></span>

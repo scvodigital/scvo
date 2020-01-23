@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Latest SCVO members</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+  <link rel="stylesheet" type="text/css" href="{{~>asset_url url='libraries/slick/slick.css'}}"/>
+  <link rel="stylesheet" type="text/css" href="{{~>asset_url url='libraries/slick/slick-theme.css'}}"/>
+  <style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Lato:400,600&display=swap');
+
+  @font-face {
+    font-family: 'Asap';
+    src: url('{{~>asset_url url='fonts/Asap-Bold.eot'~}}');
+    src: url('{{~>asset_url url='fonts/Asap-Bold.eot?#iefix'~}}') format('embedded-opentype'),
+    url('{{~>asset_url url='fonts/Asap-Bold.woff2'~}}') format('woff2'),
+    url('{{~>asset_url url='fonts/Asap-Bold.woff'~}}') format('woff'),
+    url('{{~>asset_url url='fonts/Asap-Bold.ttf'~}}') format('truetype'),
+    url('{{~>asset_url url='fonts/Asap-Bold.svg#Asap-Bold'~}}') format('svg');
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  body {
+    background-color: #FF595A;
+    font-size: 20px;
+  }
+
+  .scvo-brand {
+    max-width: 20vw;
+    margin: 2rem auto;
+    display: block;
+    text-align: center;
+  }
+  .scvo-brand img {
+    margin: 1rem 0;
+  }
+  .scvo-brand h2 {
+    margin: 2rem 0;
+  }
+  p {
+    color: white;
+    font-family: 'Lato';
+  }
+  p u {
+    text-decoration-skip: ink;
+  }
+  h1,
+  h2,
+  h3 {
+    color: white;
+    font-family: 'Asap';
+    font-weight: 800;
+    font-feature-settings: "ss01" on;
+    letter-spacing: -0.08rem;
+  }
+  .slick-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    padding: 1rem;
+  }
+  .slick-slide.slick-current {
+    opacity: 1;
+  }
+  /* .slide-animated {
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.05s;
+  }
+  .slide-animated.is-transitioned {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+  }
+  .slide-title.is-transitioned {
+    transition-delay: 0.2s;
+  }
+  .slide-subtitle.is-transitioned {
+    transition-delay: 0.35s;
+  }
+  .slide-date.is-transitioned {
+    transition-delay: 0.5s;
+  } */
+  </style>
+  <script>
+  window.console = window.console || function(t) {};
+  </script>
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+  </script>
+</head>
+<body translate="no">
+  <div class="scvo-brand">
+    <img src="{{~>asset_url url='images/logos/scvo-white.svg'}}" />
+    <h2>New members &amp; supporters</h2>
+  </div>
+  <div class="slider center slick-slider">
+    {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
+    {{#each @root.data.primaryResponse.hits.hits ~}}
+    {{#with _source ~}}
+    <div class="content">
+      {{#if og_image ~}}
+      {{!-- <img src="{{og_image}}" class="top" /> --}}
+      {{/if ~}}
+      <h1 class="slide-animated slide-title">{{{trim title}}}</h1>
+      <div class="slide-animated slide-subtitle">
+        {{#if charity_number ~}}
+        <p><strong>Registered charity {{{trim charity_number}}}</strong></p>
+        {{/if ~}}
+        {{#if description ~}}
+        <p>{{{truncate (trim description) 350}}}</p>
+        {{/if ~}}
+        {{#if website ~}}
+        <p><u>{{{trim website}}}</u></p>
+        {{/if ~}}
+        {{#if twitter ~}}
+        <p><u>{{{trim twitter}}}</u></p>
+        {{/if ~}}
+      </div>
+      {{#if date_membership ~}}
+      <div class="slide-animated slide-date">
+        <p>
+          <strong>
+            Joined SCVO {{replace (momentFromNow date_membership) 'a day ago' 'yesterday'}}
+            {{#if type}}as a {{{lowercase type}}}{{/if}}
+          </strong>
+        </p>
+      </div>
+      {{/if ~}}
+    </div>
+    {{/with ~}}
+    {{/each ~}}
+    {{/compare ~}}
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <script type="text/javascript" src="{{~>asset_url url='libraries/slick/slick.min.js'}}"></script>
+  <script>
+  $(document).ready(function(){
+    $('.center').slick({
+      autoplay: true,
+      autoplaySpeed: 6000,
+      centerMode: true,
+      slidesToShow: 3,
+      // adaptiveHeight: true,
+      centerPadding: '60px',
+      dots: false,
+      infinite: true,
+      arrows: false,
+      speed: 500,
+      cssEase: 'linear'
+    });
+    // $(".slick-slider").on("slick-initialized", () => {
+    //   setTimeout(() => {
+    //     $(".slick-active .slide-animated").addClass("is-transitioned");
+    //   }, 200);
+    // });
+  });
+  </script>
+</body>
+</html>

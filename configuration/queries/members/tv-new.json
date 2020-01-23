@@ -1,0 +1,26 @@
+{
+  "size": 10,
+  "from": 0,
+  "_source": [
+    "title",
+    "og_image",
+    "type",
+    "description",
+    "membership_number",
+    "date_membership",
+    "charity_number",
+    "website",
+    "twitter",
+    "facebook"
+  ],
+  "query": {
+    "match_all": {}
+  },
+  "sort": [
+    {
+      "date_membership": {
+        "order": "desc"
+      }
+    }
+  ]
+}
