@@ -1,23 +1,4 @@
 <div class="post-tag">
-  <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item">
-      {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug ~}}
-      {{#compare this "===" (lastItem (split ../request.params.path '_')) ~}}
-      {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.post_tags @index}}}
-      {{/compare ~}}
-      {{/each ~}}
-    </li>
-  </ul>
-
-  <h1>
-    {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug ~}}
-    {{#compare this "===" (lastItem (split ../request.params.path '_')) ~}}
-    {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.post_tags @index}}}
-    {{/compare ~}}
-    {{/each ~}}
-  </h1>
-
   <div class="container-fluid">
     <div class="mdc-layout-grid v-margin">
       <div class="mdc-layout-grid__inner">

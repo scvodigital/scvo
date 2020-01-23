@@ -2,14 +2,12 @@
 <ul class="breadcrumb breadcrumb-length-{{breadcrumb.length}}" aria-hidden="true">
   <li class="breadcrumb-item"><a href="/">Home</a></li>
   {{#if categories_slug.[0] ~}}
-  {{#compare categories_slug.[0] 'posts' ~}}
-  <li class="breadcrumb-item"><a href="/blogs">Blogs</a></li>
-  {{else}}
   {{#compare categories_slug.[0] 'press-releases' ~}}
-  <li class="breadcrumb-item"><a href="/press-media">Press releases</a></li>
+  <li class="breadcrumb-item"><a href="/about">About</a></li>
+  <li class="breadcrumb-item"><a href="/about/press-media">Press releases</a></li>
   {{else}}
-  <li class="breadcrumb-item"><a href="/post/categories/{{categories_slug.[0]}}">{{{categories.[0]}}}</a></li>
-  {{/compare ~}}
+  <li class="breadcrumb-item"><a href="/{{categories_slug.[0]}}">{{{categories.[0]}}}</a></li>
+  <li class="breadcrumb-item"><a href="/{{categories_slug.[0]}}/posts">Posts</a></li>
   {{/compare ~}}
   {{/if ~}}
   <li class="breadcrumb-item">{{{striptags title}}}</li>

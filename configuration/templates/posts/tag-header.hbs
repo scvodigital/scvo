@@ -1,0 +1,19 @@
+<ul class="breadcrumb">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item">
+    {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug ~}}
+    {{#compare this (lastItem (split (replace @root.request.params.path '_posts' '') '_')) ~}}
+    {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.post_tags @index}}}
+    {{/compare ~}}
+    {{/each ~}}
+    posts
+  </li>
+</ul>
+
+<h1>
+  {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug ~}}
+  {{#compare this (lastItem (split (replace @root.request.params.path '_posts' '') '_')) ~}}
+  {{{lookup @root.data.primaryResponse.hits.hits.[0]._source.post_tags @index}}}
+  {{/compare ~}}
+  {{/each ~}}
+</h1>

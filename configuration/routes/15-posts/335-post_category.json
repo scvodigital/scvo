@@ -54,8 +54,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.posts_category-head-tags",
-              "body": ">context.metaData.handlebars.templates.posts_category",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.posts_category-header",
+              "body": ">context.metaData.handlebars.templates.posts_category-results"
             },
             "contentType": "text/html"
           }

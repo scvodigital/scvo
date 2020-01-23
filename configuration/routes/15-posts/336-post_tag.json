@@ -53,8 +53,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.posts_tag-head-tags",
-              "body": ">context.metaData.handlebars.templates.posts_tag",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.posts_tag-header",
+              "body": ">context.metaData.handlebars.templates.posts_tag-results"
             },
             "contentType": "text/html"
           }
