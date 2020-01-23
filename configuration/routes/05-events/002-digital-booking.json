@@ -1,6 +1,6 @@
 {
   "name": "event_digital_booking",
-  "pattern": "/digital/events/:id(/:junk)/book",
+  "pattern": "/support/digital/events/:id(/:junk)/book",
   "debug": false,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

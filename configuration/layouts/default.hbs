@@ -324,6 +324,7 @@
       {{{layoutParts.header}}}
       {{{layoutParts.fullWidthBody}}}
       {{{layoutParts.footer}}}
+      {{{layoutParts.fullWidthFooter}}}
       {{else}}
       {{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
       <div class="sidebar-present container">
@@ -359,6 +360,7 @@
         </div>
         {{{layoutParts.footer}}}
       </div>
+      {{{layoutParts.fullWidthFooter}}}
       {{else}}
       <div class="sidebar-not-present container">
         {{{layoutParts.header}}}
@@ -367,6 +369,7 @@
         </main>
         {{{layoutParts.footer}}}
       </div>
+      {{{layoutParts.fullWidthFooter}}}
       {{/ifAny ~}}
       {{/if ~}}
 

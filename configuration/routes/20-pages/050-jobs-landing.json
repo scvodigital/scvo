@@ -48,6 +48,12 @@
             "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-list"
           },
           {
+            "name": "posts_related",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.pages_posts-random"
+          },
+          {
             "name": "related_training",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
@@ -74,7 +80,8 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.jobs_landing-header",
-              "body": ">context.metaData.handlebars.templates.jobs_landing-body"
+              "body": ">context.metaData.handlebars.templates.jobs_landing-body",
+              "fullWidthFooter": ">context.metaData.handlebars.templates.page-footer"
             },
             "contentType": "text/html"
           }

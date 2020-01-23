@@ -21,6 +21,25 @@
       "renderer": "handlebars"
     },
     {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "posts_related",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.pages_posts-random"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
       "name": "destination",
       "taskModule": "renderLayout",
       "renderer": "handlebars",
@@ -38,7 +57,8 @@
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_landing-header",
               "body": ">context.metaData.handlebars.templates.about_landing-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar"
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "fullWidthFooter": ">context.metaData.handlebars.templates.page-footer"
             },
             "contentType": "text/html"
           }

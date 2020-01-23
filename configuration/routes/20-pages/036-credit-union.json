@@ -1,8 +1,8 @@
 {
   "name": "page_credit_union",
   "pattern": {
-    "index": "/credit-union",
-    "section": "/credit-union/*path"
+    "index": "/services/credit-union",
+    "section": "/services/credit-union/*path"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

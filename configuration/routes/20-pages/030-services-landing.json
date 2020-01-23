@@ -37,6 +37,12 @@
             "template": ">context.metaData.handlebars.queries.jobs_home-goodmoves-vacancy-list"
           },
           {
+            "name": "posts_related",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.pages_posts-random"
+          },
+          {
             "name": "tfn_latest",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "tfn-legacy-post-news,tfn-legacy-feature",
@@ -63,7 +69,8 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.services_landing-header",
-              "body": ">context.metaData.handlebars.templates.services_landing-body"
+              "body": ">context.metaData.handlebars.templates.services_landing-body",
+              "fullWidthFooter": ">context.metaData.handlebars.templates.page-footer"
             },
             "contentType": "text/html"
           }

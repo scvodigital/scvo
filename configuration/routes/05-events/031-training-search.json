@@ -1,9 +1,9 @@
 {
   "name": "event_search",
   "debug": true,
-  "pattern": "/events",
+  "pattern": "/support/events",
   "metaData": {
-    "searchUrl": "/events"
+    "searchUrl": "/support/events"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

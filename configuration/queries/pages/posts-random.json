@@ -12,13 +12,15 @@
     "is_press_release",
     "author_slug",
     "author_name_full",
+    "og_image",
     "author_avatar",
     "staff_profile",
     "og_image",
     "categories",
     "categories_slug",
     "post_tags",
-    "post_tags_slug"
+    "post_tags_slug",
+    "post_slug"
   ],
   "query": {
     "function_score": {
@@ -35,12 +37,19 @@
               "term": {
                 "hide_from_search": "1"
               }
+            },
+            {
+              "term": {
+                "is_press_release": true
+              }
             }
           ],
           "must": [
             {
-              "term": {
-                "is_press_release": false
+              "terms": {
+                "categories_id": [
+                  {{join @root.data.primaryResponse.hits.hits.[0]._source.categories_id}}
+                ]
               }
             }
           ]
@@ -64,16 +73,6 @@
           "weight": 2
         },
         {{/if ~}}
-        {
-          "filter": {
-            "terms": {
-              "categories_id": [
-                {{join @root.data.primaryResponse.hits.hits.[0]._source.categories_id}}
-              ]
-            }
-          },
-          "weight": 1
-        },
         {
           "filter": {
             "term": {

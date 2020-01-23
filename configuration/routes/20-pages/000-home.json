@@ -26,7 +26,7 @@
             "template": ">context.metaData.handlebars.queries.jobs_home-goodmoves-vacancy-list"
           },
           {
-            "name": "blogs_latest",
+            "name": "posts_latest",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
             "template": ">context.metaData.handlebars.queries.posts_home-blog-post-list"
@@ -65,7 +65,7 @@
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.home_landing-header",
               "fullWidthBody": ">context.metaData.handlebars.templates.home_landing-body",
-              "footer": ">context.metaData.handlebars.templates.home_landing-footer"
+              "fullWidthFooter": ">context.metaData.handlebars.templates.home_landing-footer"
             },
             "contentType": "text/html"
           }

@@ -1,12 +1,25 @@
-{{#compare @root.data.supplimentaryResponses.related_posts.hits.total ">" 0 ~}}
-<div class="related">
-  <h3>{{default title "Related posts"}}</h3>
-  <div class="columns">
-    {{#each @root.data.supplimentaryResponses.related_posts.hits.hits ~}}
-    <div class="column col-3 col-md-6 col-sm-12">
-      {{> post_gist _source}}
+{{> promoted_find_info_on}}
+
+{{#compare @root.data.supplimentaryResponses.posts_related.hits.total ">" 0 ~}}
+<div class="related-posts v-padding-full bg-gray">
+  <div class="container b-margin-full">
+      {{#compare @root.data.supplimentaryResponses.posts_related.hits.total ">" 0 ~}}
+      <h3 class="b-margin">
+        Related posts
+      </h3>
+      <div class="columns">
+        {{#each (split "0,1,2,3" ",") ~}}
+        {{#with (getProperty @root.data.supplimentaryResponses.posts_related.hits.hits (concat this '._source')) ~}}
+        <div class="column col-3 col-lg-6 col-sm-12">
+          <a href="{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
+          <span class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span><br />
+          <a href="{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+        </div>
+        {{/with ~}}
+        {{/each ~}}
+      </div>
+      {{/compare ~}}
     </div>
-    {{/each ~}}
   </div>
 </div>
 {{/compare ~}}
