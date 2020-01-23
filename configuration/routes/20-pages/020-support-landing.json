@@ -1,5 +1,6 @@
 {
   "name": "page_support_landing",
+  "debug": true,
   "pattern": "/support",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -56,8 +57,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_landing-header",
-              "body": ">context.metaData.handlebars.templates.support_landing-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "fullWidthBody": ">context.metaData.handlebars.templates.support_landing-body",
               "fullWidthFooter": ">context.metaData.handlebars.templates.page-footer"
             },
             "contentType": "text/html"

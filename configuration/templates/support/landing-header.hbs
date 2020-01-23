@@ -1,7 +1,19 @@
 {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-{{> breadcrumbs_cms_page}}
+<div class="container">
+  {{> breadcrumbs_cms_page}}
+</div>
 
-{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-<h1>{{{title}}}</h1>
-{{/with ~}}
+<div class="bg-primary b-padding-full">
+  <div class="container">
+    {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+    <h1 class="text-white">{{{title}}}</h1>
+    {{/with ~}}
+    <div class="columns">
+      <div class="column col-6 col-md-8 col-sm-12 col-mx-auto">
+        <h2 class="text-white text-centre">What can we help you with?</h2>
+        {{> site_search_form placeholder='Search for resources' target='/search' type='scvo-page'}}
+      </div>
+    </div>
+  </div>
+</div>
 {{/if ~}}

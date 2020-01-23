@@ -1,6 +1,8 @@
 <div class="search b-margin-full">
+  {{#if title ~}}
   <h3>{{title}}</h3>
-  <form action="{{searchPath}}" method="GET" autocomplete="off">
+  {{/if ~}}
+  <form action="{{default searchPath '/search'}}" method="GET" autocomplete="off">
     <div class="input-group input-inline">
       <input type="text" class="form-input" placeholder="Search" id="q" name="q" aria-label="Search keywords" value="{{@root.request.params.query.q}}">
       <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
