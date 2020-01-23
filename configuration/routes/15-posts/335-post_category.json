@@ -1,6 +1,6 @@
 {
   "name": "post_category",
-  "pattern": "/post/categories/:category_slug",
+  "pattern": "/:category_slug/posts",
   "debug": false,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

@@ -23,17 +23,10 @@
           "term": {
             "hide_from_search": "1"
           }
-        }
-      ],
-      "must": [
-        {
-          "term": {
-            "categories_slug": "posts"
-          }
         },
         {
           "term": {
-            "is_press_release": false
+            "is_press_release": true
           }
         }
       ]

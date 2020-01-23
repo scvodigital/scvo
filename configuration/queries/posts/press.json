@@ -41,10 +41,8 @@
       ],
       "should": [
         {
-          "terms": {
-            "categories_id": [
-              20
-            ]
+          "term": {
+            "post_tags_slug": "press-release"
           }
         }
       ],

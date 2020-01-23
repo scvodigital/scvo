@@ -7,9 +7,9 @@
     "categories_slug",
     "title",
     "path",
-    "author_avatar",
     "og_image",
     "author_name_full",
+    "author_avatar",
     "publish_on",
     "updated"
   ],
@@ -35,7 +35,7 @@
       "must": [
         {
           "term": {
-            "categories_id": 519
+            "post_tags_slug": "research"
           }
         }
       ]

@@ -1,7 +1,7 @@
 {
   "name": "page_press",
-  "debug": false,
-  "pattern": "/press-media",
+  "debug": true,
+  "pattern": "/about/press-media",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -73,9 +73,10 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.posts_press-results",
-              "rightSidebar": ">context.metaData.handlebars.templates.posts_press-sidebar"
+              "header": ">context.metaData.handlebars.templates.about_press-header",
+              "body": ">context.metaData.handlebars.templates.about_press-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.about_press-footer"
             },
             "contentType": "text/html"
           }

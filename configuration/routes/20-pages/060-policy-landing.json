@@ -1,5 +1,6 @@
 {
   "name": "page_policy",
+  "debug": true,
   "pattern": "/policy",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -33,19 +34,19 @@
             "name": "latest_briefings",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_briefings"
+            "template": ">context.metaData.handlebars.queries.posts_policy-briefings"
           },
           {
             "name": "latest_consultation_responses",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_consultation-responses"
+            "template": ">context.metaData.handlebars.queries.posts_policy-consultation-responses"
           },
           {
             "name": "latest_research",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_reports"
+            "template": ">context.metaData.handlebars.queries.posts_policy-research"
           },
           {
             "name": "events_total",

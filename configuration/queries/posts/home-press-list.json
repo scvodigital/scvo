@@ -26,7 +26,15 @@
             "is_press_release": true
           }
         }
-      ]
+      ],
+      "should": [
+        {
+          "term": {
+            "post_tags_slug": "press-release"
+          }
+        }
+      ],
+      "minimum_should_match": 1
     }
   },
   "sort": {

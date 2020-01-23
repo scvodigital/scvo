@@ -4,6 +4,11 @@
 		"path": "/about",
 		"route": "^/about$",
 		"children": [{
+				"label": "Press releases",
+				"path": "/about/press-media",
+				"route": "^/about/press-media"
+			},
+			{
 				"label": "Board of trustees",
 				"path": "/about/board-of-trustees",
 				"route": "^/about/board-of-trustees"

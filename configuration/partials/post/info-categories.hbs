@@ -6,21 +6,9 @@
   <ul class="inline-list">
     {{#each categories ~}}
     <li>
-      {{#compare (itemAt ../categories_slug @index) "press-releases" ~}}
-      <a href="/press-media">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+      {{#compare this "Uncategorised" ~}}
       {{else}}
-      {{#compare (itemAt ../categories_slug @index) "credit-union-news" ~}}
-      <a href="/credit-union/important-news">{{{this}}}</a>{{#unless @last}}, {{/unless}}
-      {{else}}
-      {{#compare (itemAt ../categories_slug @index) "posts" ~}}
-      <a href="/blogs">{{{this}}}</a>{{#unless @last}}, {{/unless}}
-      {{else}}
-      {{#compare (itemAt ../categories_slug @index) "uncategorised" ~}}
-      {{else}}
-      <a href="/post/categories/{{itemAt ../categories_slug @index}}">{{{this}}}</a>{{#unless @last}}, {{/unless}}
-      {{/compare ~}}
-      {{/compare ~}}
-      {{/compare ~}}
+      <a href="/{{itemAt ../categories_slug @index}}/posts">{{{this}}}</a>{{#unless @last}}, {{/unless}}
       {{/compare ~}}
     </li>
     {{/each ~}}
@@ -34,7 +22,11 @@
   <ul class="inline-list">
     {{#each post_tags ~}}
     <li>
+      {{#compare this "Press Release" ~}}
+      <a href="/about/press-media" class="chip bg-primary">{{{this}}}</a>
+      {{else}}
       <a href="/post/tags/{{itemAt ../post_tags_slug @index}}" class="chip bg-primary">{{{this}}}</a>
+      {{/compare ~}}
     </li>
     {{/each ~}}
   </ul>
