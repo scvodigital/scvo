@@ -3,7 +3,7 @@
   "debug": true,
   "pattern": "/support/events/:id(/:junk)",
   "metaData": {
-    "searchUrl": "/events"
+    "searchUrl": "/support/events"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

@@ -228,7 +228,7 @@ h3 {
 .card-title.h4,
 .card-title,
 h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: $heading-font-weight;
   a {
     font-weight: $heading-font-weight;
@@ -1030,6 +1030,8 @@ a.no-underline:hover {
     opacity: 1;
   }
 }
+.fs-fund,
+.goodmoves-vacancy,
 .goodmoves-vacancies,
 .tfn-posts,
 .latest-posts {
@@ -1043,6 +1045,10 @@ a.no-underline:hover {
   li {
     margin-left: 0;
   }
+}
+.goodmoves-vacancy.gist,
+.fs-fund.gist {
+  margin-bottom: $unit;
 }
 .card.goodmoves-vacancy.search-result,
 .goodmoves-vacancies {

@@ -59,7 +59,10 @@
 
 {{#compare @root.data.supplimentaryResponses.recently_updated_funds.hits.total ">" 0 ~}}
 <div class="columns">
-  <h3 class="blogs">Recently updated funds</h3>
+  <h3 class="blogs">
+    Recently updated funds&ensp;
+    <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website" class="caption">Find more</a>
+  </h3>
   <div class="columns">
     {{#each @root.data.supplimentaryResponses.recently_updated_funds.hits.hits ~}}
     <div class="column col-4 col-lg-6 col-md-12">
@@ -67,6 +70,5 @@
     </div>
     {{/each ~}}
   </div>
-  <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website" class="mdc-button v-margin-full pull-right">Find more</a>
 </div>
 {{/compare ~}}
