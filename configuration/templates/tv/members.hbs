@@ -24,11 +24,11 @@
 
   body {
     background-color: #FF595A;
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .scvo-brand {
-    max-width: 20vw;
+    max-width: 25vw;
     margin: 2rem auto;
     display: block;
     text-align: center;
@@ -37,7 +37,8 @@
     margin: 1rem 0;
   }
   .scvo-brand h2 {
-    margin: 2rem 0;
+    margin: 2rem 0 3rem;
+    font-size: 2.4rem;
   }
   p {
     color: white;
@@ -117,7 +118,7 @@
         <p><strong>Registered charity {{{trim charity_number}}}</strong></p>
         {{/if ~}}
         {{#if description ~}}
-        <p>{{{truncate (trim description) 350}}}</p>
+        <p>{{{truncate (trim description) 280}}}</p>
         {{/if ~}}
         {{#if website ~}}
         <p><u>{{{trim website}}}</u></p>
