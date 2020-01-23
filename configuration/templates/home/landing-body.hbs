@@ -29,7 +29,7 @@
             </div>
           </div>
           <div class="card-body">
-            {{#with @root.data.supplimentaryResponses.blogs_latest.hits.hits.[0]._source ~}}
+            {{#with @root.data.supplimentaryResponses.posts_latest.hits.hits.[0]._source ~}}
             <h4>{{{trim title}}}</h4>
             <p>
               {{{truncate description 280}}}

@@ -11,8 +11,8 @@
           {{#each (split "1,2,3,4" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.posts_latest.hits.hits (concat this '._source')) ~}}
           <li class="clearfix b-margin">
-            <a href="{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
-            <a href="{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+            <a href="/{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
+            <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
             &ensp;<span class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span>
           </li>
           {{/with ~}}
@@ -29,8 +29,8 @@
           {{#each (split "1,2,3,4" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
           <li class="clearfix b-margin">
-            <a href="{{url}}" class="pull-left r-margin no-underline"><img src="{{image_portrait_small}}" alt="{{{trim title}}}" class="avatar avatar-lg" /></a>
-            <a href="{{url}}">{{{trim title}}}</a>
+            <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="pull-left r-margin no-underline"><img src="{{image_portrait_small}}" alt="{{{trim title}}}" class="avatar avatar-lg" /></a>
+            <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
             <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
           </li>
           {{/with ~}}
