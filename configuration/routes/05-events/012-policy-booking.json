@@ -1,6 +1,6 @@
 {
   "name": "event_policy_booking",
-  "pattern": "/policy-research/events/:id(/:junk)/book",
+  "pattern": "/policy/events/:id(/:junk)/book",
   "debug": false,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -56,10 +56,10 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.support_events_policy_booking-header",
+              "header": ">context.metaData.handlebars.templates.policy_events_booking-header",
               "leftSidebar": ">context.metaData.handlebars.templates.support_events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.support_events_policy_search-sidebar",
-              "body": ">context.metaData.handlebars.templates.support_events_policy_booking-body"
+              "rightSidebar": ">context.metaData.handlebars.templates.policy_events_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.policy_events_booking-body"
             },
             "contentType": "text/html"
           }

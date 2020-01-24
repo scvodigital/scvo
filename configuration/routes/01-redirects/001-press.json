@@ -1,0 +1,14 @@
+{
+  "name": "redirect_press",
+  "pattern": "/press-media",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/about/press-media",
+        "statusCode": 301
+      }
+    }
+  ]
+}

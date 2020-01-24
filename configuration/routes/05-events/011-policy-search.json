@@ -1,7 +1,7 @@
 {
   "name": "event_policy_search",
   "debug": true,
-  "pattern": "/policy-research/events",
+  "pattern": "/policy/events",
   "metaData": {
     "searchUrl": "/policy-research/events"
   },
@@ -57,10 +57,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.support_events_policy_search-head-tags",
-              "header": ">context.metaData.handlebars.templates.support_events_policy_search-header",
+              "head": ">context.metaData.handlebars.templates.policy_events_search-head-tags",
+              "header": ">context.metaData.handlebars.templates.policy_events_search-header",
               "leftSidebar": ">context.metaData.handlebars.templates.support_events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.support_events_policy_search-sidebar",
+              "rightSidebar": ">context.metaData.handlebars.templates.policy_events_search-sidebar",
               "body": ">context.metaData.handlebars.templates.support_events_search-results"
             },
             "contentType": "text/html"
