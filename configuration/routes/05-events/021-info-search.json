@@ -1,9 +1,9 @@
 {
-  "name": "event_digital",
+  "name": "event_info_search",
   "debug": true,
-  "pattern": "/support/digital/events/:id(/:junk)",
+  "pattern": "/support/running-your-organisation/events",
   "metaData": {
-    "searchUrl": "/digital/events"
+    "searchUrl": "/support/running-your-organisation/events"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -18,8 +18,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-event",
-          "template": ">context.metaData.handlebars.queries.events_event",
-          "noResultsRoute": "four_oh_four"
+          "template": ">context.metaData.handlebars.queries.events_info-search"
         }
       },
       "renderer": "handlebars"
@@ -34,16 +33,10 @@
         },
         "queryTemplates": [
           {
-            "name": "related_events",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_digital-related"
-          },
-          {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_digital-aggs"
+            "template": ">context.metaData.handlebars.queries.events_info-aggs"
           }
         ]
       },
@@ -64,10 +57,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.support_events_digital_event-header",
+              "head": ">context.metaData.handlebars.templates.support_events_info_search-head-tags",
+              "header": ">context.metaData.handlebars.templates.support_events_info_search-header",
               "leftSidebar": ">context.metaData.handlebars.templates.support_events_search-form",
-              "body": ">context.metaData.handlebars.templates.support_events_event-body"
+              "rightSidebar": ">context.metaData.handlebars.templates.support_events_info_search-sidebar",
+              "body": ">context.metaData.handlebars.templates.support_events_search-results"
             },
             "contentType": "text/html"
           }
