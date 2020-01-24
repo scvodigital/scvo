@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>Latest SCVO members</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
+  <link type="text/css" rel="stylesheet" href="{{~>asset_url url='libraries/fontawesome-pro/css/all.min.css'~}}" />
   <link rel="stylesheet" type="text/css" href="{{~>asset_url url='libraries/slick/slick.css'}}"/>
   <link rel="stylesheet" type="text/css" href="{{~>asset_url url='libraries/slick/slick-theme.css'}}"/>
   <style type="text/css">
@@ -24,12 +25,12 @@
 
   body {
     background-color: #FF595A;
-    font-size: 25px;
+    font-size: 32px;
   }
 
   .scvo-brand {
     max-width: 25vw;
-    margin: 2rem auto;
+    margin: 4rem auto;
     display: block;
     text-align: center;
   }
@@ -40,12 +41,18 @@
     margin: 2rem 0 3rem;
     font-size: 2.4rem;
   }
+  li,
+  span,
   p {
     color: white;
     font-family: 'Lato';
   }
   p u {
     text-decoration-skip: ink;
+  }
+  .slide-title {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
   }
   h1,
   h2,
@@ -60,7 +67,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.6;
+    opacity: 0.5;
     padding: 1rem;
   }
   .slick-slide.slick-current {
@@ -89,6 +96,9 @@
   .slide-date.is-transitioned {
     transition-delay: 0.5s;
   } */
+  .fa-ul {
+    margin-left: 3rem;
+  }
   </style>
   <script>
   window.console = window.console || function(t) {};
@@ -121,11 +131,16 @@
         <p>{{{truncate (trim description) 280}}}</p>
         {{/if ~}}
         {{#if website ~}}
-        <p><u>{{{trim website}}}</u></p>
+        <p><u>{{replace (replace (replace (trim website) 'https://' '') 'http://' '') 'www.' ''}}</u></p>
         {{/if ~}}
         {{#if twitter ~}}
-        <p><u>{{{trim twitter}}}</u></p>
+        <ul class="fa-ul">
+          <li><span class="fa-li"><span class="fab fa-twitter"></span></span> @{{replace (replace (replace (replace (replace (replace (replace (trim twitter) 'https://' '') 'http://' '') 'm.twitter.com/' '') 'mobile.twitter.com/' '') 'twitter.com/' '') '?lang=en' '')}}</li>
+        </ul>
         {{/if ~}}
+        {{!-- {{#if facebook ~}}
+        <p><u>{{trim facebook}}</u></p>
+        {{/if ~}} --}}
       </div>
       {{#if date_membership ~}}
       <div class="slide-animated slide-date">
