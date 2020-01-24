@@ -1,5 +1,5 @@
 <div class="bg-white">
-  <div class="container t-padding-full">
+  <div class="container v-padding-full">
     <div class="columns">
       <div class="column col-6 col-lg-12">
         {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
@@ -21,7 +21,7 @@
         <div class="card card-no-padding">
           <section class="card-header">
             <div class="card-title h4">
-              <a href="/policy-research/events"><span class="r-margin far fa-fw fa-chalkboard-teacher"></span> Events</a>
+              <a href="/policy/events"><span class="r-margin far fa-fw fa-chalkboard-teacher"></span> Events</a>
             </div>
           </section>
           <section class="card-body">
@@ -34,7 +34,7 @@
           </section>
           {{#compare total ">" 0 ~}}
           <section class="card-footer">
-            <a class="btn btn-link" href="/policy-research/events">Find out more</a>
+            <a class="btn btn-link" href="/policy/events">Find out more</a>
           </section>
           {{/compare ~}}
           {{/with ~}}
@@ -52,7 +52,7 @@
         {{> post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[2]._source}}
         {{/if ~}}
 
-        <a href="/policy-research/briefings" class="v-margin">More briefings</a>
+        <a href="/policy/briefings" class="v-margin">More briefings</a>
       </div>
       <div class="column col-4 col-lg-6 col-md-12">
         <h3>Consultation responses</h3>
@@ -63,7 +63,7 @@
         {{> post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[2]._source}}
         {{/if ~}}
 
-        <a href="/policy-research/consultation-responses" class="v-margin">More consultation responses</a>
+        <a href="/policy/consultation-responses" class="v-margin">More consultation responses</a>
       </div>
       <div class="column col-4 col-lg-6 col-md-12 no-border">
         <h3>Research</h3>
@@ -74,7 +74,7 @@
         {{> post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[2]._source}}
         {{/if ~}}
 
-        <a href="/policy-research/research" class="v-margin">More research</a>
+        <a href="/policy/research" class="v-margin">More research</a>
       </div>
     </div>
   </div>
@@ -88,26 +88,26 @@
       <div class="card">
         <section class="card-header">
           <div class="card-title h4">
-            <a href="/policy-research/evidence-library"><span class="r-margin far fa-fw fa-folder-open"> </span>Evidence Library</a>
+            <a href="/policy/evidence-library"><span class="r-margin far fa-fw fa-folder-open"> </span>Evidence Library</a>
           </div>
         </section>
         <section class="card-body">
           A resource for anyone interested in learning about the voluntary sector in Scotland
         </section>
-        <section class="card-footer"><a class="btn btn-link" href="/policy-research/evidence-library">Find out more</a></section>
+        <section class="card-footer"><a class="btn btn-link" href="/policy/evidence-library">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
       <div class="card">
         <section class="card-header">
           <div class="card-title h4">
-            <a href="/policy-research/policy-forum"><span class="r-margin far fa-fw fa-comments"> </span>Policy Forum</a>
+            <a href="/policy/policy-forum"><span class="r-margin far fa-fw fa-comments"> </span>Policy Forum</a>
           </div>
         </section>
         <section class="card-body">
           Advising us on policies which reflect the best interests of the voluntary sector in Scotland
         </section>
-        <section class="card-footer"><a class="btn btn-link" href="/policy-research/policy-forum">Find out more</a></section>
+        <section class="card-footer"><a class="btn btn-link" href="/policy/policy-forum">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
@@ -127,26 +127,26 @@
       <div class="card">
         <section class="card-header">
           <div class="card-title h4">
-            <a href="/policy-research/positive-partnerships"><span class="r-margin far fa-fw fa-handshake-alt"> </span>Positive partnerships</a>
+            <a href="/policy/positive-partnerships"><span class="r-margin far fa-fw fa-handshake-alt"> </span>Positive partnerships</a>
           </div>
         </section>
         <section class="card-body">
           We recently asked our members and those working in charities, voluntary groups and social enterprises across Scotland to share any successful partnership projects they have with the public sector.
         </section>
-        <section class="card-footer"><a class="btn btn-link" href="/policy-research/positive-partnerships">Find out more</a></section>
+        <section class="card-footer"><a class="btn btn-link" href="/policy/positive-partnerships">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">
       <div class="card">
         <section class="card-header">
           <div class="card-title h4">
-            <a href="/policy-research/intermediaries"><span class="r-margin far fa-fw fa-retweet"> </span>Intermediaries</a>
+            <a href="/policy/intermediaries"><span class="r-margin far fa-fw fa-retweet"> </span>Intermediaries</a>
           </div>
         </section>
         <section class="card-body">
           Details on everything from our intermediaries network to resources and directories for those working in intermediary bodies.
         </section>
-        <section class="card-footer"><a class="btn btn-link" href="/policy-research/intermediaries">Find out more</a></section>
+        <section class="card-footer"><a class="btn btn-link" href="/policy/intermediaries">Find out more</a></section>
       </div>
     </div>
     <div class="column col-4 col-lg-6 col-md-12">

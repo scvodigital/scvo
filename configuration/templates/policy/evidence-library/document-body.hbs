@@ -14,7 +14,7 @@
       <ul class="inline-list">
         {{#each library_classification ~}}
         <li>
-          <a href="/policy-research/evidence-library?classification={{itemAt ../library_classification_slug @index}}">{{{itemAt (split this "-") (subtract (length (split this "-")) 1)}}}</a>
+          <a href="/policy/evidence-library?classification={{itemAt ../library_classification_slug @index}}">{{{itemAt (split this "-") (subtract (length (split this "-")) 1)}}}</a>
         </li>
         {{/each ~}}
       </ul>

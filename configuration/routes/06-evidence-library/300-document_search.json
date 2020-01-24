@@ -1,7 +1,7 @@
 {
   "name": "evidence_library_document_search",
   "debug": true,
-  "pattern": "/policy-research/evidence-library",
+  "pattern": "/policy/evidence-library",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -63,19 +63,19 @@
           "rss": {
             "layout": ">context.metaData.handlebars.layouts.rss",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.evidence-library_rss-head-tags",
-              "body": ">context.metaData.handlebars.templates.evidence-library_rss"
+              "head": ">context.metaData.handlebars.templates.policy_evidence-library_rss-head-tags",
+              "body": ">context.metaData.handlebars.templates.policy_evidence-library_rss"
             },
             "contentType": "application/rss+xml"
           },
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.evidence-library_head-tags",
-              "header": ">context.metaData.handlebars.templates.evidence-library_search-header",
-              "leftSidebar": ">context.metaData.handlebars.templates.evidence-library_search-form",
+              "head": ">context.metaData.handlebars.templates.policy_evidence-library_head-tags",
+              "header": ">context.metaData.handlebars.templates.policy_evidence-library_search-header",
+              "leftSidebar": ">context.metaData.handlebars.templates.policy_evidence-library_search-form",
               "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
-              "body": ">context.metaData.handlebars.templates.evidence-library_search-results"
+              "body": ">context.metaData.handlebars.templates.policy_evidence-library_search-results"
             },
             "contentType": "text/html"
           }

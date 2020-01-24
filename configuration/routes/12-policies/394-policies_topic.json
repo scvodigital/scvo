@@ -1,7 +1,7 @@
 {
   "name": "page_policies_topic",
   "debug": true,
-  "pattern": "/policy-research/policies/:topic",
+  "pattern": "/policy/policies/:topic",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

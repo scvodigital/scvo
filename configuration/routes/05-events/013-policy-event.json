@@ -3,7 +3,7 @@
   "debug": true,
   "pattern": "/policy/events/:id(/:junk)",
   "metaData": {
-    "searchUrl": "/policy-research/events"
+    "searchUrl": "/policy/events"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
