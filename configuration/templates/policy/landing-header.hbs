@@ -1,9 +1,18 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
 <div class="container">
-  {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-  {{> breadcrumbs_cms_page}}
-
-  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-  <h1>{{{title}}}</h1>
-  {{/with ~}}
-  {{/if ~}}
+  <div class="hero">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column col-8 col-lg-7 col-md-12 hero-text">
+          {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+          <h1 class="text-secondary">{{{title}}}</h1>
+          {{/with ~}}
+        </div>
+        <div class="column col-4 col-lg-5 col-md-12 hero-illustration">
+          <img src="{{~>asset_url url='images/home/scvo_motheroftwo_montage_11.png'~}}" alt="Illustration of a group of people" class="img-responsive" />
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+{{/if ~}}

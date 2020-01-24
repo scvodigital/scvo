@@ -1,74 +1,80 @@
-<div class="columns linked-cards">
-  <div class="column col-6 col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title h3">
-          <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website">
-            <span class="fal fa-fw fa-search-plus fa-2x">&nbsp;</span>
-            Search for funding
-          </a>
+<div class="bg-white">
+  <div class="container t-padding-full">
+    <div class="columns linked-cards">
+      <div class="column col-6 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h3">
+              <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website">
+                <span class="fal fa-fw fa-search-plus fa-2x">&nbsp;</span>
+                Search for funding
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
+          </div>
         </div>
       </div>
-      <div class="card-body">
-        {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
-      </div>
-    </div>
-  </div>
-  <div class="column col-6 col-lg-12">
-    <div class="card">
-      <div class="card-header">
-        <div class="card-title h3">
-          <a href="https://fundingscotland.com/funder/001b000000SsxRDAAZ/scottish-council-for-voluntary-organisations?utm_source=scvo&utm_campaign=page&utm_medium=website">
-            <span class="fal fa-fw fa-chart-bar fa-2x">&nbsp;</span>
-            Funding from SCVO
-          </a>
+      <div class="column col-6 col-lg-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h3">
+              <a href="https://fundingscotland.com/funder/001b000000SsxRDAAZ/scottish-council-for-voluntary-organisations?utm_source=scvo&utm_campaign=page&utm_medium=website">
+                <span class="fal fa-fw fa-chart-bar fa-2x">&nbsp;</span>
+                Funding from SCVO
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>We believe in being fully transparent when it comes to the funding opportunities we create/are part of - and we love celebrating the success stories of those who benefit!</p>
+            <p>For details of the funds available right now, and information and evaluation of previously funded projects, see the following pages:</p>
+            {{#each @root.data.supplimentaryResponses.scvo_funds.aggregations.funds.buckets ~}}
+            {{#compare funds.hits.total ">" 0 ~}}
+            <h3>
+              {{#compare key "open"}}
+              Open funds
+              {{else}}
+              Currently closed funds &amp; successful projects
+              {{/compare ~}}
+            </h3>
+            <ul>
+              {{#each funds.hits.hits ~}}
+              {{#with _source ~}}
+              <li><a href="{{replace (replace fund_url "https://scvo.org/" "/") "https://scvo.org.uk/" "/"}}">{{{replace title "SCVO - " ""}}}</a></li>
+              {{/with ~}}
+              {{/each ~}}
+            </ul>
+            {{/compare ~}}
+            {{/each ~}}
+            <p>
+              All our grants data are published openly via the <a href="http://www.threesixtygiving.org/support/standard/">360Giving Standard</a>.
+            </p>
+            <h3>Supported Programmes</h3>
+            <ul>
+              <li><a href="/funding/benefit-take-up-and-income-maximisation-fund">Scottish Benefits Take-Up Fund and Scottish Income Maximisation Fund</a></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="card-body">
-        <p>We believe in being fully transparent when it comes to the funding opportunities we create/are part of - and we love celebrating the success stories of those who benefit!</p>
-        <p>For details of the funds available right now, and information and evaluation of previously funded projects, see the following pages:</p>
-        {{#each @root.data.supplimentaryResponses.scvo_funds.aggregations.funds.buckets ~}}
-        {{#compare funds.hits.total ">" 0 ~}}
-        <h3>
-          {{#compare key "open"}}
-          Open funds
-          {{else}}
-          Currently closed funds &amp; successful projects
-          {{/compare ~}}
-        </h3>
-        <ul>
-          {{#each funds.hits.hits ~}}
-          {{#with _source ~}}
-          <li><a href="{{replace (replace fund_url "https://scvo.org/" "/") "https://scvo.org.uk/" "/"}}">{{{replace title "SCVO - " ""}}}</a></li>
-          {{/with ~}}
-          {{/each ~}}
-        </ul>
-        {{/compare ~}}
-        {{/each ~}}
-        <p>
-          All our grants data are published openly via the <a href="http://www.threesixtygiving.org/support/standard/">360Giving Standard</a>.
-        </p>
-        <h3>Supported Programmes</h3>
-        <ul>
-          <li><a href="/funding/benefit-take-up-and-income-maximisation-fund">Scottish Benefits Take-Up Fund and Scottish Income Maximisation Fund</a></li>
-        </ul>
       </div>
     </div>
   </div>
 </div>
 
 {{#compare @root.data.supplimentaryResponses.recently_updated_funds.hits.total ">" 0 ~}}
-<div class="columns">
-  <h3 class="blogs">
-    Recently updated funds&ensp;
-    <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website" class="caption">Find more</a>
-  </h3>
+<div class="container">
   <div class="columns">
-    {{#each @root.data.supplimentaryResponses.recently_updated_funds.hits.hits ~}}
-    <div class="column col-4 col-lg-6 col-md-12">
-      {{> fund_gist _source}}
+    <h3 class="blogs">
+      Recently updated funds&ensp;
+      <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website" class="caption">Find more</a>
+    </h3>
+    <div class="columns">
+      {{#each @root.data.supplimentaryResponses.recently_updated_funds.hits.hits ~}}
+      <div class="column col-4 col-lg-6 col-md-12">
+        {{> fund_gist _source}}
+      </div>
+      {{/each ~}}
     </div>
-    {{/each ~}}
   </div>
 </div>
 {{/compare ~}}

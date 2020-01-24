@@ -1,36 +1,40 @@
-<div class="columns">
-  <div class="column col-6 col-lg-12">
-    <h3>
-      Find a job in the voluntary sector
-    </h3>
-    <form action="/jobs/goodmoves/search" method="GET" class="search_form" data-auto-search="true">
-      {{!-- <input type="hidden" name="utm_source" value="scvo" />
-      <input type="hidden" name="utm_campaign" value="page" />
-      <input type="hidden" name="utm_medium" value="website" /> --}}
-      <div class="input-group">
-        <input type="text" class="form-input input-lg" name="q" id="jobs-keywords" placeholder="Keywords" value="{{@root.request.params.query.q}}">
-        <button type="submit" class="btn btn-primary input-group-btn btn-lg" aria-label="Search" alt="Search">
-          <span class="far fa-search" aria-hidden="true" aria-label="Search"></span>
-        </button>
+<div class="bg-white">
+  <div class="container t-padding-full">
+    <div class="columns">
+      <div class="column col-6 col-lg-12">
+        <h3>
+          Find a job in the voluntary sector
+        </h3>
+        <form action="/jobs/goodmoves/search" method="GET" class="search_form" data-auto-search="true">
+          {{!-- <input type="hidden" name="utm_source" value="scvo" />
+          <input type="hidden" name="utm_campaign" value="page" />
+          <input type="hidden" name="utm_medium" value="website" /> --}}
+          <div class="input-group">
+            <input type="text" class="form-input input-lg" name="q" id="jobs-keywords" placeholder="Keywords" value="{{@root.request.params.query.q}}">
+            <button type="submit" class="btn btn-primary input-group-btn btn-lg" aria-label="Search" alt="Search">
+              <span class="far fa-search" aria-hidden="true" aria-label="Search"></span>
+            </button>
+          </div>
+        </form>
+        <p>
+          Charity jobs in <a href="https://goodmoves.com/jobs-in/aberdeen?utm_source=scvo&utm_campaign=page&utm_medium=website">Aberdeen</a>, <a href="https://goodmoves.com/jobs-in/dundee?utm_source=scvo&utm_campaign=page&utm_medium=website">Dundee</a>, <a href="https://goodmoves.com/jobs-in/edinburgh?utm_source=scvo&utm_campaign=page&utm_medium=website">Edinburgh</a>, <a href="https://goodmoves.com/jobs-in/glasgow?utm_source=scvo&utm_campaign=page&utm_medium=website">Glasgow</a>, <a href="https://goodmoves.com/jobs-in/highland?utm_source=scvo&utm_campaign=page&utm_medium=website">Inverness</a>, <a href="https://goodmoves.com/jobs-in/stirling?utm_source=scvo&utm_campaign=page&utm_medium=website">Stirling</a>, and <a href="https://goodmoves.com/jobs-in/perth-and-kinross?utm_source=scvo&utm_campaign=page&utm_medium=website">Perth</a>. <a href="https://goodmoves.com/browse?utm_source=scvo&utm_campaign=page&utm_medium=website">Browse all jobs</a>.
+        </p>
+        <p>
+          <a href="https://goodmoves.com/recruitment?utm_source=scvo&utm_campaign=page&utm_medium=website" class="btn btn-link">Advertise with us</a>
+        </p>
       </div>
-    </form>
-    <p>
-      Charity jobs in <a href="https://goodmoves.com/jobs-in/aberdeen?utm_source=scvo&utm_campaign=page&utm_medium=website">Aberdeen</a>, <a href="https://goodmoves.com/jobs-in/dundee?utm_source=scvo&utm_campaign=page&utm_medium=website">Dundee</a>, <a href="https://goodmoves.com/jobs-in/edinburgh?utm_source=scvo&utm_campaign=page&utm_medium=website">Edinburgh</a>, <a href="https://goodmoves.com/jobs-in/glasgow?utm_source=scvo&utm_campaign=page&utm_medium=website">Glasgow</a>, <a href="https://goodmoves.com/jobs-in/highland?utm_source=scvo&utm_campaign=page&utm_medium=website">Inverness</a>, <a href="https://goodmoves.com/jobs-in/stirling?utm_source=scvo&utm_campaign=page&utm_medium=website">Stirling</a>, and <a href="https://goodmoves.com/jobs-in/perth-and-kinross?utm_source=scvo&utm_campaign=page&utm_medium=website">Perth</a>. <a href="https://goodmoves.com/browse?utm_source=scvo&utm_campaign=page&utm_medium=website">Browse all jobs</a>.
-    </p>
-    <p>
-      <a href="https://goodmoves.com/recruitment?utm_source=scvo&utm_campaign=page&utm_medium=website" class="btn btn-link">Advertise with us</a>
-    </p>
-  </div>
-  <div class="column col-6 col-lg-12">
-    <div class="cjs-brand">
-      <h3>Creating jobs in Scotland's voluntary sector for unemployed young people</h3>
-      <p>
-        Community Jobs Scotland works with hundreds of voluntary sector organisations and has supported over 8,000 unemployed young people into work.
-      </p>
-      <p>
-        <a href="/jobs/community-jobs-scotland" class="btn btn-link">Find out more</a>
-        <a href="/jobs/community-jobs-scotland/vacancies/sign-in" class="btn btn-link">JCP & SDS vacancy access</a>
-      </p>
+      <div class="column col-6 col-lg-12">
+        <div class="cjs-brand">
+          <h3>Creating jobs in Scotland's voluntary sector for unemployed young people</h3>
+          <p>
+            Community Jobs Scotland works with hundreds of voluntary sector organisations and has supported over 8,000 unemployed young people into work.
+          </p>
+          <p>
+            <a href="/jobs/community-jobs-scotland" class="btn btn-link">Find out more</a>
+            <a href="/jobs/community-jobs-scotland/vacancies/sign-in" class="btn btn-link">JCP & SDS vacancy access</a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -69,28 +73,36 @@
 {{/each ~}}
 <script src="{{~>asset_url url='all-vacancies.js'~}}"></script> --}}
 
-<h2>Top jobs on <strong>good</strong>moves</h2>
-<div class="columns">
-  {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
-  <div class="column col-4 col-lg-6 col-md-12">
-    {{> goodmoves_gist _source}}
+{{#compare @root.data.supplimentaryResponses.goodmoves_latest.hits.total ">" 0 ~}}
+<div class="container">
+  <h2>Top jobs on <strong>good</strong>moves</h2>
+  <div class="columns">
+    {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
+    <div class="column col-4 col-lg-6 col-md-12">
+      {{> goodmoves_gist _source}}
+    </div>
+    {{/each ~}}
   </div>
-  {{/each ~}}
+  <p>
+    <a href="/jobs/search" class="btn btn-link">Find more jobs</a>
+  </p>
 </div>
-<p>
-  <a href="/jobs/search" class="btn btn-link">Find more jobs</a>
-</p>
+{{/compare ~}}
 
 {{#compare @root.data.supplimentaryResponses.related_training.hits.total ">" 0 ~}}
-<h2>Our training courses</h2>
-<div class="columns">
-  {{#each @root.data.supplimentaryResponses.related_training.hits.hits ~}}
-  <div class="column col-3 col-lg-4 col-md-6 col-sm-12">
-    {{> event_gist _source}}
+<div class="bg-white">
+  <div class="container">
+    <h2>Our training courses</h2>
+    <div class="columns">
+      {{#each @root.data.supplimentaryResponses.related_training.hits.hits ~}}
+      <div class="column col-3 col-lg-4 col-md-6 col-sm-12">
+        {{> event_gist _source}}
+      </div>
+      {{/each ~}}
+    </div>
+    <p>
+      <a href="/support/events?course_type=Training+Course" class="btn btn-link">See all courses</a>
+    </p>
   </div>
-  {{/each ~}}
 </div>
-<p>
-  <a href="/support/events?course_type=Training+Course" class="btn btn-link">See all courses</a>
-</p>
 {{/compare ~}}
