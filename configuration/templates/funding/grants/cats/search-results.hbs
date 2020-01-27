@@ -2,7 +2,7 @@
 
 <div class="divider"></div>
 
-<form action="/support/funding/carers-act-transformation-support-fund/projects" method="GET" class="search_form">
+<form action="/funding/carers-act-transformation-support-fund/projects" method="GET" class="search_form">
   <div class="columns">
     <div class="column col-8 col-md-12">
       <div class="input-group input-inline" style="width:100%">
@@ -36,7 +36,7 @@
       <div class="x-padding card scvo-grant scvo-grant-cats">
         <section class="mdc-card__primary">
           <h4 class="no-margin">
-            <a href="/support/funding/carers-act-transformation-support-fund/projects/{{Id}}/{{slugify title}}">{{{title}}}</a>
+            <a href="/funding/carers-act-transformation-support-fund/projects/{{Id}}/{{slugify title}}">{{{title}}}</a>
           </h4>
         </section>
         <section class="mdc-card__supporting-text">
@@ -46,10 +46,10 @@
           </p>
           {{/if}}
           {{#if description}}
-          {{{truncate description 180}}} <a href="/support/funding/carers-act-transformation-support-fund/projects/{{Id}}/{{slugify title}}">Read more</a>
+          {{{truncate description 180}}} <a href="/funding/carers-act-transformation-support-fund/projects/{{Id}}/{{slugify title}}">Read more</a>
           {{else}}
           {{#if description_alt}}
-          {{{truncate description_alt 180}}} <a href="/support/funding/carers-act-transformation-support-fund/projects/{{Id}}/{{slugify title}}">Read more</a>
+          {{{truncate description_alt 180}}} <a href="/funding/carers-act-transformation-support-fund/projects/{{Id}}/{{slugify title}}">Read more</a>
           {{/if}}
           {{/if}}
         </section>
@@ -60,7 +60,7 @@
               <span aria-hidden="true" class="far fa-calendar-alt"></span>
               <ul class="inline-list">
                 <li>
-                  <a href="/support/funding/carers-act-transformation-support-fund/projects?call={{slugify call}}">{{call}}</a>
+                  <a href="/funding/carers-act-transformation-support-fund/projects?call={{slugify call}}">{{call}}</a>
                 </li>
               </ul>
             </div>
@@ -71,7 +71,7 @@
               <ul class="inline-list">
                 {{#each individuals_supported ~}}
                 <li>
-                  <a href="/support/funding/carers-act-transformation-support-fund/projects?tag={{slugify this}}" class="chip bg-primary">{{this}}</a>
+                  <a href="/funding/carers-act-transformation-support-fund/projects?tag={{slugify this}}" class="chip bg-primary">{{this}}</a>
                 </li>
                 {{/each ~}}
               </ul>
