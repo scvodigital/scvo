@@ -1,0 +1,26 @@
+{
+  "name": "redirect_cyber",
+  "pattern": {
+    "old": "/digital/evolution/cyber-resilience(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "new": "/support/digital/evolution/cyber-resilience(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/funding/cyber-essentials-fund{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}

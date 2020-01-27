@@ -1,12 +1,12 @@
 {
   "name": "running_your_organisation_credit_union_credit_union_loan_repayment_calculator",
-  "pattern": "/running-your-organisation/credit-union/credit-union-loan-repayment-calculator",
+  "pattern": "/support/running-your-organisation/credit-union/credit-union-loan-repayment-calculator",
   "tasks": [
     {
       "name": "destination",
       "taskModule": "redirect",
       "config": {
-        "location": "/credit-union/loan-calculator",
+        "location": "/services/credit-union/loan-calculator",
         "statusCode": 301
       }
     }

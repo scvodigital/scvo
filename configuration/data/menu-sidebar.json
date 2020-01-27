@@ -377,32 +377,32 @@
 					},
 					{
 						"label": "Charter fund",
-						"path": "/support/digital/participation/charter-fund",
-						"route": "^/support/digital/participation/charter-fund$",
+						"path": "/funding/digital-participation-charter-fund",
+						"route": "^/funding/digital-participation-charter-fund$",
 						"secret_children": [{
 								"label": "Call for funding",
-								"path": "/support/digital/participation/charter-fund/call-for-funding",
-								"route": "^/support/digital/participation/charter-fund/call-for-funding$"
+								"path": "/funding/digital-participation-charter-fund/call-for-funding",
+								"route": "^/funding/digital-participation-charter-fund/call-for-funding$"
 							},
 							{
 								"label": "Key criteria",
-								"path": "/support/digital/participation/charter-fund/call-for-funding/key-criteria",
-								"route": "^/support/digital/participation/charter-fund/call-for-funding/key-criteria$"
+								"path": "/funding/digital-participation-charter-fund/call-for-funding/key-criteria",
+								"route": "^/funding/digital-participation-charter-fund/call-for-funding/key-criteria$"
 							},
 							{
 								"label": "FAQs",
-								"path": "/support/digital/participation/charter-fund/call-for-funding/faqs",
-								"route": "^/support/digital/participation/charter-fund/call-for-funding/faqs$"
+								"path": "/funding/digital-participation-charter-fund/call-for-funding/faqs",
+								"route": "^/funding/digital-participation-charter-fund/call-for-funding/faqs$"
 							},
 							{
 								"label": "Apply",
-								"path": "/support/digital/participation/charter-fund/apply",
-								"route": "^/support/digital/participation/charter-fund/apply$"
+								"path": "/funding/digital-participation-charter-fund/apply",
+								"route": "^/funding/digital-participation-charter-fund/apply$"
 							},
 							{
 								"label": "Projects",
-								"path": "/support/digital/participation/charter-fund/projects",
-								"route": "^/support/digital/participation/charter-fund/projects$"
+								"path": "/funding/digital-participation-charter-fund/projects",
+								"route": "^/funding/digital-participation-charter-fund/projects$"
 							}
 						]
 					},
@@ -498,27 +498,27 @@
 		"route": "^/policy$",
 		"children": [{
 			"label": "#EUareValued",
-			"path": "/policy/eu-are-valued",
-			"route": "^/policy/eu-are-valued$",
+			"path": "/policy/campaigns/eu-are-valued",
+			"route": "^/policy/campaigns/eu-are-valued$",
 			"children": [{
 					"label": "Background",
-					"path": "/policy/eu-are-valued/background",
-					"route": "^/policy/eu-are-valued/background"
+					"path": "/policy/campaigns/eu-are-valued/background",
+					"route": "^/policy/campaigns/eu-are-valued/background"
 				},
 				{
 					"label": "Applying for settled status",
-					"path": "/policy/eu-are-valued/applying-for-settled-status",
-					"route": "^/policy/eu-are-valued/applying-for-settled-status"
+					"path": "/policy/campaigns/eu-are-valued/applying-for-settled-status",
+					"route": "^/policy/campaigns/eu-are-valued/applying-for-settled-status"
 				},
 				{
 					"label": "Case studies",
-					"path": "/policy/eu-are-valued/case-studies",
-					"route": "^/policy/eu-are-valued/case-studies"
+					"path": "/policy/campaigns/eu-are-valued/case-studies",
+					"route": "^/policy/campaigns/eu-are-valued/case-studies"
 				},
 				{
 					"label": "Challenging hate crime",
-					"path": "/policy/eu-are-valued/challenging-hate-crime",
-					"route": "^/policy/eu-are-valued/challenging-hate-crime"
+					"path": "/policy/campaigns/eu-are-valued/challenging-hate-crime",
+					"route": "^/policy/campaigns/eu-are-valued/challenging-hate-crime"
 				}
 			]
 		}]
@@ -939,96 +939,96 @@
 					},
 					{
 						"label": "Community Capacity and Resilience Fund",
-						"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund",
-						"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund$",
+						"path": "/funding/community-capacity-resilience-fund",
+						"route": "^/funding/community-capacity-resilience-fund$",
 						"children": [{
 								"label": "Introduction",
-								"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund/introduction-ccrf-round-5",
-								"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund/introduction-ccrf-round-5$"
+								"path": "/funding/community-capacity-resilience-fund/introduction-ccrf-round-5",
+								"route": "^/funding/community-capacity-resilience-fund/introduction-ccrf-round-5$"
 							}, {
 								"label": "Key dates",
-								"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund/key-dates",
-								"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund/key-dates$"
+								"path": "/funding/community-capacity-resilience-fund/key-dates",
+								"route": "^/funding/community-capacity-resilience-fund/key-dates$"
 							}, {
 								"label": "Criteria & eligibility",
-								"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund/criteria",
-								"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund/criteria$"
+								"path": "/funding/community-capacity-resilience-fund/criteria",
+								"route": "^/funding/community-capacity-resilience-fund/criteria$"
 							},
 							{
 								"label": "Application form guidance notes",
-								"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund/guidance",
-								"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund/guidance$"
+								"path": "/funding/community-capacity-resilience-fund/guidance",
+								"route": "^/funding/community-capacity-resilience-fund/guidance$"
 							},
 							{
 								"label": "Project ideas",
-								"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund/project-ideas",
-								"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund/project-ideas$"
+								"path": "/funding/community-capacity-resilience-fund/project-ideas",
+								"route": "^/funding/community-capacity-resilience-fund/project-ideas$"
 							},
 							{
 								"label": "Hints & tips",
-								"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund/application-hints-tips",
-								"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund/application-hints-tips$"
+								"path": "/funding/community-capacity-resilience-fund/application-hints-tips",
+								"route": "^/funding/community-capacity-resilience-fund/application-hints-tips$"
 							},
 							{
 								"label": "Frequently asked questions",
-								"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund/faqs",
-								"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund/faqs$"
+								"path": "/funding/community-capacity-resilience-fund/faqs",
+								"route": "^/funding/community-capacity-resilience-fund/faqs$"
 							},
 							{
 								"label": "Apply",
-								"path": "/support/running-your-organisation/funding/community-capacity-resilience-fund/apply",
-								"route": "^/support/running-your-organisation/funding/community-capacity-resilience-fund/apply$"
+								"path": "/funding/community-capacity-resilience-fund/apply",
+								"route": "^/funding/community-capacity-resilience-fund/apply$"
 							}
 						]
 					},
 					{
 						"label": "Carers Act Transformation Support Fund",
-						"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund",
-						"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund$",
+						"path": "/support/funding/carers-act-transformation-support-fund",
+						"route": "^/support/funding/carers-act-transformation-support-fund$",
 						"secret_children": [{
 								"label": "Application process",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/application-process",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/application-process$"
+								"path": "/support/funding/carers-act-transformation-support-fund/application-process",
+								"route": "^/support/funding/carers-act-transformation-support-fund/application-process$"
 							},
 							{
 								"label": "Key dates",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/key-dates",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/key-dates$"
+								"path": "/support/funding/carers-act-transformation-support-fund/key-dates",
+								"route": "^/support/funding/carers-act-transformation-support-fund/key-dates$"
 							},
 							{
 								"label": "Eligibility criteria",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/eligibility-criteria",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/eligibility-criteria$"
+								"path": "/support/funding/carers-act-transformation-support-fund/eligibility-criteria",
+								"route": "^/support/funding/carers-act-transformation-support-fund/eligibility-criteria$"
 							},
 							{
 								"label": "Activity criteria",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/activity-criteria",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/activity-criteria$"
+								"path": "/support/funding/carers-act-transformation-support-fund/activity-criteria",
+								"route": "^/support/funding/carers-act-transformation-support-fund/activity-criteria$"
 							},
 							{
 								"label": "Grant awards",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/grant-awards",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/grant-awards$"
+								"path": "/support/funding/carers-act-transformation-support-fund/grant-awards",
+								"route": "^/support/funding/carers-act-transformation-support-fund/grant-awards$"
 							},
 							{
 								"label": "Guidance on completing the application form",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/guidance-on-completing-the-application-form",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/guidance-on-completing-the-application-form$"
+								"path": "/support/funding/carers-act-transformation-support-fund/guidance-on-completing-the-application-form",
+								"route": "^/support/funding/carers-act-transformation-support-fund/guidance-on-completing-the-application-form$"
 							},
 							{
 								"label": "Hints & tips",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/hints-tips",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/hints-tips$"
+								"path": "/support/funding/carers-act-transformation-support-fund/hints-tips",
+								"route": "^/support/funding/carers-act-transformation-support-fund/hints-tips$"
 							},
 							{
 								"label": "FAQs",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/faqs",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/faqs$"
+								"path": "/support/funding/carers-act-transformation-support-fund/faqs",
+								"route": "^/support/funding/carers-act-transformation-support-fund/faqs$"
 							},
 							{
 								"label": "Apply",
-								"path": "/support/running-your-organisation/funding/carers-act-transformation-support-fund/apply",
-								"route": "^/support/running-your-organisation/funding/carers-act-transformation-support-fund/apply$"
+								"path": "/support/funding/carers-act-transformation-support-fund/apply",
+								"route": "^/support/funding/carers-act-transformation-support-fund/apply$"
 							}
 						]
 					},
