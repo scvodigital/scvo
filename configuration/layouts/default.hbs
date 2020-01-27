@@ -21,7 +21,7 @@
           <section class="navbar-section">
             <div class="form-horizontal hide-lg">
               {{> site_search_form}}
-              <a href="/services/membership" class="btn btn-primary btn-lg btn-cta float-right">Join our community</a>
+              <a href="/about/membership" class="btn btn-primary btn-lg btn-cta float-right">Join our community</a>
             </div>
             <div class="mobile-header-buttons show-lg">
               <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
@@ -320,58 +320,7 @@
         </aside>
       </div>
 
-      {{#if layoutParts.fullWidthBody ~}}
-      {{{layoutParts.header}}}
-      {{{layoutParts.fullWidthBody}}}
-      {{{layoutParts.footer}}}
-      {{{layoutParts.fullWidthFooter}}}
-      {{else}}
-      {{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
-      <div class="sidebar-present container">
-        {{{layoutParts.header}}}
-        <div class="columns">
-          {{#ifAll layoutParts.leftSidebar layoutParts.rightSidebar ~}}
-          <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
-            {{{layoutParts.leftSidebar}}}
-          </aside>
-          <main class="body column col-xs-auto">
-            {{{layoutParts.body}}}
-          </main>
-          <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
-            {{{layoutParts.rightSidebar}}}
-          </aside>
-          {{else}}
-          {{#if layoutParts.leftSidebar ~}}
-          <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
-            {{{layoutParts.leftSidebar}}}
-          </aside>
-          <main class="body column col-xs-auto">
-            {{{layoutParts.body}}}
-          </main>
-          {{else}}
-          <main class="body column col-xs-auto">
-            {{{layoutParts.body}}}
-          </main>
-          <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
-            {{{layoutParts.rightSidebar}}}
-          </aside>
-          {{/if ~}}
-          {{/ifAll ~}}
-        </div>
-        {{{layoutParts.footer}}}
-      </div>
-      {{{layoutParts.fullWidthFooter}}}
-      {{else}}
-      <div class="sidebar-not-present container">
-        {{{layoutParts.header}}}
-        <main class="body">
-          {{{layoutParts.body}}}
-        </main>
-        {{{layoutParts.footer}}}
-      </div>
-      {{{layoutParts.fullWidthFooter}}}
-      {{/ifAny ~}}
-      {{/if ~}}
+      {{> layout_body}}
 
       {{> layout_footer}}
     </div>

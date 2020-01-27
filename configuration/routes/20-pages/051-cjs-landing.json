@@ -54,9 +54,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
+              "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.jobs_cjs_landing-header",
-              "fullWidthBody": ">context.metaData.handlebars.templates.jobs_cjs_landing-body",
+              "body": ">context.metaData.handlebars.templates.jobs_cjs_landing-body",
               "footer": ">context.metaData.handlebars.templates.jobs_cjs_footer"
             },
             "contentType": "text/html"

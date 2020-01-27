@@ -19,6 +19,37 @@
 				"route": "^/about/staff-team"
 			},
 			{
+				"label": "Membership",
+				"path": "/about/membership",
+				"route": "^/about/membership$",
+				"children": [{
+						"label": "Membership review",
+						"path": "/about/membership/review",
+						"route": "^/about/membership/review"
+					},
+					{
+						"label": "Membership eligibility",
+						"path": "/about/membership/eligibility",
+						"route": "^/about/membership/eligibility"
+					},
+					{
+						"label": "Member benefits",
+						"path": "/about/membership/benefits",
+						"route": "^/about/membership/benefits"
+					},
+					{
+						"label": "Join us",
+						"path": "/about/membership/join",
+						"route": "^/about/membership/join"
+					},
+					{
+						"label": "FAQ",
+						"path": "/about/membership/faq",
+						"route": "^/about/membership/faq"
+					}
+				]
+			},
+			{
 				"label": "Our members",
 				"path": "/about/members",
 				"route": "^/about/members"
@@ -1055,42 +1086,6 @@
 				]
 			}
 		]
-	}],
-	"services-membership": [{
-		"label": "Services",
-		"path": "/services",
-		"route": "^/services$",
-		"children": [{
-			"label": "Membership",
-			"path": "/services/membership",
-			"route": "^/services/membership$",
-			"children": [{
-					"label": "Membership review",
-					"path": "/services/membership/review",
-					"route": "^/services/membership/review"
-				},
-				{
-					"label": "Membership eligibility",
-					"path": "/services/membership/eligibility",
-					"route": "^/services/membership/eligibility"
-				},
-				{
-					"label": "Member benefits",
-					"path": "/services/membership/benefits",
-					"route": "^/services/membership/benefits"
-				},
-				{
-					"label": "Join us",
-					"path": "/services/membership/join",
-					"route": "^/services/membership/join"
-				},
-				{
-					"label": "FAQ",
-					"path": "/services/membership/faq",
-					"route": "^/services/membership/faq"
-				}
-			]
-		}]
 	}],
 	"setting-up-a-charity": [{
 		"label": "Setting up a charity",

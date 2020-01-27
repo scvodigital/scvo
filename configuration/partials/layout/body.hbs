@@ -1,0 +1,47 @@
+{{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
+<div class="sidebar-present{{#compare layoutParts.style 'fullWidth'}} bg-white{{/compare}}">
+  <div class="container">
+    {{{layoutParts.header}}}
+    <div class="columns">
+      {{#ifAll layoutParts.leftSidebar layoutParts.rightSidebar ~}}
+      <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
+        {{{layoutParts.leftSidebar}}}
+      </aside>
+      <main class="body column col-xs-auto">
+        {{{layoutParts.body}}}
+      </main>
+      <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
+        {{{layoutParts.rightSidebar}}}
+      </aside>
+      {{else}}
+      {{#if layoutParts.leftSidebar ~}}
+      <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
+        {{{layoutParts.leftSidebar}}}
+      </aside>
+      <main class="body column col-xs-auto">
+        {{{layoutParts.body}}}
+      </main>
+      {{else}}
+      <main class="body column col-xs-auto">
+        {{{layoutParts.body}}}
+      </main>
+      <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
+        {{{layoutParts.rightSidebar}}}
+      </aside>
+      {{/if ~}}
+      {{/ifAll ~}}
+    </div>
+  </div>
+  {{{layoutParts.footer}}}
+</div>
+{{else}}
+<div class="sidebar-not-present">
+  <div class="{{#unless (compare layoutParts.style 'fullWidth')}}container{{/unless}}">
+    {{{layoutParts.header}}}
+    <main class="body">
+      {{{layoutParts.body}}}
+    </main>
+  </div>
+  {{{layoutParts.footer}}}
+</div>
+{{/ifAny ~}}

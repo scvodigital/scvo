@@ -419,6 +419,10 @@ a:hover {
 .sidebar .menu .menu-item>a:hover {
   // background-color: $primary-color;
 }
+.sidebar-left,
+.sidebar-right {
+  padding-top: $unit;
+}
 .goodmoves-vacancies a,
 .bg-secondary a,
 footer .footer-main a {

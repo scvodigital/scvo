@@ -67,10 +67,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
+              "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.funding_landing-header",
-              "fullWidthBody": ">context.metaData.handlebars.templates.funding_landing-body",
-              "fullWidthFooter": ">context.metaData.handlebars.templates.page-footer"
+              "body": ">context.metaData.handlebars.templates.funding_landing-body",
+              "footer": ">context.metaData.handlebars.templates.page-footer"
             },
             "contentType": "text/html"
           }

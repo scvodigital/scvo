@@ -73,9 +73,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
+              "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.policy_landing-header",
-              "fullWidthBody": ">context.metaData.handlebars.templates.policy_landing-body"
+              "body": ">context.metaData.handlebars.templates.policy_landing-body"
             },
             "contentType": "text/html"
           }
