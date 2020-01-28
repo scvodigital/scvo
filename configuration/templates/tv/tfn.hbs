@@ -7,28 +7,23 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'>
-  <style type="text/css">
-  @font-face {
-    font-family: 'Asap';
-    src: url('{{~>asset_url url='fonts/Asap-Bold.eot'~}}');
-    src: url('{{~>asset_url url='fonts/Asap-Bold.eot?#iefix'~}}') format('embedded-opentype'),
-    url('{{~>asset_url url='fonts/Asap-Bold.woff2'~}}') format('woff2'),
-    url('{{~>asset_url url='fonts/Asap-Bold.woff'~}}') format('woff'),
-    url('{{~>asset_url url='fonts/Asap-Bold.ttf'~}}') format('truetype'),
-    url('{{~>asset_url url='fonts/Asap-Bold.svg#Asap-Bold'~}}') format('svg');
-    font-weight: bold;
-    font-style: normal;
-  }
-  </style>
+
+  {{> layout_fonts}}
+
   <style>
   :root {
     --main-white-color: white;
     --main-black-color: black;
   }
   body {
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
     width: 100vw;
     background-color: rgba(59,157,177,1);
+  }
+  li,
+  span,
+  div,
+  p {
+    font-family: 'Ingra';
   }
 
   * {

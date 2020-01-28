@@ -392,7 +392,7 @@ a:visited {
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
-  transition: background-size $transition-speed, color $transition-speed, border $transition-speed;
+  transition: background-size $transition-speed, color $transition-speed, border $transition-speed, background-color $transition-speed;
   // padding-top: 1px;
   // padding-bottom: $thick-line;
 }
@@ -444,7 +444,8 @@ ol li a:hover,
 .sidebar .menu .menu-item>a:focus,
 .sidebar .menu .menu-item>a:hover {
   color: $primary-color;
-  border-bottom: $thick-line solid $primary-color;
+  // border-bottom: $thick-line solid $primary-color;
+  border-bottom-color: transparent;
   background: none;
 }
 footer a:hover {
@@ -1545,10 +1546,15 @@ header.toolbar {
     border-radius: 0;
     line-height: 1.1rem;
     height: 1.5rem;
+    transition: background-color 0.1s, color 0.1s;
   }
   .btn:hover,
-  .btn:focus,
-  .btn.active {
+  .btn:focus {
+    background-color: $secondary-color-light;
+    color: white;
+  }
+  .btn.active,
+  .btn.active:hover {
     background-color: $primary-color;
     color: white;
   }
@@ -2218,6 +2224,7 @@ footer {
 }
 .no-margin {
   margin: 0 !important;
+  padding: 0 !important;
 }
 .border {
   border-style: solid;
