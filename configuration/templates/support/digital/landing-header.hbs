@@ -1,6 +1,17 @@
-  {{> breadcrumbs_cms_page}}
-
-  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-  <h1>{{{title}}}</h1>
-  {{{content}}}
-  {{/with ~}}
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+<div class="container">
+  <div class="hero">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column col-8 col-lg-7 col-md-12 hero-text">
+          <h1 class="text-secondary">Digital</h1>
+          <h3 class="text-secondary l-margin-full t-margin-full">We’re helping people and organisations in Scotland develop their digital potential</h3>
+        </div>
+        <div class="column col-4 col-lg-5 col-md-12 hero-illustration">
+          <img src="{{~>asset_url url='images/home/scvo_motheroftwo_montage_11.png'~}}" alt="Illustration of a group of people" class="img-responsive" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if ~}}

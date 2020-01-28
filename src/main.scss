@@ -400,6 +400,9 @@ h4 a:visited,
   // color: $secondary-color;
   border-bottom: $thick-line solid transparent;
 }
+.btn {
+  border: 1px solid $primary-color;
+}
 .sidebar .menu .menu-item>a:focus,
 .sidebar .menu .menu-item>a:hover,
 h1 a:hover,
@@ -469,6 +472,24 @@ footer .footer-copyright a:hover {
   background: white;
   color: $primary-color;
   border-color: $primary-color;
+}
+.bg-primary {
+  .btn {
+    border: 1px solid white;
+    background-color: $primary-color;
+    color: white;
+  }
+  .btn.btn-primary {
+    border: 1px solid white;
+    background-color: white;
+    color: $primary-color;
+  }
+  .btn:hover,
+  .btn.btn-primary:hover {
+    border: 1px solid white;
+    background-color: white;
+    color: $primary-color;
+  }
 }
 .breadcrumb .breadcrumb-item a,
 .pagination a,
@@ -989,9 +1010,12 @@ a.no-underline:hover {
     .btn {
       background-color: $secondary-color;
       border-color: $secondary-color;
+      color: white;
     }
     .btn:hover {
       background-color: $secondary-color-dark;
+      border-color: $secondary-color-dark;
+      color: white;
     }
   }
 }
@@ -1774,11 +1798,6 @@ form {
     //   font-weight: $heading-link-weight;
     // }
   }
-}
-
-.body,
-.sidebar {
-  padding-bottom: $unit*2;
 }
 
 .sidebar {
