@@ -36,14 +36,14 @@ $border-radius: 6px;
 $heading-font-family: 'Asap';
 $heading-font-weight: 800;
 $heading-link-weight: 600;
+$body-font-family: 'Ingra';
 $body-font-weight: 400;
-$body-font-family: 'Lato';
-$body-link-weight: 400;
+$body-link-weight: 600;
 $page-width: 1400px;
 $home-splash-height: 25vh;
 $transition-speed: .3s;
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400,600&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,600&display=swap');
 
 @import "../node_modules/spectre.css/src/spectre";
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
@@ -385,7 +385,7 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: $body-link-weight;
   color: $secondary-color;
   // border-bottom: $thick-line solid lighten($secondary-color,50%);
   background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
@@ -1226,7 +1226,7 @@ aside {
   a[href^="https://"]::after {
     font-family: 'Font Awesome\ 5 Pro';
     content: "\f08e";
-    font-weight: 600;
+    font-weight: $body-link-weight;
     margin-left: $unit/4;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
