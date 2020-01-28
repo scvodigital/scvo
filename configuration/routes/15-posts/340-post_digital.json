@@ -1,6 +1,7 @@
 {
   "name": "post_digital",
-  "pattern": "/support/digital/blogs",
+  "debug": true,
+  "pattern": "/support/digital/posts",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -14,8 +15,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-page",
-          "template": ">context.metaData.handlebars.queries.pages_page",
-          "noResultsRoute": "four_oh_four"
+          "template": ">context.metaData.handlebars.queries.pages_page"
         }
       },
       "renderer": "handlebars"

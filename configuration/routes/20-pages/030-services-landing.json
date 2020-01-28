@@ -21,6 +21,7 @@
       },
       "renderer": "handlebars"
     },
+    "context.metaData.commonTasks.postsLatest",
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
@@ -35,12 +36,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "goodmoves-vacancy",
             "template": ">context.metaData.handlebars.queries.jobs_home-goodmoves-vacancy-list"
-          },
-          {
-            "name": "posts_related",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.pages_posts-random"
           },
           {
             "name": "tfn_latest",

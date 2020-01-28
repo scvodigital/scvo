@@ -475,6 +475,7 @@ a:hover {
   padding-top: $unit;
 }
 .goodmoves-vacancies a,
+.bg-primary a,
 .bg-secondary a,
 footer .footer-main a {
   color: white;
@@ -491,6 +492,7 @@ footer .footer-main a {
   border-bottom: $thick-line solid white;
   // background-size: $thick-line 50px;
 }
+.bg-primary a:hover,
 .bg-secondary a:hover,
 footer .footer-main a:hover {
   // border-bottom-color: white;
@@ -1093,6 +1095,7 @@ a.no-underline:hover {
 .text-secondary {
   color: $secondary-color !important;
 }
+.bg-primary,
 .bg-secondary {
   p,
   div,
@@ -1191,6 +1194,7 @@ a.pure-menu-link:hover {
 .chip {
   color: $secondary-color-dark !important;
   background-color: lighten($secondary-color-light, 23%);
+  margin-top: -0.1rem;
 }
 .chip:hover {
   color: white !important;
@@ -1631,7 +1635,7 @@ blockquote {
   margin: 0;
   .supplimentary-list-item {
     list-style-type: none;
-    margin-bottom: $unit;
+    margin-bottom: $unit*2;
   }
 }
 .inline-list {
@@ -1736,6 +1740,7 @@ blockquote {
   margin-bottom: $unit/2;
 }
 .post-info {
+  margin: $unit/2 0;
   .post-info-item {
     display: inline;
     margin-left: $unit/4;
@@ -2222,6 +2227,7 @@ footer {
 .x-margin-full {
   margin: $unit !important;
 }
+figure,
 .no-margin {
   margin: 0 !important;
   padding: 0 !important;
@@ -2466,7 +2472,7 @@ footer {
   }
   img {
     opacity: .85;
-    transition: opacity .3s ease-in-out;
+    transition: opacity $transition-speed ease-in-out;
   }
   img:hover {
     opacity: 1;

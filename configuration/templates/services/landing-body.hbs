@@ -1,25 +1,76 @@
 <div class="bg-white">
-  <div class="container t-padding-full">
-    <div class="columns">
+  <div class="container v-padding-full">
+    <div class="columns v-padding-full">
       <div class="column col-8 col-lg-12">
-        {{> page_full @root.data.primaryResponse.hits.hits.[0]._source}}
+        {{!-- {{> page_full @root.data.primaryResponse.hits.hits.[0]._source}} --}}
+        {{!-- <h3>Supporting your organisation</h3> --}}
+        <div class="equal-height linked-cards">
+          <div class="columns">
+            <div class="column col-6 col-md-12">
+              <div class="card green mdc-card office-space">
+                <section class="card-header">
+                  <h1 class="card-title"><a href="/services/office-space"><span class="fal fa-fw fa-building fa-2x">&nbsp;</span>Office and meeting space</a></h1>
+                </section>
+                <section class="card-body">Join us in one of our affordable shared office space locations in Glasgow, Edinburgh and Inverness.</section>
+                <section class="card-footer"><a class="btn btn-link" href="/services/office-space">Find out more</a></section>
+              </div>
+            </div>
+            <div class="column col-6 col-md-12">
+              <div class="card pink mdc-card managed-it">
+                <section class="card-header">
+                  <h1 class="card-title"><a href="/services/managed-it"><span class="fal fa-fw fa-desktop fa-2x">&nbsp;</span>Managed IT</a></h1>
+                </section>
+                <section class="card-body">The SCVO IT Service offers a broad range of expertise to bring you the right technological solutions and support to help you in your day-to-day work.</section>
+                <section class="card-footer"><a class="btn btn-link" href="/services/managed-it">Find out more</a></section>
+              </div>
+            </div>
+            <div class="column col-6 col-md-12">
+              <div class="card primary mdc-card payroll">
+                <section class="card-header">
+                  <h1 class="card-title"><a href="/services/payroll"><span class="fal fa-fw fa-list-alt fa-2x">&nbsp;</span>Payroll</a></h1>
+                </section>
+                <section class="card-body">Professional and friendly service, dealing with all aspects of payroll – from management reporting and issuing P60s to dealing with sick and maternity leave.</section>
+                <section class="card-footer"><a class="btn btn-link" href="/services/payroll">Find out more</a></section>
+              </div>
+            </div>
+            <div class="column col-6 col-md-12">
+              <div class="card secondary mdc-card credit-union">
+                <section class="">
+                  <h1 class="card-title"><a href="/services/credit-union"><span class="hidden">Credit Union</span></a></h1>
+                </section>
+                <section class="card-body">The SCVO Credit Union is Scotland’s leading voluntary sector credit union. It offers low-cost loans, easy savings facilities, payroll deduction and quick bank transfers.</section>
+                <section class="card-footer"><a class="btn btn-link" href="/services/credit-union">Find out more</a></section>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{!-- <h3>Business partners</h3>
+        <div class="equal-height linked-cards">
+          <div class="columns">
+            <div class="column col-6 col-md-12">
+              <div class="card gray mdc-card insurance">
+                <section class="card-header">
+                  <h1 class="card-title"><a href="/services/insurance"><span class="fal fa-fw fa-shield-check fa-2x">&nbsp;</span>Insurance</a></h1>
+                </section>
+                <section class="card-body">Keegan and Pennykid provide professional and independent advice to the voluntary sector</section>
+                <section class="card-footer"><a class="btn btn-link" href="/services/insurance">Find out more</a></section>
+              </div>
+            </div>
+          </div>
+        </div> --}}
       </div>
       <div class="column col-4 col-lg-12">
-        {{!-- <img src="{{~>asset_url url='images/home/scvo_motheroftwo_montage_11.png'~}}" class="img-responsive" /> --}}
-
-        {{!-- <br /> --}}
-        {{> goodmoves_latest_jobs}}
-
+        {{> tfn_latest}}
         <br />
-        {{> tfn_post_latest_posts}}
+        {{> goodmoves_latest}}
 
-        <div class="columns t-margin">
+        {{!-- <div class="columns t-margin">
           <div class="column col-9 col-ml-auto">
             <div class="divider v-margin-full"></div>
 
             {{> sidebars_running}}
           </div>
-        </div>
+        </div> --}}
       </div>
     </div>
   </div>

@@ -41,9 +41,10 @@
       "must": [
         {
           "terms": {
-            "categories_id": [
-              9,
-              510
+            "post_tags_slug": [
+              "digital-participation",
+              "digital-evolution",
+              "digital-research"
             ]
           }
         }

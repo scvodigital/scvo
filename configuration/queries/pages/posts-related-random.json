@@ -12,19 +12,30 @@
     "is_press_release",
     "author_slug",
     "author_name_full",
+    "og_image",
     "author_avatar",
     "staff_profile",
     "og_image",
     "categories",
     "categories_slug",
     "post_tags",
-    "post_tags_slug"
+    "post_tags_slug",
+    "post_slug"
   ],
   "query": {
     "function_score": {
       "query": {
         "bool": {
           "must_not": [
+            {{#if @root.data.postsLatest ~}}
+            {
+              "terms": {
+                "wpid": [
+                  {{#eachJoin (distinct (pluck @root.data.postsLatest.hits.hits "_source.wpid")) "," ~}}{{{stringify this}}}{{/eachJoin}}
+                ]
+              }
+            },
+            {{/if ~}}
             {
               "term": {
                 "hide_in_results": true
@@ -69,10 +80,10 @@
               "_type": "scvo-post"
             }
           },
-          "weight": 3,
+          "weight": 2,
           "gauss": {
             "publish_on": {
-              "scale": "30d",
+              "scale": "180d",
               "decay": 0.1
             }
           }
