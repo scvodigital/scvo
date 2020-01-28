@@ -1,8 +1,8 @@
 $primary-color: #FF595A;
-$primary-color-light: lighten($primary-color, 30%) !default;
+$primary-color-light: lighten($primary-color, 25%) !default;
 $primary-color-dark: #C5143D;
 $secondary-color: #244B5A;
-$secondary-color-light: lighten($secondary-color, 30%) !default;
+$secondary-color-light: lighten($secondary-color, 10%) !default;
 $secondary-color-dark: darken($secondary-color, 10%) !default;
 $secondary-color-dark-var: 152d36;
 $dark-color: #203139;
@@ -29,8 +29,8 @@ $purple-color: #CCBFDF;
 $pink-color: #FEB3B4;
 
 $unit: 1rem;
-$padding: .4rem;
-$thick-line: 4px;
+$padding: 1.2rem;
+$thick-line: 5px;
 $thin-line: 0.05rem;
 $border-radius: 6px;
 $heading-font-family: 'Asap';
@@ -41,7 +41,7 @@ $body-font-family: 'Lato';
 $body-link-weight: 400;
 $page-width: 1400px;
 $home-splash-height: 25vh;
-$transition-speed: .2s;
+$transition-speed: .3s;
 
 @import url('https://fonts.googleapis.com/css?family=Lato:400,600&display=swap');
 
@@ -59,7 +59,7 @@ $transition-speed: .2s;
 }
 
 .container {
-  padding: 0 $unit*2;
+  padding: 0 $padding*2;
   // padding: 0;
   margin: 0 auto;
   max-width: $page-width;
@@ -74,6 +74,15 @@ $transition-speed: .2s;
     }
   }
 }
+.columns {
+  margin-left: -($padding);
+  margin-right: -($padding);
+  .column {
+    padding-left: $padding;
+    padding-right: $padding;
+  }
+}
+
 body,
 .footer-copyright {
   background-color: $bg-color;
@@ -165,7 +174,6 @@ body,
   }
 }
 
-
 html {
   overflow: -moz-scrollbars-vertical;
   overflow-y: scroll;
@@ -214,7 +222,7 @@ h2 {
 .mdc-card__title,
 .card-title.h3,
 h3 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: $heading-font-weight;
   a {
     font-weight: $heading-font-weight;
@@ -379,44 +387,83 @@ a:visited {
   text-decoration: none;
   font-weight: 600;
   color: $secondary-color;
-  border-bottom: $thick-line solid $secondary-color;
-  // background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
-  // background-position: 0 100%;
-  // background-repeat: repeat-x;
-  // background-size: $thick-line $thick-line;
-  transition: border $transition-speed, color $transition-speed, background-color $transition-speed;
+  // border-bottom: $thick-line solid lighten($secondary-color,50%);
+  background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: $thick-line $thick-line;
+  transition: background-size $transition-speed, color $transition-speed, border $transition-speed;
   // padding-top: 1px;
   // padding-bottom: $thick-line;
 }
 h1 a:link,
 h1 a:visited,
+.h1 a:link,
+.h1 a:visited,
 h2 a:link,
 h2 a:visited,
+.h2 a:link,
+.h2 a:visited,
 h3 a:link,
 h3 a:visited,
+.h3 a:link,
+.h3 a:visited,
 h4 a:link,
 h4 a:visited,
+.h4 a:link,
+.h4 a:visited,
+h5 a:link,
+h5 a:visited,
+.h5 a:link,
+.h5 a:visited,
+.post-info a:link,
+.post-info a:visited,
+ul li a:link,
+ul li a:visited,
+ol li a:link,
+ol li a:visited,
+footer a:link,
+footer a:visited,
 .sidebar .menu .menu-item>a {
-  // color: $secondary-color;
   border-bottom: $thick-line solid transparent;
+  background: none;
+}
+h1 a:hover,
+.h1 a:hover,
+h2 a:hover,
+.h2 a:hover,
+h3 a:hover,
+.h3 a:hover,
+h4 a:hover,
+.h4 a:hover,
+h5 a:hover,
+.h5 a:hover,
+.post-info a:hover,
+ul li a:hover,
+ol li a:hover,
+.sidebar .menu .menu-item>a:focus,
+.sidebar .menu .menu-item>a:hover {
+  color: $primary-color;
+  border-bottom: $thick-line solid $primary-color;
+  background: none;
+}
+footer a:hover {
+  color: white;
+  border-bottom: $thick-line solid white;
+  background: none;
 }
 .btn {
   border: 1px solid $primary-color;
 }
-.sidebar .menu .menu-item>a:focus,
-.sidebar .menu .menu-item>a:hover,
-h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
 a:hover {
   text-decoration: none;
-  color: $primary-color;
-  background: transparent;
+  // color: $primary-color;
+  // background: transparent;
   // color: white;
-  // background: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%);
-  // background-size: $thick-line $thick-line;
-  border-bottom-color: $primary-color;
+  // color: $secondary-color;
+  // background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
+  background-size: $thick-line 50px;
+  // border-bottom-color: $secondary-color-light;
 }
 .sidebar .menu .menu-item>a:focus,
 .sidebar .menu .menu-item>a:hover {
@@ -431,6 +478,7 @@ a:hover {
 footer .footer-main a {
   color: white;
   border-bottom: $thick-line solid transparent;
+  background: none;
   // background: linear-gradient(to bottom, white 0%, white 100%);
   // background-position: 0 100%;
   // background-repeat: repeat-x;
@@ -463,15 +511,31 @@ footer .footer-copyright a:hover {
   border-bottom: $thick-line solid $secondary-color;
   // background-size: $thick-line 50px;
 }
+footer .footer-copyright a.scvo-logo {
+  border: none;
+}
 .btn.btn-primary {
   border-color: $primary-color;
   border-bottom-width: $thin-line !important;
-  transition: background $transition-speed, color $transition-speed !important;
+  transition: background $transition-speed, border $transition-speed, color $transition-speed !important;
 }
+.wp-block-file__button,
+.post-info a:link.chip,
+.post-info a:visited.chip,
+.chip.bg-primary {
+  color: white !important;
+  background-color: $primary-color;
+  border: $thin-line solid $primary-color;
+  transition: background $transition-speed, border $transition-speed, color $transition-speed;
+  border-bottom-width: $thin-line;
+}
+.wp-block-file__button:hover,
+.chip.bg-primary:hover,
+a.chip:hover,
 .btn.btn-primary:hover {
-  background: white;
-  color: $primary-color;
-  border-color: $primary-color;
+  color: white !important;
+  background: $secondary-color-light !important;
+  border-color: $secondary-color-light !important;
 }
 .bg-primary {
   .btn {
@@ -493,9 +557,9 @@ footer .footer-copyright a:hover {
 }
 .breadcrumb .breadcrumb-item a,
 .pagination a,
-footer .footer-copyright a.scvo-logo,
 #scvo-tab-bar a,
 a.no-underline,
+footer .footer-copyright a.scvo-logo,
 a.navbar-brand,
 a.avatar,
 a.author,
@@ -505,7 +569,8 @@ a.chip {
   padding-top: 0;
   padding-bottom: 0;
   color: $primary-color;
-  border-bottom: none;
+  background: none;
+  // border-bottom: none;
 }
 .breadcrumb .breadcrumb-item a {
   border-bottom: none;
@@ -513,7 +578,6 @@ a.chip {
 .breadcrumb .breadcrumb-item a:hover,
 .pagination a:hover,
 .breadcrumb .breadcrumb-item a:hover,
-a.chip:hover,
 a.author:hover,
 a.no-underline:hover {
   color: $primary-color-dark !important;
@@ -554,7 +618,7 @@ a.no-underline:hover {
     align-items: center;
     justify-content: left;
     h1 {
-      font-size: 4.5rem;
+      font-size: 4.4rem;
       letter-spacing: -0.2rem;
       font-weight: $heading-font-weight;
       margin: 0;
@@ -1105,18 +1169,6 @@ a.no-underline:hover {
 
 .avatar.avatar-sm {
   margin-right: $unit/5;
-}
-.wp-block-file__button,
-.chip.bg-primary {
-  color: white !important;
-  background-color: $primary-color !important;
-  border: $thin-line solid $primary-color !important;
-  transition: background $transition-speed, color $transition-speed;
-}
-.wp-block-file__button:hover,
-.chip.bg-primary:hover {
-  color: $primary-color !important;
-  background-color: white !important;
 }
 a.rss {
   color: $warning-color;
@@ -1868,7 +1920,8 @@ footer {
     padding: 0 0 $unit*1.5;
     position: relative;
     .membership {
-      margin-top: -($unit*0.8);
+      margin-top: -($unit*3);
+      margin-bottom: $unit;
     }
     .contact p {
       margin-top: $unit/3;
