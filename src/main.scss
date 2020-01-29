@@ -346,7 +346,8 @@ h1.font-default,
     height: 2.5rem;
     width: 2.5rem;
     line-height: 2.5rem;
-    padding-left: .333rem;
+    padding-left: .4rem;
+    padding-right: .1rem;
     margin-right: 0;
     color: #ffffff;
     transition: background-image $transition-speed;
@@ -698,7 +699,7 @@ a.author:hover,
     justify-content: left;
     h1 {
       font-size: 4rem;
-      letter-spacing: -0.2rem;
+      letter-spacing: -0.15rem;
       font-weight: $heading-font-weight;
       margin: 0;
     }
@@ -753,9 +754,9 @@ a.author:hover,
 .card.gray,
 .card.green,
 .card.pink {
-  padding: $unit*1.5 $unit*1.25 $unit*1.25;
+  // padding: $unit*1.5 $unit*1.25 $unit*1.25;
   margin-bottom: $unit;
-  border: $thick-line solid transparent !important;
+  // border: $thick-line solid transparent !important;
   transition: background $transition-speed;
   .card-header {
     padding-top: 0;
@@ -770,25 +771,25 @@ a.author:hover,
     border-bottom: $thick-line solid transparent;
   }
 }
-.card.primary:hover,
-.card.secondary:hover,
-.card.yellow:hover,
-.card.blue:hover,
-.card.purple:hover,
-.card.gray:hover,
-.card.green:hover,
-.card.pink:hover {
-  background-color: white;
-  border-color: $primary-color !important;
-  color: $primary-color;
-  a {
-    color: $primary-color;
-    border-bottom: $thick-line solid $primary-color;
-  }
-  .card-body {
-    color: $secondary-color;
-  }
-}
+// .card.primary:hover,
+// .card.secondary:hover,
+// .card.yellow:hover,
+// .card.blue:hover,
+// .card.purple:hover,
+// .card.gray:hover,
+// .card.green:hover,
+// .card.pink:hover {
+//   background-color: white;
+//   border-color: $primary-color !important;
+//   color: $primary-color;
+//   a {
+//     color: $primary-color;
+//     border-bottom: $thick-line solid $primary-color;
+//   }
+//   .card-body {
+//     color: $secondary-color;
+//   }
+// }
 .policy-stats,
 .card.scvo-page.search-result,
 .card.scvo-post.search-result,
