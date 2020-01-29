@@ -5,7 +5,7 @@
     "title",
     "title_slug",
     "funder_organisation",
-    "date_last_important_activity"
+    "date_last_modified"
   ],
   "query": {
     "bool": {
@@ -19,6 +19,6 @@
     }
   },
   "sort": {
-    "date_last_important_activity": "desc"
+    "date_last_modified": "desc"
   }
 }

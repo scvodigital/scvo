@@ -1,12 +1,12 @@
 <div class="bg-white">
   <div class="container t-padding-full">
-    <div class="columns linked-cards">
+    <div class="columns linked-cards b-padding">
       <div class="column col-6 col-lg-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3">
+            <div class="card-title h2">
               <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website">
-                <span class="fal fa-fw fa-search-plus fa-2x">&nbsp;</span>
+                {{!-- <span class="fal fa-fw fa-search-plus fa-2x">&nbsp;</span> --}}
                 Search for funding
               </a>
             </div>
@@ -19,9 +19,9 @@
       <div class="column col-6 col-lg-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3">
+            <div class="card-title h2">
               <a href="https://fundingscotland.com/funder/001b000000SsxRDAAZ/scottish-council-for-voluntary-organisations?utm_source=scvo&utm_campaign=page&utm_medium=website">
-                <span class="fal fa-fw fa-chart-bar fa-2x">&nbsp;</span>
+                {{!-- <span class="fal fa-fw fa-chart-bar fa-2x">&nbsp;</span> --}}
                 Funding from SCVO
               </a>
             </div>
@@ -31,13 +31,13 @@
             <p>For details of the funds available right now, and information and evaluation of previously funded projects, see the following pages:</p>
             {{#each @root.data.supplimentaryResponses.scvo_funds.aggregations.funds.buckets ~}}
             {{#compare funds.hits.total ">" 0 ~}}
-            <h3>
+            <h4>
               {{#compare key "open"}}
               Open funds
               {{else}}
               Currently closed funds &amp; successful projects
               {{/compare ~}}
-            </h3>
+            </h4>
             <ul>
               {{#each funds.hits.hits ~}}
               {{#with _source ~}}
@@ -50,7 +50,7 @@
             <p>
               All our grants data are published openly via the <a href="http://www.threesixtygiving.org/support/standard/">360Giving Standard</a>.
             </p>
-            <h3>Supported Programmes</h3>
+            <h4>Supported Programmes</h4>
             <ul>
               <li><a href="/funding/benefit-take-up-and-income-maximisation-fund">Scottish Benefits Take-Up Fund and Scottish Income Maximisation Fund</a></li>
             </ul>
@@ -63,11 +63,11 @@
 
 {{#compare @root.data.supplimentaryResponses.recently_updated_funds.hits.total ">" 0 ~}}
 <div class="container">
-  <div class="columns">
-    <h3 class="blogs">
+  <div class="columns v-padding-full">
+    <h2 class="b-margin-full">
       Recently updated funds&ensp;
-      <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website" class="caption">Find more</a>
-    </h3>
+      <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website" class="caption">Find more funds</a>
+    </h2>
     <div class="columns">
       {{#each @root.data.supplimentaryResponses.recently_updated_funds.hits.hits ~}}
       <div class="column col-4 col-lg-6 col-md-12">

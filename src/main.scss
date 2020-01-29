@@ -200,6 +200,15 @@ body *::before {
   box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: $heading-link-weight;
+  letter-spacing: -0.05rem;
+  line-height: 1.2;
+  .caption {
+    font-size: 70%;
+  }
+}
 h1 {
   font-size: 2.3rem;
   margin: $unit/2 0 $unit;
@@ -208,25 +217,34 @@ h1 {
     font-weight: $heading-font-weight;
     border-bottom: none;
   }
+  .caption {
+    font-size: 1.2rem;
+  }
 }
 .mdc-typography--title,
 .card-title.h2,
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.55rem;
   font-weight: $heading-font-weight;
   a {
     font-weight: $heading-font-weight;
     border-bottom: none;
   }
+  .caption {
+    font-size: 1rem;
+  }
 }
 .mdc-card__title,
 .card-title.h3,
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: $heading-font-weight;
   a {
     font-weight: $heading-font-weight;
     border-bottom: none;
+  }
+  .caption {
+    font-size: 1rem;
   }
 }
 .staff-list h3 {
@@ -255,15 +273,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: $unit/2;
   a {
     font-weight: $heading-link-weight;
-  }
-}
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: $heading-link-weight;
-  letter-spacing: -0.05rem;
-  line-height: 1.2;
-  .caption {
-    font-size: 70%;
   }
 }
 h1,
@@ -518,6 +527,7 @@ footer .footer-copyright a.scvo-logo {
 .btn.btn-link,
 .btn.btn-primary {
   border-bottom-width: $thin-line !important;
+  line-height: 1.3rem;
 }
 a.btn:link,
 a.btn:visited {
@@ -1216,7 +1226,7 @@ a.pure-menu-link:hover {
 .chip {
   color: $secondary-color-dark !important;
   background-color: lighten($secondary-color-light, 23%);
-  margin-top: -0.1rem;
+  margin: -0.1rem 0;
 }
 .chip:hover {
   color: white !important;
