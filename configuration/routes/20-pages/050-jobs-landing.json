@@ -49,12 +49,6 @@
             "template": ">context.metaData.handlebars.queries.jobs_cjs-vacancy-list"
           },
           {
-            "name": "posts_related",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.pages_posts-random"
-          },
-          {
             "name": "related_training",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",

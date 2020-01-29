@@ -130,7 +130,7 @@
       "queryTemplates": {
         "index": "{$elasticsearch-index.txt}",
         "type": "scvo-post",
-        "template": ">context.metaData.handlebars.queries.posts_home-blog-post-list"
+        "template": ">context.metaData.handlebars.queries.posts_latest"
       }
     },
     "renderer": "handlebars"
@@ -146,7 +146,7 @@
       "queryTemplates": {
         "index": "{$elasticsearch-index.txt}",
         "type": "scvo-post",
-        "template": ">context.metaData.handlebars.queries.pages_posts-related-random"
+        "template": ">context.metaData.handlebars.queries.posts_related-random"
       }
     },
     "renderer": "handlebars"

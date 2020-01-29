@@ -42,12 +42,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "fs-fund",
             "template": ">context.metaData.handlebars.queries.funding_funding-latest"
-          },
-          {
-            "name": "posts_related",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.pages_posts-random"
           }
         ]
       },
@@ -72,7 +66,7 @@
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.funding_landing-header",
               "body": ">context.metaData.handlebars.templates.funding_landing-body",
-              "footer": ">context.metaData.handlebars.templates.page-footer"
+              "footer": ">context.metaData.handlebars.templates.funding_landing-footer"
             },
             "contentType": "text/html"
           }

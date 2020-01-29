@@ -52,6 +52,7 @@
               }
             }
           ],
+          {{#if @root.data.primaryResponse.hits.hits.[0]._source.categories_id ~}}
           "filter": [
             {
               "terms": {
@@ -61,6 +62,7 @@
               }
             }
           ],
+          {{/if ~}}
           "must": [
             {
               "more_like_this": {

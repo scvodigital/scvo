@@ -9,9 +9,15 @@
       {{#each (split "0,1,2,3" ",") ~}}
       {{#with (getProperty @root.data.postsRelated.hits.hits (concat this '._source')) ~}}
       <div class="column col-3 col-lg-6 col-sm-12">
-        <a href="/{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
-        <span class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span><br />
-        <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+        <div class="columns">
+          <div class="column col-3 col-md-4">
+            <a href="/{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
+          </div>
+          <div class="column col-9 col-md-8">
+            <span class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span><br />
+            <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+          </div>
+        </div>
       </div>
       {{/with ~}}
       {{/each ~}}
