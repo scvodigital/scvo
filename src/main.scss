@@ -595,19 +595,19 @@ footer .footer-copyright a.scvo-logo {
   border-color: $primary-color;
   transition: background $transition-speed, border $transition-speed, color $transition-speed !important;
 }
-.wp-block-file__button,
+a.wp-block-file__button,
 .post-info a:link.chip,
 .post-info a:visited.chip,
-.chip.bg-primary {
+a.chip.bg-primary {
   color: white !important;
   background-color: $primary-color;
   border: $thin-line solid $primary-color;
   transition: background $transition-speed, border $transition-speed, color $transition-speed;
   border-bottom-width: $thin-line;
 }
-.wp-block-file__button:hover,
-.chip.bg-primary:hover,
-.chip:hover,
+a.wp-block-file__button:hover,
+a.chip.bg-primary:hover,
+a.chip:hover,
 .btn.btn-primary:hover {
   color: white !important;
   background: $secondary-color-light !important;
@@ -635,6 +635,7 @@ footer .footer-copyright a.scvo-logo {
 .pagination a,
 #scvo-tab-bar a,
 .splash-image-header a,
+.wp-block-file a,
 a.no-underline,
 a.thumbnail,
 footer .footer-copyright .scvo-logo,
@@ -1355,7 +1356,7 @@ aside {
   a,
   a:hover {
     font-weight: $body-font-weight;
-    color: black;
+    color: $secondary-color;
     text-decoration: none;
     border: none;
   }
@@ -1365,6 +1366,7 @@ aside {
     margin-left: $unit/2;
     border-radius: $unit;
     padding: $unit/5 $unit*.4;
+    background: $primary-color;
   }
   .wp-block-file__button:hover {
     font-weight: $heading-link-weight;

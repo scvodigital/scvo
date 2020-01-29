@@ -362,105 +362,6 @@
 			}
 		]
 	}],
-	"digital": [{
-		"label": "Digital",
-		"path": "/support/digital",
-		"route": "^/support/digital$",
-		"children": [{
-				"label": "Participation",
-				"path": "/support/digital/participation",
-				"route": "^/support/digital/participation$",
-				"children": [{
-						"label": "Why digital matters",
-						"path": "/support/digital/participation/why-digital-matters",
-						"route": "^/support/digital/participation/why-digital-matters$"
-					},
-					{
-						"label": "Essential digital skills",
-						"path": "/support/digital/participation/skills",
-						"route": "^/support/digital/participation/skills$"
-					},
-					{
-						"label": "Digital Champions - training",
-						"path": "/support/digital/participation/champions",
-						"route": "^/support/digital/participation/champions$"
-					},
-					{
-						"label": "Digital Champions - housing",
-						"path": "/support/digital/participation/support/digital-champions-in-social-housing",
-						"route": "^/support/digital/participation/support/digital-champions-in-social-housing$"
-					},
-					{
-						"label": "Events",
-						"path": "/support/digital/events",
-						"route": "^/support/digital/events$"
-					},
-					{
-						"label": "Research",
-						"path": "/support/digital/participation/reports",
-						"route": "^/support/digital/participation/reports$"
-					}
-				]
-			},
-			{
-				"label": "Evolution",
-				"path": "/support/digital/evolution",
-				"route": "^/support/digital/evolution$",
-				"children": [{
-						"label": "Digital Check-up",
-						"path": "/support/digital/evolution/check-up",
-						"route": "^/support/digital/evolution/check-up"
-					},
-					{
-						"label": "Digitally Confident Scotland",
-						"path": "/support/digital/evolution/creating-a-digitally-confident-third-sector-in-scotland-what-next",
-						"route": "^/support/digital/evolution/creating-a-digitally-confident-third-sector-in-scotland-what-next"
-					},
-					{
-						"label": "Senior Leaders Programme 2020",
-						"path": "/support/digital/evolution/senior-leaders",
-						"route": "^/support/digital/evolution/senior-leaders$",
-						"children": [{
-							"children": [{
-									"label": "Our Alumni",
-									"path": "/support/digital/evolution/senior-leaders/our-alumni",
-									"route": "^/support/digital/evolution/senior-leaders/our-alumni$"
-								},
-								{
-									"label": "Programme structure",
-									"path": "/support/digital/evolution/senior-leaders/programme-structure",
-									"route": "^/support/digital/evolution/senior-leaders/programme-structure$"
-								},
-								{
-									"label": "Eligibility and commitment",
-									"path": "/support/digital/evolution/senior-leaders/eligibility-and-commitment",
-									"route": "^/support/digital/evolution/senior-leaders/eligibility-and-commitment$"
-								},
-								{
-									"label": "Why apply?",
-									"path": "/support/digital/evolution/senior-leaders/why-apply",
-									"route": "^/support/digital/evolution/senior-leaders/why-apply$"
-								},
-								{
-									"label": "Application process",
-									"path": "/support/digital/evolution/senior-leaders/application-process",
-									"route": "^/support/digital/evolution/senior-leaders/application-process$"
-								}
-							],
-							"label": "Senior Leaders",
-							"path": "/support/digital/evolution/senior-leaders",
-							"route": "^/support/digital/evolution/senior-leaders$"
-						}]
-					},
-					{
-						"label": "Digital Pioneers",
-						"path": "/support/digital/evolution/support/digital-pioneers",
-						"route": "^/support/digital/evolution/support/digital-pioneers$"
-					}
-				]
-			}
-		]
-	}],
 	"euarevalued": [{
 		"label": "Policy",
 		"path": "/policy",
@@ -636,391 +537,490 @@
 			]
 		}]
 	}],
-	"running": [{
-		"label": "Running your organisation",
-		"path": "/support/running-your-organisation",
-		"route": "^/support/running-your-organisation$",
-		"children": [{
-				"label": "Financial responsibilities",
-				"path": "/support/running-your-organisation/finance-business-management",
-				"route": "^/support/running-your-organisation/finance-business-management$",
-				"children": [{
-						"label": "Bank accounts",
-						"path": "/support/running-your-organisation/finance-business-management/bank-accounts",
-						"route": "^/support/running-your-organisation/finance-business-management/bank-accounts"
-					},
-					{
-						"label": "Water and sewerage exemption scheme",
-						"path": "/support/running-your-organisation/finance-business-management/water-sewerage-exemption-scheme",
-						"route": "^/support/running-your-organisation/finance-business-management/water-sewerage-exemption-scheme"
-					},
-					{
-						"label": "Accounts &#038; reporting",
-						"path": "/support/running-your-organisation/finance-business-management/charity-accounts-financial-reporting",
-						"route": "^/support/running-your-organisation/finance-business-management/charity-accounts-financial-reporting"
-					},
-					{
-						"label": "Tax &#038; VAT",
-						"path": "/support/running-your-organisation/finance-business-management/tax-vat",
-						"route": "^/support/running-your-organisation/finance-business-management/tax-vat"
-					},
-					{
-						"label": "Organisational development",
-						"path": "/support/running-your-organisation/finance-business-management/organisational-development",
-						"route": "/support/running-your-organisation/finance-business-management/organisational-development"
-					},
-					{
-						"label": "Property",
-						"path": "/support/running-your-organisation/finance-business-management/property",
-						"route": "^/support/running-your-organisation/finance-business-management/property"
-					},
-					{
-						"label": "Insurance",
-						"path": "/support/running-your-organisation/finance-business-management/insurance",
-						"route": "^/support/running-your-organisation/finance-business-management/insurance"
-					},
-					{
-						"label": "Trading",
-						"path": "/support/running-your-organisation/finance-business-management/trading",
-						"route": "^/support/running-your-organisation/finance-business-management/trading"
-					}
-				]
-			},
-			{
-				"label": "Business planning",
-				"path": "/support/running-your-organisation/business-planning",
-				"route": "^/support/running-your-organisation/business-planning$",
-				"children": [{
-						"label": "Writing a business plan",
-						"path": "/support/running-your-organisation/business-planning/writing-business-plan",
-						"route": "^/support/running-your-organisation/business-planning/writing-business-plan"
-					},
-					{
-						"label": "Risk analysis &#038; management",
-						"path": "/support/running-your-organisation/business-planning/risk-analysis-management",
-						"route": "^/support/running-your-organisation/business-planning/risk-analysis-management"
-					},
-					{
-						"label": "Reserves",
-						"path": "/support/running-your-organisation/business-planning/reserves",
-						"route": "^/support/running-your-organisation/business-planning/reserves"
-					},
-					{
-						"label": "Monitoring, evaluation and review",
-						"path": "/support/running-your-organisation/business-planning/monitoring-evaluation-review",
-						"route": "^/support/running-your-organisation/business-planning/monitoring-evaluation-review"
-					},
-					{
-						"label": "Mergers &#038; collaborations",
-						"path": "/support/running-your-organisation/business-planning/mergers-collaborations",
-						"route": "^/support/running-your-organisation/business-planning/mergers-collaborations"
-					}
-				]
-			},
-			{
-				"label": "Legislation &#038; regulation",
-				"path": "/support/running-your-organisation/legislation",
-				"route": "^/support/running-your-organisation/legislation$",
-				"children": [{
-						"label": "Data protection &#038; GDPR",
-						"path": "/support/running-your-organisation/legislation/data-protection",
-						"route": "^/support/running-your-organisation/legislation/data-protection"
-					},
-					{
-						"label": "Lobbying",
-						"path": "/support/running-your-organisation/legislation/lobbying",
-						"route": "^/support/running-your-organisation/legislation/lobbying"
-					},
-					{
-						"label": "Fire safety",
-						"path": "/support/running-your-organisation/legislation/fire-safety",
-						"route": "^/support/running-your-organisation/legislation/fire-safety"
-					},
-					{
-						"label": "Music &#038; film licensing",
-						"path": "/support/running-your-organisation/legislation/music-film-licensing",
-						"route": "^/support/running-your-organisation/legislation/music-film-licensing"
-					},
-					{
-						"label": "Premises licensing",
-						"path": "/support/running-your-organisation/legislation/premises-licensing",
-						"route": "^/support/running-your-organisation/legislation/premises-licensing"
-					},
-					{
-						"label": "Food hygiene &#038; catering",
-						"path": "/support/running-your-organisation/legislation/food-hygiene-catering",
-						"route": "^/support/running-your-organisation/legislation/food-hygiene-catering"
-					},
-					{
-						"label": "Health &#038; safety",
-						"path": "/support/running-your-organisation/legislation/health-safety",
-						"route": "^/support/running-your-organisation/legislation/health-safety"
-					},
-					{
-						"label": "PVG scheme",
-						"path": "/support/running-your-organisation/legislation/pvg-scheme",
-						"route": "^/support/running-your-organisation/legislation/pvg-scheme"
-					},
-					{
-						"label": "Freedom of information",
-						"path": "/support/running-your-organisation/legislation/foi-act",
-						"route": "^/support/running-your-organisation/legislation/foi-act"
-					}
-				]
-			},
-			{
-				"label": "Good Governance",
-				"path": "/support/running-your-organisation/governance",
-				"route": "^/support/running-your-organisation/governance$",
-				"children": [{
-						"label": "Scottish Governance Code & checkup",
-						"path": "/support/running-your-organisation/governance/scottish-governance-code-checkup",
-						"route": "^/support/running-your-organisation/governance/scottish-governance-code-checkup$",
-						"secret_children": [{
-								"label": "Start",
-								"path": "/support/running-your-organisation/governance/checkup/questions",
-								"route": "^/support/running-your-organisation/governance/checkup/questions"
-							},
-							{
-								"label": "Results",
-								"path": "/support/running-your-organisation/governance/checkup/results",
-								"route": "^/support/running-your-organisation/governance/checkup/results"
-							},
-							{
-								"label": "Blogs",
-								"path": "/support/running-your-organisation/governance/checkup/blogs",
-								"route": "^/support/running-your-organisation/governance/checkup/blogs"
-							},
-							{
-								"label": "About",
-								"path": "/support/running-your-organisation/governance/checkup/about",
-								"route": "^/support/running-your-organisation/governance/checkup/about"
-							}
-						]
-					},
-					{
-						"label": "Roles &#038; responsibilities",
-						"path": "/support/running-your-organisation/governance/roles-responsibilities",
-						"route": "^/support/running-your-organisation/governance/roles-responsibilities"
-					},
-					{
-						"label": "Recruitment &#038; induction",
-						"path": "/support/running-your-organisation/governance/recruitment-induction",
-						"route": "^/support/running-your-organisation/governance/recruitment-induction"
-					},
-					{
-						"label": "Meetings",
-						"path": "/support/running-your-organisation/governance/meetings",
-						"route": "^/support/running-your-organisation/governance/meetings"
-					},
-					{
-						"label": "Developing your board",
-						"path": "/support/running-your-organisation/governance/developing-board",
-						"route": "^/support/running-your-organisation/governance/developing-board"
-					},
-					{
-						"label": "Jargon buster",
-						"path": "/support/running-your-organisation/governance/jargon-buster",
-						"route": "^/support/running-your-organisation/governance/jargon-buster"
-					},
-					{
-						"label": "Mediation",
-						"path": "/support/running-your-organisation/governance/mediation",
-						"route": "^/support/running-your-organisation/governance/mediation"
-					},
-					{
-						"label": "Scottish Governance Code for the Third Sector",
-						"path": "https://governancecode.scot",
-						"route": "^https://governancecode.scot"
-					}
-				]
-			},
-			{
-				"label": "Managing staff &#038; volunteers",
-				"path": "/support/running-your-organisation/staff-volunteers",
-				"route": "^/support/running-your-organisation/staff-volunteers$",
-				"children": [{
-						"label": "Staff",
-						"path": "/support/running-your-organisation/staff-volunteers/staff",
-						"route": "^/support/running-your-organisation/staff-volunteers/staff"
-					},
-					{
-						"label": "Volunteers",
-						"path": "/support/running-your-organisation/staff-volunteers/volunteers",
-						"route": "^/support/running-your-organisation/staff-volunteers/volunteers"
-					},
-					{
-						"label": "Safeguarding",
-						"path": "/support/running-your-organisation/staff-volunteers/safeguarding",
-						"route": "^/support/running-your-organisation/staff-volunteers/safeguarding"
-					},
-					{
-						"label": "More information",
-						"path": "/support/running-your-organisation/staff-volunteers/more-information",
-						"route": "^/support/running-your-organisation/staff-volunteers/more-information"
-					}
-				]
-			},
-			{
-				"label": "Funding",
-				"path": "/support/running-your-organisation/funding",
-				"route": "^/support/running-your-organisation/funding$",
-				"children": [{
-						"label": "Finding funding step by step",
-						"path": "/support/running-your-organisation/funding/step-by-step-guide",
-						"route": "^/support/running-your-organisation/funding/step-by-step-guide$",
-						"children": [{
-								"label": "Get ready",
-								"path": "/support/running-your-organisation/funding/step-by-step-guide/get-ready",
-								"route": "^/support/running-your-organisation/funding/step-by-step-guide/get-ready"
-							},
-							{
-								"label": "Find your funds",
-								"path": "/support/running-your-organisation/funding/step-by-step-guide/find-your-funds",
-								"route": "^/support/running-your-organisation/funding/step-by-step-guide/find-your-funds"
-							},
-							{
-								"label": "Make the ask",
-								"path": "/support/running-your-organisation/funding/step-by-step-guide/make-the-ask",
-								"route": "^/support/running-your-organisation/funding/step-by-step-guide/make-the-ask"
-							},
-							{
-								"label": "Success & sustainability",
-								"path": "/support/running-your-organisation/funding/step-by-step-guide/success-and-sustainability",
-								"route": "^/support/running-your-organisation/funding/step-by-step-guide/success-and-sustainability"
-							},
-							{
-								"label": "Other sources",
-								"path": "/support/running-your-organisation/funding/step-by-step-guide/other-sources",
-								"route": "^/support/running-your-organisation/funding/step-by-step-guide/other-sources"
-							},
-							{
-								"label": "Jargon buster",
-								"path": "/support/running-your-organisation/funding/step-by-step-guide/jargon-buster",
-								"route": "^/support/running-your-organisation/funding/step-by-step-guide/jargon-buster"
-							}
-						]
-					},
-					{
-						"label": "Fortnightly funding updates",
-						"path": "/support/running-your-organisation/funding/updates",
-						"route": "^/support/running-your-organisation/funding/updates$"
-					},
-					{
-						"label": "Useful links",
-						"path": "/support/running-your-organisation/funding/useful-links",
-						"route": "^/support/running-your-organisation/funding/useful-links$"
-					}
-				]
-			},
-			{
-				"label": "EU exit (Brexit)",
-				"path": "/support/running-your-organisation/planning-for-eu-exit-brexit",
-				"route": "^/support/running-your-organisation/planning-for-eu-exit-brexit"
-			},
-			{
-				"label": "KeyStone",
-				"path": "/support/running-your-organisation/keystone",
-				"route": "^/support/running-your-organisation/keystone$",
-				"children": [{
-						"label": "Governance",
-						"path": "/support/running-your-organisation/keystone/governance",
-						"route": "^/support/running-your-organisation/keystone/governance$"
-					},
-					{
-						"label": "Managing people",
-						"path": "/support/running-your-organisation/keystone/managing-people",
-						"route": "^/support/running-your-organisation/keystone/managing-people$"
-					},
-					{
-						"label": "Managing money",
-						"path": "/support/running-your-organisation/keystone/managing-money",
-						"route": "^/support/running-your-organisation/keystone/managing-money$"
-					},
-					{
-						"label": "Managing resources",
-						"path": "/support/running-your-organisation/keystone/managing-resources",
-						"route": "^/support/running-your-organisation/keystone/managing-resources$"
-					},
-					{
-						"label": "Working with users",
-						"path": "/support/running-your-organisation/keystone/working-with-users",
-						"route": "^/support/running-your-organisation/keystone/working-with-users$"
-					},
-					{
-						"label": "Legislation &#038; regulation",
-						"path": "/support/running-your-organisation/keystone/legislation-regulation",
-						"route": "^/support/running-your-organisation/keystone/legislation-regulation$"
-					},
-					{
-						"label": "How to use the KeyStone toolkit",
-						"path": "/support/running-your-organisation/keystone/how-to-use-the-keystone-toolkit",
-						"route": "^/support/running-your-organisation/keystone/how-to-use-the-keystone-toolkit$"
-					},
-					{
-						"label": "Glossary",
-						"path": "/support/running-your-organisation/keystone/glossary",
-						"route": "^/support/running-your-organisation/keystone/glossary$"
-					}
-				]
-			},
-			{
-				"label": "Events",
-				"path": "/support/running-your-organisation/events",
-				"route": "^/support/running-your-organisation/events"
-			}
-		]
-	}],
-	"setting-up-a-charity": [{
-		"label": "Setting up a charity",
-		"path": "/support/setting-up-a-charity",
-		"route": "^/support/setting-up-a-charity$",
-		"children": [{
-				"label": "1. Get started",
-				"path": "/support/setting-up-a-charity/get-started",
-				"route": "^/support/setting-up-a-charity/get-started"
-			},
-			{
-				"label": "2. Make a plan",
-				"path": "/support/setting-up-a-charity/make-a-plan",
-				"route": "^/support/setting-up-a-charity/make-a-plan"
-			},
-			{
-				"label": "3. Decide on membership",
-				"path": "/support/setting-up-a-charity/decide-on-membership",
-				"route": "^/support/setting-up-a-charity/decide-on-membership"
-			},
-			{
-				"label": "4. Decide on charitable status",
-				"path": "/support/setting-up-a-charity/decide-on-charitable-status",
-				"route": "^/support/setting-up-a-charity/decide-on-charitable-status"
-			},
-			{
-				"label": "5. Consider the risks",
-				"path": "/support/setting-up-a-charity/consider-the-risks",
-				"route": "^/support/setting-up-a-charity/consider-the-risks"
-			},
-			{
-				"label": "6. Decide on structure",
-				"path": "/support/setting-up-a-charity/decide-on-structure",
-				"route": "^/support/setting-up-a-charity/decide-on-structure"
-			},
-			{
-				"label": "7. Write your constitution",
-				"path": "/support/setting-up-a-charity/write-your-constitution",
-				"route": "^/support/setting-up-a-charity/write-your-constitution"
-			},
-			{
-				"label": "8. Next steps",
-				"path": "/support/setting-up-a-charity/next-steps",
-				"route": "^/support/setting-up-a-charity/next-steps"
-			},
-			{
-				"label": "Frequently asked questions",
-				"path": "/support/setting-up-a-charity/frequently-asked-questions",
-				"route": "^/support/setting-up-a-charity/frequently-asked-questions"
-			}
-		]
+	"support": [{
+		"label": "Support &amp; learning",
+		"path": "/support",
+		"route": "^/support$",
+		"children": [		{
+			"label": "Setting up a charity",
+			"path": "/support/setting-up-a-charity",
+			"route": "^/support/setting-up-a-charity$",
+			"children": [{
+					"label": "1. Get started",
+					"path": "/support/setting-up-a-charity/get-started",
+					"route": "^/support/setting-up-a-charity/get-started"
+				},
+				{
+					"label": "2. Make a plan",
+					"path": "/support/setting-up-a-charity/make-a-plan",
+					"route": "^/support/setting-up-a-charity/make-a-plan"
+				},
+				{
+					"label": "3. Decide on membership",
+					"path": "/support/setting-up-a-charity/decide-on-membership",
+					"route": "^/support/setting-up-a-charity/decide-on-membership"
+				},
+				{
+					"label": "4. Decide on charitable status",
+					"path": "/support/setting-up-a-charity/decide-on-charitable-status",
+					"route": "^/support/setting-up-a-charity/decide-on-charitable-status"
+				},
+				{
+					"label": "5. Consider the risks",
+					"path": "/support/setting-up-a-charity/consider-the-risks",
+					"route": "^/support/setting-up-a-charity/consider-the-risks"
+				},
+				{
+					"label": "6. Decide on structure",
+					"path": "/support/setting-up-a-charity/decide-on-structure",
+					"route": "^/support/setting-up-a-charity/decide-on-structure"
+				},
+				{
+					"label": "7. Write your constitution",
+					"path": "/support/setting-up-a-charity/write-your-constitution",
+					"route": "^/support/setting-up-a-charity/write-your-constitution"
+				},
+				{
+					"label": "8. Next steps",
+					"path": "/support/setting-up-a-charity/next-steps",
+					"route": "^/support/setting-up-a-charity/next-steps"
+				},
+				{
+					"label": "Frequently asked questions",
+					"path": "/support/setting-up-a-charity/frequently-asked-questions",
+					"route": "^/support/setting-up-a-charity/frequently-asked-questions"
+				}
+			]
+		},
+		{
+			"label": "Running your organisation",
+			"path": "/support/running-your-organisation",
+			"route": "^/support/running-your-organisation$",
+			"children": [{
+					"label": "Financial responsibilities",
+					"path": "/support/running-your-organisation/finance-business-management",
+					"route": "^/support/running-your-organisation/finance-business-management$",
+					"children": [{
+							"label": "Bank accounts",
+							"path": "/support/running-your-organisation/finance-business-management/bank-accounts",
+							"route": "^/support/running-your-organisation/finance-business-management/bank-accounts"
+						},
+						{
+							"label": "Water and sewerage exemption scheme",
+							"path": "/support/running-your-organisation/finance-business-management/water-sewerage-exemption-scheme",
+							"route": "^/support/running-your-organisation/finance-business-management/water-sewerage-exemption-scheme"
+						},
+						{
+							"label": "Accounts &#038; reporting",
+							"path": "/support/running-your-organisation/finance-business-management/charity-accounts-financial-reporting",
+							"route": "^/support/running-your-organisation/finance-business-management/charity-accounts-financial-reporting"
+						},
+						{
+							"label": "Tax &#038; VAT",
+							"path": "/support/running-your-organisation/finance-business-management/tax-vat",
+							"route": "^/support/running-your-organisation/finance-business-management/tax-vat"
+						},
+						{
+							"label": "Organisational development",
+							"path": "/support/running-your-organisation/finance-business-management/organisational-development",
+							"route": "/support/running-your-organisation/finance-business-management/organisational-development"
+						},
+						{
+							"label": "Property",
+							"path": "/support/running-your-organisation/finance-business-management/property",
+							"route": "^/support/running-your-organisation/finance-business-management/property"
+						},
+						{
+							"label": "Insurance",
+							"path": "/support/running-your-organisation/finance-business-management/insurance",
+							"route": "^/support/running-your-organisation/finance-business-management/insurance"
+						},
+						{
+							"label": "Trading",
+							"path": "/support/running-your-organisation/finance-business-management/trading",
+							"route": "^/support/running-your-organisation/finance-business-management/trading"
+						}
+					]
+				},
+				{
+					"label": "Business planning",
+					"path": "/support/running-your-organisation/business-planning",
+					"route": "^/support/running-your-organisation/business-planning$",
+					"children": [{
+							"label": "Writing a business plan",
+							"path": "/support/running-your-organisation/business-planning/writing-business-plan",
+							"route": "^/support/running-your-organisation/business-planning/writing-business-plan"
+						},
+						{
+							"label": "Risk analysis &#038; management",
+							"path": "/support/running-your-organisation/business-planning/risk-analysis-management",
+							"route": "^/support/running-your-organisation/business-planning/risk-analysis-management"
+						},
+						{
+							"label": "Reserves",
+							"path": "/support/running-your-organisation/business-planning/reserves",
+							"route": "^/support/running-your-organisation/business-planning/reserves"
+						},
+						{
+							"label": "Monitoring, evaluation and review",
+							"path": "/support/running-your-organisation/business-planning/monitoring-evaluation-review",
+							"route": "^/support/running-your-organisation/business-planning/monitoring-evaluation-review"
+						},
+						{
+							"label": "Mergers &#038; collaborations",
+							"path": "/support/running-your-organisation/business-planning/mergers-collaborations",
+							"route": "^/support/running-your-organisation/business-planning/mergers-collaborations"
+						}
+					]
+				},
+				{
+					"label": "Legislation &#038; regulation",
+					"path": "/support/running-your-organisation/legislation",
+					"route": "^/support/running-your-organisation/legislation$",
+					"children": [{
+							"label": "Data protection &#038; GDPR",
+							"path": "/support/running-your-organisation/legislation/data-protection",
+							"route": "^/support/running-your-organisation/legislation/data-protection"
+						},
+						{
+							"label": "Lobbying",
+							"path": "/support/running-your-organisation/legislation/lobbying",
+							"route": "^/support/running-your-organisation/legislation/lobbying"
+						},
+						{
+							"label": "Fire safety",
+							"path": "/support/running-your-organisation/legislation/fire-safety",
+							"route": "^/support/running-your-organisation/legislation/fire-safety"
+						},
+						{
+							"label": "Music &#038; film licensing",
+							"path": "/support/running-your-organisation/legislation/music-film-licensing",
+							"route": "^/support/running-your-organisation/legislation/music-film-licensing"
+						},
+						{
+							"label": "Premises licensing",
+							"path": "/support/running-your-organisation/legislation/premises-licensing",
+							"route": "^/support/running-your-organisation/legislation/premises-licensing"
+						},
+						{
+							"label": "Food hygiene &#038; catering",
+							"path": "/support/running-your-organisation/legislation/food-hygiene-catering",
+							"route": "^/support/running-your-organisation/legislation/food-hygiene-catering"
+						},
+						{
+							"label": "Health &#038; safety",
+							"path": "/support/running-your-organisation/legislation/health-safety",
+							"route": "^/support/running-your-organisation/legislation/health-safety"
+						},
+						{
+							"label": "PVG scheme",
+							"path": "/support/running-your-organisation/legislation/pvg-scheme",
+							"route": "^/support/running-your-organisation/legislation/pvg-scheme"
+						},
+						{
+							"label": "Freedom of information",
+							"path": "/support/running-your-organisation/legislation/foi-act",
+							"route": "^/support/running-your-organisation/legislation/foi-act"
+						}
+					]
+				},
+				{
+					"label": "Good Governance",
+					"path": "/support/running-your-organisation/governance",
+					"route": "^/support/running-your-organisation/governance$",
+					"children": [{
+							"label": "Scottish Governance Code & checkup",
+							"path": "/support/running-your-organisation/governance/scottish-governance-code-checkup",
+							"route": "^/support/running-your-organisation/governance/scottish-governance-code-checkup$",
+							"secret_children": [{
+									"label": "Start",
+									"path": "/support/running-your-organisation/governance/checkup/questions",
+									"route": "^/support/running-your-organisation/governance/checkup/questions"
+								},
+								{
+									"label": "Results",
+									"path": "/support/running-your-organisation/governance/checkup/results",
+									"route": "^/support/running-your-organisation/governance/checkup/results"
+								},
+								{
+									"label": "Blogs",
+									"path": "/support/running-your-organisation/governance/checkup/blogs",
+									"route": "^/support/running-your-organisation/governance/checkup/blogs"
+								},
+								{
+									"label": "About",
+									"path": "/support/running-your-organisation/governance/checkup/about",
+									"route": "^/support/running-your-organisation/governance/checkup/about"
+								}
+							]
+						},
+						{
+							"label": "Roles &#038; responsibilities",
+							"path": "/support/running-your-organisation/governance/roles-responsibilities",
+							"route": "^/support/running-your-organisation/governance/roles-responsibilities"
+						},
+						{
+							"label": "Recruitment &#038; induction",
+							"path": "/support/running-your-organisation/governance/recruitment-induction",
+							"route": "^/support/running-your-organisation/governance/recruitment-induction"
+						},
+						{
+							"label": "Meetings",
+							"path": "/support/running-your-organisation/governance/meetings",
+							"route": "^/support/running-your-organisation/governance/meetings"
+						},
+						{
+							"label": "Developing your board",
+							"path": "/support/running-your-organisation/governance/developing-board",
+							"route": "^/support/running-your-organisation/governance/developing-board"
+						},
+						{
+							"label": "Jargon buster",
+							"path": "/support/running-your-organisation/governance/jargon-buster",
+							"route": "^/support/running-your-organisation/governance/jargon-buster"
+						},
+						{
+							"label": "Mediation",
+							"path": "/support/running-your-organisation/governance/mediation",
+							"route": "^/support/running-your-organisation/governance/mediation"
+						},
+						{
+							"label": "Scottish Governance Code for the Third Sector",
+							"path": "https://governancecode.scot",
+							"route": "^https://governancecode.scot"
+						}
+					]
+				},
+				{
+					"label": "Managing staff &#038; volunteers",
+					"path": "/support/running-your-organisation/staff-volunteers",
+					"route": "^/support/running-your-organisation/staff-volunteers$",
+					"children": [{
+							"label": "Staff",
+							"path": "/support/running-your-organisation/staff-volunteers/staff",
+							"route": "^/support/running-your-organisation/staff-volunteers/staff"
+						},
+						{
+							"label": "Volunteers",
+							"path": "/support/running-your-organisation/staff-volunteers/volunteers",
+							"route": "^/support/running-your-organisation/staff-volunteers/volunteers"
+						},
+						{
+							"label": "Safeguarding",
+							"path": "/support/running-your-organisation/staff-volunteers/safeguarding",
+							"route": "^/support/running-your-organisation/staff-volunteers/safeguarding"
+						},
+						{
+							"label": "More information",
+							"path": "/support/running-your-organisation/staff-volunteers/more-information",
+							"route": "^/support/running-your-organisation/staff-volunteers/more-information"
+						}
+					]
+				},
+				{
+					"label": "Funding",
+					"path": "/support/running-your-organisation/funding",
+					"route": "^/support/running-your-organisation/funding$",
+					"children": [{
+							"label": "Finding funding step by step",
+							"path": "/support/running-your-organisation/funding/step-by-step-guide",
+							"route": "^/support/running-your-organisation/funding/step-by-step-guide$",
+							"children": [{
+									"label": "Get ready",
+									"path": "/support/running-your-organisation/funding/step-by-step-guide/get-ready",
+									"route": "^/support/running-your-organisation/funding/step-by-step-guide/get-ready"
+								},
+								{
+									"label": "Find your funds",
+									"path": "/support/running-your-organisation/funding/step-by-step-guide/find-your-funds",
+									"route": "^/support/running-your-organisation/funding/step-by-step-guide/find-your-funds"
+								},
+								{
+									"label": "Make the ask",
+									"path": "/support/running-your-organisation/funding/step-by-step-guide/make-the-ask",
+									"route": "^/support/running-your-organisation/funding/step-by-step-guide/make-the-ask"
+								},
+								{
+									"label": "Success & sustainability",
+									"path": "/support/running-your-organisation/funding/step-by-step-guide/success-and-sustainability",
+									"route": "^/support/running-your-organisation/funding/step-by-step-guide/success-and-sustainability"
+								},
+								{
+									"label": "Other sources",
+									"path": "/support/running-your-organisation/funding/step-by-step-guide/other-sources",
+									"route": "^/support/running-your-organisation/funding/step-by-step-guide/other-sources"
+								},
+								{
+									"label": "Jargon buster",
+									"path": "/support/running-your-organisation/funding/step-by-step-guide/jargon-buster",
+									"route": "^/support/running-your-organisation/funding/step-by-step-guide/jargon-buster"
+								}
+							]
+						},
+						{
+							"label": "Fortnightly funding updates",
+							"path": "/support/running-your-organisation/funding/updates",
+							"route": "^/support/running-your-organisation/funding/updates$"
+						},
+						{
+							"label": "Useful links",
+							"path": "/support/running-your-organisation/funding/useful-links",
+							"route": "^/support/running-your-organisation/funding/useful-links$"
+						}
+					]
+				},
+				{
+					"label": "EU exit (Brexit)",
+					"path": "/support/running-your-organisation/planning-for-eu-exit-brexit",
+					"route": "^/support/running-your-organisation/planning-for-eu-exit-brexit"
+				},
+				{
+					"label": "KeyStone",
+					"path": "/support/running-your-organisation/keystone",
+					"route": "^/support/running-your-organisation/keystone$",
+					"children": [{
+							"label": "Governance",
+							"path": "/support/running-your-organisation/keystone/governance",
+							"route": "^/support/running-your-organisation/keystone/governance$"
+						},
+						{
+							"label": "Managing people",
+							"path": "/support/running-your-organisation/keystone/managing-people",
+							"route": "^/support/running-your-organisation/keystone/managing-people$"
+						},
+						{
+							"label": "Managing money",
+							"path": "/support/running-your-organisation/keystone/managing-money",
+							"route": "^/support/running-your-organisation/keystone/managing-money$"
+						},
+						{
+							"label": "Managing resources",
+							"path": "/support/running-your-organisation/keystone/managing-resources",
+							"route": "^/support/running-your-organisation/keystone/managing-resources$"
+						},
+						{
+							"label": "Working with users",
+							"path": "/support/running-your-organisation/keystone/working-with-users",
+							"route": "^/support/running-your-organisation/keystone/working-with-users$"
+						},
+						{
+							"label": "Legislation &#038; regulation",
+							"path": "/support/running-your-organisation/keystone/legislation-regulation",
+							"route": "^/support/running-your-organisation/keystone/legislation-regulation$"
+						},
+						{
+							"label": "How to use the KeyStone toolkit",
+							"path": "/support/running-your-organisation/keystone/how-to-use-the-keystone-toolkit",
+							"route": "^/support/running-your-organisation/keystone/how-to-use-the-keystone-toolkit$"
+						},
+						{
+							"label": "Glossary",
+							"path": "/support/running-your-organisation/keystone/glossary",
+							"route": "^/support/running-your-organisation/keystone/glossary$"
+						}
+					]
+				},
+				{
+					"label": "Events",
+					"path": "/support/running-your-organisation/events",
+					"route": "^/support/running-your-organisation/events"
+				}
+			]
+		},
+		{
+			"label": "Digital",
+			"path": "/support/digital",
+			"route": "^/support/digital$",
+			"children": [{
+					"label": "Participation",
+					"path": "/support/digital/participation",
+					"route": "^/support/digital/participation$",
+					"children": [{
+							"label": "Why digital matters",
+							"path": "/support/digital/participation/why-digital-matters",
+							"route": "^/support/digital/participation/why-digital-matters$"
+						},
+						{
+							"label": "Essential digital skills",
+							"path": "/support/digital/participation/skills",
+							"route": "^/support/digital/participation/skills$"
+						},
+						{
+							"label": "Digital Champions - training",
+							"path": "/support/digital/participation/champions",
+							"route": "^/support/digital/participation/champions$"
+						},
+						{
+							"label": "Digital Champions - housing",
+							"path": "/support/digital/participation/support/digital-champions-in-social-housing",
+							"route": "^/support/digital/participation/support/digital-champions-in-social-housing$"
+						},
+						{
+							"label": "Events",
+							"path": "/support/digital/events",
+							"route": "^/support/digital/events$"
+						},
+						{
+							"label": "Research",
+							"path": "/support/digital/participation/reports",
+							"route": "^/support/digital/participation/reports$"
+						}
+					]
+				},
+				{
+					"label": "Evolution",
+					"path": "/support/digital/evolution",
+					"route": "^/support/digital/evolution$",
+					"children": [{
+							"label": "Digital Check-up",
+							"path": "/support/digital/evolution/check-up",
+							"route": "^/support/digital/evolution/check-up"
+						},
+						{
+							"label": "Digitally Confident Scotland",
+							"path": "/support/digital/evolution/creating-a-digitally-confident-third-sector-in-scotland-what-next",
+							"route": "^/support/digital/evolution/creating-a-digitally-confident-third-sector-in-scotland-what-next"
+						},
+						{
+							"label": "Senior Leaders Programme 2020",
+							"path": "/support/digital/evolution/senior-leaders",
+							"route": "^/support/digital/evolution/senior-leaders$",
+							"secret_children": [{
+									"label": "Our Alumni",
+									"path": "/support/digital/evolution/senior-leaders/our-alumni",
+									"route": "^/support/digital/evolution/senior-leaders/our-alumni$"
+								},
+								{
+									"label": "Programme structure",
+									"path": "/support/digital/evolution/senior-leaders/programme-structure",
+									"route": "^/support/digital/evolution/senior-leaders/programme-structure$"
+								},
+								{
+									"label": "Eligibility and commitment",
+									"path": "/support/digital/evolution/senior-leaders/eligibility-and-commitment",
+									"route": "^/support/digital/evolution/senior-leaders/eligibility-and-commitment$"
+								},
+								{
+									"label": "Why apply?",
+									"path": "/support/digital/evolution/senior-leaders/why-apply",
+									"route": "^/support/digital/evolution/senior-leaders/why-apply$"
+								},
+								{
+									"label": "Application process",
+									"path": "/support/digital/evolution/senior-leaders/application-process",
+									"route": "^/support/digital/evolution/senior-leaders/application-process$"
+								}
+							]
+						},
+						{
+							"label": "Digital Pioneers",
+							"path": "/support/digital/evolution/support/digital-pioneers",
+							"route": "^/support/digital/evolution/support/digital-pioneers$"
+						}
+					]
+				}
+			]
+		}]
 	}],
 	"funding": [{
 		"label": "Funding",
