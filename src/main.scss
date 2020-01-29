@@ -11,7 +11,10 @@ $gray-color-light: lighten($gray-color, 10%) !default;
 $gray-color-dark: #9BA5AD;
 $light-color: #FEF9F9;
 $light-color-var: FEF9F9;
-$gathering-light-color-var: FEE7E8;
+$gathering-color: #8C1C5D;
+$gathering-color-light: #EAE0E8;
+$gathering-color-alt: #ECCBCD;
+// $gathering-light-color-var: FEE7E8;
 $awards-light-color-var: F9F4F5;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
@@ -98,12 +101,12 @@ body,
   background-position-y: top;
   background-repeat: no-repeat;
 }
-.the-gathering-2020 {
-  .bg-rouleaux {
-    background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-light-color-var}&style=solid');
-  }
+body.the-gathering-2020 {
+  // .bg-rouleaux {
+  //   background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-light-color-var}&style=solid');
+  // }
   .splash-image-header {
-    height: 30vh;
+    // height: 30vh;
     background-size: cover;
     background-position: center;
     .header-logo {
@@ -119,6 +122,26 @@ body,
       display: block;
       text-align: center;
       font-size: 1.1rem;
+    }
+  }
+  header.toolbar {
+    border-bottom-color: $gathering-color;
+    .btn.active,
+    .btn.active:hover {
+      background-color: $gathering-color;
+      border-color: $gathering-color;
+    }
+  }
+  .sidebar-not-present {
+    background: white;
+    a:link,
+    a:visited {
+      color: $gathering-color;
+    }
+    .btn.btn-primary {
+      color: white !important;
+      background-color: $gathering-color;
+      border-color: $gathering-color;
     }
   }
 }
@@ -299,6 +322,7 @@ h1.font-default,
 .btn.btn-lg {
   font-size: 1.1rem;
   letter-spacing: -0.02rem;
+  line-height: 1.1rem !important;
 }
 
 .card .card-title,
@@ -532,24 +556,24 @@ footer .footer-copyright a.scvo-logo {
   border-bottom-width: $thin-line !important;
   line-height: 1.3rem;
 }
-a.btn:link,
-a.btn:visited {
+.btn:link,
+.btn:visited {
   color: $primary-color;
   border: $thin-line solid $primary-color;
   background: none;
 }
-a.btn:hover {
+.btn:hover {
   background-color: $secondary-color-light;
   border-color: $secondary-color-light;
   color: white;
 }
-a.btn.btn-link:link,
-a.btn.btn-link:visited,
-a.btn.btn-link:hover {
+.btn.btn-link:link,
+.btn.btn-link:visited,
+.btn.btn-link:hover {
   border-color: transparent;
   background-color: transparent;
 }
-a.btn.btn-primary {
+.btn.btn-primary {
   background: $primary-color;
   color: white;
   border-color: $primary-color;
@@ -567,7 +591,7 @@ a.btn.btn-primary {
 }
 .wp-block-file__button:hover,
 .chip.bg-primary:hover,
-a.chip:hover,
+.chip:hover,
 .btn.btn-primary:hover {
   color: white !important;
   background: $secondary-color-light !important;
@@ -594,15 +618,17 @@ a.chip:hover,
 .breadcrumb .breadcrumb-item a,
 .pagination a,
 #scvo-tab-bar a,
+.splash-image-header a,
 a.no-underline,
-footer .footer-copyright a.scvo-logo,
+a.thumbnail,
+footer .footer-copyright .scvo-logo,
 a.navbar-brand,
 a.avatar,
 .post-info a.avatar:link,
 .post-info a.avatar:visited,
-a.author,
-a.rss,
-a.chip {
+.author,
+.rss,
+.chip {
   // border-bottom: none !important;
   padding-top: 0;
   padding-bottom: 0;
@@ -616,8 +642,8 @@ a.chip {
 .breadcrumb .breadcrumb-item a:hover,
 .pagination a:hover,
 .breadcrumb .breadcrumb-item a:hover,
-a.author:hover,
-a.no-underline:hover {
+.author:hover,
+.no-underline:hover {
   color: $primary-color-dark !important;
 }
 
@@ -1030,9 +1056,6 @@ a.no-underline:hover {
   }
 }
 
-.the-gathering-2020 .sidebar-not-present {
-  background: white;
-}
 // @media screen and (max-width: 1400px) {
 //   .promoted-content .card {
 //     height: 26vw;
