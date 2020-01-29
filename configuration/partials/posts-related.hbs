@@ -14,8 +14,8 @@
             <a href="/{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
           </div>
           <div class="column col-9 col-md-8">
-            <span class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span><br />
             <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+            <span class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span><br />
           </div>
         </div>
       </div>
