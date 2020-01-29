@@ -641,8 +641,8 @@ a.navbar-brand,
 a.avatar,
 .post-info a.avatar:link,
 .post-info a.avatar:visited,
-.author,
-.rss,
+a.author,
+a.rss,
 .chip {
   // border-bottom: none !important;
   padding-top: 0;
@@ -657,7 +657,7 @@ a.avatar,
 .breadcrumb .breadcrumb-item a:hover,
 .pagination a:hover,
 .breadcrumb .breadcrumb-item a:hover,
-.author:hover,
+a.author:hover,
 .no-underline:hover {
   color: $primary-color-dark !important;
 }
