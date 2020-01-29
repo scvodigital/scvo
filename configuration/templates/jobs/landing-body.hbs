@@ -1,5 +1,5 @@
 <div class="bg-white">
-  <div class="container t-padding-full">
+  <div class="container v-padding-full">
     <div class="columns">
       <div class="column col-6 col-lg-12">
         <h3>
@@ -75,7 +75,10 @@
 
 {{#compare @root.data.supplimentaryResponses.goodmoves_latest.hits.total ">" 0 ~}}
 <div class="container">
-  <h2>Top jobs on <strong>good</strong>moves</h2>
+  <h2>
+    Top jobs on Goodmoves&ensp;
+    <a href="/jobs/search" class="caption">Find more jobs</a>
+  </h2>
   <div class="columns">
     {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
     <div class="column col-4 col-lg-6 col-md-12">
@@ -83,16 +86,16 @@
     </div>
     {{/each ~}}
   </div>
-  <p>
-    <a href="/jobs/search" class="btn btn-link">Find more jobs</a>
-  </p>
 </div>
 {{/compare ~}}
 
 {{#compare @root.data.supplimentaryResponses.related_training.hits.total ">" 0 ~}}
-<div class="bg-white">
+<div class="bg-secondary b-padding-full">
   <div class="container">
-    <h2>Our training courses</h2>
+    <h2>
+      Our training courses&ensp;
+      <a href="/support/events?course_type=Training+Course" class="caption">See all courses</a>
+    </h2>
     <div class="columns">
       {{#each @root.data.supplimentaryResponses.related_training.hits.hits ~}}
       <div class="column col-3 col-lg-4 col-md-6 col-sm-12">
@@ -100,9 +103,6 @@
       </div>
       {{/each ~}}
     </div>
-    <p>
-      <a href="/support/events?course_type=Training+Course" class="btn btn-link">See all courses</a>
-    </p>
   </div>
 </div>
 {{/compare ~}}

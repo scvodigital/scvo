@@ -5,27 +5,6 @@
         <div class="card">
           <div class="card-header">
             <div class="card-title h3">
-              Latest press release
-              <a href="/about/press-media" class="caption l-margin">See more</a>
-            </div>
-          </div>
-          <div class="card-body">
-            {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
-            <h4>
-              <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
-            </h4>
-            <p>
-              {{{truncate description 320}}}
-              <a href="/{{replace post_slug '_' '/'}}">Read more</a>
-            </p>
-            {{/with ~}}
-          </div>
-        </div>
-      </div>
-      <div class="column col-4 col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title h3">
               Latest blog post
               <a href="/blogs" class="caption l-margin">See more</a>
             </div>
@@ -50,6 +29,27 @@
       <div class="column col-4 col-md-12">
         <div class="card">
           <div class="card-header">
+            <div class="card-title h3">
+              Latest press release
+              <a href="/about/press-media" class="caption l-margin">See more</a>
+            </div>
+          </div>
+          <div class="card-body">
+            {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
+            <h4>
+              <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
+            </h4>
+            <p>
+              {{{truncate description 320}}}
+              <a href="/{{replace post_slug '_' '/'}}">Read more</a>
+            </p>
+            {{/with ~}}
+          </div>
+        </div>
+      </div>
+      <div class="column col-4 col-md-12">
+        <div class="card">
+          <div class="card-header">
             <div class="card-title h3">Become a member</div>
           </div>
           <div class="card-body">
@@ -65,6 +65,8 @@
     </div>
   </div>
 </div>
+
+{{> promoted_find_info_on}}
 
 <div class="promoted-content v-padding-full">
   <div class="container v-padding-full">
@@ -144,10 +146,8 @@
         </div>
       </div>
       <div class="column col-4 col-md-12">
-        {{> goodmoves_latest_jobs}}
+        {{> goodmoves_latest}}
       </div>
     </div>
   </div>
 </div>
-
-{{> promoted_find_info_on}}

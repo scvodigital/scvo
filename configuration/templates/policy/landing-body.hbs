@@ -1,36 +1,40 @@
 <div class="bg-white">
   <div class="container v-padding-full">
-    <div class="columns">
+    <div class="columns linked-cards">
       <div class="column col-6 col-lg-12">
         {{!-- {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}} --}}
-        <h3>
-          <span class="r-margin far fa-fw fa-info-circle"></span> About
-        </h3>
-        <p>
-          <strong>SCVO's policy team works to ensure that the needs and concerns of the voluntary sector in Scotland are represented in the Scottish, United Kingdom and European Parliaments.</strong>
-        </p>
-        <p>
-          By acting as an authoritative and trusted voice for the sector, SCVO's policy and research output is delivered through a strong evidence base and an engaged membership.
-        </p>
-      </div>
-      <div class="column col-3 col-lg-6 col-sm-12 linked-cards">
         <div class="card card-no-padding">
-          <section class="card-header">
+          <section class="card-title">
             <h3>
-              <a href="/policy/campaigns"><span class="r-margin far fa-fw fa-flag"></span> Campaigns</a>
+              <span class="far fa-fw fa-map-marker-question"></span> About
             </h3>
-          </section>
-          <section class="card-footer">
-            <a class="btn" href="/policy/campaigns">Find out more about our campaigns</a>
-            <a class="btn btn-link" href="/policy/sector-stats">View the latest sector stats</a>
+            <p>
+              <strong>SCVO's policy team works to ensure that the needs and concerns of the voluntary sector in Scotland are represented in the Scottish, United Kingdom and European Parliaments.</strong>
+            </p>
+            <p>
+              By acting as an authoritative and trusted voice for the sector, SCVO's policy and research output is delivered through a strong evidence base and an engaged membership.
+            </p>
           </section>
         </div>
       </div>
       <div class="column col-3 col-lg-6 col-sm-12 linked-cards">
         <div class="card card-no-padding">
-          <section class="card-header">
+          <section class="card-title">
             <h3>
-              <a href="/policy/events"><span class="r-margin far fa-fw fa-chalkboard-teacher"></span> Events</a>
+              <a href="/policy/campaigns"><span class="far fa-fw fa-person-sign"></span> Campaigns</a>
+            </h3>
+          </section>
+          <section class="card-footer">
+            <a class="btn" href="/policy/campaigns">Find out more</a>
+            <a class="btn btn-link" href="/policy/sector-stats">Latest sector stats</a>
+          </section>
+        </div>
+      </div>
+      <div class="column col-3 col-lg-6 col-sm-12 linked-cards">
+        <div class="card card-no-padding">
+          <section class="card-title">
+            <h3>
+              <a href="/policy/events"><span class="far fa-fw fa-users"></span> Events</a>
             </h3>
           </section>
           <section class="card-body b-margin">
@@ -65,7 +69,7 @@
         {{> post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[2]._source}}
         {{/if ~}}
 
-        <a href="/policy/briefings" class="v-margin">More briefings</a>
+        <a href="/policy/briefings" class="btn">More briefings</a>
       </div>
       <div class="column col-4 col-lg-6 col-md-12">
         <h3>Consultation responses</h3>
@@ -76,7 +80,7 @@
         {{> post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[2]._source}}
         {{/if ~}}
 
-        <a href="/policy/consultation-responses" class="v-margin">More consultation responses</a>
+        <a href="/policy/consultation-responses" class="btn">More consultation responses</a>
       </div>
       <div class="column col-4 col-lg-6 col-md-12 no-border">
         <h3>Research</h3>
@@ -87,7 +91,7 @@
         {{> post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[2]._source}}
         {{/if ~}}
 
-        <a href="/policy/research" class="v-margin">More research</a>
+        <a href="/policy/research" class="btn">More research</a>
       </div>
     </div>
   </div>

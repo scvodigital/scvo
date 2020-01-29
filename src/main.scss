@@ -234,7 +234,6 @@ h3 {
 }
 // .mdc-card__primary h3,
 .card-title.h4,
-.card-title,
 h4 {
   font-size: 1.1rem;
   line-height: 1.2;
@@ -298,16 +297,16 @@ h1.font-default,
   .fa-fw {
     font-weight: 400 !important;
     font-size: 1em !important;
-    background-image: url('/rouleaux.svg?color=ffffff&opacity=0.75&style=solid');
+    background-image: url('/rouleaux.svg?color=FF595A&opacity=0.75&style=solid');
     position: absolute;
     height: 2.5rem;
     width: 2.5rem;
     right: .5rem;
     top: .5rem;
     margin-right: 0;
-    color: #f00;
+    color: #ffffff;
     line-height: 2.5rem;
-    padding-left: .5rem;
+    padding-left: .25rem;
   }
 }
 
@@ -586,6 +585,8 @@ a.no-underline,
 footer .footer-copyright a.scvo-logo,
 a.navbar-brand,
 a.avatar,
+.post-info a.avatar:link,
+.post-info a.avatar:visited,
 a.author,
 a.rss,
 a.chip {
@@ -594,7 +595,7 @@ a.chip {
   padding-bottom: 0;
   color: $primary-color;
   background: none;
-  // border-bottom: none;
+  border-bottom: none;
 }
 .breadcrumb .breadcrumb-item a {
   border-bottom: none;
@@ -642,7 +643,7 @@ a.no-underline:hover {
     align-items: center;
     justify-content: left;
     h1 {
-      font-size: 4.4rem;
+      font-size: 4rem;
       letter-spacing: -0.2rem;
       font-weight: $heading-font-weight;
       margin: 0;
