@@ -5,10 +5,10 @@
         <div class="card">
           <div class="card-header">
             <div class="card-title h2">
-              <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website">
+              {{!-- <a href="https://fundingscotland.com?utm_source=scvo&utm_campaign=page&utm_medium=website"> --}}
                 {{!-- <span class="fal fa-fw fa-search-plus fa-2x">&nbsp;</span> --}}
                 Search for funding
-              </a>
+              {{!-- </a> --}}
             </div>
           </div>
           <div class="card-body">
@@ -20,15 +20,19 @@
         <div class="card">
           <div class="card-header">
             <div class="card-title h2">
-              <a href="https://fundingscotland.com/funder/001b000000SsxRDAAZ/scottish-council-for-voluntary-organisations?utm_source=scvo&utm_campaign=page&utm_medium=website">
+              {{!-- <a href="https://fundingscotland.com/funder/001b000000SsxRDAAZ/scottish-council-for-voluntary-organisations?utm_source=scvo&utm_campaign=page&utm_medium=website"> --}}
                 {{!-- <span class="fal fa-fw fa-chart-bar fa-2x">&nbsp;</span> --}}
                 Funding from SCVO
-              </a>
+              {{!-- </a> --}}
             </div>
           </div>
           <div class="card-body">
-            <p>We believe in being fully transparent when it comes to the funding opportunities we create/are part of - and we love celebrating the success stories of those who benefit!</p>
-            <p>For details of the funds available right now, and information and evaluation of previously funded projects, see the following pages:</p>
+            <p>
+              We believe in being fully transparent when it comes to the funding opportunities we create/are part of - and we love celebrating the success stories of those who benefit!
+            </p>
+            <p>
+              For details of the funds available right now, and information and evaluation of previously funded projects, see the following pages:
+            </p>
             {{#each @root.data.supplimentaryResponses.scvo_funds.aggregations.funds.buckets ~}}
             {{#compare funds.hits.total ">" 0 ~}}
             <h4>
