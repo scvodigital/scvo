@@ -624,7 +624,6 @@ a.chip:hover,
     background-color: white;
     color: $primary-color;
   }
-  .btn:hover,
   .btn.btn-primary:hover {
     border: 1px solid white;
     background-color: white;
@@ -633,7 +632,7 @@ a.chip:hover,
 }
 .breadcrumb .breadcrumb-item a,
 .pagination a,
-#scvo-tab-bar a,
+.scvo-link-bar a,
 .splash-image-header a,
 .wp-block-file a,
 a.no-underline,
@@ -664,7 +663,7 @@ a.author:hover,
   color: $primary-color-dark !important;
 }
 
-#scvo-tab-bar {
+.scvo-link-bar {
   background-color: $gray-color;
   height: 40px;
   .text-link {
@@ -699,7 +698,7 @@ a.author:hover,
     align-items: center;
     justify-content: left;
     h1 {
-      font-size: 4rem;
+      font-size: 3.9rem;
       letter-spacing: -0.15rem;
       font-weight: $heading-font-weight;
       margin: 0;
@@ -1485,6 +1484,37 @@ aside {
   }
 }
 
+.mobile-menu {
+  .menu-item>a {
+    display: block !important;
+  }
+  .menu-item>a:hover,
+  .menu-item>a.active {
+    color: #fff !important;
+    border-bottom-color: #fff !important;
+  }
+  .scvo-link-bar {
+    background-color: transparent;
+    .text-right {
+      text-align: left;
+    }
+    .text-link {
+      display: block;
+      color: white;
+      line-height: 1;
+      height: auto;
+      margin: auto;
+      margin-bottom: 5px;
+    }
+    .text-link:hover {
+      border-bottom-color: white;
+    }
+    .brand-logo {
+      display: none;
+    }
+  }
+}
+
 @media screen and (min-width: 961px) {
   .mobile-search,
   .mobile-menu {
@@ -1509,7 +1539,7 @@ aside {
       left: 0;
       overflow-y: scroll;
       overflow-x: hidden;
-      padding: $unit;
+      padding: $unit*1.5 $unit;
       z-index: 4;
     }
     &.mobile-search_open,
@@ -1539,7 +1569,7 @@ aside {
   @keyframes fade-out { 0% { opacity: 1; } 100% { opacity: 0; } }
 }
 
-.scvo-tab-bar {
+.scvo-link-bar {
   background-color: $gray-color;
   .container-fluid .tab-bar {
     .tab {
@@ -2168,7 +2198,7 @@ footer {
   }
   .mobile-search .mobile-contents,
   .mobile-menu .mobile-contents {
-    padding: $unit/2;
+    padding: $unit $unit/2;
   }
 }
 
