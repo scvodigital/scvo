@@ -381,37 +381,6 @@
 						"route": "^/support/digital/participation/skills$"
 					},
 					{
-						"label": "Charter fund",
-						"path": "/funding/digital-participation-charter-fund",
-						"route": "^/funding/digital-participation-charter-fund$",
-						"secret_children": [{
-								"label": "Call for funding",
-								"path": "/funding/digital-participation-charter-fund/call-for-funding",
-								"route": "^/funding/digital-participation-charter-fund/call-for-funding$"
-							},
-							{
-								"label": "Key criteria",
-								"path": "/funding/digital-participation-charter-fund/call-for-funding/key-criteria",
-								"route": "^/funding/digital-participation-charter-fund/call-for-funding/key-criteria$"
-							},
-							{
-								"label": "FAQs",
-								"path": "/funding/digital-participation-charter-fund/call-for-funding/faqs",
-								"route": "^/funding/digital-participation-charter-fund/call-for-funding/faqs$"
-							},
-							{
-								"label": "Apply",
-								"path": "/funding/digital-participation-charter-fund/apply",
-								"route": "^/funding/digital-participation-charter-fund/apply$"
-							},
-							{
-								"label": "Projects",
-								"path": "/funding/digital-participation-charter-fund/projects",
-								"route": "^/funding/digital-participation-charter-fund/projects$"
-							}
-						]
-					},
-					{
 						"label": "Digital Champions - training",
 						"path": "/support/digital/participation/champions",
 						"route": "^/support/digital/participation/champions$"
@@ -446,11 +415,6 @@
 						"label": "Digitally Confident Scotland",
 						"path": "/support/digital/evolution/creating-a-digitally-confident-third-sector-in-scotland-what-next",
 						"route": "^/support/digital/evolution/creating-a-digitally-confident-third-sector-in-scotland-what-next"
-					},
-					{
-						"label": "Cyber resilience",
-						"path": "/support/digital/evolution/cyber-resilience",
-						"route": "^/support/digital/evolution/cyber-resilience$"
 					},
 					{
 						"label": "Senior Leaders Programme 2020",
@@ -943,101 +907,6 @@
 						"route": "^/support/running-your-organisation/funding/updates$"
 					},
 					{
-						"label": "Community Capacity and Resilience Fund",
-						"path": "/funding/community-capacity-resilience-fund",
-						"route": "^/funding/community-capacity-resilience-fund$",
-						"children": [{
-								"label": "Introduction",
-								"path": "/funding/community-capacity-resilience-fund/introduction-ccrf-round-5",
-								"route": "^/funding/community-capacity-resilience-fund/introduction-ccrf-round-5$"
-							}, {
-								"label": "Key dates",
-								"path": "/funding/community-capacity-resilience-fund/key-dates",
-								"route": "^/funding/community-capacity-resilience-fund/key-dates$"
-							}, {
-								"label": "Criteria & eligibility",
-								"path": "/funding/community-capacity-resilience-fund/criteria",
-								"route": "^/funding/community-capacity-resilience-fund/criteria$"
-							},
-							{
-								"label": "Application form guidance notes",
-								"path": "/funding/community-capacity-resilience-fund/guidance",
-								"route": "^/funding/community-capacity-resilience-fund/guidance$"
-							},
-							{
-								"label": "Project ideas",
-								"path": "/funding/community-capacity-resilience-fund/project-ideas",
-								"route": "^/funding/community-capacity-resilience-fund/project-ideas$"
-							},
-							{
-								"label": "Hints & tips",
-								"path": "/funding/community-capacity-resilience-fund/application-hints-tips",
-								"route": "^/funding/community-capacity-resilience-fund/application-hints-tips$"
-							},
-							{
-								"label": "Frequently asked questions",
-								"path": "/funding/community-capacity-resilience-fund/faqs",
-								"route": "^/funding/community-capacity-resilience-fund/faqs$"
-							},
-							{
-								"label": "Apply",
-								"path": "/funding/community-capacity-resilience-fund/apply",
-								"route": "^/funding/community-capacity-resilience-fund/apply$"
-							}
-						]
-					},
-					{
-						"label": "Carers Act Transformation Support Fund",
-						"path": "/funding/carers-act-transformation-support-fund",
-						"route": "^/funding/carers-act-transformation-support-fund$",
-						"secret_children": [{
-								"label": "Application process",
-								"path": "/funding/carers-act-transformation-support-fund/application-process",
-								"route": "^/funding/carers-act-transformation-support-fund/application-process$"
-							},
-							{
-								"label": "Key dates",
-								"path": "/funding/carers-act-transformation-support-fund/key-dates",
-								"route": "^/funding/carers-act-transformation-support-fund/key-dates$"
-							},
-							{
-								"label": "Eligibility criteria",
-								"path": "/funding/carers-act-transformation-support-fund/eligibility-criteria",
-								"route": "^/funding/carers-act-transformation-support-fund/eligibility-criteria$"
-							},
-							{
-								"label": "Activity criteria",
-								"path": "/funding/carers-act-transformation-support-fund/activity-criteria",
-								"route": "^/funding/carers-act-transformation-support-fund/activity-criteria$"
-							},
-							{
-								"label": "Grant awards",
-								"path": "/funding/carers-act-transformation-support-fund/grant-awards",
-								"route": "^/funding/carers-act-transformation-support-fund/grant-awards$"
-							},
-							{
-								"label": "Guidance on completing the application form",
-								"path": "/funding/carers-act-transformation-support-fund/guidance-on-completing-the-application-form",
-								"route": "^/funding/carers-act-transformation-support-fund/guidance-on-completing-the-application-form$"
-							},
-							{
-								"label": "Hints & tips",
-								"path": "/funding/carers-act-transformation-support-fund/hints-tips",
-								"route": "^/funding/carers-act-transformation-support-fund/hints-tips$"
-							},
-							{
-								"label": "FAQs",
-								"path": "/funding/carers-act-transformation-support-fund/faqs",
-								"route": "^/funding/carers-act-transformation-support-fund/faqs$"
-							},
-							{
-								"label": "Apply",
-								"path": "/funding/carers-act-transformation-support-fund/apply",
-								"route": "^/funding/carers-act-transformation-support-fund/apply$"
-							}
-						]
-					},
-					{
 						"label": "Useful links",
 						"path": "/support/running-your-organisation/funding/useful-links",
 						"route": "^/support/running-your-organisation/funding/useful-links$"
@@ -1152,6 +1021,142 @@
 				"route": "^/support/setting-up-a-charity/frequently-asked-questions"
 			}
 		]
+	}],
+	"funding": [{
+		"label": "Funding",
+		"path": "/funding",
+		"route": "^/funding$",
+		"children": [{
+			"label": "Carers Act Transformation Support Fund",
+			"path": "/funding/carers-act-transformation-support-fund",
+			"route": "^/funding/carers-act-transformation-support-fund$",
+			"secret_children": [{
+					"label": "Application process",
+					"path": "/funding/carers-act-transformation-support-fund/application-process",
+					"route": "^/funding/carers-act-transformation-support-fund/application-process$"
+				},
+				{
+					"label": "Key dates",
+					"path": "/funding/carers-act-transformation-support-fund/key-dates",
+					"route": "^/funding/carers-act-transformation-support-fund/key-dates$"
+				},
+				{
+					"label": "Eligibility criteria",
+					"path": "/funding/carers-act-transformation-support-fund/eligibility-criteria",
+					"route": "^/funding/carers-act-transformation-support-fund/eligibility-criteria$"
+				},
+				{
+					"label": "Activity criteria",
+					"path": "/funding/carers-act-transformation-support-fund/activity-criteria",
+					"route": "^/funding/carers-act-transformation-support-fund/activity-criteria$"
+				},
+				{
+					"label": "Grant awards",
+					"path": "/funding/carers-act-transformation-support-fund/grant-awards",
+					"route": "^/funding/carers-act-transformation-support-fund/grant-awards$"
+				},
+				{
+					"label": "Guidance on completing the application form",
+					"path": "/funding/carers-act-transformation-support-fund/guidance-on-completing-the-application-form",
+					"route": "^/funding/carers-act-transformation-support-fund/guidance-on-completing-the-application-form$"
+				},
+				{
+					"label": "Hints & tips",
+					"path": "/funding/carers-act-transformation-support-fund/hints-tips",
+					"route": "^/funding/carers-act-transformation-support-fund/hints-tips$"
+				},
+				{
+					"label": "FAQs",
+					"path": "/funding/carers-act-transformation-support-fund/faqs",
+					"route": "^/funding/carers-act-transformation-support-fund/faqs$"
+				},
+				{
+					"label": "Apply",
+					"path": "/funding/carers-act-transformation-support-fund/apply",
+					"route": "^/funding/carers-act-transformation-support-fund/apply$"
+				}
+			]
+		},
+		{
+			"label": "Community Capacity and Resilience Fund",
+			"path": "/funding/community-capacity-resilience-fund",
+			"route": "^/funding/community-capacity-resilience-fund$",
+			"secret_children": [{
+					"label": "Introduction",
+					"path": "/funding/community-capacity-resilience-fund/introduction-ccrf-round-5",
+					"route": "^/funding/community-capacity-resilience-fund/introduction-ccrf-round-5$"
+				}, {
+					"label": "Key dates",
+					"path": "/funding/community-capacity-resilience-fund/key-dates",
+					"route": "^/funding/community-capacity-resilience-fund/key-dates$"
+				}, {
+					"label": "Criteria & eligibility",
+					"path": "/funding/community-capacity-resilience-fund/criteria",
+					"route": "^/funding/community-capacity-resilience-fund/criteria$"
+				},
+				{
+					"label": "Application form guidance notes",
+					"path": "/funding/community-capacity-resilience-fund/guidance",
+					"route": "^/funding/community-capacity-resilience-fund/guidance$"
+				},
+				{
+					"label": "Project ideas",
+					"path": "/funding/community-capacity-resilience-fund/project-ideas",
+					"route": "^/funding/community-capacity-resilience-fund/project-ideas$"
+				},
+				{
+					"label": "Hints & tips",
+					"path": "/funding/community-capacity-resilience-fund/application-hints-tips",
+					"route": "^/funding/community-capacity-resilience-fund/application-hints-tips$"
+				},
+				{
+					"label": "Frequently asked questions",
+					"path": "/funding/community-capacity-resilience-fund/faqs",
+					"route": "^/funding/community-capacity-resilience-fund/faqs$"
+				},
+				{
+					"label": "Apply",
+					"path": "/funding/community-capacity-resilience-fund/apply",
+					"route": "^/funding/community-capacity-resilience-fund/apply$"
+				}
+			]
+		},
+		{
+			"label": "Cyber Essentials fund",
+			"path": "/funding/cyber-essentials-fund",
+			"route": "^/funding/cyber-essentials-fund$"
+		},
+		{
+			"label": "Digital participation charter fund",
+			"path": "/funding/digital-participation-charter-fund",
+			"route": "^/funding/digital-participation-charter-fund$",
+			"secret_children": [{
+					"label": "Call for funding",
+					"path": "/funding/digital-participation-charter-fund/call-for-funding",
+					"route": "^/funding/digital-participation-charter-fund/call-for-funding$"
+				},
+				{
+					"label": "Key criteria",
+					"path": "/funding/digital-participation-charter-fund/call-for-funding/key-criteria",
+					"route": "^/funding/digital-participation-charter-fund/call-for-funding/key-criteria$"
+				},
+				{
+					"label": "FAQs",
+					"path": "/funding/digital-participation-charter-fund/call-for-funding/faqs",
+					"route": "^/funding/digital-participation-charter-fund/call-for-funding/faqs$"
+				},
+				{
+					"label": "Apply",
+					"path": "/funding/digital-participation-charter-fund/apply",
+					"route": "^/funding/digital-participation-charter-fund/apply$"
+				},
+				{
+					"label": "Projects",
+					"path": "/funding/digital-participation-charter-fund/projects",
+					"route": "^/funding/digital-participation-charter-fund/projects$"
+				}
+			]
+		}]
 	}],
 	"account": [{
 		"label": "My account",

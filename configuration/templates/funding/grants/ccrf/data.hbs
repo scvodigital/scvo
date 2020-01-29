@@ -84,7 +84,7 @@
       "postalCode": "EH3 6BB",
       "addressCountry": "Scotland",
       "description": "The Scottish Council for Voluntary Organisations is the membership organisation for Scotland's charities, voluntary organisations and social enterprises.",
-      "url": "http://scvo.org",
+      "url": "http://scvo.scot",
       "location": [{
         "latitude": 55.959611,
         "longitude": -3.190946
@@ -95,12 +95,12 @@
       "code": "scvo-ccrf-{{call_slug}}",
       "title": "Community Capacity & Resilience Fund - {{call}}",
       "description": "Funding to help local voluntary sector groups and organisations across Scotland tackle poverty and mitigate against UK government welfare changes.",
-      "url": "https://scvo.org/running-your-organisation/funding/community-capacity-resilience-fund"
+      "url": "https://scvo.scot/funding/community-capacity-resilience-fund"
     }],
     "fromOpenCall": "Yes",
     {{/if ~}}
     "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}",
-    "dataSource": "https://scvo.org/running-your-organisation/funding/community-capacity-resilience-fund/projects/data.json"
+    "dataSource": "https://scvo.scot/funding/community-capacity-resilience-fund/projects/data.json"
   }{{#unless @last}},{{/unless}}
   {{/with}}
   {{/each}}

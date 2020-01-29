@@ -56,8 +56,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.grants_charter_grant-header",
-              "body": ">context.metaData.handlebars.templates.grants_charter_grant-body"
+              "header": ">context.metaData.handlebars.templates.funding_grants_charter_grant-header",
+              "body": ">context.metaData.handlebars.templates.funding_grants_charter_grant-body",
+              "footer": ">context.metaData.handlebars.templates.support_digital_footer"
             },
             "contentType": "text/html"
           }
