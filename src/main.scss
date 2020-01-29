@@ -1,3 +1,4 @@
+$domain: test.scvo.org;
 $primary-color: #FF595A;
 $primary-color-var: FF595A;
 $primary-color-light: #ffd6d6;
@@ -97,7 +98,7 @@ body,
 }
 .icon-rouleaux,
 .bg-rouleaux {
-  background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$light-color-var}&style=solid');
+  background-image:url('https://{$domain}/rouleaux.svg?color=#{$light-color-var}&style=solid');
   background-size: $page-width;
   background-position-x: center;
   background-position-y: top;
@@ -105,7 +106,7 @@ body,
 }
 body.the-gathering-2020 {
   // .bg-rouleaux {
-  //   background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-light-color-var}&style=solid');
+  //   background-image:url('https://{$domain}/rouleaux.svg?color=#{$gathering-light-color-var}&style=solid');
   // }
   .splash-image-header {
     // height: 30vh;
@@ -149,7 +150,7 @@ body.the-gathering-2020 {
 }
 .scottish-charity-awards {
   .bg-rouleaux {
-    background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$awards-light-color-var}&style=solid');
+    background-image:url('https://{$domain}/rouleaux.svg?color=#{$awards-light-color-var}&style=solid');
   }
   .splash-image-header {
     height: auto;
@@ -337,7 +338,7 @@ h1.font-default,
   .fa-fw {
     font-weight: 400 !important;
     font-size: 1.2rem !important;
-    background-image: url('/rouleaux.svg?color=#{$secondary-color-var}&opacity=1&style=solid');
+    background-image: url('https://{$domain}/rouleaux.svg?color=#{$secondary-color-var}&opacity=1&style=solid');
     // position: absolute;
     // right: .5rem;
     // top: .5rem;
@@ -354,7 +355,7 @@ h1.font-default,
 }
 .card .card-title a:hover {
   .fa-fw {
-    background-image: url('/rouleaux.svg?color=#{$primary-color-var}&opacity=1&style=solid');
+    background-image: url('https://{$domain}/rouleaux.svg?color=#{$primary-color-var}&opacity=1&style=solid');
   }
 }
 
@@ -2554,6 +2555,6 @@ figure,
     border: $thick-line solid $light-color;
   }
   .bg-rouleaux {
-    background-image: url('/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid');
+    background-image: url('https://{$domain}/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid');
   }
 }
