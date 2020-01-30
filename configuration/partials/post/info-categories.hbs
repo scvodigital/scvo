@@ -25,19 +25,19 @@
       {{#ifAny (compare this "Press Release") ~}}
       <a href="/about/press-media" class="chip bg-primary">Press release</a>
       {{else}}
-      {{#ifAny (compare this "SCVO news") (compare this "SCVO blog") ~}}
+      {{#ifAny (compare this "SCVO") (compare this "SCVO news") (compare this "SCVO Labs") (compare this "SCVO blog") ~}}
       <a href="/about/blog" class="chip bg-primary">SCVO news</a>
       {{else}}
       {{#ifAny (compare this "Digital blog") (compare this "Events blog") (compare this "Running your organisation blog") ~}}
       <a href="/support/blog" class="chip bg-primary">{{{this}}}</a>
       {{else}}
-      {{#ifAny (compare this "Funding blog") ~}}
+      {{#ifAny (compare this "Funding blog") (compare this "Funding") ~}}
       <a href="/funding/blog" class="chip bg-primary">{{{this}}}</a>
       {{else}}
-      {{#ifAny (compare this "Employability blog") ~}}
+      {{#ifAny (compare this "Employability blog") (compare this "Employability") ~}}
       <a href="/jobs/blog" class="chip bg-primary">{{{this}}}</a>
       {{else}}
-      {{#ifAny (compare this "Campaign blog") (compare this "Policy blog") (compare this "Research blog") ~}}
+      {{#ifAny (compare this "Campaign blog") (compare this "Policy blog") (compare this "Policy") (compare this "Research blog") ~}}
       <a href="/policy/blog" class="chip bg-primary">{{{this}}}</a>
       {{else}}
       <a href="/post/tags/{{itemAt ../post_tags_slug @index}}" class="chip bg-primary">{{{this}}}</a>
