@@ -22,6 +22,22 @@
       "renderer": "handlebars"
     },
     {
+      "name": "page",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_category-blog"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
       "name": "destination",
       "taskModule": "renderLayout",
       "renderer": "handlebars",
@@ -53,9 +69,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.posts_category-head-tags",
-              "header": ">context.metaData.handlebars.templates.posts_category-header",
-              "body": ">context.metaData.handlebars.templates.posts_category-results"
+              "head": ">context.metaData.handlebars.templates.posts_blog-head-tags",
+              "header": ">context.metaData.handlebars.templates.posts_blog-header",
+              "body": ">context.metaData.handlebars.templates.posts_category-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar"
             },
             "contentType": "text/html"
           }

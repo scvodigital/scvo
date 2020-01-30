@@ -1,0 +1,19 @@
+<div class="container">
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item">
+      <a href="/{{@root.request.params.category_slug}}">{{{@root.data.page.hits.hits.[0]._source.title}}}</a>
+    </li>
+    <li class="breadcrumb-item">
+      Blog
+    </li>
+  </ul>
+
+  <h1>
+    {{#compare @root.request.params.category_slug 'about' ~}}
+    SCVO news blog
+    {{else}}
+    {{{@root.data.page.hits.hits.[0]._source.title}}} blog
+    {{/compare ~}}
+  </h1>
+</div>

@@ -1,0 +1,29 @@
+{
+  "size": 1,
+  "_source": [
+    "wpid",
+    "slug",
+    "title",
+    "sub_title",
+    "og_title",
+    "og_summary",
+    "description",
+    "content",
+    "rendered.json_ld",
+    "breadcrumb",
+    "categories_id",
+    "categories_slug",
+    "author",
+    "hide_overlay",
+    "hide_related_posts",
+    "text_bag_boost",
+    "quotation",
+    "header_background",
+    "header_text"
+  ],
+  "query": {
+    "term": {
+      "path": "/{{@root.request.params.category_slug}}"
+    }
+  }
+}
