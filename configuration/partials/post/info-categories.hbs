@@ -26,7 +26,7 @@
       <a href="/about/press-media" class="chip bg-primary">Press release</a>
       {{else}}
       {{#ifAny (compare this "SCVO") (compare this "SCVO news") (compare this "SCVO Labs") (compare this "SCVO blog") ~}}
-      <a href="/about/blog" class="chip bg-primary">SCVO news</a>
+      <a href="/about/blog" class="chip bg-primary">{{{this}}}</a>
       {{else}}
       {{#ifAny (compare this "Digital blog") (compare this "Events blog") (compare this "Running your organisation blog") ~}}
       <a href="/support/blog" class="chip bg-primary">{{{this}}}</a>
