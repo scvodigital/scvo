@@ -1,6 +1,6 @@
 {
   "name": "trustee_search",
-  "pattern": "/support/trustees/search",
+  "pattern": "/support/terrific-trustees/search",
   "debug": true,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -54,10 +54,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.jobs_trustees_search-head-tags",
-              "header": ">context.metaData.handlebars.templates.jobs_trustees_search-header",
+              "head": ">context.metaData.handlebars.templates.support_trustees_search-head-tags",
+              "header": ">context.metaData.handlebars.templates.support_trustees_search-header",
               "body": ">context.metaData.handlebars.templates.search_search-results",
-              "leftSidebar": ">context.metaData.handlebars.templates.jobs_trustees_sidebar"
+              "leftSidebar": ">context.metaData.handlebars.templates.support_trustees_sidebar"
             },
             "contentType": "text/html"
           }

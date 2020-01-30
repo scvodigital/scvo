@@ -58,8 +58,16 @@
 <div class="bg-gray">
   <div class="container v-padding-full">
     <h2 class="b-padding">
-      <a href="/support/events">Events & training courses</a>
+      <a href="/support/events">Events & training courses&ensp;</a>
+      <a href="/support/events"><span class="caption">See all</span></a>
     </h2>
+    <div class="columns b-padding">
+      {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets ~}}
+      <div class="column col-3 col-lg-6 col-sm-12">
+        <a href="/support/events?q=&course_type={{replace key ' ' '+'}}">{{inflect doc_count (lowercase key) (concat (lowercase key) 's') true}}
+      </div>
+      {{/each ~}}
+    </div>
   </div>
 </div>
 <div class="container v-padding-full">
@@ -95,15 +103,5 @@
         <li><a href="/support/digital/events">Events</a></li>
       </ul>
     </div>
-  </div>
-</div>
-<div class="bg-gray">
-  <div class="container v-padding-full">
-    <h2 class="b-padding">
-      <a href="/support/milo">Milo training</a>
-    </h2>
-    <p class="b-padding">
-      The data management and reporting platform used by Scotland’s Third Sector Interfaces.
-    </p>
   </div>
 </div>
