@@ -1,7 +1,7 @@
 {
-  "name": "page_blogs",
-  "debug": false,
-  "pattern": "/blogs",
+  "name": "post_category_blog",
+  "debug": true,
+  "pattern": "/:category_slug/blog",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -14,29 +14,10 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-page",
-          "template": ">context.metaData.handlebars.queries.pages_page",
+          "type": "scvo-post",
+          "template": ">context.metaData.handlebars.queries.posts_category-blog",
           "noResultsRoute": "four_oh_four"
         }
-      },
-      "renderer": "handlebars"
-    },
-    {
-      "name": "supplimentaryResponses",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": [
-          {
-            "name": "posts",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_blogs"
-          }
-        ]
       },
       "renderer": "handlebars"
     },
@@ -72,10 +53,9 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.posts_blog-results",
-              "rightSidebar": ">context.metaData.handlebars.templates.posts_blog-sidebar"
+              "head": ">context.metaData.handlebars.templates.posts_category-head-tags",
+              "header": ">context.metaData.handlebars.templates.posts_category-header",
+              "body": ">context.metaData.handlebars.templates.posts_category-results"
             },
             "contentType": "text/html"
           }
