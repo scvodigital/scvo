@@ -1769,6 +1769,15 @@ blockquote {
 
 .pagination {
   justify-content: center;
+  .pagination-page {
+    height: 1.5rem;
+    width: 1.5rem;
+    text-align: center;
+    border-radius: 50% !important;
+  }
+  .page-item.active:hover a {
+    color: white;
+  }
 }
 
 .supplimentary-list {

@@ -1,5 +1,5 @@
 {{#compare @root.data.supplimentaryResponses.posts.hits.total ">" 0 ~}}
-<ul class="supplimentary-list">
+<ul class="supplimentary-list v-margin-full t-padding">
   {{#each @root.data.supplimentaryResponses.posts.hits.hits ~}}
   {{> post_list _source}}
   {{/each ~}}
