@@ -1,5 +1,7 @@
-{{> breadcrumbs_cms_post}}
+<div class="container">
+  {{> breadcrumbs_cms_post}}
 
-{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-<h1>{{{title}}}</h1>
-{{/with ~}}
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <h1>{{{title}}}</h1>
+  {{/with ~}}
+</div>

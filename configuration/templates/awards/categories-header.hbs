@@ -1,22 +1,24 @@
-<ul class="breadcrumb" aria-hidden="true">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
-  {{#if @root.request.params.category ~}}
-  <li class="breadcrumb-item">
-    <a href="/scottish-charity-awards/finalists-2020">Categories</a>
-  </li>
-  <li class="breadcrumb-item">
-    {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
-  </li>
-  {{else}}
-  <li class="breadcrumb-item">
-    Categories
-  </li>
-  {{/if ~}}
-</ul>
+<div class="container">
+  <ul class="breadcrumb" aria-hidden="true">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
+    {{#if @root.request.params.category ~}}
+    <li class="breadcrumb-item">
+      <a href="/scottish-charity-awards/finalists-2020">Categories</a>
+    </li>
+    <li class="breadcrumb-item">
+      {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
+    </li>
+    {{else}}
+    <li class="breadcrumb-item">
+      Categories
+    </li>
+    {{/if ~}}
+  </ul>
 
-<h1>
-  {{{if @root.request.params.category
-      (getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title"))
-      else=@root.data.search.cms.hits.hits.[0]._source.sub_title}}}
-</h1>
+  <h1>
+    {{{if @root.request.params.category
+        (getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title"))
+        else=@root.data.search.cms.hits.hits.[0]._source.sub_title}}}
+  </h1>
+</div>

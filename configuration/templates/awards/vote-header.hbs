@@ -1,11 +1,13 @@
-<ul class="breadcrumb" aria-hidden="true">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
-  <li class="breadcrumb-item"><a href="/scottish-charity-awards/finalists-2020">Categories</a></li>
-  <li class="breadcrumb-item"><a href="/scottish-charity-awards/finalists-2020/{{@root.request.params.category}}">{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</a></li>
-  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-  <li class="breadcrumb-item">{{{title}}}</li>
-  {{/with ~}}
-</ul>
+<div class="container">
+  <ul class="breadcrumb" aria-hidden="true">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
+    <li class="breadcrumb-item"><a href="/scottish-charity-awards/finalists-2020">Categories</a></li>
+    <li class="breadcrumb-item"><a href="/scottish-charity-awards/finalists-2020/{{@root.request.params.category}}">{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</a></li>
+    {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+    <li class="breadcrumb-item">{{{title}}}</li>
+    {{/with ~}}
+  </ul>
 
-<h1>{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</h1>
+  <h1>{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</h1>
+</div>

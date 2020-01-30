@@ -1,7 +1,7 @@
 {{#ifAny layoutParts.leftSidebar layoutParts.rightSidebar ~}}
 <div class="sidebar-present{{#compare layoutParts.style 'fullWidth'}} bg-white{{/compare}}">
-  <div class="container">
-    {{{layoutParts.header}}}
+  {{{layoutParts.header}}}
+  <div class="{{#unless (compare layoutParts.style 'fullWidth')}}container{{/unless}}">
     <div class="columns">
       {{#ifAll layoutParts.leftSidebar layoutParts.rightSidebar ~}}
       <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
@@ -36,12 +36,10 @@
 </div>
 {{else}}
 <div class="sidebar-not-present">
-  <div class="{{#unless (compare layoutParts.style 'fullWidth')}}container{{/unless}}">
-    {{{layoutParts.header}}}
-    <main class="body">
-      {{{layoutParts.body}}}
-    </main>
-  </div>
+  {{{layoutParts.header}}}
+  <main class="{{#unless (compare layoutParts.style 'fullWidth')}}container {{/unless}}body">
+    {{{layoutParts.body}}}
+  </main>
   {{{layoutParts.footer}}}
 </div>
 {{/ifAny ~}}

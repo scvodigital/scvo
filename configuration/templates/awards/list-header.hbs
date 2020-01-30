@@ -1,8 +1,10 @@
-<ul class="breadcrumb" aria-hidden="true">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
-  <li class="breadcrumb-item"><a href="/scottish-charity-awards/finalists-2020">Vote</a></li>
-  <li class="breadcrumb-item">{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</li>
-</ul>
+<div class="container">
+  <ul class="breadcrumb" aria-hidden="true">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
+    <li class="breadcrumb-item"><a href="/scottish-charity-awards/finalists-2020">Vote</a></li>
+    <li class="breadcrumb-item">{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</li>
+  </ul>
 
-<h1>{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</h1>
+  <h1>{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</h1>
+</div>

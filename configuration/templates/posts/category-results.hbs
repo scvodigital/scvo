@@ -1,26 +1,15 @@
-<div class="post-category">
-  <div class="container-fluid">
-    <div class="mdc-layout-grid v-margin-full">
-      <div class="mdc-layout-grid__inner">
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone content post-content">
-          {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
-          {{> search_info paging=@root.data.primaryResponse.pagination}}
-          <ul class="supplimentary-list">
-            {{#each @root.data.primaryResponse.hits.hits ~}}
-            {{> post_list _source}}
-            {{/each ~}}
-          </ul>
-          {{> pagination paging=@root.data.primaryResponse.pagination}}
-          {{else}}
-          <p>
-            No posts in this category could be loaded.
-          </p>
-          {{/compare ~}}
-        </div>
-        <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-8-tablet mdc-layout-grid__cell--span-4-phone sidebar post-sidebar">
-          <!-- TBC -->
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container v-margin-full">
+  {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
+  {{> search_info paging=@root.data.primaryResponse.pagination}}
+  <ul class="supplimentary-list">
+    {{#each @root.data.primaryResponse.hits.hits ~}}
+    {{> post_list _source}}
+    {{/each ~}}
+  </ul>
+  {{> pagination paging=@root.data.primaryResponse.pagination}}
+  {{else}}
+  <p>
+    No posts in this category could be loaded.
+  </p>
+  {{/compare ~}}
 </div>

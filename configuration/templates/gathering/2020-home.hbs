@@ -1,10 +1,8 @@
-{{!-- <div class="page"> --}}
+<div class="container">
+  {{> page_full @root.data.primaryResponse.hits.hits.[0]._source}}
+</div>
+<div class="page">
   <div class="container">
-    {{> page_full @root.data.primaryResponse.hits.hits.[0]._source}}
+    {{> footers_gathering}}
   </div>
-  <div class="page">
-    <div class="container">
-      {{> footers_gathering}}
-    </div>
-  </div>
-{{!-- </div> --}}
+</div>

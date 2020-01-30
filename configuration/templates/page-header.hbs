@@ -1,7 +1,22 @@
 {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-{{> breadcrumbs_cms_page}}
-
+<div class="container">
+  {{> breadcrumbs_cms_page}}
+</div>
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-<h1>{{{title}}}</h1>
+{{#if header_background ~}}
+<div class="bg-header b-margin-full" style="background-image:url('{{header_background}}');">
+  <div class="container t-padding-full">
+    {{#if header_text ~}}
+    <img src="{{header_text}}" alt="{{{title}}}" />
+    {{else}}
+    <h1 class="v-padding-full">{{{title}}}</h1>
+    {{/if ~}}
+  </div>
+</div>
+{{else}}
+<div class="container">
+  <h1>{{{title}}}</h1>
+</div>
+{{/if ~}}
 {{/with ~}}
 {{/if ~}}

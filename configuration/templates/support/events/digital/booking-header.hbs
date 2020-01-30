@@ -1,11 +1,13 @@
-{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-<ul class="breadcrumb">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
-  <li class="breadcrumb-item"><a href="/support/digital">Digital</a></li>
-  <li class="breadcrumb-item"><a href="/support/digital/events">Events</a></li>
-  <li class="breadcrumb-item"><a href="{{path}}">{{{title}}}</a></li>
-  <li class="breadcrumb-item">Booking</li>
-</ul>
+<div class="container">
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/support/digital">Digital</a></li>
+    <li class="breadcrumb-item"><a href="/support/digital/events">Events</a></li>
+    <li class="breadcrumb-item"><a href="{{path}}">{{{title}}}</a></li>
+    <li class="breadcrumb-item">Booking</li>
+  </ul>
 
-<h1>{{{title}}}</h1>
-{{/with ~}}
+  <h1>{{{title}}}</h1>
+  {{/with ~}}
+</div>

@@ -361,16 +361,6 @@ h1.font-default,
   }
 }
 
-.mdc-card {
-  margin-bottom: $unit;
-  .mdc-card__media {
-    background-size: cover;
-    background-position: center center;
-    height: auto;
-    background-image: none !important;
-  }
-}
-
 .search-info {
   margin: $unit 0;
   background: $gray-color-light;
@@ -615,6 +605,10 @@ a.chip:hover,
   color: white !important;
   background: $secondary-color-light !important;
   border-color: $secondary-color-light !important;
+}
+.bg-header {
+  background-size: cover;
+  background-position: center center;
 }
 .bg-primary {
   .btn {
@@ -934,6 +928,10 @@ a.author:hover,
   a {
     color: $secondary-color-dark;
   }
+}
+
+.body {
+  padding-bottom: $padding;
 }
 
 .projects-campaigns.eu-are-valued .body h2,
