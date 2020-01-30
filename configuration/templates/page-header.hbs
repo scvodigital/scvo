@@ -5,12 +5,14 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 {{#if header_background ~}}
 <div class="bg-header b-margin-full" style="background-image:url('{{header_background}}');">
-  <div class="container t-padding-full">
-    {{#if header_text ~}}
-    <img src="{{header_text}}" alt="{{{title}}}" />
-    {{else}}
-    <h1 class="v-padding-full">{{{title}}}</h1>
-    {{/if ~}}
+  <div class="t-padding-full{{#unless hide_overlay}} overlay{{/unless}}">
+    <div class="container">
+      {{#if header_text ~}}
+      <img src="{{header_text}}" alt="{{{title}}}" />
+      {{else}}
+      <h1 class="v-padding-full">{{{title}}}</h1>
+      {{/if ~}}
+    </div>
   </div>
 </div>
 {{else}}

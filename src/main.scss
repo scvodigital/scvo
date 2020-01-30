@@ -609,6 +609,16 @@ a.chip:hover,
 .bg-header {
   background-size: cover;
   background-position: center center;
+  .overlay {
+    background-image: linear-gradient(80deg, $secondary-color 30%, transparent 80%);
+    h1 {
+      height: 25vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+  }
 }
 .bg-primary {
   .btn {
