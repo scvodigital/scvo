@@ -1884,10 +1884,13 @@ blockquote {
     }
   }
 }
-.full .post-info {
-  border-bottom: $thin-line solid $gray-color-light;
-  padding-bottom: $unit/4;
-  margin-bottom: $unit/2;
+.full {
+  padding-bottom: $unit*2;
+  .post-info {
+    // border-bottom: $thin-line solid $gray-color-light;
+    padding-bottom: $unit/4;
+    margin-bottom: $unit/2;
+  }
 }
 .post-info {
   margin: $unit/2 0;
