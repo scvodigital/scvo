@@ -28,8 +28,11 @@
       {{#ifAny (compare this "SCVO") (compare this "SCVO news") (compare this "SCVO Labs") (compare this "SCVO blog") ~}}
       <a href="/about/blog" class="chip bg-primary">{{{this}}}</a>
       {{else}}
-      {{#ifAny (compare this "Digital blog") (compare this "Events blog") (compare this "Running your organisation blog") ~}}
+      {{#ifAny (compare this "Events blog") (compare this "Running your organisation blog") ~}}
       <a href="/support/blog" class="chip bg-primary">{{{this}}}</a>
+      {{else}}
+      {{#ifAny (compare this "Digital blog") ~}}
+      <a href="/support/digital/blogs" class="chip bg-primary">{{{this}}}</a>
       {{else}}
       {{#ifAny (compare this "Funding blog") (compare this "Funding") ~}}
       <a href="/funding/blog" class="chip bg-primary">{{{this}}}</a>
@@ -40,7 +43,20 @@
       {{#ifAny (compare this "Campaign blog") (compare this "Policy blog") (compare this "Policy") (compare this "Research blog") ~}}
       <a href="/policy/blog" class="chip bg-primary">{{{this}}}</a>
       {{else}}
+      {{#ifAny (compare this "Policy briefing") ~}}
+      <a href="/policy/briefings" class="chip bg-primary">{{{this}}}</a>
+      {{else}}
+      {{#ifAny (compare this "Consultation response") ~}}
+      <a href="/policy/consultation-responses" class="chip bg-primary">{{{this}}}</a>
+      {{else}}
+      {{#ifAny (compare this "Research") ~}}
+      <a href="/policy/research" class="chip bg-primary">{{{this}}}</a>
+      {{else}}
       <a href="/post/tags/{{itemAt ../post_tags_slug @index}}" class="chip bg-primary">{{{this}}}</a>
+      {{/ifAny ~}}
+      {{/ifAny ~}}
+      {{/ifAny ~}}
+      {{/ifAny ~}}
       {{/ifAny ~}}
       {{/ifAny ~}}
       {{/ifAny ~}}
