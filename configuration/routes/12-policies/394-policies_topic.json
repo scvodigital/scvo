@@ -36,9 +36,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.policies_topic-head-tags",
-              "header": ">context.metaData.handlebars.templates.policies_topic-header",
-              "body": ">context.metaData.handlebars.templates.policies_topic-body"
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.policy_policies_topic-head-tags",
+              "header": ">context.metaData.handlebars.templates.policy_policies_topic-header",
+              "body": ">context.metaData.handlebars.templates.policy_policies_topic-body"
             },
             "contentType": "text/html"
           }

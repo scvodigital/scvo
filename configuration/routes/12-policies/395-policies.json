@@ -55,9 +55,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
+              "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.policies_policies-header",
-              "body": ">context.metaData.handlebars.templates.policies_policies-body"
+              "header": ">context.metaData.handlebars.templates.policy_policies_policies-header",
+              "body": ">context.metaData.handlebars.templates.policy_policies_policies-body"
             },
             "contentType": "text/html"
           }
