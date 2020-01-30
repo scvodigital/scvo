@@ -75,6 +75,11 @@
 				"route": "^/about/strategy"
 			},
 			{
+				"label": "Transparency &#038; open data",
+				"path": "/about/transparency-open-data",
+				"route": "^/about/transparency-open-data"
+			},
+			{
 				"label": "Brand guidelines",
 				"path": "/about/brand-guidelines",
 				"route": "^/about/brand-guidelines"
@@ -479,7 +484,12 @@
 		"label": "Support &amp; learning",
 		"path": "/support",
 		"route": "^/support$",
-		"children": [		{
+		"children": [{
+			"label": "Information Service",
+			"path": "/support/information-service",
+			"route": "^/support/information-service$"
+		},
+		{
 			"label": "Setting up a charity",
 			"path": "/support/setting-up-a-charity",
 			"route": "^/support/setting-up-a-charity$",
@@ -890,8 +900,8 @@
 						},
 						{
 							"label": "Digital Champions - housing",
-							"path": "/support/digital/participation/support/digital-champions-in-social-housing",
-							"route": "^/support/digital/participation/support/digital-champions-in-social-housing$"
+							"path": "/support/digital/participation/digital-champions-in-social-housing",
+							"route": "^/support/digital/participation/digital-champions-in-social-housing$"
 						},
 						{
 							"label": "Events",
@@ -952,8 +962,8 @@
 						},
 						{
 							"label": "Digital Pioneers",
-							"path": "/support/digital/evolution/support/digital-pioneers",
-							"route": "^/support/digital/evolution/support/digital-pioneers$"
+							"path": "/support/digital/evolution/digital-pioneers",
+							"route": "^/support/digital/evolution/digital-pioneers$"
 						}
 					]
 				}
