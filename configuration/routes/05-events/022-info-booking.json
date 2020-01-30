@@ -1,7 +1,7 @@
 {
   "name": "event_info_booking",
   "debug": false,
-  "pattern": "/support/running-your-organisation/events/:id(/:junk)/book",
+  "pattern": "/support/information-service/events/:id(/:junk)/book",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -58,7 +58,6 @@
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_events_info_booking-header",
               "leftSidebar": ">context.metaData.handlebars.templates.support_events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.support_events_info_search-sidebar",
               "body": ">context.metaData.handlebars.templates.support_events_info_booking-body"
             },
             "contentType": "text/html"

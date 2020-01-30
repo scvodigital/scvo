@@ -1,9 +1,9 @@
 {
   "name": "event_info_search",
   "debug": true,
-  "pattern": "/support/running-your-organisation/events",
+  "pattern": "/support/information-service/events",
   "metaData": {
-    "searchUrl": "/support/running-your-organisation/events"
+    "searchUrl": "/support/information-service/events"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -60,7 +60,7 @@
               "head": ">context.metaData.handlebars.templates.support_events_info_search-head-tags",
               "header": ">context.metaData.handlebars.templates.support_events_info_search-header",
               "leftSidebar": ">context.metaData.handlebars.templates.support_events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.support_events_info_search-sidebar",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
               "body": ">context.metaData.handlebars.templates.support_events_search-results"
             },
             "contentType": "text/html"

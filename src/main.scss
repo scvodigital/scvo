@@ -1161,6 +1161,28 @@ a.author:hover,
     }
   }
 }
+.bg-secondary {
+  .btn {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+  }
+  .btn:hover {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: white;
+  }
+  .btn.btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    color: white;
+  }
+  .btn.btn-primary:hover {
+    background-color: $primary-color-dark !important;
+    border-color: $primary-color-dark !important;
+    color: white;
+  }
+}
 .bg-white {
   background: white;
 }
@@ -1243,6 +1265,17 @@ a.author:hover,
   .btn-lg:hover {
     background: white;
     color: $primary-color-dark;
+  }
+}
+
+.blocks-gallery-grid {
+  list-style-type: none;
+  margin-left: -($padding);
+  margin-right: -($padding);
+  .blocks-gallery-item {
+    width: 25%;
+    display: inline-block;
+    padding: $padding;
   }
 }
 
