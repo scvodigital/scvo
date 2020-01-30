@@ -1,5 +1,6 @@
 {
   "name": "page_eu_are_valued_settled_status",
+  "debug": true,
   "pattern": "/policy/campaigns/eu-are-valued/applying-for-settled-status",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -20,6 +21,8 @@
       },
       "renderer": "handlebars"
     },
+    "context.metaData.commonTasks.postsLatest",
+    "context.metaData.commonTasks.postsRelated",
     {
       "name": "destination",
       "taskModule": "renderLayout",
@@ -37,8 +40,9 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.projects-campaigns_eu-are-valued-settled-status",
-              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar"
+              "body": ">context.metaData.handlebars.templates.page-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.policy_campaigns_eu-are-valued-settled-status-footer"
             },
             "contentType": "text/html"
           }
