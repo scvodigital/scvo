@@ -1,0 +1,37 @@
+{{#compare @root.data.supplimentaryResponses.tfn_related_posts.hits.total ">" 0 ~}}
+<div class="related-posts v-padding-full bg-gray">
+  <div class="container b-margin-full">
+    {{#compare @root.data.supplimentaryResponses.tfn_related_posts.hits.total ">" 0 ~}}
+    <h3 class="b-margin">
+      Related TFN news&ensp;
+      <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption">See more</a>
+    </h3>
+    <div class="columns">
+      {{#each (split "0,1,2,3" ",") ~}}
+      {{#with (getProperty @root.data.supplimentaryResponses.tfn_related_posts.hits.hits (concat this '._source')) ~}}
+      <div class="column col-3 col-lg-6 col-sm-12">
+        <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline"><img src="{{image_wide}}" alt="{{{title}}}" class="img-responsive b-margin" /></a>
+        <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
+        <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div>
+      </div>
+      {{/with ~}}
+      {{/each ~}}
+    </div>
+    {{/compare ~}}
+  </div>
+</div>
+{{/compare ~}}
+
+{{!--
+{{#compare @root.data.supplimentaryResponses.tfn_related_posts.hits.total ">" 0 ~}}
+<div class="related t-margin-full post-related post-related-tfn">
+  <h4>Related articles on <a href="http://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Third Force News</a></h4>
+  <div class="columns">
+    {{#each @root.data.supplimentaryResponses.tfn_related_posts.hits.hits ~}}
+    <div class="col-3 col-4-lg col-6-md col-12-sm">
+      {{> tfn_post_gist _source}}
+    </div>
+    {{/each ~}}
+  </div>
+</div>
+{{/compare ~}} --}}

@@ -1,16 +1,23 @@
 {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
-<div class="tfn-posts bg-secondary x-padding-full">
-  <h4>Latest news</h4>
-  <ul>
-    {{#each @root.data.supplimentaryResponses.tfn_latest.hits.hits ~}}
-    {{#with _source ~}}
-    <li>
-      <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
-      <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div>
-    </li>
-    {{/with ~}}
-    {{/each ~}}
-  </ul>
-  <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="">Read more on TFN</a>
+<div class="related-posts v-padding-full bg-gray">
+  <div class="container b-margin-full">
+    {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
+    <h3 class="b-margin">
+      Latest TFN news&ensp;
+      <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption">See more</a>
+    </h3>
+    <div class="columns">
+      {{#each (split "0,1,2,3" ",") ~}}
+      {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
+      <div class="column col-3 col-lg-6 col-sm-12">
+        <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline"><img src="{{image_wide}}" alt="{{{title}}}" class="img-responsive b-margin" /></a>
+        <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
+        <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div>
+      </div>
+      {{/with ~}}
+      {{/each ~}}
+    </div>
+    {{/compare ~}}
+  </div>
 </div>
 {{/compare ~}}
