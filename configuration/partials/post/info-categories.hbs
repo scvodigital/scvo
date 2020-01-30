@@ -22,11 +22,31 @@
   <ul class="inline-list">
     {{#each post_tags ~}}
     <li>
-      {{#compare this "Press Release" ~}}
-      <a href="/about/press-media" class="chip bg-primary">{{{this}}}</a>
+      {{#ifAny (compare this "Press Release") ~}}
+      <a href="/about/press-media" class="chip bg-primary">Press release</a>
+      {{else}}
+      {{#ifAny (compare this "SCVO news") (compare this "SCVO blog") ~}}
+      <a href="/about/blog" class="chip bg-primary">SCVO news</a>
+      {{else}}
+      {{#ifAny (compare this "Digital blog") (compare this "Events blog") (compare this "Running your organisation blog") ~}}
+      <a href="/support/blog" class="chip bg-primary">{{{this}}}</a>
+      {{else}}
+      {{#ifAny (compare this "Funding blog") ~}}
+      <a href="/funding/blog" class="chip bg-primary">{{{this}}}</a>
+      {{else}}
+      {{#ifAny (compare this "Employability blog") ~}}
+      <a href="/jobs/blog" class="chip bg-primary">{{{this}}}</a>
+      {{else}}
+      {{#ifAny (compare this "Campaign blog") (compare this "Policy blog") (compare this "Research blog") ~}}
+      <a href="/policy/blog" class="chip bg-primary">{{{this}}}</a>
       {{else}}
       <a href="/post/tags/{{itemAt ../post_tags_slug @index}}" class="chip bg-primary">{{{this}}}</a>
-      {{/compare ~}}
+      {{/ifAny ~}}
+      {{/ifAny ~}}
+      {{/ifAny ~}}
+      {{/ifAny ~}}
+      {{/ifAny ~}}
+      {{/ifAny ~}}
     </li>
     {{/each ~}}
   </ul>
