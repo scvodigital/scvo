@@ -1,0 +1,16 @@
+{{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
+<div class="tfn-posts bg-secondary x-padding-full">
+  <h4>Latest news</h4>
+  <ul>
+    {{#each @root.data.supplimentaryResponses.tfn_latest.hits.hits ~}}
+    {{#with _source ~}}
+    <li>
+      <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
+      <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div>
+    </li>
+    {{/with ~}}
+    {{/each ~}}
+  </ul>
+  <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="">Read more on TFN</a>
+</div>
+{{/compare ~}}
