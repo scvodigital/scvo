@@ -2,6 +2,9 @@
   {{#with _source ~}}
   <div class="card-header">
     <div class="card-title h4">
+      {{#compare ../_type "goodhq-post" ~}}
+      {{{truncate (trim title) 140}}}
+      {{else}}
       {{#if url ~}}
       {{#if (contains url 'https://scvo.scot') ~}}
       <a href="{{replace url 'https://scvo.scot' ''}}">{{{truncate (trim title) 140}}}</a>
@@ -11,6 +14,7 @@
       {{else}}
       {{{truncate (trim title) 140}}}
       {{/if ~}}
+      {{/compare ~}}
     </div>
   </div>
   {{#if description ~}}
@@ -25,6 +29,8 @@
     {{{truncate (striptags description) 280}}}
   </div>
   {{/if ~}}
+  {{#compare ../_type "goodhq-post" ~}}
+  {{else}}
   {{#if url ~}}
   <div class="card-footer">
     {{#if (contains url 'https://scvo.scot') ~}}
@@ -34,5 +40,6 @@
     {{/if ~}}
   </div>
   {{/if ~}}
+  {{/compare ~}}
   {{/with ~}}
 </div>

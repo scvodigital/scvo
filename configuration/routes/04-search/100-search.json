@@ -13,7 +13,7 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-page,scvo-post,scvo-staff,scvo-member,cjs-vacancy,charter-signatory-digitalparticipation,charter-signatory-humanrights,goodmoves-vacancy,fs-fund,goodhq-organisation,goodhq-post,scvo-document-evidence,scvo-event,scvo-grant-charter,scvo-grant-ccrf,scvo-grant-cats,oscr-charity,tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-poll,tfn-legacy-event,tfn-legacy-list,tfn-legacy-feature",
+          "type": "scvo-page,scvo-post,scvo-staff,scvo-member,cjs-vacancy,charter-signatory-digitalparticipation,goodmoves-vacancy,fs-fund,goodhq-organisation,goodhq-post,scvo-document-evidence,scvo-event,scvo-grant-charter,scvo-grant-ccrf,scvo-grant-cats,tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
           "template": ">context.metaData.handlebars.queries.search_search"
         }
       },
