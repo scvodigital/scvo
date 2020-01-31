@@ -673,6 +673,12 @@ a.author:hover,
 .scvo-link-bar {
   background-color: $gray-color;
   height: 40px;
+  ul {
+    list-style-type: none;
+    li {
+      display: inline;
+    }
+  }
   .text-link {
     display: inline-block;
     height: 40px;
