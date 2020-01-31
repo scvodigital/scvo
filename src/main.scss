@@ -663,7 +663,6 @@ a.rss,
   border-bottom: none;
 }
 .breadcrumb .breadcrumb-item a:hover,
-.pagination a:hover,
 .breadcrumb .breadcrumb-item a:hover,
 a.author:hover,
 .no-underline:hover {
@@ -797,13 +796,6 @@ a.author:hover,
 //     color: $secondary-color;
 //   }
 // }
-.policy-stats,
-.card.scvo-page.search-result,
-.card.scvo-post.search-result,
-.card.scvo-document-evidence.search-result,
-.card.scvo-member.search-result,
-.card.scvo-staff.search-result,
-.card.scvo-event.search-result,
 .card.primary {
   background-color: $primary-color;
   .card-title .fa-fw {
@@ -826,9 +818,6 @@ a.author:hover,
     color: white;
   }
 }
-.card.scvo-grant-cyber.search-result,
-.card.scvo-grant-charter.search-result,
-.card.charter-signatory-digitalparticipation.search-result,
 .card.secondary {
   background-color: $secondary-color;
   .card-title .fa-fw {
@@ -859,7 +848,6 @@ a.author:hover,
     color: $primary-color-dark;
   }
 }
-.card.fs-fund.search-result,
 .landing-header-cjs,
 .card.blue {
   background-color: $blue-color;
@@ -876,8 +864,6 @@ a.author:hover,
     color: $secondary-color-dark;
   }
 }
-.card.goodhq-organisation.search-result,
-.card.goodhq-post.search-result,
 .card.purple {
   background-color: $purple-color;
   .card-title .fa-fw {
@@ -908,7 +894,6 @@ a.author:hover,
     color: white;
   }
 }
-.card.milo-volunteering-opportunity.search-result,
 .card.green {
   background-color: $green-color;
   .card-title .fa-fw {
@@ -1780,6 +1765,10 @@ blockquote {
     width: 1.5rem;
     text-align: center;
     border-radius: 50% !important;
+  }
+  .pagination-page:hover {
+    background-color: $primary-color;
+    color: white !important;
   }
   .page-item.active:hover a {
     color: white;

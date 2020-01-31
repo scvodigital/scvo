@@ -1,14 +1,14 @@
 <div class="card-header">
   <div class="card-title h4">
-    {{#ifAny path url ~}}
-    <a href="{{default path url}}">{{{truncate (trim title) 140}}}</a>
+    {{#if url ~}}
+    {{#if (contains url 'https://scvo.scot') ~}}
+    <a href="{{replace url 'https://scvo.scot' ''}}">{{{truncate (trim title) 140}}}</a>
     {{else}}
-    {{#compare ../_type "goodmoves-vacancy" ~}}
-    <a href="https://goodmoves.com/vacancy/{{Id}}/{{slugify title}}">{{{truncate (trim title) 140}}}</a>
+    <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{{truncate (trim title) 140}}}</a>
+    {{/if ~}}
     {{else}}
     {{{truncate (trim title) 140}}}
-    {{/compare ~}}
-    {{/ifAny ~}}
+    {{/if ~}}
   </div>
 </div>
 {{#if description ~}}
@@ -16,14 +16,12 @@
   {{{truncate (striptags description) 280}}}
 </div>
 {{/if ~}}
-{{#ifAny path url ~}}
+{{#if url ~}}
 <div class="card-footer">
-  <a href="{{default path url}}" class="btn btn-link">Read more</a>
+  {{#if (contains url 'https://scvo.scot') ~}}
+  <a href="{{replace url 'https://scvo.scot' ''}}" class="btn btn-link">Read more</a>
+  {{else}}
+  <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website" class="btn btn-link">Read more</a>
+  {{/if ~}}
 </div>
-{{else}}
-{{#compare ../_type "goodmoves-vacancy" ~}}
-<div class="card-footer">
-  <a href="https://goodmoves.com/vacancy/{{Id}}/{{slugify title}}" class="btn btn-link">Read more</a>
-</div>
-{{/compare ~}}
-{{/ifAny ~}}
+{{/if ~}}
