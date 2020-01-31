@@ -983,6 +983,11 @@
 			"label": "Carers Act Transformation Support Fund",
 			"path": "/funding/carers-act-transformation-support-fund",
 			"route": "^/funding/carers-act-transformation-support-fund$",
+			"children": [{
+				"label": "Supported organisations",
+				"path": "/funding/carers-act-transformation-support-fund/projects",
+				"route": "^/funding/carers-act-transformation-support-fund/projects$"
+			}],
 			"secret_children": [{
 					"label": "Application process",
 					"path": "/funding/carers-act-transformation-support-fund/application-process",
@@ -1034,6 +1039,11 @@
 			"label": "Community Capacity and Resilience Fund",
 			"path": "/funding/community-capacity-resilience-fund",
 			"route": "^/funding/community-capacity-resilience-fund$",
+			"children": [{
+				"label": "Supported projects",
+				"path": "/funding/community-capacity-resilience-fund/projects",
+				"route": "^/funding/community-capacity-resilience-fund/projects$"
+			}],
 			"secret_children": [{
 					"label": "Introduction",
 					"path": "/funding/community-capacity-resilience-fund/introduction-ccrf-round-5",
@@ -1077,12 +1087,22 @@
 		{
 			"label": "Cyber Essentials fund",
 			"path": "/funding/cyber-essentials-fund",
-			"route": "^/funding/cyber-essentials-fund$"
+			"route": "^/funding/cyber-essentials-fund$",
+			"children": [{
+				"label": "Supported organisations",
+				"path": "/funding/cyber-essentials-fund/projects",
+				"route": "^/funding/cyber-essentials-fund/projects$"
+			}]
 		},
 		{
 			"label": "Digital participation charter fund",
 			"path": "/funding/digital-participation-charter-fund",
 			"route": "^/funding/digital-participation-charter-fund$",
+			"children": [{
+				"label": "Supported projects",
+				"path": "/funding/digital-participation-charter-fund/projects",
+				"route": "^/funding/digital-participation-charter-fund/projects$"
+			}],
 			"secret_children": [{
 					"label": "Call for funding",
 					"path": "/funding/digital-participation-charter-fund/call-for-funding",

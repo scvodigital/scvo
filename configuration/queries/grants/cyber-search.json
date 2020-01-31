@@ -20,9 +20,11 @@
   ],
   "query": {
     "bool": {
-      "must": [
+      "must_not": [
         {
-          "match_all": {}
+          "term": {
+            "recipient_name": "Community Welfare Test (CO)"
+          }
         }
       ]
     }

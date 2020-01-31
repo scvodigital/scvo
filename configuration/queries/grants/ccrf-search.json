@@ -46,6 +46,13 @@
           "match_all": {}
         }
         {{/ifAny ~}}
+      ],
+      "must_not": [
+        {
+          "term": {
+            "recipient_name": "Community Welfare Test (CO)"
+          }
+        }
       ]
     }
   },
