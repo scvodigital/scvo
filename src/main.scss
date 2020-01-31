@@ -1419,6 +1419,11 @@ aside {
 .form-select {
   background-color: white;
 }
+.form-group {
+  .search-location {
+    width: 100%;
+  }
+}
 
 #toaster {
   position: fixed;
@@ -1595,11 +1600,15 @@ aside {
   @keyframes fade-out { 0% { opacity: 1; } 100% { opacity: 0; } }
 }
 
+.tab {
+  border-bottom: 0;
+}
 .scvo-link-bar {
   background-color: $gray-color;
   .container-fluid .tab-bar {
     .tab {
       color: $secondary-color !important;
+      border-bottom: $unit/5 solid transparent;
     }
     .tab.active {
       background-color: transparent;

@@ -64,7 +64,7 @@
 
   <div class="form-group">
     <select class="form-select" id="sector" name="sector">
-      <option value=""{{#if @root.request.params.query.sector}}{{else}} selected{{/if}}>Sector</option>
+      <option value=""{{#if @root.request.params.query.sector}}{{else}} selected{{/if}}>All sectors</option>
       {{#each @root.data.supplimentaryResponses.types.aggregations.sectors_slugs.buckets ~}}
       {{> sector title=(lookup @root.data.supplimentaryResponses.types.aggregations.sectors.buckets @index) slug=key}}
       {{/each ~}}
@@ -73,14 +73,14 @@
 
   <div class="form-group">
     <select class="form-select" id="region" name="region">
-      <option value=""{{#if @root.request.params.query.region}}{{else}} selected{{/if}}>Region</option>
+      <option value=""{{#if @root.request.params.query.region}}{{else}} selected{{/if}}>All regions</option>
       {{#each @root.data.supplimentaryResponses.types.aggregations.regions_slugs.buckets ~}}
       {{> region title=(lookup @root.data.supplimentaryResponses.types.aggregations.regions.buckets @index) slug=key}}
       {{/each ~}}
     </select>
   </div>
 
-  <button class="btn btn-primary" type="submit">
+  <button class="btn btn-primary btn-block" type="submit">
     Search jobs
   </button>
 </form>

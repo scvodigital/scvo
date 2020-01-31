@@ -29,6 +29,36 @@
 			"notAuthenticatedRoute": "sign_in"
 		}
 	},
+  "cjsAuthNotRequired": {
+		"name": "cjsAuth",
+		"taskModule": "firebaseAuth",
+		"config": {
+			"tokenPath": "request.cookies.cjs_token",
+			"cookieName": "cjs_cookie",
+			"cookieOptions": {
+				"maxAge": 1209600000,
+				"secure": true,
+				"path": "/"
+			},
+			"appName": "cjs",
+			"notAuthenticatedRoute": ""
+		}
+	},
+	"cjsAuthRequired": {
+		"name": "cjsAuth",
+		"taskModule": "firebaseAuth",
+		"config": {
+			"tokenPath": "request.cookies.cjs_token",
+			"cookieName": "cjs_cookie",
+			"cookieOptions": {
+				"maxAge": 1209600000,
+				"secure": true,
+				"path": "/"
+			},
+			"appName": "cjs",
+			"notAuthenticatedRoute": "cjs_sign_in"
+		}
+	},
   "getSignUpStatus": {
 		"name": "signUpStatus",
 		"taskModule": "firebaseRtbGet",

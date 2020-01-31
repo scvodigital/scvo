@@ -1,10 +1,10 @@
 {
-  "name": "cjs_job_phase",
+  "name": "cjs_sign_out",
+  "pattern": "/sign-out-cjs",
   "debug": true,
-  "pattern": "/jobs/community-jobs-scotland/vacancies",
+  "errorRoute": "five_hundred",
   "tasks": [
-    "context.metaData.commonTasks.authNotRequired",
-    "context.metaData.commonTasks.cjsAuthNotRequired",
+    "context.metaData.commonTasks.cjsAuthRequired",
     {
       "name": "destination",
       "taskModule": "renderLayout",
@@ -21,9 +21,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.jobs_cjs_vacancies_landing-header",
-              "body": ">context.metaData.handlebars.templates.jobs_cjs_vacancies_landing-body",
-              "footer": ">context.metaData.handlebars.templates.jobs_cjs_footer"
+              "body": ">context.metaData.handlebars.templates.account_auth_sign-out-cjs-body"
             },
             "contentType": "text/html"
           }

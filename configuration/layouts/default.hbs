@@ -20,7 +20,7 @@
           </section>
           <section class="navbar-section">
             <div class="form-horizontal hide-lg">
-              {{> site_search_form}}
+              {{> site_search_form id='header'}}
               <a href="/about/membership" class="btn btn-primary btn-lg btn-cta float-right">Join our community</a>
             </div>
             <div class="mobile-header-buttons show-lg">
@@ -110,11 +110,17 @@
               </div>
             </div>
           {{else}}
+          {{#if @root.data.cjsAuth ~}}
+          <a href="/sign-out-cjs" class="btn btn-link" data-component="TasksTrigger" data-taskstrigger="sign-out-cjs">
+            Sign out
+          </a>
+          {{else}}
           {{#each context.metaData.layoutMenus.user-not-signed-in ~}}
           <a href="{{stripTrailingSlash path}}" class="btn btn-link{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
             {{{label}}}
           </a>
           {{/each ~}}
+          {{/if ~}}
           {{/if ~}}
           </section>
         </header>
@@ -195,7 +201,7 @@
             </section>
           </header>
           <div class="b-margin-full v-padding-full">
-            {{> site_search_form}}
+            {{> site_search_form id='mobile'}}
           </div>
         </aside>
       </div>
