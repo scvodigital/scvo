@@ -280,14 +280,14 @@
             {{/each ~}}
             {{else}}
             {{#each @root.context.metaData.layoutMenus.user-not-signed-in ~}}
-            <li class="menu-item">
+            {{!-- <li class="menu-item">
               <a href="{{stripTrailingSlash path}}" class="{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
                 {{#if icon ~}}
                 <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
                 {{/if ~}}
                 {{{label}}}
               </a>
-            </li>
+            </li> --}}
             {{/each ~}}
             {{/if ~}}
           </ul>
