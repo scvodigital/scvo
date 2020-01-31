@@ -1,21 +1,23 @@
 {
   "size": 6,
   "_source": [
+    "Id",
     "wpid",
-    "slug",
     "title",
-    "sub_title",
-    "og_title",
-    "og_summary",
     "description",
-    "content",
-    "rendered.json_ld",
-    "breadcrumb",
-    "categories_id",
+    "url",
+    "is_press_release",
+    "author_name_full",
+    "author_slug",
+    "author_avatar",
+    "og_image",
+    "staff_profile",
+    "categories",
     "categories_slug",
-    "author",
-    "path",
-    "url"
+    "post_tags",
+    "post_tags_slug",
+    "publish_on",
+    "updated"
   ],
   "query": {
     "bool": {

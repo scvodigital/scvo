@@ -10,9 +10,7 @@
 
   <h3>Did you mean?</h3>
   {{#with @root.data.not_found.hits.hits.[0] ~}}
-  <div class="card search-result {{_type}} {{_type}}-{{_id}} b-margin-full">
-    {{> site_search_result _source}}
-  </div>
+  {{> site_search_result this}}
   {{/with ~}}
   {{/ifAll ~}}
   {{#ifAll @root.data.not_found (compare @root.data.not_found.hits.total ">" 1) ~}}
@@ -21,9 +19,7 @@
   {{#each @root.data.not_found.hits.hits ~}}
   {{#compare @index "===" 0 ~}}
   {{else}}
-  <div class="card search-result {{_type}} {{_type}}-{{_id}} b-margin-full">
-    {{> site_search_result _source}}
-  </div>
+  {{> site_search_result this}}
   {{/compare ~}}
   {{/each ~}}
   {{else}}

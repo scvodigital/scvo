@@ -24,21 +24,9 @@
   ],
   "query": {
     "bool": {
-      "must_not": [
-        {
-          "term": {
-            "hide_in_results": true
-          }
-        },
-        {
-          "term": {
-            "hide_from_search": "1"
-          }
-        }
-      ]
       {{#if @root.request.params.category_slug ~}}
       {{#switch @root.request.params.category_slug ~}}
-      {{#case "about" ~}},
+      {{#case "about" ~}}
       "should": [
         {
           "terms": {
@@ -51,9 +39,9 @@
           }
         }
       ],
-      "minimum_should_match": 1
+      "minimum_should_match": 1,
       {{/case ~}}
-      {{#case "support" ~}},
+      {{#case "support" ~}}
       "should": [
         {
           "terms": {
@@ -65,9 +53,9 @@
           }
         }
       ],
-      "minimum_should_match": 1
+      "minimum_should_match": 1,
       {{/case ~}}
-      {{#case "services" ~}},
+      {{#case "services" ~}}
       "should": [
         {
           "terms": {
@@ -77,9 +65,9 @@
           }
         }
       ],
-      "minimum_should_match": 1
+      "minimum_should_match": 1,
       {{/case ~}}
-      {{#case "funding" ~}},
+      {{#case "funding" ~}}
       "should": [
         {
           "terms": {
@@ -90,9 +78,9 @@
           }
         }
       ],
-      "minimum_should_match": 1
+      "minimum_should_match": 1,
       {{/case ~}}
-      {{#case "jobs" ~}},
+      {{#case "jobs" ~}}
       "should": [
         {
           "terms": {
@@ -103,9 +91,9 @@
           }
         }
       ],
-      "minimum_should_match": 1
+      "minimum_should_match": 1,
       {{/case ~}}
-      {{#case "policy" ~}},
+      {{#case "policy" ~}}
       "should": [
         {
           "terms": {
@@ -117,10 +105,34 @@
           }
         }
       ],
-      "minimum_should_match": 1
+      "minimum_should_match": 1,
       {{/case ~}}
+      {{#switchDefault ~}}
+      "should": [
+        {
+          "terms": {
+            "post_tags_slug": [
+              "{{@root.request.params.category_slug}}"
+            ]
+          }
+        }
+      ],
+      "minimum_should_match": 1,
+      {{/switchDefault ~}}
       {{/switch ~}}
       {{/if ~}}
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "term": {
+            "hide_from_search": "1"
+          }
+        }
+      ]
     }
   },
   "sort": {

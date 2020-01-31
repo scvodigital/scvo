@@ -3,6 +3,7 @@
   "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
     "Id",
+    "wpid",
     "title",
     "description",
     "url",
