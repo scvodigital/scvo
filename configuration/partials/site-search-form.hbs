@@ -1,9 +1,9 @@
 <form class="b-margin" autocomplete="off" action="{{default target '/search'}}" method="GET">
   <div class="input-group input-inline">
     <input type="text" class="form-input" placeholder="{{default placeholder 'Search SCVO, TFN, Goodmoves, and more'}}" id="q" name="q" aria-label="Search keywords" value="{{@root.request.params.query.q}}" />
-    {{#if type ~}}
-    <input type="hidden" name="type" value="{{type}}" />
-    {{/if ~}}
+    {{#ifAny type @root.request.params.query.type ~}}
+    <input type="hidden" name="type" value="{{default type @root.request.params.query.type}}" />
+    {{/ifAny ~}}
     <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" title="Search">
       <span class="far fa-search" aria-hidden="true"></span>
     </button>

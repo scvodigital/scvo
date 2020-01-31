@@ -8,6 +8,9 @@
 {{/inline ~}}
 
 <form action="/search" method="GET" autocomplete="off" class="v-margin-full">
+  {{#if @root.request.params.query.q ~}}
+  <input type="hidden" name="q" value="{{@root.request.params.query.q}}" />
+  {{/if ~}}
   <h3>Filters</h3>
   <h4>SCVO</h4>
   {{>filter_checkbox label="Pages" value="scvo-page"}}

@@ -1,27 +1,38 @@
-<div class="card-header">
-  <div class="card-title h4">
-    {{#if url ~}}
+<div class="card card-no-padding search-result {{_type}} {{_type}}-{{_id}} b-margin-full v-padding">
+  {{#with _source ~}}
+  <div class="card-header">
+    <div class="card-title h4">
+      {{#if url ~}}
+      {{#if (contains url 'https://scvo.scot') ~}}
+      <a href="{{replace url 'https://scvo.scot' ''}}">{{{truncate (trim title) 140}}}</a>
+      {{else}}
+      <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{{truncate (trim title) 140}}}</a>
+      {{/if ~}}
+      {{else}}
+      {{{truncate (trim title) 140}}}
+      {{/if ~}}
+    </div>
+  </div>
+  {{#if description ~}}
+  <div class="card-body">
+    {{#compare ../_type "scvo-post" ~}}
+    <div class="post-info">
+      {{> post_info_author}}
+      {{> post_info_published}}
+      {{> post_info_categories}}
+    </div>
+    {{/compare ~}}
+    {{{truncate (striptags description) 280}}}
+  </div>
+  {{/if ~}}
+  {{#if url ~}}
+  <div class="card-footer">
     {{#if (contains url 'https://scvo.scot') ~}}
-    <a href="{{replace url 'https://scvo.scot' ''}}">{{{truncate (trim title) 140}}}</a>
+    <a href="{{replace url 'https://scvo.scot' ''}}" class="btn btn-link">Read more</a>
     {{else}}
-    <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{{truncate (trim title) 140}}}</a>
-    {{/if ~}}
-    {{else}}
-    {{{truncate (trim title) 140}}}
+    <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website" class="btn btn-link">Read more</a>
     {{/if ~}}
   </div>
-</div>
-{{#if description ~}}
-<div class="card-body">
-  {{{truncate (striptags description) 280}}}
-</div>
-{{/if ~}}
-{{#if url ~}}
-<div class="card-footer">
-  {{#if (contains url 'https://scvo.scot') ~}}
-  <a href="{{replace url 'https://scvo.scot' ''}}" class="btn btn-link">Read more</a>
-  {{else}}
-  <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website" class="btn btn-link">Read more</a>
   {{/if ~}}
+  {{/with ~}}
 </div>
-{{/if ~}}

@@ -1,11 +1,9 @@
 {{> search_info paging=@root.data.primaryResponse.pagination}}
 
 {{#each @root.data.primaryResponse.hits.hits ~}}
-<div class="card card-no-padding search-result {{_type}} {{_type}}-{{_id}} b-margin-full v-padding">
-  {{#with _source ~}}
-  {{> site_search_result}}
-  {{/with ~}}
-</div>
+{{#with this ~}}
+{{> site_search_result}}
+{{/with ~}}
 {{/each ~}}
 
 {{> pagination paging=@root.data.primaryResponse.pagination}}
