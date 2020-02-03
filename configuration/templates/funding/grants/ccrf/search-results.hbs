@@ -40,18 +40,20 @@
           </h4>
         </section>
         <section class="mdc-card__supporting-text">
-          {{#if recipient_name}}
+          {{#if recipient_name ~}}
+          {{#compare recipient_name "!==" title ~}}
           <p class="b-margin">
             <strong>{{recipient_name}}</strong>
           </p>
-          {{/if}}
-          {{#if description}}
+          {{/compare ~}}
+          {{/if ~}}
+          {{#if description ~}}
           {{{truncate description 180}}} <a href="/funding/community-capacity-resilience-fund/projects/{{Id}}/{{slugify title}}">Read more</a>
           {{else}}
-          {{#if description_alt}}
+          {{#if description_alt ~}}
           {{{truncate description_alt 180}}} <a href="/funding/community-capacity-resilience-fund/projects/{{Id}}/{{slugify title}}">Read more</a>
-          {{/if}}
-          {{/if}}
+          {{/if ~}}
+          {{/if ~}}
         </section>
         <section class="mdc-card__actions">
           <div class="post-info">
