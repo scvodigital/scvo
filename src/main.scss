@@ -611,7 +611,7 @@ a.chip:hover,
   background-size: cover;
   background-position: center center;
   .overlay {
-    background-image: linear-gradient(80deg, $secondary-color 30%, transparent 80%);
+    background-image: linear-gradient(100deg, $secondary-color 30%, rgba(255, 89, 90,0.5) 80%, $primary-color);
     h1 {
       height: 25vh;
       color: white;
