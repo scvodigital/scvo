@@ -369,7 +369,7 @@ h1.font-default,
     height: 2.5rem;
     width: 2.5rem;
     line-height: 2.5rem;
-    padding-left: .4rem;
+    padding-left: .5rem;
     padding-right: .1rem;
     margin-right: 0;
     color: #ffffff;
@@ -542,16 +542,20 @@ a:hover {
 .bg-secondary a.no-underline,
 footer a {
   color: white;
-  // border-bottom: $thick-line solid transparent;
   background: none;
   border: none;
-  // background: linear-gradient(to bottom, white 0%, white 100%);
-  // background-position: 0 100%;
-  // background-repeat: repeat-x;
-  // background-size: $thick-line $thick-line;
-  // transition: background-size $transition-speed, color $transition-speed;
 }
-
+.goodmoves-vacancies a:hover {
+  color: $secondary-color-dark;
+}
+.bg-gray a {
+  color: $secondary-color;
+  background: none;
+  border: none;
+}
+.bg-gray a:hover {
+  color: $primary-color;
+}
 
 .card .card-image {
   padding: 0;
@@ -575,20 +579,35 @@ footer a {
     overflow: hidden;
     .card-image {
       margin: 0;
+      width: 100%;
       max-width: 100%;
       -webkit-transition: .5s ease;
       -moz-transition: .5s ease;
       transition: .5s ease;
     }
   }
-  p {
-    line-height: 1.5;
-    font-weight: 400;
-    margin: 0;
+  .card-header {
+    .card-title {
+      margin: 0;
+    }
+    .card-subtitle {
+      line-height: 1.5;
+      margin-bottom: .5rem;
+    }
+  }
+  .card-body {
+    p {
+      line-height: 1.5;
+      font-weight: 400;
+      margin: 0;
+    }
   }
 }
+.card-footer {
+  padding-top: 0;
+}
 .card-image-link:hover {
-  h4 {
+  .card-title {
     color: $primary-color;
   }
   .card-image {
@@ -723,23 +742,6 @@ a.chip:hover {
       align-items: center;
       justify-content: left;
     }
-  }
-}
-.bg-primary {
-  .btn {
-    border: 1px solid white;
-    background-color: $primary-color;
-    color: white;
-  }
-  .btn.btn-primary {
-    border: 1px solid white;
-    background-color: white;
-    color: $primary-color;
-  }
-  .btn.btn-primary:hover {
-    border: 1px solid white;
-    background-color: white;
-    color: $primary-color;
   }
 }
 .breadcrumb .breadcrumb-item a,
@@ -1246,6 +1248,26 @@ a.author:hover,
 
 .bg-primary {
   background-color: $primary-color;
+  .btn {
+    background-color: $primary-color;
+    border: 1px solid white;
+    color: white;
+  }
+  .btn:hover {
+    background-color: white;
+    border-color: white;
+    color: $primary-color;
+  }
+  .btn.btn-primary {
+    background-color: white;
+    border: 1px solid white;
+    color: $primary-color;
+  }
+  .btn.btn-primary:hover {
+    background-color: $secondary-color-light;
+    border-color: $secondary-color-light;
+    color: white;
+  }
   .input-group {
     .form-input {
       background-color: white;
@@ -1317,13 +1339,15 @@ a.author:hover,
   }
 }
 .find-information-on {
-  // padding-top: $unit*1.5;
-  // padding-bottom: $unit;
+  // background-image: linear-gradient(100deg, $secondary-color 10%, $primary-color 85%) !important;
   a, h2, h3, h4, .title {
     color: white;
   }
   .icon {
-    color: $primary-color;
+    color: black;
+  }
+  .icon-rouleaux {
+    mix-blend-mode: color-dodge;
   }
   a {
     opacity: 0.8;
@@ -1346,9 +1370,11 @@ a.author:hover,
   ul {
     list-style-type: none;
     margin-left: 0;
+    margin-bottom: 0;
   }
   li {
     margin-left: 0;
+    margin-bottom: $unit/2;
   }
 }
 .goodmoves-vacancy.gist,
@@ -1401,6 +1427,7 @@ a.rss {
 }
 .btn:hover,
 .btn-link:hover {
+  color: $secondary-color;
   background-color: transparent;
 }
 
@@ -1417,6 +1444,7 @@ a.pure-menu-link:hover {
   color: $secondary-color-dark !important;
   background-color: lighten($secondary-color-light, 23%);
   margin: -0.1rem 0;
+  background-image: none !important;
 }
 .chip:hover {
   color: white !important;

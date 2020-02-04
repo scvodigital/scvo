@@ -9,8 +9,8 @@
       {{#each (split "0,1,2,3" ",") ~}}
       {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
       <div class="column col-3 col-lg-6 col-sm-12">
-        <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline"><img src="{{image_wide}}" alt="{{{title}}}" class="img-responsive b-margin" /></a>
-        <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
+        <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline"><img src="{{image_wide}}" alt="{{{title}}}" class="img-responsive b-margin" /></a>
+        <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
         <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div>
       </div>
       {{/with ~}}
