@@ -81,9 +81,9 @@
   </div>
 </div>
 
-<div class="useful-content">
-  <div class="container v-padding-full">
-    <div class="columns linked-cards">
+<div class="bg-secondary useful-content">
+  <div class="container t-padding-full">
+    <div class="columns linked-cards t-margin-full">
       {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
       <div class="column col-4 col-md-12">
         <div class="card">
@@ -94,7 +94,7 @@
             </div>
           </div>
           {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
-          <div class="card-image" style="height: 137px; overflow: hidden;">
+          <div class="card-image" style="overflow:hidden;">
             <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic"><img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" /></a>
           </div>
           <div class="card-body">
@@ -102,7 +102,9 @@
             {{!-- <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a> --}}
             <p>
               {{{truncate description 280}}}
-              <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Read more</a>
+            </p>
+            <p>
+              <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline">Read more</a>
             </p>
           </div>
           {{/with ~}}

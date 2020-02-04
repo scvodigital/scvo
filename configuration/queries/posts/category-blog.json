@@ -24,8 +24,7 @@
   ],
   "query": {
     "bool": {
-      {{#if @root.request.params.category_slug ~}}
-      {{#switch @root.request.params.category_slug ~}}
+      {{#switch (default @root.request.params.category_slug (replace @root.request.url.pathname '/' '')) ~}}
       {{#case "about" ~}}
       "should": [
         {
@@ -112,7 +111,7 @@
         {
           "terms": {
             "post_tags_slug": [
-              "{{@root.request.params.category_slug}}"
+              "{{default @root.request.params.category_slug (replace @root.request.url.pathname '/' '')}}"
             ]
           }
         }
@@ -120,7 +119,6 @@
       "minimum_should_match": 1,
       {{/switchDefault ~}}
       {{/switch ~}}
-      {{/if ~}}
       "must_not": [
         {
           "term": {

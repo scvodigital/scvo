@@ -21,7 +21,7 @@
       },
       "renderer": "handlebars"
     },
-    "context.metaData.commonTasks.postsLatest",
+    "context.metaData.commonTasks.postsBlog",
     {
       "name": "destination",
       "taskModule": "renderLayout",
@@ -41,7 +41,7 @@
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.about_landing-header",
               "body": ">context.metaData.handlebars.templates.about_landing-body",
-              "footer": ">context.metaData.handlebars.templates.page-footer"
+              "footer": ">context.metaData.handlebars.templates.about_landing-footer"
             },
             "contentType": "text/html"
           }

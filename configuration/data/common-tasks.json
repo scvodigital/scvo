@@ -165,6 +165,22 @@
     },
     "renderer": "handlebars"
   },
+  "postsBlog": {
+    "name": "postsBlog",
+    "taskModule": "elasticsearch",
+    "config": {
+      "connectionStringTemplate": "{$elasticsearch-url.txt}",
+      "elasticsearchConfig": {
+        "apiVersion": "5.6"
+      },
+      "queryTemplates": {
+        "index": "{$elasticsearch-index.txt}",
+        "type": "scvo-post",
+        "template": ">context.metaData.handlebars.queries.posts_category-blog"
+      }
+    },
+    "renderer": "handlebars"
+  },
   "postsRelated": {
     "name": "postsRelated",
     "taskModule": "elasticsearch",

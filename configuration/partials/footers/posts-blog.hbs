@@ -1,12 +1,13 @@
-{{#compare @root.data.postsRelated.hits.total ">" 0 ~}}
+{{#compare @root.data.postsBlog.hits.total ">" 0 ~}}
 <div class="related-posts v-padding-full bg-gray">
   <div class="container b-margin-full">
     <h3 class="b-margin">
-      Related posts
+      Latest posts&ensp;
+      <a href="{{@root.request.url.pathname}}/blog" class="caption">See more</a>
     </h3>
     <div class="columns">
       {{#each (split "0,1,2,3" ",") ~}}
-      {{#with (getProperty @root.data.postsRelated.hits.hits (concat this '._source')) ~}}
+      {{#with (getProperty @root.data.postsBlog.hits.hits (concat this '._source')) ~}}
       <div class="column col-3 col-lg-6 col-sm-12">
         <div class="columns">
           <div class="column col-3 col-md-4">

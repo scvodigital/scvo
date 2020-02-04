@@ -489,7 +489,8 @@ ol li a:hover,
   border-bottom-color: transparent;
   background: none;
 }
-footer a:hover {
+footer a:hover,
+footer ul li a:hover {
   color: white;
   border-bottom: $thick-line solid white;
   background: none;
@@ -992,67 +993,67 @@ a.author:hover,
     border-bottom-color: white;
   }
 }
-.promoted-content {
-  .card {
-//     height: 366px;
-//     overflow: hidden;
-//     .card-header {
-//       transition: margin $transition-speed;
+// .promoted-content {
+//   .card {
+// //     height: 366px;
+// //     overflow: hidden;
+// //     .card-header {
+// //       transition: margin $transition-speed;
+// //     }
+// //     .card-image {
+// //       position: relative;
+// //       .logo {
+// //         height: 100%;
+// //         width: auto;
+// //         position: absolute;
+// //         top: 0;
+// //         left: 0;
+// //         right: 0;
+// //         margin: 0 auto;
+// //       }
+// //       .overlay-effect {
+// //         width: 100%;
+// //         height: 100%;
+// //         position: absolute;
+// //         left: 0;
+// //         top: 0;
+// //         opacity: 0;
+// //         transition: opacity $transition-speed;
+// //         background-color: rgba(255, 89, 90, 0.2);
+// //         overflow: hidden;
+// //       }
+// //     }
+// //     .card-header {
+// //       border-top: $thick-line solid $primary-color;
+// //       padding-top: $unit*.4;
+// //     }
+// //     .card-footer:last-child {
+// //       padding-bottom: $unit*.4;
+// //     }
+//     .card-header,
+//     .card-body,
+//     .card-footer {
+//       z-index: 1;
 //     }
-//     .card-image {
-//       position: relative;
-//       .logo {
-//         height: 100%;
-//         width: auto;
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         right: 0;
-//         margin: 0 auto;
-//       }
-//       .overlay-effect {
-//         width: 100%;
-//         height: 100%;
-//         position: absolute;
-//         left: 0;
-//         top: 0;
-//         opacity: 0;
-//         transition: opacity $transition-speed;
-//         background-color: rgba(255, 89, 90, 0.2);
-//         overflow: hidden;
-//       }
-//     }
-//     .card-header {
-//       border-top: $thick-line solid $primary-color;
-//       padding-top: $unit*.4;
-//     }
-//     .card-footer:last-child {
-//       padding-bottom: $unit*.4;
-//     }
-    .card-header,
-    .card-body,
-    .card-footer {
-      z-index: 1;
-    }
-//     .card-body {
-//       overflow: hidden;
-//     }
-    .card-title,
-    .card-title a,
-    .card-subtitle {
-      color: white !important;
-    }
+// //     .card-body {
+// //       overflow: hidden;
+// //     }
+//     // .card-title,
+//     // .card-title a,
+//     // .card-subtitle {
+//     //   color: white !important;
+//     // }
+// //   }
+// //   .card:hover {
+// //     .card-header {
+// //       margin-top: -148px;
+// //     }
+// //     .overlay-effect {
+// //       opacity: 1;
+// //     }
+// //   }
 //   }
-//   .card:hover {
-//     .card-header {
-//       margin-top: -148px;
-//     }
-//     .overlay-effect {
-//       opacity: 1;
-//     }
-//   }
-  }
-}
+// }
 .card.the-gathering {
   .card-image .logo {
     padding: $unit 0;
@@ -1063,7 +1064,7 @@ a.author:hover,
 .card.twenty-years {
   .card-image .background {
     width: 100%;
-    height: 134px;
+    height: 128px;
   }
 }
 
