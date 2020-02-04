@@ -17,4 +17,24 @@
   </div>
 </div>
 
+{{#compare @root.data.supplimentaryResponses.recently_updated_funds.hits.total ">" 0 ~}}
+<div class="bg-white">
+  <div class="container">
+    <div class="columns v-padding-full">
+      <h2 class="b-margin-full">
+        Recently updated funds&ensp;
+        <a href="https://fundingscotland.com/search?utm_source=scvo&utm_campaign=page&utm_medium=website" class="caption">Find more funds</a>
+      </h2>
+      <div class="columns">
+        {{#each @root.data.supplimentaryResponses.recently_updated_funds.hits.hits ~}}
+        <div class="column col-4 col-lg-6 col-md-12">
+          {{> fund_gist _source}}
+        </div>
+        {{/each ~}}
+      </div>
+    </div>
+  </div>
+</div>
+{{/compare ~}}
+
 {{> footers_posts_latest}}

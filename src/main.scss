@@ -14,17 +14,13 @@ $gray-color-dark: #9BA5AD;
 $light-color: #FEF9F9;
 $light-color-var: FEF9F9;
 $gathering-color: #8C1C5D;
-$gathering-color-light: #EAE0E8;
+$gathering-color-light: #EFE0E8;
 $gathering-color-alt: #ECCBCD;
 $gathering-color-light-var: FAF5F8;
 $awards-color-light-var: F9F4F5;
 $success-color: #3BAA34;
 $warning-color: #F05B23;
 $error-color: #f03823;
-
-$bg-color: #FEF9F9;
-$bg-color-light: #ffffff;
-$bg-color-dark: #D5D8DC;
 
 $goodmoves-color: rgb(68, 133, 50);
 $yellow-color: #FFDB00;
@@ -90,7 +86,7 @@ $transition-speed: .3s;
 
 body,
 .footer-copyright {
-  background-color: $bg-color;
+  background-color: $secondary-color;
 }
 .footer-main {
   background-color: $secondary-color;
@@ -104,11 +100,17 @@ body,
   background-repeat: no-repeat;
 }
 body.the-gathering-2020 {
+  $primary-color: #933062;
+  $primary-color-var: 933062;
+  $primary-color-light: #EFE0E8;
   .bg-rouleaux {
     background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-color-light-var}&style=solid');
   }
+  // header.toolbar .btn,
+  // a:link {
+  //   background: linear-gradient(to bottom, $gathering-color-light 0%, $gathering-color-light 100%);
+  // }
   .splash-image-header {
-    // height: 30vh;
     background-size: cover;
     background-position: center;
     .header-logo {
@@ -520,7 +522,7 @@ a:hover {
 .goodmoves-vacancies a,
 .bg-primary a,
 .bg-secondary a,
-footer .footer-main a {
+footer a {
   color: white;
   border-bottom: $thick-line solid transparent;
   background: none;
@@ -537,26 +539,26 @@ footer .footer-main a {
 }
 .bg-primary a:hover,
 .bg-secondary a:hover,
-footer .footer-main a:hover {
+footer a:hover {
   // border-bottom-color: white;
   color: white;
   border-bottom: $thick-line solid white;
   // background-size: $thick-line 50px;
 }
-footer .footer-copyright a {
-  border-bottom: $thick-line solid transparent;
-  // background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
-  // background-position: 0 100%;
-  // background-repeat: repeat-x;
-  // background-size: $thick-line $thick-line;
-  // transition: background-size $transition-speed, color $transition-speed;
-}
-footer .footer-copyright a:hover {
-  // border-bottom-color: $secondary-color;
-  // color: white;
-  border-bottom: $thick-line solid $secondary-color;
-  // background-size: $thick-line 50px;
-}
+// footer .footer-copyright a {
+//   border-bottom: $thick-line solid transparent;
+//   // background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
+//   // background-position: 0 100%;
+//   // background-repeat: repeat-x;
+//   // background-size: $thick-line $thick-line;
+//   // transition: background-size $transition-speed, color $transition-speed;
+// }
+// footer .footer-copyright a:hover {
+//   // border-bottom-color: $secondary-color;
+//   // color: white;
+//   border-bottom: $thick-line solid $secondary-color;
+//   // background-size: $thick-line 50px;
+// }
 footer .footer-copyright a.scvo-logo {
   border: none;
 }
@@ -1420,7 +1422,7 @@ aside {
 }
 .form-input,
 .form-select {
-  background-color: white;
+  background-color: white !important;
 }
 .form-group {
   .search-location {
@@ -1688,21 +1690,31 @@ header.header {
 header.toolbar {
   // padding-top: $unit/2;
   border-bottom: $thick-line solid $primary-color;
+  .site-tab-bar {
+    margin-bottom: -1px;
+  }
   .btn {
     color: $secondary-color;
     // border-radius: $border-radius $border-radius 0 0 !important;
     border-radius: 0;
     line-height: 1.1rem;
     height: 1.5rem;
-    transition: background-color 0.1s, color 0.1s;
+    // transition: background-color 0.1s, color 0.1s;
+    background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 0 0;
+    transition: background-size $transition-speed;
   }
   .btn:hover,
   .btn:focus {
-    background-color: $secondary-color-light;
-    color: white;
+    background-size: $thick-line 50px;
+    // background-color: $secondary-color-light;
+    color: $secondary-color;
   }
   .btn.active,
   .btn.active:hover {
+    background-size: 0 0;
     background-color: $primary-color;
     color: white;
   }
@@ -2089,7 +2101,7 @@ footer {
   position: relative;
   .footer-main {
     // margin-top: $unit*1.5;
-    padding: 0 0 $unit*1.5;
+    padding: 0 0 $unit;
     position: relative;
     .membership {
       margin-top: -($unit*3);
@@ -2131,11 +2143,8 @@ footer {
     }
     p,
     a {
-      color: $secondary-color;
+      color: white;
     }
-    // a:hover {
-    //   color: $secondary-color;
-    // }
     p {
       margin: $unit/2 0;
       font-size: 0.7rem;
@@ -2608,8 +2617,7 @@ figure,
   .page,
   .menu,
   .breadcrumb .breadcrumb-item,
-  .breadcrumb .breadcrumb-item:not(:first-child)::before,
-  .footer-copyright {
+  .breadcrumb .breadcrumb-item:not(:first-child)::before {
     background: $secondary-color;
     color: white;
   }
