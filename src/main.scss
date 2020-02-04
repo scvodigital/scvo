@@ -14,7 +14,7 @@ $gray-color-dark: #9BA5AD;
 $light-color: #FEF9F9;
 $light-color-var: FEF9F9;
 $gathering-color: #8C1C5D;
-$gathering-color-light: #EFE0E8;
+$gathering-color-light: #EAE0E8;
 $gathering-color-alt: #ECCBCD;
 $gathering-color-light-var: FAF5F8;
 $awards-color-light-var: F9F4F5;
@@ -100,17 +100,11 @@ body,
   background-repeat: no-repeat;
 }
 body.the-gathering-2020 {
-  $primary-color: #933062;
-  $primary-color-var: 933062;
-  $primary-color-light: #EFE0E8;
   .bg-rouleaux {
     background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-color-light-var}&style=solid');
   }
-  // header.toolbar .btn,
-  // a:link {
-  //   background: linear-gradient(to bottom, $gathering-color-light 0%, $gathering-color-light 100%);
-  // }
   .splash-image-header {
+    // height: 30vh;
     background-size: cover;
     background-position: center;
     .header-logo {

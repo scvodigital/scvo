@@ -1,0 +1,39 @@
+{{!-- <h2 class="mdc-card__title mdc-card__title--large">Search jobs</h2> --}}
+<form action="/jobs/goodmoves/search" method="GET">
+  <div class="form-group has-icon-left">
+    <span class="far fa-search form-icon" tabindex="0"></span>
+    <input type="text" id="jobs-keywords" name="q" class="form-input" value="{{@root.request.params.query.q}}" placeholder="Keywords">
+  </div>
+  <div class="form-group">
+    <select class="form-select" id="jobs-role" name="role">
+      <option value=""{{#if @root.request.params.query.role}}{{else}} selected{{/if}}>All roles</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.roles.buckets ~}}
+      <option value="{{key}}" {{#compare @root.request.params.query.role "===" key}}selected{{/compare}}>{{key}}</option>
+      {{/each ~}}
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="form-select" id="jobs-sector" name="sector">
+      <option value=""{{#if @root.request.params.query.sector}}{{else}} selected{{/if}}>All sectors</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.sectors.buckets ~}}
+      <option value="{{key}}" {{#compare @root.request.params.query.sector "===" key}}selected{{/compare}}>{{key}}</option>
+      {{/each ~}}
+    </select>
+  </div>
+  <div class="form-group">
+    <select class="form-select" id="jobs-status" name="status">
+      <option value=""{{#if @root.request.params.query.status}}{{else}} selected{{/if}}>All statuses</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.statuses.buckets ~}}
+      <option value="{{key}}" {{#compare @root.request.params.query.status "===" key}}selected{{/compare}}>{{key}}</option>
+      {{/each ~}}
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="number" id="jobs-minimum_salary" name="minimum_salary" class="form-input" value="{{@root.request.params.query.minimum_salary}}" placeholder="Minimum salary, e.g. 32000">
+    <div class="mdc-line-ripple"></div>
+  </div>
+  <button class="btn btn-primary btn-block" type="submit">
+    <span class="far fa-search float-left pt-1"></span>
+    Search jobs
+  </button>
+</form>

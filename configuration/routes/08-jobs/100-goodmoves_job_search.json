@@ -55,8 +55,10 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.jobs_goodmoves-vacancy-search-head-tags",
-              "body": ">context.metaData.handlebars.templates.jobs_goodmoves-vacancy-search",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.jobs_goodmoves-vacancy-search-header",
+              "leftSidebar": ">context.metaData.handlebars.templates.jobs_goodmoves-vacancy-search-form",
+              "body": ">context.metaData.handlebars.templates.jobs_goodmoves-vacancy-search-results",
+              "footer": ">context.metaData.handlebars.templates.jobs_goodmoves-vacancy-search-footer"
             },
             "contentType": "text/html"
           }

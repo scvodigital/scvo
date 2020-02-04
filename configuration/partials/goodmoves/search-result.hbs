@@ -1,26 +1,26 @@
 <h3>
-  <a href="https://goodmoves.com/vacancy/{{source.Id}}/{{source.title_slug}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{{source.title}}}</a>
+  <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{{title}}}</a>
 </h3>
 <p>
-  {{#ifAll source.organisation.slug source.organisation.name ~}}
+  {{#ifAll organisation.slug organisation.name ~}}
   <span class="far fa-building fa-fw" title="Organisation"></span>
-  <a href="https://goodmoves.com/organisation/{{source.organisation.id}}/{{source.organisation.slug_name}}?utm_source=scvo&utm_campaign=search&utm_medium=website">{{source.organisation.name}}</a>
+  <a href="https://goodmoves.com/organisation/{{organisation.id}}/{{organisation.slug_name}}?utm_source=scvo&utm_campaign=search&utm_medium=website" class="no-underline">{{organisation.name}}</a>
   <br />
   {{/ifAll ~}}
-  {{#if source.location ~}}
+  {{#if location ~}}
   <span class="far fa-map-marker-alt fa-fw" title="Location"></span>
-  {{source.location}}<br />
+  {{location}}<br />
   {{/if ~}}
-  {{#if source.closing_date ~}}
+  {{#if closing_date ~}}
   <span class="far fa-calendar-alt fa-fw" title="Closing date"></span>
-  Closing {{momentFormat (moment source.closing_date 'x') 'dddd Do MMMM YYYY'}}
+  Closing {{momentFormat (moment closing_date 'x') 'dddd Do MMMM YYYY'}}
   {{/if ~}}
 </ul>
-{{#if source.description_short ~}}
+{{#if description_short ~}}
 <p>
-  {{{source.description_short}}}
+  {{{description_short}}}
 </p>
 {{/if ~}}
 <p>
-  <a href="https://goodmoves.com/vacancy/{{source.Id}}/{{source.title_slug}}?utm_source=scvo&utm_campaign=search&utm_medium=website">Find out more &amp; apply</a>
+  <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website" class="no-underline">Find out more &amp; apply</a>
 </p>
