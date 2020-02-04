@@ -2664,3 +2664,34 @@ figure,
     background-image: url('https://test.scvo.org/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid');
   }
 }
+
+@media print {
+  h1 {
+    font-size: 1.6rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
+  header,
+  .navbar,
+  .apply-button,
+  .print-button,
+  .sidebar,
+  .related,
+  .pagination,
+  .footer-image,
+  .breadcrumb,
+  .header-caption,
+  #share-menu-button,
+  .grid-info .social,
+  .footer,
+  footer {
+    display: none !important;
+  }
+}
