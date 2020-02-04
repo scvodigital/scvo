@@ -1700,10 +1700,8 @@ header.header {
 header.toolbar {
   // padding-top: $unit/2;
   border-bottom: $thick-line solid $primary-color;
-  .site-tab-bar {
-    margin-bottom: -1px;
-  }
   .btn {
+    border: none;
     color: $secondary-color;
     // border-radius: $border-radius $border-radius 0 0 !important;
     border-radius: 0;
