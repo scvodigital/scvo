@@ -94,20 +94,23 @@
             </div>
           </div>
           {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
-          <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline card-image-link">
-            <div class="card-image" style="overflow:hidden;">
-              <img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" />
+          <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">
+            <div class="card-image-link">
+              <div class="card-image-wrapper">
+                <div class="card-image">
+                  <img src="{{replace image_wide '__wide' ''}}" alt="{{trim title}}" class="img-responsive" />
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>{{{trim title}}}</h4>
+                <p>
+                  {{{truncate description 280}}}
+                </p>
+              </div>
             </div>
           </a>
-          <div class="card-body">
-            <h4><a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a></h4>
-            {{!-- <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a> --}}
-            <p>
-              {{{truncate description 280}}}
-            </p>
-            <p>
-              <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline">Read more</a>
-            </p>
+          <div class="card-footer">
+            <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline">Read more</a>
           </div>
           {{/with ~}}
         </div>
@@ -120,9 +123,7 @@
               Featured campaign
               <a href="/policy/campaigns" class="caption l-margin">See more</a>
             </div>
-            <div>
-              {{> promoted_eu_are_valued}}
-            </div>
+            {{> promoted_eu_are_valued}}
           </div>
         </div>
       </div>
