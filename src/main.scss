@@ -1177,6 +1177,18 @@ a.author:hover,
     border-color: $primary-color-dark !important;
     color: white;
   }
+  .input-group .form-input,
+  .input-group .form-select,
+  .input-group-btn {
+    background-color: $secondary-color !important;
+    color: white;
+    border-color: white !important;
+  }
+  .input-group .btn.btn-primary:hover {
+    background-color: white !important;
+    color: $secondary-color !important;
+    border-color: white !important;
+  }
 }
 .bg-white {
   background: white;

@@ -1,9 +1,9 @@
-<div class="latest-posts v-padding-full bg-gray">
+<div class="latest-posts b-padding-full bg-gray">
   <div class="container v-padding-full">
     <div class="columns">
       {{#compare @root.data.supplimentaryResponses.posts_latest.hits.total ">" 0 ~}}
       <div class="column col-6 col-md-12">
-        <h3 class="b-margin">
+        <h3 class="b-margin-full">
           Recent SCVO blog posts
           <a href="/blogs" class="caption l-margin">Read more</a>
         </h3>
@@ -13,7 +13,7 @@
           <li class="clearfix b-margin">
             <a href="/{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
             <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
-            &ensp;<span class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</span>
+            <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
           </li>
           {{/with ~}}
           {{/each ~}}
@@ -21,7 +21,7 @@
       {{/compare ~}}
       {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
       <div class="column col-6 col-md-12">
-        <h3 class="b-margin">
+        <h3 class="b-margin-full">
           Recent TFN stories
           <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">Read more on TFN</a>
         </h3>
