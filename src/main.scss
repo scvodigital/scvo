@@ -1247,6 +1247,9 @@ a.author:hover,
 .goodmoves-vacancy.gist,
 .fs-fund.gist {
   margin-bottom: $unit;
+  h4 {
+    padding-top: 0;
+  }
 }
 .goodmoves-vacancies {
   background-color: $goodmoves-color;
