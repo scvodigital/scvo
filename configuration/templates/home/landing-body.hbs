@@ -94,17 +94,19 @@
             </div>
           </div>
           {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
-          <div class="card-image" style="overflow:hidden;">
-            <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic"><img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" /></a>
-          </div>
+          <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline card-image-link">
+            <div class="card-image" style="overflow:hidden;">
+              <img src="{{image_wide}}" alt="{{trim title}}" class="img-responsive" />
+            </div>
+          </a>
           <div class="card-body">
-            <h4><a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a></h4>
+            <h4><a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a></h4>
             {{!-- <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a> --}}
             <p>
               {{{truncate description 280}}}
             </p>
             <p>
-              <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline">Read more</a>
+              <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline">Read more</a>
             </p>
           </div>
           {{/with ~}}
@@ -114,7 +116,7 @@
       <div class="column col-4 col-md-12">
         <div class="card">
           <div class="card-header">
-            <div class="card-title h3" style="padding-bottom: 0.8rem;">
+            <div class="card-title h3">
               Featured campaign
               <a href="/policy/campaigns" class="caption l-margin">See more</a>
             </div>
