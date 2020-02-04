@@ -44,8 +44,6 @@ $page-width: 1400px;
 $home-splash-height: 25vh;
 $transition-speed: .3s;
 
-// @import url('https://fonts.googleapis.com/css?family=Lato:400,600&display=swap');
-
 @import "../node_modules/spectre.css/src/spectre";
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css');
@@ -84,7 +82,6 @@ $transition-speed: .3s;
 
 .container {
   padding: 0 $padding*2;
-  // padding: 0;
   margin: 0 auto;
   max-width: $page-width;
   .container {
@@ -124,7 +121,6 @@ body.the-gathering-2020 {
     background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-color-light-var}&style=solid');
   }
   .splash-image-header {
-    // height: 30vh;
     background-size: cover;
     background-position: center;
     .header-logo {
@@ -294,7 +290,6 @@ h3 {
 .staff-list h3 {
   margin: $unit 0 0;
 }
-// .mdc-card__primary h3,
 .card-title.h4,
 h4 {
   font-size: 1.1rem;
@@ -367,9 +362,6 @@ h1.font-default,
     font-weight: 400 !important;
     font-size: 1.2rem !important;
     background-image: url('https://test.scvo.org/rouleaux.svg?color=#{$secondary-color-var}&opacity=1&style=solid');
-    // position: absolute;
-    // right: .5rem;
-    // top: .5rem;
     float: right;
     margin-top: -0.6rem;
     height: 2.5rem;
@@ -455,14 +447,11 @@ a:visited {
   text-decoration: none;
   font-weight: $body-link-weight;
   color: $secondary-color;
-  // border-bottom: $thick-line solid lighten($secondary-color,50%);
   background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
   transition: background-size $transition-speed, color $transition-speed, border $transition-speed, background-color $transition-speed;
-  // padding-top: 1px;
-  // padding-bottom: $thick-line;
 }
 h1 a:link,
 h1 a:visited,
@@ -491,7 +480,6 @@ h5 a:visited,
 footer a:link,
 footer a:visited,
 .sidebar .menu .menu-item>a {
-  // border-bottom: $thick-line solid transparent;
   background: none;
 }
 footer a:link,
@@ -513,29 +501,16 @@ h5 a:hover,
 .sidebar .menu .menu-item>a:focus,
 .sidebar .menu .menu-item>a:hover {
   color: $primary-color;
-  // border-bottom: $thick-line solid $primary-color;
-  // border-bottom-color: transparent;
   background: none;
 }
 footer a:hover,
 footer ul li a:hover {
   color: $primary-color;
-  // border-bottom: $thick-line solid white;
   background: none;
 }
 a:hover {
   text-decoration: none;
-  // color: $primary-color;
-  // background: transparent;
-  // color: white;
-  // color: $secondary-color;
-  // background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
   background-size: $thick-line 50px;
-  // border-bottom-color: $secondary-color-light;
-}
-.sidebar .menu .menu-item>a:focus,
-.sidebar .menu .menu-item>a:hover {
-  // background-color: $primary-color;
 }
 .sidebar-left,
 .sidebar-right {
@@ -631,8 +606,6 @@ footer a {
   top: 0;
   left: 0;
   position: absolute;
-  // background: #000;
-  // background: rgba(0,0,0,0.3);
   background-image: linear-gradient(100deg, $secondary-color, transparent, $primary-color);
   z-index: 2;
   opacity: 0.4;
@@ -652,40 +625,12 @@ footer a {
     line-height: 0;
   }
 }
-// .bg-secondary a.no-underline:hover,
-// .goodmoves-vacancies a:hover {
-//   color: white !important;
-//   border-bottom: $thick-line solid white;
-// }
-// .goodmoves-vacancies a:hover {
-//   border-bottom: $thick-line solid white;
-// }
 .bg-primary a:hover {
-  // border-bottom-color: white;
   color: $secondary-color;
-  // border-bottom-color: white;
-  // background-size: $thick-line 50px;
 }
 .bg-secondary a:hover {
-  // border-bottom-color: white;
   color: $primary-color;
-  // border-bottom-color: white;
-  // background-size: $thick-line 50px;
 }
-// footer .footer-copyright a {
-//   border-bottom: $thick-line solid transparent;
-//   // background: linear-gradient(to bottom, $secondary-color 0%, $secondary-color 100%);
-//   // background-position: 0 100%;
-//   // background-repeat: repeat-x;
-//   // background-size: $thick-line $thick-line;
-//   // transition: background-size $transition-speed, color $transition-speed;
-// }
-// footer .footer-copyright a:hover {
-//   // border-bottom-color: $secondary-color;
-//   // color: white;
-//   border-bottom: $thick-line solid $secondary-color;
-//   // background-size: $thick-line 50px;
-// }
 footer .footer-copyright a.scvo-logo {
   border: none;
 }
@@ -705,7 +650,6 @@ footer .footer-copyright a.scvo-logo {
   background-color: $secondary-color-light;
   border-color: $secondary-color-light;
   color: white;
-  // color: $secondary-color-light;
 }
 .btn.btn-link:link,
 .btn.btn-link:visited,
@@ -766,7 +710,6 @@ a.avatar,
 a.author,
 a.rss,
 .chip {
-  // border-bottom: none !important;
   padding-top: 0;
   padding-bottom: 0;
   color: $primary-color;
@@ -853,11 +796,6 @@ a.author:hover,
       padding-top: 0;
     }
   }
-  // .card-header,
-  // .card-body,
-  // .card-footer {
-  //   padding: $unit*1.5;
-  // }
 }
 .card.card-no-padding {
   .card-header,
@@ -880,9 +818,7 @@ a.author:hover,
 .card.gray,
 .card.green,
 .card.pink {
-  // padding: $unit*1.5 $unit*1.25 $unit*1.25;
   margin-bottom: $unit;
-  // border: $thick-line solid transparent !important;
   transition: background $transition-speed;
   .card-header {
     padding-top: 0;
@@ -897,25 +833,6 @@ a.author:hover,
     border-bottom: $thick-line solid transparent;
   }
 }
-// .card.primary:hover,
-// .card.secondary:hover,
-// .card.yellow:hover,
-// .card.blue:hover,
-// .card.purple:hover,
-// .card.gray:hover,
-// .card.green:hover,
-// .card.pink:hover {
-//   background-color: white;
-//   border-color: $primary-color !important;
-//   color: $primary-color;
-//   a {
-//     color: $primary-color;
-//     border-bottom: $thick-line solid $primary-color;
-//   }
-//   .card-body {
-//     color: $secondary-color;
-//   }
-// }
 .card.primary {
   background-color: $primary-color;
   .card-title .fa-fw {
@@ -1110,67 +1027,6 @@ a.author:hover,
     border-bottom-color: white;
   }
 }
-// .promoted-content {
-//   .card {
-// //     height: 366px;
-// //     overflow: hidden;
-// //     .card-header {
-// //       transition: margin $transition-speed;
-// //     }
-// //     .card-image {
-// //       position: relative;
-// //       .logo {
-// //         height: 100%;
-// //         width: auto;
-// //         position: absolute;
-// //         top: 0;
-// //         left: 0;
-// //         right: 0;
-// //         margin: 0 auto;
-// //       }
-// //       .overlay-effect {
-// //         width: 100%;
-// //         height: 100%;
-// //         position: absolute;
-// //         left: 0;
-// //         top: 0;
-// //         opacity: 0;
-// //         transition: opacity $transition-speed;
-// //         background-color: rgba(255, 89, 90, 0.2);
-// //         overflow: hidden;
-// //       }
-// //     }
-// //     .card-header {
-// //       border-top: $thick-line solid $primary-color;
-// //       padding-top: $unit*.4;
-// //     }
-// //     .card-footer:last-child {
-// //       padding-bottom: $unit*.4;
-// //     }
-//     .card-header,
-//     .card-body,
-//     .card-footer {
-//       z-index: 1;
-//     }
-// //     .card-body {
-// //       overflow: hidden;
-// //     }
-//     // .card-title,
-//     // .card-title a,
-//     // .card-subtitle {
-//     //   color: white !important;
-//     // }
-// //   }
-// //   .card:hover {
-// //     .card-header {
-// //       margin-top: -148px;
-// //     }
-// //     .overlay-effect {
-// //       opacity: 1;
-// //     }
-// //   }
-//   }
-// }
 .card.the-gathering {
   .card-image .logo {
     padding: $unit 0;
@@ -1184,75 +1040,6 @@ a.author:hover,
     height: 128px;
   }
 }
-
-// @media screen and (max-width: 1400px) {
-//   .promoted-content .card {
-//     height: 26vw;
-//   }
-// }
-// @media screen and (max-width: 1250px) {
-//   .promoted-content .card {
-//     height: 27vw;
-//   }
-//   .hero .hero-text h1 {
-//     font-size: 4rem;
-//   }
-// }
-// @media screen and (max-width: 1100px) {
-//   .promoted-content .card {
-//     height: 28vw;
-//   }
-//   .hero .hero-text h1 {
-//     font-size: 3.5rem;
-//   }
-// }
-// @media screen and (max-width: 840px) {
-//   .promoted-content .card {
-//     height: 50vw;
-//   }
-//   .hero .hero-text h1 {
-//     font-size: 3rem;
-//     letter-spacing: -0.01rem;
-//   }
-// }
-// @media screen and (max-width: 680px) {
-//   .promoted-content .card {
-//     height: 52vw;
-//   }
-//   .hero .hero-text h1 {
-//     font-size: 2.5rem;
-//   }
-// }
-// @media screen and (max-width: 560px) {
-//   .promoted-content .card {
-//     height: 54vw;
-//   }
-//   .hero .hero-text h1 {
-//     font-size: 2rem;
-//     letter-spacing: 0;
-//   }
-// }
-// @media screen and (max-width: 490px) {
-//   .promoted-content .card {
-//     height: 56vw;
-//   }
-//   .hero .hero-text h1 {
-//     font-size: 1.85rem;
-//   }
-// }
-// @media screen and (max-width: 420px) {
-//   .promoted-content .card {
-//     height: 58vw;
-//   }
-//   .hero .hero-text h1 {
-//     font-size: 1.75rem;
-//   }
-// }
-// @media screen and (max-width: 340px) {
-//   .promoted-content .card {
-//     height: 60vw;
-//   }
-// }
 
 .bg-primary {
   background-color: $primary-color;
@@ -1482,7 +1269,6 @@ form#settled_status {
   display: none;
 }
 
-
 main,
 aside {
   a[href^="http://"]::after,
@@ -1660,8 +1446,8 @@ aside {
       margin: $unit/4 0;
     }
     .tt-dataset {
-      // padding: $unit/4 0;
-      h3, div {
+      h3,
+      div {
         padding: 0 $unit/4;
       }
     }
@@ -1824,12 +1610,10 @@ header {
   min-width: 240px;
 }
 header.header {
-  // padding-top: $unit/2;
   .navbar-brand {
     line-height: 1;
     img {
       width: 320px;
-      // margin-left: -10px;
     }
   }
   .form-horizontal {
@@ -1840,16 +1624,13 @@ header.header {
   }
 }
 header.toolbar {
-  // padding-top: $unit/2;
   border-bottom: $thick-line solid $primary-color;
   .btn {
     border: none;
     color: $secondary-color;
-    // border-radius: $border-radius $border-radius 0 0 !important;
     border-radius: 0;
     line-height: 1.1rem;
     height: 1.5rem;
-    // transition: background-color 0.1s, color 0.1s;
     background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
     background-position: 0 100%;
     background-repeat: repeat-x;
@@ -1859,7 +1640,6 @@ header.toolbar {
   .btn:hover,
   .btn:focus {
     background-size: $thick-line 50px;
-    // background-color: $secondary-color-light;
     color: $secondary-color;
   }
   .btn.active,
@@ -1870,9 +1650,6 @@ header.toolbar {
   }
 }
 
-// .navbar.toolbar .btn {
-//   line-height: 1.7rem;
-// }
 .cards.equal-height {
   .column {
     padding-bottom: 0.8rem;
@@ -1968,9 +1745,6 @@ blockquote {
     margin: 0;
     padding: 0;
   }
-  // li:not(:last-child) {
-  //   margin-right: 5px;
-  // }
 }
 .inline-dl {
   margin: 0;
@@ -1985,12 +1759,6 @@ blockquote {
   }
   dd {
     width: 70%;
-    p {
-      span {
-        // margin-left: $unit/5;
-        // margin-right: $unit/5;
-      }
-    }
     table {
       th,
       td {
@@ -2048,7 +1816,6 @@ blockquote {
     font-weight: $heading-link-weight;
   }
   dd {
-    // margin: 0 0 $unit;
     .mdc-layout-grid__inner:last-child {
       margin-bottom: 0;
     }
@@ -2057,7 +1824,6 @@ blockquote {
 .full {
   padding-bottom: $unit*2;
   .post-info {
-    // border-bottom: $thin-line solid $gray-color-light;
     padding-bottom: $unit/4;
     margin-bottom: $unit/2;
   }
@@ -2077,10 +1843,6 @@ ul li,
 ol li {
   margin-top: 0;
 }
-// ul li:first-child,
-// ol li:first-child {
-//   margin-top: 0;
-// }
 .form.disabled,
 form.disabled {
   pointer-events: none;
@@ -2116,7 +1878,6 @@ form {
 }
 
 .authentication-form {
-  // padding: $unit*1.5 0;
   min-height: 15vh;
   max-width: 500px !important;
   margin: 0 auto;
@@ -2165,9 +1926,6 @@ form {
   #sign-up-message,
   #reset-password-message {
     display: none;
-    // a {
-    //   font-weight: $heading-link-weight;
-    // }
   }
 }
 #sign-out-form {
@@ -2180,9 +1938,6 @@ form {
 form {
   #active-form-message {
     display: none;
-    // a {
-    //   font-weight: $heading-link-weight;
-    // }
   }
 }
 
@@ -2195,7 +1950,6 @@ form {
       border-radius: 0;
       padding: 0;
       margin: 0;
-      // font-size: 0.95rem;
       display: inline;
     }
     .menu-item>a.menu-level-1 {
@@ -2205,7 +1959,6 @@ form {
     .menu-item>a:active,
     .menu-item>a.active {
       background-color: transparent;
-      // color: white;
     }
   }
   // .menu.menu-depth-2 {
@@ -2233,7 +1986,6 @@ form {
   //   }
   // }
 }
-
 .fa-ul {
   margin-left: 1.3333rem;
 }
@@ -2265,9 +2017,6 @@ footer {
     h4 {
       color: white;
     }
-    // a:hover {
-    //   color: white;
-    // }
     p {
       margin: 0;
     }
@@ -2360,7 +2109,6 @@ footer {
           text-align: left;
           border-width: 0;
           margin-top: .33rem;
-          // height: 40px;
           p {
             padding: $unit/10 0;
           }
@@ -2802,9 +2550,6 @@ figure,
   img:hover {
     opacity: 1;
   }
-  // .menu {
-  //   border: $thick-line solid $light-color;
-  // }
   .bg-rouleaux {
     background-image: url('https://test.scvo.org/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid');
   }
