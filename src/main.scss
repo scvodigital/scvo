@@ -346,6 +346,12 @@ h1.font-default,
   line-height: 1.1rem !important;
 }
 .btn.btn-lg:hover {
+  color: white;
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
+.btn.btn-primary.btn-lg:hover {
+  color: white;
   background-color: $secondary-color-light;
   border-color: $secondary-color-light;
 }
@@ -540,6 +546,7 @@ a:hover {
 .bg-primary a,
 .bg-secondary a,
 .bg-secondary a.no-underline,
+.wp-block-image a,
 footer a {
   color: white;
   background: none;
@@ -1063,7 +1070,8 @@ a.author:hover,
   .card-image {
     position: relative;
     .logo {
-      height: 100%;
+      max-height: 100%;
+      height: auto;
       width: auto;
       position: absolute;
       top: 0;
@@ -2403,6 +2411,15 @@ footer {
   .mobile-menu .mobile-contents {
     padding: $unit $unit/2;
   }
+}
+
+.alignright {
+  float: right;
+  margin-left: $padding !important;
+}
+.alignleft {
+  float: left;
+  margin-right: $padding !important;
 }
 
 .text-left {
