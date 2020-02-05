@@ -479,6 +479,8 @@ h5 a:visited,
 .related-posts a:visited,
 footer a:link,
 footer a:visited,
+.tab .tab-item a,
+.menu .menu-item a,
 .sidebar .menu .menu-item>a {
   background: none;
 }
@@ -498,6 +500,8 @@ h5 a:hover,
 .h5 a:hover,
 .post-info a:hover,
 .related-posts a:hover,
+.tab .tab-item a:hover,
+.menu .menu-item a:hover,
 .sidebar .menu .menu-item>a:focus,
 .sidebar .menu .menu-item>a:hover {
   color: $primary-color;
@@ -608,7 +612,7 @@ footer a {
   position: absolute;
   background-image: linear-gradient(100deg, $secondary-color, transparent, $primary-color);
   z-index: 2;
-  opacity: 0.4;
+  opacity: 0.3333;
   -moz-transition: 0.5s ease;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
