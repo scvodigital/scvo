@@ -14,7 +14,7 @@
 <meta property="og:summary" content="{{stripTags (regexReplace (default og_summary (default ../og_summary (default description ../description))) '\r|\n' 'gi' '')}}" data-dynamic="true">
 <meta name="description" content="{{stripTags (regexReplace (default description (default ../description (default og_summary ../og_summary))) '\r|\n' 'gi' '')}}" data-dynamic="true">
 {{/ifAny ~}}
-{{> page_json_ld this}}
+{{> content_page_json_ld this}}
 {{/with ~}}
 {{else}}
 <title>Scottish Council for Voluntary Organisations – SCVO</title>

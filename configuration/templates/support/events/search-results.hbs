@@ -3,7 +3,7 @@
 {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
 {{#each @root.data.primaryResponse.hits.hits ~}}
 {{#with _source ~}}
-{{> event_list}}
+{{> content_event_list}}
 {{/with ~}}
 {{/each ~}}
 {{else}}

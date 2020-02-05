@@ -6,7 +6,7 @@
   </div>
   <div class="card-body">
     <div class="post-info">
-      {{> post_info_published}}
+      {{> content_post_info_published}}
     </div>
     <p>
       {{{truncate description 140}}}
@@ -15,7 +15,7 @@
   {{#ifAll categories post_tags ~}}
   <div class="card-footer">
     <div class="post-info">
-      {{> post_info_categories}}
+      {{> content_post_info_categories}}
     </div>
   </div>
   {{/ifAll ~}}

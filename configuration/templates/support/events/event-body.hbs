@@ -1,7 +1,7 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <h2>{{{title}}}</h2>
 
-{{> event_full}}
+{{> content_event_full}}
 {{/with ~}}
 
 {{> events_same}}

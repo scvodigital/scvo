@@ -71,9 +71,9 @@
         <h3 class="b-padding">Briefings</h3>
 
         {{#if @root.data.supplimentaryResponses.latest_briefings.hits.hits ~}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[0]._source}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[1]._source}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[2]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[0]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[1]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[2]._source}}
         {{/if ~}}
 
         <a href="/policy/briefings" class="no-underline">More briefings</a>
@@ -82,9 +82,9 @@
         <h3 class="b-padding">Consultation responses</h3>
 
         {{#if @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits ~}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[0]._source}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[1]._source}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[2]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[0]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[1]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[2]._source}}
         {{/if ~}}
 
         <a href="/policy/consultation-responses" class="no-underline">More consultation responses</a>
@@ -93,9 +93,9 @@
         <h3 class="b-padding">Research</h3>
 
         {{#if @root.data.supplimentaryResponses.latest_research.hits.hits ~}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[0]._source}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[1]._source}}
-        {{> post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[2]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[0]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[1]._source}}
+        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[2]._source}}
         {{/if ~}}
 
         <a href="/policy/research" class="no-underline">More research</a>

@@ -1,6 +1,6 @@
 {{#each @root.data.primaryResponse.hits.hits ~}}
-{{> post_rss _source}}
+{{> content_post_rss _source}}
 {{/each ~}}
 {{#each @root.data.supplimentaryResponses.posts.hits.hits ~}}
-{{> post_rss _source}}
+{{> content_post_rss _source}}
 {{/each ~}}

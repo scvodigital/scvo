@@ -1,0 +1,20 @@
+<div class="map-content" data-opportunity-id="{{Id}}" data-opportunity-layout="Map" data-opportunity-context="{{default viewContext 'Map'}}">
+  <h4>
+    <a href="{{path}}{{> query_search}}">{{title}}</a>
+  </h4>
+  <div class="post-info">
+    {{#if organisation.name ~}}
+    <div class="post-info-item post-info-organisation v-margin">
+      {{{replace (replace organisation.name "'" "&apos;") "`" "&apos"}}}
+    </div>
+    {{/if ~}}
+    {{#if description_short ~}}
+    <div class="post-info-item post-info-description faded-overflow">
+      {{{replace (replace description_short "'" "&apos;") "`" "&apos"}}}
+    </div>
+    {{/if ~}}
+  </div>
+  <div class="opportunity-link">
+    <a href="{{path}}{{> query_search}}" class="btn btn-link">Find out more</a>
+  </div>
+</div>

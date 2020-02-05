@@ -11,6 +11,6 @@
 {{else}}
 <h2>Current vacancies with SCVO</h2>
 {{#each @root.data.supplimentaryResponses.scvo_jobs.hits.hits ~}}
-{{> goodmoves_search_result source=_source}}
+{{> content_goodmoves_search_result source=_source}}
 {{/each ~}}
 {{/compare ~}}

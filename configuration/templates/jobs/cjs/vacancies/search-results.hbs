@@ -18,6 +18,69 @@
 {{#compare @root.data.supplimentaryResponses.types.hits.total ">" 0 ~}}
 {{#ifAny @root.request.params.query.view @root.request.params.query.q @root.request.params.query.job_number @root.request.params.query.location @root.request.params.query.sector request.params.query.region ~}}
 {{#compare @root.request.params.query.view "===" "map" ~}}
+
+<div id="map-full" style="height: 60vh; width: 100%;" data-component="LeafletMap" data-LeafletMap='{
+    mapOptions: {
+      fullscreenControl: true,
+      scrollWheelZoom: false,
+      trackResize: false,
+      zoom: 11
+    },
+    initialLatLng: { lat: 55.94528820000001, lng: -3.200755699999945 },
+    featureGroups: [
+      {{#ifAll @root.request.params.query.distance @root.request.params.query.lat @root.request.params.query.lng ~}}
+      {
+        boundToThis: true,
+        features: [
+          {
+            type: "Circle",
+            latLng: { lat: {{@root.request.params.query.lat}}, lng: {{@root.request.params.query.lng}} },
+            options: {
+              radius: {{default (multiply @root.request.params.query.distance 1609.34) 0}},
+              color: "#008EDF"
+            }
+          }
+        ]
+      }
+      {{/ifAll ~}}
+    ],
+    markerClusterGroups: [
+      {
+        boundToThis: true,
+        options: {
+          showCoverageOnHover: false
+        },
+        markers: [
+          {{#each @root.data.primaryResponse.hits.hits ~}}
+            {{#if _source.geo_coords ~}}
+              {{#each (arrayify _source.geo_coords) ~}}
+                {{#if @root.request.params.query.distance ~}}
+                  {{#compare (itemAt ../fields.distance @index) "<" @root.request.params.query.distance ~}}
+                    {
+                      type: "Marker",
+                      popupContent: `
+                        {{> content_cjs_map ../_source map_postcode=(itemAt (arrayify (split ../_source.postcode ",")) @index)}}
+                      `,
+                      latLng: { lat: {{lat}}, lng: {{lon}} }
+                    },
+                  {{/compare ~}}
+                {{else}}
+                  {
+                    type: "Marker",
+                    popupContent: `
+                      {{> content_cjs_map ../_source map_postcode=(itemAt (arrayify (split ../_source.postcode ",")) @index)}}
+                    `,
+                    latLng: { lat: {{lat}}, lng: {{lon}} }
+                  },
+                {{/if ~}}
+              {{/each ~}}
+            {{/if ~}}
+          {{/each ~}}
+        ]
+      }
+    ]
+  }'></div>
+
 <div id="detailed-results-container" class="container-content container-map">
   <div id="map-full" data-map-name="fullMap" data-map-clustered-options='{
     {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}}

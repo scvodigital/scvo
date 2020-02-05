@@ -5,7 +5,7 @@
     {{#each @root.data.supplimentaryResponses.related_events.hits.hits ~}}
     <div class="column col-6 col-md-12">
       {{#with _source ~}}
-      {{> event_list}}
+      {{> content_event_list}}
       {{/with ~}}
     </div>
     {{/each ~}}

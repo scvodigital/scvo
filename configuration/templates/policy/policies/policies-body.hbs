@@ -29,7 +29,7 @@
 {{else}}
 <div class="container">
   {{#each @root.data.supplimentaryResponses.policies.hits.hits ~}}
-  {{> policies_full _source}}
+  {{> content_policy_full _source}}
   {{/each ~}}
 </div>
 {{/unless ~}}

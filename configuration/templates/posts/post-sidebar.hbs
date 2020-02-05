@@ -5,27 +5,27 @@
 <ul class="supplimentary-list">
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[0] ~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[1] ~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[2] ~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[3] ~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[4] ~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
 </ul>
@@ -40,27 +40,27 @@
 <ul class="supplimentary-list">
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[0]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[1]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[2]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[3]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[4]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
 </ul>
@@ -68,27 +68,27 @@
 <ul class="supplimentary-list">
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[0]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[1]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[2]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[3]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
   {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[4]~}}
-  {{> post_sidebar _source}}
+  {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
 </ul>

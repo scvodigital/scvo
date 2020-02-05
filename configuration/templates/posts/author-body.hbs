@@ -6,7 +6,7 @@
     {{/compare ~}}
     <ul class="supplimentary-list">
       {{#each @root.data.primaryResponse.hits.hits ~}}
-      {{> post_list _source}}
+      {{> content_post_list _source}}
       {{/each ~}}
     </ul>
     {{> pagination paging=@root.data.primaryResponse.pagination}}

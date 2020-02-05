@@ -95,7 +95,7 @@
   <div class="columns">
     {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
     <div class="column col-4 col-lg-6 col-md-12">
-      {{> goodmoves_gist _source}}
+      {{> content_goodmoves_gist _source}}
     </div>
     {{/each ~}}
   </div>
@@ -112,7 +112,7 @@
     <div class="columns">
       {{#each @root.data.supplimentaryResponses.related_training.hits.hits ~}}
       <div class="column col-3 col-lg-4 col-md-6 col-sm-12">
-        {{> event_gist _source}}
+        {{> content_event_gist _source}}
       </div>
       {{/each ~}}
     </div>
