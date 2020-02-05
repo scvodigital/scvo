@@ -1,17 +1,32 @@
 {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
 <div class="related-posts v-padding-full bg-gray">
-  <div class="container b-margin-full">
-    <h3 class="b-margin">
+  <div class="container v-padding-full b-margin">
+    <h3 class="no-margin">
       Latest TFN news&ensp;
       <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption">See more</a>
     </h3>
     <div class="columns">
-      {{#each (split "0,1,2,3" ",") ~}}
+      {{#each (split "0,1,2" ",") ~}}
       {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
-      <div class="column col-3 col-lg-6 col-sm-12">
-        <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline"><img src="{{image_wide}}" alt="{{{title}}}" class="img-responsive b-margin" /></a>
+      <div class="column col-4 col-lg-6 col-sm-12">
+        <div class="card card-no-padding">
+          <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" style="line-height:0;">
+            <div class="card-image-link">
+              <div class="card-image-wrapper">
+                <div class="card-image" style="--aspect-ratio: 3/1; background-image:url('{{replace image_wide '__wide' ''}}')"></div>
+              </div>
+              <div class="card-header">
+                <h4 class="card-title">{{{trim title}}}</h4>
+              </div>
+              <div class="card-body">
+                <p class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        {{!-- <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="no-underline"><img src="{{image_wide}}" alt="{{{title}}}" class="img-responsive b-margin" /></a>
         <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
-        <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div>
+        <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div> --}}
       </div>
       {{/with ~}}
       {{/each ~}}
