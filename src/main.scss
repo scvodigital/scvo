@@ -546,6 +546,12 @@ footer a {
 .card .card-image {
   padding: 0;
   margin: $unit 0 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   a {
     display: block;
   }

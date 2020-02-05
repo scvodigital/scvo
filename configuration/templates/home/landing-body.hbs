@@ -97,9 +97,7 @@
           <a href="{{trim url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">
             <div class="card-image-link">
               <div class="card-image-wrapper">
-                <div class="card-image" style="--aspect-ratio: 3/2;">
-                  <img src="{{replace image_wide '__wide' ''}}" alt="{{trim title}}" class="img-responsive" />
-                </div>
+                <div class="card-image" style="--aspect-ratio: 16/9; background-image:url('{{replace image_wide '__wide' ''}}')"></div>
               </div>
               <div class="card-header">
                 <h4 class="card-title">{{{trim title}}}</h4>
