@@ -1,5 +1,6 @@
 {
   "name": "page_cjs_survey_completion",
+  "debug": true,
   "pattern": "/jobs/community-jobs-scotland/surveys/completion",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -36,8 +37,9 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.cjs_survey-completion",
-              "foot": ""
+              "header": ">context.metaData.handlebars.templates.jobs_cjs_landing-header",
+              "body": ">context.metaData.handlebars.templates.jobs_cjs_survey-completion",
+              "footer": ">context.metaData.handlebars.templates.jobs_cjs_footer"
             },
             "contentType": "text/html"
           }
