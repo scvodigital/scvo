@@ -1,0 +1,34 @@
+{
+  "name": "place-lookup",
+  "pattern": "/place-lookup",
+  "debug": true,
+  "doNotZip": true,
+  "tasks": [
+    {
+      "name": "search_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "geo_lookup",
+          "type": "os_place",
+          "template": ">context.metaData.handlebars.queries.utilities_search-place-lookup"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "body",
+        "template": ">context.metaData.handlebars.templates.utilities_search-place-lookup",
+        "parseJson": true
+      }
+    }
+  ]
+}

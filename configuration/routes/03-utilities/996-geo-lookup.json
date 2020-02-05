@@ -1,6 +1,8 @@
 {
-  "name": "geo_lookup",
+  "name": "geo-lookup",
   "pattern": "/geo-lookup",
+  "debug": true,
+  "doNotZip": true,
   "tasks": [
     {
       "name": "search_data",
@@ -11,9 +13,8 @@
           "apiVersion": "5.6"
         },
         "queryTemplates": {
-          "name": "detailed_results",
           "index": "geo_lookup",
-          "type": "postcode,place",
+          "type": "os_place,postcode,outcode",
           "template": ">context.metaData.handlebars.queries.utilities_search-geo-lookup"
         }
       },
@@ -21,12 +22,24 @@
     },
     {
       "name": "destination",
-      "taskModule": "render",
+      "taskModule": "renderLayout",
       "renderer": "handlebars",
       "config": {
+        "logic": {
+          "if": [
+            "data"
+          ]
+        },
         "output": "body",
-        "template": ">context.metaData.handlebars.templates.utilities_geo-lookup",
-        "parseJson": "true"
+        "layouts": {
+          "data": {
+            "layout": ">context.metaData.handlebars.layouts.data",
+            "parts": {
+              "content": ">context.metaData.handlebars.templates.utilities_search-geo-lookup"
+            },
+            "contentType": "application/json; charset=utf-8"
+          }
+        }
       }
     }
   ]

@@ -1,27 +1,34 @@
 [
-{{#eachJoin @root.data.search_data.hits.hits ","}}
+  {{#eachJoin @root.data.search_data.hits.hits "," ~}}
   {
     "display": {{{stringify _source.display}}},
     "place": {{{stringify _source.place}}},
-    {{#if _source.region}}
-      "region": {{{stringify _source.region}}},
-    {{/if}}
-    {{#if _source.population}}
-      "population": {{{default stringify _source.population 0}}},
-    {{/if}}
-    {{#if _source.district}}
-      "district": {{{stringify _source.district}}},
-    {{/if}}
-    {{#if _source.ward}}
-      "ward": {{{stringify _source.ward}}},
-    {{/if}}
-    {{#if _source.nuts_3}}
-      "nuts_3": {{{stringify _source.nuts_3}}},
-    {{/if}}
-    {{#if _source.constituency}}
-      "constituency": {{{stringify _source.constituency}}},
-    {{/if}}
+    {{#if _source.region ~}}
+    "region": {{{stringify _source.region}}},
+    {{/if ~}}
+    {{#if _source.population ~}}
+    "population": {{{default stringify _source.population 0}}},
+    {{/if ~}}
+    {{#if _source.district ~}}
+    "district": {{{stringify (replace (replace (replace (replace _source.district " and " " & ") " Islands" "") "City of " "") " City" "")}}},
+    {{else}}
+    {{#if _source.county ~}}
+    "district": {{{stringify (replace (replace (replace (replace _source.county " and " " & ") " Islands" "") "City of " "") " City" "")}}},
+    {{/if ~}}
+    {{/if ~}}
+    {{#if _source.ward ~}}
+    "ward": {{{stringify _source.ward}}},
+    {{/if ~}}
+    {{#if _source.nuts_3 ~}}
+    "nuts_3": {{{stringify _source.nuts_3}}},
+    {{/if ~}}
+    {{#if _source.constituency ~}}
+    "constituency": {{{stringify _source.constituency}}},
+    {{/if ~}}
+    {{#if _source.country ~}}
+    "country": {{{stringify _source.country}}},
+    {{/if ~}}
     "point": {{{stringify _source.point}}}
   }
-{{/eachJoin}}
+  {{/eachJoin ~}}
 ]

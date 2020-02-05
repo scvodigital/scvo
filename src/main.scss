@@ -1234,6 +1234,12 @@ a.rss {
   border-color: transparent;
   color: $primary-color-dark;
 }
+.btn.btn-primary:focus,
+.btn.btn-primary:hover {
+  background-color: $secondary-color-light;
+  border-color: $secondary-color-light;
+  color: white;
+}
 
 a:focus,
 .btn:focus {

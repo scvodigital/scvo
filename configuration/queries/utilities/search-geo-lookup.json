@@ -1,29 +1,84 @@
 {
   "size": 6,
-  "_source": ["place", "display", "point"],
+  "_source": ["place", "display", "point", "county"],
   "query": {
     "bool": {
-      "must": [
+      "filter": [
         {
-          "query_string": {
-             "default_field": "autocomplete",
-             "analyzer": "autocomplete",
-             "query":
-               {{~#if (regexMatch @root.request.params.query.q "^([A-Z]{1,2})(([0-9][A-Z])|([0-9]{1,2}))" "ig")~}}
-                 {{{stringify (replace @root.request.params.query.q " " "")}}}
-               {{else}}
-                 {{{stringify @root.request.params.query.q}}}
-               {{~/if~}}
+          "terms": {
+            "_type": [
+              {{#compare (length @root.request.params.query.q) ">" 4}}
+                "os_place", "postcode"
+              {{else}}
+                "os_place", "outcode"
+              {{/compare}}
+            ]
           }
         }
       ],
-      "filter": [
+      "must": [
+        {
+          "query_string": {
+             "fields": ["autocomplete", "textbag"],
+             "query":
+              {{~#if (regexMatch @root.request.params.query.q "^([A-Z]{1,2})(([0-9][A-Z])|([0-9]{1,2}))" "ig")~}}
+                {{{stringify (replace @root.request.params.query.q " " "")}}}
+              {{else}}
+                {{{stringify (lowercase @root.request.params.query.q)}}}
+              {{~/if~}}
+          }
+        },
         {
           "term": {
-            "country": "Scotland"
+            "country": {
+              "value": "Scotland"
+            }
           }
         }
-      ]
+      ],
+      "should": [
+        {
+          "term": {
+            "localType": {
+              "value": "City",
+              "boost": 5
+            }
+          }
+        },
+        {
+          "term": {
+            "localType": {
+              "value": "Town",
+              "boost": 4
+            }
+          }
+        },
+        {
+          "term": {
+            "localType": {
+              "value": "Village",
+              "boost": 3
+            }
+          }
+        },
+        {
+          "term": {
+            "localType": {
+              "value": "Suburban Area",
+              "boost": 2
+            }
+          }
+        },
+        {
+          "term": {
+            "localType": {
+              "value": "Hamlet",
+              "boost": 1
+            }
+          }
+        }
+      ],
+      "boost": 1
     }
   }
 }

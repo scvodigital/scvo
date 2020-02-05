@@ -1,0 +1,22 @@
+{{#json}}
+  {{~#withExtend this
+    lat=@root.request.params.query.lat
+    lng=@root.request.params.query.lng
+    place=@root.data.search_data.hits.hits.[0]._source.display~}}
+    {{~#unlessAll lat lng~}}
+      {{{json key="error" value="Need both a latitude and longitude"}}},
+      {{{json key="place" value="Error"}}}
+    {{~else~}}
+      {{~#if (any @root.errors)~}}
+        {{{json key="error" value=@root.errors}}},
+        {{{json key="place" value="Error"}}}
+      {{~else~}}
+        {{~#if place~}}
+          {{{json key="place" value=place}}}
+        {{~else~}}
+          {{{json key=(concat lat ", " lng)}}}
+        {{~/if~}}
+      {{~/if~}}
+    {{~/unlessAll~}}
+  {{~/withExtend~}}
+{{/json}}

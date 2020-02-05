@@ -1,0 +1,12 @@
+{
+  "_source": ["display"],
+  "size": 1,
+  "sort": {
+    "_geo_distance": {
+      "point": {
+        {{{json key="lat" value=@root.request.params.query.lat}}},
+        {{{json key="lon" value=@root.request.params.query.lng}}}
+      }
+    }
+  }
+}
