@@ -128,7 +128,7 @@ body {
 }
 .icon-rouleaux,
 .bg-rouleaux {
-  background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$light-color-var}&style=solid');
+  background-image:url('https://scvo.scot/rouleaux.svg?color=#{$light-color-var}&style=solid');
   background-size: $page-width;
   background-position-x: center;
   background-position-y: top;
@@ -136,7 +136,7 @@ body {
 }
 body.the-gathering-2020 {
   .bg-rouleaux {
-    background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$gathering-color-light-var}&style=solid');
+    background-image:url('https://scvo.scot/rouleaux.svg?color=#{$gathering-color-light-var}&style=solid');
   }
   .splash-image-header {
     background-size: cover;
@@ -180,7 +180,7 @@ body.the-gathering-2020 {
 }
 .scottish-charity-awards {
   .bg-rouleaux {
-    background-image:url('https://test.scvo.org/rouleaux.svg?color=#{$awards-color-light-var}&style=solid');
+    background-image:url('https://scvo.scot/rouleaux.svg?color=#{$awards-color-light-var}&style=solid');
   }
   .splash-image-header {
     height: auto;
@@ -379,7 +379,7 @@ h1.font-default,
   .fa-fw {
     font-weight: 400 !important;
     font-size: 1.2rem !important;
-    background-image: url('https://test.scvo.org/rouleaux.svg?color=#{$secondary-color-var}&opacity=1&style=solid');
+    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$secondary-color-var}&opacity=1&style=solid');
     float: right;
     margin-top: -0.6rem;
     height: 2.5rem;
@@ -394,7 +394,7 @@ h1.font-default,
 }
 .card .card-title a:hover {
   .fa-fw {
-    background-image: url('https://test.scvo.org/rouleaux.svg?color=#{$primary-color-var}&opacity=1&style=solid');
+    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$primary-color-var}&opacity=1&style=solid');
   }
 }
 
@@ -2639,7 +2639,7 @@ figure,
     opacity: 1;
   }
   .bg-rouleaux {
-    background-image: url('https://test.scvo.org/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid');
+    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid');
   }
 }
 
