@@ -521,7 +521,7 @@ a:hover {
   padding-top: $unit;
   padding-bottom: $padding;
 }
-.goodmoves-vacancies a,
+.bg-goodmoves a,
 .bg-primary a,
 .bg-secondary a,
 .bg-secondary a.no-underline,
@@ -531,7 +531,7 @@ footer a {
   background: none;
   border: none;
 }
-.goodmoves-vacancies a:hover {
+.bg-goodmoves a:hover {
   color: $secondary-color-dark;
 }
 .bg-gray a {
@@ -543,7 +543,27 @@ footer a {
   color: $primary-color;
 }
 
+.bg-tfn {
+  background-color: #3b9db1 !important;
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  .caption,
+  a {
+    color: white;
+  }
+  a {
+    background: none;
+  }
+  a:hover {
+    color: $secondary-color-dark;
+  }
+}
+
 .card .card-image {
+  position: relative;
   padding: 0;
   margin: $unit 0 0;
   background-size: cover;
@@ -574,9 +594,11 @@ footer a {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    // height: 100px;
     .card-image {
       margin: 0;
       width: 100%;
+      height: 100%;
       max-width: 100%;
       -webkit-transition: .5s ease;
       -moz-transition: .5s ease;
@@ -999,9 +1021,9 @@ a.author:hover,
       width: auto;
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
+      left: auto;
+      right: auto;
+      margin: 0;
     }
   }
 }
@@ -1141,16 +1163,18 @@ a.author:hover,
   }
 }
 .find-information-on {
-  // background-image: linear-gradient(100deg, $secondary-color 10%, $primary-color 85%) !important;
+  background-image: linear-gradient(100deg, $secondary-color 10%, $primary-color 85%) !important;
   a, h2, h3, h4, .title {
     color: white;
   }
-  .icon {
-    color: $primary-color;
+  .icon-rouleaux {
+    // background-color: white;
+    mix-blend-mode: lighten;
+    .icon {
+      // color: $primary-color;
+      color: black;
+    }
   }
-  // .icon-rouleaux {
-  //   background-color: white;
-  // }
   a {
     opacity: 0.8;
     transition: opacity $transition-speed;
@@ -1163,8 +1187,8 @@ a.author:hover,
     opacity: 1;
   }
 }
-.goodmoves-vacancies,
-.tfn-posts,
+.bg-goodmoves,
+.bg-tfn,
 .latest-posts {
   h4 {
     padding-top: 0;
@@ -1186,7 +1210,7 @@ a.author:hover,
     padding-top: 0;
   }
 }
-.goodmoves-vacancies {
+.bg-goodmoves {
   background-color: $goodmoves-color;
   h4,
   li,

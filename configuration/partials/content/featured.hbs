@@ -2,9 +2,14 @@
   <a href="{{link}}" class="no-underline">
     <div class="card-image-link">
       <div class="card-image-wrapper">
-        <div class="card-image" style="{{#if ratio}}--aspect-ratio:{{replace ratio ':' '/'}};{{/if}}background-image:url('{{#if (contains image 'http')}}{{image}}{{else}}{{~>asset_url url=image~}}{{/if}}')">
+        <div class="card-image" style="{{#if ratio}}--aspect-ratio: {{replace ratio ':' '/'}};{{/if}}background-image: url('{{#if (contains image 'http')}}{{image}}{{else}}{{~>asset_url url=image~}}{{/if}}')">
           {{#if logo ~}}
           <img src="{{#if (contains logo 'http')}}{{logo}}{{else}}{{~>asset_url url=logo~}}{{/if}}" class="img-responsive logo" {{#if logo_style}}style="{{logo_style}}"{{/if}} />
+          {{else}}
+          {{!-- This is an attempted fix for IE... --}}
+          {{!-- <div class="logo">
+            <img src="{{~>asset_url url='images/placeholder.png'~}}" class="img-responsive logo" style="padding:2rem; position:relative;" />
+          </div> --}}
           {{/if ~}}
         </div>
       </div>

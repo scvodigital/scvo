@@ -65,6 +65,31 @@
 				"route": "^/about/professional-networks"
 			},
 			{
+				"label": "European projects",
+				"path": "/about/european-projects",
+				"route": "^/about/european-projects$",
+				"children": [{
+					"label": "SCOPE",
+					"path": "/about/european-projects/scope",
+					"route": "^/about/european-projects/scope$"
+				},
+				{
+					"label": "Food, poverty and social inclusion",
+					"path": "/about/european-projects/food-poverty-social-inclusion",
+					"route": "^/about/european-projects/food-poverty-social-inclusion$"
+				},
+				{
+					"label": "Young people & the SDGs",
+					"path": "/about/european-projects/young-people-the-sdgs",
+					"route": "^/about/european-projects/young-people-the-sdgs$"
+				},
+				{
+					"label": "mPower",
+					"path": "/about/european-projects/mpower",
+					"route": "^/about/european-projects/mpower$"
+				}]
+			},
+			{
 				"label": "Annual review",
 				"path": "/about/annual-review",
 				"route": "^/about/annual-review"
@@ -430,6 +455,11 @@
 							"route": "^/policy/campaigns/20-years-delivering-change/community-right-to-buy$"
 						}
 					]
+				},
+				{
+					"label": "The Right Approach",
+					"path": "/policy/campaigns/right-approach",
+					"route": "^/policy/campaigns/right-approach$"
 				}]
 			}
 		]
