@@ -14,7 +14,7 @@
           type: "firebaseSignIn",
           config: {
             email: { __template: '\{{jquery "#sign-in-email" "val"}}' },
-            password: { __template: '\{{jquery "#sign-in-password" "val"}}' },
+            password: { __template: '\{{{jquery "#sign-in-password" "val"}}}' },
             providerId: { __template: '\{{jquery rootElement "attr" (split "data-provider-id")}}' }
           }
         },
