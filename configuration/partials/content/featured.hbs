@@ -1,0 +1,35 @@
+<div class="card card-no-padding {{name}}">
+  <a href="{{link}}" class="no-underline">
+    <div class="card-image-link">
+      <div class="card-image-wrapper">
+        <div class="card-image" style="{{#if ratio}}--aspect-ratio:{{ratio}};{{/if}}background-image:url('{{#if (contains image 'http')}}{{image}}{{else}}{{~>asset_url url=image~}}{{/if}}')">
+          {{#if logo ~}}
+          <img src="{{#if (contains logo 'http')}}{{logo}}{{else}}{{~>asset_url url=logo~}}{{/if}}" class="img-responsive logo" {{#if logo_style}}style="{{logo_style}}"{{/if}} />
+          {{/if ~}}
+        </div>
+      </div>
+      <div class="card-header">
+        <{{heading}} class="card-title">
+          {{title}}
+        </{{heading}}>
+        {{#if subtitle ~}}
+        <div class="card-subtitle">{{subtitle}}</div>
+        {{/if ~}}
+      </div>
+      {{#if body ~}}
+      <div class="card-body t-margin">
+        <p>
+          {{body}}
+        </p>
+      </div>
+      {{/if ~}}
+    </div>
+  </a>
+  <div class="card-footer">
+    <a href="{{link}}" class="no-underline r-margin-full">{{default read_more_text 'Read more'}}</a>
+    {{#ifAll link_2 link_2_text ~}}
+    <a href="{{link_2}}" class="no-underline">{{link_2_text}}</a>
+    {{/ifAll ~}}
+    {{!-- <a href="/the-gathering-2020/book-a-stand" class="btn btn-link">Book a stand</a> --}}
+  </div>
+</div>
