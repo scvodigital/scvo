@@ -358,11 +358,7 @@ h1.font-default,
   letter-spacing: -0.02rem;
   line-height: 1.1rem !important;
 }
-.btn.btn-lg:hover {
-  color: white;
-  background-color: $primary-color;
-  border-color: $primary-color;
-}
+.btn.btn-lg:hover,
 .btn.btn-primary.btn-lg:hover {
   color: white;
   background-color: $secondary-color-light;
@@ -1277,11 +1273,6 @@ a.author:hover,
 }
 a.rss {
   color: $warning-color;
-}
-.btn:hover {
-  background-color: $primary-color;
-  border-color: $primary-color;
-  color: white;
 }
 .btn-link:hover {
   background-color: transparent;
