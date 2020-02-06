@@ -35,6 +35,11 @@
           "term": {
             "hide_from_search": "1"
           }
+        },
+        {
+          "term": {
+            "is_press_release": true
+          }
         }
       ],
       "must": [
