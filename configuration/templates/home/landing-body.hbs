@@ -72,12 +72,10 @@
   <div class="container v-padding-full">
     <div class="columns">
       <div class="column col-6 col-md-12">
-        {{!-- {{> promoted_the_gathering}} --}}
-        {{> content_featured name="the-gathering" link="/the-gathering-2020" heading="h3" title="The Gathering" subtitle="19th & 20th February 2020" body="The Gathering is the largest free voluntary sector event in the UK, a place for all the amazing people working in the voluntary sector to network, showcase what they do and learn from each other." logo="images/gathering/logo_2020_colour.svg" ratio='4.5/1' image="images/gathering/header_2020.svg" read_more_text="Find out more" link_2="/the-gathering-2020/event-programme" link_2_text="Event programme"}}
+        {{> content_featured name="the-gathering" link="/the-gathering-2020" heading="h3" title="The Gathering" subtitle="19th & 20th February 2020" body="The Gathering is the largest free voluntary sector event in the UK, a place for all the amazing people working in the voluntary sector to network, showcase what they do and learn from each other." logo="images/gathering/logo_2020_colour.svg" ratio="4.5:1" image="images/gathering/header_2020.svg" read_more_text="Find out more" link_2="/the-gathering-2020/event-programme" link_2_text="Event programme"}}
       </div>
       <div class="column col-6 col-md-12">
-        {{!-- {{> promoted_twenty_years}} --}}
-        {{> content_featured name="twenty-years" link="/policy/campaigns/20-years-delivering-change" heading="h3" title="Charities, Scotland & Holyrood" subtitle="Twenty years delivering change" body="To celebrate the Scottish Parliament marking its 20th anniversary, SCVO has produced a limited-edition book - Charities, Scotland & Holyrood: Twenty Years Delivering Change." logo="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/banners/20yrs.png" ratio='4.5/1' image="https://storage.googleapis.com/scvo-cms/scvo-cms/scvo-cms-content/images/banners/20yrs-bg.png" read_more_text="Take a look"}}
+        {{> content_featured name="twenty-years" link="/policy/campaigns/20-years-delivering-change" heading="h3" title="Charities, Scotland & Holyrood" subtitle="Twenty years delivering change" body="To celebrate the Scottish Parliament marking its 20th anniversary, SCVO has produced a limited-edition book - Charities, Scotland & Holyrood: Twenty Years Delivering Change." logo="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/banners/20yrs.png" ratio="4.5:1" image="https://storage.googleapis.com/scvo-cms/scvo-cms/scvo-cms-content/images/banners/20yrs-bg.png" read_more_text="Take a look"}}
       </div>
     </div>
   </div>
@@ -90,10 +88,10 @@
       <div class="column col-4 col-md-12">
         <h3 class="no-margin">
           Latest news on TFN
-          <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">See more</a>
+          <a href="http://thirdforcenews.org.uk/tfn-news?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">See more</a>
         </h3>
         {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
-        {{> content_featured name="latest-tfn" link=(trim url) heading="h4" title=(trim title) body=(truncate description 280) ratio='16/9' image=(replace image_wide '__wide' '')}}
+        {{> content_featured name="latest-tfn" link=(trim url) heading="h4" title=(trim title) body=(truncate description 280) ratio="16:9" image=(replace image_wide '__wide' '')}}
         {{/with ~}}
       </div>
       {{/compare ~}}
@@ -102,8 +100,7 @@
           Featured campaign
           <a href="/policy/campaigns" class="caption l-margin">See more</a>
         </h3>
-        {{> content_featured name="featured-campaign" link="/policy/campaigns/eu-are-valued" heading="h4" title="#EUareValued" body="We believe every person who works to make a difference to Scottish communities should be valued, and that includes our colleagues who have come from other EU countries to live and work here. Scotland’s voluntary sector is strengthened thanks to their contribution." ratio='16/9' logo="images/home/eu-are-valued-logo.png" logo_style="padding:2rem; position:relative;" image="images/home/eu-are-valued-bg.jpg"}}
-        {{!-- {{> promoted_eu_are_valued}} --}}
+        {{> content_featured name="featured-campaign" link="/policy/campaigns/eu-are-valued" heading="h4" title="#EUareValued" body="We believe every person who works to make a difference to Scottish communities should be valued, and that includes our colleagues who have come from other EU countries to live and work here. Scotland’s voluntary sector is strengthened thanks to their contribution." ratio="16:9" logo="images/home/eu-are-valued-logo.png" logo_style="padding:2rem; position:relative;" image="images/home/eu-are-valued-bg.jpg"}}
       </div>
       <div class="column col-4 col-md-12">
         <div class="h3" style="padding-bottom: 0.8rem;">

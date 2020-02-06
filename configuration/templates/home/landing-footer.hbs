@@ -10,7 +10,7 @@
         <ul>
           {{#each (split "1,2,3,4" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.posts_latest.hits.hits (concat this '._source')) ~}}
-          <li class="clearfix b-margin">
+          <li class="clearfix b-margin-full">
             <a href="/{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
             <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
             <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
@@ -23,12 +23,12 @@
       <div class="column col-6 col-md-12">
         <h3 class="b-margin-full">
           Recent TFN stories
-          <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">Read more on TFN</a>
+          <a href="http://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">Read more on TFN</a>
         </h3>
         <ul>
           {{#each (split "1,2,3,4" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
-          <li class="clearfix b-margin">
+          <li class="clearfix b-margin-full">
             <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="pull-left r-margin no-underline"><img src="{{image_portrait_small}}" alt="{{{trim title}}}" class="avatar avatar-lg" /></a>
             <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
             <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>

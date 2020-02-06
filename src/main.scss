@@ -811,12 +811,12 @@ a.author:hover,
     padding: 0;
   }
 }
-.digital .card .card-image {
-  height: $unit*8;
-  background-size: cover;
-  background-position: center center;
-  margin-top: $unit/2;
-}
+// .digital .card .card-image {
+//   height: $unit*8;
+//   background-size: cover;
+//   background-position: center center;
+//   // margin-top: $unit/2;
+// }
 .card.primary,
 .card.secondary,
 .card.yellow,
@@ -1146,11 +1146,11 @@ a.author:hover,
     color: white;
   }
   .icon {
-    color: black;
+    color: $primary-color;
   }
-  .icon-rouleaux {
-    mix-blend-mode: color-dodge;
-  }
+  // .icon-rouleaux {
+  //   background-color: white;
+  // }
   a {
     opacity: 0.8;
     transition: opacity $transition-speed;
