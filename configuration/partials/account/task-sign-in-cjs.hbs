@@ -42,7 +42,7 @@
         },
         {
           type: "run",
-          config: { code: "window.location.href = '/jobs/community-jobs-scotland/vacancies'" }
+          config: { code: "window.location.href = '/jobs/community-jobs-scotland/vacancies{{#if @root.request.params.query.vacancy}}/{{replace @root.request.params.query.vacancy '_' '/'}}{{/if}}'" }
         }
       ]
     }
