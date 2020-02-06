@@ -1,5 +1,6 @@
 {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
 <div class="bg-tfn tfn-posts x-padding-full">
+  <a href="http://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" title="Third Force News - The voice of Scotland's third sector"><img src="{{~>asset_url url='images/logos/tfn.png'}}" class="service-logo" /></a>
   <h4>Latest news</h4>
   <ul>
     {{#each (split "0,1,2" ",") ~}}
@@ -11,6 +12,6 @@
     {{/with ~}}
     {{/each ~}}
   </ul>
-  <a href="http://thirdforcenews.org.uk/?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="">Read more on TFN</a>
+  <a href="http://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Read more on TFN</a>
 </div>
 {{/compare ~}}
