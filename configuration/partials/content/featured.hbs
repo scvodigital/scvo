@@ -6,10 +6,8 @@
           {{#if logo ~}}
           <img src="{{#if (contains logo 'http')}}{{logo}}{{else}}{{~>asset_url url=logo~}}{{/if}}" class="img-responsive logo" {{#if logo_style}}style="{{logo_style}}"{{/if}} />
           {{else}}
-          {{!-- This is an attempted fix for IE... --}}
-          {{!-- <div class="logo">
-            <img src="{{~>asset_url url='images/placeholder.png'~}}" class="img-responsive logo" style="padding:2rem; position:relative;" />
-          </div> --}}
+          {{!-- This is a fix for IE... --}}
+          <img src="{{~>asset_url url='images/placeholder.png'~}}" class="img-responsive logo" style="padding: 0; width: 100%; position: relative;">
           {{/if ~}}
         </div>
       </div>
