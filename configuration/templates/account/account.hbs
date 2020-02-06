@@ -317,7 +317,7 @@
           name: "reAuthenticate",
           type: "firebaseReAuthenticate",
           config: {
-            password: { __template: '\{{jquery "#re-authenticate-password" "val"}}' },
+            password: { __template: '\{{{jquery "#re-authenticate-password" "val"}}}' },
             providerId: { __template: '\{{jquery rootElement "data" (split "provider-id")}}' }
           }
         },
@@ -403,8 +403,8 @@
           name: "changePassword",
           type: "firebaseChangePassword",
           config: {
-            password: { __template: "\{{jquery '#change-password-value' 'val'}}" },
-            passwordConfirm: { __template: "\{{jquery '#change-password-confirm' 'val'}}" }
+            password: { __template: "\{{{jquery '#change-password-value' 'val'}}}" },
+            passwordConfirm: { __template: "\{{{jquery '#change-password-confirm' 'val'}}}" }
           }
         },
         {
