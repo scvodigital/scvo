@@ -202,7 +202,7 @@ if (document.location.search.match(/type=embed/gi)) {
     {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
     {{#each @root.data.primaryResponse.hits.hits ~}}
     {{#with _source ~}}
-    <div class="owl-slide d-flex align-items-center cover" style="background-image: url('{{replace image_wide '__wide' ''}}');">
+    <div class="owl-slide d-flex align-items-center cover" style="background-image: url('{{image}}');">
       <div class="overlay">
         <img src="{{~>asset_url url='images/logos/tfn-strapline.png'}}" class="footer" />
         <div class="owl-slide-block">
