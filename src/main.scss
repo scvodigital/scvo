@@ -1564,19 +1564,18 @@ aside {
 }
 
 .mobile-menu {
-  // .menu-item>a {
-  //   display: block !important;
-  // }
-  .menu .menu-item {
-    padding: 0 $unit/2;
-  }
-  .menu .menu-item>a {
-    border-bottom: $thick-line solid transparent;
-  }
-  .menu-item>a:hover,
-  .menu-item>a.active {
-    color: #fff !important;
-    border-bottom-color: #fff !important;
+  .menu {
+    .menu-item {
+      padding: 0 $unit/2;
+    }
+    .menu-item>a {
+      border-bottom: $thick-line solid transparent;
+    }
+    .menu-item>a:hover,
+    .menu-item>a.active {
+      color: #fff !important;
+      border-bottom-color: #fff !important;
+    }
   }
   .scvo-link-bar {
     background-color: transparent;
