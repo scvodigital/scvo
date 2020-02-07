@@ -32,8 +32,12 @@
     {{#if decision_date ~}}
     "awardDate": "{{momentFormat (moment decision_date 'x') "YYYY-MM-DD"}}",
     {{else}}
+    {{#if recommendation_agreed_date ~}}
+    "awardDate": "{{momentFormat (moment recommendation_agreed_date 'x') "YYYY-MM-DD"}}",
+    {{else}}
     {{#if date_last_modified ~}}
-    "awardDate": "{{momentFormat (moment date_last_modified 'x') "YYYY-MM-DD"}}",
+    "awardDate": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DD"}}",
+    {{/if ~}}
     {{/if ~}}
     {{/if ~}}
     {{/if ~}}
