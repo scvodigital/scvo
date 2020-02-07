@@ -548,13 +548,30 @@ footer a {
 .bg-goodmoves a:hover {
   color: $secondary-color-dark;
 }
-.bg-gray a {
-  color: $secondary-color;
-  background: none;
-  border: none;
-}
-.bg-gray a:hover {
-  color: $primary-color;
+.bg-gray {
+  a {
+    color: $secondary-color;
+    background: none;
+    border: none;
+  }
+  a:hover {
+    color: $primary-color;
+  }
+  .form-input:focus {
+    box-shadow: none;
+  }
+  .input-group .form-input,
+  .input-group .form-select,
+  .input-group-btn {
+    background-color: transparent !important;
+    color: $secondary-color-dark !important;
+    border-color: $secondary-color-dark !important;
+  }
+  .input-group .btn.btn-primary:hover {
+    background-color: $secondary-color-dark !important;
+    color: white !important;
+    border-color: $secondary-color-dark !important;
+  }
 }
 
 .bg-tfn {
@@ -1151,10 +1168,13 @@ a.author:hover,
     border-color: $primary-color-dark !important;
     color: white;
   }
+  .form-input:focus {
+    box-shadow: none;
+  }
   .input-group .form-input,
   .input-group .form-select,
   .input-group-btn {
-    background-color: $secondary-color !important;
+    background-color: transparent !important;
     color: white;
     border-color: white !important;
   }
