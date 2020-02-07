@@ -27,11 +27,28 @@
       "config": {
         "logic": {
           "if": [
+            {
+              "in": [
+                "view=rss",
+                {
+                  "var": "request.fullUrl"
+                }
+              ]
+            },
+            "rss",
             "default"
           ]
         },
         "output": "body",
         "layouts": {
+          "rss": {
+            "layout": ">context.metaData.handlebars.layouts.rss",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.posts_tag-rss-head-tags",
+              "body": ">context.metaData.handlebars.templates.posts_tag-rss"
+            },
+            "contentType": "application/rss+xml"
+          },
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {

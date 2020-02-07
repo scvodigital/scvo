@@ -2,10 +2,11 @@
   <title>{{{title}}}</title>
   <description>{{{truncate description 280}}}</description>
   <link>{{url}}</link>
-  <guid isPermaLink="false">{{Id}}</guid>
+  <guid isPermaLink="false">{{wpid}}</guid>
   <pubDate>{{momentFormat (moment publish_on 'x') "ddd, DD MMM YYYY hh:mm:ss"}} GMT</pubDate>
-  <author>{{author_name_full}}</author>
   <category>{{join post_tags ", "}}</category>
+  {{#unless is_press_release ~}}
+  <author>{{author_name_full}}</author>
   {{#if author_sfid ~}}
   {{#if staff_profile ~}}
   <image>{{{staff_profile.photo_wee}}}</image>
@@ -15,4 +16,5 @@
   {{else}}
   <image>{{{author_avatar}}}</image>
   {{/if ~}}
+  {{/unless ~}}
 </item>
