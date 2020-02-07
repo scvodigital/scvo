@@ -33,13 +33,13 @@
     {{#each @root.data.supplimentaryResponses.grants.hits.hits ~}}
     {{#with _source ~}}
     <div class="column col-4 col-md-6 col-sm-12 b-margin-full">
-      <div class="x-padding card scvo-grant scvo-grant-cats">
-        <section class="mdc-card__primary">
+      <div class="t-padding-full card card-no-padding scvo-grant scvo-grant-cats">
+        <section class="card-header">
           <h4 class="no-margin">
             <a href="/funding/carers-act-transformation-support-fund/projects/{{Id}}/{{slugify title}}">{{{title}}}</a>
           </h4>
         </section>
-        <section class="mdc-card__supporting-text">
+        <section class="card-body">
           {{#if recipient_name ~}}
           {{#compare recipient_name "!==" title ~}}
           <p class="b-margin">
@@ -55,7 +55,7 @@
           {{/if ~}}
           {{/if ~}}
         </section>
-        <section class="mdc-card__actions">
+        <section class="card-footer">
           <div class="post-info">
             {{#if call ~}}
             <div class="post-info-item post-info-date">
@@ -73,7 +73,7 @@
               <ul class="inline-list">
                 {{#each individuals_supported ~}}
                 <li>
-                  <a href="/funding/carers-act-transformation-support-fund/projects?tag={{slugify this}}" class="chip bg-primary">{{this}}</a>
+                  <a href="/funding/carers-act-transformation-support-fund/projects?tag={{slugify this}}" class="chip">{{this}}</a>
                 </li>
                 {{/each ~}}
               </ul>

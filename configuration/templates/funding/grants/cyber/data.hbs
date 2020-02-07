@@ -33,7 +33,7 @@
       {{#if actual_end ~}}
       "endDate": "{{momentFormat (moment actual_end 'x') "YYYY-MM-DD"}}",
       {{/if ~}}
-      "dateModified": "{{momentFormat (moment date_last_modified 'x') "YYYY-MM-DDTHH:mm:ssZ"}}"
+      "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}"
     }]
     {{/if ~}}
     {{/if ~}}
@@ -46,7 +46,7 @@
       {{#if planned_end ~}},
       "endDate": "{{momentFormat (moment planned_end 'x') "YYYY-MM-DD"}}"
       {{/if ~}},
-      "dateModified": "{{momentFormat (moment date_last_modified 'x') "YYYY-MM-DDTHH:mm:ssZ"}}"
+      "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}"
     }]
     {{/if ~}}
     {{/if ~}},
