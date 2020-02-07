@@ -14,15 +14,13 @@
   </div>
   {{/if ~}}
   <ul class="fa-ul">
-    {{#if planned_start ~}}
-    {{#if planned_end ~}}
+    {{#ifAll planned_start planned_end ~}}
     <li>
       <span class="fa-li"><span class="far fa-calendar-alt"></span></span>
       From {{momentFormat (moment planned_start 'x') "Do MMMM YYYY"}}
       to {{momentFormat (moment planned_end 'x') "Do MMMM YYYY"}}
     </li>
-    {{/if ~}}
-    {{/if ~}}
+    {{/ifAll ~}}
     {{#if call ~}}
     <li>
       <span class="fa-li"><span class="fal fa-money-bill"></span></span>
@@ -100,24 +98,24 @@
   <div class="project-milestone_1">
     {{{markdown milestone_1_desc}}}
   </div>
-  {{/if ~}}
   {{#if milestone_2_desc ~}}
   <h3 class="project-milestone_2">Phase 2</h3>
   <div class="project-milestone_2">
     {{{markdown milestone_2_desc}}}
   </div>
-  {{/if ~}}
   {{#if milestone_3_desc ~}}
   <h3 class="project-milestone_3">Phase 3</h3>
   <div class="project-milestone_3">
     {{{markdown milestone_3_desc}}}
   </div>
-  {{/if ~}}
   {{#if milestone_4_desc ~}}
   <h3 class="project-milestone_4">Phase 4</h3>
   <div class="project-milestone_4">
     {{{markdown milestone_4_desc}}}
   </div>
+  {{/if ~}}
+  {{/if ~}}
+  {{/if ~}}
   {{/if ~}}
 
   {{#compare (length project_updates) ">" 0 ~}}
