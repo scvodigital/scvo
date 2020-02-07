@@ -3,6 +3,8 @@
   {{#with @root.data.primaryResponse.hits.hits.[0]._source.staff_profile ~}}
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/about">About us</a></li>
+    <li class="breadcrumb-item"><a href="/about/staff-team">Staff team</a></li>
     <li class="breadcrumb-item">{{{name_full}}}</li>
   </ul>
 
@@ -18,6 +20,7 @@
   {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
     <li class="breadcrumb-item">{{{author_name_full}}}</li>
   </ul>
 
@@ -26,8 +29,10 @@
     <img src="{{author_avatar}}" alt="{{author_name_full}}" class="avatar avatar-xl float-left r-margin-full t-margin" />
     {{/if ~}}
     <h1>{{{author_name_full}}}</h1>
-    <h3 class="no-margin">>{{{author_job_title}}}{{#ifAll author_job_title author_organisation_name}} at {{/ifAll ~}}{{{author_organisation_name}}}</h3>
-    {{/with ~}}
+    {{#if author_job_title ~}}
+    <h3 class="no-margin">{{{author_job_title}}}{{#ifAll author_job_title author_organisation_name}} at {{/ifAll ~}}{{{author_organisation_name}}}</h3>
     {{/if ~}}
   </div>
+  {{/with ~}}
+  {{/if ~}}
 </div>

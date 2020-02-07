@@ -214,11 +214,6 @@ body.the-gathering-2020 {
     margin-left: $unit*.45;
   }
 }
-@media screen and (max-width: $page-width) {
-  .bg-rouleaux {
-    background-size: 100%;
-  }
-}
 
 .page {
   background-color: white;
@@ -848,6 +843,15 @@ a.author:hover,
   }
 }
 
+@media screen and (max-width: $page-width) {
+  .bg-rouleaux {
+    background-size: 100%;
+  }
+  .hero .hero-text h1 {
+    font-size: 3rem;
+  }
+}
+
 .card {
   border: none !important;
   box-shadow: none;
@@ -1323,6 +1327,8 @@ a.pure-menu-link:hover {
   background-color: lighten($secondary-color-light, 23%);
   margin: -0.1rem 0;
   background-image: none !important;
+  margin-top: $unit/10;
+  margin-bottom: $unit/10;
 }
 .chip:hover {
   color: white !important;
@@ -1558,8 +1564,11 @@ aside {
 }
 
 .mobile-menu {
+  // .menu-item>a {
+  //   display: block !important;
+  // }
   .menu-item>a {
-    display: block !important;
+    border-bottom: $thick-line solid transparent;
   }
   .menu-item>a:hover,
   .menu-item>a.active {
@@ -1670,6 +1679,13 @@ header {
     float: right;
     .btn {
       padding: 0;
+    }
+    .btn.btn-primary:active,
+    .btn.btn-primary:focus,
+    .btn.btn-primary:hover {
+      border-color: transparent !important;
+      background-color: transparent !important;
+      outline: none;
     }
   }
   .dropdown {
