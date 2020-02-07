@@ -36,6 +36,17 @@
       ]
     }
   },
+  "aggs": {
+    "types": {
+      "terms": {
+        "field": "course_type",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    }
+  },
   "sort": {
     "date_start": "asc"
   }
