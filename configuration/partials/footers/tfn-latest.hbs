@@ -9,7 +9,7 @@
       {{#each (split "0,1,2" ",") ~}}
       {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
       <div class="column col-4 col-lg-6 col-sm-12">
-        {{> content_featured name="latest-tfn" link=(trim url) heading="h4" title=(trim title) body=(momentFormat (moment date_published 'x') "Do MMMM YYYY") ratio="16:9" image=(replace image_wide '__wide' '')}}
+        {{> content_featured name="latest-tfn" link=(trim url) heading="h4" title=(trim title) body=(momentFormat (moment date_published 'x') "Do MMMM YYYY") ratio="16:9" image=image}}
       </div>
       {{/with ~}}
       {{/each ~}}

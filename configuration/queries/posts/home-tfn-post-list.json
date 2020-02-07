@@ -4,12 +4,23 @@
     "title",
     "url",
     "description",
-    "image_wide",
+    "image",
     "image_portrait_small",
     "date_published"
   ],
   "query": {
-    "match_all": {}
+    "bool": {
+      "must": {
+        "match_all": {}
+      },
+      "filter":  [
+        {
+          "exists": {
+            "field": "image"
+          }
+        }
+      ]
+    }
   },
   "sort": {
     "date_published": "desc"

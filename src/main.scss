@@ -823,8 +823,10 @@ a.author:hover,
   }
   .hero-illustration {
     img {
+      padding-right: $padding;
       vertical-align: bottom;
       max-width: 100%;
+      margin-left: auto;
     }
   }
 }

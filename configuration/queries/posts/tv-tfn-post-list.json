@@ -3,11 +3,22 @@
   "_source": [
     "title",
     "description",
-    "image_wide",
+    "image",
     "date_published"
   ],
   "query": {
-    "match_all": {}
+    "bool": {
+      "must": {
+        "match_all": {}
+      },
+      "filter":  [
+        {
+          "exists": {
+            "field": "image"
+          }
+        }
+      ]
+    }
   },
   "sort": {
     "date_published": "desc"

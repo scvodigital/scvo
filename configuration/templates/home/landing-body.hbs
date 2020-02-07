@@ -91,7 +91,7 @@
           <a href="http://thirdforcenews.org.uk/tfn-news?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">See more</a>
         </h3>
         {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
-        {{> content_featured name="latest-tfn" link=(trim url) heading="h4" title=(trim title) body=(truncate description 280) ratio="16:9" image=(replace image_wide '__wide' '')}}
+        {{> content_featured name="latest-tfn" link=(trim url) heading="h4" title=(trim title) body=(truncate description 280) ratio="16:9" image=image}}
         {{/with ~}}
       </div>
       {{/compare ~}}

@@ -4,7 +4,7 @@
     "Id",
     "url",
     "title",
-    "image_wide",
+    "image",
     "date_published"
   ],
   "query": {
@@ -12,6 +12,13 @@
       "must": {
         "match_all": {}
       },
+      "filter":  [
+        {
+          "exists": {
+            "field": "image"
+          }
+        }
+      ],
       "should": [
         {
           "simple_query_string": {
