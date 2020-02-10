@@ -3,15 +3,11 @@
 		"label": "About SCVO",
 		"path": "/about",
 		"route": "^/about$",
-		"children": [{
-				"label": "Press releases",
-				"path": "/about/press-media",
-				"route": "^/about/press-media"
-			},
-		{
-				"label": "Blog",
-				"path": "/about/blog",
-				"route": "^/about/blog"
+		"children": [
+			{
+				"label": "Staff team",
+				"path": "/about/staff-team",
+				"route": "^/about/staff-team"
 			},
 			{
 				"label": "Board of trustees",
@@ -19,9 +15,59 @@
 				"route": "^/about/board-of-trustees"
 			},
 			{
-				"label": "Staff team",
-				"path": "/about/staff-team",
-				"route": "^/about/staff-team"
+				"label": "Work with us",
+				"path": "/about/work-with-us",
+				"route": "^/about/work-with-us"
+			},
+			{
+				"label": "Press releases",
+				"path": "/about/press-media",
+				"route": "^/about/press-media"
+			},
+			{
+				"label": "Blog",
+				"path": "/about/blog",
+				"route": "^/about/blog"
+			},
+			{
+				"label": "Annual review",
+				"path": "/about/annual-review",
+				"route": "^/about/annual-review"
+			},
+			{
+				"label": "Accounts",
+				"path": "/about/accounts",
+				"route": "^/about/accounts"
+			},
+			{
+				"label": "Strategy 2019-22",
+				"path": "/about/strategy",
+				"route": "^/about/strategy"
+			},
+			{
+				"label": "European projects",
+				"path": "/about/european-projects",
+				"route": "^/about/european-projects$",
+				"children": [{
+					"label": "SCOPE",
+					"path": "/about/european-projects/scope",
+					"route": "^/about/european-projects/scope$"
+				},
+				{
+					"label": "Food, poverty and social inclusion",
+					"path": "/about/european-projects/food-poverty-social-inclusion",
+					"route": "^/about/european-projects/food-poverty-social-inclusion$"
+				},
+				{
+					"label": "Young people & the SDGs",
+					"path": "/about/european-projects/young-people-the-sdgs",
+					"route": "^/about/european-projects/young-people-the-sdgs$"
+				},
+				{
+					"label": "mPower",
+					"path": "/about/european-projects/mpower",
+					"route": "^/about/european-projects/mpower$"
+				}]
 			},
 			{
 				"label": "Membership",
@@ -63,51 +109,6 @@
 				"label": "Professional networks",
 				"path": "/about/professional-networks",
 				"route": "^/about/professional-networks"
-			},
-			{
-				"label": "European projects",
-				"path": "/about/european-projects",
-				"route": "^/about/european-projects$",
-				"children": [{
-					"label": "SCOPE",
-					"path": "/about/european-projects/scope",
-					"route": "^/about/european-projects/scope$"
-				},
-				{
-					"label": "Food, poverty and social inclusion",
-					"path": "/about/european-projects/food-poverty-social-inclusion",
-					"route": "^/about/european-projects/food-poverty-social-inclusion$"
-				},
-				{
-					"label": "Young people & the SDGs",
-					"path": "/about/european-projects/young-people-the-sdgs",
-					"route": "^/about/european-projects/young-people-the-sdgs$"
-				},
-				{
-					"label": "mPower",
-					"path": "/about/european-projects/mpower",
-					"route": "^/about/european-projects/mpower$"
-				}]
-			},
-			{
-				"label": "Annual review",
-				"path": "/about/annual-review",
-				"route": "^/about/annual-review"
-			},
-			{
-				"label": "Accounts",
-				"path": "/about/accounts",
-				"route": "^/about/accounts"
-			},
-			{
-				"label": "Strategy 2019-22",
-				"path": "/about/strategy",
-				"route": "^/about/strategy"
-			},
-			{
-				"label": "Work with us",
-				"path": "/about/work-with-us",
-				"route": "^/about/work-with-us"
 			}
 		]
 	}],

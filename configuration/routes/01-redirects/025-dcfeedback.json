@@ -1,0 +1,14 @@
+{
+  "name": "redirect_dcfeedback",
+  "pattern": "/dcfeedback",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/support/digital/participation/champions/dc-training-your-feedback",
+        "statusCode": 301
+      }
+    }
+  ]
+}
