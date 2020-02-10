@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Edinburgh</h2>
+  <p>
+    <strong>Mansfield Traquair Centre</strong>, 15 Mansfield Place, Edinburgh EH3 6BB
+  </p>
+  <p>
+    Bicycles nearby:<br />
+    {{#each @root.data.bicycles.edinburgh.network.stations ~}}
+    {{#compare name "East London Street" ~}}
+    {{free_bikes}} available and {{inflect empty_slots "space" "spaces" true}} at {{name}}<br />
+    {{/compare ~}}
+    {{#compare name "Scotland Street" ~}}
+    {{free_bikes}} available and {{inflect empty_slots "space" "spaces" true}} at {{name}}<br />
+    {{/compare ~}}
+    {{/each}}
+  </p>
+
+  <h2>Glasgow</h2>
+  <p>
+    <strong>Brunswick House</strong>, 51 Wilson Street, Glasgow G1 1UZ
+  </p>
+  <p>
+    Bicycles nearby:<br />
+    {{#each @root.data.bicycles.glasgow.network.stations ~}}
+    {{#compare name "Gallery of Modern Art" ~}}
+    {{free_bikes}} available and {{inflect empty_slots "space" "spaces" true}} at {{name}}<br />
+    {{/compare ~}}
+    {{#compare name "Argyle Street Railway Station" ~}}
+    {{free_bikes}} available and {{inflect empty_slots "space" "spaces" true}} at {{name}}<br />
+    {{/compare ~}}
+    {{/each}}
+  </p>
+  <p>
+    <strong>Edward House</strong>, 199 Sauchiehall Street, Glasgow G2 3EX
+  </p>
+  <p>
+    Bicycles nearby:<br />
+    {{#each @root.data.bicycles.glasgow.network.stations ~}}
+    {{#compare name "Sauchiehall Street" ~}}
+    {{free_bikes}} available and {{inflect empty_slots "space" "spaces" true}} at {{name}}<br />
+    {{/compare ~}}
+    {{/each}}
+  </p>
+
+  <h2>Inverness</h2>
+  <p>
+    <strong>Fairways House</strong>, Fairways Business Park, Slackbuie Avenue, Inverness IV2 6AA
+  </p>
+</div>

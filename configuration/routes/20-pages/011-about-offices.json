@@ -1,11 +1,25 @@
 {
-  "name": "page_about_office",
-  "pattern": {
-    "index": "/about/offices",
-    "section": "/about/offices/:slug"
-  },
+  "name": "page_about_offices",
+  "pattern": "__DISABLED__/about/offices",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page",
+          "noResultsRoute": "four_oh_four"
+        }
+      },
+      "renderer": "handlebars"
+    },
     {
       "name": "bicycles",
       "taskModule": "request",
@@ -33,7 +47,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.about-office"
+              "header": ">context.metaData.handlebars.templates.page-header",
+              "body": ">context.metaData.handlebars.templates.about_offices-body"
             },
             "contentType": "text/html"
           }
