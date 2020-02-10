@@ -1,15 +1,15 @@
-<div class="list scvo-event scvo-event-{{Id}} mdc-card">
-  <section class="mdc-card__primary">
-    <h3 class="mdc-card__title">
+<div class="list scvo-event scvo-event-{{Id}} card card-no-padding v-padding">
+  <section class="card-header">
+    <h4 class="card-title">
       <a href="{{path}}">{{{title}}}</a>
-    </h3>
+    </h4>
     <div class="post-info">
       {{> content_event_post_info_booked}}
       {{> content_event_post_info_date}}
       {{> content_event_post_info_city}}
     </div>
   </section>
-  <section class="mdc-card__supporting-text">
+  <section class="card-body">
     <p>
       {{#if course_overview_short ~}}
       {{{course_overview_short}}}

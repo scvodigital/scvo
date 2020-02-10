@@ -10,7 +10,7 @@
     <select class="form-select" id="events-course_type" name="course_type">
       <option value=""{{#if @root.request.params.query.course_type}}{{else}} selected{{/if}}>Event type</option>
       {{#each @root.data.supplimentaryResponses.types.aggregations.types.buckets ~}}
-      <option value="{{key}}" {{#compare @root.request.params.query.course_type "===" key}}selected{{/compare}}>{{key}}</option>
+      <option value="{{key}}" {{#compare @root.request.params.query.course_type "===" key}}selected{{/compare}}>{{replace key "Workshops" "Workshop"}}</option>
       {{/each ~}}
     </select>
   </div>

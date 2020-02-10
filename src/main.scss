@@ -272,7 +272,6 @@ h1 {
     font-size: 1.2rem;
   }
 }
-.mdc-typography--title,
 .card-title.h2,
 h2 {
   font-size: 1.55rem;
@@ -286,7 +285,6 @@ h2 {
     font-size: 1rem;
   }
 }
-.mdc-card__title,
 .card-title.h3,
 h3 {
   font-size: 1.35rem;
@@ -312,9 +310,6 @@ h4 {
     font-weight: $heading-font-weight;
     border-bottom: none;
   }
-}
-.mdc-card__title {
-  margin: 0;
 }
 .caption {
   font-size: 90%;
@@ -344,9 +339,6 @@ h1.font-default,
 }
 .splash-image-header .header-text {
   letter-spacing: -0.04rem;
-}
-.mdc-card__title {
-  font-family: $body-font-family;
 }
 .btn.btn-lg {
   font-size: 1.1rem;
@@ -872,10 +864,14 @@ a.author:hover,
 }
 .card.card-no-padding {
   .card-header,
+  .card-title,
   .card-body,
   .card-footer {
     padding: 0;
   }
+}
+.card.list {
+  margin-bottom: $unit;
 }
 // .digital .card .card-image {
 //   height: $unit*8;
