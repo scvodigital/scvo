@@ -1,0 +1,14 @@
+{
+  "name": "redirect_cyberevent",
+  "pattern": "/cyberevent",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/events/a1v3z00000Hs8nuAAB/cyber-education-and-cyber-essentials",
+        "statusCode": 301
+      }
+    }
+  ]
+}
