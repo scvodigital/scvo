@@ -344,6 +344,7 @@ h1.font-default,
   font-size: 1.1rem;
   letter-spacing: -0.02rem;
   line-height: 1.1rem !important;
+  transition-timing-function: ease-in-out;
 }
 .btn.btn-lg:hover,
 .btn.btn-primary.btn-lg:hover {
@@ -718,6 +719,7 @@ footer .footer-copyright a.scvo-logo {
   color: white;
   border-color: $primary-color;
   transition: background $transition-speed, border $transition-speed, color $transition-speed !important;
+  transition-timing-function: ease-in-out;
 }
 .wp-block-file .wp-block-file__button,
 a.wp-block-file__button,
@@ -847,6 +849,7 @@ a.author:hover,
   }
   .hero .hero-text h1 {
     font-size: 3rem;
+    letter-spacing: -0.1rem;
   }
 }
 
@@ -2219,7 +2222,8 @@ footer {
     }
   }
   .hero .hero-text h1 {
-    font-size: 2.6rem;
+    font-size: 2.45rem;
+    letter-spacing: -0.08rem;
   }
   h1 {
     font-size: 1.5rem;
