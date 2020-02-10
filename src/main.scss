@@ -461,6 +461,7 @@ a:visited {
   background-repeat: repeat-x;
   background-size: $thick-line $thick-line;
   transition: background-size $transition-speed, color $transition-speed, border $transition-speed, background-color $transition-speed;
+  transition-timing-function: ease-in-out;
 }
 h1 a:link,
 h1 a:visited,
@@ -657,6 +658,7 @@ footer a {
 .card-image-link:hover {
   .card-title {
     color: $primary-color;
+    transition: color $transition-speed;
   }
   .card-image {
     -webkit-transform: scale3d(1.05,1.05,1);
