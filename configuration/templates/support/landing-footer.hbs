@@ -38,18 +38,19 @@
   </div>
 </div>
 
-<div class="bg-primary">
-  <div class="container v-padding-full">
-    <h2 class="b-padding">
-      Events & training courses&ensp;
-      <a href="/support/events"><span class="caption">See all</span></a>
-    </h2>
-    <div class="columns b-padding-full b-margin">
-      {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets ~}}
-      <div class="column col-3 col-lg-6 col-sm-12">
-        <a href="/support/events?q=&course_type={{replace key ' ' '+'}}">{{inflect doc_count (lowercase (replace key "Workshops" "Workshop")) (concat (lowercase (replace key "Workshops" "Workshop")) 's') true}}
-      </div>
-      {{/each ~}}
+<div class="bg-secondary">
+  <div class="container text-centre v-padding-full">
+    <h3>
+      <a href="/support/information-service">Information Service</a>
+    </h3>
+    <div class="b-margin-full">
+      <p>
+        The SCVO Information Service offers help for anyone setting up or running a voluntary sector organisation.
+      </p>
+      <p>
+        <a href="/support/information-service" class="btn btn-primary">Find out more</a>
+        <a href="/support/information-service/events" class="btn">Upcoming events</a>
+      </p>
     </div>
   </div>
 </div>
