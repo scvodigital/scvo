@@ -549,16 +549,20 @@ footer a {
     box-shadow: none;
   }
   .input-group .form-input,
-  .input-group .form-select,
-  .input-group-btn {
-    background-color: transparent !important;
+  .input-group .form-select {
+    background-color: white !important;
     color: $secondary-color-dark !important;
-    border-color: $secondary-color-dark !important;
+    border-color: $primary-color !important;
+  }
+  .input-group-btn {
+    background-color: $primary-color !important;
+    color: white !important;
+    border-color: $primary-color !important;
   }
   .input-group .btn.btn-primary:hover {
-    background-color: $secondary-color-dark !important;
+    background-color: $secondary-color-light !important;
     color: white !important;
-    border-color: $secondary-color-dark !important;
+    border-color: $secondary-color-light !important;
   }
 }
 
@@ -629,7 +633,7 @@ footer a {
   }
   .card-header {
     .card-title {
-      margin: 0;
+      margin: $unit 0 0;
     }
     .card-subtitle {
       line-height: 1.5;

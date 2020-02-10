@@ -13,16 +13,16 @@
       </div>
       <div class="card-header">
         <{{heading}} class="card-title">
-          {{title}}
+          {{{title}}}
         </{{heading}}>
         {{#if subtitle ~}}
-        <div class="card-subtitle">{{subtitle}}</div>
+        <div class="card-subtitle">{{{subtitle}}}</div>
         {{/if ~}}
       </div>
       {{#if body ~}}
       <div class="card-body t-margin">
         <p>
-          {{body}}
+          {{{body}}}
         </p>
       </div>
       {{/if ~}}
@@ -30,12 +30,12 @@
   </a>
   {{#unless hide_read_more ~}}
   <div class="card-footer">
-    <a href="{{link}}" class="no-underline r-margin-full">{{default read_more_text 'Read more'}}</a>
+    <a href="{{link}}" class="no-underline r-margin-full">{{{default read_more_text 'Read more'}}}</a>
     {{#ifAll link_2 link_2_text ~}}
-    <a href="{{link_2}}" class="no-underline">{{link_2_text}}</a>
+    <a href="{{link_2}}" class="no-underline">{{{link_2_text}}}</a>
     {{/ifAll ~}}
     {{#ifAll link_3 link_3_text ~}}
-    <a href="{{link_3}}" class="no-underline">{{link_3_text}}</a>
+    <a href="{{link_3}}" class="no-underline">{{{link_3_text}}}</a>
     {{/ifAll ~}}
   </div>
   {{/unless ~}}
