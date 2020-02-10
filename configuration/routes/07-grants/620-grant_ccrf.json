@@ -1,6 +1,6 @@
 {
   "name": "grant_ccrf",
-  "debug": true,
+  "debug": false,
   "pattern": "/funding/community-capacity-resilience-fund/projects/:project_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

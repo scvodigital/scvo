@@ -1,5 +1,6 @@
 {
   "name": "page_cjs_content",
+  "debug": false,
   "pattern": "/jobs/community-jobs-scotland/:section(/:subsection)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

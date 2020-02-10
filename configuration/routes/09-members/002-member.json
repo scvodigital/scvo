@@ -1,6 +1,6 @@
 {
   "name": "member_page",
-  "debug": true,
+  "debug": false,
   "pattern": "/about/members/:member_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

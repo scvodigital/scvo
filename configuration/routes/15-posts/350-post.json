@@ -1,10 +1,10 @@
 {
   "name": "post",
+  "debug": false,
   "pattern": {
     "post_path": "/post(/:year)(/:month)(/:day)(/:slug)",
     "post_id": "/p/*id(/:year)(/:month)(/:day)(/:slug)"
   },
-  "debug": true,
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

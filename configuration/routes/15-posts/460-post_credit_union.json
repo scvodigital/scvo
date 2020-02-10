@@ -1,5 +1,6 @@
 {
   "name": "credit_union_news",
+  "debug": false,
   "pattern": "/services/credit-union/important-news",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

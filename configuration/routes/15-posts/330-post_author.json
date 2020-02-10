@@ -1,6 +1,6 @@
 {
   "name": "post_author",
-  "debug": true,
+  "debug": false,
   "pattern": "/post/author/:author_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

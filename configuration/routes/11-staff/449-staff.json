@@ -1,5 +1,6 @@
 {
   "name": "staff",
+  "debug": false,
   "pattern": "/about/staff-team/:id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

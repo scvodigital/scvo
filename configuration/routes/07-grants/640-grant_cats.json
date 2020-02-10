@@ -1,6 +1,6 @@
 {
   "name": "grant_cats",
-  "debug": true,
+  "debug": false,
   "pattern": "/funding/carers-act-transformation-support-fund/projects/:project_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

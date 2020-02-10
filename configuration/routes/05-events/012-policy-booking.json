@@ -1,7 +1,7 @@
 {
   "name": "event_policy_booking",
-  "pattern": "/policy/events/:id(/:junk)/book",
   "debug": false,
+  "pattern": "/policy/events/:id(/:junk)/book",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

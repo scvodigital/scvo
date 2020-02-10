@@ -1,6 +1,6 @@
 {
   "name": "post_category_blog",
-  "debug": true,
+  "debug": false,
   "pattern": "/:category_slug/blog",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

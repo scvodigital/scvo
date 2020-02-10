@@ -1,5 +1,6 @@
 {
   "name": "post_tag",
+  "debug": false,
   "pattern": "/post/tags/:tag_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

@@ -1,6 +1,6 @@
 {
   "name": "evidence_library_document",
-  "debug": true,
+  "debug": false,
   "pattern": "/policy/evidence-library/:library_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
