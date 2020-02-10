@@ -1,5 +1,5 @@
 <div class="bg-white">
-  <div class="container v-padding-full b-margin-full">
+  <div class="container v-padding-full">
     <div class="columns b-padding">
       <div class="column col-6 col-lg-12">
         <h2>
@@ -87,17 +87,19 @@
 <script src="{{~>asset_url url='all-vacancies.js'~}}"></script> --}}
 
 {{#compare @root.data.supplimentaryResponses.goodmoves_latest.hits.total ">" 0 ~}}
-<div class="container b-padding-full">
-  <h2 class="b-margin b-padding-full">
-    Top jobs on Goodmoves&ensp;
-    <a href="/jobs/search" class="caption">Find more jobs</a>
-  </h2>
-  <div class="columns">
-    {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
-    <div class="column col-4 col-lg-6 col-md-12">
-      {{> content_goodmoves_gist _source}}
+<div class="bg-goodmoves">
+  <div class="container b-padding-full">
+    <h2 class="b-margin b-padding-full">
+      Top jobs on Goodmoves&ensp;
+      <a href="/jobs/search" class="caption">Find more jobs</a>
+    </h2>
+    <div class="columns">
+      {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
+      <div class="column col-4 col-lg-6 col-md-12">
+        {{> content_goodmoves_gist _source}}
+      </div>
+      {{/each ~}}
     </div>
-    {{/each ~}}
   </div>
 </div>
 {{/compare ~}}

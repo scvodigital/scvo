@@ -1261,6 +1261,8 @@ a.author:hover,
 }
 .bg-goodmoves {
   background-color: $goodmoves-color;
+  h2,
+  h3,
   h4,
   li,
   a,
@@ -1294,11 +1296,32 @@ a.author:hover,
   }
 }
 
-.avatar.logo {
-  background-color: white;
-}
+// .avatar.logo {
+//   background-color: white;
+// }
 .avatar.avatar-sm {
   margin-right: $unit/5;
+}
+.thumbnail {
+  display: block;
+  width: 3.2rem;
+  height: 3.2rem;
+  overflow: hidden;
+  background: white !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.thumbnail>img {
+  max-height: 100%;
+  max-width: 100%;
+  height: initial !important;
+  width: initial !important;
+  background: white;
+  border-radius: 0;
 }
 a.rss {
   color: $warning-color;
