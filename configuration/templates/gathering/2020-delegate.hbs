@@ -1,5 +1,9 @@
 <div class="container">
   <h2>Gathering 2020 delegate</h2>
 
+  {{#if @root.request.params.delegate_id ~}}
   <script type="text/javascript" >document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90213772/Gathering-Pre-Check?ID={{@root.request.params.delegate_id}}&__output=embedjs&__ref=' + escape(document.location.origin + document.location.pathname) + '" type="text/javascript" ></scr' + 'ipt>');</script><style>.sg-survey{display:none; }</style>
+  {{else}}
+  <p>Error: Something went wrong, please use the full link provided and try again.
+  {{/if ~}}
 </div>
