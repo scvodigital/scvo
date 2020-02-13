@@ -853,6 +853,23 @@ a.author:hover,
   }
 }
 
+.wp-block-table table {
+  border-collapse: collapse;
+  td {
+    border: 1px solid $gray-color-light;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  tr:nth-child(even) {
+    background-color: $light-color;
+  }
+  tr:nth-child(odd) {
+    background-color: white;
+  }
+}
+
 .card {
   border: none !important;
   box-shadow: none;
