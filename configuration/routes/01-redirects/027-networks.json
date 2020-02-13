@@ -1,0 +1,14 @@
+{
+  "name": "redirect_networks",
+  "pattern": "/networks",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/about/professional-networks",
+        "statusCode": 301
+      }
+    }
+  ]
+}
