@@ -1,7 +1,7 @@
 {
   "name": "page_gathering_2020",
   "debug": false,
-  "pattern": "/the-gathering-2020(/:section)(/:subsection)",
+  "pattern": "/the-gathering-2020(/:level_1)(/:level_2)(/:level_3)(/:level_4)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
