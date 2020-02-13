@@ -1,26 +1,9 @@
 {
-  "name": "page_gathering_2020_home",
-  "debug": false,
-  "pattern": "__DISABLED__/the-gathering-2020",
+  "name": "page_gathering_2020_delegate",
+  "debug": true,
+  "pattern": "/the-gathering-2020/delegate(/:delegate_id)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
-    {
-      "name": "primaryResponse",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": {
-          "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-page",
-          "template": ">context.metaData.handlebars.queries.pages_page",
-          "noResultsRoute": "four_oh_four"
-        }
-      },
-      "renderer": "handlebars"
-    },
     "context.metaData.commonTasks.postsLatest",
     {
       "name": "destination",
@@ -39,7 +22,8 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.gathering_2020-header",
-              "body": ">context.metaData.handlebars.templates.gathering_2020-home"
+              "body": ">context.metaData.handlebars.templates.gathering_2020-delegate",
+              "rightSidebar": ">context.metaData.handlebars.templates.gathering_2020-sidebar"
             },
             "contentType": "text/html"
           }
