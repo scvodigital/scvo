@@ -2728,6 +2728,13 @@ figure,
   .scvo-services .btn-lg {
     color: $primary-color;
   }
+  body.the-gathering-2020 {
+    .header-text,
+    .header-text a,
+    .header-text a:hover {
+      color: $gathering-color;
+    }
+  }
   img {
     opacity: .85;
     transition: opacity $transition-speed ease-in-out;
