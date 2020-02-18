@@ -35,13 +35,15 @@
   "startDate": "{{momentFormat (moment date_start 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
   "endDate": "{{momentFormat (moment date_end 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
   "description": {{{stringify (concat '' (truncate (striptags description) 280))}}},
+  {{#if trainer ~}}
   "performer": {
     "@type": "Person",
     "name": "{{trainer}}"
   },
+  {{/if ~}}
   "offers": {
     "availability": "{{#if places_available}}Places available{{else}}Fully booked{{/if}}",
-    "url": "{{url}}/book",
+    "url": "{{#if booking_url}}{{booking_url}}{{else}}{{url}}/book{{/if}}",
     "validFrom": "{{momentFormat (moment date_start 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
     "priceCurrency": "GBP"
   }
