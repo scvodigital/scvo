@@ -1,4 +1,12 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+{{#if logos ~}}
+{{#each logos ~}}
+<div class="b-margin-full">
+  <img src="{{url}}" alt="{{name}}" class="img-responsive" />
+</div>
+{{/each ~}}
+{{/if ~}}
+
 {{#if booking_url ~}}
 {{!-- {{#if (contains booking_url 'surveygizmo.eu') ~}}
 <script type="text/javascript" >document.write('<script src="{{booking_url}}?sfid={{Id}}&__output=embedjs&__ref=' + escape(document.location.origin + document.location.pathname) + '" type="text/javascript" ></scr' + 'ipt>');</script><style>.sg-survey{display:none; }</style>

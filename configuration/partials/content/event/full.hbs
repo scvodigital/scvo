@@ -171,29 +171,41 @@
           {{{other_information}}}
         </dd>
         {{/if ~}}
+        <dt>
+          &nbsp;
+        </dt>
+        <dd class="v-margin">
+          {{#if places_available ~}}
+          {{#compare places_available ">" 0 ~}}
+          {{#compare places_available "<" 5 ~}}
+          <p class="booking course-almost-full">
+            <strong>Note:</strong> Only a few places left!
+          </p>
+          {{/compare ~}}
+          <p class="book-now">
+            <a href="{{#if booking_url}}{{#if (contains booking_url "https://www.surveygizmo.eu")}}{{path}}/book{{else}}{{{booking_url}}}{{/if}}{{else}}{{path}}/book{{/if}}" class="btn btn-primary btn-lg">Book now</a>
+          </p>
+          {{else}}
+          <p class="booking course-full">
+            <strong>Please note this {{#compare course_type "Training Course"}}course{{else}}event{{/compare}} is now fully booked!</strong>
+          </p>
+          {{/compare ~}}
+          {{else}}
+          <p class="booking course-full">
+            <strong>Please note this {{#compare course_type "Training Course"}}course{{else}}event{{/compare}} is now fully booked!</strong>
+          </p>
+          {{/if ~}}
+        </dd>
       </dl>
-      {{#if places_available ~}}
-      {{#compare places_available ">" 0 ~}}
-      {{#compare places_available "<" 5 ~}}
-      <p class="booking course-almost-full">
-        <strong>Note:</strong> Only a few places left!
-      </p>
-      {{/compare ~}}
-      <p class="book-now">
-        <a href="{{#if booking_url}}{{#if (contains booking_url "https://www.surveygizmo.eu")}}{{path}}/book{{else}}{{{booking_url}}}{{/if}}{{else}}{{path}}/book{{/if}}" class="btn btn-primary btn-lg">Book now</a>
-      </p>
-      {{else}}
-      <p class="booking course-full">
-        <strong>Please note this {{#compare course_type "Training Course"}}course{{else}}event{{/compare}} is now fully booked!</strong>
-      </p>
-      {{/compare ~}}
-      {{else}}
-      <p class="booking course-full">
-        <strong>Please note this {{#compare course_type "Training Course"}}course{{else}}event{{/compare}} is now fully booked!</strong>
-      </p>
-      {{/if ~}}
     </div>
     <div class="column col-4 col-md-12 sidebar event-sidebar">
+      {{#if logos ~}}
+      {{#each logos ~}}
+      <div class="text-center b-margin-full">
+        <img src="{{url}}" alt="{{name}}" class="img-responsive" />
+      </div>
+      {{/each ~}}
+      {{/if ~}}
       <div class="columns">
         <div class="column col-2 col-lg-3 col-sm-12">
           <strong>Venue</strong>
@@ -219,8 +231,8 @@
           {{/if ~}}
         </div>
         {{#ifAll event_venue.address_1 event_venue.postcode geo.latitude geo.longitude ~}}
-        <div class="column col-12">
-          <a href="https://maps.google.co.uk/?q={{urlencode event_venue.address_1}},%20{{urlencode event_venue.postcode}}" class="no-ext no-underline">
+        <div class="column col-12 v-margin-full">
+          <a href="https://maps.google.co.uk/?q={{urlencode replace event_venue.address_1}},+{{urlencode event_venue.postcode}}" class="no-ext no-underline">
             <img src="http://maps.googleapis.com/maps/api/staticmap?center={{geo.latitude}},{{geo.longitude}}&zoom=14&size=420x320&maptype=roadmap&markers={{geo.latitude}},{{geo.longitude}}&key=AIzaSyDSixdiuQklJxhvx0_gsv4xYnjLXTb3G4I" />
           </a>
         </div>
