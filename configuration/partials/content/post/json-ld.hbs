@@ -4,8 +4,16 @@
   "@type": "Article",
   "headline": "{{title}}",
   "image": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}",
-  "author": "{{author_name_full}}",
-  "editor": "Ann Rowe",
+  {{#unless is_press_release ~}}
+  "author": {
+    "@type": "Person",
+    "name": "{{author_name_full}}"
+  },
+  {{/unless ~}}
+  "editor": {
+    "@type": "Person",
+    "name": "Ann Rowe"
+  },
   "genre": "News",
   {{#if post_tags ~}}
   "keywords": "{{join post_tags ", "}}",

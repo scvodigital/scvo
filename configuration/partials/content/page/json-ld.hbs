@@ -1,12 +1,17 @@
 <script type="application/ld+json" data-dynamic="true">
 {
   "@context": "http://schema.org",
-  "@type": "Article",
+  "@type": "WebPage",
   "headline": "{{title}}",
   "image": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}",
-  "author": "{{author_name_full}}",
-  "editor": "Ann Rowe",
-  "genre": "News",
+  "author": {
+    "@type": "Person",
+    "name": "{{author_name_full}}"
+  },
+  "editor": {
+    "@type": "Person",
+    "name": "Ann Rowe"
+  },
   {{#if post_tags ~}}
   "keywords": "{{join post_tags ", "}}",
   {{/if ~}}
