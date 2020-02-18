@@ -12,12 +12,38 @@
       "url": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}"
     }
   },
+  {{#if event_venue ~}}
+  "location": {
+    "@type": "Place",
+    "name": "{{event_venue.name}}",
+    "alternateName": "{{event_venue.organisation_name}}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{event_venue.address_1}}",
+      "addressLocality": "{{event_venue.address_2}}",
+      "addressCountry": "Scotland",
+      "postalCode": "{{event_venue.postcode}}"
+    }
+  },
+  {{else}}
+  "location": "{{venue_alt}}",
+  {{/if ~}}
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{url}}"
   },
   "startDate": "{{momentFormat (moment date_start 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
   "endDate": "{{momentFormat (moment date_end 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
-  "about": {{{stringify (concat '' (truncate (striptags description) 280))}}}
+  "description": {{{stringify (concat '' (truncate (striptags description) 280))}}},
+  "performer": {
+    "@type": "Person",
+    "name": "{{trainer}}"
+  },
+  "offers": {
+    "availability": "{{#if places_available}}Places available{{else}}Fully booked{{/if}}",
+    "url": "{{url}}/book",
+    "validFrom": "{{momentFormat (moment date_start 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
+    "priceCurrency": "GBP"
+  }
 }
 </script>
