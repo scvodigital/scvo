@@ -2014,8 +2014,23 @@ blockquote {
 
 ul li,
 ol li {
-  margin-top: 0;
+  margin-bottom: $unit/2;
 }
+ul li:last-child,
+ol li:last-child {
+  margin-bottom: 0;
+}
+ul {
+  list-style: disc outside;
+}
+ol {
+  list-style: decimal outside;
+}
+ul,
+ol {
+  margin-left: $unit;
+}
+
 .form.disabled,
 form.disabled {
   pointer-events: none;
