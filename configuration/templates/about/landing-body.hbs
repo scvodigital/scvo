@@ -1,4 +1,4 @@
-<div class="bg-white sidebar-present v-padding-full">
+{{!-- <div class="bg-white sidebar-present v-padding-full">
   <div class="container">
     <div class="columns">
       <main class="body column col-xs-auto">
@@ -9,13 +9,12 @@
       </aside>
     </div>
   </div>
-</div>
+</div> --}}
 
-
-{{!-- <div class="bg-gray sidebar-not-present v-padding-full">
+<div class="bg-gray sidebar-not-present v-padding-full">
   <div class="container t-padding">
     <p>
-      The Scottish Council for Voluntary Organisations (SCVO) is the national membership organisation for the voluntary sector.
+      <strong>The Scottish Council for Voluntary Organisations (SCVO) is the national membership organisation for the voluntary sector</strong>
     </p>
   </div>
 </div>
@@ -41,7 +40,7 @@
           <a href="/about/annual-review" class="no-underline">Annual review</a><br />
           <a href="/about/accounts" class="no-underline">Accounts</a><br />
           <a href="/about/strategy" class="no-underline">Strategy 2019-22</a><br />
-          <a href="/about/partnership-projects" class="no-underline">Partnership projects [NEW!] </a><br />
+          {{!-- <a href="/about/partnership-projects" class="no-underline">Partnership projects [NEW!] </a><br /> --}}
           <a href="/about/european-projects" class="no-underline">European projects</a>
         </p>
       </div>
@@ -54,16 +53,83 @@
         </p>
       </div>
     </div>
-    <img src="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2019/10/logo-strip-for-website.png" alt="" style="max-width:600px; text-align:center; margin:1rem auto; display:block;" />
-    <p>
+    {{!-- <img src="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2019/10/logo-strip-for-website.png" alt="" style="max-width:600px; text-align:center; margin:1rem auto; display:block;" /> --}}
+    <div class="sponsors v-margin-full">
+      <div class="sponsor oscr">
+        <a href="https://www.oscr.org.uk/about-charities/search-the-register/charity-details?number=SC003558" target="_blank" class="no-ext no-underline"><img src="{{~>asset_url url='images/about/oscr-scvo-landscape.png'~}}" class="img-responsive" title="OSCR Registered SCIO SC003558" /></a>
+      </div>
+      <div class="sponsor healthy-working-lives">
+        <a href="https://www.healthyworkinglives.scot" target="_blank" class="no-ext no-underline"><img src="{{~>asset_url url='images/about/healthy-working-lives-bronze.png'~}}" class="img-responsive" title="Healthy Working Lives - Bronze Award" /></a>
+      </div>
+      <div class="sponsor flexible-working">
+        <a href="https://www.workingfamilies.org.uk/campaigns/happy-to-talk-flexible-working" target="_blank" class="no-ext no-underline"><img src="{{~>asset_url url='images/about/flexible-working.png'~}}" class="img-responsive" title="Happy to talk flexible working" /></a>
+      </div>
+      <div class="sponsor carer-positive">
+        <a href="http://www.carerpositive.org/carer-positive-employers" target="_blank" class="no-ext no-underline"><img src="{{~>asset_url url='images/about/carer-positive.png'~}}" class="img-responsive" title="Carer positive employer in Scotland - Engaged" /></a>
+      </div>
+      <div class="sponsor living-wage">
+        <a href="https://scottishlivingwage.org" target="_blank" class="no-ext no-underline"><img src="{{~>asset_url url='images/about/living-wage-employer.png'~}}" class="img-responsive" title="We are a Living Wage Employer" /></a>
+      </div>
+    </div>
+    {{!-- <p>
       [*TBC* Support our network (this will contain business development stuff but doesn’t need to exist yet, although may affect layout if ends up being 4-across)]
-    </p>
+    </p> --}}
   </div>
 </div>
 
 <div class="bg-secondary sidebar-not-present v-padding-full">
-  <div class="container">
-    SECTION 2 – social media icons and links (banner)
+  <div class="container v-padding">
+    {{!-- SECTION 2 – social media icons and links (banner) --}}
+    <div class="columns">
+      <div class="column col-4 col-lg-12 align-self-centre">
+        <div class="columns">
+          <div class="column col-6 col-sm-12">
+            <h4 class="text-center">
+              <a href="https://www.linkedin.com/company/scvo" class="no-underline no-ext" title="LinkedIn">
+                <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
+                  <span class="icon fab fa-linkedin-in fa-fw fa-2x" aria-hidden="true"></span>
+                </div>
+              </a>
+            </h4>
+          </div>
+          <div class="column col-6 col-sm-12">
+            <h4 class="text-center">
+              <a href="https://www.facebook.com/SCVO1939" class="no-underline no-ext" title="Facebook">
+                <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
+                  <span class="icon fab fa-facebook-f fa-fw fa-2x" aria-hidden="true"></span>
+                </div>
+              </a>
+            </h4>
+          </div>
+          <div class="column col-6 col-sm-12">
+            <h4 class="text-center">
+              <a href="https://soundcloud.com/scvo-1" class="no-underline no-ext" title="Soundcloud">
+                <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
+                  <span class="icon fab fa-soundcloud fa-fw fa-2x" aria-hidden="true"></span>
+                </div>
+              </a>
+            </h4>
+          </div>
+          <div class="column col-6 col-sm-12">
+            <h4 class="text-center">
+              <a href="https://www.youtube.com/user/SCVOtv" class="no-underline no-ext" title="YouTube">
+                <div class="icon-rouleaux" style="background-image:url('/rouleaux.svg?color=ffffff&style=solid');">
+                  <span class="icon fab fa-youtube fa-fw fa-2x" aria-hidden="true"></span>
+                </div>
+              </a>
+            </h4>
+          </div>
+        </div>
+        {{!-- <iframe src="https://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FSCVO1939&width=800&colorscheme=dark&show_faces=true&border_color&stream=true&header=true&height=200" scrolling="yes" style="border:none; overflow:hidden; width:100%; height:200px; background: white; float:left;" allowtransparency="true" frameborder="0"></iframe> --}}
+      </div>
+      <div class="column col-4 col-lg-6 col-md-12 align-self-centre">
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/IK0wVIwfejM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="column col-4 col-lg-6 col-md-12 align-self-centre">
+        <a class="twitter-timeline" href="https://twitter.com/scvotweet" data-tweet-limit="1" data-width="100%" data-chrome="transparent noscrollbar noborders noheader nofooter" data-theme="dark"></a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -108,4 +174,4 @@
       </div>
     </div>
   </div>
-</div> --}}
+</div>

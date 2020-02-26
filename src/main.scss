@@ -1219,6 +1219,23 @@ a.author:hover,
     color: $secondary-color !important;
     border-color: white !important;
   }
+  .icon-rouleaux {
+    mix-blend-mode: screen;
+    .icon {
+      color: black;
+    }
+  }
+  a {
+    opacity: 0.8;
+    transition: opacity $transition-speed;
+    .icon-rouleaux,
+    .title {
+      opacity: inherit;
+    }
+  }
+  a:hover {
+    opacity: 1;
+  }
 }
 .bg-white {
   background: white;
@@ -2357,7 +2374,6 @@ footer {
 }
 
 .sponsors {
-  margin-bottom: $unit*2;
   display: flex;
   margin-left: -($unit/2);
   margin-right: -($unit/2);
@@ -2383,6 +2399,11 @@ footer {
   .sponsor.robertson-trust { flex: 1; }
   .sponsor.goodmoves { flex: 1; }
   .sponsor.sustainability { flex: 1; }
+  .sponsor.healthy-working-lives { flex: 1; }
+  .sponsor.flexible-working { flex: .6; }
+  .sponsor.carer-positive { flex: 1; }
+  .sponsor.oscr { flex: 1; }
+  .sponsor.living-wage { flex: .45; }
 }
 
 .alignright {
@@ -2420,6 +2441,9 @@ footer {
   content: "";
   clear: both;
   display: table;
+}
+.align-self-centre {
+  align-self: center;
 }
 .align-centre {
   display: flex;
