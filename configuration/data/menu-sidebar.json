@@ -298,12 +298,12 @@
 			},
 			{
 				"label": "Policy Forum",
-				"path": "/policy/policy-forum",
-				"route": "^/policy/policy-forum$",
+				"path": "/policy/forum",
+				"route": "^/policy/forum$",
 				"children": [{
 						"label": "Manifesto for the Future",
-						"path": "/policy/policy-forum/manifesto-for-the-future",
-						"route": "^/policy/policy-forum/manifesto-for-the-future$"
+						"path": "/policy/forum/manifesto-for-the-future",
+						"route": "^/policy/forum/manifesto-for-the-future$"
 					}
 				]
 			},
