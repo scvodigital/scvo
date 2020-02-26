@@ -1,4 +1,4 @@
-<div class="bg-white sidebar-present v-padding-full">
+{{!-- <div class="bg-white sidebar-present v-padding-full">
   <div class="container">
     <div class="columns">
       <main class="body column col-xs-auto">
@@ -9,9 +9,9 @@
       </aside>
     </div>
   </div>
-</div>
+</div> --}}
 
-<!-- <div class="bg-gray sidebar-not-present v-padding-full">
+<div class="bg-gray sidebar-not-present v-padding-full">
   <div class="container t-padding">
     <p>
       <strong>The Scottish Council for Voluntary Organisations (SCVO) is the national membership organisation for the voluntary sector</strong>
@@ -25,11 +25,11 @@
       <div class="column col-4 col-lg-6 col-md-12">
         <h2>Who we are</h2>
         <p>
-          <a href="/about/constitution" class="no-underline">Constitution [NEW!] </a><br />
+          <a href="/about/constitution" class="no-underline">Constitution</a><br />
           <a href="/about/staff-team" class="no-underline">Staff team</a><br />
           <a href="/about/board-of-trustees" class="no-underline">Board of trustees</a><br />
           <a href="/about/work-with-us" class="no-underline">Work with us</a><br />
-          <a href="/about/offices" class="no-underline">Offices [NEW!] </a>
+          <a href="/about/offices" class="no-underline">Offices</a>
         </p>
       </div>
       <div class="column col-4 col-lg-6 col-md-12">
@@ -40,7 +40,7 @@
           <a href="/about/annual-review" class="no-underline">Annual review</a><br />
           <a href="/about/accounts" class="no-underline">Accounts</a><br />
           <a href="/about/strategy" class="no-underline">Strategy 2019-22</a><br />
-          {{!-- <a href="/about/partnership-projects" class="no-underline">Partnership projects [NEW!] </a><br /> --}}
+          {{!-- <a href="/about/partnership-projects" class="no-underline">Partnership projects</a><br /> --}}
           <a href="/about/european-projects" class="no-underline">European projects</a>
         </p>
       </div>
@@ -53,6 +53,14 @@
         </p>
       </div>
     </div>
+    {{!--
+    <div class="column col-3 col-lg-6 col-md-12">
+      <h2>Support our network</h2>
+      <p>
+        [*TBC* this will contain business development stuff but doesn’t need to exist yet, although may affect layout if ends up being 4-across]
+      </p>
+    </div>
+     --}}
     {{!-- <img src="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2019/10/logo-strip-for-website.png" alt="" style="max-width:600px; text-align:center; margin:1rem auto; display:block;" /> --}}
     <div class="sponsors v-margin-full">
       <div class="sponsor oscr">
@@ -71,9 +79,6 @@
         <a href="https://scottishlivingwage.org" target="_blank" class="no-ext no-underline"><img src="{{~>asset_url url='images/about/living-wage-employer.png'~}}" class="img-responsive" title="We are a Living Wage Employer" /></a>
       </div>
     </div>
-    {{!-- <p>
-      [*TBC* Support our network (this will contain business development stuff but doesn’t need to exist yet, although may affect layout if ends up being 4-across)]
-    </p> --}}
   </div>
 </div>
 
@@ -137,41 +142,58 @@
   <div class="container">
     <h2>About the voluntary sector</h2>
     <div class="columns">
-      <div class="column col-4 col-lg-6 col-md-12">
+      {{!-- <div class="column col-4 col-lg-6 col-md-12">
         <h4>What is a modern charity</h4>
         <p>
-          [The content currently on I Love Charity]
+          Every story starts at the beginning. That’s why we’ve created this resource (see clip below!) to enable people outwith the charity sector to see what exactly the modern voluntary sector does in Scotland, to create a better understanding of the sector as a whole.
         </p>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12">
+        <p>
+          In February 2018, we published a report which showed that public trust in charities has declined in the last two years. As a result, we launched the #ILoveCharity campaign, to inspire trust in charities by supporting good governance within organisations to ensure they are well run, open and transparent, and to encourage charities to work harder at promoting the positive impact of their work.
+        </p>
+        <p>
+          Over the next 12 months we will be hosting a storytelling conference, network events, roadshows and training to enable charities, social enterprises and voluntary organisations across the country to better share their impact and stories. For more information see our menu on the right, or for the latest updates follow us at <a href="http://twitter.com/scvotweet">@scvotweet</a> or <a href="https://twitter.com/hashtag/ilovecharity">#ilovecharity</a>.
+        </p>
+      </div> --}}
+      {{!-- <div class="column col-4 col-lg-6 col-md-12">
         <h4>State of the Sector</h4>
         <p>
-          [Stats]
+          <a href="/policy/sector-stats">View the latest sector stats</a>
         </p>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12">
+      </div> --}}
+      <div class="column col-4 col-lg-12">
         <h4>Guide to working and volunteering in the sector</h4>
         <p>
-          [Document]
+          With three new charities registered in Scotland every working day, the sector is vast, vibrant and varied – and changing all the time.
         </p>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h4>What are intermediaries</h4>
         <p>
-          [Content]
+          Read more:
+          <a href="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2019/08/A-Guide-to-Working-and-Volunteering-in-Scotlands-Voluntary-Sector-2019-PDF.pdf" class="chip" download>PDF download</a>
+          <a href="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2019/08/A-Guide-to-Working-and-Volunteering-in-Scotlands-voluntary-sector-2019-WORD.docx" class="chip" download>Word download</a>
         </p>
       </div>
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h4>Terrific Trustees</h4>
+      <div class="column col-4 col-lg-12">
+        <h4>Intermediaries</h4>
         <p>
-          [Content]
+          Intermediaries are voluntary sector organisations whose members are primarily other voluntary sector organisations that share a common interest or purpose. Their main role is to support and represent these members. Intermediaries are also called umbrella bodies, membership bodies or network bodies.
+        </p>
+        <p>
+          <a href="/policy/intermediaries">Find out more</a>
         </p>
       </div>
-      <div class="column col-4 col-lg-6 col-md-12">
+      {{!-- <div class="column col-4 col-lg-6 col-md-12">
         <p>
           [*TBC* Goodmoves job salaries info]
+        </p>
+      </div> --}}
+      <div class="column col-4 col-lg-12">
+        <h4>Terrific Trustees</h4>
+        <p>
+          With over 250,000 trustees across the country who help manage, shape and guide voluntary sector organisations, we think it’s important to provide practical help and information which caters specifically to board members.
+        </p>
+        <p>
+          <a href="/support/terrific-trustees">Find out more</a>
         </p>
       </div>
     </div>
   </div>
-</div> -->
+</div>

@@ -5,6 +5,11 @@
 		"route": "^/about$",
 		"children": [
 			{
+				"label": "Constitution",
+				"path": "/about/constitution",
+				"route": "^/about/constitution"
+			},
+			{
 				"label": "Staff team",
 				"path": "/about/staff-team",
 				"route": "^/about/staff-team"
@@ -18,6 +23,11 @@
 				"label": "Work with us",
 				"path": "/about/work-with-us",
 				"route": "^/about/work-with-us"
+			},
+			{
+				"label": "Offices",
+				"path": "/about/offices",
+				"route": "^/about/offices"
 			},
 			{
 				"label": "Press releases",

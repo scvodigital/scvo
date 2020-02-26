@@ -54,9 +54,9 @@
       Events & training courses&ensp;
       <a href="/support/events"><span class="caption">See all</span></a>
     </h2>
-    <div class="columns b-padding-full b-margin">
+    <div class="columns b-margin">
       {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets ~}}
-      <div class="column col-3 col-lg-6 col-sm-12">
+      <div class="column col-3 col-lg-6 col-sm-12 b-padding-full">
         <a href="/support/events?q=&course_type={{replace key ' ' '+'}}">{{inflect doc_count (lowercase (replace key "Workshops" "Workshop")) (concat (lowercase (replace key "Workshops" "Workshop")) 's') true}}
       </div>
       {{/each ~}}
