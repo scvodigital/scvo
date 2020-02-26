@@ -1,0 +1,14 @@
+{
+  "name": "redirect_blogs",
+  "pattern": "/blogs",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/about/blog",
+        "statusCode": 301
+      }
+    }
+  ]
+}

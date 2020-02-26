@@ -1,10 +1,7 @@
 {
   "name": "page_posts",
   "debug": false,
-  "pattern": {
-    "blogs": "/blogs",
-    "posts": "/posts"
-  },
+  "pattern": "/posts",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
