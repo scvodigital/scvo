@@ -1,7 +1,7 @@
 {
-  "name": "list_charity_awards",
+  "name": "vote_charity_awards_thanks",
   "debug": true,
-  "pattern": "/scottish-charity-awards/finalists-2019/*category",
+  "pattern": "/scottish-charity-awards/finalists-2019/*category/*vote/thanks",
   "metaData": {
     "awards-info": "{:../../data/info-charity-awards.json}"
   },
@@ -18,7 +18,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-charityawards",
-          "template": ">context.metaData.handlebars.queries.pages_charity-awards-list",
+          "template": ">context.metaData.handlebars.queries.pages_charity-awards-vote",
           "noResultsRoute": "four_oh_four"
         }
       },
@@ -40,8 +40,10 @@
             "layout": ">context.metaData.handlebars.layouts.awards",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.awards_list-header",
-              "body": ">context.metaData.handlebars.templates.awards_list-body"
+              "header": ">context.metaData.handlebars.templates.awards_vote-thanks-header",
+              "body": ">context.metaData.handlebars.templates.awards_vote-thanks-body",
+              "footer": ">context.metaData.handlebars.templates.awards_footer",
+              "footer": ">context.metaData.handlebars.templates.awards-vote-thanks-footer"
             },
             "contentType": "text/html"
           }

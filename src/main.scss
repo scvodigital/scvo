@@ -537,6 +537,9 @@ footer a {
 .bg-goodmoves a:hover {
   color: $secondary-color-dark;
 }
+.text-gray {
+  color: $gray-color-dark !important;
+}
 .bg-gray {
   a {
     color: $secondary-color;
@@ -1266,6 +1269,7 @@ a.author:hover,
   margin: 0 auto;
   max-height: 45px;
 }
+.sponsors,
 .bg-goodmoves,
 .bg-tfn,
 .latest-posts {
@@ -2353,10 +2357,32 @@ footer {
 }
 
 .sponsors {
-  h3,
-  p {
-    margin-bottom: $unit;
+  margin-bottom: $unit*2;
+  display: flex;
+  margin-left: -($unit/2);
+  margin-right: -($unit/2);
+  .sponsor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: $unit/2;
+    margin-right: $unit/2;
+    img {
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+    }
   }
+  .sponsor.scvo { flex: 1; }
+  .sponsor.caf { flex: 1; }
+  .sponsor.cld { flex: .75; }
+  .sponsor.digital-scotland { flex: 1.8; }
+  .sponsor.keegan-pennykid { flex: 0.85; }
+  .sponsor.oscr { flex: 1.2; }
+  .sponsor.sgn { flex: 1.45; }
+  .sponsor.robertson-trust { flex: 1; }
+  .sponsor.goodmoves { flex: 1; }
+  .sponsor.sustainability { flex: 1; }
 }
 
 .alignright {
@@ -2758,6 +2784,10 @@ figure,
   }
   img:hover {
     opacity: 1;
+  }
+  .sponsors .sponsor {
+    mix-blend-mode: screen;
+    filter: grayscale(1);
   }
   .bg-rouleaux {
     background-image: url('https://scvo.scot/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid') !important;
