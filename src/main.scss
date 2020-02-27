@@ -2421,22 +2421,31 @@ footer {
       vertical-align: middle;
     }
   }
-  .sponsor.scvo { flex: 1; }
-  .sponsor.caf { flex: 1; }
-  .sponsor.cld { flex: .75; }
-  .sponsor.digital-scotland { flex: 1.8; }
-  .sponsor.keegan-pennykid { flex: 0.85; }
-  .sponsor.oscr { flex: 1.2; }
-  .sponsor.sgn { flex: 1.45; }
-  .sponsor.robertson-trust { flex: 1; }
-  .sponsor.goodmoves { flex: 1; }
-  .sponsor.sustainability { flex: 1; }
-  .sponsor.healthy-working-lives { flex: 1; }
-  .sponsor.flexible-working { flex: .6; }
-  .sponsor.carer-positive { flex: 1; }
-  .sponsor.oscr { flex: 1; }
-  .sponsor.living-wage { flex: .45; }
 }
+.sponsors.awards .sponsor.scvo { flex: 1; }
+.sponsors.awards .sponsor.caf { flex: 1; }
+.sponsors.awards .sponsor.cld { flex: .75; }
+.sponsors.awards .sponsor.digital-scotland { flex: 1.8; }
+.sponsors.awards .sponsor.keegan-pennykid { flex: 0.85; }
+.sponsors.awards .sponsor.oscr { flex: 1.2; }
+.sponsors.awards .sponsor.sgn { flex: 1.45; }
+.sponsors.awards .sponsor.robertson-trust { flex: 1; }
+.sponsors.awards .sponsor.goodmoves { flex: 1; }
+.sponsors.awards .sponsor.sustainability { flex: 1; }
+
+.sponsors.about .sponsor.healthy-working-lives { flex: 1; }
+.sponsors.about .sponsor.flexible-working { flex: .6; }
+.sponsors.about .sponsor.carer-positive { flex: 1; }
+.sponsors.about .sponsor.oscr { flex: 1; }
+.sponsors.about .sponsor.living-wage { flex: .45; }
+
+.sponsors.gathering .sponsor.keegan-pennykid { flex: 0.6; }
+.sponsors.gathering .sponsor.oscr { flex: 0.85; }
+.sponsors.gathering .sponsor.ccla { flex: 1.2; }
+.sponsors.gathering .sponsor.socialenterprise { flex: .3; }
+.sponsors.gathering .sponsor.socialenterprisescotland { flex: .3; }
+.sponsors.gathering .sponsor.glasgowconventionbureau { flex: .7; }
+.sponsors.gathering .sponsor.thirdforcenews { flex: .55; }
 
 .alignright {
   float: right;
