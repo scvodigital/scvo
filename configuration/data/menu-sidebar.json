@@ -1000,6 +1000,76 @@
 					]
 				}
 			]
+		},
+		{
+			"label": "Milo",
+			"path": "/support/milo",
+			"route": "^/support/milo$",
+			"children": [{
+					"label": "Search Milo data",
+					"path": "https://getinvolved.scot/organisations",
+					"route": "https://getinvolved.scot/organisations"
+				},
+				{
+				"label": "Training",
+				"path": "/support/milo/training",
+				"route": "^/support/milo/training$",
+				"children": [{
+					"label": "Quick start guide",
+					"path": "/support/milo/training/quick-start-guide",
+					"route": "^/support/milo/training/quick-start-guide$"
+				},
+				{
+					"label": "Getting started",
+					"path": "/support/milo/training/getting-started",
+					"route": "^/support/milo/training/getting-started$"
+				},
+				{
+					"label": "Organisations",
+					"path": "/support/milo/training/organisations",
+					"route": "^/support/milo/training/organisations$"
+				},
+				{
+					"label": "Contacts",
+					"path": "/support/milo/training/contacts",
+					"route": "^/support/milo/training/contacts$"
+				},
+				{
+					"label": "Volunteer Registrations",
+					"path": "/support/milo/training/volunteer-registrations",
+					"route": "^/support/milo/training/volunteer-registrations$"
+				},
+				{
+					"label": "Volunteering Opportunities",
+					"path": "/support/milo/training/volunteering-opportunities",
+					"route": "^/support/milo/training/volunteering-opportunities$"
+				},
+				{
+					"label": "Interactions",
+					"path": "/support/milo/training/interactions",
+					"route": "^/support/milo/training/interactions$"
+				},
+				{
+					"label": "Reporting",
+					"path": "/support/milo/training/reporting",
+					"route": "^/support/milo/training/reporting$"
+				},
+				{
+					"label": "Reporting tips",
+					"path": "/support/milo/training/reporting-tips",
+					"route": "^/support/milo/training/reporting-tips$"
+				},
+				{
+					"label": "Training videos",
+					"path": "/support/milo/training/videos",
+					"route": "^/support/milo/training/videos$"
+				}]
+			},
+			{
+				"label": "Library",
+				"path": "/support/milo/library",
+				"route": "^/support/milo/library$"
+			}]
 		}]
 	}],
 	"funding": [{
