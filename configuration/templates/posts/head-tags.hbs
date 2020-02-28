@@ -7,9 +7,6 @@
 <title>Scottish Council for Voluntary Organisations – SCVO</title>
 <meta property="og:title" content="Scottish Council for Voluntary Organisations – SCVO" data-dynamic="true">
 {{/ifAny ~}}
-<meta property="og:image" content="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/logos/scvo-logo-square.png" data-dynamic="true">
-<meta property="og:image:width" content="190" data-dynamic="true">
-<meta property="og:image:height" content="190" data-dynamic="true">
 <meta property="og:type" content="article" data-dynamic="true">
 {{#ifAny og_summary description ../og_summary ../description ~}}
 <meta property="og:summary" content="{{stripTags (regexReplace (default og_summary (default ../og_summary (default description ../description))) '\r|\n' 'gi' '')}}" data-dynamic="true">
@@ -21,3 +18,6 @@
 <title>Scottish Council for Voluntary Organisations – SCVO</title>
 <meta property="og:title" content="Scottish Council for Voluntary Organisations – SCVO" data-dynamic="true">
 {{/if ~}}
+<meta property="og:image" content="{{~>asset_url url='images/icons/apple-touch-icon.png'~}}" data-dynamic="true">
+<meta property="og:image:width" content="180" data-dynamic="true">
+<meta property="og:image:height" content="180" data-dynamic="true">

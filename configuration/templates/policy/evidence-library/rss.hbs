@@ -1,3 +1,3 @@
 {{#each @root.data.primaryResponse.hits.hits ~}}
-{{{_source.rendered.rss}}}
+{{> content_document_rss _source}}
 {{/each ~}}

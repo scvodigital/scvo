@@ -6,8 +6,7 @@
     "og_image",
     "name_full",
     "job_title",
-    "organisation_name",
-    "rendered.json_ld"
+    "organisation_name"
   ],
   "query": {
     {{#if @root.request.params.author_slug ~}}
