@@ -1,5 +1,6 @@
 {
   "name": "robots",
+  "debug": true,
   "pattern": "/robots.txt",
   "tasks": [
     {
@@ -17,7 +18,7 @@
           "data": {
             "layout": ">context.metaData.handlebars.layouts.data",
             "parts": {
-              "content": ">context.metaData.handlebars.templates.robots"
+              "content": ">context.metaData.handlebars.templates.utilities_robots"
             },
             "contentType": "text/plain"
           }
