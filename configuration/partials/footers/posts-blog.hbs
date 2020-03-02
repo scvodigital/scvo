@@ -1,6 +1,6 @@
 {{#compare @root.data.postsBlog.hits.total ">" 0 ~}}
 <div class="related-posts v-padding-full bg-gray">
-  <div class="container b-margin-full">
+  <div class="container b-margin">
     <h3 class="b-margin">
       Latest posts&ensp;
       <a href="{{@root.request.url.pathname}}/blog" class="caption">See more</a>
@@ -9,7 +9,7 @@
       {{#each (split "0,1,2,3" ",") ~}}
       {{#with (getProperty @root.data.postsBlog.hits.hits (concat this '._source')) ~}}
       <div class="column col-3 col-lg-6 col-sm-12">
-        <div class="columns">
+        <div class="columns b-margin">
           <div class="column col-3 col-md-4">
             <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
           </div>
