@@ -793,8 +793,10 @@ a.author:hover,
   background-color: $gray-color;
   height: 40px;
   ul {
+    margin: 0;
     list-style-type: none;
     li {
+      margin: 0;
       display: inline;
     }
   }
