@@ -808,8 +808,11 @@ a.author:hover,
     margin-right: $unit*(3/4);
     color: $secondary-color;
   }
+  .text-link:active,
+  .text-link:focus,
   .text-link:hover {
     border-bottom: $thick-line solid $secondary-color;
+    text-decoration: none;
   }
   .brand-logo {
     margin-left: $unit/4;
@@ -1154,9 +1157,9 @@ a.author:hover,
     color: white;
   }
   .btn:hover {
-    background-color: white;
-    border-color: white;
-    color: $primary-color;
+    background-color: $secondary-color-light;
+    border-color: $secondary-color-light;
+    color: white;
   }
   .btn.btn-primary {
     background-color: white;
