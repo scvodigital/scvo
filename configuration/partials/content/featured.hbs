@@ -2,7 +2,7 @@
   <a href="{{link}}" class="no-underline">
     <div class="card-image-link">
       <div class="card-image-wrapper">
-        <div class="card-image" style="{{#if ratio}}--aspect-ratio: {{replace ratio ':' '/'}};{{/if}}background-image: url('{{#if (contains image 'http')}}{{image}}{{else}}{{~>asset_url url=image~}}{{/if}}')">
+        <div class="card-image" style="{{#if ratio}}--aspect-ratio: {{replace ratio ':' '/'}};{{/if}}background-image: url('{{#if (contains image 'http')}}{{replace image 'http://' 'https://'}}{{else}}{{~>asset_url url=image~}}{{/if}}')">
           {{#if logo ~}}
           <img src="{{#if (contains logo 'http')}}{{logo}}{{else}}{{~>asset_url url=logo~}}{{/if}}" class="img-responsive logo" {{#if logo_style}}style="{{logo_style}}"{{/if}} />
           {{else}}
