@@ -233,7 +233,7 @@
         {{#ifAll event_venue.address_1 event_venue.postcode geo.latitude geo.longitude ~}}
         <div class="column col-12 v-margin-full">
           <a href="https://maps.google.co.uk/?q={{urlencode replace event_venue.address_1}},+{{urlencode event_venue.postcode}}" class="no-ext no-underline">
-            <img src="http://maps.googleapis.com/maps/api/staticmap?center={{geo.latitude}},{{geo.longitude}}&zoom=14&size=420x320&maptype=roadmap&markers={{geo.latitude}},{{geo.longitude}}&key=AIzaSyDSixdiuQklJxhvx0_gsv4xYnjLXTb3G4I" />
+            <img src="https://maps.googleapis.com/maps/api/staticmap?center={{geo.latitude}},{{geo.longitude}}&zoom=14&size=420x320&maptype=roadmap&markers={{geo.latitude}},{{geo.longitude}}&key=AIzaSyDSixdiuQklJxhvx0_gsv4xYnjLXTb3G4I" />
           </a>
         </div>
         {{/ifAll ~}}
@@ -261,7 +261,7 @@
       {{Speaker_Biography__c}}
     </p>
     <p>
-      {{#if Contact__r.Contact_Twitter_Handle__c ~}}Twitter: <a href="http://twitter.com/{{replace Contact__r.Contact_Twitter_Handle__c "@" ""}}">{{Contact__r.Contact_Twitter_Handle__c}}</a>{{/if ~}}
+      {{#if Contact__r.Contact_Twitter_Handle__c ~}}Twitter: <a href="https://twitter.com/{{replace Contact__r.Contact_Twitter_Handle__c '@' ''}}">{{Contact__r.Contact_Twitter_Handle__c}}</a>{{/if ~}}
       {{#if Contact__r.LinkedIn_URL__c ~}}
       {{#if Contact__r.Contact_Twitter_Handle__c ~}}<br />{{/if ~}}
       LinkedIn: <a href="{{Contact__r.LinkedIn_URL__c}}">{{Contact__r.LinkedIn_URL__c}}</a>{{/if ~}}
