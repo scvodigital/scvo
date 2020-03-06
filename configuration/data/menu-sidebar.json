@@ -1228,6 +1228,41 @@
 			]
 		}]
 	}],
+	"help": [{
+		"label": "Help",
+		"path": "",
+		"route": "^/help$",
+		"children": [{
+			"label": "Accessibility",
+			"path": "/accessibility",
+			"route": "^/accessibility$"
+		},
+		{
+			"label": "Transparency & open data",
+			"path": "/transparency",
+			"route": "^/transparency$"
+		},
+		{
+			"label": "Privacy",
+			"path": "/privacy",
+			"route": "^/privacy$"
+		},
+		{
+			"label": "Cookies",
+			"path": "/cookies",
+			"route": "^/cookies$"
+		},
+		{
+			"label": "Terms & conditions",
+			"path": "/terms",
+			"route": "^/terms$"
+		},
+		{
+			"label": "Feedback & complaints",
+			"path": "/feedback-complaints",
+			"route": "^/feedback-complaints$"
+		}]
+	}],
 	"account": [{
 		"label": "My account",
 		"path": "/account",

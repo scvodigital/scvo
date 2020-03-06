@@ -2199,8 +2199,9 @@ form {
       margin: 0;
       display: inline;
     }
-    .menu-item>a.menu-level-1 {
+    .menu-item>.menu-level-1 {
       font-size: 1.1rem;
+      font-weight: $heading-link-weight;
       margin-bottom: $unit/2;
     }
     .menu-item>a:active,
