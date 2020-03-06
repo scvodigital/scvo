@@ -3,7 +3,7 @@
   <div class="container b-margin">
     <h3 class="b-margin">
       Latest posts&ensp;
-      <a href="{{@root.request.url.pathname}}/posts" class="caption">See more</a>
+      <a href="/{{@root.data.primaryResponse.hits.hits.[0]._source.categories_slug}}/posts" class="caption">See more</a>
     </h3>
     <div class="columns">
       {{#each (split "0,1,2,3" ",") ~}}
