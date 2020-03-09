@@ -1273,6 +1273,41 @@
 			"route": "^/feedback-complaints$"
 		}]
 	}],
+	"covid-19": [{
+		"label": "Coronavirus information & guidance",
+		"path": "/coronavirus-covid-19-information-guidance",
+		"route": "^/coronavirus-covid-19-information-guidance$",
+		"children": [{
+			"label": "What is Coronavirus and COVID-19?",
+			"path": "/coronavirus-covid-19-information-guidance/what-is-coronavirus-and-covid-19",
+			"route": "^/coronavirus-covid-19-information-guidance/what-is-coronavirus-and-covid-19$"
+		},
+		{
+			"label": "What are the symptoms of COVID-19?",
+			"path": "/coronavirus-covid-19-information-guidance/what-are-the-symptoms-of-covid-19",
+			"route": "^/coronavirus-covid-19-information-guidance/what-are-the-symptoms-of-covid-19$"
+		},
+		{
+			"label": "What’s the best way to help prevent the spread of COVID-19?",
+			"path": "/coronavirus-covid-19-information-guidance/whats-the-best-way-to-help-prevent-the-spread-of-covid-19",
+			"route": "^/coronavirus-covid-19-information-guidance/whats-the-best-way-to-help-prevent-the-spread-of-covid-19$"
+		},
+		{
+			"label": "What can we need to do to protect and support staff, volunteers, beneficiaries and service users? ",
+			"path": "/coronavirus-covid-19-information-guidance/what-can-we-do-to-protect-support-staff-volunteers-beneficiaries-service-users",
+			"route": "^/coronavirus-covid-19-information-guidance/what-can-we-do-to-protect-support-staff-volunteers-beneficiaries-service-users$"
+		},
+		{
+			"label": "What can trustees do?",
+			"path": "/coronavirus-covid-19-information-guidance/what-can-trustees-do",
+			"route": "^/coronavirus-covid-19-information-guidance/what-can-trustees-do"
+		},
+		{
+			"label": "Resources",
+			"path": "/coronavirus-covid-19-information-guidance/resources",
+			"route": "^/coronavirus-covid-19-information-guidance/resources$"
+		}]
+	}],
 	"account": [{
 		"label": "My account",
 		"path": "/account",
