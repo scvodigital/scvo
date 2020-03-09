@@ -84,17 +84,22 @@
 				"path": "/about/membership",
 				"route": "^/about/membership$",
 				"children": [{
-						"label": "Membership review",
+						"label": "Review",
 						"path": "/about/membership/review",
 						"route": "^/about/membership/review"
 					},
 					{
-						"label": "Membership eligibility",
+						"label": "Eligibility",
 						"path": "/about/membership/eligibility",
 						"route": "^/about/membership/eligibility"
 					},
 					{
-						"label": "Member benefits",
+						"label": "Supporters",
+						"path": "/about/membership/supporters",
+						"route": "^/about/membership/supporters"
+					},
+					{
+						"label": "Benefits",
 						"path": "/about/membership/benefits",
 						"route": "^/about/membership/benefits"
 					},
