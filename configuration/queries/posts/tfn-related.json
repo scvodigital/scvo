@@ -8,28 +8,43 @@
     "date_published"
   ],
   "query": {
-    "bool": {
-      "must": {
-        "match_all": {}
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": {
+            "match_all": {}
+          },
+          "filter":  [
+            {
+              "exists": {
+                "field": "image"
+              }
+            }
+          ],
+          "should": [
+            {
+              "simple_query_string": {
+                "query": "{{@root.data.primaryResponse.hits.hits.[0]._source.title}} {{join @root.data.primaryResponse.hits.hits.[0]._source.categories}} {{join @root.data.primaryResponse.hits.hits.[0]._source.post_tags}}",
+                "default_operator": "or",
+                "fields": ["text_bag"],
+                "analyzer": "snowball"
+              }
+            }
+          ],
+          "minimum_should_match": 0
+        }
       },
-      "filter":  [
+      "functions": [
         {
-          "exists": {
-            "field": "image"
+          "gauss": {
+            "date_published": {
+              "scale": "7d",
+              "decay": 0.1
+            }
           }
         }
       ],
-      "should": [
-        {
-          "simple_query_string": {
-            "query": "{{@root.data.primaryResponse.hits.hits.[0]._source.title}} {{join @root.data.primaryResponse.hits.hits.[0]._source.categories}} {{join @root.data.primaryResponse.hits.hits.[0]._source.post_tags}}",
-            "default_operator": "or",
-            "fields": ["text_bag"],
-            "analyzer": "snowball"
-          }
-        }
-      ],
-      "minimum_should_match": 0
+      "score_mode": "multiply"
     }
   }
 }
