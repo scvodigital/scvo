@@ -2861,6 +2861,12 @@ figure,
   h1, h2, h3, h4, div, p, li, div, td, th {
     color: white !important;
   }
+  .bg-yellow {
+    h2,
+    a {
+      color: $secondary-color !important;
+    }
+  }
   .scvo-link-bar .text-link,
   .scvo-services .btn-lg {
     color: $primary-color;
