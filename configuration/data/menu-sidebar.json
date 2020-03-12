@@ -86,37 +86,37 @@
 				"children": [{
 						"label": "Review",
 						"path": "/about/membership/review",
-						"route": "^/about/membership/review"
+						"route": "^/about/membership/review$"
 					},
 					{
 						"label": "Eligibility",
 						"path": "/about/membership/eligibility",
-						"route": "^/about/membership/eligibility"
-					},
-					{
-						"label": "Supporters",
-						"path": "/about/membership/supporters",
-						"route": "^/about/membership/supporters"
-					},
-					{
-						"label": "Benefits",
-						"path": "/about/membership/benefits",
-						"route": "^/about/membership/benefits"
+						"route": "^/about/membership/eligibility$"
 					},
 					{
 						"label": "Fees",
 						"path": "/about/membership/fees",
-						"route": "^/about/membership/fees"
+						"route": "^/about/membership/fees$"
+					},
+					{
+						"label": "Members",
+						"path": "/about/membership/members",
+						"route": "^/about/membership/members$"
+					},
+					{
+						"label": "Supporters",
+						"path": "/about/membership/supporters",
+						"route": "^/about/membership/supporters$"
 					},
 					{
 						"label": "Join us",
 						"path": "/about/membership/join",
-						"route": "^/about/membership/join"
+						"route": "^/about/membership/join$"
 					},
 					{
 						"label": "FAQ",
 						"path": "/about/membership/faq",
-						"route": "^/about/membership/faq"
+						"route": "^/about/membership/faq$"
 					}
 				]
 			},
