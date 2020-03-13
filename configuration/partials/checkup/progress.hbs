@@ -1,11 +1,18 @@
-<div class="progress-bar mdc-elevation--z3 trapezoid">
+{{!-- <div class="progress-bar mdc-elevation--z3 trapezoid">
   <div class="progress-label" style="width:{{progress}}%">
-    <div class="progress-label-text trapezoid-content{{#compare progress 100}} text-center{{/compare}}">
-      {{#compare progress "<" 100 ~}}
-      {{progress}}% complete
-      {{else}}
-      Checkup complete
-      {{/compare ~}}
-    </div>
+    <div class="progress-label-text trapezoid-content{{#compare progress 100}} text-center{{/compare}}"> --}}
+<ul class="breadcrumb breadcrumb-length-3" aria-hidden="true">
+  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/support">Support &amp; learning</a></li>
+  <li class="breadcrumb-item"><a href="/support/running-your-organisation">Running your organisation</a></li>
+  <li class="breadcrumb-item"><a href="/support/running-your-organisation/governance">Good Governance</a></li>
+  {{#if progress ~}}
+  <li class="breadcrumb-item"><a href="/support/running-your-organisation/governance/checkup">Checkup</a></li>
+  <li class="breadcrumb-item">{{#compare progress "<" 100 ~}}{{progress}}% complete{{else}}Checkup complete{{/compare ~}}</li>
+  {{else}}
+  <li class="breadcrumb-item">Checkup</li>
+  {{/if ~}}
+</ul>
+    {{!-- </div>
   </div>
-</div>
+</div> --}}

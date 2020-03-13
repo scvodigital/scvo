@@ -2,11 +2,9 @@
 <form action="/support/running-your-organisation/governance/checkup/{{next_section}}" method="post" class="checkup-section b-padding-full" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
-  <div class="checkup-section-header b-padding-full v-margin-full">
+  <div class="checkup-section-header b-padding-full b-margin-full">
     <div class="container">
-      {{#if progress ~}}
       {{> checkup_progress progress=progress}}
-      {{/if ~}}
       {{!-- <div class="columns">
         <div class="column col-2 col-md-3 col-sm-4">
           {{#ifAll icon title ~}}
@@ -14,9 +12,9 @@
           {{/ifAll ~}}
         </div>
         <div class="column col-10 col-md-9 col-sm-8"> --}}
-          {{#if name ~}}
+          {{!-- {{#if name ~}}
           <div class="mdc-typography--body2">{{{name}}}</div>
-          {{/if ~}}
+          {{/if ~}} --}}
           {{#if title ~}}
           <h1 class="mdc-typography--headline3">{{{title}}}</h1>
           {{/if ~}}
