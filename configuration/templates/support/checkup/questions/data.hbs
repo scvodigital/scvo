@@ -167,16 +167,18 @@
             "answer": "Our trustees have written <a href=\"/support/running-your-organisation/governance/roles-responsibilities\" target=\"_blank\">role descriptions</a>",
             "score": 1
           },
+          {{#compare @root.request.body.answers-section-start-organisation_type "Charity" ~}}
           {
             "answer": "We ensure our trustees understand their <a href=\"https://www.oscr.org.uk/guidance-and-forms/guidance-and-good-practice-for-charity-trustees/\" target=\"_blank\">duties and responsibilities</a> under the Charities and Trustee Investment Act (Scotland) 2005",
-            "organisation_type": "charity",
             "score": 1
           },
+          {{/compare ~}}
+          {{#compare @root.request.body.answers-section-start-organisation_type "Company" ~}}
           {
             "answer": "We ensure our directors understand their <a href=\"https://www.gov.uk/running-a-limited-company\" target=\"_blank\">duties and responsibilities</a> under the Companies Act 2006",
-            "organisation_type": "company",
             "score": 1
           },
+          {{/compare ~}}
           {
             "answer": "All trustees value collective decision making and understand they're all part of the leadership team and equally accountable for decisions made and their outcomes",
             "score": 1
