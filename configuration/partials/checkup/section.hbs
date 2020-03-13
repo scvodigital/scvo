@@ -1,82 +1,76 @@
 {{#with (getProperty @root.data.checkup section) ~}}
-<form action="/checkup/{{next_section}}" method="post" class="checkup-section b-padding-full" id="checkup-{{../section}}">
+<form action="/support/running-your-organisation/governance/checkup/{{next_section}}" method="post" class="checkup-section b-padding-full" id="checkup-{{../section}}">
   {{> checkup_answers section=@root.request.body.answer-section}}
   <input type="hidden" name="answer-section" value="{{../section}}" />
   <div class="checkup-section-header b-padding-full v-margin-full">
-    <div class="container-fluid">
-      <div class="container-content">
-        {{#if progress ~}}
-        {{> checkup_progress progress=progress}}
-        {{/if ~}}
-        <div class="mdc-layout-grid">
-          <div class="mdc-layout-grid__inner">
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
-              {{#ifAll icon title ~}}
-              <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
-              {{/ifAll ~}}
-            </div>
-            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
-              {{#if name ~}}
-              <div class="mdc-typography--body2">{{{name}}}</div>
-              {{/if ~}}
-              {{#if title ~}}
-              <h1 class="mdc-typography--headline3">{{{title}}}</h1>
-              {{/if ~}}
-              {{#if description ~}}
-              <div class="mdc-typography--body1">{{{description}}}</div>
-              {{/if ~}}
-            </div>
-          </div>
+    <div class="container">
+      {{#if progress ~}}
+      {{> checkup_progress progress=progress}}
+      {{/if ~}}
+      {{!-- <div class="columns">
+        <div class="column col-2 col-md-3 col-sm-4">
+          {{#ifAll icon title ~}}
+          <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" title="{{title}}" class="icon" />
+          {{/ifAll ~}}
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="container-content">
-      <div class="mdc-typography--body2">
-        * required information
-      </div>
-      {{#each questions ~}}
-      <div class="question-block mdc-elevation--z3">
-        <div class="question">
+        <div class="column col-10 col-md-9 col-sm-8"> --}}
+          {{#if name ~}}
+          <div class="mdc-typography--body2">{{{name}}}</div>
+          {{/if ~}}
           {{#if title ~}}
-          <h2 class="mdc-typography--headline5 question-title">{{{title}}}</h2>
+          <h1 class="mdc-typography--headline3">{{{title}}}</h1>
           {{/if ~}}
           {{#if description ~}}
-          <div class="mdc-typography--body1 question-description">{{{description}}}</div>
+          <div class="mdc-typography--body1">{{{description}}}</div>
           {{/if ~}}
-        </div>
-        {{#ifAny (compare type "select-one") (compare type "select-many") ~}}
-        <ul class="answer-block">
-          {{#each options ~}}
-          {{#switch ../type ~}}
-          {{#case "select-one" ~}}
-          {{#if answer ~}}
-          <li class="answer">{{> components_radio_button label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
-          {{/if ~}}
-          {{/case ~}}
-          {{#case "select-many" ~}}
-          {{#if answer ~}}
-          <li class="answer">{{> components_checkbox label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
-          {{/if ~}}
-          {{/case ~}}
-          {{/switch ~}}
-          {{/each ~}}
-        </ul>
-        {{/ifAny ~}}
-        {{#compare type "freetext" ~}}
-        <div class="answer-block">
-          <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
-            <textarea id="{{slugify title}}" name="answers-{{../../section}}-{{value}}" class="mdc-text-field__input" rows="5" placeholder="{{placeholder}}"></textarea>
-            <label for="{{slugify title}}" class="mdc-floating-label"></label>
-          </div>
-        </div>
-        {{/compare ~}}
+        {{!-- </div>
       </div>
-      {{/each ~}}
-      <div class="cta b-padding-full">
-        <button type="submit" class="mdc-button mdc-button--raised">Next section</button>
+    </div> --}}
+  </div>
+  <div class="container">
+    <div class="mdc-typography--body2">
+      * required information
+    </div>
+    {{#each questions ~}}
+    <div class="question-block mdc-elevation--z3">
+      <div class="question">
+        {{#if title ~}}
+        <h2 class="mdc-typography--headline5 question-title">{{{title}}}</h2>
+        {{/if ~}}
+        {{#if description ~}}
+        <div class="mdc-typography--body1 question-description">{{{description}}}</div>
+        {{/if ~}}
       </div>
+      {{#ifAny (compare type "select-one") (compare type "select-many") ~}}
+      <ul class="answer-block">
+        {{#each options ~}}
+        {{#switch ../type ~}}
+        {{#case "select-one" ~}}
+        {{#if answer ~}}
+        <li class="answer">{{> forms_radio_button label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value required="true"}}</li>
+        {{/if ~}}
+        {{/case ~}}
+        {{#case "select-many" ~}}
+        {{#if answer ~}}
+        <li class="answer">{{> forms_checkbox label=answer id=(slugify (concat answer ../value)) name=(concat "answers-" ../../../section "-" ../value) value=value}}</li>
+        {{/if ~}}
+        {{/case ~}}
+        {{/switch ~}}
+        {{/each ~}}
+      </ul>
+      {{/ifAny ~}}
+      {{#compare type "freetext" ~}}
+      <div class="answer-block">
+        <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth">
+          <textarea id="{{slugify title}}" name="answers-{{../../section}}-{{value}}" class="mdc-text-field__input" rows="5" placeholder="{{placeholder}}"></textarea>
+          <label for="{{slugify title}}" class="mdc-floating-label"></label>
+        </div>
+      </div>
+      {{/compare ~}}
+    </div>
+    {{/each ~}}
+    <div class="cta b-padding-full">
+      <button type="submit" class="btn btn-primary">Next section</button>
     </div>
   </div>
 </form>

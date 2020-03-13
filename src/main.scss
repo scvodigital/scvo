@@ -2215,6 +2215,15 @@ form {
   }
 }
 
+.checkup {
+  .answer-block {
+    margin: 0;
+    .answer {
+      list-style-type: none;
+    }
+  }
+}
+
 .sidebar {
   .menu {
     box-shadow: none;
