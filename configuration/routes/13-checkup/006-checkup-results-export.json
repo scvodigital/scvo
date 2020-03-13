@@ -1,0 +1,41 @@
+{
+  "name": "checkup_results_export",
+  "debug": true,
+  "pattern": "/support/running-your-organisation/governance/checkup/results-export",
+  "tasks": [
+    "context.metaData.commonTasks.authRequired",
+    {
+      "name": "allResponses",
+      "taskModule": "firebaseRtbGet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "pathTemplate": "/submissions/",
+        "defaultData": {}
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "body": ">context.metaData.handlebars.templates.support_checkup_results_export"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

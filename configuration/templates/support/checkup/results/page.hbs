@@ -1,0 +1,964 @@
+<div class="checkup-section b-padding-full" id="checkup-results">
+  <div class="checkup-section-header b-padding-full v-margin-full">
+    <div class="container-fluid">
+      <div class="container-content">
+        {{> checkup_progress progress=100}}
+        <h1 class="mdc-typography--headline3 font-default">
+          {{#ifAny @root.data.rootResponse.organisation @root.request.params.query.web_organisation ~}}
+            Checkup results for {{{default @root.data.rootResponse.organisation @root.request.params.query.web_organisation}}}
+          {{else}}
+            Your checkup results
+          {{/ifAny ~}}
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="container-content">
+      {{#ifAny @root.data.rootResponse.percentage_total @root.request.params.query.s1 ~}}
+      <div class="question-block mdc-elevation--z3">
+        <div class="results-block">
+          <div class="mdc-layout-grid t-margin-full">
+            <div class="mdc-layout-grid__inner">
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+                  Your overall score
+                  {{else}}
+                  {{{@root.data.rootResponse.name}}}
+                  {{/ifAny ~}}
+                </div>
+                <div class="score score-respondent">
+                  {{@root.data.results.overall.respondent}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment @root.data.rootResponse.date_last_modified "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
+              </div>
+              {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-9-desktop mdc-layout-grid__cell--span-5-tablet mdc-layout-grid__cell--span-4-phone result result-average">
+                <div class="mdc-typography--headline6">
+                  Average score
+                </div>
+                <div class="score">
+                  {{@root.data.results.overall.average}}%
+                  {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
+                  <span class="mdc-typography--body2">
+                    (compared with your {{@root.data.additionalResponses.hits.total}} colleagues who have also completed the checkup via a sharing link)
+                  </span>
+                  {{else}}
+                  {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
+                  <span class="mdc-typography--body2">
+                    (compared with
+                    {{inflect @root.data.results.totalRespondents @root.data.currentSite.for_singular @root.data.currentSite.for_plural true}}
+                    across
+                    {{@root.data.results.where}}
+                    {{#compare @root.data.currentSite.name "housing"}}of similar size{{else}}in the same income bracket{{/compare}})
+                  </span>
+                  {{/compare ~}}
+                  {{/compare ~}}
+                </div>
+              </div>
+              {{else}}
+              {{#with @root.data.results.overall ~}}
+              {{#if shared_1_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_1_name}}}
+                </div>
+                <div class="score score-shared-1">
+                  {{shared_1_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_1_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_2_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_2_name}}}
+                </div>
+                <div class="score score-shared-2">
+                  {{shared_2_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_2_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_3_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_3_name}}}
+                </div>
+                <div class="score score-shared-3">
+                  {{shared_3_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_3_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_4_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_4_name}}}
+                </div>
+                <div class="score score-shared-4">
+                  {{shared_4_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_4_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_5_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_5_name}}}
+                </div>
+                <div class="score score-shared-5">
+                  {{shared_5_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_5_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_6_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_6_name}}}
+                </div>
+                <div class="score score-shared-6">
+                  {{shared_6_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_6_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
+              </div>
+              {{/if ~}}
+              {{#if shared_7_percentage ~}}
+              <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3-desktop mdc-layout-grid__cell--span-3-tablet mdc-layout-grid__cell--span-4-phone result result-overall">
+                <div class="mdc-typography--headline6">
+                  {{{shared_7_name}}}
+                </div>
+                <div class="score score-shared-7">
+                  {{shared_7_percentage}}%
+                </div>
+                <div class="mdc-typography--caption">
+                  {{momentFormat (moment shared_7_date "YYYY-MM-DDTHH:mm:ss.SSS\Z") "Do MMM YYYY"}}
+                </div>
+              </div>
+              {{/if ~}}
+              {{/with ~}}
+              {{/ifAny ~}}
+            </div>
+          </div>
+
+          {{#ifAny @root.data.rootResponse.percentage_total (ifAll @root.request.params.query.s1 @root.request.params.query.s2 @root.request.params.query.s3 @root.request.params.query.s4) ~}}
+            <div class="mdc-layout-grid">
+              <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                  <div class="radarChart"></div>
+
+                  {{#unless @root.data.results.overall.shared_1_percentage ~}}
+                  {{#compare @root.data.results.overall.respondent ">" @root.data.results.overall.average ~}}
+                    <div class="t-margin-full t-padding-full mdc-typography--headline5">
+                      Congratulations for scoring above the average but please don't let that make you complacent.
+                    </div>
+                  {{/compare ~}}
+                  {{/unless ~}}
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-4-tablet mdc-layout-grid__cell--span-4-phone">
+                  <div class="key">
+                    <ul>
+                      {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+                      <li class="key-your">Your scores</li>
+                      <li class="key-average">Average scores</li>
+                      {{else}}
+                      <li class="key-your">{{{@root.data.rootResponse.name}}}</li>
+                      {{#with @root.data.results.overall ~}}
+                      {{#if shared_1_name ~}}
+                      <li class="key-shared-1">{{{shared_1_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_2_name ~}}
+                      <li class="key-shared-2">{{{shared_2_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_3_name ~}}
+                      <li class="key-shared-3">{{{shared_3_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_4_name ~}}
+                      <li class="key-shared-4">{{{shared_4_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_5_name ~}}
+                      <li class="key-shared-5">{{{shared_5_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_6_name ~}}
+                      <li class="key-shared-6">{{{shared_6_name}}}</li>
+                      {{/if ~}}
+                      {{#if shared_7_name ~}}
+                      <li class="key-shared-7">{{{shared_7_name}}}</li>
+                      {{/if ~}}
+                      {{/with ~}}
+                      {{/ifAny ~}}
+                    </ul>
+                  </div>
+
+                  {{#each @root.data.results.sections ~}}
+                    <div class="mdc-typography--body1">
+                      {{title}}
+                      <div class="scores mdc-typography--caption">
+                        <span class="score score-respondent">
+                          {{respondent}}%
+                        </span>
+                        {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+                        <span class="score">
+                          {{average}}%
+                        </span>
+                        {{else}}
+                        {{#if shared_1_percentage ~}}
+                        <span class="score score-shared-1">
+                          {{shared_1_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_2_percentage ~}}
+                        <span class="score score-shared-2">
+                          {{shared_2_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_3_percentage ~}}
+                        <span class="score score-shared-3">
+                          {{shared_3_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_4_percentage ~}}
+                        <span class="score score-shared-4">
+                          {{shared_4_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_5_percentage ~}}
+                        <span class="score score-shared-5">
+                          {{shared_5_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_6_percentage ~}}
+                        <span class="score score-shared-6">
+                          {{shared_6_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{#if shared_7_percentage ~}}
+                        <span class="score score-shared-7">
+                          {{shared_7_percentage}}%
+                        </span>
+                        {{/if ~}}
+                        {{/ifAny ~}}
+                      </div>
+                    </div>
+                  {{/each ~}}
+
+                  {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
+                  {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
+                  <div class="cta t-margin-full v-padding-full">
+                    <a href="javascript: scrollToResources();" class="mdc-button mdc-button--raised">
+                      <span class="fas fa-file-alt fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+                      Read resources
+                    </a>
+                  </div>
+                  {{/compare ~}}
+                  {{/ifAny ~}}
+
+                  {{#if @root.request.params.query.rid ~}}
+                  <div class="cta v-padding-full">
+                    <div class="mdc-text-field mdc-text-field--with-trailing-icon">
+                      <input type="text" id="share-url" class="mdc-text-field__input" value="https://{{@root.request.url.host}}/checkup?sid={{@root.request.params.query.rid}}" readonly>
+                      <label for="share-url" class="mdc-floating-label mdc-floating-label--float-above">Share with colleagues</label>
+                      <i class="mdc-text-field__icon fas fa-copy fa-fw" tabindex="0" role="button" id="share-button" title="Copy URL"></i>
+                      <div class="mdc-line-ripple"></div>
+                    </div>
+                    <p class="mdc-typography--body1">
+                      Invite your colleagues to complete the checkup and see your results plotted together - a great way of comparing views on your digital maturity.
+                    </p>
+                  </div>
+                  {{/if ~}}
+                </div>
+              </div>
+            </div>
+          {{/ifAny ~}}
+        </div>
+      </div>
+
+      <div class="v-padding-full">
+        <div class="v-margin-full b-padding-full">
+          {{#ifAll (compare @root.data.currentSite.name "default") (compare (default @root.request.params.query.area @root.data.rootResponse.area) "scotland") ~}}
+            <h3 class="mdc-typography--headline4 v-margin b-padding-full">
+              We would love to discuss your results and next steps
+            </h3>
+
+            <div class="cta">
+              <!-- Calendly link widget begin -->
+              <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+              <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+              <a onclick="Calendly.showPopupWidget('https://calendly.com/john-fitzgerald/check-up');return false;" class="mdc-button mdc-button--raised">
+                <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+                Book a follow-up call with SCVO
+              </a>
+              <!-- Calendly link widget end -->
+              <div class="mdc-typography--body1 t-margin-full">
+                <a href="https://scvo.scot/support/digital/about">Sign up to our e-bulletin</a> to get details of our events, training and other support for digital change.
+              </div>
+              <!-- Intercom livechat -->
+              <script>
+                window.intercomSettings = {
+                  app_id: "t67hvr75"
+                };
+              </script>
+              <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/t67hvr75';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();</script>
+          </div>
+          {{/ifAll ~}}
+          {{#compare @root.data.currentSite.name "housing" ~}}
+          <h3 class="mdc-typography--headline4 v-margin b-padding-full">
+            We would love to discuss your results and next steps
+          </h3>
+
+          <div class="cta">
+            <!-- Calendly link widget begin -->
+            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+            <a onclick="Calendly.showPopupWidget('https://calendly.com/gdickson-3/digital-check-up');return false;" class="mdc-button mdc-button--raised mdc-button--disabled">
+              <span class="fas fa-phone fa-flip-horizontal fa-fw mdc-list-item__graphic" aria-hidden="true"></span>
+              Book a follow-up call with SFHA
+            </a>
+            <!-- Calendly link widget end -->
+          </div>
+          {{/compare ~}}
+        </div>
+      </div>
+      {{else}}
+      Error 500: Something went wrong processing your checkup, please <a href="/checkup">start again</a>.
+      {{/ifAny ~}}
+    </div>
+  </div>
+
+  {{#ifAny @root.data.rootResponse.topic @root.request.params.query.topic ~}}
+    {{#with (getProperty @root.data.results.sections (default @root.data.rootResponse.topic @root.request.params.query.topic)) ~}}
+    {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
+      <div class="checkup-topic-header checkup-topic-header-{{default @root.data.rootResponse.topic @root.request.params.query.topic}}" id="resources">
+        <div class="container-fluid">
+          <div class="container-content">
+            <div class="mdc-layout-grid">
+              <div class="mdc-layout-grid__inner">
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
+                  <img src="{{~>asset_url url=(concat 'images/icon-' icon '@2x.png')~}}" class="icon" />
+                </div>
+                <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
+                  <div class="mdc-typography--body2">Focus on</div>
+                  <div class="mdc-typography--headline3">
+                    {{{title}}}
+                  </div>
+                  {{#if respondent ~}}
+                  {{#compare @root.data.additionalResponses.hits.total 0 ~}}
+                  <div class="mdc-typography--body1">
+                    You scored {{respondent}}% - the average is {{average}}%
+                    {{#compare (default @root.data.rootResponse.income_band @root.request.params.query.income_band) "!==" "0" ~}}
+                    for
+                    {{inflect @root.data.results.totalRespondents (concat "other " @root.data.currentSite.for_singular) (concat "other " @root.data.currentSite.for_plural) true}}
+                    across
+                    {{@root.data.results.where}}
+                    {{#compare @root.data.currentSite.name "housing"}}of similar size{{else}}in the same income bracket{{/compare}})
+                    {{/compare ~}}
+                  </div>
+                  {{else}}
+                  {{#compare @root.data.additionalResponses.hits.total ">" 3 ~}}
+                  <div class="mdc-typography--body1">
+                    You scored {{respondent}}% - the average is {{average}}%
+                    (compared with your {{@root.data.additionalResponses.hits.total}} colleagues who have also completed the checkup via a sharing link)
+                  </div>
+                  {{/compare ~}}
+                  {{/compare ~}}
+                  {{/if ~}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/compare ~}}
+    {{/with ~}}
+
+    {{#compare @root.data.supplimentaryResponses.resources_focus.hits.total ">" 0 ~}}
+      <div class="container-fluid v-margin-full v-padding-full">
+        <div class="container-content">
+          <div class="mdc-layout-grid equal-height t-padding-full">
+            <div class="mdc-layout-grid__inner">
+              {{#each @root.data.supplimentaryResponses.resources_focus.hits.hits ~}}
+                {{#with _source ~}}
+                  {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
+                {{/with ~}}
+              {{/each ~}}
+            </div>
+          </div>
+          {{#compare @root.data.supplimentaryResponses.resources_relevant.hits.total 0 ~}}
+          <div class="mdc-typography--body1 t-margin-full">
+            <a href="/checkup/resources">Resources for other topic areas</a>
+          </div>
+          {{/compare ~}}
+        </div>
+      </div>
+    {{/compare ~}}
+
+    {{#compare @root.data.supplimentaryResponses.resources_relevant.hits.total ">" 0 ~}}
+    <div class="checkup-topic-header t-margin-full" id="resources">
+      <div class="container-fluid">
+        <div class="container-content">
+          <div class="mdc-typography--body2">Relevant</div>
+          <div class="mdc-typography--body1">
+            Based on your checkup result, here are more resources that may be of interest
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid v-margin-full v-padding-full">
+      <div class="container-content">
+        <div class="mdc-layout-grid equal-height t-padding-full">
+          <div class="mdc-layout-grid__inner">
+            {{#each @root.data.supplimentaryResponses.resources_relevant.hits.hits ~}}
+            {{#with _source ~}}
+            {{> content_resource_card slug=post_tags_slug.[0] link=link title=title author=author_attribution content=content}}
+            {{/with ~}}
+            {{/each ~}}
+          </div>
+        </div>
+        <div class="mdc-typography--body1 t-margin-full">
+          <a href="/checkup/resources">List all resources</a>
+        </div>
+      </div>
+    </div>
+    {{/compare ~}}
+
+  {{/ifAny ~}}
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+<script>
+  function scrollToResources() {
+    document.querySelector('#resources').scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
+/////////////////////////////////////////////////////////
+/////////////// The Radar Chart Function ////////////////
+/////////////// Written by Nadieh Bremer ////////////////
+////////////////// VisualCinnamon.com ///////////////////
+/////////// Inspired by the code of alangrafu ///////////
+/////////////////////////////////////////////////////////
+
+function RadarChart(id, data, options) {
+  var cfg = {
+    w: 600,				//Width of the circle
+    h: 600,				//Height of the circle
+    margin: {top: 5, right: 5, bottom: 5, left: 5}, //The margins of the SVG
+    levels: 4,				//How many levels or inner circles should there be drawn
+    maxValue: 0, 			//What is the value that the biggest circle will represent
+    labelFactor: 1.2, 	//How much farther than the radius of the outer circle should the labels be placed
+    wrapWidth: 60, 		//The number of pixels after which a label needs to be given a new line
+    opacityArea: 0.25, 	//The opacity of the area of the blob
+    dotRadius: 10, 			//The size of the colored circles of each blog
+    opacityCircles: 0, 	//The opacity of the circles of each blob
+    strokeWidth: 3, 		//The width of the stroke around each blob
+    roundStrokes: false,	//If true the area and stroke will follow a round path (cardinal-closed)
+    color: d3.scale.category10()	//Color function
+  };
+
+  //Put all of the options into a variable called cfg
+  if('undefined' !== typeof options){
+    for(var i in options){
+      if('undefined' !== typeof options[i]){ cfg[i] = options[i]; }
+    }//for i
+  }//if
+
+  //If the supplied maxValue is smaller than the actual one, replace by the max in the data
+  var maxValue = Math.max(cfg.maxValue, d3.max(data, function(i){return d3.max(i.map(function(o){return o.value;}))}));
+
+  var allAxis = (data[0].map(function(i, j){return i.axis})),	//Names of each axis
+  total = allAxis.length,					//The number of different axes
+  radius = Math.min(cfg.w/2, cfg.h/2), 	//Radius of the outermost circle
+  Format = d3.format('%'),			 	//Percentage formatting
+  angleSlice = Math.PI * 2 / total;		//The width in radians of each "slice"
+
+  //Scale for the radius
+  var rScale = d3.scale.linear()
+  .range([0, radius])
+  .domain([0, maxValue]);
+
+  //Remove whatever chart with the same id/class was present before
+  d3.select(id).select("svg").remove();
+
+  //Initiate the radar chart SVG
+  var svg = d3.select(id).append("svg")
+  .attr("width",  cfg.w + cfg.margin.left + cfg.margin.right)
+  .attr("height", cfg.h + cfg.margin.top + cfg.margin.bottom)
+  .attr("class", "radar"+id);
+  //Append a g element
+  var g = svg.append("g")
+  .attr("transform", "translate(" + (cfg.w/2 + cfg.margin.left) + "," + (cfg.h/2 + cfg.margin.top) + ")");
+
+  //Wrapper for the grid & axes
+  var axisGrid = g.append("g").attr("class", "axisWrapper");
+
+  //Draw the background circles
+  axisGrid.selectAll(".levels")
+  .data(d3.range(1,(cfg.levels+1)).reverse())
+  .enter()
+  .append("circle")
+  .attr("class", "gridCircle")
+  .attr("r", function(d, i){return radius/cfg.levels*d;})
+  .style("fill", "#B8B8B8")
+  .style("stroke", "#B8B8B8")
+  .style("fill-opacity", cfg.opacityCircles)
+
+  //Create the straight lines radiating outward from the center
+  var axis = axisGrid.selectAll(".axis")
+  .data(allAxis)
+  .enter()
+  .append("g")
+  .attr("class", "axis");
+  //Append the lines
+  axis.append("line")
+  .attr("x1", 0)
+  .attr("y1", 0)
+  .attr("x2", function(d, i){ return rScale(maxValue*1.1) * Math.cos(angleSlice*i - Math.PI/2); })
+  .attr("y2", function(d, i){ return rScale(maxValue*1.1) * Math.sin(angleSlice*i - Math.PI/2); })
+  .attr("class", "line")
+  .style("stroke", "#B8B8B8")
+  .style("stroke-width", "1px");
+
+  //Append the labels at each axis
+  axis.append("text")
+  .attr("class", "legend")
+  .style("font-size", "0.9rem")
+  .style("font-variant", "all-small-caps")
+  .attr("text-anchor", "middle")
+  .attr("dy", "0.35em")
+  .attr("x", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.cos(angleSlice*i - Math.PI/2); })
+  .attr("y", function(d, i){ return rScale(maxValue * cfg.labelFactor) * Math.sin(angleSlice*i - Math.PI/2); })
+  .text(function(d){return d})
+  .call(wrap, cfg.wrapWidth);
+
+  /////////////////////////////////////////////////////////
+  ///////////// Draw the radar chart blobs ////////////////
+  /////////////////////////////////////////////////////////
+
+  //The radial line function
+  var radarLine = d3.svg.line.radial()
+  .interpolate("linear-closed")
+  .radius(function(d) { return rScale(d.value); })
+  .angle(function(d,i) {	return i*angleSlice; });
+
+  if(cfg.roundStrokes) {
+    radarLine.interpolate("cardinal-closed");
+  }
+
+  //Create a wrapper for the blobs
+  var blobWrapper = g.selectAll(".radarWrapper")
+  .data(data)
+  .enter().append("g")
+  .attr("class", "radarWrapper");
+
+  //Append the backgrounds
+  blobWrapper
+  .append("path")
+  .attr("class", "radarArea")
+  .attr("d", function(d,i) { return radarLine(d); })
+  .style("fill", function(d,i) { return cfg.color(i); })
+  .style("fill-opacity", function(d,i) { return cfg.fillOpacity(i); })
+
+  //Create the outlines
+  blobWrapper.append("path")
+  .attr("class", "radarStroke")
+  .attr("d", function(d,i) { return radarLine(d); })
+  .style("stroke-width", cfg.strokeWidth + "px")
+  .style("stroke-dasharray", function(d,i) { return cfg.strokeStyle(i); })
+  .style("stroke", function(d,i) { return cfg.color(i); })
+  .style("fill", "none")
+  // .style("filter" , "url(#glow)");
+
+  //Append the circles
+  blobWrapper.selectAll(".radarCircle")
+  .data(function(d,i) { return d; })
+  .enter().append("circle")
+  .attr("class", "radarCircle")
+  .attr("r", cfg.dotRadius)
+  .attr("cx", function(d,i){ return rScale(d.value) * Math.cos(angleSlice*i - Math.PI/2); })
+  .attr("cy", function(d,i){ return rScale(d.value) * Math.sin(angleSlice*i - Math.PI/2); })
+  .style("stroke-width", cfg.strokeWidth + "px")
+  .style("stroke-dasharray", function(d,i,j) { return cfg.strokeStyle(j); })
+  .style("stroke", function(d,i,j) { return cfg.color(j); })
+  .style("fill", function(d,i,j) { return cfg.dotColor(j); })
+  .style("fill-opacity", 1);
+
+  //Taken from http://bl.ocks.org/mbostock/7555321
+  //Wraps SVG text
+  function wrap(text, width) {
+    text.each(function() {
+      var text = d3.select(this),
+      words = text.text().split(/\s+/).reverse(),
+      word,
+      line = [],
+      lineNumber = 0,
+      lineHeight = 1.4, // ems
+      y = text.attr("y"),
+      x = text.attr("x"),
+      dy = parseFloat(text.attr("dy")),
+      tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+
+      while (word = words.pop()) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
+          tspan = text.append("tspan").attr("x", x).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+        }
+      }
+    });
+  }//wrap
+
+}//RadarChart
+</script>
+<script>
+
+/* Radar chart design created by Nadieh Bremer - VisualCinnamon.com */
+
+//////////////////////////////////////////////////////////////
+//////////////////////// Set-Up //////////////////////////////
+//////////////////////////////////////////////////////////////
+
+var margin = {top: 75, right: 75, bottom: 20, left: 75},
+width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+height = Math.min(width+90, window.innerHeight - margin.top - margin.bottom - 20);
+
+//////////////////////////////////////////////////////////////
+////////////////////////// Data //////////////////////////////
+//////////////////////////////////////////////////////////////
+
+var data = [
+  [//Your scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.respondent}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.respondent}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.respondent}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.respondent}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.respondent}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.respondent}}/100
+    }
+  ]
+  {{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+  ,[//Average scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.average}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.average}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.average}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.average}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.average}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.average}}/100
+    }
+  ]
+  {{else}}
+  {{#if @root.data.results.overall.shared_1_percentage ~}}
+  ,[//Shared 1 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_1_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_1_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_1_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_1_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_1_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_1_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_2_percentage ~}}
+  ,[//Shared 2 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_2_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_2_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_2_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_2_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_2_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_2_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_3_percentage ~}}
+  ,[//Shared 3 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_3_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_3_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_3_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_3_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_3_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_3_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_4_percentage ~}}
+  ,[//Shared 4 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_4_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_4_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_4_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_4_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_4_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_4_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_5_percentage ~}}
+  ,[//Shared 5 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_5_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_5_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_5_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_5_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_5_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_5_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_6_percentage ~}}
+  ,[//Shared 6 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_6_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_6_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_6_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_6_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_6_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_6_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{#if @root.data.results.overall.shared_7_percentage ~}}
+  ,[//Shared 7 scores
+    {
+      axis:"Overall",
+      value:{{@root.data.results.overall.shared_7_percentage}}/100
+    },
+    {
+      axis:"Leadership",
+      value:{{@root.data.results.sections.leadership.shared_7_percentage}}/100
+    },
+    {
+      axis:"Tools",
+      value:{{@root.data.results.sections.tools.shared_7_percentage}}/100
+    },
+    {{#compare @root.data.currentSite.name "housing" ~}}
+    {
+      axis:"TEC",
+      value:{{@root.data.results.sections.tec.shared_7_percentage}}/100
+    },
+    {{/compare ~}}
+    {
+      axis:"Data",
+      value:{{@root.data.results.sections.data.shared_7_percentage}}/100
+    },
+    {
+      axis:"Cyber",
+      value:{{@root.data.results.sections.cyber.shared_7_percentage}}/100
+    }
+  ]
+  {{/if ~}}
+  {{/ifAny ~}}
+];
+//////////////////////////////////////////////////////////////
+//////////////////// Draw the Chart //////////////////////////
+//////////////////////////////////////////////////////////////
+
+{{#ifAny (compare @root.data.additionalResponses.hits.total 0) (compare @root.data.additionalResponses.hits.total ">" 3) ~}}
+var color = d3.scale.ordinal()
+.range(["#1377CD","#444444"]);
+var dotColor = d3.scale.ordinal()
+.range(["#1377CD","#ffffff"]);
+var fillOpacity = d3.scale.ordinal()
+.range(["0.1","0"]);
+var strokeStyle = d3.scale.ordinal()
+.range(["0","4,3"]);
+{{else}}
+var color = d3.scale.ordinal()
+.range(["#1377CD","#D21262","#588223","#754AA5"]);
+var dotColor = d3.scale.ordinal()
+.range(["#1377CD","#D21262","#588223","#754AA5"]);
+var fillOpacity = d3.scale.ordinal()
+.range(["0.1","0.1","0.1","0.1"]);
+var strokeStyle = d3.scale.ordinal()
+.range(["0","0","0","0"]);
+{{/ifAny ~}}
+
+var radarChartOptions = {
+  w: width,
+  h: height,
+  margin: margin,
+  maxValue: 0,
+  levels: 5,
+  roundStrokes: true,
+  color: color,
+  dotColor: dotColor,
+  fillOpacity: fillOpacity,
+  strokeStyle: strokeStyle
+};
+//Call function to draw the Radar chart
+RadarChart(".radarChart", data, radarChartOptions);
+</script>
+
+<script>
+  //Share code
+  document.querySelector('#share-button').addEventListener('click', function() {
+    var textbox = document.querySelector('#share-url');
+    textbox.select();
+    document.execCommand('copy');
+    alert("Digital Checkup sharing link copied to clipboard");
+  });
+</script>

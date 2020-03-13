@@ -149,6 +149,16 @@
 			"partition": "scvo-profiles-{{data.auth.uid}}"
 		}
 	},
+  "getCheckupData": {
+    "name": "checkup",
+    "taskModule": "render",
+    "renderer": "handlebars",
+    "config": {
+      "output": "data",
+      "template": ">context.metaData.handlebars.templates.support_checkup_questions_data",
+      "parseJson": true
+    }
+  },
   "postsLatest": {
     "name": "postsLatest",
     "taskModule": "elasticsearch",

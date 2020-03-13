@@ -1,0 +1,45 @@
+{
+  "name": "checkup_page",
+  "debug": true,
+  "pattern": {
+    "home": "/support/running-your-organisation/governance/checkup",
+    "section": "/support/running-your-organisation/governance/checkup/:section"
+  },
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    "context.metaData.commonTasks.getCheckupData",
+    {
+      "name": "rootResponse",
+      "taskModule": "firebaseRtbGet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "pathTemplate": "/submissions/{{default @root.request.params.query.sid 'null'}}/",
+        "defaultData": {}
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "body": ">context.metaData.handlebars.templates.support_checkup_questions_page"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

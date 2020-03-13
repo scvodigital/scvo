@@ -1,0 +1,76 @@
+{
+  "name": "checkup_results",
+  "debug": true,
+  "pattern": "/support/running-your-organisation/governance/checkup/results",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "rootResponse",
+      "taskModule": "firebaseRtbGet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "pathTemplate": "/submissions/{{default @root.request.params.query.rid 'null'}}/",
+        "defaultData": {}
+      }
+    },
+    {
+      "name": "results",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": ">context.metaData.handlebars.templates.support_checkup_results_formatter",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "resources_relevant",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-resource",
+            "template": ">context.metaData.handlebars.queries.resources-relevant"
+          },
+          {
+            "name": "resources_focus",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-resource",
+            "template": ">context.metaData.handlebars.queries.resources-focus"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "body": ">context.metaData.handlebars.templates.support_checkup_results_page"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

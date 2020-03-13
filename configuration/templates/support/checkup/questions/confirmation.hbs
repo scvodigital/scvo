@@ -1,0 +1,71 @@
+<form action="/checkup/submit" method="post" class="checkup-section b-padding-full" id="checkup-confirmation">
+  {{> checkup_answers section=@root.request.body.answer-section}}
+  <div class="checkup-section-header b-padding-full v-margin-full">
+    <div class="container-fluid">
+      <div class="container-content">
+        {{> checkup_progress progress=95}}
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-2-desktop mdc-layout-grid__cell--span-1-tablet mdc-layout-grid__cell--span-1-phone">
+              <img src="{{~>asset_url url='images/icon-confirm@2x.png'~}}" title="Confirmation" class="icon" />
+            </div>
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-10-desktop mdc-layout-grid__cell--span-7-tablet mdc-layout-grid__cell--span-3-phone">
+              <h1 class="mdc-typography--headline3">Confirmation</h1>
+              <div class="mdc-typography--body1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="container-content">
+      <div class="mdc-typography--body2">
+        * required information
+      </div>
+
+      <div class="question-block mdc-elevation--z3">
+        <div class="question">
+          <h2 class="mdc-typography--headline5 question-title">If you could tackle one digital project in the next three months, what would that be?</h2>
+        </div>
+        <div class="answer-block">
+          <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+            <textarea id="next_project" name="answers-next_project" class="mdc-text-field__input" rows="10" placeholder="Please enter a description"></textarea>
+            <label for="next_project" class="mdc-floating-label"></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="question-block mdc-elevation--z3">
+        <div class="question">
+          <h2 class="mdc-typography--headline5 question-title">What are the top barriers to digital change in your organisation?</h2>
+        </div>
+        <div class="answer-block">
+          <div class="mdc-text-field mdc-text-field--textarea mdc-text-field--fullwidth" data-mdc-auto-init="MDCTextField">
+            <textarea id="barriers" name="answers-barriers" class="mdc-text-field__input" rows="10" placeholder="Please enter a description"></textarea>
+            <label for="barriers" class="mdc-floating-label"></label>
+          </div>
+        </div>
+      </div>
+
+      {{#compare @root.data.currentSite.name "housing" ~}}
+      <input type="hidden" name="answers-support" value="Yes please" />
+      {{else}}
+      <div class="question-block mdc-elevation--z3">
+        <div class="question">
+          <h2 class="mdc-typography--headline5 question-title">Would you like additional support from a local infrastructure organisation based on your responses? *</h2>
+          <div class="mdc-typography--body1 question-description">This could be funding, events, training and 1:1 support</div>
+        </div>
+        <ul class="answer-block">
+          <li class="answer">{{> components_radio_button label="Yes please - I'd like support to help put this into action" id="yes" name="answers-support" value="Yes please"}}</li>
+          <li class="answer">{{> components_radio_button label="No thanks!" id="no" name="answers-support" value="No thanks"}}</li>
+        </ul>
+      </div>
+      {{/compare ~}}
+
+      <div class="cta b-padding-full">
+        <button type="submit" class="mdc-button mdc-button--raised">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>

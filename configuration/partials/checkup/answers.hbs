@@ -1,0 +1,8 @@
+{{#if @root.request.body ~}}
+{{#each (filter (keyValue @root.request.body) "key" "testIn" "answers-") ~}}
+<input type="hidden" name="{{key}}" value="{{#compare (length (arrayify value)) '>' 1}}{{#eachJoin (arrayify value) ';'}}{{this}}{{/eachJoin}}{{else}}{{value}}{{/compare}}" />
+{{/each ~}}
+{{/if ~}}
+{{#if @root.request.params.query.sid ~}}
+<input type="hidden" name="answers-sid" value="{{@root.request.params.query.sid}}" />
+{{/if ~}}

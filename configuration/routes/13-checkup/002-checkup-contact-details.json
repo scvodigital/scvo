@@ -1,0 +1,40 @@
+{
+  "name": "checkup_contact_details",
+  "pattern": "/support/running-your-organisation/governance/checkup/contact-details",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "rootResponse",
+      "taskModule": "firebaseRtbGet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "pathTemplate": "/submissions/{{default @root.request.body.answers-sid 'null'}}/",
+        "defaultData": {}
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "body": ">context.metaData.handlebars.templates.support_checkup_questions_contact-details"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

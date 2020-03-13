@@ -1267,6 +1267,7 @@ a.bg-yellow {
   background: $yellow-color !important;
   border: none;
   display: block;
+  color: $secondary-color;
   // .container {
   //   background-image: url('https://scvo.scot/rouleaux.svg?color=FFDD02&style=stripes');
   //   background-size: cover;
@@ -2869,11 +2870,8 @@ figure,
   h1, h2, h3, h4, div, p, li, div, td, th {
     color: white !important;
   }
-  .bg-yellow {
-    h2,
-    a {
-      color: $secondary-color !important;
-    }
+  a.bg-yellow:hover {
+    color: $secondary-color !important;
   }
   .scvo-link-bar .text-link,
   .scvo-services .btn-lg {

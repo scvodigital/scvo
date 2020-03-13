@@ -1,0 +1,32 @@
+{
+  "size": 100,
+  "_source": [
+    "title",
+    "content",
+    "author_attribution",
+    "link",
+    "post_tags_slug"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "terms": {
+            "post_tags_slug": [
+              "content-marketing-data",
+              "cyber-resilience",
+              "tools-equipment",
+              "leadership",
+              "culture",
+              "skills",
+              "technology-enabled-care"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "weight": "desc"
+  }
+}

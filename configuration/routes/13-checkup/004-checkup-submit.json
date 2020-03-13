@@ -1,0 +1,82 @@
+{
+  "name": "checkup_submit",
+  "debug": true,
+  "pattern": "/support/running-your-organisation/governance/checkup/submit",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    "context.metaData.commonTasks.getCheckupData",
+    {
+      "name": "rid",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": "{{hash (concat (moment null 'X') '-' (hash @root.request.body.email))}}",
+        "output": "data"
+      }
+    },
+    {
+      "name": "scoresIndividual",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.support_checkup_scores_gather",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "scoresCombined",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.support_checkup_scores_calculate",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "response",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.support_checkup_database_firebase",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "save_data",
+      "taskModule": "firebaseRtbSet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "digital-checkup",
+        "setOrUpdate": "set",
+        "pathTemplate": "/submissions/{{@root.data.rid}}/",
+        "dataTemplate": ">context.metaData.handlebars.templates.support_checkup_database_firebase"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "body": ">context.metaData.handlebars.templates.support_checkup_questions_submit"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
