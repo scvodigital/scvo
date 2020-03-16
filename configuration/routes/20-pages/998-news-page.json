@@ -2,7 +2,7 @@
   "name": "news_page",
   "debug": false,
   "pattern": {
-    "covid": "/coronavirus-covid-19-information-guidance(/:page)"
+    "covid": "/support/covid-19(/:page)"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
