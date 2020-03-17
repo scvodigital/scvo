@@ -1,8 +1,8 @@
 {
-  "name": "news_page",
+  "name": "coronavirus_page",
   "debug": false,
   "pattern": {
-    "covid": "/support/covid-19(/:page)"
+    "coronavirus": "/support/covid-19(/:page)"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -60,7 +60,7 @@
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",
               "body": ">context.metaData.handlebars.templates.page-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"
