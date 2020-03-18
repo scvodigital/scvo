@@ -4,18 +4,18 @@
   <div class="{{#unless (compare layoutParts.style 'fullWidth')}}container{{/unless}}">
     <div class="columns">
       {{#ifAll layoutParts.leftSidebar layoutParts.rightSidebar ~}}
-      <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
+      <aside class="sidebar sidebar-left column col-3 col-xl-4 col-lg-12">
         {{{layoutParts.leftSidebar}}}
       </aside>
       <main class="body column col-xs-auto">
         {{{layoutParts.body}}}
       </main>
-      <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
+      <aside class="sidebar sidebar-right column col-3 col-xl-4 col-lg-12">
         {{{layoutParts.rightSidebar}}}
       </aside>
       {{else}}
       {{#if layoutParts.leftSidebar ~}}
-      <aside class="sidebar sidebar-left column col-3 col-xl-4 hide-lg">
+      <aside class="sidebar sidebar-left column col-3 col-xl-4 col-lg-12">
         {{{layoutParts.leftSidebar}}}
       </aside>
       <main class="body column col-xs-auto">
@@ -25,7 +25,7 @@
       <main class="body column col-xs-auto">
         {{{layoutParts.body}}}
       </main>
-      <aside class="sidebar sidebar-right column col-3 col-xl-4 hide-lg">
+      <aside class="sidebar sidebar-right column col-3 col-xl-4 col-lg-12">
         {{{layoutParts.rightSidebar}}}
       </aside>
       {{/if ~}}
