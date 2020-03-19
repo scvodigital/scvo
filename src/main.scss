@@ -2853,63 +2853,63 @@ figure,
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  body,
-  .page,
-  .menu {
-    background: $secondary-color;
-    color: white;
-  }
-  .footer-main {
-    background: $secondary-color;
-  }
-  .bg-gray,
-  .bg-white {
-    background: $secondary-color-dark !important;
-  }
-  a:link,
-  a:visited,
-  header.toolbar .btn,
-  header.toolbar .btn:hover,
-  header.toolbar .btn:focus,
-  footer .footer-copyright p,
-  footer .footer-copyright a,
-  .text-primary,
-  .text-secondary,
-  .breadcrumb .breadcrumb-item,
-  .breadcrumb .breadcrumb-item:not(:first-child)::before,
-  h1, h2, h3, h4, div, p, li, div, td, th {
-    color: white !important;
-  }
-  a.bg-yellow:hover {
-    color: $secondary-color !important;
-  }
-  .scvo-link-bar .text-link,
-  .scvo-services .btn-lg {
-    color: $primary-color;
-  }
-  body.the-gathering-2020 {
-    .header-text,
-    .header-text a,
-    .header-text a:hover {
-      color: $gathering-color;
-    }
-  }
-  img {
-    opacity: .85;
-    transition: opacity $transition-speed ease-in-out;
-  }
-  img:hover {
-    opacity: 1;
-  }
-  .sponsors .sponsor {
-    mix-blend-mode: screen;
-    filter: grayscale(1);
-  }
-  .bg-rouleaux {
-    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid') !important;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   body,
+//   .page,
+//   .menu {
+//     background: $secondary-color;
+//     color: white;
+//   }
+//   .footer-main {
+//     background: $secondary-color;
+//   }
+//   .bg-gray,
+//   .bg-white {
+//     background: $secondary-color-dark !important;
+//   }
+//   a:link,
+//   a:visited,
+//   header.toolbar .btn,
+//   header.toolbar .btn:hover,
+//   header.toolbar .btn:focus,
+//   footer .footer-copyright p,
+//   footer .footer-copyright a,
+//   .text-primary,
+//   .text-secondary,
+//   .breadcrumb .breadcrumb-item,
+//   .breadcrumb .breadcrumb-item:not(:first-child)::before,
+//   h1, h2, h3, h4, div, p, li, div, td, th {
+//     color: white !important;
+//   }
+//   a.bg-yellow:hover {
+//     color: $secondary-color !important;
+//   }
+//   .scvo-link-bar .text-link,
+//   .scvo-services .btn-lg {
+//     color: $primary-color;
+//   }
+//   body.the-gathering-2020 {
+//     .header-text,
+//     .header-text a,
+//     .header-text a:hover {
+//       color: $gathering-color;
+//     }
+//   }
+//   img {
+//     opacity: .85;
+//     transition: opacity $transition-speed ease-in-out;
+//   }
+//   img:hover {
+//     opacity: 1;
+//   }
+//   .sponsors .sponsor {
+//     mix-blend-mode: screen;
+//     filter: grayscale(1);
+//   }
+//   .bg-rouleaux {
+//     background-image: url('https://scvo.scot/rouleaux.svg?color=#{$secondary-color-dark-var}&style=solid') !important;
+//   }
+// }
 
 @media print {
   h1 {
