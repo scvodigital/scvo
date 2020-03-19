@@ -33,29 +33,29 @@
 <form action="/about/staff-team" method="GET" [searchroute]="'staff_search'" data-auto-search="true" class="t-margin-full">
   <div class="mdc-layout-grid filter">
     <div class="columns">
-      <div class="column col-3 col-xl-4 col-md-6 col-sm-12">
+      <div class="column col-4 col-xl-4 col-md-4 col-sm-12">
         <div class="form-group">
           <select class="form-select" id="department" name="department" onchange="this.form.submit();">
             <option value="all"{{#if @root.request.params.query.department}}{{else}} selected{{/if}}>All departments</option>
             {{#each @root.data.supplimentaryResponses.departments.aggregations.departments.buckets ~}}
             {{#if key ~}}
-            <option value="{{slugify key}}" {{#compare ../request.params.query.department "===" (slugify key)}}selected{{/compare}}>{{key}}</option>
+            <option value="{{slugify key}}" {{#compare ../request.params.query.department "===" (slugify key)}}selected{{/compare}}>{{{key}}}</option>
             {{/if ~}}
             {{/each ~}}
           </select>
         </div>
       </div>
-      <div class="column col-4 col-xl-6 hide-sm"></div>
+      {{!-- <div class="column col-4 col-xl-6 hide-sm"></div>
       <div class="column col-2 col-xl-3 col-md-6 col-sm-12">
         <div class="form-group">
           <select class="form-select" id="city" name="city" onchange="this.form.submit();">
             <option value="all"{{#if @root.request.params.query.city}}{{else}} selected{{/if}}>All cities</option>
             {{#each @root.data.supplimentaryResponses.departments.aggregations.cities.buckets ~}}
-            <option value="{{slugify key}}" {{#compare ../request.params.query.city "===" (slugify key)}}selected{{/compare}}>{{key}}</option>
+            <option value="{{slugify key}}" {{#compare ../request.params.query.city "===" (slugify key)}}selected{{/compare}}>{{{key}}}</option>
             {{/each ~}}
           </select>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 </form>
@@ -67,28 +67,28 @@
   {{#with _source ~}}
   <div class="list scvo-staff mdc-layout-grid">
     <div class="columns">
-      <div class="column col-3 col-xl-4 col-md-6 col-sm-12 name_full">
+      <div class="column col-4 col-xl-4 col-md-5 col-sm-5 job_title">
+        {{#if job_title ~}}
+        {{replace job_title "Job Title:	" ""}}
+        {{/if ~}}
+      </div>
+      <div class="column col-4 col-xl-4 col-md-5 col-sm-5 name_full">
         <a href="/about/staff-team/{{Id}}/{{slugify name_full}}">
           {{!-- <img src="{{og_image}}" /> --}}
           {{trim name_full}}
         </a>
       </div>
-      <div class="column col-4 col-xl-6 col-md-12 job_title">
-        {{#if job_title ~}}
-        {{replace job_title "Job Title:	" ""}}
-        {{/if ~}}
-      </div>
-      <div class="column col-2 col-xl-3 col-md-6 col-sm-12 city">
+      {{!-- <div class="column col-2 col-xl-3 col-md-6 col-sm-12 city">
         {{#if city ~}}
         {{city}}
         {{/if ~}}
-      </div>
+      </div> --}}
       {{!-- <div class="column col-2 col-xl-3 col-md-6 col-sm-12 work_phone">
         {{#if work_phone ~}}
         <a href="tel:{{replace work_phone " " ""}}">{{work_phone}}</a>
         {{/if ~}}
       </div> --}}
-      <div class="column col-1 col-xl-2 col-md-3 col-sm-12 contact">
+      <div class="column col-4 col-xl-4 col-md-2 col-sm-2 contact">
         {{!-- {{#if twitter ~}}
         <a href="{{#startsWith '@' twitter}}http://twitter.com/{{twitter}}{{else}}{{twitter}}{{/startsWith}}" class="no-ext no-underline"><span class="fab fa-twitter" aria-hidden="true"></span></a>
         {{/if ~}} --}}
