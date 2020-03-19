@@ -13,14 +13,14 @@
               Department
             </dt>
             <dd>
-              {{#compare directorate department}}
+              {{#compare (replace directorate ' &amp; ' ' and ') (replace department ' &amp; ' ' and ')}}
               {{#compare directorate "Directorate"}}
               {{else}}
-              {{#if department}}<a href="/about/staff-team?department={{slugify department}}">{{department}}</a>{{/if}}
+              {{#if department}}<a href="/about/staff-team?department={{slugify department}}">{{{department}}}</a>{{/if}}
               {{/compare}}
               {{else}}
-              {{#if department}}<a href="/about/staff-team?department={{slugify department}}">{{department}}</a>{{/if}}
-              {{#if directorate}} ({{directorate}}){{/if}}
+              {{#if department}}<a href="/about/staff-team?department={{slugify department}}">{{{department}}}</a>{{/if}}
+              {{#if directorate}} ({{{directorate}}}){{/if}}
               {{/compare}}
             </dd>
             {{/ifAny ~}}
