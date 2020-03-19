@@ -1,4 +1,36 @@
-<form action="/about/staff-team" method="GET" [searchroute]="'staff_search'" data-auto-search="true">
+<p>
+  Our staff, where possible, are working from home. Customers and clients of our services will get regular updates from individual services and teams about any impact this may have and how to stay in touch.
+</p>
+<p>
+  You can also contact us as follows:
+</p>
+<ul>
+  <li>General Enquiries: <a href="mailto:enquiries@scvo.org.uk">enquiries@scvo.org.uk</a>&ensp;0800 169 0022</li>
+</ul>
+<ul>
+  <li>Information Service: <a href="mailto:enquiries@scvo.org.uk">enquiries@scvo.org.uk</a>&ensp;0800 169 0022</li>
+</ul>
+<ul>
+  <li class="no-margin">Managed IT: <a href="mailto:ITHelpdesk@scvo.org.uk">ITHelpdesk@scvo.org.uk</a></li>
+  <li class="no-margin">Office and meeting space: <a href="mailto:facilities@scvo.org.uk">facilities@scvo.org.uk</a></li>
+  <li class="no-margin">Payroll service: <a href="mailto:payroll@scvo.org.uk">payroll@scvo.org.uk</a>&ensp;0131 474 8008</li>
+  <li class="no-margin">SCVO Credit Union: <a href="mailto:credit.union@scvo.org.uk">credit.union@scvo.org.uk</a></li>
+</ul>
+<ul>
+  <li class="no-margin">Community Jobs Scotland: <a href="mailto:communityjobsscotland@scvo.org.uk">communityjobsscotland@scvo.org.uk</a></li>
+  <li class="no-margin">Funding Scotland: <a href="mailto:fundingscotland@scvo.org.uk">fundingscotland@scvo.org.uk</a></li>
+  <li class="no-margin">Goodmoves: <a href="mailto:sales@goodmoves.org.uk">sales@goodmoves.org.uk</a>&ensp;0800 019 2149</li>
+  <li class="no-margin">Scottish Charity Awards: <a href="mailto:awards@scvo.org.uk">awards@scvo.org.uk</a></li>
+  <li class="no-margin">SCVO Digital team: <a href="mailto:digital@scvo.org.uk">digital@scvo.org.uk</a></li>
+  <li class="no-margin">SCVO Membership team: <a href="mailto:membership@scvo.org.uk">membership@scvo.org.uk</a></li>
+  <li class="no-margin">SCVO Policy team: <a href="mailto:scvopolicyandresearch@scvo.org.uk">scvopolicyandresearch@scvo.org.uk</a></li>
+  <li class="no-margin">The Gathering: <a href="mailto:thegathering@scvo.org.uk">thegathering@scvo.org.uk</a></li>
+  <li class="no-margin">Third Force News: <a href="mailto:tfn@scvo.org.uk">tfn@scvo.org.uk</a></li>
+  <li class="no-margin">Training: <a href="mailto:training@scvo.ork.uk">training@scvo.ork.uk</a></li>
+</ul>
+
+<h2>Staff directory</h2>
+<form action="/about/staff-team" method="GET" [searchroute]="'staff_search'" data-auto-search="true" class="t-margin-full">
   <div class="mdc-layout-grid filter">
     <div class="columns">
       <div class="column col-3 col-xl-4 col-md-6 col-sm-12">
@@ -29,7 +61,7 @@
 </form>
 
 {{#each @root.data.primaryResponse.aggregations.query.buckets ~}}
-<div class="v-margin staff-list">
+<div class="b-margin-full staff-list">
   <h3>{{{key}}}</h3>
   {{#each staff.hits.hits ~}}
   {{#with _source ~}}
@@ -51,15 +83,15 @@
         {{city}}
         {{/if ~}}
       </div>
-      <div class="column col-2 col-xl-3 col-md-6 col-sm-12 work_phone">
+      {{!-- <div class="column col-2 col-xl-3 col-md-6 col-sm-12 work_phone">
         {{#if work_phone ~}}
         <a href="tel:{{replace work_phone " " ""}}">{{work_phone}}</a>
         {{/if ~}}
-      </div>
+      </div> --}}
       <div class="column col-1 col-xl-2 col-md-3 col-sm-12 contact">
-        {{#if twitter ~}}
-        {{!-- <a href="{{#startsWith '@' twitter}}http://twitter.com/{{twitter}}{{else}}{{twitter}}{{/startsWith}}" class="no-ext no-underline"><span class="fab fa-twitter" aria-hidden="true"></span></a> --}}
-        {{/if ~}}
+        {{!-- {{#if twitter ~}}
+        <a href="{{#startsWith '@' twitter}}http://twitter.com/{{twitter}}{{else}}{{twitter}}{{/startsWith}}" class="no-ext no-underline"><span class="fab fa-twitter" aria-hidden="true"></span></a>
+        {{/if ~}} --}}
         {{#if linkedin ~}}
         <a href="{{linkedin}}" class="no-ext no-underline"><span class="fab fa-linkedin fa-fw" aria-hidden="true"></span></a>
         {{/if ~}}

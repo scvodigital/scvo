@@ -1,0 +1,14 @@
+{
+  "name": "redirect_contacts",
+  "pattern": "/contacts",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/about/staff-team",
+        "statusCode": 301
+      }
+    }
+  ]
+}
