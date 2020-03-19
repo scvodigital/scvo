@@ -1283,34 +1283,99 @@
 			"route": "^/feedback-complaints$"
 		}]
 	}],
+	"covid-19-legacy": [{
+		"label": "COVID-19 Third Sector Information Hub",
+		"path": "/support/covid-19",
+		"route": "_OLD/support/covid-19$",
+		"children": [{
+			"label": "Coronavirus/COVID-19",
+			"path": "/support/covid-19/what-is-coronavirus-and-covid-19",
+			"route": "_OLD/support/covid-19/what-is-coronavirus-and-covid-19$"
+		},
+		{
+			"label": "Symptoms",
+			"path": "/support/covid-19/symptoms",
+			"route": "_OLD/support/covid-19/symptoms$"
+		},
+		{
+			"label": "Preventing the spread",
+			"path": "/support/covid-19/preventing-the-spread",
+			"route": "_OLD/support/covid-19/preventing-the-spread$"
+		},
+		{
+			"label": "Supporting your people",
+			"path": "/support/covid-19/supporting-your-people",
+			"route": "_OLD/support/covid-19/supporting-your-people$"
+		},
+		{
+			"label": "Service continuity",
+			"path": "/support/covid-19/service-continuity",
+			"route": "_OLD/support/covid-19/service-continuity$"
+		},
+		{
+			"label": "Resources",
+			"path": "/support/covid-19/resources",
+			"route": "_OLD/support/covid-19/resources$"
+		},
+		{
+			"label": "What SCVO is doing",
+			"path": "/support/covid-19/what-scvo-is-doing",
+			"route": "_OLD/support/covid-19/what-scvo-is-doing$"
+		},
+		{
+			"label": "Funders",
+			"path": "/support/covid-19/how-funders-are-responding",
+			"route": "_OLD/support/covid-19/how-funders-are-responding$"
+		},
+		{
+			"label": "Funding available",
+			"path": "/support/covid-19/funding-available",
+			"route": "_OLD/support/covid-19/funding-available$"
+		}]
+	}],
 	"covid-19": [{
 		"label": "COVID-19 Third Sector Information Hub",
 		"path": "/support/covid-19",
 		"route": "^/support/covid-19$",
 		"children": [{
 			"label": "Coronavirus/COVID-19",
-			"path": "/support/covid-19/what-is-coronavirus-and-covid-19",
-			"route": "^/support/covid-19/what-is-coronavirus-and-covid-19$"
+			"path": "/support/covid-19/coronavirus",
+			"route": "^/support/covid-19/coronavirus$"
 		},
 		{
-			"label": "Symptoms",
-			"path": "/support/covid-19/symptoms",
-			"route": "^/support/covid-19/symptoms$"
+			"label": "Funding",
+			"path": "/support/covid-19/funding",
+			"route": "^/support/covid-19/funding$"
 		},
 		{
-			"label": "Preventing the spread",
-			"path": "/support/covid-19/preventing-the-spread",
-			"route": "^/support/covid-19/preventing-the-spread$"
+			"label": "Employment/HR",
+			"path": "/support/covid-19/employment",
+			"route": "^/support/covid-19/employment$"
 		},
 		{
-			"label": "Supporting your people",
-			"path": "/support/covid-19/supporting-your-people",
-			"route": "^/support/covid-19/supporting-your-people$"
+			"label": "Governance &amp; risk",
+			"path": "/support/covid-19/governance",
+			"route": "^/support/covid-19/governance$"
 		},
 		{
-			"label": "Service continuity",
-			"path": "/support/covid-19/service-continuity",
-			"route": "^/support/covid-19/service-continuity$"
+			"label": "Volunteering",
+			"path": "/support/covid-19/volunteering",
+			"route": "^/support/covid-19/volunteering$"
+		},
+		{
+			"label": "Fundraising",
+			"path": "/support/covid-19/fundraising",
+			"route": "^/support/covid-19/fundraising$"
+		},
+		{
+			"label": "New service delivery models",
+			"path": "/support/covid-19/new-service-delivery-models",
+			"route": "^/support/covid-19/new-service-delivery-models$"
+		},
+		{
+			"label": "Remote working",
+			"path": "/support/covid-19/remote-working",
+			"route": "^/support/covid-19/remote-working$"
 		},
 		{
 			"label": "Resources",
@@ -1323,19 +1388,9 @@
 			"route": "^/support/covid-19/what-scvo-is-doing$"
 		},
 		{
-			"label": "Funders",
-			"path": "/support/covid-19/how-funders-are-responding",
-			"route": "^/support/covid-19/how-funders-are-responding$"
-		},
-		{
-			"label": "Funding available",
-			"path": "/support/covid-19/funding-available",
-			"route": "^/support/covid-19/funding-available$"
-		},
-		{
-			"label": "Community Assistance Directory",
-			"path": "https://covid-19.scvo.org",
-			"route": "^https://covid-19.scvo.org$"
+			"label": "FAQ",
+			"path": "/support/covid-19/faq",
+			"route": "^/support/covid-19/faq$"
 		}]
 	}],
 	"account": [{
