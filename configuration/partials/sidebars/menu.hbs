@@ -1,6 +1,6 @@
 {{#*inline "childMenu" ~}}
 <li class="menu-item">
-  {{#if path}}<a class="menu-level-{{level}}{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}" href="{{path}}">{{else}}<div class="menu-level-{{level}}">{{/if}}{{#switch level}}{{#case 2}}<span class="far fa-angle-right" aria-hidden="true"></span>{{/case}}{{#case 3}}<span class="far fa-angle-double-right" aria-hidden="true"></span>{{/case}}{{#case 4}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{#case 5}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{/switch}} {{{label}}}{{#if path}}</a>{{else}}</div>{{/if}}
+  {{#if path}}<a class="menu-level-{{level}}{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}" href="{{path}}">{{else}}<div class="menu-level-{{level}}">{{/if}}{{#switch level}}{{#case 2}}<span class="far fa-angle-right" aria-hidden="true"></span>{{/case}}{{#case 3}}<span class="far fa-angle-double-right" aria-hidden="true"></span>{{/case}}{{#case 4}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{/switch}} {{{label}}}{{#if path}}</a>{{else}}</div>{{/if}}
 </li>
 {{/inline ~}}
 
@@ -51,45 +51,21 @@
                     </ul>
                   {{else}}
                     {{#each children ~}}
-                      {{#if children ~}}
-                        {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
-                          <ul class="menu menu-depth-5">
-                            {{#if ../../../this ~}}
-                            {{> childMenu ../../../this level=1}}
-                            {{/if ~}}
-                            {{#if ../../this ~}}
-                            {{> childMenu ../../this level=2}}
-                            {{/if ~}}
-                            {{#if ../this ~}}
-                            {{> childMenu ../this level=3}}
-                            {{/if ~}}
-                            {{#if this ~}}
-                            {{> childMenu this level=4}}
-                            {{/if ~}}
-                            {{#each this.children ~}}
-                            {{> childMenu this level=5}}
-                            {{/each ~}}
-                          </ul>
-                        {{else}}
-                          {{#each children ~}}
-                            {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
-                            <ul class="menu menu-depth-4">
-                              {{#if ../../../this ~}}
-                              {{> childMenu ../../../this level=1}}
-                              {{/if ~}}
-                              {{#if ../../this ~}}
-                              {{> childMenu ../../this level=2}}
-                              {{/if ~}}
-                              {{#if ../this ~}}
-                              {{> childMenu ../this level=3}}
-                              {{/if ~}}
-                              {{#each ../this.children ~}}
-                              {{> childMenu this level=4}}
-                              {{/each ~}}
-                            </ul>
-                            {{/if ~}}
-                          {{/each ~}}
+                      {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                      <ul class="menu menu-depth-4">
+                        {{#if ../../../this ~}}
+                        {{> childMenu ../../../this level=1}}
                         {{/if ~}}
+                        {{#if ../../this ~}}
+                        {{> childMenu ../../this level=2}}
+                        {{/if ~}}
+                        {{#if ../this ~}}
+                        {{> childMenu ../this level=3}}
+                        {{/if ~}}
+                        {{#each ../this.children ~}}
+                        {{> childMenu this level=4}}
+                        {{/each ~}}
+                      </ul>
                       {{/if ~}}
                     {{/each ~}}
                   {{/if ~}}
