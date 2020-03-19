@@ -1264,11 +1264,14 @@ a.author:hover,
   }
 }
 
+.bg-yellow,
 a.bg-yellow {
   background: $yellow-color !important;
+  color: $secondary-color;
+}
+a.bg-yellow {
   border: none;
   display: block;
-  color: $secondary-color;
   .columns {
     margin-left: -($padding/2);
     margin-right: -($padding/2);
