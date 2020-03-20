@@ -1345,7 +1345,32 @@
 		{
 			"label": "Funding",
 			"path": "/support/covid-19/funding",
-			"route": "^/support/covid-19/funding$"
+			"route": "^/support/covid-19/funding$",
+			"children": [{
+				"label": "Funders",
+				"path": "/support/covid-19/funding/funders",
+				"route": "^/support/covid-19/funding/funders$"
+			},
+			{
+				"label": "Funding available",
+				"path": "/support/covid-19/funding/available",
+				"route": "^/support/covid-19/funding/available$",
+				"children": [{
+					"label": "Third Sector Resilience Fund",
+					"path": "/support/covid-19/funding/available/third-sector-resilience-fund",
+					"route": "^/support/covid-19/funding/available/third-sector-resilience-fund$"
+				},
+				{
+					"label": "Supporting Communities Fund",
+					"path": "/support/covid-19/funding/supporting-communities-fund",
+					"route": "^/support/covid-19/funding/available/supporting-communities-fund$"
+				},
+				{
+					"label": "Wellbeing Fund",
+					"path": "/support/covid-19/funding/available/wellbeing-fund",
+					"route": "^/support/covid-19/funding/available/wellbeing-fund$"
+				}]
+			}]
 		},
 		{
 			"label": "Employment/HR",
