@@ -1347,11 +1347,6 @@
 			"path": "/support/covid-19/funding",
 			"route": "^/support/covid-19/funding$",
 			"children": [{
-				"label": "Funders",
-				"path": "/support/covid-19/funding/funders",
-				"route": "^/support/covid-19/funding/funders$"
-			},
-			{
 				"label": "Funding for organisations",
 				"path": "/support/covid-19/funding/for-organisations",
 				"route": "^/support/covid-19/funding/for-organisations$",
@@ -1375,6 +1370,11 @@
 				"label": "Funding for individuals",
 				"path": "/support/covid-19/funding/for-individuals",
 				"route": "^/support/covid-19/funding/for-individuals$"
+			},
+			{
+				"label": "Funders",
+				"path": "/support/covid-19/funding/funders",
+				"route": "^/support/covid-19/funding/funders$"
 			}]
 		},
 		{
