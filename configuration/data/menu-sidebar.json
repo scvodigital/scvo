@@ -1352,24 +1352,29 @@
 				"route": "^/support/covid-19/funding/funders$"
 			},
 			{
-				"label": "Funding available",
-				"path": "/support/covid-19/funding/available",
-				"route": "^/support/covid-19/funding/available$",
+				"label": "Funding for organisations",
+				"path": "/support/covid-19/funding/for-organisations",
+				"route": "^/support/covid-19/funding/for-organisations$",
 				"children": [{
 					"label": "Third Sector Resilience Fund",
-					"path": "/support/covid-19/funding/available/third-sector-resilience-fund",
-					"route": "^/support/covid-19/funding/available/third-sector-resilience-fund$"
+					"path": "/support/covid-19/funding/for-organisations/third-sector-resilience-fund",
+					"route": "^/support/covid-19/funding/for-organisations/third-sector-resilience-fund$"
 				},
 				{
 					"label": "Supporting Communities Fund",
-					"path": "/support/covid-19/funding/available/supporting-communities-fund",
-					"route": "^/support/covid-19/funding/available/supporting-communities-fund$"
+					"path": "/support/covid-19/funding/for-organisations/supporting-communities-fund",
+					"route": "^/support/covid-19/funding/for-organisations/supporting-communities-fund$"
 				},
 				{
 					"label": "Wellbeing Fund",
-					"path": "/support/covid-19/funding/available/wellbeing-fund",
-					"route": "^/support/covid-19/funding/available/wellbeing-fund$"
+					"path": "/support/covid-19/funding/for-organisations/wellbeing-fund",
+					"route": "^/support/covid-19/funding/for-organisations/wellbeing-fund$"
 				}]
+			},
+			{
+				"label": "Funding for individuals",
+				"path": "/support/covid-19/funding/for-individuals",
+				"route": "^/support/covid-19/funding/for-individuals$"
 			}]
 		},
 		{

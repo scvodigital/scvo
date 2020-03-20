@@ -1,0 +1,50 @@
+{
+  "size": 4,
+  "_source": [
+    "Id",
+    "url",
+    "title",
+    "image",
+    "date_published"
+  ],
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": {
+            "match_all": {}
+          },
+          "filter":  [
+            {
+              "exists": {
+                "field": "image"
+              }
+            }
+          ],
+          "should": [
+            {
+              "simple_query_string": {
+                "query": "Coronavirus COVID-19 {{@root.data.primaryResponse.hits.hits.[0]._source.title}} {{join @root.data.primaryResponse.hits.hits.[0]._source.categories}} {{join @root.data.primaryResponse.hits.hits.[0]._source.post_tags}}",
+                "default_operator": "or",
+                "fields": ["text_bag"],
+                "analyzer": "snowball"
+              }
+            }
+          ],
+          "minimum_should_match": 0
+        }
+      },
+      "functions": [
+        {
+          "gauss": {
+            "date_published": {
+              "scale": "7d",
+              "decay": 0.1
+            }
+          }
+        }
+      ],
+      "score_mode": "multiply"
+    }
+  }
+}
