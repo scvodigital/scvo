@@ -1383,7 +1383,7 @@
 			"route": "^/support/covid-19/employment$"
 		},
 		{
-			"label": "Governance &amp; risk",
+			"label": "Governance & risk",
 			"path": "/support/covid-19/governance",
 			"route": "^/support/covid-19/governance$"
 		},
@@ -1395,7 +1395,32 @@
 		{
 			"label": "Fundraising",
 			"path": "/support/covid-19/fundraising",
-			"route": "^/support/covid-19/fundraising$"
+			"route": "^/support/covid-19/fundraising$",
+			"children": [{
+				"label": "Finance & fundraising",
+				"path": "/support/covid-19/fundraising/finance",
+				"route": "^/support/covid-19/fundraising/finance$"
+			},
+			{
+				"label": "National Emergencies Trust",
+				"path": "/support/covid-19/fundraising/national-emergencies-trust",
+				"route": "^/support/covid-19/fundraising/national-emergencies-trust$"
+			},
+			{
+				"label": "Events Fundraising",
+				"path": "/support/covid-19/fundraising/events",
+				"route": "^/support/covid-19/fundraising/events$"
+			},
+			{
+				"label": "Community & Public Fundraising",
+				"path": "/support/covid-19/fundraising/community-public",
+				"route": "^/support/covid-19/fundraising/community-public$"
+			},
+			{
+				"label": "Direct Marketing",
+				"path": "/support/covid-19/fundraising/direct-marketing",
+				"route": "^/support/covid-19/fundraising/direct-marketing$"
+			}]
 		},
 		{
 			"label": "New service delivery models",
