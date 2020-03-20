@@ -1,6 +1,9 @@
 {
   "name": "redirect_coronavirus_funding",
-  "pattern": "/support/covid-19/funding-available",
+  "pattern": {
+    "old_1": "/support/covid-19/funding-available",
+    "old_2": "/support/covid-19/funding/available"
+  },
   "tasks": [
     {
       "name": "destination",
