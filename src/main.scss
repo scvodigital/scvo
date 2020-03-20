@@ -1486,7 +1486,11 @@ aside {
     position: relative;
   }
   a.no-ext::after,
+  a[href^="https://covid-19.scvo.org"]::after,
   a[href^="https://scvo.org"]::after,
+  a[href^="https://covid-19.scvo.scot"]::after,
+  a[href^="https://scvo.scot"]::after,
+  a[href^="https://covid-19.scvo.org.uk"]::after,
   a[href^="https://scvo.org.uk"]::after,
   a[href^="https://storage.googleapis.com"]::after,
   a[href^="https://www.facebook.com/SCVO1939"]::after,
