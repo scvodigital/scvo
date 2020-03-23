@@ -1,0 +1,3 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{> content_page_full_urgent @root.data.primaryResponse.hits.hits.[0]._source}}
+{{/if ~}}

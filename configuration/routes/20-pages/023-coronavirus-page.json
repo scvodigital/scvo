@@ -1,7 +1,7 @@
 {
   "name": "coronavirus_page",
   "debug": false,
-  "pattern": "/support/covid-19(/:level_1)(/:level_2)(/:level_3)(/:level_4)(/:level_5)",
+  "pattern": "/support/coronavirus(/:level_1)(/:level_2)(/:level_3)(/:level_4)(/:level_5)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -57,8 +57,8 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.page-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.support_covid-19_page-sidebar",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_page-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

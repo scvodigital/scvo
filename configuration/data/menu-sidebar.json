@@ -1283,169 +1283,119 @@
 			"route": "^/feedback-complaints$"
 		}]
 	}],
-	"covid-19-legacy": [{
-		"label": "COVID-19 Third Sector Information Hub",
-		"path": "/support/covid-19",
-		"route": "_OLD/support/covid-19$",
+	"coronavirus": [{
+		"label": "Coronavirus Third Sector Information Hub",
+		"path": "/support/coronavirus",
+		"route": "^/support/coronavirus$",
 		"children": [{
-			"label": "Coronavirus/COVID-19",
-			"path": "/support/covid-19/what-is-coronavirus-and-covid-19",
-			"route": "_OLD/support/covid-19/what-is-coronavirus-and-covid-19$"
-		},
-		{
-			"label": "Symptoms",
-			"path": "/support/covid-19/symptoms",
-			"route": "_OLD/support/covid-19/symptoms$"
-		},
-		{
-			"label": "Preventing the spread",
-			"path": "/support/covid-19/preventing-the-spread",
-			"route": "_OLD/support/covid-19/preventing-the-spread$"
-		},
-		{
-			"label": "Supporting your people",
-			"path": "/support/covid-19/supporting-your-people",
-			"route": "_OLD/support/covid-19/supporting-your-people$"
-		},
-		{
-			"label": "Service continuity",
-			"path": "/support/covid-19/service-continuity",
-			"route": "_OLD/support/covid-19/service-continuity$"
-		},
-		{
-			"label": "Resources",
-			"path": "/support/covid-19/resources",
-			"route": "_OLD/support/covid-19/resources$"
-		},
-		{
-			"label": "What SCVO is doing",
-			"path": "/support/covid-19/what-scvo-is-doing",
-			"route": "_OLD/support/covid-19/what-scvo-is-doing$"
-		},
-		{
-			"label": "Funders",
-			"path": "/support/covid-19/how-funders-are-responding",
-			"route": "_OLD/support/covid-19/how-funders-are-responding$"
-		},
-		{
-			"label": "Funding available",
-			"path": "/support/covid-19/funding-available",
-			"route": "_OLD/support/covid-19/funding-available$"
-		}]
-	}],
-	"covid-19": [{
-		"label": "COVID-19 Third Sector Information Hub",
-		"path": "/support/covid-19",
-		"route": "^/support/covid-19$",
-		"children": [{
-			"label": "Coronavirus/COVID-19",
-			"path": "/support/covid-19/coronavirus",
-			"route": "^/support/covid-19/coronavirus$"
+			"label": "Coronavirus",
+			"path": "/support/coronavirus/coronavirus",
+			"route": "^/support/coronavirus/coronavirus$"
 		},
 		{
 			"label": "Funding",
-			"path": "/support/covid-19/funding",
-			"route": "^/support/covid-19/funding$",
+			"path": "/support/coronavirus/funding",
+			"route": "^/support/coronavirus/funding$",
 			"children": [{
 				"label": "Funding for organisations",
-				"path": "/support/covid-19/funding/for-organisations",
-				"route": "^/support/covid-19/funding/for-organisations$",
+				"path": "/support/coronavirus/funding/for-organisations",
+				"route": "^/support/coronavirus/funding/for-organisations$",
 				"children": [{
 					"label": "Third Sector Resilience Fund",
-					"path": "/support/covid-19/funding/for-organisations/third-sector-resilience-fund",
-					"route": "^/support/covid-19/funding/for-organisations/third-sector-resilience-fund$"
+					"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund",
+					"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund$"
 				},
 				{
 					"label": "Supporting Communities Fund",
-					"path": "/support/covid-19/funding/for-organisations/supporting-communities-fund",
-					"route": "^/support/covid-19/funding/for-organisations/supporting-communities-fund$"
+					"path": "/support/coronavirus/funding/for-organisations/supporting-communities-fund",
+					"route": "^/support/coronavirus/funding/for-organisations/supporting-communities-fund$"
 				},
 				{
 					"label": "Wellbeing Fund",
-					"path": "/support/covid-19/funding/for-organisations/wellbeing-fund",
-					"route": "^/support/covid-19/funding/for-organisations/wellbeing-fund$"
+					"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund",
+					"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund$"
 				}]
 			},
 			{
 				"label": "Funding for individuals",
-				"path": "/support/covid-19/funding/for-individuals",
-				"route": "^/support/covid-19/funding/for-individuals$"
+				"path": "/support/coronavirus/funding/for-individuals",
+				"route": "^/support/coronavirus/funding/for-individuals$"
 			},
 			{
 				"label": "Funders",
-				"path": "/support/covid-19/funding/funders",
-				"route": "^/support/covid-19/funding/funders$"
+				"path": "/support/coronavirus/funding/funders",
+				"route": "^/support/coronavirus/funding/funders$"
 			}]
 		},
 		{
 			"label": "Employment/HR",
-			"path": "/support/covid-19/employment",
-			"route": "^/support/covid-19/employment$"
+			"path": "/support/coronavirus/employment",
+			"route": "^/support/coronavirus/employment$"
 		},
 		{
 			"label": "Governance & risk",
-			"path": "/support/covid-19/governance",
-			"route": "^/support/covid-19/governance$"
+			"path": "/support/coronavirus/governance",
+			"route": "^/support/coronavirus/governance$"
 		},
 		{
 			"label": "Volunteering",
-			"path": "/support/covid-19/volunteering",
-			"route": "^/support/covid-19/volunteering$"
+			"path": "/support/coronavirus/volunteering",
+			"route": "^/support/coronavirus/volunteering$"
 		},
 		{
 			"label": "Fundraising",
-			"path": "/support/covid-19/fundraising",
-			"route": "^/support/covid-19/fundraising$",
+			"path": "/support/coronavirus/fundraising",
+			"route": "^/support/coronavirus/fundraising$",
 			"children": [{
 				"label": "Finance & fundraising",
-				"path": "/support/covid-19/fundraising/finance",
-				"route": "^/support/covid-19/fundraising/finance$"
+				"path": "/support/coronavirus/fundraising/finance",
+				"route": "^/support/coronavirus/fundraising/finance$"
 			},
 			{
 				"label": "National Emergencies Trust",
-				"path": "/support/covid-19/fundraising/national-emergencies-trust",
-				"route": "^/support/covid-19/fundraising/national-emergencies-trust$"
+				"path": "/support/coronavirus/fundraising/national-emergencies-trust",
+				"route": "^/support/coronavirus/fundraising/national-emergencies-trust$"
 			},
 			{
 				"label": "Events fundraising",
-				"path": "/support/covid-19/fundraising/events",
-				"route": "^/support/covid-19/fundraising/events$"
+				"path": "/support/coronavirus/fundraising/events",
+				"route": "^/support/coronavirus/fundraising/events$"
 			},
 			{
 				"label": "Community & public fundraising",
-				"path": "/support/covid-19/fundraising/community-public",
-				"route": "^/support/covid-19/fundraising/community-public$"
+				"path": "/support/coronavirus/fundraising/community-public",
+				"route": "^/support/coronavirus/fundraising/community-public$"
 			},
 			{
 				"label": "Direct Marketing",
-				"path": "/support/covid-19/fundraising/direct-marketing",
-				"route": "^/support/covid-19/fundraising/direct-marketing$"
+				"path": "/support/coronavirus/fundraising/direct-marketing",
+				"route": "^/support/coronavirus/fundraising/direct-marketing$"
 			}]
 		},
 		{
 			"label": "New service delivery models",
-			"path": "/support/covid-19/new-service-delivery-models",
-			"route": "^/support/covid-19/new-service-delivery-models$"
+			"path": "/support/coronavirus/new-service-delivery-models",
+			"route": "^/support/coronavirus/new-service-delivery-models$"
 		},
 		{
 			"label": "Remote working",
-			"path": "/support/covid-19/remote-working",
-			"route": "^/support/covid-19/remote-working$"
+			"path": "/support/coronavirus/remote-working",
+			"route": "^/support/coronavirus/remote-working$"
 		},
 		{
 			"label": "Resources",
-			"path": "/support/covid-19/resources",
-			"route": "^/support/covid-19/resources$"
+			"path": "/support/coronavirus/resources",
+			"route": "^/support/coronavirus/resources$"
 		},
 		{
 			"label": "What SCVO is doing",
-			"path": "/support/covid-19/what-scvo-is-doing",
-			"route": "^/support/covid-19/what-scvo-is-doing$"
+			"path": "/support/coronavirus/what-scvo-is-doing",
+			"route": "^/support/coronavirus/what-scvo-is-doing$"
 		},
 		{
 			"label": "FAQ",
-			"path": "/support/covid-19/faq",
-			"route": "^/support/covid-19/faq$"
+			"path": "/support/coronavirus/faq",
+			"route": "^/support/coronavirus/faq$"
 		}]
 	}],
 	"account": [{
