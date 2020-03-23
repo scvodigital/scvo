@@ -1,10 +1,12 @@
 <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
-  <div class="page-info v-margin-full b-padding-full">
-    <div class="page-info-item page-info-updated text-warning">
+  <div class="page-info">
+    <div class="page-info-item page-info-updated text-white label label-warning">
       <span class="far fa-calendar-alt" aria-hidden="true"></span>
       Last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
     </div>
   </div>
 
-  {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+  <div class="v-margin-full b-padding-full">
+    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+  </div>
 </div>
