@@ -1425,7 +1425,12 @@
 		{
 			"label": "What SCVO is doing",
 			"path": "/support/coronavirus/what-scvo-is-doing",
-			"route": "^/support/coronavirus/what-scvo-is-doing$"
+			"route": "^/support/coronavirus/what-scvo-is-doing$",
+			"children": [{
+				"label": "Digital assets",
+				"path": "/support/coronavirus/what-scvo-is-doing/digital-assets",
+				"route": "^/support/coronavirus/what-scvo-is-doing/digital-assets$"
+			}]
 		},
 		{
 			"label": "FAQ",
