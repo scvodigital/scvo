@@ -1357,20 +1357,56 @@
 			"path": "/support/coronavirus/fundraising",
 			"route": "^/support/coronavirus/fundraising$",
 			"children": [{
-				"label": "Finance & fundraising",
-				"path": "/support/coronavirus/fundraising/finance",
-				"route": "^/support/coronavirus/fundraising/finance$"
+				"label": "Fundraising",
+				"path": "/support/coronavirus/fundraising/fundraising",
+				"route": "^/support/coronavirus/fundraising/fundraising$",
+				"children": [{
+					"label": "Finance",
+					"path": "/support/coronavirus/fundraising/fundraising/finance",
+					"route": "^/support/coronavirus/fundraising/fundraising/finance$"
+				},
+				{
+					"label": "Events",
+					"path": "/support/coronavirus/fundraising/fundraising/events",
+					"route": "^/support/coronavirus/fundraising/fundraising/events$"
+				}]
 			},
 			{
-				"label": "National Emergencies Trust",
-				"path": "/support/coronavirus/fundraising/national-emergencies-trust",
-				"route": "^/support/coronavirus/fundraising/national-emergencies-trust$"
+				"label": "Donations",
+				"path": "/support/coronavirus/fundraising/donations",
+				"route": "^/support/coronavirus/fundraising/donations$",
+				"children": [{
+					"label": "Direct marketing",
+					"path": "/support/coronavirus/fundraising/donations/direct-marketing",
+					"route": "^/support/coronavirus/fundraising/donations/direct-marketing$"
+				},
+				{
+					"label": "Community & face to face fundraising",
+					"path": "/support/coronavirus/fundraising/donations/community-public",
+					"route": "^/support/coronavirus/fundraising/donations/community-public$"
+				}]
 			},
 			{
-				"label": "Events fundraising",
-				"path": "/support/coronavirus/fundraising/events",
-				"route": "^/support/coronavirus/fundraising/events$"
-			},
+				"label": "Trading",
+				"path": "/support/coronavirus/fundraising/trading",
+				"route": "^/support/coronavirus/fundraising/trading$",
+				"children": [{
+					"label": "Charity shops",
+					"path": "/support/coronavirus/fundraising/trading/charity-shops",
+					"route": "^/support/coronavirus/fundraising/trading/charity-shops$"
+				},
+				{
+					"label": "Business advice",
+					"path": "/support/coronavirus/fundraising/trading/business-advice",
+					"route": "^/support/coronavirus/fundraising/trading/business-advice$"
+				},
+				{
+					"label": "Legislation",
+					"path": "/support/coronavirus/fundraising/trading/legislation",
+					"route": "^/support/coronavirus/fundraising/trading/legislation$"
+				}]
+			}]
+		},
 			{
 				"label": "Community & public fundraising",
 				"path": "/support/coronavirus/fundraising/community-public",
