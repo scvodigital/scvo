@@ -1588,6 +1588,18 @@ aside {
   }
 }
 
+.events-warning:hover,
+.events-warning:hover p {
+  transition: $transition-speed;
+  transition-timing-function: ease-in-out;
+}
+.events-warning:hover {
+  background-color: $secondary-color !important;
+  p {
+    color: white;
+  }
+}
+
 #toaster {
   position: fixed;
   z-index: 2;
