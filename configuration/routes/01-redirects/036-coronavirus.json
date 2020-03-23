@@ -1,6 +1,12 @@
 {
   "name": "redirect_coronavirus",
-  "pattern": "/coronavirus-covid-19-information-guidance(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "old": "/coronavirus-covid-19-information-guidance(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "short_1": "/coronavirus",
+    "short_2": "/covid-19",
+    "short_3": "/covid19",
+    "short_4": "/coronovirus"
+  },
   "tasks": [
     {
       "name": "url",
