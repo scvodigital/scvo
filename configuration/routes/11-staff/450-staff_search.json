@@ -14,8 +14,9 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-staff",
-          "template": ">context.metaData.handlebars.queries.staff_staff-search"
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page",
+          "noResultsRoute": "four_oh_four"
         }
       },
       "renderer": "handlebars"
@@ -29,6 +30,12 @@
           "apiVersion": "5.6"
         },
         "queryTemplates": [
+          {
+            "name": "staff",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-staff",
+            "template": ">context.metaData.handlebars.queries.staff_staff-search"
+          },
           {
             "name": "departments",
             "index": "{$../../data/elasticsearch-index.txt}",
