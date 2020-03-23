@@ -1,6 +1,7 @@
-  {{!-- {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-  {{> content_page_full @root.data.primaryResponse.hits.hits.[0]._source}}
-  {{/if ~}} --}}
+{{!-- {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{> content_page_full @root.data.primaryResponse.hits.hits.[0]._source}}
+{{/if ~}} --}}
+
 <div class="container v-padding-full">
   <div class="columns b-padding">
     <div class="column col-4 col-lg-6 col-md-12">
@@ -57,9 +58,12 @@
     <div class="columns b-margin">
       {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets ~}}
       <div class="column col-3 col-lg-6 col-sm-12 b-padding-full">
-        <a href="/support/events?q=&course_type={{replace key ' ' '+'}}">{{inflect doc_count (lowercase (replace key "Workshops" "Workshop")) (concat (lowercase (replace key "Workshops" "Workshop")) 's') true}}
+        <a href="/support/events?q=&course_type={{replace key ' ' '+'}}">{{inflect doc_count (lowercase (replace key "Workshops" "Workshop")) (concat (lowercase (replace key "Workshops" "Workshop")) 's') true}}</a>
       </div>
       {{/each ~}}
     </div>
+    {{> events_warning}}
   </div>
 </div>
+
+{{> layout_header_upper}}

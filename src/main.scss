@@ -1594,9 +1594,10 @@ aside {
   transition-timing-function: ease-in-out;
 }
 .events-warning:hover {
-  background-color: $secondary-color !important;
+  background-color: $primary-color-dark !important;
   p {
     color: white;
+    cursor: default;
   }
 }
 
