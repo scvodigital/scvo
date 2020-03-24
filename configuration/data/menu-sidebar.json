@@ -1303,7 +1303,22 @@
 				"children": [{
 					"label": "Third Sector Resilience Fund",
 					"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund",
-					"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund"
+					"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund",
+					"NEW_children": [{
+						"label": "Eligibility checker",
+						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker",
+						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker$"
+					},
+					{
+						"label": "Guidance for applicants",
+						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants",
+						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants$"
+					},
+					{
+						"label": "Frequently asked questions",
+						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/frequently-asked-questions",
+						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/frequently-asked-questions$"
+					}]
 				},
 				{
 					"label": "Supporting Communities Fund",
@@ -1382,8 +1397,8 @@
 				},
 				{
 					"label": "Community & face to face fundraising",
-					"path": "/support/coronavirus/fundraising/donations/community-public",
-					"route": "^/support/coronavirus/fundraising/donations/community-public$"
+					"path": "/support/coronavirus/fundraising/donations/community",
+					"route": "^/support/coronavirus/fundraising/donations/community$"
 				},
 				{
 					"label": "National Emergencies Trust",
