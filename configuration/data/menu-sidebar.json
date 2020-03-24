@@ -1350,6 +1350,11 @@
 				"label": "Voluntary sector & coronavirus",
 				"path": "/support/coronavirus/funding/the-voluntary-sector-and-coronavirus",
 				"route": "^/support/coronavirus/funding/the-voluntary-sector-and-coronavirus$"
+			},
+			{
+				"label": "Frequently asked questions",
+				"path": "/support/coronavirus/funding/faq",
+				"route": "^/support/coronavirus/funding/faq$"
 			}]
 		},
 		{
@@ -1360,7 +1365,12 @@
 		{
 			"label": "Governance & risk",
 			"path": "/support/coronavirus/governance",
-			"route": "^/support/coronavirus/governance$"
+			"route": "^/support/coronavirus/governance$",
+			"children": [{
+				"label": "Frequently asked questions",
+				"path": "/support/coronavirus/governance/faq",
+				"route": "^/support/coronavirus/governance/faq$"
+			}]
 		},
 		{
 			"label": "Volunteering",
@@ -1390,6 +1400,11 @@
 				"label": "Resources",
 				"path": "/support/coronavirus/volunteering/resources",
 				"route": "^/support/coronavirus/volunteering/resources$"
+			},
+			{
+				"label": "Frequently asked questions",
+				"path": "/support/coronavirus/volunteering/faq",
+				"route": "^/support/coronavirus/volunteering/faq$"
 			}]
 		},
 		{
@@ -1483,7 +1498,7 @@
 			}]
 		},
 		{
-			"label": "FAQ",
+			"label": "Frequently asked questions",
 			"path": "/support/coronavirus/faq",
 			"route": "^/support/coronavirus/faq$"
 		}]

@@ -1,0 +1,33 @@
+{
+  "size": 100,
+  "_source": [
+    "title",
+    "content",
+    "post_tags_slug"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {{#if @root.request.params.section ~}}
+        {
+          "terms": {
+            "post_tags_slug": [
+              "{{@root.request.params.section}}"
+            ]
+          }
+        },
+        {{/if ~}}
+        {
+          "terms": {
+            "post_tags_slug": [
+              "coronavirus"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "weight": "desc"
+  }
+}

@@ -1,0 +1,14 @@
+{{!-- {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{> content_page_full_urgent @root.data.primaryResponse.hits.hits.[0]._source}}
+{{/if ~}} --}}
+
+<div class="b-margin-full b-padding-full">
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
+  {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
+  {{#with _source ~}}
+  <h4>{{{title}}}</h4>
+  {{{content}}}
+  {{/with ~}}
+  {{/each ~}}
+  {{/compare ~}}
+</div>
