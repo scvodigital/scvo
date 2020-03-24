@@ -29,5 +29,32 @@
   },
   "sort": {
     "weight": "desc"
+  },
+  "aggs": {
+    "query": {
+      "terms": {
+        "field": "post_tags",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 1000
+      },
+      "aggs": {
+        "faqs": {
+          "top_hits": {
+            "size": 1000,
+            "sort": {
+              "weight": "asc"
+            },
+            "_source": {
+              "includes": [
+                "title",
+                "content"
+              ]
+            }
+          }
+        }
+      }
+    }
   }
 }

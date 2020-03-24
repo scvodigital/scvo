@@ -1360,7 +1360,12 @@
 		{
 			"label": "Employment/HR",
 			"path": "/support/coronavirus/employment",
-			"route": "^/support/coronavirus/employment$"
+			"route": "^/support/coronavirus/employment$",
+			"children": [{
+				"label": "Frequently asked questions",
+				"path": "/support/coronavirus/employment/faq",
+				"route": "^/support/coronavirus/employment/faq$"
+			}]
 		},
 		{
 			"label": "Governance & risk",

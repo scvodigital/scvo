@@ -3,6 +3,7 @@
 {{/if ~}} --}}
 
 <div class="b-margin-full b-padding-full">
+  {{#if @root.request.params.section ~}}
   {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
@@ -11,4 +12,17 @@
   {{/with ~}}
   {{/each ~}}
   {{/compare ~}}
+  {{else}}
+  {{#each @root.data.supplimentaryResponses.faqs.aggregations.query.buckets ~}}
+  {{#unless (compare key "Coronavirus") ~}}
+  <h2>{{{key}}}</h2>
+  {{#each faqs.hits.hits ~}}
+  {{#with _source ~}}
+  <h4>{{{title}}}</h4>
+  {{{content}}}
+  {{/with ~}}
+  {{/each ~}}
+  {{/unless ~}}
+  {{/each ~}}
+  {{/if ~}}
 </div>
