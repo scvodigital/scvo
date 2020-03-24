@@ -1472,6 +1472,11 @@
 			"path": "/support/coronavirus/what-scvo-is-doing",
 			"route": "^/support/coronavirus/what-scvo-is-doing$",
 			"children": [{
+				"label": "Bulletin",
+				"path": "/support/coronavirus/what-scvo-is-doing/bulletin",
+				"route": "^/support/coronavirus/what-scvo-is-doing/bulletin$"
+			},
+			{
 				"label": "Digital assets",
 				"path": "/support/coronavirus/what-scvo-is-doing/digital-assets",
 				"route": "^/support/coronavirus/what-scvo-is-doing/digital-assets$"
