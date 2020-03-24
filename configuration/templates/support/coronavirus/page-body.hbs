@@ -1,3 +1,22 @@
-{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-{{> content_page_full_urgent @root.data.primaryResponse.hits.hits.[0]._source}}
-{{/if ~}}
+<div class="v-margin-full b-padding-full">
+  {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+  {{> content_page_full_urgent @root.data.primaryResponse.hits.hits.[0]._source}}
+  {{/if ~}}
+
+  {{#if (contains @root.request.url.pathname "funding/for-organisations/third-sector-resilience-fund") ~}}
+  <div class="columns">
+    <div class="column col-3 col-md-6 align-centre">
+      <a href="https://gov.scot" class="no-ext no-underline"><img src="{{~>asset_url url='images/logos/organisations/Scottish_Government_Logo.png'~}}" alt="Scottish Government" class="img-responsive" /></a>
+    </div>
+    <div class="column col-3 col-md-6 align-centre">
+      <a href="https://www.firstport.org.uk" class="no-ext no-underline"><img src="{{~>asset_url url='images/logos/organisations/firstport_logo_screen.png'~}}" alt="Firstport" class="img-responsive" /></a>
+    </div>
+    <div class="column col-3 col-md-6 align-centre">
+      <a href="https://www.socialinvestmentscotland.com" class="no-ext no-underline"><img src="{{~>asset_url url='images/logos/organisations/social_investment_scotland.png'~}}" alt="Social Investment Scotland" class="img-responsive" /></a>
+    </div>
+    <div class="column col-3 col-md-6 align-centre">
+      <a href="https://www.corra.scot" class="no-ext no-underline"><img src="{{~>asset_url url='images/logos/organisations/Corra_FC-logo.png'~}}" alt="Corra Foundation" class="img-responsive" /></a>
+    </div>
+  </div>
+  {{/if ~}}
+</div>
