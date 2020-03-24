@@ -5,7 +5,7 @@ branches:
   only:
   - production
 cache:
-  npm: true
+  npm: false
 before_install:
 install:
 - npm i
