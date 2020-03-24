@@ -1365,7 +1365,32 @@
 		{
 			"label": "Volunteering",
 			"path": "/support/coronavirus/volunteering",
-			"route": "^/support/coronavirus/volunteering$"
+			"route": "^/support/coronavirus/volunteering$",
+			"children": [{
+				"label": "In your community",
+				"path": "/support/coronavirus/volunteering/community",
+				"route": "^/support/coronavirus/volunteering/community$"
+			},
+			{
+				"label": "Local",
+				"path": "/support/coronavirus/volunteering/local",
+				"route": "^/support/coronavirus/volunteering/local$"
+			},
+			{
+				"label": "Scotland",
+				"path": "/support/coronavirus/volunteering/scotland",
+				"route": "^/support/coronavirus/volunteering/scotland$"
+			},
+			{
+				"label": "UK",
+				"path": "/support/coronavirus/volunteering/uk",
+				"route": "^/support/coronavirus/volunteering/uk$"
+			},
+			{
+				"label": "Resources",
+				"path": "/support/coronavirus/volunteering/resources",
+				"route": "^/support/coronavirus/volunteering/resources$"
+			}]
 		},
 		{
 			"label": "Fundraising",
