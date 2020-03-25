@@ -1,7 +1,7 @@
 {
-  "name": "credit_union_loan_calculator",
+  "name": "coronavirus_tsrf_eligibility_checker",
   "debug": false,
-  "pattern": "/services/credit-union/loan-calculator",
+  "pattern": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -22,6 +22,25 @@
       "renderer": "handlebars"
     },
     {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "tfn_related_posts",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
+            "template": ">context.metaData.handlebars.queries.posts_tfn-related-coronavirus"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
       "name": "destination",
       "taskModule": "renderLayout",
       "renderer": "handlebars",
@@ -38,9 +57,9 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.services_credit-union_loan-calculator",
-              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
-              "footer": ">context.metaData.handlebars.templates.services_credit-union_footer"
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_tsrf_eligibility-checker",
+              "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"
           }
