@@ -39,6 +39,11 @@
   p u {
     text-decoration-skip: ink;
   }
+  a,
+  a:hover {
+    color: white;
+    text-decoration: underline;
+  }
   .slide-title {
     font-size: 2.9rem;
     margin-bottom: 1rem;
@@ -124,7 +129,7 @@
         <p>{{{truncate (trim description) 280}}}</p>
         {{/if ~}}
         {{#if website ~}}
-        <p><u>{{replace (replace (replace (trim website) 'https://' '') 'http://' '') 'www.' ''}}</u></p>
+        <p><a href="{{fixUrl website}}">{{replace (replace (replace (trim website) 'https://' '') 'http://' '') 'www.' ''}}</a></p>
         {{/if ~}}
         {{#if twitter ~}}
         <ul class="fa-ul">
