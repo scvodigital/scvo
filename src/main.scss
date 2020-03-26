@@ -2265,10 +2265,12 @@ form {
 }
 .accordion-content {
   padding: 0 $unit;
+  margin-bottom: 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  p:last-child {
+  p:last-child,
+  ul:last-child {
     margin-bottom: $unit;
   }
 }
