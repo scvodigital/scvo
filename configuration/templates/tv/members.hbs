@@ -139,7 +139,7 @@
       <div class="slide-animated slide-date">
         <p>
           <strong>
-            Joined SCVO {{replace (momentFromNow date_membership) 'a day ago' 'yesterday'}}
+            Joined SCVO {{#if (contains (momentFromNow date_membership) "hours")}}today{{else}}{{replace (momentFromNow date_membership) 'a day ago' 'yesterday'}}{{/if}}
             {{#if type}}as a {{{lowercase type}}}{{/if}}
           </strong>
         </p>
