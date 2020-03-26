@@ -7,8 +7,10 @@
   {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
-  <h4>{{{title}}}</h4>
-  {{{content}}}
+  <h4 class="accordion">{{{title}}}</h4>
+  <div class="accordion-content">
+    {{{content}}}
+  </div>
   {{/with ~}}
   {{/each ~}}
   {{/compare ~}}
@@ -18,11 +20,15 @@
   <h2>{{{key}}}</h2>
   {{#each faqs.hits.hits ~}}
   {{#with _source ~}}
-  <h4>{{{title}}}</h4>
-  {{{content}}}
+  <h4 class="accordion">{{{title}}}</h4>
+  <div class="accordion-content">
+    {{{content}}}
+  </div>
   {{/with ~}}
   {{/each ~}}
   {{/unless ~}}
   {{/each ~}}
   {{/if ~}}
 </div>
+
+<script src="{{~>asset_url url='js/accordion.js'~}}"></script>

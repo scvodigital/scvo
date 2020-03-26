@@ -2250,6 +2250,40 @@ form {
   }
 }
 
+.accordion {
+  background-color: $gray-color;
+  cursor: pointer;
+  padding: $unit;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+.accordion.active, .accordion:hover {
+  background-color: $gray-color-light;
+}
+.accordion-content {
+  padding: 0 $unit;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  p:last-child {
+    margin-bottom: $unit;
+  }
+}
+.accordion:after {
+  content: '\f107';
+  font-family: 'Font Awesome\ 5 Pro';
+  font-weight: 400;
+  color: $gray-color-dark;
+  float: right;
+  margin-left: 5px;
+}
+.accordion.active:after {
+  content: "\f106";
+}
+
 .sidebar {
   .menu {
     box-shadow: none;
