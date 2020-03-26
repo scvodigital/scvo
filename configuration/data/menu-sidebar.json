@@ -1321,19 +1321,29 @@
 					}]
 				},
 				{
-					"label": "Supporting Communities Fund",
-					"path": "/support/coronavirus/funding/for-organisations/supporting-communities-fund",
-					"route": "^/support/coronavirus/funding/for-organisations/supporting-communities-fund$"
-				},
-				{
-					"label": "Wellbeing Fund",
-					"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund",
-					"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund$"
+					"label": "Scottish Government funding",
+					"path": "/support/coronavirus/funding/for-organisations/scottish-government",
+					"route": "^/support/coronavirus/funding/for-organisations/scottish-government$",
+					"children": [{
+						"label": "Supporting Communities Fund",
+						"path": "/support/coronavirus/funding/for-organisations/scottish-government/supporting-communities-fund",
+						"route": "^/support/coronavirus/funding/for-organisations/scottish-government/supporting-communities-fund$"
+					},
+					{
+						"label": "Wellbeing Fund",
+						"path": "/support/coronavirus/funding/for-organisations/scottish-government/wellbeing-fund",
+						"route": "^/support/coronavirus/funding/for-organisations/scottish-government/wellbeing-fund$"
+					}]
 				},
 				{
 					"label": "National Emergencies Trust",
 					"path": "/support/coronavirus/fundraising/donations/national-emergencies-trust",
 					"route": "^NOT_HERE/support/coronavirus/fundraising/donations/national-emergencies-trust$"
+				},
+				{
+					"label": "Independent grant funding",
+					"path": "/support/coronavirus/funding/for-organisations/independent",
+					"route": "^/support/coronavirus/funding/for-organisations/independent$"
 				}]
 			},
 			{
