@@ -1,90 +1,108 @@
-{{#unless @root.request.body.selection ~}}
-<p>
-  Thank you for your interest in the Third Sector Resilience Fund (TSRF). To help us assess if the TSRF fund is the right for your organisation, please tick the boxes against the statements that apply to your current circumstances:
-</p>
-<form action="{{@root.request.url.pathname}}" method="post">
-  <div class="form-group">
-    <label class="form-checkbox">
-      <input type="checkbox" name="selection" value="1">
-      <i class="form-icon"></i> We are charity, voluntary organisation or social enterprise based in Scotland and/or primarily delivering services/activities in Scottish communities.
-    </label>
-  </div>
-  <div class="form-group">
-    <label class="form-checkbox">
-      <input type="checkbox" name="selection" value="2">
-      <i class="form-icon"></i> We have been providing our activities and/or services before March 2020.
-    </label>
-  </div>
-  <div class="form-group">
-    <label class="form-checkbox">
-      <input type="checkbox" name="selection" value="3">
-      <i class="form-icon"></i> Our funding need is directly as a result of the impact of COVID-19 and Scotland’s national precautionary measures.
-    </label>
-  </div>
-  <div class="form-group">
-    <label class="form-checkbox">
-      <input type="checkbox" name="selection" value="4">
-      <i class="form-icon"></i> We are applying for funding to help our short-term cashflow position.
-    </label>
-  </div>
-  <div class="form-group">
-    <label class="form-checkbox">
-      <input type="checkbox" name="selection" value="5">
-      <i class="form-icon"></i> We know how much our monthly outgoings are and the anticipated value of income loss over the next six months (ballpark figure).
-    </label>
-  </div>
-  <div class="form-group">
-    <label class="form-checkbox">
-      <input type="checkbox" name="selection" value="6">
-      <i class="form-icon"></i> We know how much funding from TSRF we would need to keep our organisation afloat until the end of July 2020 (ballpark figure).
-    </label>
-  </div>
-  <input type="submit" class="btn btn-lg btn-primary" value="Check" />
-</form>
-{{else}}
-{{#if (contains @root.request.body.selection '1') ~}}
-{{#if (contains @root.request.body.selection '2') ~}}
-{{#if (contains @root.request.body.selection '3') ~}}
-{{#if (contains @root.request.body.selection '4') ~}}
-{{#ifAll (contains @root.request.body.selection '5') (contains @root.request.body.selection '6') ~}}
-<p>
-  Good news, we think the Third Sector Resilience Fund will be able to help you.
-</p>
-<p>
-  Please only complete the application form that best matches your funding needs. The fund partners are working closely together to ensure funds are distributed according to applicants’ current financial positions and needs, making two applications for different amounts will not improve your chances of success.
-</p>
-<p>
-  If your funding needs are below £25,000 please <a href="https://www.tfaforms.com/4811715">apply here</a>.
-</p>
-<p>
-  If your funding needs are between £25,000- £100,000, please <a href="https://formstack.io/E68D0">apply here</a>.
-</p>
-<p>
-  If your funding needs are above £100,000 or if you are looking for loan finance, please <a href="http://www.socialinvestmentscotland.com/support/resilience-fund-loan-funding">apply here</a>.
-</p>
-{{else}}
-<p>
-  For us to be able to process and make a decision about your application as quickly as possible, we need to understand your current financial position and likely funding gap over the next six months. We recommend that you spend some time reviewing your finances and once you are in a position to answer this question, go through this assessment again.
-</p>
-{{/ifAll ~}}
-{{else}}
-<p>
-  We are sorry but the TRSF is not the right fund for you. This fund is to help charities and organisations to stabilise cashflow issues during this difficult period. You may be eligible for other funding, <a href="/support/coronavirus/funding/for-organisations">find out more about other COVID-19 emergency funds</a>.
-</p>
-{{/if ~}}
-{{else}}
-<p>
-  We are sorry but the TRSF is not the right fund for you. This is an emergency fund to support organisations that would otherwise be in a stable financial position, but that find themselves now badly affected financially due to the outbreak. You may be eligible for other funding, <a href="/support/coronavirus/funding/for-organisations">find out more about other COVID-19 emergency funds</a>.
-</p>
-{{/if ~}}
-{{else}}
-<p>
-  We are sorry but the TSRF is not the right fund for you. This fund aims to help charities and social enterprises delivering services prior to the COVID-19 outbreak. You may be eligible for other funding, <a href="/support/coronavirus/funding/for-organisations">find out more about other COVID-19 emergency funds</a>
-</p>
-{{/if ~}}
-{{else}}
-<p>
-  We are sorry but the TSRF is not the right fund for you. This fund is for registered charities, voluntary organisations and social enterprises only. You may be eligible for other funding, <a href="/support/coronavirus/funding/for-organisations">find out more about other COVID-19 emergency funds</a>.
-</p>
-{{/if ~}}
-{{/unless ~}}
+<div class="b-margin-full b-padding-full">
+  {{#unless @root.request.body.selection ~}}
+  <p>
+    Thank you for your interest in the Third Sector Resilience Fund (TSRF). To help us assess if the TSRF fund is the right for your organisation, please tick the boxes against the statements that apply to your current circumstances:
+  </p>
+  <form action="{{@root.request.url.pathname}}" method="post">
+    <div class="form-group">
+      <label class="form-checkbox">
+        <input type="checkbox" name="selection" value="1">
+        <i class="form-icon"></i> We are charity, voluntary organisation or social enterprise based in Scotland and/or primarily delivering services/activities in Scottish communities.
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="form-checkbox">
+        <input type="checkbox" name="selection" value="2">
+        <i class="form-icon"></i> We have been providing our activities and/or services before March 2020.
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="form-checkbox">
+        <input type="checkbox" name="selection" value="3">
+        <i class="form-icon"></i> Our funding need is directly as a result of the impact of COVID-19 and Scotland’s national precautionary measures.
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="form-checkbox">
+        <input type="checkbox" name="selection" value="4">
+        <i class="form-icon"></i> We are applying for funding to help our short-term cashflow position.
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="form-checkbox">
+        <input type="checkbox" name="selection" value="5">
+        <i class="form-icon"></i> We know how much our monthly outgoings are and the anticipated value of income loss over the next six months (ballpark figure).
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="form-checkbox">
+        <input type="checkbox" name="selection" value="6">
+        <i class="form-icon"></i> We know how much funding from TSRF we would need to keep our organisation afloat until the end of July 2020 (ballpark figure).
+      </label>
+    </div>
+    <input type="submit" class="btn btn-lg btn-primary" value="Check" />
+  </form>
+  {{else}}
+  {{#if (contains @root.request.body.selection '1') ~}}
+  {{#if (contains @root.request.body.selection '2') ~}}
+  {{#if (contains @root.request.body.selection '3') ~}}
+  {{#if (contains @root.request.body.selection '4') ~}}
+  {{#ifAll (contains @root.request.body.selection '5') (contains @root.request.body.selection '6') ~}}
+  <h4>
+    Good news, we think the Third Sector Resilience Fund will be able to help you
+  </h4>
+  <p>
+    Please only complete the application form that best matches your funding needs. The fund partners are working closely together to ensure funds are distributed according to applicants’ current financial positions and needs, making two applications for different amounts will not improve your chances of success.
+  </p>
+  <p>
+    If your funding needs are below £25,000 please&nbsp;<a href="https://www.tfaforms.com/4811715">apply here</a>.
+  </p>
+  <p>
+    If your funding needs are between £25,000- £100,000, please <a href="https://formstack.io/E68D0">apply here</a>.
+  </p>
+  <p>
+    If your funding needs are above £100,000 or if you are looking for loan finance, please&nbsp;<a href="http://www.socialinvestmentscotland.com/support/resilience-fund-loan-funding">apply here</a>.
+  </p>
+  {{!-- <ul>
+    <li>
+      If your funding needs are <strong>below £25,000</strong> please <a href="https://www.tfaforms.com/4811715">apply via the Corra Foundation</a>.<br />
+      If you need help, please contact: <a href="mailto:hello@corra.scot">hello@corra.scot</a>.
+    </li>
+    <li>
+      If your funding needs are <strong>between £25,000-£100,000</strong>, please <a href="https://formstack.io/E68D0">apply via Firstport</a>.<br />
+      If you need help, please contact: <a href="mailto:info@firstport.org.uk">info@firstport.org.uk</a>.
+    </li>
+    <li>
+      If your funding needs are <strong>above £100,000</strong> or if you are looking for <strong>loan finance</strong>, please <a href="http://www.socialinvestmentscotland.com/support/resilience-fund-loan-funding">apply via Social Investment Scotland</a>.<br />
+      If you need help, please contact: <a href="mailto:srf@socialinvestmentscotland.com">srf@socialinvestmentscotland.com</a>.
+    </li>
+  </ul> --}}
+  {{else}}
+  <p>
+    For us to be able to process and make a decision about your application as quickly as possible, we need to understand your current financial position and likely funding gap over the next six months. We recommend that you spend some time reviewing your finances and once you are in a position to answer this question, go through this assessment again.
+  </p>
+  {{/ifAll ~}}
+  {{else}}
+  <p>
+    We are sorry but the TRSF is not the right fund for you. This fund is to help charities and organisations to stabilise cashflow issues during this difficult period. You may be eligible for other funding, <a href="/support/coronavirus/funding/for-organisations">find out more about other COVID-19 emergency funds</a>.
+  </p>
+  {{/if ~}}
+  {{else}}
+  <p>
+    We are sorry but the TRSF is not the right fund for you. This is an emergency fund to support organisations that would otherwise be in a stable financial position, but that find themselves now badly affected financially due to the outbreak. You may be eligible for other funding, <a href="/support/coronavirus/funding/for-organisations">find out more about other COVID-19 emergency funds</a>.
+  </p>
+  {{/if ~}}
+  {{else}}
+  <p>
+    We are sorry but the TSRF is not the right fund for you. This fund aims to help charities and social enterprises delivering services prior to the COVID-19 outbreak. You may be eligible for other funding, <a href="/support/coronavirus/funding/for-organisations">find out more about other COVID-19 emergency funds</a>
+  </p>
+  {{/if ~}}
+  {{else}}
+  <p>
+    We are sorry but the TSRF is not the right fund for you. This fund is for registered charities, voluntary organisations and social enterprises only. You may be eligible for other funding, <a href="/support/coronavirus/funding/for-organisations">find out more about other COVID-19 emergency funds</a>.
+  </p>
+  {{/if ~}}
+  {{/unless ~}}
+</div>
+
+{{> footers_logos_tsrf}}
