@@ -52,10 +52,14 @@
       {{#ifAny (compare this "Research") ~}}
       <a href="/policy/research" class="chip">{{{this}}}</a>
       {{else}}
+      {{#ifAny (compare this "Credit Union") ~}}
+      <a href="/services/credit-union/important-news" class="chip">{{{this}}}</a>
+      {{else}}
       {{#ifAny (compare this "Scottish Charity Awards") ~}}
       <a href="/scottish-charity-awards/blog" class="chip">{{{this}}}</a>
       {{else}}
       <a href="/post/tags/{{itemAt ../post_tags_slug @index}}" class="chip">{{{this}}}</a>
+      {{/ifAny ~}}
       {{/ifAny ~}}
       {{/ifAny ~}}
       {{/ifAny ~}}
