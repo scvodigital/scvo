@@ -2251,24 +2251,43 @@ form {
 }
 
 .accordion {
-  background-color: $gray-color;
+  background-color: transparent;
   cursor: pointer;
-  padding: $unit;
+  padding: $unit/2;
   width: 100%;
   text-align: left;
   border: none;
   outline: none;
   transition: 0.4s;
+  border-radius: $thick-line;
+  position: relative;
+  color: $secondary-color-dark;
+}
+.accordion:before {
+  transition: opacity $transition-speed;
+  border-radius: $thick-line;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(100deg, $secondary-color, $primary-color);
+  opacity: 0.222;
 }
 .accordion.active, .accordion:hover {
   background-color: $gray-color-light;
 }
+.accordion.active:before, .accordion:hover:before {
+  opacity: 0;
+}
 .accordion-content {
-  padding: 0 $unit;
+  padding: 0 $unit/2;
   margin-bottom: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  transition: max-height $transition-speed ease-in-out;
   p:last-child,
   ul:last-child {
     margin-bottom: $unit;
@@ -2278,7 +2297,7 @@ form {
   content: '\f107';
   font-family: 'Font Awesome\ 5 Pro';
   font-weight: 400;
-  color: $gray-color-dark;
+  color: $secondary-color;
   float: right;
   margin-left: 5px;
 }
