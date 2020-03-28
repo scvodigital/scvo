@@ -1,0 +1,10 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+<div class="container">
+  {{> breadcrumbs_cms_page}}
+</div>
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<div class="container">
+  <h1 class="font-default">{{{title}}}</h1>
+</div>
+{{/with ~}}
+{{/if ~}}

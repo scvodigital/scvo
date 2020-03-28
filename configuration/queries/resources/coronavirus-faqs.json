@@ -12,7 +12,29 @@
         {
           "terms": {
             "post_tags_slug": [
-              "{{@root.request.params.section}}"
+              {{#switch @root.request.params.section}}
+              {{#case "your-employees"}}
+              "employment"
+              {{/case}}
+              {{#case "your-funding"}}
+              "funding"
+              {{/case}}
+              {{#case "leading-your-organisation"}}
+              "governance"
+              {{/case}}
+              {{#case "your-services"}}
+              "services"
+              {{/case}}
+              {{#case "your-volunteers"}}
+              "volunteering"
+              {{/case}}
+              {{#case "your-fundraising"}}
+              "fundraising"
+              {{/case}}
+              {{#case "guidance"}}
+              "general"
+              {{/case}}
+              {{/switch ~}}
             ]
           }
         },
