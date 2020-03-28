@@ -1,0 +1,23 @@
+{
+  "name": "redirect_coronavirus_volunteering",
+  "pattern": "/support/coronavirus/volunteering(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)(:/seven)(:/eight)",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/support/coronavirus/your-volunteers{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}{{#if request.params.seven}}/{{request.params.seven}}{{/if}}{{#if request.params.eight}}/{{request.params.eight}}{{/if}}"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}

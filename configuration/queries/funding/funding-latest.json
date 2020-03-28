@@ -9,7 +9,7 @@
   ],
   "query": {
     "bool": {
-      "must": [
+      "filter": [
         {
           "term": {
             "fund_status_slug": "open"

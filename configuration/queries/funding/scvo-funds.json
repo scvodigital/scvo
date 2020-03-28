@@ -2,7 +2,7 @@
   "size": 0,
   "query": {
     "bool": {
-      "must": [
+      "filter": [
         {
           "term": {
             "funder_organisation.id": "001b000000SsxRDAAZ"

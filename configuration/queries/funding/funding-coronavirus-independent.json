@@ -1,0 +1,32 @@
+{
+  "size": 6,
+  "_source": [
+    "Id",
+    "title",
+    "title_slug",
+    "funder_organisation",
+    "fund_url",
+    "date_last_modified"
+  ],
+  "query": {
+    "bool": {
+      "filter": [],
+      "must": [
+        {
+          "query_string": {
+            "query": "coronavirus",
+            "fields": [
+              "text_bag_boost^5",
+              "text_bag"
+            ],
+            "default_operator": "AND",
+            "analyzer": "snowball"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "date_last_modified": "desc"
+  }
+}

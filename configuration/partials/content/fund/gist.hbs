@@ -1,6 +1,6 @@
 <div class="gist fs-fund fs-fund-{{Id}}">
   <h4>
-    <a href="https://fundingscotland.com/fund/{{Id}}/{{title_slug}}?utm_source=scvo&utm_campaign=list&utm_medium=website">{{{title}}} - {{{funder_organisation.name}}}</a>
+    <a href="https://fundingscotland.com/fund/{{Id}}/{{title_slug}}?utm_source=scvo&utm_campaign=list&utm_medium=website">{{{title}}}{{#compare title "!==" funder_organisation.name}} - {{{funder_organisation.name}}}{{/compare}}</a>
   </h4>
   <div class="post-info">
     <div class="post-info-item" title="Last reviewed {{momentFromNow date_last_modified}}">

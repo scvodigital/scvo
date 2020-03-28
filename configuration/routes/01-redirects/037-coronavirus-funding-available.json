@@ -1,5 +1,5 @@
 {
-  "name": "redirect_coronavirus_funding",
+  "name": "redirect_coronavirus_funding-available",
   "pattern": {
     "old_1": "/support/covid-19/funding-available",
     "old_2": "/support/covid-19/funding/available"
@@ -9,7 +9,7 @@
       "name": "destination",
       "taskModule": "redirect",
       "config": {
-        "location": "/support/coronavirus/funding",
+        "location": "/support/coronavirus/your-funding",
         "statusCode": 302
       }
     }
