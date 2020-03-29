@@ -1,6 +1,8 @@
-{{!-- {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-{{> content_page_full_urgent @root.data.primaryResponse.hits.hits.[0]._source}}
-{{/if ~}} --}}
+{{#with @root.data.primaryResponse.hits.hits.[0] ~}}
+<div class="b-margin-full">
+  {{{replace (replace (replace (replace _source.content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+</div>
+{{/with ~}}
 
 <div class="b-margin-full b-padding-full">
   {{#if @root.request.params.section ~}}
