@@ -1357,8 +1357,8 @@
 				},
 				{
 					"label": "National Emergencies Trust",
-					"path": "/support/coronavirus/fundraising/donations/national-emergencies-trust",
-					"route": "^NOT_HERE/support/coronavirus/fundraising/donations/national-emergencies-trust$"
+					"path": "/support/coronavirus/fundraising/for-organisations/national-emergencies-trust",
+					"route": "^/support/coronavirus/fundraising/for-organisations/national-emergencies-trust$"
 				},
 				{
 					"label": "Independent grant funding",
@@ -1387,6 +1387,21 @@
 			"path": "/support/coronavirus/leading-your-organisation",
 			"route": "^/support/coronavirus/leading-your-organisation$",
 			"children": [{
+				"label": "Governance",
+				"path": "/support/coronavirus/leading-your-organisation/governance",
+				"route": "^/support/coronavirus/leading-your-organisation/governance$"
+			},
+			{
+				"label": "Business advice",
+				"path": "/support/coronavirus/leading-your-organisation/business-advice",
+				"route": "^/support/coronavirus/leading-your-organisation/business-advice$"
+			},
+			{
+				"label": "Finance",
+				"path": "/support/coronavirus/leading-your-organisation/finance",
+				"route": "^/support/coronavirus/leading-your-organisation/finance$"
+			},
+			{
 				"label": "Frequently asked questions",
 				"path": "/support/coronavirus/leading-your-organisation/faq",
 				"route": "^/support/coronavirus/leading-your-organisation/faq$"
@@ -1432,39 +1447,19 @@
 			"path": "/support/coronavirus/fundraising",
 			"route": "^/support/coronavirus/fundraising$",
 			"children": [{
-				"label": "Fundraising",
-				"path": "/support/coronavirus/fundraising/fundraising",
-				"route": "^/support/coronavirus/fundraising/fundraising$",
-				"children": [{
-					"label": "Finance",
-					"path": "/support/coronavirus/fundraising/fundraising/finance",
-					"route": "^/support/coronavirus/fundraising/fundraising/finance$"
-				},
-				{
-					"label": "Events",
-					"path": "/support/coronavirus/fundraising/fundraising/events",
-					"route": "^/support/coronavirus/fundraising/fundraising/events$"
-				}]
+				"label": "Events",
+				"path": "/support/coronavirus/fundraising/events",
+				"route": "^/support/coronavirus/fundraising/events$"
 			},
 			{
-				"label": "Donations",
-				"path": "/support/coronavirus/fundraising/donations",
-				"route": "^/support/coronavirus/fundraising/donations$",
-				"children": [{
-					"label": "Direct marketing",
-					"path": "/support/coronavirus/fundraising/donations/direct-marketing",
-					"route": "^/support/coronavirus/fundraising/donations/direct-marketing$"
-				},
-				{
-					"label": "Community & face to face fundraising",
-					"path": "/support/coronavirus/fundraising/donations/community",
-					"route": "^/support/coronavirus/fundraising/donations/community$"
-				},
-				{
-					"label": "National Emergencies Trust",
-					"path": "/support/coronavirus/fundraising/donations/national-emergencies-trust",
-					"route": "^/support/coronavirus/fundraising/donations/national-emergencies-trust$"
-				}]
+				"label": "Direct marketing",
+				"path": "/support/coronavirus/fundraising/direct-marketing",
+				"route": "^/support/coronavirus/fundraising/direct-marketing$"
+			},
+			{
+				"label": "Community & face to face fundraising",
+				"path": "/support/coronavirus/fundraising/community",
+				"route": "^/support/coronavirus/fundraising/community$"
 			}]
 		},
 		{
