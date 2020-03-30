@@ -1,6 +1,9 @@
 {
   "name": "redirect_coronavirus_tsrf-faq",
-  "pattern": "/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/frequently-asked-questions(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "old_1": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/frequently-asked-questions(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "old_2": "/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/frequently-asked-questions(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
@@ -8,7 +11,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/faq{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
+        "template": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/faq{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
       }
     },
     {

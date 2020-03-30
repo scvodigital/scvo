@@ -1288,98 +1288,98 @@
 		"path": "/support/coronavirus",
 		"route": "^/support/coronavirus$",
 		"children": [{
-			"label": "Your employees",
-			"path": "/support/coronavirus/your-employees",
-			"route": "^/support/coronavirus/your-employees$",
+			"label": "Employees",
+			"path": "/support/coronavirus/employees",
+			"route": "^/support/coronavirus/employees$",
 			"children": [{
 				"label": "Employment law",
-				"path": "/support/coronavirus/your-employees/employment-law",
-				"route": "^/support/coronavirus/your-employees/employment-law$"
+				"path": "/support/coronavirus/employees/employment-law",
+				"route": "^/support/coronavirus/employees/employment-law$"
 			},
 			{
 				"label": "Remote working",
-				"path": "/support/coronavirus/your-employees/remote-working",
-				"route": "^/support/coronavirus/your-employees/remote-working$"
+				"path": "/support/coronavirus/employees/remote-working",
+				"route": "^/support/coronavirus/employees/remote-working$"
 			},
 			{
 				"label": "Looking after your employees",
-				"path": "/support/coronavirus/your-employees/looking-after-your-employees",
-				"route": "^/support/coronavirus/your-employees/looking-after-your-employees$"
+				"path": "/support/coronavirus/employees/looking-after-your-employees",
+				"route": "^/support/coronavirus/employees/looking-after-your-employees$"
 			},
 			{
 				"label": "Frequently asked questions",
-				"path": "/support/coronavirus/your-employees/faq",
-				"route": "^/support/coronavirus/your-employees/faq$"
+				"path": "/support/coronavirus/employees/faq",
+				"route": "^/support/coronavirus/employees/faq$"
 			}]
 		},
 		{
-			"label": "Your funding",
-			"path": "/support/coronavirus/your-funding",
-			"route": "^/support/coronavirus/your-funding$",
+			"label": "Funding",
+			"path": "/support/coronavirus/funding",
+			"route": "^/support/coronavirus/funding$",
 			"children": [{
 				"label": "Funding for organisations",
-				"path": "/support/coronavirus/your-funding/for-organisations",
-				"route": "^/support/coronavirus/your-funding/for-organisations$",
+				"path": "/support/coronavirus/funding/for-organisations",
+				"route": "^/support/coronavirus/funding/for-organisations$",
 				"children": [{
 					"label": "Third Sector Resilience Fund",
-					"path": "/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund",
-					"route": "^/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund$",
+					"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund",
+					"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund$",
 					"children": [{
 						"label": "Eligibility checker",
-						"path": "/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/eligibility-checker",
-						"route": "^/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/eligibility-checker$"
+						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker",
+						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker$"
 					},
 					{
 						"label": "Guidance for applicants",
-						"path": "/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants",
-						"route": "^/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants$"
+						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants",
+						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants$"
 					},
 					{
 						"label": "Frequently asked questions",
-						"path": "/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/faq",
-						"route": "^/support/coronavirus/your-funding/for-organisations/third-sector-resilience-fund/faq$"
+						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/faq",
+						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/faq$"
 					}]
 				},
 				{
 					"label": "Scottish Government funding",
-					"path": "/support/coronavirus/your-funding/for-organisations/scottish-government",
-					"route": "^/support/coronavirus/your-funding/for-organisations/scottish-government$",
+					"path": "/support/coronavirus/funding/for-organisations/scottish-government",
+					"route": "^/support/coronavirus/funding/for-organisations/scottish-government$",
 					"_REMOVED_children": [{
 						"label": "Supporting Communities Fund",
-						"path": "/support/coronavirus/your-funding/for-organisations/scottish-government/supporting-communities-fund",
-						"route": "^/support/coronavirus/your-funding/for-organisations/scottish-government/supporting-communities-fund$"
+						"path": "/support/coronavirus/funding/for-organisations/scottish-government/supporting-communities-fund",
+						"route": "^/support/coronavirus/funding/for-organisations/scottish-government/supporting-communities-fund$"
 					},
 					{
 						"label": "Wellbeing Fund",
-						"path": "/support/coronavirus/your-funding/for-organisations/scottish-government/wellbeing-fund",
-						"route": "^/support/coronavirus/your-funding/for-organisations/scottish-government/wellbeing-fund$"
+						"path": "/support/coronavirus/funding/for-organisations/scottish-government/wellbeing-fund",
+						"route": "^/support/coronavirus/funding/for-organisations/scottish-government/wellbeing-fund$"
 					}]
 				},
 				{
 					"label": "National Emergencies Trust",
-					"path": "/support/coronavirus/your-fundraising/donations/national-emergencies-trust",
-					"route": "^NOT_HERE/support/coronavirus/your-fundraising/donations/national-emergencies-trust$"
+					"path": "/support/coronavirus/fundraising/donations/national-emergencies-trust",
+					"route": "^NOT_HERE/support/coronavirus/fundraising/donations/national-emergencies-trust$"
 				},
 				{
 					"label": "Independent grant funding",
-					"path": "/support/coronavirus/your-funding/for-organisations/independent",
-					"route": "^/support/coronavirus/your-funding/for-organisations/independent$"
+					"path": "/support/coronavirus/funding/for-organisations/independent",
+					"route": "^/support/coronavirus/funding/for-organisations/independent$"
 				}]
 			},
 			{
 				"label": "Funders",
-				"path": "/support/coronavirus/your-funding/funders",
-				"route": "^/support/coronavirus/your-funding/funders$"
+				"path": "/support/coronavirus/funding/funders",
+				"route": "^/support/coronavirus/funding/funders$"
 			},
 			{
 				"label": "Voluntary sector & coronavirus",
-				"path": "/support/coronavirus/your-funding/the-voluntary-sector-and-coronavirus",
-				"route": "^/support/coronavirus/your-funding/the-voluntary-sector-and-coronavirus$"
+				"path": "/support/coronavirus/funding/the-voluntary-sector-and-coronavirus",
+				"route": "^/support/coronavirus/funding/the-voluntary-sector-and-coronavirus$"
 			},
 			{
 				"label": "Frequently asked questions",
-				"path": "/support/coronavirus/your-funding/faq",
-				"route": "^/support/coronavirus/your-funding/faq$"
+				"path": "/support/coronavirus/funding/faq",
+				"route": "^/support/coronavirus/funding/faq$"
 			}]
 		},
 		{
@@ -1393,77 +1393,77 @@
 			}]
 		},
 		{
-			"label": "Your services",
-			"path": "/support/coronavirus/your-services",
-			"route": "^/support/coronavirus/your-services$",
+			"label": "Services",
+			"path": "/support/coronavirus/services",
+			"route": "^/support/coronavirus/services$",
 			"children": [{
 				"label": "Usual services",
-				"path": "/support/coronavirus/your-services/usual-services",
-				"route": "^/support/coronavirus/your-services/usual-services$"
+				"path": "/support/coronavirus/services/usual-services",
+				"route": "^/support/coronavirus/services/usual-services$"
 			},
 			{
 				"label": "New service delivery models",
-				"path": "/support/coronavirus/your-services/new-service-delivery-models",
-				"route": "^/support/coronavirus/your-services/new-service-delivery-models$"
+				"path": "/support/coronavirus/services/new-service-delivery-models",
+				"route": "^/support/coronavirus/services/new-service-delivery-models$"
 			}]
 		},
 		{
-			"label": "Your volunteers",
-			"path": "/support/coronavirus/your-volunteers",
-			"route": "^/support/coronavirus/your-volunteers$",
+			"label": "Volunteers",
+			"path": "/support/coronavirus/volunteers",
+			"route": "^/support/coronavirus/volunteers$",
 			"children": [{
 				"label": "For organisations",
-				"path": "/support/coronavirus/your-volunteers/for-organisations",
-				"route": "^/support/coronavirus/your-volunteers/for-organisations$"
+				"path": "/support/coronavirus/volunteers/for-organisations",
+				"route": "^/support/coronavirus/volunteers/for-organisations$"
 			},
 			{
 				"label": "For volunteers",
-				"path": "/support/coronavirus/your-volunteers/for-volunteers",
-				"route": "^/support/coronavirus/your-volunteers/for-volunteers$"
+				"path": "/support/coronavirus/volunteers/for-volunteers",
+				"route": "^/support/coronavirus/volunteers/for-volunteers$"
 			},
 			{
 				"label": "Frequently asked questions",
-				"path": "/support/coronavirus/your-volunteers/faq",
-				"route": "^/support/coronavirus/your-volunteers/faq$"
+				"path": "/support/coronavirus/volunteers/faq",
+				"route": "^/support/coronavirus/volunteers/faq$"
 			}]
 		},
 		{
-			"label": "Your fundraising & trading",
-			"path": "/support/coronavirus/your-fundraising",
-			"route": "^/support/coronavirus/your-fundraising$",
+			"label": "Fundraising & trading",
+			"path": "/support/coronavirus/fundraising",
+			"route": "^/support/coronavirus/fundraising$",
 			"children": [{
 				"label": "Fundraising",
-				"path": "/support/coronavirus/your-fundraising/fundraising",
-				"route": "^/support/coronavirus/your-fundraising/fundraising$",
+				"path": "/support/coronavirus/fundraising/fundraising",
+				"route": "^/support/coronavirus/fundraising/fundraising$",
 				"children": [{
 					"label": "Finance",
-					"path": "/support/coronavirus/your-fundraising/fundraising/finance",
-					"route": "^/support/coronavirus/your-fundraising/fundraising/finance$"
+					"path": "/support/coronavirus/fundraising/fundraising/finance",
+					"route": "^/support/coronavirus/fundraising/fundraising/finance$"
 				},
 				{
 					"label": "Events",
-					"path": "/support/coronavirus/your-fundraising/fundraising/events",
-					"route": "^/support/coronavirus/your-fundraising/fundraising/events$"
+					"path": "/support/coronavirus/fundraising/fundraising/events",
+					"route": "^/support/coronavirus/fundraising/fundraising/events$"
 				}]
 			},
 			{
 				"label": "Donations",
-				"path": "/support/coronavirus/your-fundraising/donations",
-				"route": "^/support/coronavirus/your-fundraising/donations$",
+				"path": "/support/coronavirus/fundraising/donations",
+				"route": "^/support/coronavirus/fundraising/donations$",
 				"children": [{
 					"label": "Direct marketing",
-					"path": "/support/coronavirus/your-fundraising/donations/direct-marketing",
-					"route": "^/support/coronavirus/your-fundraising/donations/direct-marketing$"
+					"path": "/support/coronavirus/fundraising/donations/direct-marketing",
+					"route": "^/support/coronavirus/fundraising/donations/direct-marketing$"
 				},
 				{
 					"label": "Community & face to face fundraising",
-					"path": "/support/coronavirus/your-fundraising/donations/community",
-					"route": "^/support/coronavirus/your-fundraising/donations/community$"
+					"path": "/support/coronavirus/fundraising/donations/community",
+					"route": "^/support/coronavirus/fundraising/donations/community$"
 				},
 				{
 					"label": "National Emergencies Trust",
-					"path": "/support/coronavirus/your-fundraising/donations/national-emergencies-trust",
-					"route": "^/support/coronavirus/your-fundraising/donations/national-emergencies-trust$"
+					"path": "/support/coronavirus/fundraising/donations/national-emergencies-trust",
+					"route": "^/support/coronavirus/fundraising/donations/national-emergencies-trust$"
 				}]
 			}]
 		},
