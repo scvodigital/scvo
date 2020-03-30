@@ -1465,7 +1465,12 @@
 		{
 			"label": "Guidance & support",
 			"path": "/support/coronavirus/guidance",
-			"route": "^/support/coronavirus/guidance$"
+			"route": "^/support/coronavirus/guidance$",
+			"children": [{
+				"label": "Frequently asked questions",
+				"path": "/support/coronavirus/guidance/faq",
+				"route": "^/support/coronavirus/guidance/faq$"
+			}]
 		},
 		{
 			"label": "What SCVO is doing",
