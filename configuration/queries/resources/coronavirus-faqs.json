@@ -14,25 +14,25 @@
             "post_tags_slug": [
               {{#switch @root.request.params.section}}
               {{#case "employees"}}
-              "employment"
+              "employees"
               {{/case}}
               {{#case "funding"}}
               "funding"
               {{/case}}
               {{#case "leading-your-organisation"}}
-              "governance"
+              "leading-your-organisation"
               {{/case}}
               {{#case "services"}}
               "services"
               {{/case}}
               {{#case "volunteers"}}
-              "volunteering"
+              "volunteers"
               {{/case}}
               {{#case "fundraising"}}
               "fundraising"
               {{/case}}
               {{#case "guidance"}}
-              "general"
+              "guidance"
               {{/case}}
               {{/switch ~}}
             ]
