@@ -1424,6 +1424,8 @@ a.rss {
 
 a:focus,
 .btn:focus {
+  background: inherit;
+  color: inherit;
   outline: none;
   box-shadow: none;
 }

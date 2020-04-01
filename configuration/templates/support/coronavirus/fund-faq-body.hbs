@@ -4,6 +4,19 @@
 </div>
 {{/with ~}}
 
+<div class="caption pull-right">
+  <button class="btn btn-sm" id="accordions_expand">
+    Expand all
+  </button>
+  <button class="btn btn-sm" id="accordions_collapse">
+    Collapse all
+  </button>
+</div>
+
+<div class="b-margin-full">
+  <br />
+</div>
+
 <div class="b-margin-full b-padding-full">
   {{#if @root.request.params.fund ~}}
   {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
