@@ -1,6 +1,9 @@
 {
   "name": "redirect_coronavirus_employment",
-  "pattern": "/support/coronavirus/employment(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "old_1": "/support/coronavirus/employment(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "old_2": "/support/coronavirus/your-employees(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
