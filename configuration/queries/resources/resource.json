@@ -1,0 +1,37 @@
+{
+  "size": 1,
+  "_source": [
+    "wpid",
+    "slug",
+    "title",
+    "og_title",
+    "og_image",
+    "og_summary",
+    "publish_on",
+    "updated",
+    "content",
+    "categories",
+    "categories_slug",
+    "categories_id",
+    "post_tags",
+    "post_tags_slug",
+    "post_tags_id"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {{#if @root.request.params.slug ~}}
+        {
+          "term": {
+            "slug": "p_resource_{{@root.request.params.slug}}"
+          }
+        }
+        {{else}}
+        {
+          "match_none": {}
+        }
+        {{/if ~}}
+      ]
+    }
+  }
+}
