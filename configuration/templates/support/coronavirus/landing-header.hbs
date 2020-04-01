@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="hero">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column col-7 col-lg-6 col-md-12 hero-text">
+          <h1 class="text-secondary smaller">Coronavirus Third Sector Information Hub</h1>
+        </div>
+        <div class="column col-5 col-lg-6 col-md-12 hero-illustration">
+          <img src="{{~>asset_url url='images/headers/montage_fourperson.png'~}}" alt="Illustration of a group of people" class="img-responsive" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="b-padding-full">
+  <div class="bg-gray v-padding-full b-margin-full">
+    <div class="container v-padding-full t-margin">
+      <div class="columns">
+        <div class="column col-7 col-lg-8 col-md-9 col-sm-12 col-mx-auto">
+          {{!-- <h2 class="text-centre">&nbsp;</h2> --}}
+          {{> site_search_form placeholder='Search the Coronavirus Third Sector Information Hub' target='/support/coronavirus/search' id='coronavirus'}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{!-- {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+<div class="container">
+  {{> breadcrumbs_cms_page}}
+</div>
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+{{/with ~}}
+{{/if ~}} --}}

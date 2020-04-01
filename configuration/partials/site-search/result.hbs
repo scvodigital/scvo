@@ -17,7 +17,7 @@
       {{/compare ~}}
     </div>
   </div>
-  {{#if description ~}}
+  {{#ifAny description content ~}}
   <div class="card-body">
     {{#compare ../_type "scvo-post" ~}}
     <div class="post-info">
@@ -26,9 +26,9 @@
       {{> content_post_info_categories}}
     </div>
     {{/compare ~}}
-    {{{truncate (striptags description) 280}}}
+    {{{truncate (striptags (default description content)) 280}}}
   </div>
-  {{/if ~}}
+  {{/ifAny ~}}
   {{#compare ../_type "goodhq-post" ~}}
   {{else}}
   {{#if url ~}}

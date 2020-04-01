@@ -4,21 +4,20 @@
 </div>
 {{/with ~}}
 
-<div class="caption pull-right">
-  <button class="btn btn-sm" id="accordions_expand">
-    Expand all
-  </button>
-  <button class="btn btn-sm" id="accordions_collapse">
-    Collapse all
-  </button>
-</div>
-
-<div class="b-margin-full">
-  <br />
-</div>
-
 <div class="b-margin-full b-padding-full">
+  <div class="caption pull-right">
+    <button class="btn btn-sm" id="accordions_expand">
+      Expand all
+    </button>
+    <button class="btn btn-sm" id="accordions_collapse">
+      Collapse all
+    </button>
+  </div>
+
   {{#if @root.request.params.section ~}}
+  <div class="b-margin-full">
+    <br />
+  </div>
   {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
@@ -31,7 +30,7 @@
   {{/compare ~}}
   {{else}}
   {{#each @root.data.supplimentaryResponses.faqs.aggregations.query.buckets ~}}
-  {{#unless (compare key "Coronavirus") ~}}
+  {{#unless (compare key "Coronavirus (COVID-19)") ~}}
   <h2>{{{key}}}</h2>
   {{#each faqs.hits.hits ~}}
   {{#with _source ~}}

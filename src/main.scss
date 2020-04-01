@@ -842,6 +842,9 @@ a.author:hover,
       font-weight: $heading-font-weight;
       margin: 0;
     }
+    h1.smaller {
+      font-size: 2.9rem;
+    }
   }
   .hero-illustration {
     img {
@@ -853,6 +856,19 @@ a.author:hover,
   }
 }
 
+::-webkit-input-placeholder {
+  color: $gray-color-dark !important;
+}
+::-moz-placeholder {
+  color: $gray-color-dark !important;
+}
+:-ms-input-placeholder {
+  color: $gray-color-dark !important;
+}
+::placeholder {
+  color: $gray-color-dark !important;
+}
+
 @media screen and (max-width: $page-width) {
   .bg-rouleaux {
     background-size: 100%;
@@ -860,6 +876,9 @@ a.author:hover,
   .hero .hero-text h1 {
     font-size: 3rem;
     letter-spacing: -0.1rem;
+  }
+  .hero .hero-text h1.smaller {
+    font-size: 2.3rem;
   }
 }
 
@@ -2445,6 +2464,9 @@ footer {
   .hero .hero-text h1 {
     font-size: 2.45rem;
     letter-spacing: -0.08rem;
+  }
+  .hero .hero-text h1.smaller {
+    font-size: 2rem;
   }
   h1 {
     font-size: 1.5rem;

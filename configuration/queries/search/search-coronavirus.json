@@ -1,0 +1,110 @@
+{
+  "size": 10,
+  "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
+  "_source": [
+    "Id",
+    "wpid",
+    "title",
+    "description",
+    "content",
+    "url",
+    "slug",
+    "is_press_release",
+    "author_name_full",
+    "author_slug",
+    "author_avatar",
+    "og_image",
+    "staff_profile",
+    "categories",
+    "categories_slug",
+    "post_tags",
+    "post_tags_slug",
+    "publish_on",
+    "updated"
+  ],
+  "highlight" : {
+    "fields" : {
+      "text_bag": {}
+    }
+  },
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "post_tags_slug": "coronavirus"
+          }
+        }
+      ],
+      "must": [
+        {
+          "exists": {
+            "field": "title"
+        }}{{#if request.params.query.q}},{{/if}}
+        {{#if request.params.query.q}}
+        {
+          "bool": {
+            "must_not": [
+              {
+                "term": {
+                  "hide_in_results": true
+                }
+              }
+            ],
+            "should": [
+              {
+                "query_string": {
+                  "query": {{{stringify (default request.params.query.q "")}}},
+                  "fields": ["text_bag_boost^10", "text_bag"],
+                  "default_operator": "AND",
+                  "analyzer": "snowball"
+                }
+              },
+              {
+                "match_phrase": {
+                  "title": {
+                    "query": {{{stringify (default request.params.query.q "")}}},
+                    "boost": 20
+                  }
+                }
+              }
+            ]
+          }
+        }
+        {{else}},
+        {
+          "bool": {
+            "should": [
+              {
+                "match_all": {}
+              }
+            ]
+          }
+        }
+        {{/if}}
+      ],
+      "must_not": [
+        {
+          "match_phrase": {
+            "title": {
+              "query": "Frequently asked questions"
+            }
+          }
+        },
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "term": {
+            "hide_from_search": "1"
+          }
+        }
+      ]
+    }
+  }{{#unless @root.request.params.query.q}},
+  "sort": {
+    "publish_on": "desc"
+  }{{/unless ~}}
+}
