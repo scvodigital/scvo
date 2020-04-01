@@ -7,9 +7,10 @@
 {{/with ~}}
 {{/each ~}}
 {{else}}
-<p>
-  Error 404: No events could be loaded
-</p>
+<div class="label label-info v-padding h-padding-full">
+  <span class="far fa-info-circle r-margin"></span>
+  There are no future events currently listed
+</div>
 {{/compare ~}}
 
 {{> pagination paging=@root.data.primaryResponse.pagination}}
