@@ -40,11 +40,13 @@
         },
         {{/if ~}}
         {
-          "terms": {
-            "post_tags_slug": [
-              "coronavirus",
-              "faq"
-            ]
+          "term": {
+            "post_tags_slug": "faq"
+          }
+        },
+        {
+          "term": {
+            "categories_slug": "coronavirus"
           }
         }
       ]

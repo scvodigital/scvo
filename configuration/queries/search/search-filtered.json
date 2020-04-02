@@ -31,8 +31,14 @@
     "bool": {
       "filter": [
         {
-          "term": {
-            "post_tags_slug": "coronavirus"
+          "terms": {
+            "categories_slug": [
+              {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+              {{#each categories_slug ~}}
+              "{{this}}"{{#unless @last}},{{/unless}}
+              {{/each ~}}
+              {{/with ~}}
+            ]
           }
         }
       ],
@@ -84,13 +90,6 @@
         {{/if}}
       ],
       "must_not": [
-        {
-          "match_phrase": {
-            "title": {
-              "query": "Frequently asked questions"
-            }
-          }
-        },
         {
           "term": {
             "hide_in_results": true

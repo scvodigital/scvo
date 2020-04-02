@@ -1,9 +1,9 @@
-{{> search_info paging=@root.data.primaryResponse.pagination}}
+{{> search_info paging=@root.data.search_results.pagination}}
 
-{{#each @root.data.primaryResponse.hits.hits ~}}
+{{#each @root.data.search_results.hits.hits ~}}
 {{#with this ~}}
 {{> site_search_result}}
 {{/with ~}}
 {{/each ~}}
 
-{{> pagination paging=@root.data.primaryResponse.pagination}}
+{{> pagination paging=@root.data.search_results.pagination}}
