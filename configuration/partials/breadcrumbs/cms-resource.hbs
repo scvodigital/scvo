@@ -1,10 +1,11 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <ul class="breadcrumb breadcrumb-length-{{breadcrumb.length}}" aria-hidden="true">
   <li class="breadcrumb-item"><a href="/">Home</a></li>
-  {{#if categories_slug.[0] ~}}
-  <li class="breadcrumb-item"><a href="/{{categories_slug.[0]}}">{{{categories.[0]}}}</a></li>
-  <li class="breadcrumb-item"><a href="/{{categories_slug.[0]}}/posts">Resources</a></li>
-  {{/if ~}}
+  {{#ifAll (contains post_tags_slug "coronavirus") (contains post_tags_slug "faq") ~}}
+  <li class="breadcrumb-item"><a href="/support/">Support & learning</a></li>
+  <li class="breadcrumb-item"><a href="/support/coronavirus">Coronavirus Third Sector Information Hub</a></li>
+  <li class="breadcrumb-item"><a href="/support/coronavirus/faq">Frequently asked questions</a></li>
+  {{/ifAll ~}}
   <li class="breadcrumb-item">{{{striptags title}}}</li>
 </ul>
 {{/with ~}}

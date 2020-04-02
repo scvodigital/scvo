@@ -27,9 +27,17 @@
           }
         }
         {{else}}
+        {{#if @root.request.params.faq_slug ~}}
+        {
+          "term": {
+            "path": "{{@root.request.url.pathname}}"
+          }
+        }
+        {{else}}
         {
           "match_none": {}
         }
+        {{/if ~}}
         {{/if ~}}
       ]
     }

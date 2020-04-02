@@ -1,7 +1,10 @@
 {
   "name": "resource",
   "debug": true,
-  "pattern": "/p/resource/:slug",
+  "pattern": {
+    "general": "/p/resource/:slug",
+    "coronavirus_faq": "/support/coronavirus/faq/:faq_slug"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -58,6 +61,7 @@
               "head": ">context.metaData.handlebars.templates.posts_head-tags",
               "header": ">context.metaData.handlebars.templates.posts_resource-header",
               "body": ">context.metaData.handlebars.templates.posts_resource-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
               "footer": ">context.metaData.handlebars.templates.posts_resource-footer"
             }
           }
