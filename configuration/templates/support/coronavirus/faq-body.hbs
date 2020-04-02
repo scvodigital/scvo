@@ -5,6 +5,7 @@
 {{/with ~}}
 
 <div class="b-margin-full b-padding-full">
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3 ~}}
   <div class="caption pull-right">
     <button class="btn btn-sm" id="accordions_expand">
       Expand all
@@ -13,11 +14,14 @@
       Collapse all
     </button>
   </div>
+  {{/compare ~}}
 
   {{#if @root.request.params.section ~}}
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3 ~}}
   <div class="b-margin-full">
     <br />
   </div>
+  {{/compare ~}}
   {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
