@@ -1,0 +1,4 @@
+<div class="page-info-item page-info-updated text-white label label-warning" title="{{#compare (momentFormat (moment publish_on 'x') 'Do MMMM YYYY') '===' (momentFormat (moment updated 'x') 'Do MMMM YYYY')}}Published{{else}}Last updated{{/compare}} on {{momentFormat (moment updated 'x') 'Do MMMM YYYY'}}">
+  <span class="far fa-calendar-edit" aria-hidden="true"></span>
+  {{momentFormat (moment updated "x") "Do MMMM YYYY"}}
+</div>

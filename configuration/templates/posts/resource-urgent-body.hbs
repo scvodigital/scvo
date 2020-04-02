@@ -1,0 +1,10 @@
+<div class="content post-content">
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <div class="full scvo-cms scvo-cms-post scvo-cms-post-{{wpid}}">
+    <div class="post-info">
+      {{> content_post_info_updated}}
+    </div>
+    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+  </div>
+  {{/with ~}}
+</div>
