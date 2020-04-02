@@ -30,7 +30,7 @@
   {{/compare ~}}
   {{else}}
   {{#each @root.data.supplimentaryResponses.faqs.aggregations.query.buckets ~}}
-  {{#unless (compare key "Coronavirus (COVID-19)") ~}}
+  {{#ifNone (compare key "Coronavirus (COVID-19)") (compare key "FAQ") ~}}
   <h2>{{{key}}}</h2>
   {{#each faqs.hits.hits ~}}
   {{#with _source ~}}
@@ -40,7 +40,7 @@
   </div>
   {{/with ~}}
   {{/each ~}}
-  {{/unless ~}}
+  {{/ifNone ~}}
   {{/each ~}}
   {{/if ~}}
 </div>
