@@ -1,7 +1,7 @@
 {
   "name": "resource_coronavirus_fund_faq",
   "debug": true,
-  "pattern": "/support/coronavirus/employees/for-organisations/third-sector-resilience-fund/faq/:faq_slug",
+  "pattern": "/support/coronavirus/funding/for-organisations/:fund_slug/faq/:faq_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -15,7 +15,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "funder-faq",
-          "template": ">context.metaData.handlebars.queries.resources_resource",
+          "template": ">context.metaData.handlebars.queries.resources_fund-faq",
           "noResultsRoute": "four_oh_four"
         }
       },

@@ -4,7 +4,7 @@
     <div class="post-info">
       {{> content_post_info_updated}}
     </div>
-    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+    {{{replace (replace (replace (replace (default content description) "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
   </div>
   {{/with ~}}
 </div>

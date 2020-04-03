@@ -1,0 +1,24 @@
+{
+  "size": 1,
+  "_source": [
+    "title",
+    "description"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {{#ifAll @root.request.params.fund_slug @root.request.params.faq_slug ~}}
+        {
+          "term": {
+            "_id": "funder_faq_{{@root.request.params.fund_slug}}_{{@root.request.params.faq_slug}}"
+          }
+        }
+        {{else}}
+        {
+          "match_none": {}
+        }
+        {{/ifAll ~}}
+      ]
+    }
+  }
+}
