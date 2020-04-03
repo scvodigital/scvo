@@ -21,12 +21,8 @@
         {{#if @root.request.params.fund ~}}
         {
           "terms": {
-            "fund": [
-              {{#switch @root.request.params.fund}}
-              {{#case "third-sector-resilience-fund"}}
-              "TSRF"
-              {{/case}}
-              {{/switch ~}}
+            "fund_slug": [
+              "{{@root.request.params.fund}}"
             ]
           }
         }
