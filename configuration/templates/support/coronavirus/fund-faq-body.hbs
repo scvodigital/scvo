@@ -19,7 +19,7 @@
 
 <div class="b-margin-full b-padding-full">
   {{#if @root.request.params.fund ~}}
-  {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
+  {{!-- {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
   {{#if description ~}}
@@ -32,7 +32,20 @@
   {{/if ~}}
   {{/with ~}}
   {{/each ~}}
-  {{/compare ~}}
+  {{/compare ~}} --}}
+  {{#each @root.data.supplimentaryResponses.faqs.aggregations.query.buckets ~}}
+  <h2>{{{key}}}</h2>
+  {{#each faqs.hits.hits ~}}
+  {{#with _source ~}}
+  <h4 class="accordion">{{{title}}}</h4>
+  <div class="accordion-content">
+    <p>
+      {{{replace description "\n" '<br />'}}}
+    </p>
+  </div>
+  {{/with ~}}
+  {{/each ~}}
+  {{/each ~}}
   {{/if ~}}
 </div>
 
