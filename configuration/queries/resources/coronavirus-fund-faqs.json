@@ -1,13 +1,23 @@
 {
   "size": 100,
   "_source": [
-    "question",
-    "answer",
+    "title",
+    "description",
     "category"
   ],
   "query": {
     "bool": {
       "must": [
+        {
+          "term": {
+            "post_tags_slug": "faq"
+          }
+        },
+        {
+          "term": {
+            "categories_slug": "coronavirus"
+          }
+        },
         {{#if @root.request.params.fund ~}}
         {
           "terms": {
@@ -49,8 +59,8 @@
             },
             "_source": {
               "includes": [
-                "question",
-                "answer"
+                "title",
+                "description"
               ]
             }
           }

@@ -22,11 +22,11 @@
   {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
-  {{#if answer ~}}
-  <h4 class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion{{/compare}}">{{{question}}}</h4>
+  {{#if description ~}}
+  <h4 class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion{{/compare}}">{{{title}}}</h4>
   <div class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion-content{{/compare}}">
     <p>
-      {{{answer}}}
+      {{{description}}}
     </p>
   </div>
   {{/if ~}}
