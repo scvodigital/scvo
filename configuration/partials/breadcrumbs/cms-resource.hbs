@@ -1,10 +1,10 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <ul class="breadcrumb breadcrumb-length-{{breadcrumb.length}}" aria-hidden="true">
   <li class="breadcrumb-item"><a href="/">Home</a></li>
-  {{#ifAny (ifAll (contains post_tags_slug "coronavirus") (contains post_tags_slug "faq")) (compare @root.route.name "resource_coronavirus_fund_faq") ~}}
+  {{#ifAny (ifAll (contains categories_slug "coronavirus") (contains post_tags_slug "faq")) (compare @root.route.name "resource_coronavirus_fund_faq") ~}}
   <li class="breadcrumb-item"><a href="/support/">Support & learning</a></li>
   <li class="breadcrumb-item"><a href="/support/coronavirus">Coronavirus Third Sector Information Hub</a></li>
-  {{#ifAll (contains post_tags_slug "coronavirus") (contains post_tags_slug "faq") ~}}
+  {{#ifAll (contains categories_slug "coronavirus") (contains post_tags_slug "faq") ~}}
   <li class="breadcrumb-item"><a href="/support/coronavirus/faq">Frequently asked questions</a></li>
   {{/ifAll ~}}
   {{#compare @root.route.name "resource_coronavirus_fund_faq" ~}}
@@ -13,6 +13,13 @@
   <li class="breadcrumb-item"><a href="/support/coronavirus/funding/for-organisations/third-sector-resilience-fund">Third Sector Resilience Fund</a></li>
   <li class="breadcrumb-item"><a href="/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/faq">Frequently asked questions</a></li>
   {{/compare ~}}
+  {{/ifAny ~}}
+  {{#ifAny (ifAll (contains categories_slug "about") (contains post_tags_slug "faq")) ~}}
+  <li class="breadcrumb-item"><a href="/about/">About</a></li>
+  <li class="breadcrumb-item"><a href="/about/membership">Membership</a></li>
+  {{#ifAll (contains categories_slug "about") (contains post_tags_slug "faq") ~}}
+  <li class="breadcrumb-item"><a href="/about/membership/faq">Frequently asked questions</a></li>
+  {{/ifAll ~}}
   {{/ifAny ~}}
   <li class="breadcrumb-item">{{{striptags title}}}</li>
 </ul>
