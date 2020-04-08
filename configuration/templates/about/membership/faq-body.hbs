@@ -1,0 +1,36 @@
+{{#with @root.data.primaryResponse.hits.hits.[0] ~}}
+<div class="b-margin-full">
+  {{{replace (replace (replace (replace _source.content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+</div>
+{{/with ~}}
+
+<div class="b-margin-full b-padding-full">
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3 ~}}
+  <div class="caption pull-right">
+    <button class="btn btn-sm" id="accordions_expand">
+      Expand all
+    </button>
+    <button class="btn btn-sm" id="accordions_collapse">
+      Collapse all
+    </button>
+  </div>
+  {{/compare ~}}
+
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3 ~}}
+  <div class="b-margin-full">
+    <br />
+  </div>
+  {{/compare ~}}
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
+  {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
+  {{#with _source ~}}
+  <h4 class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion{{/compare}}">{{{title}}}</h4>
+  <div class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion-content{{/compare}}">
+    {{{content}}}
+  </div>
+  {{/with ~}}
+  {{/each ~}}
+  {{/compare ~}}
+</div>
+
+<script src="{{~>asset_url url='js/accordion.js'~}}"></script>

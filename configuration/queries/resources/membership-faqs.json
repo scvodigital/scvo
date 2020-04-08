@@ -1,0 +1,30 @@
+{
+  "size": 100,
+  "_source": [
+    "title",
+    "content",
+    "post_tags_slug"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "terms": {
+            "post_tags_slug": [
+              "faq",
+              "membership"
+            ]
+          }
+        },
+        {
+          "term": {
+            "categories_slug": "about"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "weight": "asc"
+  }
+}
