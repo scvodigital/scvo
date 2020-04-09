@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
     if (document.getElementById("not_a_charity").checked) {
       document.getElementById("organisation-details").classList.remove("hidden");
       document.getElementById("oscr_validation_icon").classList.remove("fa-check");
+      document.getElementById("oscr_validation_icon").classList.remove("text-success");
+      document.getElementById("oscr_validation_icon").classList.remove("text-error");
       document.getElementById("oscr_validation_icon").classList.add("fa-times");
       document.getElementById("typeahead_charity_number").value = "";
       document.getElementById("tfa_1876").value = "";
