@@ -1,0 +1,9 @@
+[
+  {{#each @root.data.search_data.hits.hits ~}}
+  {
+    {{#each (keyValue _source) ~}}
+    "{{key}}": {{{safeStringify value}}}{{#unless @last}},{{/unless}}
+    {{/each ~}}
+  }{{#unless @last}},{{/unless}}
+  {{/each ~}}
+]

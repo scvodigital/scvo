@@ -1,0 +1,481 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+  let formElement = document.getElementById("tfa_0");
+  if (null === formElement) {
+    formElement = document.getElementById("0");
+  }
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+    let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+    if (null !== cumulatedTimeElement) {
+      let cumulatedTime = parseInt(cumulatedTimeElement.value);
+      if (null !== cumulatedTime && cumulatedTime > 0) {
+        formTimeDiff += cumulatedTime;
+      }
+    }
+    let jsTimeInput = document.createElement("input");
+    jsTimeInput.setAttribute("type", "hidden");
+    jsTimeInput.setAttribute("value", formTimeDiff.toString());
+    jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("autocomplete", "off");
+    if (null !== formElement) {
+      formElement.appendChild(jsTimeInput);
+    }
+  };
+  if (null !== formElement) {
+    if(formElement.addEventListener){
+      formElement.addEventListener('submit', appendJsTimerElement, false);
+    } else if(formElement.attachEvent){
+      formElement.attachEvent('onsubmit', appendJsTimerElement);
+    }
+  }
+  document.getElementById("not_a_charity").addEventListener("click", function() {
+    if (document.getElementById("not_a_charity").checked) {
+      document.getElementById("organisation-details").classList.remove("hidden");
+      document.getElementById("oscr_validation_icon").classList.remove("fa-check");
+      document.getElementById("typeahead_charity_number").value = "";
+      document.getElementById("tfa_1876").value = "";
+      document.getElementById("tfa_1941").value = "";
+      document.getElementById("tfa_1944").value = "";
+      document.getElementById("tfa_1946").value = "";
+      document.getElementById("tfa_1969").value = "";
+    }
+  });
+});
+</script>
+
+{{!-- <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=ce892614333b8518746c3522036f0083" rel="stylesheet" type="text/css" /> --}}
+{{!-- <link href="https://www.tfaforms.com/uploads/themes/theme-66536.css" rel="stylesheet" type="text/css" /> --}}
+
+<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=ce892614333b8518746c3522036f0083" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=ce892614333b8518746c3522036f0083"></script>
+<script type="text/javascript">
+wFORMS.behaviors.prefill.skip = false;
+</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=ce892614333b8518746c3522036f0083"></script>
+
+<div class="form-horizontal form b-margin-full b-padding-full">
+  <h2>Register interest in the Wellbeing fund</h2>
+
+  <div class="wFormContainer">
+    <div class="wFormHeader"></div>
+    <div class="wForm" id="4815763-WRPR" dir="ltr">
+      <div class="codesection" id="code-4815763"></div>
+      <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove" id="4815763" role="form">
+        {{!-- <label class="form-label r-margin preField" id="tfa_1879-L">Organisation Details</label>
+        --}}
+        <fieldset id="tfa_1883" class="section">
+          <h3 id="tfa_1883-L">Organisation details</h3>
+
+          <div class="form-group">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label for="typeahead_charity_number" class="form-label r-margin">
+                Scottish Charity Number
+              </label>
+            </div>
+            <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="input-group has-icon-right" data-component="Typeahead" data-Typeahead="typeahead-oscr">
+                {{!-- <span class="input-group-addon">SC</span> --}}
+                <input id="typeahead_charity_number" name="typeahead_charity_number" class="form-input" autocomplete="nope" data-lpignore="true" {{>form_validation_attributes @root.context.metaData.accountInfoValidation.organisation_charity_number}} onkeyup="this.value = this.value.toUpperCase();">
+                <span class="form-icon far" id="oscr_validation_icon"></span>
+              </div>
+            </div>
+            <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <label class="form-checkbox">
+                <input type="checkbox" id="not_a_charity" name="not_a_charity">
+                <i class="form-icon"></i> Not a registered charity
+              </label>
+            </div>
+          </div>
+
+          <div id="organisation-details" class="hidden">
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_1876-L" class="form-label r-margin preField reqMark" for="tfa_1876">Organisation name</label>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <div class="input-group oneField field-container-D" id="tfa_1876-D">
+                  <input type="text" id="tfa_1876" name="tfa_1876" value="" aria-required="true" title="Organisation Name" class="form-input required">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1939-D">
+                  <label id="tfa_1939-L" class="form-label r-margin preField reqMark" for="tfa_1939">Organisation email</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1939" name="tfa_1939" value="" aria-required="true" title="Organisation Email" class="form-input required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1928-D">
+                  <label id="tfa_1928-L" class="form-label r-margin preField reqMark" for="tfa_1928">Phone</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1928" name="tfa_1928" value="" aria-required="true" title="Phone" class="form-input required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1930-D">
+                  <label id="tfa_1930-L" class="form-label r-margin preField" for="tfa_1930">Website</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1930" name="tfa_1930" value="" class="form-input" title="Website">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1922-D">
+                  <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">Street</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1922" name="tfa_1922" value="" aria-required="true" title="Street Address" class="form-input required">
+              </div>
+            </div>
+            <input id="tfa_1884" name="tfa_1884" title="Local Authority" type="hidden" />
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1923-D">
+                  <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">Town/city</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1923" name="tfa_1923" value="" aria-required="true" title="Town/City" class="form-input required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1925-D">
+                  <label id="tfa_1925-L" class="form-label r-margin preField reqMark" for="tfa_1925">Postcode</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1925" name="tfa_1925" value="" aria-required="true" title="Post Code" class="form-input required">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset id="tfa_1880" class="section">
+          <div id="contact-details" class="hidden">
+            <h3 id="tfa_1880-L">Primary contact</h3>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1958-D">
+                  <label id="tfa_1958-L" class="form-label r-margin preField reqMark" for="tfa_1958">Job title</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1958" name="tfa_1958" value="" aria-required="true" title="Job Title" class="form-input required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1-D">
+                  <label id="tfa_1-L" class="form-label r-margin preField reqMark" for="tfa_1">First name</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1" name="tfa_1" value="" aria-required="true" title="First Name" class="form-input required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1875-D">
+                  <label id="tfa_1875-L" class="form-label r-margin preField reqMark" for="tfa_1875">Last name</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1875" name="tfa_1875" value="" aria-required="true" title="Last Name" class="form-input required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1932-D">
+                  <label id="tfa_1932-L" class="form-label r-margin preField reqMark" for="tfa_1932">Email</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1932" name="tfa_1932" value="" aria-required="true" title="Email" class="form-input required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1949-D">
+                  <label id="tfa_1949-L" class="form-label r-margin preField reqMark" for="tfa_1949">Mobile phone</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1949" name="tfa_1949" value="" aria-required="true" title="Mobile Phone" class="form-input required">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1950-D">
+                  <label id="tfa_1950-L" class="form-label r-margin preField" for="tfa_1950">Work phone</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <input type="text" id="tfa_1950" name="tfa_1950" value="" title="Work Phone">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset id="tfa_1882" class="section">
+          <div id="interest-details" class="hidden">
+            <h3 id="tfa_1882-L">Interest details</h3>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1959-D">
+                  <label id="tfa_1959-L" class="form-label r-margin preField" for="tfa_1959">
+                    Main types of support
+                  </label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <select id="tfa_1959" name="tfa_1959" title="Main Types of Support">
+                  <option value="">Please select&hellip;</option>
+                  <option value="tfa_1960" id="tfa_1960">Emotional of social support</option>
+                  <option value="tfa_1961" id="tfa_1961">Food / grocery delivery</option>
+                  <option value="tfa_1962" id="tfa_1962">Mutual aid</option>
+                  <option value="tfa_1963" id="tfa_1963">Transportation</option>
+                  <option value="tfa_1964" id="tfa_1964">Information and advice</option>
+                  <option value="tfa_1965" id="tfa_1965">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1967-D">
+                  <label id="tfa_1967-L" class="form-label r-margin preField reqMark" for="tfa_1967">Other support</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <textarea aria-required="true" id="tfa_1967" name="tfa_1967" placeholder="Express your interest here" title="Other support" class="form-input required"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1878-D">
+                  <label id="tfa_1878-L" class="form-label r-margin preField reqMark" for="tfa_1878">Interest</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <textarea aria-required="true" id="tfa_1878" name="tfa_1878" placeholder="Express your interest here" title="Interest" class="form-input required"></textarea>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group oneField field-container-D" id="tfa_1969-D">
+                  <label id="tfa_1969-L" class="form-label r-margin preField reqMark" for="tfa_1969">Areas covered</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <textarea aria-required="true" id="tfa_1969" name="tfa_1969" placeholder="Express your interest here" title="Areas covered" class="form-input required"></textarea>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="actions" id="4815763-A">
+          <input id="save" type="submit" data-label="Save &amp; Continue" class="primaryAction btn btn-primary" id="submit_button" value="Save &amp; Continue" disabled>
+        </div>
+        <div style="clear:both"></div>
+        <input type="hidden" id="tfa_1941" name="tfa_1941" value="" title="Scottish Charity Number">
+        <input type="hidden" id="tfa_1944" name="tfa_1944" value="" title="Constitutional Form">
+        <input type="hidden" id="tfa_1946" name="tfa_1946" value="" title="Charity Status">
+        <input type="hidden" id="tfa_1936" name="tfa_1936" value="" title="Constituency">
+        <input type="hidden" id="tfa_1934" name="tfa_1934" value="" title="Ward">
+        <input type="hidden" id="tfa_1953" name="tfa_1953" value="" title="SIMD datazone">
+        <input type="hidden" id="tfa_1955" name="tfa_1955" value="" title="SIMD rank">
+        <input type="hidden" id="tfa_1957" name="tfa_1957" value="" title="NHS Health Board">
+        <input type="hidden" value="4815763" name="tfa_dbFormId" id="tfa_dbFormId">
+        <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
+        <input type="hidden" value="5a9db286c2f6d83f6cf706b1d57cb120" name="tfa_dbControl" id="tfa_dbControl">
+        <input type="hidden" value="13" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+      </form>
+    </div>
+  </div>
+</div>
+{{!-- <div class="wFormFooter">
+<p class="supportInfo">
+<a target="new" class="gdprLink" href="https://www.formassembly.com/gdpr-rights">Your Rights Under GDPR</a>
+</p>
+</div> --}}
+
+{{{{raw}}}}
+<script data-component-config="typeahead-oscr" type="javascript/blocked">
+{
+  typeaheadOptions: {
+    highlight: true,
+    hint: true,
+    minlength: 1,
+    limit: 5
+  },
+  itemSelectedTasks: [
+    {
+      type: "elementManipulator",
+      config: {
+        ">.tt-input": { value: { __pointer: "metadata.suggestion.charity_number" } },
+        "#oscr_validation_icon": { removeClass: ["text-error", "fa-times"], addClass: ["text-success", "fa-check"] },
+        "#tfa_1876": { value: { __pointer: "metadata.suggestion.charity_name" } },
+        "#tfa_1941": { value: { __pointer: "metadata.suggestion.charity_number" } },
+        "#tfa_1944": { value: { __pointer: "metadata.suggestion.constitutional_form" } },
+        "#tfa_1946": { value: { __pointer: "metadata.suggestion.charity_status" } },
+        "#tfa_1969": { value: { __pointer: "metadata.suggestion.main_operating_location" } },
+        "#organisation-details": { removeClass: "hidden" }
+      }
+    },
+    {
+      type: "elementManipulator",
+      config: {
+        ">.tt-menu": { styles: { display: "none !important" } }
+      }
+    }
+  ],
+  nothingSelectedTasks: [
+    {
+      type: "switch",
+      config: {
+        which: {
+          __template: "\{{#if metadata.currentRemoteData.[0]}}selectFirst\{{/if}}"
+        },
+        branches: {
+          default: {
+            tasks: [
+              {
+                type: "run",
+                config: { code: "metadata.instance.clearSelection()" }
+              },
+              {
+                type: "elementManipulator",
+                config: {
+                  "#oscr_validation_icon": { addClass: ["text-error", "fa-times"], removeClass: ["text-success", "fa-check"] }
+                }
+              }
+            ]
+          },
+          selectFirst: {
+            tasks: [
+              {
+                type: "run",
+                config: { code: "console.log('DATA LOADED SO SELECTING FIRST', metadata.currentRemoteData)" }
+              },
+              {
+                type: "run",
+                config: { code: "metadata.instance.typeaheadSelect(metadata.event, metadata.currentRemoteData[0])" }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  datasets: [
+    {
+      name: "oscr_lookup",
+      display: "charity_number",
+      templates: { header: "" },
+      bloodhound: {
+        datumTokenizer: "objWhitespace",
+        datumTokenizerField: "charity_number",
+        queryTokenizer: "whitespace",
+        remote: {
+          url: "/oscr-lookup?q=*",
+          wildcard: "*"
+        }
+      }
+    },
+  ],
+  clearIfNothingSelected: true
+}
+</script>
+
+{{!-- <script data-component-config="typeahead-postcode" type="javascript/blocked">
+{
+typeaheadOptions: {
+highlight: true,
+minlength: 1
+},
+itemSelectedTasks: [
+{
+type: "elementManipulator",
+config: {
+"#location-lat": { value: { __pointer: "metadata.suggestion.point.lat" } },
+"#location-lng": { value: { __pointer: "metadata.suggestion.point.lon" } },
+"#default-sort": { value: { __template: "distance" } },
+">.tt-input": { value: { __pointer: "metadata.suggestion.display" } }
+}
+},
+{
+type: "elementManipulator",
+config: {
+">.tt-menu": { styles: { display: "none !important" } }
+}
+}
+],
+nothingSelectedTasks: [
+{
+type: "switch",
+config: {
+which: {
+__template: "\{{#if metadata.currentRemoteData.[0]}}selectFirst\{{/if}}"
+},
+branches: {
+default: {
+tasks: [
+{
+type: "run",
+config: { code: "console.log('NO DATA LOADED SO CLEARING LOCATION FIELDS')" }
+},
+"empty-location-fields",
+{
+type: "run",
+config: { code: "metadata.instance.clearSelection()" }
+}
+]
+},
+selectFirst: {
+tasks: [
+{
+type: "run",
+config: { code: "console.log('DATA LOADED SO SELECTING FIRST', metadata.currentRemoteData)" }
+},
+{
+type: "run",
+config: { code: "metadata.instance.typeaheadSelect(metadata.event, metadata.currentRemoteData[0])" }
+}
+]
+}
+}
+}
+}
+],
+datasets: [
+{
+name: "geo_lookup",
+display: "display",
+templates: { header: "" },
+bloodhound: {
+datumTokenizer: "objWhitespace",
+datumTokenizerField: "place",
+queryTokenizer: "whitespace",
+remote: {
+url: "/geo-lookup?q=*",
+wildcard: "*"
+}
+}
+},
+],
+clearIfNothingSelected: true
+}
+</script> --}}
+{{{{/raw}}}}

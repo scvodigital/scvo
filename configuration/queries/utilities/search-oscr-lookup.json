@@ -1,0 +1,24 @@
+{{#withExtend this q=@root.request.params.query.q}}
+{
+  "size": 5,
+  "_source": [
+    "constitutional_form",
+    "charity_status",
+    "main_operating_location",
+    "charity_name",
+    "charity_number",
+    "postcode"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "wildcard": {
+            "charity_number": {{{stringify (concat "*" q "*")}}}
+          }
+        }
+      ]
+    }
+  }
+}
+{{/withExtend}}

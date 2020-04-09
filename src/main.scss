@@ -613,7 +613,6 @@ footer a {
 .card-image-link {
   position: relative;
   width: 100%;
-  overflow: hidden;
   margin: $unit 0 0;
   overflow: hidden;
   display: inline-block;
@@ -1480,6 +1479,7 @@ form#settled_status {
   margin-top: $unit/2;
   border-radius: $unit/5;
 }
+.hidden,
 #settled_status_guide .guide_text,
 #settled_status_q_b,
 #settled_status_q_c,
@@ -1591,11 +1591,13 @@ aside {
     width: fit-content;
   }
 }
-.form-group .form-input,
-.input-group .form-input,
-.form-group .form-select,
-.input-group .form-select {
-  border-color: $primary-color;
+header {
+  .form-group .form-input,
+  .input-group .form-input,
+  .form-group .form-select,
+  .input-group .form-select {
+    border-color: $primary-color;
+  }
 }
 .input-group.input-inline {
   width: 100%;
