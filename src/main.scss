@@ -1464,6 +1464,7 @@ a.pure-menu-link:hover {
   background-color: $secondary-color-dark;
 }
 
+.hidden,
 .column.hidden {
   display: none !important;
 }
@@ -1479,7 +1480,6 @@ form#settled_status {
   margin-top: $unit/2;
   border-radius: $unit/5;
 }
-.hidden,
 #settled_status_guide .guide_text,
 #settled_status_q_b,
 #settled_status_q_c,
