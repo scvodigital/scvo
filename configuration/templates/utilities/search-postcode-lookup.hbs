@@ -1,0 +1,43 @@
+[
+  {{#eachJoin @root.data.search_data.hits.hits "," ~}}
+  {
+    "display": {{{stringify _source.place}}},
+    "place": {{{stringify _source.place}}},
+    {{#if _source.district ~}}
+    "local_authority": {{{stringify (replace (replace (replace (replace _source.district " and " " & ") " Islands" "") "City of " "") " City" "")}}},
+    {{else}}
+    {{#if _source.county ~}}
+    "local_authority": {{{stringify (replace (replace (replace (replace _source.county " and " " & ") " Islands" "") "City of " "") " City" "")}}},
+    {{/if ~}}
+    {{/if ~}}
+    {{#if _source.country ~}}
+    "country": {{{stringify _source.country}}},
+    {{/if ~}}
+    {{#if _source.ward ~}}
+    "ward": {{{stringify _source.ward}}},
+    {{/if ~}}
+    {{#if _source.constituency ~}}
+    "constituency": {{{stringify _source.constituency}}},
+    {{/if ~}}
+    {{#if _source.nuts_3 ~}}
+    "nuts_3": {{{stringify _source.nuts_3}}},
+    {{/if ~}}
+    {{#if _source.dz ~}}
+    "simd_datazone": {{{stringify _source.dz}}},
+    {{/if ~}}
+    {{#if _source.simd_decile ~}}
+    "simd_decile": {{{stringify _source.simd_decile}}},
+    {{/if ~}}
+    {{#if _source.simd_quintile ~}}
+    "simd_quintile": {{{stringify _source.simd_quintile}}},
+    {{/if ~}}
+    {{#if _source.simd_vigintile ~}}
+    "simd_vigintile": {{{stringify _source.simd_vigintile}}},
+    {{/if ~}}
+    {{#if _source.simd_rank ~}}
+    "simd_rank": {{{stringify _source.simd_rank}}},
+    {{/if ~}}
+    "point": {{{stringify _source.point}}}
+  }
+  {{/eachJoin ~}}
+]

@@ -1,0 +1,46 @@
+{
+  "name": "postcode-lookup",
+  "pattern": "/postcode-lookup",
+  "debug": true,
+  "doNotZip": true,
+  "tasks": [
+    {
+      "name": "search_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "geo_lookup",
+          "type": "postcode",
+          "template": ">context.metaData.handlebars.queries.utilities_search-postcode-lookup"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "data"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "data": {
+            "layout": ">context.metaData.handlebars.layouts.data",
+            "parts": {
+              "content": ">context.metaData.handlebars.templates.utilities_search-postcode-lookup"
+            },
+            "contentType": "application/json; charset=utf-8"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -133,33 +133,84 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group oneField field-container-D" id="tfa_1922-D">
-                  <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">Street</label>
-                </div>
-              </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                <input type="text" id="tfa_1922" name="tfa_1922" value="" aria-required="true" title="Street Address" class="form-input required">
-              </div>
-            </div>
-            <input id="tfa_1884" name="tfa_1884" title="Local Authority" type="hidden" />
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group oneField field-container-D" id="tfa_1923-D">
-                  <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">Town/city</label>
-                </div>
-              </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                <input type="text" id="tfa_1923" name="tfa_1923" value="" aria-required="true" title="Town/City" class="form-input required">
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group oneField field-container-D" id="tfa_1925-D">
                   <label id="tfa_1925-L" class="form-label r-margin preField reqMark" for="tfa_1925">Postcode</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                <input type="text" id="tfa_1925" name="tfa_1925" value="" aria-required="true" title="Post Code" class="form-input required">
+              <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <div class="input-group has-icon-right postcode-wrapper" data-component="TasksTrigger" data-TasksTrigger="postcode-lookup">
+                  <input type="text" id="tfa_1925" name="tfa_1925" value="" aria-required="true" title="Postcode" class="form-input required" onkeyup="this.value = this.value.toUpperCase();">
+                  <span class="form-icon far" id="postcode_validation_icon"></span>
+                </div>
+                <span id="postcode_validation_message"></span>
+              </div>
+            </div>
+            <div id="location-details" class="hidden">
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="input-group oneField field-container-D" id="tfa_1922-D">
+                    <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">Street</label>
+                  </div>
+                </div>
+                <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                  <input type="text" id="tfa_1922" name="tfa_1922" value="" aria-required="true" title="Street Address" class="form-input required">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="input-group oneField field-container-D" id="tfa_1923-D">
+                    <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">Town/city</label>
+                  </div>
+                </div>
+                <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                  <input type="text" id="tfa_1923" name="tfa_1923" value="" aria-required="true" title="Town/City" class="form-input required">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="input-group oneField field-container-D" id="tfa_1884-D">
+                    <label id="tfa_1884-L" class="form-label r-margin preField reqMark" for="tfa_1884">Local authority</label>
+                  </div>
+                </div>
+                <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                  <input type="text" id="tfa_1884" name="tfa_1884" title="Local Authority" class="form-input" disabled />
+                  {{!-- <select id="tfa_1884" name="tfa_1884" title="Local Authority" aria-required="true" class="required">
+                    <option value=""></option>
+                    <option value="tfa_1888" id="tfa_1888" class="">Aberdeen</option>
+                    <option value="tfa_1889" id="tfa_1889" class="">Aberdeenshire</option>
+                    <option value="tfa_1890" id="tfa_1890" class="">Angus</option>
+                    <option value="tfa_1891" id="tfa_1891" class="">Argyll and Bute</option>
+                    <option value="tfa_1893" id="tfa_1893" class="">Clackmannanshire</option>
+                    <option value="tfa_1895" id="tfa_1895" class="">Dumfries and Galloway</option>
+                    <option value="tfa_1896" id="tfa_1896" class="">Dundee</option>
+                    <option value="tfa_1897" id="tfa_1897" class="">East Ayrshire</option>
+                    <option value="tfa_1898" id="tfa_1898" class="">East Dunbartonshire</option>
+                    <option value="tfa_1899" id="tfa_1899" class="">East Lothian</option>
+                    <option value="tfa_1900" id="tfa_1900" class="">East Renfrewshire</option>
+                    <option value="tfa_1892" id="tfa_1892" class="">Edinburgh</option>
+                    <option value="tfa_1901" id="tfa_1901" class="">Falkirk</option>
+                    <option value="tfa_1902" id="tfa_1902" class="">Fife</option>
+                    <option value="tfa_1903" id="tfa_1903" class="">Glasgow</option>
+                    <option value="tfa_1904" id="tfa_1904" class="">Highland</option>
+                    <option value="tfa_1905" id="tfa_1905" class="">Inverclyde</option>
+                    <option value="tfa_1906" id="tfa_1906" class="">Midlothian</option>
+                    <option value="tfa_1907" id="tfa_1907" class="">Moray</option>
+                    <option value="tfa_1894" id="tfa_1894" class="">Na h-Eileanan Siar</option>
+                    <option value="tfa_1908" id="tfa_1908" class="">North Ayrshire</option>
+                    <option value="tfa_1909" id="tfa_1909" class="">North Lanarkshire</option>
+                    <option value="tfa_1910" id="tfa_1910" class="">Orkney</option>
+                    <option value="tfa_1911" id="tfa_1911" class="">Perth and Kinross</option>
+                    <option value="tfa_1912" id="tfa_1912" class="">Renfrewshire</option>
+                    <option value="tfa_1913" id="tfa_1913" class="">Scottish Borders</option>
+                    <option value="tfa_1914" id="tfa_1914" class="">Shetland</option>
+                    <option value="tfa_1915" id="tfa_1915" class="">South Ayrshire</option>
+                    <option value="tfa_1916" id="tfa_1916" class="">South Lanarkshire</option>
+                    <option value="tfa_1917" id="tfa_1917" class="">Stirling</option>
+                    <option value="tfa_1918" id="tfa_1918" class="">West Dunbartonshire</option>
+                    <option value="tfa_1919" id="tfa_1919" class="">West Lothian</option>
+                    <option value="tfa_1920" id="tfa_1920" class="" value="Scotland Wide">Scotland-wide</option>
+                  </select> --}}
+                </div>
               </div>
             </div>
           </div>
@@ -331,6 +382,9 @@ wFORMS.behaviors.prefill.skip = false;
         "#tfa_1944": { value: { __pointer: "metadata.suggestion.constitutional_form" } },
         "#tfa_1946": { value: { __pointer: "metadata.suggestion.charity_status" } },
         "#tfa_1969": { value: { __pointer: "metadata.suggestion.main_operating_location" } },
+        "#tfa_1930": { value: { __pointer: "metadata.suggestion.website" } },
+        "#tfa_1957": { value: { __pointer: "metadata.suggestion.nhs_ha" } },
+        "#tfa_1925": { value: { __pointer: "metadata.suggestion.postcode" } },
         "#organisation-details": { removeClass: "hidden" }
       }
     },
@@ -339,6 +393,11 @@ wFORMS.behaviors.prefill.skip = false;
       config: {
         ">.tt-menu": { styles: { display: "none !important" } }
       }
+    },
+    "postcode-lookup",
+    {
+      type: "run",
+      config: { code: "document.getElementById('tfa_1876').focus();" }
     }
   ],
   nothingSelectedTasks: [
@@ -399,83 +458,231 @@ wFORMS.behaviors.prefill.skip = false;
 }
 </script>
 
-{{!-- <script data-component-config="typeahead-postcode" type="javascript/blocked">
+<script data-component-config="postcode-lookup" type="javascript/blocked">
+  {
+    blur: { tasks: ["postcode-lookup"] },
+    keyup: { tasks: ["postcode-lookup"] }
+  }
+</script>
+<script data-task="postcode-lookup" type="javascript/blocked">
 {
-typeaheadOptions: {
-highlight: true,
-minlength: 1
-},
-itemSelectedTasks: [
-{
-type: "elementManipulator",
-config: {
-"#location-lat": { value: { __pointer: "metadata.suggestion.point.lat" } },
-"#location-lng": { value: { __pointer: "metadata.suggestion.point.lon" } },
-"#default-sort": { value: { __template: "distance" } },
-">.tt-input": { value: { __pointer: "metadata.suggestion.display" } }
+  type: "multiTask",
+  config: {
+    tasks: [
+      {
+        type: "switch",
+        config: {
+          which: { __template: "{{#regexMatch (jquery '#tfa_1925' 'val') '[a-z]{1,2}[0-9]{1,2}[a-z]?\\s?[0-9][a-z]{2}' 'ig'}}check{{/regexMatch}}" },
+          branches: {
+            default: {
+              tasks: [
+                {
+                  type: "elementManipulator",
+                  config: {
+                    "#postcode_validation_icon": {
+                      addClass: [ "fa-times", "text-error" ],
+                      removeClass: [ "loading", "fa-check", "text-primary", "text-success" ]
+                    },
+                    "#tfa_1884": {
+                      value: ""
+                    },
+                    "#tfa_1936": {
+                      value: ""
+                    },
+                    "#nuts_3": {
+                      value: ""
+                    },
+                    "#tfa_1934": {
+                      value: ""
+                    },
+                    "#tfa_1953": {
+                      value: ""
+                    },
+                    "#tfa_1955": {
+                      value: ""
+                    },
+                    "#tfa_1923": {
+                      value: ""
+                    },
+                    "#postcode_validation_message": {
+                      contents: { __template: "" }
+                    },
+                    "#postcode-wrapper": {
+                      removeClass: [ "has-error" ],
+                    }
+                  }
+                }
+              ]
+            },
+            check: {
+              __doNotCompile: true,
+              tasks: [
+                {
+                  type: "elementManipulator",
+                  config: {
+                    "#postcode_validation_icon": {
+                      addClass: [ "loading", "text-primary" ],
+                      removeClass: [ "fa-check", "fa-times", "text-error", "text-success" ]
+                    }
+                  }
+                },
+                {
+                  name: "postcodeLookup",
+                  type: "request",
+                  config: { url: { __template: "/postcode-lookup?q={{jquery '#tfa_1925' 'val'}}" } }
+                },
+                {
+                  __doNotCompile: true,
+                  type: "switch",
+                  config: {
+                    which: { __template: "{{#any data.postcodeLookup}}found{{/any}}" },
+                    branches: {
+                      default: {
+                        tasks: [
+                          {
+                            type: "elementManipulator",
+                            config: {
+                              "#tfa_1884": {
+                                value: ""
+                              },
+                              "#tfa_1936": {
+                                value: ""
+                              },
+                              "#tfa_1934": {
+                                value: ""
+                              },
+                              "#tfa_1953": {
+                                value: ""
+                              },
+                              "#tfa_1955": {
+                                value: ""
+                              },
+                              "#tfa_1923": {
+                                value: ""
+                              },
+                              "#postcode_validation_message": {
+                                contents: { __template: "" }
+                              },
+                              "#postcode-wrapper": {
+                                removeClass: [ "has-error" ],
+                              },
+                              "#postcode_validation_icon": {
+                                addClass: [ "fa-times", "text-error" ],
+                                removeClass: [ "loading", "fa-check", "text-primary", "text-success" ]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      found: {
+                        tasks: [
+                          {
+                            __doNotCompile: true,
+                            type: "switch",
+                            config: {
+                              which: { __template: "{{#eq data.postcodeLookup.[0].country 'Scotland'}}scotland{{/eq}}" },
+                              branches: {
+                                default: {
+                                  tasks: [
+                                    {
+                                      type: "elementManipulator",
+                                      config: {
+                                        "#tfa_1884": {
+                                          value: ""
+                                        },
+                                        "#tfa_1936": {
+                                          value: ""
+                                        },
+                                        "#tfa_1934": {
+                                          value: ""
+                                        },
+                                        "#tfa_1953": {
+                                          value: ""
+                                        },
+                                        "#tfa_1955": {
+                                          value: ""
+                                        },
+                                        "#tfa_1923": {
+                                          value: ""
+                                        },
+                                        "#postcode_validation_message": {
+                                          contents: { __template: "Please enter a postcode in Scotland" }
+                                        },
+                                        "#postcode-wrapper": {
+                                          addClass: [ "has-error" ],
+                                        },
+                                        "#postcode_validation_icon": {
+                                          addClass: [ "fa-times", "text-error" ],
+                                          removeClass: [ "loading", "fa-check", "text-primary", "text-success" ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                scotland: {
+                                  tasks: [
+                                    {
+                                      type: "elementManipulator",
+                                      config: {
+                                        ">": {
+                                          value: { __template: "{{{data.postcodeLookup.[0].place}}}" }
+                                        },
+                                        "#tfa_1884": {
+                                          value: { __template: "{{{data.postcodeLookup.[0].local_authority}}}" }
+                                        },
+                                        "#tfa_1936": {
+                                          value: { __template: "{{{data.postcodeLookup.[0].constituency}}}" }
+                                        },
+                                        "#tfa_1934": {
+                                          value: { __template: "{{{data.postcodeLookup.[0].ward}}}" }
+                                        },
+                                        "#tfa_1953": {
+                                          value: { __template: "{{{data.postcodeLookup.[0].simd_datazone}}}" }
+                                        },
+                                        "#tfa_1955": {
+                                          value: { __template: "{{{data.postcodeLookup.[0].simd_rank}}}" }
+                                        },
+                                        "#tfa_1923": {
+                                          value: { __template: "{{{data.postcodeLookup.[0].nuts_3}}}" }
+                                        },
+                                        "#postcode_validation_message": {
+                                          contents: { __template: "" }
+                                        },
+                                        "#postcode-wrapper": {
+                                          removeClass: [ "has-error" ]
+                                        },
+                                        "#location-details": {
+                                          removeClass: "hidden"
+                                        },
+                                        "#contact-details": {
+                                          removeClass: "hidden"
+                                        },
+                                        "#interest-details": {
+                                          removeClass: "hidden"
+                                        },
+                                        "#postcode_validation_icon": {
+                                          addClass: [ "fa-check", "text-success" ],
+                                          removeClass: [ "loading", "fa-times", "text-primary", "text-error" ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
 }
-},
-{
-type: "elementManipulator",
-config: {
-">.tt-menu": { styles: { display: "none !important" } }
-}
-}
-],
-nothingSelectedTasks: [
-{
-type: "switch",
-config: {
-which: {
-__template: "\{{#if metadata.currentRemoteData.[0]}}selectFirst\{{/if}}"
-},
-branches: {
-default: {
-tasks: [
-{
-type: "run",
-config: { code: "console.log('NO DATA LOADED SO CLEARING LOCATION FIELDS')" }
-},
-"empty-location-fields",
-{
-type: "run",
-config: { code: "metadata.instance.clearSelection()" }
-}
-]
-},
-selectFirst: {
-tasks: [
-{
-type: "run",
-config: { code: "console.log('DATA LOADED SO SELECTING FIRST', metadata.currentRemoteData)" }
-},
-{
-type: "run",
-config: { code: "metadata.instance.typeaheadSelect(metadata.event, metadata.currentRemoteData[0])" }
-}
-]
-}
-}
-}
-}
-],
-datasets: [
-{
-name: "geo_lookup",
-display: "display",
-templates: { header: "" },
-bloodhound: {
-datumTokenizer: "objWhitespace",
-datumTokenizerField: "place",
-queryTokenizer: "whitespace",
-remote: {
-url: "/geo-lookup?q=*",
-wildcard: "*"
-}
-}
-},
-],
-clearIfNothingSelected: true
-}
-</script> --}}
+</script>
 {{{{/raw}}}}

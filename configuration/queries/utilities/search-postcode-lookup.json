@@ -1,0 +1,30 @@
+{{#withExtend this q=@root.request.params.query.q}}
+{
+  "size": 1,
+  "_source": [
+    "*"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        { "terms": { "_type": [ "os_place", "postcode" ] } },
+        { "exists": { "field": "district" } },
+        {
+          "ids": {
+            "values": [
+              {{{stringify
+                (uppercase
+                  (regexReplace
+                    (regexReplace q "[^a-z0-9]" "ig" "")
+                    "([0-9][a-z]{2})$" "ig" " $1"
+                  )
+                )
+              }}}
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
+{{/withExtend}}

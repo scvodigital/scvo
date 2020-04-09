@@ -1590,6 +1590,12 @@ aside {
   .form-select {
     width: fit-content;
   }
+  .form-input:not(:first-child):not(:last-child),
+  .form-select:not(:first-child):not(:last-child),
+  .input-group-addon:not(:first-child):not(:last-child),
+  .input-group-btn:not(:first-child):not(:last-child) {
+    border-radius: $border-radius;
+  }
 }
 header {
   .form-group .form-input,
