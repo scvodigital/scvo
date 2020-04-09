@@ -251,47 +251,6 @@
 			}
 		]
 	}],
-	"credit-union": [{
-		"label": "Credit Union",
-		"path": "/services/credit-union",
-		"route": "^/services/credit-union$",
-		"children": [{
-				"label": "Member news and reports",
-				"path": "/services/credit-union/important-news",
-				"route": "^/services/credit-union/important-news"
-			},
-			{
-				"label": "Member section",
-				"path": "/services/credit-union/members-guide",
-				"route": "^/services/credit-union/members-guide"
-			},
-			{
-				"label": "Employer section",
-				"path": "/services/credit-union/employers-guide",
-				"route": "^/services/credit-union/employers-guide"
-			},
-			{
-				"label": "FAQs & general information",
-				"path": "/services/credit-union/faqs",
-				"route": "^/services/credit-union/faqs"
-			},
-			{
-				"label": "Loans calculator & APR & interest rates",
-				"path": "/services/credit-union/loan-calculator",
-				"route": "^/services/credit-union/loan-calculator"
-			},
-			{
-				"label": "Information and application forms",
-				"path": "/services/credit-union/loan-forms",
-				"route": "^/services/credit-union/loan-forms"
-			},
-			{
-				"label": "Joining information and general forms",
-				"path": "/services/credit-union/join",
-				"route": "^/services/credit-union/join"
-			}
-		]
-	}],
 	"policy": [{
 		"label": "Policy & research",
 		"path": "/policy",
@@ -1079,6 +1038,116 @@
 				"label": "Library",
 				"path": "/support/milo/library",
 				"route": "^/support/milo/library$"
+			}]
+		}]
+	}],
+	"services": [{
+		"label": "Services",
+		"path": "/services",
+		"route": "^/services$",
+		"children": [{
+			"label": "Office & meeting space",
+			"path": "/services/office-space",
+			"route": "^/services/office-space$",
+			"children": [{
+				"label": "Office space - Mansfield Traquair Centre, Edinburgh",
+				"path": "/services/office-space/mansfield-traquair-centre",
+				"route": "^/services/office-space/mansfield-traquair-centre"
+			},
+			{
+				"label": "Office space - Brunswick House, Glasgow",
+				"path": "/services/office-space/brunswick-house",
+				"route": "^/services/office-space/brunswick-house"
+			},
+			{
+				"label": "Office space - Edward House, Glasgow",
+				"path": "/services/office-space/edward-house",
+				"route": "^/services/office-space/edward-house"
+			},
+			{
+				"label": "Office space - Fairways House, Inverness",
+				"path": "/services/office-space/fairways-house",
+				"route": "^/services/office-space/fairways-house"
+			},
+			{
+				"label": "Meeting space - Mansfield Traquair Centre, Edinburgh",
+				"path": "/services/office-space/meeting-space-mansfield-traquair-centre-edinburgh",
+				"route": "^/services/office-space/meeting-space-mansfield-traquair-centre-edinburgh"
+			},
+			{
+				"label": "Meeting space - Brunswick House, Glasgow",
+				"path": "/services/office-space/meeting-space-brunswick-house-glasgow",
+				"route": "^/services/office-space/meeting-space-brunswick-house-glasgow"
+			},
+			{
+				"label": "Meeting space - Fairways House, Inverness",
+				"path": "/services/office-space/meeting-space-fairways-house-inverness",
+				"route": "^/services/office-space/meeting-space-fairways-house-inverness"
+			},
+			{
+				"label": "Enquiry form",
+				"path": "/services/office-space/enquire",
+				"route": "^/services/office-space/enquire"
+			}]
+		},
+		{
+			"label": "Managed IT",
+			"path": "/services/managed-it",
+			"route": "^/services/managed-it$",
+			"children": [{
+				"label": "Enquiry form",
+				"path": "/services/managed-it/enquire",
+				"route": "^/services/managed-it/enquire"
+			}]
+		},
+		{
+			"label": "Payroll",
+			"path": "/services/payroll",
+			"route": "^/services/payroll$",
+			"children": [{
+				"label": "Enquiry form",
+				"path": "/services/payroll/enquire",
+				"route": "^/services/payroll/enquire"
+			}]
+		},
+		{
+			"label": "SCVO Credit Union",
+			"path": "/services/credit-union",
+			"route": "^/services/credit-union$",
+			"children": [{
+				"label": "Member news and reports",
+				"path": "/services/credit-union/important-news",
+				"route": "^/services/credit-union/important-news"
+			},
+			{
+				"label": "Member section",
+				"path": "/services/credit-union/members-guide",
+				"route": "^/services/credit-union/members-guide"
+			},
+			{
+				"label": "Employer section",
+				"path": "/services/credit-union/employers-guide",
+				"route": "^/services/credit-union/employers-guide"
+			},
+			{
+				"label": "FAQs & general information",
+				"path": "/services/credit-union/faqs",
+				"route": "^/services/credit-union/faqs"
+			},
+			{
+				"label": "Loans calculator & APR & interest rates",
+				"path": "/services/credit-union/loan-calculator",
+				"route": "^/services/credit-union/loan-calculator"
+			},
+			{
+				"label": "Information and application forms",
+				"path": "/services/credit-union/loan-forms",
+				"route": "^/services/credit-union/loan-forms"
+			},
+			{
+				"label": "Joining information and general forms",
+				"path": "/services/credit-union/join",
+				"route": "^/services/credit-union/join"
 			}]
 		}]
 	}],
