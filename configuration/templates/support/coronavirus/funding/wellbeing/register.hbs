@@ -184,8 +184,8 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                  <input type="text" id="tfa_1884" name="tfa_1884" title="Local Authority" class="form-input" disabled />
-                  {{!-- <select id="tfa_1884" name="tfa_1884" title="Local Authority" aria-required="true" class="required">
+                  {{!-- <input type="text" id="tfa_1884" name="tfa_1884" title="Local Authority" class="form-input" disabled /> --}}
+                  <select id="tfa_1884" name="tfa_1884" title="Local Authority" aria-required="true" class="required form-select">
                     <option value=""></option>
                     <option value="tfa_1888" id="tfa_1888" class="">Aberdeen</option>
                     <option value="tfa_1889" id="tfa_1889" class="">Aberdeenshire</option>
@@ -220,7 +220,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <option value="tfa_1918" id="tfa_1918" class="">West Dunbartonshire</option>
                     <option value="tfa_1919" id="tfa_1919" class="">West Lothian</option>
                     <option value="tfa_1920" id="tfa_1920" class="" value="Scotland Wide">Scotland-wide</option>
-                  </select> --}}
+                  </select>
                 </div>
               </div>
             </div>
@@ -305,12 +305,12 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
                 <select id="tfa_1959" name="tfa_1959" title="Main Types of Support" class="form-select">
                   <option value="" required>Please select&hellip;</option>
-                  <option value="tfa_1960" id="tfa_1960" required>Emotional of social support</option>
-                  <option value="tfa_1961" id="tfa_1961" required>Food / grocery delivery</option>
-                  <option value="tfa_1962" id="tfa_1962" required>Mutual aid</option>
-                  <option value="tfa_1963" id="tfa_1963" required>Transportation</option>
-                  <option value="tfa_1964" id="tfa_1964" required>Information and advice</option>
-                  <option value="tfa_1965" id="tfa_1965" required>Other</option>
+                  <option value="tfa_1960" id="tfa_1960" required value="Emotional of social support	">Emotional of social support</option>
+                  <option value="tfa_1961" id="tfa_1961" required value="Food / grocery delivery	">Food / grocery delivery</option>
+                  <option value="tfa_1962" id="tfa_1962" required value="	Mutual aid	">Mutual aid</option>
+                  <option value="tfa_1963" id="tfa_1963" required value="	Transportation	">Transportation</option>
+                  <option value="tfa_1964" id="tfa_1964" required value="	Information and advice	">Information and advice</option>
+                  <option value="tfa_1965" id="tfa_1965" required value="	Other">Other</option>
                 </select>
               </div>
             </div>
@@ -639,7 +639,7 @@ wFORMS.behaviors.prefill.skip = false;
                                           value: { __template: "{{{data.postcodeLookup.[0].place}}}" }
                                         },
                                         "#tfa_1884": {
-                                          value: { __template: "{{{data.postcodeLookup.[0].local_authority}}}" }
+                                          value: { __template: "{{{data.postcodeLookup.[0].local_aithority}}}" }
                                         },
                                         "#tfa_1936": {
                                           value: { __template: "{{{data.postcodeLookup.[0].constituency}}}" }
