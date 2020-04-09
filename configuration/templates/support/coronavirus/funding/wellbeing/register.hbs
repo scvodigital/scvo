@@ -345,7 +345,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </fieldset>
         <div class="actions" id="4815763-A">
-          <input id="save" type="submit" data-label="Submit" class="primaryAction btn btn-primary" id="submit_button" value="Submit">
+          <input type="submit" data-label="Submit" class="primaryAction btn btn-primary hidden" id="submit_button" value="Submit">
         </div>
         <div style="clear:both;"></div>
         <input type="hidden" id="tfa_1941" name="tfa_1941" value="" title="Scottish Charity Number">
@@ -672,6 +672,9 @@ wFORMS.behaviors.prefill.skip = false;
                                         "#postcode_validation_icon": {
                                           addClass: [ "fa-check", "text-success" ],
                                           removeClass: [ "loading", "fa-times", "text-primary", "text-error" ]
+                                        },
+                                        "#submit_button": {
+                                          removeClass: "hidden"
                                         }
                                       }
                                     }
