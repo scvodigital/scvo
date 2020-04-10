@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("not_a_charity").addEventListener("click", function() {
     if (document.getElementById("not_a_charity").checked) {
       document.getElementById("organisation-details").classList.remove("hidden");
+      document.getElementById("oscr-wrapper").classList.remove("has-error");
       document.getElementById("oscr_validation_icon").classList.remove("fa-check");
       document.getElementById("oscr_validation_icon").classList.remove("text-success");
       document.getElementById("oscr_validation_icon").classList.remove("text-error");
@@ -53,6 +54,8 @@ document.addEventListener("DOMContentLoaded", function(){
       document.getElementById("tfa_1957").value = "";
     } else {
       document.getElementById("oscr_validation_icon").classList.remove("hidden");
+      document.getElementById("typeahead_charity_number").disabled = false;
+      document.getElementById("oscr-wrapper").classList.add("has-error");
     }
   });
   document.getElementById("tfa_1959").addEventListener("click", function() {
@@ -96,7 +99,7 @@ wFORMS.behaviors.prefill.skip = false;
               </label>
             </div>
             <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
-              <div class="form-group has-icon-right has-error oscr-wrapper" data-component="TasksTrigger" data-TasksTrigger="oscr-lookup">
+              <div class="form-group has-icon-right has-error" data-component="TasksTrigger" data-TasksTrigger="oscr-lookup" id="oscr-wrapper">
                 {{!-- <span class="input-group-addon">SC</span> --}}
                 <input id="typeahead_charity_number" name="typeahead_charity_number" class="form-input" autocomplete="nope" data-lpignore="true" onkeyup="this.value = this.value.toUpperCase();" maxlength="8">
                 <span class="form-icon far" id="oscr_validation_icon"></span>
@@ -159,7 +162,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                <div class="form-group has-icon-right has-error postcode-wrapper" data-component="TasksTrigger" data-TasksTrigger="postcode-lookup">
+                <div class="form-group has-icon-right has-error" data-component="TasksTrigger" data-TasksTrigger="postcode-lookup" id="postcode-wrapper">
                   <input type="text" id="tfa_1925" name="tfa_1925" value="" aria-required="true" title="Postcode" class="form-input required" required onkeyup="this.value = this.value.toUpperCase();">
                   <span class="form-icon far" id="postcode_validation_icon"></span>
                   <p id="postcode_validation_message" class="form-input-hint"></p>
@@ -343,107 +346,6 @@ wFORMS.behaviors.prefill.skip = false;
 </div> --}}
 
 {{{{raw}}}}
-{{!-- <script data-component-config="typeahead-oscr" type="javascript/blocked">
-{
-  typeaheadOptions: {
-    highlight: true,
-    hint: true,
-    minlength: 1,
-    limit: 5
-  },
-  itemSelectedTasks: [
-    {
-      type: "elementManipulator",
-      config: {
-        ">.tt-input": { value: { __pointer: "metadata.suggestion.charity_number" } },
-        "#tfa_1925": { value: { __pointer: "metadata.suggestion.postcode" } },
-        "#oscr_validation_icon": { removeClass: ["text-error", "fa-times"], addClass: ["text-success", "fa-check"] },
-        "#tfa_1876": { value: { __pointer: "metadata.suggestion.charity_name" } },
-        "#tfa_1941": { value: { __pointer: "metadata.suggestion.charity_number" } },
-        "#tfa_1944": { value: { __pointer: "metadata.suggestion.constitutional_form" } },
-        "#tfa_1946": { value: { __pointer: "metadata.suggestion.charity_status" } },
-        "#tfa_1969": { value: { __pointer: "metadata.suggestion.main_operating_location" } },
-        "#tfa_1930": { value: { __pointer: "metadata.suggestion.website" } },
-        "#tfa_1928": { value: { __pointer: "metadata.suggestion.phone" } },
-        "#tfa_1922": { value: { __pointer: "metadata.suggestion.street" } },
-        "#tfa_1923": { value: { __pointer: "metadata.suggestion.city" } },
-        "#tfa_1957": { value: { __pointer: "metadata.suggestion.geo.nhs_ha" } },
-        "#organisation-details": { removeClass: ["hidden"] }
-      }
-    },
-    {
-      type: "elementManipulator",
-      config: {
-        ">.tt-menu": { styles: { display: "none !important" } }
-      }
-    },
-    "postcode-lookup",
-    {
-      type: "run",
-      config: { code: "document.getElementById('tfa_1876').focus();" }
-    }
-  ],
-  nothingSelectedTasks: [
-    {
-      type: "switch",
-      config: {
-        which: {
-          __template: "\{{#if metadata.currentRemoteData.[0]}}selectFirst\{{/if}}"
-        },
-        branches: {
-          default: {
-            tasks: [
-              {
-                type: "run",
-                config: { code: "metadata.instance.clearSelection()" }
-              },
-              {
-                type: "elementManipulator",
-                config: {
-                  "#oscr_validation_icon": {
-                    addClass: ["text-error", "fa-times"],
-                    removeClass: ["text-success", "fa-check"]
-                  }
-                }
-              }
-            ]
-          },
-          selectFirst: {
-            tasks: [
-              {
-                type: "run",
-                config: { code: "console.log('DATA LOADED SO SELECTING FIRST', metadata.currentRemoteData)" }
-              },
-              {
-                type: "run",
-                config: { code: "metadata.instance.typeaheadSelect(metadata.event, metadata.currentRemoteData[0])" }
-              }
-            ]
-          }
-        }
-      }
-    }
-  ],
-  datasets: [
-    {
-      name: "oscr_lookup",
-      display: "charity_number",
-      templates: { header: "" },
-      bloodhound: {
-        datumTokenizer: "objWhitespace",
-        datumTokenizerField: "charity_number",
-        queryTokenizer: "whitespace",
-        remote: {
-          url: "/oscr-lookup?q=*",
-          wildcard: "*"
-        }
-      }
-    },
-  ],
-  clearIfNothingSelected: true
-}
-</script> --}}
-
 <script data-component-config="oscr-lookup" type="javascript/blocked">
   {
     blur: { tasks: ["oscr-lookup"] },
