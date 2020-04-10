@@ -10,7 +10,7 @@
   ],
   "query": {
     "bool": {
-      "must": [
+      "should": [
         {
           "query_string": {
              "fields": ["text_bag_boost"],
@@ -19,17 +19,11 @@
         },
         {
           "wildcard": {
-            "registered_charity_number": "?*"
+            "registered_charity_number": {{{stringify (concat "*" q "*")}}}
           }
         }
       ],
-      "must_not": [
-        {
-          "term": {
-            "registered_charity_number": "SC003558"
-          }
-        }
-      ]
+      "minimum_should_match": 1
     }
   }
 }

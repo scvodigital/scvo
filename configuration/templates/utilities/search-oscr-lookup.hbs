@@ -1,6 +1,11 @@
 [
-  {{#each @root.data.search_data.hits.hits ~}}
+  {{#each @root.data.oscr_data.hits.hits ~}}
   {
+    {{!-- {{#each @root.data.milo_data.hits.hits ~}}
+    {{#compare registered_charity_number ../charity_number ~}}
+    "scvo_member": {{{safeStringify registered_charity_number}}},
+    {{/compare ~}}
+    {{/each ~}} --}}
     {{#each (keyValue _source) ~}}
     "{{key}}": {{{safeStringify value}}}{{#unless @last}},{{/unless}}
     {{/each ~}}

@@ -5,7 +5,7 @@
   "doNotZip": true,
   "tasks": [
     {
-      "name": "search_data",
+      "name": "oscr_data",
       "taskModule": "elasticsearch",
       "config": {
         "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
@@ -16,6 +16,22 @@
           "index": "web-content-production",
           "type": "oscr-charity",
           "template": ">context.metaData.handlebars.queries.utilities_search-oscr-lookup"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "milo_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "web-content-production",
+          "type": "milo-organisation",
+          "template": ">context.metaData.handlebars.queries.utilities_search-org-lookup"
         }
       },
       "renderer": "handlebars"
