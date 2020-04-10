@@ -37,13 +37,22 @@ document.addEventListener("DOMContentLoaded", function(){
       document.getElementById("oscr_validation_icon").classList.remove("fa-check");
       document.getElementById("oscr_validation_icon").classList.remove("text-success");
       document.getElementById("oscr_validation_icon").classList.remove("text-error");
-      document.getElementById("oscr_validation_icon").classList.add("fa-times");
+      document.getElementById("oscr_validation_icon").classList.remove("fa-times");
+      document.getElementById("oscr_validation_icon").classList.add("hidden");
       document.getElementById("typeahead_charity_number").value = "";
+      document.getElementById("typeahead_charity_number").disabled = true;
       document.getElementById("tfa_1876").value = "";
       document.getElementById("tfa_1941").value = "";
       document.getElementById("tfa_1944").value = "";
       document.getElementById("tfa_1946").value = "";
       document.getElementById("tfa_1969").value = "";
+      document.getElementById("tfa_1930").value = "";
+      document.getElementById("tfa_1928").value = "";
+      document.getElementById("tfa_1922").value = "";
+      document.getElementById("tfa_1923").value = "";
+      document.getElementById("tfa_1957").value = "";
+    } else {
+      document.getElementById("oscr_validation_icon").classList.remove("hidden");
     }
   });
   document.getElementById("tfa_1959").addEventListener("click", function() {
@@ -87,10 +96,11 @@ wFORMS.behaviors.prefill.skip = false;
               </label>
             </div>
             <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
-              <div class="input-group has-icon-right" data-component="Typeahead" data-Typeahead="typeahead-oscr">
+              <div class="form-group has-icon-right has-error oscr-wrapper" data-component="TasksTrigger" data-TasksTrigger="oscr-lookup">
                 {{!-- <span class="input-group-addon">SC</span> --}}
                 <input id="typeahead_charity_number" name="typeahead_charity_number" class="form-input" autocomplete="nope" data-lpignore="true" onkeyup="this.value = this.value.toUpperCase();" maxlength="8">
                 <span class="form-icon far" id="oscr_validation_icon"></span>
+                <p id="oscr_validation_message" class="form-input-hint"></p>
               </div>
             </div>
             <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
@@ -149,11 +159,11 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                <div class="input-group has-icon-right postcode-wrapper" data-component="TasksTrigger" data-TasksTrigger="postcode-lookup">
+                <div class="form-group has-icon-right has-error postcode-wrapper" data-component="TasksTrigger" data-TasksTrigger="postcode-lookup">
                   <input type="text" id="tfa_1925" name="tfa_1925" value="" aria-required="true" title="Postcode" class="form-input required" required onkeyup="this.value = this.value.toUpperCase();">
                   <span class="form-icon far" id="postcode_validation_icon"></span>
+                  <p id="postcode_validation_message" class="form-input-hint"></p>
                 </div>
-                <span id="postcode_validation_message"></span>
               </div>
             </div>
             <div id="location-details" class="hidden">
@@ -333,7 +343,7 @@ wFORMS.behaviors.prefill.skip = false;
 </div> --}}
 
 {{{{raw}}}}
-<script data-component-config="typeahead-oscr" type="javascript/blocked">
+{{!-- <script data-component-config="typeahead-oscr" type="javascript/blocked">
 {
   typeaheadOptions: {
     highlight: true,
@@ -354,6 +364,9 @@ wFORMS.behaviors.prefill.skip = false;
         "#tfa_1946": { value: { __pointer: "metadata.suggestion.charity_status" } },
         "#tfa_1969": { value: { __pointer: "metadata.suggestion.main_operating_location" } },
         "#tfa_1930": { value: { __pointer: "metadata.suggestion.website" } },
+        "#tfa_1928": { value: { __pointer: "metadata.suggestion.phone" } },
+        "#tfa_1922": { value: { __pointer: "metadata.suggestion.street" } },
+        "#tfa_1923": { value: { __pointer: "metadata.suggestion.city" } },
         "#tfa_1957": { value: { __pointer: "metadata.suggestion.geo.nhs_ha" } },
         "#organisation-details": { removeClass: ["hidden"] }
       }
@@ -429,6 +442,210 @@ wFORMS.behaviors.prefill.skip = false;
   ],
   clearIfNothingSelected: true
 }
+</script> --}}
+
+<script data-component-config="oscr-lookup" type="javascript/blocked">
+  {
+    blur: { tasks: ["oscr-lookup"] },
+    keyup: { tasks: ["oscr-lookup"] }
+  }
+</script>
+<script data-task="oscr-lookup" type="javascript/blocked">
+{
+  type: "multiTask",
+  config: {
+    tasks: [
+      {
+        type: "switch",
+        config: {
+          which: { __template: "{{#regexMatch (jquery '#typeahead_charity_number' 'val') 'SC[0-9]{6}' 'ig'}}long_enough{{/regexMatch}}" },
+          branches: {
+            default: {
+              tasks: [
+                {
+                  type: "elementManipulator",
+                  config: {
+                    "#oscr_validation_icon": {
+                      addClass: ["loading"],
+                      removeClass: ["fa-times", "text-error", "fa-check", "text-primary", "text-success"]
+                    },
+                    "#tfa_1925": {
+                      value: ""
+                    },
+                    "#tfa_1876": {
+                      value: ""
+                    },
+                    "#tfa_1941": {
+                      value: ""
+                    },
+                    "#tfa_1944": {
+                      value: ""
+                    },
+                    "#tfa_1946": {
+                      value: ""
+                    },
+                    "#tfa_1969": {
+                      value: ""
+                    },
+                    "#tfa_1930": {
+                      value: ""
+                    },
+                    "#tfa_1928": {
+                      value: ""
+                    },
+                    "#tfa_1922": {
+                      value: ""
+                    },
+                    "#tfa_1923": {
+                      value: ""
+                    },
+                    "#tfa_1957": {
+                      value: ""
+                    },
+                    "#oscr_validation_message": {
+                      contents: { __template: '' }
+                    },
+                    "#oscr-wrapper": {
+                      addClass: ["has-error"]
+                    }
+                  }
+                }
+              ]
+            },
+            long_enough: {
+              __doNotCompile: true,
+              tasks: [
+                {
+                  name: "oscrLookup",
+                  type: "request",
+                  config: { url: { __template: "/oscr-lookup?q={{jquery '#typeahead_charity_number' 'val'}}" } }
+                },
+                {
+                  type: "switch",
+                  config: {
+                    which: { __template: "{{#ifAll (regexMatch (jquery '#typeahead_charity_number' 'val') 'SC[0-9]{6}' 'ig') data.oscrLookup.[0].charity_number}}valid{{/ifAll}}" },
+                    branches: {
+                      default: {
+                        tasks: [
+                          {
+                            type: "elementManipulator",
+                            config: {
+                              "#oscr_validation_icon": {
+                                removeClass: ["fa-times", "text-error", "loading", "fa-check", "text-primary", "text-success"]
+                              },
+                              "#tfa_1925": {
+                                value: ""
+                              },
+                              "#tfa_1876": {
+                                value: ""
+                              },
+                              "#tfa_1941": {
+                                value: ""
+                              },
+                              "#tfa_1944": {
+                                value: ""
+                              },
+                              "#tfa_1946": {
+                                value: ""
+                              },
+                              "#tfa_1969": {
+                                value: ""
+                              },
+                              "#tfa_1930": {
+                                value: ""
+                              },
+                              "#tfa_1928": {
+                                value: ""
+                              },
+                              "#tfa_1922": {
+                                value: ""
+                              },
+                              "#tfa_1923": {
+                                value: ""
+                              },
+                              "#tfa_1957": {
+                                value: ""
+                              },
+                              "#oscr_validation_message": {
+                                contents: { __template: 'Invalid charity number, please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search/">check your OSCR record</a>.' }
+                              },
+                              "#oscr-wrapper": {
+                                addClass: ["has-error"]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      valid: {
+                        tasks: [
+                          {
+                            type: "elementManipulator",
+                            config: {
+                              ">": {
+                                value: { __template: "{{{data.oscrLookup.[0].charity_number}}}" }
+                              },
+                              "#tfa_1925": {
+                                value: { __template: "{{{data.oscrLookup.[0].postcode}}}" }
+                              },
+                              "#tfa_1876": {
+                                value: { __template: "{{{data.oscrLookup.[0].charity_name}}}" }
+                              },
+                              "#tfa_1941": {
+                                value: { __template: "{{{data.oscrLookup.[0].charity_number}}}" }
+                              },
+                              "#tfa_1944": {
+                                value: { __template: "{{{data.oscrLookup.[0].constitutional_form}}}" }
+                              },
+                              "#tfa_1946": {
+                                value: { __template: "{{{data.oscrLookup.[0].charity_status}}}" }
+                              },
+                              "#tfa_1969": {
+                                value: { __template: "{{{data.oscrLookup.[0].main_operating_location}}}" }
+                              },
+                              "#tfa_1930": {
+                                value: { __template: "{{{data.oscrLookup.[0].website}}}" }
+                              },
+                              "#tfa_1928": {
+                                value: { __template: "{{{data.oscrLookup.[0].phone}}}" }
+                              },
+                              "#tfa_1922": {
+                                value: { __template: "{{{data.oscrLookup.[0].street}}}" }
+                              },
+                              "#tfa_1923": {
+                                value: { __template: "{{{data.oscrLookup.[0].city}}}" }
+                              },
+                              "#tfa_1957": {
+                                value: { __template: "{{{data.oscrLookup.[0].geo.nhs_ha}}}" }
+                              },
+                              "#oscr_validation_message": {
+                                contents: { __template: "" }
+                              },
+                              "#oscr-wrapper": {
+                                removeClass: ["has-error"]
+                              },
+                              "#organisation-details": {
+                                removeClass: ["hidden"]
+                              },
+                              "#oscr_validation_icon": {
+                                addClass: ["fa-check", "text-success"],
+                                removeClass: ["loading", "fa-times", "text-primary", "text-error"]
+                              }
+                            }
+                          },
+                          "postcode-lookup"
+                        ]
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
 </script>
 
 <script data-component-config="postcode-lookup" type="javascript/blocked">
@@ -462,9 +679,6 @@ wFORMS.behaviors.prefill.skip = false;
                     "#tfa_1936": {
                       value: ""
                     },
-                    "#nuts_3": {
-                      value: ""
-                    },
                     "#tfa_1934": {
                       value: ""
                     },
@@ -478,7 +692,7 @@ wFORMS.behaviors.prefill.skip = false;
                       contents: { __template: "" }
                     },
                     "#postcode-wrapper": {
-                      removeClass: ["has-error"],
+                      addClass: ["has-error"]
                     }
                   }
                 }
@@ -531,7 +745,7 @@ wFORMS.behaviors.prefill.skip = false;
                                 contents: { __template: "" }
                               },
                               "#postcode-wrapper": {
-                                removeClass: ["has-error"],
+                                addClass: ["has-error"]
                               },
                               "#postcode_validation_icon": {
                                 addClass: ["fa-times", "text-error"],
@@ -573,7 +787,7 @@ wFORMS.behaviors.prefill.skip = false;
                                           contents: { __template: "Please enter a postcode in Scotland" }
                                         },
                                         "#postcode-wrapper": {
-                                          addClass: ["has-error"],
+                                          addClass: ["has-error"]
                                         },
                                         "#postcode_validation_icon": {
                                           addClass: ["fa-times", "text-error"],
