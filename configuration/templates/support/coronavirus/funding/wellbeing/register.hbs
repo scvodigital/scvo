@@ -186,39 +186,9 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
                   {{!-- <input type="text" id="tfa_1884" name="tfa_1884" title="Local Authority" class="form-input" disabled /> --}}
                   <select id="tfa_1884" name="tfa_1884" title="Local Authority" aria-required="true" class="required form-select" required>
-                    <option value="tfa_1970" id="tfa_1970" class="">Aberdeen</option>
-                    <option value="tfa_1971" id="tfa_1971" class="">Aberdeenshire</option>
-                    <option value="tfa_1972" id="tfa_1972" class="">Angus</option>
-                    <option value="tfa_1973" id="tfa_1973" class="">Argyll and Bute</option>
-                    <option value="tfa_1974" id="tfa_1974" class="">Edinburgh</option>
-                    <option value="tfa_1975" id="tfa_1975" class="">Clackmannanshire</option>
-                    <option value="tfa_1976" id="tfa_1976" class="">Na h-Eileanan Siar</option>
-                    <option value="tfa_1977" id="tfa_1977" class="">Dumfries and Galloway</option>
-                    <option value="tfa_1978" id="tfa_1978" class="">Dundee</option>
-                    <option value="tfa_1979" id="tfa_1979" class="">East Ayrshire</option>
-                    <option value="tfa_1980" id="tfa_1980" class="">East Dunbartonshire</option>
-                    <option value="tfa_1981" id="tfa_1981" class="">East Lothian</option>
-                    <option value="tfa_1982" id="tfa_1982" class="">East Renfrewshire</option>
-                    <option value="tfa_1983" id="tfa_1983" class="">Falkirk</option>
-                    <option value="tfa_1984" id="tfa_1984" class="">Fife</option>
-                    <option value="tfa_1985" id="tfa_1985" class="">Glasgow</option>
-                    <option value="tfa_1986" id="tfa_1986" class="">Highland</option>
-                    <option value="tfa_1987" id="tfa_1987" class="">Inverclyde</option>
-                    <option value="tfa_1988" id="tfa_1988" class="">Midlothian</option>
-                    <option value="tfa_1989" id="tfa_1989" class="">Moray</option>
-                    <option value="tfa_1990" id="tfa_1990" class="">North Ayrshire</option>
-                    <option value="tfa_1991" id="tfa_1991" class="">North Lanarkshire</option>
-                    <option value="tfa_1992" id="tfa_1992" class="">Orkney</option>
-                    <option value="tfa_1993" id="tfa_1993" class="">Perth and Kinross</option>
-                    <option value="tfa_1994" id="tfa_1994" class="">Renfrewshire</option>
-                    <option value="tfa_1995" id="tfa_1995" class="">Scottish Borders</option>
-                    <option value="tfa_1996" id="tfa_1996" class="">Shetland</option>
-                    <option value="tfa_1997" id="tfa_1997" class="">South Ayrshire</option>
-                    <option value="tfa_1998" id="tfa_1998" class="">South Lanarkshire</option>
-                    <option value="tfa_1999" id="tfa_1999" class="">Stirling</option>
-                    <option value="tfa_2000" id="tfa_2000" class="">West Dunbartonshire</option>
-                    <option value="tfa_2001" id="tfa_2001" class="">West Lothian</option>
-                    <option value="tfa_2002" id="tfa_2002" class="" value="Scotland Wide">Scotland-wide</option>
+                    {{#each @root.context.metaData.formMapping.local_authority ~}}
+                    <option value="{{formassembly}}" id="{{formassembly}}" class="">{{name}}</option>
+                    {{/each ~}}
                   </select>
                 </div>
               </div>
@@ -622,8 +592,7 @@ wFORMS.behaviors.prefill.skip = false;
                                           value: { __template: "{{{data.postcodeLookup.[0].place}}}" }
                                         },
                                         "#tfa_1884": {
-                                          value: { __template: "{{{data.postcodeLookup.[0].local_authority}}}" },
-                                          addClass: [{__template: "{{{data.postcodeLookup.[0].local_authority}}}"}]
+                                          value: { __template: "{{{data.postcodeLookup.[0].local_authority_formassembly}}}" }
                                         },
                                         "#tfa_1936": {
                                           value: { __template: "{{{data.postcodeLookup.[0].constituency}}}" }

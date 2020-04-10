@@ -5,9 +5,11 @@
     "place": {{{stringify _source.place}}},
     {{#if _source.district ~}}
     "local_authority": {{{stringify (replace (replace (replace (replace _source.district " and " " & ") " Islands" "") "City of " "") " City" "")}}},
+    "local_authority_formassembly": {{{stringify (getProperty @root.context.metaData.formMapping.local_authority (concat (slugify (replace (replace (replace (replace _source.district " and " " & ") " Islands" "") "City of " "") " City" "")) ".formassembly"))}}},
     {{else}}
     {{#if _source.county ~}}
     "local_authority": {{{stringify (replace (replace (replace (replace _source.county " and " " & ") " Islands" "") "City of " "") " City" "")}}},
+    "local_authority_formassembly": {{{stringify (getProperty @root.context.metaData.formMapping.local_authority (concat (slugify (replace (replace (replace (replace _source.county " and " " & ") " Islands" "") "City of " "") " City" "")) ".formassembly"))}}},
     {{/if ~}}
     {{/if ~}}
     {{#if _source.country ~}}
