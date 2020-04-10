@@ -1458,7 +1458,17 @@
 			"children": [{
 				"label": "Governance",
 				"path": "/support/coronavirus/leading-your-organisation/governance",
-				"route": "^/support/coronavirus/leading-your-organisation/governance$"
+				"route": "^/support/coronavirus/leading-your-organisation/governance$",
+				"children": [{
+					"label": "Your board",
+					"path": "/support/coronavirus/leading-your-organisation/governance/your-board",
+					"route": "^/support/coronavirus/leading-your-organisation/governance/your-board$"
+				},
+				{
+					"label": "Business continuity",
+					"path": "/support/coronavirus/leading-your-organisation/governance/business-continuity",
+					"route": "^/support/coronavirus/leading-your-organisation/governance/business-continuity$"
+				}]
 			},
 			{
 				"label": "Business advice",
