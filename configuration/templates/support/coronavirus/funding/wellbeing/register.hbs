@@ -101,7 +101,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
               <div class="form-group has-icon-right has-error" data-component="TasksTrigger" data-TasksTrigger="oscr-lookup" id="oscr-wrapper">
                 {{!-- <span class="input-group-addon">SC</span> --}}
-                <input id="typeahead_charity_number" name="typeahead_charity_number" class="form-input" autocomplete="nope" data-lpignore="true" onkeyup="this.value = this.value.toUpperCase();" maxlength="8">
+                <input id="typeahead_charity_number" name="typeahead_charity_number" class="form-input" autocomplete="nope" data-lpignore="true" onkeyup="this.value = this.value.toUpperCase().replace(/o/ig, '0');" maxlength="8">
                 <span class="form-icon far" id="oscr_validation_icon"></span>
                 <p id="oscr_validation_message" class="form-input-hint"></p>
               </div>
@@ -119,7 +119,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_1876-L" class="form-label r-margin preField reqMark" for="tfa_1876">Organisation name</label>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group oneField field-container-D" id="tfa_1876-D">
                   <input type="text" id="tfa_1876" name="tfa_1876" value="" aria-required="true" title="Organisation Name" class="form-input required" required>
                 </div>
@@ -131,8 +131,8 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1939-L" class="form-label r-margin preField reqMark" for="tfa_1939">Organisation email</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                <input type="text" id="tfa_1939" name="tfa_1939" value="" aria-required="true" title="Organisation Email" class="form-input required" required>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="email" id="tfa_1939" name="tfa_1939" value="" aria-required="true" title="Organisation Email" class="form-input required" required>
               </div>
             </div>
             <div class="form-group">
@@ -141,7 +141,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1928-L" class="form-label r-margin preField reqMark" for="tfa_1928">Phone</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <input type="text" id="tfa_1928" name="tfa_1928" value="" aria-required="true" title="Phone" class="form-input required" required>
               </div>
             </div>
@@ -151,7 +151,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1930-L" class="form-label r-margin preField" for="tfa_1930">Website</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <input type="text" id="tfa_1930" name="tfa_1930" value="" class="form-input" title="Website">
               </div>
             </div>
@@ -176,7 +176,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">Street</label>
                   </div>
                 </div>
-                <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1922" name="tfa_1922" value="" aria-required="true" title="Street Address" class="form-input required" required>
                 </div>
               </div>
@@ -186,7 +186,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">Town/city</label>
                   </div>
                 </div>
-                <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1923" name="tfa_1923" value="" aria-required="true" title="Town/City" class="form-input required" required>
                 </div>
               </div>
@@ -196,7 +196,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <label id="tfa_1884-L" class="form-label r-margin preField reqMark" for="tfa_1884">Local authority</label>
                   </div>
                 </div>
-                <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   {{!-- <input type="text" id="tfa_1884" name="tfa_1884" title="Local Authority" class="form-input" disabled /> --}}
                   <select id="tfa_1884" name="tfa_1884" title="Local Authority" aria-required="true" class="required form-select" required>
                     {{#each @root.context.metaData.formMapping.local_authority ~}}
@@ -217,7 +217,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1958-L" class="form-label r-margin preField reqMark" for="tfa_1958">Job title</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <input type="text" id="tfa_1958" name="tfa_1958" value="" aria-required="true" title="Job Title" class="form-input required" required>
               </div>
             </div>
@@ -227,7 +227,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1-L" class="form-label r-margin preField reqMark" for="tfa_1">First name</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <input type="text" id="tfa_1" name="tfa_1" value="" aria-required="true" title="First Name" class="form-input required" required>
               </div>
             </div>
@@ -237,7 +237,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1875-L" class="form-label r-margin preField reqMark" for="tfa_1875">Last name</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <input type="text" id="tfa_1875" name="tfa_1875" value="" aria-required="true" title="Last Name" class="form-input required" required>
               </div>
             </div>
@@ -247,8 +247,8 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1932-L" class="form-label r-margin preField reqMark" for="tfa_1932">Email</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                <input type="text" id="tfa_1932" name="tfa_1932" value="" aria-required="true" title="Email" class="form-input required" required>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="email" id="tfa_1932" name="tfa_1932" value="" aria-required="true" title="Email" class="form-input required" required>
               </div>
             </div>
             <div class="form-group">
@@ -257,7 +257,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1949-L" class="form-label r-margin preField reqMark" for="tfa_1949">Contact phone number</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <input type="text" id="tfa_1949" name="tfa_1949" value="" aria-required="true" title="Mobile Phone" class="form-input required" required>
               </div>
             </div>
@@ -284,7 +284,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <select id="tfa_1959" name="tfa_1959" title="Main Types of Support" class="form-select">
                   <option value="" required>Please select&hellip;</option>
                   <option value="tfa_1960" id="tfa_1960" required value="Emotional of social support	">Emotional of social support</option>
@@ -302,7 +302,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1967-L" class="form-label r-margin preField reqMark" for="tfa_1967">Other support</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <textarea aria-required="true" id="tfa_1967" name="tfa_1967" placeholder="" title="Other support" class="form-input"></textarea>
               </div>
             </div>
@@ -312,7 +312,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label id="tfa_1969-L" class="form-label r-margin preField reqMark" for="tfa_1969">Areas covered</label>
                 </div>
               </div>
-              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <textarea aria-required="true" id="tfa_1969" name="tfa_1969" placeholder="Express your interest here" title="Areas covered" class="form-input required" required></textarea>
               </div>
             </div>
@@ -766,5 +766,3 @@ wFORMS.behaviors.prefill.skip = false;
 }
 </script>
 {{{{/raw}}}}
-
-

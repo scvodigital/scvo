@@ -2,6 +2,7 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
   {{{layoutParts.head}}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.8.3/polyfill.min.js"></script>
   {{> layout_head}}
 </head>
 <body class="{{#if request.params.path}}{{replace (replace request.params.path '20-years' 'twenty-years') '_' ' '}}{{else}}home{{/if}}">
