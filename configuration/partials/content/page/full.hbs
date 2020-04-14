@@ -1,13 +1,27 @@
 {{> leading_quotation sourcePage=this}}
 
 <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
+  {{#if highlight_last_updated ~}}
+  <div class="page-info b-margin-full">
+    <div class="page-info-item page-info-updated text-white label label-warning" title="{{#compare (momentFormat (moment publish_on 'x') 'Do MMMM YYYY') '===' (momentFormat (moment updated 'x') 'Do MMMM YYYY')}}Published{{else}}Last updated{{/compare}} on {{momentFormat (moment updated 'x') 'Do MMMM YYYY'}} at {{momentFormat (moment updated 'x') 'HH:mm:ss'}}">
+      <span class="far fa-calendar-alt" aria-hidden="true"></span>
+      Last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
+    </div>
+  </div>
+  {{/if ~}}
+
   {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
 
-  {{!-- <div class="divider"></div> --}}
+  {{#unless highlight_last_updated ~}}
   <div class="page-info v-margin-full b-padding-full">
     <div class="page-info-item page-info-updated text-gray">
       <span class="far fa-calendar-alt" aria-hidden="true"></span>
       Page last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
     </div>
   </div>
+  {{/unless ~}}
 </div>
+
+{{#if (contains @root.request.url.pathname "/support/coronavirus/") ~}}
+<script src="{{~>asset_url url='js/accordion.js'~}}"></script>
+{{/if ~}}
