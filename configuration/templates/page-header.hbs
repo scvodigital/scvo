@@ -18,7 +18,10 @@
 {{else}}
 
 {{#if (contains @root.request.url.pathname "/about/membership") ~}}
-{{> membership_warning}}
+{{> warnings_membership}}
+{{/if ~}}
+{{#if (contains @root.request.url.pathname "/jobs/community-jobs-scotland") ~}}
+{{> warnings_cjs}}
 {{/if ~}}
 
 <div class="container">
