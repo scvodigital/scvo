@@ -16,6 +16,11 @@
   </div>
 </div>
 {{else}}
+
+{{#if (contains @root.request.url.pathname "/about/membership") ~}}
+{{> membership_warning}}
+{{/if ~}}
+
 <div class="container">
   <h1>{{{title}}}</h1>
 </div>
