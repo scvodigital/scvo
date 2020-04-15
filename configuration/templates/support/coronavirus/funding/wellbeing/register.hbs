@@ -977,94 +977,47 @@ wFORMS.behaviors.prefill.skip = false;
                       found: {
                         tasks: [
                           {
-                            __doNotCompile: true,
-                            type: "switch",
+                            type: "elementManipulator",
                             config: {
-                              which: { __template: "{{#eq data.postcodeLookup.[0].country 'Scotland'}}scotland{{/eq}}" },
-                              branches: {
-                                default: {
-                                  tasks: [
-                                    {
-                                      type: "elementManipulator",
-                                      config: {
-                                        "#tfa_1884": {
-                                          value: ""
-                                        },
-                                        "#tfa_1936": {
-                                          value: ""
-                                        },
-                                        "#tfa_1934": {
-                                          value: ""
-                                        },
-                                        "#tfa_1953": {
-                                          value: ""
-                                        },
-                                        "#tfa_1955": {
-                                          value: ""
-                                        },
-                                        "#postcode_validation_message": {
-                                          contents: { __template: "Please enter a postcode in Scotland" }
-                                        },
-                                        "#postcode-wrapper": {
-                                          addClass: ["has-error"]
-                                        },
-                                        "#postcode_validation_icon": {
-                                          addClass: ["fa-times", "text-error"],
-                                          removeClass: ["loading", "fa-check", "text-primary", "text-success"]
-                                        }
-                                      }
-                                    }
-                                  ]
-                                },
-                                scotland: {
-                                  tasks: [
-                                    {
-                                      type: "elementManipulator",
-                                      config: {
-                                        ">": {
-                                          value: { __template: "{{{data.postcodeLookup.[0].place}}}" }
-                                        },
-                                        "#tfa_1884": {
-                                          value: { __template: "{{{data.postcodeLookup.[0].local_authority_formassembly}}}" }
-                                        },
-                                        "#tfa_1936": {
-                                          value: { __template: "{{{data.postcodeLookup.[0].constituency}}}" }
-                                        },
-                                        "#tfa_1934": {
-                                          value: { __template: "{{{data.postcodeLookup.[0].ward}}}" }
-                                        },
-                                        "#tfa_1953": {
-                                          value: { __template: "{{{data.postcodeLookup.[0].simd_datazone}}}" }
-                                        },
-                                        "#tfa_1955": {
-                                          value: { __template: "{{{data.postcodeLookup.[0].simd_rank}}}" }
-                                        },
-                                        "#postcode_validation_message": {
-                                          contents: { __template: "" }
-                                        },
-                                        "#postcode-wrapper": {
-                                          removeClass: ["has-error"]
-                                        },
-                                        "#location-details": {
-                                          removeClass: ["hidden"]
-                                        },
-                                        "#contact-details": {
-                                          removeClass: ["hidden"]
-                                        },
-                                        "#interest-details": {
-                                          removeClass: ["hidden"]
-                                        },
-                                        "#postcode_validation_icon": {
-                                          addClass: ["fa-check", "text-success"],
-                                          removeClass: ["loading", "fa-times", "text-primary", "text-error"]
-                                        },
-                                        "#submit_button": {
-                                          removeClass: ["hidden"]
-                                        }
-                                      }
-                                    }
-                                  ]
-                                }
+                              ">": {
+                                value: { __template: "{{{data.postcodeLookup.[0].place}}}" }
+                              },
+                              "#tfa_1884": {
+                                value: { __template: "{{{data.postcodeLookup.[0].local_authority_formassembly}}}" }
+                              },
+                              "#tfa_1936": {
+                                value: { __template: "{{{data.postcodeLookup.[0].constituency}}}" }
+                              },
+                              "#tfa_1934": {
+                                value: { __template: "{{{data.postcodeLookup.[0].ward}}}" }
+                              },
+                              "#tfa_1953": {
+                                value: { __template: "{{{data.postcodeLookup.[0].simd_datazone}}}" }
+                              },
+                              "#tfa_1955": {
+                                value: { __template: "{{{data.postcodeLookup.[0].simd_rank}}}" }
+                              },
+                              "#postcode_validation_message": {
+                                contents: { __template: "" }
+                              },
+                              "#postcode-wrapper": {
+                                removeClass: ["has-error"]
+                              },
+                              "#location-details": {
+                                removeClass: ["hidden"]
+                              },
+                              "#contact-details": {
+                                removeClass: ["hidden"]
+                              },
+                              "#interest-details": {
+                                removeClass: ["hidden"]
+                              },
+                              "#postcode_validation_icon": {
+                                addClass: ["fa-check", "text-success"],
+                                removeClass: ["loading", "fa-times", "text-primary", "text-error"]
+                              },
+                              "#submit_button": {
+                                removeClass: ["hidden"]
                               }
                             }
                           }

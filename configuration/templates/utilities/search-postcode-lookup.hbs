@@ -3,6 +3,7 @@
   {
     "display": {{{stringify _source.place}}},
     "place": {{{stringify _source.place}}},
+    {{#compare _source.country "Scotland" ~}}
     {{#if _source.district ~}}
     "local_authority": {{{stringify (replace (replace (replace (replace _source.district " and " " & ") " Islands" "") "City of " "") " City" "")}}},
     "local_authority_formassembly": {{{stringify (getProperty @root.context.metaData.formMapping.local_authority (concat (slugify (replace (replace (replace (replace _source.district " and " " & ") " Islands" "") "City of " "") " City" "")) ".formassembly"))}}},
@@ -12,6 +13,10 @@
     "local_authority_formassembly": {{{stringify (getProperty @root.context.metaData.formMapping.local_authority (concat (slugify (replace (replace (replace (replace _source.county " and " " & ") " Islands" "") "City of " "") " City" "")) ".formassembly"))}}},
     {{/if ~}}
     {{/if ~}}
+    {{else}}
+    "local_authority": "Scotland-wide",
+    "local_authority_formassembly": {{{stringify @root.context.metaData.formMapping.local_authority.z-scotland.formassembly}}},
+    {{/compare ~}}
     {{#if _source.country ~}}
     "country": {{{stringify _source.country}}},
     {{/if ~}}
