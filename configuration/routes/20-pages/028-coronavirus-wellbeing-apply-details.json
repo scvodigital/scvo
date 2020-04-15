@@ -26,11 +26,19 @@
       "config": {
         "if": [
           {
-            "==": [
+            "and": [
               {
-                "var": "data.oscr_data.hits.hits.length"
+                "==": [
+                  { "var": "data.oscr_data.hits.total" },
+                  0
+                ]
               },
-              0
+              {
+                "!=": [
+                  { "var": "request.params.charity_number" },
+                  "not-a-charity"
+                ]
+              }
             ]
           },
           "coronavirus_wellbeing_apply",
@@ -68,10 +76,36 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
             "template": ">context.metaData.handlebars.queries.posts_tfn-related-coronavirus"
+          },
+          {
+            "name": "postcode_data",
+            "index": "geo_lookup",
+            "type": "postcode",
+            "template": ">context.metaData.handlebars.queries.pages_wellbeing-fund-postcode"
           }
         ]
       },
       "renderer": "handlebars"
+    },
+    {
+      "name": "postcode_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.utilities_search-postcode-lookup",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "form_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.support_coronavirus_funding_wellbeing_apply-form-data",
+        "output": "data",
+        "parseJson": true
+      }
     },
     {
       "name": "destination",

@@ -1,0 +1,11 @@
+{
+  "size": 1,
+  "_source": [
+    "*"
+  ],
+  "query": {
+    "ids": {
+      "values": {{{json value=(default @root.data.oscr_data.hits.hits.[0]._source.postcode "xxxxxxx")}}}
+    }
+  }
+}

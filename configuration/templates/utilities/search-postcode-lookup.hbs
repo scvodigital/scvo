@@ -1,5 +1,5 @@
 [
-  {{#eachJoin @root.data.search_data.hits.hits "," ~}}
+  {{#eachJoin (default @root.data.search_data.hits.hits @root.data.supplimentaryResponses.postcode_data.hits.hits) "," ~}}
   {
     "display": {{{stringify _source.place}}},
     "place": {{{stringify _source.place}}},

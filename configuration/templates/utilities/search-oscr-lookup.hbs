@@ -1,25 +1,25 @@
 [
   {{#each @root.data.oscr_data.hits.hits ~}}
-  {
-    {{#each @root.data.milo_data.hits.hits ~}}
-    {{#compare _source.registered_charity_number ../_source.charity_number ~}}
-    {{#if _source.scvo_member ~}}
-    "scvo_member": {{#compare _source.scvo_member.membership_status "Active Member"}}true{{else}}false{{/compare}},
-    {{/if ~}}
-    {{#if _source.phone ~}}
-    "phone": {{{safeStringify _source.phone}}},
-    {{/if ~}}
-    {{#if _source.location_street ~}}
-    "street": {{{safeStringify _source.location_street}}},
-    {{/if ~}}
-    {{#if _source.location_city ~}}
-    "city": {{{safeStringify _source.location_city}}},
-    {{/if ~}}
-    {{/compare ~}}
-    {{/each ~}}
-    {{#each (keyValue _source) ~}}
-    "{{key}}": {{{safeStringify value}}}{{#unless @last}},{{/unless}}
-    {{/each ~}}
-  }{{#unless @last}},{{/unless}}
+    {
+      {{#each @root.data.milo_data.hits.hits ~}}
+        {{#compare _source.registered_charity_number ../_source.charity_number ~}}
+          {{#if _source.scvo_member ~}}
+            "scvo_member": {{#compare _source.scvo_member.membership_status "Active Member"}}true{{else}}false{{/compare}},
+          {{/if ~}}
+          {{#if _source.phone ~}}
+            "phone": {{{safeStringify _source.phone}}},
+          {{/if ~}}
+          {{#if _source.location_street ~}}
+            "street": {{{safeStringify _source.location_street}}},
+          {{/if ~}}
+          {{#if _source.location_city ~}}
+            "city": {{{safeStringify _source.location_city}}},
+          {{/if ~}}
+        {{/compare ~}}
+      {{/each ~}}
+      {{#each (keyValue _source) ~}}
+        "{{key}}": {{{safeStringify value}}}{{#unless @last}},{{/unless}}
+      {{/each ~}}
+    }{{#unless @last}},{{/unless}}
   {{/each ~}}
 ]
