@@ -1466,24 +1466,14 @@
 			"path": "/support/coronavirus/leading-your-organisation",
 			"route": "^/support/coronavirus/leading-your-organisation$",
 			"children": [{
-				"label": "Governance",
-				"path": "/support/coronavirus/leading-your-organisation/governance",
-				"route": "^/support/coronavirus/leading-your-organisation/governance$",
-				"children": [{
-					"label": "Your board",
-					"path": "/support/coronavirus/leading-your-organisation/governance/your-board",
-					"route": "^/support/coronavirus/leading-your-organisation/governance/your-board$"
-				},
-				{
-					"label": "Business continuity",
-					"path": "/support/coronavirus/leading-your-organisation/governance/business-continuity",
-					"route": "^/support/coronavirus/leading-your-organisation/governance/business-continuity$"
-				}]
+				"label": "Your board",
+				"path": "/support/coronavirus/leading-your-organisation/your-board",
+				"route": "^/support/coronavirus/leading-your-organisation/your-board$"
 			},
 			{
-				"label": "Business advice",
-				"path": "/support/coronavirus/leading-your-organisation/business-advice",
-				"route": "^/support/coronavirus/leading-your-organisation/business-advice$"
+				"label": "Business continuity",
+				"path": "/support/coronavirus/leading-your-organisation/business-continuity",
+				"route": "^/support/coronavirus/leading-your-organisation/business-continuity$"
 			},
 			{
 				"label": "Finance",
@@ -1579,6 +1569,11 @@
 				"label": "Digital assets",
 				"path": "/support/coronavirus/what-scvo-is-doing/digital-assets",
 				"route": "^/support/coronavirus/what-scvo-is-doing/digital-assets$"
+			},
+			{
+				"label": "Impact survey",
+				"path": "/support/coronavirus/what-scvo-is-doing/impact-survey",
+				"route": "^/support/coronavirus/what-scvo-is-doing/impact-survey$"
 			}]
 		},
 		{
