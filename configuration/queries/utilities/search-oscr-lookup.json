@@ -1,4 +1,4 @@
-{{#withExtend this q=@root.request.params.query.q}}
+{{#withExtend this q=(default @root.request.params.query.q @root.request.params.charity_number)}}
 {
   "size": 5,
   "_source": [
