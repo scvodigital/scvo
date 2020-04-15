@@ -1,621 +1,1094 @@
 {{#if @root.request.params.query.debug ~}}
-<!-- FORM: HEAD SECTION -->
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+  let formElement = document.getElementById("tfa_0");
+  if (null === formElement) {
+    formElement = document.getElementById("0");
+  }
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+    let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+    if (null !== cumulatedTimeElement) {
+      let cumulatedTime = parseInt(cumulatedTimeElement.value);
+      if (null !== cumulatedTime && cumulatedTime > 0) {
+        formTimeDiff += cumulatedTime;
+      }
+    }
+    let jsTimeInput = document.createElement("input");
+    jsTimeInput.setAttribute("type", "hidden");
+    jsTimeInput.setAttribute("value", formTimeDiff.toString());
+    jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("autocomplete", "off");
+    if (null !== formElement) {
+      formElement.appendChild(jsTimeInput);
+    }
+  };
+  if (null !== formElement) {
+    if(formElement.addEventListener){
+      formElement.addEventListener('submit', appendJsTimerElement, false);
+    } else if(formElement.attachEvent){
+      formElement.attachEvent('onsubmit', appendJsTimerElement);
+    }
+  }
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-            <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function(){
-            const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
-            let formElement = document.getElementById("tfa_0");
-            if (null === formElement) {
-                formElement = document.getElementById("0");
-            }
-            let appendJsTimerElement = function(){
-                let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
-                let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
-                if (null !== cumulatedTimeElement) {
-                    let cumulatedTime = parseInt(cumulatedTimeElement.value);
-                    if (null !== cumulatedTime && cumulatedTime > 0) {
-                        formTimeDiff += cumulatedTime;
-                    }
-                }
-                let jsTimeInput = document.createElement("input");
-                jsTimeInput.setAttribute("type", "hidden");
-                jsTimeInput.setAttribute("value", formTimeDiff.toString());
-                jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
-                jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
-                jsTimeInput.setAttribute("autocomplete", "off");
-                if (null !== formElement) {
-                    formElement.appendChild(jsTimeInput);
-                }
-            };
-            if (null !== formElement) {
-                if(formElement.addEventListener){
-                    formElement.addEventListener('submit', appendJsTimerElement, false);
-                } else if(formElement.attachEvent){
-                    formElement.attachEvent('onsubmit', appendJsTimerElement);
-                }
-            }
-        });
-    </script>
+  document.getElementById("typeahead_charity_number").value = "{{@root.request.params.query.scn}}";
 
-    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=d1f5c19bf2f1748255566c3e4c87f328" rel="stylesheet" type="text/css" />
+  document.getElementById("not_a_charity").addEventListener("click", function() {
+    if (document.getElementById("not_a_charity").checked) {
+      document.getElementById("organisation-details").classList.remove("hidden");
+      document.getElementById("oscr-wrapper").classList.remove("has-error");
+      document.getElementById("oscr_validation_icon").classList.remove("fa-check");
+      document.getElementById("oscr_validation_icon").classList.remove("text-success");
+      document.getElementById("oscr_validation_icon").classList.remove("text-error");
+      document.getElementById("oscr_validation_icon").classList.remove("fa-times");
+      document.getElementById("oscr_validation_icon").classList.add("hidden");
+      document.getElementById("typeahead_charity_number").value = "";
+      document.getElementById("typeahead_charity_number").disabled = true;
+      document.getElementById("tfa_1876").value = "";
+      document.getElementById("tfa_1941").value = "";
+      document.getElementById("tfa_1944").value = "";
+      document.getElementById("tfa_1946").value = "";
+      document.getElementById("tfa_1930").value = "";
+      document.getElementById("tfa_1928").value = "";
+      document.getElementById("tfa_1922").value = "";
+      document.getElementById("tfa_1923").value = "";
+      document.getElementById("tfa_1957").value = "";
+      document.getElementById("tfa_1925").value = "";
+      $("#postcode_validation_icon").addClass('fa-times text-error').removeClass('loading', 'fa-check', 'text-primary', 'text-success');
+      $("#tfa_1884").val('');
+      $("#tfa_1936").val('');
+      $("#tfa_1934").val('');
+      $("#tfa_1953").val('');
+      $("#tfa_1955").val('');
+    } else {
+      document.getElementById("oscr_validation_icon").classList.remove("hidden");
+      document.getElementById("typeahead_charity_number").disabled = false;
+      document.getElementById("oscr-wrapper").classList.add("has-error");
+    }
+  });
+  document.getElementById("tfa_1959").addEventListener("click", function() {
+    if (document.getElementById("tfa_1965").selected) {
+      document.getElementById("support-other-field").classList.remove("hidden");
+    } else {
+      document.getElementById("support-other-field").classList.add("hidden");
+      document.getElementById("tfa_1967").value = "";
+    }
+  });
+});
+</script>
 
-    <link href="https://www.tfaforms.com/uploads/themes/theme-66536.css" rel="stylesheet" type="text/css" />
-    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=d1f5c19bf2f1748255566c3e4c87f328" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
-    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=d1f5c19bf2f1748255566c3e4c87f328"></script>
-    <script type="text/javascript">
-        wFORMS.behaviors.prefill.skip = false;
-    </script>
-        <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=d1f5c19bf2f1748255566c3e4c87f328"></script>
+{{!-- <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=d1f5c19bf2f1748255566c3e4c87f328" rel="stylesheet" type="text/css" /> --}}
+{{!-- <link href="https://www.tfaforms.com/uploads/themes/theme-66536.css" rel="stylesheet" type="text/css" /> --}}
 
-<!-- FORM: BODY SECTION -->
-<div class="wFormContainer" style="max-width: 100%; width:auto;">
+<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=d1f5c19bf2f1748255566c3e4c87f328" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=d1f5c19bf2f1748255566c3e4c87f328"></script>
+<script type="text/javascript">
+wFORMS.behaviors.prefill.skip = false;
+</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=d1f5c19bf2f1748255566c3e4c87f328"></script>
+
+<div class="form-horizontal form b-margin-full b-padding-full">
+  {{!-- <h2>Register interest in the Wellbeing fund</h2> --}}
+
+  <div class="wFormContainer">
     <div class="wFormHeader"></div>
-    <style type="text/css">
-                #tfa_1922,
-                *[id^="tfa_1922["] {
-                    width: 298px !important;
-                }
-                #tfa_1922-D,
-                *[id^="tfa_1922["][class~="field-container-D"] {
-                    width: auto !important;
-                }
+    <div class="wForm" id="4816485-WRPR" dir="ltr">
+      <div class="codesection" id="code-4816485"></div>
+      <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove" id="4816485" role="form">
+        <fieldset id="tfa_1883" class="section">
+          <h3 id="tfa_1883-L">Organisation details</h3>
 
-                #tfa_1884,
-                *[id^="tfa_1884["] {
-                    width: 278px !important;
-                }
-                #tfa_1884-D,
-                *[id^="tfa_1884["][class~="field-container-D"] {
-                    width: auto !important;
-                }
+          <div class="form-group">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label for="typeahead_charity_number" class="form-label r-margin">
+                Scottish Charity Number
+                <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits</p>
+              </label>
+            </div>
+            <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <div class="form-group has-icon-right has-error" data-component="TasksTrigger" data-TasksTrigger="oscr-lookup" id="oscr-wrapper">
+                {{!-- <span class="input-group-addon">SC</span> --}}
+                <input id="typeahead_charity_number" name="typeahead_charity_number" class="form-input" autocomplete="nope" data-lpignore="true" onkeyup="this.value = this.value.toUpperCase().replace(/o/ig, '0');" maxlength="8">
+                <span class="form-icon far" id="oscr_validation_icon"></span>
+                <p id="oscr_validation_message" class="form-input-hint"></p>
+              </div>
+            </div>
+            <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-md-12">
+              <label class="form-checkbox">
+                <input type="checkbox" id="not_a_charity" name="not_a_charity">
+                <i class="form-icon"></i> Not a registered charity
+              </label>
+            </div>
+          </div>
 
-                #tfa_1930,
-                *[id^="tfa_1930["] {
-                    width: 598px !important;
-                }
-                #tfa_1930-D,
-                *[id^="tfa_1930["][class~="field-container-D"] {
-                    width: auto !important;
-                }
+          <div id="organisation-details" class="hidden">
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_1876-L" class="form-label r-margin preField reqMark" for="tfa_1876">Organisation name</label>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1876-D">
+                  <input type="text" id="tfa_1876" name="tfa_1876" value="" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1939-D">
+                  <label id="tfa_1939-L" class="form-label r-margin preField reqMark" for="tfa_1939">Organisation email address</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="email" id="tfa_1939" name="tfa_1939" value="" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1928-D">
+                  <label id="tfa_1928-L" class="form-label r-margin preField reqMark" for="tfa_1928">Phone number</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1928" name="tfa_1928" value="" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1930-D">
+                  <label id="tfa_1930-L" class="form-label r-margin preField" for="tfa_1930">Website address</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1930" name="tfa_1930" value="" class="form-input" autocomplete="nope" data-lpignore="true">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1925-D">
+                  <label id="tfa_1925-L" class="form-label r-margin preField reqMark" for="tfa_1925">Postcode</label>
+                </div>
+              </div>
+              <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
+                <div class="form-group has-icon-right has-error" data-component="TasksTrigger" data-TasksTrigger="postcode-lookup" id="postcode-wrapper">
+                  <input type="text" id="tfa_1925" name="tfa_1925" value="" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required onkeyup="this.value = this.value.toUpperCase();">
+                  <span class="form-icon far" id="postcode_validation_icon"></span>
+                  <p id="postcode_validation_message" class="form-input-hint"></p>
+                </div>
+              </div>
+            </div>
+            <div id="location-details" class="hidden">
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="input-group form-group field-container-D" id="tfa_1922-D">
+                    <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">Street</label>
+                  </div>
+                </div>
+                <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <input type="text" id="tfa_1922" name="tfa_1922" value="" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="input-group form-group field-container-D" id="tfa_1923-D">
+                    <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">Town/city</label>
+                  </div>
+                </div>
+                <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <input type="text" id="tfa_1923" name="tfa_1923" value="" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                    <label id="tfa_1884-L" class="form-label r-margin preField reqMark" for="tfa_1884">Local authority</label>
+                  </div>
+                </div>
+                <div class="column col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  {{!-- <input type="text" id="tfa_1884" name="tfa_1884" title="Local Authority" class="form-input" disabled /> --}}
+                  <select id="tfa_1884" name="tfa_1884" title="Local Authority" aria-required="true" class="required form-select" autocomplete="nope" data-lpignore="true" required>
+                    {{#each @root.context.metaData.formMapping.local_authority ~}}
+                    <option value="{{formassembly}}" id="{{formassembly}}" class="">{{name}}</option>
+                    {{/each ~}}
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset id="tfa_1880" class="section">
+          <div id="contact-details" class="hidden">
+            <h3 id="tfa_1880-L">Primary contact</h3>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1-D">
+                  <label id="tfa_1-L" class="form-label r-margin preField reqMark" for="tfa_1">First name</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1" name="tfa_1" value="" aria-required="true" class="form-input required" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1875-D">
+                  <label id="tfa_1875-L" class="form-label r-margin preField reqMark" for="tfa_1875">Last name</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1875" name="tfa_1875" value="" aria-required="true" class="form-input required" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1958-D">
+                  <label id="tfa_1958-L" class="form-label r-margin preField reqMark" for="tfa_1958">Job title</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1958" name="tfa_1958" value="" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1932-D">
+                  <label id="tfa_1932-L" class="form-label r-margin preField reqMark" for="tfa_1932">Email address</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="email" id="tfa_1932" name="tfa_1932" value="" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1949-D">
+                  <label id="tfa_1949-L" class="form-label r-margin preField reqMark" for="tfa_1949">Contact phone number</label>
+                </div>
+              </div>
+              <div class="column col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1949" name="tfa_1949" value="" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset id="tfa_1882" class="section">
+          <div id="interest-details" class="hidden">
+            <h3 id="tfa_1882-L">Funding</h3>
+            <div class="form-group field-container-D b-margin-full" id="tfa_2007-D" role="radiogroup" aria-labelledby="tfa_2007-L" data-tfa-labelledby="-L tfa_2007-L">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                  <label id="tfa_2007-L" class="preField reqMark">Where do you provide services?</label>
+                </div>
+              </div>
+              <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <span id="tfa_2007" class="choices vertical required">
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2019-L" for="tfa_2019">
+                      <input type="radio" value="tfa_2019" class="" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L">
+                      <i class="form-icon"></i>
+                      Across Scotland
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2020-L" for="tfa_2020">
+                      <input type="radio" value="tfa_2020" class="" id="tfa_2020" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L" data-conditionals="#tfa_2084">
+                      <i class="form-icon"></i>
+                      Across several local authority areas
+                    </label>
+                  </div>
+                  <div class="oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="-L tfa_2084-L">
+                    <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2020`">
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2085-L" for="tfa_2085">
+                          <input type="checkbox" value="tfa_2085" class="" id="tfa_2085" name="tfa_2085" aria-labelledby="tfa_2085-L" data-tfa-labelledby="tfa_2084-L tfa_2085-L">
+                          <i class="form-icon"></i> Aberdeen
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2086-L" for="tfa_2086">
+                          <input type="checkbox" value="tfa_2086" class="" id="tfa_2086" name="tfa_2086" aria-labelledby="tfa_2086-L" data-tfa-labelledby="tfa_2084-L tfa_2086-L">
+                          <i class="form-icon"></i> Aberdeenshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2087-L" for="tfa_2087">
+                          <input type="checkbox" value="tfa_2087" class="" id="tfa_2087" name="tfa_2087" aria-labelledby="tfa_2087-L" data-tfa-labelledby="tfa_2084-L tfa_2087-L">
+                          <i class="form-icon"></i> Angus
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2088-L" for="tfa_2088">
+                          <input type="checkbox" value="tfa_2088" class="" id="tfa_2088" name="tfa_2088" aria-labelledby="tfa_2088-L" data-tfa-labelledby="tfa_2084-L tfa_2088-L">
+                          <i class="form-icon"></i> Argyll & Bute
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2089-L" for="tfa_2089">
+                          <input type="checkbox" value="tfa_2089" class="" id="tfa_2089" name="tfa_2089" aria-labelledby="tfa_2089-L" data-tfa-labelledby="tfa_2084-L tfa_2089-L">
+                          <i class="form-icon"></i> Clackmannanshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2090-L" for="tfa_2090">
+                          <input type="checkbox" value="tfa_2090" class="" id="tfa_2090" name="tfa_2090" aria-labelledby="tfa_2090-L" data-tfa-labelledby="tfa_2084-L tfa_2090-L">
+                          <i class="form-icon"></i> Dumfries & Galloway
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2091-L" for="tfa_2091">
+                          <input type="checkbox" value="tfa_2091" class="" id="tfa_2091" name="tfa_2091" aria-labelledby="tfa_2091-L" data-tfa-labelledby="tfa_2084-L tfa_2091-L">
+                          <i class="form-icon"></i> Dundee
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2092-L" for="tfa_2092">
+                          <input type="checkbox" value="tfa_2092" class="" id="tfa_2092" name="tfa_2092" aria-labelledby="tfa_2092-L" data-tfa-labelledby="tfa_2084-L tfa_2092-L">
+                          <i class="form-icon"></i> East Ayrshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2093-L" for="tfa_2093">
+                          <input type="checkbox" value="tfa_2093" class="" id="tfa_2093" name="tfa_2093" aria-labelledby="tfa_2093-L" data-tfa-labelledby="tfa_2084-L tfa_2093-L">
+                          <i class="form-icon"></i> East Dunbartonshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2094-L" for="tfa_2094">
+                          <input type="checkbox" value="tfa_2094" class="" id="tfa_2094" name="tfa_2094" aria-labelledby="tfa_2094-L" data-tfa-labelledby="tfa_2084-L tfa_2094-L">
+                          <i class="form-icon"></i> East Lothian
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2095-L" for="tfa_2095">
+                          <input type="checkbox" value="tfa_2095" class="" id="tfa_2095" name="tfa_2095" aria-labelledby="tfa_2095-L" data-tfa-labelledby="tfa_2084-L tfa_2095-L">
+                          <i class="form-icon"></i> East Renfrewshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2096-L" for="tfa_2096">
+                          <input type="checkbox" value="tfa_2096" class="" id="tfa_2096" name="tfa_2096" aria-labelledby="tfa_2096-L" data-tfa-labelledby="tfa_2084-L tfa_2096-L">
+                          <i class="form-icon"></i> Edinburgh
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2097-L" for="tfa_2097">
+                          <input type="checkbox" value="tfa_2097" class="" id="tfa_2097" name="tfa_2097" aria-labelledby="tfa_2097-L" data-tfa-labelledby="tfa_2084-L tfa_2097-L">
+                          <i class="form-icon"></i> Falkirk
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2098-L" for="tfa_2098">
+                          <input type="checkbox" value="tfa_2098" class="" id="tfa_2098" name="tfa_2098" aria-labelledby="tfa_2098-L" data-tfa-labelledby="tfa_2084-L tfa_2098-L">
+                          <i class="form-icon"></i> Fife
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2099-L" for="tfa_2099">
+                          <input type="checkbox" value="tfa_2099" class="" id="tfa_2099" name="tfa_2099" aria-labelledby="tfa_2099-L" data-tfa-labelledby="tfa_2084-L tfa_2099-L">
+                          <i class="form-icon"></i> Glasgow
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2100-L" for="tfa_2100">
+                          <input type="checkbox" value="tfa_2100" class="" id="tfa_2100" name="tfa_2100" aria-labelledby="tfa_2100-L" data-tfa-labelledby="tfa_2084-L tfa_2100-L">
+                          <i class="form-icon"></i> Highland
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2101-L" for="tfa_2101">
+                          <input type="checkbox" value="tfa_2101" class="" id="tfa_2101" name="tfa_2101" aria-labelledby="tfa_2101-L" data-tfa-labelledby="tfa_2084-L tfa_2101-L">
+                          <i class="form-icon"></i> Inverclyde
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2102-L" for="tfa_2102">
+                          <input type="checkbox" value="tfa_2102" class="" id="tfa_2102" name="tfa_2102" aria-labelledby="tfa_2102-L" data-tfa-labelledby="tfa_2084-L tfa_2102-L">
+                          <i class="form-icon"></i> Midlothian
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2103-L" for="tfa_2103">
+                          <input type="checkbox" value="tfa_2103" class="" id="tfa_2103" name="tfa_2103" aria-labelledby="tfa_2103-L" data-tfa-labelledby="tfa_2084-L tfa_2103-L">
+                          <i class="form-icon"></i> Moray
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2104-L" for="tfa_2104">
+                          <input type="checkbox" value="tfa_2104" class="" id="tfa_2104" name="tfa_2104" aria-labelledby="tfa_2104-L" data-tfa-labelledby="tfa_2084-L tfa_2104-L">
+                          <i class="form-icon"></i> Na h-Eileanan Siar
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2105-L" for="tfa_2105">
+                          <input type="checkbox" value="tfa_2105" class="" id="tfa_2105" name="tfa_2105" aria-labelledby="tfa_2105-L" data-tfa-labelledby="tfa_2084-L tfa_2105-L">
+                          <i class="form-icon"></i> North Ayrshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2106-L" for="tfa_2106">
+                          <input type="checkbox" value="tfa_2106" class="" id="tfa_2106" name="tfa_2106" aria-labelledby="tfa_2106-L" data-tfa-labelledby="tfa_2084-L tfa_2106-L">
+                          <i class="form-icon"></i> North Lanarkshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2107-L" for="tfa_2107">
+                          <input type="checkbox" value="tfa_2107" class="" id="tfa_2107" name="tfa_2107" aria-labelledby="tfa_2107-L" data-tfa-labelledby="tfa_2084-L tfa_2107-L">
+                          <i class="form-icon"></i> Orkney
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2108-L" for="tfa_2108">
+                          <input type="checkbox" value="tfa_2108" class="" id="tfa_2108" name="tfa_2108" aria-labelledby="tfa_2108-L" data-tfa-labelledby="tfa_2084-L tfa_2108-L">
+                          <i class="form-icon"></i> Perth & Kinross
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2109-L" for="tfa_2109">
+                          <input type="checkbox" value="tfa_2109" class="" id="tfa_2109" name="tfa_2109" aria-labelledby="tfa_2109-L" data-tfa-labelledby="tfa_2084-L tfa_2109-L">
+                          <i class="form-icon"></i> Renfrewshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2110-L" for="tfa_2110">
+                          <input type="checkbox" value="tfa_2110" class="" id="tfa_2110" name="tfa_2110" aria-labelledby="tfa_2110-L" data-tfa-labelledby="tfa_2084-L tfa_2110-L">
+                          <i class="form-icon"></i> Scottish Borders
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2111-L" for="tfa_2111">
+                          <input type="checkbox" value="tfa_2111" class="" id="tfa_2111" name="tfa_2111" aria-labelledby="tfa_2111-L" data-tfa-labelledby="tfa_2084-L tfa_2111-L">
+                          <i class="form-icon"></i> Shetland
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2112-L" for="tfa_2112">
+                          <input type="checkbox" value="tfa_2112" class="" id="tfa_2112" name="tfa_2112" aria-labelledby="tfa_2112-L" data-tfa-labelledby="tfa_2084-L tfa_2112-L">
+                          <i class="form-icon"></i> South Ayrshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2113-L" for="tfa_2113">
+                          <input type="checkbox" value="tfa_2113" class="" id="tfa_2113" name="tfa_2113" aria-labelledby="tfa_2113-L" data-tfa-labelledby="tfa_2084-L tfa_2113-L">
+                          <i class="form-icon"></i> South Lanarkshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2114-L" for="tfa_2114">
+                          <input type="checkbox" value="tfa_2114" class="" id="tfa_2114" name="tfa_2114" aria-labelledby="tfa_2114-L" data-tfa-labelledby="tfa_2084-L tfa_2114-L">
+                          <i class="form-icon"></i> Stirling
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2115-L" for="tfa_2115">
+                          <input type="checkbox" value="tfa_2115" class="" id="tfa_2115" name="tfa_2115" aria-labelledby="tfa_2115-L" data-tfa-labelledby="tfa_2084-L tfa_2115-L">
+                          <i class="form-icon"></i> West Dunbartonshire
+                        </label>
+                      </span>
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="tfa_2116-L" for="tfa_2116">
+                          <input type="checkbox" value="tfa_2116" class="" id="tfa_2116" name="tfa_2116" aria-labelledby="tfa_2116-L" data-tfa-labelledby="tfa_2084-L tfa_2116-L">
+                          <i class="form-icon"></i> West Lothian
+                        </label>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2021-L" for="tfa_2021">
+                      <input type="radio" value="tfa_2021" class="" id="tfa_2021" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L" data-conditionals="#tfa_2051">
+                      <i class="form-icon"></i>
+                      Across one local authority area
+                    </label>
+                  </div>
+                  <div class="form-group field-container-D no-margin" id="tfa_2051-D">
+                    <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2021`" title="Local Authority area" class="form-select b-margin-full">
+                      <option value="">Please select...</option>
+                      <option value="tfa_2052" id="tfa_2052" class="">Aberdeen</option>
+                      <option value="tfa_2053" id="tfa_2053" class="">Aberdeenshire</option>
+                      <option value="tfa_2054" id="tfa_2054" class="">Angus</option>
+                      <option value="tfa_2055" id="tfa_2055" class="">Argyll & Bute</option>
+                      <option value="tfa_2056" id="tfa_2056" class="">Clackmannanshire</option>
+                      <option value="tfa_2057" id="tfa_2057" class="">Dumfries & Galloway</option>
+                      <option value="tfa_2058" id="tfa_2058" class="">Dundee</option>
+                      <option value="tfa_2059" id="tfa_2059" class="">East Ayrshire</option>
+                      <option value="tfa_2060" id="tfa_2060" class="">East Dunbartonshire</option>
+                      <option value="tfa_2061" id="tfa_2061" class="">East Lothian</option>
+                      <option value="tfa_2062" id="tfa_2062" class="">East Renfrewshire</option>
+                      <option value="tfa_2063" id="tfa_2063" class="">Edinburgh</option>
+                      <option value="tfa_2064" id="tfa_2064" class="">Falkirk</option>
+                      <option value="tfa_2065" id="tfa_2065" class="">Fife</option>
+                      <option value="tfa_2066" id="tfa_2066" class="">Glasgow</option>
+                      <option value="tfa_2067" id="tfa_2067" class="">Highland</option>
+                      <option value="tfa_2068" id="tfa_2068" class="">Inverclyde</option>
+                      <option value="tfa_2069" id="tfa_2069" class="">Midlothian</option>
+                      <option value="tfa_2070" id="tfa_2070" class="">Moray</option>
+                      <option value="tfa_2071" id="tfa_2071" class="">Na h-Eileanan Siar</option>
+                      <option value="tfa_2072" id="tfa_2072" class="">North Ayrshire</option>
+                      <option value="tfa_2073" id="tfa_2073" class="">North Lanarkshire</option>
+                      <option value="tfa_2074" id="tfa_2074" class="">Orkney</option>
+                      <option value="tfa_2075" id="tfa_2075" class="">Perth & Kinross</option>
+                      <option value="tfa_2076" id="tfa_2076" class="">Renfrewshire</option>
+                      <option value="tfa_2077" id="tfa_2077" class="">Scottish Borders</option>
+                      <option value="tfa_2078" id="tfa_2078" class="">Shetland</option>
+                      <option value="tfa_2079" id="tfa_2079" class="">South Ayrshire</option>
+                      <option value="tfa_2080" id="tfa_2080" class="">South Lanarkshire</option>
+                      <option value="tfa_2081" id="tfa_2081" class="">Stirling</option>
+                      <option value="tfa_2082" id="tfa_2082" class="">West Dunbartonshire</option>
+                      <option value="tfa_2083" id="tfa_2083" class="">West Lothian</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2022-L" for="tfa_2022">
+                      <input type="radio" value="tfa_2022" class="" id="tfa_2022" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L" data-conditionals="#tfa_2117">
+                      <i class="form-icon"></i>
+                      Within a specific community (e.g. town, village or neighbourhood)
+                    </label>
+                  </div>
+                  <div class="form-group field-container-D" id="tfa_2117-D">
+                    <input type="text" id="tfa_2117" name="tfa_2117" value="" data-condition="`#tfa_2022`" placeholder="Please tell us your neighbourhood here" class="form-input b-margin-full" style="width: 100%:">
+                  </div>
+                </span>
+              </div>
+            </div>
+            <div class="form-group field-container-D b-margin-full" id="tfa_1959-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                  <label id="tfa_1959-L" class="preField reqMark" for="tfa_1959"><div>What is the main issue you will aim to help people with?</div></label>
+                </div>
+              </div>
+              <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <select id="tfa_1959" name="tfa_1959" title="What is the main issue you will aim to help people with?" aria-required="true" class="form-select required"><option value="">Please select...</option>
+                  <option value="tfa_2023" id="tfa_2023" class="">Food</option>
+                  <option value="tfa_2024" id="tfa_2024" class="">Physical health</option>
+                  <option value="tfa_2025" id="tfa_2025" class="">Mental health and wellbeing</option>
+                  <option value="tfa_2026" id="tfa_2026" class="">Home life or housing situation</option>
+                  <option value="tfa_2027" id="tfa_2027" class="">Money</option>
+                  <option value="tfa_2028" id="tfa_2028" class="">Employment</option>
+                  <option value="tfa_2029" id="tfa_2029" data-conditionals="#tfa_2048" class="">Other (please describe)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group field-container-D" id="tfa_2048-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                  {{!-- <label id="tfa_2048-L" class="preField " for="tfa_2048">What is the main issue you will aim to help people with? (other)</label> --}}
+                </div>
+              </div>
+              <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_2048" name="tfa_2048" data-condition="`#tfa_2029`" placeholder="What is the main issue you will aim to help people with? (other)" class="form-input b-margin-full"></textarea>
+              </div>
+            </div>
+            <div class="form-group field-container-D" id="tfa_2011-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                  <label id="tfa_2011-L" class="preField reqMark" for="tfa_2011">What is the main type of activity you are seeking funding for?</label>
+                </div>
+              </div>
+              <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <select id="tfa_2011" name="tfa_2011" title="What is the main type of activity you are seeking funding for?" aria-required="true" class="form-select required">
+                  <option value="">Please select...</option>
+                  <option value="tfa_2030" id="tfa_2030" class="">Food provision or co-ordination</option>
+                  <option value="tfa_2031" id="tfa_2031" class="">Delivery of shopping / essential items</option>
+                  <option value="tfa_2032" id="tfa_2032" class="">Activity to reduce the impact of isolation and/or increase wellbeing</option>
+                  <option value="tfa_2033" id="tfa_2033" class="">Co-ordination of local activity (e.g. support services or volunteers)</option>
+                  <option value="tfa_2034" id="tfa_2034" class="">Money to sustain your organisation due to loss of other income</option>
+                  <option value="tfa_2035" id="tfa_2035" class="">Resources to support your organisation’s staff or volunteers to work remotely</option>
+                  <option value="tfa_2036" id="tfa_2036" class="">Resources to support change in how your service is delivered (e.g. providing new online or telephone services)</option>
+                  <option value="tfa_2037" id="tfa_2037" class="">Money for additional supplies to support service delivery (e.g. hygiene products, PPE)</option>
+                  <option value="tfa_2038" id="tfa_2038" class="">Staff or volunteer expenses</option>
+                  <option value="tfa_2039" id="tfa_2039" data-conditionals="#tfa_2049" class="">Other (please describe below)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group field-container-D" id="tfa_2049-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                  {{!-- <label id="tfa_2049-L" class="preField " for="tfa_2049">What is the main type of activity you are seeking funding for? (other)</label> --}}
+                </div>
+              </div>
+              <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_2049" name="tfa_2049" data-condition="`#tfa_2039`" placeholder="What is the main type of activity you are seeking funding for? (other)" class="form-input b-margin-full"></textarea>
+              </div>
+            </div>
+            <div class="form-group field-container-D" id="tfa_2015-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                  <label id="tfa_2015-L" class="preField reqMark" for="tfa_2015">Is there a specific target group you are seeking funding to work with?</label>
+                </div>
+              </div>
+              <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <select id="tfa_2015" name="tfa_2015" title="Is there a specific target group you are seeking funding to work with?" aria-required="true" class="form-select required">
+                  <option value="">Please select...</option>
+                  <option value="tfa_2040" id="tfa_2040" class="">Children and families</option>
+                  <option value="tfa_2041" id="tfa_2041" class="">Young people</option>
+                  <option value="tfa_2042" id="tfa_2042" class="">Older people</option>
+                  <option value="tfa_2043" id="tfa_2043" class="">Shielded group </option>
+                  <option value="tfa_2044" id="tfa_2044" class="">People with disabilities</option>
+                  <option value="tfa_2045" id="tfa_2045" class="">Minority communities</option>
+                  <option value="tfa_2046" id="tfa_2046" class="">Key workers</option>
+                  <option value="tfa_2047" id="tfa_2047" data-conditionals="#tfa_2050" class="">Other (please describe below)</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group field-container-D" id="tfa_2050-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                  {{!-- <label id="tfa_2050-L" class="preField " for="tfa_2050">Is there a specific target group you are seeking funding to work with? (other)</label> --}}
+                </div>
+              </div>
+              <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_2050" name="tfa_2050" data-condition="`#tfa_2047`" placeholder="Is there a specific target group you are seeking funding to work with? (other)" class="form-input b-margin-full"></textarea>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <fieldset id="tfa_2121" class="section">
+          <div id="costs-details" class="hidden">
+            <legend id="tfa_2121-L"><span style="font-weight: 400;">Please give us a broad breakdown of costs</span></legend>
+            <div id="tfa_2151" class="section group"><table class="gridLayout ">
+              <thead><tr class="headerRow">
+                <th> </th>
+                <th scope="col" id="tfa_2153-GRID" class="">Description </th>
+                <th scope="col" id="tfa_2154-GRID" class="">Amount </th>
+              </tr></thead>
+              <tbody>
+                <tr id="tfa_2152" class="section    alternate-0 ">
+                  <th scope="row" id="tfa_2152-L" class="headerCol">Budget 1 </th>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2153-D"><div class="inputWrapper"><input type="text" id="tfa_2153" name="tfa_2153" value="" title="Description" class=""></div></div></td>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2154-D"><div class="inputWrapper"><input type="text" id="tfa_2154" name="tfa_2154" value="" title="Amount" class="calc-BudgetAmount"></div></div></td>
+                  <td style="display: none"></td>
+                </tr>
+                <tr id="tfa_2156" class="section    alternate-1 ">
+                  <th scope="row" id="tfa_2156-L" class="headerCol">Budget 2 </th>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2157-D"><div class="inputWrapper"><input type="text" id="tfa_2157" name="tfa_2157" value="" title="Description" class=""></div></div></td>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2158-D"><div class="inputWrapper"><input type="text" id="tfa_2158" name="tfa_2158" value="" title="Amount" class="calc-BudgetAmountB"></div></div></td>
+                  <td style="display: none"></td>
+                </tr>
+                <tr id="tfa_2160" class="section    alternate-0 ">
+                  <th scope="row" id="tfa_2160-L" class="headerCol">Budget 3 </th>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2161-D"><div class="inputWrapper"><input type="text" id="tfa_2161" name="tfa_2161" value="" title="Description" class=""></div></div></td>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2162-D"><div class="inputWrapper"><input type="text" id="tfa_2162" name="tfa_2162" value="" title="Amount" class="calc-BudgetAmountC"></div></div></td>
+                  <td style="display: none"></td>
+                </tr>
+                <tr id="tfa_2164" class="section    alternate-1 ">
+                  <th scope="row" id="tfa_2164-L" class="headerCol">Budget 4 </th>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2165-D"><div class="inputWrapper"><input type="text" id="tfa_2165" name="tfa_2165" value="" title="Description" class=""></div></div></td>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2166-D"><div class="inputWrapper"><input type="text" id="tfa_2166" name="tfa_2166" value="" title="Amount" class="calc-BudgetAmountD"></div></div></td>
+                  <td style="display: none"></td>
+                </tr>
+                <tr id="tfa_2168" class="section    alternate-0 ">
+                  <th scope="row" id="tfa_2168-L" class="headerCol">Budget 5 </th>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2169-D"><div class="inputWrapper"><input type="text" id="tfa_2169" name="tfa_2169" value="" title="Description" class=""></div></div></td>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2170-D"><div class="inputWrapper"><input type="text" id="tfa_2170" name="tfa_2170" value="" title="Amount" class="calc-BudgetAmountE"></div></div></td>
+                  <td style="display: none"></td>
+                </tr>
+                <tr id="tfa_2176" class="section    alternate-1 ">
+                  <th scope="row" id="tfa_2176-L" class="headerCol"><b>Budget Total</b> </th>
+                  <td class=""><div class="oneField field-container-D    " id="tfa_2178-D"><div class="inputWrapper"><input type="text" id="tfa_2178" name="tfa_2178" value="" readonly title="Amount" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly"></div></div></td>
+                  <td style="display: none"></td>
+                </tr>
+              </tbody>
+            </table></div>
+            <div class="oneField field-container-D    " id="tfa_2179-D">
+              <label id="tfa_2179-L" class="label preField " for="tfa_2179"><div ccp_infra_version="3" ccp_infra_timestamp="1586885576543" ccp_infra_user_hash="2475111555" ccp_infra_copy_id="" data-ccp-timestamp="1586885576543" style="">Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered.&nbsp; This should link to the budget headings you give us below</div></label><br><div class="inputWrapper"><textarea id="tfa_2179" name="tfa_2179" title="Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered.  This should link to the budget headings you give us below" class=""></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2180-D" role="group" aria-labelledby="tfa_2180-L" data-tfa-labelledby="-L tfa_2180-L">
+              <label id="tfa_2180-L" class="label preField reqMark" aria-label="Please indicate here that you are authorised to submit this application on behalf of your organisation.   required"><span style="font-size: 14.5px;">Please indicate here that you are authorised to submit this application on behalf of your organisation.</span></label><br><div class="inputWrapper"><span id="tfa_2180" class="choices vertical required"><span class="oneChoice"><input type="checkbox" value="tfa_2186" class="" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2180-L tfa_2186-L"><label class="label postField" id="tfa_2186-L" for="tfa_2186"><span class="input-checkbox-faux"></span></label></span></span></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2184-D" role="group" aria-labelledby="tfa_2184-L" data-tfa-labelledby="-L tfa_2184-L">
+              <label id="tfa_2184-L" class="label preField reqMark" aria-label="Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)   required"><span style="font-size: 14.5px;">Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)</span></label><br><div class="inputWrapper"><span id="tfa_2184" class="choices vertical required"><span class="oneChoice"><input type="checkbox" value="tfa_2185" class="" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2184-L tfa_2185-L"><label class="label postField" id="tfa_2185-L" for="tfa_2185"><span class="input-checkbox-faux"></span><br></label></span></span></div>
+            </div>
+          </div>
+        </fieldset>
 
-                #tfa_1957,
-                *[id^="tfa_1957["] {
-                    width: 598px !important;
-                }
-                #tfa_1957-D,
-                *[id^="tfa_1957["][class~="field-container-D"] {
-                    width: auto !important;
-                }
+        <div class="actions columns" id="4816485-A">
+          <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
+          <div class="column col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+            <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg hidden h-margin b-margin-full" id="submit_button" value="Submit">
+          </div>
+        </div>
+        <div style="clear:both;"></div>
+        <input type="hidden" id="tfa_1941" name="tfa_1941" value="" title="Scottish Charity Number">
+        <input type="hidden" id="tfa_1944" name="tfa_1944" value="" title="Constitutional Form">
+        <input type="hidden" id="tfa_1946" name="tfa_1946" value="" title="Charity Status">
+        <input type="hidden" id="tfa_1936" name="tfa_1936" value="" title="Constituency">
+        <input type="hidden" id="tfa_1934" name="tfa_1934" value="" title="Ward">
+        <input type="hidden" id="tfa_1953" name="tfa_1953" value="" title="SIMD datazone">
+        <input type="hidden" id="tfa_1955" name="tfa_1955" value="" title="SIMD rank">
+        <input type="hidden" id="tfa_1957" name="tfa_1957" value="" title="NHS Health Board">
+        <input type="hidden" value="4816485" name="tfa_dbFormId" id="tfa_dbFormId">
+        <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
+        <input type="hidden" value="71cdc02e5cdf876a0adddebfbfff785f" name="tfa_dbControl" id="tfa_dbControl">
+        <input type="hidden" value="15" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+      </form>
+    </div>
+  </div>
+</div>
 
-                #tfa_1,
-                *[id^="tfa_1["] {
-                    width: 278px !important;
+{{{{raw}}}}
+<script data-component-config="oscr-lookup" type="javascript/blocked">
+{
+  blur: { tasks: ["oscr-lookup"] },
+  keyup: { tasks: ["oscr-lookup"] }
+}
+</script>
+<script data-task="oscr-lookup" type="javascript/blocked">
+{
+  type: "multiTask",
+  config: {
+    tasks: [
+      {
+        type: "switch",
+        config: {
+          which: { __template: "{{#regexMatch (jquery '#typeahead_charity_number' 'val') 'SC[0-9]{6}' 'ig'}}long_enough{{/regexMatch}}" },
+          branches: {
+            default: {
+              tasks: [
+                {
+                  type: "elementManipulator",
+                  config: {
+                    "#oscr_validation_icon": {
+                      addClass: ["loading"],
+                      removeClass: ["fa-times", "text-error", "fa-check", "text-primary", "text-success"]
+                    },
+                    "#tfa_1925": {
+                      value: ""
+                    },
+                    "#tfa_1876": {
+                      value: ""
+                    },
+                    "#tfa_1941": {
+                      value: ""
+                    },
+                    "#tfa_1944": {
+                      value: ""
+                    },
+                    "#tfa_1946": {
+                      value: ""
+                    },
+                    "#tfa_1930": {
+                      value: ""
+                    },
+                    "#tfa_1928": {
+                      value: ""
+                    },
+                    "#tfa_1922": {
+                      value: ""
+                    },
+                    "#tfa_1923": {
+                      value: ""
+                    },
+                    "#tfa_1957": {
+                      value: ""
+                    },
+                    "#oscr_validation_message": {
+                      contents: { __template: '' }
+                    },
+                    "#oscr-wrapper": {
+                      addClass: ["has-error"]
+                    }
+                  }
                 }
-                #tfa_1-D,
-                *[id^="tfa_1["][class~="field-container-D"] {
-                    width: auto !important;
+              ]
+            },
+            long_enough: {
+              __doNotCompile: true,
+              tasks: [
+                {
+                  name: "oscrLookup",
+                  type: "request",
+                  config: { url: { __template: "/oscr-lookup?q={{jquery '#typeahead_charity_number' 'val'}}" } }
+                },
+                {
+                  type: "switch",
+                  config: {
+                    which: { __template: "{{#ifAll (regexMatch (jquery '#typeahead_charity_number' 'val') 'SC[0-9]{6}' 'ig') data.oscrLookup.[0].charity_number}}valid{{/ifAll}}" },
+                    branches: {
+                      default: {
+                        tasks: [
+                          {
+                            type: "elementManipulator",
+                            config: {
+                              "#oscr_validation_icon": {
+                                removeClass: ["fa-times", "text-error", "loading", "fa-check", "text-primary", "text-success"]
+                              },
+                              "#tfa_1925": {
+                                value: ""
+                              },
+                              "#tfa_1876": {
+                                value: ""
+                              },
+                              "#tfa_1941": {
+                                value: ""
+                              },
+                              "#tfa_1944": {
+                                value: ""
+                              },
+                              "#tfa_1946": {
+                                value: ""
+                              },
+                              "#tfa_1930": {
+                                value: ""
+                              },
+                              "#tfa_1928": {
+                                value: ""
+                              },
+                              "#tfa_1922": {
+                                value: ""
+                              },
+                              "#tfa_1923": {
+                                value: ""
+                              },
+                              "#tfa_1957": {
+                                value: ""
+                              },
+                              "#oscr_validation_message": {
+                                contents: { __template: 'Invalid charity number, please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search/">check your OSCR record</a>.' }
+                              },
+                              "#oscr-wrapper": {
+                                addClass: ["has-error"]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      valid: {
+                        tasks: [
+                          {
+                            type: "elementManipulator",
+                            config: {
+                              ">": {
+                                value: { __template: "{{{data.oscrLookup.[0].charity_number}}}" }
+                              },
+                              "#tfa_1925": {
+                                value: { __template: "{{{data.oscrLookup.[0].postcode}}}" }
+                              },
+                              "#tfa_1876": {
+                                value: { __template: "{{{data.oscrLookup.[0].charity_name}}}" }
+                              },
+                              "#tfa_1941": {
+                                value: { __template: "{{{data.oscrLookup.[0].charity_number}}}" }
+                              },
+                              "#tfa_1944": {
+                                value: { __template: "{{{data.oscrLookup.[0].constitutional_form}}}" }
+                              },
+                              "#tfa_1946": {
+                                value: { __template: "{{{data.oscrLookup.[0].charity_status}}}" }
+                              },
+                              "#tfa_1930": {
+                                value: { __template: "{{{data.oscrLookup.[0].website}}}" }
+                              },
+                              "#tfa_1928": {
+                                value: { __template: "{{{data.oscrLookup.[0].phone}}}" }
+                              },
+                              "#tfa_1922": {
+                                value: { __template: "{{{data.oscrLookup.[0].street}}}" }
+                              },
+                              "#tfa_1923": {
+                                value: { __template: "{{{data.oscrLookup.[0].city}}}" }
+                              },
+                              "#tfa_1957": {
+                                value: { __template: "{{{data.oscrLookup.[0].geo.nhs_ha}}}" }
+                              },
+                              "#oscr_validation_message": {
+                                contents: { __template: "" }
+                              },
+                              "#oscr-wrapper": {
+                                removeClass: ["has-error"]
+                              },
+                              "#organisation-details": {
+                                removeClass: ["hidden"]
+                              },
+                              "#oscr_validation_icon": {
+                                addClass: ["fa-check", "text-success"],
+                                removeClass: ["loading", "fa-times", "text-primary", "text-error"]
+                              }
+                            }
+                          },
+                          "postcode-lookup"
+                        ]
+                      }
+                    }
+                  }
                 }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+</script>
 
-                #tfa_1875,
-                *[id^="tfa_1875["] {
-                    width: 300px !important;
+<script data-component-config="postcode-lookup" type="javascript/blocked">
+{
+  blur: { tasks: ["postcode-lookup"] },
+  keyup: { tasks: ["postcode-lookup"] }
+}
+</script>
+<script data-task="postcode-lookup" type="javascript/blocked">
+{
+  type: "multiTask",
+  config: {
+    tasks: [
+      {
+        type: "switch",
+        config: {
+          which: { __template: "{{#regexMatch (jquery '#tfa_1925' 'val') '[a-z]{1,2}[0-9]{1,2}[a-z]?\\s?[0-9][a-z]{2}' 'ig'}}check{{/regexMatch}}" },
+          branches: {
+            default: {
+              tasks: [
+                {
+                  type: "elementManipulator",
+                  config: {
+                    "#postcode_validation_icon": {
+                      addClass: ["fa-times", "text-error"],
+                      removeClass: ["loading", "fa-check", "text-primary", "text-success"]
+                    },
+                    "#tfa_1884": {
+                      value: ""
+                    },
+                    "#tfa_1936": {
+                      value: ""
+                    },
+                    "#tfa_1934": {
+                      value: ""
+                    },
+                    "#tfa_1953": {
+                      value: ""
+                    },
+                    "#tfa_1955": {
+                      value: ""
+                    },
+                    "#postcode_validation_message": {
+                      contents: { __template: "" }
+                    },
+                    "#postcode-wrapper": {
+                      addClass: ["has-error"]
+                    }
+                  }
                 }
-                #tfa_1875-D,
-                *[id^="tfa_1875["][class~="field-container-D"] {
-                    width: auto !important;
+              ]
+            },
+            check: {
+              __doNotCompile: true,
+              tasks: [
+                {
+                  type: "elementManipulator",
+                  config: {
+                    "#postcode_validation_icon": {
+                      addClass: ["loading", "text-primary"],
+                      removeClass: ["fa-check", "fa-times", "text-error", "text-success"]
+                    }
+                  }
+                },
+                {
+                  name: "postcodeLookup",
+                  type: "request",
+                  config: { url: { __template: "/postcode-lookup?q={{jquery '#tfa_1925' 'val'}}" } }
+                },
+                {
+                  __doNotCompile: true,
+                  type: "switch",
+                  config: {
+                    which: { __template: "{{#any data.postcodeLookup}}found{{/any}}" },
+                    branches: {
+                      default: {
+                        tasks: [
+                          {
+                            type: "elementManipulator",
+                            config: {
+                              "#tfa_1884": {
+                                value: ""
+                              },
+                              "#tfa_1936": {
+                                value: ""
+                              },
+                              "#tfa_1934": {
+                                value: ""
+                              },
+                              "#tfa_1953": {
+                                value: ""
+                              },
+                              "#tfa_1955": {
+                                value: ""
+                              },
+                              "#postcode_validation_message": {
+                                contents: { __template: "" }
+                              },
+                              "#postcode-wrapper": {
+                                addClass: ["has-error"]
+                              },
+                              "#postcode_validation_icon": {
+                                addClass: ["fa-times", "text-error"],
+                                removeClass: ["loading", "fa-check", "text-primary", "text-success"]
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      found: {
+                        tasks: [
+                          {
+                            type: "elementManipulator",
+                            config: {
+                              ">": {
+                                value: { __template: "{{{data.postcodeLookup.[0].place}}}" }
+                              },
+                              "#tfa_1884": {
+                                value: { __template: "{{{data.postcodeLookup.[0].local_authority_formassembly}}}" }
+                              },
+                              "#tfa_1936": {
+                                value: { __template: "{{{data.postcodeLookup.[0].constituency}}}" }
+                              },
+                              "#tfa_1934": {
+                                value: { __template: "{{{data.postcodeLookup.[0].ward}}}" }
+                              },
+                              "#tfa_1953": {
+                                value: { __template: "{{{data.postcodeLookup.[0].simd_datazone}}}" }
+                              },
+                              "#tfa_1955": {
+                                value: { __template: "{{{data.postcodeLookup.[0].simd_rank}}}" }
+                              },
+                              "#postcode_validation_message": {
+                                contents: { __template: "" }
+                              },
+                              "#postcode-wrapper": {
+                                removeClass: ["has-error"]
+                              },
+                              "#location-details": {
+                                removeClass: ["hidden"]
+                              },
+                              "#contact-details": {
+                                removeClass: ["hidden"]
+                              },
+                              "#interest-details": {
+                                removeClass: ["hidden"]
+                              },
+                              "#postcode_validation_icon": {
+                                addClass: ["fa-check", "text-success"],
+                                removeClass: ["loading", "fa-times", "text-primary", "text-error"]
+                              },
+                              "#submit_button": {
+                                removeClass: ["hidden"]
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
                 }
-
-                #tfa_1958,
-                *[id^="tfa_1958["] {
-                    width: 278px !important;
-                }
-                #tfa_1958-D,
-                *[id^="tfa_1958["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_1932,
-                *[id^="tfa_1932["] {
-                    width: 598px !important;
-                }
-                #tfa_1932-D,
-                *[id^="tfa_1932["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_1959,
-                *[id^="tfa_1959["] {
-                    width: 598px !important;
-                }
-                #tfa_1959-D,
-                *[id^="tfa_1959["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2153,
-                *[id^="tfa_2153["] {
-                    width: 181px !important;
-                }
-                #tfa_2153-D,
-                *[id^="tfa_2153["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2153-L,
-                label[id^="tfa_2153["] {
-                    width: 58px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2154,
-                *[id^="tfa_2154["] {
-                    width: 100% !important;
-                }
-                #tfa_2154-D,
-                *[id^="tfa_2154["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2154-L,
-                label[id^="tfa_2154["] {
-                    width: 61px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2157,
-                *[id^="tfa_2157["] {
-                    width: 100% !important;
-                }
-                #tfa_2157-D,
-                *[id^="tfa_2157["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2157-L,
-                label[id^="tfa_2157["] {
-                    width: 58px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2158,
-                *[id^="tfa_2158["] {
-                    width: 100% !important;
-                }
-                #tfa_2158-D,
-                *[id^="tfa_2158["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2158-L,
-                label[id^="tfa_2158["] {
-                    width: 61px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2161,
-                *[id^="tfa_2161["] {
-                    width: 100% !important;
-                }
-                #tfa_2161-D,
-                *[id^="tfa_2161["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2161-L,
-                label[id^="tfa_2161["] {
-                    width: 58px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2162,
-                *[id^="tfa_2162["] {
-                    width: 100% !important;
-                }
-                #tfa_2162-D,
-                *[id^="tfa_2162["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2162-L,
-                label[id^="tfa_2162["] {
-                    width: 61px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2165,
-                *[id^="tfa_2165["] {
-                    width: 100% !important;
-                }
-                #tfa_2165-D,
-                *[id^="tfa_2165["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2165-L,
-                label[id^="tfa_2165["] {
-                    width: 58px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2166,
-                *[id^="tfa_2166["] {
-                    width: 100% !important;
-                }
-                #tfa_2166-D,
-                *[id^="tfa_2166["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2166-L,
-                label[id^="tfa_2166["] {
-                    width: 61px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2169,
-                *[id^="tfa_2169["] {
-                    width: 100% !important;
-                }
-                #tfa_2169-D,
-                *[id^="tfa_2169["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2169-L,
-                label[id^="tfa_2169["] {
-                    width: 58px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2170,
-                *[id^="tfa_2170["] {
-                    width: 100% !important;
-                }
-                #tfa_2170-D,
-                *[id^="tfa_2170["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2170-L,
-                label[id^="tfa_2170["] {
-                    width: 61px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2178,
-                *[id^="tfa_2178["] {
-                    width: 101px !important;
-                }
-                #tfa_2178-D,
-                *[id^="tfa_2178["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2178-L,
-                label[id^="tfa_2178["] {
-                    width: 61px !important;
-                    min-width: 0px;
-                }
-
-                #tfa_2179,
-                *[id^="tfa_2179["] {
-                    width: 1000px !important;
-                }
-                #tfa_2179-D,
-                *[id^="tfa_2179["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2179-L,
-                label[id^="tfa_2179["] {
-                    width: 982px !important;
-                    min-width: 0px;
-                }
-            </style><div class=""><div class="wForm" id="4816485-WRPR" dir="ltr">
-<div class="codesection" id="code-4816485"></div>
-<form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsTooltip labelsAbove" id="4816485" role="form">
-<div class="saveAndResume"><div class="oneField">
-<span class="oneChoice"><input type="checkbox" id="tfa_saveForLater" name="tfa_saveForLater" value="1" data-conditionals="#saveAndResumeFieldset" autocomplete="off"><label for="tfa_saveForLater" class="postField">Save my progress and resume later</label></span>
-                | <a href="https://www.tfaforms.com/forms/resume/4816485" onclick="return confirm('Are you sure you want to resume a previous response? Any information you just entered on this page will be discarded.');">Resume a previously saved form</a>
-</div></div>
-<div class="saveAndResume" id="saveAndResumeFieldset" data-condition="`#tfa_saveForLater`"><fieldset>
-<legend>Resume Later</legend>
-<p class="instructions">In order to be able to resume this form later, please enter your email and choose a password.</p>
-<div class="oneField">
-<label class="preField" for="tfa_resumeEmail">Your Email:</label><input type="text" value="" name="tfa_resumeEmail" id="tfa_resumeEmail">
-</div>
-<div class="oneField">
-<label class="preField" for="tfa_resumePassword">A Password:</label><input type="password" value="" name="tfa_resumePassword" id="tfa_resumePassword">
-</div>
-<div class="oneField">
-<label class="preField" for="tfa_confirmPassword">Confirm Password:</label><input type="password" value="" name="tfa_confirmPassword" id="tfa_confirmPassword">
-</div>
-<div class="actions">
-<script type="text/javascript">wFORMS.behaviors.validation.passwordStrength = "low";</script><input type="button" class="primaryAction" id="tfa_resumeLater" name="tfa_resumeLater" value="Save">
-</div>
-</fieldset></div>
-<div class="oneField field-container-D    " id="tfa_2118-D">
-<label id="tfa_2118-L" class="label preField " for="tfa_2118">Expression of interest ID</label><br><div class="inputWrapper"><input type="text" id="tfa_2118" name="tfa_2118" value="" title="Expression of interest ID" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2120-D">
-<label id="tfa_2120-L" class="label preField " for="tfa_2120">Organisation ID</label><br><div class="inputWrapper"><input type="text" id="tfa_2120" name="tfa_2120" value="" title="Organisation ID" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2119-D">
-<label id="tfa_2119-L" class="label preField " for="tfa_2119">Contact ID</label><br><div class="inputWrapper"><input type="text" id="tfa_2119" name="tfa_2119" value="" title="Contact ID" class=""></div>
-</div>
-<div id="tfa_1879" class="section group">
-<label class="label preField" id="tfa_1879-L">Organisation information</label><br><fieldset id="tfa_1883" class="section">
-<legend id="tfa_1883-L">About your organisation</legend>
-<div id="tfa_1942" class="section inline group">
-<div class="oneField field-container-D    " id="tfa_1876-D">
-<label id="tfa_1876-L" class="label preField reqMark" for="tfa_1876">Organisation Name</label><br><div class="inputWrapper"><input type="text" id="tfa_1876" name="tfa_1876" value="" aria-required="true" title="Organisation Name" class="required"></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1941-D">
-<label id="tfa_1941-L" class="label preField " for="tfa_1941"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;">Scottish Charity Number</div></label><br><div class="inputWrapper"><input type="text" id="tfa_1941" name="tfa_1941" value="" title="Scottish Charity Number" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1944-D">
-<label id="tfa_1944-L" class="label preField " for="tfa_1944"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;"><div>Constitutional Form</div></div></label><br><div class="inputWrapper"><input type="text" id="tfa_1944" name="tfa_1944" value="" title="Constitutional Form" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1946-D">
-<label id="tfa_1946-L" class="label preField " for="tfa_1946"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;"><div>Charity Status</div></div></label><br><div class="inputWrapper"><input type="text" id="tfa_1946" name="tfa_1946" value="" title="Charity Status" class=""></div>
-</div>
-</div>
-<div id="tfa_1947" class="section inline group">
-<div class="oneField field-container-D    " id="tfa_1922-D">
-<label id="tfa_1922-L" class="label preField reqMark" for="tfa_1922">Street Address</label><br><div class="inputWrapper"><input type="text" id="tfa_1922" name="tfa_1922" value="" aria-required="true" title="Street Address" class="required"></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1884-D">
-<label id="tfa_1884-L" class="label preField reqMark" for="tfa_1884">Local Authority</label><br><div class="inputWrapper"><select id="tfa_1884" name="tfa_1884" title="Local Authority" aria-required="true" class="required"><option value="">Please select...</option>
-<option value="tfa_1970" id="tfa_1970" class="">Aberdeen</option>
-<option value="tfa_1971" id="tfa_1971" class="">Aberdeenshire</option>
-<option value="tfa_1972" id="tfa_1972" class="">Angus</option>
-<option value="tfa_1973" id="tfa_1973" class="">Argyll and Bute</option>
-<option value="tfa_1974" id="tfa_1974" class="">Edinburgh</option>
-<option value="tfa_1975" id="tfa_1975" class="">Clackmannanshire</option>
-<option value="tfa_1976" id="tfa_1976" class="">Na h-Eileanan Siar</option>
-<option value="tfa_1977" id="tfa_1977" class="">Dumfries and Galloway</option>
-<option value="tfa_1978" id="tfa_1978" class="">Dundee</option>
-<option value="tfa_1979" id="tfa_1979" class="">East Ayrshire</option>
-<option value="tfa_1980" id="tfa_1980" class="">East Dunbartonshire</option>
-<option value="tfa_1981" id="tfa_1981" class="">East Lothian</option>
-<option value="tfa_1982" id="tfa_1982" class="">East Renfrewshire</option>
-<option value="tfa_1983" id="tfa_1983" class="">Falkirk</option>
-<option value="tfa_1984" id="tfa_1984" class="">Fife</option>
-<option value="tfa_1985" id="tfa_1985" class="">Glasgow</option>
-<option value="tfa_1986" id="tfa_1986" class="">Highland</option>
-<option value="tfa_1987" id="tfa_1987" class="">Inverclyde</option>
-<option value="tfa_1988" id="tfa_1988" class="">Midlothian</option>
-<option value="tfa_1989" id="tfa_1989" class="">Moray</option>
-<option value="tfa_1990" id="tfa_1990" class="">North Ayrshire</option>
-<option value="tfa_1991" id="tfa_1991" class="">North Lanarkshire</option>
-<option value="tfa_1992" id="tfa_1992" class="">Orkney</option>
-<option value="tfa_1993" id="tfa_1993" class="">Perth and Kinross</option>
-<option value="tfa_1994" id="tfa_1994" class="">Renfrewshire</option>
-<option value="tfa_1995" id="tfa_1995" class="">Scottish Borders</option>
-<option value="tfa_1996" id="tfa_1996" class="">Shetland</option>
-<option value="tfa_1997" id="tfa_1997" class="">South Ayrshire</option>
-<option value="tfa_1998" id="tfa_1998" class="">South Lanarkshire</option>
-<option value="tfa_1999" id="tfa_1999" class="">Stirling</option>
-<option value="tfa_2000" id="tfa_2000" class="">West Dunbartonshire</option>
-<option value="tfa_2001" id="tfa_2001" class="">West Lothian</option>
-<option value="tfa_2002" id="tfa_2002" class="">Scotland Wide</option></select></div>
-</div>
-</div>
-<div id="tfa_1926" class="section inline group">
-<div class="oneField field-container-D    " id="tfa_1923-D">
-<label id="tfa_1923-L" class="label preField reqMark" for="tfa_1923">Town/City</label><br><div class="inputWrapper"><input type="text" id="tfa_1923" name="tfa_1923" value="" aria-required="true" title="Town/City" class="required"></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1925-D">
-<label id="tfa_1925-L" class="label preField reqMark" for="tfa_1925">Post Code</label><br><div class="inputWrapper"><input type="text" id="tfa_1925" name="tfa_1925" value="" aria-required="true" title="Post Code" class="required"></div>
-</div>
-</div>
-<div id="tfa_1940" class="section inline group">
-<div class="oneField field-container-D    " id="tfa_1928-D">
-<label id="tfa_1928-L" class="label preField reqMark" for="tfa_1928">Phone</label><br><div class="inputWrapper"><input type="text" id="tfa_1928" name="tfa_1928" value="" aria-required="true" title="Phone" class="required"></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1939-D">
-<label id="tfa_1939-L" class="label preField reqMark" for="tfa_1939"><span style="color: rgb(60, 61, 62); font-family: Helvetica; font-size: 14.2px; text-align: center; white-space: nowrap; background-color: rgb(255, 255, 255);">Organisation Email</span></label><br><div class="inputWrapper"><input type="text" id="tfa_1939" name="tfa_1939" value="" aria-required="true" title="Organisation Email" class="required"></div>
-</div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1930-D">
-<label id="tfa_1930-L" class="label preField " for="tfa_1930">Website</label><br><div class="inputWrapper"><input type="text" id="tfa_1930" name="tfa_1930" value="" title="Website" class=""></div>
-</div>
-<div id="tfa_1948" class="section inline group">
-<div class="oneField field-container-D    " id="tfa_1936-D">
-<label id="tfa_1936-L" class="label preField " for="tfa_1936"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;">Constituency&nbsp;</div></label><br><div class="inputWrapper"><input type="text" id="tfa_1936" name="tfa_1936" value="" title="Constituency " class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1934-D">
-<label id="tfa_1934-L" class="label preField " for="tfa_1934"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;">Ward&nbsp;</div></label><br><div class="inputWrapper"><input type="text" id="tfa_1934" name="tfa_1934" value="" title="Ward " class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1953-D">
-<label id="tfa_1953-L" class="label preField " for="tfa_1953"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;"><div>SIMD datazone</div></div></label><br><div class="inputWrapper"><input type="text" id="tfa_1953" name="tfa_1953" value="" title="SIMD datazone" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1955-D">
-<label id="tfa_1955-L" class="label preField " for="tfa_1955"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;"><div>SIMD rank</div></div></label><br><div class="inputWrapper"><input type="text" id="tfa_1955" name="tfa_1955" value="" title="SIMD rank" class=""></div>
-</div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1957-D">
-<label id="tfa_1957-L" class="label preField " for="tfa_1957"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;">NHS&nbsp;Health Board</div></label><br><div class="inputWrapper"><input type="text" id="tfa_1957" name="tfa_1957" value="" title="NHS Health Board" class=""></div>
-</div>
-</fieldset>
-</div>
-<fieldset id="tfa_1880" class="section">
-<legend id="tfa_1880-L">Main contact</legend>
-<div id="tfa_1881" class="section inline group">
-<div class="oneField field-container-D    " id="tfa_1-D">
-<label id="tfa_1-L" class="label preField reqMark" for="tfa_1">First Name</label><br><div class="inputWrapper"><input type="text" id="tfa_1" name="tfa_1" value="" aria-required="true" title="First Name" class="required"></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1875-D">
-<label id="tfa_1875-L" class="label preField reqMark" for="tfa_1875">Last Name</label><br><div class="inputWrapper"><input type="text" id="tfa_1875" name="tfa_1875" value="" aria-required="true" title="Last Name" class="required"></div>
-</div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1958-D">
-<label id="tfa_1958-L" class="label preField reqMark" for="tfa_1958">Job Title</label><br><div class="inputWrapper"><input type="text" id="tfa_1958" name="tfa_1958" value="" aria-required="true" title="Job Title" class="required"></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1932-D">
-<label id="tfa_1932-L" class="label preField reqMark" for="tfa_1932">Email</label><br><div class="inputWrapper"><input type="text" id="tfa_1932" name="tfa_1932" value="" aria-required="true" title="Email" class="required"></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1949-D">
-<label id="tfa_1949-L" class="label preField reqMark" for="tfa_1949">Phone</label><br><div class="inputWrapper"><input type="text" id="tfa_1949" name="tfa_1949" value="" aria-required="true" title="Phone" class="required"></div>
-</div>
-</fieldset>
-<fieldset id="tfa_1882" class="section">
-<legend id="tfa_1882-L">Funding</legend>
-<div class="oneField field-container-D    " id="tfa_2007-D" role="radiogroup" aria-labelledby="tfa_2007-L" data-tfa-labelledby="-L tfa_2007-L">
-<label id="tfa_2007-L" class="label preField reqMark">Where do you provide services?</label><br><div class="inputWrapper"><span id="tfa_2007" class="choices vertical required"><span class="oneChoice"><input type="radio" value="tfa_2019" class="" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L"><label class="label postField" id="tfa_2019-L" for="tfa_2019"><span class="input-radio-faux"></span>Across Scotland </label></span><span class="oneChoice"><input type="radio" value="tfa_2020" class="" id="tfa_2020" name="tfa_2007" aria-required="true" data-conditionals="#tfa_2084" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L"><label class="label postField" id="tfa_2020-L" for="tfa_2020"><span class="input-radio-faux"></span>Across several local authority areas </label></span><span class="oneChoice"><input type="radio" value="tfa_2021" class="" id="tfa_2021" name="tfa_2007" aria-required="true" data-conditionals="#tfa_2051" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L"><label class="label postField" id="tfa_2021-L" for="tfa_2021"><span class="input-radio-faux"></span>Across one local authority area </label></span><span class="oneChoice"><input type="radio" value="tfa_2022" class="" id="tfa_2022" name="tfa_2007" aria-required="true" data-conditionals="#tfa_2117" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L"><label class="label postField" id="tfa_2022-L" for="tfa_2022"><span class="input-radio-faux"></span>Within a specific community (e.g. town, village or neighbourhood) </label></span></span></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="-L tfa_2084-L">
-<label id="tfa_2084-L" class="label preField ">Local Authority areas</label><br><div class="inputWrapper"><span id="tfa_2084" class="choices vertical " data-condition="`#tfa_2020`"><span class="oneChoice"><input type="checkbox" value="tfa_2085" class="" id="tfa_2085" name="tfa_2085" aria-labelledby="tfa_2085-L" data-tfa-labelledby="tfa_2084-L tfa_2085-L"><label class="label postField" id="tfa_2085-L" for="tfa_2085"><span class="input-checkbox-faux"></span>Aberdeen</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2086" class="" id="tfa_2086" name="tfa_2086" aria-labelledby="tfa_2086-L" data-tfa-labelledby="tfa_2084-L tfa_2086-L"><label class="label postField" id="tfa_2086-L" for="tfa_2086"><span class="input-checkbox-faux"></span>Aberdeenshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2087" class="" id="tfa_2087" name="tfa_2087" aria-labelledby="tfa_2087-L" data-tfa-labelledby="tfa_2084-L tfa_2087-L"><label class="label postField" id="tfa_2087-L" for="tfa_2087"><span class="input-checkbox-faux"></span>Angus</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2088" class="" id="tfa_2088" name="tfa_2088" aria-labelledby="tfa_2088-L" data-tfa-labelledby="tfa_2084-L tfa_2088-L"><label class="label postField" id="tfa_2088-L" for="tfa_2088"><span class="input-checkbox-faux"></span>Argyll and Bute</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2089" class="" id="tfa_2089" name="tfa_2089" aria-labelledby="tfa_2089-L" data-tfa-labelledby="tfa_2084-L tfa_2089-L"><label class="label postField" id="tfa_2089-L" for="tfa_2089"><span class="input-checkbox-faux"></span>Clackmannanshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2090" class="" id="tfa_2090" name="tfa_2090" aria-labelledby="tfa_2090-L" data-tfa-labelledby="tfa_2084-L tfa_2090-L"><label class="label postField" id="tfa_2090-L" for="tfa_2090"><span class="input-checkbox-faux"></span>Dumfries and Galloway</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2091" class="" id="tfa_2091" name="tfa_2091" aria-labelledby="tfa_2091-L" data-tfa-labelledby="tfa_2084-L tfa_2091-L"><label class="label postField" id="tfa_2091-L" for="tfa_2091"><span class="input-checkbox-faux"></span>Dundee</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2092" class="" id="tfa_2092" name="tfa_2092" aria-labelledby="tfa_2092-L" data-tfa-labelledby="tfa_2084-L tfa_2092-L"><label class="label postField" id="tfa_2092-L" for="tfa_2092"><span class="input-checkbox-faux"></span>East Ayrshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2093" class="" id="tfa_2093" name="tfa_2093" aria-labelledby="tfa_2093-L" data-tfa-labelledby="tfa_2084-L tfa_2093-L"><label class="label postField" id="tfa_2093-L" for="tfa_2093"><span class="input-checkbox-faux"></span>East Dunbartonshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2094" class="" id="tfa_2094" name="tfa_2094" aria-labelledby="tfa_2094-L" data-tfa-labelledby="tfa_2084-L tfa_2094-L"><label class="label postField" id="tfa_2094-L" for="tfa_2094"><span class="input-checkbox-faux"></span>East Lothian</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2095" class="" id="tfa_2095" name="tfa_2095" aria-labelledby="tfa_2095-L" data-tfa-labelledby="tfa_2084-L tfa_2095-L"><label class="label postField" id="tfa_2095-L" for="tfa_2095"><span class="input-checkbox-faux"></span>East Renfrewshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2096" class="" id="tfa_2096" name="tfa_2096" aria-labelledby="tfa_2096-L" data-tfa-labelledby="tfa_2084-L tfa_2096-L"><label class="label postField" id="tfa_2096-L" for="tfa_2096"><span class="input-checkbox-faux"></span>Edinburgh</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2097" class="" id="tfa_2097" name="tfa_2097" aria-labelledby="tfa_2097-L" data-tfa-labelledby="tfa_2084-L tfa_2097-L"><label class="label postField" id="tfa_2097-L" for="tfa_2097"><span class="input-checkbox-faux"></span>Falkirk</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2098" class="" id="tfa_2098" name="tfa_2098" aria-labelledby="tfa_2098-L" data-tfa-labelledby="tfa_2084-L tfa_2098-L"><label class="label postField" id="tfa_2098-L" for="tfa_2098"><span class="input-checkbox-faux"></span>Fife</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2099" class="" id="tfa_2099" name="tfa_2099" aria-labelledby="tfa_2099-L" data-tfa-labelledby="tfa_2084-L tfa_2099-L"><label class="label postField" id="tfa_2099-L" for="tfa_2099"><span class="input-checkbox-faux"></span>Glasgow</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2100" class="" id="tfa_2100" name="tfa_2100" aria-labelledby="tfa_2100-L" data-tfa-labelledby="tfa_2084-L tfa_2100-L"><label class="label postField" id="tfa_2100-L" for="tfa_2100"><span class="input-checkbox-faux"></span>Highland</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2101" class="" id="tfa_2101" name="tfa_2101" aria-labelledby="tfa_2101-L" data-tfa-labelledby="tfa_2084-L tfa_2101-L"><label class="label postField" id="tfa_2101-L" for="tfa_2101"><span class="input-checkbox-faux"></span>Inverclyde</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2102" class="" id="tfa_2102" name="tfa_2102" aria-labelledby="tfa_2102-L" data-tfa-labelledby="tfa_2084-L tfa_2102-L"><label class="label postField" id="tfa_2102-L" for="tfa_2102"><span class="input-checkbox-faux"></span>Midlothian</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2103" class="" id="tfa_2103" name="tfa_2103" aria-labelledby="tfa_2103-L" data-tfa-labelledby="tfa_2084-L tfa_2103-L"><label class="label postField" id="tfa_2103-L" for="tfa_2103"><span class="input-checkbox-faux"></span>Moray</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2104" class="" id="tfa_2104" name="tfa_2104" aria-labelledby="tfa_2104-L" data-tfa-labelledby="tfa_2084-L tfa_2104-L"><label class="label postField" id="tfa_2104-L" for="tfa_2104"><span class="input-checkbox-faux"></span>Na h-Eileanan Siar</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2105" class="" id="tfa_2105" name="tfa_2105" aria-labelledby="tfa_2105-L" data-tfa-labelledby="tfa_2084-L tfa_2105-L"><label class="label postField" id="tfa_2105-L" for="tfa_2105"><span class="input-checkbox-faux"></span>North Ayrshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2106" class="" id="tfa_2106" name="tfa_2106" aria-labelledby="tfa_2106-L" data-tfa-labelledby="tfa_2084-L tfa_2106-L"><label class="label postField" id="tfa_2106-L" for="tfa_2106"><span class="input-checkbox-faux"></span>North Lanarkshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2107" class="" id="tfa_2107" name="tfa_2107" aria-labelledby="tfa_2107-L" data-tfa-labelledby="tfa_2084-L tfa_2107-L"><label class="label postField" id="tfa_2107-L" for="tfa_2107"><span class="input-checkbox-faux"></span>Orkney</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2108" class="" id="tfa_2108" name="tfa_2108" aria-labelledby="tfa_2108-L" data-tfa-labelledby="tfa_2084-L tfa_2108-L"><label class="label postField" id="tfa_2108-L" for="tfa_2108"><span class="input-checkbox-faux"></span>Perth and Kinross</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2109" class="" id="tfa_2109" name="tfa_2109" aria-labelledby="tfa_2109-L" data-tfa-labelledby="tfa_2084-L tfa_2109-L"><label class="label postField" id="tfa_2109-L" for="tfa_2109"><span class="input-checkbox-faux"></span>Renfrewshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2110" class="" id="tfa_2110" name="tfa_2110" aria-labelledby="tfa_2110-L" data-tfa-labelledby="tfa_2084-L tfa_2110-L"><label class="label postField" id="tfa_2110-L" for="tfa_2110"><span class="input-checkbox-faux"></span>Scottish Borders</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2111" class="" id="tfa_2111" name="tfa_2111" aria-labelledby="tfa_2111-L" data-tfa-labelledby="tfa_2084-L tfa_2111-L"><label class="label postField" id="tfa_2111-L" for="tfa_2111"><span class="input-checkbox-faux"></span>Shetland</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2112" class="" id="tfa_2112" name="tfa_2112" aria-labelledby="tfa_2112-L" data-tfa-labelledby="tfa_2084-L tfa_2112-L"><label class="label postField" id="tfa_2112-L" for="tfa_2112"><span class="input-checkbox-faux"></span>South Ayrshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2113" class="" id="tfa_2113" name="tfa_2113" aria-labelledby="tfa_2113-L" data-tfa-labelledby="tfa_2084-L tfa_2113-L"><label class="label postField" id="tfa_2113-L" for="tfa_2113"><span class="input-checkbox-faux"></span>South Lanarkshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2114" class="" id="tfa_2114" name="tfa_2114" aria-labelledby="tfa_2114-L" data-tfa-labelledby="tfa_2084-L tfa_2114-L"><label class="label postField" id="tfa_2114-L" for="tfa_2114"><span class="input-checkbox-faux"></span>Stirling</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2115" class="" id="tfa_2115" name="tfa_2115" aria-labelledby="tfa_2115-L" data-tfa-labelledby="tfa_2084-L tfa_2115-L"><label class="label postField" id="tfa_2115-L" for="tfa_2115"><span class="input-checkbox-faux"></span>West Dunbartonshire</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2116" class="" id="tfa_2116" name="tfa_2116" aria-labelledby="tfa_2116-L" data-tfa-labelledby="tfa_2084-L tfa_2116-L"><label class="label postField" id="tfa_2116-L" for="tfa_2116"><span class="input-checkbox-faux"></span>West Lothian</label></span></span></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2051-D">
-<label id="tfa_2051-L" class="label preField " for="tfa_2051">Local Authority area</label><br><div class="inputWrapper"><select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2021`" title="Local Authority area" class=""><option value="">Please select...</option>
-<option value="tfa_2052" id="tfa_2052" class="">Aberdeen</option>
-<option value="tfa_2053" id="tfa_2053" class="">Aberdeenshire</option>
-<option value="tfa_2054" id="tfa_2054" class="">Angus</option>
-<option value="tfa_2055" id="tfa_2055" class="">Argyll and Bute</option>
-<option value="tfa_2056" id="tfa_2056" class="">Clackmannanshire</option>
-<option value="tfa_2057" id="tfa_2057" class="">Dumfries and Galloway</option>
-<option value="tfa_2058" id="tfa_2058" class="">Dundee</option>
-<option value="tfa_2059" id="tfa_2059" class="">East Ayrshire</option>
-<option value="tfa_2060" id="tfa_2060" class="">East Dunbartonshire</option>
-<option value="tfa_2061" id="tfa_2061" class="">East Lothian</option>
-<option value="tfa_2062" id="tfa_2062" class="">East Renfrewshire</option>
-<option value="tfa_2063" id="tfa_2063" class="">Edinburgh</option>
-<option value="tfa_2064" id="tfa_2064" class="">Falkirk</option>
-<option value="tfa_2065" id="tfa_2065" class="">Fife</option>
-<option value="tfa_2066" id="tfa_2066" class="">Glasgow</option>
-<option value="tfa_2067" id="tfa_2067" class="">Highland</option>
-<option value="tfa_2068" id="tfa_2068" class="">Inverclyde</option>
-<option value="tfa_2069" id="tfa_2069" class="">Midlothian</option>
-<option value="tfa_2070" id="tfa_2070" class="">Moray</option>
-<option value="tfa_2071" id="tfa_2071" class="">Na h-Eileanan Siar</option>
-<option value="tfa_2072" id="tfa_2072" class="">North Ayrshire</option>
-<option value="tfa_2073" id="tfa_2073" class="">North Lanarkshire</option>
-<option value="tfa_2074" id="tfa_2074" class="">Orkney</option>
-<option value="tfa_2075" id="tfa_2075" class="">Perth and Kinross</option>
-<option value="tfa_2076" id="tfa_2076" class="">Renfrewshire</option>
-<option value="tfa_2077" id="tfa_2077" class="">Scottish Borders</option>
-<option value="tfa_2078" id="tfa_2078" class="">Shetland</option>
-<option value="tfa_2079" id="tfa_2079" class="">South Ayrshire</option>
-<option value="tfa_2080" id="tfa_2080" class="">South Lanarkshire</option>
-<option value="tfa_2081" id="tfa_2081" class="">Stirling</option>
-<option value="tfa_2082" id="tfa_2082" class="">West Dunbartonshire</option>
-<option value="tfa_2083" id="tfa_2083" class="">West Lothian</option></select></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2117-D">
-<label id="tfa_2117-L" class="label preField " for="tfa_2117">Area</label><br><div class="inputWrapper"><input type="text" id="tfa_2117" name="tfa_2117" value="" data-condition="`#tfa_2022`" title="Area" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1959-D">
-<label id="tfa_1959-L" class="label preField reqMark" for="tfa_1959"><div style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;">What is the main issue you will aim to help people with?</div></label><br><div class="inputWrapper"><select id="tfa_1959" name="tfa_1959" title="What is the main issue you will aim to help people with?" aria-required="true" class="required"><option value="">Please select...</option>
-<option value="tfa_2023" id="tfa_2023" class="">Food </option>
-<option value="tfa_2024" id="tfa_2024" class="">Physical health </option>
-<option value="tfa_2025" id="tfa_2025" class="">Mental health and wellbeing </option>
-<option value="tfa_2026" id="tfa_2026" class="">Home life or housing situation </option>
-<option value="tfa_2027" id="tfa_2027" class="">Money </option>
-<option value="tfa_2028" id="tfa_2028" class="">Employment </option>
-<option value="tfa_2029" id="tfa_2029" data-conditionals="#tfa_2048" class="">Other (please describe) </option></select></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2048-D">
-<label id="tfa_2048-L" class="label preField " for="tfa_2048"><span style="font-family: &quot;Segoe UI&quot;, system-ui, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, sans-serif; font-size: 14px;">What is the main issue you will aim to help people with? (other)</span></label><br><div class="inputWrapper"><textarea id="tfa_2048" name="tfa_2048" data-condition="`#tfa_2029`" title="What is the main issue you will aim to help people with? (other)" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2011-D">
-<label id="tfa_2011-L" class="label preField reqMark" for="tfa_2011">What is the main type of activity you are seeking funding for?</label><br><div class="inputWrapper"><select id="tfa_2011" name="tfa_2011" title="What is the main type of activity you are seeking funding for?" aria-required="true" class="required"><option value="">Please select...</option>
-<option value="tfa_2030" id="tfa_2030" class="">Food provision or co-ordination</option>
-<option value="tfa_2031" id="tfa_2031" class="">Delivery of shopping / essential items</option>
-<option value="tfa_2032" id="tfa_2032" class="">Activity to reduce the impact of isolation and/or increase wellbeing</option>
-<option value="tfa_2033" id="tfa_2033" class="">Co-ordination of local activity (e.g. support services or volunteers)</option>
-<option value="tfa_2034" id="tfa_2034" class="">Money to sustain your organisation due to loss of other income</option>
-<option value="tfa_2035" id="tfa_2035" class="">Resources to support your organisation’s staff or volunteers to work remotely</option>
-<option value="tfa_2036" id="tfa_2036" class="">Resources to support change in how your service is delivered (e.g. providing new online or telephone services)</option>
-<option value="tfa_2037" id="tfa_2037" class="">Money for additional supplies to support service delivery (e.g. hygiene products, PPE)</option>
-<option value="tfa_2038" id="tfa_2038" class="">Staff or volunteer expenses</option>
-<option value="tfa_2039" id="tfa_2039" data-conditionals="#tfa_2049" class="">Other (please describe below)</option></select></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2049-D">
-<label id="tfa_2049-L" class="label preField " for="tfa_2049"><span style="font-size: 14.5px;">What is the main type of activity you are seeking funding for? (other)</span></label><br><div class="inputWrapper"><textarea id="tfa_2049" name="tfa_2049" data-condition="`#tfa_2039`" title="What is the main type of activity you are seeking funding for? (other)" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2015-D">
-<label id="tfa_2015-L" class="label preField reqMark" for="tfa_2015">Is there a specific target group you are seeking funding to work with?</label><br><div class="inputWrapper"><select id="tfa_2015" name="tfa_2015" title="Is there a specific target group you are seeking funding to work with?" aria-required="true" class="required"><option value="">Please select...</option>
-<option value="tfa_2040" id="tfa_2040" class="">Children and families</option>
-<option value="tfa_2041" id="tfa_2041" class="">Young people</option>
-<option value="tfa_2042" id="tfa_2042" class="">Older people</option>
-<option value="tfa_2043" id="tfa_2043" class="">Shielded group </option>
-<option value="tfa_2044" id="tfa_2044" class="">People with disabilities</option>
-<option value="tfa_2045" id="tfa_2045" class="">Minority communities</option>
-<option value="tfa_2046" id="tfa_2046" class="">Key workers</option>
-<option value="tfa_2047" id="tfa_2047" data-conditionals="#tfa_2050" class="">Other (please describe below)</option></select></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2050-D">
-<label id="tfa_2050-L" class="label preField " for="tfa_2050"><span style="font-size: 14.5px;">Is there a specific target group you are seeking funding to work with? (other)</span></label><br><div class="inputWrapper"><textarea id="tfa_2050" name="tfa_2050" data-condition="`#tfa_2047`" title="Is there a specific target group you are seeking funding to work with? (other)" class=""></textarea></div>
-</div>
-</fieldset>
-<fieldset id="tfa_2121" class="section">
-<legend id="tfa_2121-L"><span style="font-weight: 400;">Please give us a broad breakdown of costs</span></legend>
-<div id="tfa_2151" class="section group"><table class="gridLayout ">
-<thead><tr class="headerRow">
-<th> </th>
-<th scope="col" id="tfa_2153-GRID" class="">Description </th>
-<th scope="col" id="tfa_2154-GRID" class="">Amount </th>
-</tr></thead>
-<tbody>
-<tr id="tfa_2152" class="section    alternate-0 ">
-<th scope="row" id="tfa_2152-L" class="headerCol">Budget 1 </th>
-<td class=""><div class="oneField field-container-D    " id="tfa_2153-D"><div class="inputWrapper"><input type="text" id="tfa_2153" name="tfa_2153" value="" title="Description" class=""></div></div></td>
-<td class=""><div class="oneField field-container-D    " id="tfa_2154-D"><div class="inputWrapper"><input type="text" id="tfa_2154" name="tfa_2154" value="" title="Amount" class="calc-BudgetAmount"></div></div></td>
-<td style="display: none"></td>
-</tr>
-<tr id="tfa_2156" class="section    alternate-1 ">
-<th scope="row" id="tfa_2156-L" class="headerCol">Budget 2 </th>
-<td class=""><div class="oneField field-container-D    " id="tfa_2157-D"><div class="inputWrapper"><input type="text" id="tfa_2157" name="tfa_2157" value="" title="Description" class=""></div></div></td>
-<td class=""><div class="oneField field-container-D    " id="tfa_2158-D"><div class="inputWrapper"><input type="text" id="tfa_2158" name="tfa_2158" value="" title="Amount" class="calc-BudgetAmountB"></div></div></td>
-<td style="display: none"></td>
-</tr>
-<tr id="tfa_2160" class="section    alternate-0 ">
-<th scope="row" id="tfa_2160-L" class="headerCol">Budget 3 </th>
-<td class=""><div class="oneField field-container-D    " id="tfa_2161-D"><div class="inputWrapper"><input type="text" id="tfa_2161" name="tfa_2161" value="" title="Description" class=""></div></div></td>
-<td class=""><div class="oneField field-container-D    " id="tfa_2162-D"><div class="inputWrapper"><input type="text" id="tfa_2162" name="tfa_2162" value="" title="Amount" class="calc-BudgetAmountC"></div></div></td>
-<td style="display: none"></td>
-</tr>
-<tr id="tfa_2164" class="section    alternate-1 ">
-<th scope="row" id="tfa_2164-L" class="headerCol">Budget 4 </th>
-<td class=""><div class="oneField field-container-D    " id="tfa_2165-D"><div class="inputWrapper"><input type="text" id="tfa_2165" name="tfa_2165" value="" title="Description" class=""></div></div></td>
-<td class=""><div class="oneField field-container-D    " id="tfa_2166-D"><div class="inputWrapper"><input type="text" id="tfa_2166" name="tfa_2166" value="" title="Amount" class="calc-BudgetAmountD"></div></div></td>
-<td style="display: none"></td>
-</tr>
-<tr id="tfa_2168" class="section    alternate-0 ">
-<th scope="row" id="tfa_2168-L" class="headerCol">Budget 5 </th>
-<td class=""><div class="oneField field-container-D    " id="tfa_2169-D"><div class="inputWrapper"><input type="text" id="tfa_2169" name="tfa_2169" value="" title="Description" class=""></div></div></td>
-<td class=""><div class="oneField field-container-D    " id="tfa_2170-D"><div class="inputWrapper"><input type="text" id="tfa_2170" name="tfa_2170" value="" title="Amount" class="calc-BudgetAmountE"></div></div></td>
-<td style="display: none"></td>
-</tr>
-<tr id="tfa_2176" class="section    alternate-1 ">
-<th scope="row" id="tfa_2176-L" class="headerCol"><b>Budget Total</b> </th>
-<td class=""><div class="oneField field-container-D    " id="tfa_2178-D"><div class="inputWrapper"><input type="text" id="tfa_2178" name="tfa_2178" value="" readonly title="Amount" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly"></div></div></td>
-<td style="display: none"></td>
-</tr>
-</tbody>
-</table></div>
-<div class="oneField field-container-D    " id="tfa_2179-D">
-<label id="tfa_2179-L" class="label preField " for="tfa_2179"><div ccp_infra_version="3" ccp_infra_timestamp="1586885576543" ccp_infra_user_hash="2475111555" ccp_infra_copy_id="" data-ccp-timestamp="1586885576543" style="">Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered.&nbsp; This should link to the budget headings you give us below</div></label><br><div class="inputWrapper"><textarea id="tfa_2179" name="tfa_2179" title="Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered.  This should link to the budget headings you give us below" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2180-D" role="group" aria-labelledby="tfa_2180-L" data-tfa-labelledby="-L tfa_2180-L">
-<label id="tfa_2180-L" class="label preField reqMark" aria-label="Please indicate here that you are authorised to submit this application on behalf of your organisation.   required"><span style="font-size: 14.5px;">Please indicate here that you are authorised to submit this application on behalf of your organisation.</span></label><br><div class="inputWrapper"><span id="tfa_2180" class="choices vertical required"><span class="oneChoice"><input type="checkbox" value="tfa_2186" class="" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2180-L tfa_2186-L"><label class="label postField" id="tfa_2186-L" for="tfa_2186"><span class="input-checkbox-faux"></span></label></span></span></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2184-D" role="group" aria-labelledby="tfa_2184-L" data-tfa-labelledby="-L tfa_2184-L">
-<label id="tfa_2184-L" class="label preField reqMark" aria-label="Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)   required"><span style="font-size: 14.5px;">Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)</span></label><br><div class="inputWrapper"><span id="tfa_2184" class="choices vertical required"><span class="oneChoice"><input type="checkbox" value="tfa_2185" class="" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2184-L tfa_2185-L"><label class="label postField" id="tfa_2185-L" for="tfa_2185"><span class="input-checkbox-faux"></span><br></label></span></span></div>
-</div>
-</fieldset>
-<div class="actions" id="4816485-A"><input type="submit" data-label="Submit" class="primaryAction" id="submit_button" value="Submit"></div>
-<div style="clear:both"></div>
-<input type="hidden" value="4816485" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="71cdc02e5cdf876a0adddebfbfff785f" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="15" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff"><div class="saveAndResume"><div class="oneField">
-<a href="#" id="tfa_saveForLaterLink">Save my progress and resume later</a>
-                | <a href="https://www.tfaforms.com/forms/resume/4816485" onclick="return confirm('Are you sure you want to resume a previous response? Any information you just entered on this page will be discarded.');">Resume a previously saved form</a>
-</div></div>
-</form>
-</div></div><div class="wFormFooter"><p class="supportInfo"><br></p></div>
-  <p class="supportInfo" >
-      </p>
- </div>
-
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}
+</script>
+{{{{/raw}}}}
 {{/if ~}}
