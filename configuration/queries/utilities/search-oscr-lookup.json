@@ -13,6 +13,9 @@
     "postcode"
   ],
   "query": {
+    {{#compare q "not-a-charity"}}
+    "match_none": {}
+    {{else}}
     "bool": {
       "must": [
         {
@@ -22,6 +25,7 @@
         }
       ]
     }
+    {{/compare}}
   }
 }
 {{/withExtend}}

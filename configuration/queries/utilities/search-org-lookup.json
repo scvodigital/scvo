@@ -11,6 +11,9 @@
     "scvo_member"
   ],
   "query": {
+    {{#compare q "not-a-charity"}}
+    "match_none": {}
+    {{else}}
     "bool": {
       "should": [
         {
@@ -27,6 +30,7 @@
       ],
       "minimum_should_match": 1
     }
+    {{/compare}}
   }
 }
 {{/withExtend}}
