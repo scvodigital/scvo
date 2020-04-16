@@ -5,14 +5,14 @@
   defaults=@root.data.form_data.defaults
 }}
 <script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-  const FORM_TIME_START = Math.floor((new Date).getTime() / 1000);
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
   let formElement = document.getElementById("tfa_0");
   if (null === formElement) {
     formElement = document.getElementById("0");
   }
-  let appendJsTimerElement = function() {
-    let formTimeDiff = Math.floor((new Date).getTime() / 1000) - FORM_TIME_START;
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
     let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
     if (null !== cumulatedTimeElement) {
       let cumulatedTime = parseInt(cumulatedTimeElement.value);
@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
   if (null !== formElement) {
-    if (formElement.addEventListener) {
+    if(formElement.addEventListener){
       formElement.addEventListener('submit', appendJsTimerElement, false);
-    } else if (formElement.attachEvent) {
+    } else if(formElement.attachEvent){
       formElement.attachEvent('onsubmit', appendJsTimerElement);
     }
   }
@@ -675,7 +675,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2190-D">
-                  <input type="file" id="tfa_2190" name="tfa_2190" size="" autocomplete="nope" data-lpignore="true" class="form-input">
+                  <input type="file" id="tfa_2190" name="tfa_2190" size="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
                 </div>
               </div>
             </div>
@@ -688,7 +688,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2192-D">
-                  <input type="file" id="tfa_2192" name="tfa_2192" size="" autocomplete="nope" data-lpignore="true" class="form-input">
+                  <input type="file" id="tfa_2192" name="tfa_2192" size="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
                 </div>
               </div>
             </div>
