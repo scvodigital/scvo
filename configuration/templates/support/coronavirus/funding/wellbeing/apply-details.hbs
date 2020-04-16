@@ -91,7 +91,9 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
             </div>
-            {{#unless defaults.tfa_1941 ~}}
+            {{#if defaults.tfa_1941 ~}}
+            <input type="hidden" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" title="Constitutional Form">
+            {{else}}
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
@@ -100,7 +102,19 @@ wFORMS.behaviors.prefill.skip = false;
                 </p>
               </div>
             </div>
-            {{/unless ~}}
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_1944-L" class="form-label r-margin preField reqMark" for="tfa_1944">
+                  Organisation type
+                </label>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1944-D">
+                  <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+                </div>
+              </div>
+            </div>
+            {{/if ~}}
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -826,7 +840,6 @@ wFORMS.behaviors.prefill.skip = false;
         </div>
 
         <div style="clear:both;"></div>
-        <input type="hidden" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" title="Constitutional Form">
         <input type="hidden" id="tfa_1946" name="tfa_1946" value="{{defaults.tfa_1946}}" title="Charity Status">
         <input type="hidden" id="tfa_1936" name="tfa_1936" value="{{defaults.tfa_1936}}" title="Constituency">
         <input type="hidden" id="tfa_1934" name="tfa_1934" value="{{defaults.tfa_1934}}" title="Ward">
