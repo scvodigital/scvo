@@ -673,7 +673,7 @@ wFORMS.behaviors.prefill.skip = false;
                       {{#if multiple ~}}
                       <span class="form-group column col-6 col-md-12">
                         <label class="form-checkbox" id="{{multiple}}-L" for="{{multiple}}">
-                          <input type="checkbox" value="{{multiple}}" class="" id="{{multiple}}" name="{{multiple}}" aria-labelledby="{{multiple}}-L" data-tfa-labelledby="tfa_2084-L {{multiple}}-L" {{#if (dot ../defaults multiple)}}checked{{/if}}>
+                          <input type="checkbox" value="{{multiple}}" class="" id="{{multiple}}" name="{{multiple}}" aria-labelledby="{{multiple}}-L" data-tfa-labelledby="tfa_2084-L {{multiple}}-L"{{#if (dot ../defaults multiple)}} checked{{/if}}>
                           <i class="form-icon"></i> {{name}}
                         </label>
                       </span>
@@ -907,6 +907,7 @@ document.addEventListener("DOMContentLoaded", function() {
       $postcodeIcon = $('#postcode_validation_icon'),
       $postcodeWrapper = $('#postcode-wrapper'),
       $postcodeValidationMessage = $('#postcode_validation_message'),
+      $locations = $('input[name=tfa_2007]'),
       $acrossScotlandRadio = $('#tfa_2019'),
       $acrossSeveralAuthoritiesRadio = $('#tfa_2020'),
       $acrossSeveralAuthoritiesCheckboxes = $('#tfa_2084').find('input'),
@@ -975,6 +976,16 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   $postcode.on('keyup', checkPostcode);
+
+  $('input[type=radio][name=tfa_2007]').change(function() {
+    $('#tfa_2051').val('');
+    $('#tfa_2117').val('');
+    {{#each local_authorities ~}}
+    {{#if multiple ~}}
+    $('#{{multiple}}').removeAttr('checked');
+    {{/if ~}}
+    {{/each ~}}
+  });
 
   // function validateFundingSection() {
   //   var areaValid = ($acrossScotlandRadio.is(':checked')) ||
