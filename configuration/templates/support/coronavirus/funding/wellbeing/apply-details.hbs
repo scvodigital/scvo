@@ -61,7 +61,7 @@ wFORMS.behaviors.prefill.skip = false;
           <h3 id="tfa_1883-L">Organisation details</h3>
 
           <div id="organisation-details">
-            {{#if defaults.tfa_1941}}
+            {{#if defaults.tfa_1941 ~}}
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_1941-L" class="form-label r-margin preField reqMark" for="tfa_1941">
@@ -77,7 +77,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             {{else}}
             <input type="hidden" id="tfa_1941" name="tfa_1941" value="{{defaults.tfa_1941}}" title="Scottish Charity Number" class="form-input">
-            {{/if}}
+            {{/if ~}}
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -91,6 +91,16 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
             </div>
+            {{#unless defaults.tfa_1941 ~}}
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <p class="form-input-hint">
+                  <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply">Have a Scottish Charity Number?</a>
+                </p>
+              </div>
+            </div>
+            {{/unless ~}}
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -770,19 +780,23 @@ wFORMS.behaviors.prefill.skip = false;
             <h3>Confirmation</h3>
 
             <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
-              <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
-                <input type="checkbox" value="tfa_2186" class="" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" {{#if defaults.tfa_2186}}checked{{/if}}>
-                <i class="form-icon"></i>
-                Please indicate here that you are authorised to submit this application on behalf of your organisation.
-              </label>
+              <div class="col-9 col-xl-12">
+                <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
+                  <input type="checkbox" value="tfa_2186" class="" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" {{#if defaults.tfa_2186}}checked{{/if}}>
+                  <i class="form-icon"></i>
+                  Please indicate here that you are authorised to submit this application on behalf of your organisation.
+                </label>
+              </div>
             </div>
 
             <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
-              <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
-                <input type="checkbox" value="tfa_2185" class="" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" {{#if defaults.tfa_2185}}checked{{/if}}>
-                <i class="form-icon"></i>
-                Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)
-              </label>
+              <div class="col-9 col-xl-12">
+                <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
+                  <input type="checkbox" value="tfa_2185" class="" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" {{#if defaults.tfa_2185}}checked{{/if}}>
+                  <i class="form-icon"></i>
+                  Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)
+                </label>
+              </div>
             </div>
           </div>
         </fieldset>
