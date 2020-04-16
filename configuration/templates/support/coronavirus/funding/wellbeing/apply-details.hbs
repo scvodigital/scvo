@@ -66,7 +66,8 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_1941-L" class="form-label r-margin preField reqMark" for="tfa_1941">
-                  Charity number
+                  Scottish Charity Number
+                  <p class="form-input-hint"><a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply/not-a-charity">Not a registered charity?</a></p>
                 </label>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
@@ -301,7 +302,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2020`">
                       {{#each local_authorities ~}}
                       {{#if multiple ~}}
-                      <span class="form-group col-6 col-md-12">
+                      <span class="form-group column col-6 col-md-12">
                         <label class="form-checkbox" id="{{multiple}}-L" for="{{multiple}}">
                           <input type="checkbox" value="{{multiple}}" class="" id="{{multiple}}" name="{{multiple}}" aria-labelledby="{{multiple}}-L" data-tfa-labelledby="tfa_2084-L {{multiple}}-L" {{#if (dot ../defaults multiple)}}checked{{/if}}>
                           <i class="form-icon"></i> {{name}}
