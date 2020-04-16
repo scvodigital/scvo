@@ -153,7 +153,7 @@
                   </div>
                 </div>
                 <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-md-12">
-                  <div id="postcode-wrapper" class="form-group has-icon-right has-error">
+                  <div id="postcode-wrapper" class="form-group has-icon-right">
                     <input type="text" id="tfa_1925" name="tfa_1925" value="{{defaults.tfa_1925}}"
                       aria-required="true" autocomplete="nope" data-lpignore="true"
                       class="form-input required" style="text-transform: uppercase;"
@@ -305,7 +305,7 @@
                     </label>
                   </div>
                 </div>
-                <div class="col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <span id="tfa_2007" class="choices vertical required">
                     <div class="form-group">
                       <label class="form-radio" id="tfa_2019-L" for="tfa_2019">
@@ -385,13 +385,13 @@
               <div class="form-group field-container-D b-margin-full" id="tfa_1959-D">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="input-group form-group field-container-D" id="tfa_1884-D">
-                    <label id="tfa_1959-L" class="preField reqMark" for="tfa_1959">
+                    <label id="tfa_1959-L" class="preField reqMark r-margin" for="tfa_1959">
                       What is the main issue you will aim to help people with?
                     </label>
                   </div>
                 </div>
 
-                <div class="col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <select id="tfa_1959" name="tfa_1959" title="What is the main issue you will aim to help people with?"
                     aria-required="true" class="form-select required">
                     <option value="">
@@ -428,7 +428,7 @@
                     {{!-- <label id="tfa_2048-L" class="preField " for="tfa_2048">What is the main issue you will aim to help people with? (other)</label> --}}
                   </div>
                 </div>
-                <div class="col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <textarea id="tfa_2048" name="tfa_2048" data-condition="`#tfa_2029`"
                     placeholder="What is the main issue you will aim to help people with? (other)"
                     class="form-input b-margin-full">{{defaults.tfa_2048}}</textarea>
@@ -438,13 +438,13 @@
               <div class="form-group field-container-D" id="tfa_2011-D">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="input-group form-group field-container-D" id="tfa_1884-D">
-                    <label id="tfa_2011-L" class="preField reqMark" for="tfa_2011">
+                    <label id="tfa_2011-L" class="preField reqMark r-margin" for="tfa_2011">
                       What is the main type of activity you are seeking funding for?
                     </label>
                   </div>
                 </div>
 
-                <div class="col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <select id="tfa_2011" name="tfa_2011"
                     title="What is the main type of activity you are seeking funding for?" aria-required="true"
                     class="form-select required">
@@ -491,7 +491,7 @@
                     {{!-- <label id="tfa_2049-L" class="preField " for="tfa_2049">What is the main type of activity you are seeking funding for? (other)</label> --}}
                   </div>
                 </div>
-                <div class="col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <textarea id="tfa_2049" name="tfa_2049" data-condition="`#tfa_2039`"
                     placeholder="What is the main type of activity you are seeking funding for? (other)"
                     class="form-input b-margin-full">{{defaults.tfa_2048}}</textarea>
@@ -501,12 +501,12 @@
               <div class="form-group field-container-D" id="tfa_2015-D">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="input-group form-group field-container-D" id="tfa_1884-D">
-                    <label id="tfa_2015-L" class="preField reqMark" for="tfa_2015">
+                    <label id="tfa_2015-L" class="preField reqMark r-margin" for="tfa_2015">
                       Is there a specific target group you are seeking funding to work with?
                     </label>
                   </div>
                 </div>
-                <div class="col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <select id="tfa_2015" name="tfa_2015"
                     title="Is there a specific target group you are seeking funding to work with?" aria-required="true"
                     class="form-select required">
@@ -714,53 +714,85 @@
                   title="Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered. This should link to the budget headings you give us below" required>{{defaults.tfa_2050}}</textarea>
               </div>
 
-              <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
-                <div class="inputWrapper">
-                  <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
-                    <input type="checkbox" value="tfa_2186" class="" id="tfa_2186" name="tfa_2186"
-                      aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" {{#if defaults.tfa_2186}}checked{{/if}}>
-                    <i class="form-icon"></i>
-                    Please indicate here that you are authorised to submit this application on
-                    behalf of your organisation.
+              <div class="form-group t-margin-full">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2190-L" class="form-label r-margin preField" for="tfa_2190">
+                    Link to Your Last set of Audited Account
                   </label>
+                </div>
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <div class="input-group form-group field-container-D" id="tfa_2190-D">
+                    <input type="file" id="tfa_2190" name="tfa_2190" size="" class="form-input">
+                  </div>
                 </div>
               </div>
 
-              <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
-                <div class="inputWrapper">
-                  <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
-                    <input type="checkbox" value="tfa_2185" class="" id="tfa_2185" name="tfa_2185"
-                      aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" {{#if defaults.tfa_2185}}checked{{/if}}>
-                    <i class="form-icon"></i>
-                    Please indicate here that you will deliver services in ways that minimise
-                    risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone,
-                    distancing and hygiene systems)
+              <div class="form-group t-margin-full">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2192-L" class="form-label r-margin preField" for="tfa_2192">
+                    Upload Bank Statement (Latest)
                   </label>
+                </div>
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <div class="input-group form-group field-container-D" id="tfa_2192-D">
+                    <input type="file" id="tfa_2192" name="tfa_2192" size="" class="form-input">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset id="tfa_2269" class="section">
+              <div id="bank-details" {{#unless defaults.tfa_1925}}class="hidden"{{/unless}}>
+                <legend id="tfa_2269-L">Bank account details</legend>
+                <div class="oneField field-container-D" id="tfa_2270-D">
+                <label id="tfa_2270-L" class="label preField reqMark" for="tfa_2270">Account name</label><br><div class="inputWrapper"><input type="text" id="tfa_2270" name="tfa_2270" value="" aria-required="true" class="required"></div>
+                </div>
+                <div id="tfa_2272" class="section inline group">
+                <div class="oneField field-container-D" id="tfa_2273-D">
+                <label id="tfa_2273-L" class="label preField reqMark" for="tfa_2273">Sort code</label><br><div class="inputWrapper"><input type="text" id="tfa_2273" name="tfa_2273" value="" placeholder="●●-●●-●●" aria-required="true" class="required" required></div>
+                </div>
+                <div class="oneField field-container-D" id="tfa_2274-D">
+                <label id="tfa_2274-L" class="label preField reqMark" for="tfa_2274">Account number</label><br><div class="inputWrapper"><input type="text" id="tfa_2274" name="tfa_2274" value="" placeholder="●●●●●●●●" aria-required="true" class="required" required></div>
+                </div>
+                </div>
+                <div id="tfa_2281" class="section inline group">
+                <div class="oneField field-container-D" id="tfa_2271-D">
+                <label id="tfa_2271-L" class="label preField reqMark" for="tfa_2271">Bank name</label><br><div class="inputWrapper"><input type="text" id="tfa_2271" name="tfa_2271" value="" aria-required="true" class="required" required></div>
+                </div>
+                <div class="oneField field-container-D" id="tfa_2283-D">
+                <label id="tfa_2283-L" class="label preField reqMark" for="tfa_2283">Bank address</label><br><div class="inputWrapper"><input type="text" id="tfa_2283" name="tfa_2283" value="" aria-required="true" class="required" required></div>
+                </div>
+                <div class="oneField field-container-D" id="tfa_2280-D">
+                <label id="tfa_2280-L" class="label preField reqMark" for="tfa_2280">Bank postcode</label><br><div class="inputWrapper"><input type="text" id="tfa_2280" name="tfa_2280" value="" aria-required="true" class="required" required></div>
+                </div>
+                </div>
+
+                <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
+                  <div class="inputWrapper">
+                    <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
+                      <input type="checkbox" value="tfa_2186" class="" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" {{#if defaults.tfa_2186}}checked{{/if}}>
+                      <i class="form-icon"></i>
+                      Please indicate here that you are authorised to submit this application on behalf of your organisation.
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
+                  <div class="inputWrapper">
+                    <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
+                      <input type="checkbox" value="tfa_2185" class="" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" {{#if defaults.tfa_2185}}checked{{/if}}>
+                      <i class="form-icon"></i>
+                      Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)
+                    </label>
+                  </div>
                 </div>
               </div>
             </div>
-
-            <div class="form-group t-margin-full">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2187-L" class="form-label r-margin preField" for="tfa_2187">
-                  Upload Constitution
-                </label>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_2187-D">
-                  <input type="file" id="tfa_2187" name="tfa_2187" size="" title="Upload Constitution" class="form-input">
-                </div>
-              </div>
-            </div>
-
           </fieldset>
 
           <div class="actions columns" id="4816751-A">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
             <div class="col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="submit" data-label="Submit"
-                class="primaryAction btn btn-primary btn-lg {{#unless defaults.tfa_1925}}hidden{{/unless}} h-margin b-margin-full"
-                id="submit_button" value="Submit">
+              <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg {{#unless defaults.tfa_1925}}hidden{{/unless}} h-margin b-margin-full" id="submit_button" value="Submit">
             </div>
           </div>
 
@@ -775,7 +807,7 @@
           <input type="hidden" value="4816751" name="tfa_dbFormId" id="tfa_dbFormId">
           <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
           <input type="hidden" value="a88d4226ef03459b652fa4269034a60d" name="tfa_dbControl" id="tfa_dbControl">
-          <input type="hidden" value="22" name="tfa_dbVersionId" id="tfa_dbVersionId">
+          <input type="hidden" value="25" name="tfa_dbVersionId" id="tfa_dbVersionId">
           <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         </form>
       </div>
