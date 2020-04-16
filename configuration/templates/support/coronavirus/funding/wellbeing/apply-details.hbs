@@ -1,4 +1,3 @@
-{{#ifAny @root.request.params.query.debug (compare @root.request.url.hostname "scvo.local") ~}}
 {{#withExtend this
   local_authorities=@root.data.form_data.local_authorities
   fields=@root.data.form_data.fields
@@ -918,4 +917,3 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 {{/withExtend}}
-{{/ifAny ~}}
