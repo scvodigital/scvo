@@ -982,7 +982,7 @@ document.addEventListener("DOMContentLoaded", function() {
     $('#tfa_2117').val('');
     {{#each local_authorities ~}}
     {{#if multiple ~}}
-    $('#{{multiple}}').removeAttr('checked');
+    $('#{{multiple}}').prop('checked', false);
     {{/if ~}}
     {{/each ~}}
   });
