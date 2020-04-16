@@ -793,10 +793,24 @@ wFORMS.behaviors.prefill.skip = false;
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  var $postcode = $('#tfa_1925');
-  var $postcodeIcon = $('#postcode_validation_icon');
-  var $postcodeWrapper = $('#postcode-wrapper');
-  var $postcodeValidationMessage = $('#postcode_validation_message');
+  var $form = $('#4816751'),
+      $postcode = $('#tfa_1925'),
+      $postcodeIcon = $('#postcode_validation_icon'),
+      $postcodeWrapper = $('#postcode-wrapper'),
+      $postcodeValidationMessage = $('#postcode_validation_message'),
+      $acrossScotlandRadio = $('#tfa_2019'),
+      $acrossSeveralAuthoritiesRadio = $('#tfa_2020'),
+      $acrossSeveralAuthoritiesCheckboxes = $('#tfa_2084').find('input'),
+      $acrossOneAuthorityRadio = $('#tfa_2021'),
+      $acrossOneAuthoritySelect = $('#tfa_2051'),
+      $withinSpecificCommunityRadio = $('#tfa_2022'),
+      $withinSpecificCommunityText = $('#tfa_2117'),
+      $mainIssueSelect = $('#tfa_1959'),
+      $mainIssueOtherTextarea = $('#tfa_2048'),
+      $mainTypeOfActivitySelect = $('#tfa_2011'),
+      $mainTypeOfActivityOtherTextarea = $('#tfa_2049'),
+      $specificTargetGroupSelect = $('#tfa_2015'),
+      $specificTargetGroupOtherTextarea = $('#tfa_2050');
 
   function checkPostcode() {
     var postcode = $('#tfa_1925').val().toUpperCase();
@@ -852,6 +866,29 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   $postcode.on('keyup', checkPostcode);
+
+  function validateFundingSection() {
+    var areaValid = ($acrossScotlandRadio.is(':checked')) ||
+                    ($acrossSeveralAuthoritiesRadio.is(':checked') && $acrossSeveralAuthoritiesCheckboxes.filter(':checked').length > 0) ||
+                    ($acrossOneAuthorityRadio.is(':checked') && !!$acrossOneAuthoritySelect.val()) ||
+                    ($withinSpecificCommunityRadio.is(':checked') && !!$withinSpecificCommunityText.val());
+    var issueValid = !(!$mainIssueSelect.val() || ($mainIssueSelect.val() === 'tfa_2029' && !$mainIssueOtherTextarea.val()));
+    var typeValid = !(!$mainTypeOfActivitySelect.val() || ($mainTypeOfActivitySelect.val() === 'tfa_2039' && !$mainTypeOfActivityOtherTextarea.val()));
+    var targetValid = !(!$specificTargetGroupSelect.val() || ($specificTargetGroupSelect.val() === 'tfa_2047' && !$specificTargetGroupOtherTextarea.val()));
+
+    console.log(`areaValid: ${areaValid}, issueValid: ${issueValid}, typeValid: ${typeValid}, targetValid: ${targetValid}`);
+
+    return areaValid && issueValid && typeValid && targetValid;
+  }
+
+  $form.on('change', function() {
+    var fundingSectionValid = validateFundingSection();
+    if (fundingSectionValid) {
+      $('#costs-details').removeClass('hidden');
+    } else {
+      $('#costs-details').addClass('hidden');
+    }
+  });
 });
 </script>
 {{/withExtend}}
