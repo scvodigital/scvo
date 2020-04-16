@@ -408,7 +408,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group field-container-D" id="tfa_2015-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                <div class="input-group form-group field-container-D">
                   <label id="tfa_2015-L" class="preField reqMark r-margin" for="tfa_2015">
                     Is there a specific target group you are seeking funding to work with?
                   </label>
@@ -419,29 +419,29 @@ wFORMS.behaviors.prefill.skip = false;
                   <option value="">
                     Please select...
                   </option>
-                  <option value="tfa_2040" id="tfa_2040" class="" {{#compare defaults.tfa_2015 "tfa_2040"}}selected{{/compare}}>
+                  <option value="tfa_2040" id="tfa_2040" class="" data-conditionals="#tfa_2301" {{#compare defaults.tfa_2015 "tfa_2040"}}selected{{/compare}}>
                     Children and families
                   </option>
-                  <option value="tfa_2041" id="tfa_2041" class="" {{#compare defaults.tfa_2015 "tfa_2041"}}selected{{/compare}}>
+                  <option value="tfa_2041" id="tfa_2041" class="" data-conditionals="#tfa_2301" {{#compare defaults.tfa_2015 "tfa_2041"}}selected{{/compare}}>
                     Young people
                   </option>
-                  <option value="tfa_2042" id="tfa_2042" class="" {{#compare defaults.tfa_2015 "tfa_2042"}}selected{{/compare}}>
+                  <option value="tfa_2042" id="tfa_2042" class="" data-conditionals="#tfa_2301" {{#compare defaults.tfa_2015 "tfa_2042"}}selected{{/compare}}>
                     Older people
                   </option>
-                  <option value="tfa_2043" id="tfa_2043" class="" {{#compare defaults.tfa_2015 "tfa_2043"}}selected{{/compare}}>
+                  <option value="tfa_2043" id="tfa_2043" class="" data-conditionals="#tfa_2301" {{#compare defaults.tfa_2015 "tfa_2043"}}selected{{/compare}}>
                     Shielded group
                   </option>
-                  <option value="tfa_2044" id="tfa_2044" class="" {{#compare defaults.tfa_2015 "tfa_2044"}}selected{{/compare}}>
+                  <option value="tfa_2044" id="tfa_2044" class="" data-conditionals="#tfa_2301" {{#compare defaults.tfa_2015 "tfa_2044"}}selected{{/compare}}>
                     People with disabilities
                   </option>
-                  <option value="tfa_2045" id="tfa_2045" class="" {{#compare defaults.tfa_2015 "tfa_2045"}}selected{{/compare}}>
+                  <option value="tfa_2045" id="tfa_2045" class="" data-conditionals="#tfa_2301" {{#compare defaults.tfa_2015 "tfa_2045"}}selected{{/compare}}>
                     Minority communities
                   </option>
-                  <option value="tfa_2046" id="tfa_2046" class="" {{#compare defaults.tfa_2015 "tfa_2046"}}selected{{/compare}}>
+                  <option value="tfa_2046" id="tfa_2046" class="" data-conditionals="#tfa_2301" {{#compare defaults.tfa_2015 "tfa_2046"}}selected{{/compare}}>
                     Key workers
                   </option>
-                  <option value="tfa_2047" id="tfa_2047" data-conditionals="#tfa_2050" class="" {{#compare defaults.tfa_2015 "tfa_2047"}}selected{{/compare}}>
-                    Other (please describe below)
+                  <option value="tfa_2047" id="tfa_2047" data-conditionals="#tfa_2050,#tfa_2301" class="" {{#compare defaults.tfa_2015 "tfa_2047"}}selected{{/compare}}>
+                    Other
                   </option>
                 </select>
               </div>
@@ -449,12 +449,23 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group field-container-D" id="tfa_2050-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                <div class="input-group form-group field-container-D">
                   {{!-- <label id="tfa_2050-L" class="preField " for="tfa_2050">Is there a specific target group you are seeking funding to work with? (other)</label> --}}
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <textarea id="tfa_2050" name="tfa_2050" data-condition="`#tfa_2047`" placeholder="" autocomplete="nope" data-lpignore="true" class="form-input b-margin-full">{{defaults.tfa_2050}}</textarea>
+                <textarea id="tfa_2050" name="tfa_2050" data-condition="`#tfa_2047`" placeholder="Please state the specific target group you are seeking funding to work with" autocomplete="nope" data-lpignore="true" class="form-input b-margin-full">{{defaults.tfa_2050}}</textarea>
+              </div>
+            </div>
+
+            <div class="form-group field-container-D" id="tfa_2301-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D">
+                  {{!-- <label id="tfa_2301-L" class="preField " for="tfa_2301">Description</label> --}}
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_2301" name="tfa_2301" rows="5" data-condition="`#tfa_2040` OR `#tfa_2041` OR `#tfa_2042` OR `#tfa_2043` OR `#tfa_2044` OR `#tfa_2045` OR `#tfa_2046` OR `#tfa_2047`" placeholder="Please describe in more detail the specific target group you are seeking funding to work with" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input b-margin required count-words" required></textarea>
               </div>
             </div>
 
@@ -610,7 +621,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
 
               <div class="col-9 col-xl-12">
-                <textarea id="tfa_2179" name="tfa_2179" class="form-input b-margin-full required" autocomplete="nope" data-lpignore="true" title="Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered. This should link to the budget headings you give us below" required>{{defaults.tfa_2050}}</textarea>
+                <textarea id="tfa_2179" name="tfa_2179" class="form-input b-margin required" autocomplete="nope" data-lpignore="true" title="Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered. This should link to the budget headings you give us below" required>{{defaults.tfa_2050}}</textarea>
               </div>
             </div>
 
@@ -618,12 +629,12 @@ wFORMS.behaviors.prefill.skip = false;
         </fieldset>
 
         <fieldset id="tfa_1882" class="section">
-          <div id="interest-details"{{#unless defaults.tfa_1925}} class="hidden"{{/unless}}>
+          <div id="interest-details">
             <h3 id="tfa_1882-L">Funding</h3>
 
             <div class="form-group field-container-D b-margin-full" id="tfa_2007-D" role="radiogroup" aria-labelledby="tfa_2007-L" data-tfa-labelledby="-L tfa_2007-L">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                <div class="input-group form-group field-container-D">
                   <label id="tfa_2007-L" class="preField reqMark">
                     Where do you provide services?
                   </label>
@@ -696,7 +707,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group field-container-D b-margin-full" id="tfa_1959-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                <div class="input-group form-group field-container-D">
                   <label id="tfa_1959-L" class="preField reqMark r-margin" for="tfa_1959">
                     What is the main issue you will aim to help people with?
                   </label>
@@ -708,25 +719,25 @@ wFORMS.behaviors.prefill.skip = false;
                   <option value="">
                     Please select...
                   </option>
-                  <option value="tfa_2023" id="tfa_2023" class="" {{#compare defaults.tfa_1959 "tfa_2023"}}selected{{/compare}}>
+                  <option value="tfa_2023" id="tfa_2023" data-conditionals="#tfa_2297" class="" {{#compare defaults.tfa_1959 "tfa_2023"}}selected{{/compare}}>
                     Food
                   </option>
-                  <option value="tfa_2024" id="tfa_2024" class="" {{#compare defaults.tfa_1959 "tfa_2024"}}selected{{/compare}}>
+                  <option value="tfa_2024" id="tfa_2024" data-conditionals="#tfa_2297" class="" {{#compare defaults.tfa_1959 "tfa_2024"}}selected{{/compare}}>
                     Physical health
                   </option>
-                  <option value="tfa_2025" id="tfa_2025" class="" {{#compare defaults.tfa_1959 "tfa_2025"}}selected{{/compare}}>
+                  <option value="tfa_2025" id="tfa_2025" data-conditionals="#tfa_2297" class="" {{#compare defaults.tfa_1959 "tfa_2025"}}selected{{/compare}}>
                     Mental health and wellbeing
                   </option>
-                  <option value="tfa_2026" id="tfa_2026" class="" {{#compare defaults.tfa_1959 "tfa_2026"}}selected{{/compare}}>
+                  <option value="tfa_2026" id="tfa_2026" data-conditionals="#tfa_2297" class="" {{#compare defaults.tfa_1959 "tfa_2026"}}selected{{/compare}}>
                     Home life or housing situation
                   </option>
-                  <option value="tfa_2027" id="tfa_2027" class="" {{#compare defaults.tfa_1959 "tfa_2027"}}selected{{/compare}}>
+                  <option value="tfa_2027" id="tfa_2027" data-conditionals="#tfa_2297" class="" {{#compare defaults.tfa_1959 "tfa_2027"}}selected{{/compare}}>
                     Money
                   </option>
-                  <option value="tfa_2028" id="tfa_2028" class="" {{#compare defaults.tfa_1959 "tfa_2028"}}selected{{/compare}}>
+                  <option value="tfa_2028" id="tfa_2028" data-conditionals="#tfa_2297" class="" {{#compare defaults.tfa_1959 "tfa_2028"}}selected{{/compare}}>
                     Employment
                   </option>
-                  <option value="tfa_2029" id="tfa_2029" data-conditionals="#tfa_2048" class="" {{#compare defaults.tfa_1959 "tfa_2029"}}selected{{/compare}}>
+                  <option value="tfa_2029" id="tfa_2029" data-conditionals="#tfa_2297,#tfa_2048" class="" {{#compare defaults.tfa_1959 "tfa_2029"}}selected{{/compare}}>
                     Other (please describe)
                   </option>
                 </select>
@@ -735,18 +746,29 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group field-container-D" id="tfa_2048-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
-                  {{!-- <label id="tfa_2048-L" class="preField " for="tfa_2048">What is the main issue you will aim to help people with? (other)</label> --}}
-                </div>
+                {{!-- <div class="input-group form-group field-container-D">
+                  <label id="tfa_2048-L" class="preField " for="tfa_2048">What is the main issue you will aim to help people with? (other)</label>
+                </div> --}}
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <textarea id="tfa_2048" name="tfa_2048" data-condition="`#tfa_2029`" placeholder="" autocomplete="nope" data-lpignore="true" class="form-input b-margin-full">{{defaults.tfa_2048}}</textarea>
+                <textarea id="tfa_2048" name="tfa_2048" data-condition="`#tfa_2029`" placeholder="Please state the main issue you will aim to help people with" autocomplete="nope" data-lpignore="true" class="form-input b-margin-full">{{defaults.tfa_2048}}</textarea>
+              </div>
+            </div>
+
+            <div class="form-group field-container-D" id="tfa_2297-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                {{!-- <div class="input-group form-group field-container-D">
+                  <label id="tfa_2297-L" class="preField " for="tfa_2297">Description</label>
+                </div> --}}
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_2297" name="tfa_2297" rows="5" data-condition="`#tfa_2023` OR `#tfa_2024` OR `#tfa_2025` OR `#tfa_2026` OR `#tfa_2027` OR `#tfa_2028` OR `#tfa_2029`" placeholder="Please describe in more detail the main issue you will aim to help people with" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input b-margin required count-words" required></textarea>
               </div>
             </div>
 
             <div class="form-group field-container-D" id="tfa_2011-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                <div class="input-group form-group field-container-D">
                   <label id="tfa_2011-L" class="preField reqMark r-margin" for="tfa_2011">
                     What is the main type of activity you are seeking funding for?
                   </label>
@@ -758,35 +780,35 @@ wFORMS.behaviors.prefill.skip = false;
                   <option value="">
                     Please select...
                   </option>
-                  <option value="tfa_2030" id="tfa_2030" class="" {{#compare defaults.tfa_2011 "tfa_2030"}}selected{{/compare}}>
+                  <option value="tfa_2030" id="tfa_2030" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2030"}}selected{{/compare}}>
                     Food provision or co-ordination
                   </option>
-                  <option value="tfa_2031" id="tfa_2031" class="" {{#compare defaults.tfa_2011 "tfa_2031"}}selected{{/compare}}>
+                  <option value="tfa_2031" id="tfa_2031" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2031"}}selected{{/compare}}>
                     Delivery of shopping / essential items
                   </option>
-                  <option value="tfa_2032" id="tfa_2032" class="" {{#compare defaults.tfa_2011 "tfa_2032"}}selected{{/compare}}>
+                  <option value="tfa_2032" id="tfa_2032" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2032"}}selected{{/compare}}>
                     Activity to reduce the impact of isolation and/or increase wellbeing
                   </option>
-                  <option value="tfa_2033" id="tfa_2033" class="" {{#compare defaults.tfa_2011 "tfa_2033"}}selected{{/compare}}>
+                  <option value="tfa_2033" id="tfa_2033" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2033"}}selected{{/compare}}>
                     Co-ordination of local activity (e.g. support services or volunteers)
                   </option>
-                  <option value="tfa_2034" id="tfa_2034" class="" {{#compare defaults.tfa_2011 "tfa_2034"}}selected{{/compare}}>
+                  <option value="tfa_2034" id="tfa_2034" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2034"}}selected{{/compare}}>
                     Money to sustain your organisation due to loss of other income
                   </option>
-                  <option value="tfa_2035" id="tfa_2035" class="" {{#compare defaults.tfa_2011 "tfa_2035"}}selected{{/compare}}>
+                  <option value="tfa_2035" id="tfa_2035" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2035"}}selected{{/compare}}>
                     Resources to support your organisation’s staff or volunteers to work remotely
                   </option>
-                  <option value="tfa_2036" id="tfa_2036" class="" {{#compare defaults.tfa_2011 "tfa_2036"}}selected{{/compare}}>
+                  <option value="tfa_2036" id="tfa_2036" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2036"}}selected{{/compare}}>
                     Resources to support change in how your service is delivered (e.g. providing new online or telephone services)
                   </option>
-                  <option value="tfa_2037" id="tfa_2037" class="" {{#compare defaults.tfa_2011 "tfa_2037"}}selected{{/compare}}>
+                  <option value="tfa_2037" id="tfa_2037" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2037"}}selected{{/compare}}>
                     Money for additional supplies to support service delivery (e.g. hygiene products, PPE)
                   </option>
-                  <option value="tfa_2038" id="tfa_2038" class="" {{#compare defaults.tfa_2011 "tfa_2038"}}selected{{/compare}}>
+                  <option value="tfa_2038" id="tfa_2038" data-conditionals="#tfa_2299" class="" {{#compare defaults.tfa_2011 "tfa_2038"}}selected{{/compare}}>
                     Staff or volunteer expenses
                   </option>
-                  <option value="tfa_2039" id="tfa_2039" data-conditionals="#tfa_2049" class="" {{#compare defaults.tfa_2011 "tfa_2039"}}selected{{/compare}}>
-                    Other (please describe below)
+                  <option value="tfa_2039" id="tfa_2039" data-conditionals="#tfa_2299,#tfa_2049" class="" {{#compare defaults.tfa_2011 "tfa_2039"}}selected{{/compare}}>
+                    Other (please describe)
                   </option>
                 </select>
               </div>
@@ -794,15 +816,25 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group field-container-D" id="tfa_2049-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                <div class="input-group form-group field-container-D">
                   {{!-- <label id="tfa_2049-L" class="preField " for="tfa_2049">What is the main type of activity you are seeking funding for? (other)</label> --}}
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <textarea id="tfa_2049" name="tfa_2049" data-condition="`#tfa_2039`" placeholder="" autocomplete="nope" data-lpignore="true" class="form-input b-margin-full">{{defaults.tfa_2048}}</textarea>
+                <textarea id="tfa_2049" name="tfa_2049" data-condition="`#tfa_2039`" placeholder="Please state the main type of activity you are seeking funding for" autocomplete="nope" data-lpignore="true" class="form-input b-margin-full">{{defaults.tfa_2048}}</textarea>
               </div>
             </div>
 
+            <div class="form-group field-container-D" id="tfa_2299-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                {{!-- <div class="input-group form-group field-container-D">
+                  <label id="tfa_2299-L" class="preField " for="tfa_2299">Description</label>
+                </div> --}}
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_2299" name="tfa_2299" rows="5" data-condition="`#tfa_2030` OR `#tfa_2031` OR `#tfa_2032` OR `#tfa_2033` OR `#tfa_2034` OR `#tfa_2035` OR `#tfa_2036` OR `#tfa_2037` OR `#tfa_2038` OR `#tfa_2039`" placeholder="Please describe in more detail the main type of activity you are seeking funding for" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input b-margin required count-words" required>{{defaults.tfa_2299}}</textarea>
+              </div>
+            </div>
           </div>
         </fieldset>
 

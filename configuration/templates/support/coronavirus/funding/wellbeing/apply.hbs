@@ -4,14 +4,14 @@
       <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
       The charity number you entered could not be matched with an OSCR record
     </div>
-    <p class="t-margin b-margin-full form-input-hint text-secondary">Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search/" class="no-ext">check the charity register</a> for your Scottish Charity Number then try again</p>
+    <p class="t-margin b-margin-full form-input-hint text-secondary">Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search/" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again</p>
   {{/if ~}}
   <div class="columns">
     <div class="column col-sm-12 col-xs-12">
       <div class="form-group">
         <label for="charity_number" class="form-label">Scottish Charity Number</label>
         <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
-        <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits</p>
+        <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search/" class="no-ext" target="_blank">search the OSCR register</a> to confirm</p>
       </div>
       <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
         Apply now
