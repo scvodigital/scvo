@@ -271,7 +271,7 @@ wFORMS.behaviors.prefill.skip = false;
         </fieldset>
 
         <fieldset id="tfa_1882" class="section">
-          <div id="interest-details" {{#unless defaults.tfa_1925}}class="hidden" {{/unless}}>
+          <div id="interest-details"{{#unless defaults.tfa_1925}} class="hidden"{{/unless}}>
             <h3 id="tfa_1882-L">Funding</h3>
 
             <div class="form-group field-container-D b-margin-full" id="tfa_2007-D" role="radiogroup" aria-labelledby="tfa_2007-L" data-tfa-labelledby="-L tfa_2007-L">
@@ -691,7 +691,7 @@ wFORMS.behaviors.prefill.skip = false;
         </fieldset>
 
         <fieldset id="tfa_2269" class="section">
-          <div id="bank-details"{{#unless defaults.tfa_1925}} class="hidden"{{/unless}}>
+          <div id="bank-details" class="hidden">
             <h3 id="tfa_2269-L">Bank account details</h3>
 
             <div class="form-group">
@@ -791,7 +791,7 @@ wFORMS.behaviors.prefill.skip = false;
         <div class="actions columns" id="4816751-A">
           <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
           <div class="col-9 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-            <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg {{#unless defaults.tfa_1925}}hidden{{/unless}} h-margin b-margin-full" id="submit_button" value="Submit">
+            <input type="submit" data-label="Submit" class="hidden primaryAction btn btn-primary btn-lg {{#unless defaults.tfa_1925}}hidden{{/unless}} h-margin b-margin-full" id="submit_button" value="Submit">
           </div>
         </div>
 
@@ -907,8 +907,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var fundingSectionValid = validateFundingSection();
     if (fundingSectionValid) {
       $('#costs-details').removeClass('hidden');
+      $('#bank-details').removeClass('hidden');
+      $('#submit_button').removeClass('hidden');
     } else {
       $('#costs-details').addClass('hidden');
+      $('#bank-details').addClass('hidden');
+      $('#submit_button').addClass('hidden');
     }
   });
 });
