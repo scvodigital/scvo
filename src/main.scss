@@ -443,6 +443,8 @@ a,
 .divider-vert[data-content]::after {
   font-weight: $heading-link-weight;
   color: $secondary-color;
+  line-height: $padding*2;
+  padding: 0;
 }
 
 a:link,

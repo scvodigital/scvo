@@ -1,9 +1,11 @@
 <div class="form-horizontal form b-margin-full b-padding-full">
-  {{#if @root.request.params.charity_number}}
-    <div class="bg-error x-padding v-margin-full">
-      Invalid charity number
+  {{#if @root.request.params.charity_number ~}}
+    <div class="label label-error x-padding t-margin-full">
+      <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
+      The charity number you entered could not be matched with an OSCR record
     </div>
-  {{/if}}
+    <p class="t-margin b-margin-full form-input-hint text-secondary">Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search/" class="no-ext">check the charity register</a> for your Scottish Charity Number then try again</p>
+  {{/if ~}}
   <div class="columns">
     <div class="column col-sm-12 col-xs-12">
       <div class="form-group">
@@ -17,10 +19,10 @@
     </div>
     <div class="divider-vert hide-sm" data-content="OR"></div>
     <div class="divider text-center show-sm col-12" data-content="OR"></div>
-    <div class="column col-sm-12 col-xs-12">
-      <p>
+    <div class="column col-sm-12 col-xs-12 align-centre">
+      {{!-- <p>
         If you are not a registered charity you can still apply. Click the link below to continue.
-      </p>
+      </p> --}}
       <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply/not-a-charity" class="btn btn-block">
         Not a registered charity
       </a>
