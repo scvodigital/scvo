@@ -215,6 +215,7 @@
     "tfa_1936": {{{json value=(default @root.data.postcode_data.[0].constituency "")}}},
     "tfa_1934": {{{json value=(default @root.data.postcode_data.[0].ward "")}}},
     "tfa_1953": {{{json value=(default @root.data.postcode_data.[0].simd_datazone "")}}},
-    "tfa_1955": {{{json value=(default @root.data.postcode_data.[0].simd_rank "")}}}
+    "tfa_1955": {{{json value=(default @root.data.postcode_data.[0].simd_rank "")}}},
+    "tfa_2295": {{{json value=(default @root.request.params.query.skey "")}}}
   }
 }
