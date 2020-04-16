@@ -511,7 +511,7 @@ wFORMS.behaviors.prefill.skip = false;
         </fieldset>
 
         <fieldset id="tfa_2121" class="section">
-          <div id="costs-details" class="hidden">
+          <div id="costs-details"{{#unless defaults.tfa_1925}} class="hidden"{{/unless}}>
             <h3 id="tfa_2121-L">Costs</h3>
             <legend id="tfa_2121-L">
               <span style="font-weight: 400;">
@@ -519,7 +519,7 @@ wFORMS.behaviors.prefill.skip = false;
               </span>
             </legend>
             <div id="tfa_2151" class="section group">
-              <table class="gridLayout ">
+              <table class="gridLayout">
                 <thead>
                   <tr class="headerRow">
                     <th> </th>
@@ -696,7 +696,7 @@ wFORMS.behaviors.prefill.skip = false;
         </fieldset>
 
         <fieldset id="tfa_2269" class="section">
-          <div id="bank-details" {{#unless defaults.tfa_1925}}class="hidden" {{/unless}}>
+          <div id="bank-details"{{#unless defaults.tfa_1925}} class="hidden"{{/unless}}>
             <h3 id="tfa_2269-L">Bank account details</h3>
 
             <div class="form-group">
