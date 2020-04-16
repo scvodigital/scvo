@@ -15,6 +15,15 @@
     "match_none": {}
     {{else}}
     "bool": {
+      {{#if @root.data.oscr_data.hits.hits.[0] ~}}
+      "filter": [
+        {
+          "term": {
+            "location_postcode": "{{@root.data.oscr_data.hits.hits.[0]._source.postcode}}"
+          }
+        }
+      ],
+      {{/if ~}}
       "should": [
         {
           "query_string": {
