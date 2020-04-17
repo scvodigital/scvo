@@ -233,8 +233,20 @@
   ],
   "where_services": [
     {
-      "name": "Aberdeen",
-      "id": "tfa_2085"
+      "name": "Across Scotland",
+      "id": "tfa_2019"
+    },
+    {
+      "name": "Across several local authority areas",
+      "id": "tfa_2020"
+    },
+    {
+      "name": "Across one local authority area",
+      "id": "tfa_2021"
+    },
+    {
+      "name": "Within a specific community (e.g. town, village or neighbourhood)",
+      "id": "tfa_2022"
     }
   ],
   "main_issues": [
@@ -335,7 +347,6 @@
     "tfa_2015": {{{json value=(default @root.data.eoi_data.[0].Is_there_a_specific_target_group__c "")}}},
     "tfa_2050": {{{json value=(default @root.data.eoi_data.[0].Is_there_a_specific_target_group_Other__c "")}}},
     "tfa_2007": {{{json value=(default @root.data.eoi_data.[0].Where_do_you_provide_services__c "")}}},
-    "tfa_2084": {{{json value=(default @root.data.eoi_data.[0].Where_do_you_provide_services_LA__c "")}}},
     "tfa_2051": {{{json value=(default @root.data.eoi_data.[0].Where_do_you_provide_services_LA__c "")}}},
     "tfa_2117": {{{json value=(default @root.data.eoi_data.[0].Areas_covered__c "")}}},
     "tfa_1959": {{{json value=(default @root.data.eoi_data.[0].What_is_the_main_issue__c "")}}},

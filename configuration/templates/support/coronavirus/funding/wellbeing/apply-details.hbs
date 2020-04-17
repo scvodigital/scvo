@@ -626,14 +626,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2007" class="choices vertical required">
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2019-L" for="tfa_2019">
-                      <input type="radio" value="tfa_2019" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L"{{#compare defaults.tfa_2007 "tfa_2019"}} checked{{/compare}}>
+                      <input type="radio" value="tfa_2019" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L"{{#compare defaults.tfa_2007 "Across Scotland"}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Across Scotland
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2020-L" for="tfa_2020">
-                      <input type="radio" value="tfa_2020" id="tfa_2020" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2007 "tfa_2020"}} checked{{/compare}}>
+                      <input type="radio" value="tfa_2020" id="tfa_2020" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2007 "Across several local authority areas"}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Across several local authority areas
                     </label>
@@ -655,7 +655,7 @@ wFORMS.behaviors.prefill.skip = false;
 
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2021-L" for="tfa_2021">
-                      <input type="radio" value="tfa_2021" id="tfa_2021" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L" data-conditionals="#tfa_2051" {{#compare defaults.tfa_2007 "tfa_2021"}}checked{{/compare}}>
+                      <input type="radio" value="tfa_2021" id="tfa_2021" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L" data-conditionals="#tfa_2051"{{#compare defaults.tfa_2007 "Across one local authority area"}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Across one local authority area
                     </label>
@@ -666,7 +666,7 @@ wFORMS.behaviors.prefill.skip = false;
                       <option value="">Please select...</option>
                       {{#each selection_local_authorities ~}}
                       {{#if id_single ~}}
-                      <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2021 id_single}} selected{{/compare}}>{{name}}</option>
+                      <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2051 name}} selected{{/compare}}>{{name}}</option>
                       {{/if ~}}
                       {{/each ~}}
                     </select>
@@ -674,7 +674,7 @@ wFORMS.behaviors.prefill.skip = false;
 
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2022-L" for="tfa_2022">
-                      <input type="radio" value="tfa_2022" id="tfa_2022" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L" data-conditionals="#tfa_2117" {{#compare defaults.tfa_2007 "tfa_2022"}}checked{{/compare}}>
+                      <input type="radio" value="tfa_2022" id="tfa_2022" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L" data-conditionals="#tfa_2117"{{#compare defaults.tfa_2007 "Within a specific community (e.g. town, village or neighbourhood)"}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Within a specific community (e.g. town, village or neighbourhood)
                     </label>
