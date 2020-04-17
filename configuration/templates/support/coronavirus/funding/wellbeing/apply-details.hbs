@@ -91,6 +91,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1876-D">
                   <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+                  <p class="form-input-hint text-secondary">If any of the information below about your registered office is incorrect please amend it</p>
                 </div>
               </div>
             </div>
@@ -436,7 +437,46 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group field-container-D" id="tfa_2301-D" data-condition="`#tfa_2040` OR `#tfa_2041` OR `#tfa_2042` OR `#tfa_2043` OR `#tfa_2044` OR `#tfa_2045` OR `#tfa_2046` OR `#tfa_2047`">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <textarea id="tfa_2301" name="tfa_2301" rows="5" placeholder="Please describe in more detail the specific target group you are seeking funding to work with" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input required count-words" required></textarea>
+                <textarea id="tfa_2301" name="tfa_2301" rows="5" placeholder="Who is the main target group that you are seeking funding to work with and what are the unmet needs of that group" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-group field-container-D b-margin-full" id="tfa_1959-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D">
+                  <label id="tfa_1959-L" class="preField reqMark r-margin" for="tfa_1959">
+                    What is the main issue you will aim to help people with?
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <select id="tfa_1959" name="tfa_1959" title="What is the main issue you will aim to help people with?" aria-required="true" class="form-select required">
+                  <option value="">
+                    Please select...
+                  </option>
+                  {{#each selection_issue ~}}
+                  <option value="{{id}}" id="{{id}}" data-conditionals="#tfa_2297-D{{#compare name 'Other (please describe)'}},#tfa_2048-D{{/compare}}"{{#compare ../defaults.tfa_1959 name}} selected{{/compare}}>{{name}}</option>
+                  {{/each ~}}
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group field-container-D" id="tfa_2048-D" data-condition="`#tfa_2029`">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_2048" name="tfa_2048" placeholder="Please state the main issue you will aim to help people with" data-maxwords="50" autocomplete="nope" data-lpignore="true" class="form-input count-words">{{defaults.tfa_2048}}</textarea>
+              </div>
+            </div>
+
+            <div class="form-group field-container-D" id="tfa_2297-D" data-condition="`#tfa_2023` OR `#tfa_2024` OR `#tfa_2025` OR `#tfa_2026` OR `#tfa_2027` OR `#tfa_2028` OR `#tfa_2029`">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                {{!-- <div class="input-group form-group field-container-D">
+                  <label id="tfa_2297-L" class="preField " for="tfa_2297">Description</label>
+                </div> --}}
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_2297" name="tfa_2297" rows="5" placeholder="Please describe in more detail the main issue you will aim to help people with" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input required count-words" required></textarea>
               </div>
             </div>
 
@@ -453,9 +493,11 @@ wFORMS.behaviors.prefill.skip = false;
 
             <h3 id="tfa_2121-L">Costs</h3>
             <p>
-              Please give us a broad breakdown of costs
+              Please give us a high level budget breaking down activity into broad themes.  e.g. Volunteer expenses, running costs, PPE materials, Activity packs, equipment.
             </p>
-            <div class="col-9 col-xl-12">
+            <h4>Budget</h4>
+
+            <div class="col-9 col-xl-12 b-margin-full">
               <div id="tfa_2151" class="section group">
                 <table class="gridLayout" style="width:100%;">
                   <thead>
@@ -591,145 +633,6 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="form-group">
-              <div class="col-9 col-xl-12">
-                <div class="input-group form-group field-container-D" id="tfa_2179-D">
-                  <label id="tfa_2179-L" class="form-label t-margin preField reqMark" for="tfa_2179">
-                    Please give us some more detail about the type of activity you are seeking
-                    funding for and how that activity will be delivered. This should link to
-                    the budget headings you give us below
-                  </label>
-                </div>
-              </div>
-
-              <div class="col-9 col-xl-12">
-                <textarea id="tfa_2179" rows="6" name="tfa_2179" data-maxwords="500" class="form-input count-words required" autocomplete="nope" data-lpignore="true" title="Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered. This should link to the budget headings you give us below" required>{{defaults.tfa_2179}}</textarea>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        <div id="tfa_1882" class="section">
-          <div id="interest-details">
-            <h3 id="tfa_1882-L">Funding</h3>
-
-            <div class="form-group field-container-D b-margin-full" id="tfa_2007-D" role="radiogroup" aria-labelledby="tfa_2007-L" data-tfa-labelledby="-L tfa_2007-L">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D">
-                  <label id="tfa_2007-L" class="preField reqMark">
-                    Where do you provide services?
-                  </label>
-                </div>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <span id="tfa_2007" class="choices vertical required">
-                  <div class="form-group">
-                    <label class="form-radio" id="tfa_2019-L" for="tfa_2019">
-                      <input type="radio" value="tfa_2019" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L"{{#compare defaults.tfa_2007 "Across Scotland"}} checked{{/compare}}>
-                      <i class="form-icon"></i>
-                      Across Scotland
-                    </label>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-radio" id="tfa_2020-L" for="tfa_2020">
-                      <input type="radio" value="tfa_2020" id="tfa_2020" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2007 "Across several local authority areas"}} checked{{/compare}}>
-                      <i class="form-icon"></i>
-                      Across several local authority areas
-                    </label>
-                  </div>
-                  <div class="label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="-L tfa_2084-L">
-                    <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2020`">
-                      {{#each selection_local_authorities ~}}
-                      {{#if id_multiple ~}}
-                      <span class="form-group column col-6 col-md-12">
-                        <label class="form-checkbox" id="{{id_multiple}}-L" for="{{id_multiple}}">
-                          <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (dot ../defaults id_multiple)}} checked{{/if}}>
-                          <i class="form-icon"></i> {{name}}
-                        </label>
-                      </span>
-                      {{/if ~}}
-                      {{/each ~}}
-                    </span>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="form-radio" id="tfa_2021-L" for="tfa_2021">
-                      <input type="radio" value="tfa_2021" id="tfa_2021" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L" data-conditionals="#tfa_2051"{{#compare defaults.tfa_2007 "Across one local authority area"}} checked{{/compare}}>
-                      <i class="form-icon"></i>
-                      Across one local authority area
-                    </label>
-                  </div>
-
-                  <div class="form-group field-container-D no-margin" id="tfa_2051-D">
-                    <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2021`" title="Local Authority area" class="form-select b-margin-full">
-                      <option value="">Please select...</option>
-                      {{#each selection_local_authorities ~}}
-                      {{#if id_single ~}}
-                      <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2051 name}} selected{{/compare}}>{{name}}</option>
-                      {{/if ~}}
-                      {{/each ~}}
-                    </select>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="form-radio" id="tfa_2022-L" for="tfa_2022">
-                      <input type="radio" value="tfa_2022" id="tfa_2022" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L" data-conditionals="#tfa_2117"{{#compare defaults.tfa_2007 "Within a specific community (e.g. town, village or neighbourhood)"}} checked{{/compare}}>
-                      <i class="form-icon"></i>
-                      Within a specific community (e.g. town, village or neighbourhood)
-                    </label>
-                  </div>
-
-                  <div class="form-group field-container-D" id="tfa_2117-D">
-                    <input type="text" id="tfa_2117" name="tfa_2117" value="{{defaults.tfa_2117}}" data-condition="`#tfa_2022`" placeholder="Please tell us your neighbourhood here" class="form-input" autocomplete="nope" data-lpignore="true" style="width: 100%;">
-                  </div>
-                </span>
-              </div>
-            </div>
-
-            <div class="form-group field-container-D b-margin-full" id="tfa_1959-D">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D">
-                  <label id="tfa_1959-L" class="preField reqMark r-margin" for="tfa_1959">
-                    What is the main issue you will aim to help people with?
-                  </label>
-                </div>
-              </div>
-
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <select id="tfa_1959" name="tfa_1959" title="What is the main issue you will aim to help people with?" aria-required="true" class="form-select required">
-                  <option value="">
-                    Please select...
-                  </option>
-                  {{#each selection_issue ~}}
-                  <option value="{{id}}" id="{{id}}" data-conditionals="#tfa_2297-D{{#compare name 'Other (please describe)'}},#tfa_2048-D{{/compare}}"{{#compare ../defaults.tfa_1959 name}} selected{{/compare}}>{{name}}</option>
-                  {{/each ~}}
-                </select>
-              </div>
-            </div>
-
-            <div class="form-group field-container-D" id="tfa_2048-D" data-condition="`#tfa_2029`">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                {{!-- <div class="input-group form-group field-container-D">
-                  <label id="tfa_2048-L" class="preField " for="tfa_2048">What is the main issue you will aim to help people with? (other)</label>
-                </div> --}}
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <textarea id="tfa_2048" name="tfa_2048" placeholder="Please state the main issue you will aim to help people with" data-maxwords="50" autocomplete="nope" data-lpignore="true" class="form-input count-words">{{defaults.tfa_2048}}</textarea>
-              </div>
-            </div>
-
-            <div class="form-group field-container-D" id="tfa_2297-D" data-condition="`#tfa_2023` OR `#tfa_2024` OR `#tfa_2025` OR `#tfa_2026` OR `#tfa_2027` OR `#tfa_2028` OR `#tfa_2029`">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                {{!-- <div class="input-group form-group field-container-D">
-                  <label id="tfa_2297-L" class="preField " for="tfa_2297">Description</label>
-                </div> --}}
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <textarea id="tfa_2297" name="tfa_2297" rows="5" placeholder="Please describe in more detail the main issue you will aim to help people with" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input required count-words" required></textarea>
-              </div>
-            </div>
-
             <div class="form-group field-container-D" id="tfa_2011-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D">
@@ -753,9 +656,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group field-container-D" id="tfa_2049-D" data-condition="`#tfa_2039`">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D">
-                  {{!-- <label id="tfa_2049-L" class="preField " for="tfa_2049">What is the main type of activity you are seeking funding for? (other)</label> --}}
-                </div>
+                <div class="input-group form-group field-container-D"></div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <textarea id="tfa_2049" name="tfa_2049" placeholder="Please state the main type of activity you are seeking funding for" data-maxwords="50" autocomplete="nope" data-lpignore="true" class="form-input count-words">{{defaults.tfa_2048}}</textarea>
@@ -763,15 +664,111 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
 
             <div class="form-group field-container-D" id="tfa_2299-D" data-condition="`#tfa_2030` OR `#tfa_2031` OR `#tfa_2032` OR `#tfa_2033` OR `#tfa_2034` OR `#tfa_2035` OR `#tfa_2036` OR `#tfa_2037` OR `#tfa_2038` OR `#tfa_2039`">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                {{!-- <div class="input-group form-group field-container-D">
-                  <label id="tfa_2299-L" class="preField " for="tfa_2299">Description</label>
-                </div> --}}
-              </div>
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <textarea id="tfa_2299" name="tfa_2299" rows="5" placeholder="Please describe in more detail the main type of activity you are seeking funding for" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input required count-words" required>{{defaults.tfa_2299}}</textarea>
+                <textarea id="tfa_2299" name="tfa_2299" rows="5" placeholder="Please tell us more detail about the type of activity you are seeking funding for and how that activity will be delivered. This should focus on meeting unmet need and should link directly to your budget" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input required count-words" required>{{defaults.tfa_2299}}</textarea>
               </div>
             </div>
+
+            {{!-- <div class="form-group">
+              <div class="col-9 col-xl-12">
+                <div class="input-group form-group field-container-D" id="tfa_2179-D">
+                  <label id="tfa_2179-L" class="form-label t-margin preField reqMark" for="tfa_2179">
+                    Please give us some more detail about the type of activity you are seeking
+                    funding for and how that activity will be delivered. This should link to
+                    the budget headings you give us below
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-9 col-xl-12">
+                <textarea id="tfa_2179" rows="6" name="tfa_2179" data-maxwords="500" class="form-input count-words required" autocomplete="nope" data-lpignore="true" title="Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered. This should link to the budget headings you give us below" required>{{defaults.tfa_2179}}</textarea>
+              </div>
+            </div> --}}
+
+          </div>
+        </div>
+
+        <div id="tfa_1882" class="section">
+          <div id="interest-details">
+            <h3 id="tfa_1882-L">Geographical area you work in</h3>
+            <p>
+              Please tell us where you will be delivering the activity that you are applying for funding for.
+            </p>
+
+            <div class="form-group field-container-D b-margin-full" id="tfa_2007-D" role="radiogroup" aria-labelledby="tfa_2007-L" data-tfa-labelledby="-L tfa_2007-L">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D">
+                  <label id="tfa_2007-L" class="preField reqMark">
+                    Where do you provide services?
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <span id="tfa_2007" class="choices vertical required">
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2019-L" for="tfa_2019">
+                      <input type="radio" value="tfa_2019" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L"{{#compare defaults.tfa_2007 "Across Scotland"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      Across Scotland
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2020-L" for="tfa_2020">
+                      <input type="radio" value="tfa_2020" id="tfa_2020" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2007 "Across several local authority areas"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      Across several local authority areas
+                    </label>
+                  </div>
+                  <div class="label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="-L tfa_2084-L">
+                    <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2020`">
+                      {{#each selection_local_authorities ~}}
+                      {{#if id_multiple ~}}
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="{{id_multiple}}-L" for="{{id_multiple}}">
+                          <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (dot ../defaults id_multiple)}} checked{{/if}}>
+                          <i class="form-icon"></i> {{name}}
+                        </label>
+                      </span>
+                      {{/if ~}}
+                      {{/each ~}}
+                    </span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2021-L" for="tfa_2021">
+                      <input type="radio" value="tfa_2021" id="tfa_2021" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L" data-conditionals="#tfa_2051"{{#compare defaults.tfa_2007 "Across one local authority area"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      Across one local authority area
+                    </label>
+                  </div>
+
+                  <div class="form-group field-container-D no-margin" id="tfa_2051-D">
+                    <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2021`" title="Local Authority area" class="form-select b-margin-full">
+                      <option value="">Please select...</option>
+                      {{#each selection_local_authorities ~}}
+                      {{#if id_single ~}}
+                      <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2051 name}} selected{{/compare}}>{{name}}</option>
+                      {{/if ~}}
+                      {{/each ~}}
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2022-L" for="tfa_2022">
+                      <input type="radio" value="tfa_2022" id="tfa_2022" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L" data-conditionals="#tfa_2117"{{#compare defaults.tfa_2007 "Within a specific community (e.g. town, village or neighbourhood)"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      Within a specific community (e.g. town, village or neighbourhood)
+                    </label>
+                  </div>
+
+                  <div class="form-group field-container-D" id="tfa_2117-D">
+                    <input type="text" id="tfa_2117" name="tfa_2117" value="{{defaults.tfa_2117}}" data-condition="`#tfa_2022`" placeholder="Please tell us your neighbourhood here" class="form-input" autocomplete="nope" data-lpignore="true" style="width: 100%;">
+                  </div>
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
 
