@@ -1,6 +1,9 @@
 {{#withExtend this
-  local_authorities=@root.data.form_data.local_authorities
-  fields=@root.data.form_data.fields
+  selection_local_authorities=@root.data.form_data.local_authorities
+  selection_target=@root.data.form_data.target_groups
+  selection_where=@root.data.form_data.where_services
+  selection_issue=@root.data.form_data.main_issues
+  selection_activity=@root.data.form_data.activity_types
   defaults=@root.data.form_data.defaults
 }}
 <script type="text/javascript">
@@ -207,9 +210,9 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   {{!-- <input type="text" id="tfa_1884" name="tfa_1884" title="Local Authority" class="form-input" disabled /> --}}
                   <select id="tfa_1884" name="tfa_1884" title="Local Authority" aria-required="true" class="required form-select" autocomplete="nope" data-lpignore="true" required>
-                    {{#each local_authorities ~}}
-                    {{#if this.organisation}}
-                    <option value="{{organisation}}" id="{{organisation}}" class="" {{#compare organisation ../defaults.tfa_1884}}selected{{/compare}}>{{name}}</option>
+                    {{#each selection_local_authorities ~}}
+                    {{#if this.id_organisation}}
+                    <option value="{{id_organisation}}" id="{{id_organisation}}"{{#compare id_organisation ../defaults.tfa_1884}} selected{{/compare}}>{{name}}</option>
                     {{/if}}
                     {{/each ~}}
                   </select>
@@ -416,30 +419,9 @@ wFORMS.behaviors.prefill.skip = false;
                   <option value="">
                     Please select...
                   </option>
-                  <option value="tfa_2040" id="tfa_2040" class="" data-conditionals="#tfa_2301-D" {{#compare defaults.tfa_2015 "tfa_2040"}}selected{{/compare}}>
-                    Children and families
-                  </option>
-                  <option value="tfa_2041" id="tfa_2041" class="" data-conditionals="#tfa_2301-D" {{#compare defaults.tfa_2015 "tfa_2041"}}selected{{/compare}}>
-                    Young people
-                  </option>
-                  <option value="tfa_2042" id="tfa_2042" class="" data-conditionals="#tfa_2301-D" {{#compare defaults.tfa_2015 "tfa_2042"}}selected{{/compare}}>
-                    Older people
-                  </option>
-                  <option value="tfa_2043" id="tfa_2043" class="" data-conditionals="#tfa_2301-D" {{#compare defaults.tfa_2015 "tfa_2043"}}selected{{/compare}}>
-                    Shielded group
-                  </option>
-                  <option value="tfa_2044" id="tfa_2044" class="" data-conditionals="#tfa_2301-D" {{#compare defaults.tfa_2015 "tfa_2044"}}selected{{/compare}}>
-                    People with disabilities
-                  </option>
-                  <option value="tfa_2045" id="tfa_2045" class="" data-conditionals="#tfa_2301-D" {{#compare defaults.tfa_2015 "tfa_2045"}}selected{{/compare}}>
-                    Minority communities
-                  </option>
-                  <option value="tfa_2046" id="tfa_2046" class="" data-conditionals="#tfa_2301-D" {{#compare defaults.tfa_2015 "tfa_2046"}}selected{{/compare}}>
-                    Key workers
-                  </option>
-                  <option value="tfa_2047" id="tfa_2047" data-conditionals="#tfa_2050-D,#tfa_2301-D" class="" {{#compare defaults.tfa_2015 "tfa_2047"}}selected{{/compare}}>
-                    Other
-                  </option>
+                  {{#each selection_target ~}}
+                  <option value="{{id}}" id="{{id}}" data-conditionals="#tfa_2301-D{{#if (contains name 'Other')}},#tfa_2050-D{{/if}}"{{#if (contains ../defaults.tfa_2015 name)}} selected{{/if}}>{{name}}</option>
+                  {{/each ~}}
                 </select>
               </div>
             </div>
@@ -479,10 +461,10 @@ wFORMS.behaviors.prefill.skip = false;
                   <thead>
                     <tr class="headerRow">
                       <th> </th>
-                      <th scope="col" id="tfa_2153-GRID" class="">
+                      <th scope="col" id="tfa_2153-GRID">
                         Description
                       </th>
-                      <th scope="col" id="tfa_2154-GRID" class="">
+                      <th scope="col" id="tfa_2154-GRID">
                         Amount
                       </th>
                     </tr>
@@ -493,12 +475,12 @@ wFORMS.behaviors.prefill.skip = false;
                       <th scope="row" id="tfa_2152-L" class="headerCol text-left">
                         Budget 1
                       </th>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2153-D">
                           <input type="text" id="tfa_2153" name="tfa_2153" value="" autocomplete="nope" data-lpignore="true" class="form-input">
                         </div>
                       </td>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2154-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
@@ -513,12 +495,12 @@ wFORMS.behaviors.prefill.skip = false;
                       <th scope="row" id="tfa_2156-L" class="headerCol text-left">
                         Budget 2
                       </th>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2157-D">
                           <input type="text" id="tfa_2157" name="tfa_2157" value="" autocomplete="nope" data-lpignore="true" class="form-input">
                         </div>
                       </td>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2158-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
@@ -533,12 +515,12 @@ wFORMS.behaviors.prefill.skip = false;
                       <th scope="row" id="tfa_2160-L" class="headerCol text-left">
                         Budget 3
                       </th>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2161-D">
                           <input type="text" id="tfa_2161" name="tfa_2161" value="" autocomplete="nope" data-lpignore="true" class="form-input">
                         </div>
                       </td>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2162-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
@@ -553,12 +535,12 @@ wFORMS.behaviors.prefill.skip = false;
                       <th scope="row" id="tfa_2164-L" class="headerCol text-left">
                         Budget 4
                       </th>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2165-D">
                           <input type="text" id="tfa_2165" name="tfa_2165" value="" autocomplete="nope" data-lpignore="true" class="form-input">
                         </div>
                       </td>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2166-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
@@ -573,12 +555,12 @@ wFORMS.behaviors.prefill.skip = false;
                       <th scope="row" id="tfa_2168-L" class="headerCol text-left">
                         Budget 5
                       </th>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2169-D">
                           <input type="text" id="tfa_2169" name="tfa_2169" value="" autocomplete="nope" data-lpignore="true" class="form-input">
                         </div>
                       </td>
-                      <td class="">
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2170-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
@@ -593,8 +575,8 @@ wFORMS.behaviors.prefill.skip = false;
                       <th scope="row" id="tfa_2176-L" class="headerCol text-left">
                         <strong>Budget total</strong>
                       </th>
-                      <td class=""></td>
-                      <td class="">
+                      <td></td>
+                      <td>
                         <div class="form-group oneField field-container-D" id="tfa_2178-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
@@ -644,25 +626,25 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2007" class="choices vertical required">
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2019-L" for="tfa_2019">
-                      <input type="radio" value="tfa_2019" class="" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L"{{#compare defaults.tfa_2007 "tfa_2019"}} checked{{/compare}}>
+                      <input type="radio" value="tfa_2019" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L"{{#compare defaults.tfa_2007 "tfa_2019"}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Across Scotland
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2020-L" for="tfa_2020">
-                      <input type="radio" value="tfa_2020" class="" id="tfa_2020" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2007 "tfa_2020"}} checked{{/compare}}>
+                      <input type="radio" value="tfa_2020" id="tfa_2020" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2007 "tfa_2020"}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Across several local authority areas
                     </label>
                   </div>
                   <div class="label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="-L tfa_2084-L">
                     <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2020`">
-                      {{#each local_authorities ~}}
-                      {{#if multiple ~}}
+                      {{#each selection_local_authorities ~}}
+                      {{#if id_multiple ~}}
                       <span class="form-group column col-6 col-md-12">
-                        <label class="form-checkbox" id="{{multiple}}-L" for="{{multiple}}">
-                          <input type="checkbox" value="{{multiple}}" class="" id="{{multiple}}" name="{{multiple}}" aria-labelledby="{{multiple}}-L" data-tfa-labelledby="tfa_2084-L {{multiple}}-L"{{#if (dot ../defaults multiple)}} checked{{/if}}>
+                        <label class="form-checkbox" id="{{id_multiple}}-L" for="{{id_multiple}}">
+                          <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (dot ../defaults id_multiple)}} checked{{/if}}>
                           <i class="form-icon"></i> {{name}}
                         </label>
                       </span>
@@ -673,7 +655,7 @@ wFORMS.behaviors.prefill.skip = false;
 
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2021-L" for="tfa_2021">
-                      <input type="radio" value="tfa_2021" class="" id="tfa_2021" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L" data-conditionals="#tfa_2051" {{#compare defaults.tfa_2007 "tfa_2021"}}checked{{/compare}}>
+                      <input type="radio" value="tfa_2021" id="tfa_2021" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L" data-conditionals="#tfa_2051" {{#compare defaults.tfa_2007 "tfa_2021"}}checked{{/compare}}>
                       <i class="form-icon"></i>
                       Across one local authority area
                     </label>
@@ -682,9 +664,9 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D no-margin" id="tfa_2051-D">
                     <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2021`" title="Local Authority area" class="form-select b-margin-full">
                       <option value="">Please select...</option>
-                      {{#each local_authorities ~}}
-                      {{#if single ~}}
-                      <option value="{{single}}" id="{{single}}" class="" {{#compare ../defaults.tfa_2021 single}}selected{{/compare}}>{{name}}</option>
+                      {{#each selection_local_authorities ~}}
+                      {{#if id_single ~}}
+                      <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2021 id_single}} selected{{/compare}}>{{name}}</option>
                       {{/if ~}}
                       {{/each ~}}
                     </select>
@@ -692,7 +674,7 @@ wFORMS.behaviors.prefill.skip = false;
 
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2022-L" for="tfa_2022">
-                      <input type="radio" value="tfa_2022" class="" id="tfa_2022" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L" data-conditionals="#tfa_2117" {{#compare defaults.tfa_2007 "tfa_2022"}}checked{{/compare}}>
+                      <input type="radio" value="tfa_2022" id="tfa_2022" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L" data-conditionals="#tfa_2117" {{#compare defaults.tfa_2007 "tfa_2022"}}checked{{/compare}}>
                       <i class="form-icon"></i>
                       Within a specific community (e.g. town, village or neighbourhood)
                     </label>
@@ -719,27 +701,9 @@ wFORMS.behaviors.prefill.skip = false;
                   <option value="">
                     Please select...
                   </option>
-                  <option value="tfa_2023" id="tfa_2023" data-conditionals="#tfa_2297-D" class="" {{#compare defaults.tfa_1959 "tfa_2023"}}selected{{/compare}}>
-                    Food
-                  </option>
-                  <option value="tfa_2024" id="tfa_2024" data-conditionals="#tfa_2297-D" class="" {{#compare defaults.tfa_1959 "tfa_2024"}}selected{{/compare}}>
-                    Physical health
-                  </option>
-                  <option value="tfa_2025" id="tfa_2025" data-conditionals="#tfa_2297-D" class="" {{#compare defaults.tfa_1959 "tfa_2025"}}selected{{/compare}}>
-                    Mental health and wellbeing
-                  </option>
-                  <option value="tfa_2026" id="tfa_2026" data-conditionals="#tfa_2297-D" class="" {{#compare defaults.tfa_1959 "tfa_2026"}}selected{{/compare}}>
-                    Home life or housing situation
-                  </option>
-                  <option value="tfa_2027" id="tfa_2027" data-conditionals="#tfa_2297-D" class="" {{#compare defaults.tfa_1959 "tfa_2027"}}selected{{/compare}}>
-                    Money
-                  </option>
-                  <option value="tfa_2028" id="tfa_2028" data-conditionals="#tfa_2297-D" class="" {{#compare defaults.tfa_1959 "tfa_2028"}}selected{{/compare}}>
-                    Employment
-                  </option>
-                  <option value="tfa_2029" id="tfa_2029" data-conditionals="#tfa_2297-D,#tfa_2048-D" class="" {{#compare defaults.tfa_1959 "tfa_2029"}}selected{{/compare}}>
-                    Other (please describe)
-                  </option>
+                  {{#each selection_issue ~}}
+                  <option value="{{id}}" id="{{id}}" data-conditionals="#tfa_2297-D{{#compare name 'Other (please describe)'}},#tfa_2048-D{{/compare}}"{{#compare ../defaults.tfa_1959 name}} selected{{/compare}}>{{name}}</option>
+                  {{/each ~}}
                 </select>
               </div>
             </div>
@@ -780,36 +744,9 @@ wFORMS.behaviors.prefill.skip = false;
                   <option value="">
                     Please select...
                   </option>
-                  <option value="tfa_2030" id="tfa_2030" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2030"}}selected{{/compare}}>
-                    Food provision or co-ordination
-                  </option>
-                  <option value="tfa_2031" id="tfa_2031" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2031"}}selected{{/compare}}>
-                    Delivery of shopping / essential items
-                  </option>
-                  <option value="tfa_2032" id="tfa_2032" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2032"}}selected{{/compare}}>
-                    Activity to reduce the impact of isolation and/or increase wellbeing
-                  </option>
-                  <option value="tfa_2033" id="tfa_2033" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2033"}}selected{{/compare}}>
-                    Co-ordination of local activity (e.g. support services or volunteers)
-                  </option>
-                  <option value="tfa_2034" id="tfa_2034" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2034"}}selected{{/compare}}>
-                    Money to sustain your organisation due to loss of other income
-                  </option>
-                  <option value="tfa_2035" id="tfa_2035" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2035"}}selected{{/compare}}>
-                    Resources to support your organisation’s staff or volunteers to work remotely
-                  </option>
-                  <option value="tfa_2036" id="tfa_2036" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2036"}}selected{{/compare}}>
-                    Resources to support change in how your service is delivered (e.g. providing new online or telephone services)
-                  </option>
-                  <option value="tfa_2037" id="tfa_2037" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2037"}}selected{{/compare}}>
-                    Money for additional supplies to support service delivery (e.g. hygiene products, PPE)
-                  </option>
-                  <option value="tfa_2038" id="tfa_2038" data-conditionals="#tfa_2299-D" class="" {{#compare defaults.tfa_2011 "tfa_2038"}}selected{{/compare}}>
-                    Staff or volunteer expenses
-                  </option>
-                  <option value="tfa_2039" id="tfa_2039" data-conditionals="#tfa_2299-D,#tfa_2049-D" class="" {{#compare defaults.tfa_2011 "tfa_2039"}}selected{{/compare}}>
-                    Other (please describe)
-                  </option>
+                  {{#each selection_activity ~}}
+                  <option value="{{id}}" id="{{id}}" data-conditionals="#tfa_2299-D{{#compare name 'Other (please describe)'}},#tfa_2049-D{{/compare}}"{{#compare ../defaults.tfa_2011 name}} selected{{/compare}}>{{name}}</option>
+                  {{/each ~}}
                 </select>
               </div>
             </div>
@@ -845,7 +782,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
               <div class="col-9 col-xl-12">
                 <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
-                  <input type="checkbox" value="tfa_2186" class="" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" {{#if defaults.tfa_2186}}checked{{/if}}>
+                  <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" {{#if defaults.tfa_2186}}checked{{/if}}>
                   <i class="form-icon"></i>
                   Please indicate here that you are authorised to submit this application on behalf of your organisation.
                 </label>
@@ -855,7 +792,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
               <div class="col-9 col-xl-12">
                 <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
-                  <input type="checkbox" value="tfa_2185" class="" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" {{#if defaults.tfa_2185}}checked{{/if}}>
+                  <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" {{#if defaults.tfa_2185}}checked{{/if}}>
                   <i class="form-icon"></i>
                   Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)
                 </label>
@@ -970,9 +907,9 @@ document.addEventListener("DOMContentLoaded", function() {
   $('input[type=radio][name=tfa_2007]').change(function() {
     $('#tfa_2051').val('');
     $('#tfa_2117').val('');
-    {{#each local_authorities ~}}
-    {{#if multiple ~}}
-    $('#{{multiple}}').prop('checked', false);
+    {{#each selection_local_authorities ~}}
+    {{#if id_multiple ~}}
+    $('#{{id_multiple}}').prop('checked', false);
     {{/if ~}}
     {{/each ~}}
   });
