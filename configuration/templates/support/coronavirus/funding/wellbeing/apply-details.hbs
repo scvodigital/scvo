@@ -502,13 +502,13 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <h3 id="tfa_2121-L">Costs</h3>
-            <p>
-              Please give us a high level budget breaking down activity into broad themes.  e.g. Volunteer expenses, running costs, PPE materials, Activity packs, equipment.
-            </p>
-            <h4>Budget</h4>
-
             <div class="col-9 col-xl-12 b-margin-full">
+              <h3 id="tfa_2121-L">Costs</h3>
+              <p>
+                Please give us a high level budget breaking down activity into broad themes.  e.g. Volunteer expenses, running costs, PPE materials, Activity packs, equipment.
+              </p>
+
+              <h4>Budget</h4>
               <div id="tfa_2151" class="section group">
                 <table class="gridLayout" style="width:100%;">
                   <thead>
@@ -702,10 +702,12 @@ wFORMS.behaviors.prefill.skip = false;
 
         <div id="tfa_1882" class="section">
           <div id="interest-details">
-            <h3 id="tfa_1882-L">Geographical area you work in</h3>
-            <p>
-              Please tell us where you will be delivering the activity that you are applying for funding for.
-            </p>
+            <div class="col-9 col-xl-12">
+              <h3 id="tfa_1882-L">Geographical area you work in</h3>
+              <p>
+                Please tell us where you will be delivering the activity that you are applying for funding for.
+              </p>
+            </div>
 
             <div class="form-group field-container-D b-margin-full" id="tfa_2007-D" role="radiogroup" aria-labelledby="tfa_2007-L" data-tfa-labelledby="-L tfa_2007-L">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -790,7 +792,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
               <div class="col-9 col-xl-12">
                 <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
-                  <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" {{#if defaults.tfa_2186}}checked{{/if}}>
+                  <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" required>
                   <i class="form-icon"></i>
                   Please indicate here that you are authorised to submit this application on behalf of your organisation.
                 </label>
@@ -800,7 +802,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
               <div class="col-9 col-xl-12">
                 <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
-                  <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" {{#if defaults.tfa_2185}}checked{{/if}}>
+                  <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" required>
                   <i class="form-icon"></i>
                   Please indicate here that you will deliver services in ways that minimise risk of Covid-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems)
                 </label>
