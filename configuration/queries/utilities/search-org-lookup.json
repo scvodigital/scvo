@@ -19,7 +19,7 @@
       "filter": [
         {
           "term": {
-            "location_postcode": "{{@root.data.oscr_data.hits.hits.[0]._source.postcode}}"
+            "location_postcode": "{{default @root.data.eoi_data.[0].Account__r.BillingAddress.postalCode @root.data.oscr_data.hits.hits.[0]._source.postcode}}"
           }
         }
       ],

@@ -1,4 +1,4 @@
-{{#withExtend this q=@root.request.params.query.q}}
+{{#withExtend this q=(default @root.data.eoi_data.[0].Account__r.BillingAddress.postalCode @root.request.params.query.q)}}
 {
   "size": 1,
   "_source": [
