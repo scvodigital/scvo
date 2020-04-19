@@ -1,6 +1,14 @@
 {
   "local_authorities": [
     {
+      "name": "Scotland-wide",
+      "id_organisation": "tfa_2002"
+    },
+    {
+      "name": "Regional",
+      "id_organisation": "tfa_2306"
+    },
+    {
       "name": "Aberdeen",
       "id_multiple": "tfa_2085",
       "id_single": "tfa_2052",
@@ -191,10 +199,6 @@
       "id_multiple": "tfa_2116",
       "id_single": "tfa_2083",
       "id_organisation": "tfa_2000"
-    },
-    {
-      "name": "Scotland-wide",
-      "id_organisation": "tfa_2002"
     }
   ],
   "target_groups": [
@@ -279,6 +283,24 @@
       "id": "tfa_2029"
     }
   ],
+  "other_funding": [
+    {
+      "name": "Wellbeing Fund (earlier phases)",
+      "id": "tfa_2308"
+    },
+    {
+      "name": "Third Sector Resilience Fund",
+      "id": "tfa_2309"
+    },
+    {
+      "name": "Food Fund",
+      "id": "tfa_2310"
+    },
+    {
+      "name": "Supporting Communities Fund",
+      "id": "tfa_2311"
+    }
+  ],
   "activity_types": [
     {
       "name": "Food provision or co-ordination",
@@ -333,7 +355,6 @@
     "tfa_1922": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.BillingAddress.street @root.data.milo_data.hits.hits.[0]._source.location_street) "")}}},
     "tfa_1923": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.BillingAddress.city (default @root.data.milo_data.hits.hits.[0]._source.location_city @root.data.milo_data.hits.hits.[0]._source.location_region)) "")}}},
     "tfa_1925": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.BillingAddress.postalCode @root.data.postcode_data.[0].place) "")}}},
-    "tfa_1884": {{{json value=(default @root.data.postcode_data.[0].local_authority_formassembly "")}}},
     "tfa_1936": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Constituency__c @root.data.postcode_data.[0].constituency) "")}}},
     "tfa_1934": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Ward__c @root.data.postcode_data.[0].ward) "")}}},
     "tfa_1953": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.SIMD_datazone__c @root.data.postcode_data.[0].simd_datazone) "")}}},
@@ -364,7 +385,6 @@
     "tfa_1922": {{{json value=(default @root.data.milo_data.hits.hits.[0]._source.location_street "")}}},
     "tfa_1923": {{{json value=(default (default @root.data.milo_data.hits.hits.[0]._source.location_city @root.data.milo_data.hits.hits.[0]._source.location_region) "")}}},
     "tfa_1925": {{{json value=(default @root.data.postcode_data.[0].place "")}}},
-    "tfa_1884": {{{json value=(default @root.data.postcode_data.[0].local_authority_formassembly "")}}},
     "tfa_1936": {{{json value=(default @root.data.postcode_data.[0].constituency "")}}},
     "tfa_1934": {{{json value=(default @root.data.postcode_data.[0].ward "")}}},
     "tfa_1953": {{{json value=(default @root.data.postcode_data.[0].simd_datazone "")}}},
