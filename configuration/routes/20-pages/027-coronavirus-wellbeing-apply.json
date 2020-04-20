@@ -5,6 +5,22 @@
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
+      "name": "reroute",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "==": [
+              { "var": "data.eoi_data.length" },
+              0
+            ]
+          },
+          "coronavirus_wellbeing_apply_not_registered",
+          false
+        ]
+      }
+    },
+    {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
       "config": {
