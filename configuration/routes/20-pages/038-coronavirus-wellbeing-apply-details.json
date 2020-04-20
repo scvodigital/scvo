@@ -110,7 +110,7 @@
       }
     },
     {
-      "name": "reroute",
+      "name": "check_for_eoi",
       "taskModule": "reroute",
       "config": {
         "if": [
@@ -126,11 +126,11 @@
       }
     },
     {
-      "name": "reroute",
+      "name": "check_for_applied",
       "taskModule": "reroute",
       "config": {
         "if": [
-          { "==": [{"var": "data.eoi_data.[0].Applied__c"}, true] },
+          { "==": [{"var": "data.eoi_data.0.Applied__c"}, true] },
           "coronavirus_wellbeing_apply_already_applied",
           false
         ]
