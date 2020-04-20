@@ -114,7 +114,12 @@
       "taskModule": "reroute",
       "config": {
         "if": [
-          { "==": [{"var": "data.eoi_data.[0].Session_Key__c"}, true] },
+          {
+            "==": [
+              { "var": "data.eoi_data.length" },
+              0
+            ]
+          },
           "coronavirus_wellbeing_apply_not_registered",
           false
         ]
