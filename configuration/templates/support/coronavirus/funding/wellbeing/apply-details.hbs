@@ -64,7 +64,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_1941-L" class="form-label r-margin preField reqMark" for="tfa_1941">
                   Scottish Charity Number
-                  <p class="form-input-hint"><a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply/not-a-charity">Not a registered charity?</a></p>
+                  {{!-- <p class="form-input-hint"><a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply/not-a-charity{{#if @root.request.params.query.session}}?session={{@root.request.params.query.session}}{{/if}}">Not a registered charity?</a></p> --}}
                 </label>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
@@ -105,11 +105,11 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="input-group form-group field-container-D" id="tfa_1944-D">
                   <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true">
                 </div>
-                <div class="form-group">
+                {{!-- <div class="form-group">
                   <p class="form-input-hint">
                     <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply">Have a Scottish Charity Number?</a>
                   </p>
-                </div>
+                </div> --}}
               </div>
             </div>
             {{/if ~}}
