@@ -110,6 +110,28 @@
       }
     },
     {
+      "name": "reroute",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          { "==": [{"var": "data.eoi_data.[0].Session_Key__c"}, true] },
+          "coronavirus_wellbeing_apply_not_registered",
+          false
+        ]
+      }
+    },
+    {
+      "name": "reroute",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          { "==": [{"var": "data.eoi_data.[0].Applied__c"}, true] },
+          "coronavirus_wellbeing_apply_already_applied",
+          false
+        ]
+      }
+    },
+    {
       "name": "form_data",
       "taskModule": "render",
       "renderer": "handlebars",
