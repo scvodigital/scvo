@@ -42,9 +42,6 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
-{{!-- <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=d1f5c19bf2f1748255566c3e4c87f328" rel="stylesheet" type="text/css" /> --}}
-{{!-- <link href="https://www.tfaforms.com/uploads/themes/theme-66536.css" rel="stylesheet" type="text/css" /> --}}
-
 <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=d1f5c19bf2f1748255566c3e4c87f328" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
 <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=d1f5c19bf2f1748255566c3e4c87f328"></script>
 <script type="text/javascript">
@@ -99,11 +96,6 @@ wFORMS.behaviors.prefill.skip = false;
             <input type="hidden" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" title="Constitutional Form">
             {{else}}
             <div class="form-group">
-              <p class="form-input-hint">
-                <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply">Have a Scottish Charity Number?</a>
-              </p>
-            </div>
-            <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_1944-L" class="form-label r-margin preField reqMark" for="tfa_1944">
                   Organisation type
@@ -111,7 +103,12 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1944-D">
-                  <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+                  <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true">
+                </div>
+                <div class="form-group">
+                  <p class="form-input-hint">
+                    <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply">Have a Scottish Charity Number?</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -165,7 +162,6 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                {{!-- <input type="text" id="tfa_1884" name="tfa_1884" title="Local Authority" class="form-input" disabled /> --}}
                 <select id="tfa_1884" name="tfa_1884" aria-required="true" class="required form-select" autocomplete="nope" data-lpignore="true" required>
                   <option value="" disabled selected>
                     Please select...
@@ -232,7 +228,7 @@ wFORMS.behaviors.prefill.skip = false;
 
         <div id="tfa_1880" class="section">
           <div id="contact-details" {{#unless defaults.tfa_1925}}class="hidden" {{/unless}}>
-            <h3 id="tfa_1880-L">Primary contact for the application</h3>
+            <h3 id="tfa_1880-L" class="t-margin">Primary contact for the application</h3>
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -304,7 +300,7 @@ wFORMS.behaviors.prefill.skip = false;
         <div id="tfa_2269" class="section">
           <div id="bank-details">
             <div class="col-9 col-xl-12">
-              <h3 id="tfa_2269-L">Organisation bank account details</h3>
+              <h3 id="tfa_2269-L" class="t-margin">Organisation bank account details</h3>
               <p>
                 To increase the speed of making payments to successful applicants, we are asking for your bank details at this stage. Please ensure the details are correct to ensure money reaches the correct account.
               </p>
@@ -480,7 +476,7 @@ wFORMS.behaviors.prefill.skip = false;
               </p>
             </div>
 
-            <div class="form-group field-container-D b-margin-full" id="tfa_1959-D">
+            <div class="form-group field-container-D t-margin b-margin-full" id="tfa_1959-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_1959-L" class="preField reqMark r-margin" for="tfa_1959">
@@ -490,7 +486,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <select id="tfa_1959" name="tfa_1959" aria-required="true" class="form-select required">
-                  <option value="" disabled>
+                  <option value="" disabled{{#unless defaults.tfa_1959}} selected{{/unless}}>
                     Please select...
                   </option>
                   {{#each selection_issue ~}}
@@ -502,7 +498,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="form-group field-container-D" id="tfa_2015-D">
+            <div class="form-group field-container-D b-margin-full" id="tfa_2015-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2015-L" class="preField reqMark r-margin" for="tfa_2015">
@@ -512,7 +508,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <select id="tfa_2015" name="tfa_2015" aria-required="true" class="form-select required">
-                  <option value="" disabled>
+                  <option value="" disabled{{#unless defaults.tfa_2015}} selected{{/unless}}>
                     Please select...
                   </option>
                   {{#each selection_target ~}}
@@ -521,13 +517,6 @@ wFORMS.behaviors.prefill.skip = false;
                 </select>
               </div>
             </div>
-
-            {{!-- <div class="form-group field-container-D" id="tfa_2050-D" data-condition="`#tfa_2047`">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <textarea id="tfa_2050" name="tfa_2050" placeholder="Please state the specific target group you are seeking funding to work with" data-maxwords="50" autocomplete="nope" data-lpignore="true" class="form-input count-words">{{defaults.tfa_2050}}</textarea>
-              </div>
-            </div> --}}
 
             <div class="form-group field-container-D t-margin" id="tfa_2301-D">
               <div class="col-9 col-xl-12">
@@ -559,7 +548,6 @@ wFORMS.behaviors.prefill.skip = false;
                   </label>
                 </div>
                 <textarea id="tfa_2302" name="tfa_2302" rows="3" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input required count-words" required></textarea>
-                {{!-- <input type="text" id="" name="tfa_2302" value="" autocomplete="nope" data-lpignore="true" class="form-input"> --}}
               </div>
             </div>
 
@@ -774,11 +762,12 @@ wFORMS.behaviors.prefill.skip = false;
                           <th scope="row" id="tfa_2176-L" class="headerCol text-left">
                             <strong>Budget total</strong>
                           </th>
-                          <td colspan="2">
+                          <td></td>
+                          <td>
                             <div class="form-group oneField field-container-D" id="tfa_2178-D">
                               <div class="input-group" style="width:100%;">
                                 <span class="input-group-addon">&pound;</span>
-                                <input type="number" id="tfa_2178" name="tfa_2178" value="" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right">
+                                <input type="number" id="tfa_2178" name="tfa_2178" value="" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right" disabled>
                               </div>
                             </div>
                           </td>
@@ -787,62 +776,8 @@ wFORMS.behaviors.prefill.skip = false;
                     </table>
                   </div>
                 </div>
-
-                {{!-- <div class="form-group field-container-D" id="tfa_2011-D">
-                  <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                    <div class="input-group form-group field-container-D">
-                      <label id="tfa_2011-L" class="preField reqMark r-margin" for="tfa_2011">
-                        What is the main type of activity you are seeking funding for?
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                    <select id="tfa_2011" name="tfa_2011" title="What is the main type of activity you are seeking funding for?" aria-required="true" class="form-select required">
-                      <option value="">
-                        Please select...
-                      </option>
-                      {{#each selection_activity ~}}
-                      <option value="{{id}}" id="{{id}}" data-conditionals="#tfa_2299-D{{#compare name 'Other (please describe)'}},#tfa_2049-D{{/compare}}"{{#compare ../defaults.tfa_2011 name}} selected{{/compare}}>{{name}}</option>
-                      {{/each ~}}
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group field-container-D" id="tfa_2049-D" data-condition="`#tfa_2039`">
-                  <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                    <div class="input-group form-group field-container-D"></div>
-                  </div>
-                  <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                    <textarea id="tfa_2049" name="tfa_2049" placeholder="Please state the main type of activity you are seeking funding for" data-maxwords="50" autocomplete="nope" data-lpignore="true" class="form-input count-words">{{defaults.tfa_2048}}</textarea>
-                  </div>
-                </div>
-
-                <div class="form-group field-container-D" id="tfa_2299-D" data-condition="`#tfa_2030` OR `#tfa_2031` OR `#tfa_2032` OR `#tfa_2033` OR `#tfa_2034` OR `#tfa_2035` OR `#tfa_2036` OR `#tfa_2037` OR `#tfa_2038` OR `#tfa_2039`">
-                  <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div>
-                  <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                    <textarea id="tfa_2299" name="tfa_2299" rows="5" placeholder="Please tell us more detail about the type of activity you are seeking funding for and how that activity will be delivered. This should focus on meeting unmet need and should link directly to your budget" autocomplete="nope" data-lpignore="true" data-maxwords="100" class="form-input required count-words" required>{{defaults.tfa_2299}}</textarea>
-                  </div>
-                </div> --}}
               </div>
             </div>
-
-            {{!-- <div class="form-group">
-              <div class="col-9 col-xl-12">
-                <div class="input-group form-group field-container-D" id="tfa_2179-D">
-                  <label id="tfa_2179-L" class="form-label t-margin preField reqMark" for="tfa_2179">
-                    Please give us some more detail about the type of activity you are seeking
-                    funding for and how that activity will be delivered. This should link to
-                    the budget headings you give us below
-                  </label>
-                </div>
-              </div>
-
-              <div class="col-9 col-xl-12">
-                <textarea id="tfa_2179" rows="6" name="tfa_2179" data-maxwords="500" class="form-input count-words required" autocomplete="nope" data-lpignore="true" title="Please give us some more detail about the type of activity you are seeking funding for and how that activity will be delivered. This should link to the budget headings you give us below" required>{{defaults.tfa_2179}}</textarea>
-              </div>
-            </div> --}}
-
           </div>
         </div>
 
@@ -886,7 +821,6 @@ wFORMS.behaviors.prefill.skip = false;
         </div>
 
         <div class="actions columns" id="4816751-A">
-          {{!-- <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12"></div> --}}
           <div class="col-9 col-xl-12 align-centre">
             <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg h-margin b-margin-full" id="submit_button" value="Submit">
           </div>
@@ -903,7 +837,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" value="4816751" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="a88d4226ef03459b652fa4269034a60d" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="40" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="42" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
       </form>
     </div>
@@ -1006,33 +940,6 @@ document.addEventListener("DOMContentLoaded", function() {
     blocks: [8],
     numericOnly: true
   });
-
-  // function validateFundingSection() {
-  //   var areaValid = ($acrossScotlandRadio.is(':checked')) ||
-  //                   ($acrossSeveralAuthoritiesRadio.is(':checked') && $acrossSeveralAuthoritiesCheckboxes.filter(':checked').length > 0) ||
-  //                   ($acrossOneAuthorityRadio.is(':checked') && !!$acrossOneAuthoritySelect.val()) ||
-  //                   ($withinSpecificCommunityRadio.is(':checked') && !!$withinSpecificCommunityText.val());
-  //   var issueValid = !(!$mainIssueSelect.val() || ($mainIssueSelect.val() === 'tfa_2029' && !$mainIssueOtherTextarea.val()));
-  //   var typeValid = !(!$mainTypeOfActivitySelect.val() || ($mainTypeOfActivitySelect.val() === 'tfa_2039' && !$mainTypeOfActivityOtherTextarea.val()));
-  //   var targetValid = !(!$specificTargetGroupSelect.val() || ($specificTargetGroupSelect.val() === 'tfa_2047' && !$specificTargetGroupOtherTextarea.val()));
-  //
-  //   console.log(`areaValid: ${areaValid}, issueValid: ${issueValid}, typeValid: ${typeValid}, targetValid: ${targetValid}`);
-  //
-  //   return areaValid && issueValid && typeValid && targetValid;
-  // }
-  //
-  // $form.on('change', function() {
-  //   var fundingSectionValid = validateFundingSection();
-  //   if (fundingSectionValid) {
-  //     $('#costs-details').removeClass('hidden');
-  //     $('#bank-details').removeClass('hidden');
-  //     $('#submit_button').removeClass('hidden');
-  //   } else {
-  //     $('#costs-details').addClass('hidden');
-  //     $('#bank-details').addClass('hidden');
-  //     $('#submit_button').addClass('hidden');
-  //   }
-  // });
 });
 </script>
 {{/withExtend}}
