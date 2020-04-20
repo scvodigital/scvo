@@ -602,7 +602,7 @@ wFORMS.behaviors.prefill.skip = false;
                           {{#if id_multiple ~}}
                           <span class="form-group column col-6 col-md-12">
                             <label class="form-checkbox" id="{{id_multiple}}-L" for="{{id_multiple}}">
-                              <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (dot ../defaults id_multiple)}} checked{{/if}}>
+                              <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (split ../defaults.tfa_2051 ";") name)}} checked{{/if}}>
                               <i class="form-icon"></i> {{name}}
                             </label>
                           </span>
