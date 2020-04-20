@@ -1404,14 +1404,14 @@
 					"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund",
 					"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund$",
 					"children": [{
-						"label": "Eligibility checker",
-						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker",
-						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker$"
-					},
-					{
 						"label": "Guidance for applicants",
 						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants",
 						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants$"
+					},
+					{
+						"label": "Eligibility checker",
+						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker",
+						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker$"
 					},
 					{
 						"label": "Frequently asked questions",
@@ -1422,11 +1422,26 @@
 				{
 					"label": "Wellbeing Fund",
 					"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund",
-					"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund$",
-					"children": [{
+					"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund",
+					"register_children": [{
 						"label": "Register interest",
 						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest",
 						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest$"
+					}],
+					"apply_children": [{
+						"label": "Guidance for applicants",
+						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/guidance-for-applicants",
+						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/guidance-for-applicants$"
+					},
+					{
+						"label": "Apply now",
+						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/apply",
+						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/apply$"
+					},
+					{
+						"label": "Frequently asked questions",
+						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/faq",
+						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/faq$"
 					}]
 				},
 				{
