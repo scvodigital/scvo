@@ -4,6 +4,7 @@
 </div>
 {{/with ~}}
 
+{{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
 <div class="caption pull-right">
   <button class="btn btn-sm" id="accordions_expand">
     Expand all
@@ -16,23 +17,15 @@
 <div class="b-margin-full">
   <br />
 </div>
+{{else}}
+<p>
+  FAQs will be added shortly
+</p>
+{{/compare}}
 
 <div class="b-margin-full b-padding-full">
   {{#if @root.request.params.fund ~}}
-  {{!-- {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
-  {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
-  {{#with _source ~}}
-  {{#if description ~}}
-  <h4 class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion{{/compare}}">{{{title}}}</h4>
-  <div class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion-content{{/compare}}">
-    <p>
-      {{{description}}}
-    </p>
-  </div>
-  {{/if ~}}
-  {{/with ~}}
-  {{/each ~}}
-  {{/compare ~}} --}}
+  {{#compare (length @root.data.supplimentaryResponses.faqs.aggregations.query.buckets) ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.aggregations.query.buckets ~}}
   <h2>{{{key}}}</h2>
   {{#each faqs.hits.hits ~}}
@@ -46,6 +39,22 @@
   {{/with ~}}
   {{/each ~}}
   {{/each ~}}
+  {{else}}
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
+  {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
+  {{#with _source ~}}
+  {{#if description ~}}
+  <h4 class="accordion">{{{title}}}</h4>
+  <div class="accordion-content">
+    <p>
+      {{{replace description "\n" '<br />'}}}
+    </p>
+  </div>
+  {{/if ~}}
+  {{/with ~}}
+  {{/each ~}}
+  {{/compare ~}}
+  {{/compare ~}}
   {{/if ~}}
 </div>
 

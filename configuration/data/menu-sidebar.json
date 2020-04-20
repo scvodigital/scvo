@@ -1422,21 +1422,16 @@
 				{
 					"label": "Wellbeing Fund",
 					"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund",
-					"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund",
+					"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund$|^/support/coronavirus/funding/for-organisations/wellbeing-fund/apply",
 					"register_children": [{
 						"label": "Register interest",
 						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest",
 						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest$"
 					}],
-					"apply_children": [{
+					"children": [{
 						"label": "Guidance for applicants",
 						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/guidance-for-applicants",
 						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/guidance-for-applicants$"
-					},
-					{
-						"label": "Apply now",
-						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/apply",
-						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/apply$"
 					},
 					{
 						"label": "Frequently asked questions",
