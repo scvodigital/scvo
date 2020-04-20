@@ -512,7 +512,7 @@ wFORMS.behaviors.prefill.skip = false;
                     Please select...
                   </option>
                   {{#each selection_target ~}}
-                  <option value="{{id}}" id="{{id}}"{{#compare ../defaults.tfa_2015 (replace name ' (please describe)' '')}} selected{{/compare}}>{{name}}</option>
+                  <option value="{{id}}" id="{{id}}"{{#compare ../defaults.tfa_2015 name}} selected{{/compare}}>{{name}}</option>
                   {{/each ~}}
                 </select>
               </div>
