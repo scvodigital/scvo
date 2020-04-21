@@ -24,6 +24,22 @@
       "renderer": "handlebars"
     },
     {
+      "name": "check_for_session_key",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "==": [
+              { "var": "request.params.query.session" },
+              ""
+            ]
+          },
+          "coronavirus_wellbeing_apply_not_registered",
+          false
+        ]
+      }
+    },
+    {
       "name": "attachment_issues_data",
       "taskModule": "salesforceApex",
       "renderer": "handlebars",
@@ -36,15 +52,25 @@
       }
     },
     {
-      "name": "check_for_session_key",
+      "name": "check_session_key_validity",
       "taskModule": "reroute",
       "config": {
         "if": [
           {
-            "==": [
-              { "var": "request.params.query.session" },
-              ""
-            ]
+            "==": [ { "var": "data.attachment_issues_data.length" }, 0 ]
+          },
+          "coronavirus_wellbeing_apply_not_registered",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_issues",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "==": [ { "var": "data.attachment_issues_data.0.Issues_with_attachments__c" }, false ]
           },
           "coronavirus_wellbeing_apply_not_registered",
           false
