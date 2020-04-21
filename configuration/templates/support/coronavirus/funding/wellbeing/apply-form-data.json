@@ -344,7 +344,7 @@
     }
   ],
   "defaults": {
-    {{#ifAll @root.request.params.query.session (ifAny (compare @root.request.params.charity_number @root.data.eoi_data.[0].Account__r.Scottish_Charity_Number__c) (compare @root.request.params.charity_number "not-a-charity")) ~}}
+    {{#ifAll @root.request.params.query.session (ifAny (compare @root.request.params.charity_number @root.data.eoi_data.[0].Account__r.Scottish_Charity_Number__c) (compare @root.request.params.charity_number "not-a-charity") (compare @root.request.params.query.ex "eoi")) ~}}
     "tfa_1876": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Name @root.data.oscr_data.hits.hits.[0]._source.charity_name) "")}}},
     "tfa_1941": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Scottish_Charity_Number__c @root.data.oscr_data.hits.hits.[0]._source.charity_number) "")}}},
     "tfa_1944": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Constitutional_form__c @root.data.oscr_data.hits.hits.[0]._source.constitutional_form) "")}}},
