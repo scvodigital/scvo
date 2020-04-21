@@ -24,6 +24,18 @@
       "renderer": "handlebars"
     },
     {
+      "name": "attachment_issues_data",
+      "taskModule": "salesforceApex",
+      "renderer": "handlebars",
+      "config": {
+        "connection": "grantsProduction",
+        "output": "data",
+        "method": "GET",
+        "apexClassPath": "/AttachmentIssue/{{default request.params.query.session 'invalid-key'}}",
+        "body": ""
+      }
+    },
+    {
       "name": "check_for_session_key",
       "taskModule": "reroute",
       "config": {
