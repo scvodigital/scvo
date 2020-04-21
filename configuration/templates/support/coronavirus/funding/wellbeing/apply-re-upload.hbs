@@ -1,0 +1,168 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+  let formElement = document.getElementById("tfa_0");
+  if (null === formElement) {
+    formElement = document.getElementById("0");
+  }
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+    let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+    if (null !== cumulatedTimeElement) {
+      let cumulatedTime = parseInt(cumulatedTimeElement.value);
+      if (null !== cumulatedTime && cumulatedTime > 0) {
+        formTimeDiff += cumulatedTime;
+      }
+    }
+    let jsTimeInput = document.createElement("input");
+    jsTimeInput.setAttribute("type", "hidden");
+    jsTimeInput.setAttribute("value", formTimeDiff.toString());
+    jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("autocomplete", "off");
+    if (null !== formElement) {
+      formElement.appendChild(jsTimeInput);
+    }
+  };
+  if (null !== formElement) {
+    if(formElement.addEventListener){
+      formElement.addEventListener('submit', appendJsTimerElement, false);
+    } else if(formElement.attachEvent){
+      formElement.attachEvent('onsubmit', appendJsTimerElement);
+    }
+  }
+});
+</script>
+
+<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=d1f5c19bf2f1748255566c3e4c87f328" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=d1f5c19bf2f1748255566c3e4c87f328"></script>
+<script type="text/javascript">
+wFORMS.behaviors.prefill.skip = false;
+</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=d1f5c19bf2f1748255566c3e4c87f328"></script>
+
+<div class="form-horizontal form b-margin-full b-padding-full">
+  <div class="wFormContainer">
+    <div class="wFormHeader"></div>
+    <div class="wForm" id="4819843-WRPR" dir="ltr">
+      <div class="codesection" id="code-4819843"></div>
+      <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsTooltip labelsAbove" id="4819843" role="form" enctype="multipart/form-data">
+
+        <div class="col-9 col-xl-12">
+          <h2>Application file attachment re-upload</h2>
+          <p>
+            Due to a technical error, file attachments for the first few applications were not uploaded correctly and cannot be opened for assessment. We need you to re-upload the supporting documents you attached to your application on Monday 20th April. We apologise for this inconvenience.
+          </p>
+        </div>
+
+        <div class="section">
+          <div class="col-9 col-xl-12">
+            <h3>Governance and finance checks</h3>
+            <p>
+              Charities, social enterprises, community groups and other voluntary organisations that have independent governance and an asset lock are eligible to apply. Organisations must be in a stable financial position to be able to deliver the proposed activity and can apply for a maximum of 20% of the total annual income from your latest accounts.
+            </p>
+            <p>
+              Please upload the following documents to allow us to conduct due diligence checks on these criteria.
+            </p>
+          </div>
+
+          <div class="form-group t-margin-full">
+            <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <label id="tfa_2303-L" class="form-label r-margin preField" for="tfa_2303">
+                Your main governance document<br />
+                (Constitution, memorandum and articles, rules of operation etc.)
+              </label>
+            </div>
+            <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="input-group form-group field-container-D" id="tfa_2303-D">
+                <input type="file" id="tfa_2303" name="tfa_2303" size="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group t-margin-full">
+            <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <label id="tfa_2187-L" class="form-label r-margin preField" for="tfa_2187">
+                Your latest audited accounts
+              </label>
+            </div>
+            <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="input-group form-group field-container-D" id="tfa_2187-D">
+                <input type="file" id="tfa_2187" name="tfa_2187" size="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group t-margin-full">
+            <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <label id="tfa_2189-L" class="form-label r-margin preField" for="tfa_2189">
+                Your latest bank statement
+              </label>
+            </div>
+            <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="input-group form-group field-container-D" id="tfa_2189-D">
+                <input type="file" id="tfa_2189" name="tfa_2189" size="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div id="confirmation">
+            <div class="col-9 col-xl-12">
+              <h3>Confirmation</h3>
+              <p>
+                Please confirm that:
+              </p>
+            </div>
+
+            <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
+              <div class="col-9 col-xl-12">
+                <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
+                  <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L tfa_2186-L" required>
+                  <i class="form-icon"></i>
+                  You are authorised to submit this application on behalf of your organisation.
+                </label>
+              </div>
+            </div>
+            <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
+              <div class="col-9 col-xl-12">
+                <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
+                  <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L tfa_2185-L" required>
+                  <i class="form-icon"></i>
+                  Your activity will deliver services in ways that minimise risk of COVID-19 transmission to recipients, volunteers and staff (e.g. by using digital, phone, distancing and hygiene systems).
+                </label>
+              </div>
+            </div>
+            <div class="form-group" id="tfa_2304-D" role="group" aria-labelledby="tfa_2304-L" data-tfa-labelledby="-L tfa_2304-L">
+              <div class="col-9 col-xl-12">
+                <label class="form-checkbox" id="tfa_2304-L" for="tfa_2305">
+                  <input type="checkbox" value="tfa_2305" id="tfa_2305" name="tfa_2305" aria-labelledby="tfa_2305-L" data-tfa-labelledby="tfa_2304-L tfa_2305-L" required>
+                  <i class="form-icon"></i>
+                  You understand that by applying, the information you supplied will be shared with a range of national and local organisations for the purposes of verification and assessment. Your application details, with the exception of the primary contact details, may be published openly on the internet if you are successful.
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions columns" id="4819843-A">
+          <div class="col-9 col-xl-12 align-centre v-margin-full">
+            <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg h-margin b-margin-full" id="submit_button" value="Submit">
+          </div>
+        </div>
+
+        <div class="col-9 col-xl-12">
+          <p>
+            By submitting your application you confirm that you understand and accept our obligations under the General Data Protection Regulation (GDPR) set out in our  <a href="/privacy" target="_blank">privacy notice</a>.  You also confirm and agree that for the purposes of this particular fund, we will share your information with the <a href="https://www.gov.scot/publications/third-sector-interfaces-contact-details" target="_blank">Wellbeing Fund partners</a> if deemed appropriate.
+          </p>
+        </div>
+
+        <div style="clear:both;"></div>
+        <input type="hidden" value="4819843" name="tfa_dbFormId" id="tfa_dbFormId">
+        <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
+        <input type="hidden" value="444ce8c606b29df0c5f7b256e9158af5" name="tfa_dbControl" id="tfa_dbControl">
+        <input type="hidden" value="2" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+      </form>
+    </div>
+  </div>
+</div>
