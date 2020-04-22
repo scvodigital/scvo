@@ -921,6 +921,11 @@
 					"path": "/support/digital/evolution",
 					"route": "^/support/digital/evolution$",
 					"children": [{
+							"label": "Coronavirus Digital Service Delivery for Charities",
+							"path": "/support/digital/evolution/coronavirus-digital-service-delivery-for-charities",
+							"route": "^/support/digital/evolution/coronavirus-digital-service-delivery-for-charities$"
+						},
+						{
 							"label": "Digital Check-up",
 							"path": "/support/digital/evolution/check-up",
 							"route": "^/support/digital/evolution/check-up"
