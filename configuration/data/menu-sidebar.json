@@ -1355,7 +1355,7 @@
 	"coronavirus": [{
 		"label": "Coronavirus Third Sector Information Hub",
 		"path": "/support/coronavirus",
-		"route": "^/support/coronavirus$",
+		"route": "^/support/coronavirus$|^/support/coronavirus/search$",
 		"children": [{
 			"label": "Your employees",
 			"path": "/support/coronavirus/employees",
@@ -1595,11 +1595,6 @@
 			"label": "Frequently asked questions",
 			"path": "/support/coronavirus/faq",
 			"route": "^/support/coronavirus/faq"
-		},
-		{
-			"label": "Search",
-			"path": "/support/coronavirus/search",
-			"route": "^/support/coronavirus/search$"
 		}]
 	}],
 	"account": [{
