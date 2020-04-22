@@ -5,6 +5,18 @@
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
+      "name": "eoi_data",
+      "taskModule": "salesforceApex",
+      "renderer": "handlebars",
+      "config": {
+        "connection": "grantsProduction",
+        "output": "data",
+        "method": "GET",
+        "apexClassPath": "/ExpressionOfInterest/{{default request.params.query.session 'invalid-key'}}",
+        "body": ""
+      }
+    },
+    {
       "name": "oscr_data",
       "taskModule": "elasticsearch",
       "config": {
@@ -95,18 +107,6 @@
         "template": ">context.metaData.handlebars.templates.utilities_search-postcode-lookup",
         "output": "data",
         "parseJson": true
-      }
-    },
-    {
-      "name": "eoi_data",
-      "taskModule": "salesforceApex",
-      "renderer": "handlebars",
-      "config": {
-        "connection": "grantsProduction",
-        "output": "data",
-        "method": "GET",
-        "apexClassPath": "/ExpressionOfInterest/{{default request.params.query.session 'invalid-key'}}",
-        "body": ""
       }
     },
     {
