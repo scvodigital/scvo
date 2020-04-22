@@ -617,7 +617,7 @@ wFORMS.behaviors.prefill.skip = false;
 
                       <div class="form-group field-container-D no-margin" id="tfa_2051-D">
                         <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2021`" class="form-select b-margin-full">
-                          <option value="" disabled>
+                          <option value="" disabled {{#unless defaults.tfa_2051}}selected{{/unless}}>
                             Please select...
                           </option>
                           {{#each selection_local_authorities ~}}
@@ -901,6 +901,21 @@ document.addEventListener("DOMContentLoaded", function() {
       clearLocationData();
     }
   }
+
+  //$acrossOneAuthorityRadio.on('change', singleLocationCheckChange);
+//
+  //function singleLocationCheckChange() {
+  //  var checked = $acrossOneAuthorityRadio.prop('checked');
+  //  if (!checked) {
+  //    console.log('Single location un checked');
+  //    $acrossOneAuthoritySelect.val('');
+  //  } else {
+  //    console.log('Single location checked clearing several', $acrossSeveralAuthoritiesCheckboxes);
+  //    $acrossSeveralAuthoritiesCheckboxes.prop('checked', false);
+  //  }
+  //}
+//
+  //singleLocationCheckChange();
 
   function setLocationData(data) {
     console.log(data);
