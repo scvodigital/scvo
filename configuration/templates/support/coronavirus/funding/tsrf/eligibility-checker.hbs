@@ -40,6 +40,12 @@
         <i class="form-icon"></i> We know how much funding from TSRF we would need to keep our organisation afloat until the end of July 2020 (ballpark figure).
       </label>
     </div>
+    <div class="form-group">
+      <label class="form-checkbox">
+        <input type="checkbox" name="selection" value="7">
+        <i class="form-icon"></i>We have contacted our Local Authority about emergency funding available in our area.
+      </label>
+    </div>
     <input type="submit" class="btn btn-lg btn-primary t-margin-full" value="Check" />
   </form>
   {{else}}
@@ -48,6 +54,7 @@
   {{#if (contains @root.request.body.selection '3') ~}}
   {{#if (contains @root.request.body.selection '4') ~}}
   {{#ifAll (contains @root.request.body.selection '5') (contains @root.request.body.selection '6') ~}}
+  {{#if (contains @root.request.body.selection '7') ~}}
   <h4>
     Good news, we think the Third Sector Resilience Fund will be able to help you
   </h4>
@@ -58,7 +65,7 @@
     If your funding needs are for a grant only and below £25,000 please <a href="https://www.tfaforms.com/4811715">apply here</a>.
   </p>
   <p>
-    If your funding needs are for a grant and between £25,000-£75,000, please <a href="https://formstack.io/6B686">apply here</a>.
+    If your funding needs are for a grant and between £25,000-£75,000, please <a href="https://formstack.io/79847">apply here</a>.
   </p>
   <p>
     If your funding needs are for loan finance of £50,000 and above, please <a href="http://www.socialinvestmentscotland.com/support/resilience-fund-loan-funding">apply here</a>.
@@ -80,6 +87,14 @@
       If you need help, please contact: <a href="mailto:srf@socialinvestmentscotland.com">srf@socialinvestmentscotland.com</a>.
     </li>
   </ul> --}}
+  {{else}}
+    <p>
+      <em>You can now apply for grants to help with the impact of the coronavirus (COVID-19) on your organisation through your Local Authority. If you haven’t already, we would advise that you look into the options available from your Local Authority before applying to the TSRF. You can find information about these as well as contact details by following this link:></em>
+    </p>
+    <p>
+      <a href="https://findbusinesssupport.gov.scot/coronavirus-advice/sources-of-funding">https://findbusinesssupport.gov.scot/coronavirus-advice/sources-of-funding</a></em>
+    </p>
+  {{/if ~}}
   {{else}}
   <p>
     For us to be able to process and make a decision about your application as quickly as possible, we need to understand your current financial position and likely funding gap over the next six months. We recommend that you spend some time reviewing your finances and once you are in a position to answer this question, go through this assessment again.
