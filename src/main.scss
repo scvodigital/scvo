@@ -1304,12 +1304,30 @@ a.bg-yellow {
     }
   }
 }
+.banner-coronavirus-info-hub {
+  .logo {
+    height: 39px;
+    width: 145px;
+    .scvo-logo {
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-image: url("https://storage.googleapis.com/scvo-assets/test/scvo/images/logos/scvo-secondary.svg");
+    }
+  }
+}
+.banner-coronavirus-info-hub:hover {
+  .logo .scvo-logo {
+    background-image: url("https://storage.googleapis.com/scvo-assets/test/scvo/images/logos/scvo-black.svg");
+  }
+}
 a.bg-yellow:hover {
   h2,
   h3,
   .fa-fw,
   .link-hover {
-    color: $primary-color-dark;
+    color: black;
   }
 }
 
@@ -1590,6 +1608,12 @@ aside {
   .form-input {
     width: auto;
   }
+  .readonly.form-input {
+    user-select: none;
+    border-color: #a5c0cc;
+    box-shadow: none;
+    cursor: default;
+  }
   .form-select {
     width: fit-content;
   }
@@ -1774,6 +1798,10 @@ header {
 @media screen and (max-width: 960px) {
   header.header .navbar-brand img {
     width: 45vw !important;
+  }
+  .banner-coronavirus-info-hub .logo {
+    width: 115px;
+    height: 31px;
   }
   .mobile-search,
   .mobile-menu {
