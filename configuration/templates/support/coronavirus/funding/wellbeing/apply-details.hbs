@@ -775,7 +775,7 @@ wFORMS.behaviors.prefill.skip = false;
                             <div class="form-group oneField field-container-D" id="tfa_2178-D">
                               <div class="input-group" style="width:100%;">
                                 <span class="input-group-addon">&pound;</span>
-                                <input type="number" id="tfa_2178" name="tfa_2178" value="0" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right" disabled>
+                                <input type="number" id="tfa_2178" name="tfa_2178" value="0" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right">
                               </div>
                             </div>
                           </td>
@@ -783,6 +783,21 @@ wFORMS.behaviors.prefill.skip = false;
                       </tbody>
                     </table>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-4 col-xl-5 col-lg-5 col-md-6 col-sm-12">
+                <label id="total_annual_income-L" class="form-label r-margin preField" for="total_annual_income">
+                  Total annual income
+                  <div class="caption">From your most recent accounts</div>
+                </label>
+              </div>
+              <div class="col-5 col-xl-7 col-lg-7 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="total_annual_income-D" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" id="total_annual_income" name="total_annual_income" value="0" min="1" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" required>
                 </div>
               </div>
             </div>
@@ -903,7 +918,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   //$acrossOneAuthorityRadio.on('change', singleLocationCheckChange);
-//
+  //
   //function singleLocationCheckChange() {
   //  var checked = $acrossOneAuthorityRadio.prop('checked');
   //  if (!checked) {
@@ -914,7 +929,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //    $acrossSeveralAuthoritiesCheckboxes.prop('checked', false);
   //  }
   //}
-//
+  //
   //singleLocationCheckChange();
 
   function setLocationData(data) {
@@ -969,7 +984,42 @@ document.addEventListener("DOMContentLoaded", function() {
     blocks: [8],
     numericOnly: true
   });
+
+  $("#4816751").submit(function(e){
+    e.preventDefault();
+    var budget_total = $('#tfa_2178').val();
+    var total_annual_income = $('#total_annual_income').val();
+    var form = this;
+    if (budget_total >= 5000) {
+      if (budget_total <= 100000) {
+        if (budget_total < (total_annual_income * 0.2)) {
+          form.submit();
+        } else {
+          $('#submit_button').prop("disabled", false);
+          $('#submit_button').prop("style", false);
+          $('#submit_button').val("Submit");
+          alert("Your budget is too high for this fund. Your total budget exceeds 20% of your annual income.");
+        }
+      } else {
+        $('#submit_button').prop("disabled", false);
+        $('#submit_button').prop("style", false);
+        $('#submit_button').val("Submit");
+        alert("Your budget is too high for this fund. Your total budget must be below £100,000.");
+      }
+    } else {
+      $('#submit_button').prop("disabled", false);
+      $('#submit_button').prop("style", false);
+      $('#submit_button').val("Submit");
+      alert("Your budget is too low for this fund. Your total budget must be above £5,000.");
+    }
+    setTimeout(function(){
+      $('#submit_button').prop("disabled", false);
+      $('#submit_button').prop("style", false);
+      $('#submit_button').val("Submit");
+    }, 100);
+  });
 });
+
 function validate_filesize(file) {
   var filesize = file.files[0].size / 1024 / 1024; // in MB
   if (filesize > 5) {
