@@ -23,8 +23,12 @@ $gathering-color-alt: #ECCBCD;
 $gathering-color-light-var: FAF5F8;
 $awards-color-light-var: F9F4F5;
 
-$goodmoves-color: rgb(68, 133, 50);
-$tfn-color: #3b9db1;
+$goodmoves-legacy-color: rgb(68, 133, 50);
+$goodmoves-color: #A8D91B;
+$tfn-legacy-color: #3b9db1;
+$tfn-color: #00FFFF;
+$fs-legacy-color: #537F2C;
+$fs-color: #537F2C;
 
 $blue-color: #4CBED5;
 $purple-color: #C0B5DA;
@@ -576,7 +580,7 @@ footer a {
 }
 
 .bg-tfn {
-  background-color: $tfn-color !important;
+  background-color: $tfn-legacy-color !important;
   h1,
   h2,
   h3,
@@ -810,14 +814,29 @@ a.author:hover,
     line-height: 40px;
     border-bottom: $thick-line solid transparent;
     margin-right: $unit*(3/4);
+    // padding: 0 $unit/2;
     color: $secondary-color;
   }
+  .text-link.active,
   .text-link:active,
   .text-link:focus,
   .text-link:hover {
     border-bottom: $thick-line solid $secondary-color;
     text-decoration: none;
+    // background-color: $primary-color;
+    // color: white;
   }
+  // .text-link.funding-scotland:hover {
+  //   background-color: $fs-color;
+  // }
+  // .text-link.goodmoves:hover {
+  //   background-color: $goodmoves-color;
+  //   color: $secondary-color;
+  // }
+  // .text-link.tfn:hover {
+  //   background-color: $tfn-color;
+  //   color: $secondary-color;
+  // }
   .brand-logo {
     margin-left: $unit/4;
     line-height: 38px;
@@ -1383,7 +1402,7 @@ a.bg-yellow:hover {
   }
 }
 .bg-goodmoves {
-  background-color: $goodmoves-color;
+  background-color: $goodmoves-legacy-color;
   h2,
   h3,
   h4,

@@ -1,0 +1,32 @@
+<nav class="hide-lg scvo-link-bar">
+  <div class="container text-right">
+    <ul>
+      <li>
+        <a class="scvo text-link{{#ifAll (contains @root.request.url.hostname 'scvo.') (compare (contains @root.request.url.pathname 'scottish-charity-awards') false) (compare (contains @root.request.url.pathname 'about/membership') false)}} active{{/ifAll}}" href="{{#unless (contains @root.request.url.hostname 'scvo.')}}https://scvo.org{{else}}/{{/unless}}" title="Scottish Council for Voluntary Organisations">SCVO</a>
+      </li>
+      <li>
+        <a class="goodmoves text-link{{#if (contains @root.request.url.hostname 'goodmoves.')}} active{{/if}}" href="https://goodmoves.com">Goodmoves</a>
+      </li>
+      <li>
+        <a class="tfn text-link{{#if (contains @root.request.url.hostname 'thirdforcenews.')}} active{{/if}}" href="https://thirdforcenews.org.uk">TFN</a>
+      </li>
+      <li>
+        <a class="funding-scotland text-link{{#ifAny (contains @root.request.url.hostname 'fundingscotland.') (contains @root.request.url.hostname 'fs-')}} active{{/ifAny}}" href="https://fundingscotland.com">Funding Scotland</a>
+      </li>
+      <li>
+        <a class="scottish-charity-awards text-link{{#ifAll (contains @root.request.url.hostname 'scvo.') (contains @root.request.url.pathname 'scottish-charity-awards')}} active{{/ifAll}}" href="{{#unless (contains @root.request.url.hostname 'scvo.')}}https://scvo.org{{/unless}}/scottish-charity-awards">Scottish Charity Awards</a>
+      </li>
+      <li>
+        <a class="scottish-charity-awards text-link{{#ifAll (contains @root.request.url.hostname 'scvo.') (contains @root.request.url.pathname 'about/membership')}} active{{/ifAll}}" href="{{#unless (contains @root.request.url.hostname 'scvo.')}}https://scvo.org{{/unless}}/about/membership">SCVO Membership</a>
+      </li>
+      {{!-- <li>
+        <a class="text-link" href="{{#unless (contains @root.request.url.hostname 'scvo.')}}https://scvo.org{{/unless}}/the-gathering-2020" title="The Gathering - Scotland's largest event for charities, social enterprises and voluntary organisations">The Gathering</a>
+      </li> --}}
+      <li>
+        <a class="pull-right l-margin-full brand-logo no-ext no-underline" href="{{#unless (contains @root.request.url.hostname 'scvo.')}}https://scvo.org{{else}}/{{/unless}}" title="Scottish Council for Voluntary Organisations">
+          <img src="{{~>asset_url url='images/logos/scvo-secondary.svg'}}" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

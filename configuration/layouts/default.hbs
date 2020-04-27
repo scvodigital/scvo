@@ -5,6 +5,7 @@
   {{> layout_head}}
 </head>
 <body class="{{#if request.params.path}}{{replace (replace request.params.path '20-years' 'twenty-years') '_' ' '}}{{else}}home{{/if}}">
+  {{!-- {{> layout_sites_bar}} --}}
   <div class="hide-lg">
     {{> components_scvo_bar}}
   </div>
