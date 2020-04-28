@@ -1531,12 +1531,12 @@
 			"path": "/support/coronavirus/volunteers",
 			"route": "^/support/coronavirus/volunteers$",
 			"children": [{
-				"label": "For organisations",
+				"label": "Information for organisations",
 				"path": "/support/coronavirus/volunteers/for-organisations",
 				"route": "^/support/coronavirus/volunteers/for-organisations$"
 			},
 			{
-				"label": "For volunteers",
+				"label": "Information for volunteers",
 				"path": "/support/coronavirus/volunteers/for-volunteers",
 				"route": "^/support/coronavirus/volunteers/for-volunteers$"
 			},
@@ -1571,6 +1571,21 @@
 			"path": "/support/coronavirus/guidance",
 			"route": "^/support/coronavirus/guidance$",
 			"children": [{
+				"label": "Events",
+				"path": "/support/coronavirus/guidance/events",
+				"route": "^/support/coronavirus/guidance/events$"
+			},
+			{
+				"label": "Resources for organisations",
+				"path": "/support/coronavirus/guidance/for-organisations",
+				"route": "^/support/coronavirus/guidance/for-organisations$"
+			},
+			{
+				"label": "Resources for individuals",
+				"path": "/support/coronavirus/guidance/for-individuals",
+				"route": "^/support/coronavirus/guidance/for-individuals$"
+			},
+			{
 				"label": "Frequently asked questions",
 				"path": "/support/coronavirus/guidance/faq",
 				"route": "^/support/coronavirus/guidance/faq$"

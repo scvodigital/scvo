@@ -1,0 +1,19 @@
+<p>
+  SCVO has the following coronavirus-related online events coming up:
+</p>
+
+<ul>
+  {{#each @root.data.supplimentaryResponses.events.hits.hits ~}}
+  {{#with _source ~}}
+  <li>{{#compare (momentFormat (moment date_start "x") "mm") "00"}}{{momentFormat (moment date_start "x") "Do MMMM\, h"}}{{else}}{{momentFormat (moment date_start "x") "Do MMMM\, h:mm"}}{{/compare}}{{#compare date_start date_end}}{{momentFormat (moment date_start "x") ":mma"}}{{else}}{{momentFormat (moment date_end "x") "\-h:mma"}}{{/compare}} <a href="{{path}}">{{{title}}}</a></li>
+  {{/with ~}}
+  {{/each ~}}
+</ul>
+
+<p>
+  You can view all of SCVO’s events on our <a href="/support/events">events & training page</a>.
+</p>
+
+<p>
+  If your organisation is hosting a webinar, online course or seminar on this topic and would like to promote it, you can submit it to <a href="https://thirdforcenews.org.uk/events/submit">TFN’s online events calendar</a>.
+</p>
