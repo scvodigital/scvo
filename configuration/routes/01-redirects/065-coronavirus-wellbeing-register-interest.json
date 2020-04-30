@@ -1,6 +1,9 @@
 {
   "name": "redirect_coronavirus-wellbeing-register-interest",
-  "pattern": "/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "register_interest": "/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "apply": "/support/coronavirus/funding/for-organisations/wellbeing-fund/apply(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
