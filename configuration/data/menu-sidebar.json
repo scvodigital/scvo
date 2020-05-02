@@ -1401,72 +1401,82 @@
 			"path": "/support/coronavirus/funding",
 			"route": "^/support/coronavirus/funding$",
 			"children": [{
-				"label": "Funding for organisations",
-				"path": "/support/coronavirus/funding/for-organisations",
-				"route": "^/support/coronavirus/funding/for-organisations$",
+				"label": "Scottish Government",
+				"path": "/support/coronavirus/funding/scottish-government",
+				"route": "^/support/coronavirus/funding/scottish-government$",
 				"children": [{
 					"label": "Third Sector Resilience Fund",
-					"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund",
-					"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund$",
+					"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund",
+					"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund$",
 					"children": [{
 						"label": "Guidance for applicants",
-						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants",
-						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/guidance-for-applicants$"
+						"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/guidance-for-applicants",
+						"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/guidance-for-applicants$"
 					},
 					{
 						"label": "Eligibility checker",
-						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker",
-						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/eligibility-checker$"
+						"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/eligibility-checker",
+						"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/eligibility-checker$"
 					},
 					{
 						"label": "Frequently asked questions",
-						"path": "/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/faq",
-						"route": "^/support/coronavirus/funding/for-organisations/third-sector-resilience-fund/faq$"
+						"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/faq",
+						"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/faq$"
 					}]
 				},
 				{
 					"label": "Wellbeing Fund",
-					"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund",
-					"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund$|^/support/coronavirus/funding/for-organisations/wellbeing-fund/apply",
+					"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund",
+					"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund$|^/support/coronavirus/funding/scottish-government/wellbeing-fund/apply",
 					"register_children": [{
 						"label": "Register interest",
-						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest",
-						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest$"
+						"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/register-interest",
+						"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/register-interest$"
 					}],
 					"children": [{
 						"label": "Guidance for applicants",
-						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/guidance-for-applicants",
-						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/guidance-for-applicants$"
+						"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants",
+						"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants$"
 					},
 					{
 						"label": "Frequently asked questions",
-						"path": "/support/coronavirus/funding/for-organisations/wellbeing-fund/faq",
-						"route": "^/support/coronavirus/funding/for-organisations/wellbeing-fund/faq$"
+						"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/faq",
+						"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/faq$"
 					}]
 				},
 				{
-					"label": "National Emergencies Trust",
-					"path": "/support/coronavirus/funding/for-organisations/national-emergencies-trust",
-					"route": "^/support/coronavirus/funding/for-organisations/national-emergencies-trust$"
-				},
-				{
-					"label": "Scottish Government funding",
-					"path": "/support/coronavirus/funding/for-organisations/scottish-government",
-					"route": "^/support/coronavirus/funding/for-organisations/scottish-government$"
-				},
-				{
-					"label": "Independent grant funding",
-					"path": "/support/coronavirus/funding/for-organisations/independent",
-					"route": "^/support/coronavirus/funding/for-organisations/independent$"
+					"label": "Supporting Communities Fund",
+					"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund",
+					"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund$"
 				}]
 			},
 			{
-				"label": "Funders",
-				"path": "/support/coronavirus/funding/funders",
-				"route": "^/support/coronavirus/funding/funders$"
+				"label": "National Emergencies Trust",
+				"path": "/support/coronavirus/funding/national-emergencies-trust",
+				"route": "^/support/coronavirus/funding/national-emergencies-trust$"
 			},
 			{
-				"label": "Voluntary sector & coronavirus",
+				"label": "Independent funders",
+				"path": "/support/coronavirus/funding/independent",
+				"route": "^/support/coronavirus/funding/independent$"
+			},
+			{
+				"label": "Other financial support",
+				"path": "/support/coronavirus/funding/other-financial-support",
+				"route": "^/support/coronavirus/funding/other-financial-support$"
+			},
+			{
+				"label": "Your regular funding",
+				"path": "/support/coronavirus/funding/your-regular-funding",
+				"route": "^/support/coronavirus/funding/your-regular-funding$"
+			},
+			{
+				"label": "Funders - best practice",
+				"path": "/support/coronavirus/funding/funders-best-practice",
+				"route": "^/support/coronavirus/funding/funders-best-practice$"
+			},
+			{
+				"label": "The voluntary sector & coronavirus",
 				"path": "/support/coronavirus/funding/the-voluntary-sector-and-coronavirus",
 				"route": "^/support/coronavirus/funding/the-voluntary-sector-and-coronavirus$"
 			},
