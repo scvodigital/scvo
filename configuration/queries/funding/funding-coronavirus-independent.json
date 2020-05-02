@@ -1,25 +1,38 @@
 {
-  "size": 6,
+  "size": 50,
   "_source": [
     "Id",
     "title",
     "title_slug",
     "funder_organisation",
     "fund_url",
+    "url",
     "date_last_modified"
   ],
   "query": {
     "bool": {
-      "filter": [],
+      "filter": [
+        {
+          "terms": {
+            "source_of_fund_slug": [
+              "community-benefit",
+              "european",
+              "lottery",
+              "private-for-profit-organisation",
+              "trust-foundation"
+            ]
+          }
+        }
+      ],
       "must": [
         {
           "query_string": {
-            "query": "coronavirus",
+            "query": "coronavirus covid corona COVID-19",
             "fields": [
               "text_bag_boost^5",
               "text_bag"
             ],
-            "default_operator": "AND",
+            "default_operator": "OR",
             "analyzer": "snowball"
           }
         }
@@ -27,6 +40,6 @@
     }
   },
   "sort": {
-    "date_last_modified": "desc"
+    "funder_organisation.name": "asc"
   }
 }
