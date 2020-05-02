@@ -23,7 +23,7 @@
       {{!-- <p>
         If you are not a registered charity you can still apply. Click the link below to continue.
       </p> --}}
-      <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/apply/not-a-charity" class="btn btn-block">
+      <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/not-a-charity" class="btn btn-block">
         Not a registered charity
       </a>
     </div>
@@ -43,7 +43,7 @@
       .on('keyup', function(evt) {
         var charityNumber = evt.target.value = evt.target.value.toUpperCase().replace(/o/ig, '0');
         if (charityNumber.match(/SC[0-9]{6}/)) {
-          var url = '/support/coronavirus/funding/for-organisations/wellbeing-fund/apply/' + charityNumber;
+          var url = '/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/' + charityNumber;
           $('#charity_number_submit')
             .removeAttr('disabled', false)
             .attr('href', url);
