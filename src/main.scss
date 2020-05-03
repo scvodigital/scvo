@@ -1798,6 +1798,9 @@ header {
       margin: auto;
       margin-bottom: 5px;
     }
+    .text-link.active,
+    .text-link:active,
+    .text-link:focus,
     .text-link:hover {
       border-bottom-color: white;
     }
@@ -1820,7 +1823,6 @@ header {
   }
   .banner-coronavirus-info-hub .logo {
     width: 115px;
-    height: 31px;
   }
   .mobile-search,
   .mobile-menu {

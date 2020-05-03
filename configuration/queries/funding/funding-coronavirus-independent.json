@@ -22,9 +22,7 @@
               "trust-foundation"
             ]
           }
-        }
-      ],
-      "must": [
+        },
         {
           "query_string": {
             "query": "coronavirus covid corona COVID-19",
@@ -36,6 +34,8 @@
             "analyzer": "snowball"
           }
         }
+      ],
+      "must": [
       ]
     }
   },
