@@ -1,0 +1,69 @@
+{
+  "size": 0,
+  "_source": false,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "terms": {
+            "source_of_fund_slug": [
+              "community-benefit",
+              "european",
+              "lottery",
+              "private-for-profit-organisation",
+              "trust-foundation"
+            ]
+          }
+        },
+        {
+          "query_string": {
+            "query": "coronavirus covid COVID-19",
+            "fields": [
+              "text_bag_boost^5"
+            ],
+            "default_operator": "OR",
+            "analyzer": "snowball"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "type": {
+      "terms": {
+        "field": "type_of_funding",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
+    "source": {
+      "terms": {
+        "field": "source_of_fund",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
+    "cost": {
+      "terms": {
+        "field": "type_of_cost",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
+    "status": {
+      "terms": {
+        "field": "fund_status",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    }
+  }
+}

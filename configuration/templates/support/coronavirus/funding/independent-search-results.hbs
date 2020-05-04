@@ -5,11 +5,54 @@
   {{/with ~}}
   {{/if ~}}
 
+  <form action="{{@root.request.url.pathname}}" method="get" class="columns">
+    <div class="form-group column col-3 col-md-6 col-sm-12">
+      <select class="form-select" name="type_of_funding" onchange="this.form.submit()">
+        <option disabled{{#unless @root.request.params.query.type_of_funding}} selected{{/unless}}>Type of funding</option>
+        <option value="">Any type of funding</option>
+        {{#each @root.data.supplimentaryResponses.fund_aggs.aggregations.type.buckets ~}}
+        <option value="{{slugify key}}"{{#compare @root.request.params.query.type_of_funding (slugify key)}} selected{{/compare}}>{{key}}</option>
+        {{/each ~}}
+      </select>
+    </div>
+    <div class="form-group column col-3 col-md-6 col-sm-12">
+      <select class="form-select" name="source_of_fund" onchange="this.form.submit()">
+        <option disabled{{#unless @root.request.params.query.source_of_fund}} selected{{/unless}}>Source</option>
+        <option value="">Any source</option>
+        {{#each @root.data.supplimentaryResponses.fund_aggs.aggregations.source.buckets ~}}
+        <option value="{{slugify key}}"{{#compare @root.request.params.query.source_of_fund (slugify key)}} selected{{/compare}}>{{key}}</option>
+        {{/each ~}}
+      </select>
+    </div>
+    <div class="form-group column col-3 col-md-6 col-sm-12">
+      <select class="form-select" name="type_of_cost" onchange="this.form.submit()">
+        <option disabled{{#unless @root.request.params.query.type_of_cost}} selected{{/unless}}>Type of cost</option>
+        <option value="">Any type of cost</option>
+        {{#each @root.data.supplimentaryResponses.fund_aggs.aggregations.cost.buckets ~}}
+        <option value="{{slugify key}}"{{#compare @root.request.params.query.type_of_cost (slugify key)}} selected{{/compare}}>{{key}}</option>
+        {{/each ~}}
+      </select>
+    </div>
+    <div class="form-group column col-3 col-md-6 col-sm-12">
+      <select class="form-select" name="fund_status" onchange="this.form.submit()">
+        <option disabled{{#unless @root.request.params.query.fund_status}} selected{{/unless}}>Current status</option>
+        <option value="">Any status</option>
+        {{#each @root.data.supplimentaryResponses.fund_aggs.aggregations.status.buckets ~}}
+        <option value="{{slugify key}}"{{#compare @root.request.params.query.fund_status (slugify key)}} selected{{/compare}}>{{replace key "Currently Closed" "Closed"}}</option>
+        {{/each ~}}
+      </select>
+    </div>
+  </form>
+
   {{#compare @root.data.supplimentaryResponses.funds.hits.total ">" 0}}
   {{#each @root.data.supplimentaryResponses.funds.hits.hits ~}}
   {{#with _source ~}}
   {{> content_fund_search_result this}}
   {{/with ~}}
   {{/each ~}}
+  {{else}}
+  <p class="v-margin-full">
+    No funds could be found matching your filters. <a href="{{@root.request.url.pathname}}">Please try again</a>.
+  </p>
   {{/compare ~}}
 </div>

@@ -2,16 +2,16 @@
   <div class="mdc-card__info--content-primary">
     {{#if fund_status ~}}
     {{#if (contains fund_status "Open") ~}}
-    <span class="pull-right mdc-elevation--z1 v-margin l-margin-full mdc-typography--caption fund-status mdc-theme--success-dark-border mdc-theme--success-dark">
+    <span class="pull-right label label-rounded label-success l-margin-full mdc-typography--caption fund-status" style="margin-top:1.4rem;">
       Currently open
     </span>
     {{else}}
     {{#ifAll (compare date_reopens ">=" (dateMath "now/d")) (compare date_reopens "<=" (dateMath @root.context.metaData.openingSoonDate)) ~}}
-    <span class="pull-right mdc-elevation--z1 v-margin l-margin-full mdc-typography--caption fund-status mdc-theme--warning-border mdc-theme--warning">
+    <span class="pull-right label label-rounded label-warning l-margin-full mdc-typography--caption fund-status" style="margin-top:1.4rem;">
       Opening soon
     </span>
     {{else}}
-    <span class="pull-right mdc-elevation--z1 v-margin l-margin-full mdc-typography--caption fund-status mdc-theme--error-border mdc-theme--error">
+    <span class="pull-right label label-rounded label-error l-margin-full mdc-typography--caption fund-status" style="margin-top:1.4rem;">
       Currently closed
     </span>
     {{/ifAll ~}}
@@ -44,11 +44,6 @@
     </ul>
     {{/ifAll ~}}
     <div class="fund-details mdc-typography--body1">
-      {{#ifAll (compare @root.route.name "!==" "fund") date_last_modified ~}}
-      <span class="key-info-bit r-margin-full">
-        Last reviewed {{{momentFromNow (moment date_last_modified "x") "Do MMMM YYYY"}}}
-      </span>
-      {{/ifAll ~}}
       {{#if type_of_funding ~}}
       {{#compare (length (arrayify type_of_funding)) ">" 0 ~}}
       <span class="key-info-bit r-margin-full">
@@ -110,6 +105,11 @@
       </span>
       {{/if ~}}
     </div>
+    {{#ifAll (compare @root.route.name "!==" "fund") date_last_modified ~}}
+    <span class="key-info-bit v-margin r-margin-full label label-warning">
+      Last reviewed {{{momentFromNow (moment date_last_modified "x") "Do MMMM YYYY"}}}
+    </span>
+    {{/ifAll ~}}
     {{#ifAll news date_news_last_updated ~}}
     <div class="fund-details mdc-typography--body1">
       <strong>News - {{{momentFormat (moment date_news_last_updated 'x') 'Do MMM YYYY'}}}:</strong>

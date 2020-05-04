@@ -41,6 +41,12 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "fs-fund",
             "template": ">context.metaData.handlebars.queries.funding_funding-coronavirus-independent-search"
+          },
+          {
+            "name": "fund_aggs",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "fs-fund",
+            "template": ">context.metaData.handlebars.queries.funding_funding-coronavirus-independent-aggs"
           }
         ]
       },

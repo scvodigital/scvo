@@ -76,18 +76,51 @@
         },
         {
           "query_string": {
-            "query": "coronavirus covid corona COVID-19",
+            "query": "coronavirus covid COVID-19",
             "fields": [
-              "text_bag_boost^5",
-              "text_bag"
+              "text_bag_boost^5"
             ],
             "default_operator": "OR",
             "analyzer": "snowball"
           }
         }
-      ],
+      ]{{#ifAny @root.request.params.query.type_of_funding @root.request.params.query.source_of_fund @root.request.params.query.type_of_cost @root.request.params.query.fund_status ~}},
       "must": [
+        {{#if @root.request.params.query.type_of_funding ~}}
+        {
+          "term": {
+            "type_of_funding_slug": "{{@root.request.params.query.type_of_funding}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.source_of_fund ~}}
+        {
+          "term": {
+            "source_of_fund_slug": "{{@root.request.params.query.source_of_fund}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.type_of_cost ~}}
+        {
+          "term": {
+            "type_of_cost_slug": "{{@root.request.params.query.type_of_cost}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.fund_status ~}}
+        {
+          "term": {
+            "fund_status_slug": "{{@root.request.params.query.fund_status}}"
+          }
+        },
+        {{/if ~}}
+        {
+          "exists": {
+            "field": "title"
+          }
+        }
       ]
+      {{/ifAny ~}}
     }
   },
   "sort": {
