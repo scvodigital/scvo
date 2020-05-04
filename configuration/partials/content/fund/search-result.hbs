@@ -1,0 +1,11 @@
+<div class="mdc-card search-result" data-fund-id="{{Id}}" data-fund-context="search-result">
+  {{> content_fund_key_info}}
+  <hr class="mdc-list-divider" />
+  {{#ifAll (getProperty @root.data.profile (concat @root.data.currentSite.name ".notes." Id)) (compare hideNotes "!==" true) ~}}
+    {{> content_fund_description limit="3rem" description=description}}
+    {{> content_fund_notes limit="7rem"}}
+  {{else}}
+    {{> content_fund_description limit="4rem" description=description}}
+  {{/ifAll ~}}
+  {{> content_fund_actions slug=slug Id=Id title=title actions=actions}}
+</div>

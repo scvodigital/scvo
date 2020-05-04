@@ -1,0 +1,120 @@
+<div class="mdc-card__info--content-primary-row">
+  <div class="mdc-card__info--content-primary">
+    {{#if fund_status ~}}
+    {{#if (contains fund_status "Open") ~}}
+    <span class="pull-right mdc-elevation--z1 v-margin l-margin-full mdc-typography--caption fund-status mdc-theme--success-dark-border mdc-theme--success-dark">
+      Currently open
+    </span>
+    {{else}}
+    {{#ifAll (compare date_reopens ">=" (dateMath "now/d")) (compare date_reopens "<=" (dateMath @root.context.metaData.openingSoonDate)) ~}}
+    <span class="pull-right mdc-elevation--z1 v-margin l-margin-full mdc-typography--caption fund-status mdc-theme--warning-border mdc-theme--warning">
+      Opening soon
+    </span>
+    {{else}}
+    <span class="pull-right mdc-elevation--z1 v-margin l-margin-full mdc-typography--caption fund-status mdc-theme--error-border mdc-theme--error">
+      Currently closed
+    </span>
+    {{/ifAll ~}}
+    {{/if ~}}
+    {{/if ~}}
+
+    {{#compare @root.route.name "===" "fund" ~}}
+    {{#compare view "===" "full" ~}}
+    {{#unless (compare (querystringify @root.request.params.query utm_source=null utm_campaign=null utm_medium=null) "") ~}}
+    {{#ifAny @root.request.params.query.page @root.request.params.query.keywords @root.request.params.query.activities @root.request.params.query.beneficiaries @root.request.params.query.geographical_areas_funded @root.request.params.query.type_of_cost @root.request.params.query.type_of_funding @root.request.params.query.source_of_fund @root.request.params.query.miscellaneous ~}}
+    <a href="https://funding.scot/search{{> query_search}}" class="back-to-results"><span class="far fa-chevron-circle-left" aria-hidden="true"></span> <span class="underline">Back to search results</span></a>
+    {{/ifAny ~}}
+    {{/unless ~}}
+    {{/compare ~}}
+    {{/compare ~}}
+
+    {{#if title ~}}
+    <h2 class="mdc-card__info--content-primary-title mdc-typography--headline5">
+      <a href="{{> content_fund_url search=true}}">
+        <span class="hover-underline">{{title}}</span>
+      </a>
+    </h2>
+    {{/if ~}}
+    {{#ifAll funder_organisation.id funder_organisation.name funder_organisation.slug ~}}
+    <ul class="fa-ul funder">
+      <li class="mdc-card__info--content-primary-funder mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-building" title="Funder"></span></span>
+        {{funder_organisation.name}}
+      </li>
+    </ul>
+    {{/ifAll ~}}
+    <div class="fund-details mdc-typography--body1">
+      {{#ifAll (compare @root.route.name "!==" "fund") date_last_modified ~}}
+      <span class="key-info-bit r-margin-full">
+        Last reviewed {{{momentFromNow (moment date_last_modified "x") "Do MMMM YYYY"}}}
+      </span>
+      {{/ifAll ~}}
+      {{#if type_of_funding ~}}
+      {{#compare (length (arrayify type_of_funding)) ">" 0 ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Type of funding:</strong>
+        {{#each (arrayify type_of_funding) ~}}
+        {{{this}}}{{#unless @last}}, {{/unless}}
+        {{/each}}
+      </span>
+      {{/compare ~}}
+      {{/if ~}}
+      {{#if source_of_fund ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Source:</strong>
+        {{{source_of_fund}}}
+      </span>
+      {{/if ~}}
+      {{#if type_of_cost ~}}
+      {{#compare (length (arrayify type_of_cost)) ">" 0 ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Type of cost:</strong>
+        {{#each (arrayify type_of_cost) ~}}
+        {{{this}}}{{#unless @last}}, {{/unless}}
+        {{/each}}
+      </span>
+      {{/compare ~}}
+      {{/if ~}}
+      {{#if next_deadline ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Next deadline:</strong>
+        {{#if @root.data.auth ~}}
+        {{{momentFormat (moment next_deadline 'x') 'Do MMM YYYY'}}}
+        {{else}}
+        in {{{momentFormat (moment next_deadline 'x') 'MMMM YYYY'}}}
+        {{/if ~}}
+      </span>
+      {{/if ~}}
+      {{#ifAll award_size_max (compare @root.route.name "funding_updates") ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Maximum award:</strong>
+        {{{currency_sign}}}{{addCommas award_size_max}}
+      </span>
+      {{/ifAll ~}}
+      {{#if website ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Website:</strong>
+        {{{website}}}
+      </span>
+      {{/if ~}}
+      {{#if email ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Email:</strong>
+        {{{email}}}
+      </span>
+      {{/if ~}}
+      {{#if phone ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Phone:</strong>
+        {{{phone}}}
+      </span>
+      {{/if ~}}
+    </div>
+    {{#ifAll news date_news_last_updated ~}}
+    <div class="fund-details mdc-typography--body1">
+      <strong>News - {{{momentFormat (moment date_news_last_updated 'x') 'Do MMM YYYY'}}}:</strong>
+      {{{news}}}
+    </div>
+    {{/ifAll ~}}
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="b-margin-full b-padding-full">
+  {{#compare @root.data.primaryResponse.hits.total ">" 0}}
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  {{> content_fund_full this}}
+
+  <h2>Contact</h2>
+  {{> content_fund_contact this}}
+
+  <div class="mdc-typography--body2 last-modified t-margin-full t-padding">
+    <span class="far fa-calendar-alt" aria-hidden="true"></span>
+    <span title="Fund last reviewed: {{momentFormat (moment date_last_modified 'x') 'YYYY-MM-DD HH:mm'}}">Fund last reviewed {{momentFromNow date_last_modified}}</span>
+  </div>
+  {{/with ~}}
+  {{/compare ~}}
+</div>

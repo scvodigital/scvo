@@ -1,0 +1,56 @@
+{{#withExtend this actions=(split actions ",") test="THIS IS A TEST" ~}}
+  {{#if (any actions) ~}}
+    <div class="mdc-card__actions">
+      <div class="mdc-card__action-buttons mdc-card__actions--full-bleed">
+        {{#if (contains actions "more-funder") ~}}
+          <a href="/funder/{{funder_organisation.id}}/{{funder_organisation.slug}}{{> query_search}}" class="mdc-card__action hide-sm">
+            Find out more about {{funder_organisation.name}}
+          </a>
+          <a href="/funder/{{funder_organisation.Id}}/{{funder_organisation.slug}}{{> query_search}}" class="mdc-card__action hide-md hide-lg">
+            <span class="fal fa-info-circle fa-fw fa-2x" aria-hidden="true"></span>
+          </a>
+        {{/if}}
+        {{#if (contains actions "more-fund") ~}}
+          <a href="{{> content_fund_url search=true}}" class="mdc-card__action hide-sm">
+            Find out more
+          </a>
+          <a href="{{> content_fund_url search=true}}" class="mdc-card__action hide-md hide-lg">
+            <span class="fal fa-info-circle fa-fw fa-2x" aria-hidden="true"></span>
+          </a>
+        {{/if ~}}
+        {{#if (contains actions "notes") ~}}
+          {{#compare (trim (getProperty @root.data.profile.notes Id)) "!==" "" ~}}
+            <a href="{{> content_fund_url search=true anchor="notes"}}" class="mdc-card__action mdc-card__action-notes hide-sm">
+              Your notes
+            </a>
+            <a href="{{> content_fund_url search=true anchor="notes"}}" class="mdc-card__action mdc-card__action-notes hide-md hide-lg">
+              <span class="fal fa-edit fa-fw fa-2x" aria-hidden="true"></span>
+            </a>
+          {{/compare ~}}
+        {{/if ~}}
+      </div>
+      <div class="mdc-card__action-icons pull-right">
+        {{#if @root.data.auth ~}}
+          {{#if (contains actions "pdf") ~}}
+            <a href="/fund-pdf/{{Id}}" class="mdc-icon-button mdc-card__action mdc-card__action--icon mdc-card__action--download-pdf" title="Download fund as PDF" download>
+              <span class="far fa-file-pdf" aria-hidden="true"></span>
+            </a>
+          {{/if}}
+        {{/if}}
+        {{#>premium_content}}
+          {{#if @root.data.auth ~}}
+            {{#if (contains actions "hide-fund") ~}}
+              {{> content_fund_action_hide_fund id=Id name=title}}
+            {{/if ~}}
+            {{#if (contains actions "unhide-fund") ~}}
+              {{> content_fund_action_unhide_fund id=Id}}
+            {{/if ~}}
+            {{#if (contains actions "lists")}}
+              {{> content_fund_action_manage_lists id=Id slug=slug}}
+            {{/if ~}}
+          {{/if ~}}
+        {{/premium_content}}
+      </div>
+    </div>
+  {{/if ~}}
+{{/withExtend ~}}

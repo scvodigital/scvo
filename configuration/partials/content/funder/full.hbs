@@ -1,0 +1,69 @@
+<div class="mdc-card full t-margin-full" data-funder-id="{{Id}}">
+  <div class="mdc-card__info--content-secondary-row">
+    <div class="mdc-card__info--content-secondary">
+      <div class="mdc-card__info--content-secondary-title mdc-typography--headline3">
+        {{{title}}}
+      </div>
+      {{> content_funder_charity_number}}
+      <div class="detailed-info">
+        {{#if description ~}}
+        <div class="mdc-typography--body1 v-margin">
+          {{{description}}}
+        </div>
+        {{/if ~}}
+      </div>
+      <div class="key-info-extra">
+        <ul class="fa-ul last">
+          {{#if @root.data.supplimentaryResponses.funds_open.hits.hits.[0]._source.funder_organisation.address ~}}
+            <li class="mdc-typography--body1">
+              <span class="fa-li"><span class="far fa-building fa-fw" title="Address"></span></span>
+              <span class="key-info-bit r-margin-full">
+                {{replace @root.data.supplimentaryResponses.funds_open.hits.hits.[0]._source.funder_organisation.address ", , " ", "}}
+              </span>
+            </li>
+          {{/if ~}}
+          {{#if website ~}}
+          {{#compare website "!==" null ~}}
+          {{#compare website "!==" "http://" ~}}
+          <li class="mdc-card__info--content-secondary-website mdc-typography--body1">
+            <span class="fa-li"><span class="far fa-link fa-fw" title="Website"></span></span>
+            <a href="{{website_url}}" target="_blank">{{website}}</a>
+          </li>
+          {{/compare ~}}
+          {{/compare ~}}
+          {{/if ~}}
+          {{#if twitter ~}}
+          {{#compare twitter "!==" null ~}}
+          {{#compare twitter "!==" "http://" ~}}
+          <li class="mdc-card__info--content-secondary-twitter mdc-typography--body1">
+            <span class="fa-li"><span class="fab fa-twitter fa-fw" title="Twitter"></span></span>
+            <a href="{{twitter_url}}" target="_blank">{{twitter}}</a>
+          </li>
+          {{/compare ~}}
+          {{/compare ~}}
+          {{/if ~}}
+          {{#if facebook ~}}
+          {{#compare facebook "!==" null ~}}
+          {{#compare facebook "!==" "http://" ~}}
+          <li class="mdc-card__info--content-secondary-facebook mdc-typography--body1">
+            <span class="fa-li"><span class="fab fa-facebook fa-fw" title="Facebook"></span></span>
+            <a href="{{facebook_url}}" target="_blank">{{facebook}}</a>
+          </li>
+          {{/compare ~}}
+          {{/compare ~}}
+          {{/if ~}}
+          {{#if linkedin ~}}
+          {{#compare linkedin "!==" null ~}}
+          {{#compare linkedin "!==" "http://" ~}}
+          <li class="mdc-card__info--content-secondary-linkedin mdc-typography--body1">
+            <span class="fa-li"><span class="fab fa-linkedin fa-fw" title="LinkedIn"></span></span>
+            <a href="{{linkedin_url}}" target="_blank">{{linkedin}}</a>
+          </li>
+          {{/compare ~}}
+          {{/compare ~}}
+          {{/if ~}}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

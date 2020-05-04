@@ -1,0 +1,96 @@
+{
+  "size": 50,
+  "_source": [
+    "region_group_slug",
+    "title",
+    "region_group",
+    "description",
+    "activities_slugs",
+    "fund_status_slug",
+    "funder_organisation.name",
+    "date_reopens",
+    "Id",
+    "beneficiaries",
+    "beneficiaries_slugs",
+    "type_of_funding",
+    "activities",
+    "type_of_cost",
+    "text_bag_boost",
+    "fund_status",
+    "funder_organisation.id",
+    "funder_organisation.slug",
+    "source_of_fund",
+    "slug",
+    "funder_organisation.charity_number",
+    "award_size_max",
+    "fund_url",
+    "annual_income_max",
+    "award_size_avg",
+    "rendered.json_ld",
+    "also_funds_individuals",
+    "funder_organisation.twitter",
+    "funder_organisation.website",
+    "fund_email_address",
+    "currency_sign",
+    "applicant_success_rate",
+    "charities_only",
+    "date_last_modified",
+    "award_size_min",
+    "when_to_apply",
+    "geographical_areas_funded",
+    "annual_income_min",
+    "fund_telephone",
+    "who_can_apply",
+    "annual_total",
+    "date_due_to_open",
+    "how_to_apply",
+    "funder_organisation.facebook",
+    "notes_on_award_amounts",
+    "funder_organisation.address",
+    "funder_organisation.email",
+    "summary",
+    "next_deadline",
+    "funder_organisation.telephone",
+    "fund_exclusion",
+    "geographical_areas_funded_slugs",
+    "date_last_checked",
+    "funder_organisation.linkedin",
+    "funder_organisation.logo_url",
+    "for_charities_only",
+    "funder_organisation.has_logo",
+    "rendered.fundingscotland_rss"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "terms": {
+            "source_of_fund_slug": [
+              "community-benefit",
+              "european",
+              "lottery",
+              "private-for-profit-organisation",
+              "trust-foundation"
+            ]
+          }
+        },
+        {
+          "query_string": {
+            "query": "coronavirus covid corona COVID-19",
+            "fields": [
+              "text_bag_boost^5",
+              "text_bag"
+            ],
+            "default_operator": "OR",
+            "analyzer": "snowball"
+          }
+        }
+      ],
+      "must": [
+      ]
+    }
+  },
+  "sort": {
+    "funder_organisation.name": "asc"
+  }
+}

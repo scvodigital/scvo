@@ -1,0 +1,17 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<div class="container">
+  <ul class="breadcrumb breadcrumb-length-3" aria-hidden="true">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/support">Support &amp; learning</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus">Coronavirus Third Sector Information Hub</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding">Funding</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding/independent">Funds: Independent funders</a></li>
+    <li class="breadcrumb-item">{{{title}}}</li>
+  </ul>
+</div>
+<div class="container">
+  <h1 class="font-default">{{{title}}}</h1>
+</div>
+{{/with ~}}
+{{/if ~}}

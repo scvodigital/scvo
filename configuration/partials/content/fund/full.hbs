@@ -1,0 +1,171 @@
+<div class="" data-fund-id="{{Id}}" data-fund-context="full">
+  <div class="key-info-extra">
+    <ul class="fa-ul first">
+      {{#if (length (arrayify activities)) ~}}
+      <li class="mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-person-sign fa-fw" title="Activities"></span></span>
+        {{#each (arrayify activities) ~}}
+        <a href="https://funding.scot/search?activities={{lookup (arrayify ../activities_slugs) @index}}">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+        {{/each ~}}
+      </li>
+      {{/if ~}}
+      {{#if (length (arrayify beneficiaries)) ~}}
+      <li class="mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-users fa-fw" title="Beneficiaries"></span></span>
+        {{#each (arrayify beneficiaries) ~}}
+        <a href="https://funding.scot/search?beneficiaries={{lookup (arrayify ../beneficiaries_slugs) @index}}">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+        {{/each ~}}
+      </li>
+      {{/if ~}}
+      {{#if (length (arrayify geographical_areas_funded)) ~}}
+      <li class="mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-map-marker-alt fa-fw" title="Geographical areas funded"></span></span>
+        <span class="areas">
+        {{#each (arrayify geographical_areas_funded) ~}}
+        <a href="https://funding.scot/search?geographical_areas_funded={{lookup (arrayify ../geographical_areas_funded_slugs) @index}}" class="area"><span class="area-text">{{{this}}}</span></a>
+        {{/each ~}}
+        </span>
+      </li>
+      {{/if ~}}
+      <!-- {{#if source_of_fund ~}}
+      <li class="mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-sitemap fa-fw" title="Source of fund"></span></span>
+        <span class="key-info-bit r-margin-full">
+          <strong>{{source_of_fund}}</strong>
+        </span>
+      </li>
+      {{/if ~}} -->
+      {{#if charities_only ~}}
+      <li class="mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-home-heart fa-fw" title="Charities only"></span></span>
+        <strong>For charities only</strong>
+      </li>
+      {{/if ~}}
+      {{#if also_funds_individuals ~}}
+      <li class="mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-user-check fa-fw" title="Also funds individuals"></span></span>
+        <strong>Also funds individuals</strong>
+      </li>
+      {{/if ~}}
+      {{#if applicant_success_rate ~}}
+      <li class="mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-badge-check fa-fw" title="Applicant success rate"></span></span>
+        <strong>Applicant success rate:</strong> {{applicant_success_rate}}%
+      </li>
+      {{/if ~}}
+    </ul>
+  </div>
+  <div class="detailed-info">
+    {{#if description ~}}
+    <h4 class="mdc-typography--headline7">Summary</h4>
+    <div class="mdc-typography--body1">
+      {{{markdown (removeEntities description)}}}
+    </div>
+    {{/if ~}}
+
+    {{#ifAny award_size_min award_size_max award_size_avg annual_total notes_on_award_amounts ~}}
+    <h4 class="mdc-typography--headline7">Fund award sizes</h4>
+    <div class="fund-details">
+      {{#if award_size_min ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Minimum:</strong>
+        {{{currency_sign}}}{{addCommas award_size_min}}
+      </span>
+      {{/if ~}}
+      {{#if award_size_max ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Maximum:</strong>
+        {{{currency_sign}}}{{addCommas award_size_max}}
+      </span>
+      {{/if ~}}
+      {{#if award_size_avg ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Average:</strong>
+        {{{currency_sign}}}{{addCommas award_size_avg}}
+      </span>
+      {{/if ~}}
+      {{#if annual_total ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Annually awarded:</strong>
+        {{{currency_sign}}}{{addCommas annual_total}}
+      </span>
+      {{/if ~}}
+    </div>
+    {{#if notes_on_award_amounts ~}}
+    <span class="key-info-bit">
+      <strong>Notes on award amounts:</strong>
+      {{notes_on_award_amounts}}
+    </span>
+    {{/if ~}}
+    {{/ifAny ~}}
+
+    {{#ifAny who_can_apply annual_income_min annual_income_max ~}}
+    <h4 class="mdc-typography--headline7">Who can apply</h4>
+    <div class="fund-details">
+      {{#if who_can_apply ~}}
+      <span class="key-info-bit r-margin-full">
+        {{{who_can_apply}}}
+      </span>
+      <br />
+      {{/if ~}}
+      {{#if annual_income_min ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Minimum annual income:</strong>
+        {{!-- <span class="fa-li"><span class="far fa-arrow-alt-from-left fa-fw" title="Minimum annual income"></span></span> --}}
+        {{{currency_sign}}}{{addCommas annual_income_min}}
+      </span>
+      {{/if ~}}
+      {{#if annual_income_max ~}}
+      <span class="key-info-bit r-margin-full">
+        <strong>Maximum annual income:</strong>
+        {{!-- <span class="fa-li"><span class="far fa-arrow-alt-to-right fa-fw" title="Maximum annual income"></span></span> --}}
+        {{{currency_sign}}}{{addCommas annual_income_max}}
+      </span>
+      {{/if ~}}
+    </div>
+    {{/ifAny ~}}
+
+    {{#if how_to_apply~}}
+      <h4 class="mdc-typography--headline7">How to apply</h4>
+      <div class="mdc-typography--body1">
+        {{{how_to_apply}}}
+        {{!-- <br /> --}}
+        {{!-- <a href="#contact">Contact information</a> --}}
+      </div>
+    {{/if ~}}
+
+    {{#ifAny fund_exclusion ~}}
+    <h4 class="mdc-typography--headline7">Exclusions</h4>
+    <div class="mdc-typography--body1">
+      {{#if fund_exclusion ~}}
+      {{{fund_exclusion}}}
+      {{/if ~}}
+    </div>
+    {{/ifAny ~}}
+
+    {{#ifAny when_to_apply date_due_to_open ~}}
+    <h4 class="mdc-typography--headline7">When to apply</h4>
+    <div class="mdc-typography--body1">
+      {{#ifAny next_deadline date_due_to_open}}
+        <div class="v-margin">
+          {{#if next_deadline}}
+            <span class="key-info-bit r-margin-full">
+              <strong>Next deadline:</strong>
+              {{momentFormat (moment next_deadline "x") "Do MMM YYYY"}}
+            </span>
+          {{/if}}
+          {{#if date_due_to_open ~}}
+            <span class="key-info-bit r-margin-full">
+              <strong>Due to open:</strong>
+              {{momentFormat (moment date_due_to_open "x") "Do MMM YYYY"}}
+            </span>
+          {{/if ~}}
+        </div>
+      {{/ifAny}}
+      {{#if when_to_apply ~}}
+        <div>{{{when_to_apply}}}</div>
+      {{/if ~}}
+    </div>
+    {{/ifAny ~}}
+  </div>
+</div>

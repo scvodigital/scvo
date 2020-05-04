@@ -1,0 +1,31 @@
+{{#unless (regexMatch (default (trim charity_number) "null") "(^NULL$)|(^.*?\bNOT\b.*?$)" "ig") ~}}
+  <p class="organisation-type">
+    {{#if (regexMatch (trim charity_number) "^SC[0-9]{6}" "ig")}}
+      <small class="organisation-type-sco-charity">
+        <span class="far fa-badge-check fa-fw" aria-hidden="true"></span>
+        Charity registered in Scotland <a target="_blank" href="{{>charity_link this}}">{{trim charity_number}}</a>
+      </small>
+    {{/if}}
+
+    {{#if (regexMatch (trim charity_number) "^[0-9]+$" "ig")}}
+      <small class="organisation-type-ruk-charity">
+        <i class="far fa-badge-check fa-fw" aria-hidden="true"></i>
+        Charity number <a href="{{>charity_link this}}" target="_blank">{{trim charity_number}}</a>
+      </small>
+    {{/if}}
+
+    {{#if (contains (lowercase (trim charity_number)) "ngo")}}
+      <small class="organisation-type-ngo">
+        <i class="far fa-badge fa-fw" aria-hidden="true"></i>
+        NGO
+      </small>
+    {{/if}}
+
+    {{#unless (regexMatch (trim charity_number) "^(SC[0-9]{6})|([0-9]+)|(NGO)$" "ig")}}
+      <small class="organisation-type-sco-other">
+        <i class="far fa-badge fa-fw" aria-hidden="true"></i>
+        Organisation type: {{trim charity_number}}
+      </small>
+    {{/unless}}
+  </p>
+{{/unless ~}}

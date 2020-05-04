@@ -1,7 +1,7 @@
 {
-  "name": "page_coronavirus_funding_independent_search",
+  "name": "page_coronavirus_funding_independent_fund",
   "debug": true,
-  "pattern": "/support/coronavirus/funding/independent",
+  "pattern": "/support/coronavirus/funding/independent/:fund_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -14,8 +14,8 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-page",
-          "template": ">context.metaData.handlebars.queries.pages_page",
+          "type": "fs-fund",
+          "template": ">context.metaData.handlebars.queries.funding_funding-coronavirus-independent-fund",
           "noResultsRoute": "four_oh_four"
         }
       },
@@ -35,12 +35,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
             "template": ">context.metaData.handlebars.queries.posts_tfn-related-coronavirus"
-          },
-          {
-            "name": "funds",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "fs-fund",
-            "template": ">context.metaData.handlebars.queries.funding_funding-coronavirus-independent"
           }
         ]
       },
@@ -62,8 +56,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_independent-body",
+              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_independent-fund-header",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_independent-fund-body",
               "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },

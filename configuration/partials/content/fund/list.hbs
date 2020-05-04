@@ -1,0 +1,15 @@
+<div class="mdc-card list" data-fund-id="{{Id}}" data-fund-context="{{default context "other"}}">
+  {{> content_fund_key_info}}
+  <hr class="mdc-list-divider" />
+  {{#compare (trim (getProperty @root.data.profile (concat @root.data.currentSite.name ".notes." Id))) "!==" "" ~}}
+    {{> content_fund_description description=description}}
+    {{> content_fund_notes}}
+  {{else}}
+    {{#if @root.data.auth ~}}
+      {{> content_fund_description  description=description}}
+    {{else}}
+      {{> content_fund_description description=(truncate description "280")}}
+    {{/if}}
+  {{/compare ~}}
+  {{> content_fund_actions slug=slug Id=Id title=title actions=actions}}
+</div>

@@ -1,0 +1,10 @@
+<div class="mdc-card mini" style="max-height:15rem;" data-fund-id="{{Id}}" data-fund-context="mini">
+  {{> content_fund_key_info}}
+  {{#compare (trim (getProperty @root.data.profile.notes Id)) "!==" "" ~}}
+    {{> content_fund_description description=description}}
+    {{> content_fund_notes}}
+  {{else}}
+    {{> content_fund_description description=description}}
+  {{/compare ~}}
+  {{> content_fund_actions slug=slug Id=Id actions=(default actions "more-fund,lists,hide-fund")}}
+</div>

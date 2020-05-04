@@ -1574,8 +1574,10 @@ aside {
   a[href^="http://www.oscr.org.uk"]::after,
   a[href^="http://goodmoves"]::after,
   a[href^="https://goodmoves"]::after,
-  a[href^="http://fundingscotland"]::after,
-  a[href^="https://fundingscotland"]::after {
+  a[href^="http://funding.scot"]::after,
+  a[href^="https://funding.scot"]::after,
+  a[href^="http://fundingscotland.com"]::after,
+  a[href^="https://fundingscotland.com"]::after {
     content: "";
     margin: 0;
     top: 0;
@@ -2336,6 +2338,21 @@ form {
       list-style-type: none;
     }
   }
+}
+
+.search-result {
+  position: relative;
+  overflow: hidden;
+}
+.faded-overflow:before {
+  display: block;
+  margin-top: -2.5rem;
+  height: 2.5rem;
+  width: 100%;
+  content: "";
+  position: absolute;
+  top: 100%;
+  background: linear-gradient(#fff0, #fff);
 }
 
 .accordion {

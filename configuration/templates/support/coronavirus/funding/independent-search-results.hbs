@@ -6,12 +6,10 @@
   {{/if ~}}
 
   {{#compare @root.data.supplimentaryResponses.funds.hits.total ">" 0}}
-  <ul>
   {{#each @root.data.supplimentaryResponses.funds.hits.hits ~}}
   {{#with _source ~}}
-    <li><a href="{{url}}">{{{title}}}</a></li>
+  {{> content_fund_search_result this}}
   {{/with ~}}
   {{/each ~}}
-  </ul>
   {{/compare ~}}
 </div>

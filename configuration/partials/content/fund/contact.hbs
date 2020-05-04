@@ -1,0 +1,108 @@
+<div class="contact" data-fund-id="{{Id}}">
+  <div class="detailed-info">
+    {{#ifAny fund_email_address fund_telephone fund_url ~}}
+      <h4 class="mdc-typography--headline7">More information on this fund</h4>
+      <ul class="fa-ul first">
+
+      {{#if fund_url ~}}
+        <li class="mdc-typography--body1">
+          <span class="fa-li"><span class="far fa-link fa-fw" title="Website"></span></span>
+          <span class="key-info-bit r-margin-full">
+            <a href="{{fund_url}}" target="_blank">{{fund_url}}</a>
+          </span>
+        </li>
+      {{/if ~}}
+      {{#if fund_email_address ~}}
+        <li class="mdc-typography--body1">
+          <span class="fa-li"><span class="far fa-envelope fa-fw" title="Email"></span></span>
+          <span class="key-info-bit r-margin-full">
+        <a href="mailto:{{fund_email_address}}">{{fund_email_address}}</a>
+      </span>
+        </li>
+      {{/if~}}
+      {{#if fund_telephone ~}}
+        <li class="mdc-typography--body1">
+          <span class="fa-li"><span class="far fa-phone fa-flip-horizontal fa-fw" title="Phone"></span></span>
+          <span class="key-info-bit r-margin-full">
+        <a href="tel:{{fund_telephone}}">{{fund_telephone}}</a>
+      </span>
+        </li>
+      {{/if}}
+    </ul>
+    {{/ifAny ~}}
+    <h4 class="mdc-typography--headline7">Funder details</h4>
+    {{> content_funder_charity_number charity_number=funder_organisation.charity_number}}
+    <ul class="fa-ul first">
+    {{#if (itemAt (split funder_organisation.address ",") 0) ~}}
+      <li class="mdc-typography--body1">
+        <span class="fa-li"><span class="far fa-building fa-fw" title="Address"></span></span>
+        <span class="key-info-bit r-margin-full">
+          {{#each (split funder_organisation.address ",") ~}}
+          {{#if (trim this)}}{{trim this}}{{#unless @last}}, {{/unless}}{{/if}}
+          {{/each ~}}
+        </span>
+      </li>
+    {{/if ~}}
+    {{#if funder_organisation.website ~}}
+    <li class="mdc-typography--body1">
+      <span class="fa-li"><span class="far fa-link fa-fw" title="Website"></span></span>
+      <span class="key-info-bit r-margin-full">
+        <a href="{{funder_organisation.website}}" target="_blank">{{funder_organisation.website}}</a>
+      </span>
+    </li>
+    {{/if ~}}
+    {{#if funder_organisation.email ~}}
+    <li class="mdc-typography--body1">
+      <span class="fa-li"><span class="far fa-envelope fa-fw" title="Email"></span></span>
+      <span class="key-info-bit r-margin-full">
+        <a href="mailto:{{funder_organisation.email}}">{{funder_organisation.email}}</a>
+      </span>
+    </li>
+    {{/if~}}
+    {{#if funder_organisation.telephone ~}}
+    <li class="mdc-typography--body1">
+      <span class="fa-li"><span class="far fa-phone fa-flip-horizontal fa-fw" title="Phone"></span></span>
+      <span class="key-info-bit r-margin-full">
+        <a href="tel:{{funder_organisation.telephone}}">{{funder_organisation.telephone}}</a>
+      </span>
+    </li>
+    {{/if~}}
+    {{#if funder_organisation.twitter ~}}
+    <li class="mdc-typography--body1">
+      <span class="fa-li"><span class="fab fa-twitter fa-fw" title="Twitter"></span></span>
+      <span class="key-info-bit r-margin-full">
+        <a href="{{funder_organisation.twitter}}" target="_blank">{{funder_organisation.twitter}}</a>
+      </span>
+    </li>
+    {{/if ~}}
+    {{#if funder_organisation.facebook ~}}
+    <li class="mdc-typography--body1">
+      <span class="fa-li"><span class="fab fa-facebook fa-fw" title="Facebook"></span></span>
+      <span class="key-info-bit r-margin-full">
+        <a href="{{funder_organisation.facebook}}" target="_blank">{{funder_organisation.facebook}}</a>
+      </span>
+    </li>
+    {{/if ~}}
+    {{#if funder_organisation.linkedin ~}}
+    <li class="mdc-typography--body1">
+      <span class="fa-li"><span class="fab fa-linkedin fa-fw" title="LinkedIn"></span></span>
+      <span class="key-info-bit r-margin-full">
+        <a href="{{funder_organisation.linkedin}}" target="_blank">{{funder_organisation.linkedin}}</a>
+      </span>
+    </li>
+    {{/if ~}}
+    {{!-- {{#if funder_organisation.charity_number ~}}
+    {{#if (contains funder_organisation.charity_number "not") ~}}
+    {{else}}
+    <li class="mdc-typography--body1">
+      <span class="fa-li"><span class="far fa-info-circle fa-fw" title="Registered charity"></span></span>
+      <span class="key-info-bit r-margin-full">
+        <strong>Registered charity:</strong>
+        <a href="{{>charity_link funder_organisation}}" target="_blank">{{trim funder_organisation.charity_number}}</a>
+      </span>
+    </li>
+    {{/if ~}}
+    {{/if ~}} --}}
+    </ul>
+  </div>
+</div>
