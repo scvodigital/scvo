@@ -1,0 +1,23 @@
+"filter": [
+  {
+    "terms": {
+      "source_of_fund_slug": [
+        "community-benefit",
+        "european",
+        "lottery",
+        "private-for-profit-organisation",
+        "trust-foundation"
+      ]
+    }
+  },
+  {
+    "query_string": {
+      "query": "coronavirus covid COVID-19",
+      "fields": [
+        "text_bag_boost^5"
+      ],
+      "default_operator": "OR",
+      "analyzer": "snowball"
+    }
+  }
+]

@@ -35,10 +35,10 @@
     </div>
     <div class="form-group column col-3 col-md-6 col-sm-12">
       <select class="form-select" name="fund_status" onchange="this.form.submit()">
-        <option disabled{{#unless @root.request.params.query.fund_status}} selected{{/unless}}>Current status</option>
-        <option value="">Any status</option>
+        <option disabled>Status</option>
+        <option value="any">Any status</option>
         {{#each @root.data.supplimentaryResponses.fund_aggs.aggregations.status.buckets ~}}
-        <option value="{{slugify key}}"{{#compare @root.request.params.query.fund_status (slugify key)}} selected{{/compare}}>{{replace key "Currently Closed" "Closed"}}</option>
+        <option value="{{slugify key}}"{{#compare @root.request.params.query.fund_status (slugify key)}} selected{{/compare}}>{{replace (replace key "Open" "Currently open") "Currently Closed" "Currently closed"}}</option>
         {{/each ~}}
       </select>
     </div>

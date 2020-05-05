@@ -62,29 +62,7 @@
   ],
   "query": {
     "bool": {
-      "filter": [
-        {
-          "terms": {
-            "source_of_fund_slug": [
-              "community-benefit",
-              "european",
-              "lottery",
-              "private-for-profit-organisation",
-              "trust-foundation"
-            ]
-          }
-        },
-        {
-          "query_string": {
-            "query": "coronavirus covid COVID-19",
-            "fields": [
-              "text_bag_boost^5"
-            ],
-            "default_operator": "OR",
-            "analyzer": "snowball"
-          }
-        }
-      ]{{#ifAny @root.request.params.query.type_of_funding @root.request.params.query.source_of_fund @root.request.params.query.type_of_cost @root.request.params.query.fund_status ~}},
+      {{> queries_common_coronavirus_fund}}{{#ifAny @root.request.params.query.type_of_funding @root.request.params.query.source_of_fund @root.request.params.query.type_of_cost @root.request.params.query.fund_status ~}},
       "must": [
         {{#if @root.request.params.query.type_of_funding ~}}
         {
@@ -108,9 +86,18 @@
         },
         {{/if ~}}
         {{#if @root.request.params.query.fund_status ~}}
+        {{#compare @root.request.params.query.fund_status "any" ~}}
+        {{else}}
         {
           "term": {
             "fund_status_slug": "{{@root.request.params.query.fund_status}}"
+          }
+        },
+        {{/compare ~}}
+        {{else}}
+        {
+          "term": {
+            "fund_status_slug": "open"
           }
         },
         {{/if ~}}
@@ -124,6 +111,6 @@
     }
   },
   "sort": {
-    "funder_organisation.name": "asc"
+    "date_last_modified": "desc"
   }
 }
