@@ -12,6 +12,13 @@
   ],
   "query": {
     "bool": {
+      "filter": [
+        {
+          "term": {
+            "status": "Transferred"
+          }
+        }
+      ],
       "must": [
         {{#ifAny request.params.query.call request.params.query.q ~}}
         {{#if request.params.query.call ~}}

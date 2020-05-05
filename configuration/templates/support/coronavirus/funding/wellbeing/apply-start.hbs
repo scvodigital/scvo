@@ -1,61 +1,106 @@
 <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
-  {{#if @root.request.params.charity_number ~}}
+  <p>
+    Intro text
+  </p>
+  <div class="b-margin-full">
+    <div class="form-group" id="condition_1-D" role="group" aria-labelledby="condition_1-L" data-tfa-labelledby="-L condition_1-L">
+      <div class="col-9 col-xl-12">
+        <label class="form-checkbox" id="condition_1-L" for="condition_1">
+          <input type="checkbox" value="condition_1" id="condition_1" name="condition_1" aria-labelledby="condition_1-L" data-tfa-labelledby="condition_1-L" required{{#if @root.request.params.charity_number}} checked{{/if}}>
+          <i class="form-icon"></i>
+          Condition 1
+        </label>
+      </div>
+    </div>
+    <div class="form-group" id="condition_2-D" role="group" aria-labelledby="condition_2-L" data-tfa-labelledby="-L condition_2-L">
+      <div class="col-9 col-xl-12">
+        <label class="form-checkbox" id="condition_2-L" for="condition_2">
+          <input type="checkbox" value="condition_2" id="condition_2" name="condition_2" aria-labelledby="condition_2-L" data-tfa-labelledby="condition_2-L" required{{#if @root.request.params.charity_number}} checked{{/if}}>
+          <i class="form-icon"></i>
+          Condition 2
+        </label>
+      </div>
+    </div>
+    <div class="form-group" id="condition_3-D" role="group" aria-labelledby="condition_3-L" data-tfa-labelledby="-L condition_3-L">
+      <div class="col-9 col-xl-12">
+        <label class="form-checkbox" id="condition_3-L" for="condition_3">
+          <input type="checkbox" value="condition_3" id="condition_3" name="condition_3" aria-labelledby="condition_3-L" data-tfa-labelledby="condition_3-L" required{{#if @root.request.params.charity_number}} checked{{/if}}>
+          <i class="form-icon"></i>
+          Condition 3
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="proceed"{{#unless @root.request.params.charity_number}} style="display: none;"{{/unless}}>
+    {{#if @root.request.params.charity_number ~}}
     <div class="label label-error x-padding t-margin-full">
       <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
       The charity number you entered could not be matched with an OSCR record
     </div>
-    <p class="t-margin b-margin-full form-input-hint text-secondary">Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search/" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again</p>
-  {{/if ~}}
-  <div class="columns b-padding-full b-margin-full">
-    <div class="column col-sm-12 col-xs-12">
-      <div class="form-group">
-        <label for="charity_number" class="form-label">Scottish Charity Number</label>
-        <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
-        <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search/" class="no-ext" target="_blank">search the OSCR register</a> to confirm</p>
+    <p class="t-margin b-margin-full form-input-hint text-secondary">
+      Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+    </p>
+    {{/if ~}}
+    <div class="columns b-padding-full b-margin-full">
+      <div class="column col-sm-12 col-xs-12">
+        <div class="form-group">
+          <label for="charity_number" class="form-label">Scottish Charity Number</label>
+          <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
+          <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> to confirm</p>
+        </div>
+        <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
+          Apply now
+        </a>
       </div>
-      <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
-        Apply now
-      </a>
-    </div>
-    <div class="divider-vert hide-sm" data-content="OR"></div>
-    <div class="divider text-center show-sm col-12" data-content="OR"></div>
-    <div class="column col-sm-12 col-xs-12 align-centre">
-      {{!-- <p>
+      <div class="divider-vert hide-sm" data-content="OR"></div>
+      <div class="divider text-center show-sm col-12" data-content="OR"></div>
+      <div class="column col-sm-12 col-xs-12 align-centre">
+        {{!-- <p>
         If you are not a registered charity you can still apply. Click the link below to continue.
-      </p> --}}
-      <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/not-a-charity" class="btn btn-block">
-        Not a registered charity
-      </a>
+        </p> --}}
+        <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/not-a-charity" class="btn btn-block">
+          Not a registered charity
+        </a>
+      </div>
     </div>
   </div>
 </div>
 
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var valid = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 67, 83, 99, 115, 37, 39, 111, 79, 46, 35, 36];
+document.addEventListener("DOMContentLoaded", function() {
+  var $cBoxes = $('#condition_1,#condition_2,#condition_3');
+  $cBoxes.change(function(){
+    if ($cBoxes.length == $cBoxes.filter(':checked').length) {
+      $('#proceed').show();
+    } else {
+      $('#proceed').hide();
+    }
+  });
 
-    $('#charity_number')
-      .on('keydown', function(evt) {
-        if (valid.indexOf(evt.which) === -1 && evt.which > 31) {
-          evt.preventDefault();
-        }
-      })
-      .on('keyup', function(evt) {
-        var charityNumber = evt.target.value = evt.target.value.toUpperCase().replace(/o/ig, '0');
-        if (charityNumber.match(/SC[0-9]{6}/)) {
-          var url = '/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/' + charityNumber;
-          $('#charity_number_submit')
-            .removeAttr('disabled', false)
-            .attr('href', url);
-          if (evt.which === 13) {
-            window.location.href = url;
-          }
-        } else {
-          $('#charity_number_submit')
-            .attr('disabled', true)
-            .attr('href', '');
-        }
-      })
-      .select();
+  var valid = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 67, 83, 99, 115, 37, 39, 111, 79, 46, 35, 36];
+  $('#charity_number')
+  .on('keydown', function(evt) {
+    if (valid.indexOf(evt.which) === -1 && evt.which > 31) {
+      evt.preventDefault();
+    }
   })
+  .on('keyup', function(evt) {
+    var charityNumber = evt.target.value = evt.target.value.toUpperCase().replace(/o/ig, '0');
+    if (charityNumber.match(/SC[0-9]{6}/)) {
+      var url = '/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/' + charityNumber;
+      $('#charity_number_submit')
+      .removeAttr('disabled', false)
+      .attr('href', url);
+      if (evt.which === 13) {
+        window.location.href = url;
+      }
+    } else {
+      $('#charity_number_submit')
+      .attr('disabled', true)
+      .attr('href', '');
+    }
+  })
+  .select();
+})
 </script>

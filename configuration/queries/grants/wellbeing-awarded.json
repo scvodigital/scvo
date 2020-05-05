@@ -1,0 +1,24 @@
+{
+  "size": 1,
+  "_source": [
+    "Id"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "status": "Awarded"
+          }
+        }
+      ],
+      "must": [
+        {
+          "term": {
+            "recipient_charity_number": "{{@root.request.params.charity_number}}"
+          }
+        }
+      ]
+    }
+  }
+}

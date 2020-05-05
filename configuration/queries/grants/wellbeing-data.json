@@ -31,9 +31,13 @@
   ],
   "query": {
     "bool": {
-      "must": {
-        "match_all": {}
-      },
+      "filter": [
+        {
+          "term": {
+            "status": "Transferred"
+          }
+        }
+      ],
       "should": [
         {
           "exists": {

@@ -1,43 +1,19 @@
 {
-  "name": "coronavirus_wellbeing_apply_details",
+  "name": "coronavirus_wellbeing_apply_details_eoi",
   "debug": true,
-  "pattern": "/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/:charity_number",
+  "pattern": "_DISABLED_/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
-      "name": "award_data",
-      "taskModule": "elasticsearch",
+      "name": "eoi_data",
+      "taskModule": "salesforceApex",
+      "renderer": "handlebars",
       "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": {
-          "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "sg-grant-wellbeing",
-          "template": ">context.metaData.handlebars.queries.grants_wellbeing-awarded"
-        }
-      },
-      "renderer": "handlebars"
-    },
-    {
-      "name": "check_for_awarded",
-      "taskModule": "reroute",
-      "config": {
-        "if": [
-          {
-            "and": [
-              {
-                "!=": [
-                  { "var": "data.award_data.hits.total" },
-                  0
-                ]
-              }
-            ]
-          },
-          "coronavirus_wellbeing_apply_already_awarded",
-          false
-        ]
+        "connection": "grantsProduction",
+        "output": "data",
+        "method": "GET",
+        "apexClassPath": "/ExpressionOfInterest/{{default request.params.query.session 'invalid-key'}}",
+        "body": ""
       }
     },
     {
@@ -131,6 +107,54 @@
         "template": ">context.metaData.handlebars.templates.utilities_search-postcode-lookup",
         "output": "data",
         "parseJson": true
+      }
+    },
+    {
+      "name": "check_for_eoi",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "==": [
+                  { "var": "data.eoi_data.length" }, 0
+                ]
+              },
+              {
+                "!=": [
+                  { "var": "request.params.query.ex" }, "eoi"
+                ]
+              }
+            ]
+          },
+          "coronavirus_wellbeing_apply_not_registered",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_for_applied",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "==": [
+                  {"var": "data.eoi_data.0.Applied__c"}, true
+                ]
+              },
+              {
+                "!=": [
+                  {"var": "request.params.query.ex"}, "eoi"
+                ]
+              }
+            ]
+          },
+          "coronavirus_wellbeing_apply_already_applied",
+          false
+        ]
       }
     },
     {

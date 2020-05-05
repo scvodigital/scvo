@@ -1,6 +1,17 @@
 {
   "size": 0,
   "_source": false,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "status": "Transferred"
+          }
+        }
+      ]
+    }
+  },
   "aggs": {
     "calls": {
       "terms": {
