@@ -5,7 +5,7 @@
   {{/with ~}}
   {{/if ~}}
 
-  <form action="{{@root.request.url.pathname}}" method="get" class="columns">
+  <form action="{{@root.request.url.pathname}}" method="get" class="columns t-margin-full">
     <div class="form-group column col-3 col-md-6 col-sm-12">
       <select class="form-select" name="type_of_funding" onchange="this.form.submit()">
         <option disabled{{#unless @root.request.params.query.type_of_funding}} selected{{/unless}}>Type of funding</option>
