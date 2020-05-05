@@ -5,7 +5,7 @@
 <ul>
   {{#each @root.data.supplimentaryResponses.events.hits.hits ~}}
   {{#with _source ~}}
-  <li>{{#compare (momentFormat (moment date_start "x") "mm") "00"}}{{momentFormat (moment date_start "x") "Do MMMM\, h"}}{{else}}{{momentFormat (moment date_start "x") "Do MMMM\, h:mm"}}{{/compare}}{{#compare date_start date_end}}{{momentFormat (moment date_start "x") ":mma"}}{{else}}{{momentFormat (moment date_end "x") "\-h:mma"}}{{/compare}} <a href="{{path}}">{{{title}}}</a></li>
+  <li>{{#compare (momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "mm") "00"}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "Do MMMM\, h"}}{{else}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "Do MMMM\, h:mm"}}{{/compare}}{{#compare date_start date_end}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") ":mma"}}{{else}}{{momentFormat (momentConvertTz (moment date_end "x") "UTC" "Europe/London") "\-h:mma"}}{{/compare}} <a href="{{path}}">{{{title}}}</a></li>
   {{/with ~}}
   {{/each ~}}
 </ul>
