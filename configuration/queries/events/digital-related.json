@@ -7,6 +7,7 @@
     "path",
     "city",
     "description_short",
+    "places_available",
     "course_overview_short"
   ],
   "query": {
@@ -21,7 +22,7 @@
       "must": [
         {
           "simple_query_string": {
-            "query": "{{data.primaryResponse.hits.hits.[0]._source.title}} {{data.primaryResponse.hits.hits.[0]._source.type}} {{data.primaryResponse.hits.hits.[0]._source.trainer}}",
+            "query": "{{@root.data.primaryResponse.hits.hits.[0]._source.title}} {{@root.data.primaryResponse.hits.hits.[0]._source.type}} {{@root.data.primaryResponse.hits.hits.[0]._source.trainer}}",
             "default_operator": "or",
             "fields": ["text_bag"],
             "analyzer": "snowball"
@@ -52,7 +53,7 @@
           "bool": {
             "must_not": {
               "match": {
-                "Id": "{{data.primaryResponse.hits.hits.[0]._source.Id}}"
+                "Id": "{{@root.data.primaryResponse.hits.hits.[0]._source.Id}}"
               }
             }
           }

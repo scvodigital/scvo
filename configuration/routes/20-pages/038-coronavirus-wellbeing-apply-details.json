@@ -1,7 +1,7 @@
 {
   "name": "coronavirus_wellbeing_apply_details",
   "debug": true,
-  "pattern": "/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/:charity_number",
+  "pattern": "_disabled_/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
