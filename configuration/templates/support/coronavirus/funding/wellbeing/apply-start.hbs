@@ -59,6 +59,17 @@
   {{else}}
   {{#ifAny @root.request.params.charity_number (ifAll @root.request.body.condition_1 @root.request.body.condition_2 @root.request.body.condition_3 @root.request.body.funder) ~}}
   {{#ifAny @root.request.params.charity_number (compare @root.request.body.funder "wellbeing") ~}}
+
+  <p>
+    The Wellbeing Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the pandemic. It can fund both immediate and emerging forms of support, from now up to the end of July, reflecting that the context for people and communities may change over that time.
+  </p>
+  <p>
+    Any organisation may hold just one substantive award of between £5k and £100k.
+  </p>
+  <p>
+    Please enter the details below to continue your application process.
+  </p>
+
   {{#if @root.request.params.charity_number ~}}
   <div class="label label-error x-padding t-margin-full">
     <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>

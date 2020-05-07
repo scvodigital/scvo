@@ -5,13 +5,6 @@
   ],
   "query": {
     "bool": {
-      "filter": [
-        {
-          "term": {
-            "status": "Awarded"
-          }
-        }
-      ],
       "must": [
         {
           "term": {

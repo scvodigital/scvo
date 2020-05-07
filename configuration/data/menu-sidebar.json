@@ -1428,15 +1428,15 @@
 					"label": "Wellbeing Fund",
 					"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund",
 					"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund$|^/support/coronavirus/funding/scottish-government/wellbeing-fund/apply",
-					"register_children": [{
-						"label": "Register interest",
-						"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/register-interest",
-						"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/register-interest$"
-					}],
 					"children": [{
 						"label": "Guidance for applicants",
 						"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants",
 						"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants$"
+					},
+					{
+						"label": "Terms & conditions",
+						"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/terms-conditions",
+						"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/terms-conditions$"
 					},
 					{
 						"label": "Frequently asked questions",
