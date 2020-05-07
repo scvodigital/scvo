@@ -12,9 +12,9 @@
     <li class="breadcrumb-item"><a href="/support/coronavirus/funding">Funding</a></li>
     <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government">Funds: Scottish Government</a></li>
     <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government/wellbeing-fund">Wellbeing Fund</a></li>
-    <li class="breadcrumb-item">{{#ifAny @root.request.params.charity_number @root.request.body.funder}}{{#compare @root.route.name "coronavirus_wellbeing_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Eligibility checker{{/ifAny}}</li>
+    <li class="breadcrumb-item">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "coronavirus_wellbeing_apply_complete")}}{{#compare @root.route.name "coronavirus_wellbeing_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Eligibility checker{{/ifAny}}</li>
   </ul>
 </div>
 <div class="container">
-  <h1 class="font-default">{{#ifAny @root.request.params.charity_number @root.request.body.funder}}{{#compare @root.route.name "coronavirus_wellbeing_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Eligibility checker{{/ifAny}}</h1>
+  <h1 class="font-default">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "coronavirus_wellbeing_apply_complete")}}{{#compare @root.route.name "coronavirus_wellbeing_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Eligibility checker{{/ifAny}}</h1>
 </div>
