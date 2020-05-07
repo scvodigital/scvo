@@ -386,7 +386,7 @@ wFORMS.behaviors.prefill.skip = false;
                 Charities, social enterprises, community groups and other voluntary organisations that have independent governance and an asset lock are eligible to apply. Organisations must be in a stable financial position to be able to deliver the proposed activity and can apply for a maximum of 20% of the total annual income from your latest accounts.
               </p>
               <p>
-                Please upload the following documents to allow us to conduct due diligence checks on these criteria.
+                Please upload the following documents to allow us to conduct due diligence checks on these criteria.  There is a 5Mb limit on uploading.  If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
               </p>
             </div>
 
@@ -998,19 +998,19 @@ document.addEventListener("DOMContentLoaded", function() {
           $('#submit_button').prop("disabled", false);
           $('#submit_button').prop("style", false);
           $('#submit_button').val("Submit");
-          alert("Your budget is too high for this fund. Your total budget exceeds 20% of your annual income.");
+          alert("It looks as though you've made an error with your budget.  Your project budget needs amending to be less than 20% of your last year's turnover to meet the fund criteria.");
         }
       } else {
         $('#submit_button').prop("disabled", false);
         $('#submit_button').prop("style", false);
         $('#submit_button').val("Submit");
-        alert("Your budget is too high for this fund. Your total budget must be below £100,000.");
+        alert("It looks as though you've made an error with your budget. Your project budget needs amending to be no more than £100k to meet the fund criteria.");
       }
     } else {
       $('#submit_button').prop("disabled", false);
       $('#submit_button').prop("style", false);
       $('#submit_button').val("Submit");
-      alert("Your budget is too low for this fund. Your total budget must be above £5,000.");
+      alert("It looks as though you've made an error with your budget. Your project budget needs amending to add up to at least £5k to meet the fund criteria.");
     }
     setTimeout(function(){
       $('#submit_button').prop("disabled", false);
