@@ -22,26 +22,6 @@
     {{else}}
     {{#if date_started ~}}
     "awardDate": "{{momentFormat (moment date_started 'x') "YYYY-MM-DD"}}",
-    {{else}}
-    {{#if actual_start ~}}
-    "awardDate": "{{momentFormat (moment actual_start 'x') "YYYY-MM-DD"}}",
-    {{else}}
-    {{#if planned_start ~}}
-    "awardDate": "{{momentFormat (moment planned_start 'x') "YYYY-MM-DD"}}",
-    {{else}}
-    {{#if decision_date ~}}
-    "awardDate": "{{momentFormat (moment decision_date 'x') "YYYY-MM-DD"}}",
-    {{else}}
-    {{#if recommendation_agreed_date ~}}
-    "awardDate": "{{momentFormat (moment recommendation_agreed_date 'x') "YYYY-MM-DD"}}",
-    {{else}}
-    {{#if date_last_modified ~}}
-    "awardDate": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DD"}}",
-    {{/if ~}}
-    {{/if ~}}
-    {{/if ~}}
-    {{/if ~}}
-    {{/if ~}}
     {{/if ~}}
     {{/if ~}}
     "description": {{{stringify (default description "Detailed information not yet available.")}}},
@@ -112,15 +92,15 @@
     }],
     {{#if call ~}}
     "grantProgramme": [{
-      "code": "sg-wellbeing-{{call_slug}}",
-      "title": "Wellbeing Fund - {{call}}",
-      "description": "The Wellbeing Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the coronavirus (COVID19) pandemic.",
-      "url": "https://scvo.scot/funding/wellbeing-fund"
+      "code": "scvo-csrw-{{call_slug}}",
+      "title": "Carer Service Remote Working Fund - {{call}}",
+      "description": "COVID19 support",
+      "url": "https://scvo.scot/funding/carer-service-remote-working-fund"
     }],
     "fromOpenCall": "Yes",
     {{/if ~}}
     "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}",
-    "dataSource": "https://scvo.scot/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients/data.json"
+    "dataSource": "https://scvo.scot/funding/carer-service-remote-working-fund/recipients/data.json"
   }{{#unless @last}},{{/unless}}
   {{/with}}
   {{/each}}

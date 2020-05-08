@@ -1,0 +1,13 @@
+<div class="container">
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/funding/">Funding</a></li>
+    <li class="breadcrumb-item"><a href="/funding/carer-service-remote-working-fund">Carer service remote working fund</a></li>
+    <li class="breadcrumb-item"><a href="/funding/carer-service-remote-working-fund/recipients">Recipients</a></li>
+    <li class="breadcrumb-item">{{{title}}}</li>
+  </ul>
+
+  <h1>{{{title}}}</h1>
+  {{/with ~}}
+</div>
