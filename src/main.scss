@@ -1504,7 +1504,15 @@ a.pure-menu-link:hover {
   background-color: $secondary-color-dark;
 }
 
-.hidden,
+.hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .column.hidden {
   display: none !important;
 }

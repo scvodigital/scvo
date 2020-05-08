@@ -30,8 +30,8 @@
   <h2>{{{key}}}</h2>
   {{#each faqs.hits.hits ~}}
   {{#with _source ~}}
-  <h4 class="accordion">{{{title}}}</h4>
-  <div class="accordion-content">
+  <h4 class="accordion" aria-expanded="false">{{{title}}}</h4>
+  <div class="accordion-content hidden">
     <p>
       {{{replace description "\n" '<br />'}}}
     </p>
@@ -44,8 +44,8 @@
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
   {{#if description ~}}
-  <h4 class="accordion">{{{title}}}</h4>
-  <div class="accordion-content">
+  <h4 class="accordion" aria-expanded="false">{{{title}}}</h4>
+  <div class="accordion-content hidden">
     <p>
       {{{replace description "\n" '<br />'}}}
     </p>

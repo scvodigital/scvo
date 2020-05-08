@@ -10,11 +10,11 @@ for (i = 0; i < acc.length; i++) {
     }
     var panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
+      setTimeout(function() { addClass(panel, 'hidden'); }, 333);
       panel.style.maxHeight = null;
-      panel.setAttribute('aria-hidden', 'true');
     } else {
+      removeClass(panel, 'hidden');
       panel.style.maxHeight = panel.scrollHeight + "px";
-      panel.setAttribute('aria-hidden', 'false');
     }
   });
 }
@@ -29,10 +29,8 @@ if (document.getElementById("accordions_expand")) {
         var panel = acc[i].nextElementSibling;
         if (panel.style.maxHeight) {
           panel.style.maxHeight = null;
-          panel.setAttribute('aria-hidden', 'true');
         } else {
           panel.style.maxHeight = panel.scrollHeight + "px";
-          panel.setAttribute('aria-hidden', 'false');
         }
       }
     }
@@ -57,4 +55,17 @@ if (document.getElementById("accordions_collapse")) {
       }
     }
   });
+}
+
+function hasClass(ele,cls) {
+  return !!ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
+}
+function addClass(ele,cls) {
+  if (!hasClass(ele,cls)) ele.className += " "+cls;
+}
+function removeClass(ele,cls) {
+  if (hasClass(ele,cls)) {
+    var reg = new RegExp('(\\s|^)'+cls+'(\\s|$)');
+    ele.className=ele.className.replace(reg,' ');
+  }
 }
