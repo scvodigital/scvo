@@ -2,7 +2,9 @@
   "name": "redirect_coronavirus_wellbeing",
   "pattern": {
     "old_1": "/support/coronavirus/funding/for-organisations/scottish-government/wellbeing-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
-    "old_2": "/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest-temporary(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+    "old_2": "/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "old_3": "/support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest-temporary(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "old_4": "/support/coronavirus/funding/scottish-government/wellbeing-fund/apply(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
   },
   "tasks": [
     {
@@ -11,7 +13,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/support/coronavirus/funding/for-organisations/wellbeing-fund{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
+        "template": "/support/coronavirus/funding/scottish-government/wellbeing-fund/apply-call-2{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
       }
     },
     {
