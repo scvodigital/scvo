@@ -4,7 +4,7 @@
   {{> site_search_form placeholder='Search the Hub' target='/support/coronavirus/search' id='coronavirus'}}
 </div>
 
-{{#unless (ifAny (compare @root.request.url.pathname "/support/coronavirus/what-scvo-is-doing/bulletin") (contains @root.request.url.pathname "support/coronavirus/funding/for-organisations/wellbeing-fund/register-interest") (contains @root.request.url.pathname "support/coronavirus/funding/for-organisations/wellbeing-fund/apply"))  ~}}
+{{#unless (ifAny (compare @root.request.url.pathname "/support/coronavirus/what-scvo-is-doing/bulletin") (contains @root.request.url.pathname "support/coronavirus/funding/scottish-government/wellbeing-fund/apply"))  ~}}
 <h4 class="t-margin-full">Sign up for the Coronavirus Third Sector Bulletin</h4>
 <p>
   If you would like to receive essential updates on coronavirus (COVID-19) via our Coronavirus Third Sector Bulletin, please enter your details below:
