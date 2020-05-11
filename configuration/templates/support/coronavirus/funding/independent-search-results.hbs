@@ -38,7 +38,7 @@
         <option disabled>Status</option>
         <option value="any">Any status</option>
         {{#each @root.data.supplimentaryResponses.fund_aggs.aggregations.status.buckets ~}}
-        <option value="{{slugify key}}"{{#compare @root.request.params.query.fund_status (slugify key)}} selected{{/compare}}>{{replace (replace key "Open" "Currently open") "Currently Closed" "Currently closed"}}</option>
+        <option value="{{slugify key}}"{{#compare @root.request.params.query.fund_status (slugify key)}} selected{{/compare}}{{#unless @root.request.params.query.fund_status}}{{#compare key 'Open'}} selected{{/compare}}{{/unless}}>{{replace (replace key "Open" "Currently open") "Currently Closed" "Currently closed"}}</option>
         {{/each ~}}
       </select>
     </div>

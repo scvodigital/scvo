@@ -62,7 +62,7 @@
   ],
   "query": {
     "bool": {
-      {{> queries_common_coronavirus_fund}}{{#ifAny @root.request.params.query.type_of_funding @root.request.params.query.source_of_fund @root.request.params.query.type_of_cost @root.request.params.query.fund_status ~}},
+      {{> queries_common_coronavirus_fund}},
       "must": [
         {{#if @root.request.params.query.type_of_funding ~}}
         {
@@ -107,7 +107,6 @@
           }
         }
       ]
-      {{/ifAny ~}}
     }
   },
   "sort": {
