@@ -1,0 +1,14 @@
+{
+  "name": "redirect_nevermoreneeded",
+  "pattern": "/nevermoreneeded",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/policy/campaigns/never-more-needed",
+        "statusCode": 301
+      }
+    }
+  ]
+}

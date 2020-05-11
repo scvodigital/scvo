@@ -1191,6 +1191,15 @@ a.author:hover,
   }
 }
 
+.policy.campaigns.never-more-needed {
+  .bg-header {
+    padding-bottom: $unit;
+    .container {
+      margin: $unit auto;
+    }
+  }
+}
+
 .bg-primary {
   background-color: $primary-color;
   .btn {
