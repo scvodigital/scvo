@@ -1,0 +1,14 @@
+{
+  "name": "redirect_digishift",
+  "pattern": "/support/events/a1v0n000009ykqgqaw-essential-digital-toolkit-a-year-on",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/support/digital/evolution/coronavirus-digital-service-delivery-for-charities",
+        "statusCode": 301
+      }
+    }
+  ]
+}
