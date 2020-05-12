@@ -1,6 +1,10 @@
 {
   "name": "redirect_nevermoreneeded",
-  "pattern": "/nevermoreneeded",
+  "pattern": {
+    "v1": "/nevermoreneeded",
+    "v2": "/hashtag/nevermoreneeded",
+    "v3": "/never-more-needed"
+  },
   "tasks": [
     {
       "name": "destination",
