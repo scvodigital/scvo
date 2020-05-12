@@ -1,0 +1,10 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{#unless @root.data.primaryResponse.hits.hits.[0]._source.hide_related_posts ~}}
+{{> footers_posts_related}}
+{{/unless ~}}
+{{/if ~}}
+{{> footers_posts_latest}}
+
+{{> footers_tfn_related}}
+
+{{> footers_tfn_latest}}

@@ -1,23 +1,32 @@
 {
   "size": 4,
   "_source": [
-    "Id",
-    "url",
+    "categories_id",
     "title",
-    "image",
-    "date_published"
+    "publish_on",
+    "updated",
+    "path",
+    "url",
+    "wpid",
+    "description",
+    "description_truncated",
+    "is_press_release",
+    "author_slug",
+    "author_name_full",
+    "og_image",
+    "author_avatar",
+    "staff_profile",
+    "og_image",
+    "categories",
+    "categories_slug",
+    "post_tags",
+    "post_tags_slug",
+    "post_slug"
   ],
   "query": {
     "function_score": {
       "query": {
         "bool": {
-          "filter":  [
-            {
-              "exists": {
-                "field": "image"
-              }
-            }
-          ],
           "should": [
             {
               "simple_query_string": {
