@@ -1,5 +1,5 @@
 {{#*inline "childMenu" ~}}
-{{#if path ~}}
+{{#ifAll path (ifAny description icon) ~}}
 <div class="column col-6 col-md-12">
   <div class="card">
     {{#ifAny label label_full ~}}
@@ -17,7 +17,7 @@
     </div>
   </div>
 </div>
-{{/if ~}}
+{{/ifAll ~}}
 {{/inline ~}}
 
 <div class="b-margin-full b-padding-full">
