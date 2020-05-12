@@ -1,13 +1,15 @@
 {{#*inline "childMenu" ~}}
+{{#if route ~}}
 <li class="menu-item">
   {{#if path}}<a class="menu-level-{{level}}{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}" href="{{path}}">{{else}}<div class="menu-level-{{level}}">{{/if}}{{#switch level}}{{#case 2}}<span class="far fa-angle-right" aria-hidden="true"></span>{{/case}}{{#case 3}}<span class="far fa-angle-double-right" aria-hidden="true"></span>{{/case}}{{#case 4}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{#case 5}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{/switch}} {{{label}}}{{#if path}}</a>{{else}}</div>{{/if}}
 </li>
+{{/if ~}}
 {{/inline ~}}
 
 {{#each @root.context.metaData.sidebarMenus ~}}
   {{#each this ~}}
     {{#if children ~}}
-      {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
         <ul class="menu menu-depth-2">
           {{#if this ~}}
           {{> childMenu this level=1}}
@@ -19,7 +21,7 @@
       {{else}}
         {{#each children ~}}
           {{#if children ~}}
-            {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
               <ul class="menu menu-depth-3">
                 {{#if ../this ~}}
                 {{> childMenu ../this level=1}}
@@ -34,7 +36,7 @@
             {{else}}
               {{#each children ~}}
                 {{#if children ~}}
-                  {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
                     <ul class="menu menu-depth-4">
                       {{#if ../../this ~}}
                       {{> childMenu ../../this level=1}}
@@ -52,7 +54,7 @@
                   {{else}}
                     {{#each children ~}}
                       {{#if children ~}}
-                        {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
                           <ul class="menu menu-depth-5">
                             {{#if ../../../this ~}}
                             {{> childMenu ../../../this level=1}}
@@ -72,7 +74,7 @@
                           </ul>
                         {{else}}
                           {{#each children ~}}
-                            {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
                             <ul class="menu menu-depth-5">
                               {{#if ../../../../this ~}}
                               {{> childMenu ../../../../this level=1}}
@@ -90,11 +92,11 @@
                               {{> childMenu this level=5}}
                               {{/each ~}}
                             </ul>
-                            {{/if ~}}
+                            {{/ifAll ~}}
                           {{/each ~}}
-                        {{/if ~}}
+                        {{/ifAll ~}}
                       {{else}}
-                        {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
                           <ul class="menu menu-depth-4">
                             {{#if ../../../this ~}}
                             {{> childMenu ../../../this level=1}}
@@ -109,12 +111,12 @@
                             {{> childMenu this level=4}}
                             {{/each ~}}
                           </ul>
-                        {{/if ~}}
+                        {{/ifAll ~}}
                       {{/if ~}}
                     {{/each ~}}
-                  {{/if ~}}
+                  {{/ifAll ~}}
                 {{else}}
-                  {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
                     <ul class="menu menu-depth-3">
                       {{#if ../../this ~}}
                       {{> childMenu ../../this level=1}}
@@ -126,12 +128,12 @@
                       {{> childMenu this level=3}}
                       {{/each ~}}
                     </ul>
-                  {{/if ~}}
+                  {{/ifAll ~}}
                 {{/if ~}}
               {{/each ~}}
-            {{/if ~}}
+            {{/ifAll ~}}
           {{else}}
-            {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
             <ul class="menu menu-depth-2">
               {{#if ../this ~}}
               {{> childMenu ../this level=1}}
@@ -140,16 +142,16 @@
               {{> childMenu this level=2}}
               {{/each ~}}
             </ul>
-            {{/if ~}}
+            {{/ifAll ~}}
           {{/if ~}}
         {{/each ~}}
-      {{/if ~}}
+      {{/ifAll ~}}
     {{else}}
-      {{#if (regexMatch @root.request.url.pathname route "gi") ~}}
+      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
       <ul class="menu menu-depth-1">
         {{> childMenu this level=1}}
       </ul>
-      {{/if ~}}
+      {{/ifAll ~}}
     {{/if ~}}
   {{/each ~}}
 {{/each ~}}

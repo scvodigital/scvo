@@ -1,9 +1,8 @@
 {
-  "name": "never_more_needed_page",
+  "name": "coronavirus_menu_page",
   "debug": true,
   "pattern": {
-    "landing": "/policy/campaigns/never-more-needed",
-    "section": "/policy/campaigns/never-more-needed/:level_1(/:level_2)(/:level_3)(/:level_4)(/:level_5)(/:level_6)(/:level_7)(/:level_8)"
+    "your-employees": "/support/coronavirus/employees"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -37,25 +36,9 @@
             "name": "tfn_related_posts",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
-            "template": ">context.metaData.handlebars.queries.posts_tfn-related-never-more-needed"
+            "template": ">context.metaData.handlebars.queries.posts_tfn-related-coronavirus"
           }
         ]
-      },
-      "renderer": "handlebars"
-    },
-    {
-      "name": "postsRelated",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": {
-          "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-post",
-          "template": ">context.metaData.handlebars.queries.posts_related-never-more-needed"
-        }
       },
       "renderer": "handlebars"
     },
@@ -75,10 +58,10 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.page-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.policy_campaigns_never-more-needed-sidebar",
-              "footer": ">context.metaData.handlebars.templates.page-posts-news-footer"
+              "header": ">context.metaData.handlebars.templates.support_coronavirus_page-header",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_page-menu",
+              "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"
           }

@@ -1383,45 +1383,64 @@
 			"label": "Your employees",
 			"path": "/support/coronavirus/employees",
 			"route": "^/support/coronavirus/employees$",
+			"description": "How to support and protect your staff, and enable remote working",
+			"icon": "house-user",
 			"children": [{
 				"label": "Furlough",
+				"label_full": "Furlough – Job Retention Scheme",
 				"path": "/support/coronavirus/employees/furlough",
-				"route": "^/support/coronavirus/employees/furlough$"
+				"route": "^/support/coronavirus/employees/furlough$",
+				"description": "Information for employers about furloughing staff (Coronavirus Job Retention Scheme)",
+				"icon": "house-user"
 			},
 			{
 				"label": "Employment law",
 				"path": "/support/coronavirus/employees/employment-law",
-				"route": "^/support/coronavirus/employees/employment-law$"
+				"route": "^/support/coronavirus/employees/employment-law$",
+				"description": "How to support & protect your staff, volunteers & beneficiaries",
+				"icon": "balance-scale"
 			},
 			{
 				"label": "Remote working",
 				"path": "/support/coronavirus/employees/remote-working",
-				"route": "^/support/coronavirus/employees/remote-working$"
+				"route": "^/support/coronavirus/employees/remote-working$",
+				"description": "How to support your staff to work remotely, with tips on equipment and wellbeing",
+				"icon": "microphone-alt-slash"
 			},
 			{
 				"label": "Cyber resilience",
 				"path": "/support/coronavirus/employees/cyber-resilience",
-				"route": "^/support/coronavirus/employees/cyber-resilience$"
+				"route": "^/support/coronavirus/employees/cyber-resilience$",
+				"description": "Guidance for employees on how to keep your data and systems safe when working remotely",
+				"icon": "lock-alt"
 			},
 			{
 				"label": "Looking after your employees",
 				"path": "/support/coronavirus/employees/looking-after-your-employees",
-				"route": "^/support/coronavirus/employees/looking-after-your-employees$"
+				"route": "^/support/coronavirus/employees/looking-after-your-employees$",
+				"description": "How to support your employees and communicate effectively during the crisis",
+				"icon": "thumbs-up"
 			},
 			{
 				"label": "Frequently asked questions",
 				"path": "/support/coronavirus/employees/faq",
-				"route": "^/support/coronavirus/employees/faq$"
+				"route": "^/support/coronavirus/employees/faq$",
+				"description": "Answers to commonly asked questions in this topic area",
+				"icon": "question-circle"
 			}]
 		},
 		{
 			"label": "Funding",
 			"path": "/support/coronavirus/funding",
 			"route": "^/support/coronavirus/funding$",
+			"description": "Funding available to support with the crisis",
+			"icon": "chart-bar",
 			"children": [{
 				"label": "Scottish Government",
 				"path": "/support/coronavirus/funding/scottish-government",
 				"route": "^/support/coronavirus/funding/scottish-government$",
+				"description": "",
+				"icon": "",
 				"children": [{
 					"label": "Third Sector Resilience Fund",
 					"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund",
@@ -1446,6 +1465,8 @@
 					"label": "Wellbeing Fund",
 					"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund",
 					"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund$|^/support/coronavirus/funding/scottish-government/wellbeing-fund/apply",
+					"description": "",
+					"icon": "",
 					"children": [{
 						"label": "Guidance for applicants",
 						"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants",
@@ -1471,27 +1492,37 @@
 			{
 				"label": "National Emergencies Trust",
 				"path": "/support/coronavirus/funding/national-emergencies-trust",
-				"route": "^/support/coronavirus/funding/national-emergencies-trust$"
+				"route": "^/support/coronavirus/funding/national-emergencies-trust$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Independent funders",
 				"path": "/support/coronavirus/funding/independent",
-				"route": "^/support/coronavirus/funding/independent"
+				"route": "^/support/coronavirus/funding/independent",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Other financial support",
 				"path": "/support/coronavirus/funding/other-financial-support",
-				"route": "^/support/coronavirus/funding/other-financial-support$"
+				"route": "^/support/coronavirus/funding/other-financial-support$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Your regular funding",
 				"path": "/support/coronavirus/funding/your-regular-funding",
-				"route": "^/support/coronavirus/funding/your-regular-funding$"
+				"route": "^/support/coronavirus/funding/your-regular-funding$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Funders - best practice",
 				"path": "/support/coronavirus/funding/funders-best-practice",
-				"route": "^/support/coronavirus/funding/funders-best-practice$"
+				"route": "^/support/coronavirus/funding/funders-best-practice$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "The voluntary sector & coronavirus",
@@ -1501,128 +1532,184 @@
 			{
 				"label": "Frequently asked questions",
 				"path": "/support/coronavirus/funding/faq",
-				"route": "^/support/coronavirus/funding/faq$"
+				"route": "^/support/coronavirus/funding/faq$",
+				"description": "",
+				"icon": ""
 			}]
 		},
 		{
 			"label": "Leading your organisation",
 			"path": "/support/coronavirus/leading-your-organisation",
 			"route": "^/support/coronavirus/leading-your-organisation$",
+			"description": "Leading your organisation and accessing business support",
+			"icon": "user-headset",
 			"children": [{
 				"label": "Your board",
 				"path": "/support/coronavirus/leading-your-organisation/your-board",
-				"route": "^/support/coronavirus/leading-your-organisation/your-board$"
+				"route": "^/support/coronavirus/leading-your-organisation/your-board$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Business continuity",
 				"path": "/support/coronavirus/leading-your-organisation/business-continuity",
-				"route": "^/support/coronavirus/leading-your-organisation/business-continuity$"
+				"route": "^/support/coronavirus/leading-your-organisation/business-continuity$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Finance",
 				"path": "/support/coronavirus/leading-your-organisation/finance",
-				"route": "^/support/coronavirus/leading-your-organisation/finance$"
+				"route": "^/support/coronavirus/leading-your-organisation/finance$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Cyber resilience",
 				"path": "/support/coronavirus/leading-your-organisation/cyber-resilience",
-				"route": "^/support/coronavirus/leading-your-organisation/cyber-resilience$"
+				"route": "^/support/coronavirus/leading-your-organisation/cyber-resilience$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Frequently asked questions",
 				"path": "/support/coronavirus/leading-your-organisation/faq",
-				"route": "^/support/coronavirus/leading-your-organisation/faq$"
+				"route": "^/support/coronavirus/leading-your-organisation/faq$",
+				"description": "",
+				"icon": ""
 			}]
 		},
 		{
 			"label": "Services",
 			"path": "/support/coronavirus/services",
 			"route": "^/support/coronavirus/services$",
+			"description": "Essential services and new models of digital service delivery",
+			"icon": "video",
 			"children": [{
 				"label": "Essential services",
 				"path": "/support/coronavirus/services/essential-services",
-				"route": "^/support/coronavirus/services/essential-services$"
+				"route": "^/support/coronavirus/services/essential-services$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "New service delivery models",
 				"path": "/support/coronavirus/services/new-service-delivery-models",
-				"route": "^/support/coronavirus/services/new-service-delivery-models$"
+				"route": "^/support/coronavirus/services/new-service-delivery-models$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Frequently asked questions",
 				"path": "/support/coronavirus/services/faq",
-				"route": "^/support/coronavirus/services/faq$"
+				"route": "^/support/coronavirus/services/faq$",
+				"description": "",
+				"icon": ""
 			}]
 		},
 		{
 			"label": "Volunteers",
 			"path": "/support/coronavirus/volunteers",
 			"route": "^/support/coronavirus/volunteers$",
+			"description": "How to support volunteers in line with government guidance",
+			"icon": "hand-holding-heart",
 			"children": [{
 				"label": "Information for organisations",
 				"path": "/support/coronavirus/volunteers/for-organisations",
-				"route": "^/support/coronavirus/volunteers/for-organisations$"
+				"route": "^/support/coronavirus/volunteers/for-organisations$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Information for volunteers",
 				"path": "/support/coronavirus/volunteers/for-volunteers",
-				"route": "^/support/coronavirus/volunteers/for-volunteers$"
+				"route": "^/support/coronavirus/volunteers/for-volunteers$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Frequently asked questions",
 				"path": "/support/coronavirus/volunteers/faq",
-				"route": "^/support/coronavirus/volunteers/faq$"
+				"route": "^/support/coronavirus/volunteers/faq$",
+				"description": "",
+				"icon": ""
 			}]
 		},
 		{
 			"label": "Fundraising",
 			"path": "/support/coronavirus/fundraising",
 			"route": "^/support/coronavirus/fundraising$",
+			"description": "Information for fundraisers",
+			"icon": "money-check-edit",
 			"children": [{
 				"label": "Events",
 				"path": "/support/coronavirus/fundraising/events",
-				"route": "^/support/coronavirus/fundraising/events$"
+				"route": "^/support/coronavirus/fundraising/events$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Direct marketing",
 				"path": "/support/coronavirus/fundraising/direct-marketing",
-				"route": "^/support/coronavirus/fundraising/direct-marketing$"
+				"route": "^/support/coronavirus/fundraising/direct-marketing$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Community & face to face fundraising",
 				"path": "/support/coronavirus/fundraising/community",
-				"route": "^/support/coronavirus/fundraising/community$"
+				"route": "^/support/coronavirus/fundraising/community$",
+				"description": "",
+				"icon": ""
 			}]
+		},
+		{
+			"label": "Community Assistance Directory",
+			"path": "https://coronavirus.scvo.org",
+			"description": "Find and offer help in your community",
+			"icon": "search-plus"
 		},
 		{
 			"label": "Guidance & support",
 			"path": "/support/coronavirus/guidance",
 			"route": "^/support/coronavirus/guidance$",
+			"description": "Links to official resources & information",
+			"icon": "external-link",
 			"children": [{
 				"label": "Events",
 				"path": "/support/coronavirus/guidance/events",
-				"route": "^/support/coronavirus/guidance/events$"
+				"route": "^/support/coronavirus/guidance/events$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Resources for organisations",
 				"path": "/support/coronavirus/guidance/for-organisations",
-				"route": "^/support/coronavirus/guidance/for-organisations$"
+				"route": "^/support/coronavirus/guidance/for-organisations$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Resources for individuals",
 				"path": "/support/coronavirus/guidance/for-individuals",
-				"route": "^/support/coronavirus/guidance/for-individuals$"
+				"route": "^/support/coronavirus/guidance/for-individuals$",
+				"description": "",
+				"icon": ""
 			},
 			{
 				"label": "Frequently asked questions",
 				"path": "/support/coronavirus/guidance/faq",
-				"route": "^/support/coronavirus/guidance/faq$"
+				"route": "^/support/coronavirus/guidance/faq$",
+				"description": "",
+				"icon": ""
 			}]
 		},
 		{
 			"label": "What SCVO is doing",
 			"path": "/support/coronavirus/what-scvo-is-doing",
 			"route": "^/support/coronavirus/what-scvo-is-doing$",
+			"description": "Find out more about our response to the coronavirus (COVID-19) pandemic",
+			"icon": "info-circle",
 			"children": [{
 				"label": "Bulletin",
 				"path": "/support/coronavirus/what-scvo-is-doing/bulletin",
@@ -1642,7 +1729,9 @@
 		{
 			"label": "Frequently asked questions",
 			"path": "/support/coronavirus/faq",
-			"route": "^/support/coronavirus/faq"
+			"route": "^/support/coronavirus/faq",
+			"description": "Answers to commonly asked questions across all topic areas",
+			"icon": "question-circle"
 		}]
 	}],
 	"account": [{
