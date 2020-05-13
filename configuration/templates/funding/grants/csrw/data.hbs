@@ -45,7 +45,7 @@
       "id": "GB-SC-{{recipient_charity_number}}",
       "charityNumber": "{{recipient_charity_number}}"
       {{else}}
-      "id": "SCVO-{{recipient_id}}-{{call_slug}}"{{/if ~}}{{#if recipient_overview ~}},
+      "id": "SCVO-{{recipient_id}}-{{slugify call}}"{{/if ~}}{{#if recipient_overview ~}},
       "description": {{{stringify recipient_overview}}}{{/if ~}}{{#if recipient_address_street ~}},
       "streetAddress": {{{stringify recipient_address_street}}}{{/if ~}}{{#if recipient_address_town ~}},
       "addressLocality": {{{stringify recipient_address_town}}}{{/if ~}}{{#if recipient_address_region ~}},
@@ -92,7 +92,7 @@
     }],
     {{#if call ~}}
     "grantProgramme": [{
-      "code": "scvo-csrw-{{call_slug}}",
+      "code": "scvo-csrw-{{slugify call}}",
       "title": "Carer Service Remote Working Fund - {{call}}",
       "description": "COVID19 support",
       "url": "https://scvo.scot/funding/carer-service-remote-working-fund"

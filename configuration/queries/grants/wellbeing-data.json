@@ -27,14 +27,15 @@
     "recipient_address_region",
     "recipient_address_postcode",
     "recipient_address_location_coords",
-    "recipient_url"
+    "recipient_url",
+    "funder_name"
   ],
   "query": {
     "bool": {
       "filter": [
         {
           "term": {
-            "status": "Transferred"
+            "paid_by_funder": true
           }
         }
       ],

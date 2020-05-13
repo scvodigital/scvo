@@ -45,7 +45,7 @@
       "id": "GB-SC-{{recipient_charity_number}}",
       "charityNumber": "{{recipient_charity_number}}"
       {{else}}
-      "id": "SCVO-{{recipient_id}}-{{call_slug}}"{{/if ~}}{{#if recipient_overview ~}},
+      "id": "SCVO-{{recipient_id}}-{{slugify call}}"{{/if ~}}{{#if recipient_overview ~}},
       "description": {{{stringify recipient_overview}}}{{/if ~}}{{#if recipient_address_street ~}},
       "streetAddress": {{{stringify recipient_address_street}}}{{/if ~}}{{#if recipient_address_town ~}},
       "addressLocality": {{{stringify recipient_address_town}}}{{/if ~}}{{#if recipient_address_region ~}},
@@ -92,7 +92,7 @@
     }],
     {{#if call ~}}
     "grantProgramme": [{
-      "code": "scvo-ccrf-{{call_slug}}",
+      "code": "scvo-ccrf-{{slugify call}}",
       "title": "Community Capacity & Resilience Fund - {{call}}",
       "description": "Funding to help local voluntary sector groups and organisations across Scotland tackle poverty and mitigate against UK government welfare changes.",
       "url": "https://scvo.scot/funding/community-capacity-resilience-fund"

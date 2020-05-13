@@ -8,14 +8,15 @@
     "description",
     "description_alt",
     "call",
-    "individuals_supported"
+    "individuals_supported",
+    "funder_name"
   ],
   "query": {
     "bool": {
       "filter": [
         {
           "term": {
-            "status": "Transferred"
+            "paid_by_funder": true
           }
         }
       ],

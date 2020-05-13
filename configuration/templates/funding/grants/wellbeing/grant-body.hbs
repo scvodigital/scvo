@@ -1,8 +1,8 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <div class="full scvo-grant scvo-grant-charter">
-  {{#if recipient_name ~}}
+  {{!-- {{#if recipient_name ~}}
   <h3 class="black-text">{{{recipient_name}}}</h3>
-  {{/if ~}}
+  {{/if ~}} --}}
   {{#if recipient_charity_number ~}}
   <p class="charity-info">
     Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}">{{recipient_charity_number}}</a>
@@ -25,13 +25,13 @@
     <li>
       <span class="fa-li"><span class="fal fa-money-bill"></span></span>
       {{#if amount_awarded ~}}
-      Award: &pound;{{addCommas amount_awarded}} via <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_awarded}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
       {{else}}
       {{#if amount_requested_total ~}}
-      Award: &pound;{{addCommas amount_requested_total}} via <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested_total}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
       {{else}}
       {{#if amount_requested ~}}
-      Award: &pound;{{addCommas amount_requested}} via <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
       {{/if ~}}
       {{/if ~}}
       {{/if ~}}
@@ -68,7 +68,7 @@
       <ul class="inline-list">
         {{#each individuals_supported ~}}
         <li>
-          <a href="/support/coronavirus/funding/for-organisations/wellbeing-fund/recipients/?tag={{slugify this}}" class="chip">{{this}}</a>
+          <a href="{{@root.request.url.pathname}}?tag={{slugify this}}" class="chip">{{this}}</a>
         </li>
         {{/each ~}}
       </ul>
@@ -77,44 +77,18 @@
   {{/compare ~}}
   {{/if ~}}
 
-  <h2 class="project-overview">Project plan</h2>
+  {{!-- <h2 class="project-overview">Project plan</h2> --}}
   {{#if description ~}}
-  <h3 class="project-overview">Project description</h3>
+  <h3 class="project-overview">Description</h3>
   <div class="project-overview">
     {{{markdown description}}}
   </div>
   {{else}}
   {{#if description_alt ~}}
-  <h3 class="project-overview">Project description</h3>
+  <h3 class="project-overview">Description</h3>
   <div class="project-overview">
     {{{markdown description_alt}}}
   </div>
-  {{/if ~}}
-  {{/if ~}}
-
-  {{#if milestone_1_desc ~}}
-  <h2 class="project-milestones">Project milestones</h2>
-  <h3 class="project-milestone_1">Phase 1</h3>
-  <div class="project-milestone_1">
-    {{{markdown milestone_1_desc}}}
-  </div>
-  {{#if milestone_2_desc ~}}
-  <h3 class="project-milestone_2">Phase 2</h3>
-  <div class="project-milestone_2">
-    {{{markdown milestone_2_desc}}}
-  </div>
-  {{#if milestone_3_desc ~}}
-  <h3 class="project-milestone_3">Phase 3</h3>
-  <div class="project-milestone_3">
-    {{{markdown milestone_3_desc}}}
-  </div>
-  {{#if milestone_4_desc ~}}
-  <h3 class="project-milestone_4">Phase 4</h3>
-  <div class="project-milestone_4">
-    {{{markdown milestone_4_desc}}}
-  </div>
-  {{/if ~}}
-  {{/if ~}}
   {{/if ~}}
   {{/if ~}}
 

@@ -25,11 +25,12 @@
     "milestone_2_desc",
     "milestone_3_desc",
     "milestone_4_desc",
-    "project_updates"
+    "project_updates",
+    "funder_name"
   ],
   "query": {
     "term": {
-      "Id": "{{@root.request.params.project_id}}"
+      "Id": "{{@root.request.params.grant_id}}"
     }
   }
 }

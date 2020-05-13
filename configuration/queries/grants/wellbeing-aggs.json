@@ -6,7 +6,7 @@
       "filter": [
         {
           "term": {
-            "status": "Transferred"
+            "paid_by_funder": true
           }
         }
       ]

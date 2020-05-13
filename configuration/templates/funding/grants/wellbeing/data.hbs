@@ -65,7 +65,7 @@
       "id": "GB-SC-{{recipient_charity_number}}",
       "charityNumber": "{{recipient_charity_number}}"
       {{else}}
-      "id": "SCVO-{{recipient_id}}-{{call_slug}}"{{/if ~}}{{#if recipient_overview ~}},
+      "id": "SCVO-{{recipient_id}}-{{slugify call}}"{{/if ~}}{{#if recipient_overview ~}},
       "description": {{{stringify recipient_overview}}}{{/if ~}}{{#if recipient_address_street ~}},
       "streetAddress": {{{stringify recipient_address_street}}}{{/if ~}}{{#if recipient_address_town ~}},
       "addressLocality": {{{stringify recipient_address_town}}}{{/if ~}}{{#if recipient_address_region ~}},
@@ -93,26 +93,25 @@
       {{/compare}}
       {{/if ~}}
     }],
+    {{#if funder_name ~}}
     "fundingOrganization": [{
-      "name": "Scottish Council For Voluntary Organisations",
-      "id": "GB-SC-SC003558",
-      "charityNumber": "SC003558",
-      "department": "Policy",
-      "streetAddress": "Mansfield Traquair, 15 Mansfield Place",
-      "addressLocality": "Edinburgh",
-      "addressRegion": "City of Edinburgh",
-      "postalCode": "EH3 6BB",
-      "addressCountry": "Scotland",
-      "description": "The Scottish Council for Voluntary Organisations is the membership organisation for Scotland's charities, voluntary organisations and social enterprises.",
-      "url": "http://scvo.scot",
-      "location": [{
-        "latitude": 55.959611,
-        "longitude": -3.190946
-      }]
+      {{#switch funder_name ~}}
+      {{#case "The Hunter Foundation" ~}}
+      "id": "GB-SC-SC027532",
+      {{/case ~}}
+      {{#case "Inspiring Scotland" ~}}
+      "id": "GB-SC-SC039605",
+      {{/case ~}}
+      {{#case "Corra Foundation" ~}}
+      "id": "GB-SC-SC009481",
+      {{/case ~}}
+      {{/switch ~}}
+      "name": "{{funder_name}}"
     }],
+    {{/if ~}}
     {{#if call ~}}
     "grantProgramme": [{
-      "code": "sg-wellbeing-{{call_slug}}",
+      "code": "sg-wellbeing-{{slugify call}}",
       "title": "Wellbeing Fund - {{call}}",
       "description": "The Wellbeing Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the coronavirus (COVID19) pandemic.",
       "url": "https://scvo.scot/funding/wellbeing-fund"

@@ -25,13 +25,13 @@
     <li>
       <span class="fa-li"><span class="fal fa-money-bill"></span></span>
       {{#if amount_awarded ~}}
-      Award: &pound;{{addCommas amount_awarded}} via <a href="/funding/digital-participation-charter-fund/projects?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_awarded}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
       {{else}}
       {{#if amount_requested_total ~}}
-      Award: &pound;{{addCommas amount_requested_total}} via <a href="/funding/digital-participation-charter-fund/projects?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested_total}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
       {{else}}
       {{#if amount_requested ~}}
-      Award: &pound;{{addCommas amount_requested}} via <a href="/funding/digital-participation-charter-fund/projects?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
       {{/if ~}}
       {{/if ~}}
       {{/if ~}}
@@ -68,7 +68,7 @@
       <ul class="inline-list">
         {{#each individuals_supported ~}}
         <li>
-          <a href="/funding/digital-participation-charter-fund/projects/?tag={{slugify this}}" class="chip">{{this}}</a>
+          <a href="{{@root.request.url.pathname}}?tag={{slugify this}}" class="chip">{{this}}</a>
         </li>
         {{/each ~}}
       </ul>

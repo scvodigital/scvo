@@ -1,7 +1,7 @@
 {
   "name": "grant_csrw",
   "debug": false,
-  "pattern": "/funding/carer-service-remote-working-fund/recipients/:project_id(/:junk)",
+  "pattern": "/funding/carer-service-remote-working-fund/recipients/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

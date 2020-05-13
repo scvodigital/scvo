@@ -65,7 +65,7 @@
       "id": "GB-SC-{{recipient_charity_number}}",
       "charityNumber": "{{recipient_charity_number}}"
       {{else}}
-      "id": "SCVO-{{recipient_id}}-{{call_slug}}"{{/if ~}}{{#if recipient_overview ~}},
+      "id": "SCVO-{{recipient_id}}-{{slugify call}}"{{/if ~}}{{#if recipient_overview ~}},
       "description": {{{stringify recipient_overview}}}{{/if ~}}{{#if recipient_address_street ~}},
       "streetAddress": {{{stringify recipient_address_street}}}{{/if ~}}{{#if recipient_address_town ~}},
       "addressLocality": {{{stringify recipient_address_town}}}{{/if ~}}{{#if recipient_address_region ~}},
@@ -112,7 +112,7 @@
     }],
     {{#if call ~}}
     "grantProgramme": [{
-      "code": "scvo-digital-charter-{{call_slug}}",
+      "code": "scvo-digital-charter-{{slugify call}}",
       "title": "Charter Fund - {{call}}",
       "description": "Our Digital Participation Charter Fund, supported by by the Scottish Government, the ERDF and BT, invests in community digital participation projects across Scotland. The projects that we're supporting will enable groups and organisations to digitise content, build digital networks and improve the digital skills of their members, so that they can continue to thrive in the digital world.",
       "url": "https://scvo.scot/funding/digital-participation-charter-fund"

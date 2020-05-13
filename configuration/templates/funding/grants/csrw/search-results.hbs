@@ -2,7 +2,7 @@
 
 <div class="divider"></div>
 
-<form action="/funding/carer-service-remote-working-fund/recipients" method="GET" class="search_form">
+<form action="{{@root.request.url.pathname}}" method="GET" class="search_form">
   <div class="columns">
     <div class="column col-8 col-md-12">
       <div class="input-group input-inline" style="width:100%">
@@ -36,7 +36,7 @@
       <div class="t-padding-full card card-no-padding scvo-grant scvo-grant-csrw">
         <section class="card-header">
           <h4 class="no-margin">
-            <a href="/funding/carer-service-remote-working-fund/recipients/{{Id}}/{{slugify title}}">{{{title}}}</a>
+            <a href="{{@root.request.url.pathname}}/{{Id}}/{{slugify title}}">{{{title}}}</a>
           </h4>
         </section>
         <section class="card-body">
@@ -48,10 +48,10 @@
           {{/compare ~}}
           {{/if ~}}
           {{#if description ~}}
-          {{{truncate description 180}}} <a href="/funding/carer-service-remote-working-fund/recipients/{{Id}}/{{slugify title}}">Read more</a>
+          {{{truncate description 180}}} <a href="{{@root.request.url.pathname}}/{{Id}}/{{slugify title}}">Read more</a>
           {{else}}
           {{#if description_alt ~}}
-          {{{truncate description_alt 180}}} <a href="/funding/carer-service-remote-working-fund/recipients/{{Id}}/{{slugify title}}">Read more</a>
+          {{{truncate description_alt 180}}} <a href="{{@root.request.url.pathname}}/{{Id}}/{{slugify title}}">Read more</a>
           {{/if ~}}
           {{/if ~}}
         </section>
@@ -62,7 +62,7 @@
               <span aria-hidden="true" class="far fa-calendar-alt"></span>
               <ul class="inline-list">
                 <li>
-                  <a href="/funding/carer-service-remote-working-fund/recipients?call={{slugify call}}">{{call}}</a>
+                  <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
                 </li>
               </ul>
             </div>
@@ -73,7 +73,7 @@
               <ul class="inline-list">
                 {{#each individuals_supported ~}}
                 <li>
-                  <a href="/funding/carer-service-remote-working-fund/recipients?tag={{slugify this}}" class="chip">{{this}}</a>
+                  <a href="{{@root.request.url.pathname}}?tag={{slugify this}}" class="chip">{{this}}</a>
                 </li>
                 {{/each ~}}
               </ul>
