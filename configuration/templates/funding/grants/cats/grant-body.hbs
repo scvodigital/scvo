@@ -20,13 +20,13 @@
     <li>
       <span class="fa-li"><span class="far fa-money-bill"></span></span>
       {{#if amount_awarded ~}}
-      Award: &pound;{{addCommas amount_awarded}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_awarded}} via <a href="/funding/carers-act-transformation-support-fund/projects?call={{slugify call}}">{{call}}</a>
       {{else}}
       {{#if amount_requested_total ~}}
-      Award: &pound;{{addCommas amount_requested_total}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested_total}} via <a href="/funding/carers-act-transformation-support-fund/projects?call={{slugify call}}">{{call}}</a>
       {{else}}
       {{#if amount_requested ~}}
-      Award: &pound;{{addCommas amount_requested}} via <a href="{{@root.request.url.pathname}}?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested}} via <a href="/funding/carers-act-transformation-support-fund/projects?call={{slugify call}}">{{call}}</a>
       {{/if ~}}
       {{/if ~}}
       {{/if ~}}
