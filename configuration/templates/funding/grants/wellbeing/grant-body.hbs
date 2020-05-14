@@ -60,22 +60,37 @@
     {{/if ~}}
   </ul>
 
-  {{#if individuals_supported ~}}
-  {{#compare (length individuals_supported) ">" 0 ~}}
   <div class="post-info">
+    {{#if main_issue ~}}
+    {{#compare (length main_issue) ">" 0 ~}}
     <div class="post-info-item post-info-categories">
-      <span aria-hidden="true" class="far fa-{{inflect individuals_supported 'tag' 'tags'}}"></span>
+      <span aria-hidden="true" class="far fa-{{inflect main_issue 'tag' 'tags'}}"></span>
       <ul class="inline-list">
-        {{#each individuals_supported ~}}
+        {{#each main_issue ~}}
         <li>
-          <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?tag={{slugify this}}" class="chip">{{this}}</a>
+          <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?main_issue={{slugify this}}" class="chip">{{this}}</a>
         </li>
         {{/each ~}}
       </ul>
     </div>
+    {{/compare ~}}
+    {{/if ~}}
+
+    {{#if target_group ~}}
+    {{#compare (length target_group) ">" 0 ~}}
+    <div class="post-info-item post-info-categories">
+      <span aria-hidden="true" class="far fa-{{inflect target_group 'tag' 'tags'}}"></span>
+      <ul class="inline-list">
+        {{#each target_group ~}}
+        <li>
+          <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?target_group={{slugify this}}" class="chip">{{replace this ' (please describe below)' ''}}</a>
+        </li>
+        {{/each ~}}
+      </ul>
+    </div>
+    {{/compare ~}}
+    {{/if ~}}
   </div>
-  {{/compare ~}}
-  {{/if ~}}
 
   {{!-- <h2 class="project-overview">Project plan</h2> --}}
   {{#if description ~}}

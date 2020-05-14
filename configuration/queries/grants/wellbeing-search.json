@@ -1,6 +1,6 @@
 {
   "size": 20,
-  "from": {{multiply (subtract (default request.params.query.page 1) 1) 20}},
+  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 20}},
   "_source": [
     "title",
     "Id",
@@ -9,6 +9,8 @@
     "description_alt",
     "call",
     "individuals_supported",
+    "main_issue",
+    "target_group",
     "funder_name"
   ],
   "query": {
@@ -21,25 +23,43 @@
         }
       ],
       "must": [
-        {{#ifAny request.params.query.call request.params.query.q ~}}
-        {{#if request.params.query.call ~}}
+        {{#ifAny @root.request.params.query.main_issue @root.request.params.query.target_group @root.request.params.query.call @root.request.params.query.q ~}}
+        {{#if @root.request.params.query.main_issue ~}}
         {
           "term": {
-            "call-slug": "{{request.params.query.call}}"
+            "main_issue-slugs": "{{@root.request.params.query.main_issue}}"
           }
-        }
-        {{#if request.params.query.q}},{{/if}}
+        },
         {{/if ~}}
-        {{#if request.params.query.q ~}}
+        {{#if @root.request.params.query.target_group ~}}
+        {
+          "term": {
+            "target_group-slugs": "{{@root.request.params.query.target_group}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.call ~}}
+        {
+          "term": {
+            "call-slug": "{{@root.request.params.query.call}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.q ~}}
         {
           "query_string": {
-            "query": {{{stringify (default request.params.query.q "")}}},
+            "query": {{{stringify (default @root.request.params.query.q "")}}},
             "default_field": "text_bag",
             "default_operator": "AND",
             "analyzer": "snowball"
           }
-        }
+        },
         {{/if ~}}
+        {
+          "exists": {
+            "field": "title"
+          }
+        }
         {{else}}
         {
           "match_all": {}

@@ -136,12 +136,30 @@
       "geoCodeType": "CCG"
     }],
     {{/if ~}}
-    "classifications": [{
-      "vocabulary": "Category",
-      "code": "category",
-      "title": "Coronavirus (COVID-19)",
-      "description": "Providing funding to organisations as a direct result of the coronavirus (COVID-19) pandemic."
-    }],
+    "classifications": [
+      {{#if main_issue}}{{#each main_issue}}
+      {
+        "vocabulary": "Main issue",
+        "code": "main-issue",
+        "title": "{{this}}",
+        "description": "Does your activity primarily focus on one of these themes?"
+      },
+      {{/each}}{{/if}}
+      {{#if target_group}}{{#each target_group}}
+      {
+        "vocabulary": "Target group",
+        "code": "target-group",
+        "title": "{{replace this ' (please describe below)' ''}}",
+        "description": "Is there a specific target group you are working with?"
+      },
+      {{/each}}{{/if}}
+      {
+        "vocabulary": "Category",
+        "code": "category",
+        "title": "Coronavirus (COVID-19)",
+        "description": "Providing funding to organisations as a direct result of the coronavirus (COVID-19) pandemic."
+      }
+    ],
     {{#if funder_name ~}}
     "fundingOrganization": [{
       {{#switch funder_name ~}}

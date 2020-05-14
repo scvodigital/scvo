@@ -4,7 +4,7 @@
 
 <form action="{{@root.request.url.pathname}}" method="GET" class="search_form">
   <div class="columns">
-    <div class="column col-9 col-md-12">
+    <div class="column col-6 col-lg-12">
       <div class="input-group input-inline" style="width:100%">
         <input type="text" class="form-input" name="q" id="grant-wellbeing-keywords" value="{{@root.request.params.query.q}}" placeholder="Search">
         <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" alt="Search">
@@ -12,7 +12,27 @@
         </button>
       </div>
     </div>
-    <div class="column col-3 col-lg-6 col-md-12">
+    <div class="column col-2 col-lg-4 col-md-12">
+      <div class="form-group">
+        <select class="form-select" id="grant-wellbeing-main_issue" name="main_issue" onchange="this.form.submit()">
+          <option value=""{{#if @root.request.params.query.main_issue}}{{else}} selected{{/if}}>Main issue</option>
+          {{#each @root.data.supplimentaryResponses.types.aggregations.main_issues.buckets ~}}
+          <option value="{{slugify key}}" {{#compare ../request.params.query.main_issue "===" (slugify key)}}selected{{/compare}}>{{key}} ({{doc_count}})</option>
+          {{/each ~}}
+        </select>
+      </div>
+    </div>
+    <div class="column col-2 col-lg-4 col-md-12">
+      <div class="form-group">
+        <select class="form-select" id="grant-wellbeing-target_group" name="target_group" onchange="this.form.submit()">
+          <option value=""{{#if @root.request.params.query.target_group}}{{else}} selected{{/if}}>Target group</option>
+          {{#each @root.data.supplimentaryResponses.types.aggregations.target_groups.buckets ~}}
+          <option value="{{slugify key}}" {{#compare ../request.params.query.target_group "===" (slugify key)}}selected{{/compare}}>{{replace key ' (please describe below)' ''}} ({{doc_count}})</option>
+          {{/each ~}}
+        </select>
+      </div>
+    </div>
+    <div class="column col-2 col-lg-4 col-md-12">
       <div class="form-group">
         <select class="form-select" id="grant-wellbeing-call" name="call" onchange="this.form.submit()">
           <option value=""{{#if @root.request.params.query.call}}{{else}} selected{{/if}}>Funding round</option>
@@ -66,6 +86,34 @@
                 </li>
               </ul>
             </div>
+            {{/if ~}}
+            {{#if main_issue ~}}
+            {{#compare (length main_issue) ">" 0 ~}}
+            <div class="post-info-item post-info-categories">
+              <span aria-hidden="true" class="far fa-{{inflect main_issue 'tag' 'tags'}}"></span>
+              <ul class="inline-list">
+                {{#each main_issue ~}}
+                <li>
+                  <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?main_issue={{slugify this}}" class="chip">{{this}}</a>
+                </li>
+                {{/each ~}}
+              </ul>
+            </div>
+            {{/compare ~}}
+            {{/if ~}}
+            {{#if target_group ~}}
+            {{#compare (length target_group) ">" 0 ~}}
+            <div class="post-info-item post-info-categories">
+              <span aria-hidden="true" class="far fa-{{inflect target_group 'tag' 'tags'}}"></span>
+              <ul class="inline-list">
+                {{#each target_group ~}}
+                <li>
+                  <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?target_group={{slugify (replace this ' (please describe below)' '')}}" class="chip">{{replace this ' (please describe below)' ''}}</a>
+                </li>
+                {{/each ~}}
+              </ul>
+            </div>
+            {{/compare ~}}
             {{/if ~}}
           </div>
         </section>

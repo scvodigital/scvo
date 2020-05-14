@@ -17,7 +17,25 @@
       "terms": {
         "field": "call",
         "order": {
-          "_term": "desc"
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
+    "target_groups": {
+      "terms": {
+        "field": "target_group",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
+    "main_issues": {
+      "terms": {
+        "field": "main_issue",
+        "order": {
+          "_term": "asc"
         },
         "size": 10000
       }
