@@ -17,7 +17,7 @@
     "amountAwarded": 0,
     {{/if ~}}
     {{/if ~}}
-    {{#ifAll paid_by_funder amount_awarded ~}}
+    {{#ifAll paid_by_funder (ifAny amount_requested amount_awarded) ~}}
     {{#if amount_awarded ~}}
     "amountDisbursed": {{amount_awarded}},
     {{else}}
@@ -178,12 +178,15 @@
       {{#switch funder_name ~}}
       {{#case "The Hunter Foundation" ~}}
       "id": "GB-SC-SC027532",
+      "url": "https://www.thehunterfoundation.co.uk",
       {{/case ~}}
       {{#case "Inspiring Scotland" ~}}
       "id": "GB-SC-SC039605",
+      "url": "https://www.inspiringscotland.org.uk",
       {{/case ~}}
       {{#case "Corra Foundation" ~}}
       "id": "GB-SC-SC009481",
+      "url": "https://www.corra.scot",
       {{/case ~}}
       {{/switch ~}}
       "name": "{{funder_name}}"
