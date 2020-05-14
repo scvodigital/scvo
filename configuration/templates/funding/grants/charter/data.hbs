@@ -87,8 +87,15 @@
       },
       {
         "countryCode": "GB",
-        "geoCode": "{{geo.codes.ccg}}",
+        "geoCode": "{{geo.nhs_ha}}",
         "geoCodeType": "HB",
+        "latitude": {{geo_coords.lat}},
+        "longitude": {{geo_coords.lon}}
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo.codes.ccg}}",
+        "geoCodeType": "CCG",
         "latitude": {{geo_coords.lat}},
         "longitude": {{geo_coords.lon}}
       }]
@@ -124,8 +131,15 @@
     },
     {
       "countryCode": "GB",
-      "geoCode": "{{geo.codes.ccg}}",
+      "geoCode": "{{geo.nhs_ha}}",
       "geoCodeType": "HB",
+      "latitude": {{geo_coords.lat}},
+      "longitude": {{geo_coords.lon}}
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.ccg}}",
+      "geoCodeType": "CCG",
       "latitude": {{geo_coords.lat}},
       "longitude": {{geo_coords.lon}}
     }],
