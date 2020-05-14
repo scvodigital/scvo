@@ -1,6 +1,6 @@
 {
-  "size": 20,
-  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 20}},
+  "size": 12,
+  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 12}},
   "_source": [
     "title",
     "Id",
