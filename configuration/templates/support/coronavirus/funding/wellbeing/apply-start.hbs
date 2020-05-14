@@ -1,5 +1,5 @@
 <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
-  {{#unless (ifAny @root.request.params.charity_number (ifAll @root.request.body.condition_1 @root.request.body.condition_2 @root.request.body.condition_3 @root.request.body.funder)) ~}}
+  {{#unless (ifAny @root.request.params.charity_number (ifAll @root.request.body.condition_1 @root.request.body.condition_3 @root.request.body.funder)) ~}}
   <form action="{{@root.request.url.pathname}}" method="post" id="eligibility-checker">
     <p>
       The Wellbeing Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the pandemic. It can fund both immediate and emerging forms of support, from now up to the end of July, reflecting that the context for people and communities may change over that time.
@@ -20,7 +20,7 @@
       <div class="form-group" id="condition_2-D" role="group" aria-labelledby="condition_2-L" data-tfa-labelledby="-L condition_2-L">
         <div class="col-9 col-xl-12">
           <label class="form-checkbox" id="condition_2-L" for="condition_2">
-            <input type="checkbox" value="true" id="condition_2" name="condition_2" aria-labelledby="condition_2-L" data-tfa-labelledby="condition_2-L" required>
+            <input type="checkbox" value="true" id="condition_2" name="condition_2" aria-labelledby="condition_2-L" data-tfa-labelledby="condition_2-L">
             <i class="form-icon"></i>
             My application is for less than 20% of last year’s annual income
           </label>
@@ -57,8 +57,9 @@
     </div>
   </form>
   {{else}}
-  {{#ifAny @root.request.params.charity_number (ifAll @root.request.body.condition_1 @root.request.body.condition_2 @root.request.body.condition_3 @root.request.body.funder) ~}}
+  {{#ifAny @root.request.params.charity_number (ifAll @root.request.body.condition_1 @root.request.body.condition_3 @root.request.body.funder) ~}}
   {{#ifAny @root.request.params.charity_number (compare @root.request.body.funder "wellbeing") ~}}
+  {{#if @root.request.body.condition_2 ~}}
 
   <p>
     The Wellbeing Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the pandemic. It can fund both immediate and emerging forms of support, from now up to the end of July, reflecting that the context for people and communities may change over that time.
@@ -106,6 +107,17 @@
       <a href="{{@root.request.url.pathname}}" class="no-underline"><span class="far fa-chevron-circle-left r-margin" aria-hidden="true"></span> Back to eligibility checker</a>
     </p>
   </div>
+  {{else}}
+  <div class="b-padding-full b-margin-full">
+    <h2>Not eligible</h2>
+    <p>
+      Your application must be for less than 20% of your last year's turnover to meet the fund criteria.<br /><a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants">Read the guidance for applicants</a>
+    </p>
+    <p class="t-margin-full">
+      <a href="{{@root.request.url.pathname}}" class="no-underline"><span class="far fa-chevron-circle-left r-margin" aria-hidden="true"></span> Back to eligibility checker</a>
+    </p>
+  </div>
+  {{/if ~}}
   {{else}}
   {{#compare @root.request.body.funder "rrr" ~}}
   <p>
