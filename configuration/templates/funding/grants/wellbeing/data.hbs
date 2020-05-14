@@ -11,12 +11,25 @@
     {{#if amount_awarded ~}}
     "amountAwarded": {{amount_awarded}},
     {{else}}
-    {{#if amount_requested_total ~}}
-    "amountAwarded": {{amount_requested_total}},
-    {{else}}
+    {{#if amount_requested ~}}
     "amountAwarded": {{amount_requested}},
+    {{else}}
+    "amountAwarded": 0,
     {{/if ~}}
     {{/if ~}}
+    {{#ifAll paid_by_funder amount_awarded ~}}
+    {{#if amount_awarded ~}}
+    "amountDisbursed": {{amount_awarded}},
+    {{else}}
+    {{#if amount_requested ~}}
+    "amountDisbursed": {{amount_requested}},
+    {{else}}
+    "amountDisbursed": 0,
+    {{/if ~}}
+    {{/if ~}}
+    {{else}}
+    "amountDisbursed": 0,
+    {{/ifAll ~}}
     {{#if date_awarded ~}}
     "awardDate": "{{momentFormat (moment date_awarded 'x') "YYYY-MM-DD"}}",
     {{else}}

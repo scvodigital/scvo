@@ -32,23 +32,12 @@
     "geo_coords",
     "geo",
     "recipient_url",
-    "funder_name"
+    "funder_name",
+    "paid_by_funder"
   ],
   "query": {
     "bool": {
-      "filter": [
-        {
-          "term": {
-            "paid_by_funder": true
-          }
-        }
-      ],
       "should": [
-        {
-          "exists": {
-            "field": "amount_requested_total"
-          }
-        },
         {
           "exists": {
             "field": "amount_requested"
