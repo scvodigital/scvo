@@ -10,6 +10,7 @@
     "call",
     "individuals_supported",
     "main_issue",
+    "area",
     "target_group",
     "funder_name"
   ],
@@ -23,7 +24,14 @@
         }
       ],
       "must": [
-        {{#ifAny @root.request.params.query.main_issue @root.request.params.query.target_group @root.request.params.query.call @root.request.params.query.q ~}}
+        {{#ifAny @root.request.params.query.area @root.request.params.query.main_issue @root.request.params.query.target_group @root.request.params.query.call @root.request.params.query.q ~}}
+        {{#if @root.request.params.query.area ~}}
+        {
+          "term": {
+            "area-slug": "{{@root.request.params.query.area}}"
+          }
+        },
+        {{/if ~}}
         {{#if @root.request.params.query.main_issue ~}}
         {
           "term": {

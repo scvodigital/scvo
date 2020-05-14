@@ -22,6 +22,15 @@
         "size": 10000
       }
     },
+    "areas": {
+      "terms": {
+        "field": "area",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
     "target_groups": {
       "terms": {
         "field": "target_group",
