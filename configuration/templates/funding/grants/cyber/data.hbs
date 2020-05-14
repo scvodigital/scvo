@@ -112,8 +112,22 @@
     {{#if geo_coords ~}},
     "beneficiaryLocation": [{
       "countryCode": "GB",
-      "geoCode": "{{geo.admin_ward}}",
+      "geoCode": "{{geo.codes.admin_ward}}",
       "geoCodeType": "WD",
+      "latitude": {{geo_coords.lat}},
+      "longitude": {{geo_coords.lon}}
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.parliamentary_constituency}}",
+      "geoCodeType": "WPC",
+      "latitude": {{geo_coords.lat}},
+      "longitude": {{geo_coords.lon}}
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.ccg}}",
+      "geoCodeType": "HB",
       "latitude": {{geo_coords.lat}},
       "longitude": {{geo_coords.lon}}
     }]
