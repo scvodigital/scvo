@@ -72,32 +72,28 @@
       "addressRegion": {{{stringify recipient_address_region}}}{{/if ~}}{{#if recipient_address_postcode ~}},
       "postalCode": "{{recipient_address_postcode}}"{{/if ~}}{{#if geo_coords ~}},
       "location": [{
-        "countryCode": "GB",
-        "geoCode": "{{geo.codes.admin_ward}}",
-        "geoCodeType": "WD",
         "latitude": {{geo_coords.lat}},
         "longitude": {{geo_coords.lon}}
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo.codes.admin_ward}}",
+        "geoCodeType": "WD"
       },
       {
         "countryCode": "GB",
         "geoCode": "{{geo.codes.parliamentary_constituency}}",
-        "geoCodeType": "WPC",
-        "latitude": {{geo_coords.lat}},
-        "longitude": {{geo_coords.lon}}
+        "geoCodeType": "WPC"
       },
       {
         "countryCode": "GB",
         "geoCode": "{{geo.nhs_ha}}",
-        "geoCodeType": "HB",
-        "latitude": {{geo_coords.lat}},
-        "longitude": {{geo_coords.lon}}
+        "geoCodeType": "HB"
       },
       {
         "countryCode": "GB",
         "geoCode": "{{geo.codes.ccg}}",
-        "geoCodeType": "CCG",
-        "latitude": {{geo_coords.lat}},
-        "longitude": {{geo_coords.lon}}
+        "geoCodeType": "CCG"
       }]
       {{/if ~}}
       {{#if recipient_address_postcode ~}},
@@ -116,32 +112,28 @@
     }],
     {{#if geo_coords ~}}
     "beneficiaryLocation": [{
-      "countryCode": "GB",
-      "geoCode": "{{geo.codes.admin_ward}}",
-      "geoCodeType": "WD",
       "latitude": {{geo_coords.lat}},
       "longitude": {{geo_coords.lon}}
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.admin_ward}}",
+      "geoCodeType": "WD"
     },
     {
       "countryCode": "GB",
       "geoCode": "{{geo.codes.parliamentary_constituency}}",
-      "geoCodeType": "WPC",
-      "latitude": {{geo_coords.lat}},
-      "longitude": {{geo_coords.lon}}
+      "geoCodeType": "WPC"
     },
     {
       "countryCode": "GB",
       "geoCode": "{{geo.nhs_ha}}",
-      "geoCodeType": "HB",
-      "latitude": {{geo_coords.lat}},
-      "longitude": {{geo_coords.lon}}
+      "geoCodeType": "HB"
     },
     {
       "countryCode": "GB",
       "geoCode": "{{geo.codes.ccg}}",
-      "geoCodeType": "CCG",
-      "latitude": {{geo_coords.lat}},
-      "longitude": {{geo_coords.lon}}
+      "geoCodeType": "CCG"
     }],
     {{/if ~}}
     "fundingOrganization": [{
