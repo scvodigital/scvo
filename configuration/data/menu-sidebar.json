@@ -354,6 +354,13 @@
 					"route": "^/policy/campaigns/never-more-needed$",
 					"description": "",
 					"icon": "",
+					"children": [{
+						"label": "Resources",
+						"path": "/policy/campaigns/never-more-needed/resources",
+						"route": "^/policy/campaigns/never-more-needed/resources$",
+						"description": "",
+						"icon": ""
+					}],
 					"_new_children": [{
 						"label": "What SCVO is doing",
 						"path": "/policy/campaigns/never-more-needed/what-scvo-is-doing",
