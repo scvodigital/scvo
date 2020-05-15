@@ -59,7 +59,7 @@
   {{else}}
   {{#ifAny @root.request.params.charity_number (ifAll @root.request.body.condition_1 @root.request.body.condition_3 @root.request.body.funder) ~}}
   {{#ifAny @root.request.params.charity_number (compare @root.request.body.funder "wellbeing") ~}}
-  {{#if @root.request.body.condition_2 ~}}
+  {{#ifAny @root.request.params.charity_number @root.request.body.condition_2 ~}}
 
   <p>
     The Wellbeing Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the pandemic. It can fund both immediate and emerging forms of support, from now up to the end of July, reflecting that the context for people and communities may change over that time.
@@ -117,7 +117,7 @@
       <a href="{{@root.request.url.pathname}}" class="no-underline"><span class="far fa-chevron-circle-left r-margin" aria-hidden="true"></span> Back to eligibility checker</a>
     </p>
   </div>
-  {{/if ~}}
+  {{/ifAny ~}}
   {{else}}
   {{#compare @root.request.body.funder "rrr" ~}}
   <p>
