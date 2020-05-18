@@ -1,7 +1,11 @@
 {
-  "name": "page_digital",
+  "name": "digital_menu_page",
   "debug": true,
-  "pattern": "/support/digital",
+  "pattern": {
+    "participation": "/support/digital/participation",
+    "evolution": "/support/digital/evolution",
+    "evolution-digishift": "/support/digital/evolution/digishift"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -68,8 +72,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.support_digital_landing-header",
-              "body": ">context.metaData.handlebars.templates.page-menu",
+              "header": ">context.metaData.handlebars.templates.page-header",
+              "body": ">context.metaData.handlebars.templates.support_digital_page-menu",
               "rightSidebar": ">context.metaData.handlebars.templates.support_digital_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.support_digital_footer"
             },

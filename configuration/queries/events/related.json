@@ -22,18 +22,13 @@
           "match": {
             "Id": "{{@root.data.primaryResponse.hits.hits.[0]._source.Id}}"
           }
-        },
-        {
-          "match": {
-            "title": "{{@root.data.primaryResponse.hits.hits.[0]._source.title}}"
-          }
         }
       ],
       "must": [
         {
           "simple_query_string": {
-            "query": "{{@root.data.primaryResponse.hits.hits.[0]._source.title}} {{@root.data.primaryResponse.hits.hits.[0]._source.type}} {{@root.data.primaryResponse.hits.hits.[0]._source.trainer}}",
-            "default_operator": "or",
+            "query": "{{@root.data.primaryResponse.hits.hits.[0]._source.title}} {{@root.data.primaryResponse.hits.hits.[0]._source.type}} {{@root.data.primaryResponse.hits.hits.[0]._source.team}} {{@root.data.primaryResponse.hits.hits.[0]._source.trainer}}",
+            "default_operator": "OR",
             "fields": ["text_bag"],
             "analyzer": "snowball"
           }
@@ -44,19 +39,14 @@
               "gte" : "now/d"
             }
           }
-        },
-        {
-          "term": {
-            "team": "events"
-          }
-        },
+        }{{!--,
         {
           "range" : {
             "places_available" : {
               "gte" : "1"
             }
           }
-        }
+        } --}}
       ]
     }
   }

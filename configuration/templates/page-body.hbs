@@ -1,3 +1,5 @@
 {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
 {{> content_page_full @root.data.primaryResponse.hits.hits.[0]._source}}
 {{/if ~}}
+
+<script src="{{~>asset_url url='js/accordion.js'~}}"></script>

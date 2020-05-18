@@ -6,6 +6,7 @@
     "Id",
     "title",
     "course_type",
+    "team",
     "date_start",
     "path",
     "course_overview_short",
@@ -31,10 +32,17 @@
         }
       ],
       "filter": [
-        {{#if @root.request.params.query.course_type ~}}
+        {{#if @root.request.params.query.team ~}}
         {
           "term": {
-            "course_type": "{{request.params.query.course_type}}"
+            "team": "{{@root.request.params.query.team}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.type ~}}
+        {
+          "term": {
+            "course_type": "{{request.params.query.type}}"
           }
         },
         {{/if ~}}

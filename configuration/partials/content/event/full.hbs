@@ -1,4 +1,4 @@
-<div class="full scvo-event scvo-event-{{Id}}{{#if (contains other_information 'brand-')}} scvo-event-{{other_information}}{{/if}}">
+<div class="full t-margin-full scvo-event scvo-event-{{Id}}{{#if (contains other_information 'brand-')}} scvo-event-{{other_information}}{{/if}}">
   <div class="columns">
     <div class="column col-8 col-md-12 content event-content">
       <dl class="inline-dl">
@@ -243,30 +243,31 @@
 </div>
 
 {{#if speakers ~}}
-<h2>{{inflect (arrayify speakers) "Speaker" "Speakers"}}</h2>
-{{#each (arrayify speakers) ~}}
-<div class="columns">
-  <div class="column col-2 col-md-3">
-    {{#compare Contact__r.Organisation__c "Scottish Council for Voluntary Organisations" ~}}
-    <img src="https://avatars.io/twitter/{{replace Contact__r.Contact_Twitter_Handle__c "@" ""}}/medium" alt="{{Contact__r.Name}}" class="photo-wee staff" />
-    {{else}}
-    <img src="https://avatars.io/twitter/{{replace Contact__r.Contact_Twitter_Handle__c "@" ""}}/medium" alt="{{Contact__r.Name}}" class="photo-wee" />
-    {{/compare ~}}
-  </div>
-  <div class="column col-10 col-md-9">
-    <p>
-      <strong>{{Contact__r.Name}}</strong>{{#if Contact__r.Organisation__c ~}}, {{Contact__r.Organisation__c}}{{/if}}
-    </p>
-    <p>
-      {{Speaker_Biography__c}}
-    </p>
-    <p>
-      {{#if Contact__r.Contact_Twitter_Handle__c ~}}Twitter: <a href="https://twitter.com/{{replace Contact__r.Contact_Twitter_Handle__c '@' ''}}">{{Contact__r.Contact_Twitter_Handle__c}}</a>{{/if ~}}
-      {{#if Contact__r.LinkedIn_URL__c ~}}
-      {{#if Contact__r.Contact_Twitter_Handle__c ~}}<br />{{/if ~}}
-      LinkedIn: <a href="{{Contact__r.LinkedIn_URL__c}}">{{Contact__r.LinkedIn_URL__c}}</a>{{/if ~}}
-    </p>
-  </div>
+<div class="b-margin-full">
+  <h2>{{inflect (length (arrayify speakers)) "Speaker" "Speakers"}}</h2>
+  {{#each (arrayify speakers) ~}}
+  {{!-- <div class="columns">
+    <div class="column {{#if Contact__r.Contact_Twitter_Handle__c ~}}col-10 col-md-9{{else}}col-12{{/if}}"> --}}
+      <p>
+        <strong>{{Contact__r.Name}}</strong>{{#if Contact__r.Organisation__c ~}}, {{Contact__r.Organisation__c}}{{/if}}
+        {{#if Speaker_Biography__c ~}}<br />
+        {{Speaker_Biography__c}}
+        {{/if ~}}
+        {{#if Contact__r.Contact_Twitter_Handle__c ~}}<br />
+        Twitter: <a href="https://twitter.com/{{replace Contact__r.Contact_Twitter_Handle__c '@' ''}}">{{Contact__r.Contact_Twitter_Handle__c}}</a>
+        {{/if ~}}
+        {{#if Contact__r.LinkedIn_URL__c ~}}
+        <br />
+        LinkedIn: <a href="{{Contact__r.LinkedIn_URL__c}}">{{Contact__r.LinkedIn_URL__c}}</a>
+        {{/if ~}}
+      </p>
+    {{!-- </div> --}}
+    {{!-- {{#if Contact__r.Contact_Twitter_Handle__c ~}}
+    <div class="column col-2 col-md-3">
+      <img src="https://twitter.com/{{replace Contact__r.Contact_Twitter_Handle__c "@" ""}}/profile_image?size=original " alt="{{Contact__r.Name}}" class="photo-wee{{#compare Contact__r.Organisation__c 'Scottish Council for Voluntary Organisations'}}staff{{/compare}}" />
+    </div>
+    {{/if ~}} --}}
+  {{!-- </div> --}}
+  {{/each ~}}
 </div>
-{{/each ~}}
 {{/if ~}}

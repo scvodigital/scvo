@@ -54,6 +54,15 @@
         "size": 10000
       }
     },
+    "teams": {
+      "terms": {
+        "field": "team",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 10000
+      }
+    },
     "months": {
       "terms": {
         "field": "month",
