@@ -1,0 +1,30 @@
+<form action="/policy/coronavirus" method="GET" autocomplete="off">
+  <div class="form-group has-icon-left">
+    <span class="far fa-search form-icon" tabindex="0"></span>
+    <input type="text" id="evidence-library-keywords" name="q" class="form-input" value="{{@root.request.params.query.q}}" placeholder="Keywords">
+  </div>
+  {{!-- <div class="form-group">
+    <select class="form-select" id="evidence-library-classification" name="classification">
+      <option value="" {{#if @root.request.params.query.classification}}{{else}}selected{{/if}}>Category</option>
+      {{#each @root.data.supplimentaryResponses.types.aggregations.types.buckets ~}}
+      <option value="{{slugify key}}" {{#compare @root.request.params.query.classification "===" (slugify key)}}selected{{/compare}}>{{key}} ({{doc_count}})</option>
+      {{/each ~}}
+    </select>
+  </div> --}}
+  <button class="btn btn-primary btn-block" type="submit">
+    <span class="far fa-search float-left pt-1"></span>
+    Search
+  </button>
+</form>
+
+{{!-- <div class="divider v-margin-full"></div>
+
+<h4>About</h4>
+<p class="b-margin-full">
+  The Evidence Library is a resource for anyone interested in the voluntary sector in Scotland.  Managed by SCVO, the library signposts to research and evidence produced by, or on, the voluntary sector. For further information email: <a href="mailto:research@scvo.org.uk">research@scvo.org.uk</a>
+</p>
+
+<h4>Submit your own research</h4>
+<p class="b-padding-full">
+  Use the <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=-ZSUwso6cUqV4siAxaXo-Zv5X-otFddAmqH7h_mpNVVUNkhZOFhWVFpGR0JWWlYwSjRMR1BBS0o0QyQlQCN0PWcu">Voluntary Sector Intelligence Form</a> to submit your own research.
+</p> --}}

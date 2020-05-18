@@ -1,37 +1,39 @@
-{{> search_info paging=@root.data.primaryResponse.pagination}}
+<div class="b-margin-full b-padding-full">
+  {{> search_info paging=@root.data.primaryResponse.pagination}}
 
-{{#each @root.data.primaryResponse.hits.hits ~}}
-{{#with _source ~}}
-<div class="list scvo-document scvo-document-evidence scvo-document-evidence-{{Id}} mdc-card">
-  <section class="mdc-card__primary">
-    <h3 class="mdc-card__title mdc-card__title--large">
-      <a href="/policy/evidence-library/{{slug}}">{{{trim title}}}</a>
-    </h3>
-    <div class="post-info">
-      {{#if author_name ~}}
-      <div class="post-info-item post-info-author">
-        <span class="far fa-user-edit" aria-hidden="true"></span>
-        {{author_name}}
+  {{#each @root.data.primaryResponse.hits.hits ~}}
+  {{#with _source ~}}
+  <div class="list scvo-document scvo-document-evidence scvo-document-evidence-{{Id}} mdc-card">
+    <section class="mdc-card__primary">
+      <h3 class="mdc-card__title mdc-card__title--large">
+        <a href="/policy/evidence-library/{{slug}}">{{{trim title}}}</a>
+      </h3>
+      <div class="post-info">
+        {{#if author_name ~}}
+        <div class="post-info-item post-info-author">
+          <span class="far fa-user-edit" aria-hidden="true"></span>
+          {{author_name}}
+        </div>
+        {{/if ~}}
+        {{#if when_posted ~}}
+        <div class="post-info-item post-info-published">
+          <span class="far fa-calendar-alt" aria-hidden="true"></span>
+          {{when_posted}}
+        </div>
+        {{/if ~}}
       </div>
-      {{/if ~}}
-      {{#if when_posted ~}}
-      <div class="post-info-item post-info-published">
-        <span class="far fa-calendar-alt" aria-hidden="true"></span>
-        {{when_posted}}
-      </div>
-      {{/if ~}}
-    </div>
-  </section>
-  <section class="mdc-card__supporting-text">
-    <p>
-      {{#if description}}
-      {{{truncate description 280}}}
-      {{/if}}
-      <a href="/policy/evidence-library/{{slug}}">Read more</a>
-    </p>
-  </section>
+    </section>
+    <section class="mdc-card__supporting-text">
+      <p>
+        {{#if description}}
+        {{{truncate description 280}}}
+        {{/if}}
+        <a href="/policy/evidence-library/{{slug}}">Read more</a>
+      </p>
+    </section>
+  </div>
+  {{/with ~}}
+  {{/each ~}}
+
+  {{> pagination paging=@root.data.primaryResponse.pagination}}
 </div>
-{{/with ~}}
-{{/each ~}}
-
-{{> pagination paging=@root.data.primaryResponse.pagination}}

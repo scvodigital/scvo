@@ -1,0 +1,83 @@
+{{#compare @root.data.supplimentaryResponses.latest_posts.hits.total ">" 0 ~}}
+<div class="b-padding-full">
+  <div class="bg-gray v-padding-full b-margin-full">
+    <div class="container v-padding">
+      <h2 class="b-margin-full">Latest intelligence briefings &amp; blogs</h2>
+      <div class="columns">
+        {{#each (split "0,1,2,3" ",") ~}}
+        {{#with (getProperty @root.data.supplimentaryResponses.latest_posts.hits.hits (concat this '._source')) ~}}
+        <div class="column col-3 col-lg-6 col-sm-12">
+          <div class="columns b-margin">
+            <div class="column col-3 col-md-4">
+              <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
+            </div>
+            <div class="column col-9 col-md-8">
+              <a href="{{path}}">{{{trim title}}}</a>
+              <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
+            </div>
+          </div>
+        </div>
+        {{/with ~}}
+        {{/each ~}}
+      </div>
+    </div>
+  </div>
+</div>
+{{/compare ~}}
+
+<div class="container b-margin-full b-padding-full">
+  <h2>Coronavirus evidence library</h2>
+  <div class="columns">
+    <div class="column col-3 col-lg-4 col-md-12">
+      <form action="/policy/coronavirus" method="GET" autocomplete="off" class="t-margin-full">
+        <div class="form-group has-icon-left">
+          <span class="far fa-search form-icon" tabindex="0"></span>
+          <input type="text" id="evidence-library-keywords" name="q" class="form-input" value="{{@root.request.params.query.q}}" placeholder="Keywords">
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">
+          <span class="far fa-search float-left pt-1"></span>
+          Search
+        </button>
+      </form>
+    </div>
+    <div class="column col-9 col-lg-8 col-md-12">
+      {{> search_info paging=@root.data.supplimentaryResponses.evidence_library.pagination}}
+
+      {{#each @root.data.supplimentaryResponses.evidence_library.hits.hits ~}}
+      {{#with _source ~}}
+      <div class="list scvo-document scvo-document-evidence scvo-document-evidence-{{Id}} mdc-card">
+        <section class="mdc-card__primary">
+          <h3 class="mdc-card__title mdc-card__title--large">
+            <a href="/policy/coronavirus/{{slug}}">{{{trim title}}}</a>
+          </h3>
+          <div class="post-info">
+            {{#if author_name ~}}
+            <div class="post-info-item post-info-author">
+              <span class="far fa-user-edit" aria-hidden="true"></span>
+              {{author_name}}
+            </div>
+            {{/if ~}}
+            {{#if when_posted ~}}
+            <div class="post-info-item post-info-published">
+              <span class="far fa-calendar-alt" aria-hidden="true"></span>
+              {{when_posted}}
+            </div>
+            {{/if ~}}
+          </div>
+        </section>
+        <section class="mdc-card__supporting-text">
+          <p>
+            {{#if description}}
+            {{{truncate description 280}}}
+            {{/if}}hits
+            <a href="/policy/coronavirus/{{slug}}">Read more</a>
+          </p>
+        </section>
+      </div>
+      {{/with ~}}
+      {{/each ~}}
+
+      {{> pagination paging=@root.data.supplimentaryResponses.evidence_library.pagination}}
+    </div>
+  </div>
+</div>

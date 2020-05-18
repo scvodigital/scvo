@@ -1,92 +1,95 @@
-{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-<div class="full scvo-document scvo-document-evidence scvo-document-evidence-{{Id}}">
-  <div class="post-info">
-    {{#if when_posted ~}}
-    <div class="post-info-item post-info-published">
-      <span class="far fa-calendar-alt" aria-hidden="true"></span>
-      {{when_posted}}
-    </div>
-    {{/if ~}}
-    {{#if library_classification ~}}
-    {{#compare library_classification.[0] '!==' 'Uncategorised' ~}}
-    <div class="post-info-item post-info-tags">
-      <span class="far fa-{{inflect library_classification 'tag' 'tags'}}" aria-hidden="true"></span>
-      <ul class="inline-list">
-        {{#each library_classification ~}}
-        <li>
-          <a href="/policy/evidence-library?classification={{itemAt ../library_classification_slug @index}}" class="chip">{{{itemAt (split this "-") (subtract (length (split this "-")) 1)}}}</a>
-        </li>
-        {{/each ~}}
-      </ul>
-    </div>
-    {{/compare ~}}
-    {{/if ~}}
-  </div>
-  <dl class="inline-dl">
-    {{#if year_published ~}}
-    <dt>Year of publication</dt>
-    <dd>
-      {{year_published}}
-    </dd>
-    {{/if ~}}
-    {{#if author_name ~}}
-    <dt>Author</dt>
-    <dd>
-      {{author_name}}
-    </dd>
-    {{else}}
-    {{#if comm_org ~}}
-    {{#compare comm_org '!=='author_name ~}}
-    <dt>Commissioning organisation</dt>
-    <dd>
-      {{comm_org}}
-    </dd>
-    {{/compare ~}}
-    {{/if ~}}
-    {{/if ~}}
-    {{#if description ~}}
-    <dt>Abstract</dt>
-    <dd>
-      {{{markdown description}}}
-    </dd>
-    {{/if ~}}
-    {{#if files ~}}
-    <dt>Downloads</dt>
-    <dd>
-      <ul class="fa-ul">
-        {{#each files ~}}
-        <li class="mime-{{this.contentType}}">
-          <span class="fa-li far fa-file-{{#compare this.extension "===" "pdf"}}pdf{{else}}alt{{/compare}}"></span>
-          <a href="{{this.uploadUrl}}">{{this.title}}</a>
-          <span class="size hidden">({{this.fileSize}}Kb)</span>
-        </li>
-        {{/each ~}}
-      </ul>
-    </dd>
-    {{/if ~}}
-    {{#if weblink_url ~}}
-    <dt>&nbsp;</dt>
-    <dd>
-      {{#if weblink_title ~}}
-      {{#compare weblink_title 'NULL' ~}}
-      <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
-        Read online
-      </a>
-      {{else}}
-      {{#compare weblink_url 'NULL' ~}}
-      {{else}}
-      <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
-        {{weblink_title}}
-      </a>
-      {{/compare ~}}
-      {{/compare ~}}
-      {{else}}
-      <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
-        Read online
-      </a>
+<div class="b-margin-full b-padding-full">
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <div class="full scvo-document scvo-document-evidence scvo-document-evidence-{{Id}}">
+    <div class="post-info">
+      {{#if when_posted ~}}
+      <div class="post-info-item post-info-published">
+        <span class="far fa-calendar-alt" aria-hidden="true"></span>
+        {{when_posted}}
+      </div>
       {{/if ~}}
-    </dd>
-    {{/if ~}}
-  </dl>
+      {{#if library_classification ~}}
+      {{#compare library_classification.[0] '!==' 'Uncategorised' ~}}
+      <div class="post-info-item post-info-tags">
+        <span class="far fa-{{inflect library_classification 'tag' 'tags'}}" aria-hidden="true"></span>
+        <ul class="inline-list">
+          {{#each library_classification ~}}
+          <li>
+            <a href="/policy/evidence-library?classification={{itemAt ../library_classification_slug @index}}" class="chip">{{{itemAt (split this "-") (subtract (length (split this "-")) 1)}}}</a>
+          </li>
+          {{/each ~}}
+        </ul>
+      </div>
+      {{/compare ~}}
+      {{/if ~}}
+    </div>
+    <dl class="inline-dl">
+      {{#if year_published ~}}
+      <dt>Year of publication</dt>
+      <dd>
+        {{year_published}}
+      </dd>
+      {{/if ~}}
+      {{#if author_name ~}}
+      <dt>Author</dt>
+      <dd>
+        {{author_name}}
+      </dd>
+      {{else}}
+      {{#if comm_org ~}}
+      {{#compare comm_org '!=='author_name ~}}
+      <dt>Commissioning organisation</dt>
+      <dd>
+        {{comm_org}}
+      </dd>
+      {{/compare ~}}
+      {{/if ~}}
+      {{/if ~}}
+      {{#if description ~}}
+      <dt>Abstract</dt>
+      <dd>
+        {{{markdown description}}}
+      </dd>
+      {{/if ~}}
+      {{#if files ~}}
+      <dt>Downloads</dt>
+      <dd>
+        <ul class="fa-ul">
+          {{#each files ~}}
+          <li class="mime-{{this.contentType}}">
+            <span class="fa-li far fa-file-{{#compare this.extension "===" "pdf"}}pdf{{else}}alt{{/compare}}"></span>
+            <a href="{{this.uploadUrl}}">{{this.title}}</a>
+            <span class="size hidden">({{this.fileSize}}Kb)</span>
+          </li>
+          {{/each ~}}
+        </ul>
+      </dd>
+      {{/if ~}}
+      {{#if weblink_url ~}}
+      <dt>&nbsp;</dt>
+      <dd>
+        {{#if weblink_title ~}}
+        {{#compare weblink_title 'NULL' ~}}
+        <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
+          Read online
+        </a>
+        {{else}}
+        {{#compare weblink_url 'NULL' ~}}
+        {{else}}
+        <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
+          {{weblink_title}}
+        </a>
+        {{/compare ~}}
+        {{/compare ~}}
+        {{else}}
+        <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
+          Read online
+        </a>
+        {{/if ~}}
+      </dd>
+      {{/if ~}}
+    </dl>
+  </div>
+  <div class="clearfix"></div>
+  {{/with ~}}
 </div>
-{{/with ~}}

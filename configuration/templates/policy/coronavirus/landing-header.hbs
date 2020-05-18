@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="hero">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column col-7 col-lg-6 col-md-12 hero-text">
+          <h1 class="text-secondary smaller">Coronavirus Third Sector Intelligence Hub</h1>
+        </div>
+        <div class="column col-5 col-lg-6 col-md-12 hero-illustration">
+          <img src="{{~>asset_url url='images/headers/montage_socialdistance.png'~}}" alt="Illustration of a group of people social distancing" class="img-responsive" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="v-margin-full v-padding-full">
+    <div class="columns">
+      <div class="column col-8 col-lg-6 col-md-12">
+        {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+        {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+        {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+        {{/with ~}}
+        {{/if ~}}
+      </div>
+      <div class="column col-4 col-lg-6 col-md-12">
+        <div class="columns">
+          <div class="column col-5 col-lg-12">
+            <a href="/policy/campaigns/never-more-needed"><img src="{{~>asset_url url='images/nmn/NMN_Scotland_logomark_NMN_logo_stacked_full_colour.png'~}}" alt="#NeverMoreNeeded" class="img-responsive" /></a>
+          </div>
+          <div class="column col-7 col-lg-12">
+            <p>
+              The #NeverMoreNeeded campaign is sharing stories of how individuals and organisations are responding.
+            </p>
+            <p>
+              <a href="/policy/campaigns/never-more-needed">Find out more</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

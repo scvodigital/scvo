@@ -17,13 +17,6 @@
       "query": {
         "bool": {
           "must": [
-            {{#if @root.request.params.query.classification}}
-            {
-              "term": {
-                "library_classification_slug": "{{@root.request.params.query.classification}}"
-              }
-            },
-            {{/if}}
             {{#if @root.request.params.query.q}}
             {
               "query_string": {
@@ -38,7 +31,23 @@
               "match_all": {}
             }
             {{/if}}
-          ]
+          ],
+          "should": [
+            {
+              "term": {
+                "library_classification_slug": "coronavirus"
+              }
+            },
+            {
+              "query_string": {
+                "query": "coronavirus covid-19",
+                "default_field": "text_bag",
+                "default_operator": "OR",
+                "analyzer": "snowball"
+              }
+            }
+          ],
+          "minimum_should_match": 1
         }
       },
       "boost_mode": "multiply",
