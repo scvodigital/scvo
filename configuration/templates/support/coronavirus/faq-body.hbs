@@ -25,10 +25,12 @@
   {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
+  {{#ifAll title content ~}}
   <h4 class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion{{/compare}}" aria-expanded="false">{{{title}}}</h4>
   <div class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion-content hidden{{/compare}}">
     {{{content}}}
   </div>
+  {{/ifAll ~}}
   {{/with ~}}
   {{/each ~}}
   {{/compare ~}}
@@ -38,10 +40,12 @@
   <h2>{{{key}}}</h2>
   {{#each faqs.hits.hits ~}}
   {{#with _source ~}}
+  {{#ifAll title content ~}}
   <h4 class="accordion" aria-expanded="false">{{{title}}}</h4>
   <div class="accordion-content hidden">
     {{{content}}}
   </div>
+  {{/ifAll ~}}
   {{/with ~}}
   {{/each ~}}
   {{/ifNone ~}}

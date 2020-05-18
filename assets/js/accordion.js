@@ -28,8 +28,10 @@ if (document.getElementById("accordions_expand")) {
         acc[i].setAttribute('aria-expanded', 'true');
         var panel = acc[i].nextElementSibling;
         if (panel.style.maxHeight) {
+          setTimeout(function() { addClass(panel, 'hidden'); }, 333);
           panel.style.maxHeight = null;
         } else {
+          removeClass(panel, 'hidden');
           panel.style.maxHeight = panel.scrollHeight + "px";
         }
       }
@@ -46,11 +48,11 @@ if (document.getElementById("accordions_collapse")) {
         acc[i].setAttribute('aria-expanded', 'false');
         var panel = acc[i].nextElementSibling;
         if (panel.style.maxHeight) {
+          setTimeout(function() { addClass(panel, 'hidden'); }, 333);
           panel.style.maxHeight = null;
-          panel.setAttribute('aria-hidden', 'true');
         } else {
+          removeClass(panel, 'hidden');
           panel.style.maxHeight = panel.scrollHeight + "px";
-          panel.setAttribute('aria-hidden', 'false');
         }
       }
     }
