@@ -20,16 +20,17 @@
     <li>
       <span class="fa-li"><span class="far fa-money-bill"></span></span>
       {{#if amount_awarded ~}}
-      Award: &pound;{{addCommas amount_awarded}} via <a href="/funding/carer-service-remote-working-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_awarded}}
       {{else}}
       {{#if amount_requested_total ~}}
-      Award: &pound;{{addCommas amount_requested_total}} via <a href="/funding/carer-service-remote-working-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested_total}}
       {{else}}
       {{#if amount_requested ~}}
-      Award: &pound;{{addCommas amount_requested}} via <a href="/funding/carer-service-remote-working-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested}}
       {{/if ~}}
       {{/if ~}}
       {{/if ~}}
+      via <a href="/funding/carer-service-remote-working-fund/recipients?call={{slugify call}}">{{call}}</a>
     </li>
     {{/if}}
     <li>
@@ -45,7 +46,7 @@
     {{#if recipient_url ~}}
     <li>
       <span class="fa-li"><span class="far fa-link"></span></span>
-      <a href="{{fixUrl recipient_url 'http'}}">{{recipient_url}}</a>
+      <a href="{{fixUrl recipient_url 'http'}}">{{lowercase recipient_url}}</a>
     </li>
     {{/if ~}}
     {{#if recipient_twitter ~}}

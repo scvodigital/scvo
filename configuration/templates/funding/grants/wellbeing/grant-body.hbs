@@ -25,16 +25,20 @@
     <li>
       <span class="fa-li"><span class="fal fa-money-bill"></span></span>
       {{#if amount_awarded ~}}
-      Award: &pound;{{addCommas amount_awarded}} via <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_awarded}}
       {{else}}
       {{#if amount_requested_total ~}}
-      Award: &pound;{{addCommas amount_requested_total}} via <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested_total}}
       {{else}}
       {{#if amount_requested ~}}
-      Award: &pound;{{addCommas amount_requested}} via <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      Award: &pound;{{addCommas amount_requested}}
       {{/if ~}}
       {{/if ~}}
       {{/if ~}}
+      via <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      {{#unless paid_by_funder ~}}
+      but not yet paid
+      {{/unless ~}}
     </li>
     {{/if ~}}
     <li>
@@ -44,7 +48,7 @@
     {{#if recipient_url ~}}
     <li>
       <span class="fa-li"><span class="far fa-link"></span></span>
-      <a href="{{fixUrl recipient_url 'http'}}">{{recipient_url}}</a>
+      <a href="{{fixUrl recipient_url 'http'}}">{{lowercase recipient_url}}</a>
     </li>
     {{/if ~}}
     {{#if recipient_twitter ~}}
