@@ -31,8 +31,7 @@ $fs-legacy-color: #537F2C;
 $fs-color: #537F2C;
 
 $blue-color: #4CBED5;
-$blue-color-light: #a9dbea;
-$blue-color-lighter: #cbe9f2;
+$blue-color-light: #D4E6F2;
 $blue-color-dark: #6f9dae;
 $purple-color: #C0B5DA;
 $green-color: #AFD5A6;
@@ -1370,7 +1369,7 @@ a.bg-yellow:hover {
 body.support.digital.landing .page-body,
 body.support.digital.participation .page-body,
 body.support.digital.evolution .page-body {
-  background-color: $blue-color-lighter;
+  background-color: $blue-color-light;
   // a:link, a:visited {
   //   background: linear-gradient(to bottom, $blue-color-dark 0%, $blue-color-dark 100%);
   // }
@@ -2752,6 +2751,7 @@ footer {
 .text-left {
   text-align: left;
 }
+.has-text-align-right,
 .text-right {
   text-align: right;
 }

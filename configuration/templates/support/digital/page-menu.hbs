@@ -24,9 +24,9 @@
   {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
   {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
   <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
-    {{!-- {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}} --}}
-{{!-- {{#if content}} t-margin-full t-padding-full{{/if}} --}}
-    <div class="linked-cards support support-organisation equal-height">
+    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+
+    <div class="linked-cards support support-organisation equal-height{{#if content}} t-margin-full t-padding-full{{/if}}">
       {{#each @root.context.metaData.sidebarMenus ~}}
         {{#each this ~}}
           {{#if children ~}}
