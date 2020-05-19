@@ -1,0 +1,55 @@
+{
+  "size": 100,
+  "_source": [
+    "slug",
+    "title",
+    "course_type",
+    "date_start",
+    "date_end",
+    "places_available",
+    "Id",
+    "path",
+    "city",
+    "description",
+    "description_short",
+    "course_overview",
+    "course_overview_short",
+    "booking_url"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        }
+      ],
+      "must": [
+        {
+          "query_string": {
+            "query": "DigiShift",
+            "default_field": "text_bag",
+            "default_operator": "AND",
+            "analyzer": "snowball"
+          }
+        },
+        {
+          "range" : {
+            "date_start" : {
+              "gte" : "now/d"
+            }
+          }
+        },
+        {
+          "term": {
+            "team": "digital"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "date_start": "asc"
+  }
+}

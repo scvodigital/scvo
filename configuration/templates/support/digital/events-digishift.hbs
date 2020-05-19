@@ -1,0 +1,26 @@
+<div class="b-margin-full b-padding-full">
+  {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
+    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+
+    {{#compare @root.data.events.hits.total ">" 0 ~}}
+    <div class="{{#if content}}t-margin-full t-padding-full{{/if}}">
+      {{#each @root.data.events.hits.hits ~}}
+      {{#with _source ~}}
+      <h3>{{{trim (replace (replace (replace (replace title 'DigiShift:' '') 'DigiShift :' '') 'DigiShift -' '') 'DigiShift Webinar: ' '')}}}</h3>
+      <h4>{{momentFormat (moment date_start 'x') "dddd Do MMMM"}} {{#compare (momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "mm") "00"}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "h"}}{{else}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "h:mm"}}{{/compare}}{{#compare date_start date_end}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") ":mma"}}{{else}}{{momentFormat (momentConvertTz (moment date_end "x") "UTC" "Europe/London") "\-h:mma"}}{{/compare}}</h4>
+      <p>
+        {{{default description course_overview}}}
+      </p>
+      <p class="book-now">
+        <a href="{{#if booking_url}}{{#if (contains booking_url 'https://www.surveygizmo.eu')}}{{path}}/book{{else}}{{{booking_url}}}{{/if}}{{else}}{{path}}/book{{/if}}" class="btn btn-primary btn-lg">Book now</a>
+      </p>
+      {{/with ~}}
+      {{/each ~}}
+    </div>
+    {{/compare ~}}
+  </div>
+  {{/with ~}}
+  {{/if ~}}
+</div>
