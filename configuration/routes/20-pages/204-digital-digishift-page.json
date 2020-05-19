@@ -1,7 +1,7 @@
 {
-  "name": "digital_digishift_events",
+  "name": "digital_digishift_page",
   "debug": true,
-  "pattern": "/support/digital/evolution/digishift/events",
+  "pattern": "/support/digital/evolution/digishift/:section",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -22,7 +22,7 @@
       "renderer": "handlebars"
     },
     {
-      "name": "events",
+      "name": "resources",
       "taskModule": "elasticsearch",
       "config": {
         "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
@@ -31,8 +31,8 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-event",
-          "template": ">context.metaData.handlebars.queries.events_digital-digishift-search"
+          "type": "scvo-resource",
+          "template": ">context.metaData.handlebars.queries.resources_digishift"
         }
       },
       "renderer": "handlebars"
@@ -54,7 +54,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_digital_page-header",
-              "body": ">context.metaData.handlebars.templates.support_digital_digishift-events",
+              "body": ">context.metaData.handlebars.templates.support_digital_digishift-page",
               "rightSidebar": ">context.metaData.handlebars.templates.support_digital_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.support_digital_footer"
             },

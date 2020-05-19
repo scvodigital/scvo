@@ -1,0 +1,54 @@
+<div class="b-margin-full b-padding-full">
+  {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
+    {{#if highlight_last_updated ~}}
+    <div class="page-info b-margin-full">
+      <div class="page-info-item page-info-updated text-white label label-warning" title="{{#compare (momentFormat (moment publish_on 'x') 'Do MMMM YYYY') '===' (momentFormat (moment updated 'x') 'Do MMMM YYYY')}}Published{{else}}Last updated{{/compare}} on {{momentFormat (moment updated 'x') 'Do MMMM YYYY'}} at {{momentFormat (moment updated 'x') 'HH:mm:ss'}}">
+        <span class="far fa-calendar-alt" aria-hidden="true"></span>
+        Last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
+      </div>
+    </div>
+    {{/if ~}}
+
+    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+
+    {{#compare @root.data.resources.hits.total ">" 0 ~}}
+    {{#each @root.data.resources.hits.hits ~}}
+    {{#with _source ~}}
+    <div class="columns digishift-resource b-margin">
+      <div class="column col-2 col-md-3 align-centre">
+        <span class="fal fa-fw fa-{{icon}} fa-2x">&nbsp;</span>
+      </div>
+      <div class="column col-10 col-md-9">
+        {{#if weblink ~}}
+        <h3><a href="{{weblink}}">{{{title}}}</a></h3>
+        {{else}}
+        <h3>{{{title}}}</h3>
+        {{/if ~}}
+        {{#if (contains content "iframe") ~}}
+        {{{replace content 'iframe src' 'iframe height="161px" width="100%" src'}}}
+        {{else}}
+        <p>
+          {{stripTags content}}{{#if author_attribution}}<br />
+          by {{author_attribution}}{{/if}}
+        </p>
+        {{/if ~}}
+      </div>
+    </div>
+    {{/with ~}}
+    {{/each ~}}
+    {{/compare ~}}
+
+    {{#unless highlight_last_updated ~}}
+    <div class="page-info v-margin-full b-padding-full">
+      <div class="page-info-item page-info-updated text-gray">
+        <span class="far fa-calendar-alt" aria-hidden="true"></span>
+        Page last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
+      </div>
+    </div>
+    {{/unless ~}}
+  </div>
+  {{/with ~}}
+  {{/if ~}}
+</div>
