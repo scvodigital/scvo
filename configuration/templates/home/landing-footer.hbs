@@ -5,7 +5,7 @@
       <div class="column col-6 col-md-12">
         <h3 class="b-margin-full">
           Recent SCVO blog posts
-          <a href="/about/blog" class="caption l-margin">Read more</a>
+          {{!-- <a href="/about/blog" class="caption l-margin">Read more</a> --}}
         </h3>
         <ul>
           {{#each (split "1,2,3,4" ",") ~}}
@@ -17,13 +17,28 @@
           </li>
           {{/with ~}}
           {{/each ~}}
+        </ul>
+        <h3 class="t-margin-full">Blogs</h3>
+        <div class="columns">
+          <div class="column col-3 col-xl-6 col-lg-12 b-margin">
+            <a href="/about/blog" class="">SCVO news</a>
+          </div>
+          <div class="column col-3 col-xl-6 col-lg-12 b-margin">
+            <a href="/support/blog" class="">Support & learning</a>
+          </div>
+          <div class="column col-3 col-xl-6 col-lg-12 b-margin">
+            <a href="/funding/blog" class="">Funding</a>
+          </div>
+          <div class="column col-3 col-xl-6 col-lg-12 b-margin">
+            <a href="/policy/blog" class="">Policy</a>
+          </div>
+        </div>
       </div>
       {{/compare ~}}
       {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
       <div class="column col-6 col-md-12">
         <h3 class="b-margin-full">
           Recent TFN stories
-          <a href="https://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption l-margin">Read more on TFN</a>
         </h3>
         <ul>
           {{#each (split "1,2,3,4" ",") ~}}
@@ -36,6 +51,7 @@
           {{/with ~}}
           {{/each ~}}
         </ul>
+        <a href="https://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="">Read more on TFN</a>
       </div>
       {{/compare ~}}
     </div>

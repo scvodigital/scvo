@@ -6,7 +6,6 @@
           <div class="card-header">
             <div class="card-title h2">
               Latest blog post
-              <a href="/about/blog" class="caption l-margin">See more</a>
             </div>
           </div>
           <div class="card-body">
@@ -15,7 +14,7 @@
               <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
             </h4>
             <p>
-              {{{truncate description 280}}}
+              {{{truncate description 140}}}
               <a href="/{{replace post_slug '_' '/'}}">Read more</a>
             </p>
             <p>
@@ -24,6 +23,13 @@
             </p>
             {{/with ~}}
           </div>
+          <div class="card-footer">
+            <h4>Blogs</h4>
+            <a href="/about/blog" class="caption no-underline">SCVO news</a><br />
+            <a href="/support/blog" class="caption no-underline">Support & learning</a><br />
+            <a href="/funding/blog" class="caption no-underline">Funding</a><br />
+            <a href="/policy/blog" class="caption no-underline">Policy</a>
+          </div>
         </div>
       </div>
       <div class="column col-4 col-md-12">
@@ -31,7 +37,6 @@
           <div class="card-header">
             <div class="card-title h2">
               Latest press release
-              <a href="/about/press-media" class="caption l-margin">See more</a>
             </div>
           </div>
           <div class="card-body">
@@ -40,10 +45,13 @@
               <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
             </h4>
             <p>
-              {{{truncate description 320}}}
+              {{{truncate description 405}}}
               <a href="/{{replace post_slug '_' '/'}}">Read more</a>
             </p>
             {{/with ~}}
+          </div>
+          <div class="card-footer">
+            <a href="/about/press-media" class="caption no-underline">All press releases</a>
           </div>
         </div>
       </div>
@@ -53,9 +61,20 @@
             <div class="card-title h2">Become a member</div>
           </div>
           <div class="card-body">
-            Our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members believe that charities, community groups, social enterprises and
-            voluntary organisations help make Scotland a better place; and our shared voice has the power and
-            influence to tackle pressing issues, and create a better future for the people and communities we care about.
+            <p>
+              The Scottish Council for Voluntary Organisations (SCVO) is the national membership organisation for the voluntary sector.
+            </p>
+            <p>
+              Along with our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members, we believe that charities, social enterprises and voluntary groups make Scotland a better place.
+            </p>
+            <p>
+              By joining SCVO you can become part of a movement that is dedicated to achieving the ambitions of Scotland’s voluntary sector.
+            </p>
+            <p>
+              SCVO membership also gives you access to vital support services that can help your group or organisation run smoothly.
+            </p>
+
+            {{!-- Our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members believe that charities, community groups, social enterprises and voluntary organisations help make Scotland a better place; and our shared voice has the power and influence to tackle pressing issues, and create a better future for the people and communities we care about. --}}
           </div>
           <div class="card-footer">
             <a href="/about/membership" class="btn btn-primary btn-lg">SCVO membership</a>
