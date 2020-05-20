@@ -3,7 +3,11 @@
     <div class="hero-body">
       <div class="columns">
         <div class="column col-7 col-lg-6 col-md-12 hero-text">
-          <h1 class="text-secondary smaller">Coronavirus Third Sector Intelligence Hub</h1>
+          {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+          {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+          <h1 class="text-secondary smaller">{{{title}}}</h1>
+          {{/with ~}}
+          {{/if ~}}
         </div>
         <div class="column col-5 col-lg-6 col-md-12 hero-illustration">
           <img src="{{~>asset_url url='images/headers/montage_socialdistance.png'~}}" alt="Illustration of a group of people social distancing" class="img-responsive" />
