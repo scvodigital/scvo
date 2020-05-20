@@ -1,35 +1,36 @@
 {{#compare @root.data.supplimentaryResponses.latest_posts.hits.total ">" 0 ~}}
-<div class="b-padding-full">
-  <div class="bg-gray v-padding-full b-margin-full">
-    <div class="container v-padding">
-      <h2 class="b-margin-full">Latest intelligence briefings &amp; blogs</h2>
-      <div class="columns">
-        {{#each (split "0,1,2,3" ",") ~}}
-        {{#with (getProperty @root.data.supplimentaryResponses.latest_posts.hits.hits (concat this '._source')) ~}}
-        <div class="column col-3 col-lg-6 col-sm-12">
-          <div class="columns b-margin">
-            <div class="column col-3 col-md-4">
-              <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
-            </div>
-            <div class="column col-9 col-md-8">
-              <a href="{{path}}">{{{trim title}}}</a>
-              <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
-            </div>
+<div class="bg-gray v-padding-full b-margin-full">
+  <div class="container v-padding">
+    <h2 class="b-margin-full">Latest intelligence briefings &amp; blogs</h2>
+    <div class="columns">
+      {{#each (split "0,1,2,3" ",") ~}}
+      {{#with (getProperty @root.data.supplimentaryResponses.latest_posts.hits.hits (concat this '._source')) ~}}
+      <div class="column col-3 col-lg-6 col-sm-12">
+        <div class="columns b-margin">
+          <div class="column col-3 col-md-4">
+            <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
+          </div>
+          <div class="column col-9 col-md-8">
+            <a href="{{path}}">{{{trim title}}}</a>
+            <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
           </div>
         </div>
-        {{/with ~}}
-        {{/each ~}}
       </div>
+      {{/with ~}}
+      {{/each ~}}
     </div>
   </div>
 </div>
 {{/compare ~}}
 
 <div class="container b-margin-full b-padding-full">
+  {{!-- <p class="pull-right t-margin-full">
+    Submit your own research: email the title, author, date published, web link or attachment, and a short description to <a href="mailto:research@scvo.org.uk">research@scvo.org.uk</a>
+  </p> --}}
   <h2>Coronavirus evidence library</h2>
   <div class="columns">
     <div class="column col-3 col-lg-4 col-md-12">
-      <form action="/policy/coronavirus" method="GET" autocomplete="off" class="t-margin-full">
+      <form action="/policy/coronavirus" method="GET" autocomplete="off" class="v-margin-full">
         <div class="form-group has-icon-left">
           <span class="far fa-search form-icon" tabindex="0"></span>
           <input type="text" id="evidence-library-keywords" name="q" class="form-input" value="{{@root.request.params.query.q}}" placeholder="Keywords">
@@ -39,6 +40,15 @@
           Search
         </button>
       </form>
+      <h4>About</h4>
+      <p class="b-margin-full">
+        The Evidence Library is a resource for anyone interested in the voluntary sector in Scotland.  Managed by SCVO, the library signposts to research and evidence produced by, or on, the voluntary sector. For further information email: <a href="mailto:research@scvo.org.uk">research@scvo.org.uk</a>.
+      </p>
+
+      <h4>Submit your own research</h4>
+      <p class="b-padding-full">
+        Email the title, author, date published, web link or attachment, and a short description to <a href="mailto:research@scvo.org.uk">research@scvo.org.uk</a>.
+      </p>
     </div>
     <div class="column col-9 col-lg-8 col-md-12">
       {{> search_info paging=@root.data.supplimentaryResponses.evidence_library.pagination}}
