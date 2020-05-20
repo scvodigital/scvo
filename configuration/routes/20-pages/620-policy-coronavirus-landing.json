@@ -41,6 +41,12 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-document-evidence",
             "template": ">context.metaData.handlebars.queries.evidence-library_document-search-coronavirus"
+          },
+          {
+            "name": "types",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-document-evidence",
+            "template": ">context.metaData.handlebars.queries.evidence-library_document-aggs"
           }
         ]
       },

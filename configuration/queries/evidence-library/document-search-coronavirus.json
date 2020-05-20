@@ -32,22 +32,13 @@
             }
             {{/if}}
           ],
-          "should": [
+          "filter": [
             {
               "term": {
-                "library_classification_slug": "coronavirus"
-              }
-            },
-            {
-              "query_string": {
-                "query": "coronavirus covid-19",
-                "default_field": "text_bag",
-                "default_operator": "OR",
-                "analyzer": "snowball"
+                "library_classification_slug": "coronavirus-covid-19"
               }
             }
-          ],
-          "minimum_should_match": 1
+          ]
         }
       },
       "boost_mode": "multiply",

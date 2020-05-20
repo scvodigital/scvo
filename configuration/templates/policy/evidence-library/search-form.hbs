@@ -7,7 +7,7 @@
     <select class="form-select" id="evidence-library-classification" name="classification">
       <option value="" {{#if @root.request.params.query.classification}}{{else}}selected{{/if}}>Category</option>
       {{#each @root.data.supplimentaryResponses.types.aggregations.types.buckets ~}}
-      <option value="{{slugify key}}" {{#compare @root.request.params.query.classification "===" (slugify key)}}selected{{/compare}}>{{key}} ({{doc_count}})</option>
+      <option value="{{slugify key}}"{{#compare (slugify key) @root.request.params.query.classification}} selected{{/compare}}>{{key}} ({{doc_count}})</option>
       {{/each ~}}
     </select>
   </div>

@@ -15,7 +15,7 @@
         <ul class="inline-list">
           {{#each library_classification ~}}
           <li>
-            <a href="/policy/evidence-library?classification={{itemAt ../library_classification_slug @index}}" class="chip">{{{itemAt (split this "-") (subtract (length (split this "-")) 1)}}}</a>
+            <a href="/policy/evidence-library?classification={{itemAt ../library_classification_slug @index}}" class="chip">{{{trim (replace (replace (replace (replace (replace (replace (replace (replace this 'Sustainability - ' '') 'Public Services - ' '') 'People - ' '') 'Organisational - ' '') 'Health - ' '') 'People - ' '') 'Equality - ' '') 'Civil Society - ' '')}}}</a>
           </li>
           {{/each ~}}
         </ul>
