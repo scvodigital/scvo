@@ -31,7 +31,7 @@
         },
         "queryTemplates": [
           {
-            "name": "latest_posts",
+            "name": "coronavirus_posts",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
             "template": ">context.metaData.handlebars.queries.posts_policy-coronavirus"

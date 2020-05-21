@@ -36,15 +36,13 @@
           }
         }
       ],
-      {{!--
       "filter": [
         {
           "term": {
-            "categories_slug": "coronavirus"
+            "post_tags_slug": "coronavirus"
           }
         }
       ],
-      --}}
       "should": [
         {
           "term": {

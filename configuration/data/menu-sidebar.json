@@ -1255,7 +1255,7 @@
 									"icon": "file-signature"
 								},
 								{
-									"label": "Essential skills",
+									"label": "Essential Digital Skills",
 									"path": "/support/digital/participation/skills",
 									"route": "^/support/digital/participation/skills$",
 									"description": "Understand how to measure essential digital skills with our toolkit.",
@@ -1277,7 +1277,7 @@
 									"icon": "question-circle"
 								},
 								{
-									"label": "Digital Champions - Social Housing",
+									"label": "Digital Champions - social housing",
 									"label_full": "Digital Champions in Social Housing",
 									"path": "/support/digital/participation/digital-champions-in-social-housing",
 									"route": "^/support/digital/participation/digital-champions-in-social-housing$",
@@ -1301,7 +1301,7 @@
 									"icon": ""
 								},
 								{
-									"label": "Essential digital skills",
+									"label": "Essential skills",
 									"path": "/support/digital/participation/skills",
 									"route": "^/support/digital/participation/skills$",
 									"description": "",
@@ -2347,6 +2347,11 @@
 									"description": "<div class=\"label label-success label-rounded b-margin\">Currently open</div><br />Funds to support your community – includes the food fund.",
 									"icon": "tasks",
 									"children": [
+										{
+											"label": "Recipients",
+											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients",
+											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients$"
+										},
 										{
 											"label": "Guidance for applicants",
 											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants",

@@ -1,10 +1,12 @@
-{{#compare @root.data.supplimentaryResponses.latest_posts.hits.total ">" 0 ~}}
+{{#compare @root.data.supplimentaryResponses.coronavirus_posts.hits.total ">" 0 ~}}
 <div class="bg-gray v-padding-full b-margin-full">
   <div class="container v-padding">
-    <h2 class="b-margin-full">Latest intelligence briefings &amp; blogs</h2>
+    <h2 class="b-margin-full">
+      Latest intelligence briefings &amp; blogs
+    </h2>
     <div class="columns">
       {{#each (split "0,1,2,3" ",") ~}}
-      {{#with (getProperty @root.data.supplimentaryResponses.latest_posts.hits.hits (concat this '._source')) ~}}
+      {{#with (getProperty @root.data.supplimentaryResponses.coronavirus_posts.hits.hits (concat this '._source')) ~}}
       <div class="column col-3 col-lg-6 col-sm-12">
         <div class="columns b-margin">
           <div class="column col-3 col-md-4">
@@ -19,6 +21,10 @@
       {{/with ~}}
       {{/each ~}}
     </div>
+    <p class="t-margin">
+      <a href="/policy/briefings" class="caption no-underline">All briefings</a><br />
+      <a href="/policy/blog" class="caption no-underline">Policy blog</a>
+    </p>
   </div>
 </div>
 {{/compare ~}}
