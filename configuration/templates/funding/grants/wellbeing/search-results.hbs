@@ -104,11 +104,11 @@
             {{#if main_issue ~}}
             {{#compare (length main_issue) ">" 0 ~}}
             <div class="post-info-item post-info-categories">
-              <span aria-hidden="true" class="far fa-{{inflect main_issue 'tag' 'tags'}}"></span>
+              {{!-- <span aria-hidden="true" class="far fa-{{inflect main_issue 'tag' 'tags'}}"></span> --}}
               <ul class="inline-list">
                 {{#each main_issue ~}}
                 <li>
-                  <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?main_issue={{slugify this}}" class="chip">{{this}}</a>
+                  <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?main_issue={{slugify this}}" class="chip" title="Main issue: {{replace this ' (please describe)' ''}}">{{replace this ' (please describe)' ''}}</a>
                 </li>
                 {{/each ~}}
               </ul>
@@ -118,11 +118,11 @@
             {{#if target_group ~}}
             {{#compare (length target_group) ">" 0 ~}}
             <div class="post-info-item post-info-categories">
-              <span aria-hidden="true" class="far fa-{{inflect target_group 'tag' 'tags'}}"></span>
+              {{!-- <span aria-hidden="true" class="far fa-{{inflect target_group 'tag' 'tags'}}"></span> --}}
               <ul class="inline-list">
                 {{#each target_group ~}}
                 <li>
-                  <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?target_group={{slugify (replace this ' (please describe below)' '')}}" class="chip">{{replace this ' (please describe below)' ''}}</a>
+                  <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?target_group={{slugify (replace this ' (please describe below)' '')}}" class="chip" title="Target group: {{replace this ' (please describe below)' ''}}">{{replace this ' (please describe below)' ''}}</a>
                 </li>
                 {{/each ~}}
               </ul>
