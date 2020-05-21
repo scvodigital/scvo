@@ -32,6 +32,7 @@ $fs-color: #537F2C;
 
 $blue-color: #4CBED5;
 $blue-color-light: #D4E6F2;
+$blue-color-light-var: F6F8FC;
 $blue-color-dark: #6f9dae;
 $purple-color: #C0B5DA;
 $green-color: #AFD5A6;
@@ -135,15 +136,22 @@ body {
 }
 .icon-rouleaux,
 .bg-rouleaux {
-  background-image:url('https://scvo.scot/rouleaux.svg?color=#{$light-color-var}&style=solid');
+  background-image: url('https://scvo.scot/rouleaux.svg?color=#{$light-color-var}&style=solid');
   background-size: $page-width;
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
 }
+body.digital.landing,
+body.digital.participation,
+body.digital.evolution {
+  .bg-rouleaux {
+    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$blue-color-light-var}&style=solid');
+  }
+}
 body.the-gathering-2020 {
   .bg-rouleaux {
-    background-image:url('https://scvo.scot/rouleaux.svg?color=#{$gathering-color-light-var}&style=solid');
+    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$gathering-color-light-var}&style=solid');
   }
   .splash-image-header {
     background-size: cover;
