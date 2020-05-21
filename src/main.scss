@@ -51,10 +51,10 @@ $heading-font-weight: 800;
 $heading-link-weight: 600;
 $body-font-family: 'Ingra';
 $body-font-weight: 400;
-$body-link-weight: 600;
+$body-bold-weight: 600;
 $page-width: 1400px;
 $home-splash-height: 25vh;
-$transition-speed: .3s;
+$transition-speed: .333s;
 
 @import "../node_modules/spectre.css/src/spectre";
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
@@ -439,7 +439,7 @@ p {
 a,
 .btn,
 .chip {
-  font-weight: $body-link-weight;
+  font-weight: $body-bold-weight;
 }
 
 .breadcrumb {
@@ -475,13 +475,13 @@ a,
 
 a:link,
 a:visited {
-  text-decoration: none;
-  font-weight: $body-link-weight;
+  text-decoration: underline;
+  // font-weight: $body-bold-weight;
   color: $secondary-color;
   background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
-  background-position: 0 100%;
+  background-position: 0 75%;
   background-repeat: repeat-x;
-  background-size: $thick-line $thick-line;
+  background-size: 0 0;
   transition: background-size $transition-speed, color $transition-speed, border $transition-speed, background-color $transition-speed;
   transition-timing-function: ease-in-out;
 }
@@ -539,14 +539,37 @@ h5 a:hover,
   color: $primary-color;
   background: none;
 }
-footer a:hover,
-footer ul li a:hover {
-  color: $primary-color;
+h1 a:link,
+.h1 a:link,
+h2 a:link,
+.h2 a:link,
+h3 a:link,
+.h3 a:link,
+h4 a:link,
+.h4 a:link,
+h5 a:link,
+.h5 a:link,
+.post-info a:link,
+.related-posts a:link,
+.tab .tab-item a:link,
+.menu .menu-item a:link,
+.sidebar .menu .menu-item>a:link {
+  text-decoration: none;
   background: none;
 }
-a:hover {
+footer a:link,
+footer ul li a:link {
+  background: none;
   text-decoration: none;
-  background-size: $thick-line 50px;
+}
+footer a:hover,
+footer ul li a:hover {
+  text-decoration: none;
+  color: $primary-color;
+}
+a:hover {
+  // text-decoration: underline;
+  background-size: $thick-line 9px;
 }
 .sidebar-left,
 .sidebar-right {
@@ -563,9 +586,10 @@ footer a {
   color: white;
   background: none;
   border: none;
+  text-decoration: none;
 }
 .bg-goodmoves a:hover {
-  color: $secondary-color-dark;
+  color: $primary-color;
 }
 .text-gray {
   color: $gray-color-dark !important;
@@ -575,6 +599,7 @@ footer a {
     color: $secondary-color;
     background: none;
     border: none;
+    text-decoration: none;
   }
   a:hover {
     color: $primary-color;
@@ -726,32 +751,46 @@ footer .footer-copyright a.scvo-logo {
 .btn,
 .btn.btn-link,
 .btn.btn-primary {
+  text-decoration: none;
   border-bottom-width: $thin-line !important;
   line-height: 1.3rem;
+  transition: background $transition-speed, border $transition-speed, color $transition-speed !important;
+  transition-timing-function: ease-in-out;
+  background: none;
 }
 .btn:link,
 .btn:visited {
-  color: $primary-color;
-  border: $thin-line solid $primary-color;
-  background: none;
+  text-decoration: none;
+  background-color: $secondary-color;
+  border-color: $secondary-color;
+  color: white;
 }
-.btn:hover {
-  background-color: $secondary-color-light;
-  border-color: $secondary-color-light;
+.btn:hover,
+.btn:focus,
+.btn:active {
+  text-decoration: none;
+  background-color: $primary-color;
+  border-color: $primary-color;
   color: white;
 }
 .btn.btn-link:link,
 .btn.btn-link:visited,
-.btn.btn-link:hover {
+.btn.btn-link:hover,
+.btn.btn-link:focus,
+.btn.btn-link:active {
   border-color: transparent;
   background-color: transparent;
+  color: $secondary-color;
 }
 .btn.btn-primary {
-  background: $primary-color;
-  color: white;
+  background-color: $primary-color;
   border-color: $primary-color;
-  transition: background $transition-speed, border $transition-speed, color $transition-speed !important;
-  transition-timing-function: ease-in-out;
+  color: white;
+}
+.btn.btn-primary:hover {
+  background-color: $secondary-color-light;
+  border-color: $secondary-color-light;
+  color: white;
 }
 .wp-block-file .wp-block-file__button,
 a.wp-block-file__button,
@@ -759,8 +798,8 @@ a.wp-block-file__button,
 .post-info a:visited.chip,
 a.chip {
   color: white !important;
-  background-color: $secondary-color-light;
-  border: $thin-line solid $secondary-color-light;
+  background-color: $secondary-color;
+  border: $thin-line solid $secondary-color;
   transition: background $transition-speed, border $transition-speed, color $transition-speed;
   border-bottom-width: $thin-line;
 }
@@ -768,8 +807,8 @@ a.chip {
 a.wp-block-file__button:hover,
 a.chip:hover {
   color: white !important;
-  background: $secondary-color !important;
-  border: $thin-line solid $secondary-color !important;
+  background: $primary-color !important;
+  border-color: $primary-color !important;
 }
 .bg-header {
   background-size: cover;
@@ -806,6 +845,25 @@ a.rss,
   color: $primary-color;
   background: none;
   border-bottom: none;
+  text-decoration: none;
+}
+.card-footer a {
+  display: inline-block;
+  line-height: 1.2rem;
+  font-weight: $body-bold-weight;
+  color: $secondary-color;
+  background-image: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%);
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 5px $medium-line;
+  transition: background-size $transition-speed, color $transition-speed, border $transition-speed, background-color $transition-speed, background-image $transition-speed;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+}
+.card-footer a:hover {
+  color: $secondary-color;
+  background-image: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
+  background-size: 5px 14px;
 }
 .breadcrumb .breadcrumb-item a {
   border-bottom: none;
@@ -816,10 +874,6 @@ a.rss,
 a.author:hover,
 .no-underline:hover {
   color: $primary-color-dark;
-}
-
-a:hover span.hover-underline {
-  text-decoration: underline;
 }
 
 .scvo-link-bar {
@@ -889,7 +943,7 @@ a:hover span.hover-underline {
       margin: 0;
     }
     h1.smaller {
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       letter-spacing: -0.1rem;
     }
   }
@@ -1302,6 +1356,18 @@ a:hover span.hover-underline {
     color: $secondary-color !important;
     border-color: white !important;
   }
+  a h1,
+  a h2,
+  a h3,
+  a h4 {
+    transition: color $transition-speed;
+  }
+  a:hover h1,
+  a:hover h2,
+  a:hover h3,
+  a:hover h4 {
+    color: $primary-color;
+  }
 }
 .section-social {
   .icon-rouleaux {
@@ -1346,10 +1412,18 @@ a:hover span.hover-underline {
 a.bg-yellow {
   background: $yellow-color !important;
   color: $secondary-color;
+  text-decoration: none;
 }
 a.bg-yellow {
   border: none;
   display: block;
+  .fa-fw,
+  h2,
+  h3,
+  h4 {
+    text-decoration: none;
+    transition: color $transition-speed;
+  }
   .columns {
     margin-left: -($padding/2);
     margin-right: -($padding/2);
@@ -1357,6 +1431,14 @@ a.bg-yellow {
       padding-left: $padding/2;
       padding-right: $padding/2;
     }
+  }
+}
+a.bg-yellow:hover {
+  .fa-fw,
+  h2,
+  h3,
+  h4 {
+    color: $primary-color-dark;
   }
 }
 .banner-coronavirus-info-hub {
@@ -1531,11 +1613,12 @@ a.rss {
 
 a:focus,
 .btn:focus {
-  background: inherit;
-  color: inherit;
+  // background: inherit;
+  // color: inherit;
   outline: none;
   box-shadow: none;
 }
+.chip-set a,
 .chip-set a:hover,
 a.pure-menu-link:hover {
   text-decoration: none;
@@ -1591,7 +1674,7 @@ aside {
   a[href^="https://"]::after {
     font-family: 'Font Awesome\ 5 Pro';
     content: "\f08e";
-    font-weight: $body-link-weight;
+    font-weight: $body-bold-weight;
     margin-left: $unit/4;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;

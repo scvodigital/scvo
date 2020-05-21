@@ -2,27 +2,29 @@
   <div class="key-info-extra">
     <ul class="fa-ul first">
       {{#if (length (arrayify activities)) ~}}
-      <li class="mdc-typography--body1">
-        <span class="fa-li"><span class="far fa-person-sign fa-fw" title="Activities"></span></span>
+      <li class="mdc-typography--body1 chip-set">
+        <span class="fa-li" style="margin-top:0.15rem;"><span class="far fa-person-sign fa-fw" title="Activities"></span></span>
         {{#each (arrayify activities) ~}}
-        <a href="https://funding.scot/search?activities={{lookup (arrayify ../activities_slugs) @index}}">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+        <a href="https://funding.scot/search?activities={{lookup (arrayify ../activities_slugs) @index}}" class="chip">{{{this}}}</a>
+        {{!-- {{#unless @last}}, {{/unless}} --}}
         {{/each ~}}
       </li>
       {{/if ~}}
       {{#if (length (arrayify beneficiaries)) ~}}
-      <li class="mdc-typography--body1">
-        <span class="fa-li"><span class="far fa-users fa-fw" title="Beneficiaries"></span></span>
+      <li class="mdc-typography--body1 chip-set">
+        <span class="fa-li" style="margin-top:0.15rem;"><span class="far fa-users fa-fw" title="Beneficiaries"></span></span>
         {{#each (arrayify beneficiaries) ~}}
-        <a href="https://funding.scot/search?beneficiaries={{lookup (arrayify ../beneficiaries_slugs) @index}}">{{{this}}}</a>{{#unless @last}}, {{/unless}}
+        <a href="https://funding.scot/search?beneficiaries={{lookup (arrayify ../beneficiaries_slugs) @index}}" class="chip">{{{this}}}</a>
+        {{!-- {{#unless @last}}, {{/unless}} --}}
         {{/each ~}}
       </li>
       {{/if ~}}
       {{#if (length (arrayify geographical_areas_funded)) ~}}
       <li class="mdc-typography--body1">
-        <span class="fa-li"><span class="far fa-map-marker-alt fa-fw" title="Geographical areas funded"></span></span>
-        <span class="areas">
+        <span class="fa-li" style="margin-top:0.15rem;"><span class="far fa-map-marker-alt fa-fw" title="Geographical areas funded"></span></span>
+        <span class="areas chip-set">
         {{#each (arrayify geographical_areas_funded) ~}}
-        <a href="https://funding.scot/search?geographical_areas_funded={{lookup (arrayify ../geographical_areas_funded_slugs) @index}}" class="area"><span class="area-text">{{{this}}}</span></a>
+        <a href="https://funding.scot/search?geographical_areas_funded={{lookup (arrayify ../geographical_areas_funded_slugs) @index}}" class="area chip"><span class="area-text">{{{this}}}</span></a>
         {{/each ~}}
         </span>
       </li>
