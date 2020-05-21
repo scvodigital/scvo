@@ -43,6 +43,7 @@ $orange-color: #F8AB23;
 $unit: 1rem;
 $padding: 1.2rem;
 $thick-line: 5px;
+$medium-line: 2px;
 $thin-line: 0.05rem;
 $border-radius: 6px;
 $heading-font-family: 'Asap';
@@ -291,7 +292,7 @@ h1 {
 h2 {
   font-size: 1.55rem;
   font-weight: $heading-font-weight;
-  letter-spacing: -0.08rem;
+  letter-spacing: -0.06rem;
   a {
     font-weight: $heading-font-weight;
     border-bottom: none;
@@ -304,7 +305,7 @@ h2 {
 h3 {
   font-size: 1.35rem;
   font-weight: $heading-font-weight;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.07rem;
   a {
     font-weight: $heading-font-weight;
     border-bottom: none;
@@ -321,6 +322,7 @@ h4 {
   font-size: 1.1rem;
   line-height: 1.2;
   font-weight: $heading-font-weight;
+  letter-spacing: -0.04rem;
   a {
     font-weight: $heading-font-weight;
     border-bottom: none;
@@ -882,12 +884,13 @@ a:hover span.hover-underline {
     justify-content: left;
     h1 {
       font-size: 3.9rem;
-      letter-spacing: -0.15rem;
+      letter-spacing: -0.13rem;
       font-weight: $heading-font-weight;
       margin: 0;
     }
     h1.smaller {
       font-size: 2.8rem;
+      letter-spacing: -0.1rem;
     }
   }
   .hero-illustration {
@@ -919,10 +922,11 @@ a:hover span.hover-underline {
   }
   .hero .hero-text h1 {
     font-size: 3rem;
-    letter-spacing: -0.1rem;
+    letter-spacing: -0.13rem;
   }
   .hero .hero-text h1.smaller {
     font-size: 2.3rem;
+    letter-spacing: -0.1rem;
   }
 }
 
@@ -1874,7 +1878,7 @@ header {
 
 @media screen and (max-width: 960px) {
   header.header .navbar-brand img {
-    width: 45vw !important;
+    width: 35vw !important;
   }
   .banner-coronavirus-info-hub .logo {
     width: 115px;
@@ -2017,7 +2021,7 @@ header.header {
   .navbar-brand {
     line-height: 1;
     img {
-      width: 320px;
+      width: 250px;
     }
   }
   .form-horizontal {
@@ -2028,7 +2032,7 @@ header.header {
   }
 }
 header.toolbar {
-  border-bottom: $thick-line solid $primary-color;
+  border-bottom: $medium-line solid $primary-color;
   .btn {
     border: none;
     color: $secondary-color;
@@ -2624,16 +2628,16 @@ footer {
     letter-spacing: -0.08rem;
   }
   .hero .hero-text h1.smaller {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
   h2 {
-    font-size: 1.22rem;
+    font-size: 1.3rem;
   }
   h3 {
-    font-size: 1.11rem;
+    font-size: 1.15rem;
   }
   h4 {
     font-size: 1rem;
@@ -2694,7 +2698,8 @@ footer {
     }
   }
   footer .footer-copyright .logos {
-    text-align: center;
+    text-align: left;
+    margin: $unit 0;
   }
 }
 

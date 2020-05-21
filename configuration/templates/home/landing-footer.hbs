@@ -41,7 +41,7 @@
           Recent TFN stories
         </h3>
         <ul>
-          {{#each (split "1,2,3,4" ",") ~}}
+          {{#each (split "1,2,3,4,5,6" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
           <li class="clearfix b-margin-full">
             <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="pull-left r-margin no-underline"><img src="{{image_portrait_small}}" alt="{{{trim title}}}" class="avatar avatar-lg" /></a>
