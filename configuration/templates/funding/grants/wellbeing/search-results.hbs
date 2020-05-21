@@ -2,8 +2,8 @@
 
 {{!-- <div class="divider"></div> --}}
 
-<form action="{{@root.request.url.pathname}}" method="GET" class="search_form">
-  <div class="columns t-margin b-margin-full">
+<form action="{{@root.request.url.pathname}}" method="GET" class="search_form v-margin-full">
+  <div class="columns b-margin-full">
     <div class="column col-12">
       <div class="input-group input-inline" style="width:100%">
         <input type="text" class="form-input" name="q" id="grant-wellbeing-keywords" value="{{@root.request.params.query.q}}" placeholder="Search">
@@ -81,13 +81,13 @@
           </p>
           {{/compare ~}}
           {{/if ~}}
-          {{#if description ~}}
+          {{!-- {{#if description ~}}
           {{{truncate description 180}}} <a href="{{@root.request.url.pathname}}/{{Id}}/{{slugify title}}">Read more</a>
           {{else}}
           {{#if description_alt ~}}
           {{{truncate description_alt 180}}} <a href="{{@root.request.url.pathname}}/{{Id}}/{{slugify title}}">Read more</a>
           {{/if ~}}
-          {{/if ~}}
+          {{/if ~}} --}}
         </section>
         <section class="card-footer">
           <div class="post-info">
