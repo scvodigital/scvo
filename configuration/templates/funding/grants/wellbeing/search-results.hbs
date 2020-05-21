@@ -3,8 +3,8 @@
 {{!-- <div class="divider"></div> --}}
 
 <form action="{{@root.request.url.pathname}}" method="GET" class="search_form">
-  <div class="columns">
-    <div class="column col-4 col-lg-12">
+  <div class="columns t-margin b-margin-full">
+    <div class="column col-12">
       <div class="input-group input-inline" style="width:100%">
         <input type="text" class="form-input" name="q" id="grant-wellbeing-keywords" value="{{@root.request.params.query.q}}" placeholder="Search">
         <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" alt="Search">
@@ -12,7 +12,9 @@
         </button>
       </div>
     </div>
-    <div class="column col-2 col-lg-6 col-md-12">
+  </div>
+  <div class="columns">
+    <div class="column col-3 col-lg-6 col-md-12">
       <div class="form-group">
         <select class="form-select" id="grant-wellbeing-area" name="area" onchange="this.form.submit()">
           <option value=""{{#if @root.request.params.query.area}}{{else}} selected{{/if}}>Area</option>
@@ -24,7 +26,7 @@
         </select>
       </div>
     </div>
-    <div class="column col-2 col-lg-6 col-md-12">
+    <div class="column col-3 col-lg-6 col-md-12">
       <div class="form-group">
         <select class="form-select" id="grant-wellbeing-main_issue" name="main_issue" onchange="this.form.submit()">
           <option value=""{{#if @root.request.params.query.main_issue}}{{else}} selected{{/if}}>Main issue</option>
@@ -34,7 +36,7 @@
         </select>
       </div>
     </div>
-    <div class="column col-2 col-lg-6 col-md-12">
+    <div class="column col-3 col-lg-6 col-md-12">
       <div class="form-group">
         <select class="form-select" id="grant-wellbeing-target_group" name="target_group" onchange="this.form.submit()">
           <option value=""{{#if @root.request.params.query.target_group}}{{else}} selected{{/if}}>Target group</option>
@@ -44,7 +46,7 @@
         </select>
       </div>
     </div>
-    <div class="column col-2 col-lg-6 col-md-12">
+    <div class="column col-3 col-lg-6 col-md-12">
       <div class="form-group">
         <select class="form-select" id="grant-wellbeing-call" name="call" onchange="this.form.submit()">
           <option value=""{{#if @root.request.params.query.call}}{{else}} selected{{/if}}>Funding round</option>
@@ -64,7 +66,7 @@
   <div class="columns t-margin-full">
     {{#each @root.data.supplimentaryResponses.grants.hits.hits ~}}
     {{#with _source ~}}
-    <div class="column col-4 col-md-6 col-sm-12 b-margin-full">
+    <div class="column col-12 b-margin-full">
       <div class="t-padding-full card card-no-padding scvo-grant scvo-grant-wellbeing">
         <section class="card-header">
           <h4 class="no-margin">
