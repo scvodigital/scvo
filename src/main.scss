@@ -808,6 +808,10 @@ a.author:hover,
   color: $primary-color-dark;
 }
 
+a:hover span.hover-underline {
+  text-decoration: underline;
+}
+
 .scvo-link-bar {
   background-color: $gray-color;
   height: 40px;
