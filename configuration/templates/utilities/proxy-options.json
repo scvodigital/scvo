@@ -2,10 +2,10 @@
   {
     "method": "{{@root.request.verb}}",
     "headers": {
-      "content-type": {{{safeStringify (if (compare contentType "text/plain") "application/json" else=contentType)}}}
+      "content-type": {{{json value=(if (compare contentType "text/plain") "application/json" else=contentType)}}}
     },
     {{#if @root.request.body}}
-      "body": {{{stringify (default @root.request.body null)}}}, 
+      "body": {{{json value=(default @root.request.body null)}}},
     {{/if}}
     {{#compare contentType "!==" "application/x-ndjson"}}
       "json": true,
