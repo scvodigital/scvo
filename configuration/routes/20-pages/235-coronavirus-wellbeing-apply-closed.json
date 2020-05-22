@@ -1,20 +1,9 @@
 {
-  "name": "coronavirus_wellbeing_apply",
+  "name": "coronavirus_wellbeing_apply_closed",
   "debug": true,
-  "pattern": "/support/coronavirus/funding/scottish-government/wellbeing-fund/apply-call-2",
+  "pattern": "/support/coronavirus/funding/scottish-government/wellbeing-fund/apply-call-2/closed",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
-    {
-      "name": "form_closed",
-      "taskModule": "reroute",
-      "config": {
-        "if": [
-          1,
-          "coronavirus_wellbeing_apply_closed",
-          false
-        ]
-      }
-    },
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
@@ -51,7 +40,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_wellbeing_apply-header",
-              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_wellbeing_apply-start",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_wellbeing_apply-closed",
               "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
