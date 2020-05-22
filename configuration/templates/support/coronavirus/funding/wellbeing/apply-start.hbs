@@ -157,13 +157,28 @@ document.addEventListener("DOMContentLoaded", function() {
   var valid = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 67, 83, 99, 115, 37, 39, 111, 79, 46, 35, 36];
   $('#charity_number')
   .on('keydown', function(evt) {
+    if (evt.ctrlKey) {
+      return;
+    }
+
     if (valid.indexOf(evt.which) === -1 && evt.which > 31) {
       evt.preventDefault();
     }
   })
-  .on('keyup', function(evt) {
-    var charityNumber = evt.target.value = evt.target.value.toUpperCase().replace(/o/ig, '0');
-    if (charityNumber.match(/SC[0-9]{6}/)) {
+  .on('keyup', checkCN)
+  .on('change', checkCN)
+  .on('paste', function(evt) {
+    setTimeout(function() {
+      checkCN(evt);
+    }, 0);
+  })
+  .select();
+
+  function checkCN(evt) {
+    var matches = evt.target.value.replace(/[^sco0-9]/img, '');
+    var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
+
+    if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
       var url = '/support/coronavirus/funding/scottish-government/wellbeing-fund/apply-call-2/' + charityNumber;
       $('#charity_number_submit')
       .removeAttr('disabled', false)
@@ -176,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
       .attr('disabled', true)
       .attr('href', '');
     }
-  })
-  .select();
+  }
+
 })
 </script>
