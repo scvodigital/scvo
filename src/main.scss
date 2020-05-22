@@ -31,8 +31,8 @@ $fs-legacy-color: #537F2C;
 $fs-color: #537F2C;
 
 $blue-color: #4CBED5;
-$blue-color-light: #D4E6F2;
-$blue-color-light-var: F6F8FC;
+$blue-color-light: #edf8fa;
+$blue-color-light-var: f4fbfc;
 $blue-color-dark: #6f9dae;
 $purple-color: #C0B5DA;
 $green-color: #AFD5A6;
@@ -54,7 +54,8 @@ $body-font-weight: 400;
 $body-bold-weight: 600;
 $page-width: 1400px;
 $home-splash-height: 25vh;
-$transition-speed: .333s;
+$slow-transition-speed: .333s;
+$fast-transition-speed: .15s;
 
 @import "../node_modules/spectre.css/src/spectre";
 @import url('../node_modules/leaflet.markercluster/dist/MarkerCluster.css');
@@ -390,7 +391,7 @@ h1.font-default,
     padding-right: $unit/10;
     margin-right: 0;
     color: #ffffff;
-    transition: background-image $transition-speed;
+    transition: background-image $slow-transition-speed;
   }
 }
 .card .card-title .fa-fw {
@@ -436,7 +437,13 @@ p {
   margin: 0 0 $unit/2;
 }
 
-a,
+footer a,
+.card-footer a,
+.latest-posts a,
+.related-posts a,
+.bg-gray a,
+.bg-primary a,
+.bg-secondary a,
 .btn,
 .chip {
   font-weight: $body-bold-weight;
@@ -451,14 +458,14 @@ a,
   font-weight: $body-font-weight;
   a {
     color: $primary-color !important;
-    font-weight: $body-font-weight;
+    font-weight: $body-font-weight !important;
   }
 }
 .breadcrumb .breadcrumb-item:not(:first-child)::before {
   color: $primary-color;
   font-family: 'Font Awesome\ 5 Pro';
   content: "\f105";
-  font-weight: 400;
+  font-weight: $body-font-weight;
 }
 .divider {
   border-top-color: $primary-color;
@@ -482,7 +489,7 @@ a:visited {
   background-position: 0 75%;
   background-repeat: repeat-x;
   background-size: 0 0;
-  transition: background-size $transition-speed, color $transition-speed, border $transition-speed, background-color $transition-speed;
+  transition: background-size $slow-transition-speed, color $slow-transition-speed, border $slow-transition-speed, background-color $slow-transition-speed;
   transition-timing-function: ease-in-out;
 }
 h1 a:link,
@@ -587,6 +594,7 @@ footer a {
   background: none;
   border: none;
   text-decoration: none;
+  font-weight: $body-bold-weight;
 }
 .bg-goodmoves a:hover {
   color: $primary-color;
@@ -712,7 +720,7 @@ footer a {
 .card-image-link:hover {
   .card-title {
     color: $primary-color;
-    transition: color $transition-speed;
+    transition: color $slow-transition-speed;
   }
   .card-image {
     -webkit-transform: scale3d(1.05,1.05,1);
@@ -731,19 +739,49 @@ footer a {
   background-image: linear-gradient(100deg, $secondary-color, transparent, $primary-color);
   opacity: 0.3333;
   z-index: 2;
-  -webkit-transition: $transition-speed ease-in-out;
-  -moz-transition: $transition-speed ease-in-out;
-  transition: $transition-speed ease-in-out;
+  -webkit-transition: $slow-transition-speed ease-in-out;
+  -moz-transition: $slow-transition-speed ease-in-out;
+  transition: $slow-transition-speed ease-in-out;
 }
 .card-image-link:hover .card-image:after {
   opacity: 0;
 }
 
-.bg-primary a:hover {
-  color: $secondary-color;
+a.bg-primary,
+a.bg-secondary {
+  text-decoration: none;
+  background: $primary-color !important;
+  display: block;
+  .fa-fw,
+  h2,
+  h3,
+  h4,
+  p {
+    color: white;
+    transition: color $slow-transition-speed;
+    text-decoration: none;
+  }
 }
-.bg-secondary a:hover {
-  color: $primary-color;
+a.bg-secondary {
+  background: $secondary-color !important;
+}
+a.bg-primary:hover {
+  .fa-fw,
+  h2,
+  h3,
+  h4,
+  p {
+    color: $secondary-color;
+  }
+}
+a.bg-secondary:hover {
+  .fa-fw,
+  h2,
+  h3,
+  h4,
+  p {
+    color: $primary-color;
+  }
 }
 footer .footer-copyright a.scvo-logo {
   border: none;
@@ -754,9 +792,12 @@ footer .footer-copyright a.scvo-logo {
   text-decoration: none;
   border-bottom-width: $thin-line !important;
   line-height: 1.3rem;
-  transition: background $transition-speed, border $transition-speed, color $transition-speed !important;
+  transition: background $fast-transition-speed, border $fast-transition-speed, color $fast-transition-speed !important;
   transition-timing-function: ease-in-out;
   background: none;
+}
+.btn.btn-link {
+  transition: background $slow-transition-speed, border $slow-transition-speed, color $slow-transition-speed !important;
 }
 .btn:link,
 .btn:visited {
@@ -800,7 +841,7 @@ a.chip {
   color: white !important;
   background-color: $secondary-color;
   border: $thin-line solid $secondary-color;
-  transition: background $transition-speed, border $transition-speed, color $transition-speed;
+  transition: background $fast-transition-speed, border $fast-transition-speed, color $fast-transition-speed;
   border-bottom-width: $thin-line;
 }
 .wp-block-file .wp-block-file__button:hover,
@@ -838,10 +879,12 @@ a.avatar,
 .post-info a.avatar:link,
 .post-info a.avatar:visited,
 a.author,
+a.category,
 a.rss,
 .chip {
   padding-top: 0;
   padding-bottom: 0;
+  font-weight: $body-bold-weight;
   color: $primary-color;
   background: none;
   border-bottom: none;
@@ -849,21 +892,21 @@ a.rss,
 }
 .card-footer a {
   display: inline-block;
-  line-height: 1.2rem;
+  line-height: 1rem;
   font-weight: $body-bold-weight;
   color: $secondary-color;
   background-image: linear-gradient(to bottom, $primary-color 0%, $primary-color 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 5px $medium-line;
-  transition: background-size $transition-speed, color $transition-speed, border $transition-speed, background-color $transition-speed, background-image $transition-speed;
+  transition: background-size $slow-transition-speed, color $slow-transition-speed, border $slow-transition-speed, background-color $slow-transition-speed, background-image $slow-transition-speed;
   transition-timing-function: ease-in-out;
   text-decoration: none;
 }
 .card-footer a:hover {
   color: $secondary-color;
   background-image: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
-  background-size: 5px 14px;
+  background-size: 5px 13px;
 }
 .breadcrumb .breadcrumb-item a {
   border-bottom: none;
@@ -872,6 +915,7 @@ a.rss,
 .breadcrumb .breadcrumb-item a:hover,
 .breadcrumb .breadcrumb-item a:hover,
 a.author:hover,
+a.category:hover,
 .no-underline:hover {
   color: $primary-color-dark;
 }
@@ -1049,7 +1093,7 @@ a.author:hover,
 .card.green,
 .card.pink {
   margin-bottom: $unit;
-  transition: background $transition-speed;
+  transition: background $slow-transition-speed;
   .card-header {
     padding-top: 0;
   }
@@ -1319,6 +1363,10 @@ a.author:hover,
       color: white;
     }
   }
+  a:hover {
+    color: $secondary-color;
+    background: none;
+  }
 }
 .bg-secondary {
   .btn {
@@ -1356,17 +1404,9 @@ a.author:hover,
     color: $secondary-color !important;
     border-color: white !important;
   }
-  a h1,
-  a h2,
-  a h3,
-  a h4 {
-    transition: color $transition-speed;
-  }
-  a:hover h1,
-  a:hover h2,
-  a:hover h3,
-  a:hover h4 {
+  a:hover {
     color: $primary-color;
+    background: none;
   }
 }
 .section-social {
@@ -1378,7 +1418,7 @@ a.author:hover,
   }
   a {
     opacity: 0.8;
-    transition: opacity $transition-speed;
+    transition: opacity $slow-transition-speed;
     .icon-rouleaux,
     .title {
       opacity: inherit;
@@ -1420,9 +1460,10 @@ a.bg-yellow {
   .fa-fw,
   h2,
   h3,
-  h4 {
+  h4,
+  p {
     text-decoration: none;
-    transition: color $transition-speed;
+    transition: color $slow-transition-speed;
   }
   .columns {
     margin-left: -($padding/2);
@@ -1437,28 +1478,49 @@ a.bg-yellow:hover {
   .fa-fw,
   h2,
   h3,
-  h4 {
+  h4,
+  p {
     color: $primary-color-dark;
   }
 }
 .banner-coronavirus-info-hub {
-  .logo {
-    height: 39px;
-    width: 145px;
-    .scvo-logo {
-      height: 100%;
-      width: 100%;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      background-image: url("https://storage.googleapis.com/scvo-assets/test/scvo/images/logos/scvo-secondary.svg");
+  .fa-ul {
+    margin-left: $unit*3;
+    margin-bottom: 0;
+    li {
+      margin: 0;
+    }
+    .fa-li {
+      top: $unit/5;
+      left: -($unit*3);
+      width: $unit*3;
+    }
+  }
+  .banner-content {
+    padding-left: $unit;
+    p {
+      font-weight: 400;
     }
   }
 }
-.banner-coronavirus-info-hub:hover {
-  .logo .scvo-logo {
-    background-image: url("https://storage.googleapis.com/scvo-assets/test/scvo/images/logos/scvo-black.svg");
-  }
-}
+// .banner-coronavirus-info-hub {
+//   .logo {
+//     height: 39px;
+//     width: 145px;
+//     .scvo-logo {
+//       height: 100%;
+//       width: 100%;
+//       background-repeat: no-repeat;
+//       background-size: 100%;
+//       background-image: url("https://storage.googleapis.com/scvo-assets/test/scvo/images/logos/scvo-secondary.svg");
+//     }
+//   }
+// }
+// .banner-coronavirus-info-hub:hover {
+//   .logo .scvo-logo {
+//     background-image: url("https://storage.googleapis.com/scvo-assets/test/scvo/images/logos/scvo-black.svg");
+//   }
+// }
 // a.bg-yellow:hover {
 //   h2,
 //   h3,
@@ -1496,7 +1558,7 @@ body.support.digital.landing .page-body {
   }
   a {
     opacity: 0.8;
-    transition: opacity $transition-speed;
+    transition: opacity $slow-transition-speed;
     .icon-rouleaux,
     .title {
       opacity: inherit;
@@ -1674,7 +1736,7 @@ aside {
   a[href^="https://"]::after {
     font-family: 'Font Awesome\ 5 Pro';
     content: "\f08e";
-    font-weight: $body-bold-weight;
+    // font-weight: $body-bold-weight;
     margin-left: $unit/4;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -1808,7 +1870,7 @@ header {
 
 // .events-warning:hover,
 // .events-warning:hover p {
-//   transition: $transition-speed;
+//   transition: $slow-transition-speed;
 //   transition-timing-function: ease-in-out;
 // }
 // .events-warning:hover {
@@ -1985,19 +2047,19 @@ header {
     &.mobile-search_open,
     &.mobile-menu_open {
       .mobile-background {
-        animation: fade-in $transition-speed forwards;
+        animation: fade-in $slow-transition-speed forwards;
       }
       .mobile-contents {
-        animation: fade-in $transition-speed forwards;
+        animation: fade-in $slow-transition-speed forwards;
       }
     }
     &.mobile-search_closing,
     &.mobile-menu_closing {
       .mobile-background {
-        animation: fade-out $transition-speed forwards;
+        animation: fade-out $slow-transition-speed forwards;
       }
       .mobile-contents {
-        animation: fade-out $transition-speed forwards;
+        animation: fade-out $slow-transition-speed forwards;
       }
     }
     &.mobile-search_closed,
@@ -2126,7 +2188,7 @@ header.toolbar {
     background-position: 0 100%;
     background-repeat: repeat-x;
     background-size: 0 0;
-    transition: background-size $transition-speed;
+    transition: background-size $slow-transition-speed;
   }
   .btn:hover,
   .btn:focus {
@@ -2354,7 +2416,7 @@ blockquote.twitter-tweet {
   margin: $unit/2 0;
   .post-info-item {
     display: inline;
-    margin-left: $unit/4;
+    margin-left: $unit/2;
   }
   .post-info-categories {
     display: inline-block;
@@ -2530,7 +2592,7 @@ form {
   color: $secondary-color-dark;
 }
 .accordion:before {
-  transition: opacity $transition-speed;
+  transition: opacity $slow-transition-speed;
   border-radius: $thick-line;
   content: "";
   display: block;
@@ -2553,7 +2615,7 @@ form {
   margin-bottom: 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height $transition-speed ease-in-out;
+  transition: max-height $slow-transition-speed ease-in-out;
   p:last-child,
   ul:last-child {
     margin-bottom: $unit;
@@ -2581,6 +2643,7 @@ form {
       padding: 0;
       margin: 0;
       display: inline;
+      font-weight: $body-bold-weight;
     }
     .menu-item>.menu-level-1 {
       font-size: 1.1rem;
@@ -3249,7 +3312,7 @@ figure,
 //   }
 //   img {
 //     opacity: .85;
-//     transition: opacity $transition-speed ease-in-out;
+//     transition: opacity $slow-transition-speed ease-in-out;
 //   }
 //   img:hover {
 //     opacity: 1;
