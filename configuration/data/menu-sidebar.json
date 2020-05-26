@@ -1544,6 +1544,52 @@
 							]
 						},
 						{
+							"label": "Guides",
+							"path": "/support/digital/guides",
+							"route": "",
+							"description": "",
+							"icon": "",
+							"children": [
+								{
+									"label": "Digital Services",
+									"path": "/support/digital/guides/digital-services",
+									"route": "^/support/digital/guides/digital-services$",
+									"description": "services",
+									"icon": "laptop",
+									"children": [
+										{
+											"label": "Your users",
+											"path": "/support/digital/guides/digital-services/your-users",
+											"route": "^/support/digital/guides/digital-services/your-users$",
+											"description": "users",
+											"icon": "users"
+										},
+										{
+											"label": "Tools & functionality",
+											"path": "/support/digital/guides/digital-services/tools-functionality",
+											"route": "^/support/digital/guides/digital-services/tools-functionality$",
+											"description": "tools",
+											"icon": "users"
+										},
+										{
+											"label": "Safety & security",
+											"path": "/support/digital/guides/digital-services/safety-security",
+											"route": "^/support/digital/guides/digital-services/safety-security$",
+											"description": "safety",
+											"icon": "users"
+										},
+										{
+											"label": "Evaluating success",
+											"path": "/support/digital/guides/digital-services/evaluating-success",
+											"route": "^/support/digital/guides/digital-services/evaluating-success$",
+											"description": "evaluating",
+											"icon": "users"
+										}
+									]
+								}
+							]
+						},
+						{
 							"label": "Events",
 							"path": "/support/events?team=digital",
 							"route": "^/support/events?team=digital$",
