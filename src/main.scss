@@ -969,13 +969,37 @@ a.category:hover,
   }
   .wp-block-quote {
     border: none;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     cite {
       text-align: right;
       font-style: normal;
       float: right;
       font-size: initial;
     }
+  }
+}
+
+ul.list-lg {
+  margin: 0 0 $unit;
+  list-style: none;
+  padding: 0 0 0 $unit*1.75;
+  li {
+    padding-left: $unit/4;
+    font-size: 1.04rem;
+  }
+  li:before {
+    font-family: 'Font Awesome\ 5 Pro';
+    content: "\f058";
+    color: $blue-color;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1rem;
+    margin-left: -($unit*1.75);
+    width: $unit*1.75;
   }
 }
 
