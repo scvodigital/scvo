@@ -958,6 +958,27 @@ a.category:hover,
   color: $primary-color-dark;
 }
 
+.wp-block-media-text {
+  clear: both;
+  .wp-block-media-text__media {
+    float: left;
+    padding-right: $unit !important;
+    img {
+      mix-blend-mode: darken;
+    }
+  }
+  .wp-block-quote {
+    border: none;
+    font-size: 1.05rem;
+    cite {
+      text-align: right;
+      font-style: normal;
+      float: right;
+      font-size: initial;
+    }
+  }
+}
+
 .scvo-link-bar {
   background-color: $gray-color;
   height: 40px;
@@ -1570,6 +1591,7 @@ a.bg-yellow:hover {
 
 .bg-blue,
 body.support.digital.landing .page-body,
+body.support.digital.guides .page-body,
 body.support.digital.participation .page-body,
 body.support.digital.evolution .page-body {
   background-color: $blue-color-light;
