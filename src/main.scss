@@ -371,7 +371,6 @@ h1.font-default,
   border-color: $secondary-color-light;
 }
 
-.digishift-resource,
 .card .card-title {
   a {
     display: block;
@@ -379,6 +378,9 @@ h1.font-default,
   a.caption {
     display: inline;
   }
+}
+.digishift-resource,
+.card .card-title {
   .fa-fw {
     font-weight: 400 !important;
     font-size: 1.2rem !important;
