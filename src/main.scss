@@ -934,11 +934,16 @@ a.rss,
 .card-footer .post-info a {
   color: $primary-color;
 }
+.bg-secondary .card-footer a.no-underline,
 .bg-tfn .card-footer a.no-underline {
   color: white;
 }
+.bg-secondary .card-footer a.no-underline:hover {
+  color: $primary-color;
+}
 .card-footer a.no-underline:before,
-.card-footer .post-info a:before {
+.card-footer .post-info a:before,
+.card-footer a.btn:before {
   display: none;
 }
 .breadcrumb .breadcrumb-item a {
