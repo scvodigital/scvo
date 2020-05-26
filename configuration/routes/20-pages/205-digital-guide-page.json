@@ -1,12 +1,7 @@
 {
-  "name": "digital_menu_page",
+  "name": "digital_guide_page",
   "debug": true,
-  "pattern": {
-    "participation": "/support/digital/participation",
-    "evolution": "/support/digital/evolution",
-    "evolution-digishift": "/support/digital/evolution/digishift",
-    "guides": "/support/digital/guides"
-  },
+  "pattern": "/support/digital/guides/:section",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -27,33 +22,18 @@
       "renderer": "handlebars"
     },
     {
-      "name": "supplimentaryResponses",
+      "name": "resources",
       "taskModule": "elasticsearch",
       "config": {
         "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
-        "queryTemplates": [
-          {
-            "name": "latest_participation",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_latest-digital-participation"
-          },
-          {
-            "name": "latest_evolution",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_latest-digital-evolution"
-          },
-          {
-            "name": "latest_cyber",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_latest-cyber-security"
-          }
-        ]
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-resource",
+          "template": ">context.metaData.handlebars.queries.resources_guide"
+        }
       },
       "renderer": "handlebars"
     },
@@ -74,7 +54,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_digital_page-header",
-              "body": ">context.metaData.handlebars.templates.support_digital_page-menu",
+              "body": ">context.metaData.handlebars.templates.support_digital_guide-page",
               "rightSidebar": ">context.metaData.handlebars.templates.support_digital_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.support_digital_footer"
             },

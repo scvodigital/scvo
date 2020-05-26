@@ -1,0 +1,50 @@
+{
+  "size": 100,
+  "_source": [
+    "wpid",
+    "slug",
+    "title",
+    "og_title",
+    "og_image",
+    "og_summary",
+    "publish_on",
+    "updated",
+    "content",
+    "link",
+    "weblink",
+    "icon",
+    "author_attribution",
+    "categories",
+    "categories_slug",
+    "categories_id",
+    "post_tags",
+    "post_tags_slug",
+    "post_tags_id"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {{#if @root.request.params.section ~}}
+        {
+          "term": {
+            "post_tags_slug": "{{@root.request.params.section}}"
+          }
+        },
+        {{/if ~}}
+        {
+          "term": {
+            "post_tags_slug": "guide"
+          }
+        },
+        {
+          "term": {
+            "categories_slug": "digital"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "weight": "asc"
+  }
+}

@@ -34,9 +34,9 @@
   {{#if url ~}}
   <div class="card-footer">
     {{#if (contains url 'https://scvo.scot') ~}}
-    <a href="{{replace url 'https://scvo.scot' ''}}" class="btn btn-link">Read more</a>
+    <a href="{{replace url 'https://scvo.scot' ''}}">Read more</a>
     {{else}}
-    <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website" class="btn btn-link">Read more</a>
+    <a href="{{url}}?utm_source=scvo&utm_campaign=search&utm_medium=website">Read more</a>
     {{/if ~}}
   </div>
   {{/if ~}}

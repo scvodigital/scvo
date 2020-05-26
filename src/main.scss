@@ -930,6 +930,17 @@ a.rss,
   // background-image: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
   background-size: 5px 13px;
 }
+.card-footer a.no-underline,
+.card-footer .post-info a {
+  color: $primary-color;
+}
+.bg-tfn .card-footer a.no-underline {
+  color: white;
+}
+.card-footer a.no-underline:before,
+.card-footer .post-info a:before {
+  display: none;
+}
 .breadcrumb .breadcrumb-item a {
   border-bottom: none;
 }
@@ -1819,7 +1830,7 @@ aside {
     font-weight: $body-font-weight;
     color: $secondary-color;
     text-decoration: none;
-    border: none;
+    border: none !important;
   }
   .wp-block-file__button {
     font-size: 90%;
@@ -2438,13 +2449,13 @@ blockquote.twitter-tweet {
   margin: $unit/2 0;
   .post-info-item {
     display: inline;
-    margin-left: $unit/2;
+    margin-right: $unit/2;
   }
   .post-info-categories {
     display: inline-block;
   }
-  .post-info-item:first-child {
-    margin-left: 0;
+  .post-info-item:last-child {
+    margin-right: 0;
   }
 }
 
