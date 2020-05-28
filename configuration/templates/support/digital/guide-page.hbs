@@ -14,6 +14,7 @@
     {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
 
     {{#compare @root.data.resources.hits.total ">" 0 ~}}
+    <h2>Resources</h2>
     {{#each @root.data.resources.hits.hits ~}}
     {{#with _source ~}}
     <div class="columns guide-resource b-margin">
