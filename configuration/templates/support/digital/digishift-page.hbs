@@ -27,7 +27,7 @@
         <h3>{{{title}}}</h3>
         {{/if ~}}
         {{#if (contains content "iframe") ~}}
-        {{{replace content 'iframe src' 'iframe height="161px" width="100%" src'}}}
+        {{{replace (replace content 'data-width' 'width') 'data-height' 'height'}}}
         {{else}}
         <p>
           {{stripTags content}}{{#if author_attribution}}<br />
