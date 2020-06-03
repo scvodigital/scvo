@@ -1,7 +1,7 @@
 {
   "name": "digital_guide_page",
   "debug": true,
-  "pattern": "/support/digital/guides/:guide/:section",
+  "pattern": "/support/digital/guides/:guide/:section(/:sub_section)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
