@@ -1522,7 +1522,7 @@
 							"icon": "",
 							"children": [
 								{
-									"label": "Digital Services",
+									"label": "Digital services",
 									"path": "/support/digital/guides/digital-services",
 									"route": "^/support/digital/guides/digital-services$",
 									"description": "services",
@@ -1532,28 +1532,155 @@
 											"label": "Your users",
 											"path": "/support/digital/guides/digital-services/your-users",
 											"route": "^/support/digital/guides/digital-services/your-users$",
-											"description": "users",
+											"description": "Your users",
 											"icon": "users"
 										},
 										{
 											"label": "Tools & functionality",
 											"path": "/support/digital/guides/digital-services/tools-functionality",
 											"route": "^/support/digital/guides/digital-services/tools-functionality$",
-											"description": "tools",
+											"description": "Tools & functionality",
 											"icon": "users"
 										},
 										{
 											"label": "Safety & security",
 											"path": "/support/digital/guides/digital-services/safety-security",
 											"route": "^/support/digital/guides/digital-services/safety-security$",
-											"description": "safety",
+											"description": "Safety & security",
 											"icon": "users"
 										},
 										{
 											"label": "Evaluating success",
 											"path": "/support/digital/guides/digital-services/evaluating-success",
 											"route": "^/support/digital/guides/digital-services/evaluating-success$",
-											"description": "evaluating",
+											"description": "Evaluating success",
+											"icon": "users"
+										}
+									]
+								},
+								{
+									"label": "Remote working",
+									"path": "/support/digital/guides/remote-working",
+									"route": "^/support/digital/guides/remote-working$",
+									"description": "services",
+									"icon": "laptop",
+									"children": [
+										{
+											"label": "How to guide",
+											"label_full": "Remote working: How to guide",
+											"path": "/support/digital/guides/remote-working/how-to",
+											"route": "^/support/digital/guides/remote-working/how-to$",
+											"description": "Remote working: How to guide",
+											"icon": "users"
+										},
+										{
+											"label": "Enable your staff to work from home",
+											"path": "/support/digital/guides/remote-working/enable",
+											"route": "^/support/digital/guides/remote-working/enable$",
+											"description": "Enable your staff to work from home",
+											"icon": "users"
+										},
+										{
+											"label": "Tools",
+											"label_full": "Tools for keeping in touch",
+											"path": "/support/digital/guides/remote-working/tools",
+											"route": "^/support/digital/guides/remote-working/tools$",
+											"description": "Tools for keeping in touch",
+											"icon": "users"
+										},
+										{
+											"label": "Virtual meetings & video calls",
+											"path": "/support/digital/guides/remote-working/virtual-meetings-video-calls",
+											"route": "^/support/digital/guides/remote-working/virtual-meetings-video-calls$",
+											"description": "Virtual meetings & video calls",
+											"icon": "users"
+										},
+										{
+											"label": "",
+											"path": "/support/digital/guides/remote-working/",
+											"route": "^/support/digital/guides/remote-working/$",
+											"description": "users",
+											"icon": "users"
+										},
+										{
+											"label": "Work in the cloud",
+											"path": "/support/digital/guides/remote-working/work-in-the-cloud",
+											"route": "^/support/digital/guides/remote-working/work-in-the-cloud$",
+											"description": "Work in the cloud",
+											"icon": "users"
+										},
+										{
+											"label": "Cyber security",
+											"label_full": "Cyber security - working safely and securely",
+											"path": "/support/digital/guides/remote-working/cyber-security",
+											"route": "^/support/digital/guides/remote-working/cyber-security$",
+											"description": "Cyber security",
+											"icon": "users"
+										},
+										{
+											"label": "Supporting your people",
+											"label_full": "Supporting your people while working remotely",
+											"path": "/support/digital/guides/remote-working/supporting",
+											"route": "^/support/digital/guides/remote-working/supporting$",
+											"description": "Supporting your people while working remotely",
+											"icon": "users"
+										}
+									]
+								},
+								{
+									"label": "Digital inclusion",
+									"path": "/support/digital/guides/digital-inclusion",
+									"route": "^/support/digital/guides/digital-inclusion$",
+									"description": "services",
+									"icon": "laptop",
+									"children": [
+										{
+											"label": "Planning your digital inclusion support",
+											"path": "/support/digital/guides/digital-inclusion/planning",
+											"route": "^/support/digital/guides/digital-inclusion/planning$",
+											"description": "Planning your digital inclusion support",
+											"icon": "users"
+										},
+										{
+											"label": "User insight",
+											"path": "/support/digital/guides/digital-inclusion/user-insight",
+											"route": "^/support/digital/guides/digital-inclusion/user-insight$",
+											"description": "User insight",
+											"icon": "users"
+										},
+										{
+											"label": "Approach",
+											"path": "/support/digital/guides/digital-inclusion/approach",
+											"route": "^/support/digital/guides/digital-inclusion/approach$",
+											"description": "Approach",
+											"icon": "users"
+										},
+										{
+											"label": "Creating the culture",
+											"path": "/support/digital/guides/digital-inclusion/creating-the-culture",
+											"route": "^/support/digital/guides/digital-inclusion/creating-the-culture$",
+											"description": "Creating the culture",
+											"icon": "users"
+										},
+										{
+											"label": "Your Digital Champions",
+											"path": "/support/digital/guides/digital-inclusion/digital-champions",
+											"route": "^/support/digital/guides/digital-inclusion/digital-champions$",
+											"description": "Your Digital Champions",
+											"icon": "users"
+										},
+										{
+											"label": "Promoting your service",
+											"path": "/support/digital/guides/digital-inclusion/promoting-your-service",
+											"route": "^/support/digital/guides/digital-inclusion/promoting-your-service$",
+											"description": "Promoting your service",
+											"icon": "users"
+										},
+										{
+											"label": "Evaluating success",
+											"path": "/support/digital/guides/digital-inclusion/evaluating-success",
+											"route": "^/support/digital/guides/digital-inclusion/evaluating-success$",
+											"description": "Evaluating success",
 											"icon": "users"
 										}
 									]
