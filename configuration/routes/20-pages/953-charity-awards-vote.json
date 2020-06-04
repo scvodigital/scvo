@@ -25,38 +25,6 @@
       "renderer": "handlebars"
     },
     {
-      "name": "goodhq",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": {
-          "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "goodhq-organisation",
-          "template": ">context.metaData.handlebars.queries.pages_charity-awards-goodhq"
-        }
-      },
-      "renderer": "handlebars"
-    },
-    {
-      "name": "volunteering-opportunities",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": {
-          "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "milo-volunteering-opportunity",
-          "template": ">context.metaData.handlebars.queries.pages_charity-awards-volunteering-opportunities"
-        }
-      },
-      "renderer": "handlebars"
-    },
-    {
       "name": "destination",
       "taskModule": "renderLayout",
       "renderer": "handlebars",

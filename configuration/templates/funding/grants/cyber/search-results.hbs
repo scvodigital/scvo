@@ -82,22 +82,6 @@
             {{/if ~}} --}}
           </p>
           {{/if ~}}
-          {{#ifAny goodhq_organisation.website goodhq_organisation.twitter goodhq_organisation.facebook goodhq_organisation.linkedin ~}}
-          <div class="no-margin">
-            {{#if goodhq_organisation.website ~}}
-            <a href="{{fixUrl goodhq_organisation.website 'http'}}" class="no-ext no-underline"><span class="far fa-link" aria-hidden="true"></span></a>
-            {{/if ~}}
-            {{#if goodhq_organisation.twitter ~}}
-            <a href="https://twitter.com/{{goodhq_organisation.twitter}}" class="no-ext no-underline"><span class="fab fa-twitter" aria-hidden="true"></span></a>
-            {{/if ~}}
-            {{#if goodhq_organisation.facebook ~}}
-            <a href="{{fixUrl goodhq_organisation.facebook 'http'}}" class="no-ext no-underline"><span class="fab fa-facebook" aria-hidden="true"></span></a>
-            {{/if ~}}
-            {{#if goodhq_organisation.linkedin ~}}
-            <a href="{{fixUrl goodhq_organisation.linkedin 'http'}}" class="no-ext no-underline"><span class="fab fa-linkedin" aria-hidden="true"></span></a>
-            {{/if ~}}
-          </div>
-          {{/ifAny ~}}
         </section>
       </div>
     </div>
