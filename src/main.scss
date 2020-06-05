@@ -398,6 +398,12 @@ h1.font-default,
     transition: background-image $slow-transition-speed;
   }
 }
+.guide-resource,
+.digishift-resource {
+  iframe {
+    max-width: 100%;
+  }
+}
 .card .card-title .fa-fw {
   float: right;
   margin-left: $unit/2;
