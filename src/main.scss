@@ -1013,6 +1013,7 @@ a.category:hover,
   clear: both;
   .wp-block-media-text__media {
     float: left;
+    max-width: 33%;
     padding-right: $unit !important;
     img {
       mix-blend-mode: darken;
@@ -1036,7 +1037,8 @@ ul.list-lg {
   padding: 0 0 0 $unit*1.75;
   li {
     padding-left: $unit/4;
-    font-size: 1.04rem;
+    font-size: 1rem;
+    font-weight: $body-bold-weight;
   }
   li:before {
     font-family: 'Font Awesome\ 5 Pro';
@@ -1045,6 +1047,7 @@ ul.list-lg {
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: inline-block;
+    font-weight: $body-font-weight;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;

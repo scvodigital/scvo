@@ -30,8 +30,8 @@
         {{{replace (replace content 'data-width' 'width') 'data-height' 'height'}}}
         {{else}}
         <p>
-          {{stripTags content}}{{#if author_attribution}}<br />
-          by {{{author_attribution}}}{{/if}}
+          {{stripTags content}}{{#if author_attribution}}{{#if content}}<br />
+          by {{else}}By {{/if}}{{{author_attribution}}}{{/if}}
         </p>
         {{/if ~}}
       </div>
