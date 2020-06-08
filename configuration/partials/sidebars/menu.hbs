@@ -1,7 +1,7 @@
 {{#*inline "childMenu" ~}}
 {{#if route ~}}
 <li class="menu-item">
-  {{#if path}}<a class="menu-level-{{level}}{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}" href="{{path}}">{{else}}<div class="menu-level-{{level}}">{{/if}}{{#switch level}}{{#case 2}}<span class="far fa-angle-right" aria-hidden="true"></span>{{/case}}{{#case 3}}<span class="far fa-angle-double-right" aria-hidden="true"></span>{{/case}}{{#case 4}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{#case 5}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{/switch}} {{{label}}}{{#if path}}</a>{{else}}</div>{{/if}}
+  {{#if path}}<a class="menu-level-{{level}}{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}" href="{{path}}">{{else}}<div class="menu-level-{{level}}">{{/if}}{{#switch level}}{{#case 2}}<span class="far fa-angle-right" aria-hidden="true"></span>{{/case}}{{#case 3}}<span class="far fa-angle-double-right" aria-hidden="true"></span>{{/case}}{{#case 4}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{#case 5}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{#case 6}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span><span class="far fa-angle-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{#case 7}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{#case 8}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span><span class="far fa-angle-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{#case 9}}<span class="far fa-angle-double-right" aria-hidden="true"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span><span class="far fa-angle-double-right" aria-hidden="true" style="margin-left:-2px;"></span>{{/case}}{{/switch}} {{{label}}}{{#if path}}</a>{{else}}</div>{{/if}}
 </li>
 {{/if ~}}
 {{/inline ~}}
@@ -74,51 +74,215 @@
                           </ul>
                         {{else}}
                           {{#each children ~}}
-                            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
-                            <ul class="menu menu-depth-5">
-                              {{#if ../../../../this ~}}
-                              {{> childMenu ../../../../this level=1}}
-                              {{/if ~}}
-                              {{#if ../../../this ~}}
-                              {{> childMenu ../../../this level=2}}
-                              {{/if ~}}
-                              {{#if ../../this ~}}
-                              {{> childMenu ../../this level=3}}
-                              {{/if ~}}
-                              {{#if ../this ~}}
-                              {{> childMenu ../this level=4}}
-                              {{/if ~}}
-                              {{#each ../this.children ~}}
-                              {{> childMenu this level=5}}
-                              {{/each ~}}
-                            </ul>
-                            {{else}}
-                              {{#each children ~}}
-                                {{#if children ~}}
-                                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
-                                    <ul class="menu menu-depth-6">
-                                      {{#if ../../../../this ~}}
-                                      {{> childMenu ../../../../this level=1}}
-                                      {{/if ~}}
-                                      {{#if ../../../this ~}}
-                                      {{> childMenu ../../../this level=2}}
-                                      {{/if ~}}
-                                      {{#if ../../this ~}}
-                                      {{> childMenu ../../this level=3}}
-                                      {{/if ~}}
-                                      {{#if ../this ~}}
-                                      {{> childMenu ../this level=4}}
-                                      {{/if ~}}
-                                      {{#if this ~}}
-                                      {{> childMenu this level=5}}
-                                      {{/if ~}}
-                                      {{#each this.children ~}}
-                                      {{> childMenu this level=6}}
-                                      {{/each ~}}
-                                    </ul>
-                                  {{else}}
+                            {{#if children ~}}
+                              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                <ul class="menu menu-depth-6">
+                                  {{#if ../../../../this ~}}
+                                  {{> childMenu ../../../../this level=1}}
+                                  {{/if ~}}
+                                  {{#if ../../../this ~}}
+                                  {{> childMenu ../../../this level=2}}
+                                  {{/if ~}}
+                                  {{#if ../../this ~}}
+                                  {{> childMenu ../../this level=3}}
+                                  {{/if ~}}
+                                  {{#if ../this ~}}
+                                  {{> childMenu ../this level=4}}
+                                  {{/if ~}}
+                                  {{#if this ~}}
+                                  {{> childMenu this level=5}}
+                                  {{/if ~}}
+                                  {{#each this.children ~}}
+                                  {{> childMenu this level=6}}
+                                  {{/each ~}}
+                                </ul>
+                              {{else}}
+                                {{#each children ~}}
+                                  {{#if children ~}}
+                                    {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                      <ul class="menu menu-depth-7">
+                                        {{#if ../../../../../this ~}}
+                                        {{> childMenu ../../../../../this level=1}}
+                                        {{/if ~}}
+                                        {{#if ../../../../this ~}}
+                                        {{> childMenu ../../../../this level=2}}
+                                        {{/if ~}}
+                                        {{#if ../../../this ~}}
+                                        {{> childMenu ../../../this level=3}}
+                                        {{/if ~}}
+                                        {{#if ../../this ~}}
+                                        {{> childMenu ../../this level=4}}
+                                        {{/if ~}}
+                                        {{#if ../this ~}}
+                                        {{> childMenu ../this level=5}}
+                                        {{/if ~}}
+                                        {{#if this ~}}
+                                        {{> childMenu this level=6}}
+                                        {{/if ~}}
+                                        {{#each this.children ~}}
+                                        {{> childMenu this level=7}}
+                                        {{/each ~}}
+                                      </ul>
+                                    {{else}}
                                     {{#each children ~}}
-                                      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                      {{#if children ~}}
+                                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                          <ul class="menu menu-depth-8">
+                                            {{#if ../../../../../../this ~}}
+                                            {{> childMenu ../../../../../../this level=1}}
+                                            {{/if ~}}
+                                            {{#if ../../../../../this ~}}
+                                            {{> childMenu ../../../../../this level=2}}
+                                            {{/if ~}}
+                                            {{#if ../../../../this ~}}
+                                            {{> childMenu ../../../../this level=3}}
+                                            {{/if ~}}
+                                            {{#if ../../../this ~}}
+                                            {{> childMenu ../../../this level=4}}
+                                            {{/if ~}}
+                                            {{#if ../../this ~}}
+                                            {{> childMenu ../../this level=5}}
+                                            {{/if ~}}
+                                            {{#if ../this ~}}
+                                            {{> childMenu ../this level=6}}
+                                            {{/if ~}}
+                                            {{#if this ~}}
+                                            {{> childMenu this level=7}}
+                                            {{/if ~}}
+                                            {{#each this.children ~}}
+                                            {{> childMenu this level=8}}
+                                            {{/each ~}}
+                                          </ul>
+                                        {{else}}
+                                        {{#each children ~}}
+                                          {{#if children ~}}
+                                            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                              <ul class="menu menu-depth-9">
+                                                {{#if ../../../../../../../this ~}}
+                                                {{> childMenu ../../../../../../../this level=1}}
+                                                {{/if ~}}
+                                                {{#if ../../../../../../this ~}}
+                                                {{> childMenu ../../../../../../this level=2}}
+                                                {{/if ~}}
+                                                {{#if ../../../../../this ~}}
+                                                {{> childMenu ../../../../../this level=3}}
+                                                {{/if ~}}
+                                                {{#if ../../../../this ~}}
+                                                {{> childMenu ../../../../this level=4}}
+                                                {{/if ~}}
+                                                {{#if ../../../this ~}}
+                                                {{> childMenu ../../../this level=5}}
+                                                {{/if ~}}
+                                                {{#if ../../this ~}}
+                                                {{> childMenu ../../this level=6}}
+                                                {{/if ~}}
+                                                {{#if ../this ~}}
+                                                {{> childMenu ../this level=7}}
+                                                {{/if ~}}
+                                                {{#if this ~}}
+                                                {{> childMenu this level=8}}
+                                                {{/if ~}}
+                                                {{#each this.children ~}}
+                                                {{> childMenu this level=9}}
+                                                {{/each ~}}
+                                              </ul>
+                                            {{else}}
+                                              {{#each children ~}}
+                                                {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                                <ul class="menu menu-depth-8">
+                                                  {{#if ../../../../../../../this ~}}
+                                                  {{> childMenu ../../../../../../../this level=1}}
+                                                  {{/if ~}}
+                                                  {{#if ../../../../../../this ~}}
+                                                  {{> childMenu ../../../../../../this level=2}}
+                                                  {{/if ~}}
+                                                  {{#if ../../../../../this ~}}
+                                                  {{> childMenu ../../../../../this level=3}}
+                                                  {{/if ~}}
+                                                  {{#if ../../../../this ~}}
+                                                  {{> childMenu ../../../../this level=4}}
+                                                  {{/if ~}}
+                                                  {{#if ../../../this ~}}
+                                                  {{> childMenu ../../../this level=5}}
+                                                  {{/if ~}}
+                                                  {{#if ../../this ~}}
+                                                  {{> childMenu ../../this level=6}}
+                                                  {{/if ~}}
+                                                  {{#if ../this ~}}
+                                                  {{> childMenu ../this level=7}}
+                                                  {{/if ~}}
+                                                  {{#each ../this.children ~}}
+                                                  {{> childMenu this level=8}}
+                                                  {{/each ~}}
+                                                </ul>
+                                                {{else}}
+                                                {{!-- another level of menus is needed...sorry --}}
+                                                {{/ifAll ~}}
+                                              {{/each ~}}
+                                            {{/ifAll ~}}
+                                          {{else}}
+                                            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                              <ul class="menu menu-depth-8">
+                                                {{#if ../../../../../../../this ~}}
+                                                {{> childMenu ../../../../../../../this level=1}}
+                                                {{/if ~}}
+                                                {{#if ../../../../../../this ~}}
+                                                {{> childMenu ../../../../../../this level=2}}
+                                                {{/if ~}}
+                                                {{#if ../../../../../this ~}}
+                                                {{> childMenu ../../../../../this level=3}}
+                                                {{/if ~}}
+                                                {{#if ../../../../this ~}}
+                                                {{> childMenu ../../../../this level=4}}
+                                                {{/if ~}}
+                                                {{#if ../../../this ~}}
+                                                {{> childMenu ../../../this level=5}}
+                                                {{/if ~}}
+                                                {{#if ../../this ~}}
+                                                {{> childMenu ../../this level=6}}
+                                                {{/if ~}}
+                                                {{#if ../this ~}}
+                                                {{> childMenu ../this level=7}}
+                                                {{/if ~}}
+                                                {{#each ../this.children ~}}
+                                                {{> childMenu this level=8}}
+                                                {{/each ~}}
+                                              </ul>
+                                            {{/ifAll ~}}
+                                          {{/if ~}}
+                                        {{/each ~}}
+                                        {{/ifAll ~}}
+                                      {{else}}
+                                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                          <ul class="menu menu-depth-7">
+                                            {{#if ../../../../../../this ~}}
+                                            {{> childMenu ../../../../../../this level=1}}
+                                            {{/if ~}}
+                                            {{#if ../../../../../this ~}}
+                                            {{> childMenu ../../../../../this level=2}}
+                                            {{/if ~}}
+                                            {{#if ../../../../this ~}}
+                                            {{> childMenu ../../../../this level=3}}
+                                            {{/if ~}}
+                                            {{#if ../../../this ~}}
+                                            {{> childMenu ../../../this level=4}}
+                                            {{/if ~}}
+                                            {{#if ../../this ~}}
+                                            {{> childMenu ../../this level=5}}
+                                            {{/if ~}}
+                                            {{#if ../this ~}}
+                                            {{> childMenu ../this level=6}}
+                                            {{/if ~}}
+                                            {{#each ../this.children ~}}
+                                            {{> childMenu this level=7}}
+                                            {{/each ~}}
+                                          </ul>
+                                        {{/ifAll ~}}
+                                      {{/if ~}}
+                                    {{/each ~}}
+                                    {{/ifAll ~}}
+                                  {{else}}
+                                    {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
                                       <ul class="menu menu-depth-6">
                                         {{#if ../../../../../this ~}}
                                         {{> childMenu ../../../../../this level=1}}
@@ -139,34 +303,31 @@
                                         {{> childMenu this level=6}}
                                         {{/each ~}}
                                       </ul>
-                                      {{else}}
-                                      {{!-- another level of menus is needed...sorry --}}
-                                      {{/ifAll ~}}
-                                    {{/each ~}}
-                                  {{/ifAll ~}}
-                                {{else}}
-                                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
-                                    <ul class="menu menu-depth-5">
-                                      {{#if ../../../../this ~}}
-                                      {{> childMenu ../../../../this level=1}}
-                                      {{/if ~}}
-                                      {{#if ../../../this ~}}
-                                      {{> childMenu ../../../this level=2}}
-                                      {{/if ~}}
-                                      {{#if ../../this ~}}
-                                      {{> childMenu ../../this level=3}}
-                                      {{/if ~}}
-                                      {{#if ../this ~}}
-                                      {{> childMenu ../this level=4}}
-                                      {{/if ~}}
-                                      {{#each ../this.children ~}}
-                                      {{> childMenu this level=5}}
-                                      {{/each ~}}
-                                    </ul>
-                                  {{/ifAll ~}}
-                                {{/if ~}}
-                              {{/each ~}}
-                            {{/ifAll ~}}
+                                    {{/ifAll ~}}
+                                  {{/if ~}}
+                                {{/each ~}}
+                              {{/ifAll ~}}
+                            {{else}}
+                              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                <ul class="menu menu-depth-5">
+                                  {{#if ../../../../this ~}}
+                                  {{> childMenu ../../../../this level=1}}
+                                  {{/if ~}}
+                                  {{#if ../../../this ~}}
+                                  {{> childMenu ../../../this level=2}}
+                                  {{/if ~}}
+                                  {{#if ../../this ~}}
+                                  {{> childMenu ../../this level=3}}
+                                  {{/if ~}}
+                                  {{#if ../this ~}}
+                                  {{> childMenu ../this level=4}}
+                                  {{/if ~}}
+                                  {{#each ../this.children ~}}
+                                  {{> childMenu this level=5}}
+                                  {{/each ~}}
+                                </ul>
+                              {{/ifAll ~}}
+                            {{/if ~}}
                           {{/each ~}}
                         {{/ifAll ~}}
                       {{else}}

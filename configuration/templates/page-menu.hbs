@@ -64,15 +64,35 @@
                                   {{/each ~}}
                                 </div>
                               {{else}}
-                                {{#each children ~}}
+                              {{#each children ~}}
+                                {{#if children ~}}
                                   {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
-                                  <div class="columns">
-                                    {{#each ../this.children ~}}
-                                    {{> childMenu this level=5}}
+                                    <div class="columns">
+                                      {{#each this.children ~}}
+                                      {{> childMenu this level=6}}
+                                      {{/each ~}}
+                                    </div>
+                                  {{else}}
+                                    {{#each children ~}}
+                                      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                      <div class="columns">
+                                        {{#each ../this.children ~}}
+                                        {{> childMenu this level=6}}
+                                        {{/each ~}}
+                                      </div>
+                                      {{/ifAll ~}}
                                     {{/each ~}}
-                                  </div>
                                   {{/ifAll ~}}
-                                {{/each ~}}
+                                {{else}}
+                                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                    <div class="columns">
+                                      {{#each ../this.children ~}}
+                                      {{> childMenu this level=5}}
+                                      {{/each ~}}
+                                    </div>
+                                  {{/ifAll ~}}
+                                {{/if ~}}
+                              {{/each ~}}
                               {{/ifAll ~}}
                             {{else}}
                               {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}

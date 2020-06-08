@@ -1346,10 +1346,243 @@
 							"icon": "laptop-house",
 							"children": [
 								{
+									"label": "How to guides",
+									"path": "/support/digital/evolution/guides",
+									"route": "^/support/digital/evolution/guides$",
+									"description": "How to guides.",
+									"icon": "question-circle",
+									"children": [
+										{
+											"label": "Digital services",
+											"label_full": "Digital services: How to",
+											"path": "/support/digital/evolution/guides/digital-services",
+											"route": "^/support/digital/evolution/guides/digital-services$",
+											"description": "Overview of main topics to explore when moving services to digital channels. Includes popular tools and useful resources.",
+											"icon": "lightbulb-on",
+											"children": [
+												{
+													"label": "Your users",
+													"path": "/support/digital/evolution/guides/digital-services/your-users",
+													"route": "^/support/digital/evolution/guides/digital-services/your-users$",
+													"description": "How to understand your users’ digital skills and preferences.",
+													"icon": "users"
+												},
+												{
+													"label": "Tools & functionality",
+													"path": "/support/digital/evolution/guides/digital-services/tools-functionality",
+													"route": "^/support/digital/evolution/guides/digital-services/tools-functionality$",
+													"description": "Free and low cost tools that charities are using to deliver digital services.",
+													"icon": "tools",
+													"children": [
+														{
+															"label": "Webchat",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/webchat",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/webchat$",
+															"description": "Webchat",
+															"icon": "users"
+														},
+														{
+															"label": "Video calls",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/video-calls",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/video-calls$",
+															"description": "Video calls",
+															"icon": "users"
+														},
+														{
+															"label": "Bookings",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/bookings",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/bookings$",
+															"description": "Bookings",
+															"icon": "users"
+														},
+														{
+															"label": "Messenger services",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/messenger-services",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/messenger-services$",
+															"description": "Messenger services",
+															"icon": "users"
+														},
+														{
+															"label": "Chatbots",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/chatbots",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/chatbots$",
+															"description": "Chatbots",
+															"icon": "users"
+														},
+														{
+															"label": "Online forms",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/online-forms",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/online-forms$",
+															"description": "Online forms",
+															"icon": "users"
+														},
+														{
+															"label": "Webinar",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/webinar",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/webinar$",
+															"description": "Webinar",
+															"icon": "users"
+														},
+														{
+															"label": "Elearning",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/elearning",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/elearning$",
+															"description": "Elearning",
+															"icon": "users"
+														},
+														{
+															"label": "Video stream",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/video-stream",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/video-stream$",
+															"description": "Video stream",
+															"icon": "users"
+														},
+														{
+															"label": "Community building",
+															"path": "/support/digital/evolution/guides/digital-services/tools-functionality/community-building",
+															"route": "^/support/digital/evolution/guides/digital-services/tools-functionality/community-building$",
+															"description": "Community building",
+															"icon": "users"
+														}
+													]
+												},
+												{
+													"label": "Safety & security",
+													"path": "/support/digital/evolution/guides/digital-services/safety-security",
+													"route": "^/support/digital/evolution/guides/digital-services/safety-security$",
+													"description": "How to risk assess digital services. Includes resources for ensuring safety and security of employees and users.",
+													"icon": "lock-alt"
+												},
+												{
+													"label": "Evaluating success",
+													"path": "/support/digital/evolution/guides/digital-services/evaluating-success",
+													"route": "^/support/digital/evolution/guides/digital-services/evaluating-success$",
+													"description": "How to use data and feedback to review and improve your service.",
+													"icon": "balance-scale-right"
+												}
+											]
+										},
+										{
+											"label": "Remote working",
+											"label_full": "Remote working: How to",
+											"path": "/support/digital/evolution/guides/remote-working",
+											"route": "^/support/digital/evolution/guides/remote-working$",
+											"description": "Guide for organisations supporting employees and volunteers to work from home. Includes tech, software and communication.",
+											"icon": "laptop-house",
+											"children": [
+												{
+													"label": "Enable your staff to work from home",
+													"path": "/support/digital/evolution/guides/remote-working/enable",
+													"route": "^/support/digital/evolution/guides/remote-working/enable$",
+													"description": "Enable your staff to work from home",
+													"icon": "laptop-house"
+												},
+												{
+													"label": "Tools",
+													"label_full": "Tools for keeping in touch",
+													"path": "/support/digital/evolution/guides/remote-working/keeping-in-touch",
+													"route": "^/support/digital/evolution/guides/remote-working/keeping-in-touch$",
+													"description": "Tools for keeping in touch",
+													"icon": "tools"
+												},
+												{
+													"label": "Virtual meetings & video calls",
+													"path": "/support/digital/evolution/guides/remote-working/virtual-meetings",
+													"route": "^/support/digital/evolution/guides/remote-working/virtual-meetings$",
+													"description": "Virtual meetings & video calls",
+													"icon": "video"
+												},
+												{
+													"label": "Work in the cloud",
+													"path": "/support/digital/evolution/guides/remote-working/work-in-the-cloud",
+													"route": "^/support/digital/evolution/guides/remote-working/work-in-the-cloud$",
+													"description": "For efficient storing of documents, work planning and collaboration",
+													"icon": "cloud-upload"
+												},
+												{
+													"label": "Cyber security",
+													"label_full": "Cyber security - working safely and securely",
+													"path": "/support/digital/evolution/guides/remote-working/cyber-security",
+													"route": "^/support/digital/evolution/guides/remote-working/cyber-security$",
+													"description": "Cyber security",
+													"icon": "lock-alt"
+												},
+												{
+													"label": "Supporting your people",
+													"label_full": "Supporting your people while working remotely",
+													"path": "/support/digital/evolution/guides/remote-working/supporting",
+													"route": "^/support/digital/evolution/guides/remote-working/supporting$",
+													"description": "Supporting your people while working remotely",
+													"icon": "users"
+												}
+											]
+										},
+										{
+											"label": "Digital inclusion",
+											"label_full": "Digital inclusion: How to",
+											"path": "/support/digital/evolution/guides/digital-inclusion",
+											"route": "^/support/digital/evolution/guides/digital-inclusion$",
+											"description": "Guide for organisations delivering digital inclusion projects. Includes best practice, case studies and useful resources.",
+											"icon": "users",
+											"children": [
+												{
+													"label": "Planning your digital inclusion support",
+													"path": "/support/digital/evolution/guides/digital-inclusion/planning",
+													"route": "^/support/digital/evolution/guides/digital-inclusion/planning$",
+													"description": "Planning your digital inclusion support",
+													"icon": "user-chart"
+												},
+												{
+													"label": "User insight",
+													"path": "/support/digital/evolution/guides/digital-inclusion/user-insight",
+													"route": "^/support/digital/evolution/guides/digital-inclusion/user-insight$",
+													"description": "User insight",
+													"icon": "user"
+												},
+												{
+													"label": "Approach",
+													"path": "/support/digital/evolution/guides/digital-inclusion/approach",
+													"route": "^/support/digital/evolution/guides/digital-inclusion/approach$",
+													"description": "Approach",
+													"icon": "person-sign"
+												},
+												{
+													"label": "Creating the culture",
+													"path": "/support/digital/evolution/guides/digital-inclusion/creating-the-culture",
+													"route": "^/support/digital/evolution/guides/digital-inclusion/creating-the-culture$",
+													"description": "Creating the culture",
+													"icon": "hand-holding-heart"
+												},
+												{
+													"label": "Your Digital Champions",
+													"path": "/support/digital/evolution/guides/digital-inclusion/digital-champions",
+													"route": "^/support/digital/evolution/guides/digital-inclusion/digital-champions$",
+													"description": "Your Digital Champions",
+													"icon": "user-ninja"
+												},
+												{
+													"label": "Promoting your service",
+													"path": "/support/digital/evolution/guides/digital-inclusion/promoting-your-service",
+													"route": "^/support/digital/evolution/guides/digital-inclusion/promoting-your-service$",
+													"description": "Promoting your service",
+													"icon": "star-shooting"
+												},
+												{
+													"label": "Evaluating success",
+													"path": "/support/digital/evolution/guides/digital-inclusion/evaluating-success",
+													"route": "^/support/digital/evolution/guides/digital-inclusion/evaluating-success$",
+													"description": "Evaluating success",
+													"icon": "balance-scale-right"
+												}
+											]
+										}
+									]
+								},
+								{
 									"label": "DigiShift",
 									"path": "/support/digital/evolution/digishift",
 									"route": "^/support/digital/evolution/digishift$",
-									"description": "Shift your service delivery into digital and remote channels",
+									"description": "Shift your service delivery into digital and remote channels.",
 									"icon": "signal-stream",
 									"children": [
 										{
@@ -1421,7 +1654,7 @@
 									"label": "Essential skills",
 									"path": "/support/digital/participation/skills",
 									"__disabled__route": "^/support/digital/participation/skills$",
-									"description": "Understand and measure essential skills in your organisation",
+									"description": "Understand and measure essential skills in your organisation.",
 									"icon": "wifi"
 								},
 								{
@@ -1518,236 +1751,6 @@
 									"route": "^/support/digital/evolution/digital-pioneers$",
 									"description": "",
 									"icon": ""
-								}
-							]
-						},
-						{
-							"label": "Guides",
-							"path": "/support/digital/guides",
-							"route": "",
-							"description": "",
-							"icon": "",
-							"children": [
-								{
-									"label": "Digital services",
-									"path": "/support/digital/guides/digital-services",
-									"route": "^/support/digital/guides/digital-services$",
-									"description": "services",
-									"icon": "laptop",
-									"children": [
-										{
-											"label": "Your users",
-											"path": "/support/digital/guides/digital-services/your-users",
-											"route": "^/support/digital/guides/digital-services/your-users$",
-											"description": "Your users",
-											"icon": "users"
-										},
-										{
-											"label": "Tools & functionality",
-											"path": "/support/digital/guides/digital-services/tools-functionality",
-											"route": "^/support/digital/guides/digital-services/tools-functionality$",
-											"description": "Tools & functionality",
-											"icon": "users",
-											"children": [
-												{
-													"label": "Webchat",
-													"path": "/support/digital/guides/digital-services/tools-functionality/webchat",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/webchat$",
-													"description": "Webchat",
-													"icon": "users"
-												},
-												{
-													"label": "Video calls",
-													"path": "/support/digital/guides/digital-services/tools-functionality/video-calls",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/video-calls$",
-													"description": "Video calls",
-													"icon": "users"
-												},
-												{
-													"label": "Bookings",
-													"path": "/support/digital/guides/digital-services/tools-functionality/bookings",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/bookings$",
-													"description": "Bookings",
-													"icon": "users"
-												},
-												{
-													"label": "Messenger services",
-													"path": "/support/digital/guides/digital-services/tools-functionality/messenger-services",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/messenger-services$",
-													"description": "Messenger services",
-													"icon": "users"
-												},
-												{
-													"label": "Chatbots",
-													"path": "/support/digital/guides/digital-services/tools-functionality/chatbots",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/chatbots$",
-													"description": "Chatbots",
-													"icon": "users"
-												},
-												{
-													"label": "Online forms",
-													"path": "/support/digital/guides/digital-services/tools-functionality/online-forms",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/online-forms$",
-													"description": "Online forms",
-													"icon": "users"
-												},
-												{
-													"label": "Webinar",
-													"path": "/support/digital/guides/digital-services/tools-functionality/webinar",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/webinar$",
-													"description": "Webinar",
-													"icon": "users"
-												},
-												{
-													"label": "Elearning",
-													"path": "/support/digital/guides/digital-services/tools-functionality/elearning",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/elearning$",
-													"description": "Elearning",
-													"icon": "users"
-												},
-												{
-													"label": "Video stream",
-													"path": "/support/digital/guides/digital-services/tools-functionality/video-stream",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/video-stream$",
-													"description": "Video stream",
-													"icon": "users"
-												},
-												{
-													"label": "Community building",
-													"path": "/support/digital/guides/digital-services/tools-functionality/community-building",
-													"route": "^/support/digital/guides/digital-services/tools-functionality/community-building$",
-													"description": "Community building",
-													"icon": "users"
-												}
-											]
-										},
-										{
-											"label": "Safety & security",
-											"path": "/support/digital/guides/digital-services/safety-security",
-											"route": "^/support/digital/guides/digital-services/safety-security$",
-											"description": "Safety & security",
-											"icon": "users"
-										},
-										{
-											"label": "Evaluating success",
-											"path": "/support/digital/guides/digital-services/evaluating-success",
-											"route": "^/support/digital/guides/digital-services/evaluating-success$",
-											"description": "Evaluating success",
-											"icon": "users"
-										}
-									]
-								},
-								{
-									"label": "Remote working",
-									"path": "/support/digital/guides/remote-working",
-									"route": "^/support/digital/guides/remote-working$",
-									"description": "services",
-									"icon": "laptop",
-									"children": [
-										{
-											"label": "Enable your staff to work from home",
-											"path": "/support/digital/guides/remote-working/enable",
-											"route": "^/support/digital/guides/remote-working/enable$",
-											"description": "Enable your staff to work from home",
-											"icon": "users"
-										},
-										{
-											"label": "Tools",
-											"label_full": "Tools for keeping in touch",
-											"path": "/support/digital/guides/remote-working/keeping-in-touch",
-											"route": "^/support/digital/guides/remote-working/keeping-in-touch$",
-											"description": "Tools for keeping in touch",
-											"icon": "users"
-										},
-										{
-											"label": "Virtual meetings & video calls",
-											"path": "/support/digital/guides/remote-working/virtual-meetings",
-											"route": "^/support/digital/guides/remote-working/virtual-meetings$",
-											"description": "Virtual meetings & video calls",
-											"icon": "users"
-										},
-										{
-											"label": "Work in the cloud",
-											"path": "/support/digital/guides/remote-working/work-in-the-cloud",
-											"route": "^/support/digital/guides/remote-working/work-in-the-cloud$",
-											"description": "For efficient storing of documents, work planning and collaboration",
-											"icon": "users"
-										},
-										{
-											"label": "Cyber security",
-											"label_full": "Cyber security - working safely and securely",
-											"path": "/support/digital/guides/remote-working/cyber-security",
-											"route": "^/support/digital/guides/remote-working/cyber-security$",
-											"description": "Cyber security",
-											"icon": "users"
-										},
-										{
-											"label": "Supporting your people",
-											"label_full": "Supporting your people while working remotely",
-											"path": "/support/digital/guides/remote-working/supporting",
-											"route": "^/support/digital/guides/remote-working/supporting$",
-											"description": "Supporting your people while working remotely",
-											"icon": "users"
-										}
-									]
-								},
-								{
-									"label": "Digital inclusion",
-									"path": "/support/digital/guides/digital-inclusion",
-									"route": "^/support/digital/guides/digital-inclusion$",
-									"description": "services",
-									"icon": "laptop",
-									"children": [
-										{
-											"label": "Planning your digital inclusion support",
-											"path": "/support/digital/guides/digital-inclusion/planning",
-											"route": "^/support/digital/guides/digital-inclusion/planning$",
-											"description": "Planning your digital inclusion support",
-											"icon": "users"
-										},
-										{
-											"label": "User insight",
-											"path": "/support/digital/guides/digital-inclusion/user-insight",
-											"route": "^/support/digital/guides/digital-inclusion/user-insight$",
-											"description": "User insight",
-											"icon": "users"
-										},
-										{
-											"label": "Approach",
-											"path": "/support/digital/guides/digital-inclusion/approach",
-											"route": "^/support/digital/guides/digital-inclusion/approach$",
-											"description": "Approach",
-											"icon": "users"
-										},
-										{
-											"label": "Creating the culture",
-											"path": "/support/digital/guides/digital-inclusion/creating-the-culture",
-											"route": "^/support/digital/guides/digital-inclusion/creating-the-culture$",
-											"description": "Creating the culture",
-											"icon": "users"
-										},
-										{
-											"label": "Your Digital Champions",
-											"path": "/support/digital/guides/digital-inclusion/digital-champions",
-											"route": "^/support/digital/guides/digital-inclusion/digital-champions$",
-											"description": "Your Digital Champions",
-											"icon": "users"
-										},
-										{
-											"label": "Promoting your service",
-											"path": "/support/digital/guides/digital-inclusion/promoting-your-service",
-											"route": "^/support/digital/guides/digital-inclusion/promoting-your-service$",
-											"description": "Promoting your service",
-											"icon": "users"
-										},
-										{
-											"label": "Evaluating success",
-											"path": "/support/digital/guides/digital-inclusion/evaluating-success",
-											"route": "^/support/digital/guides/digital-inclusion/evaluating-success$",
-											"description": "Evaluating success",
-											"icon": "users"
-										}
-									]
 								}
 							]
 						},
