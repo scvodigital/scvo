@@ -1,7 +1,7 @@
 {
-  "name": "credit_union_loan_calculator",
+  "name": "credit_union_page",
   "debug": false,
-  "pattern": "/services/credit-union/loan-calculator",
+  "pattern": "/services/credit-union/*path",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -37,10 +37,10 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.services_credit-union_header",
-              "body": ">context.metaData.handlebars.templates.services_credit-union_loan-calculator",
+              "header": ">context.metaData.handlebars.templates.services_credit-union_page-header",
+              "body": ">context.metaData.handlebars.templates.services_credit-union_page-body",
               "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
-              "footer": ">context.metaData.handlebars.templates.services_credit-union_footer"
+              "footer": ">context.metaData.handlebars.templates.services_credit-union_page-footer"
             },
             "contentType": "text/html"
           }

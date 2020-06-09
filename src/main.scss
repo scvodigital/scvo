@@ -23,6 +23,12 @@ $gathering-color-alt: #ECCBCD;
 $gathering-color-light-var: FAF5F8;
 $awards-color-light-var: F9F4F5;
 
+$credit-union-color: #7C59B2;
+$credit-union-color-light: #E0D5EE;
+$credit-union-color-alt: #C4B0DE;
+$credit-union-color-var: 7C59B2;
+$credit-union-color-light-var: F7F4FB;
+
 $goodmoves-legacy-color: rgb(68, 133, 50);
 $goodmoves-color: #A8D91B;
 $tfn-legacy-color: #3b9db1;
@@ -32,6 +38,7 @@ $fs-color: #537F2C;
 
 $blue-color: #4CBED5;
 $blue-color-light: #edf8fa;
+$blue-color-alt: #f4fbfc;
 $blue-color-light-var: f4fbfc;
 $blue-color-dark: #6f9dae;
 $purple-color: #C0B5DA;
@@ -150,6 +157,11 @@ body.digital.participation,
 body.digital.evolution {
   .bg-rouleaux {
     background-image: url('https://scvo.scot/rouleaux.svg?color=#{$blue-color-light-var}&style=solid');
+  }
+}
+body.services.credit-union {
+  .bg-rouleaux {
+    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$credit-union-color-light-var}&style=solid');
   }
 }
 body.the-gathering-2020 {
@@ -370,6 +382,16 @@ h1.font-default,
   color: white;
   background-color: $secondary-color-light;
   border-color: $secondary-color-light;
+}
+
+p {
+  font-size: 100%;
+}
+p.text-small {
+  font-size: 90%;
+}
+p.text-large {
+  font-size: 133%;
 }
 
 .card .card-title {
@@ -1021,12 +1043,15 @@ a.category:hover,
   }
   .wp-block-quote {
     border: none;
-    font-size: 1.02rem;
+    // font-size: 1.02rem;
     cite {
       text-align: right;
       font-style: normal;
       float: right;
       font-size: initial;
+    }
+    &:before {
+      content: "";
     }
   }
 }
@@ -1381,6 +1406,51 @@ ul.list-lg {
   display: none !important;
 }
 
+h1.title-credit-union {
+  font-family: "Ingra";
+  font-weight: 400;
+  font-size: 3.5rem;
+  .text-credit-union {
+    font-weight: 800;
+    color: $credit-union-color;
+  }
+}
+.bg-credit-union {
+  background-color: $credit-union-color-light;
+  .card .card-title .fa-fw {
+    font-weight: 800 !important;
+    background-image: url("https://scvo.scot/rouleaux.svg?color=#{$credit-union-color-var}&opacity=1&style=solid")
+  }
+}
+.bg-credit-union-light {
+  background-color: $credit-union-color-light;
+}
+body.services.credit-union {
+  .card-footer a:before {
+    background-color: $credit-union-color;
+  }
+  blockquote {
+    background: linear-gradient(to bottom, $credit-union-color-light 0%, $credit-union-color-light 100%);
+    background-size: 5px 15px;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+  }
+  .landing-page-actions {
+    list-style-type: none;
+    margin: 0;
+    .btn {
+      background-color: $credit-union-color-alt;
+      border-color: $credit-union-color-alt;
+      color: $secondary-color;
+    }
+    .btn.btn-primary {
+      background-color: $credit-union-color;
+      border-color: $credit-union-color;
+      color: white;
+    }
+  }
+}
+
 .linked-cards,
 .latest-content {
   .card-header,
@@ -1673,9 +1743,16 @@ body.support.digital.guides .page-body,
 body.support.digital.participation .page-body,
 body.support.digital.evolution .page-body {
   background-color: $blue-color-light;
-  // a:link, a:visited {
-  //   background: linear-gradient(to bottom, $blue-color-dark 0%, $blue-color-dark 100%);
-  // }
+  .card-footer a:before {
+    background-color: $blue-color;
+  }
+  blockquote p {
+    background: linear-gradient(to bottom, #D5EBF1 0%, #D5EBF1 100%);
+    background-size: 5px 15px;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    display: inline;
+  }
 }
 body.support.digital.landing .page-body {
   padding-top: $unit*2;
@@ -2392,7 +2469,34 @@ header.toolbar {
 }
 
 blockquote {
+  display: inline;
+  padding: 0;
   margin-top: 0;
+  border: none;
+  position: relative;
+  font-size: 115%;
+  font-weight: $body-bold-weight;
+  background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
+  background-size: 5px 15px;
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  cite {
+    font-weight: $body-font-weight;
+    display: block;
+    font-style: normal;
+    font-size: 85%;
+    margin-top: $unit/2;
+    text-align: right;
+  }
+  &:before {
+    content: '\201C';
+    position: absolute;
+    top: -2.75rem;
+    left: -1rem;
+    color: $secondary-color-light;
+    font-size: 4rem;
+    z-index: 0;
+ }
 }
 blockquote.twitter-tweet {
   display: inline-block;
@@ -3088,6 +3192,9 @@ footer {
 .pull-centre {
   margin-left: auto !important;
   margin-right: auto !important;
+}
+.clearfix {
+  clear: both;
 }
 .clearfix::after {
   content: "";

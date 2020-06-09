@@ -1,0 +1,32 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+<div class="container">
+  {{> breadcrumbs_cms_page}}
+</div>
+
+{{!-- <div class="bg-secondary events-warning">
+  <div class="container b-padding">
+    <div class="v-margin">
+      <h4>Access to your Credit Union Account</h4>
+      <p>
+        In light of the ongoing situation with coronavirus (COVID-19), we would like to remind members about how they can transact with SCVO Credit union.
+      </p>
+      <p>
+        You may wish to:
+      </p>
+      <ul>
+        <li>Speak to a member of staff, if they are unavailable leave a voicemail  – 0131 474 8003</li>
+        <li>Submit a query via <a href="mailto:credit.union@scvo.org.uk">email</a></li>
+        <li>Use our <a href="https://members.scvocreditunion.scot">online banking</a></li>
+      </ul>
+    </div>
+  </div>
+</div> --}}
+
+{{#compare @root.route.name "!==" "credit_union_landing" ~}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<div class="container">
+  <h1>{{{title}}}</h1>
+</div>
+{{/with ~}}
+{{/compare ~}}
+{{/if ~}}

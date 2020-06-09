@@ -1,0 +1,187 @@
+<div class="container v-padding-full" style="position:relative;">
+  <img src="{{~>asset_url url='images/credit-union/cu-landing-1.png'~}}" style="max-width:40%; position:absolute;right:0.6rem;bottom:0;" class="pull-right hide-sm" />
+  <h1 class="title-credit-union b-margin-full">
+    SCVO <strong class="text-credit-union">Credit Union</strong>
+  </h1>
+  <p class="text-large v-margin-full">
+    Save, borrow and plan for tomorrow
+  </p>
+
+  <div class="columns v-padding-full">
+    <div class="column col-3 col-lg-4 col-md-6 col-sm-12">
+      <ul class="landing-page-actions">
+        <li><a href="https://members.scvocreditunion.scot/join" class="btn btn-block">Join us today</a></li>
+        <li><a href="https://members.scvocreditunion.scot/join" class="btn btn-block">Join and borrow</a></li>
+        <li><a href="https://members.scvocreditunion.scot/register" class="btn btn-block">Register for online access</a></li>
+        <li><a href="https://members.scvocreditunion.scot" class="btn btn-primary btn-block">Sign in to your account</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white">
+  <div class="container v-padding-full">
+    <div class="columns t-padding-full">
+      <div class="column col-7 col-lg-6 col-md-12">
+        <p class="t-margin">
+          We are Scotland’s leading voluntary sector credit union, with over 1,500 members. We offer low cost loans, savings facilities and quick bank transfers, providing an easy, ethical way to borrow money. Staff and volunteers of SCVO member and SCVO supporter organisations can become members of our credit union.
+        </p>
+        <p class="card-footer">
+          Find out more in our <a href="/services/credit-union/faqs">FAQs</a> or contact the team on <a href="tel:+441314748003">0131 474 8003</a> or <a href="mailto:credit.union@scvo.org.uk">credit.union@scvo.org.uk</a>
+        </p>
+      </div>
+      <div class="column col-5 col-lg-6 col-md-12 t-padding">
+        <blockquote>
+          The good thing about Payroll
+          deduction is once the first payment
+          comes off you tend to forget about
+          it. Before you know it you’ve got
+          savings you wouldn’t normally have
+          had. I have been with the Credit Union
+          for 9 years and would not hesitate
+          recommending it.
+          <cite>Stan Pearson, Crossreach Community Care</cite>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-credit-union">
+  <div class="container t-padding-full">
+    {{#*inline "childMenu" ~}}
+    {{#ifAll path (ifAny description icon) ~}}
+    <div class="column col-6 col-xl-12">
+      <div class="card b-padding-full r-padding-full">
+        {{#ifAny label label_full ~}}
+        <div class="card-heading r-padding-full">
+          <h4 class="card-title">
+            <a href="{{path}}">{{#if icon}}<span class="fal fa-fw fa-{{icon}} fa-2x">&nbsp;</span>{{/if}}{{#if label_full}}{{{label_full}}}{{else}}{{{label}}}{{/if}}</a>
+          </h4>
+        </div>
+        {{/ifAny ~}}
+        {{!-- {{#if description ~}}
+        <div class="card-body">{{{description}}}</div>
+        {{/if ~}}
+        <div class="card-footer">
+          <a href="{{path}}">Find out more</a>
+        </div> --}}
+      </div>
+    </div>
+    {{/ifAll ~}}
+    {{/inline ~}}
+
+    {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+    {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+      <div class="linked-cards support support-organisation v-padding-full">
+        {{#each @root.context.metaData.sidebarMenus ~}}
+          {{#each this ~}}
+            {{#if children ~}}
+              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                <div class="columns">
+                  {{#each this.children ~}}
+                  {{> childMenu this level=2}}
+                  {{/each ~}}
+                </div>
+              {{else}}
+                {{#each children ~}}
+                  {{#if children ~}}
+                    {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                      <div class="columns">
+                        {{#each this.children ~}}
+                        {{> childMenu this level=3}}
+                        {{/each ~}}
+                      </div>
+                    {{else}}
+                      {{#each children ~}}
+                        {{#if children ~}}
+                          {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                            <div class="columns">
+                              {{#each this.children ~}}
+                              {{> childMenu this level=4}}
+                              {{/each ~}}
+                            </div>
+                          {{else}}
+                            {{#each children ~}}
+                              {{#if children ~}}
+                                {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                  <div class="columns">
+                                    {{#each this.children ~}}
+                                    {{> childMenu this level=5}}
+                                    {{/each ~}}
+                                  </div>
+                                {{else}}
+                                {{#each children ~}}
+                                  {{#if children ~}}
+                                    {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                      <div class="columns">
+                                        {{#each this.children ~}}
+                                        {{> childMenu this level=6}}
+                                        {{/each ~}}
+                                      </div>
+                                    {{else}}
+                                      {{#each children ~}}
+                                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                        <div class="columns">
+                                          {{#each ../this.children ~}}
+                                          {{> childMenu this level=6}}
+                                          {{/each ~}}
+                                        </div>
+                                        {{/ifAll ~}}
+                                      {{/each ~}}
+                                    {{/ifAll ~}}
+                                  {{else}}
+                                    {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                      <div class="columns">
+                                        {{#each ../this.children ~}}
+                                        {{> childMenu this level=5}}
+                                        {{/each ~}}
+                                      </div>
+                                    {{/ifAll ~}}
+                                  {{/if ~}}
+                                {{/each ~}}
+                                {{/ifAll ~}}
+                              {{else}}
+                                {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                  <div class="columns">
+                                    {{#each ../this.children ~}}
+                                    {{> childMenu this level=4}}
+                                    {{/each ~}}
+                                  </div>
+                                {{/ifAll ~}}
+                              {{/if ~}}
+                            {{/each ~}}
+                          {{/ifAll ~}}
+                        {{else}}
+                          {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                            <div class="columns">
+                              {{#each ../this.children ~}}
+                              {{> childMenu this level=3}}
+                              {{/each ~}}
+                            </div>
+                          {{/ifAll ~}}
+                        {{/if ~}}
+                      {{/each ~}}
+                    {{/ifAll ~}}
+                  {{else}}
+                    {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                    <div class="columns">
+                      {{#each ../this.children ~}}
+                      {{> childMenu this level=2}}
+                      {{/each ~}}
+                    </div>
+                    {{/ifAll ~}}
+                  {{/if ~}}
+                {{/each ~}}
+              {{/ifAll ~}}
+            {{else}}
+              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+              {{/ifAll ~}}
+            {{/if ~}}
+          {{/each ~}}
+        {{/each ~}}
+      </div>
+    {{/with ~}}
+    {{/if ~}}
+  </div>
+</div>

@@ -2021,8 +2021,8 @@
 					"label": "Office & meeting space",
 					"path": "/services/office-space",
 					"route": "^/services/office-space$",
-					"description": "",
-					"icon": "",
+					"description": "Join us in one of our affordable shared office space locations in Glasgow, Edinburgh and Inverness.",
+					"icon": "building",
 					"children": [
 						{
 							"label": "Office space - Mansfield Traquair Centre, Edinburgh",
@@ -2086,8 +2086,8 @@
 					"label": "Managed IT",
 					"path": "/services/managed-it",
 					"route": "^/services/managed-it$",
-					"description": "",
-					"icon": "",
+					"description": "The SCVO IT Service offers a broad range of expertise to bring you the right technological solutions and support to help you in your day-to-day work.",
+					"icon": "sitemap",
 					"children": [
 						{
 							"label": "Enquiry form",
@@ -2100,8 +2100,8 @@
 					"label": "Payroll",
 					"path": "/services/payroll",
 					"route": "^/services/payroll$",
-					"description": "",
-					"icon": "",
+					"description": "Professional and friendly service, dealing with all aspects of payroll – from management reporting and issuing P60s to dealing with sick and maternity leave.",
+					"icon": "money-check-edit",
 					"children": [
 						{
 							"label": "Enquiry form",
@@ -2114,57 +2114,50 @@
 					"label": "SCVO Credit Union",
 					"path": "/services/credit-union",
 					"route": "^/services/credit-union$",
-					"description": "",
+					"description": "The SCVO Credit Union is Scotland’s leading voluntary sector credit union. It offers low-cost loans, easy savings facilities, payroll deduction and quick bank transfers.",
 					"icon": "",
 					"children": [
 						{
-							"label": "Member news and reports",
+							"label": "Member news & reports",
 							"path": "/services/credit-union/important-news",
 							"route": "^/services/credit-union/important-news",
 							"description": "",
-							"icon": ""
-						},
-						{
-							"label": "Member section",
-							"path": "/services/credit-union/members-guide",
-							"route": "^/services/credit-union/members-guide",
-							"description": "",
-							"icon": ""
-						},
-						{
-							"label": "Employer section",
-							"path": "/services/credit-union/employers-guide",
-							"route": "^/services/credit-union/employers-guide",
-							"description": "",
-							"icon": ""
+							"icon": "comment-alt-dots"
 						},
 						{
 							"label": "FAQs & general information",
 							"path": "/services/credit-union/faqs",
 							"route": "^/services/credit-union/faqs",
 							"description": "",
-							"icon": ""
+							"icon": "question-circle"
 						},
 						{
-							"label": "Loans calculator & APR & interest rates",
+							"label": "Members area",
+							"path": "/services/credit-union/members-guide",
+							"route": "^/services/credit-union/members-guide",
+							"description": "",
+							"icon": "user-lock"
+						},
+						{
+							"label": "Employers area",
+							"path": "/services/credit-union/employers-guide",
+							"route": "^/services/credit-union/employers-guide",
+							"description": "",
+							"icon": "users"
+						},
+						{
+							"label": "Loans calculator and APR & interest rates",
 							"path": "/services/credit-union/loan-calculator",
 							"route": "^/services/credit-union/loan-calculator",
 							"description": "",
-							"icon": ""
+							"icon": "calculator"
 						},
 						{
-							"label": "Information and application forms",
-							"path": "/services/credit-union/loan-forms",
-							"route": "^/services/credit-union/loan-forms",
+							"label": "Joining, information & application forms",
+							"path": "/services/credit-union/forms",
+							"route": "^/services/credit-union/forms",
 							"description": "",
-							"icon": ""
-						},
-						{
-							"label": "Joining information and general forms",
-							"path": "/services/credit-union/join",
-							"route": "^/services/credit-union/join",
-							"description": "",
-							"icon": ""
+							"icon": "file-alt"
 						}
 					]
 				}
