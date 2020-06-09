@@ -4,8 +4,12 @@
     "*"
   ],
   "query": {
+    {{#if @root.data.organisation.hits.hits.0._source.Id ~}}
     "term": {
-      "organisation_id": "{{@root.data.organisationInfo.hits.hits.0._source.Id}}"
+      "organisation_id": "{{@root.data.organisation.hits.hits.0._source.Id}}"
     }
+    {{else}}
+    "match_none": {}
+    {{/if ~}}
   }
 }

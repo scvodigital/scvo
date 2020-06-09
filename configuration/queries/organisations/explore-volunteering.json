@@ -4,8 +4,12 @@
     "*"
   ],
   "query": {
+    {{#if @root.data.primaryResponse.hits.hits.0._source.charity_number ~}}
     "term": {
-      "organisation_charity_number": "{{@root.data.organisationInfo.hits.hits.0._source.charity_number}}"
+      "organisation_charity_number": "{{@root.data.primaryResponse.hits.hits.0._source.charity_number}}"
     }
+    {{else}}
+    "match_none": {}
+    {{/if ~}}
   }
 }

@@ -1,11 +1,15 @@
 {
   "size": 1,
   "_source": [
-    "*"
+    "Id"
   ],
   "query": {
+    {{#if @root.data.primaryResponse.hits.hits.0._source.charity_number ~}}
     "term": {
-      "Id": "001b000000SsxrqAAB"
+      "charity_number": "{{@root.data.primaryResponse.hits.hits.0._source.charity_number}}"
     }
+    {{else}}
+    "match_none": {}
+    {{/if ~}}
   }
 }

@@ -105,7 +105,7 @@
       "queryTemplates": {
         "index": "{$elasticsearch-index.txt}",
         "type": "scvo-member",
-        "template": ">context.metaData.handlebars.queries.members_explore-organisation"
+        "template": ">context.metaData.handlebars.queries.organisations_explore-organisation"
       }
     },
     "renderer": "handlebars"
@@ -204,6 +204,59 @@
         "type": "scvo-post",
         "template": ">context.metaData.handlebars.queries.posts_related-random"
       }
+    },
+    "renderer": "handlebars"
+  },
+  "getOrganisation": {
+    "name": "organisation",
+    "taskModule": "elasticsearch",
+    "config": {
+      "connectionStringTemplate": "{$elasticsearch-url.txt}",
+      "elasticsearchConfig": {
+        "apiVersion": "5.6"
+      },
+      "queryTemplates": {
+        "index": "{$elasticsearch-index.txt}",
+        "type": "scvo-member",
+        "template": ">context.metaData.handlebars.queries.organisations_explore-organisation"
+      }
+    },
+    "renderer": "handlebars"
+  },
+  "getOrganisationResponses": {
+    "name": "organisationResponses",
+    "taskModule": "elasticsearch",
+    "config": {
+      "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+      "elasticsearchConfig": {
+        "apiVersion": "5.6"
+      },
+      "queryTemplates": [
+        {
+          "name": "vacancies",
+          "index": "{$../data/elasticsearch-index.txt}",
+          "type": "cjs-vacancy,goodmoves-vacancy",
+          "template": ">context.metaData.handlebars.queries.organisations_explore-vacancies"
+        },
+        {
+          "name": "volunteering",
+          "index": "{$../data/elasticsearch-index.txt}",
+          "type": "milo-volunteering-opportunity",
+          "template": ">context.metaData.handlebars.queries.organisations_explore-volunteering"
+        },
+        {
+          "name": "grants",
+          "index": "{$../data/elasticsearch-index.txt}",
+          "type": "scvo-grant-cats,scvo-grant-ccrf,scvo-grant-charter,scvo-grant-cyber",
+          "template": ">context.metaData.handlebars.queries.organisations_explore-grants"
+        },
+        {
+          "name": "charters",
+          "index": "{$../data/elasticsearch-index.txt}",
+          "type": "charter-signatory-digitalparticipation,charter-signatory-humanrights",
+          "template": ">context.metaData.handlebars.queries.organisations_explore-charters"
+        }
+      ]
     },
     "renderer": "handlebars"
   }

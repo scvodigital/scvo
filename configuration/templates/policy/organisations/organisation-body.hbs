@@ -1,58 +1,93 @@
-{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <div class="full scvo-member">
-  {{#if og_image ~}}
-  <img src="{{og_image}}" alt="{{title}}" />
-  {{/if ~}}
-  <div class="post-info">
-    {{#if type ~}}
-    <div class="post-info-item">
-      <span class="far fa-heart"></span>
-      {{type}}
-    </div>
+  {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+    {{#if og_image ~}}
+    <img src="{{og_image}}" alt="{{title}}" />
     {{/if ~}}
-    {{#if membership_number ~}}
-    <div class="post-info-item">
-      <span class="far fa-certificate"></span>
-      Membership number {{membership_number}}
+    <div class="post-info">
+      {{#if type ~}}
+      <div class="post-info-item">
+        <span class="far fa-heart"></span>
+        {{type}}
+      </div>
+      {{/if ~}}
+      {{#if membership_number ~}}
+      <div class="post-info-item">
+        <span class="far fa-certificate"></span>
+        Membership number {{membership_number}}
+      </div>
+      {{/if ~}}
+      {{#if charity_number ~}}
+      <div class="post-info-item">
+        <span class="far fa-badge-check"></span>
+        Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{charity_number}}">{{charity_number}}</a>
+      </div>
+      {{/if ~}}
     </div>
-    {{/if ~}}
-    {{#if charity_number ~}}
-    <div class="post-info-item">
-      <span class="far fa-badge-check"></span>
-      Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{charity_number}}">{{charity_number}}</a>
+    {{#compare @root.data.organisationResponses.charters.hits.total ">" 0 ~}}
+    <div class="post-info">
+      {{#each @root.data.organisationResponses.charters.hits.hits ~}}
+      {{#with _source ~}}
+      {{#ifAll (compare act_dorm "Active") (compare status "Signed") ~}}
+      <div class="post-info-item">
+        <span class="far fa-ribbon"></span>
+        <a href="{{url}}">{{#compare record_type "Digital"}}Digital Participation Charter{{else}}{{record_type}}{{/compare}} signatory</a>
+      </div>
+      {{/ifAll ~}}
+      {{/with ~}}
+      {{/each ~}}
     </div>
-    {{/if ~}}
-  </div>
+    {{/compare ~}}
 
-  {{#if website ~}}
-  {{#compare website '!==' 'http://'}}
-  <p>
-    <strong>Website:</strong>
-    <a href="{{#unless (contains website 'http')}}http://{{/unless}}{{website}}">{{website}}</a>
-  </p>
-  {{/compare}}
-  {{/if ~}}
+    {{#if website ~}}
+    {{#compare website '!==' 'http://'}}
+    <p>
+      <strong>Website:</strong>
+      <a href="{{#unless (contains website 'http')}}http://{{/unless}}{{website}}">{{website}}</a>
+    </p>
+    {{/compare}}
+    {{/if ~}}
 
-  {{#if twitter ~}}
-  {{#compare twitter '!==' 'http://'}}
-  <p>
-    <strong>Twitter:</strong>
-    <a href="{{#unless (contains twitter 'http')}}http://{{/unless}}{{twitter}}">{{twitter}}</a>
-  </p>
+    {{#if twitter ~}}
+    {{#compare twitter '!==' 'http://'}}
+    <p>
+      <strong>Twitter:</strong>
+      <a href="{{#unless (contains twitter 'http')}}http://{{/unless}}{{twitter}}">{{twitter}}</a>
+    </p>
+    {{/compare ~}}
+    {{/if ~}}
+
+    {{#if facebook ~}}
+    {{#compare facebook '!==' 'http://'}}
+    <p>
+      <strong>Facebook:</strong>
+      <a href="{{#unless (contains facebook 'http')}}http://{{/unless}}{{facebook}}">{{facebook}}</a>
+    </p>
+    {{/compare ~}}
+    {{/if ~}}
+  {{/with ~}}
+
+  {{#compare @root.data.organisationResponses.vacancies.hits.total ">" 0 ~}}
+  <h2>Current vacancies</h2>
+  {{#each @root.data.organisationResponses.vacancies.hits.hits ~}}
+  {{#with this ~}}
+  {{#compare _source.vacancy_status "vacancy-open" ~}}
+  {{> site_search_result}}
   {{/compare ~}}
-  {{/if ~}}
-
-  {{#if facebook ~}}
-  {{#compare facebook '!==' 'http://'}}
-  <p>
-    <strong>Facebook:</strong>
-    <a href="{{#unless (contains facebook 'http')}}http://{{/unless}}{{facebook}}">{{facebook}}</a>
-  </p>
+  {{/with ~}}
+  {{/each ~}}
   {{/compare ~}}
+
+  {{#compare @root.data.organisationResponses.volunteering.hits.total ">" 0 ~}}
+  <h2>Volunteering opportunities</h2>
+  {{#each @root.data.organisationResponses.volunteering.hits.hits ~}}
+  {{#with this ~}}
+  {{> site_search_result}}
+  {{/with ~}}
+  {{/each ~}}
+  {{/compare ~}}
+
+  {{else}}
+  <h2>Error 404: Organisation could not be found</h2>
   {{/if ~}}
 </div>
-{{/with ~}}
-{{else}}
-<h2>Error 404: Organisation could not be found</h2>
-{{/if ~}}
