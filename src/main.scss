@@ -2450,8 +2450,11 @@ blockquote.twitter-tweet {
     border-radius: 50% !important;
   }
   .pagination-page:hover {
-    background-color: $primary-color;
+    background-color: $secondary-color-light !important;
     color: white !important;
+  }
+  .pagination-arrow:hover {
+    color: $secondary-color-light !important;
   }
   .page-item.active:hover a {
     color: white;
