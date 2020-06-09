@@ -11,7 +11,7 @@
       <li><span class="fa-li"><i class="far fa-info-square"></i></span> {{membership_type}}</li>
       <li><span class="fa-li"><i class="far fa-chart-network"></i></span> {{field_of_work}}</li>
       <li><span class="fa-li"><i class="far fa-map-marker-alt"></i></span> {{geo.admin_ward}}, {{geo.admin_district}} {{postcode}}</li>
-      <li><span class="fa-li"><i class="far fa-link"></i></span> <a href="{{fixUrl website}}">{{website}}</a></li>
+      <li><span class="fa-li"><i class="far fa-link"></i></span> <a href="{{#unless (contains website 'http')}}http://{{/unless}}{{website}}">{{website}}</a></li>
     </ul>
     {{/with ~}}
 

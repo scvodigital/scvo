@@ -129,7 +129,7 @@
         <p>{{{truncate (trim description) 280}}}</p>
         {{/if ~}}
         {{#if website ~}}
-        <p><a href="{{fixUrl website}}">{{replace (replace (replace (trim website) 'https://' '') 'http://' '') 'www.' ''}}</a></p>
+        <p><a href="{{#unless (contains website 'http')}}http://{{/unless}}{{website}}">{{replace (replace (replace (trim website) 'https://' '') 'http://' '') 'www.' ''}}</a></p>
         {{/if ~}}
         {{#if twitter ~}}
         <ul class="fa-ul">

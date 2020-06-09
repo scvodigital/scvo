@@ -4,7 +4,11 @@
   "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
     "Id",
-    "title"
+    "title",
+    "alias",
+    "type",
+    "membership_number",
+    "charity_number"
   ],
   "query": {
     "bool": {
@@ -39,7 +43,11 @@
   "from": 0,
   "_source": [
     "Id",
-    "title"
+    "title",
+    "alias",
+    "type",
+    "membership_number",
+    "charity_number"
   ],
   "query": {
     "function_score": {

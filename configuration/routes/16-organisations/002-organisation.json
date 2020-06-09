@@ -1,7 +1,7 @@
 {
-  "name": "member_page",
-  "debug": false,
-  "pattern": "/about/members/:member_id(/:junk)",
+  "name": "organisation_page",
+  "debug": true,
+  "pattern": "/policy/organisations/:id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -14,8 +14,8 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-member",
-          "template": ">context.metaData.handlebars.queries.members_member",
+          "type": "oscr-charity",
+          "template": ">context.metaData.handlebars.queries.organisations_organisation",
           "noResultsRoute": "four_oh_four"
         }
       },
@@ -37,7 +37,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.about_members_member-header",
+              "header": ">context.metaData.handlebars.templates.policy_organisations_organisation-header",
               "body": ">context.metaData.handlebars.templates.policy_organisations_organisation-body",
               "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar"
             },

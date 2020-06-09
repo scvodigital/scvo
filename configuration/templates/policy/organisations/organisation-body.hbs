@@ -4,12 +4,6 @@
   {{#if og_image ~}}
   <img src="{{og_image}}" alt="{{title}}" />
   {{/if ~}}
-  {{!-- <h3>
-    {{title}}
-    {{#if alias}}
-    ({{alias}})
-    {{/if}}
-  </h3> --}}
   <div class="post-info">
     {{#if type ~}}
     <div class="post-info-item">
@@ -35,7 +29,7 @@
   {{#compare website '!==' 'http://'}}
   <p>
     <strong>Website:</strong>
-    <a href="{{fixUrl website}}">{{website}}</a>
+    <a href="{{#unless (contains website 'http')}}http://{{/unless}}{{website}}">{{website}}</a>
   </p>
   {{/compare}}
   {{/if ~}}
@@ -44,7 +38,7 @@
   {{#compare twitter '!==' 'http://'}}
   <p>
     <strong>Twitter:</strong>
-    <a href="{{fixUrl twitter}}">{{twitter}}</a>
+    <a href="{{#unless (contains twitter 'http')}}http://{{/unless}}{{twitter}}">{{twitter}}</a>
   </p>
   {{/compare ~}}
   {{/if ~}}
@@ -53,12 +47,12 @@
   {{#compare facebook '!==' 'http://'}}
   <p>
     <strong>Facebook:</strong>
-    <a href="{{fixUrl facebook}}">{{facebook}}</a>
+    <a href="{{#unless (contains facebook 'http')}}http://{{/unless}}{{facebook}}">{{facebook}}</a>
   </p>
   {{/compare ~}}
   {{/if ~}}
 </div>
 {{/with ~}}
 {{else}}
-<h2>Error 404: Member could not be found</h2>
+<h2>Error 404: Organisation could not be found</h2>
 {{/if ~}}

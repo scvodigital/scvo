@@ -1,8 +1,8 @@
 <div class="container">
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
-    <li class="breadcrumb-item"><a href="/about/members">Our members</a></li>
+    <li class="breadcrumb-item"><a href="/policy">Policy & research</a></li>
+    <li class="breadcrumb-item"><a href="/policy/organisations">Organisations</a></li>
     {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
     <li class="breadcrumb-item">
       {{#if title}}{{{title}}}{{else}}{{Id}}{{/if}}

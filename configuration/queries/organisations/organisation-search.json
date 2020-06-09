@@ -1,0 +1,44 @@
+{{#if @root.request.params.query.q ~}}
+{
+  "size": 10,
+  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 10}},
+  "_source": [
+    "Id",
+    "title",
+    "alias",
+    "type",
+    "membership_number",
+    "charity_number"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "query_string": {
+            "query": {{{stringify (default @root.request.params.query.q "")}}},
+            "default_field": "text_bag",
+            "default_operator": "AND",
+            "analyzer": "snowball"
+          }
+        }
+      ]
+    }
+  }
+}
+{{else}}
+{
+  "size": 5,
+  "from": 0,
+  "_source": [
+    "Id",
+    "title"
+  ],
+  "query": {
+    "function_score": {
+      "query": {},
+      "random_score": {},
+      "score_mode": "sum"
+    }
+  }
+}
+{{/if ~}}

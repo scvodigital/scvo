@@ -70,19 +70,19 @@
       <dd>
         {{#if weblink_title ~}}
         {{#compare weblink_title 'NULL' ~}}
-        <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
+        <a href="{{#unless (contains weblink_url 'http')}}http://{{/unless}}{{weblink_url}}" class="btn" target="_blank">
           Read online
         </a>
         {{else}}
         {{#compare weblink_url 'NULL' ~}}
         {{else}}
-        <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
+        <a href="{{#unless (contains weblink_url 'http')}}http://{{/unless}}{{weblink_url}}" class="btn" target="_blank">
           {{weblink_title}}
         </a>
         {{/compare ~}}
         {{/compare ~}}
         {{else}}
-        <a href="{{fixUrl weblink_url}}" class="btn" target="_blank">
+        <a href="{{#unless (contains weblink_url 'http')}}http://{{/unless}}{{weblink_url}}" class="btn" target="_blank">
           Read online
         </a>
         {{/if ~}}

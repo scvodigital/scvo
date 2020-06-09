@@ -11,21 +11,55 @@
   </section>
 </div>
 
-{{#if @root.request.params.query.q ~}}
-{{> search_info paging=@root.data.primaryResponse.pagination}}
-{{else}}
-<h4>Our members include&hellip;</h4>
-{{/if ~}}
+<div class="b-margin-full b-padding-full">
+  {{#if @root.request.params.query.q ~}}
+  {{> search_info paging=@root.data.primaryResponse.pagination}}
+  {{else}}
+  <h2>Our members include&hellip;</h2>
+  {{/if ~}}
 
-{{#each @root.data.primaryResponse.hits.hits ~}}
-{{#with _source ~}}
-<h4><a href="/about/members/{{Id}}/{{slugify title}}">{{{title}}}</a></h4>
-{{!-- <p>
-  <a href="/about/members/{{Id}}/{{slugify title}}">Read more</a>
-</p> --}}
-{{/with ~}}
-{{/each ~}}
+  {{#each @root.data.primaryResponse.hits.hits ~}}
+  {{#with _source ~}}
+  <div class="search-result scvo-member">
+    <h3>
+      <a href="/about/members/{{Id}}{{#if title}}/{{slugify title}}{{/if}}">
+        {{#if title}}{{{title}}}{{else}}{{Id}}{{/if}}
+        {{#if alias ~}}
+        {{#compare title "!==" alias ~}}
+        ({{{alias}}})
+        {{/compare ~}}
+        {{/if ~}}
+      </a>
+    </h3>
+    <div class="post-info">
+      {{#if type ~}}
+      <div class="post-info-item">
+        <span class="far fa-heart"></span>
+        {{type}}
+      </div>
+      {{/if ~}}
+      {{#if membership_number ~}}
+      <div class="post-info-item">
+        <span class="far fa-certificate"></span>
+        Membership number {{membership_number}}
+      </div>
+      {{/if ~}}
+      {{#if charity_number ~}}
+      <div class="post-info-item">
+        <span class="far fa-badge-check"></span>
+        Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{charity_number}}">{{charity_number}}</a>
+      </div>
+      {{/if ~}}
+    </div>
+  </div>
+  {{!-- <h4><a href="/about/members/{{Id}}/{{slugify title}}">{{{title}}}</a></h4> --}}
+  {{!-- <p>
+    <a href="/about/members/{{Id}}/{{slugify title}}">Read more</a>
+  </p> --}}
+  {{/with ~}}
+  {{/each ~}}
 
-{{#ifAny @root.request.params.query.q @root.request.params.query.type ~}}
-{{> pagination paging=@root.data.primaryResponse.pagination}}
-{{/ifAny ~}}
+  {{#ifAny @root.request.params.query.q @root.request.params.query.type ~}}
+  {{> pagination paging=@root.data.primaryResponse.pagination}}
+  {{/ifAny ~}}
+</div>
