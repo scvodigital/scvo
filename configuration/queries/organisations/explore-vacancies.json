@@ -5,8 +5,19 @@
   ],
   "query": {
     {{#if @root.data.organisation.hits.hits.0._source.Id ~}}
-    "term": {
-      "organisation.id": "{{@root.data.organisation.hits.hits.0._source.Id}}"
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "organisation.id": "{{@root.data.organisation.hits.hits.0._source.Id}}"
+          }
+        },
+        {
+          "term": {
+            "vacancy_status": "vacancy-open"
+          }
+        }
+      ]
     }
     {{else}}
     "match_none": {}
