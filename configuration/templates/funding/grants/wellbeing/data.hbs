@@ -6,7 +6,7 @@
     {{#if amount_requested_total ~}}
     "amountAppliedFor": {{amount_requested_total}},
     {{else}}
-    "amountAppliedFor": {{amount_requested}},
+    "amountAppliedFor": {{default amount_requested 0}},
     {{/if ~}}
     {{#if amount_awarded ~}}
     "amountAwarded": {{amount_awarded}},
