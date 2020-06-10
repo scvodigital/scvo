@@ -14,7 +14,7 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "sg-grant-wellbeing",
+          "type": "sg-grant-wellbeing,sg-grant-wellbeing-legacy",
           "template": ">context.metaData.handlebars.queries.grants_wellbeing-data",
           "noResultsRoute": "four_oh_four"
         }
@@ -33,7 +33,7 @@
           {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "sg-grant-wellbeing",
+            "type": "sg-grant-wellbeing,sg-grant-wellbeing-legacy",
             "template": ">context.metaData.handlebars.queries.grants_wellbeing-aggs"
           }
         ]
