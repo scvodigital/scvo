@@ -1,6 +1,6 @@
 {
   "name": "grant_wellbeing",
-  "debug": false,
+  "debug": true,
   "pattern": "/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

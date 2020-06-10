@@ -22,7 +22,7 @@
   {{#with _source ~}}
   <div class="search-result scvo-member">
     <h3>
-      <a href="/about/members/{{Id}}{{#if title}}/{{slugify title}}{{/if}}">
+      <a href="/about/members/{{membership_number}}{{#if title}}/{{slugify title}}{{/if}}">
         {{#if title}}{{{title}}}{{else}}{{Id}}{{/if}}
         {{#if alias ~}}
         {{#compare title "!==" alias ~}}

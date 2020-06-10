@@ -217,7 +217,7 @@
       },
       "queryTemplates": {
         "index": "{$elasticsearch-index.txt}",
-        "type": "scvo-member",
+        "type": "scvo-organisation",
         "template": ">context.metaData.handlebars.queries.organisations_explore-organisation"
       }
     },
