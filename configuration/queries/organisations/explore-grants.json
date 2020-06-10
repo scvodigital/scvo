@@ -5,8 +5,22 @@
   ],
   "query": {
     {{#if @root.data.organisation.hits.hits.0._source.Id ~}}
-    "term": {
-      "recipient_id": "{{@root.data.organisation.hits.hits.0._source.Id}}"
+    "bool": {
+      "should": [
+        {{#if @root.data.organisation.hits.hits.0._source.charity_number ~}}
+        {
+          "term": {
+            "recipient_charity_number": "{{@root.data.organisation.hits.hits.0._source.charity_number}}"
+          }
+        },
+        {{/if}}
+        {
+          "term": {
+            "recipient_id": "{{@root.data.organisation.hits.hits.0._source.Id}}"
+          }
+        }
+      ],
+      "minimum_should_match": 1
     }
     {{else}}
     "match_none": {}

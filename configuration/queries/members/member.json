@@ -12,8 +12,20 @@
     "facebook"
   ],
   "query": {
-    "term": {
-      "Id": "{{@root.request.params.member_id}}"
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "membership_number": "{{@root.request.params.member_id}}"
+          }
+        },
+        {
+          "term": {
+            "Id": "{{@root.request.params.member_id}}"
+          }
+        }
+      ],
+      "minimum_should_match": 1
     }
   }
 }

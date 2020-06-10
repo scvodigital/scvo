@@ -1,15 +1,33 @@
 {
   "size": 1,
   "_source": [
-    "Id"
+    "Id",
+    "field_of_work",
+    "charity_number",
+    "type",
+    "title",
+    "alias",
+    "membership_number",
+    "membership_status",
+    "postcode",
+    "facebook",
+    "twitter",
+    "website",
+    "url"
   ],
   "query": {
-    {{#if @root.data.primaryResponse.hits.hits.0._source.charity_number ~}}
+    {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
+    {{#with @root.data.primaryResponse.hits.hits.0._source ~}}
+    {{#ifAny charity_number recipient_charity_number ~}}
     "term": {
-      "charity_number": "{{@root.data.primaryResponse.hits.hits.0._source.charity_number}}"
+      "charity_number": "{{default charity_number recipient_charity_number}}"
     }
     {{else}}
     "match_none": {}
-    {{/if ~}}
+    {{/ifAny ~}}
+    {{/with ~}}
+    {{else}}
+    "match_none": {}
+    {{/compare ~}}
   }
 }

@@ -940,6 +940,7 @@ a.chip:hover {
     }
   }
 }
+.post-info a.charity_number,
 .breadcrumb .breadcrumb-item a,
 .pagination a,
 .scvo-link-bar a,
@@ -964,6 +965,12 @@ a.rss,
   background: none;
   border-bottom: none;
   text-decoration: none;
+}
+.post-info a.charity_number {
+  font-weight: $body-font-weight;
+}
+.post-info a.charity_number:hover {
+  color: $primary-color-dark;
 }
 .card-footer a {
   position: relative;
