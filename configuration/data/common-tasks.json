@@ -247,7 +247,7 @@
         {
           "name": "grants",
           "index": "{$../data/elasticsearch-index.txt}",
-          "type": "scvo-grant-cats,scvo-grant-ccrf,scvo-grant-charter,scvo-grant-cyber,scvo-grant-wellbeing,scvo-grant-wellbeing-legacy",
+          "type": "scvo-grant-cats,scvo-grant-ccrf,scvo-grant-charter,scvo-grant-cyber,sg-grant-wellbeing,sg-grant-wellbeing-legacy",
           "template": ">context.metaData.handlebars.queries.organisations_explore-grants"
         },
         {
