@@ -26,28 +26,28 @@
         {{#if @root.request.params.query.area ~}}
         {
           "term": {
-            "area-slug": "{{@root.request.params.query.area}}"
+            "area_slug": "{{@root.request.params.query.area}}"
           }
         },
         {{/if ~}}
         {{#if @root.request.params.query.main_issue ~}}
         {
           "term": {
-            "main_issue-slugs": "{{@root.request.params.query.main_issue}}"
+            "main_issue_slugs": "{{@root.request.params.query.main_issue}}"
           }
         },
         {{/if ~}}
         {{#if @root.request.params.query.target_group ~}}
         {
           "term": {
-            "target_group-slugs": "{{@root.request.params.query.target_group}}"
+            "target_group_slugs": "{{@root.request.params.query.target_group}}"
           }
         },
         {{/if ~}}
         {{#if @root.request.params.query.call ~}}
         {
           "term": {
-            "call-slug": "{{@root.request.params.query.call}}"
+            "call_slug": "{{@root.request.params.query.call}}"
           }
         },
         {{/if ~}}
