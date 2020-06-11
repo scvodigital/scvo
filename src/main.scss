@@ -1750,15 +1750,20 @@ body.support.digital.guides .page-body,
 body.support.digital.participation .page-body,
 body.support.digital.evolution .page-body {
   background-color: $blue-color-light;
-  .card-footer a:before {
-    background-color: $blue-color;
-  }
-  blockquote p {
-    background: linear-gradient(to bottom, #D5EBF1 0%, #D5EBF1 100%);
-    background-size: 5px 15px;
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    display: inline;
+  // .card-footer a:before {
+  //   background-color: $blue-color;
+  // }
+  blockquote {
+    p {
+      background: linear-gradient(to bottom, #D5EBF1 0%, #D5EBF1 100%);
+      background-size: 5px 15px;
+      background-position: 0 100%;
+      background-repeat: repeat-x;
+      display: inline;
+    }
+    &:before {
+      content: ""
+    }
   }
 }
 body.support.digital.landing .page-body {
