@@ -92,11 +92,11 @@ $fast-transition-speed: 0.12s;
 }
 
 ::-moz-selection {
-  color: #fff;
+  color: white;
   background: $primary-color-dark;
 }
 ::selection {
-  color: #fff;
+  color: white;
   background: $primary-color-dark;
 }
 
@@ -223,7 +223,7 @@ body.the-gathering-2020 {
       padding: $unit 0;
     }
     .header-text {
-      color: #ffffff;
+      color: white;
       padding-bottom: $unit;
       margin: 0 auto;
       display: block;
@@ -416,7 +416,7 @@ p.text-large {
     padding-left: $unit/2;
     padding-right: $unit/10;
     margin-right: 0;
-    color: #ffffff;
+    color: white;
     transition: background-image $slow-transition-speed;
   }
 }
@@ -1437,7 +1437,7 @@ body.services.credit-union {
     background-color: $credit-union-color;
   }
   blockquote {
-    background: linear-gradient(to bottom, $credit-union-color-light 0%, $credit-union-color-light 100%);
+    background: linear-gradient(to bottom, white 0%, white 100%);
     background-size: 5px 15px;
     background-position: 0 100%;
     background-repeat: repeat-x;
@@ -1755,7 +1755,7 @@ body.support.digital.evolution .page-body {
   // }
   blockquote {
     p {
-      background: linear-gradient(to bottom, #D5EBF1 0%, #D5EBF1 100%);
+      background: linear-gradient(to bottom, white 0%, white 100%);
       background-size: 5px 15px;
       background-position: 0 100%;
       background-repeat: repeat-x;
@@ -2217,8 +2217,8 @@ header {
     }
     .menu-item>a:hover,
     .menu-item>a.active {
-      color: #fff !important;
-      border-bottom-color: #fff !important;
+      color: white !important;
+      border-bottom-color: white !important;
     }
   }
   .scvo-link-bar {
@@ -2841,7 +2841,7 @@ form {
   content: "";
   position: absolute;
   top: 100%;
-  background: linear-gradient(#fff0, #fff);
+  background: linear-gradient(#fff0, white);
 }
 
 .accordion {
