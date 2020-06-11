@@ -16,6 +16,11 @@
       "should": [
         {
           "term": {
+            "charity_number": "{{@root.request.params.member_id}}"
+          }
+        },
+        {
+          "term": {
             "membership_number": "{{@root.request.params.member_id}}"
           }
         },

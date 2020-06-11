@@ -43,13 +43,13 @@
       but not yet paid
       {{/unless ~}}
       {{#each @root.data.organisationResponses.grants.hits.hits ~}}
-      {{#compare @root.data.primaryResponse.hits.hits.[0]._type "!==" this._type ~}}
+      {{#ifAll (contains this._type 'sg-grant-wellbeing') (compare @root.data.primaryResponse.hits.hits.[0]._type "!==" this._type) ~}}
       {{#with _source ~}}
       and
       &pound;{{addCommas (default amount_awarded amount_requested)}}
       via <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
       {{/with ~}}
-      {{/compare ~}}
+      {{/ifAll ~}}
       {{/each ~}}
     </li>
     {{/if ~}}
