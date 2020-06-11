@@ -4,23 +4,23 @@
     "*"
   ],
   "query": {
-    {{#if @root.data.organisation.hits.hits.0._source.Id ~}}
+    {{#ifAny @root.data.organisation.hits.hits.0._source.Id @root.data.organisation.hits.hits.0._source.title @root.data.organisation.hits.hits.0._source.charity_number @root.data.primaryResponse.hits.hits.0._source.title @root.data.primaryResponse.hits.hits.0._source.recipient_charity_number ~}}
     "bool": {
       "should": [
-        {{#if @root.data.organisation.hits.hits.0._source.title ~}}
+        {{#ifAny @root.data.organisation.hits.hits.0._source.title @root.data.primaryResponse.hits.hits.0._source.title ~}}
         {
           "term": {
-            "recipient_name": "{{@root.data.organisation.hits.hits.0._source.title}}"
+            "recipient_name": "{{default @root.data.organisation.hits.hits.0._source.title @root.data.primaryResponse.hits.hits.0._source.title}}"
           }
         },
-        {{/if}}
-        {{#if @root.data.organisation.hits.hits.0._source.charity_number ~}}
+        {{/ifAny ~}}
+        {{#ifAny @root.data.organisation.hits.hits.0._source.charity_number @root.data.primaryResponse.hits.hits.0._source.recipient_charity_number ~}}
         {
           "term": {
-            "recipient_charity_number": "{{@root.data.organisation.hits.hits.0._source.charity_number}}"
+            "recipient_charity_number": "{{default @root.data.organisation.hits.hits.0._source.charity_number @root.data.primaryResponse.hits.hits.0._source.recipient_charity_number}}"
           }
         },
-        {{/if}}
+        {{/ifAny ~}}
         {
           "term": {
             "recipient_id": "{{@root.data.organisation.hits.hits.0._source.Id}}"
@@ -31,6 +31,6 @@
     }
     {{else}}
     "match_none": {}
-    {{/if ~}}
+    {{/ifAny ~}}
   }
 }
