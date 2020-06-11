@@ -7,6 +7,13 @@
     {{#if @root.data.organisation.hits.hits.0._source.Id ~}}
     "bool": {
       "should": [
+        {{#if @root.data.organisation.hits.hits.0._source.title ~}}
+        {
+          "term": {
+            "recipient_name": "{{@root.data.organisation.hits.hits.0._source.title}}"
+          }
+        },
+        {{/if}}
         {{#if @root.data.organisation.hits.hits.0._source.charity_number ~}}
         {
           "term": {

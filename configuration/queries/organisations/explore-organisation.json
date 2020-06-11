@@ -18,9 +18,14 @@
   "query": {
     {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
     {{#with @root.data.primaryResponse.hits.hits.0._source ~}}
-    {{#ifAny charity_number recipient_charity_number Id ~}}
+    {{#ifAny title charity_number recipient_charity_number Id ~}}
     "bool": {
       "should": [
+        {
+          "term": {
+            "title": "{{title}}"
+          }
+        },
         {
           "term": {
             "charity_number": "{{default charity_number recipient_charity_number}}"
@@ -28,7 +33,7 @@
         },
         {
           "term": {
-            "Id": "Id"
+            "Id": "{{Id}}"
           }
         }
       ],

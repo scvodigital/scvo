@@ -46,9 +46,11 @@
       {{#if (contains _type 'sg-grant-wellbeing') ~}}
       {{#unless (ifAll (compare _type @root.data.primaryResponse.hits.hits.[0]._type) (compare _source.call_slug @root.data.primaryResponse.hits.hits.[0]._source.call_slug)) ~}}
       {{#with _source ~}}
+      {{#if paid_by_funder ~}}
       and
       &pound;{{addCommas (default amount_awarded amount_requested)}}
       via <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      {{/if ~}}
       {{/with ~}}
       {{/unless ~}}
       {{/if ~}}
@@ -60,13 +62,13 @@
       <a href="http://grantnav.threesixtygiving.org/grant/360G-SCVO-{{Id}}" target="_blank">Data published on 360Giving</a>
     </li> --}}
     {{#ifAny recipient_url @root.data.organisation.hits.hits.0._source.website ~}}
-    {{> content_item icon='link' link=(default recipient_url @root.data.organisation.hits.hits.0._source.website)}}
+    {{> content_item_link icon='link' link=(default recipient_url @root.data.organisation.hits.hits.0._source.website)}}
     {{/ifAny ~}}
     {{#ifAny recipient_twitter @root.data.organisation.hits.hits.0._source.twitter ~}}
-    {{> content_item icon='twitter' link=(default recipient_twitter @root.data.organisation.hits.hits.0._source.twitter)}}
+    {{> content_item_link icon='twitter' link=(default recipient_twitter @root.data.organisation.hits.hits.0._source.twitter)}}
     {{/ifAny ~}}
     {{#ifAny recipient_facebook @root.data.organisation.hits.hits.0._source.facebook ~}}
-    {{> content_item icon='facebook' link=(default recipient_facebook @root.data.organisation.hits.hits.0._source.facebook)}}
+    {{> content_item_link icon='facebook' link=(default recipient_facebook @root.data.organisation.hits.hits.0._source.facebook)}}
     {{/ifAny ~}}
   </ul>
 

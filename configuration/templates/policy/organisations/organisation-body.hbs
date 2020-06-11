@@ -42,13 +42,13 @@
     {{#ifAny website @root.data.organisation.hits.hits.0._source.website twitter @root.data.organisation.hits.hits.0._source.twitter facebook @root.data.organisation.hits.hits.0._source.facebook ~}}
     <ul class="fa-ul">
       {{#ifAny website @root.data.organisation.hits.hits.0._source.website ~}}
-      {{> content_item icon='link' link=(default website @root.data.organisation.hits.hits.0._source.website)}}
+      {{> content_item_link icon='link' link=(default website @root.data.organisation.hits.hits.0._source.website)}}
       {{/ifAny ~}}
       {{#ifAny twitter @root.data.organisation.hits.hits.0._source.twitter ~}}
-      {{> content_item icon='twitter' link=(default twitter @root.data.organisation.hits.hits.0._source.twitter)}}
+      {{> content_item_link icon='twitter' link=(default twitter @root.data.organisation.hits.hits.0._source.twitter)}}
       {{/ifAny ~}}
       {{#ifAny facebook @root.data.organisation.hits.hits.0._source.facebook ~}}
-      {{> content_item icon='facebook' link=(default twitter @root.data.organisation.hits.hits.0._source.facebook)}}
+      {{> content_item_link icon='facebook' link=(default facebook @root.data.organisation.hits.hits.0._source.facebook)}}
       {{/ifAny ~}}
     </ul>
     {{/ifAny ~}}

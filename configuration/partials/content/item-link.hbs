@@ -1,0 +1,18 @@
+{{#compare icon "twitter" ~}}
+<li>
+  <span class="fa-li"><span class="fab fa-{{icon}}"></span></span>
+  <a href="{{#unless (contains link 'twitter.com')}}https://twitter.com/{{replace (trim link) '@' ''}}{{else}}{{fixUrl (replace (trim link) '@' '') 'http'}}{{/unless}}">@{{replace (replace (replace (replace (replace (replace (replace (replace (trim link) '@' '') 'https://' '') 'http://' '') 'm.twitter.com/' '') 'mobile.twitter.com/' '') 'twitter.com/' '') '?lang=en' '')}}</a>
+</li>
+{{else}}
+{{#compare icon "facebook" ~}}
+<li>
+  <span class="fa-li"><span class="fab fa-{{icon}}"></span></span>
+  <a href="{{fixUrl link 'http'}}">{{replace (replace (replace link 'www.' '') 'https://' '') 'http://' ''}}</a>
+</li>
+{{else}}
+<li>
+  <span class="fa-li"><span class="far fa-{{icon}}"></span></span>
+  <a href="{{fixUrl link 'http'}}">{{lowercase (replace (replace (replace link 'www.' '') 'https://' '') 'http://' '')}}</a>
+</li>
+{{/compare ~}}
+{{/compare ~}}
