@@ -5,6 +5,17 @@
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
+      "name": "form_closed",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          1,
+          "coronavirus_wellbeing_apply_closed",
+          false
+        ]
+      }
+    },
+    {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
       "config": {
