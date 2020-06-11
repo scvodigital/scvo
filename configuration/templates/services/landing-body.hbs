@@ -1,104 +1,142 @@
 <div class="bg-white">
-  <div class="container v-padding-full">
-    <div class="columns t-padding-full">
-      <div class="column col-12 col-lg-12">
-        {{!-- {{> content_page_full @root.data.primaryResponse.hits.hits.[0]._source}} --}}
-        <div class="linked-cards">
-          <div class="columns">
-            <div class="column col-6 col-md-12 v-margin-full b-padding-full">
-              <div class="card card-no-padding office-space b-margin-full">
-                <section class="card-header">
-                  <h2 class="card-title">
-                    <a href="/services/office-space">
-                      <span class="fal fa-fw fa-building">&nbsp;</span>
-                      Office &amp; meeting space
-                    </a>
-                  </h2>
-                </section>
-                <section class="card-body b-margin">
-                  Join us in one of our affordable shared office space locations in Glasgow, Edinburgh and Inverness.
-                </section>
-                <section class="card-footer">
-                  <a href="/services/office-space">Find out more</a>
-                </section>
-              </div>
-            </div>
-            <div class="column col-6 col-md-12 v-margin-full b-padding-full">
-              <div class="card card-no-padding managed-it b-margin-full">
-                <section class="card-header">
-                  <h2 class="card-title">
-                    <a href="/services/managed-it">
-                      <span class="fal fa-fw fa-sitemap">&nbsp;</span>
-                      Managed IT
-                    </a>
-                  </h2>
-                </section>
-                <section class="card-body b-margin">
-                  The SCVO IT Service offers a broad range of expertise to bring you the right technological solutions and support to help you in your day-to-day work.
-                </section>
-                <section class="card-footer">
-                  <a href="/services/managed-it">Find out more</a>
-                </section>
-              </div>
-            </div>
-            <div class="column col-6 col-md-12 v-margin-full b-padding-full">
-              <div class="card card-no-padding payroll b-margin-full">
-                <section class="card-header">
-                  <h2 class="card-title">
-                    <a href="/services/payroll">
-                      <span class="fal fa-fw fa-money-check-edit">&nbsp;</span>
-                      Payroll
-                    </a>
-                  </h2>
-                </section>
-                <section class="card-body b-margin">
-                  Professional and friendly service, dealing with all aspects of payroll – from management reporting and issuing P60s to dealing with sick and maternity leave.
-                </section>
-                <section class="card-footer">
-                  <a href="/services/payroll">Find out more</a>
-                </section>
-              </div>
-            </div>
-            <div class="column col-6 col-md-12 v-margin-full b-padding-full">
-              <div class="card card-no-padding credit-union b-margin-full">
-                <section class="card-header">
-                  <h2 class="card-title">
-                    <a href="/services/credit-union">
-                      <span class="fal fa-fw fa-money-bill-wave">&nbsp;</span>
-                      SCVO Credit Union
-                    </a>
-                  </h2>
-                </section>
-                <section class="card-body b-margin">
-                  The SCVO Credit Union is Scotland’s leading voluntary sector credit union. It offers low-cost loans, easy savings facilities, payroll deduction and quick bank transfers.
-                </section>
-                <section class="card-footer">
-                  <a href="/services/credit-union">Find out more</a>
-                </section>
-              </div>
-            </div>
-          </div>
+  <div class="container t-padding-full">
+    {{#*inline "childMenu" ~}}
+    {{#ifAll path (ifAny description icon) ~}}
+    <div class="column col-6 col-xl-12">
+      <div class="card b-padding-full">
+        {{#ifAny label label_full ~}}
+        <div class="card-heading">
+          <h2 class="card-title">
+            <a href="{{path}}">{{#if icon}}<span class="fal fa-fw fa-{{icon}} fa-2x">&nbsp;</span>{{/if}}{{#if label_full}}{{{label_full}}}{{else}}{{{label}}}{{/if}}</a>
+          </h2>
         </div>
-        {{!-- <h3>Business partners</h3>
-        <div class="equal-height linked-cards">
-          <div class="columns">
-            <div class="column col-6 col-md-12">
-              <div class="card gray mdc-card insurance">
-                <section class="card-header">
-                  <h2 class="card-title"><a href="/services/insurance"><span class="fal fa-fw fa-shield-check fa-2x">&nbsp;</span>Insurance</a></h2>
-                </section>
-                <section class="card-body">Keegan and Pennykid provide professional and independent advice to the voluntary sector</section>
-                <section class="card-footer"><a class="btn btn-link" href="/services/insurance">Find out more</a></section>
-              </div>
-            </div>
-          </div>
-        </div> --}}
+        {{/ifAny ~}}
+        {{#if description ~}}
+        <div class="card-body">{{{description}}}</div>
+        {{/if ~}}
+        <div class="card-footer">
+          <a href="{{path}}">Find out more</a>
+        </div>
       </div>
-      {{!-- <div class="column col-4 col-lg-12">
-        {{!-- {{> sidebars_tfn_latest}}
-        <br /> -- }}
-        {{> sidebars_goodmoves_latest}}
-      </div> --}}
+    </div>
+    {{/ifAll ~}}
+    {{/inline ~}}
+
+    <div class="v-padding-full">
+      {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+      {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+      <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
+        <div class="linked-cards support support-organisation">
+          {{#each @root.context.metaData.sidebarMenus ~}}
+            {{#each this ~}}
+              {{#if children ~}}
+                {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                  <div class="columns">
+                    {{#each this.children ~}}
+                    {{> childMenu this level=2}}
+                    {{/each ~}}
+                  </div>
+                {{else}}
+                  {{#each children ~}}
+                    {{#if children ~}}
+                      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                        <div class="columns">
+                          {{#each this.children ~}}
+                          {{> childMenu this level=3}}
+                          {{/each ~}}
+                        </div>
+                      {{else}}
+                        {{#each children ~}}
+                          {{#if children ~}}
+                            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                              <div class="columns">
+                                {{#each this.children ~}}
+                                {{> childMenu this level=4}}
+                                {{/each ~}}
+                              </div>
+                            {{else}}
+                              {{#each children ~}}
+                                {{#if children ~}}
+                                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                    <div class="columns">
+                                      {{#each this.children ~}}
+                                      {{> childMenu this level=5}}
+                                      {{/each ~}}
+                                    </div>
+                                  {{else}}
+                                  {{#each children ~}}
+                                    {{#if children ~}}
+                                      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                        <div class="columns">
+                                          {{#each this.children ~}}
+                                          {{> childMenu this level=6}}
+                                          {{/each ~}}
+                                        </div>
+                                      {{else}}
+                                        {{#each children ~}}
+                                          {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                          <div class="columns">
+                                            {{#each ../this.children ~}}
+                                            {{> childMenu this level=6}}
+                                            {{/each ~}}
+                                          </div>
+                                          {{/ifAll ~}}
+                                        {{/each ~}}
+                                      {{/ifAll ~}}
+                                    {{else}}
+                                      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                        <div class="columns">
+                                          {{#each ../this.children ~}}
+                                          {{> childMenu this level=5}}
+                                          {{/each ~}}
+                                        </div>
+                                      {{/ifAll ~}}
+                                    {{/if ~}}
+                                  {{/each ~}}
+                                  {{/ifAll ~}}
+                                {{else}}
+                                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                    <div class="columns">
+                                      {{#each ../this.children ~}}
+                                      {{> childMenu this level=4}}
+                                      {{/each ~}}
+                                    </div>
+                                  {{/ifAll ~}}
+                                {{/if ~}}
+                              {{/each ~}}
+                            {{/ifAll ~}}
+                          {{else}}
+                            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                              <div class="columns">
+                                {{#each ../this.children ~}}
+                                {{> childMenu this level=3}}
+                                {{/each ~}}
+                              </div>
+                            {{/ifAll ~}}
+                          {{/if ~}}
+                        {{/each ~}}
+                      {{/ifAll ~}}
+                    {{else}}
+                      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                      <div class="columns">
+                        {{#each ../this.children ~}}
+                        {{> childMenu this level=2}}
+                        {{/each ~}}
+                      </div>
+                      {{/ifAll ~}}
+                    {{/if ~}}
+                  {{/each ~}}
+                {{/ifAll ~}}
+              {{else}}
+                {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                {{/ifAll ~}}
+              {{/if ~}}
+            {{/each ~}}
+          {{/each ~}}
+        </div>
+      </div>
+      {{/with ~}}
+      {{/if ~}}
     </div>
   </div>
 </div>

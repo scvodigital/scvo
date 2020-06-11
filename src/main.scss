@@ -1441,6 +1441,15 @@ body.services.credit-union {
     background-size: 5px 15px;
     background-position: 0 100%;
     background-repeat: repeat-x;
+    &:before {
+      content: '\201C';
+      position: absolute;
+      top: -2.75rem;
+      left: -1rem;
+      color: $secondary-color-light;
+      font-size: 4rem;
+      z-index: 0;
+    }
   }
   .landing-page-actions {
     list-style-type: none;
@@ -2481,17 +2490,20 @@ header.toolbar {
 }
 
 blockquote {
-  display: inline;
   padding: 0;
   margin-top: 0;
+  margin-right: 0;
   border: none;
   position: relative;
-  font-size: 115%;
-  font-weight: $body-bold-weight;
-  background: linear-gradient(to bottom, $primary-color-light 0%, $primary-color-light 100%);
-  background-size: 5px 15px;
-  background-position: 0 100%;
-  background-repeat: repeat-x;
+  p {
+    display: inline;
+    font-size: 115%;
+    font-weight: $body-bold-weight;
+    background: linear-gradient(to bottom, $light-color 0%, $light-color 100%);
+    background-size: 5px 15px;
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+  }
   cite {
     font-weight: $body-font-weight;
     display: block;
@@ -2500,15 +2512,6 @@ blockquote {
     margin-top: $unit/2;
     text-align: right;
   }
-  &:before {
-    content: '\201C';
-    position: absolute;
-    top: -2.75rem;
-    left: -1rem;
-    color: $secondary-color-light;
-    font-size: 4rem;
-    z-index: 0;
- }
 }
 blockquote.twitter-tweet {
   display: inline-block;
