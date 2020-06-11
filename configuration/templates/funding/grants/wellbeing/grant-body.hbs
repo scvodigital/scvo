@@ -42,6 +42,15 @@
       {{#unless paid_by_funder ~}}
       but not yet paid
       {{/unless ~}}
+      {{#each @root.data.organisationResponses.grants.hits.hits ~}}
+      {{#compare @root.data.primaryResponse.hits.hits.[0]._type "!==" this._type ~}}
+      {{#with _source ~}}
+      and
+      &pound;{{addCommas (default amount_awarded amount_requested)}}
+      via <a href="/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients?call={{slugify call}}">{{call}}</a>
+      {{/with ~}}
+      {{/compare ~}}
+      {{/each ~}}
     </li>
     {{/if ~}}
     {{!-- <li>
@@ -49,21 +58,13 @@
       <a href="http://grantnav.threesixtygiving.org/grant/360G-SCVO-{{Id}}" target="_blank">Data published on 360Giving</a>
     </li> --}}
     {{#ifAny recipient_url @root.data.organisation.hits.hits.0._source.website ~}}
-    <li>
-      <span class="fa-li"><span class="far fa-link"></span></span>
-      <a href="{{fixUrl (default recipient_url @root.data.organisation.hits.hits.0._source.website) 'http'}}">{{lowercase (default recipient_url @root.data.organisation.hits.hits.0._source.website)}}</a>
-    </li>
+    {{> content_item icon='link' link=(default recipient_url @root.data.organisation.hits.hits.0._source.website)}}
     {{/ifAny ~}}
     {{#ifAny recipient_twitter @root.data.organisation.hits.hits.0._source.twitter ~}}
-    <li>
-      <span class="fa-li"><span class="fab fa-twitter"></span></span>
-      <a href="{{fixUrl (default recipient_twitter @root.data.organisation.hits.hits.0._source.twitter) 'http'}}">Twitter</a>
+    {{> content_item icon='twitter' link=(default recipient_twitter @root.data.organisation.hits.hits.0._source.twitter)}}
     {{/ifAny ~}}
     {{#ifAny recipient_facebook @root.data.organisation.hits.hits.0._source.facebook ~}}
-    <li>
-      <span class="fa-li"><span class="fab fa-facebook"></span></span>
-      <a href="{{fixUrl (default recipient_facebook @root.data.organisation.hits.hits.0._source.facebook) 'http'}}">Facebook</a>
-    </li>
+    {{> content_item icon='facebook' link=(default recipient_facebook @root.data.organisation.hits.hits.0._source.facebook)}}
     {{/ifAny ~}}
   </ul>
 

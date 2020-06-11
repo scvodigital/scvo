@@ -13,11 +13,11 @@
   {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
   <h1>
     {{#if title}}{{{title}}}{{else}}{{Id}}{{/if}}
-    {{#if alias ~}}
-    {{#compare title "!==" alias ~}}
-    ({{{alias}}})
+    {{#ifAny alias @root.data.organisation.hits.hits.0._source.alias ~}}
+    {{#compare title "!==" (default alias @root.data.organisation.hits.hits.0._source.alias) ~}}
+    ({{{default alias @root.data.organisation.hits.hits.0._source.alias}}})
     {{/compare ~}}
-    {{/if ~}}
+    {{/ifAny ~}}
   </h1>
   {{/with ~}}
 </div>

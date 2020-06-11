@@ -1,9 +1,9 @@
 <div class="full scvo-member">
   {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
   {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-    {{#if og_image ~}}
+    {{!-- {{#if og_image ~}}
     <img src="{{og_image}}" alt="{{title}}" />
-    {{/if ~}}
+    {{/if ~}} --}}
     <div class="post-info">
       {{#if type ~}}
       <div class="post-info-item">
@@ -39,32 +39,19 @@
     </div>
     {{/compare ~}}
 
-    {{#if website ~}}
-    {{#compare website '!==' 'http://'}}
-    <p>
-      <strong>Website:</strong>
-      <a href="{{#unless (contains website 'http')}}http://{{/unless}}{{website}}">{{website}}</a>
-    </p>
-    {{/compare}}
-    {{/if ~}}
-
-    {{#if twitter ~}}
-    {{#compare twitter '!==' 'http://'}}
-    <p>
-      <strong>Twitter:</strong>
-      <a href="{{#unless (contains twitter 'http')}}http://{{/unless}}{{twitter}}">{{twitter}}</a>
-    </p>
-    {{/compare ~}}
-    {{/if ~}}
-
-    {{#if facebook ~}}
-    {{#compare facebook '!==' 'http://'}}
-    <p>
-      <strong>Facebook:</strong>
-      <a href="{{#unless (contains facebook 'http')}}http://{{/unless}}{{facebook}}">{{facebook}}</a>
-    </p>
-    {{/compare ~}}
-    {{/if ~}}
+    {{#ifAny website @root.data.organisation.hits.hits.0._source.website twitter @root.data.organisation.hits.hits.0._source.twitter facebook @root.data.organisation.hits.hits.0._source.facebook ~}}
+    <ul class="fa-ul">
+      {{#ifAny website @root.data.organisation.hits.hits.0._source.website ~}}
+      {{> content_item icon='link' link=(default website @root.data.organisation.hits.hits.0._source.website)}}
+      {{/ifAny ~}}
+      {{#ifAny twitter @root.data.organisation.hits.hits.0._source.twitter ~}}
+      {{> content_item icon='twitter' link=(default twitter @root.data.organisation.hits.hits.0._source.twitter)}}
+      {{/ifAny ~}}
+      {{#ifAny facebook @root.data.organisation.hits.hits.0._source.facebook ~}}
+      {{> content_item icon='facebook' link=(default twitter @root.data.organisation.hits.hits.0._source.facebook)}}
+      {{/ifAny ~}}
+    </ul>
+    {{/ifAny ~}}
   {{/with ~}}
 
   {{#compare @root.data.organisationResponses.vacancies.hits.total ">" 0 ~}}

@@ -1,11 +1,29 @@
 {
   "size": 1,
   "_source": [
-    "*"
+    "Id",
+    "title",
+    "alias",
+    "charity_number",
+    "website",
+    "twitter",
+    "facebook"
   ],
   "query": {
-    "term": {
-      "Id": "{{@root.request.params.id}}"
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "charity_number": "{{@root.request.params.id}}"
+          }
+        },
+        {
+          "term": {
+            "Id": "{{@root.request.params.id}}"
+          }
+        }
+      ],
+      "minimum_should_match": 1
     }
   }
 }

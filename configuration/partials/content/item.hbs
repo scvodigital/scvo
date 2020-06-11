@@ -1,0 +1,18 @@
+{{#compare icon "twitter" ~}}
+<li>
+  <span class="fa-li"><span class="fab fa-{{icon}}"></span></span>
+  <a href="{{fixUrl link 'http'}}">Twitter</a>
+</li>
+{{else}}
+{{#compare icon "facebook" ~}}
+<li>
+  <span class="fa-li"><span class="fab fa-{{icon}}"></span></span>
+  <a href="{{fixUrl link 'http'}}">Facebook</a>
+</li>
+{{else}}
+<li>
+  <span class="fa-li"><span class="far fa-{{icon}}"></span></span>
+  <a href="{{fixUrl link 'http'}}">{{lowercase (replace (replace link 'https://' '') 'http://' '')}}</a>
+</li>
+{{/compare ~}}
+{{/compare ~}}

@@ -14,7 +14,7 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "oscr-charity",
+          "type": "oscr-charity,scvo-organisation",
           "template": ">context.metaData.handlebars.queries.organisations_organisation",
           "noResultsRoute": "four_oh_four"
         }

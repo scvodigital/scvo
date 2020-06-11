@@ -11,22 +11,24 @@
   </section>
 </div>
 
-{{#if @root.request.params.query.q ~}}
-{{> search_info paging=@root.data.primaryResponse.pagination}}
-{{else}}
-{{!-- <h4>Organisations include&hellip;</h4> --}}
-{{/if ~}}
+<div class="b-margin-full b-padding-full">
+  {{#if @root.request.params.query.q ~}}
+  {{> search_info paging=@root.data.primaryResponse.pagination}}
+  {{else}}
+  {{!-- <h4>Organisations include&hellip;</h4> --}}
+  {{/if ~}}
 
-{{#each @root.data.primaryResponse.hits.hits ~}}
-{{#with _source ~}}
-{{#if title ~}}
-<h4><a href="/policy/organisations/{{Id}}/{{slugify title}}">{{{title}}}</a></h4>
-{{else}}
-<h4><a href="/policy/organisations/{{Id}}">{{{Id}}}</a></h4>
-{{/if ~}}
-{{/with ~}}
-{{/each ~}}
+  {{#each @root.data.primaryResponse.hits.hits ~}}
+  {{#with _source ~}}
+  {{#if title ~}}
+  <h4><a href="/policy/organisations/{{Id}}/{{slugify title}}">{{{title}}}</a></h4>
+  {{else}}
+  <h4><a href="/policy/organisations/{{Id}}">{{{Id}}}</a></h4>
+  {{/if ~}}
+  {{/with ~}}
+  {{/each ~}}
 
-{{#ifAny @root.request.params.query.q @root.request.params.query.type ~}}
-{{> pagination paging=@root.data.primaryResponse.pagination}}
-{{/ifAny ~}}
+  {{#ifAny @root.request.params.query.q @root.request.params.query.type ~}}
+  {{> pagination paging=@root.data.primaryResponse.pagination}}
+  {{/ifAny ~}}
+</div>
