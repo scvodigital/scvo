@@ -1,11 +1,11 @@
 {
   "name": "trustee_search",
-  "debug": false,
+  "debug": true,
   "pattern": "/support/terrific-trustees/search",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
-      "name": "primaryResponse",
+      "name": "search_results",
       "taskModule": "elasticsearch",
       "config": {
         "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
