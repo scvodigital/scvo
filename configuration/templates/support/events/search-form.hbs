@@ -9,8 +9,9 @@
   <div class="form-group">
     <select class="form-select" id="events-team" name="team">
       <option value=""{{#if @root.request.params.query.team}}{{else}} selected{{/if}}>Run by</option>
-      {{#each @root.data.supplimentaryResponses.types.aggregations.teams.buckets ~}}
-      <option value="{{key}}" {{#compare @root.request.params.query.team "===" key}}selected{{/compare}}>SCVO {{key}} team</option>
+      {{!-- @root.data.supplimentaryResponses.types.aggregations.teams.buckets --}}
+      {{#each (split "digital,events,information-service,policy" ",") ~}}
+      <option value="{{this}}" {{#compare @root.request.params.query.team "===" this}}selected{{/compare}}>SCVO {{replace (replace this 'events' 'training') 'information-service' 'information'}} team</option>
       {{/each ~}}
     </select>
   </div>
