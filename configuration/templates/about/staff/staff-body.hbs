@@ -72,14 +72,14 @@
     </h3>
     <div class="columns">
       {{#each @root.data.supplimentaryResponses.author_posts.hits.hits ~}}
-      <div class="column col-4 col-md-6 col-sm-12">
+      <div class="column col-6 col-md-12">
         {{> content_post_list _source}}
       </div>
       {{/each ~}}
     </div>
-    {{#compare @root.data.supplimentaryResponses.author_posts.hits.total ">" 3 ~}}
+    {{#compare @root.data.supplimentaryResponses.author_posts.hits.total ">" 4 ~}}
     <p class="v-margin read-more">
-      <a href="/post/author/{{{@root.data.supplimentaryResponses.author_posts.hits.hits.[0]._source.author_slug}}}" class="mdc-button mdc-button--raised">More posts</a>
+      <a href="/post/author/{{{@root.data.supplimentaryResponses.author_posts.hits.hits.[0]._source.author_slug}}}" class="mdc-button mdc-button--raised">More posts{{#if @root.data.primaryResponse.hits.hits.[0]._source.name_full}} by {{@root.data.primaryResponse.hits.hits.[0]._source.name_full}}{{/if}}</a>
     </p>
     {{/compare ~}}
   </div>
