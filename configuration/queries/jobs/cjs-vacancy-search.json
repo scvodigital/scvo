@@ -22,7 +22,7 @@
         {{#ifAll @root.request.params.query.location @root.request.params.query.lat @root.request.params.query.lng ~}}
         {
           "geo_distance": {
-            "distance": "{{default @root.request.params.query.distance "80.4672"}}km",
+            "distance": "{{default @root.request.params.query.distance '80.4672'}}km",
             "geo_coords": {
               "lat": {{@root.request.params.query.lat}},
               "lon": {{@root.request.params.query.lng}}
@@ -59,7 +59,7 @@
         {{#compare @root.request.params.phase 'p52' ~}}
         {
           "term" : {
-            "cjs_lookup": "CJS PH9 PT 52wks"
+            "cjs_lookup": "CJS PH10 PT 52wks"
           }
         }
         {{else}}
@@ -68,12 +68,12 @@
             "should": [
               {
                 "term" : {
-                  "cjs_lookup": "CJS PH9"
+                  "cjs_lookup": "CJS PH10"
                 }
               },
               {
                 "term" : {
-                  "cjs_lookup": "CJS PH9 26wks"
+                  "cjs_lookup": "CJS PH10 26wks"
                 }
               }
             ],

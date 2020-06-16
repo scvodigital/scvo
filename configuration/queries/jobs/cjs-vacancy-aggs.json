@@ -12,7 +12,7 @@
         {{#compare @root.request.params.phase 'p52' ~}}
         {
           "term" : {
-            "cjs_lookup": "CJS PH9 PT 52wks"
+            "cjs_lookup": "CJS PH10 PT 52wks"
           }
         }
         {{else}}
@@ -21,12 +21,12 @@
             "should": [
               {
                 "term" : {
-                  "cjs_lookup": "CJS PH9"
+                  "cjs_lookup": "CJS PH10"
                 }
               },
               {
                 "term" : {
-                  "cjs_lookup": "CJS PH9 26wks"
+                  "cjs_lookup": "CJS PH10 26wks"
                 }
               }
             ],
