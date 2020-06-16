@@ -42,9 +42,9 @@
     <div class="input-group has-icon-left">
       <span data-component="Typeahead" data-Typeahead="typeahead-location">
         <span class="form-icon far fa-location geo-lookup" tabindex="0" title="Find my location" data-component="TasksTrigger" data-TasksTrigger="geolocation"></span>
-        <input type="text" id="location" name="location" class="form-input input-lg" value="{{@root.request.params.query.location}}" placeholder="Location" data-lpignore="true" style="    border-radius: 5px 0 0 5px;">
+        <input type="text" id="location" name="location" class="form-input" value="{{@root.request.params.query.location}}" placeholder="Location" data-lpignore="true" style="    border-radius: 5px 0 0 5px;">
       </span>
-      <select class="form-select select-lg" id="distance" name="distance">
+      <select class="form-select" id="distance" name="distance">
         <option value="8.04672"{{#compare @root.request.params.query.distance "8.04672"}} selected{{/compare}}>5 miles</option>
         <option value="16.09344"{{#compare @root.request.params.query.distance "16.09344"}} selected{{/compare}}>10 miles</option>
         <option value="40.2336"{{#compare @root.request.params.query.distance "40.2336"}} selected{{/compare}}>25 miles</option>
