@@ -31,6 +31,17 @@ document.addEventListener("DOMContentLoaded", function(){
       formElement.attachEvent('onsubmit', appendJsTimerElement);
     }
   }
+  $("#4830198").submit(function(e){
+    e.preventDefault();
+    var q1 = $('#tfa_5').prop('checked');
+    var q2 = $('#tfa_6').prop('checked');
+    var q3 = $('#tfa_7').prop('checked');
+    var q4 = $('#tfa_8').prop('checked');
+    if (q1 && q2 && q3 && q4) {
+      $('#tfa_286').val("Member");
+    }
+    this.submit();
+  });
 });
 </script>
 <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=c3b9cbcedf4034fce2cb803518bc10b2c688cc53" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
@@ -81,28 +92,28 @@ wFORMS.behaviors.prefill.skip = false;
               <span id="tfa_4" class="choices vertical">
                 <span class="input-group">
                   <label class="form-checkbox postField" id="tfa_5-L" for="tfa_5">
-                    <input type="checkbox" value="tfa_5" class="" id="tfa_5" name="tfa_5" data-conditionals="#tfa_10,#tfa_12,#tfa_286,#tfa_289,#membership-contact-L,#supporter-contact-L" aria-labelledby="tfa_5-L" data-tfa-labelledby="tfa_4-L tfa_5-L">
+                    <input type="checkbox" value="tfa_5" class="" id="tfa_5" name="tfa_5" data-conditionals="#tfa_10,#tfa_12,#membership-contact-L,#supporter-contact-L" aria-labelledby="tfa_5-L" data-tfa-labelledby="tfa_4-L tfa_5-L">
                     <i class="form-icon"></i>
                     My organisation is a voluntary organisation (i.e. an independent, self-governing body of people who have come together to act for the benefit of the community)
                   </label>
                 </span>
                 <span class="input-group">
                   <label class="form-checkbox postField" id="tfa_6-L" for="tfa_6">
-                    <input type="checkbox" value="tfa_6" class="" id="tfa_6" name="tfa_6" data-conditionals="#tfa_12,#tfa_286,#tfa_289,#membership-contact-L,#supporter-contact-L" aria-labelledby="tfa_6-L" data-tfa-labelledby="tfa_4-L tfa_6-L">
+                    <input type="checkbox" value="tfa_6" class="" id="tfa_6" name="tfa_6" data-conditionals="#tfa_12,#membership-contact-L,#supporter-contact-L" aria-labelledby="tfa_6-L" data-tfa-labelledby="tfa_4-L tfa_6-L">
                     <i class="form-icon"></i>
                     My organisation is non-profit distributing
                   </label>
                 </span>
                 <span class="input-group">
                   <label class="form-checkbox postField" id="tfa_7-L" for="tfa_7">
-                    <input type="checkbox" value="tfa_7" class="" id="tfa_7" name="tfa_7" data-conditionals="#tfa_10,#tfa_12,#tfa_286,#tfa_289,#membership-contact-L,#supporter-contact-L" aria-labelledby="tfa_7-L" data-tfa-labelledby="tfa_4-L tfa_7-L">
+                    <input type="checkbox" value="tfa_7" class="" id="tfa_7" name="tfa_7" data-conditionals="#tfa_10,#tfa_12,#membership-contact-L,#supporter-contact-L" aria-labelledby="tfa_7-L" data-tfa-labelledby="tfa_4-L tfa_7-L">
                     <i class="form-icon"></i>
                     My organisation works towards the principles of good governance in line with the Scottish Governance Code
                   </label>
                 </span>
                 <span class="input-group">
                   <label class="form-checkbox postField" id="tfa_8-L" for="tfa_8">
-                    <input type="checkbox" value="tfa_8" class="" id="tfa_8" name="tfa_8" data-conditionals="#tfa_10,#tfa_12,#tfa_286,#tfa_289,#membership-contact-L,#supporter-contact-L" aria-labelledby="tfa_8-L" data-tfa-labelledby="tfa_4-L tfa_8-L">
+                    <input type="checkbox" value="tfa_8" class="" id="tfa_8" name="tfa_8" data-conditionals="#tfa_10,#tfa_12,#membership-contact-L,#supporter-contact-L" aria-labelledby="tfa_8-L" data-tfa-labelledby="tfa_4-L tfa_8-L">
                     <i class="form-icon"></i>
                     My organisation has a presence in Scotland (i.e. my organisation is located in Scotland or my organisation has a postal address in Scotland)
                   </label>
@@ -188,8 +199,7 @@ wFORMS.behaviors.prefill.skip = false;
           <h2 id="tfa_16-T">
             Organisation information
           </h2>
-          <input type="hidden" id="tfa_286" name="tfa_286" value="TRUE" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8`" class="">
-          <input type="hidden" id="tfa_289" name="tfa_289" value="TRUE" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`)" class="">
+          <input type="hidden" id="tfa_286" name="tfa_286" value="Supporter" />
           <div class="form-group field-container-D" id="tfa_17-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
               <label id="tfa_17-L" class="form-label r-margin preField reqMark" for="tfa_17">
@@ -1231,7 +1241,7 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="4830198" name="tfa_dbFormId" id="tfa_dbFormId">
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="fe6fdaa921ec6df0f5415fa3f3ef8404" name="tfa_dbControl" id="tfa_dbControl">
-      <input type="hidden" value="19" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="26" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
     </form>
   </div>
