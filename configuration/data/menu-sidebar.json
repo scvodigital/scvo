@@ -2585,7 +2585,14 @@
 									"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund",
 									"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund$",
 									"description": "Funds for anchor organisations.",
-									"icon": "tasks"
+									"icon": "tasks",
+									"children": [
+										{
+											"label": "Recipients",
+											"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients",
+											"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients"
+										}
+									]
 								}
 							]
 						},
