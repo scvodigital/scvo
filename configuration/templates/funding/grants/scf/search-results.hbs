@@ -106,9 +106,9 @@
               {{/if ~}}
               {{/if ~}}
               via <a href="/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients?call={{slugify call}}">{{call}}</a>
-              {{#unless paid_by_funder ~}}
+              {{!-- {{#unless paid_by_funder ~}}
               but not yet paid
-              {{/unless ~}}
+              {{/unless ~}} --}}
               {{#each @root.data.organisationResponses.grants.hits.hits ~}}
               {{#if (contains _type 'sg-grant-scf') ~}}
               {{#unless (ifAll (compare _type @root.data.primaryResponse.hits.hits.[0]._type) (compare _source.call_slug @root.data.primaryResponse.hits.hits.[0]._source.call_slug)) ~}}
