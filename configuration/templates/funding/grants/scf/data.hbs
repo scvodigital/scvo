@@ -174,33 +174,11 @@
         "description": "Providing funding to organisations as a direct result of the coronavirus (COVID-19) pandemic."
       }
     ],
-    {{#if funder_name ~}}
     "fundingOrganization": [{
-      {{#switch funder_name ~}}
-      {{#case "The Hunter Foundation" ~}}
-      "id": "GB-SC-SC027532",
-      "url": "https://www.thehunterfoundation.co.uk",
-      {{/case ~}}
-      {{#case "Inspiring Scotland" ~}}
-      "id": "GB-SC-SC039605",
-      "url": "https://www.inspiringscotland.org.uk",
-      {{/case ~}}
-      {{#case "Corra Foundation" ~}}
-      "id": "GB-SC-SC009481",
-      "url": "https://www.corra.scot",
-      {{/case ~}}
-      {{#case "STV Appeal" ~}}
-      "id": "GB-COH-SC203873",
-      "url": "https://www.stv.tv",
-      {{/case ~}}
-      {{#case "SCVO" ~}}
-      "id": "GB-SC-SC003558",
-      "url": "https://svco.scot",
-      {{/case ~}}
-      {{/switch ~}}
-      "name": "{{funder_name}}"
+      "id": "ScottishGovernment",
+      "url": "https://gov.scot",
+      "name": "Scottish Government"
     }],
-    {{/if ~}}
     {{#if call ~}}
     "grantProgramme": [{
       "code": "sg-scf-{{slugify call}}",

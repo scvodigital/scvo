@@ -38,11 +38,6 @@
   "query": {
     "bool": {
       "filter": [
-        {
-          "term": {
-            "paid_by_funder": true
-          }
-        }
       ],
       "should": [
         {
