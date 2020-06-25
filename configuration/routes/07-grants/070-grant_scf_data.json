@@ -1,0 +1,66 @@
+{
+  "name": "grant_scf_data",
+  "debug": true,
+  "pattern": "/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients/data.json",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "sg-grant-scf",
+          "template": ">context.metaData.handlebars.queries.grants_scf-data",
+          "noResultsRoute": "four_oh_four"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "types",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "sg-grant-scf",
+            "template": ">context.metaData.handlebars.queries.grants_scf-aggs"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "data"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "data": {
+            "layout": ">context.metaData.handlebars.layouts.data",
+            "parts": {
+              "content": ">context.metaData.handlebars.templates.funding_grants_scf_data"
+            },
+            "contentType": "application/json"
+          }
+        }
+      }
+    }
+  ]
+}
