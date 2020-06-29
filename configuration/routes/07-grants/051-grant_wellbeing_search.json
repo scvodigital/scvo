@@ -38,13 +38,13 @@
           {
             "name": "grants",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "sg-grant-wellbeing,sg-grant-wellbeing-legacy",
+            "type": "sg-grant-wellbeing",
             "template": ">context.metaData.handlebars.queries.grants_wellbeing-search"
           },
           {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "sg-grant-wellbeing,sg-grant-wellbeing-legacy",
+            "type": "sg-grant-wellbeing",
             "template": ">context.metaData.handlebars.queries.grants_wellbeing-aggs"
           }
         ]
