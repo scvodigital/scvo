@@ -176,7 +176,7 @@
     ],
     {{#if funder_name ~}}
     "fundingOrganization": [{
-      {{#switch funder_name ~}}
+      {{!-- {{#switch funder_name ~}}
       {{#case "The Hunter Foundation" ~}}
       "id": "GB-SC-SC027532",
       "url": "https://www.thehunterfoundation.co.uk",
@@ -198,7 +198,10 @@
       "url": "https://svco.scot",
       {{/case ~}}
       {{/switch ~}}
-      "name": "{{funder_name}}"
+      "name": "{{funder_name}}" --}}
+      "id": "GB-GOR-DA1020",
+      "url": "https://gov.scot",
+      "name": "Scottish Government"
     }],
     {{/if ~}}
     {{#if call ~}}
@@ -208,7 +211,7 @@
       "description": "The Wellbeing Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the coronavirus (COVID19) pandemic.",
       "url": "https://scvo.scot/funding/wellbeing-fund"
     }],
-    "fromOpenCall": "Yes",
+    "fromOpenCall": {{#if (contains call "Invited")}}"No"{{else}}"Yes"{{/if}},
     {{/if ~}}
     "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}",
     "dataSource": "https://scvo.scot/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients/data.json"

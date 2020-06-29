@@ -110,7 +110,7 @@
               but not yet paid
               {{/unless ~}}
               {{#each @root.data.organisationResponses.grants.hits.hits ~}}
-              {{#if (contains _type 'sg-grant-scf') ~}}
+              {{#if (contains _type 'sg-grant-wellbeing') ~}}
               {{#unless (ifAll (compare _type @root.data.primaryResponse.hits.hits.[0]._type) (compare _source.call_slug @root.data.primaryResponse.hits.hits.[0]._source.call_slug)) ~}}
               {{#with _source ~}}
               {{#if paid_by_funder ~}}
