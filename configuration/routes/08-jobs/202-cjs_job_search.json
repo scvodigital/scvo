@@ -1,6 +1,6 @@
 {
   "name": "cjs_job_search",
-  "debug": true,
+  "debug": false,
   "pattern": "/jobs/community-jobs-scotland/vacancies/:phase",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
