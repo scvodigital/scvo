@@ -58,12 +58,6 @@
         },
         {{#compare @root.request.params.phase 'p52' ~}}
         {
-          "term" : {
-            "cjs_lookup": "CJS PH10 PT 52wks"
-          }
-        }
-        {{else}}
-        {
           "bool": {
             "should": [
               {
@@ -71,6 +65,19 @@
                   "cjs_lookup": "CJS PH10"
                 }
               },
+              {
+                "term" : {
+                  "cjs_lookup": "CJS PH10 PT 52wks"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+        {{else}}
+        {
+          "bool": {
+            "should": [
               {
                 "term" : {
                   "cjs_lookup": "CJS PH10 PT 26wks"
