@@ -62,12 +62,7 @@
             "should": [
               {
                 "term" : {
-                  "cjs_lookup": "CJS PH10"
-                }
-              },
-              {
-                "term" : {
-                  "cjs_lookup": "CJS PH10 PT 52wks"
+                  "cjs_lookup": "CJS PH10 PT 26wks"
                 }
               }
             ],
@@ -80,7 +75,12 @@
             "should": [
               {
                 "term" : {
-                  "cjs_lookup": "CJS PH10 PT 26wks"
+                  "cjs_lookup": "CJS PH10"
+                }
+              },
+              {
+                "term" : {
+                  "cjs_lookup": "CJS PH10 PT 52wks"
                 }
               }
             ],
