@@ -88,6 +88,11 @@
 					"route": "^/about/membership$",
 					"children": [
 						{
+							"label": "Meet our members",
+							"path": "/about/membership/meet-our-members",
+							"route": "^/about/membership/meet-our-members$"
+						},
+						{
 							"label": "Review",
 							"path": "/about/membership/review",
 							"route": "^/about/membership/review$"
@@ -128,11 +133,6 @@
 					"label": "Our members",
 					"path": "/about/members",
 					"route": "^/about/members$|^/about/members/"
-				},
-				{
-					"label": "Meet our members",
-					"path": "/about/meet-our-members",
-					"route": "^/about/meet-our-members"
 				},
 				{
 					"label": "Networks",
