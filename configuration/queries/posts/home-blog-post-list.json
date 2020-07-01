@@ -15,6 +15,26 @@
   ],
   "query": {
     "bool": {
+      "should": [
+        {
+          "terms": {
+            "post_tags_slug": [
+              "scvo",
+              "scvo-news",
+              "scvo-blog",
+              "digital-blog",
+              "events-blog",
+              "running-your-organisation-blog",
+              "funding-blog",
+              "funding",
+              "campaign-blog",
+              "policy-blog",
+              "research-blog"
+            ]
+          }
+        }
+      ],
+      "minimum_should_match": 1,
       "must_not": [
         {
           "term": {
