@@ -2752,6 +2752,11 @@ form.disabled {
 
 form {
   position: relative;
+  .reqMark:after {
+    content: " *";
+    color: $error-color;
+    font-size: 90%;
+  }
 }
 
 .authentication-form {

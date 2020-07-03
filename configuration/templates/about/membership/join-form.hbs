@@ -317,13 +317,21 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group field-container-D" id="tfa_57-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_57-L" class="form-label r-margin preField reqMark" for="tfa_57">
+              <label id="tfa_57-L" class="form-label r-margin preField" for="tfa_57">
                 Website address
               </label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="text" id="tfa_57" name="tfa_57" value="" maxlength="255" aria-required="true" title="Website address" class="form-input required">
+              <input type="text" id="tfa_57" name="tfa_57" value="" maxlength="255" title="Website address" class="form-input validate-custom /^(http:|https:)+[^\s]+[\w]/g">
             </div>
+            <script type="text/javascript">
+            if(typeof wFORMS != 'undefined') {
+              if(wFORMS.behaviors.validation) {
+                wFORMS.behaviors.validation.rules['customtfa_57'] =  { selector: '*[id="tfa_57"]', check: 'validateCustom'};
+                wFORMS.behaviors.validation.messages['customtfa_57'] = "Please enter a single valid website URL, beginning with http:// or https://";
+              }
+            }
+            </script>
           </div>
           <div class="form-group field-container-D" id="tfa_58-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -1242,7 +1250,7 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="4830198" name="tfa_dbFormId" id="tfa_dbFormId">
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="fe6fdaa921ec6df0f5415fa3f3ef8404" name="tfa_dbControl" id="tfa_dbControl">
-      <input type="hidden" value="27" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="31" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
     </form>
   </div>
