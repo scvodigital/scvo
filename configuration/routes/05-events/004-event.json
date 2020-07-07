@@ -1,7 +1,10 @@
 {
-  "name": "event_digital_booking",
+  "name": "event",
   "debug": false,
-  "pattern": "__disabled__/support/digital/events/:id(/:junk)/book",
+  "pattern": "/support/events/:id(/:junk)",
+  "metaData": {
+    "searchUrl": "/support/events"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -31,10 +34,22 @@
         },
         "queryTemplates": [
           {
+            "name": "related_events",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-event",
+            "template": ">context.metaData.handlebars.queries.events_related"
+          },
+          {
+            "name": "same_events",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-event",
+            "template": ">context.metaData.handlebars.queries.events_same"
+          },
+          {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_digital-aggs"
+            "template": ">context.metaData.handlebars.queries.events_aggs"
           }
         ]
       },
@@ -55,10 +70,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.support_events_digital_booking-header",
+              "head": ">context.metaData.handlebars.templates.support_events_head-tags",
+              "header": ">context.metaData.handlebars.templates.support_events_event-header",
               "leftSidebar": ">context.metaData.handlebars.templates.support_events_search-form",
-              "body": ">context.metaData.handlebars.templates.support_events_digital_booking-body"
+              "body": ">context.metaData.handlebars.templates.support_events_event-body"
             },
             "contentType": "text/html"
           }

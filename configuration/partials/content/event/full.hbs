@@ -223,7 +223,7 @@
           {{/if ~}}
           {{else}}
           {{#if venue_alt ~}}
-          {{{venue_alt}}}
+          {{{replace venue_alt 'style=' 'data-style='}}}
           {{else}}
           TBC
           {{#if city ~}}({{city}}){{else}}{{#if event_venue.address_2 ~}}({{event_venue.address_2}}){{/if ~}}{{/if ~}}

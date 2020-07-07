@@ -1,10 +1,7 @@
 {
-  "name": "event_policy_search",
+  "name": "event_feedback",
   "debug": false,
-  "pattern": "__disabled__/policy/events",
-  "metaData": {
-    "searchUrl": "/policy/events"
-  },
+  "pattern": "/support/events/:id(/:junk)/feedback(/:session_key)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -18,7 +15,8 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-event",
-          "template": ">context.metaData.handlebars.queries.events_policy-search"
+          "template": ">context.metaData.handlebars.queries.events_event",
+          "noResultsRoute": "four_oh_four"
         }
       },
       "renderer": "handlebars"
@@ -36,7 +34,7 @@
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_policy-aggs"
+            "template": ">context.metaData.handlebars.queries.events_aggs"
           }
         ]
       },
@@ -57,11 +55,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.policy_events_search-head-tags",
-              "header": ">context.metaData.handlebars.templates.policy_events_search-header",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.support_events_feedback-header",
               "leftSidebar": ">context.metaData.handlebars.templates.support_events_search-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
-              "body": ">context.metaData.handlebars.templates.support_events_search-results"
+              "body": ">context.metaData.handlebars.templates.support_events_feedback-body"
             },
             "contentType": "text/html"
           }

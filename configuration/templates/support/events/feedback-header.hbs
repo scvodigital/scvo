@@ -1,0 +1,15 @@
+<div class="container">
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/support">Support &amp; learning</a></li>
+    <li class="breadcrumb-item"><a href="/support/events">Events</a></li>
+    <li class="breadcrumb-item"><a href="{{path}}">{{{title}}}</a></li>
+    <li class="breadcrumb-item">Feedback</li>
+  </ul>
+
+  {{> warnings_events}}
+
+  <h1>{{{title}}}</h1>
+  {{/with ~}}
+</div>
