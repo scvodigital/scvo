@@ -27,6 +27,13 @@
     "function_score": {
       "query": {
         "bool": {
+          "must_not": [
+            {
+              "match_phrase": {
+                "title": "Daily coronavirus roundup for third sector"
+              }
+            }
+          ],
           "should": [
             {
               "simple_query_string": {
@@ -44,7 +51,7 @@
         {
           "gauss": {
             "date_published": {
-              "scale": "14d",
+              "scale": "30d",
               "decay": 0.1
             }
           }
