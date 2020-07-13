@@ -11,6 +11,18 @@
     "function_score": {
       "query": {
         "bool": {
+          "must_not": [
+            {
+              "match_phrase": {
+                "title": "Daily coronavirus roundup for third sector"
+              }
+            },
+            {
+              "match_phrase": {
+                "title": "edition is out now"
+              }
+            }
+          ],
           "filter":  [
             {
               "exists": {
