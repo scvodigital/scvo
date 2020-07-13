@@ -2642,9 +2642,31 @@
 				},
 				{
 					"label": "Events",
-					"path": "/support/events",
-					"description": "Events from SCVO to help you respond to the crisis",
-					"icon": "calendar-alt"
+					"path": "/support/coronavirus/events",
+					"route": "^/support/coronavirus/events$",
+					"description": "Events and resources to help you respond to the crisis",
+					"icon": "calendar-alt",
+					"children": [
+						{
+							"label": "Upcoming events",
+							"path": "/support/events",
+							"description": "Events from SCVO to help you respond to the crisis",
+							"icon": "calendar-alt"
+						},
+						{
+							"label": "Open Door",
+							"path": "/support/coronavirus/events/open-door-webinars",
+							"route": "^/support/coronavirus/events/open-door-webinars$",
+							"description": "An opportunity to hear from experts in different fields about their thoughts, concerns and hopes for the voluntary sector in Scotland during these unprecedented times",
+							"icon": "door-open"
+						},
+						{
+							"label": "DigiShift",
+							"path": "/support/digital/evolution/digishift",
+							"description": "Shift your service delivery into digital and remote channels",
+							"icon": "signal-stream"
+						}
+					]
 				},
 				{
 					"label": "Coronavirus policy &amp; research",

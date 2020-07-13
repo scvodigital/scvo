@@ -2,14 +2,10 @@
   "name": "coronavirus_menu_page",
   "debug": true,
   "pattern": {
-    "your-employees": "/support/coronavirus/employees",
+    "your-employees": "/support/coronavirus/events",
     "funding": "/support/coronavirus/funding",
     "funding_scottish-government": "/support/coronavirus/funding/scottish-government",
-    "leading-your-organisation": "/support/coronavirus/leading-your-organisation",
-    "services": "/support/coronavirus/services",
-    "volunteers": "/support/coronavirus/volunteers",
-    "fundraising": "/support/coronavirus/fundraising",
-    "guidance": "/support/coronavirus/guidance"
+    "leading-your-organisation": "/support/coronavirus/leading-your-organisation"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
