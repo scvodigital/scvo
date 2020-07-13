@@ -2,7 +2,8 @@
   "name": "redirect_coronavirus_volunteering",
   "pattern": {
     "old_1": "/support/coronavirus/volunteering(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
-    "old_2": "/support/coronavirus/your-volunteers(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+    "old_2": "/support/coronavirus/your-volunteers(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "old_3": "/support/coronavirus/volunteers(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
   },
   "tasks": [
     {
@@ -11,7 +12,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/support/coronavirus/volunteers{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}{{#if request.params.seven}}/{{request.params.seven}}{{/if}}{{#if request.params.eight}}/{{request.params.eight}}{{/if}}"
+        "template": "/support/running-your-organisation/leaving-lockdown/supporting-staff-volunteers}"
       }
     },
     {

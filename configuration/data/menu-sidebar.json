@@ -762,7 +762,7 @@
 							"label_full": "Leaving lockdown: guide for voluntary organisations",
 							"path": "/support/running-your-organisation/leaving-lockdown",
 							"route": "^/support/running-your-organisation/leaving-lockdown$",
-							"description": "&nbsp;",
+							"description": "Key areas voluntary organisations need to consider as lockdown rules relax, with links to practical resources and sources of further support",
 							"icon": "map-marker-question",
 							"children": [
 								{
@@ -2509,58 +2509,6 @@
 			"icon": "",
 			"children": [
 				{
-					"label": "Your employees",
-					"path": "/support/coronavirus/employees",
-					"route": "^/support/coronavirus/employees$",
-					"description": "How to support and protect your staff, and enable remote working.",
-					"icon": "house-user",
-					"children": [
-						{
-							"label": "Furlough",
-							"label_full": "Furlough – Job Retention Scheme",
-							"path": "/support/coronavirus/employees/furlough",
-							"route": "^/support/coronavirus/employees/furlough$",
-							"description": "Information for employers about furloughing staff (Coronavirus Job Retention Scheme).",
-							"icon": "house-user"
-						},
-						{
-							"label": "Employment law",
-							"path": "/support/coronavirus/employees/employment-law",
-							"route": "^/support/coronavirus/employees/employment-law$",
-							"description": "How to support & protect your staff, volunteers & beneficiaries.",
-							"icon": "balance-scale"
-						},
-						{
-							"label": "Remote working",
-							"path": "/support/coronavirus/employees/remote-working",
-							"route": "",
-							"description": "How to support your staff to work remotely, with tips on equipment and wellbeing.",
-							"icon": "microphone-alt-slash"
-						},
-						{
-							"label": "Cyber resilience",
-							"path": "/support/coronavirus/employees/cyber-resilience",
-							"route": "^/support/coronavirus/employees/cyber-resilience$",
-							"description": "Guidance for employees on how to keep your data and systems safe when working remotely.",
-							"icon": "lock-alt"
-						},
-						{
-							"label": "Looking after your employees",
-							"path": "/support/coronavirus/employees/looking-after-your-employees",
-							"route": "^/support/coronavirus/employees/looking-after-your-employees$",
-							"description": "How to support your employees and communicate effectively during the crisis.",
-							"icon": "thumbs-up"
-						},
-						{
-							"label": "Frequently asked questions",
-							"path": "/support/coronavirus/employees/faq",
-							"route": "^/support/coronavirus/employees/faq$",
-							"description": "Answers to commonly asked questions in this topic area.",
-							"icon": "question-circle"
-						}
-					]
-				},
-				{
 					"label": "Funding",
 					"path": "/support/coronavirus/funding",
 					"route": "^/support/coronavirus/funding$",
@@ -2610,28 +2558,6 @@
 											"label": "Recipients",
 											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients",
 											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients"
-										}
-									],
-									"__old_children": [
-										{
-											"label": "Recipients",
-											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients",
-											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients"
-										},
-										{
-											"label": "Guidance for applicants",
-											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants",
-											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/guidance-for-applicants$"
-										},
-										{
-											"label": "Terms & conditions",
-											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/terms-conditions",
-											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/terms-conditions$"
-										},
-										{
-											"label": "Frequently asked questions",
-											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/faq",
-											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/faq$"
 										}
 									]
 								},
@@ -2703,145 +2629,22 @@
 					]
 				},
 				{
-					"label": "Leading your organisation",
-					"path": "/support/coronavirus/leading-your-organisation",
-					"route": "^/support/coronavirus/leading-your-organisation$",
-					"description": "Governance, risk management and lockdown easing.",
-					"icon": "user-headset",
-					"children": [
-						{
-							"label": "Your board",
-							"path": "/support/coronavirus/leading-your-organisation/your-board",
-							"route": "^/support/coronavirus/leading-your-organisation/your-board$",
-							"description": "Guidance and support for trustees.",
-							"icon": "book"
-						},
-						{
-							"label": "Risk & regulations",
-							"path": "/support/coronavirus/leading-your-organisation/business-continuity",
-							"route": "^/support/coronavirus/leading-your-organisation/business-continuity$",
-							"description": "Managing risk and complying with regulations.",
-							"icon": "book"
-						},
-						{
-							"label": "Finance",
-							"path": "/support/coronavirus/leading-your-organisation/finance",
-							"route": "^/support/coronavirus/leading-your-organisation/finance$",
-							"description": "You may need to budget for increased costs over the next financial year.",
-							"icon": "chart-bar"
-						},
-						{
-							"label": "Cyber resilience",
-							"path": "/support/coronavirus/leading-your-organisation/cyber-resilience",
-							"route": "^/support/coronavirus/leading-your-organisation/cyber-resilience$",
-							"description": "Cyber resilience for IT managers.",
-							"icon": "lock-alt"
-						},
-						{
-							"label": "Comms resources & support",
-							"path": "/support/coronavirus/leading-your-organisation/comms-resources-support",
-							"route": "^/support/coronavirus/leading-your-organisation/comms-resources-support$",
-							"description": "Links to networks, resources and guidance for those working in comms, PR or marketing within voluntary sector organisations.",
-							"icon": "comment-check"
-						},
-						{
-							"label": "Frequently asked questions",
-							"path": "/support/coronavirus/leading-your-organisation/faq",
-							"route": "^/support/coronavirus/leading-your-organisation/faq$",
-							"description": "Answers to commonly asked questions in this topic area.",
-							"icon": "question-circle"
-						}
-					]
+					"label": "Leaving lockdown: Guide for voluntary organisations",
+					"path": "/support/running-your-organisation/leaving-lockdown",
+					"description": "Key areas voluntary organisations need to consider as lockdown rules relax, with links to practical resources and sources of further support",
+					"icon": "map-marker-question"
 				},
 				{
-					"label": "Services & premises",
-					"path": "/support/coronavirus/services",
-					"route": "^/support/coronavirus/services$",
-					"description": "Delivering your essential services safely, reopening premises, and new models of delivery.",
-					"icon": "video",
-					"children": [
-						{
-							"label": "Services & premises",
-							"path": "/support/coronavirus/services/essential-services",
-							"route": "^/support/coronavirus/services/essential-services$",
-							"description": "How to safely deliver services, and reopen premises.",
-							"icon": "handshake-slash"
-						},
-						{
-							"label": "New service delivery models",
-							"path": "/support/digital/evolution/service-delivery",
-							"description": "How to adapt your services to digital and remote channels.",
-							"icon": "video"
-						},
-						{
-							"label": "Frequently asked questions",
-							"path": "/support/coronavirus/services/faq",
-							"route": "^/support/coronavirus/services/faq$",
-							"description": "Answers to commonly asked questions in this topic area.",
-							"icon": "question-circle"
-						}
-					]
+					"label": "Digital services: How to",
+					"path": "/support/digital/guides/digital-services",
+					"description": "Overview of main topics to explore when moving services to digital channels. Includes popular tools and useful resources",
+					"icon": "house-signal"
 				},
 				{
-					"label": "Volunteers",
-					"path": "/support/coronavirus/volunteers",
-					"route": "^/support/coronavirus/volunteers$",
-					"description": "How to support volunteers in line with government guidance.",
-					"icon": "hand-holding-heart",
-					"children": [
-						{
-							"label": "Information for organisations",
-							"path": "/support/coronavirus/volunteers/for-organisations",
-							"route": "^/support/coronavirus/volunteers/for-organisations$",
-							"description": "How to support people who want to volunteer with your organisation.",
-							"icon": "building"
-						},
-						{
-							"label": "Information for volunteers",
-							"path": "/support/coronavirus/volunteers/for-volunteers",
-							"route": "^/support/coronavirus/volunteers/for-volunteers$",
-							"description": "How to safely volunteer to help during the crisis.",
-							"icon": "hands-wash"
-						},
-						{
-							"label": "Frequently asked questions",
-							"path": "/support/coronavirus/volunteers/faq",
-							"route": "^/support/coronavirus/volunteers/faq$",
-							"description": "Answers to commonly asked questions in this topic area.",
-							"icon": "question-circle"
-						}
-					]
-				},
-				{
-					"label": "Fundraising",
-					"path": "/support/coronavirus/fundraising",
-					"route": "^/support/coronavirus/fundraising$",
-					"description": "Information for fundraisers.",
-					"icon": "money-check-edit",
-					"children": [
-						{
-							"label": "Events",
-							"label_full": "Events &amp; community fundraising",
-							"path": "/support/coronavirus/fundraising/events",
-							"route": "^/support/coronavirus/fundraising/events$",
-							"description": "Information on fundraising events and community fundraising.",
-							"icon": "calendar-alt"
-						},
-						{
-							"label": "Direct marketing",
-							"path": "/support/coronavirus/fundraising/direct-marketing",
-							"route": "^/support/coronavirus/fundraising/direct-marketing$",
-							"description": "Guidance for donation generating by direct marketing.",
-							"icon": "mail-bulk"
-						},
-						{
-							"label": "Community & face to face fundraising",
-							"path": "/support/coronavirus/fundraising/community",
-							"route": "^/support/coronavirus/fundraising/community$",
-							"description": "Guidance on face to face fundraising and individual giving.",
-							"icon": "handshake-slash"
-						}
-					]
+					"label": "Remote working: How to",
+					"path": "/support/digital/guides/remote-working",
+					"description": "Guide for organisations supporting employees and volunteers to work from home. Includes tech, software and communication.",
+					"icon": "laptop-house"
 				},
 				{
 					"label": "Events",
@@ -2850,54 +2653,16 @@
 					"icon": "calendar-alt"
 				},
 				{
-					"label": "Community Assistance Directory",
-					"path": "https://coronavirus.scvo.org",
-					"description": "Find and offer help in your community.",
-					"icon": "search-plus"
+					"label": "Coronavirus policy &amp; research",
+					"path": "/policy/coronavirus",
+					"description": "Latest research on the impact of coronavirus on voluntary organisations and  briefings from the SCVO policy team",
+					"icon": "university"
 				},
 				{
-					"label": "Guidance & support",
-					"path": "/support/coronavirus/guidance",
-					"route": "^/support/coronavirus/guidance$",
-					"description": "Links to official resources & information.",
-					"icon": "external-link",
-					"children": [
-						{
-							"label": "Events",
-							"path": "/support/coronavirus/guidance/events",
-							"route": "^/support/coronavirus/guidance/events$",
-							"description": "A list of coronavirus-related online events coming up.",
-							"icon": "video"
-						},
-						{
-							"label": "Open Door webinars",
-							"path": "/support/coronavirus/guidance/open-door-webinars",
-							"route": "^/support/coronavirus/guidance/open-door-webinars$",
-							"description": "An opportunity to hear from experts in different fields about their thoughts, concerns and hopes for the voluntary sector in Scotland during these unprecedented times.",
-							"icon": "door-open"
-						},
-						{
-							"label": "Resources for organisations",
-							"path": "/support/coronavirus/guidance/for-organisations",
-							"route": "^/support/coronavirus/guidance/for-organisations$",
-							"description": "Many organisations are creating resources that we will link to as and when we are made aware of them.",
-							"icon": "building"
-						},
-						{
-							"label": "Resources for individuals",
-							"path": "/support/coronavirus/guidance/for-individuals",
-							"route": "^/support/coronavirus/guidance/for-individuals$",
-							"description": "Many organisations are creating resources that we will link to as and when we are made aware of them.",
-							"icon": "hands-wash"
-						},
-						{
-							"label": "Frequently asked questions",
-							"path": "/support/coronavirus/guidance/faq",
-							"route": "^/support/coronavirus/guidance/faq$",
-							"description": "Answers to commonly asked questions in this topic area.",
-							"icon": "question-circle"
-						}
-					]
+					"label": "#NeverMoreNeeded",
+					"path": "/policy/campaigns/never-more-needed",
+					"description": "UK-wide campaign telling the story of how the voluntary sector is responding to the coronavirus crisis",
+					"icon": "hand-heart"
 				},
 				{
 					"label": "What SCVO is doing",
@@ -2924,11 +2689,10 @@
 					]
 				},
 				{
-					"label": "Frequently asked questions",
-					"path": "/support/coronavirus/faq",
-					"route": "^/support/coronavirus/faq",
-					"description": "Answers to commonly asked questions across all topic areas.",
-					"icon": "question-circle"
+					"label": "Community Assistance Directory",
+					"path": "https://coronavirus.scvo.org",
+					"description": "Find and offer help in your community.",
+					"icon": "search-plus"
 				}
 			]
 		}

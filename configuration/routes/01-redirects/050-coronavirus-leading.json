@@ -1,0 +1,23 @@
+{
+  "name": "redirect_coronavirus_leading",
+  "pattern": "/support/coronavirus/leading-your-organisation(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)(:/seven)(:/eight)",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/support/running-your-organisation/leaving-lockdown/governance"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}

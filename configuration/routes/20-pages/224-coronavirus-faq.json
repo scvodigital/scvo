@@ -2,8 +2,8 @@
   "name": "coronavirus_faq",
   "debug": true,
   "pattern": {
-    "main": "/support/coronavirus/faq",
-    "section": "/support/coronavirus/:section/faq"
+    "main": "__DISABLED__/support/coronavirus/faq",
+    "section": "__DISABLED__/support/coronavirus/:section/faq"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
