@@ -727,6 +727,7 @@ footer a {
       -webkit-transition: $slow-transition-speed ease;
       -moz-transition: $slow-transition-speed ease;
       transition: $slow-transition-speed ease;
+      will-change: transform;
     }
   }
   .card-header {
