@@ -2356,8 +2356,9 @@ header {
   }
   .mobile-header-buttons {
     float: right;
-    .btn {
+    .btn.btn-link {
       padding: 0;
+      color: $primary-color !important;
     }
     .btn.btn-primary:active,
     .btn.btn-primary:focus,
@@ -2395,6 +2396,12 @@ header {
       border-color: transparent !important;
       border-radius: 0 !important;
     }
+  }
+}
+.mobile-contents header .mobile-header-buttons {
+  .btn.btn-link {
+    padding: 0;
+    color: white !important;
   }
 }
 .navbar .navbar-section {
