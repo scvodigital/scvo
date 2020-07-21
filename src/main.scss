@@ -355,7 +355,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1,
 .h1,
-.btn.btn-lg,
 .splash-image-header .header-text {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
@@ -364,7 +363,6 @@ h1,
 }
 h1.font-default,
 .h1.font-default,
-.btn.btn-lg.font-default,
 .splash-image-header .header-text.font-default {
   font-feature-settings: "ss01" off;
 }
@@ -374,7 +372,7 @@ h1.font-default,
 .btn.btn-lg {
   font-size: 1.1rem;
   letter-spacing: -0.02rem;
-  line-height: 1.1rem !important;
+  line-height: 1.4rem !important;
   // transition-timing-function: ease-in-out;
 }
 .btn.btn-lg:hover,

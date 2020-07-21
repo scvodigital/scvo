@@ -36,6 +36,13 @@
             "team": "events"
           }
         }
+      ],
+      "must_not": [
+        {
+          "term": {
+            "team": "tfn"
+          }
+        }
       ]
     }
   }
