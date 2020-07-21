@@ -16,7 +16,7 @@
   <div class="mdc-line-ripple"></div>
 </div>
 
-<h3>
+<div>
   {{#if @root.request.params.category}}
     Showing {{@root.data.search.finalists.hits.total}} finalists in the
     {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
@@ -24,13 +24,13 @@
   {{else}}
     Showing all {{@root.data.search.finalists.hits.total}} finalists in all categories
   {{/if}}
-</h3>
+</div>
 
 {{#each @root.data.search.finalists.hits.hits ~}}
   {{#with _source ~}}
     <div class="{{category}} support mdc-card v-margin-full" data-id="{{Id}}">
       <section class="mdc-card__primary">
-        <h1 class="mdc-card__title mdc-card__title--large mdc-card__title--inline">
+        <h4 class="mdc-card__title mdc-card__title--large mdc-card__title--inline">
           <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category ".title")}}">
             {{{getProperty @root.route.metaData.awards-info (concat category ".title")}}}
           </a>
@@ -38,7 +38,7 @@
           <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{slug}}" title="Find out more about {{{title}}}">
             {{{title}}}
           </a>
-        </h1>
+        </h4>
       </section>
       <section class="mdc-card__supporting-text">
         {{#if image_url}}
