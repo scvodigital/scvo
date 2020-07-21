@@ -66,19 +66,6 @@
         </header>
       </div>
 
-      <div class="b-margin-full splash-image splash-image-header" style="background-image:url('{{~>asset_url url='images/home/charityawards-bg.jpg'~}}');">
-        <div class="splash-overlay splash-overlay-hidden v-padding-full">
-          <div class="container v-margin-full">
-            <img src="{{~>asset_url url='images/awards/logo_2020_inline_reverse.svg'~}}" alt="Scottish Charity Awards" class="header-logo hide-sm">
-            <img src="{{~>asset_url url='images/awards/logo_2020_stacked_reverse.svg'~}}" alt="Scottish Charity Awards" class="header-logo show-sm">
-            <p class="header-text">
-              Friday 25 September<br />
-              <a href="https://twitter.com/scvotweet" target="_blank">@scvotweet</a>
-            </p>
-          </div>
-        </div>
-      </div>
-
       <div class="container">
         <header class="navbar toolbar hide-lg">
           <section class="navbar-section site-tab-bar">
@@ -87,53 +74,6 @@
             {{/each ~}}
           </section>
           <section class="navbar-center"></section>
-          {{!-- <section class="navbar-section">
-          {{#if @root.data.auth ~}}
-            <div class="dropdown my-account signed-in">
-              <div class="btn-group">
-                <a href="#" class="btn btn-link dropdown-toggle{{#each context.metaData.layoutMenus.user}}{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}{{/each}}">
-                  {{#if @root.data.auth.photoURL ~}}
-                    <img src="{{@root.data.auth.photoURL}}" class="avatar avatar-sm" />
-                  {{else}}
-                    <span class="far fa-fw fa-user-circle"></span>
-                  {{/if ~}}
-                  {{default @root.data.auth.email @root.data.auth.displayName}}
-                  <span class="far fa-fw fa-angle-down"></span>
-                </a>
-                <ul class="menu">
-                  <li class="menu-item">
-                    <a href="/" class="l-padding">
-                      <span class="far fa-fw fa-home r-margin" aria-hidden="true"></span>
-                      Home
-                    </a>
-                  </li>
-                  {{#each context.metaData.layoutMenus.user-signed-in ~}}
-                  <li class="menu-item{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}">
-                    <a href="{{stripTrailingSlash path}}" class="l-padding">
-                      {{#if icon ~}}
-                      <span class="far fa-fw fa-{{icon}} r-margin" aria-hidden="true"></span>
-                      {{/if ~}}
-                      {{{label}}}
-                    </a>
-                  </li>
-                  {{/each ~}}
-                  <li class="menu-item">
-                    <a href="/sign-out" class="l-padding" data-component="TasksTrigger" data-taskstrigger="sign-out">
-                      <span class="far fa-fw fa-sign-out-alt r-margin" aria-hidden="true"></span>
-                      Sign out
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          {{else}}
-          {{#each context.metaData.layoutMenus.user-not-signed-in ~}}
-          <a href="{{stripTrailingSlash path}}" class="btn btn-link{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-            {{{label}}}
-          </a>
-          {{/each ~}}
-          {{/if ~}}
-          </section> --}}
         </header>
       </div>
 
@@ -291,6 +231,7 @@
               </div>
             </section>
           </header>
+
           <div class="b-margin-full v-padding-full">
             <ul class="menu b-padding-full">
               {{#each @root.context.metaData.layoutMenus.awards ~}}
@@ -348,6 +289,21 @@
           </div>
         </aside>
       </div>
+
+      {{#compare @root.request.url.path "/scottish-charity-awards"}}
+      <div class="container v-margin-full">
+        <div class="b-margin-full splash-image splash-image-header" style="background-image:url('{{~>asset_url url='images/home/charityawards-bg.jpg'~}}');">
+          <div class="splash-overlay splash-overlay-hidden v-padding-full">
+            <img src="{{~>asset_url url='images/awards/logo_2020_inline_reverse.svg'~}}" alt="Scottish Charity Awards" class="header-logo hide-sm">
+            <img src="{{~>asset_url url='images/awards/logo_2020_stacked_reverse.svg'~}}" alt="Scottish Charity Awards" class="header-logo show-sm">
+            <p class="header-text">
+              Friday 25 September<br />
+              <a href="https://twitter.com/scvotweet" target="_blank">@scvotweet</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      {{/compare}}
 
       {{> layout_body}}
 
