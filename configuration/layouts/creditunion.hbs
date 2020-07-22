@@ -4,7 +4,7 @@
   {{{layoutParts.head}}}
   {{> layout_head}}
 </head>
-<body class="{{#if request.params.path}}{{replace request.params.path '_' ' '}}{{else}}home{{/if}}">
+<body class="{{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
   {{!-- {{> layout_sites_bar}} --}}
   <div class="hide-lg">
     {{> components_scvo_bar}}
@@ -22,7 +22,7 @@
           <section class="navbar-section">
             <div class="form-horizontal hide-lg">
               {{> site_search_form id='header'}}
-              {{!-- <a href="/scottish-charity-awards/apply-2020" class="btn btn-primary btn-lg btn-cta float-right">Apply now</a> --}}
+              {{!-- <a href="/about/membership" class="btn btn-primary btn-lg btn-cta float-right">Join our community</a> --}}
             </div>
             <div class="mobile-header-buttons show-lg">
               <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
@@ -64,16 +64,66 @@
             </div>
           </section>
         </header>
-      </div>
-
-      <div class="container">
         <header class="navbar toolbar hide-lg">
           <section class="navbar-section site-tab-bar">
-            {{#each context.metaData.layoutMenus.awards ~}}
+            {{#each context.metaData.layoutMenus.main ~}}
             <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
             {{/each ~}}
           </section>
           <section class="navbar-center"></section>
+          <section class="navbar-section">
+          {{#if @root.data.auth ~}}
+            <div class="dropdown my-account signed-in">
+              <div class="btn-group">
+                <a href="#" class="btn btn-link dropdown-toggle{{#each context.metaData.layoutMenus.user}}{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}{{/each}}">
+                  {{#if @root.data.auth.photoURL ~}}
+                    <img src="{{@root.data.auth.photoURL}}" class="avatar avatar-sm" />
+                  {{else}}
+                    <span class="far fa-fw fa-user-circle"></span>
+                  {{/if ~}}
+                  {{default @root.data.auth.email @root.data.auth.displayName}}
+                  <span class="far fa-fw fa-angle-down"></span>
+                </a>
+                <ul class="menu">
+                  <li class="menu-item">
+                    <a href="/" class="l-padding">
+                      <span class="far fa-fw fa-home r-margin" aria-hidden="true"></span>
+                      Home
+                    </a>
+                  </li>
+                  {{#each context.metaData.layoutMenus.user-signed-in ~}}
+                  <li class="menu-item{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}">
+                    <a href="{{stripTrailingSlash path}}" class="l-padding">
+                      {{#if icon ~}}
+                      <span class="far fa-fw fa-{{icon}} r-margin" aria-hidden="true"></span>
+                      {{/if ~}}
+                      {{{label}}}
+                    </a>
+                  </li>
+                  {{/each ~}}
+                  <li class="menu-item">
+                    <a href="/sign-out" class="l-padding" data-component="TasksTrigger" data-taskstrigger="sign-out">
+                      <span class="far fa-fw fa-sign-out-alt r-margin" aria-hidden="true"></span>
+                      Sign out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          {{else}}
+          {{#if @root.data.cjsAuth ~}}
+          <a href="/sign-out-cjs" class="btn btn-link" data-component="TasksTrigger" data-taskstrigger="sign-out-cjs">
+            Sign out
+          </a>
+          {{else}}
+          {{#each context.metaData.layoutMenus.user-not-signed-in ~}}
+          {{!-- <a href="{{stripTrailingSlash path}}" class="btn btn-link{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+            {{{label}}}
+          </a> --}}
+          {{/each ~}}
+          {{/if ~}}
+          {{/if ~}}
+          </section>
         </header>
       </div>
 
@@ -231,20 +281,9 @@
               </div>
             </section>
           </header>
-
           <div class="b-margin-full v-padding-full">
             <ul class="menu b-padding-full">
-              {{#each @root.context.metaData.layoutMenus.awards ~}}
               <li class="menu-item">
-                <a href="{{stripTrailingSlash path}}" class="{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                  {{#if icon ~}}
-                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                  {{/if ~}}
-                  {{{label}}}
-                </a>
-              </li>
-              {{/each ~}}
-              <li class="menu-item t-margin-full">
                 <a href="/" class="{{#if (regexMatch @root.request.url.pathname '^/$' 'gi')}}active{{/if}}">
                   <span class="far fa-fw fa-home" aria-hidden="true"></span>
                   Home
@@ -290,29 +329,13 @@
         </aside>
       </div>
 
-      {{#compare @root.request.url.path "/scottish-charity-awards"}}
-      <div class="container v-margin-full">
-        <div class="b-margin-full splash-image splash-image-header" style="background-image:url('{{~>asset_url url='images/home/charityawards-bg.jpg'~}}');">
-          <div class="splash-overlay splash-overlay-hidden v-padding-full">
-            <img src="{{~>asset_url url='images/awards/logo_2020_inline_reverse.svg'~}}" alt="Scottish Charity Awards" class="header-logo hide-sm">
-            <img src="{{~>asset_url url='images/awards/logo_2020_stacked_reverse.svg'~}}" alt="Scottish Charity Awards" class="header-logo show-sm">
-            <p class="header-text">
-              Friday 25 September<br />
-              <a href="https://twitter.com/scvotweet" target="_blank">@scvotweet</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      {{/compare}}
-
       {{> layout_body}}
 
-      {{> layout_footer}}
+      {{> layout_footer_cu}}
     </div>
   </div>
 
   {{> layout_foot}}
-
   {{{layoutParts.foot}}}
 </body>
 </html>

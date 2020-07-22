@@ -70,15 +70,15 @@
             "contentType": "application/rss+xml"
           },
           "default": {
-            "layout": ">context.metaData.handlebars.layouts.default",
-            "parts": {
+            "layout": ">context.metaData.handlebars.layouts.creditunion",
+            "old_parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.services_credit-union_header",
               "body": ">context.metaData.handlebars.templates.posts_credit-union-results",
               "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
               "footer": ">context.metaData.handlebars.templates.services_credit-union_footer"
             },
-            "new_parts": {
+            "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.services_credit-union_page-header",
               "body": ">context.metaData.handlebars.templates.posts_credit-union-results",
