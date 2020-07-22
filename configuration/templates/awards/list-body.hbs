@@ -7,7 +7,7 @@
 <div class="{{@root.request.params.category}} support mdc-card v-margin-full">
   <section class="mdc-card__primary">
     <h1 class="mdc-card__title mdc-card__title--large">
-      <a href="{{@root.request.url.path}}/{{slug}}">{{{title}}}</a>
+      <a href="{{@root.request.url.path}}/{{replace slug 'p_award_'}}">{{{title}}}</a>
     </h1>
   </section>
   <section class="mdc-card__supporting-text">
@@ -16,7 +16,7 @@
     {{/if}}
     {{{truncate (stripTags (default og_summary content)) 280}}}
   </section>
-  <section class="mdc-card__actions"><a href="{{@root.request.url.path}}/{{slug}}">Find out more</a></section>
+  <section class="mdc-card__actions"><a href="{{@root.request.url.path}}/{{replace slug 'p_award_'}}">Find out more</a></section>
 </div>
 {{/with ~}}
 {{/each ~}}

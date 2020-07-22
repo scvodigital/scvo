@@ -1,7 +1,7 @@
 {
   "name": "categories_charity_awards",
   "debug": true,
-  "pattern": "/scottish-charity-awards/finalists-2020(/*category)",
+  "pattern": "/scottish-charity-awards/finalists-2020(/:category)",
   "metaData": {
     "awards-info": "{:../../data/info-charity-awards.json}"
   },
