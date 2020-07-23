@@ -9,7 +9,7 @@ $secondary-color-dark: darken($secondary-color, 10%) !default;
 $secondary-color-dark-var: 152d36;
 $dark-color: #203139;
 $gray-color: #D5D8DC;
-$gray-color-light: lighten($gray-color, 10%) !default;
+$gray-color-light: #F0F1F2;
 $gray-color-dark: #9BA5AD;
 $light-color: #FEF9F9;
 $light-color-var: FEF9F9;
@@ -216,22 +216,37 @@ body.the-gathering-2020 {
     height: auto;
     background-size: cover;
     background-position: center;
-    .header-logo {
-      width: 80%;
-      margin: 0 auto;
-      display: block;
-      padding: $unit 0;
-    }
-    .header-text {
-      color: white;
-      padding-bottom: $unit;
-      margin: 0 auto;
-      display: block;
-      text-align: center;
-      font-size: 1.1rem;
-      a {
+    .splash-overlay {
+      display: flex;
+      .header-logo {
+        display: flex;
+        align-items: center;
+        padding: $unit 0;
+        margin: 0 auto;
+        img {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+      .header-logo.show-sm {
+        img {
+          width: 100%;
+        }
+      }
+      .header-text {
         color: white;
-        // border-bottom-color: white;
+        text-align: center;
+        font-size: 1.1rem;
+        // align-items: flex-end;
+        // display: inline-flex;
+        // margin: 0 auto 5.5rem;
+        // z-index: 10;
+        a {
+          color: white;
+        }
+        a:hover {
+          color: $primary-color;
+        }
       }
     }
   }
@@ -1084,7 +1099,7 @@ ul.list-lg {
 }
 
 .scvo-link-bar {
-  background-color: $gray-color;
+  background-color: $gray-color-light;
   height: 40px;
   ul {
     margin: 0;
@@ -1095,23 +1110,25 @@ ul.list-lg {
     }
   }
   .text-link {
+    font-size: 91%;
     display: inline-block;
     height: 40px;
     line-height: 40px;
     border-bottom: $thick-line solid transparent;
-    margin-right: $unit*(3/4);
+    // margin-right: $unit*(3/4);
     // padding: 0 $unit/2;
+    padding: 0 0.4rem;
     color: $secondary-color;
   }
-  .text-link.active,
-  .text-link:active,
-  .text-link:focus,
-  .text-link:hover {
-    border-bottom: $thick-line solid $secondary-color;
-    text-decoration: none;
-    // background-color: $primary-color;
-    // color: white;
-  }
+  // .text-link.active,
+  // .text-link:active,
+  // .text-link:focus,
+  // .text-link:hover {
+  //   border-bottom: $thick-line solid $secondary-color;
+  //   text-decoration: none;
+  //   // background-color: $primary-color;
+  //   // color: white;
+  // }
   // .text-link.funding-scotland:hover {
   //   background-color: $fs-color;
   // }
@@ -1124,7 +1141,7 @@ ul.list-lg {
   //   color: $secondary-color;
   // }
   .brand-logo {
-    margin-left: $unit/4;
+    // margin-left: $unit/4;
     line-height: 38px;
     width: 90px;
     img {
@@ -2365,19 +2382,18 @@ header {
   border-bottom: 0;
 }
 .scvo-link-bar {
-  background-color: $gray-color;
   .container-fluid .tab-bar {
-    .tab {
-      color: $secondary-color !important;
-      border-bottom: $unit/5 solid transparent;
-    }
-    .tab.active {
-      background-color: transparent;
-      border-bottom: $unit/5 solid $secondary-color;
-    }
+    // .tab {
+    //   color: $secondary-color !important;
+    //   border-bottom: $unit/5 solid transparent;
+    // }
+    // .tab.active {
+    //   background-color: transparent;
+    //   border-bottom: $unit/5 solid $secondary-color;
+    // }
   }
   .navbar-brand img {
-    height: 36px;
+    width: 90px;
   }
 }
 header {
