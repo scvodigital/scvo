@@ -11,14 +11,16 @@
     </li>
     {{else}}
     <li class="breadcrumb-item">
-      Categories
+      Finalists 2020
     </li>
     {{/if ~}}
   </ul>
 
   <h1>
-    {{{if @root.request.params.category
-        (getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title"))
-        else=@root.data.search.cms.hits.hits.[0]._source.sub_title}}}
+    {{#if @root.request.params.category}}
+      Finalists 2020 - {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
+    {{else}}
+      Finalists 2020
+    {{/if}}
   </h1>
 </div>

@@ -1,52 +1,46 @@
 {{{@root.data.search.cms.hits.hits.[0]._source.content}}}
 
-<h3>Filter by category</h3>
-
-<div class="mdc-select">
-  <i class="mdc-select__dropdown-icon"></i>
-  <select name="category" id="category" class="mdc-select__native-control" onchange="window.location.href='/scottish-charity-awards/finalists-2020' + (this.value === 'all' ? '' : '/' + this.value)">
-    <option value="all" {{#unless @root.request.params.category}}selected{{/unless}}>Show all</option>
-    {{#each @root.data.search.categories.aggregations.categories.buckets ~}}
-      <option value="{{key}}" {{#compare @root.request.params.category key}}selected{{/compare}}>
-        {{{getProperty @root.route.metaData.awards-info (concat key ".title")}}}
-      </option>
-    {{/each}}
-  </select>
-  <label for="category" class="mdc-floating-label">Pick a category</label>
-  <div class="mdc-line-ripple"></div>
-</div>
-
-<div>
+<div class="search-info">
   {{#if @root.request.params.category}}
-    Showing {{@root.data.search.finalists.hits.total}} finalists in the
-    {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
+    Showing <strong>{{@root.data.search.finalists.hits.total}}</strong> finalists in the
+    <strong>{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</strong>
     category
   {{else}}
-    Showing all {{@root.data.search.finalists.hits.total}} finalists in all categories
+    Showing <strong>{{@root.data.search.finalists.hits.total}}</strong> finalists in all categories
   {{/if}}
 </div>
 
 {{#each @root.data.search.finalists.hits.hits ~}}
   {{#with _source ~}}
-    <div class="{{category}} support mdc-card v-margin-full" data-id="{{Id}}">
-      <section class="mdc-card__primary">
-        <h4 class="mdc-card__title mdc-card__title--large mdc-card__title--inline">
-          <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category ".title")}}">
-            {{{getProperty @root.route.metaData.awards-info (concat category ".title")}}}
-          </a>
-          <i class="fas fa-caret-right fa-fw"></i>
+    <div class="{{category}} support card v-margin-full" data-id="{{Id}}">
+      <section class="card-header">
+        <h4 class="card-title">
+          {{!-- <i class="fas fa-caret-right fa-fw"></i> --}}
           <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}" title="Find out more about {{{title}}}">
             {{{title}}}
           </a>
         </h4>
       </section>
-      <section class="mdc-card__supporting-text">
+      <section class="card-body">
         {{#if image_url}}
           <img src="{{image_url}}" style="max-width:200px;" class="pull-right l-margin-full hide-sm">
         {{/if}}
         {{{truncate (stripTags (default og_summary content)) 280}}}
       </section>
-      <section class="mdc-card__actions"><a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}">Find out more</a></section>
+      <section class="card-footer">
+        <p>
+          <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}">Find out more</a>
+        </p>
+      </section>
+      <section class="card-category" style="padding-left:.8rem;padding-right:.8rem;">
+        {{#unless @root.request.params.category}}
+          <span class="chip-set">
+            <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category ".title")}}" class="chip">
+              {{{getProperty @root.route.metaData.awards-info (concat category ".title")}}}
+            </a>
+          </span>
+        {{/unless}}
+      </section>
     </div>
   {{/with ~}}
 {{/each ~}}
