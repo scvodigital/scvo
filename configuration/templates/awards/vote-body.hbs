@@ -1,17 +1,23 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-  {{#if image_url}}
-    <div class="pull-right l-margin-full b-margin-full t-margin-full charity-awards-image hide-sm hide-md">
-      <img src="{{image_url}}" />
+  <div class="columns v-margin-full">
+    <div class="column col-8 col-lg-7 col-md-12">
+      <div class="b-margin-full">
+        {{{content}}}
+      </div>
+      {{#if image_url}}
+        <div class="charity-awards-image show-md">
+          <img src="{{image_url}}" class="img-responsive" />
+        </div>
+      {{/if}}
     </div>
-  {{/if}}
-  <div class="v-margin-full">
-    {{{content}}}
+    <div class="column col-4 col-lg-5 col-md-12">
+      {{#if image_url}}
+        <div class="pull-right l-margin-full charity-awards-image hide-md">
+          <img src="{{image_url}}" class="img-responsive t-padding-full" />
+        </div>
+      {{/if}}
+    </div>
   </div>
-  {{#if image_url}}
-    <div class="v-margin-full charity-awards-image hide-lg">
-      <img src="{{image_url}}" />
-    </div>
-  {{/if}}
 {{/with ~}}
 <script>
   gtag('event', 'charity-awards-2020-hit', {

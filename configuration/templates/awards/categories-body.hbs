@@ -12,35 +12,41 @@
 
 {{#each @root.data.search.finalists.hits.hits ~}}
   {{#with _source ~}}
-    <div class="{{category}} support card v-margin-full" data-id="{{Id}}">
-      <section class="card-header">
-        <h4 class="card-title">
-          {{!-- <i class="fas fa-caret-right fa-fw"></i> --}}
-          <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}" title="Find out more about {{{title}}}">
-            {{{title}}}
-          </a>
-        </h4>
-      </section>
-      <section class="card-body">
-        {{#if image_url}}
-          <img src="{{image_url}}" style="max-width:200px;" class="pull-right l-margin-full hide-sm">
-        {{/if}}
-        {{{truncate (stripTags (default og_summary content)) 280}}}
-      </section>
-      <section class="card-footer">
-        <p>
-          <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}">Find out more</a>
-        </p>
-      </section>
-      <section class="card-category" style="padding-left:.8rem;padding-right:.8rem;">
-        {{#unless @root.request.params.category}}
-          <span class="chip-set">
-            <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category ".title")}}" class="chip">
-              {{{getProperty @root.route.metaData.awards-info (concat category ".title")}}}
-            </a>
-          </span>
-        {{/unless}}
-      </section>
+    <div class="columns v-margin-full">
+      <div class="column col-9 col-lg-8 col-md-12">
+        <div class="{{category}} support card" data-id="{{Id}}">
+          <section class="card-header">
+            <h4 class="card-title no-padding">
+              {{!-- <i class="fas fa-caret-right fa-fw"></i> --}}
+              <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}" title="Find out more about {{{title}}}">
+                {{{title}}}
+              </a>
+            </h4>
+          </section>
+          <section class="card-body">
+            {{{truncate (stripTags (default og_summary content)) 280}}}
+          </section>
+          <section class="card-footer">
+            <p>
+              <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}">Find out more</a>
+            </p>
+          </section>
+          <section class="card-category" style="padding-left:.8rem;padding-right:.8rem;">
+            {{#unless @root.request.params.category}}
+              <span class="chip-set">
+                <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category ".title")}}" class="chip">
+                  {{{getProperty @root.route.metaData.awards-info (concat category ".title")}}}
+                </a>
+              </span>
+            {{/unless}}
+          </section>
+        </div>
+      </div>
+      {{#if image_url}}
+      <div class="column col-3 col-lg-4 col-md-12">
+          <img src="{{image_url}}" style="max-width:100%; padding-top:0.8rem;" class="pull-right l-margin-full hide-sm">
+      </div>
+      {{/if}}
     </div>
   {{/with ~}}
 {{/each ~}}
