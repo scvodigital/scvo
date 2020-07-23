@@ -284,47 +284,115 @@
           <div class="b-margin-full v-padding-full">
             <ul class="menu b-padding-full">
               <li class="menu-item">
-                <a href="/" class="{{#if (regexMatch @root.request.url.pathname '^/$' 'gi')}}active{{/if}}">
+                <a href="/services/credit-union" class="{{#if (regexMatch @root.request.url.pathname '^/$' 'gi')}}active{{/if}}">
                   <span class="far fa-fw fa-home" aria-hidden="true"></span>
-                  Home
+                  SCVO Credit Union
                 </a>
               </li>
-              {{#each @root.context.metaData.layoutMenus.main ~}}
-              <li class="menu-item">
-                <a href="{{stripTrailingSlash path}}" class="{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                  {{#if icon ~}}
-                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                  {{/if ~}}
-                  {{{label}}}
-                </a>
-              </li>
-              {{/each ~}}
-              {{#if @root.data.auth ~}}
-              {{#each @root.context.metaData.layoutMenus.user-signed-in ~}}
-              <li class="menu-item">
-                <a href="{{stripTrailingSlash path}}" class="{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                  {{#if icon ~}}
-                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                  {{/if ~}}
-                  {{{label}}}
-                </a>
-              </li>
-              {{/each ~}}
-              {{else}}
-              {{#each @root.context.metaData.layoutMenus.user-not-signed-in ~}}
-              {{!-- <li class="menu-item">
-                <a href="{{stripTrailingSlash path}}" class="{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-                  {{#if icon ~}}
-                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
-                  {{/if ~}}
-                  {{{label}}}
-                </a>
-              </li> --}}
-              {{/each ~}}
+              {{#*inline "childMenu" ~}}
+              {{#ifAll path (ifAny description icon) ~}}
+                {{#ifAny label label_full ~}}
+                  <li class="menu-item">
+                    <a href="{{path}}" class="{{#if (regexMatch @root.request.url.pathname path 'gi')}}active{{/if}}">
+                      {{#if icon}}<span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>{{/if}}
+                      {{#if label_full}}{{{label_full}}}{{else}}{{{label}}}{{/if}}
+                    </a>
+                  </li>
+                {{/ifAny ~}}
+              {{/ifAll ~}}
+              {{/inline ~}}
+
+              {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+              {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+                  {{#each @root.context.metaData.sidebarMenus ~}}
+                    {{#each this ~}}
+                      {{#if children ~}}
+                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                          {{#each this.children ~}}
+                          {{> childMenu this level=2}}
+                          {{/each ~}}
+                        {{else}}
+                          {{#each children ~}}
+                            {{#if children ~}}
+                              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                  {{#each this.children ~}}
+                                  {{> childMenu this level=3}}
+                                  {{/each ~}}
+                              {{else}}
+                                {{#each children ~}}
+                                  {{#if children ~}}
+                                    {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                        {{#each this.children ~}}
+                                        {{> childMenu this level=4}}
+                                        {{/each ~}}
+                                    {{else}}
+                                      {{#each children ~}}
+                                        {{#if children ~}}
+                                          {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                              {{#each this.children ~}}
+                                              {{> childMenu this level=5}}
+                                              {{/each ~}}
+                                          {{else}}
+                                          {{#each children ~}}
+                                            {{#if children ~}}
+                                              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                                  {{#each this.children ~}}
+                                                  {{> childMenu this level=6}}
+                                                  {{/each ~}}
+                                              {{else}}
+                                                {{#each children ~}}
+                                                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                                    {{#each ../this.children ~}}
+                                                    {{> childMenu this level=6}}
+                                                    {{/each ~}}
+                                                  {{/ifAll ~}}
+                                                {{/each ~}}
+                                              {{/ifAll ~}}
+                                            {{else}}
+                                              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                                  {{#each ../this.children ~}}
+                                                  {{> childMenu this level=5}}
+                                                  {{/each ~}}
+                                              {{/ifAll ~}}
+                                            {{/if ~}}
+                                          {{/each ~}}
+                                          {{/ifAll ~}}
+                                        {{else}}
+                                          {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                              {{#each ../this.children ~}}
+                                              {{> childMenu this level=4}}
+                                              {{/each ~}}
+                                          {{/ifAll ~}}
+                                        {{/if ~}}
+                                      {{/each ~}}
+                                    {{/ifAll ~}}
+                                  {{else}}
+                                    {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                        {{#each ../this.children ~}}
+                                        {{> childMenu this level=3}}
+                                        {{/each ~}}
+                                    {{/ifAll ~}}
+                                  {{/if ~}}
+                                {{/each ~}}
+                              {{/ifAll ~}}
+                            {{else}}
+                              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                {{#each ../this.children ~}}
+                                {{> childMenu this level=2}}
+                                {{/each ~}}
+                              {{/ifAll ~}}
+                            {{/if ~}}
+                          {{/each ~}}
+                        {{/ifAll ~}}
+                      {{else}}
+                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                        {{/ifAll ~}}
+                      {{/if ~}}
+                    {{/each ~}}
+                  {{/each ~}}
+              {{/with ~}}
               {{/if ~}}
             </ul>
-            <h5 class="x-padding">Our sites</h5>
-            {{> components_scvo_bar}}
           </div>
         </aside>
       </div>
