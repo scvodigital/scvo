@@ -1460,6 +1460,9 @@ body.services.credit-union {
       z-index: 0;
     }
   }
+  // a:link, a:visited {
+  //   background: linear-gradient(to bottom, $credit-union-color-light 0%, $credit-union-color-light 100%);
+  // }
   .landing-page-actions {
     list-style-type: none;
     margin: 0;
@@ -1468,9 +1471,19 @@ body.services.credit-union {
       border-color: $credit-union-color-alt;
       color: $secondary-color;
     }
+    .btn:hover {
+      background-color: $credit-union-color;
+      border-color: $credit-union-color;
+      color: white;
+    }
     .btn.btn-primary {
       background-color: $credit-union-color;
       border-color: $credit-union-color;
+      color: white;
+    }
+    .btn.btn-primary:hover {
+      background-color: $secondary-color;
+      border-color: $secondary-color;
       color: white;
     }
   }
