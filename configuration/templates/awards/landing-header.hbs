@@ -1,5 +1,7 @@
+{{#unless (compare @root.request.url.path "/scottish-charity-awards")}}
 <div class="container">
   {{> breadcrumbs_cms_page}}
 
   <h1>{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</h1>
 </div>
+{{/unless}}

@@ -1,7 +1,7 @@
 {
   "name": "vote_charity_awards_thanks",
   "debug": true,
-  "pattern": "/scottish-charity-awards/finalists-2020/*category/*vote/thanks",
+  "pattern": "/scottish-charity-awards/finalists-2020/:category/:vote/thanks",
   "metaData": {
     "awards-info": "{:../../data/info-charity-awards.json}"
   },

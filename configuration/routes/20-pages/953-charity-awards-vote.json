@@ -1,7 +1,7 @@
 {
   "name": "vote_charity_awards",
   "debug": true,
-  "pattern": "/scottish-charity-awards/finalists-2020/*category/*vote",
+  "pattern": "/scottish-charity-awards/finalists-2020/:category/:vote",
   "metaData": {
     "awards-info": "{:../../data/info-charity-awards.json}"
   },
@@ -42,8 +42,7 @@
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.awards_vote-header",
               "body": ">context.metaData.handlebars.templates.awards_vote-body",
-              "footer": ">context.metaData.handlebars.templates.awards_footer",
-              "footer": ">context.metaData.handlebars.templates.awards-vote-footer"
+              "footer": ">context.metaData.handlebars.templates.awards_footer"
             },
             "contentType": "text/html"
           }

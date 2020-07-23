@@ -13,7 +13,7 @@
   ],
   "query": {
     "term": {
-      "slug": "{{@root.request.params.vote}}"
+      "slug": "p_award_{{@root.request.params.vote}}"
     }
   }
 }
