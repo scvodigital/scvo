@@ -27,7 +27,7 @@ $credit-union-color: #8066AC;
 $credit-union-color-light: #DCD6E9;
 $credit-union-color-alt: #E3DEED;
 $credit-union-color-var: 8066AC;
-$credit-union-color-light-var: F5F4F9;
+$credit-union-color-light-var: F6F5F9;
 
 $goodmoves-legacy-color: rgb(68, 133, 50);
 $goodmoves-color: #A8D91B;
@@ -1417,11 +1417,23 @@ h1.title-credit-union {
     color: $credit-union-color;
   }
 }
+body.services.credit-union {
+  .text-large {
+    font-size: 175% !important;
+  }
+}
 .bg-credit-union {
   background-color: $credit-union-color-light;
   .card .card-title .fa-fw {
     font-weight: 800 !important;
     background-image: url("https://scvo.scot/rouleaux.svg?color=#{$credit-union-color-var}&opacity=1&style=solid")
+  }
+  .card .card-title a:hover {
+    color: $credit-union-color;
+    .fa-fw {
+      color: $credit-union-color;
+      background-image: url("https://scvo.scot/rouleaux.svg?color=#ffffff&opacity=1&style=solid")
+    }
   }
 }
 .bg-credit-union-light {
