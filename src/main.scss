@@ -223,20 +223,34 @@ body.the-gathering-2020 {
         align-items: center;
         padding: $unit 0;
         margin: 0 auto;
-        img {
+        flex-direction: column;
+        .header-image {
+          display: flex;
+          align-items: flex-end;
           width: 80%;
-          margin: 0 auto;
+          flex: 1 0 auto;
+          margin-bottom: 1rem;
+          img {
+            margin: 0 auto;
+            flex: 1 0 auto;
+          }
         }
       }
       .header-logo.show-sm {
         img {
           width: 100%;
         }
+        .header-text {
+          margin: 1rem auto 4rem;
+        }
       }
       .header-text {
         color: white;
         text-align: center;
         font-size: 1.1rem;
+        align-items: center;
+        flex: 0 0 auto;
+        margin-bottom: 5rem;
         // align-items: flex-end;
         // display: inline-flex;
         // margin: 0 auto 5.5rem;
