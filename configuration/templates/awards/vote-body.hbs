@@ -4,8 +4,24 @@
       <div class="b-margin-full">
         {{{content}}}
       </div>
+
+      <a name="vote"></a>
       <h4>Vote</h4>
-      <iframe src="https://www.surveygizmo.eu/s3/90258391/Scottish-Charity-Awards-2020-voting?vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}" frameborder="0" width="100%" height="500" style="overflow:hidden"></iframe>
+      {{#unless @root.request.cookies.charity_awards_already_voted}}
+        <script type="text/javascript">document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90258391/Scottish-Charity-Awards-2020-voting?__output=embedjs&vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}&__ref=' + escape(document.location.href) + '" type="text/javascript" ></scr' + 'ipt>');</script>
+        <noscript>
+          Build better products with intelligent feedback - <a href="https://try.surveygizmo.com/feedback">SurveyGizmo</a>.
+          <a href="https://www.surveygizmo.eu/s3/90258391/Scottish-Charity-Awards-2020-voting??jsfallback=true">Please take my survey now</a>
+        </noscript>
+        <style>.sg-survey{display:none; }</style>
+      {{else}}
+        {{#compare @root.request.params.vote @root.request.cookies.charity_awards_already_voted}}
+          <strong>Thanks for voting for {{{title}}}</strong>
+        {{else}}
+          <strong>You have already voted in this year's Scottish Charity Awards</strong>
+        {{/compare}}
+      {{/unless}}
+
       {{#if image_url}}
         <div class="charity-awards-image show-md">
           <img src="{{image_url}}" class="img-responsive" />
@@ -32,7 +48,7 @@
     window.location.hash = '#vote';
   {{/if}}
   console.log('Registering jQuery on load');
-  $(function() {
+  document.addEventListener('DOMContentLoaded', function() {
     window.setTimeout(function() {
       var voteSuccessElement = $('#vote-success');
       console.log('Checking vote success element', voteSuccessElement);
@@ -42,13 +58,13 @@
         var category = {{{stringify (default @root.request.params.category '')}}};
 
         console.log('Getting charity awards cookie');
-        var cookie = scvo.getCookie('charity_awards_already_voted');
+        var cookie = getCookie('charity_awards_already_voted');
         console.log('Got cookie', cookie);
 
         if (slug && category) {
           console.log('Got a slug and category.', slug, category);
           console.log('Setting cookie');
-          scvo.setCookie('charity_awards_already_voted', slug, 90);
+          setCookie('charity_awards_already_voted', slug, 90);
           if (!cookie) {
             console.log('As there was no previous cookie, firing GA event');
             gtag('event', 'charity-awards-2020', {
@@ -57,12 +73,28 @@
             });
           }
           console.log('Redirecting back to finalist page');
-          window.location.href = '/scottish-charity-awards/vote-2020/' + category + '/' + slug + '#vote';
+          window.location.href = '/scottish-charity-awards/finalists-2020/' + category + '/' + slug + '#vote';
         } else {
           console.log('No slug or category specified. Redirecting to main finalist list');
-          window.location.href = '/scottish-charity-awards/vote-2020';
+          window.location.href = '/scottish-charity-awards/finalists-2020';
         }
       }
     }, 5000);
+
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + name + "=");
+      if (parts.length == 2) return parts.pop().split(";").shift();
+    }
   });
 </script>
