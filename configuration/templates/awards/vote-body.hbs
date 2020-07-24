@@ -4,6 +4,8 @@
       <div class="b-margin-full">
         {{{content}}}
       </div>
+      <h4>Vote</h4>
+      <iframe src="https://www.surveygizmo.eu/s3/90258391/Scottish-Charity-Awards-2020-voting?vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}" frameborder="0" width="100%" height="500" style="overflow:hidden"></iframe>
       {{#if image_url}}
         <div class="charity-awards-image show-md">
           <img src="{{image_url}}" class="img-responsive" />
