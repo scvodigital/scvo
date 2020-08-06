@@ -12,18 +12,6 @@
   ],
   "query": {
     "bool": {
-      "must_not": [
-        {
-          "term": {
-            "hide_in_results": true
-          }
-        },
-        {
-          "match": {
-            "Id": "{{@root.data.primaryResponse.hits.hits.[0]._source.Id}}"
-          }
-        }
-      ],
       "must": [
         {
           "simple_query_string": {
@@ -52,6 +40,16 @@
         {
           "term": {
             "team": "tfn"
+          }
+        },
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "match": {
+            "Id": "{{@root.data.primaryResponse.hits.hits.[0]._source.Id}}"
           }
         }
       ]
