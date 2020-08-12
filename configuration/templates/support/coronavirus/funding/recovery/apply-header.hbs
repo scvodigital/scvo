@@ -1,0 +1,20 @@
+<div class="bg-error">
+  <div class="container v-padding-full t-margin-full text-white">
+    This application form is currently in development and all responses will be deleted before the fund opens on Monday 24th August
+  </div>
+</div>
+
+<div class="container">
+  <ul class="breadcrumb breadcrumb-length-4" aria-hidden="true">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/support">Support &amp; learning</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus">Coronavirus Third Sector Information Hub</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding">Funding</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government">Funds: Scottish Government</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government/recovery-fund">Recovery Fund</a></li>
+    <li class="breadcrumb-item">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "coronavirus_recovery_apply_complete")}}{{#compare @root.route.name "coronavirus_recovery_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Eligibility checker{{/ifAny}}</li>
+  </ul>
+</div>
+<div class="container">
+  <h1 class="font-default">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "coronavirus_recovery_apply_complete")}}{{#compare @root.route.name "coronavirus_recovery_apply_complete"}}Thank you{{else}}{{#compare @root.route.name "coronavirus_recovery_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{/compare}}{{else}}Eligibility checker{{/ifAny}}</h1>
+</div>

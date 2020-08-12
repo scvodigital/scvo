@@ -1,0 +1,197 @@
+<div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
+  {{#unless (ifAny @root.request.params.charity_number (ifAll @root.request.body.condition_1 @root.request.body.condition_3 @root.request.body.funder)) ~}}
+  <form action="{{@root.request.url.pathname}}" method="post" id="eligibility-checker">
+    <p>
+      The Recovery Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the pandemic. It can fund both immediate and emerging forms of support, from now up to the end of July, reflecting that the context for people and communities may change over that time.
+    </p>
+    <p>
+      To be eligible for the fund please answer the following:
+    </p>
+    <div class="b-margin-full">
+      <div class="form-group" id="condition_1-D" role="group" aria-labelledby="condition_1-L" data-tfa-labelledby="-L condition_1-L">
+        <div class="col-9 col-xl-12">
+          <label class="form-checkbox" id="condition_1-L" for="condition_1">
+            <input type="checkbox" value="true" id="condition_1" name="condition_1" aria-labelledby="condition_1-L" data-tfa-labelledby="condition_1-L" required>
+            <i class="form-icon"></i>
+            My organisation is a charity registered with OSCR, a social enterprise, or a constituted, unincorporated organisation
+          </label>
+        </div>
+      </div>
+      <div class="form-group" id="condition_2-D" role="group" aria-labelledby="condition_2-L" data-tfa-labelledby="-L condition_2-L">
+        <div class="col-9 col-xl-12">
+          <label class="form-checkbox" id="condition_2-L" for="condition_2">
+            <input type="checkbox" value="true" id="condition_2" name="condition_2" aria-labelledby="condition_2-L" data-tfa-labelledby="condition_2-L">
+            <i class="form-icon"></i>
+            My application is for less than 20% of last year’s annual income
+          </label>
+        </div>
+      </div>
+      <div class="form-group" id="condition_3-D" role="group" aria-labelledby="condition_3-L" data-tfa-labelledby="-L condition_3-L">
+        <div class="col-9 col-xl-12">
+          <label class="form-checkbox" id="condition_3-L" for="condition_3">
+            <input type="checkbox" value="true" id="condition_3" name="condition_3" aria-labelledby="condition_3-L" data-tfa-labelledby="condition_3-L" required>
+            <i class="form-icon"></i>
+            My organisation is applying for activity that will be complete by the end of July 2020
+          </label>
+        </div>
+      </div>
+      <div class="form-group" id="funder_1-D" role="group" aria-labelledby="funder_1-L" data-tfa-labelledby="-L funder_1-L">
+        <div class="col-9 col-xl-12">
+          <label class="form-radio" id="funder_1-L" for="funder_1">
+            <input type="radio" id="funder_1" name="funder" value="rrr" aria-labelledby="funder_1-L" data-tfa-labelledby="funder_1-L" required>
+            <i class="form-icon"></i>
+            The financial value of my application is between £1k and £5k. (You will be taken to a separate application form which is assessed by Foundation Scotland)
+          </label>
+        </div>
+      </div>
+      <div class="form-group" id="funder_2-D" role="group" aria-labelledby="funder_2-L" data-tfa-labelledby="-L funder_2-L">
+        <div class="col-9 col-xl-12">
+          <label class="form-radio" id="funder_2-L" for="funder_2">
+            <input type="radio" id="funder_2" name="funder" value="recovery" aria-labelledby="funder_2-L" data-tfa-labelledby="funder_2-L" required>
+            <i class="form-icon"></i>
+            The financial value of my application is above £5k but less than £100k (Your application will be assessed by the Recovery Fund coalition)
+          </label>
+        </div>
+      </div>
+      <input type="submit" data-label="Submit" class="btn btn-primary btn-lg b-margin-full" id="submit_button" value="Check eligibility">
+    </div>
+  </form>
+  {{else}}
+  {{#ifAny @root.request.params.charity_number (ifAll @root.request.body.condition_1 @root.request.body.condition_3 @root.request.body.funder) ~}}
+  {{#ifAny @root.request.params.charity_number (compare @root.request.body.funder "recovery") ~}}
+  {{#ifAny @root.request.params.charity_number @root.request.body.condition_2 ~}}
+
+  <p>
+    The Recovery Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the pandemic. It can fund both immediate and emerging forms of support, from now up to the end of July, reflecting that the context for people and communities may change over that time.
+  </p>
+  <p>
+    Any organisation may hold just one substantive award of between £5k and £100k.
+  </p>
+  <p>
+    Please enter the details below to continue your application process.
+  </p>
+
+  <div class="b-padding-full v-margin-full">
+    {{#if @root.request.params.charity_number ~}}
+    <div class="label label-error x-padding t-margin-full">
+      <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
+      The charity number you entered could not be matched with an OSCR record
+    </div>
+    <p class="t-margin b-margin-full form-input-hint text-secondary">
+      Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+    </p>
+    {{/if ~}}
+    <div class="columns">
+      <div class="column col-sm-12 col-xs-12">
+        <div class="form-group">
+          <label for="charity_number" class="form-label">Scottish Charity Number</label>
+          <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
+          <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> to confirm</p>
+        </div>
+        <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
+          Apply now
+        </a>
+      </div>
+      <div class="divider-vert hide-sm" data-content="OR"></div>
+      <div class="divider text-center show-sm col-12" data-content="OR"></div>
+      <div class="column col-sm-12 col-xs-12 align-centre">
+        {{!-- <p>
+        If you are not a registered charity you can still apply. Click the link below to continue.
+        </p> --}}
+        <a href="/support/coronavirus/funding/scottish-government/recovery-fund/apply/not-a-charity" class="btn btn-block">
+          Not a registered charity
+        </a>
+      </div>
+    </div>
+    <p class="t-margin-full">
+      <a href="{{@root.request.url.pathname}}" class="no-underline"><span class="far fa-chevron-circle-left r-margin" aria-hidden="true"></span> Back to eligibility checker</a>
+    </p>
+  </div>
+  {{else}}
+  <div class="b-padding-full b-margin-full">
+    <h2>Not eligible</h2>
+    <p>
+      Your application must be for less than 20% of your last year's turnover to meet the fund criteria.<br /><a href="/support/coronavirus/funding/scottish-government/recovery-fund/guidance-for-applicants">Read the guidance for applicants</a>
+    </p>
+    <p class="t-margin-full">
+      <a href="{{@root.request.url.pathname}}" class="no-underline"><span class="far fa-chevron-circle-left r-margin" aria-hidden="true"></span> Back to eligibility checker</a>
+    </p>
+  </div>
+  {{/ifAny ~}}
+  {{else}}
+  {{#compare @root.request.body.funder "rrr" ~}}
+  <p>
+    The Recovery Fund cannot accept applications for less than £5000. If you are looking for £5000 or less please consider Foundation Scotland’s Response, Recovery and Resilience Fund. This fund is providing funding to support constituted community groups and charities that are responding to the coronavirus pandemic in their local community. Funding is available between £1,000 and £5,000. Only constituted groups, with a governing document, can apply. Your annual income must be under £250,000.
+  </p>
+  <p>
+    <a href="https://ukcf.secure.force.com/forms/FS/RRRFund" class="btn btn-primary btn-lg">Apply now</a>
+  </p>
+  <p class="t-margin-full">
+    <a href="{{@root.request.url.pathname}}" class="no-underline"><span class="far fa-chevron-circle-left r-margin" aria-hidden="true"></span> Back to eligibility checker</a>
+  </p>
+  {{else}}
+  <p>
+    not eligible
+  </p>
+  {{/compare ~}}
+  {{/ifAny ~}}
+  {{/ifAny ~}}
+  {{/unless ~}}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // var $cBoxes = $('#condition_1,#condition_2,#condition_3');
+  // $cBoxes.change(function(){
+  //   if ($cBoxes.length == $cBoxes.filter(':checked').length) {
+  //     $('#eligibility-checker').hide();
+  //     $('#rrr-fund').hide();
+  //     $('#recovery-fund').show();
+  //   } else {
+  //     $('#eligibility-checker').show();
+  //     $('#rrr-fund').hide();
+  //     $('#recovery-fund').hide();
+  //   }
+  // });
+
+  var valid = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 67, 83, 99, 115, 37, 39, 111, 79, 46, 35, 36];
+  $('#charity_number')
+  .on('keydown', function(evt) {
+    if (evt.ctrlKey) {
+      return;
+    }
+
+    if (valid.indexOf(evt.which) === -1 && evt.which > 31) {
+      evt.preventDefault();
+    }
+  })
+  .on('keyup', checkCN)
+  .on('change', checkCN)
+  .on('paste', function(evt) {
+    setTimeout(function() {
+      checkCN(evt);
+    }, 0);
+  })
+  .select();
+
+  function checkCN(evt) {
+    var matches = evt.target.value.replace(/[^sco0-9]/img, '');
+    var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
+
+    if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
+      var url = '/support/coronavirus/funding/scottish-government/recovery-fund/apply/' + charityNumber;
+      $('#charity_number_submit')
+      .removeAttr('disabled', false)
+      .attr('href', url);
+      if (evt.which === 13) {
+        window.location.href = url;
+      }
+    } else {
+      $('#charity_number_submit')
+      .attr('disabled', true)
+      .attr('href', '');
+    }
+  }
+
+})
+</script>
