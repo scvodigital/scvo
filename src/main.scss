@@ -267,6 +267,36 @@ body.the-gathering-2020 {
   .sidebar {
     li.menu-item {
       font-size: 1.1rem;
+      a {
+        color: $secondary-color;
+      }
+      a.celebrating-communities {
+        color: #769f56;
+      }
+      a.charity-champion {
+        color: #a989a0;
+      }
+      a.charity-of-the-year {
+        color: #1f9fd6;
+      }
+      a.cracking-campaign {
+        color: #de790d;
+      }
+      a.demonstrating-digital {
+        color: #e30613;
+      }
+      a.leading-light {
+        color: #ad9310;
+      }
+      a.pioneering-project {
+        color: #568da3;
+      }
+      a.terrific-trustee {
+        color: #8f9b36;
+      }
+      a:hover {
+        color: $secondary-color;
+      }
     }
   }
 }
