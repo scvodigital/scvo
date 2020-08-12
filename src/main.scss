@@ -264,6 +264,11 @@ body.the-gathering-2020 {
       }
     }
   }
+  .sidebar {
+    li.menu-item {
+      font-size: 1.1rem;
+    }
+  }
 }
 .icon-rouleaux {
   background-size: contain;
@@ -634,7 +639,7 @@ footer ul li a:hover {
   color: $primary-color;
 }
 a:hover {
-  // text-decoration: underline;
+  text-decoration: none;
   background-size: $thick-line 9px;
 }
 .sidebar-left,

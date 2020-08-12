@@ -1,30 +1,4 @@
-{{{@root.data.search.cms.hits.hits.[0]._source.content}}}
-
-<div class="">
-  <h3>The Scottish Charity Awards 2020 finalists have been announced!</h3>
-  <p>
-    Run annually by the Scottish Council for Voluntary Organisations (SCVO), the Scottish Charity
-    Awards celebrate the best of Scotland’s voluntary sector.
-  </p>
-
-  <p>
-    This year’s shortlist includes 45 individuals and organisations from charities and voluntary
-    groups across the country.
-  </p>
-
-  <p>
-    While a judging panel will determine the winners under eight distinct categories, members of the
-    public can have their say by voting for their favourite overall entry in the People’s Choice
-    Award sponsored by Charities Aid Foundation – by visiting <a href="/vote">scvo.org.uk/vote</a> -
-    before 5pm on
-    Friday 4 September 2020.
-  </p>
-
-  <p>
-    Remember – you can only vote once and there are 45 finalists– so choose carefully!
-  </p>
-</div>
-
+{{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
 
 <div class="search-info">
   {{#if @root.request.params.category}}
@@ -54,7 +28,12 @@
           </section>
           <section class="card-footer">
             <p>
-              <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}">Find out more</a>
+              <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}">
+                Find out more
+                {{#unless @root.request.cookies.charity_awards_already_voted}}
+                &amp; vote
+                {{/unless}}
+              </a>
             </p>
           </section>
           <section class="card-category" style="padding-left:.8rem;padding-right:.8rem;">
@@ -70,7 +49,7 @@
       </div>
       {{#if image_url}}
       <div class="column col-3 col-lg-4 col-md-12">
-          <img src="{{image_url}}" style="max-width:100%; padding-top:0.8rem;" class="pull-right l-margin-full hide-sm">
+        <img src="{{image_url}}" style="max-width:100%; padding-top:0.8rem;" class="pull-right l-margin-full hide-sm">
       </div>
       {{/if}}
     </div>

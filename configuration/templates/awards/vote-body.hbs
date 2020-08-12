@@ -9,10 +9,6 @@
       <h4>Vote</h4>
       {{#unless @root.request.cookies.charity_awards_already_voted}}
         <script type="text/javascript">document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90258391/Scottish-Charity-Awards-2020-voting?__output=embedjs&vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}&__ref=' + escape(document.location.href) + '" type="text/javascript" ></scr' + 'ipt>');</script>
-        <noscript>
-          Build better products with intelligent feedback - <a href="https://try.surveygizmo.com/feedback">SurveyGizmo</a>.
-          <a href="https://www.surveygizmo.eu/s3/90258391/Scottish-Charity-Awards-2020-voting??jsfallback=true">Please take my survey now</a>
-        </noscript>
         <style>.sg-survey{display:none; }</style>
       {{else}}
         {{#compare @root.request.params.vote @root.request.cookies.charity_awards_already_voted}}
