@@ -28,11 +28,6 @@
 			"label": "Policy &#038; research",
 			"path": "/policy",
 			"route": "^/policy"
-		},
-		{
-			"label": "Vote",
-			"path": "/scottish-charity-awards/finalists-2020",
-			"route": "^/scottish-charity-awards"
 		}
 	],
 	"user-signed-in": [{
@@ -90,6 +85,11 @@
 			"label": "Scottish Charity Awards",
 			"path": "/scottish-charity-awards",
 			"route": "^/scottish-charity-awards$"
+		},
+		{
+			"label": "Vote",
+			"path": "/scottish-charity-awards/finalists-2020",
+			"route": "^/scottish-charity-awards/finalists-2020"
 		},
 		{
 			"label": "2019 winners",

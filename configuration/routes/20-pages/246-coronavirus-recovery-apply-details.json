@@ -5,17 +5,6 @@
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
-      "name": "form_closed",
-      "taskModule": "reroute",
-      "config": {
-        "if": [
-          1,
-          "coronavirus_recovery_apply_closed",
-          false
-        ]
-      }
-    },
-    {
       "name": "eoi_data",
       "taskModule": "salesforceApex",
       "renderer": "handlebars",

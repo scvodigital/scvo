@@ -26,14 +26,6 @@
     },
     {
       "name": "destination",
-      "taskModule": "redirect",
-      "config": {
-        "location": "/scottish-charity-awards/finalists-2020",
-        "statusCode": 301
-      }
-    },
-    {
-      "name": "destination-old",
       "taskModule": "renderLayout",
       "renderer": "handlebars",
       "config": {
