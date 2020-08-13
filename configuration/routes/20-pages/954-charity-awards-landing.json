@@ -1,7 +1,7 @@
 {
-  "name": "page_charity_awards",
+  "name": "page_charity_awards_landing",
   "debug": true,
-  "pattern": "/scottish-charity-awards/*path",
+  "pattern": "/scottish-charity-awards",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -23,6 +23,14 @@
     },
     {
       "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/scottish-charity-awards/finalists-2020",
+        "statusCode": 302
+      }
+    },
+    {
+      "name": "destination",
       "taskModule": "renderLayout",
       "renderer": "handlebars",
       "config": {
@@ -31,7 +39,7 @@
             "default"
           ]
         },
-        "output": "body",
+        "output": "data",
         "layouts": {
           "default": {
             "layout": ">context.metaData.handlebars.layouts.awards",
