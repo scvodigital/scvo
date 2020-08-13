@@ -65,7 +65,7 @@
           <section class="card-category" style="padding-left:.8rem;padding-right:.8rem;">
             {{#unless @root.request.params.category}}
               <span class="chip-set">
-                <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category ".title")}}" class="chip">
+                <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category '.title')}}" class="chip {{slugify (getProperty @root.route.metaData.awards-info (concat category '.title'))}}">
                   {{{getProperty @root.route.metaData.awards-info (concat category ".title")}}}
                 </a>
               </span>
