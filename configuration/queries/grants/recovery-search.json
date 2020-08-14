@@ -1,0 +1,91 @@
+{
+  "size": 10,
+  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 10}},
+  "_source": [
+    "title",
+    "Id",
+    "recipient_name",
+    "call",
+    "individuals_supported",
+    "main_issue",
+    "area",
+    "target_group",
+    "funder_name",
+    "amount_awarded",
+    "amount_requested_total",
+    "amount_requested",
+    "paid_by_funder"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "paid_by_funder": true
+          }
+        }
+      ],
+      "must": [
+        {{#ifAny @root.request.params.query.area @root.request.params.query.main_issue @root.request.params.query.target_group @root.request.params.query.call @root.request.params.query.q ~}}
+        {{#if @root.request.params.query.area ~}}
+        {
+          "term": {
+            "area_slug": "{{@root.request.params.query.area}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.main_issue ~}}
+        {
+          "term": {
+            "main_issue_slugs": "{{@root.request.params.query.main_issue}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.target_group ~}}
+        {
+          "term": {
+            "target_group_slugs": "{{@root.request.params.query.target_group}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.call ~}}
+        {
+          "term": {
+            "call_slug": "{{@root.request.params.query.call}}"
+          }
+        },
+        {{/if ~}}
+        {{#if @root.request.params.query.q ~}}
+        {
+          "query_string": {
+            "query": {{{stringify (default @root.request.params.query.q "")}}},
+            "default_field": "text_bag",
+            "default_operator": "AND",
+            "analyzer": "snowball"
+          }
+        },
+        {{/if ~}}
+        {
+          "exists": {
+            "field": "title"
+          }
+        }
+        {{else}}
+        {
+          "match_all": {}
+        }
+        {{/ifAny ~}}
+      ],
+      "must_not": [
+        {
+          "term": {
+            "recipient_name": "Community Welfare Test (CO)"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "recipient_name": "asc"
+  }
+}

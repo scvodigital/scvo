@@ -1,21 +1,9 @@
 {
-  "name": "coronavirus_recovery_apply_details",
+  "name": "coronavirus_recovery_apply_form",
   "debug": true,
   "pattern": "/support/coronavirus/funding/scottish-government/recovery-fund/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
-    {
-      "name": "eoi_data",
-      "taskModule": "salesforceApex",
-      "renderer": "handlebars",
-      "config": {
-        "connection": "grantsProduction",
-        "output": "data",
-        "method": "GET",
-        "apexClassPath": "/ExpressionOfInterest/{{default request.params.query.session 'invalid-key'}}",
-        "body": ""
-      }
-    },
     {
       "name": "award_data",
       "taskModule": "elasticsearch",
@@ -120,12 +108,6 @@
         },
         "queryTemplates": [
           {
-            "name": "tfn_related_posts",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
-            "template": ">context.metaData.handlebars.queries.posts_tfn-related-coronavirus"
-          },
-          {
             "name": "postcode_data",
             "index": "geo_lookup",
             "type": "postcode",
@@ -172,7 +154,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_recovery_apply-header",
-              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_recovery_apply-details",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_recovery_apply-form",
               "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },

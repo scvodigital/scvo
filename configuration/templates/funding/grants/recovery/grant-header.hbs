@@ -1,0 +1,16 @@
+<div class="container">
+  {{#with data.primaryResponse.hits.hits.[0]._source ~}}
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/support">Support &amp; learning</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus">Coronavirus Third Sector Information Hub</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding">Funding</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government">Funds: Scottish Government</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government/recovery-fund">Recovery Fund</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients">Recipients</a></li>
+    <li class="breadcrumb-item">{{{title}}}</li>
+  </ul>
+
+  <h1>{{{title}}}</h1>
+  {{/with ~}}
+</div>

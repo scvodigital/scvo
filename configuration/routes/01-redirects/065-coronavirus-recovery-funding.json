@@ -1,6 +1,6 @@
 {
-  "name": "redirect_coronavirus-wellbeing-funding",
-  "pattern": "/funding/wellbeing-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "name": "redirect_coronavirus-recovery-funding",
+  "pattern": "/funding/recovery-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
   "tasks": [
     {
       "name": "url",
@@ -8,7 +8,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/support/coronavirus/funding/scottish-government/wellbeing-fund"
+        "template": "/support/coronavirus/funding/scottish-government/recovery-fund"
       }
     },
     {

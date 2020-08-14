@@ -1,0 +1,17 @@
+{
+  "size": 1,
+  "_source": [
+    "Id"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "recipient_charity_number": "{{@root.request.params.charity_number}}"
+          }
+        }
+      ]
+    }
+  }
+}

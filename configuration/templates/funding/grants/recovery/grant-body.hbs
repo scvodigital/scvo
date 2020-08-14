@@ -1,0 +1,135 @@
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<div class="full scvo-grant scvo-grant-charter">
+  {{!-- {{#if recipient_name ~}}
+  <h3 class="black-text">{{{recipient_name}}}</h3>
+  {{/if ~}} --}}
+  {{#if recipient_charity_number ~}}
+  <div class="post-info">
+    <div class="post-info-item">
+      <span class="far fa-badge-check"></span>
+      Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}" class="charity_number">{{recipient_charity_number}}</a>
+    </div>
+  </div>
+  {{/if ~}}
+  {{#if recipient_overview ~}}
+  <div class="black-text">
+    {{{markdown recipient_overview}}}
+  </div>
+  {{/if ~}}
+  <ul class="fa-ul">
+    {{#ifAll planned_start planned_end ~}}
+    <li>
+      <span class="fa-li"><span class="far fa-calendar-alt"></span></span>
+      From {{momentFormat (moment planned_start 'x') "Do MMMM YYYY"}}
+      to {{momentFormat (moment planned_end 'x') "Do MMMM YYYY"}}
+    </li>
+    {{/ifAll ~}}
+    {{#if call ~}}
+    <li>
+      <span class="fa-li"><span class="fal fa-money-bill"></span></span>
+      {{#if amount_awarded ~}}
+      Award: &pound;{{addCommas amount_awarded}}
+      {{else}}
+      {{#if amount_requested_total ~}}
+      Award: &pound;{{addCommas amount_requested_total}}
+      {{else}}
+      {{#if amount_requested ~}}
+      Award: &pound;{{addCommas amount_requested}}
+      {{/if ~}}
+      {{/if ~}}
+      {{/if ~}}
+      via <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?call={{slugify call}}">{{call}}</a>
+      {{#unless paid_by_funder ~}}
+      but not yet paid
+      {{/unless ~}}
+      {{#each @root.data.organisationResponses.grants.hits.hits ~}}
+      {{#if (contains _type 'sg-grant-recovery') ~}}
+      {{#unless (ifAll (compare _type @root.data.primaryResponse.hits.hits.[0]._type) (compare _source.call_slug @root.data.primaryResponse.hits.hits.[0]._source.call_slug)) ~}}
+      {{#with _source ~}}
+      {{#if paid_by_funder ~}}
+      and
+      &pound;{{addCommas (default amount_awarded amount_requested)}}
+      via <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?call={{slugify call}}">{{call}}</a>
+      {{/if ~}}
+      {{/with ~}}
+      {{/unless ~}}
+      {{/if ~}}
+      {{/each ~}}
+    </li>
+    {{/if ~}}
+    {{!-- <li>
+      <span class="fa-li"><span class="far fa-database"></span></span>
+      <a href="http://grantnav.threesixtygiving.org/grant/360G-SCVO-{{Id}}" target="_blank">Data published on 360Giving</a>
+    </li> --}}
+    {{#ifAny recipient_url @root.data.organisation.hits.hits.0._source.website ~}}
+    {{> content_item_link icon='link' link=(default recipient_url @root.data.organisation.hits.hits.0._source.website)}}
+    {{/ifAny ~}}
+    {{#ifAny recipient_twitter @root.data.organisation.hits.hits.0._source.twitter ~}}
+    {{> content_item_link icon='twitter' link=(default recipient_twitter @root.data.organisation.hits.hits.0._source.twitter)}}
+    {{/ifAny ~}}
+    {{#ifAny recipient_facebook @root.data.organisation.hits.hits.0._source.facebook ~}}
+    {{> content_item_link icon='facebook' link=(default recipient_facebook @root.data.organisation.hits.hits.0._source.facebook)}}
+    {{/ifAny ~}}
+  </ul>
+
+  <div class="post-info">
+    {{#ifAny main_issue target_group ~}}
+    {{#ifAll (compare (length main_issue) ">" 0) (compare (length target_group) ">" 0) ~}}
+    <div class="post-info-item post-info-categories">
+      <span aria-hidden="true" class="far fa-{{inflect (add (length main_issue) (length target_group)) 'tag' 'tags'}}"></span>
+    </div>
+    {{/ifAll ~}}
+    {{#compare (length main_issue) ">" 0 ~}}
+    <div class="post-info-item post-info-categories">
+      {{!-- <span aria-hidden="true" class="far fa-{{inflect (length main_issue) 'tag' 'tags'}}"></span> --}}
+      <ul class="inline-list">
+        {{#each main_issue ~}}
+        <li>
+          <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?main_issue={{slugify this}}" class="chip" title="Main issue: {{replace this ' (please describe)' ''}}">{{replace this ' (please describe)' ''}}</a>
+        </li>
+        {{/each ~}}
+      </ul>
+    </div>
+    {{/compare ~}}
+    {{#compare (length target_group) ">" 0 ~}}
+    <div class="post-info-item post-info-categories">
+      {{!-- <span aria-hidden="true" class="far fa-{{inflect (length target_group) 'tag' 'tags'}}"></span> --}}
+      <ul class="inline-list">
+        {{#each target_group ~}}
+        <li>
+          <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?target_group={{slugify this}}" class="chip" title="Target group: {{replace this ' (please describe below)' ''}}">{{replace this ' (please describe below)' ''}}</a>
+        </li>
+        {{/each ~}}
+      </ul>
+    </div>
+    {{/compare ~}}
+    {{/ifAny ~}}
+  </div>
+
+  {{!-- {{#if description ~}}
+  <h3 class="project-overview">Description</h3>
+  <div class="project-overview">
+    {{{markdown description}}}
+  </div>
+  {{else}}
+  {{#if description_alt ~}}
+  <h3 class="project-overview">Description</h3>
+  <div class="project-overview">
+    {{{markdown description_alt}}}
+  </div>
+  {{/if ~}}
+  {{/if ~}} --}}
+
+  {{#compare (length project_updates) ">" 0 ~}}
+  <h2 class="project-evaluation">Evaluation</h2>
+  <h3 class="project-updates">Updates</h3>
+  <div class="project-updates">
+    {{#each project_updates ~}}
+    <p>
+      {{{markdown this.Project_Update__c}}}
+    </p>
+    {{/each ~}}
+  </div>
+  {{/compare ~}}
+</div>
+{{/with ~}}
