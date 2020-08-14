@@ -119,8 +119,40 @@
 						},
 						{
 							"label": "Supply partners",
-							"path": "/about/membership/scvo-supply-partners",
-							"route": "^/about/membership/scvo-supply-partners$"
+							"path": "/about/membership/supply-partners",
+							"route": "^/about/membership/supply-partners$",
+							"children": [
+								{
+									"label": "Selection process",
+									"path": "/about/membership/supply-partners/selection-process",
+									"route": "^/about/membership/supply-partners/selection-process$"
+								},
+								{
+									"label": "ExecSpace",
+									"path": "/about/membership/supply-partners/exec-space",
+									"route": "^/about/membership/supply-partners/exec-space$"
+								},
+								{
+									"label": "Housebrands Toolkits",
+									"path": "/about/membership/supply-partners/housebrands-toolkit",
+									"route": "^/about/membership/supply-partners/housebrands-toolkit$"
+								},
+								{
+									"label": "Phoenix Software",
+									"path": "/about/membership/supply-partners/phoenix-software",
+									"route": "^/about/membership/supply-partners/phoenix-software$"
+								},
+								{
+									"label": "Code of conduct",
+									"path": "/about/membership/supply-partners/code-of-conduct",
+									"route": "^/about/membership/supply-partners/code-of-conduct$"
+								},
+								{
+									"label": "Complaints procedure",
+									"path": "/about/membership/supply-partners/complaints-procedure",
+									"route": "^/about/membership/supply-partners/complaints-procedure$"
+								}
+							]
 						},
 						{
 							"label": "Join us",
