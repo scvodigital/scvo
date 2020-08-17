@@ -245,6 +245,8 @@ body.the-gathering-2020 {
         }
       }
       .header-text {
+        font-family: "Ingra";
+        font-weight: 400;
         color: white;
         text-align: center;
         font-size: 1.1rem;
@@ -257,6 +259,7 @@ body.the-gathering-2020 {
         // z-index: 10;
         a {
           color: white;
+          font-weight: 400;
         }
         a:hover {
           color: $primary-color;
