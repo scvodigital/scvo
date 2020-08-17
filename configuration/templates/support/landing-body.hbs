@@ -58,7 +58,7 @@
     <div class="columns b-margin">
       {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets ~}}
       <div class="column col-3 col-lg-6 col-sm-12 b-padding-full">
-        <a href="/support/events?q=&course_type={{replace key ' ' '+'}}">{{inflect doc_count (lowercase (replace key "Workshops" "Workshop")) (concat (lowercase (replace key "Workshops" "Workshop")) 's') true}}</a>
+        <a href="/support/events?type={{replace key ' ' '+'}}">{{inflect doc_count (lowercase (replace key "Workshops" "Workshop")) (concat (lowercase (replace key "Workshops" "Workshop")) 's') true}}</a>
       </div>
       {{/each ~}}
     </div>
