@@ -1,8 +1,10 @@
 {
   "name": "redirect_charter",
   "pattern": {
+    "newer": "/support/digital/participation/charter-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
     "old": "/digital/participation/charter-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
-    "new": "/support/digital/participation/charter-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+    "older": "/support/digital/participation/charter-funding(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "oldest": "/support/digital/participation/challenge-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
   },
   "tasks": [
     {
