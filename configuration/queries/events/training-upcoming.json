@@ -1,0 +1,67 @@
+{
+  "size": 3,
+  "_source": [
+    "slug",
+    "Id",
+    "title",
+    "course_type",
+    "date_start",
+    "date_end",
+    "path",
+    "course_overview_short",
+    "description_short",
+    "places_available",
+    "city",
+    "course_length"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        }
+      ],
+      "filter": [
+        {
+          "term": {
+            "course_type": "Training Course"
+          }
+        },
+        {
+          "range" : {
+            "date_start" : {
+              "gte" : "now/d"
+            }
+          }
+        },
+        {
+          "range" : {
+            "date_start" : {
+              "lte" : "now+6M/d"
+            }
+          }
+        }
+      ],
+      "must": [
+        {
+          "exists": {
+            "field": "title"
+          }
+        }
+      ],
+      "should": [
+        {
+          "term": {
+            "team": "events"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "sort": {
+    "date_start": "asc"
+  }
+}

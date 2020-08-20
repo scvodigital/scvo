@@ -1,18 +1,7 @@
 {
-  "name": "menu_page",
+  "name": "training_events",
   "debug": true,
-  "pattern": {
-    "setting-up-a-charity": "/support/setting-up-a-charity",
-    "running-your-organisation": "/support/running-your-organisation",
-    "running-your-organisation_leaving-lockdown": "/support/running-your-organisation/leaving-lockdown",
-    "running-your-organisation_finance-business-management": "/support/running-your-organisation/finance-business-management",
-    "running-your-organisation_business-planning": "/support/running-your-organisation/business-planning",
-    "running-your-organisation_legislation": "/support/running-your-organisation/legislation",
-    "running-your-organisation_governance": "/support/running-your-organisation/governance",
-    "running-your-organisation_staff-volunteers": "/support/running-your-organisation/staff-volunteers",
-    "running-your-organisation_funding": "/support/running-your-organisation/funding",
-    "training": "/support/training"
-  },
+  "pattern": "/support/training/programme",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -29,6 +18,25 @@
           "template": ">context.metaData.handlebars.queries.pages_page",
           "noResultsRoute": "four_oh_four"
         }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "events",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-event",
+            "template": ">context.metaData.handlebars.queries.events_training-upcoming"
+          }
+        ]
       },
       "renderer": "handlebars"
     },
@@ -51,7 +59,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.page-menu",
+              "body": ">context.metaData.handlebars.templates.support_training_events-body",
               "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-footer"
             },

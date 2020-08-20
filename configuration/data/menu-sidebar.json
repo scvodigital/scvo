@@ -675,6 +675,43 @@
 			"route": "^/support$",
 			"children": [
 				{
+					"label": "SCVO Training",
+					"path": "/support/training",
+					"route": "^/support/training$",
+					"description": "We are dedicated to continuous professional development and believe by providing affordable access to quality, bespoke courses by experienced trainers we can build capacity across the voluntary sector in Scotland.",
+					"icon": "",
+					"children": [
+						{
+							"label": "What we offer",
+							"path": "/support/training/what-we-offer",
+							"route": "^/support/training/what-we-offer$",
+							"description": "Our training programme brings a range of practical and innovative courses that are perfect for upskilling or helping you take the next step in your career.",
+							"icon": "chalkboard-teacher"
+						},
+						{
+							"label": "Training programme",
+							"path": "/support/training/programme",
+							"route": "^/support/training/programme$",
+							"description": "Our training programme delivers a range of engaging and inspiring courses to help enhance your performance and productivity.",
+							"icon": "chalkboard"
+						},
+						{
+							"label": "FAQs",
+							"path": "/support/training/faqs",
+							"route": "^/support/training/faqs$",
+							"description": "Answers to some frequently asked questions about our training programme.",
+							"icon": "question-circle"
+						},
+						{
+							"label": "In-house training",
+							"path": "/support/training/in-house",
+							"route": "^/support/training/in-house",
+							"description": "Inhouse training is a cost-effective alternative to upskill or refresh existing knowledge and skills a group of staff at the same time.",
+							"icon": "house-signal"
+						}
+					]
+				},
+				{
 					"label": "Information Service",
 					"path": "/support/information-service",
 					"route": "^/support/information-service$",
