@@ -41,6 +41,26 @@
     {{/each ~}}
     {{/compare ~}}
 
+    {{#with quotation}}
+    <div class="wp-block-media-text alignwide is-stacked-on-mobile clearfix t-margin-full t-padding-full" style="grid-template-columns:15% auto">
+      <figure class="wp-block-media-text__media">
+        <img src="{{headshot}}" alt="" class="wp-image" sizes="(max-width: 225px) 100vw, 225px">
+      </figure>
+      <div class="wp-block-media-text__content">
+        <blockquote class="wp-block-quote">
+          <p>
+            {{{text}}}
+          </p>
+          <cite>
+            {{#if author_url}}<a href="{{author_url}}">{{/if}}
+            {{{author}}}{{#if author_title}}{{#if author}}, {{/if}}{{author_title}}{{/if}}
+            {{#if author_url}}</a>{{/if}}
+          </cite>
+        </blockquote>
+      </div>
+    </div>
+    {{/with}}
+
     {{#unless highlight_last_updated ~}}
     <div class="page-info v-margin-full b-padding-full">
       <div class="page-info-item page-info-updated text-gray">
