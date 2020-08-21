@@ -1,0 +1,62 @@
+{
+  "size": 10000,
+  "_source": [
+    "amount_requested_total",
+    "amount_requested",
+    "amount_awarded",
+    "date_awarded",
+    "date_started",
+    "actual_start",
+    "actual_end",
+    "planned_start",
+    "planned_end",
+    "decision_date",
+    "description",
+    "description_alt",
+    "recommendation_agreed_date",
+    "target_group",
+    "target_group_description",
+    "main_issue",
+    "title",
+    "Id",
+    "date_last_modified",
+    "recipient_name",
+    "recipient_charity_number",
+    "recipient_id",
+    "call",
+    "call_slug",
+    "recipient_overview",
+    "recipient_address_street",
+    "recipient_address_town",
+    "recipient_address_region",
+    "recipient_address_postcode",
+    "geo_coords",
+    "geo",
+    "geo_codes_hb",
+    "recipient_url",
+    "funder_name",
+    "paid_by_funder"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+      ],
+      "should": [
+        {
+          "exists": {
+            "field": "amount_requested"
+          }
+        },
+        {
+          "exists": {
+            "field": "amount_awarded"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "sort": {
+    "recipient_name": "asc"
+  }
+}

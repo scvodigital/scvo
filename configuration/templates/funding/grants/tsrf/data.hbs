@@ -1,0 +1,197 @@
+{
+  "grants": [
+  {{#each @root.data.primaryResponse.hits.hits}}
+  {{#with _source}}
+  {
+    {{#if amount_requested_total ~}}
+    "amountAppliedFor": {{amount_requested_total}},
+    {{else}}
+    "amountAppliedFor": {{default amount_requested 0}},
+    {{/if ~}}
+    {{#if amount_awarded ~}}
+    "amountAwarded": {{amount_awarded}},
+    {{else}}
+    {{#if amount_requested ~}}
+    "amountAwarded": {{amount_requested}},
+    {{else}}
+    "amountAwarded": 0,
+    {{/if ~}}
+    {{/if ~}}
+    {{#ifAll paid_by_funder (ifAny amount_requested amount_awarded) ~}}
+    {{#if amount_awarded ~}}
+    "amountDisbursed": {{amount_awarded}},
+    {{else}}
+    {{#if amount_requested ~}}
+    "amountDisbursed": {{amount_requested}},
+    {{else}}
+    "amountDisbursed": 0,
+    {{/if ~}}
+    {{/if ~}}
+    {{else}}
+    "amountDisbursed": 0,
+    {{/ifAll ~}}
+    {{#if date_awarded ~}}
+    "awardDate": "{{momentFormat (moment date_awarded 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if date_started ~}}
+    "awardDate": "{{momentFormat (moment date_started 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if actual_start ~}}
+    "awardDate": "{{momentFormat (moment actual_start 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if planned_start ~}}
+    "awardDate": "{{momentFormat (moment planned_start 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if decision_date ~}}
+    "awardDate": "{{momentFormat (moment decision_date 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if recommendation_agreed_date ~}}
+    "awardDate": "{{momentFormat (moment recommendation_agreed_date 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if date_last_modified ~}}
+    "awardDate": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DD"}}",
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{!-- "description": {{{stringify (default description "Detailed information not yet available.")}}}, --}}
+    "description": "Detailed description not provided.",
+    "title": {{{stringify title}}},
+    "id": "360G-SCVO-{{Id}}",
+    "currency": "GBP",
+    "plannedDates": [{
+      {{#if planned_start ~}}
+      "startDate": "{{momentFormat (moment planned_start 'x') "YYYY-MM-DD"}}",
+      {{/if ~}}
+      {{#if planned_end ~}}
+      "endDate": "{{momentFormat (moment planned_end 'x') "YYYY-MM-DD"}}",
+      {{/if ~}}
+      "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}"
+    }],
+    "recipientOrganization": [{
+      {{#if recipient_name ~}}
+      "name": {{{stringify recipient_name}}},
+      {{/if ~}}
+      {{#if recipient_charity_number ~}}
+      "id": "GB-SC-{{recipient_charity_number}}",
+      "charityNumber": "{{recipient_charity_number}}"
+      {{else}}
+      "id": "360G-SCVO-{{recipient_id}}"{{/if ~}}{{#if recipient_overview ~}},
+      "description": {{{stringify recipient_overview}}}{{/if ~}}{{#if recipient_address_street ~}},
+      "streetAddress": {{{stringify recipient_address_street}}}{{/if ~}}{{#if recipient_address_town ~}},
+      "addressLocality": {{{stringify recipient_address_town}}}{{/if ~}}{{#if recipient_address_region ~}},
+      "addressRegion": {{{stringify recipient_address_region}}}{{/if ~}}{{#if recipient_address_postcode ~}},
+      "postalCode": "{{recipient_address_postcode}}"{{/if ~}}{{#if geo_coords ~}},
+      "location": [{
+        "latitude": {{geo_coords.lat}},
+        "longitude": {{geo_coords.lon}}
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo.codes.admin_ward}}",
+        "geoCodeType": "WD"
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo.codes.parliamentary_constituency}}",
+        "geoCodeType": "WPC"
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo_codes_hb}}",
+        "geoCodeType": "HB"
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo.codes.ccg}}",
+        "geoCodeType": "CCG"
+      }]
+      {{/if ~}}
+      {{#if recipient_address_postcode ~}},
+      "addressCountry": "Scotland"{{#if recipient_url ~}}{{/if ~}}
+      {{/if ~}}
+      {{#if recipient_url ~}}
+      {{#compare recipient_url "N/A" ~}}
+      {{else}}
+      {{#if (contains recipient_url "http") ~}}
+      ,"url": "{{recipient_url}}"
+      {{else}}
+      ,"url": "http://{{recipient_url}}"
+      {{/if ~}}
+      {{/compare}}
+      {{/if ~}}
+    }],
+    {{#if geo_coords ~}}
+    "beneficiaryLocation": [{
+      "latitude": {{geo_coords.lat}},
+      "longitude": {{geo_coords.lon}}
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.admin_ward}}",
+      "geoCodeType": "WD"
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.parliamentary_constituency}}",
+      "geoCodeType": "WPC"
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo_codes_hb}}",
+      "geoCodeType": "HB"
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.ccg}}",
+      "geoCodeType": "CCG"
+    }],
+    {{/if ~}}
+    "classifications": [
+      {{#if main_issue}}{{#each main_issue}}
+      {
+        "vocabulary": "Main issue",
+        "code": "main-issue",
+        "title": "{{this}}",
+        "description": "Does your activity primarily focus on one of these themes?"
+      },
+      {{/each}}{{/if}}
+      {{#if target_group}}{{#each target_group}}
+      {
+        "vocabulary": "Target group",
+        "code": "target-group",
+        "title": "{{replace this ' (please describe below)' ''}}",
+        "description": "Is there a specific target group you are working with?"
+      },
+      {{/each}}{{/if}}
+      {
+        "vocabulary": "Category",
+        "code": "category",
+        "title": "Coronavirus (COVID-19)",
+        "description": "Providing funding to organisations as a direct result of the coronavirus (COVID-19) pandemic."
+      }
+    ],
+    "fundingOrganization": [{
+      "id": "GB-GOR-DA1020",
+      "url": "https://gov.scot",
+      "name": "Scottish Government"
+    }],
+    {{#if call ~}}
+    "grantProgramme": [{
+      "code": "sg-tsrf-{{slugify call}}",
+      "title": "Third Sector Resilience Fund - {{call}}",
+      "description": "The Third Sector Resilience Fund (TSRF) is a £20m+ emergency fund for charities, community groups, social enterprises and voluntary organisations working in Scotland. The fund supports organisations that already deliver services and products but find themselves in financial difficulties directly as a result of the coronavirus pandemic.",
+      "url": "https://scvo.scot/funding/third-sector-resilience-fund"
+    }],
+    "fromOpenCall": "No",
+    {{/if ~}}
+    "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}",
+    "dataSource": "https://scvo.scot/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/recipients/data.json"
+  }{{#unless @last}},{{/unless}}
+  {{/with}}
+  {{/each}}
+  ]
+}

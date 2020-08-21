@@ -1,6 +1,9 @@
 {
   "name": "redirect_coronavirus_funding_communities",
-  "pattern": "/support/coronavirus/funding/for-organisations/supporting-communities-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "short": "/funding/supporting-communities-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "old": "/support/coronavirus/funding/for-organisations/supporting-communities-fund(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
@@ -8,7 +11,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/support/coronavirus/funding/for-organisations/scottish-government{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
+        "template": "/support/coronavirus/funding/scottish-government/supporting-communities-fund{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
       }
     },
     {

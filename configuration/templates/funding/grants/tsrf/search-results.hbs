@@ -1,0 +1,141 @@
+{{{replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "http://scvo.org.uk/" "") "https://scvo.org.uk/" "") "http://cms.scvo.org/" "/"}}}
+
+{{!-- <div class="divider"></div> --}}
+
+<form action="{{@root.request.url.pathname}}" method="GET" class="search_form v-margin-full">
+  <div class="columns b-margin-full">
+    <div class="column col-12">
+      <div class="input-group input-inline" style="width:100%">
+        <input type="text" class="form-input" name="q" id="grant-scf-keywords" value="{{@root.request.params.query.q}}" placeholder="Search">
+        <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" alt="Search">
+          <span class="far fa-search" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column col-3 col-lg-6 col-md-12">
+      <div class="form-group">
+        <select class="form-select" id="grant-scf-area" name="area" onchange="this.form.submit()">
+          <option value=""{{#if @root.request.params.query.area}}{{else}} selected{{/if}}>Area</option>
+          {{#each @root.data.supplimentaryResponses.types.aggregations.areas.buckets ~}}
+          {{#unless (ifAny (compare key "Scotland Wide") (compare key "Regional")) ~}}
+          <option value="{{slugify key}}" {{#compare ../request.params.query.area "===" (slugify key)}}selected{{/compare}}>{{replace key " and " " & "}} ({{doc_count}})</option>
+          {{/unless ~}}
+          {{/each ~}}
+        </select>
+      </div>
+    </div>
+    {{!-- <div class="column col-3 col-lg-6 col-md-12">
+      <div class="form-group">
+        <select class="form-select" id="grant-scf-main_issue" name="main_issue" onchange="this.form.submit()">
+          <option value=""{{#if @root.request.params.query.main_issue}}{{else}} selected{{/if}}>Main issue</option>
+          {{#each @root.data.supplimentaryResponses.types.aggregations.main_issues.buckets ~}}
+          <option value="{{slugify key}}" {{#compare ../request.params.query.main_issue "===" (slugify key)}}selected{{/compare}}>{{replace key ' (please describe)' ''}} ({{doc_count}})</option>
+          {{/each ~}}
+        </select>
+      </div>
+    </div>
+    <div class="column col-3 col-lg-6 col-md-12">
+      <div class="form-group">
+        <select class="form-select" id="grant-scf-target_group" name="target_group" onchange="this.form.submit()">
+          <option value=""{{#if @root.request.params.query.target_group}}{{else}} selected{{/if}}>Target group</option>
+          {{#each @root.data.supplimentaryResponses.types.aggregations.target_groups.buckets ~}}
+          <option value="{{slugify key}}" {{#compare ../request.params.query.target_group "===" (slugify key)}}selected{{/compare}}>{{replace key ' (please describe below)' ''}} ({{doc_count}})</option>
+          {{/each ~}}
+        </select>
+      </div>
+    </div> --}}
+    <div class="column col-3 col-lg-6 col-md-12">
+      <div class="form-group">
+        <select class="form-select" id="grant-scf-call" name="call" onchange="this.form.submit()">
+          <option value=""{{#if @root.request.params.query.call}}{{else}} selected{{/if}}>Funding round</option>
+          {{#each @root.data.supplimentaryResponses.types.aggregations.calls.buckets ~}}
+          <option value="{{slugify key}}" {{#compare ../request.params.query.call "===" (slugify key)}}selected{{/compare}}>{{key}} ({{doc_count}})</option>
+          {{/each ~}}
+        </select>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="equal-height v-margin-full">
+  {{#compare @root.data.supplimentaryResponses.grants.hits.total ">" 0 ~}}
+  {{> search_info paging=@root.data.supplimentaryResponses.grants.pagination}}
+
+  <div class="columns t-margin-full">
+    {{#each @root.data.supplimentaryResponses.grants.hits.hits ~}}
+    {{#with _source ~}}
+    <div class="column col-12 b-margin-full">
+      <div class="t-padding-full card card-no-padding sg-grant sg-grant-scf">
+        <section class="card-header">
+          <h4 class="no-margin">
+            <a href="{{@root.request.url.pathname}}/{{Id}}/{{slugify title}}">{{{title}}}</a>
+          </h4>
+        </section>
+        <section class="card-body">
+          {{#if recipient_name ~}}
+          {{#compare recipient_name "!==" title ~}}
+          <p class="b-margin">
+            <strong>{{recipient_name}}</strong>
+          </p>
+          {{/compare ~}}
+          {{/if ~}}
+          {{!-- {{#if description ~}}
+          {{{truncate description 180}}} <a href="{{@root.request.url.pathname}}/{{Id}}/{{slugify title}}">Read more</a>
+          {{else}}
+          {{#if description_alt ~}}
+          {{{truncate description_alt 180}}} <a href="{{@root.request.url.pathname}}/{{Id}}/{{slugify title}}">Read more</a>
+          {{/if ~}}
+          {{/if ~}} --}}
+        </section>
+        <section class="card-footer">
+          <ul class="fa-ul post-info">
+            {{#if call ~}}
+            <li class="post-info-item">
+              <span class="fa-li"><span class="fal fa-money-bill"></span></span>
+              {{#if amount_awarded ~}}
+              Award: &pound;{{addCommas amount_awarded}}
+              {{else}}
+              {{#if amount_requested_total ~}}
+              Award: &pound;{{addCommas amount_requested_total}}
+              {{else}}
+              {{#if amount_requested ~}}
+              Award: &pound;{{addCommas amount_requested}}
+              {{/if ~}}
+              {{/if ~}}
+              {{/if ~}}
+              via <a href="/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients?call={{slugify call}}">{{call}}</a>
+              {{!-- {{#unless paid_by_funder ~}}
+              but not yet paid
+              {{/unless ~}} --}}
+              {{#each @root.data.organisationResponses.grants.hits.hits ~}}
+              {{#if (contains _type 'sg-grant-scf') ~}}
+              {{#unless (ifAll (compare _type @root.data.primaryResponse.hits.hits.[0]._type) (compare _source.call_slug @root.data.primaryResponse.hits.hits.[0]._source.call_slug)) ~}}
+              {{#with _source ~}}
+              {{#if paid_by_funder ~}}
+              and
+              &pound;{{addCommas (default amount_awarded amount_requested)}}
+              via <a href="/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients?call={{slugify call}}">{{call}}</a>
+              {{/if ~}}
+              {{/with ~}}
+              {{/unless ~}}
+              {{/if ~}}
+              {{/each ~}}
+            </li>
+            {{/if ~}}
+          </ul>
+        </section>
+      </div>
+    </div>
+    {{/with ~}}
+    {{/each ~}}
+  </div>
+
+  {{> pagination paging=@root.data.supplimentaryResponses.grants.pagination}}
+  {{else}}
+  <p>
+    No recipients could be found, please try a different search.
+  </p>
+  {{/compare ~}}
+</div>
