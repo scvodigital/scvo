@@ -16,6 +16,11 @@
           "match": {
             "Id": "{{@root.data.primaryResponse.hits.hits.[0]._source.Id}}"
           }
+        },
+        {
+          "term": {
+            "team": "tfn"
+          }
         }
       ],
       "filter": [
@@ -34,13 +39,6 @@
         {
           "term": {
             "team": "events"
-          }
-        }
-      ],
-      "must_not": [
-        {
-          "term": {
-            "team": "tfn"
           }
         }
       ]
