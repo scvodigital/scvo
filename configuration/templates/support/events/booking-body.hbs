@@ -11,6 +11,11 @@
 {{!-- {{#if (contains booking_url 'surveygizmo.eu') ~}}
 <script type="text/javascript" >document.write('<script src="{{booking_url}}?sfid={{Id}}&__output=embedjs&__ref=' + escape(document.location.origin + document.location.pathname) + '" type="text/javascript" ></scr' + 'ipt>');</script><style>.sg-survey{display:none; }</style>
 {{else}} --}}
+{{#if (contains booking_url "Charity-Awards")}}
+<div class="scottish-charity-awards">
+  {{> awards_header}}
+</div>
+{{/if}}
 <iframe src="{{booking_url}}?sfid={{Id}}" frameborder="0" width="100%" height="550" style="overflow:hidden"></iframe>
 {{!-- {{/if ~}} --}}
 {{else}}
