@@ -1,0 +1,23 @@
+{
+  "name": "redirect_events-awards-2020",
+  "pattern": "/support/events/a1v3z00000I0f59AAB/scottish-charity-awards-2020",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/support/events/a1v3z00000I0f59AAB/scottish-charity-awards-2020/book"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
