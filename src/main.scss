@@ -351,6 +351,7 @@ body.the-gathering-2020 {
   .full {
     img {
       max-width: 100%;
+      height: auto;
     }
   }
 }
@@ -723,13 +724,17 @@ a:hover {
 .bg-secondary a,
 .bg-secondary a.no-underline,
 .cc-window a,
-.wp-block-image a,
 footer a {
   color: white;
   background: none;
   border: none;
   text-decoration: none;
   font-weight: $body-bold-weight;
+}
+.wp-block-image figcaption {
+  margin-bottom: $unit;
+  font-size: 80%;
+  text-align: center;
 }
 .bg-goodmoves a:hover {
   color: $primary-color;
