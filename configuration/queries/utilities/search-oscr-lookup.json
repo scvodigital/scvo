@@ -1,4 +1,4 @@
-{{#withExtend this q=(default @root.request.params.query.q (default @root.data.eoi_data.[0].Account__r.Scottish_Charity_Number__c @root.request.params.charity_number))}}
+{{#withExtend this q=(default @root.request.params.query.q @root.request.params.charity_number)}}
 {
   "size": 5,
   "_source": [

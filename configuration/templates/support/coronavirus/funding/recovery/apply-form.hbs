@@ -75,6 +75,52 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
             </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_1944-L" class="form-label r-margin preField reqMark" for="tfa_1944">
+                  Organisation type
+                </label>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1944-D">
+                  <select type="text" id="tfa_1944" name="tfa_1944" class="form-select" disabled>
+                    <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</select>
+                  </select>
+                </div>
+              </div>
+            </div>
+            {{else}}
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_2324-L" class="form-label r-margin preField reqMark" for="tfa_2324">
+                  Company Number
+                </label>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2324-D">
+                  <input type="text" id="tfa_2324" name="tfa_2324" value="{{defaults.tfa_2324}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required>
+                </div>
+                <div class="form-group">
+                  <p class="form-input-hint text-secondary">
+                    <a href="/support/coronavirus/funding/scottish-government/recovery-fund/apply">Have a Scottish Charity Number?</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_1944-L" class="form-label r-margin preField reqMark" for="tfa_1944">
+                  Organisation type
+                </label>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1944-D">
+                  <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required>
+                </div>
+              </div>
+            </div>
             {{/if ~}}
 
             <div class="form-group">
@@ -86,33 +132,14 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1876-D">
                   <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+                  {{#if defaults.tfa_1941 ~}}
                   <p class="form-input-hint text-secondary">
                     If any of the information below about your registered office is incorrect please amend it
                   </p>
+                  {{/if}}
                 </div>
               </div>
             </div>
-            {{#if defaults.tfa_1941 ~}}
-            <input type="hidden" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" title="Constitutional Form">
-            {{else}}
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_1944-L" class="form-label r-margin preField reqMark" for="tfa_1944">
-                  Organisation type
-                </label>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1944-D">
-                  <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true">
-                </div>
-                <div class="form-group">
-                  <p class="form-input-hint text-secondary">
-                    <a href="/support/coronavirus/funding/scottish-government/recovery-fund/apply">Have a Scottish Charity Number?</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            {{/if ~}}
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -129,19 +156,6 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1928-D">
-                  <label id="tfa_1928-L" class="form-label r-margin preField reqMark" for="tfa_1928">
-                    Phone number
-                  </label>
-                </div>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_1928" name="tfa_1928" value="{{defaults.tfa_1928}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1930-D">
                   <label id="tfa_1930-L" class="form-label r-margin preField" for="tfa_1930">
                     Website address
@@ -149,35 +163,35 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_1930" name="tfa_1930" value="{{defaults.tfa_1930}}" class="form-input" autocomplete="nope" data-lpignore="true">
+                <input type="url" pattern="https?://.+" id="tfa_1930" name="tfa_1930" value="{{defaults.tfa_1930}}" class="form-input" autocomplete="nope" data-lpignore="true">
+                <p class="form-input-hint text-secondary">
+                  If you enter a web address it must begin with http:// or https://
+                </p>
               </div>
             </div>
 
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
-                  <label id="tfa_1884-L" class="form-label r-margin preField reqMark" for="tfa_1884">
-                    Does your organisation work across Scotland, regionally or within one local authority area? Please select the most appropriate area.
+            <div class="form-group field-container-D t-margin" id="tfa_2325-D">
+              <div class="col-9 col-xl-12">
+                <div class="input-group form-group field-container-D">
+                  <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
+                    Organisation overview<br />
+                    (maximum 250 words)
                   </label>
                 </div>
-              </div>
-              <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <select id="tfa_1884" name="tfa_1884" aria-required="true" class="required form-select" autocomplete="nope" data-lpignore="true" required>
-                  <option value="" disabled selected>
-                    Please select...
-                  </option>
-                  {{#each selection_local_authorities ~}}
-                  {{#if this.id_organisation}}
-                  <option value="{{id_organisation}}" id="{{id_organisation}}">
-                    {{name}}
-                  </option>
-                  {{/if}}
-                  {{/each ~}}
-                </select>
+                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" required></textarea>
               </div>
             </div>
 
-            <h3>Organisation main address</h3>
+            <div class="form-group field-container-D t-margin" id="tfa_2326-D">
+              <div class="col-9 col-xl-12">
+                <div class="input-group form-group field-container-D">
+                  <label id="tfa_2326-L" class="preField r-margin reqMark" for="tfa_2326">
+                    Staff Numbers (F/T, P/T, volunteers)
+                  </label>
+                </div>
+                <textarea id="tfa_2326" name="tfa_2326" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" required></textarea>
+              </div>
+            </div>
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -210,7 +224,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group">
+              <div class="form-group b-margin">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="input-group form-group field-container-D" id="tfa_1923-D">
                     <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">
@@ -223,12 +237,39 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
             </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1884-D">
+                  <label id="tfa_1884-L" class="form-label r-margin preField reqMark" for="tfa_1884">
+                    Local Authority where you delivery the majority of your work
+                  </label>
+                </div>
+              </div>
+              <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <select id="tfa_1884" name="tfa_1884" aria-required="true" class="required form-select" autocomplete="nope" data-lpignore="true" required>
+                  <option value="" disabled{{#unless ../defaults.tfa_1884}} selected{{/unless}}>
+                    Please select...
+                  </option>
+                  {{#each selection_local_authorities ~}}
+                  {{#if this.id_organisation}}
+                  <option value="{{id_organisation}}" id="{{id_organisation}}"{{#compare name ../defaults.tfa_1884}} selected{{/compare}}>
+                    {{name}}
+                  </option>
+                  {{/if}}
+                  {{/each ~}}
+                </select>
+              </div>
+            </div>
+
           </div>
         </div>
 
         <div id="tfa_1880" class="section">
-          <div id="contact-details" {{#unless defaults.tfa_1925}}class="hidden" {{/unless}}>
-            <h3 id="tfa_1880-L" class="t-margin">Primary contact for the application</h3>
+          <div id="contact-details">
+            <h3 id="tfa_1880-L" class="t-margin">Contact information</h3>
+
+            <h4 class="t-margin">First contact</h3>
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -294,6 +335,73 @@ wFORMS.behaviors.prefill.skip = false;
                 <input type="text" id="tfa_1949" name="tfa_1949" value="{{defaults.tfa_1949}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
               </div>
             </div>
+
+            <h4 class="t-margin">Second contact</h3>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2329-D">
+                  <label id="tfa_2329-L" class="form-label r-margin preField" for="tfa_2329">
+                    First name
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_2329" name="tfa_2329" value="{{defaults.tfa_2329}}" class="form-input" autocomplete="nope" data-lpignore="true">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2330-D">
+                  <label id="tfa_2330-L" class="form-label r-margin preField" for="tfa_2330">
+                    Last name
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_2330" name="tfa_2330" value="{{defaults.tfa_2330}}" class="form-input" autocomplete="nope" data-lpignore="true">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2331-D">
+                  <label id="tfa_2331-L" class="form-label r-margin preField" for="tfa_2331">
+                    Job title
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_2331" name="tfa_2331" value="{{defaults.tfa_2331}}" autocomplete="nope" data-lpignore="true" class="form-input">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2332-D">
+                  <label id="tfa_2332-L" class="form-label r-margin preField" for="tfa_2332">
+                    Email address
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="email" id="tfa_2332" name="tfa_2332" value="{{defaults.tfa_2332}}" autocomplete="nope" data-lpignore="true" class="form-input">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2333-D">
+                  <label id="tfa_2333-L" class="form-label r-margin preField" for="tfa_2333">
+                    Contact phone number
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_2333" name="tfa_2333" value="{{defaults.tfa_2333}}" autocomplete="nope" data-lpignore="true" class="form-input">
+              </div>
+            </div>
           </div>
         </div>
 
@@ -308,74 +416,74 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2270-L" class="form-label r-margin preField" for="tfa_2270">
+                <label id="tfa_2270-L" class="form-label r-margin preField reqMark" for="tfa_2270">
                   Account name
                 </label>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2270-D">
-                  <input type="text" id="tfa_2270" name="tfa_2270" value="" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" required>
+                  <input type="text" id="tfa_2270" name="tfa_2270" value="{{defaults.tfa_2270}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2274-L" class="form-label r-margin preField" for="tfa_2274">
+                <label id="tfa_2274-L" class="form-label r-margin preField reqMark" for="tfa_2274">
                   Account number
                 </label>
               </div>
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2274-D">
-                  <input type="text" id="tfa_2274" name="tfa_2274" value="" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" required>
+                  <input type="text" id="tfa_2274" name="tfa_2274" value="{{#if defaults.application}}••••••••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2273-L" class="form-label r-margin preField" for="tfa_2273">
+                <label id="tfa_2273-L" class="form-label r-margin preField reqMark" for="tfa_2273">
                   Sort code
                 </label>
               </div>
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2273-D">
-                  <input type="text" id="tfa_2273" name="tfa_2273" value="" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" required>
+                  <input type="text" id="tfa_2273" name="tfa_2273" value="{{#if defaults.application}}••-••-••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2271-L" class="form-label r-margin preField" for="tfa_2271">
+                <label id="tfa_2271-L" class="form-label r-margin preField reqMark" for="tfa_2271">
                   Bank name
                 </label>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2271-D">
-                  <input type="text" id="tfa_2271" name="tfa_2271" value="" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" required>
+                  <input type="text" id="tfa_2271" name="tfa_2271" value="{{defaults.tfa_2271}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2283-L" class="form-label r-margin preField" for="tfa_2283">
+                <label id="tfa_2283-L" class="form-label r-margin preField reqMark" for="tfa_2283">
                   Bank address
                 </label>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2283-D">
-                  <input type="text" id="tfa_2283" name="tfa_2283" value="" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" required>
+                  <input type="text" id="tfa_2283" name="tfa_2283" value="{{defaults.tfa_2283}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2280-L" class="form-label r-margin preField" for="tfa_2280">
+                <label id="tfa_2280-L" class="form-label r-margin preField reqMark" for="tfa_2280">
                   Bank postcode
                 </label>
               </div>
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2280-D">
-                  <input type="text" id="tfa_2280" name="tfa_2280" value="" autocomplete="nope" data-lpignore="true" aria-required="true" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="required form-input" required>
+                  <input type="text" id="tfa_2280" name="tfa_2280" value="{{defaults.tfa_2280}}" autocomplete="nope" data-lpignore="true" aria-required="true" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
@@ -405,8 +513,20 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="form-group t-margin-full">
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <label id="tfa_2189-L" class="form-label r-margin preField" for="tfa_2189">
+                  Your latest bank statement
+                </label>
+              </div>
+              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2189-D">
+                  <input type="file" id="tfa_2189" name="tfa_2189" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                </div>
+              </div>
+            </div>
+            <div class="form-group t-margin-full">
+              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <label id="tfa_2187-L" class="form-label r-margin preField" for="tfa_2187">
-                  Your latest audited accounts
+                  Your latest annual accounts
                 </label>
               </div>
               <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -417,13 +537,13 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="form-group t-margin-full">
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <label id="tfa_2189-L" class="form-label r-margin preField" for="tfa_2189">
-                  Your latest bank statement
+                <label id="tfa_2390-L" class="form-label r-margin preField" for="tfa_2390">
+                  Your latest management accounts
                 </label>
               </div>
               <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_2189-D">
-                  <input type="file" id="tfa_2189" name="tfa_2189" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                <div class="input-group form-group field-container-D" id="tfa_2390-D">
+                  <input type="file" id="tfa_2390" name="tfa_2390" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" required>
                 </div>
               </div>
             </div>
@@ -436,7 +556,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="form-group field-container-D t-margin-full" id="tfa_2307-D">
+            {{!-- <div class="form-group field-container-D t-margin-full" id="tfa_2307-D">
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2307-L" class="preField reqMark r-margin" for="tfa_2307">
@@ -463,7 +583,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-9 col-xl-12">
                 <textarea id="tfa_2312" name="tfa_2312" rows="4" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="200" class="form-input count-words"></textarea>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
 
@@ -471,7 +591,7 @@ wFORMS.behaviors.prefill.skip = false;
           <div id="costs-details">
             <div class="col-9 col-xl-12">
               <h3>About your proposed activity</h3>
-              <p>
+              {{!-- <p>
                 Applications should be focused on:
               </p>
               <ul>
@@ -481,10 +601,10 @@ wFORMS.behaviors.prefill.skip = false;
               </ul>
               <p>
                 Your application will be assessed against these criteria. Your activity can cover multiple target groups and themes, as well those not included in the drop-down menus, as long as need is clearly described.
-              </p>
+              </p> --}}
             </div>
 
-            <div class="form-group field-container-D t-margin b-margin-full" id="tfa_1959-D">
+            {{!-- <div class="form-group field-container-D t-margin b-margin-full" id="tfa_1959-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_1959-L" class="preField reqMark r-margin" for="tfa_1959">
@@ -504,9 +624,9 @@ wFORMS.behaviors.prefill.skip = false;
                   {{/each ~}}
                 </select>
               </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group field-container-D b-margin-full" id="tfa_2015-D">
+            {{!-- <div class="form-group field-container-D b-margin-full" id="tfa_2015-D">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2015-L" class="preField reqMark r-margin" for="tfa_2015">
@@ -524,9 +644,9 @@ wFORMS.behaviors.prefill.skip = false;
                   {{/each ~}}
                 </select>
               </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group field-container-D t-margin" id="tfa_2301-D">
+            {{!-- <div class="form-group field-container-D t-margin" id="tfa_2301-D">
               <div class="col-9 col-xl-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2301-L" class="preField r-margin" for="tfa_2301">
@@ -541,9 +661,9 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <textarea id="tfa_2301" name="tfa_2301" rows="7" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="500" class="form-input required count-words" required></textarea>
               </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group field-container-D" id="tfa_2299-D">
+            {{!-- <div class="form-group field-container-D" id="tfa_2299-D">
               <div class="col-9 col-xl-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2299-L" class="preField r-margin" for="tfa_2299">
@@ -558,9 +678,9 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <textarea id="tfa_2299" name="tfa_2299" rows="7" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="500" class="form-input required count-words" required></textarea>
               </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group">
+            {{!-- <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_2321-L" class="form-label r-margin preField reqMark" for="tfa_2321">
                   How many individuals at risk do you anticipate will be supported by your proposed activity?
@@ -569,9 +689,9 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12" id="tfa_2321-D">
                 <input type="number" id="tfa_2321" name="tfa_2321" value="" autocomplete="nope" data-lpignore="true" min="1" title="How many individuals at risk do you anticipate will be supported by your proposed activity?" class="validate-integer form-input required" required>
               </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group">
+            {{!-- <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_2322-L" class="form-label r-margin preField reqMark" for="tfa_2322">
                   Please indicate the proposed start date for the activity you are seeking funding for (this date must be no earlier than March 16th 2020)
@@ -580,9 +700,9 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12" id="tfa_2322-D">
                 <input type="date" id="tfa_2322" name="tfa_2322" value="" autocomplete="nope" data-lpignore="true" aria-required="true" min="2020-03-16" max="2020-07-31" title="Please indicate the proposed start date for the activity you are seeking funding for" class="validate-datecal form-input required" required>
               </div>
-            </div>
+            </div> --}}
 
-            <div class="form-group">
+            {{!-- <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_2323-L" class="form-label r-margin preField reqMark" for="tfa_2323">
                   Please indicate the proposed end date for the activity you are seeking funding for (this date must be no later than July 31st 2020)
@@ -591,10 +711,9 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12" id="tfa_2323-D">
                 <input type="date" id="tfa_2323" name="tfa_2323" value="" autocomplete="nope" data-lpignore="true" aria-required="true" min="2020-03-16" max="2020-07-31" title="Please indicate the proposed end date for the activity you are seeking funding for" class="validate-datecal form-input required" required>
               </div>
-            </div>
+            </div> --}}
 
-
-            <div class="form-group field-container-D" id="tfa_2302-D">
+            {{!-- <div class="form-group field-container-D" id="tfa_2302-D">
               <div class="col-9 col-xl-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2302-L" class="preField r-margin" for="tfa_2302">
@@ -609,9 +728,9 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <textarea id="tfa_2302" name="tfa_2302" rows="4" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="200" class="form-input count-words"></textarea>
               </div>
-            </div>
+            </div> --}}
 
-            <div id="tfa_1882" class="section">
+            {{!-- <div id="tfa_1882" class="section">
               <div id="interest-details">
                 <div class="col-9 col-xl-12">
                   <h3 id="tfa_1882-L">Where will you deliver the activity</h3>
@@ -697,7 +816,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
               </div>
-            </div>
+            </div> --}}
 
             <div class="section">
               <div id="funding-details">
@@ -856,6 +975,34 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
 
+        <div id="confirmation">
+          <div class="col-9 col-xl-12">
+            <h3>Confirmation</h3>
+            <p>
+              Please confirm that:
+            </p>
+          </div>
+
+          <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
+            <div class="col-9 col-xl-12">
+              <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
+                <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L" required>
+                <i class="form-icon"></i>
+                ...your proposed activities align with current Government guidelines and phases
+              </label>
+            </div>
+          </div>
+          <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
+            <div class="col-9 col-xl-12">
+              <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
+                <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L" required>
+                <i class="form-icon"></i>
+                ...your organisation has the capacity to engage with the support and develop a recovery plan
+              </label>
+            </div>
+          </div>
+        </div>
+
         <div class="actions columns" id="4844638-A">
           <div class="col-9 col-xl-12 align-centre v-margin-full">
             <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg h-margin b-margin-full" id="submit_button" value="Submit">
@@ -863,7 +1010,6 @@ wFORMS.behaviors.prefill.skip = false;
         </div>
 
         <div style="clear:both;"></div>
-        <input type="hidden" id="tfa_2295" name="tfa_2295" value="{{defaults.tfa_2295}}" title="Expression of interest session key">
         <input type="hidden" id="tfa_1946" name="tfa_1946" value="{{defaults.tfa_1946}}" title="Charity Status">
         <input type="hidden" id="tfa_1936" name="tfa_1936" value="{{defaults.tfa_1936}}" title="Constituency">
         <input type="hidden" id="tfa_1934" name="tfa_1934" value="{{defaults.tfa_1934}}" title="Ward">
@@ -981,6 +1127,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {{/each ~}}
   });
 
+  {{#unless defaults.application}}
   var cleave_sort_code = new Cleave('#tfa_2273', {
     delimiter: '-',
     blocks: [2,2,2],
@@ -991,6 +1138,7 @@ document.addEventListener("DOMContentLoaded", function() {
     blocks: [8],
     numericOnly: true
   });
+  {{/unless}}
 
   $("#4844638").submit(function(e){
     e.preventDefault();

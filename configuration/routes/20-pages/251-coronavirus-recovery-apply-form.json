@@ -14,8 +14,8 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "sg-grant-wellbeing",
-          "template": ">context.metaData.handlebars.queries.grants_wellbeing-awarded"
+          "type": "sg-grant-recovery",
+          "template": ">context.metaData.handlebars.queries.grants_recovery-awarded"
         }
       },
       "renderer": "handlebars"
@@ -111,7 +111,7 @@
             "name": "postcode_data",
             "index": "geo_lookup",
             "type": "postcode",
-            "template": ">context.metaData.handlebars.queries.pages_wellbeing-fund-postcode"
+            "template": ">context.metaData.handlebars.queries.pages_oscr-postcode"
           }
         ]
       },

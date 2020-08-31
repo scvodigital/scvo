@@ -231,24 +231,6 @@
       "id": "tfa_2047"
     }
   ],
-  "where_services": [
-    {
-      "name": "Across Scotland",
-      "id": "tfa_2019"
-    },
-    {
-      "name": "Across several local authority areas",
-      "id": "tfa_2020"
-    },
-    {
-      "name": "Across one local authority area",
-      "id": "tfa_2021"
-    },
-    {
-      "name": "Within a specific community (e.g. town, village or neighbourhood)",
-      "id": "tfa_2022"
-    }
-  ],
   "main_issues": [
     {
       "name": "Food",
@@ -340,52 +322,45 @@
     }
   ],
   "defaults": {
-    {{#ifAll @root.request.params.query.session (ifAny (compare @root.request.params.charity_number @root.data.eoi_data.[0].Account__r.Scottish_Charity_Number__c) (compare @root.request.params.charity_number "not-a-charity") (compare @root.request.params.query.ex "eoi")) ~}}
-    "tfa_1876": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Name @root.data.oscr_data.hits.hits.[0]._source.charity_name) "")}}},
-    "tfa_1941": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Scottish_Charity_Number__c @root.data.oscr_data.hits.hits.[0]._source.charity_number) "")}}},
-    "tfa_1944": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Constitutional_form__c @root.data.oscr_data.hits.hits.[0]._source.constitutional_form) "")}}},
-    "tfa_1946": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Charity_status__c @root.data.oscr_data.hits.hits.[0]._source.charity_status) "")}}},
-    "tfa_1930": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Website @root.data.oscr_data.hits.hits.[0]._source.website) "")}}},
-    "tfa_1957": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.NHS_Health_Board__c @root.data.oscr_data.hits.hits.[0]._source.geo.nhs_ha) "")}}},
-    "tfa_1928": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Phone @root.data.milo_data.hits.hits.[0]._source.phone) "")}}},
-    "tfa_1922": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.BillingAddress.street @root.data.milo_data.hits.hits.[0]._source.location_street) "")}}},
-    "tfa_1923": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.BillingAddress.city (default @root.data.milo_data.hits.hits.[0]._source.location_city @root.data.milo_data.hits.hits.[0]._source.location_region)) "")}}},
-    "tfa_1925": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.BillingAddress.postalCode @root.data.postcode_data.[0].place) "")}}},
-    "tfa_1936": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Constituency__c @root.data.postcode_data.[0].constituency) "")}}},
-    "tfa_1934": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.Ward__c @root.data.postcode_data.[0].ward) "")}}},
-    "tfa_1953": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.SIMD_datazone__c @root.data.postcode_data.[0].simd_datazone) "")}}},
-    "tfa_1955": {{{json value=(default (default @root.data.eoi_data.[0].Account__r.SIMD_rank__c @root.data.postcode_data.[0].simd_rank) "")}}},
-    "tfa_1939": {{{json value=(default @root.data.eoi_data.[0].Account__r.Organisation_Email__c "")}}},
-    "tfa_1": {{{json value=(default @root.data.eoi_data.[0].Contact__r.FirstName "")}}},
-    "tfa_1875": {{{json value=(default @root.data.eoi_data.[0].Contact__r.LastName "")}}},
-    "tfa_1958": {{{json value=(default @root.data.eoi_data.[0].Contact__r.Title "")}}},
-    "tfa_1932": {{{json value=(default @root.data.eoi_data.[0].Contact__r.Email "")}}},
-    "tfa_1949": {{{json value=(default @root.data.eoi_data.[0].Contact__r.npe01__WorkPhone__c "")}}},
-    "tfa_2015": {{{json value=(default @root.data.eoi_data.[0].Is_there_a_specific_target_group__c "")}}},
-    "tfa_2050": {{{json value=(default @root.data.eoi_data.[0].Is_there_a_specific_target_group_Other__c "")}}},
-    "tfa_2007": {{{json value=(default @root.data.eoi_data.[0].Where_do_you_provide_services__c "")}}},
-    "tfa_2051": {{{json value=(default @root.data.eoi_data.[0].Where_do_you_provide_services_LA__c "")}}},
-    "tfa_2117": {{{json value=(default @root.data.eoi_data.[0].Areas_covered__c "")}}},
-    "tfa_1959": {{{json value=(default @root.data.eoi_data.[0].What_is_the_main_issue__c "")}}},
-    "tfa_2048": {{{json value=(default @root.data.eoi_data.[0].What_is_the_main_issue_other__c "")}}},
-    "tfa_2011": {{{json value=(default @root.data.eoi_data.[0].What_is_the_main_type_of_activity__c "")}}},
-    "tfa_2049": {{{json value=(default @root.data.eoi_data.[0].What_is_the_main_type_of_activity_other__c "")}}},
-    {{else}}
-    "tfa_1876": {{{json value=(default @root.data.oscr_data.hits.hits.[0]._source.charity_name "")}}},
-    "tfa_1941": {{{json value=(default @root.data.oscr_data.hits.hits.[0]._source.charity_number "")}}},
-    "tfa_1944": {{{json value=(default @root.data.oscr_data.hits.hits.[0]._source.constitutional_form "")}}},
-    "tfa_1946": {{{json value=(default @root.data.oscr_data.hits.hits.[0]._source.charity_status "")}}},
-    "tfa_1930": {{{json value=(default @root.data.oscr_data.hits.hits.[0]._source.website "")}}},
-    "tfa_1957": {{{json value=(default @root.data.oscr_data.hits.hits.[0]._source.geo.nhs_ha "")}}},
-    "tfa_1928": {{{json value=(default @root.data.milo_data.hits.hits.[0]._source.phone "")}}},
-    "tfa_1922": {{{json value=(default @root.data.milo_data.hits.hits.[0]._source.location_street "")}}},
-    "tfa_1923": {{{json value=(default (default @root.data.milo_data.hits.hits.[0]._source.location_city @root.data.milo_data.hits.hits.[0]._source.location_region) "")}}},
-    "tfa_1925": {{{json value=(default @root.data.postcode_data.[0].place "")}}},
-    "tfa_1936": {{{json value=(default @root.data.postcode_data.[0].constituency "")}}},
-    "tfa_1934": {{{json value=(default @root.data.postcode_data.[0].ward "")}}},
-    "tfa_1953": {{{json value=(default @root.data.postcode_data.[0].simd_datazone "")}}},
-    "tfa_1955": {{{json value=(default @root.data.postcode_data.[0].simd_rank "")}}},
-    {{/ifAll ~}}
-    "tfa_2295": {{{json value=(default @root.request.params.query.session "")}}}
+    {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant.records.[0] ~}}
+    {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant.records.[0] oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
+    "application": {{{json value=(default application.Id "")}}},
+    "tfa_1876": {{{json value=(default (default application.Account__r.Name oscr.charity_name) "")}}},
+    "tfa_1941": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}},
+    "tfa_2324": "",
+    "tfa_1944": {{{json value=(default (default application.Account__r.Constitutional_form__c oscr.constitutional_form) "")}}},
+    "tfa_1946": {{{json value=(default (default application.Account__r.Charity_status__c oscr.charity_status) "")}}},
+    "tfa_1930": {{{json value=(default (default application.Account__r.Website oscr.website) "")}}},
+    "tfa_1957": {{{json value=(default (default application.Account__r.NHS_Health_Board__c oscr.geo.nhs_ha) "")}}},
+    "tfa_1928": {{{json value=(default (default application.Account__r.Phone milo.phone) "")}}},
+    "tfa_1922": {{{json value=(default (default application.Account__r.BillingAddress.street milo.location_street) "")}}},
+    "tfa_1923": {{{json value=(default (default application.Account__r.BillingAddress.city (default milo.location_city milo.location_region)) "")}}},
+    "tfa_1884": {{{json value=(default (default postcode.local_authority milo.location_region) "")}}},
+    "tfa_1925": {{{json value=(default (default application.Account__r.BillingAddress.postalCode (default oscr.postcode postcode.place)) "")}}},
+    "tfa_1936": {{{json value=(default (default application.Account__r.Constituency__c postcode.constituency) "")}}},
+    "tfa_1934": {{{json value=(default (default application.Account__r.Ward__c postcode.ward) "")}}},
+    "tfa_1953": {{{json value=(default (default application.Account__r.SIMD_datazone__c postcode.simd_datazone) "")}}},
+    "tfa_1955": {{{json value=(default (default application.Account__r.SIMD_rank__c postcode.simd_rank) "")}}},
+    "tfa_1939": {{{json value=(default application.Account__r.Organisation_Email__c "")}}},
+    "tfa_1": {{{json value=(default application.Contact__r.FirstName "")}}},
+    "tfa_1875": {{{json value=(default application.Contact__r.LastName "")}}},
+    "tfa_1958": {{{json value=(default application.Contact__r.Title "")}}},
+    "tfa_1932": {{{json value=(default application.Contact__r.Email "")}}},
+    "tfa_1949": {{{json value=(default application.Contact__r.npe01__WorkPhone__c "")}}},
+    "tfa_2270": {{{json value=(default application.Name_on_bank_account__c "")}}},
+    "tfa_2271": {{{json value=(default application.Name_of_Bank__c "")}}},
+    "tfa_2283": {{{json value=(default application.Bank_Address__c "")}}},
+    "tfa_2280": {{{json value=(default application.Bank_Postcode__c "")}}},
+    "tfa_2015": {{{json value=(default application.Is_there_a_specific_target_group__c "")}}},
+    "tfa_2050": {{{json value=(default application.Is_there_a_specific_target_group_Other__c "")}}},
+    "tfa_2007": {{{json value=(default application.Where_do_you_provide_services__c "")}}},
+    "tfa_2051": {{{json value=(default application.Where_do_you_provide_services_LA__c "")}}},
+    "tfa_2117": {{{json value=(default application.Areas_covered__c "")}}},
+    "tfa_1959": {{{json value=(default application.What_is_the_main_issue__c "")}}},
+    "tfa_2048": {{{json value=(default application.What_is_the_main_issue_other__c "")}}},
+    "tfa_2011": {{{json value=(default application.What_is_the_main_type_of_activity__c "")}}},
+    "tfa_2049": {{{json value=(default application.What_is_the_main_type_of_activity_other__c "")}}}
+    {{/withExtend}}
+    {{/ifAny}}
   }
 }
