@@ -195,7 +195,7 @@ wFORMS.behaviors.prefill.skip = false;
                     (maximum 250 words)
                   </label>
                 </div>
-                <textarea id="tfa_2326" name="tfa_2326" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words"></textarea>
+                <textarea id="tfa_2326" name="tfa_2326" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" {{#if defaults.application_editing}}{{else}}required{{/if}}></textarea>
               </div>
             </div>
 
@@ -1007,7 +1007,7 @@ wFORMS.behaviors.prefill.skip = false;
           <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
             <div class="col-9 col-xl-12">
               <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
-                <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L" required>
+                <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
                 <i class="form-icon"></i>
                 ...your proposed activities align with current Government guidelines and phases
               </label>
@@ -1016,7 +1016,7 @@ wFORMS.behaviors.prefill.skip = false;
           <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
             <div class="col-9 col-xl-12">
               <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
-                <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L" required>
+                <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
                 <i class="form-icon"></i>
                 ...your organisation has the capacity to engage with the support and develop a recovery plan
               </label>

@@ -331,7 +331,7 @@
     "tfa_2324": "",
     "tfa_1944": {{{json value=(default (default application.Account__r.Constitutional_form__c oscr.constitutional_form) "")}}},
     "tfa_1946": {{{json value=(default (default application.Account__r.Charity_status__c oscr.charity_status) "")}}},
-    "tfa_1930": {{{json value=(default (default application.Account__r.Website oscr.website) "")}}},
+    "tfa_1930": {{{json value=(default (default application.Account__r.Website (if (contains 'http' oscr.website) oscr.website)) "")}}},
     "tfa_1957": {{{json value=(default (default application.Account__r.NHS_Health_Board__c oscr.geo.nhs_ha) "")}}},
     "tfa_1928": {{{json value=(default (default application.Account__r.Phone milo.phone) "")}}},
     "tfa_1922": {{{json value=(default (default application.Account__r.BillingAddress.street milo.location_street) "")}}},
