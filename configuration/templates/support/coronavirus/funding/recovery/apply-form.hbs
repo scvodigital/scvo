@@ -199,6 +199,8 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
+            <h4>Organisation address</h4>
+
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1925-D">
@@ -248,7 +250,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1884-D">
                   <label id="tfa_1884-L" class="form-label r-margin preField reqMark" for="tfa_1884">
-                    Local Authority where you delivery the majority of your work
+                    Local Authority
                   </label>
                 </div>
               </div>
@@ -268,6 +270,107 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
+          </div>
+        </div>
+
+        <div id="tfa_1882" class="section">
+          <div id="interest-details">
+            <div class="col-9 col-xl-12">
+              <h3 id="tfa_1882-L">Service delivery</h3>
+            </div>
+
+            <div class="form-group field-container-D b-margin-full" id="tfa_2398-D" role="radiogroup" aria-labelledby="tfa_2398-L" data-tfa-labelledby="-L tfa_2398-L">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D">
+                  <label id="tfa_2398-L" class="preField reqMark r-margin">
+                    Where does your ogranisation deliver the majority of your work?
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <span id="tfa_2398" class="choices vertical required">
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2399-L" for="tfa_2399">
+                      <input type="radio" value="tfa_2399" id="tfa_2399" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2399-L" data-tfa-labelledby="tfa_2398-L tfa_2399-L"{{#compare defaults.tfa_2398 "A local community or small number of local communities"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      A local community or small number of local communities
+                    </label>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2400-L" for="tfa_2400">
+                      <input type="radio" value="tfa_2400" id="tfa_2400" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2400-L" data-tfa-labelledby="tfa_2398-L tfa_2400-L" data-conditionals="#tfa_2051"{{#compare defaults.tfa_2398 "Across one local authority area"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      Across one Local Authority area
+                    </label>
+                  </div>
+                  <div class="form-group field-container-D no-margin" id="tfa_2051-D">
+                    <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2400`" class="form-select b-margin-full">
+                      <option value="" disabled {{#unless defaults.tfa_2051}}selected{{/unless}}>
+                        Please select...
+                      </option>
+                      {{#each selection_local_authorities ~}}
+                      {{#if id_single ~}}
+                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare ../defaults.tfa_2051 name) (compare defaults.tfa_2398 "!==" "Across one local authority area")}} selected{{/ifAll}}>
+                        {{name}}
+                      </option>
+                      {{/if ~}}
+                      {{/each ~}}
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2401-L" for="tfa_2401">
+                      <input type="radio" value="tfa_2401" id="tfa_2401" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2401-L" data-tfa-labelledby="tfa_2398-L tfa_2401-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2398 "Across several local authority areas"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      Across several local authority areas
+                    </label>
+                  </div>
+                  <div class="label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="-L tfa_2084-L">
+                    <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2401`">
+                      {{#each selection_local_authorities ~}}
+                      {{#if id_multiple ~}}
+                      <span class="form-group column col-6 col-md-12">
+                        <label class="form-checkbox" id="{{id_multiple}}-L" for="{{id_multiple}}">
+                          <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (split ../defaults.tfa_2084 ";") name)}} checked{{/if}}>
+                          <i class="form-icon"></i> {{name}}
+                        </label>
+                      </span>
+                      {{/if ~}}
+                      {{/each ~}}
+                    </span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2402-L" for="tfa_2402">
+                      <input type="radio" value="tfa_2402" id="tfa_2402" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2402-L" data-tfa-labelledby="tfa_2398-L tfa_2402-L" {{#compare defaults.tfa_2398 "Nationally (Scotland)"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      Nationally (Scotland)
+                    </label>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2403-L" for="tfa_2403">
+                      <input type="radio" value="tfa_2403" id="tfa_2403" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2403-L" data-tfa-labelledby="tfa_2398-L tfa_2403-L" {{#compare defaults.tfa_2398 "UK-wide"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      UK-wide
+                    </label>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-radio" id="tfa_2404-L" for="tfa_2404">
+                      <input type="radio" value="tfa_2404" id="tfa_2404" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2404-L" data-tfa-labelledby="tfa_2398-L tfa_2404-L" data-conditionals="#tfa_2117"{{#compare defaults.tfa_2398 "Internationally (outwith Scotland)"}} checked{{/compare}} required>
+                      <i class="form-icon"></i>
+                      Internationally (outwith Scotland)
+                    </label>
+                  </div>
+
+                  {{!-- <div class="form-group field-container-D" id="tfa_2117-D">
+                    <input type="text" id="tfa_2117" name="tfa_2117" value="{{defaults.tfa_2117}}" data-condition="`#tfa_2022`" placeholder="Please tell us your neighbourhood here" class="form-input" autocomplete="nope" data-lpignore="true" style="width: 100%;">
+                  </div> --}}
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -736,94 +839,6 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div> --}}
 
-            {{!-- <div id="tfa_1882" class="section">
-              <div id="interest-details">
-                <div class="col-9 col-xl-12">
-                  <h3 id="tfa_1882-L">Where will you deliver the activity</h3>
-                  <p>
-                    Please tell us where you will be delivering the activity that you are applying for funding for.
-                  </p>
-                </div>
-
-                <div class="form-group field-container-D b-margin-full" id="tfa_2007-D" role="radiogroup" aria-labelledby="tfa_2007-L" data-tfa-labelledby="-L tfa_2007-L">
-                  <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                    <div class="input-group form-group field-container-D">
-                      <label id="tfa_2007-L" class="preField reqMark">
-                        Where do you provide services?
-                      </label>
-                    </div>
-                  </div>
-                  <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                    <span id="tfa_2007" class="choices vertical required">
-                      <div class="form-group">
-                        <label class="form-radio" id="tfa_2019-L" for="tfa_2019">
-                          <input type="radio" value="tfa_2019" id="tfa_2019" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2019-L" data-tfa-labelledby="tfa_2007-L tfa_2019-L"{{#compare defaults.tfa_2007 "Across Scotland"}} checked{{/compare}} required>
-                          <i class="form-icon"></i>
-                          Across Scotland
-                        </label>
-                      </div>
-                      <div class="form-group">
-                        <label class="form-radio" id="tfa_2020-L" for="tfa_2020">
-                          <input type="radio" value="tfa_2020" id="tfa_2020" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2020-L" data-tfa-labelledby="tfa_2007-L tfa_2020-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2007 "Across several local authority areas"}} checked{{/compare}} required>
-                          <i class="form-icon"></i>
-                          Across several local authority areas
-                        </label>
-                      </div>
-                      <div class="label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="-L tfa_2084-L">
-                        <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2020`">
-                          {{#each selection_local_authorities ~}}
-                          {{#if id_multiple ~}}
-                          <span class="form-group column col-6 col-md-12">
-                            <label class="form-checkbox" id="{{id_multiple}}-L" for="{{id_multiple}}">
-                              <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (split ../defaults.tfa_2051 ";") name)}} checked{{/if}}>
-                              <i class="form-icon"></i> {{name}}
-                            </label>
-                          </span>
-                          {{/if ~}}
-                          {{/each ~}}
-                        </span>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="form-radio" id="tfa_2021-L" for="tfa_2021">
-                          <input type="radio" value="tfa_2021" id="tfa_2021" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2021-L" data-tfa-labelledby="tfa_2007-L tfa_2021-L" data-conditionals="#tfa_2051"{{#compare defaults.tfa_2007 "Across one local authority area"}} checked{{/compare}} required>
-                          <i class="form-icon"></i>
-                          Across one local authority area
-                        </label>
-                      </div>
-
-                      <div class="form-group field-container-D no-margin" id="tfa_2051-D">
-                        <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2021`" class="form-select b-margin-full">
-                          <option value="" disabled {{#unless defaults.tfa_2051}}selected{{/unless}}>
-                            Please select...
-                          </option>
-                          {{#each selection_local_authorities ~}}
-                          {{#if id_single ~}}
-                          <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare ../defaults.tfa_2051 name) (compare defaults.tfa_2007 "!==" "Across one local authority area")}} selected{{/ifAll}}>
-                            {{name}}
-                          </option>
-                          {{/if ~}}
-                          {{/each ~}}
-                        </select>
-                      </div>
-
-                      <div class="form-group">
-                        <label class="form-radio" id="tfa_2022-L" for="tfa_2022">
-                          <input type="radio" value="tfa_2022" id="tfa_2022" name="tfa_2007" aria-required="true" aria-labelledby="tfa_2022-L" data-tfa-labelledby="tfa_2007-L tfa_2022-L" data-conditionals="#tfa_2117"{{#compare defaults.tfa_2007 "Within a specific community (e.g. town, village or neighbourhood)"}} checked{{/compare}} required>
-                          <i class="form-icon"></i>
-                          Within a specific community (e.g. town, village or neighbourhood)
-                        </label>
-                      </div>
-
-                      <div class="form-group field-container-D" id="tfa_2117-D">
-                        <input type="text" id="tfa_2117" name="tfa_2117" value="{{defaults.tfa_2117}}" data-condition="`#tfa_2022`" placeholder="Please tell us your neighbourhood here" class="form-input" autocomplete="nope" data-lpignore="true" style="width: 100%;">
-                      </div>
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
-
             <div class="section">
               <div id="funding-details">
 
@@ -1040,20 +1055,20 @@ document.addEventListener("DOMContentLoaded", function() {
       $postcodeIcon = $('#postcode_validation_icon'),
       $postcodeWrapper = $('#postcode-wrapper'),
       $postcodeValidationMessage = $('#postcode_validation_message'),
-      $locations = $('input[name=tfa_2007]'),
-      $acrossScotlandRadio = $('#tfa_2019'),
-      $acrossSeveralAuthoritiesRadio = $('#tfa_2020'),
-      $acrossSeveralAuthoritiesCheckboxes = $('#tfa_2084').find('input'),
-      $acrossOneAuthorityRadio = $('#tfa_2021'),
-      $acrossOneAuthoritySelect = $('#tfa_2051'),
-      $withinSpecificCommunityRadio = $('#tfa_2022'),
-      $withinSpecificCommunityText = $('#tfa_2117'),
-      $mainIssueSelect = $('#tfa_1959'),
-      $mainIssueOtherTextarea = $('#tfa_2048'),
-      $mainTypeOfActivitySelect = $('#tfa_2011'),
-      $mainTypeOfActivityOtherTextarea = $('#tfa_2049'),
-      $specificTargetGroupSelect = $('#tfa_2015'),
-      $specificTargetGroupOtherTextarea = $('#tfa_2050');
+      // $locations = $('input[name=tfa_2007]'),
+      // $acrossScotlandRadio = $('#tfa_2019'),
+      // $acrossSeveralAuthoritiesRadio = $('#tfa_2020'),
+      // $acrossSeveralAuthoritiesCheckboxes = $('#tfa_2084').find('input'),
+      // $acrossOneAuthorityRadio = $('#tfa_2400'),
+      // $acrossOneAuthoritySelect = $('#tfa_2051'),
+      // $withinSpecificCommunityRadio = $('#tfa_2022'),
+      // $withinSpecificCommunityText = $('#tfa_2117'),
+      // $mainIssueSelect = $('#tfa_1959'),
+      // $mainIssueOtherTextarea = $('#tfa_2048'),
+      // $mainTypeOfActivitySelect = $('#tfa_2011'),
+      // $mainTypeOfActivityOtherTextarea = $('#tfa_2049'),
+      // $specificTargetGroupSelect = $('#tfa_2015'),
+      // $specificTargetGroupOtherTextarea = $('#tfa_2050');
 
   function checkPostcode() {
     var postcode = $('#tfa_1925').val().toUpperCase();
