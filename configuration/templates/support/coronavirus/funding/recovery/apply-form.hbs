@@ -59,7 +59,7 @@ wFORMS.behaviors.prefill.skip = false;
           <h3 id="tfa_1883-L">Organisation details</h3>
 
           <div id="organisation-details">
-            {{#if defaults.tfa_1941 ~}}
+            {{#if defaults.is_charity ~}}
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_1941-L" class="form-label r-margin preField reqMark" for="tfa_1941">
@@ -118,6 +118,9 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1944-D">
                   <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required>
+                  {{!-- <select type="text" id="tfa_1944" name="tfa_1944" class="form-select">
+                    <option value="options" selected>Options</select>
+                  </select> --}}
                 </div>
               </div>
             </div>
@@ -131,12 +134,14 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1876-D">
-                  <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
-                  {{#if defaults.tfa_1941 ~}}
+                  <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true"  {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
+                  {{#unless defaults.application_editing}}
+                  {{#if defaults.is_charity}}
                   <p class="form-input-hint text-secondary">
                     If any of the information below about your registered office is incorrect please amend it
                   </p>
                   {{/if}}
+                  {{/unless}}
                 </div>
               </div>
             </div>
@@ -150,7 +155,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="email" id="tfa_1939" name="tfa_1939" value="{{defaults.tfa_1939}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+                <input type="email" id="tfa_1939" name="tfa_1939" value="{{defaults.tfa_1939}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true"  {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
               </div>
             </div>
 
@@ -178,7 +183,7 @@ wFORMS.behaviors.prefill.skip = false;
                     (maximum 250 words)
                   </label>
                 </div>
-                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" required></textarea>
+                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}></textarea>
               </div>
             </div>
 
@@ -186,10 +191,11 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-9 col-xl-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2326-L" class="preField r-margin reqMark" for="tfa_2326">
-                    Staff Numbers (F/T, P/T, volunteers)
+                    Please tell us how the people and communities you seek to serve are involved or are able to influence how you deliver your services or support<br />
+                    (maximum 250 words)
                   </label>
                 </div>
-                <textarea id="tfa_2326" name="tfa_2326" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" required></textarea>
+                <textarea id="tfa_2326" name="tfa_2326" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words"></textarea>
               </div>
             </div>
 
@@ -280,7 +286,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_1" name="tfa_1" value="{{defaults.tfa_1}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+                <input type="text" id="tfa_1" name="tfa_1" value="{{defaults.tfa_1}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
               </div>
             </div>
 
@@ -293,7 +299,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_1875" name="tfa_1875" value="{{defaults.tfa_1875}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" required>
+                <input type="text" id="tfa_1875" name="tfa_1875" value="{{defaults.tfa_1875}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
               </div>
             </div>
 
@@ -306,7 +312,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_1958" name="tfa_1958" value="{{defaults.tfa_1958}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                <input type="text" id="tfa_1958" name="tfa_1958" value="{{defaults.tfa_1958}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
               </div>
             </div>
 
@@ -319,7 +325,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="email" id="tfa_1932" name="tfa_1932" value="{{defaults.tfa_1932}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                <input type="email" id="tfa_1932" name="tfa_1932" value="{{defaults.tfa_1932}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
               </div>
             </div>
 
@@ -332,7 +338,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_1949" name="tfa_1949" value="{{defaults.tfa_1949}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                <input type="text" id="tfa_1949" name="tfa_1949" value="{{defaults.tfa_1949}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
               </div>
             </div>
 
@@ -347,7 +353,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2329" name="tfa_2329" value="{{defaults.tfa_2329}}" class="form-input" autocomplete="nope" data-lpignore="true">
+                <input type="text" id="tfa_2329" name="tfa_2329" value="{{defaults.tfa_2329}}" class="form-input" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{/if}}>
               </div>
             </div>
 
@@ -360,7 +366,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2330" name="tfa_2330" value="{{defaults.tfa_2330}}" class="form-input" autocomplete="nope" data-lpignore="true">
+                <input type="text" id="tfa_2330" name="tfa_2330" value="{{defaults.tfa_2330}}" class="form-input" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{/if}}>
               </div>
             </div>
 
@@ -373,7 +379,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2331" name="tfa_2331" value="{{defaults.tfa_2331}}" autocomplete="nope" data-lpignore="true" class="form-input">
+                <input type="text" id="tfa_2331" name="tfa_2331" value="{{defaults.tfa_2331}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_editing}}disabled{{/if}}>
               </div>
             </div>
 
@@ -386,7 +392,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="email" id="tfa_2332" name="tfa_2332" value="{{defaults.tfa_2332}}" autocomplete="nope" data-lpignore="true" class="form-input">
+                <input type="email" id="tfa_2332" name="tfa_2332" value="{{defaults.tfa_2332}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_editing}}disabled{{/if}}>
               </div>
             </div>
 
@@ -399,7 +405,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2333" name="tfa_2333" value="{{defaults.tfa_2333}}" autocomplete="nope" data-lpignore="true" class="form-input">
+                <input type="text" id="tfa_2333" name="tfa_2333" value="{{defaults.tfa_2333}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_editing}}disabled{{/if}}>
               </div>
             </div>
           </div>
@@ -422,7 +428,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2270-D">
-                  <input type="text" id="tfa_2270" name="tfa_2270" value="{{defaults.tfa_2270}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
+                  <input type="text" id="tfa_2270" name="tfa_2270" value="{{defaults.tfa_2270}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
@@ -434,7 +440,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2274-D">
-                  <input type="text" id="tfa_2274" name="tfa_2274" value="{{#if defaults.application}}••••••••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
+                  <input type="text" id="tfa_2274" name="tfa_2274" value="{{#if defaults.application_editing}}••••••••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
@@ -446,7 +452,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2273-D">
-                  <input type="text" id="tfa_2273" name="tfa_2273" value="{{#if defaults.application}}••-••-••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
+                  <input type="text" id="tfa_2273" name="tfa_2273" value="{{#if defaults.application_editing}}••-••-••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
@@ -459,7 +465,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2271-D">
-                  <input type="text" id="tfa_2271" name="tfa_2271" value="{{defaults.tfa_2271}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
+                  <input type="text" id="tfa_2271" name="tfa_2271" value="{{defaults.tfa_2271}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
@@ -471,7 +477,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2283-D">
-                  <input type="text" id="tfa_2283" name="tfa_2283" value="{{defaults.tfa_2283}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
+                  <input type="text" id="tfa_2283" name="tfa_2283" value="{{defaults.tfa_2283}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
@@ -483,7 +489,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2280-D">
-                  <input type="text" id="tfa_2280" name="tfa_2280" value="{{defaults.tfa_2280}}" autocomplete="nope" data-lpignore="true" aria-required="true" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="required form-input" {{#if defaults.application}}disabled{{else}}required{{/if}}>
+                  <input type="text" id="tfa_2280" name="tfa_2280" value="{{defaults.tfa_2280}}" autocomplete="nope" data-lpignore="true" aria-required="true" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="required form-input" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
                 </div>
               </div>
             </div>
@@ -1127,7 +1133,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {{/each ~}}
   });
 
-  {{#unless defaults.application}}
+  {{#unless defaults.application_editing}}
   var cleave_sort_code = new Cleave('#tfa_2273', {
     delimiter: '-',
     blocks: [2,2,2],

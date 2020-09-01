@@ -59,7 +59,9 @@
             "and": [
               {
                 "!=": [
-                  { "var": "data.application_data.request.data.data_object.get_grant.totalSize" },
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.totalSize"
+                  },
                   1
                 ]
               }
@@ -79,8 +81,10 @@
             "and": [
               {
                 "!=": [
-                  { "var": "data.application_data.request.data.data_object.get_grant.records.[0].Status__c" },
-                  "Award"
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Status__c"
+                  },
+                  "Awarded"
                 ]
               }
             ]
