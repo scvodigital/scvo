@@ -117,10 +117,13 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1944-D">
-                  <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required>
-                  {{!-- <select type="text" id="tfa_1944" name="tfa_1944" class="form-select">
-                    <option value="options" selected>Options</select>
-                  </select> --}}
+                  {{!-- <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required> --}}
+                  <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true">
+                    <option value="" disabled{{#unless defaults.tfa_1944}} selected{{/unless}}>Please select...</option>
+                    {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Other' ',')}}
+                      <option value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}>{{this}}</option>
+                    {{/each}}
+                  </select>
                 </div>
               </div>
             </div>
