@@ -51,38 +51,46 @@
 
 <div class="bg-primary b-margin-full">
   <div class="container v-padding-full b-margin-full">
-    <div class="columns b-margin-full">
+    <div class="columns">
       <div class="column col-6 col-md-12">
         <h2 class="b-margin-full">
           Events
           &ensp;
           <a href="/support/events"><span class="caption">See all</span></a>
         </h2>
-        <div class="columns t-padding">
+      </div>
+      <div class="column col-6 col-md-12">
+        <h2 class="b-margin-full">
+          Training
+        </h2>
+      </div>
+    </div>
+    <div class="columns b-margin-full">
+      <div class="column col-6 col-md-12">
+        <div class="columns">
           {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets}}
           {{#unless (compare key 'Training Course')}}
-          <div class="column col-6 col-xl-12 b-padding-full text-center">
-            <span class="fal fa-fw fa-{{itemAt (split 'users-class,user-headset,house-use,user,users' ',') @index}} fa-4x p-centered b-margin"></span>
-            <a href="/support/events?type={{replace key ' ' '+'}}" class="btn">List {{inflect doc_count (concat 'upcoming ' (lowercase (replace key "Workshops" "Workshop"))) (concat 'upcoming ' (lowercase (replace key "Workshops" "Workshop")) 's') true}}</a>
+          <div class="column col-6 col-sm-12 b-padding-full text-center">
+            <span class="fal fa-fw fa-{{itemAt (split 'users-class,user-headset,house-use,user,users' ',') @index}} fa-4x p-centered b-margin-full"></span>
+            <a href="/support/events?type={{replace key ' ' '+'}}" class="btn btn-block">List {{inflect doc_count (concat 'upcoming ' (lowercase (replace key "Workshops" "Workshop"))) (concat 'upcoming ' (lowercase (replace key "Workshops" "Workshop")) 's') true}}</a>
           </div>
           {{/unless}}
           {{/each}}
         </div>
       </div>
       <div class="column col-6 col-md-12">
-        <h2 class="b-margin-full">
-          Training
-        </h2>
-        <p class="b-margin-full">
+        <p style="margin-bottom:14px;">
           We are dedicated to continuous professional development and believe by providing affordable access to quality, bespoke courses by experienced trainers we can build capacity across the voluntary sector in Scotland.
         </p>
         <p>
-          <a href="/support/training" class="btn btn-primary">Find out more</a>
           {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets}}
           {{#if (compare key 'Training Course')}}
             <a href="/support/events?type={{replace key ' ' '+'}}" class="btn">List {{inflect doc_count (lowercase (concat 'upcoming ' (replace (replace (replace key "Training" "") "Workshops" "Workshop") "Workshops" "Workshop"))) (concat 'upcoming ' (lowercase (replace (replace key "Training" "") "Workshops" "Workshop")) 's') true}}</a>
           {{/if}}
           {{/each}}
+        </p>
+        <p>
+          <a href="/support/training" class="btn btn-primary">Find out more</a>
         </p>
       </div>
     </div>
