@@ -14,7 +14,7 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "sg-grant-tsrf",
+          "type": "sg-grant-tsrf-legacy",
           "template": ">context.metaData.handlebars.queries.grants_tsrf-data",
           "noResultsRoute": "four_oh_four"
         }
@@ -33,7 +33,7 @@
           {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "sg-grant-tsrf",
+            "type": "sg-grant-tsrf-legacy",
             "template": ">context.metaData.handlebars.queries.grants_tsrf-aggs"
           }
         ]
