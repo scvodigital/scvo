@@ -1,6 +1,9 @@
 {
   "name": "awards",
-  "pattern": "/awards",
+  "pattern": {
+    "one": "/awards(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "two": "/charityawards(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "destination",

@@ -1,0 +1,18 @@
+{
+  "name": "charityawards-booking",
+  "pattern": {
+    "one": "/awards/bookyourplace",
+    "two": "/awards/book-your-place",
+    "three": "/scottish-charity-awards/bookyourplace"
+  },
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/support/events/a1v3z00000I0f59AAB/scottish-charity-awards-2020/book",
+        "statusCode": 302
+      }
+    }
+  ]
+}
