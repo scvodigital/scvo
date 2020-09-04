@@ -2546,7 +2546,7 @@
 					"label": "Funding",
 					"path": "/support/coronavirus/funding",
 					"route": "^/support/coronavirus/funding$",
-					"description": "Funding available to support with the crisis.",
+					"description": "Funding available to support with the crisis",
 					"icon": "chart-bar",
 					"children": [
 						{
@@ -2554,14 +2554,36 @@
 							"label_full": "Funds: Scottish Government",
 							"path": "/support/coronavirus/funding/scottish-government",
 							"route": "^/support/coronavirus/funding/scottish-government$",
-							"description": "Information about the Third Sector Resilience Fund, Wellbeing Fund, Food Fund and Supporting Communities Fund.",
+							"description": "Information about the Community & Third Sector Recovery Programme, the Third Sector Resilience, Wellbeing, Food, and Supporting Communities Funds",
 							"icon": "university",
 							"children": [
+								{
+									"label": "Recovery Programme",
+									"label_full": "Community & Third Sector Recovery Programme",
+									"path": "/support/coronavirus/funding/scottish-government/recovery",
+									"route": "^/support/coronavirus/funding/scottish-government/recovery$",
+									"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Helping organisations to adapt and change so they can re-open and operate sustainably post-COVID",
+									"icon": "tasks"
+								},
+								{
+									"label": "Supporting Communities Fund",
+									"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund",
+									"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund$",
+									"description": "Funds for anchor organisations",
+									"icon": "tasks",
+									"children": [
+										{
+											"label": "Recipients",
+											"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients",
+											"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients"
+										}
+									]
+								},
 								{
 									"label": "Third Sector Resilience Fund",
 									"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund",
 									"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund$",
-									"description": "<div class=\"label label-success label-rounded b-margin\">Currently open</div><br />Funds to sustain your organisation.",
+									"description": "<div class=\"label label-success label-rounded b-margin\">Currently open</div><br />Funds to sustain your organisation",
 									"icon": "tasks",
 									"children": [
 										{
@@ -2585,27 +2607,13 @@
 									"label": "Wellbeing Fund",
 									"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund",
 									"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund$|^/support/coronavirus/funding/scottish-government/wellbeing-fund/apply",
-									"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Funds to support your community – includes the food fund.",
+									"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Funds to support your community – includes the food fund",
 									"icon": "tasks",
 									"children": [
 										{
 											"label": "Recipients",
 											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients",
 											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients"
-										}
-									]
-								},
-								{
-									"label": "Supporting Communities Fund",
-									"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund",
-									"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund$",
-									"description": "Funds for anchor organisations.",
-									"icon": "tasks",
-									"children": [
-										{
-											"label": "Recipients",
-											"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients",
-											"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients"
 										}
 									]
 								}
