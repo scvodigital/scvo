@@ -69,7 +69,7 @@
       {{#if planned_end ~}}
       "endDate": "{{momentFormat (moment planned_end 'x') "YYYY-MM-DD"}}",
       {{/if ~}}
-      "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}"
+      "dateModified": "{{momentFormat (moment now) "YYYY-MM-DDTHH:mm:ssZ"}}"
     }],
     "recipientOrganization": [{
       {{#if recipient_name ~}}
@@ -188,7 +188,7 @@
     }],
     "fromOpenCall": "No",
     {{/if ~}}
-    "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}",
+    "dateModified": "{{momentFormat (moment now) "YYYY-MM-DDTHH:mm:ssZ"}}",
     "dataSource": "https://scvo.scot/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/recipients/data.json"
   }{{#unless @last}},{{/unless}}
   {{/with}}
