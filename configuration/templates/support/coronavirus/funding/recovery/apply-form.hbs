@@ -4,6 +4,7 @@
   target_communities=@root.data.form_data.target_communities
   income_generation=@root.data.form_data.income_generation
   type_of_support=@root.data.form_data.type_of_support
+  supported_groups=@root.data.form_data.supported_groups
   defaults=@root.data.form_data.defaults
 }}
 <script type="text/javascript">
@@ -808,15 +809,19 @@ wFORMS.behaviors.prefill.skip = false;
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D has-icon-left" id="tfa_2559-D">
-                            <span class="form-icon far fa-fw fa-pound-sign"></span>
-                            <input type="number" min="0" id="tfa_2559" name="tfa_2559" value="" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
+                          <div class="form-group oneField field-container-D" id="tfa_2559-D">
+                            <div class="input-group" style="width:100%;">
+                              <span class="input-group-addon">&pound;</span>
+                              <input type="number" min="0" id="tfa_2559" name="tfa_2559" value="" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
+                            </div>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D has-icon-left" id="tfa_2560-D">
-                            <span class="form-icon far fa-fw fa-pound-sign"></span>
-                            <input type="number" min="0" id="tfa_2560" name="tfa_2560" value="" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
+                          <div class="form-group oneField field-container-D" id="tfa_2560-D">
+                            <div class="input-group" style="width:100%;">
+                              <span class="input-group-addon">&pound;</span>
+                              <input type="number" min="0" id="tfa_2560" name="tfa_2560" value="" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
+                            </div>
                           </div>
                         </td>
                       </tr>
@@ -832,9 +837,11 @@ wFORMS.behaviors.prefill.skip = false;
                   </label>
                 </div>
                 <div class="col-4 col-lg-5 col-md-6 col-sm-12">
-                  <div class="form-group field-container-D has-icon-left" id="tfa_2561-D">
-                    <span class="form-icon far fa-fw fa-pound-sign"></span>
-                    <input type="number" min="0" id="tfa_2561" name="tfa_2561" value="{{defaults.tfa_2561}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                  <div class="form-group field-container-D" id="tfa_2561-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" min="0" id="tfa_2561" name="tfa_2561" value="{{defaults.tfa_2561}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -846,9 +853,11 @@ wFORMS.behaviors.prefill.skip = false;
                   </label>
                 </div>
                 <div class="col-4 col-lg-5 col-md-6 col-sm-12">
-                  <div class="form-group field-container-D has-icon-left" id="tfa_2562-D">
-                    <span class="form-icon far fa-fw fa-pound-sign"></span>
-                    <input type="number" min="0" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                  <div class="form-group field-container-D" id="tfa_2562-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" min="0" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -860,9 +869,11 @@ wFORMS.behaviors.prefill.skip = false;
                   </label>
                 </div>
                 <div class="col-4 col-lg-5 col-md-6 col-sm-12">
-                  <div class="form-group field-container-D has-icon-left" id="tfa_2563-D">
-                    <span class="form-icon far fa-fw fa-pound-sign"></span>
-                    <input type="number" min="0" id="tfa_2563" name="tfa_2563" value="{{defaults.tfa_2563}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                  <div class="form-group field-container-D" id="tfa_2563-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" min="0" id="tfa_2563" name="tfa_2563" value="{{defaults.tfa_2563}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -994,27 +1005,56 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
 
-                <div class="oneField field-container-D" id="tfa_2614-D" role="group" aria-labelledby="tfa_2614-L" data-tfa-labelledby="-L tfa_2614-L">
-                <label id="tfa_2614-L" class="label preField ">Tell us about the groups of people that are likely to be supported as a result of your recovery plan (select all that are relevant)</label><br><div class="inputWrapper"><span id="tfa_2614" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_2615" class="" id="tfa_2615" name="tfa_2615" aria-labelledby="tfa_2615-L" data-tfa-labelledby="tfa_2614-L tfa_2615-L"><label class="label postField" id="tfa_2615-L" for="tfa_2615"><span class="input-checkbox-faux"></span>People who are shielding</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2616" class="" id="tfa_2616" name="tfa_2616" aria-labelledby="tfa_2616-L" data-tfa-labelledby="tfa_2614-L tfa_2616-L"><label class="label postField" id="tfa_2616-L" for="tfa_2616"><span class="input-checkbox-faux"></span>People who have COVID-19 symptoms or are living with COVID-19 symptoms</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2617" class="" id="tfa_2617" name="tfa_2617" aria-labelledby="tfa_2617-L" data-tfa-labelledby="tfa_2614-L tfa_2617-L"><label class="label postField" id="tfa_2617-L" for="tfa_2617"><span class="input-checkbox-faux"></span>People who are non shielding but are higher risk</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2618" class="" id="tfa_2618" name="tfa_2618" aria-labelledby="tfa_2618-L" data-tfa-labelledby="tfa_2614-L tfa_2618-L"><label class="label postField" id="tfa_2618-L" for="tfa_2618"><span class="input-checkbox-faux"></span>People who are financially at risk</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2619" class="" id="tfa_2619" name="tfa_2619" aria-labelledby="tfa_2619-L" data-tfa-labelledby="tfa_2614-L tfa_2619-L"><label class="label postField" id="tfa_2619-L" for="tfa_2619"><span class="input-checkbox-faux"></span>People who are homeless</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2620" class="" id="tfa_2620" name="tfa_2620" aria-labelledby="tfa_2620-L" data-tfa-labelledby="tfa_2614-L tfa_2620-L"><label class="label postField" id="tfa_2620-L" for="tfa_2620"><span class="input-checkbox-faux"></span>Those with substance dependencies</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2621" class="" id="tfa_2621" name="tfa_2621" aria-labelledby="tfa_2621-L" data-tfa-labelledby="tfa_2614-L tfa_2621-L"><label class="label postField" id="tfa_2621-L" for="tfa_2621"><span class="input-checkbox-faux"></span>People with existing mental health problems</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2622" class="" id="tfa_2622" name="tfa_2622" aria-labelledby="tfa_2622-L" data-tfa-labelledby="tfa_2614-L tfa_2622-L"><label class="label postField" id="tfa_2622-L" for="tfa_2622"><span class="input-checkbox-faux"></span>People with learning disabilities</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2623" class="" id="tfa_2623" name="tfa_2623" aria-labelledby="tfa_2623-L" data-tfa-labelledby="tfa_2614-L tfa_2623-L"><label class="label postField" id="tfa_2623-L" for="tfa_2623"><span class="input-checkbox-faux"></span>People with dementia</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2624" class="" id="tfa_2624" name="tfa_2624" aria-labelledby="tfa_2624-L" data-tfa-labelledby="tfa_2614-L tfa_2624-L"><label class="label postField" id="tfa_2624-L" for="tfa_2624"><span class="input-checkbox-faux"></span>Victims of domestic abuse</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2625" class="" id="tfa_2625" name="tfa_2625" aria-labelledby="tfa_2625-L" data-tfa-labelledby="tfa_2614-L tfa_2625-L"><label class="label postField" id="tfa_2625-L" for="tfa_2625"><span class="input-checkbox-faux"></span>Vulnerable migrants, including refugees, asylum seekers, those with no recourse to public funds, people affected by human trafficking and seasonal migrants</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2626" class="" id="tfa_2626" name="tfa_2626" aria-labelledby="tfa_2626-L" data-tfa-labelledby="tfa_2614-L tfa_2626-L"><label class="label postField" id="tfa_2626-L" for="tfa_2626"><span class="input-checkbox-faux"></span>Gypsy / traveller communities</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2627" class="" id="tfa_2627" name="tfa_2627" aria-labelledby="tfa_2627-L" data-tfa-labelledby="tfa_2614-L tfa_2627-L"><label class="label postField" id="tfa_2627-L" for="tfa_2627"><span class="input-checkbox-faux"></span>Early release prisoners</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2628" class="" id="tfa_2628" name="tfa_2628" aria-labelledby="tfa_2628-L" data-tfa-labelledby="tfa_2614-L tfa_2628-L"><label class="label postField" id="tfa_2628-L" for="tfa_2628"><span class="input-checkbox-faux"></span>Victims of commercial sexual exploitation, including prostitution</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2629" class="" id="tfa_2629" name="tfa_2629" aria-labelledby="tfa_2629-L" data-tfa-labelledby="tfa_2614-L tfa_2629-L"><label class="label postField" id="tfa_2629-L" for="tfa_2629"><span class="input-checkbox-faux"></span>Care leavers</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2630" class="" id="tfa_2630" name="tfa_2630" data-conditionals="#tfa_2631" aria-labelledby="tfa_2630-L" data-tfa-labelledby="tfa_2614-L tfa_2630-L"><label class="label postField" id="tfa_2630-L" for="tfa_2630"><span class="input-checkbox-faux"></span>Other (please  describe)</label></span></span></div>
-                </div>
-                <div class="oneField field-container-D" id="tfa_2631-D">
-                <label id="tfa_2631-L" class="label preField " for="tfa_2631">Supported communities other</label><br><div class="inputWrapper"><input type="text" id="tfa_2631" name="tfa_2631" value="" maxlength="150" data-condition="`#tfa_2630`" title="Supported communities other" class=""></div>
+                <div class="form-group field-container-D b-margin-full" id="tfa_2614-D" role="group" aria-labelledby="tfa_2614-L" data-tfa-labelledby="tfa_2614-L">
+                  <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                    <div class="input-group form-group field-container-D">
+                      <label id="tfa_2614-L" class="preField reqMark r-margin">
+                        Tell us about the groups of people that are likely to be supported as a result of your recovery plan (select all that are relevant)
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                    <span id="tfa_2614" class="choices vertical required">
+                      {{#each supported_groups}}
+                      <div class="form-group">
+                        <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
+                          <input type="checkbox" value="{{id}}" id="{{id}}" name="tfa_2614" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
+                          <i class="form-icon"></i>
+                          {{name}}
+                        </label>
+                      </div>
+                      {{/each}}
+                      <div class="oneField field-container-D" id="tfa_2631-D" data-condition="`#tfa_2630`">
+                        <div class="inputWrapper t-margin">
+                          <input type="text" id="tfa_2631" name="tfa_2631" value="{{defaults.tfa_2631}}" maxlength="150" title="Main sector other" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
                 </div>
               </div>
-              <div id="tfa_2566" class="section">
-              <h4 id="tfa_2566-L">Funding specific questions</h4>
-              <div id="tfa_2121" class="section">
-              <h4 id="tfa_2121-L">Budget</h4>
-              <div id="tfa_2151" class="section group">
-              <div class="oneField field-container-D" id="tfa_2369-D">
-              <label id="tfa_2369-L" class="label preField " for="tfa_2369">What is the overall estimated cost of your activities? Provide a short description of item(s) and cost. For example, PPE, building contractor, HR consultant to help you implement your plans.&nbsp; If you are applying to Adapt and Thrive, remember to also attach a detailed budget for your recovery plan.</label><br><div class="inputWrapper"><textarea cols="100%" data-maxwords="500" id="tfa_2369" name="tfa_2369" title="What is the overall estimated cost of your activities? Provide a short description of item(s) and cost. For example, PPE, building contractor, HR consultant to help you implement your plans.  If you are applying to Adapt and Thrive, remember to also attach a detailed budget for your recovery plan." class="count-words"></textarea></div>
-            </div>
 
-            <div class="section">
-              <div id="funding-details">
+              <div id="tfa_2566" class="section">
+                <h4 id="tfa_2566-L">Funding specific questions</h4>
+                <div id="tfa_2121" class="section">
+                  {{!-- <h4 id="tfa_2121-L">Budget</h4> --}}
+                  <div id="tfa_2151" class="section group">
+                    <div class="form-group field-container-D t-margin" id="tfa_2369-D">
+                      <div class="col-9 col-xl-12">
+                        <div class="input-group form-group field-container-D">
+                          <label id="tfa_2369-L" class="preField r-margin reqMark" for="tfa_2369">
+                            What is the overall estimated cost of your activities? Provide a short description of item(s) and cost. For example, PPE, building contractor, HR consultant to help you implement your plans. If you are applying to Adapt and Thrive, remember to also attach a detailed budget for your recovery plan<br />
+                            (maximum 300 words)
+                          </label>
+                        </div>
+                        <textarea id="tfa_2369" name="tfa_2369" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div class="col-9 col-xl-12 b-margin-full">
-                  <h3 id="tfa_2121-L">Funding required</h3>
+                  {{!-- <h3 id="tfa_2121-L">Funding required</h3> --}}
 
                   <div id="tfa_2151" class="section group">
                     <table class="gridLayout" style="width:100%;">
@@ -1025,7 +1065,7 @@ wFORMS.behaviors.prefill.skip = false;
                             Description
                           </th>
                           <th scope="col" id="tfa_2154-GRID">
-                            Amount (£)
+                            Amount
                           </th>
                         </tr>
                       </thead>
@@ -1037,14 +1077,14 @@ wFORMS.behaviors.prefill.skip = false;
                           </th>
                           <td>
                             <div class="form-group oneField field-container-D" id="tfa_2153-D">
-                              <input type="text" id="tfa_2153" name="tfa_2153" value="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                              <input type="text" id="tfa_2153" name="tfa_2153" value="" autocomplete="nope" data-lpignore="true" class="form-input">
                             </div>
                           </td>
                           <td>
                             <div class="form-group oneField field-container-D" id="tfa_2154-D">
                               <div class="input-group" style="width:100%;">
                                 <span class="input-group-addon">&pound;</span>
-                                <input type="number" min="1" max="100000" id="tfa_2154" name="tfa_2154" value="0" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right required" required>
+                                <input type="number" min="1" max="100000" id="tfa_2154" name="tfa_2154" value="0" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
                               </div>
                             </div>
                           </td>
