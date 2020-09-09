@@ -179,6 +179,37 @@
 			]
 		}
 	],
+	"jobs": [
+		{
+			"label": "Jobs & employability",
+			"path": "/jobs",
+			"route": "^/jobs$",
+			"children": [
+				{
+					"label": "Goodmoves",
+					"path": "/jobs/goodmoves/search",
+					"route": "^__hidden__/jobs/goodmoves$"
+				},
+				{
+					"label": "Community Jobs Scotland",
+					"path": "/jobs/community-jobs-scotland",
+					"route": "^__hidden__/jobs/community-jobs-scotland$"
+				},
+				{
+					"label": "Kickstart Scheme",
+					"path": "/jobs/kickstart-scheme",
+					"route": "^/jobs/kickstart-scheme$",
+					"__hidden_children": [
+						{
+							"label": "Enquiry form",
+							"path": "/jobs/kickstart-scheme/enquire",
+							"route": "^/jobs/kickstart-scheme/enquire$"
+						}
+					]
+				}
+			]
+		}
+	],
 	"cjs": [
 		{
 			"label": "Community Jobs Scotland",
