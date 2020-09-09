@@ -65,7 +65,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <label id="tfa_1941-L" class="form-label r-margin preField reqMark" for="tfa_1941">
                   Scottish Charity Number
                 </label>
-                <p class="form-input-hint text-secondary"><a href="/support/coronavirus/funding/scottish-government/recovery-fund/apply/not-a-charity">Not a registered charity?</a></p>
+                <p class="form-input-hint text-secondary"><a href="/support/coronavirus/funding/scottish-government/community-recovery/apply/not-a-charity">Not a registered charity?</a></p>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1941-D">
@@ -103,7 +103,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="form-group">
                   <p class="form-input-hint text-secondary">
-                    <a href="/support/coronavirus/funding/scottish-government/recovery-fund/apply">Have a Scottish Charity Number?</a>
+                    <a href="/support/coronavirus/funding/scottish-government/community-recovery/apply">Have a Scottish Charity Number?</a>
                   </p>
                 </div>
               </div>
@@ -120,7 +120,7 @@ wFORMS.behaviors.prefill.skip = false;
                   {{!-- <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required> --}}
                   <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true">
                     <option value="" disabled{{#unless defaults.tfa_1944}} selected{{/unless}}>Please select...</option>
-                    {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
+                    {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust' ',')}}
                       <option value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}>{{this}}</option>
                     {{/each}}
                   </select>
@@ -158,7 +158,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="email" id="tfa_1939" name="tfa_1939" value="{{defaults.tfa_1939}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true"  {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
+                <input type="email" id="tfa_1939" name="tfa_1939" value="{{defaults.tfa_1939}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
               </div>
             </div>
 
@@ -183,12 +183,33 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
                     Organisation overview<br />
-                    (maximum 250 words)
+                    (maximum 300 words)
                   </label>
                 </div>
-                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}></textarea>
+                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}></textarea>
               </div>
             </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2504-D">
+                  <label id="tfa_2504-L" class="form-label r-margin preField reqMark" for="tfa_2504">
+                    When was your organisation established?
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="number" min="1850" max="2020" id="tfa_2504" name="tfa_2504" value="{{defaults.tfa_2504}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
+              </div>
+            </div>
+
+            <div class="oneField field-container-D    " id="tfa_2326-D">
+            <label id="tfa_2326-L" class="label preField reqMark" for="tfa_2326">Workforce staff</label><br><div class="inputWrapper"><input type="text" id="tfa_2326" name="tfa_2326" value="" maxlength="10" aria-required="true" min="0" title="Workforce staff" class="validate-integer required"></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2516-D">
+            <label id="tfa_2516-L" class="label preField reqMark" for="tfa_2516">Workforce volunteers</label><br><div class="inputWrapper"><input type="text" id="tfa_2516" name="tfa_2516" value="" maxlength="10" aria-required="true" min="0" title="Workforce volunteers" class="validate-integer required"></div>
+            </div>
+
 
             <div class="form-group field-container-D t-margin" id="tfa_2326-D">
               <div class="col-9 col-xl-12">
@@ -200,6 +221,35 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <textarea id="tfa_2326" name="tfa_2326" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="250" class="form-input required count-words" {{#if defaults.application_editing}}{{else}}required{{/if}}></textarea>
               </div>
+            </div>
+
+            <div class="oneField field-container-D    " id="tfa_2394-D">
+            <label id="tfa_2394-L" class="label preField " for="tfa_2394">Main sector</label><br><div class="inputWrapper"><select id="tfa_2394" name="tfa_2394" title="Main sector" class=""><option value="">Please select...</option>
+            <option value="tfa_2517" id="tfa_2517" class="">Community Engagement/Development </option>
+            <option value="tfa_2518" id="tfa_2518" class="">Creative Industries (including Digital)</option>
+            <option value="tfa_2519" id="tfa_2519" class="">Advocacy, minorities, rights and law </option>
+            <option value="tfa_2520" id="tfa_2520" class="">Circular Economy </option>
+            <option value="tfa_2521" id="tfa_2521" class="">Education (including research) </option>
+            <option value="tfa_2522" id="tfa_2522" class="">Employability </option>
+            <option value="tfa_2523" id="tfa_2523" class="">Energy (including renewables) </option>
+            <option value="tfa_2524" id="tfa_2524" class="">Environment and animals </option>
+            <option value="tfa_2525" id="tfa_2525" class="">Finance and Business Services </option>
+            <option value="tfa_2526" id="tfa_2526" class="">Food and Drink </option>
+            <option value="tfa_2527" id="tfa_2527" class="">Health (including mental health) </option>
+            <option value="tfa_2528" id="tfa_2528" class="">Housing </option>
+            <option value="tfa_2529" id="tfa_2529" class="">Human rights and law </option>
+            <option value="tfa_2530" id="tfa_2530" class="">Social Care</option>
+            <option value="tfa_2531" id="tfa_2531" class="">Life Sciences </option>
+            <option value="tfa_2532" id="tfa_2532" class="">Preschool education and childcare </option>
+            <option value="tfa_2533" id="tfa_2533" class="">Religion and Belief </option>
+            <option value="tfa_2534" id="tfa_2534" class="">Retail </option>
+            <option value="tfa_2535" id="tfa_2535" class="">Sport and Physical Activity </option>
+            <option value="tfa_2536" id="tfa_2536" class="">Tourism and Hospitality </option>
+            <option value="tfa_2537" id="tfa_2537" class="">Travel (including community travel) </option>
+            <option value="tfa_2538" id="tfa_2538" data-conditionals="#tfa_2539" class="">Other (please specify)</option></select></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2539-D">
+            <label id="tfa_2539-L" class="label preField " for="tfa_2539">Main sector other</label><br><div class="inputWrapper"><input type="text" id="tfa_2539" name="tfa_2539" value="" maxlength="150" data-condition="`#tfa_2538`" title="Main sector other" class=""></div>
             </div>
 
             <h4>Organisation address</h4>
@@ -221,31 +271,29 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div id="location-details"{{#unless defaults.tfa_1925}} class="hidden"{{/unless}}>
-              <div class="form-group">
-                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                  <div class="input-group form-group field-container-D" id="tfa_1922-D">
-                    <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">
-                      Street
-                    </label>
-                  </div>
-                </div>
-                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_1922" name="tfa_1922" value="{{defaults.tfa_1922}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1922-D">
+                  <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">
+                    Street
+                  </label>
                 </div>
               </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1922" name="tfa_1922" value="{{defaults.tfa_1922}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+              </div>
+            </div>
 
-              <div class="form-group b-margin">
-                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                  <div class="input-group form-group field-container-D" id="tfa_1923-D">
-                    <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">
-                      Town/city
-                    </label>
-                  </div>
+            <div class="form-group b-margin">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_1923-D">
+                  <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">
+                    Town/city
+                  </label>
                 </div>
-                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_1923" name="tfa_1923" value="{{defaults.tfa_1923}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
-                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1923" name="tfa_1923" value="{{defaults.tfa_1923}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
               </div>
             </div>
 
@@ -286,7 +334,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2398-L" class="preField reqMark r-margin">
-                    Where does your ogranisation deliver the majority of your work?
+                    Service delivery location
                   </label>
                 </div>
               </div>
@@ -294,10 +342,22 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2398" class="choices vertical required">
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2399-L" for="tfa_2399">
-                      <input type="radio" value="tfa_2399" id="tfa_2399" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2399-L" data-tfa-labelledby="tfa_2398-L tfa_2399-L"{{#compare defaults.tfa_2398 "A local community or small number of local communities"}} checked{{/compare}} required>
+                      <input type="radio" value="tfa_2399" id="tfa_2399" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2399-L" data-tfa-labelledby="tfa_2398-L tfa_2399-L" data-conditionals="#tfa_2505-D"{{#compare defaults.tfa_2398 "A local community or small number of local communities"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       A local community or small number of local communities
                     </label>
+                  </div>
+                  <div class="form-group b-margin" id="tfa_2505-D" data-condition="`#tfa_2399`">
+                    <div class="col-12">
+                      <div class="input-group form-group field-container-D">
+                        <label id="tfa_2505-L" class="form-label r-margin preField" for="tfa_2505">
+                          Which postcode(s) do you deliver in, if different from where your organisation is based?
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <input type="text" id="tfa_2505" name="tfa_2505" value="{{defaults.tfa_2505}}" maxlength="150" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input">
+                    </div>
                   </div>
 
                   <div class="form-group">
@@ -377,11 +437,21 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
 
+        <div class="oneField field-container-D    " id="tfa_2540-D">
+        <label id="tfa_2540-L" class="label preField " for="tfa_2540">How are the people and communities you seek to serve involved or able to influence how you deliver your services or support?</label><br><div class="inputWrapper"><textarea data-maxwords="150" id="tfa_2540" name="tfa_2540" title="How are the people and communities you seek to serve involved or able to influence how you deliver your services or support?" class="count-words"></textarea></div>
+        </div>
+        <div class="oneField field-container-D    " id="tfa_2506-D" role="group" aria-labelledby="tfa_2506-L" data-tfa-labelledby="-L tfa_2506-L">
+        <label id="tfa_2506-L" class="label preField ">Does your organisation work with any of the following communities or protected characteristics? (Select all that are relevant)</label><br><div class="inputWrapper"><span id="tfa_2506" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_2507" class="" id="tfa_2507" name="tfa_2507" aria-labelledby="tfa_2507-L" data-tfa-labelledby="tfa_2506-L tfa_2507-L"><label class="label postField" id="tfa_2507-L" for="tfa_2507"><span class="input-checkbox-faux"></span>Age (older people)</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2508" class="" id="tfa_2508" name="tfa_2508" aria-labelledby="tfa_2508-L" data-tfa-labelledby="tfa_2506-L tfa_2508-L"><label class="label postField" id="tfa_2508-L" for="tfa_2508"><span class="input-checkbox-faux"></span>Age (younger people)</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2509" class="" id="tfa_2509" name="tfa_2509" aria-labelledby="tfa_2509-L" data-tfa-labelledby="tfa_2506-L tfa_2509-L"><label class="label postField" id="tfa_2509-L" for="tfa_2509"><span class="input-checkbox-faux"></span>Disability</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2510" class="" id="tfa_2510" name="tfa_2510" aria-labelledby="tfa_2510-L" data-tfa-labelledby="tfa_2506-L tfa_2510-L"><label class="label postField" id="tfa_2510-L" for="tfa_2510"><span class="input-checkbox-faux"></span>Gender</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2511" class="" id="tfa_2511" name="tfa_2511" aria-labelledby="tfa_2511-L" data-tfa-labelledby="tfa_2506-L tfa_2511-L"><label class="label postField" id="tfa_2511-L" for="tfa_2511"><span class="input-checkbox-faux"></span>Race</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2512" class="" id="tfa_2512" name="tfa_2512" aria-labelledby="tfa_2512-L" data-tfa-labelledby="tfa_2506-L tfa_2512-L"><label class="label postField" id="tfa_2512-L" for="tfa_2512"><span class="input-checkbox-faux"></span>Religion / belief / faith</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2513" class="" id="tfa_2513" name="tfa_2513" aria-labelledby="tfa_2513-L" data-tfa-labelledby="tfa_2506-L tfa_2513-L"><label class="label postField" id="tfa_2513-L" for="tfa_2513"><span class="input-checkbox-faux"></span>Sexual orientation and / or gender identity</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2514" class="" id="tfa_2514" name="tfa_2514" aria-labelledby="tfa_2514-L" data-tfa-labelledby="tfa_2506-L tfa_2514-L"><label class="label postField" id="tfa_2514-L" for="tfa_2514"><span class="input-checkbox-faux"></span>Socio-economic disadvantage</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2515" class="" id="tfa_2515" name="tfa_2515" data-conditionals="#tfa_2348" aria-labelledby="tfa_2515-L" data-tfa-labelledby="tfa_2506-L tfa_2515-L"><label class="label postField" id="tfa_2515-L" for="tfa_2515"><span class="input-checkbox-faux"></span>Other (please specify)</label></span></span></div>
+        </div>
+        <div class="oneField field-container-D    " id="tfa_2348-D">
+        <label id="tfa_2348-L" class="label preField " for="tfa_2348">Target communities other</label><br><div class="inputWrapper"><input type="text" id="tfa_2348" name="tfa_2348" value="" maxlength="150" data-condition="`#tfa_2515`" title="Target communities other" class=""></div>
+        </div>
+
         <div id="tfa_1880" class="section">
           <div id="contact-details">
             <h3 id="tfa_1880-L" class="t-margin">Contact information</h3>
 
-            <h4 class="t-margin">First contact</h3>
+            <h4 class="t-margin">Main contact</h3>
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -522,7 +592,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-9 col-xl-12">
               <h3 id="tfa_2269-L" class="t-margin">Organisation bank account details</h3>
               <p>
-                To increase the speed of making payments to successful applicants, we are asking for your bank details at this stage.  Please ensure the details are correct, and match the bank statement uploaded, to ensure money reaches the correct account.
+                To increase the speed of making payments to successful applicants, we are asking for your bank details at this stage. Please ensure the details are correct, and match the bank statement uploaded, to ensure money reaches the correct account.
               </p>
             </div>
 
@@ -600,256 +670,88 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="col-9 col-xl-12">
-              <h3>Governance and finance checks</h3>
-              <p>
-                Charities, social enterprises, community groups and other voluntary organisations that have independent governance and an asset lock are eligible to apply. Organisations must be in a stable financial position to be able to deliver the proposed activity and can apply for a maximum of 20% of the total annual income from your latest accounts.
-              </p>
-              <p>
-                Please upload the following documents to allow us to conduct due diligence checks on these criteria.  There is a 5Mb limit, per document, on uploading.  If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
-              </p>
+            <fieldset id="tfa_2316" class="section">
+            <legend id="tfa_2316-L">Organisation finances (if you are struggling with this section then assistance can be provided)</legend>
+            <div class="oneField field-container-D    " id="tfa_2541-D" role="group" aria-labelledby="tfa_2541-L" data-tfa-labelledby="-L tfa_2541-L">
+            <label id="tfa_2541-L" class="label preField ">How do you normally generate the majority of your income? (Select all that are relevant)</label><br><div class="inputWrapper"><span id="tfa_2541" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_2542" class="" id="tfa_2542" name="tfa_2542" aria-labelledby="tfa_2542-L" data-tfa-labelledby="tfa_2541-L tfa_2542-L"><label class="label postField" id="tfa_2542-L" for="tfa_2542"><span class="input-checkbox-faux"></span>Competitive Tenders</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2543" class="" id="tfa_2543" name="tfa_2543" aria-labelledby="tfa_2543-L" data-tfa-labelledby="tfa_2541-L tfa_2543-L"><label class="label postField" id="tfa_2543-L" for="tfa_2543"><span class="input-checkbox-faux"></span>Donations</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2544" class="" id="tfa_2544" name="tfa_2544" aria-labelledby="tfa_2544-L" data-tfa-labelledby="tfa_2541-L tfa_2544-L"><label class="label postField" id="tfa_2544-L" for="tfa_2544"><span class="input-checkbox-faux"></span>Fundraising (including fundraising events)</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2545" class="" id="tfa_2545" name="tfa_2545" aria-labelledby="tfa_2545-L" data-tfa-labelledby="tfa_2541-L tfa_2545-L"><label class="label postField" id="tfa_2545-L" for="tfa_2545"><span class="input-checkbox-faux"></span>Grants</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2546" class="" id="tfa_2546" name="tfa_2546" aria-labelledby="tfa_2546-L" data-tfa-labelledby="tfa_2541-L tfa_2546-L"><label class="label postField" id="tfa_2546-L" for="tfa_2546"><span class="input-checkbox-faux"></span>Legacies</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2547" class="" id="tfa_2547" name="tfa_2547" aria-labelledby="tfa_2547-L" data-tfa-labelledby="tfa_2541-L tfa_2547-L"><label class="label postField" id="tfa_2547-L" for="tfa_2547"><span class="input-checkbox-faux"></span>Loans</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2548" class="" id="tfa_2548" name="tfa_2548" aria-labelledby="tfa_2548-L" data-tfa-labelledby="tfa_2541-L tfa_2548-L"><label class="label postField" id="tfa_2548-L" for="tfa_2548"><span class="input-checkbox-faux"></span>Membership Fees</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2549" class="" id="tfa_2549" name="tfa_2549" aria-labelledby="tfa_2549-L" data-tfa-labelledby="tfa_2541-L tfa_2549-L"><label class="label postField" id="tfa_2549-L" for="tfa_2549"><span class="input-checkbox-faux"></span>Service Level Agreements</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2550" class="" id="tfa_2550" name="tfa_2550" aria-labelledby="tfa_2550-L" data-tfa-labelledby="tfa_2541-L tfa_2550-L"><label class="label postField" id="tfa_2550-L" for="tfa_2550"><span class="input-checkbox-faux"></span>Sponsorship</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2551" class="" id="tfa_2551" name="tfa_2551" aria-labelledby="tfa_2551-L" data-tfa-labelledby="tfa_2541-L tfa_2551-L"><label class="label postField" id="tfa_2551-L" for="tfa_2551"><span class="input-checkbox-faux"></span>Trading (selling to the public or other organisations)</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2552" class="" id="tfa_2552" name="tfa_2552" aria-labelledby="tfa_2552-L" data-tfa-labelledby="tfa_2541-L tfa_2552-L"><label class="label postField" id="tfa_2552-L" for="tfa_2552"><span class="input-checkbox-faux"></span>Community Bonds</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2553" class="" id="tfa_2553" name="tfa_2553" aria-labelledby="tfa_2553-L" data-tfa-labelledby="tfa_2541-L tfa_2553-L"><label class="label postField" id="tfa_2553-L" for="tfa_2553"><span class="input-checkbox-faux"></span>Community Shares</label></span></span></div>
             </div>
-
-            <div class="form-group t-margin-full">
-              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <label id="tfa_2303-L" class="form-label r-margin preField" for="tfa_2303">
-                  Your main governance document<br />
-                  (Constitution, memorandum and articles, rules of operation etc.)
-                </label>
-              </div>
-              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_2303-D">
-                  <input type="file" id="tfa_2303" name="tfa_2303" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" {{#unless defaults.application_editing}}required{{/unless}}>
-                </div>
-              </div>
+            <div class="oneField field-container-D    " id="tfa_2554-D" role="radiogroup" aria-labelledby="tfa_2554-L" data-tfa-labelledby="-L tfa_2554-L">
+            <label id="tfa_2554-L" class="label preField ">Do you regularly receive income from the sales of good and services to other organisations and general public and/or deliver contracts or service level agreements?</label><br><div class="inputWrapper"><span id="tfa_2554" class="choices vertical "><span class="oneChoice"><input type="radio" value="tfa_2555" class="" id="tfa_2555" name="tfa_2554" aria-labelledby="tfa_2555-L" data-tfa-labelledby="tfa_2554-L tfa_2555-L"><label class="label postField" id="tfa_2555-L" for="tfa_2555"><span class="input-radio-faux"></span>Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_2556" class="" id="tfa_2556" name="tfa_2554" aria-labelledby="tfa_2556-L" data-tfa-labelledby="tfa_2554-L tfa_2556-L"><label class="label postField" id="tfa_2556-L" for="tfa_2556"><span class="input-radio-faux"></span>No</label></span></span></div>
             </div>
-            <div class="form-group t-margin-full">
-              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <label id="tfa_2189-L" class="form-label r-margin preField" for="tfa_2189">
-                  Your latest bank statement
-                </label>
-              </div>
-              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_2189-D">
-                  <input type="file" id="tfa_2189" name="tfa_2189" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" {{#unless defaults.application_editing}}required{{/unless}}>
-                </div>
-              </div>
+            <fieldset id="tfa_2557" class="section">
+            <legend id="tfa_2557-L">Tell us about your income and expenditure for the last year</legend>
+            <div class="oneField field-container-D    " id="tfa_2558-D">
+            <label id="tfa_2558-L" class="label preField " for="tfa_2558">Year-ending</label><br><div class="inputWrapper"><input type="text" id="tfa_2558" name="tfa_2558" value="" maxlength="4" min="2010" max="2020" title="Year-ending" class="validate-integer"></div>
             </div>
-            <div class="form-group t-margin-full">
-              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <label id="tfa_2187-L" class="form-label r-margin preField" for="tfa_2187">
-                  Your latest annual accounts
-                </label>
-              </div>
-              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_2187-D">
-                  <input type="file" id="tfa_2187" name="tfa_2187" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" {{#unless defaults.application_editing}}required{{/unless}}>
-                </div>
-              </div>
+            <div class="oneField field-container-D    " id="tfa_2559-D">
+            <label id="tfa_2559-L" class="label preField " for="tfa_2559">Income</label><br><div class="inputWrapper"><input type="text" id="tfa_2559" name="tfa_2559" value="" maxlength="150" title="Income" class="validate-integer"></div>
             </div>
-            <div class="form-group t-margin-full">
-              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <label id="tfa_2390-L" class="form-label r-margin preField" for="tfa_2390">
-                  Your latest management accounts
-                </label>
-              </div>
-              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_2390-D">
-                  <input type="file" id="tfa_2390" name="tfa_2390" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" {{#unless defaults.application_editing}}required{{/unless}}>
-                </div>
-              </div>
+            <div class="oneField field-container-D    " id="tfa_2560-D">
+            <label id="tfa_2560-L" class="label preField " for="tfa_2560">Expenditure</label><br><div class="inputWrapper"><input type="text" id="tfa_2560" name="tfa_2560" value="" maxlength="150" title="Expenditure" class="validate-integer"></div>
             </div>
-            <div class="form-group b-margin-full">
-              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12"></div>
-              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <p class="form-input-hint text-secondary ">
-                  The maximum file size you can upload is 5Mb
-                </p>
-              </div>
+            </fieldset>
+            <div class="oneField field-container-D    " id="tfa_2561-D">
+            <label id="tfa_2561-L" class="label preField " for="tfa_2561">What is your current bank balance?</label><br><div class="inputWrapper"><input type="text" id="tfa_2561" name="tfa_2561" value="" maxlength="150" title="What is your current bank balance?" class="validate-integer"></div>
             </div>
-
-            {{!-- <div class="form-group field-container-D t-margin-full" id="tfa_2307-D">
-              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D">
-                  <label id="tfa_2307-L" class="preField reqMark r-margin" for="tfa_2307">
-                    Are you receiving any other Scottish Government funding related to the coronavirus pandemic? Please tick all that apply and provide brief details, including amounts, below.
-                  </label>
-                </div>
-              </div>
-              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="oneField field-container-D" id="tfa_2307-D" role="group" aria-labelledby="tfa_2307-L" data-tfa-labelledby="-L tfa_2307-L">
-                  <span id="tfa_2307" class="choices vertical columns">
-                    {{#each selection_funding ~}}
-                    <span class="form-group column col-12">
-                      <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2307-L {{id}}-L">
-                        <i class="form-icon"></i> {{name}}
-                      </label>
-                    </span>
-                    {{/each ~}}
-                  </span>
-                </div>
-              </div>
+            <div class="oneField field-container-D    " id="tfa_2562-D">
+            <label id="tfa_2562-L" class="label preField " for="tfa_2562">How much cash or unrestricted reserves do you currently have?</label><br><div class="inputWrapper"><input type="text" id="tfa_2562" name="tfa_2562" value="" maxlength="150" title="How much cash or unrestricted reserves do you currently have?" class="validate-integer"></div>
             </div>
-            <div class="form-group field-container-D t-margin" id="tfa_2312-D">
-              <div class="col-9 col-xl-12">
-                <textarea id="tfa_2312" name="tfa_2312" rows="4" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="200" class="form-input count-words"></textarea>
-              </div>
-            </div> --}}
-          </div>
-        </div>
-
-        <div id="tfa_2121" class="section">
-          <div id="costs-details">
-            <div class="col-9 col-xl-12">
-              <h3>About your proposed activity</h3>
-              {{!-- <p>
-                Applications should be focused on:
-              </p>
-              <ul>
-                <li><strong>At risk groups</strong> with new needs which are not being met by existing services. </li>
-                <li>Providing <strong>vital wellbeing support</strong> on issues such as food, physical health, mental health, personal finances, home life and housing. </li>
-                <li><strong>Immediate</strong> support being delivered now and over the next 2-3 months </li>
-              </ul>
-              <p>
-                Your application will be assessed against these criteria. Your activity can cover multiple target groups and themes, as well those not included in the drop-down menus, as long as need is clearly described.
-              </p> --}}
+            <div class="oneField field-container-D    " id="tfa_2563-D">
+            <label id="tfa_2563-L" class="label preField " for="tfa_2563">How much restricted and/or committed funds do you currently have?</label><br><div class="inputWrapper"><input type="text" id="tfa_2563" name="tfa_2563" value="" maxlength="150" title="How much restricted and/or committed funds do you currently have?" class="validate-integer"></div>
             </div>
-
-            {{!-- <div class="form-group field-container-D t-margin b-margin-full" id="tfa_1959-D">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D">
-                  <label id="tfa_1959-L" class="preField reqMark r-margin" for="tfa_1959">
-                    Does your activity primarily focus on one of these themes
-                  </label>
-                </div>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <select id="tfa_1959" name="tfa_1959" aria-required="true" class="form-select required">
-                  <option value="" disabled{{#unless defaults.tfa_1959}} selected{{/unless}}>
-                    Please select...
-                  </option>
-                  {{#each selection_issue ~}}
-                  <option value="{{id}}" id="{{id}}"{{#compare ../defaults.tfa_1959 (replace name ' (please describe)' '')}} selected{{/compare}}>
-                    {{name}}
-                  </option>
-                  {{/each ~}}
-                </select>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group field-container-D b-margin-full" id="tfa_2015-D">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D">
-                  <label id="tfa_2015-L" class="preField reqMark r-margin" for="tfa_2015">
-                    Is there a specific target group you are working with?
-                  </label>
-                </div>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <select id="tfa_2015" name="tfa_2015" aria-required="true" class="form-select required">
-                  <option value="" disabled{{#unless defaults.tfa_2015}} selected{{/unless}}>
-                    Please select...
-                  </option>
-                  {{#each selection_target ~}}
-                  <option value="{{id}}" id="{{id}}"{{#compare ../defaults.tfa_2015 name}} selected{{/compare}}>{{name}}</option>
-                  {{/each ~}}
-                </select>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group field-container-D t-margin" id="tfa_2301-D">
-              <div class="col-9 col-xl-12">
-                <div class="input-group form-group field-container-D">
-                  <label id="tfa_2301-L" class="preField r-margin" for="tfa_2301">
-                    Please describe:
-                    <ul>
-                      <li>The main target group that you are seeking funding to work with</li>
-                      <li>What their needs are</li>
-                      <li>Why these are not currently being met by existing services</li>
-                    </ul>
-                    (maximum 500 words)
-                  </label>
-                </div>
-                <textarea id="tfa_2301" name="tfa_2301" rows="7" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="500" class="form-input required count-words" required></textarea>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group field-container-D" id="tfa_2299-D">
-              <div class="col-9 col-xl-12">
-                <div class="input-group form-group field-container-D">
-                  <label id="tfa_2299-L" class="preField r-margin" for="tfa_2299">
-                    Please provide us with:
-                    <ul>
-                      <li>Details about the type of activity you are seeking funding for</li>
-                      <li>How that activity will be delivered</li>
-                      <li>Link your activity and its delivery to your budget lines below</li>
-                    </ul>
-                    (maximum 500 words)
-                  </label>
-                </div>
-                <textarea id="tfa_2299" name="tfa_2299" rows="7" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="500" class="form-input required count-words" required></textarea>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2321-L" class="form-label r-margin preField reqMark" for="tfa_2321">
-                  How many individuals at risk do you anticipate will be supported by your proposed activity?
-                </label>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12" id="tfa_2321-D">
-                <input type="number" id="tfa_2321" name="tfa_2321" value="" autocomplete="nope" data-lpignore="true" min="1" title="How many individuals at risk do you anticipate will be supported by your proposed activity?" class="validate-integer form-input required" required>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2322-L" class="form-label r-margin preField reqMark" for="tfa_2322">
-                  Please indicate the proposed start date for the activity you are seeking funding for (this date must be no earlier than March 16th 2020)
-                </label>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12" id="tfa_2322-D">
-                <input type="date" id="tfa_2322" name="tfa_2322" value="" autocomplete="nope" data-lpignore="true" aria-required="true" min="2020-03-16" max="2020-07-31" title="Please indicate the proposed start date for the activity you are seeking funding for" class="validate-datecal form-input required" required>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2323-L" class="form-label r-margin preField reqMark" for="tfa_2323">
-                  Please indicate the proposed end date for the activity you are seeking funding for (this date must be no later than July 31st 2020)
-                </label>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12" id="tfa_2323-D">
-                <input type="date" id="tfa_2323" name="tfa_2323" value="" autocomplete="nope" data-lpignore="true" aria-required="true" min="2020-03-16" max="2020-07-31" title="Please indicate the proposed end date for the activity you are seeking funding for" class="validate-datecal form-input required" required>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group field-container-D" id="tfa_2302-D">
-              <div class="col-9 col-xl-12">
-                <div class="input-group form-group field-container-D">
-                  <label id="tfa_2302-L" class="preField r-margin" for="tfa_2302">
-                    Are you working in partnership with any other organisations to deliver the activity? If so, please briefly describe:
-                    <ul>
-                      <li>Who they are</li>
-                      <li>Their roles and responsibilities</li>
-                      <li>Confirm that they are aware of this application and are supportive of it</li>
-                    </ul>
-                    (maximum 200 words)
-                  </label>
-                </div>
-                <textarea id="tfa_2302" name="tfa_2302" rows="4" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="200" class="form-input count-words"></textarea>
-              </div>
-            </div> --}}
-
+            <div class="oneField field-container-D    " id="tfa_2564-D">
+            <label id="tfa_2564-L" class="label preField " for="tfa_2564">Is there anything unusual about your current funding / income that you would like to explain? Or anything else that you would like to tell us about your organisation’s financial situation? Include details of any ringfenced or committed monies for specific work or project</label><br><div class="inputWrapper"><textarea cols="100%" data-maxwords="150" id="tfa_2564" name="tfa_2564" title="Is there anything unusual about your current funding / income that you would like to explain? Or anything else that you would like to tell us about your organisation’s financial situation? Include details of any ringfenced or committed monies for specific work or project" class="count-words"></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2565-D">
+            <label id="tfa_2565-L" class="label preField " for="tfa_2565">Explain how you have been financially impacted as a result of COVID-19</label><br><div class="inputWrapper"><textarea cols="100%" data-maxwords="150" id="tfa_2565" name="tfa_2565" title="Explain how you have been financially impacted as a result of COVID-19" class="count-words"></textarea></div>
+            </div>
+            </fieldset>
+            <fieldset id="tfa_2567" class="section">
+            <legend id="tfa_2567-L">Recovery and funding plan</legend>
+            <div class="oneField field-container-D    " id="tfa_2602-D" role="group" aria-labelledby="tfa_2602-L" data-tfa-labelledby="-L tfa_2602-L">
+            <label id="tfa_2602-L" class="label preField ">Select the type of recovery support you are looking for (select all that are relevant)</label><br><div class="inputWrapper"><span id="tfa_2602" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_2603" class="" id="tfa_2603" name="tfa_2603" aria-labelledby="tfa_2603-L" data-tfa-labelledby="tfa_2602-L tfa_2603-L"><label class="label postField" id="tfa_2603-L" for="tfa_2603"><span class="input-checkbox-faux"></span>Guidance on statutory requirements</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2604" class="" id="tfa_2604" name="tfa_2604" aria-labelledby="tfa_2604-L" data-tfa-labelledby="tfa_2602-L tfa_2604-L"><label class="label postField" id="tfa_2604-L" for="tfa_2604"><span class="input-checkbox-faux"></span>Advice in helping to implement your recovery plan </label></span><span class="oneChoice"><input type="checkbox" value="tfa_2605" class="" id="tfa_2605" name="tfa_2605" aria-labelledby="tfa_2605-L" data-tfa-labelledby="tfa_2602-L tfa_2605-L"><label class="label postField" id="tfa_2605-L" for="tfa_2605"><span class="input-checkbox-faux"></span>General business support or advice</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2606" class="" id="tfa_2606" name="tfa_2606" aria-labelledby="tfa_2606-L" data-tfa-labelledby="tfa_2602-L tfa_2606-L"><label class="label postField" id="tfa_2606-L" for="tfa_2606"><span class="input-checkbox-faux"></span>Funding </label></span><span class="oneChoice"><input type="checkbox" value="tfa_2607" class="" id="tfa_2607" name="tfa_2607" data-conditionals="#tfa_2632" aria-labelledby="tfa_2607-L" data-tfa-labelledby="tfa_2602-L tfa_2607-L"><label class="label postField" id="tfa_2607-L" for="tfa_2607"><span class="input-checkbox-faux"></span>Other (please specify)</label></span></span></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2632-D">
+            <label id="tfa_2632-L" class="label preField " for="tfa_2632">Type of support other</label><br><div class="inputWrapper"><input type="text" id="tfa_2632" name="tfa_2632" value="" maxlength="150" data-condition="`#tfa_2607`" title="Type of support other" class=""></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2608-D">
+            <label id="tfa_2608-L" class="label preField " for="tfa_2608">Explain briefly how your organisation operated before coronavirus and any changes that you have already made to continue your activity.&nbsp;</label><br><div class="inputWrapper"><textarea data-maxwords="300" id="tfa_2608" name="tfa_2608" title="Explain briefly how your organisation operated before coronavirus and any changes that you have already made to continue your activity. " class="count-words"></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2609-D">
+            <label id="tfa_2609-L" class="label preField " for="tfa_2609">Tell us about your plans for the reopening or restructuring of your organisation and/or services</label><br><div class="inputWrapper"><textarea data-maxwords="300" id="tfa_2609" name="tfa_2609" title="Tell us about your plans for the reopening or restructuring of your organisation and/or services" class="count-words"></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2610-D">
+            <label id="tfa_2610-L" class="label preField " for="tfa_2610">Describe any physical changes you need to make to operate safely and sustainably in the recovery phase while continuing to have a positive impact for the people and communities you work with.</label><br><div class="inputWrapper"><textarea data-maxwords="300" id="tfa_2610" name="tfa_2610" title="Describe any physical changes you need to make to operate safely and sustainably in the recovery phase while continuing to have a positive impact for the people and communities you work with." class="count-words"></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2611-D">
+            <label id="tfa_2611-L" class="label preField " for="tfa_2611">Describe how your organisation and future activities will contribute to assisting rebuilding the health and wellbeing of your community. Priority will be given to organisations who can evidence the impact for people and communities who have been disproportionately affected by COVID19</label><br><div class="inputWrapper"><textarea data-maxwords="300" id="tfa_2611" name="tfa_2611" title="Describe how your organisation and future activities will contribute to assisting rebuilding the health and wellbeing of your community. Priority will be given to organisations who can evidence the impact for people and communities who have been disproportionately affected by COVID19" class="count-words"></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2612-D">
+            <label id="tfa_2612-L" class="label preField " for="tfa_2612">Have any of the people or communities you work with been involved in your recovery or reopening plans? If yes, tell us how. If no, tell us why this wasn't possible</label><br><div class="inputWrapper"><textarea data-maxwords="150" id="tfa_2612" name="tfa_2612" title="Have any of the people or communities you work with been involved in your recovery or reopening plans? If yes, tell us how. If no, tell us why this wasn't possible" class="count-words"></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2613-D">
+            <label id="tfa_2613-L" class="label preField " for="tfa_2613">Please tell us about any aspects of your recovery plan you have concerns about.</label><br><div class="inputWrapper"><textarea data-maxwords="150" id="tfa_2613" name="tfa_2613" title="Please tell us about any aspects of your recovery plan you have concerns about." class="count-words"></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2614-D" role="group" aria-labelledby="tfa_2614-L" data-tfa-labelledby="-L tfa_2614-L">
+            <label id="tfa_2614-L" class="label preField ">Tell us about the groups of people that are likely to be supported as a result of your recovery plan (select all that are relevant)</label><br><div class="inputWrapper"><span id="tfa_2614" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_2615" class="" id="tfa_2615" name="tfa_2615" aria-labelledby="tfa_2615-L" data-tfa-labelledby="tfa_2614-L tfa_2615-L"><label class="label postField" id="tfa_2615-L" for="tfa_2615"><span class="input-checkbox-faux"></span>People who are shielding</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2616" class="" id="tfa_2616" name="tfa_2616" aria-labelledby="tfa_2616-L" data-tfa-labelledby="tfa_2614-L tfa_2616-L"><label class="label postField" id="tfa_2616-L" for="tfa_2616"><span class="input-checkbox-faux"></span>People who have COVID-19 symptoms or are living with COVID-19 symptoms</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2617" class="" id="tfa_2617" name="tfa_2617" aria-labelledby="tfa_2617-L" data-tfa-labelledby="tfa_2614-L tfa_2617-L"><label class="label postField" id="tfa_2617-L" for="tfa_2617"><span class="input-checkbox-faux"></span>People who are non shielding but are higher risk</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2618" class="" id="tfa_2618" name="tfa_2618" aria-labelledby="tfa_2618-L" data-tfa-labelledby="tfa_2614-L tfa_2618-L"><label class="label postField" id="tfa_2618-L" for="tfa_2618"><span class="input-checkbox-faux"></span>People who are financially at risk</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2619" class="" id="tfa_2619" name="tfa_2619" aria-labelledby="tfa_2619-L" data-tfa-labelledby="tfa_2614-L tfa_2619-L"><label class="label postField" id="tfa_2619-L" for="tfa_2619"><span class="input-checkbox-faux"></span>People who are homeless</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2620" class="" id="tfa_2620" name="tfa_2620" aria-labelledby="tfa_2620-L" data-tfa-labelledby="tfa_2614-L tfa_2620-L"><label class="label postField" id="tfa_2620-L" for="tfa_2620"><span class="input-checkbox-faux"></span>Those with substance dependencies</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2621" class="" id="tfa_2621" name="tfa_2621" aria-labelledby="tfa_2621-L" data-tfa-labelledby="tfa_2614-L tfa_2621-L"><label class="label postField" id="tfa_2621-L" for="tfa_2621"><span class="input-checkbox-faux"></span>People with existing mental health problems</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2622" class="" id="tfa_2622" name="tfa_2622" aria-labelledby="tfa_2622-L" data-tfa-labelledby="tfa_2614-L tfa_2622-L"><label class="label postField" id="tfa_2622-L" for="tfa_2622"><span class="input-checkbox-faux"></span>People with learning disabilities</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2623" class="" id="tfa_2623" name="tfa_2623" aria-labelledby="tfa_2623-L" data-tfa-labelledby="tfa_2614-L tfa_2623-L"><label class="label postField" id="tfa_2623-L" for="tfa_2623"><span class="input-checkbox-faux"></span>People with dementia</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2624" class="" id="tfa_2624" name="tfa_2624" aria-labelledby="tfa_2624-L" data-tfa-labelledby="tfa_2614-L tfa_2624-L"><label class="label postField" id="tfa_2624-L" for="tfa_2624"><span class="input-checkbox-faux"></span>Victims of domestic abuse</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2625" class="" id="tfa_2625" name="tfa_2625" aria-labelledby="tfa_2625-L" data-tfa-labelledby="tfa_2614-L tfa_2625-L"><label class="label postField" id="tfa_2625-L" for="tfa_2625"><span class="input-checkbox-faux"></span>Vulnerable migrants, including refugees, asylum seekers, those with no recourse to public funds, people affected by human trafficking and seasonal migrants</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2626" class="" id="tfa_2626" name="tfa_2626" aria-labelledby="tfa_2626-L" data-tfa-labelledby="tfa_2614-L tfa_2626-L"><label class="label postField" id="tfa_2626-L" for="tfa_2626"><span class="input-checkbox-faux"></span>Gypsy / traveller communities</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2627" class="" id="tfa_2627" name="tfa_2627" aria-labelledby="tfa_2627-L" data-tfa-labelledby="tfa_2614-L tfa_2627-L"><label class="label postField" id="tfa_2627-L" for="tfa_2627"><span class="input-checkbox-faux"></span>Early release prisoners</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2628" class="" id="tfa_2628" name="tfa_2628" aria-labelledby="tfa_2628-L" data-tfa-labelledby="tfa_2614-L tfa_2628-L"><label class="label postField" id="tfa_2628-L" for="tfa_2628"><span class="input-checkbox-faux"></span>Victims of commercial sexual exploitation, including prostitution</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2629" class="" id="tfa_2629" name="tfa_2629" aria-labelledby="tfa_2629-L" data-tfa-labelledby="tfa_2614-L tfa_2629-L"><label class="label postField" id="tfa_2629-L" for="tfa_2629"><span class="input-checkbox-faux"></span>Care leavers</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2630" class="" id="tfa_2630" name="tfa_2630" data-conditionals="#tfa_2631" aria-labelledby="tfa_2630-L" data-tfa-labelledby="tfa_2614-L tfa_2630-L"><label class="label postField" id="tfa_2630-L" for="tfa_2630"><span class="input-checkbox-faux"></span>Other (please  describe)</label></span></span></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2631-D">
+            <label id="tfa_2631-L" class="label preField " for="tfa_2631">Supported communities other</label><br><div class="inputWrapper"><input type="text" id="tfa_2631" name="tfa_2631" value="" maxlength="150" data-condition="`#tfa_2630`" title="Supported communities other" class=""></div>
+            </div>
+            </fieldset>
+            <fieldset id="tfa_2566" class="section">
+            <legend id="tfa_2566-L">Funding specific questions</legend>
+            <fieldset id="tfa_2121" class="section">
+            <legend id="tfa_2121-L">Budget</legend>
+            <div id="tfa_2151" class="section group">
+            <div class="oneField field-container-D    " id="tfa_2369-D">
+            <label id="tfa_2369-L" class="label preField " for="tfa_2369">What is the overall estimated cost of your activities? Provide a short description of item(s) and cost. For example, PPE, building contractor, HR consultant to help you implement your plans.&nbsp; If you are applying to Adapt and Thrive, remember to also attach a detailed budget for your recovery plan.</label><br><div class="inputWrapper"><textarea cols="100%" data-maxwords="500" id="tfa_2369" name="tfa_2369" title="What is the overall estimated cost of your activities? Provide a short description of item(s) and cost. For example, PPE, building contractor, HR consultant to help you implement your plans.  If you are applying to Adapt and Thrive, remember to also attach a detailed budget for your recovery plan." class="count-words"></textarea></div>
+            </div>
             <div class="section">
               <div id="funding-details">
 
                 <div class="col-9 col-xl-12 b-margin-full">
                   <h3 id="tfa_2121-L">Funding required</h3>
-                  <p>
-                    Please give us a high-level budget, breaking down activity into a maximum of five broad themes (e.g. staff salaries, volunteer expenses, equipment). The total budget should not exceed the £100,000 limit of the Wellbeing Fund.
-                  </p>
 
                   <div id="tfa_2151" class="section group">
                     <table class="gridLayout" style="width:100%;">
@@ -982,18 +884,139 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="form-group">
-              <div class="col-4 col-xl-5 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2319-L" class="form-label r-margin preField" for="tfa_2319">
-                  Total annual income
-                  <div class="caption">From your most recent accounts</div>
+            </div>
+            </fieldset>
+            <div class="oneField field-container-D    " id="tfa_2568-D">
+            <label id="tfa_2568-L" class="label preField " for="tfa_2568">How much money are you applying for?</label><br><div class="inputWrapper"><input type="text" id="tfa_2568" name="tfa_2568" value="" maxlength="150" min="0" title="How much money are you applying for?" class="validate-integer"></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2569-D" role="group" aria-labelledby="tfa_2569-L" data-tfa-labelledby="-L tfa_2569-L">
+            <label id="tfa_2569-L" class="label preField ">Would you consider taking part funding in the form of a loan?</label><br><div class="inputWrapper"><span id="tfa_2569" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_2570" class="" id="tfa_2570" name="tfa_2570" aria-labelledby="tfa_2570-L" data-tfa-labelledby="tfa_2569-L tfa_2570-L"><label class="label postField" id="tfa_2570-L" for="tfa_2570"><span class="input-checkbox-faux"></span>Yes</label></span></span></div>
+            </div>
+            <fieldset id="tfa_2585" class="section">
+            <legend id="tfa_2585-L">Have you applied or are looking for other sources of funding to support this work. If yes, provide details i.e. funder, how much and expected outcome.</legend>
+            <table class="gridLayout ">
+            <thead><tr class="headerRow">
+            <th> </th>
+            <th scope="col" id="tfa_2584-GRID" class=""> </th>
+            </tr></thead>
+            <tbody><tr id="tfa_2572" class="section repeat   alternate-0 " data-repeatlimit="4">
+            <th scope="row" id="tfa_2572-L" class="headerCol"> </th>
+            <td class=""><div id="tfa_2584" class="section inline group">
+            <div class="oneField field-container-D    " id="tfa_2574-D">
+            <label id="tfa_2574-L" class="label preField " for="tfa_2574">Funder</label><br><div class="inputWrapper"><input type="text" id="tfa_2574" name="tfa_2574" value="" maxlength="150" title="Funder" class=""></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2571-D">
+            <label id="tfa_2571-L" class="label preField " for="tfa_2571">Activity description</label><br><div class="inputWrapper"><input type="text" id="tfa_2571" name="tfa_2571" value="" maxlength="150" title="Activity description" class=""></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2575-D">
+            <label id="tfa_2575-L" class="label preField " for="tfa_2575">Funding requested</label><br><div class="inputWrapper"><input type="text" id="tfa_2575" name="tfa_2575" value="" maxlength="150" title="Funding requested" class="validate-integer"></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2576-D">
+            <label id="tfa_2576-L" class="label preField " for="tfa_2576">Status</label><br><div class="inputWrapper"><select id="tfa_2576" name="tfa_2576" title="Status" class=""><option value="">Please select...</option>
+            <option value="tfa_2577" id="tfa_2577" class="">Applied</option>
+            <option value="tfa_2578" id="tfa_2578" class="">Committed</option>
+            <option value="tfa_2579" id="tfa_2579" class="">Guaranteed</option></select></div>
+            </div>
+            </div></td>
+            <td> </td>
+            <td style="display: none"></td>
+            </tr></tbody>
+            </table>
+            </fieldset>
+            <div class="oneField field-container-D    " id="tfa_2587-D">
+            <label id="tfa_2587-L" class="label preField " for="tfa_2587">How will this funding help with your overall fundraising and/or recovery plan?</label><br><div class="inputWrapper"><textarea data-maxwords="150" id="tfa_2587" name="tfa_2587" title="How will this funding help with your overall fundraising and/or recovery plan?" class="count-words"></textarea></div>
+            </div>
+            <div class="oneField field-container-D    " id="tfa_2588-D" role="group" aria-labelledby="tfa_2588-L" data-tfa-labelledby="-L tfa_2588-L">
+            <label id="tfa_2588-L" class="label preField ">Are you applying for funding</label><br><div class="inputWrapper"><span id="tfa_2588" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_2589" class="" id="tfa_2589" name="tfa_2589" aria-labelledby="tfa_2589-L" data-tfa-labelledby="tfa_2588-L tfa_2589-L"><label class="label postField" id="tfa_2589-L" for="tfa_2589"><span class="input-checkbox-faux"></span>To continue activity you have been delivering in response to COVID</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2590" class="" id="tfa_2590" name="tfa_2590" aria-labelledby="tfa_2590-L" data-tfa-labelledby="tfa_2588-L tfa_2590-L"><label class="label postField" id="tfa_2590-L" for="tfa_2590"><span class="input-checkbox-faux"></span>To re-start core activity</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2591" class="" id="tfa_2591" name="tfa_2591" aria-labelledby="tfa_2591-L" data-tfa-labelledby="tfa_2588-L tfa_2591-L"><label class="label postField" id="tfa_2591-L" for="tfa_2591"><span class="input-checkbox-faux"></span>To deliver new activity identified as a priority due to COVID impact</label></span></span></div>
+            </div>
+            <fieldset id="tfa_2592" class="section">
+            <legend id="tfa_2592-L">Further detail</legend>
+            <table class="gridLayout ">
+            <thead><tr class="headerRow">
+            <th> </th>
+            <th scope="col" id="tfa_2594-GRID" class="">Fund </th>
+            <th scope="col" id="tfa_2595-GRID" class="">Amount </th>
+            <th scope="col" id="tfa_2596-GRID" class="">Funded until </th>
+            <th scope="col" id="tfa_2597-GRID" class="">Partner </th>
+            </tr></thead>
+            <tbody><tr id="tfa_2593" class="section repeat   alternate-0 " data-repeatlimit="2">
+            <th scope="row" id="tfa_2593-L" class="headerCol"> </th>
+            <td class=""><div class="oneField field-container-D    " id="tfa_2594-D"><div class="inputWrapper"><input type="text" id="tfa_2594" name="tfa_2594" value="" maxlength="150" title="Fund" class=""></div></div></td>
+            <td class=""><div class="oneField field-container-D    " id="tfa_2595-D"><div class="inputWrapper"><input type="text" id="tfa_2595" name="tfa_2595" value="" maxlength="150" title="Amount" class=""></div></div></td>
+            <td class=""><div class="oneField field-container-D    " id="tfa_2596-D"><div class="inputWrapper"><input type="text" id="tfa_2596" name="tfa_2596" value="" maxlength="150" title="Funded until" class=""></div></div></td>
+            <td class=""><div class="oneField field-container-D    " id="tfa_2597-D"><div class="inputWrapper"><input type="text" id="tfa_2597" name="tfa_2597" value="" maxlength="150" title="Partner" class=""></div></div></td>
+            <td> </td>
+            <td style="display: none"></td>
+            </tr></tbody>
+            </table>
+            </fieldset>
+
+            <div class="oneField field-container-D    " id="tfa_2598-D">
+            <label id="tfa_2598-L" class="label preField " for="tfa_2598">If funding is to deliver services and activity please describe how you are working in partnership with other community organisations and public sector to maximise resources?</label><br><div class="inputWrapper"><textarea data-maxwords="150" id="tfa_2598" name="tfa_2598" title="If funding is to deliver services and activity please describe how you are working in partnership with other community organisations and public sector to maximise resources?" class="count-words"></textarea></div>
+            </div>
+
+            <div class="col-9 col-xl-12">
+              <h3>Governance and finance checks</h3>
+              <p>
+                Please upload the following documents to allow us to conduct due diligence checks on these criteria.  There is a 5Mb limit, per document, on uploading.  If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
+              </p>
+            </div>
+
+            <div class="form-group t-margin-full">
+              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <label id="tfa_2303-L" class="form-label r-margin preField" for="tfa_2303">
+                  Your main governance document<br />
+                  (Constitution, memorandum and articles, rules of operation etc.)
                 </label>
               </div>
-              <div class="col-5 col-xl-7 col-lg-7 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_2319-D" style="width:100%;">
-                  <span class="input-group-addon">&pound;</span>
-                  <input type="number" id="tfa_2319" name="tfa_2319" value="0" min="1" autocomplete="nope" data-lpignore="true" aria-required="true" class="required form-input" required>
+              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2303-D">
+                  <input type="file" id="tfa_2303" name="tfa_2303" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" {{#unless defaults.application_editing}}required{{/unless}}>
                 </div>
+              </div>
+            </div>
+            <div class="form-group t-margin-full">
+              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <label id="tfa_2189-L" class="form-label r-margin preField" for="tfa_2189">
+                  Your latest bank statement
+                </label>
+              </div>
+              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2189-D">
+                  <input type="file" id="tfa_2189" name="tfa_2189" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" {{#unless defaults.application_editing}}required{{/unless}}>
+                </div>
+              </div>
+            </div>
+            <div class="form-group t-margin-full">
+              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <label id="tfa_2187-L" class="form-label r-margin preField" for="tfa_2187">
+                  Your latest annual accounts
+                </label>
+              </div>
+              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2187-D">
+                  <input type="file" id="tfa_2187" name="tfa_2187" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" {{#unless defaults.application_editing}}required{{/unless}}>
+                </div>
+              </div>
+            </div>
+            <div class="form-group t-margin-full">
+              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <label id="tfa_2390-L" class="form-label r-margin preField" for="tfa_2390">
+                  Your latest management accounts
+                </label>
+              </div>
+              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D" id="tfa_2390-D">
+                  <input type="file" id="tfa_2390" name="tfa_2390" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" class="form-input required" {{#unless defaults.application_editing}}required{{/unless}}>
+                </div>
+              </div>
+            </div>
+            <div class="form-group b-margin-full">
+              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12"></div>
+              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <p class="form-input-hint text-secondary ">
+                  The maximum file size you can upload is 5Mb
+                </p>
               </div>
             </div>
           </div>
@@ -1012,7 +1035,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
                 <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
                 <i class="form-icon"></i>
-                ...your proposed activities align with current Government guidelines and phases
+                ...you are aware of and understand all current Government guidelines and phases and your proposed activities align with these
               </label>
             </div>
           </div>
@@ -1021,7 +1044,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
                 <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
                 <i class="form-icon"></i>
-                ...your organisation has the capacity to engage with the support and develop a recovery plan
+                ..you have either staff, directors and/or trustees/management committee members who are able to implement the plan and discuss the proposed changes
               </label>
             </div>
           </div>
@@ -1043,7 +1066,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" value="4844638" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="76e570e6a1fe06dbcccebe0246bb3d7f" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="5" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="22" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
       </form>
     </div>
@@ -1057,7 +1080,7 @@ document.addEventListener("DOMContentLoaded", function() {
       $postcode = $('#tfa_1925'),
       $postcodeIcon = $('#postcode_validation_icon'),
       $postcodeWrapper = $('#postcode-wrapper'),
-      $postcodeValidationMessage = $('#postcode_validation_message'),
+      $postcodeValidationMessage = $('#postcode_validation_message');
       // $locations = $('input[name=tfa_2007]'),
       // $acrossScotlandRadio = $('#tfa_2019'),
       // $acrossSeveralAuthoritiesRadio = $('#tfa_2020'),
@@ -1118,13 +1141,13 @@ document.addEventListener("DOMContentLoaded", function() {
     $('#tfa_1955').val(data[0].simd_rank);
     $('#postcode_validation_message').html('');
     $('#postcode-wrapper').removeClass("has-error")
-    $('#location-details').removeClass("hidden")
-    $('#contact-details').removeClass("hidden")
-    $('#interest-details').removeClass("hidden")
+    // $('#location-details').removeClass("hidden")
+    // $('#contact-details').removeClass("hidden")
+    // $('#interest-details').removeClass("hidden")
     $('#postcode_validation_icon')
     .addClass("fa-check text-success")
     .removeClass("loading fa-times text-primary text-error");
-    $('#submit_button').removeClass("hidden");
+    // $('#submit_button').removeClass("hidden");
   }
 
   function clearLocationData() {

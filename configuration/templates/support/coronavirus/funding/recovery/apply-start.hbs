@@ -1,9 +1,6 @@
 <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
   <p>
-    The Recovery Fund, part of Scottish Government’s £350m emergency response to coronavirus, is focused on providing funding to organisations that can support people who are facing additional barriers or have increased requirements as a direct result of the pandemic. It can fund both immediate and emerging forms of support, from now up to the end of July, reflecting that the context for people and communities may change over that time.
-  </p>
-  <p>
-    Any organisation may hold just one substantive award of between £5k and £100k.
+    The Community & Third Sector Recovery Programme, part of Scottish Government’s £350m emergency response to coronavirus, is helping organisations to adapt and change so they can re-open and operate sustainably post-COVID.
   </p>
   <p>
     Please enter the details below to continue your application process.
@@ -36,7 +33,7 @@
         {{!-- <p>
         If you are not a registered charity you can still apply. Click the link below to continue.
         </p> --}}
-        <a href="/support/coronavirus/funding/scottish-government/recovery-fund/apply/not-a-charity" class="btn btn-block">
+        <a href="/support/coronavirus/funding/scottish-government/community-recovery/apply/not-a-charity" class="btn btn-block">
           Not a registered charity
         </a>
       </div>
@@ -74,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
 
     if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
-      var url = '/support/coronavirus/funding/scottish-government/recovery-fund/apply/' + charityNumber;
+      var url = '/support/coronavirus/funding/scottish-government/community-recovery/apply/' + charityNumber;
       $('#charity_number_submit')
       .removeAttr('disabled', false)
       .attr('href', url);
