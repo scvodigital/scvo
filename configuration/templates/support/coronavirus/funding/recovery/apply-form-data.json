@@ -283,94 +283,134 @@
       "id": "tfa_2538"
     }
   ],
-  "main_issues": [
+  "target_communities": [
     {
-      "name": "Food",
-      "id": "tfa_2023"
+      "name": "Age (older people)",
+      "id": "tfa_2507"
     },
     {
-      "name": "Physical health",
-      "id": "tfa_2024"
+      "name": "Age (younger people)",
+      "id": "tfa_2508"
     },
     {
-      "name": "Mental health and wellbeing",
-      "id": "tfa_2025"
+      "name": "Disability",
+      "id": "tfa_2509"
     },
     {
-      "name": "Home life or housing situation",
-      "id": "tfa_2026"
+      "name": "Gender",
+      "id": "tfa_2510"
     },
     {
-      "name": "Money",
-      "id": "tfa_2027"
+      "name": "Race",
+      "id": "tfa_2511"
     },
     {
-      "name": "Employment",
-      "id": "tfa_2028"
+      "name": "Religion / belief / faith",
+      "id": "tfa_2512"
     },
     {
-      "name": "Other",
-      "id": "tfa_2029"
+      "name": "Sexual orientation and / or gender identity",
+      "id": "tfa_2513"
+    },
+    {
+      "name": "Socio-economic disadvantage",
+      "id": "tfa_2514"
+    },
+    {
+      "name": "Other (please specify)",
+      "id": "tfa_2515"
     }
   ],
-  "other_funding": [
+  "income_generation": [
     {
-      "name": "Wellbeing Fund (earlier phases)",
-      "id": "tfa_2308"
+      "name": "Competitive Tenders",
+      "id": "tfa_2542"
     },
     {
-      "name": "Third Sector Resilience Fund",
-      "id": "tfa_2309"
+      "name": "Donations",
+      "id": "tfa_2543"
     },
     {
-      "name": "Food Fund",
-      "id": "tfa_2310"
+      "name": "Fundraising (including fundraising events)",
+      "id": "tfa_2544"
     },
     {
-      "name": "Supporting Communities Fund",
-      "id": "tfa_2311"
+      "name": "Grants",
+      "id": "tfa_2545"
+    },
+    {
+      "name": "Legacies",
+      "id": "tfa_2546"
+    },
+    {
+      "name": "Loans",
+      "id": "tfa_2547"
+    },
+    {
+      "name": "Membership Fees",
+      "id": "tfa_2548"
+    },
+    {
+      "name": "Service Level Agreements",
+      "id": "tfa_2549"
+    },
+    {
+      "name": "Sponsorship",
+      "id": "tfa_2550"
+    },
+    {
+      "name": "Trading (selling to the public or other organisations)",
+      "id": "tfa_2551"
+    },
+    {
+      "name": "Community Bonds",
+      "id": "tfa_2552"
+    },
+    {
+      "name": "Community Shares",
+      "id": "tfa_2553"
     }
   ],
-  "activity_types": [
+  "type_of_support": [
     {
-      "name": "Food provision or co-ordination",
-      "id": "tfa_2030"
+      "name": "Guidance on statutory requirements",
+      "id": "tfa_2603"
     },
     {
-      "name": "Delivery of shopping / essential items",
-      "id": "tfa_2031"
+      "name": "Advice in helping to implement your recovery plan",
+      "id": "tfa_2604"
     },
     {
-      "name": "Activity to reduce the impact of isolation and/or increase wellbeing",
-      "id": "tfa_2032"
+      "name": "General business support or advice",
+      "id": "tfa_2605"
     },
     {
-      "name": "Co-ordination of local activity (e.g. support services or volunteers)",
-      "id": "tfa_2033"
+      "name": "Funding",
+      "id": "tfa_2606"
     },
     {
-      "name": "Money to sustain your organisation due to loss of other income",
-      "id": "tfa_2034"
+      "name": "Other (please specify)",
+      "id": "tfa_2607"
+    }
+  ],
+  "test3": [
+    {
+      "name": "",
+      "id": ""
     },
     {
-      "name": "Resources to support your organisation’s staff or volunteers to work remotely",
-      "id": "tfa_2035"
+      "name": "",
+      "id": ""
+    }
+  ],
+  "test4": [
+    {
+      "name": "",
+      "id": ""
     },
     {
-      "name": "Resources to support change in how your service is delivered (e.g. providing new online or telephone services)",
-      "id": "tfa_2036"
-    },
-    {
-      "name": "Money for additional supplies to support service delivery (e.g. hygiene products, PPE)",
-      "id": "tfa_2037"
-    },
-    {
-      "name": "Staff or volunteer expenses",
-      "id": "tfa_2038"
-    },
-    {
-      "name": "Other (please describe)",
-      "id": "tfa_2039"
+      "name": "",
+      "id": ""
     }
   ],
   "defaults": {
@@ -403,6 +443,8 @@
     "tfa_1958": {{{json value=(default application.Contact__r.Title "")}}},
     "tfa_1932": {{{json value=(default application.Contact__r.Email "")}}},
     "tfa_1949": {{{json value=(default application.Contact__r.npe01__WorkPhone__c "")}}},
+    "tfa_2506": {{{json value=(default application.Target_communities__c "")}}},
+    "tfa_2348": {{{json value=(default application.Target_communities_other__c "")}}},
     "tfa_2270": {{{json value=(default application.Name_on_bank_account__c "")}}},
     "tfa_2271": {{{json value=(default application.Name_of_Bank__c "")}}},
     "tfa_2283": {{{json value=(default application.Bank_Address__c "")}}},
