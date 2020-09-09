@@ -193,42 +193,94 @@
       "id_single": "tfa_2001"
     }
   ],
-  "target_groups": [
+  "main_sector": [
     {
-      "name": "Children and families",
-      "id": "tfa_2040"
+      "name": "Community Engagement/Development",
+      "id": "tfa_2517"
     },
     {
-      "name": "Young people",
-      "id": "tfa_2041"
+      "name": "Creative Industries (including Digital)",
+      "id": "tfa_2518"
     },
     {
-      "name": "Older people",
-      "id": "tfa_2042"
+      "name": "Advocacy, minorities, rights and law",
+      "id": "tfa_2519"
     },
     {
-      "name": "Shielded group",
-      "id": "tfa_2043"
+      "name": "Circular Economy",
+      "id": "tfa_2520"
     },
     {
-      "name": "People with disabilities",
-      "id": "tfa_2044"
+      "name": "Education (including research)",
+      "id": "tfa_2521"
     },
     {
-      "name": "Minority communities",
-      "id": "tfa_2045"
+      "name": "Employability",
+      "id": "tfa_2522"
     },
     {
-      "name": "Key workers",
-      "id": "tfa_2046"
+      "name": "Energy (including renewables)",
+      "id": "tfa_2523"
     },
     {
-      "name": "Homeless people and rough sleepers",
-      "id": "tfa_2320"
+      "name": "Environment and animals",
+      "id": "tfa_2524"
     },
     {
-      "name": "Other",
-      "id": "tfa_2047"
+      "name": "Finance and Business Services",
+      "id": "tfa_2525"
+    },
+    {
+      "name": "Food and Drink",
+      "id": "tfa_2526"
+    },
+    {
+      "name": "Health (including mental health)",
+      "id": "tfa_2527"
+    },
+    {
+      "name": "Housing",
+      "id": "tfa_2528"
+    },
+    {
+      "name": "Human rights and law",
+      "id": "tfa_2529"
+    },
+    {
+      "name": "Social Care",
+      "id": "tfa_2530"
+    },
+    {
+      "name": "Life Sciences",
+      "id": "tfa_2531"
+    },
+    {
+      "name": "Preschool education and childcare",
+      "id": "tfa_2532"
+    },
+    {
+      "name": "Religion and Belief",
+      "id": "tfa_2533"
+    },
+    {
+      "name": "Retail",
+      "id": "tfa_2534"
+    },
+    {
+      "name": "Sport and Physical Activity",
+      "id": "tfa_2535"
+    },
+    {
+      "name": "Tourism and Hospitality",
+      "id": "tfa_2536"
+    },
+    {
+      "name": "Travel (including community travel)",
+      "id": "tfa_2537"
+    },
+    {
+      "name": "Other (please specify)",
+      "id": "tfa_2538"
     }
   ],
   "main_issues": [
@@ -345,6 +397,7 @@
     "tfa_1939": {{{json value=(default application.Account__r.Organisation_Email__c "")}}},
     "tfa_2504": {{{json value=(default application.Account__r.Organisation_established__c "")}}},
     "tfa_2325": {{{json value=(default application.Account__r.Description "")}}},
+    "tfa_2394": {{{json value=(default application.Account__r.Main_sector__c "")}}},
     "tfa_1": {{{json value=(default application.Contact__r.FirstName "")}}},
     "tfa_1875": {{{json value=(default application.Contact__r.LastName "")}}},
     "tfa_1958": {{{json value=(default application.Contact__r.Title "")}}},
@@ -354,7 +407,6 @@
     "tfa_2271": {{{json value=(default application.Name_of_Bank__c "")}}},
     "tfa_2283": {{{json value=(default application.Bank_Address__c "")}}},
     "tfa_2280": {{{json value=(default application.Bank_Postcode__c "")}}},
-    "tfa_2015": {{{json value=(default application.Is_there_a_specific_target_group__c "")}}},
     "tfa_2050": {{{json value=(default application.Is_there_a_specific_target_group_Other__c "")}}},
     "tfa_2051": {{{json value=(default application.Where_do_you_provide_services__c "")}}},
     "tfa_2084": {{{json value=(default application.Where_do_you_provide_services_LA__c "")}}},

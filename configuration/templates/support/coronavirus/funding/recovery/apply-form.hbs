@@ -1,6 +1,6 @@
 {{#withExtend this
   selection_local_authorities=@root.data.form_data.local_authorities
-  selection_target=@root.data.form_data.target_groups
+  selection_sector=@root.data.form_data.main_sector
   selection_where=@root.data.form_data.where_services
   selection_issue=@root.data.form_data.main_issues
   selection_funding=@root.data.form_data.other_funding
@@ -203,13 +203,41 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="oneField field-container-D    " id="tfa_2326-D">
-            <label id="tfa_2326-L" class="label preField reqMark" for="tfa_2326">Workforce staff</label><br><div class="inputWrapper"><input type="text" id="tfa_2326" name="tfa_2326" value="" maxlength="10" aria-required="true" min="0" title="Workforce staff" class="validate-integer required"></div>
-            </div>
-            <div class="oneField field-container-D    " id="tfa_2516-D">
-            <label id="tfa_2516-L" class="label preField reqMark" for="tfa_2516">Workforce volunteers</label><br><div class="inputWrapper"><input type="text" id="tfa_2516" name="tfa_2516" value="" maxlength="10" aria-required="true" min="0" title="Workforce volunteers" class="validate-integer required"></div>
-            </div>
 
+            <div class="col-9 col-xl-12 b-margin-full">
+              <div class="section group">
+                <table class="gridLayout" style="width:100%;">
+                  <thead>
+                    <tr class="headerRow">
+                      <th> </th>
+                      <th scope="col" id="tfa_2153-GRID">
+                        Full Time Equivalent (FTE)
+                      </th>
+                      <th scope="col" id="tfa_2154-GRID">
+                        Volunteers
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="tfa_2152" class="section alternate-0 ">
+                      <th scope="row" id="tfa_2152-L" class="headerCol text-left">
+                        Staff numbers
+                      </th>
+                      <td>
+                        <div class="form-group oneField field-container-D" id="tfa_2326-D">
+                          <input type="number" min="0" id="tfa_2326" name="tfa_2326" value="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="form-group oneField field-container-D" id="tfa_2516-D">
+                          <input type="number" min="0" id="tfa_2516" name="tfa_2516" value="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
 
             <div class="form-group field-container-D t-margin" id="tfa_2326-D">
               <div class="col-9 col-xl-12">
@@ -223,33 +251,29 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="oneField field-container-D    " id="tfa_2394-D">
-            <label id="tfa_2394-L" class="label preField " for="tfa_2394">Main sector</label><br><div class="inputWrapper"><select id="tfa_2394" name="tfa_2394" title="Main sector" class=""><option value="">Please select...</option>
-            <option value="tfa_2517" id="tfa_2517" class="">Community Engagement/Development </option>
-            <option value="tfa_2518" id="tfa_2518" class="">Creative Industries (including Digital)</option>
-            <option value="tfa_2519" id="tfa_2519" class="">Advocacy, minorities, rights and law </option>
-            <option value="tfa_2520" id="tfa_2520" class="">Circular Economy </option>
-            <option value="tfa_2521" id="tfa_2521" class="">Education (including research) </option>
-            <option value="tfa_2522" id="tfa_2522" class="">Employability </option>
-            <option value="tfa_2523" id="tfa_2523" class="">Energy (including renewables) </option>
-            <option value="tfa_2524" id="tfa_2524" class="">Environment and animals </option>
-            <option value="tfa_2525" id="tfa_2525" class="">Finance and Business Services </option>
-            <option value="tfa_2526" id="tfa_2526" class="">Food and Drink </option>
-            <option value="tfa_2527" id="tfa_2527" class="">Health (including mental health) </option>
-            <option value="tfa_2528" id="tfa_2528" class="">Housing </option>
-            <option value="tfa_2529" id="tfa_2529" class="">Human rights and law </option>
-            <option value="tfa_2530" id="tfa_2530" class="">Social Care</option>
-            <option value="tfa_2531" id="tfa_2531" class="">Life Sciences </option>
-            <option value="tfa_2532" id="tfa_2532" class="">Preschool education and childcare </option>
-            <option value="tfa_2533" id="tfa_2533" class="">Religion and Belief </option>
-            <option value="tfa_2534" id="tfa_2534" class="">Retail </option>
-            <option value="tfa_2535" id="tfa_2535" class="">Sport and Physical Activity </option>
-            <option value="tfa_2536" id="tfa_2536" class="">Tourism and Hospitality </option>
-            <option value="tfa_2537" id="tfa_2537" class="">Travel (including community travel) </option>
-            <option value="tfa_2538" id="tfa_2538" data-conditionals="#tfa_2539" class="">Other (please specify)</option></select></div>
+            <div class="form-group field-container-D b-margin-full" id="tfa_2394-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="input-group form-group field-container-D">
+                  <label id="tfa_2394-L" class="preField reqMark r-margin" for="tfa_2394">
+                    Select the main sector your organisation works in
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <select id="tfa_2394" name="tfa_2394" aria-required="true" class="form-select required">
+                  <option value="" disabled{{#unless defaults.tfa_2394}} selected{{/unless}}>
+                    Please select...
+                  </option>
+                  {{#each selection_sector ~}}
+                  <option value="{{id}}" id="{{id}}"{{#compare ../defaults.tfa_2394 name}} selected{{/compare}}>{{name}}</option>
+                  {{/each ~}}
+                </select>
+              </div>
             </div>
-            <div class="oneField field-container-D    " id="tfa_2539-D">
-            <label id="tfa_2539-L" class="label preField " for="tfa_2539">Main sector other</label><br><div class="inputWrapper"><input type="text" id="tfa_2539" name="tfa_2539" value="" maxlength="150" data-condition="`#tfa_2538`" title="Main sector other" class=""></div>
+            <div class="oneField field-container-D" id="tfa_2539-D">
+              <div class="inputWrapper">
+                <input type="text" id="tfa_2539" name="tfa_2539" value="" maxlength="150" title="Main sector other" class="">
+              </div>
             </div>
 
             <h4>Organisation address</h4>
@@ -437,9 +461,18 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
 
-        <div class="oneField field-container-D    " id="tfa_2540-D">
-        <label id="tfa_2540-L" class="label preField " for="tfa_2540">How are the people and communities you seek to serve involved or able to influence how you deliver your services or support?</label><br><div class="inputWrapper"><textarea data-maxwords="150" id="tfa_2540" name="tfa_2540" title="How are the people and communities you seek to serve involved or able to influence how you deliver your services or support?" class="count-words"></textarea></div>
+        <div class="form-group field-container-D t-margin" id="tfa_2540-D">
+          <div class="col-9 col-xl-12">
+            <div class="input-group form-group field-container-D">
+              <label id="tfa_2540-L" class="preField r-margin reqMark" for="tfa_2540">
+                How are the people and communities you seek to serve involved or able to influence how you deliver your services or support?<br />
+                (maximum 150 words)
+              </label>
+            </div>
+            <textarea id="tfa_2540" name="tfa_2540" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" {{#if defaults.application_editing}}{{else}}required{{/if}}></textarea>
+          </div>
         </div>
+
         <div class="oneField field-container-D    " id="tfa_2506-D" role="group" aria-labelledby="tfa_2506-L" data-tfa-labelledby="-L tfa_2506-L">
         <label id="tfa_2506-L" class="label preField ">Does your organisation work with any of the following communities or protected characteristics? (Select all that are relevant)</label><br><div class="inputWrapper"><span id="tfa_2506" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_2507" class="" id="tfa_2507" name="tfa_2507" aria-labelledby="tfa_2507-L" data-tfa-labelledby="tfa_2506-L tfa_2507-L"><label class="label postField" id="tfa_2507-L" for="tfa_2507"><span class="input-checkbox-faux"></span>Age (older people)</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2508" class="" id="tfa_2508" name="tfa_2508" aria-labelledby="tfa_2508-L" data-tfa-labelledby="tfa_2506-L tfa_2508-L"><label class="label postField" id="tfa_2508-L" for="tfa_2508"><span class="input-checkbox-faux"></span>Age (younger people)</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2509" class="" id="tfa_2509" name="tfa_2509" aria-labelledby="tfa_2509-L" data-tfa-labelledby="tfa_2506-L tfa_2509-L"><label class="label postField" id="tfa_2509-L" for="tfa_2509"><span class="input-checkbox-faux"></span>Disability</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2510" class="" id="tfa_2510" name="tfa_2510" aria-labelledby="tfa_2510-L" data-tfa-labelledby="tfa_2506-L tfa_2510-L"><label class="label postField" id="tfa_2510-L" for="tfa_2510"><span class="input-checkbox-faux"></span>Gender</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2511" class="" id="tfa_2511" name="tfa_2511" aria-labelledby="tfa_2511-L" data-tfa-labelledby="tfa_2506-L tfa_2511-L"><label class="label postField" id="tfa_2511-L" for="tfa_2511"><span class="input-checkbox-faux"></span>Race</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2512" class="" id="tfa_2512" name="tfa_2512" aria-labelledby="tfa_2512-L" data-tfa-labelledby="tfa_2506-L tfa_2512-L"><label class="label postField" id="tfa_2512-L" for="tfa_2512"><span class="input-checkbox-faux"></span>Religion / belief / faith</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2513" class="" id="tfa_2513" name="tfa_2513" aria-labelledby="tfa_2513-L" data-tfa-labelledby="tfa_2506-L tfa_2513-L"><label class="label postField" id="tfa_2513-L" for="tfa_2513"><span class="input-checkbox-faux"></span>Sexual orientation and / or gender identity</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2514" class="" id="tfa_2514" name="tfa_2514" aria-labelledby="tfa_2514-L" data-tfa-labelledby="tfa_2506-L tfa_2514-L"><label class="label postField" id="tfa_2514-L" for="tfa_2514"><span class="input-checkbox-faux"></span>Socio-economic disadvantage</label></span><span class="oneChoice"><input type="checkbox" value="tfa_2515" class="" id="tfa_2515" name="tfa_2515" data-conditionals="#tfa_2348" aria-labelledby="tfa_2515-L" data-tfa-labelledby="tfa_2506-L tfa_2515-L"><label class="label postField" id="tfa_2515-L" for="tfa_2515"><span class="input-checkbox-faux"></span>Other (please specify)</label></span></span></div>
         </div>
