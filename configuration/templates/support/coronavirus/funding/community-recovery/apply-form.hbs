@@ -259,7 +259,7 @@ wFORMS.behaviors.prefill.skip = false;
                     Please select&hellip;
                   </option>
                   {{#each main_sector ~}}
-                    <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_2394 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2539-D"{{/if}}>{{name}}</option>
+                    <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_2394 name)}} selected{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2539-D"{{/if}}>{{name}}</option>
                   {{/each ~}}
                 </select>
                 <div class="form-group oneField field-container-D" id="tfa_2539-D" data-condition="`#tfa_2538`" style="width:100%;">
