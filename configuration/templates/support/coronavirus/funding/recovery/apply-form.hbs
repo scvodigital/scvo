@@ -139,14 +139,14 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1876-D">
-                  <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
-                  {{#unless defaults.application_editing}}
+                  <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{else}}required{{#if defaults.tfa_1876}} readonly{{/if}}{{/if}}>
+                  {{!-- {{#unless defaults.application_editing}}
                   {{#if defaults.is_charity}}
                   <p class="form-input-hint text-secondary">
                     If any of the information below about your registered office is incorrect please amend it
                   </p>
                   {{/if}}
-                  {{/unless}}
+                  {{/unless}} --}}
                 </div>
               </div>
             </div>
@@ -221,7 +221,7 @@ wFORMS.behaviors.prefill.skip = false;
                     </tr>
                   </thead>
                   <tbody>
-                    <tr id="tfa_2152" class="section alternate-0 ">
+                    <tr id="tfa_2152" class="section">
                       <th scope="row" id="tfa_2152-L" class="headerCol text-left">
                         Staff numbers
                       </th>
@@ -356,7 +356,7 @@ wFORMS.behaviors.prefill.skip = false;
               <h3 id="tfa_1882-L">Service delivery</h3>
             </div>
 
-            <div class="form-group field-container-D b-margin-full" id="tfa_2398-D" role="radiogroup" aria-labelledby="tfa_2398-L" data-tfa-labelledby="-L tfa_2398-L">
+            <div class="form-group field-container-D b-margin-full" id="tfa_2398-D" role="radiogroup" aria-labelledby="tfa_2398-L" data-tfa-labelledby="tfa_2398-L">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D">
                   <label id="tfa_2398-L" class="preField reqMark r-margin">
@@ -376,13 +376,13 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group b-margin" id="tfa_2505-D" data-condition="`#tfa_2399`">
                     <div class="col-12">
                       <div class="input-group form-group field-container-D">
-                        <label id="tfa_2505-L" class="form-label r-margin preField" for="tfa_2505">
+                        <label id="tfa_2505-L" class="form-label r-margin preField reqMark" for="tfa_2505">
                           Which postcode(s) do you deliver in, if different from where your organisation is based?
                         </label>
                       </div>
                     </div>
                     <div class="col-12">
-                      <input type="text" id="tfa_2505" name="tfa_2505" value="{{defaults.tfa_2505}}" maxlength="150" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input">
+                      <input type="text" id="tfa_2505" name="tfa_2505" value="{{defaults.tfa_2505}}" maxlength="150" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
                     </div>
                   </div>
 
@@ -803,7 +803,7 @@ wFORMS.behaviors.prefill.skip = false;
                       </tr>
                     </thead>
                     <tbody>
-                      <tr id="tfa_2152" class="section alternate-0 ">
+                      <tr id="tfa_2152" class="section">
                         <td>
                           <div class="form-group oneField field-container-D" id="tfa_2558-D">
                             <input type="number" maxlength="4" min="2010" max="2020" id="tfa_2558" name="tfa_2558" value="" autocomplete="nope" data-lpignore="true" class="form-input required" required>
@@ -1061,122 +1061,99 @@ wFORMS.behaviors.prefill.skip = false;
                     <table class="gridLayout" style="width:100%;">
                       <thead>
                         <tr class="headerRow">
-                          <th> </th>
-                          <th scope="col" id="tfa_2153-GRID">
-                            Description
+                          <th scope="col" id="tfa_2153-GRID" style="width:50%;">
+                            Budget description
                           </th>
-                          <th scope="col" id="tfa_2154-GRID">
+                          <th scope="col" id="tfa_2154-GRID" style="width:50%;">
                             Amount
                           </th>
                         </tr>
                       </thead>
-
                       <tbody>
-                        <tr id="tfa_2152" class="section alternate-0 ">
-                          <th scope="row" id="tfa_2152-L" class="headerCol text-left">
-                            Budget line 1
-                          </th>
+                        <tr id="tfa_2152" class="section">
+                          <td>
+                            <div class="form-group oneField field-container-D" id="tfa_2635-D">
+                              <input type="text" id="tfa_2635" name="tfa_2635" value="{{defaults.tfa_2635}}" autocomplete="nope" data-lpignore="true" class="form-input">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="form-group oneField field-container-D" id="tfa_2638-D">
+                              <div class="input-group" style="width:100%;">
+                                <span class="input-group-addon">&pound;</span>
+                                <input type="number" min="1" max="100000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr id="tfa_2156" class="section">
+                          <td>
+                            <div class="form-group oneField field-container-D" id="tfa_2639-D">
+                              <input type="text" id="tfa_2639" name="tfa_2639" value="{{defaults.tfa_2639}}" autocomplete="nope" data-lpignore="true" class="form-input">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="form-group oneField field-container-D" id="tfa_2640-D">
+                              <div class="input-group" style="width:100%;">
+                                <span class="input-group-addon">&pound;</span>
+                                <input type="number" min="0" max="100000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right">
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr id="tfa_2160" class="section">
+                          <td>
+                            <div class="form-group oneField field-container-D" id="tfa_2637-D">
+                              <input type="text" id="tfa_2637" name="tfa_2637" value="{{defaults.tfa_2637}}" autocomplete="nope" data-lpignore="true" class="form-input">
+                            </div>
+                          </td>
+                          <td>
+                            <div class="form-group oneField field-container-D" id="tfa_2636-D">
+                              <div class="input-group" style="width:100%;">
+                                <span class="input-group-addon">&pound;</span>
+                                <input type="number" min="0" max="100000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right">
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr id="tfa_2164" class="section">
                           <td>
                             <div class="form-group oneField field-container-D" id="tfa_2153-D">
-                              <input type="text" id="tfa_2153" name="tfa_2153" value="" autocomplete="nope" data-lpignore="true" class="form-input">
+                              <input type="text" id="tfa_2153" name="tfa_2153" value="{{defaults.tfa_2153}}" autocomplete="nope" data-lpignore="true" class="form-input">
                             </div>
                           </td>
                           <td>
                             <div class="form-group oneField field-container-D" id="tfa_2154-D">
                               <div class="input-group" style="width:100%;">
                                 <span class="input-group-addon">&pound;</span>
-                                <input type="number" min="1" max="100000" id="tfa_2154" name="tfa_2154" value="0" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
+                                <input type="number" min="0" max="100000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right">
                               </div>
                             </div>
                           </td>
                         </tr>
-
-                        <tr id="tfa_2156" class="section alternate-1 ">
-                          <th scope="row" id="tfa_2156-L" class="headerCol text-left">
-                            Budget line 2
-                          </th>
+                        <tr id="tfa_2168" class="section">
                           <td>
-                            <div class="form-group oneField field-container-D" id="tfa_2157-D">
-                              <input type="text" id="tfa_2157" name="tfa_2157" value="" autocomplete="nope" data-lpignore="true" class="form-input">
+                            <div class="form-group oneField field-container-D" id="tfa_2633-D">
+                              <input type="text" id="tfa_2633" name="tfa_2633" value="{{defaults.tfa_2633}}" autocomplete="nope" data-lpignore="true" class="form-input">
                             </div>
                           </td>
                           <td>
-                            <div class="form-group oneField field-container-D" id="tfa_2158-D">
+                            <div class="form-group oneField field-container-D" id="tfa_2634-D">
                               <div class="input-group" style="width:100%;">
                                 <span class="input-group-addon">&pound;</span>
-                                <input type="number" min="0" max="100000" id="tfa_2158" name="tfa_2158" value="0" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right required" required>
+                                <input type="number" min="tfa_2634" max="100000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right">
                               </div>
                             </div>
                           </td>
                         </tr>
-
-                        <tr id="tfa_2160" class="section alternate-0 ">
-                          <th scope="row" id="tfa_2160-L" class="headerCol text-left">
-                            Budget line 3
-                          </th>
-                          <td>
-                            <div class="form-group oneField field-container-D" id="tfa_2161-D">
-                              <input type="text" id="tfa_2161" name="tfa_2161" value="" autocomplete="nope" data-lpignore="true" class="form-input">
-                            </div>
-                          </td>
-                          <td>
-                            <div class="form-group oneField field-container-D" id="tfa_2162-D">
-                              <div class="input-group" style="width:100%;">
-                                <span class="input-group-addon">&pound;</span>
-                                <input type="number" min="0" max="100000" id="tfa_2162" name="tfa_2162" value="0" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right required" required>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr id="tfa_2164" class="section alternate-1 ">
-                          <th scope="row" id="tfa_2164-L" class="headerCol text-left">
-                            Budget line 4
-                          </th>
-                          <td>
-                            <div class="form-group oneField field-container-D" id="tfa_2165-D">
-                              <input type="text" id="tfa_2165" name="tfa_2165" value="" autocomplete="nope" data-lpignore="true" class="form-input">
-                            </div>
-                          </td>
-                          <td>
-                            <div class="form-group oneField field-container-D" id="tfa_2166-D">
-                              <div class="input-group" style="width:100%;">
-                                <span class="input-group-addon">&pound;</span>
-                                <input type="number" min="0" max="100000" id="tfa_2166" name="tfa_2166" value="0" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right required" required>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr id="tfa_2168" class="section alternate-0 ">
-                          <th scope="row" id="tfa_2168-L" class="headerCol text-left">
-                            Budget line 5
-                          </th>
-                          <td>
-                            <div class="form-group oneField field-container-D" id="tfa_2169-D">
-                              <input type="text" id="tfa_2169" name="tfa_2169" value="" autocomplete="nope" data-lpignore="true" class="form-input">
-                            </div>
-                          </td>
-                          <td>
-                            <div class="form-group oneField field-container-D" id="tfa_2170-D">
-                              <div class="input-group" style="width:100%;">
-                                <span class="input-group-addon">&pound;</span>
-                                <input type="number" min="0" max="100000" id="tfa_2170" name="tfa_2170" value="0" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right required" required>
-                              </div>
-                            </div>
-                          </td>
-                        </tr>
-
-                        <tr id="tfa_2176" class="section alternate-1 ">
+                        <tr id="tfa_2176" class="section">
                           <th scope="row" id="tfa_2176-L" class="headerCol text-left">
                             <strong>Budget total</strong>
                           </th>
-                          <td></td>
                           <td>
                             <div class="form-group oneField field-container-D" id="tfa_2178-D">
                               <div class="input-group" style="width:100%;">
                                 <span class="input-group-addon">&pound;</span>
-                                <input type="number" id="tfa_2178" name="tfa_2178" value="0" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right">
+                                <input type="number" id="tfa_2178" name="tfa_2178" value="{{defaults.tfa_2178}}" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right">
                               </div>
                             </div>
                           </td>
@@ -1777,9 +1754,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   $postcode.on('keyup', checkPostcode);
 
-  $('input[type=radio][name=tfa_2007]').change(function() {
+  $('input[type=radio][name=tfa_2398]').change(function() {
+    $('#tfa_2505').val('');
     $('#tfa_2051').val('');
-    $('#tfa_2117').val('');
     {{#each local_authorities ~}}
     {{#if id_multiple ~}}
     $('#{{id_multiple}}').prop('checked', false);
@@ -1799,40 +1776,6 @@ document.addEventListener("DOMContentLoaded", function() {
     numericOnly: true
   });
   {{/unless}}
-
-  $("#4844638").submit(function(e){
-    e.preventDefault();
-    var budget_total = $('#tfa_2178').val();
-    var total_annual_income = $('#tfa_2319').val();
-    var form = this;
-    if (budget_total >= 5000) {
-      if (budget_total <= 100000) {
-        if (budget_total < (total_annual_income * 0.2)) {
-          form.submit();
-        } else {
-          $('#submit_button').prop("disabled", false);
-          $('#submit_button').prop("style", false);
-          $('#submit_button').val("Submit");
-          alert("It looks as though you've made an error with your budget.  Your project budget needs amending to be less than 20% of your last year's turnover to meet the fund criteria.");
-        }
-      } else {
-        $('#submit_button').prop("disabled", false);
-        $('#submit_button').prop("style", false);
-        $('#submit_button').val("Submit");
-        alert("It looks as though you've made an error with your budget. Your project budget needs amending to be no more than £100k to meet the fund criteria.");
-      }
-    } else {
-      $('#submit_button').prop("disabled", false);
-      $('#submit_button').prop("style", false);
-      $('#submit_button').val("Submit");
-      alert("It looks as though you've made an error with your budget. Your project budget needs amending to add up to at least £5k to meet the fund criteria.");
-    }
-    setTimeout(function(){
-      $('#submit_button').prop("disabled", false);
-      $('#submit_button').prop("style", false);
-      $('#submit_button').val("Submit");
-    }, 100);
-  });
 });
 
 function validate_filesize(file) {
