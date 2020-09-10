@@ -788,6 +788,8 @@ wFORMS.behaviors.prefill.skip = false;
                       </label>
                     </div>
                   </span>
+                  <input type="hidden" id="tfa_2689" name="tfa_2689" value="Applied" class="">
+                  <input type="hidden" id="tfa_2690" name="tfa_2690" value="Applied" class="">
                 </div>
               </div>
             </div>
@@ -1724,7 +1726,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" value="4844638" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="76e570e6a1fe06dbcccebe0246bb3d7f" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="27" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="29" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
       </form>
     </div>
@@ -1739,8 +1741,10 @@ document.addEventListener("DOMContentLoaded", function() {
       $postcodeIcon = $('#postcode_validation_icon'),
       $postcodeWrapper = $('#postcode-wrapper'),
       $postcodeValidationMessage = $('#postcode_validation_message'),
-      $fundBranching = $('input[name=fund_branching]');
-      $branches = $('#fund_branches');
+      $fundBranching = $('input[name=fund_branching]'),
+      $branches = $('#fund_branches'),
+      $initialRecovery = $('#tfa_2689'),
+      $initialCommunity = $('#tfa_2690');
       // $locations = $('input[name=tfa_2007]'),
       // $acrossSeveralAuthoritiesRadio = $('#tfa_2020'),
       // $acrossSeveralAuthoritiesCheckboxes = $('#tfa_2084').find('input'),
@@ -1782,6 +1786,20 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!checked) {
       $branches.addClass('hidden');
     } else {
+      switch ($('input[name=fund_branching]:checked').val()) {
+        case 'fund_branching_both':
+          $initialRecovery.val('Applied');
+          $initialCommunity.val('Applied');
+          break;
+        case 'fund_branching_recovery':
+          $initialRecovery.val('Applied');
+          $initialCommunity.val('Inactive');
+          break;
+        case 'fund_branching_community':
+          $initialRecovery.val('Inactive');
+          $initialCommunity.val('Applied');
+          break;
+      }
       $branches.removeClass('hidden');
     }
   }
