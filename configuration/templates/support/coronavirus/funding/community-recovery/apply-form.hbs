@@ -259,7 +259,7 @@ wFORMS.behaviors.prefill.skip = false;
                     Please select&hellip;
                   </option>
                   {{#each main_sector ~}}
-                  <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_2394 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2539-D"{{/if}}>{{name}}</option>
+                    <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_2394 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2539-D"{{/if}}>{{name}}</option>
                   {{/each ~}}
                 </select>
                 <div class="form-group oneField field-container-D" id="tfa_2539-D" data-condition="`#tfa_2538`" style="width:100%;">
@@ -317,20 +317,20 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1884-D">
-                  <label id="tfa_1884-L" class="form-label r-margin preField reqMark" for="tfa_1884">
+                <div class="input-group form-group field-container-D" id="tfa_2438-D">
+                  <label id="tfa_2438-L" class="form-label r-margin preField reqMark" for="tfa_2438">
                     Local Authority
                   </label>
                 </div>
               </div>
               <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <select id="tfa_1884" name="tfa_1884" aria-required="true" class="required form-select" autocomplete="nope" data-lpignore="true" required>
-                  <option value="" disabled{{#unless ../defaults.tfa_1884}} selected{{/unless}}>
+                <select id="tfa_2438" name="tfa_2438" aria-required="true" class="required form-select" autocomplete="nope" data-lpignore="true" required>
+                  <option value="" disabled{{#unless ../defaults.tfa_2438}} selected{{/unless}}>
                     Please select&hellip;
                   </option>
                   {{#each local_authorities ~}}
                   {{#if this.id_organisation}}
-                  <option value="{{id_organisation}}" id="{{id_organisation}}"{{#compare name ../defaults.tfa_1884}} selected{{/compare}}>
+                  <option value="{{id_organisation}}" id="{{id_organisation}}"{{#compare name ../defaults.tfa_2438}} selected{{/compare}}>
                     {{name}}
                   </option>
                   {{/if}}
@@ -360,7 +360,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2398" class="choices vertical required">
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2399-L" for="tfa_2399">
-                      <input type="radio" value="tfa_2399" id="tfa_2399" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2399-L" data-tfa-labelledby="tfa_2398-L tfa_2399-L" data-conditionals="#tfa_2505-D"{{#compare defaults.tfa_2398 "A local community or small number of local communities"}} checked{{/compare}} required>
+                      <input type="radio" value="tfa_2399" id="tfa_2399" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2399-L" data-tfa-labelledby="tfa_2398-L tfa_2399-L" data-conditionals="#tfa_2505-D"{{#compare defaults.tfa_2398 "Within a specific community (e.g. town, village or neighbourhood)"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       A local community or small number of local communities
                     </label>
@@ -424,7 +424,7 @@ wFORMS.behaviors.prefill.skip = false;
 
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2402-L" for="tfa_2402">
-                      <input type="radio" value="tfa_2402" id="tfa_2402" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2402-L" data-tfa-labelledby="tfa_2398-L tfa_2402-L" {{#compare defaults.tfa_2398 "Nationally (Scotland)"}} checked{{/compare}} required>
+                      <input type="radio" value="tfa_2402" id="tfa_2402" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2402-L" data-tfa-labelledby="tfa_2398-L tfa_2402-L" {{#compare defaults.tfa_2398 "Across Scotland"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       Nationally (Scotland)
                     </label>
@@ -1072,7 +1072,7 @@ wFORMS.behaviors.prefill.skip = false;
                         {{#each supported_groups}}
                         <div class="form-group">
                           <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
+                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2614 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
                             <i class="form-icon"></i>
                             {{name}}
                           </label>
@@ -1464,7 +1464,7 @@ wFORMS.behaviors.prefill.skip = false;
                     {{#each funding_needs}}
                     <div class="form-group">
                       <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                        <input type="checkbox" value="{{id}}" id="{{id}}" name="tfa_2588" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2588-L {{id}}-L"{{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}>
+                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2588-L {{id}}-L"{{#if (contains ../defaults.tfa_2588 name)}} checked{{/if}}>
                         <i class="form-icon"></i>
                         {{name}}
                       </label>
