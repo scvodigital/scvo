@@ -86,9 +86,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1944-D">
-                  <select type="text" id="tfa_1944" name="tfa_1944" class="form-select" disabled>
-                    <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</select>
-                  </select>
+                  <input type="text" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}" readonly>
                 </div>
               </div>
             </div>
@@ -198,14 +196,14 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
 
             <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_2504-D">
                   <label id="tfa_2504-L" class="form-label r-margin preField reqMark" for="tfa_2504">
                     When was your organisation established?
                   </label>
                 </div>
               </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <input type="number" min="1850" max="2020" id="tfa_2504" name="tfa_2504" value="{{defaults.tfa_2504}}" aria-required="true" class="form-input required" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}disabled{{else}}required{{/if}}>
               </div>
             </div>
@@ -260,7 +258,7 @@ wFORMS.behaviors.prefill.skip = false;
                     Please select&hellip;
                   </option>
                   {{#each main_sector ~}}
-                  <option value="{{id}}" id="{{id}}"{{#compare ../defaults.tfa_2394 name}} selected{{/compare}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2539-D"{{/if}}>{{name}}</option>
+                  <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_2394 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2539-D"{{/if}}>{{name}}</option>
                   {{/each ~}}
                 </select>
                 <div class="form-group oneField field-container-D" id="tfa_2539-D" data-condition="`#tfa_2538`" style="width:100%;">
@@ -477,7 +475,7 @@ wFORMS.behaviors.prefill.skip = false;
               {{#each target_communities}}
               <div class="form-group">
                 <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                  <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L" {{#if (contains defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2348-D"{{/if}}>
+                  <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L"{{#if (contains ../defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2348-D"{{/if}}>
                   <i class="form-icon"></i>
                   {{name}}
                 </label>
@@ -799,7 +797,7 @@ wFORMS.behaviors.prefill.skip = false;
                       {{#each income_generation}}
                       <div class="form-group">
                         <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                          <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2541-L {{id}}-L" {{#if (contains defaults.tfa_2541 name)}} checked{{/if}}>
+                          <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2541-L {{id}}-L" {{#if (contains ../defaults.tfa_2541 name)}} checked{{/if}}>
                           <i class="form-icon"></i>
                           {{name}}
                         </label>
@@ -973,7 +971,7 @@ wFORMS.behaviors.prefill.skip = false;
                         {{#each type_of_support}}
                         <div class="form-group">
                           <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L" {{#if (contains defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}}>
+                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L" {{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}}>
                             <i class="form-icon"></i>
                             {{name}}
                           </label>
@@ -1073,7 +1071,7 @@ wFORMS.behaviors.prefill.skip = false;
                         {{#each supported_groups}}
                         <div class="form-group">
                           <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
+                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
                             <i class="form-icon"></i>
                             {{name}}
                           </label>
@@ -1465,7 +1463,7 @@ wFORMS.behaviors.prefill.skip = false;
                     {{#each funding_needs}}
                     <div class="form-group">
                       <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                        <input type="checkbox" value="{{id}}" id="{{id}}" name="tfa_2588" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2588-L {{id}}-L"{{#if (contains defaults.tfa_2602 name)}} checked{{/if}}>
+                        <input type="checkbox" value="{{id}}" id="{{id}}" name="tfa_2588" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2588-L {{id}}-L"{{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}>
                         <i class="form-icon"></i>
                         {{name}}
                       </label>
