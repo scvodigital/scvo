@@ -455,7 +455,7 @@
       "id": "tfa_2629"
     },
     {
-      "name": "Other (please  describe)",
+      "name": "Other (please describe)",
       "id": "tfa_2630"
     }
   ],
@@ -477,6 +477,7 @@
     {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant.records.[0] ~}}
     {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant.records.[0] oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
     "application_editing": {{{json value=(default application.Id "")}}},
+    "application_fund": {{{json value=(default application.Fund_Name__c "")}}},
     "is_charity": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}},
     "tfa_1876": {{{json value=(default (default application.Account__r.Name oscr.charity_name) "")}}},
     "tfa_1941": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}},

@@ -758,31 +758,28 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div id="tfa_2316" class="section">
 
-              <h3 id="tfa_2316-L">Organisation finances</h3>
-              <p>
-                If you are struggling with this section then assistance can be provided
-              </p>
+              <h3 id="tfa_2316-L">Application type</h3>
 
               <div class="form-group field-container-D b-margin-full" id="fund_branching-D" role="radiogroup" aria-labelledby="fund_branching-L" data-tfa-labelledby="fund_branching-L">
                 <div class="col-9 col-xl-10 col-lg-12 col-md-12 col-sm-12">
                   <span id="fund_branching" class="choices vertical required">
                     <div class="form-group">
                       <label class="form-radio" id="fund_branching_recovery-L" for="fund_branching_recovery">
-                        <input type="radio" value="fund_branching_recovery" id="fund_branching_recovery" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_recovery-L" data-tfa-labelledby="fund_branching-L fund_branching_recovery-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D">
+                        <input type="radio" value="fund_branching_recovery" id="fund_branching_recovery" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_recovery-L" data-tfa-labelledby="fund_branching-L fund_branching_recovery-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}{{#if defaults.application_fund}} disabled{{/if}}>
                         <i class="form-icon"></i>
                         Is the majority of your application focused on adapting for future delivery?
                       </label>
                     </div>
                     <div class="form-group">
                       <label class="form-radio" id="fund_branching_community-L" for="fund_branching_community">
-                        <input type="radio" value="fund_branching_community" id="fund_branching_community" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_community-L" data-tfa-labelledby="fund_branching-L fund_branching_community-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D">
+                        <input type="radio" value="fund_branching_community" id="fund_branching_community" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_community-L" data-tfa-labelledby="fund_branching-L fund_branching_community-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}{{#if defaults.application_fund}} disabled{{/if}}>
                         <i class="form-icon"></i>
                         Is the majority of your application focused on delivering ongoing support?
                       </label>
                     </div>
                     <div class="form-group">
                       <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                        <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D">
+                        <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D"{{#if defaults.application_fund}} disabled{{/if}}>
                         <i class="form-icon"></i>
                         Are you looking for funding to support both types of activity?
                       </label>
@@ -797,9 +794,13 @@ wFORMS.behaviors.prefill.skip = false;
         </div>
 
         <div id="fund_branches" class="hidden">
-          <div>
-            <div>
-              <div>
+          <div class="section">
+            <div class="section">
+              <div class="section">
+                <h3 id="tfa_2316-L">Organisation finances</h3>
+                <p>
+                  If you are struggling with this section then assistance can be provided
+                </p>
 
                 <div class="form-group field-container-D b-margin-full" id="tfa_2541-D" role="group" aria-labelledby="tfa_2541-L" data-tfa-labelledby="tfa_2541-L" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
                   <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">

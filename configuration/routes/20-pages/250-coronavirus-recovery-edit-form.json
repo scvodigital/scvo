@@ -99,7 +99,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.support_coronavirus_funding_recovery_apply-form-data",
+        "template": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form-data",
         "output": "data",
         "parseJson": true
       }
@@ -120,8 +120,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_recovery_edit-header",
-              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_recovery_apply-form",
+              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_edit-header",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form",
               "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
