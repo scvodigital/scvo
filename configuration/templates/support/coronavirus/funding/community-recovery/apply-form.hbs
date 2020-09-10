@@ -446,10 +446,6 @@ wFORMS.behaviors.prefill.skip = false;
                       Internationally (outwith Scotland)
                     </label>
                   </div>
-
-                  {{!-- <div class="form-group field-container-D" id="tfa_2117-D">
-                    <input type="text" id="tfa_2117" name="tfa_2117" value="{{defaults.tfa_2117}}" data-condition="`#tfa_2022`" placeholder="Please tell us your neighbourhood here" class="form-input" autocomplete="nope" data-lpignore="true" style="width: 100%;">
-                  </div> --}}
                 </span>
               </div>
             </div>
@@ -468,7 +464,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
 
-        <div class="form-group field-container-D b-margin-full" id="tfa_2506-D" role="group" aria-labelledby="tfa_2506-L" data-tfa-labelledby="-L tfa_2506-L">
+        <div class="form-group field-container-D b-margin-full" id="tfa_2506-D" role="group" aria-labelledby="tfa_2506-L" data-tfa-labelledby="tfa_2506-L">
           <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
             <div class="input-group form-group field-container-D">
               <label id="tfa_2506-L" class="preField reqMark r-margin">
@@ -481,7 +477,7 @@ wFORMS.behaviors.prefill.skip = false;
               {{#each target_communities}}
               <div class="form-group">
                 <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                  <input type="checkbox" value="{{id}}" id="{{id}}" name="tfa_2506" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L" {{#if (contains defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2348-D"{{/if}}>
+                  <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L" {{#if (contains defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2348-D"{{/if}}>
                   <i class="form-icon"></i>
                   {{name}}
                 </label>
@@ -803,7 +799,7 @@ wFORMS.behaviors.prefill.skip = false;
                       {{#each income_generation}}
                       <div class="form-group">
                         <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                          <input type="checkbox" value="{{id}}" id="{{id}}" name="tfa_2541" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2541-L {{id}}-L" {{#if (contains defaults.tfa_2541 name)}} checked{{/if}}>
+                          <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2541-L {{id}}-L" {{#if (contains defaults.tfa_2541 name)}} checked{{/if}}>
                           <i class="form-icon"></i>
                           {{name}}
                         </label>
@@ -977,7 +973,7 @@ wFORMS.behaviors.prefill.skip = false;
                         {{#each type_of_support}}
                         <div class="form-group">
                           <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                            <input type="checkbox" value="{{id}}" id="{{id}}" name="tfa_2602" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L" {{#if (contains defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}}>
+                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L" {{#if (contains defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}}>
                             <i class="form-icon"></i>
                             {{name}}
                           </label>
@@ -1077,7 +1073,7 @@ wFORMS.behaviors.prefill.skip = false;
                         {{#each supported_groups}}
                         <div class="form-group">
                           <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                            <input type="checkbox" value="{{id}}" id="{{id}}" name="tfa_2614" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
+                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
                             <i class="form-icon"></i>
                             {{name}}
                           </label>
@@ -1096,7 +1092,6 @@ wFORMS.behaviors.prefill.skip = false;
                 <div id="tfa_2566" class="section">
                   <h4 id="tfa_2566-L">Funding specific questions</h4>
                   <div id="tfa_2121" class="section">
-                    {{!-- <h4 id="tfa_2121-L">Budget</h4> --}}
                     <div id="tfa_2151" class="section group">
                       <div class="form-group field-container-D t-margin" id="tfa_2369-D">
                         <div class="col-9 col-xl-12">
@@ -1113,8 +1108,6 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
 
                   <div class="col-9 col-xl-12 b-margin-full">
-                    {{!-- <h3 id="tfa_2121-L">Funding required</h3> --}}
-
                     <div id="tfa_2151" class="section group">
                       <table class="gridLayout" style="width:100%;">
                         <thead>
@@ -1138,7 +1131,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2638-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="1" max="100000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
+                                  <input type="number" min="1" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1153,7 +1146,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2640-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="0" max="100000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right">
+                                  <input type="number" min="0" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1168,7 +1161,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2636-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="0" max="100000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right">
+                                  <input type="number" min="0" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1183,7 +1176,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2154-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="0" max="100000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right">
+                                  <input type="number" min="0" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1198,7 +1191,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2634-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="tfa_2634" max="100000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right">
+                                  <input type="number" min="tfa_2634" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right">
                                 </div>
                               </div>
                             </td>
