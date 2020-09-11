@@ -94,7 +94,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <input type="hidden" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}">
                   {{else}}
                   <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true">
-                    <option value="" disabled{{#unless defaults.tfa_1944}} selected{{/unless}}>Please select&hellip;</option>
+                    <option value="" disabled selected>Please select&hellip;</option>
                     {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
                       <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                     {{/each}}
@@ -143,7 +143,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <input type="hidden" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}">
                   {{else}}
                   <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true">
-                    <option value="" disabled>Please select&hellip;</option>
+                    <option value="" disabled selected>Please select&hellip;</option>
                     {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
                       <option id="{{slugify this}}" value="{{this}}"{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                     {{/each}}
