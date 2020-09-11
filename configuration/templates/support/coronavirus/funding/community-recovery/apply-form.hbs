@@ -791,7 +791,9 @@ wFORMS.behaviors.prefill.skip = false;
                     </div>
                   </span>
                   <input type="hidden" id="tfa_2689" name="tfa_2689" value="Applied" class="">
+                  <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CFSJAA4" class="">
                   <input type="hidden" id="tfa_2690" name="tfa_2690" value="Applied" class="">
+                  <input type="hidden" id="tfa_2693" name="tfa_2693" value="0123z000000CFcxAAG" class="">
                 </div>
               </div>
             </div>
@@ -1752,8 +1754,10 @@ document.addEventListener("DOMContentLoaded", function() {
       $postcodeValidationMessage = $('#postcode_validation_message'),
       $fundBranching = $('input[name=fund_branching]'),
       $branches = $('#fund_branches'),
-      $initialRecovery = $('#tfa_2689'),
-      $initialCommunity = $('#tfa_2690');
+      $initialRecoveryStatus = $('#tfa_2689'),
+      $initialRecoveryType = $('#tfa_2692'),
+      $initialCommunityStatus = $('#tfa_2690'),
+      $initialCommunityType = $('#tfa_2693');
 
   $form.submit(function(e) {
     e.preventDefault();
@@ -1793,16 +1797,22 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       switch ($('input[name=fund_branching]:checked').val()) {
         case 'fund_branching_both':
-          $initialRecovery.val('Applied');
-          $initialCommunity.val('Applied');
+          $initialRecoveryStatus.val('Applied');
+          $initialRecoveryType.val('0123z000000CFSJAA4');
+          $initialCommunityStatus.val('Applied');
+          $initialCommunityType.val('0123z000000CFcxAAG');
           break;
         case 'fund_branching_recovery':
-          $initialRecovery.val('Applied');
-          $initialCommunity.val('Inactive');
+          $initialRecoveryStatus.val('Applied');
+          $initialRecoveryType.val('0123z000000CFSJAA4');
+          $initialCommunityStatus.val('Inactive');
+          $initialCommunityType.val('0123z000000CFgkAAG');
           break;
         case 'fund_branching_community':
-          $initialRecovery.val('Inactive');
-          $initialCommunity.val('Applied');
+          $initialRecoveryStatus.val('Inactive');
+          $initialRecoveryType.val('0123z000000CFgkAAG');
+          $initialCommunityStatus.val('Applied');
+          $initialCommunityType.val('0123z000000CFcxAAG');
           break;
       }
       $branches.removeClass('hidden');
