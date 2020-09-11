@@ -761,7 +761,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div id="tfa_2316" class="section">
+            <div id="tfa_2316" class="section{{#if defaults.application_editing}} hidden{{/if}}">
 
               <h3 id="tfa_2316-L">Application type</h3>
 
@@ -770,21 +770,21 @@ wFORMS.behaviors.prefill.skip = false;
                   <span id="fund_branching" class="choices vertical required">
                     <div class="form-group">
                       <label class="form-radio" id="fund_branching_recovery-L" for="fund_branching_recovery">
-                        <input type="radio" value="fund_branching_recovery" id="fund_branching_recovery" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_recovery-L" data-tfa-labelledby="fund_branching-L fund_branching_recovery-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}{{#if defaults.application_fund}} disabled{{/if}}>
+                        <input type="radio" value="fund_branching_recovery" id="fund_branching_recovery" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_recovery-L" data-tfa-labelledby="fund_branching-L fund_branching_recovery-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}>
                         <i class="form-icon"></i>
                         Is the majority of your application focused on adapting for future delivery?
                       </label>
                     </div>
                     <div class="form-group">
                       <label class="form-radio" id="fund_branching_community-L" for="fund_branching_community">
-                        <input type="radio" value="fund_branching_community" id="fund_branching_community" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_community-L" data-tfa-labelledby="fund_branching-L fund_branching_community-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}{{#if defaults.application_fund}} disabled{{/if}}>
+                        <input type="radio" value="fund_branching_community" id="fund_branching_community" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_community-L" data-tfa-labelledby="fund_branching-L fund_branching_community-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
                         <i class="form-icon"></i>
                         Is the majority of your application focused on delivering ongoing support?
                       </label>
                     </div>
                     <div class="form-group">
                       <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                        <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D"{{#if defaults.application_fund}} disabled{{/if}}>
+                        <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D">
                         <i class="form-icon"></i>
                         Are you looking for funding to support both types of activity?
                       </label>
@@ -932,7 +932,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <div class="form-group field-container-D" id="tfa_2562-D">
                       <div class="input-group" style="width:100%;">
                         <span class="input-group-addon">&pound;</span>
-                        <input type="number" min="0" max="100000000" max="1000000" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                        <input type="number" min="0" max="100000000" max="100000000" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
                       </div>
                     </div>
                   </div>
@@ -1152,7 +1152,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2638-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="0" max="1000000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
+                                  <input type="number" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1167,7 +1167,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2640-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="0" max="1000000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right">
+                                  <input type="number" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1182,7 +1182,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2636-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="0" max="1000000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right">
+                                  <input type="number" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1197,7 +1197,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2154-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="0" max="1000000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right">
+                                  <input type="number" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1212,7 +1212,7 @@ wFORMS.behaviors.prefill.skip = false;
                               <div class="form-group oneField field-container-D" id="tfa_2634-D">
                                 <div class="input-group" style="width:100%;">
                                   <span class="input-group-addon">&pound;</span>
-                                  <input type="number" min="0" max="1000000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right">
+                                  <input type="number" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right">
                                 </div>
                               </div>
                             </td>
@@ -1247,7 +1247,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D" id="tfa_2568-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" min="0" max="1000000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                      <input type="number" min="0" max="100000000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
                     </div>
                   </div>
                 </div>
@@ -1295,7 +1295,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2575-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="1000000" id="tfa_2575" name="tfa_2575" value="{{defaults.tfa_2575}}" autocomplete="nope" data-lpignore="true" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2575" name="tfa_2575" value="{{defaults.tfa_2575}}" autocomplete="nope" data-lpignore="true" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1331,7 +1331,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2659-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="1000000" id="tfa_2659" name="tfa_2659" value="{{defaults.tfa_2659}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2659" name="tfa_2659" value="{{defaults.tfa_2659}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1367,7 +1367,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2666-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="1000000" id="tfa_2666" name="tfa_2666" value="{{defaults.tfa_2666}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2666" name="tfa_2666" value="{{defaults.tfa_2666}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1403,7 +1403,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2673-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="1000000" id="tfa_2673" name="tfa_2673" value="{{defaults.tfa_2673}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2673" name="tfa_2673" value="{{defaults.tfa_2673}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1439,7 +1439,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2680-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="1000000" id="tfa_2680" name="tfa_2680" value="{{defaults.tfa_2680}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2680" name="tfa_2680" value="{{defaults.tfa_2680}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1520,7 +1520,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <div class="form-group oneField field-container-D" id="tfa_2595-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" min="0" max="1000000" id="tfa_2595" name="tfa_2595" value="{{defaults.tfa_2595}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
+                            <input type="number" min="0" max="100000000" id="tfa_2595" name="tfa_2595" value="{{defaults.tfa_2595}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
                           </div>
                         </div>
                       </td>
@@ -1551,7 +1551,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <div class="form-group oneField field-container-D" id="tfa_2652-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" min="0" max="1000000" id="tfa_2652" name="tfa_2652" value="{{defaults.tfa_2652}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
+                            <input type="number" min="0" max="100000000" id="tfa_2652" name="tfa_2652" value="{{defaults.tfa_2652}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
                           </div>
                         </div>
                       </td>
@@ -1582,7 +1582,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <div class="form-group oneField field-container-D" id="tfa_2648-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" min="0" max="1000000" id="tfa_2648" name="tfa_2648" value="{{defaults.tfa_2648}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
+                            <input type="number" min="0" max="100000000" id="tfa_2648" name="tfa_2648" value="{{defaults.tfa_2648}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
                           </div>
                         </div>
                       </td>
