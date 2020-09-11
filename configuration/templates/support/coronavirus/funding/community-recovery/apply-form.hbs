@@ -1768,19 +1768,20 @@ document.addEventListener("DOMContentLoaded", function() {
       $fundBranching = $('input[name=fund_branching]'),
       $branches = $('#fund_branches'),
       $organisationType = $('#tfa_1944'),
+      $organisationTypeOther = $('#org_type_other'),
+      $organisationTypeOtherBlock = $('#org_type_other-D'),
       $initialRecoveryStatus = $('#tfa_2689'),
       $initialRecoveryType = $('#tfa_2692'),
       $initialCommunityStatus = $('#tfa_2690'),
       $initialCommunityType = $('#tfa_2693');
 
-  $form.submit(function(e) {
-    e.preventDefault();
-    var organisation_type_other = $('#org_type_other').val();
+  $organisationTypeOther.blur(function(e) {
+    var organisation_type_other = $organisationTypeOther.val();
     if (organisation_type_other) {
       $organisationType.append('<option value="'+organisation_type_other+'">'+organisation_type_other+'</option>');
       $organisationType.val(organisation_type_other);
+      $organisationTypeOtherBlock.addClass('offstate');
     }
-    this.submit();
   });
 
   function checkPostcode() {
