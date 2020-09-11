@@ -136,17 +136,24 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_1944-D">
                   {{!-- <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required> --}}
+                  {{#if defaults.tfa_1944}}
+                  <select id="organisation_type" name="organisation_type" class="form-select" disabled>
+                    <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</option>
+                  </select>
+                  <input type="hidden" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}">
+                  {{else}}
                   <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true">
-                    <option value="" disabled{{#unless defaults.tfa_1944}} selected{{/unless}}>Please select&hellip;</option>
+                    <option value="" disabled>Please select&hellip;</option>
                     {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
-                      <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
+                      <option id="{{slugify this}}" value="{{this}}"{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                     {{/each}}
                   </select>
                   <div class="form-group oneField field-container-D" id="org_type_other-D" data-condition="`#other-please-specify`" style="width:100%;">
                     <div class="inputWrapper t-margin" style="width:100%;">
-                      <input type="text" id="org_type_other" name="org_type_other" value="{{defaults.tfa_1944}}" maxlength="150" title="Org name other" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
+                      <input type="text" id="org_type_other" name="org_type_other" value="" maxlength="150" title="Org name other" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
                     </div>
                   </div>
+                  {{/if}}
                 </div>
               </div>
             </div>
@@ -1318,14 +1325,14 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2657-D">
                             <div class="inputWrapper">
-                              <input type="text" id="tfa_2657" name="tfa_2657" maxlength="150" value="{{defaults.tfa_2657}}" maxlength="150" title="Funder" class="form-input">
+                              <input type="text" id="tfa_2657" name="tfa_2657" maxlength="150" value="{{defaults.tfa_2657}}" autocomplete="nope" data-lpignore="true" maxlength="150" title="Funder" class="form-input">
                             </div>
                           </div>
                         </td>
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2658-D">
                             <div class="inputWrapper">
-                              <input type="text" id="tfa_2658" name="tfa_2658" maxlength="150" value="{{defaults.tfa_2658}}" maxlength="150" title="Activity description" class="form-input">
+                              <input type="text" id="tfa_2658" name="tfa_2658" maxlength="150" value="{{defaults.tfa_2658}}" autocomplete="nope" data-lpignore="true" maxlength="150" title="Activity description" class="form-input">
                             </div>
                           </div>
                         </td>
@@ -1333,7 +1340,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2659-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2659" name="tfa_2659" value="{{defaults.tfa_2659}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2659" name="tfa_2659" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2659}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1354,14 +1361,14 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2664-D">
                             <div class="inputWrapper">
-                              <input type="text" id="tfa_2664" name="tfa_2664" maxlength="150" value="{{defaults.tfa_2664}}" maxlength="150" title="Funder" class="form-input">
+                              <input type="text" id="tfa_2664" name="tfa_2664" maxlength="150" value="{{defaults.tfa_2664}}" autocomplete="nope" data-lpignore="true" maxlength="150" title="Funder" class="form-input">
                             </div>
                           </div>
                         </td>
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2665-D">
                             <div class="inputWrapper">
-                              <input type="text" id="tfa_2665" name="tfa_2665" maxlength="150" value="{{defaults.tfa_2665}}" maxlength="150" title="Activity description" class="form-input">
+                              <input type="text" id="tfa_2665" name="tfa_2665" maxlength="150" value="{{defaults.tfa_2665}}" autocomplete="nope" data-lpignore="true" maxlength="150" title="Activity description" class="form-input">
                             </div>
                           </div>
                         </td>
@@ -1369,7 +1376,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2666-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2666" name="tfa_2666" value="{{defaults.tfa_2666}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2666" name="tfa_2666" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2666}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1390,14 +1397,14 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2671-D">
                             <div class="inputWrapper">
-                              <input type="text" id="tfa_2671" name="tfa_2671" maxlength="150" value="{{defaults.tfa_2671}}" maxlength="150" title="Funder" class="form-input">
+                              <input type="text" id="tfa_2671" name="tfa_2671" maxlength="150" value="{{defaults.tfa_2671}}" autocomplete="nope" data-lpignore="true" maxlength="150" title="Funder" class="form-input">
                             </div>
                           </div>
                         </td>
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2672-D">
                             <div class="inputWrapper">
-                              <input type="text" id="tfa_2672" name="tfa_2672" maxlength="150" value="{{defaults.tfa_2672}}" maxlength="150" title="Activity description" class="form-input">
+                              <input type="text" id="tfa_2672" name="tfa_2672" maxlength="150" value="{{defaults.tfa_2672}}" autocomplete="nope" data-lpignore="true" maxlength="150" title="Activity description" class="form-input">
                             </div>
                           </div>
                         </td>
@@ -1405,7 +1412,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2673-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2673" name="tfa_2673" value="{{defaults.tfa_2673}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2673" name="tfa_2673" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2673}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1426,14 +1433,14 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2678-D">
                             <div class="inputWrapper">
-                              <input type="text" id="tfa_2678" name="tfa_2678" maxlength="150" value="{{defaults.tfa_2678}}" maxlength="150" title="Funder" class="form-input">
+                              <input type="text" id="tfa_2678" name="tfa_2678" maxlength="150" value="{{defaults.tfa_2678}}" autocomplete="nope" data-lpignore="true" maxlength="150" title="Funder" class="form-input">
                             </div>
                           </div>
                         </td>
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2679-D">
                             <div class="inputWrapper">
-                              <input type="text" id="tfa_2679" name="tfa_2679" maxlength="150" value="{{defaults.tfa_2679}}" maxlength="150" title="Activity description" class="form-input">
+                              <input type="text" id="tfa_2679" name="tfa_2679" maxlength="150" value="{{defaults.tfa_2679}}" autocomplete="nope" data-lpignore="true" maxlength="150" title="Activity description" class="form-input">
                             </div>
                           </div>
                         </td>
@@ -1441,7 +1448,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="form-group oneField field-container-D" id="tfa_2680-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2680" name="tfa_2680" value="{{defaults.tfa_2680}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" min="0" max="100000000" id="tfa_2680" name="tfa_2680" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2680}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
