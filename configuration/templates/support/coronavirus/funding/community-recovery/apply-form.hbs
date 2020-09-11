@@ -96,12 +96,12 @@ wFORMS.behaviors.prefill.skip = false;
                   <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true">
                     <option value="" disabled{{#unless defaults.tfa_1944}} selected{{/unless}}>Please select&hellip;</option>
                     {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
-                      <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_name_other-D"{{/if}}>{{this}}</option>
+                      <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                     {{/each}}
                   </select>
-                  <div class="form-group oneField field-container-D" id="org_name_other-D" data-condition="`#other-please-specify`" style="width:100%;">
+                  <div class="form-group oneField field-container-D" id="org_type_other-D" data-condition="`#other-please-specify`" style="width:100%;">
                     <div class="inputWrapper t-margin" style="width:100%;">
-                      <input type="text" id="org_name_other" name="org_name_other" value="{{defaults.tfa_1944}}" maxlength="150" title="Org name other" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
+                      <input type="text" id="org_type_other" name="org_type_other" value="{{defaults.tfa_1944}}" maxlength="150" title="Org name other" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
                     </div>
                   </div>
                   {{/if}}
@@ -134,17 +134,17 @@ wFORMS.behaviors.prefill.skip = false;
                 </label>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1944-D">
+                <div class="form-group field-container-D" id="tfa_1944-D">
                   {{!-- <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required> --}}
                   <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true">
                     <option value="" disabled{{#unless defaults.tfa_1944}} selected{{/unless}}>Please select&hellip;</option>
                     {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
-                      <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_name_other-D"{{/if}}>{{this}}</option>
+                      <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                     {{/each}}
                   </select>
-                  <div class="form-group oneField field-container-D" id="org_name_other-D" data-condition="`#other-please-specify`" style="width:100%;">
+                  <div class="form-group oneField field-container-D" id="org_type_other-D" data-condition="`#other-please-specify`" style="width:100%;">
                     <div class="inputWrapper t-margin" style="width:100%;">
-                      <input type="text" id="org_name_other" name="org_name_other" value="{{defaults.tfa_1944}}" maxlength="150" title="Org name other" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
+                      <input type="text" id="org_type_other" name="org_type_other" value="{{defaults.tfa_1944}}" maxlength="150" title="Org name other" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
                     </div>
                   </div>
                 </div>
@@ -1754,19 +1754,15 @@ document.addEventListener("DOMContentLoaded", function() {
       $branches = $('#fund_branches'),
       $initialRecovery = $('#tfa_2689'),
       $initialCommunity = $('#tfa_2690');
-      // $locations = $('input[name=tfa_2007]'),
-      // $acrossSeveralAuthoritiesRadio = $('#tfa_2020'),
-      // $acrossSeveralAuthoritiesCheckboxes = $('#tfa_2084').find('input'),
-      // $acrossOneAuthorityRadio = $('#tfa_2400'),
-      // $acrossOneAuthoritySelect = $('#tfa_2051'),
-      // $withinSpecificCommunityRadio = $('#tfa_2022'),
-      // $withinSpecificCommunityText = $('#tfa_2117'),
-      // $mainIssueSelect = $('#tfa_1959'),
-      // $mainIssueOtherTextarea = $('#tfa_2048'),
-      // $mainTypeOfActivitySelect = $('#tfa_2011'),
-      // $mainTypeOfActivityOtherTextarea = $('#tfa_2049'),
-      // $specificTargetGroupSelect = $('#tfa_2015'),
-      // $specificTargetGroupOtherTextarea = $('#tfa_2050');
+
+  $form.submit(function(e) {
+    e.preventDefault();
+    var organisation_type_other = $('#org_type_other').val();
+    if (organisation_type_other) {
+      $('#tfa_1944').val(organisation_type_other);
+    }
+    this.submit();
+  });
 
   function checkPostcode() {
     var postcode = $('#tfa_1925').val().toUpperCase();
@@ -1823,13 +1819,9 @@ document.addEventListener("DOMContentLoaded", function() {
     $('#tfa_1955').val(data[0].simd_rank);
     $('#postcode_validation_message').html('');
     $('#postcode-wrapper').removeClass("has-error")
-    // $('#location-details').removeClass("hidden")
-    // $('#contact-details').removeClass("hidden")
-    // $('#interest-details').removeClass("hidden")
     $('#postcode_validation_icon')
-    .addClass("fa-check text-success")
-    .removeClass("loading fa-times text-primary text-error");
-    // $('#submit_button').removeClass("hidden");
+      .addClass("fa-check text-success")
+      .removeClass("loading fa-times text-primary text-error");
   }
 
   function clearLocationData() {
@@ -1872,7 +1864,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function validate_filesize(file) {
   var filesize = file.files[0].size / 1024 / 1024; // in MB
-  if (filesize > 5) {
+  if (filesize >= 5) {
     alert('Uploaded filesize exceeds 5Mb - please choose a smaller file');
     $(file).val('');
   }
