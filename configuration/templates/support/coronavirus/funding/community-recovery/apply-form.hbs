@@ -86,8 +86,25 @@ wFORMS.behaviors.prefill.skip = false;
                 </label>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <div class="input-group form-group field-container-D" id="tfa_1944-D">
-                  <input type="text" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}" readonly>
+                <div class="form-group field-container-D" id="tfa_1944-D">
+                  {{#if defaults.tfa_1944}}
+                  <select id="organisation_type" name="organisation_type" class="form-select" disabled>
+                    <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</option>
+                  </select>
+                  <input type="hidden" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}">
+                  {{else}}
+                  <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true">
+                    <option value="" disabled{{#unless defaults.tfa_1944}} selected{{/unless}}>Please select&hellip;</option>
+                    {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
+                      <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_name_other-D"{{/if}}>{{this}}</option>
+                    {{/each}}
+                  </select>
+                  <div class="form-group oneField field-container-D" id="org_name_other-D" data-condition="`#other-please-specify`" style="width:100%;">
+                    <div class="inputWrapper t-margin" style="width:100%;">
+                      <input type="text" id="org_name_other" name="org_name_other" value="{{defaults.tfa_1944}}" maxlength="150" title="Org name other" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
+                    </div>
+                  </div>
+                  {{/if}}
                 </div>
               </div>
             </div>
@@ -143,7 +160,12 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="input-group form-group field-container-D" id="tfa_1876-D">
-                  <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{#if defaults.tfa_1876}} readonly{{/if}}{{/if}}>
+                  {{#ifAny defaults.application_editing defaults.tfa_1876}}
+                  <input type="text" id="organisation_name" name="organisation_name" value="{{defaults.tfa_1876}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input" disabled>
+                  <input type="hidden" id="tfa_1876" name="tfa_1876" class="form-input" value="{{defaults.tfa_1876}}">
+                  {{else}}
+                  <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                  {{/ifAny}}
                   {{!-- {{#unless defaults.application_editing}}
                   {{#if defaults.is_charity}}
                   <p class="form-input-hint text-secondary">
@@ -1597,9 +1619,15 @@ wFORMS.behaviors.prefill.skip = false;
 
               <div class="col-9 col-xl-12">
                 <h3>File attachments</h3>
+                {{#if defaults.application_editing}}
                 <p>
-                  Please upload the following documents to allow us to conduct due diligence checks on these criteria.  There is a 5Mb limit, per document, on uploading.  If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
+                  You have already uploaded all four documents required. These options are available if you need to upload a new copy any of the documents.
                 </p>
+                {{else}}
+                <p>
+                  Please upload the following documents to allow us to conduct due diligence checks on these criteria. There is a 5Mb limit, per document, on uploading.  If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
+                </p>
+                {{/if}}
               </div>
 
               <div class="form-group t-margin-full">
