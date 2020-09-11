@@ -505,7 +505,7 @@ wFORMS.behaviors.prefill.skip = false;
               {{#each target_communities}}
               <div class="form-group">
                 <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                  <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L"{{#if (contains ../defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains 'Other' name)}} data-conditionals="#tfa_2348-D"{{/if}}>
+                  <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L"{{#if (contains ../defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2348-D"{{/if}}>
                   <i class="form-icon"></i>
                   {{name}}
                 </label>
@@ -1003,13 +1003,13 @@ wFORMS.behaviors.prefill.skip = false;
                         {{#each type_of_support}}
                         <div class="form-group">
                           <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L"{{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains 'Other' name)}}{{#unless (contains 'Other' ../defaults.tfa_2602)}} data-conditionals="#tfa_2632-D"{{/unless}}{{/if}}>
+                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L"{{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}}>
                             <i class="form-icon"></i>
                             {{name}}
                           </label>
                         </div>
                         {{/each}}
-                        <div class="form-group oneField field-container-D" id="tfa_2632-D"{{#unless (contains 'Other' defaults.tfa_2602)}} data-condition="`#tfa_2607`"{{/unless}}>
+                        <div class="form-group oneField field-container-D" id="tfa_2632-D" data-condition="`#tfa_2607`">
                           <div class="inputWrapper t-margin" style="width:100%;">
                             <input type="text" id="tfa_2632" name="tfa_2632" value="{{defaults.tfa_2632}}" maxlength="150" title="Type of support other" autocomplete="nope" data-lpignore="true" class="form-input required" required>
                           </div>
@@ -1103,7 +1103,7 @@ wFORMS.behaviors.prefill.skip = false;
                         {{#each supported_groups}}
                         <div class="form-group">
                           <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2614 name)}} checked{{/if}}{{#if (contains 'Other' name)}} data-conditionals="#tfa_2631-D"{{/if}}>
+                            <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2614 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
                             <i class="form-icon"></i>
                             {{name}}
                           </label>
