@@ -882,13 +882,19 @@ wFORMS.behaviors.prefill.skip = false;
                       <thead>
                         <tr class="headerRow">
                           <th scope="col" id="tfa_2558-GRID">
-                            Year-ending
+                            <label class="reqMark">
+                              Year-ending
+                            </label>
                           </th>
                           <th scope="col" id="tfa_2559-GRID">
-                            Income
+                            <label class="reqMark">
+                              Income
+                            </label>
                           </th>
                           <th scope="col" id="tfa_2560-GRID">
-                            Expenditure
+                            <label class="reqMark">
+                              Expenditure
+                            </label>
                           </th>
                         </tr>
                       </thead>
@@ -896,7 +902,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <tr id="tfa_2152" class="section">
                           <td>
                             <div class="form-group oneField field-container-D" id="tfa_2558-D">
-                              <input type="number" maxlength="4" min="2015" max="2020" id="tfa_2558" name="tfa_2558" value="{{defaults.tfa_2558}}" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                              <input type="number" maxlength="4" min="2015" max="2020" id="tfa_2558" name="tfa_2558" value="{{defaults.tfa_2558}}" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
                             </div>
                           </td>
                           <td>
@@ -1352,7 +1358,7 @@ wFORMS.behaviors.prefill.skip = false;
                         </td>
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2660-D">
-                            <div class="inputWrapper">
+                            <div class="inputWrapper" style="width:100%;">
                               <select id="tfa_2660" name="tfa_2660" title="Status" class="form-select">
                                 <option value="" disabled{{#unless defaults.tfa_2660}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2661" id="tfa_2661"{{#compare defaults.tfa_2660 'Applied'}} selected{{/compare}}>Applied</option>
@@ -1388,7 +1394,7 @@ wFORMS.behaviors.prefill.skip = false;
                         </td>
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2667-D">
-                            <div class="inputWrapper">
+                            <div class="inputWrapper" style="width:100%;">
                               <select id="tfa_2667" name="tfa_2667" title="Status" class="form-select">
                                 <option value="" disabled{{#unless defaults.tfa_2667}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2668" id="tfa_2668"{{#compare defaults.tfa_2667 'Applied'}} selected{{/compare}}>Applied</option>
@@ -1424,7 +1430,7 @@ wFORMS.behaviors.prefill.skip = false;
                         </td>
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2674-D">
-                            <div class="inputWrapper">
+                            <div class="inputWrapper" style="width:100%;">
                               <select id="tfa_2674" name="tfa_2674" title="Status" class="form-select">
                                 <option value="" disabled{{#unless defaults.tfa_2674}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2675" id="tfa_2675"{{#compare defaults.tfa_2674 'Applied'}} selected{{/compare}}>Applied</option>
@@ -1460,7 +1466,7 @@ wFORMS.behaviors.prefill.skip = false;
                         </td>
                         <td class="">
                           <div class="form-group oneField field-container-D" id="tfa_2681-D">
-                            <div class="inputWrapper">
+                            <div class="inputWrapper" style="width:100%;">
                               <select id="tfa_2681" name="tfa_2681" title="Status" class="form-select">
                                 <option value="" disabled{{#unless defaults.tfa_2681}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2682" id="tfa_2682"{{#compare defaults.tfa_2681 'Applied'}} selected{{/compare}}>Applied</option>
@@ -1654,13 +1660,13 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="form-group field-container-D" id="tfa_2303-D">
-                    <input type="file" id="tfa_2303" name="tfa_2303" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                    <input type="file" id="tfa_2303" name="tfa_2303" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
                   </div>
                 </div>
               </div>
               <div class="form-group t-margin-full">
                 <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <label id="tfa_2189-L" class="form-label r-margin preField" for="tfa_2189">
+                  <label id="tfa_2189-L" class="form-label r-margin preField{{#unless defaults.application_editing}} reqMark{{/unless}}" for="tfa_2189">
                     Your latest bank statement
                   </label>
                 </div>
@@ -1678,7 +1684,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="form-group field-container-D" id="tfa_2187-D">
-                    <input type="file" id="tfa_2187" name="tfa_2187" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                    <input type="file" id="tfa_2187" name="tfa_2187" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
                   </div>
                 </div>
               </div>
@@ -1690,7 +1696,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="form-group field-container-D" id="tfa_2390-D">
-                    <input type="file" id="tfa_2390" name="tfa_2390" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                    <input type="file" id="tfa_2390" name="tfa_2390" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
                   </div>
                 </div>
               </div>
