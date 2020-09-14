@@ -289,7 +289,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <select id="tfa_2394" name="tfa_2394" aria-required="true" class="form-select required">
+                <select id="tfa_2394" name="tfa_2394" aria-required="true" {{#if defaults.application_editing}}class="form-select" disabled{{else}}class="form-select required" required{{/if}}>
                   <option value="" disabled{{#unless defaults.tfa_2394}} selected{{/unless}}>
                     Please select&hellip;
                   </option>
