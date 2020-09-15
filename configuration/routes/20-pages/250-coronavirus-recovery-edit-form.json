@@ -86,6 +86,14 @@
                   },
                   "Information Requested"
                 ]
+              },
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Status__c"
+                  },
+                  "Inactive"
+                ]
               }
             ]
           },
