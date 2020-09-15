@@ -70,7 +70,7 @@ wFORMS.behaviors.prefill.skip = false;
             </h2>
           </div>
         </div>
-        <div id="tfa_1883-body" class="container section b-padding-full">
+        <div id="tfa_1883-body" class="container section v-padding-full">
           <div id="organisation-details">
             {{#if defaults.is_charity ~}}
             <div class="form-group">
@@ -397,7 +397,7 @@ wFORMS.behaviors.prefill.skip = false;
               </h2>
             </div>
           </div>
-          <div id="tfa_1882-body" class="container section b-padding-full">
+          <div id="tfa_1882-body" class="container section v-padding-full">
             <div class="form-group field-container-D b-margin-full" id="tfa_2398-D" role="radiogroup" aria-labelledby="tfa_2398-L" data-tfa-labelledby="tfa_2398-L">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D">
@@ -552,7 +552,7 @@ wFORMS.behaviors.prefill.skip = false;
               </h2>
             </div>
           </div>
-          <div class="bg-gray v-padding-full">
+          <div class="bg-gray b-padding-full t-padding">
             <div id="tfa_1880-body" class="container section b-padding-full">
               <h3 class="t-margin">Main contact</h3>
 
@@ -721,87 +721,89 @@ wFORMS.behaviors.prefill.skip = false;
       <div id="tfa_2269" class="section">
         <div id="bank-details">
           <div class="bg-secondary">
-            <div class="container section b-margin-full v-padding-full">
+            <div class="container section v-padding-full">
               <h2 id="tfa_2269-L" class="t-margin">
                 <span class="pull-left fal fa-piggy-bank r-margin-full" style="margin-top:-.5rem;font-size:2.2rem;"></span>
                 Organisation bank account details
               </h2>
             </div>
           </div>
-          <div id="tfa_2269-body" class="container section b-padding-full">
-            <p>
-              To increase the speed of making payments to successful applicants, we are asking for your bank details at this stage. Please ensure the details are correct, and match the bank statement uploaded, to ensure money reaches the correct account.
-            </p>
+          <div class="bg-gray v-padding-full">
+            <div id="tfa_2269-body" class="container section v-padding-full">
+              <p>
+                To increase the speed of making payments to successful applicants, we are asking for your bank details at this stage. Please ensure the details are correct, and match the bank statement uploaded, to ensure money reaches the correct account.
+              </p>
 
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2270-L" class="form-label r-margin preField reqMark" for="tfa_2270">
-                  Account name
-                </label>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <div class="field-container-D" id="tfa_2270-D">
-                  <input type="text" id="tfa_2270" name="tfa_2270" maxlength="150" value="{{defaults.tfa_2270}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2270-L" class="form-label r-margin preField reqMark" for="tfa_2270">
+                    Account name
+                  </label>
+                </div>
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <div class="field-container-D" id="tfa_2270-D">
+                    <input type="text" id="tfa_2270" name="tfa_2270" maxlength="150" value="{{defaults.tfa_2270}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2274-L" class="form-label r-margin preField reqMark" for="tfa_2274">
-                  Account number
-                </label>
-              </div>
-              <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="field-container-D" id="tfa_2274-D">
-                  <input type="text" id="tfa_2274" name="tfa_2274" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2274-L" class="form-label r-margin preField reqMark" for="tfa_2274">
+                    Account number
+                  </label>
+                </div>
+                <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="field-container-D" id="tfa_2274-D">
+                    <input type="text" id="tfa_2274" name="tfa_2274" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2273-L" class="form-label r-margin preField reqMark" for="tfa_2273">
-                  Sort code
-                </label>
-              </div>
-              <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="field-container-D" id="tfa_2273-D">
-                  <input type="text" id="tfa_2273" name="tfa_2273" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2273-L" class="form-label r-margin preField reqMark" for="tfa_2273">
+                    Sort code
+                  </label>
+                </div>
+                <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="field-container-D" id="tfa_2273-D">
+                    <input type="text" id="tfa_2273" name="tfa_2273" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2271-L" class="form-label r-margin preField reqMark" for="tfa_2271">
-                  Bank name
-                </label>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <div class="field-container-D" id="tfa_2271-D">
-                  <input type="text" id="tfa_2271" name="tfa_2271" maxlength="150" value="{{defaults.tfa_2271}}" autocomplete="nope" data-lpignore="true" aria-required="true"  {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2271-L" class="form-label r-margin preField reqMark" for="tfa_2271">
+                    Bank name
+                  </label>
+                </div>
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <div class="field-container-D" id="tfa_2271-D">
+                    <input type="text" id="tfa_2271" name="tfa_2271" maxlength="150" value="{{defaults.tfa_2271}}" autocomplete="nope" data-lpignore="true" aria-required="true"  {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2283-L" class="form-label r-margin preField reqMark" for="tfa_2283">
-                  Bank address
-                </label>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <div class="field-container-D" id="tfa_2283-D">
-                  <input type="text" id="tfa_2283" name="tfa_2283" maxlength="150" value="{{defaults.tfa_2283}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2283-L" class="form-label r-margin preField reqMark" for="tfa_2283">
+                    Bank address
+                  </label>
+                </div>
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <div class="field-container-D" id="tfa_2283-D">
+                    <input type="text" id="tfa_2283" name="tfa_2283" maxlength="150" value="{{defaults.tfa_2283}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="form-group">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2280-L" class="form-label r-margin preField reqMark" for="tfa_2280">
-                  Bank postcode
-                </label>
-              </div>
-              <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="field-container-D" id="tfa_2280-D">
-                  <input type="text" id="tfa_2280" name="tfa_2280" maxlength="150" value="{{defaults.tfa_2280}}" autocomplete="nope" data-lpignore="true" aria-required="true" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+              <div class="form-group">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2280-L" class="form-label r-margin preField reqMark" for="tfa_2280">
+                    Bank postcode
+                  </label>
+                </div>
+                <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="field-container-D" id="tfa_2280-D">
+                    <input type="text" id="tfa_2280" name="tfa_2280" maxlength="150" value="{{defaults.tfa_2280}}" autocomplete="nope" data-lpignore="true" aria-required="true" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                  </div>
                 </div>
               </div>
             </div>
@@ -810,14 +812,14 @@ wFORMS.behaviors.prefill.skip = false;
 
         <div id="branching" class="section{{#if defaults.application_editing}} hidden{{/if}}">
           <div class="bg-secondary">
-            <div class="container section v-margin-full v-padding-full">
+            <div class="container section b-margin-full v-padding-full">
               <h2 id="branching-L" class="t-margin">
                 <span class="pull-left fal fa-map-signs r-margin-full" style="margin-top:-.5rem;font-size:2.2rem;"></span>
                 Application type
               </h2>
             </div>
           </div>
-          <div id="branching-body" class="container section b-padding-full">
+          <div id="branching-body" class="container section v-padding-full">
             <div class="form-group field-container-D b-margin-full" id="fund_branching-D" role="radiogroup" aria-labelledby="fund_branching-L" data-tfa-labelledby="fund_branching-L">
               <div class="col-9 col-xl-10 col-lg-12 col-md-12 col-sm-12">
                 <span id="fund_branching" class="choices vertical required">
@@ -854,15 +856,15 @@ wFORMS.behaviors.prefill.skip = false;
 
         <div id="fund_branches" class="hidden">
           <div class="bg-secondary">
-            <div class="container section v-margin-full v-padding-full">
+            <div class="container section b-margin-full v-padding-full">
               <h2 id="tfa_2316-L" class="t-margin">
                 <span class="pull-left fal fa-chart-bar r-margin-full" style="margin-top:-.5rem;font-size:2.2rem;"></span>
                 Organisation finances
               </h2>
             </div>
           </div>
-          <div id="tfa_2316-body" class="container section b-padding-full">
-            <p>
+          <div id="tfa_2316-body" class="container section v-padding-full">
+            <p class="b-margin">
               If you are struggling with this section then assistance can be provided.
             </p>
 
@@ -1054,7 +1056,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </h2>
               </div>
             </div>
-            <div id="tfa_2567-body" class="container section b-padding-full">
+            <div id="tfa_2567-body" class="container section v-padding-full">
               <div class="form-group field-container-D b-margin-full" id="tfa_2602-D" role="group" aria-labelledby="tfa_2602-L" data-tfa-labelledby="tfa_2602-L">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="form-group field-container-D">
@@ -1194,7 +1196,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </h2>
               </div>
             </div>
-            <div id="tfa_2566-body" class="container section b-padding-full">
+            <div id="tfa_2566-body" class="container section v-padding-full">
               <div id="tfa_2121" class="section">
                 <div id="tfa_2151" class="section group">
                   <div class="form-group field-container-D t-margin" id="tfa_2369-D">
@@ -1708,7 +1710,7 @@ wFORMS.behaviors.prefill.skip = false;
               </h2>
             </div>
           </div>
-          <div class="bg-gray">
+          <div class="bg-gray t-padding">
             <div id="attachments-body" class="container section v-padding-full">
               <div class="form-group">
                 <div class="col-9 col-xl-12">
@@ -1793,7 +1795,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </h2>
               </div>
             </div>
-            <div id="confirmation-body" class="container section b-padding-full">
+            <div id="confirmation-body" class="container section v-padding-full">
               <div class="col-9 col-xl-12">
                 <p>
                   Please confirm that:
