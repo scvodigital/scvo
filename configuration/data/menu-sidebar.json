@@ -2591,10 +2591,44 @@
 								{
 									"label": "Recovery Programme",
 									"label_full": "Community & Third Sector Recovery Programme",
-									"path": "/support/coronavirus/funding/scottish-government/recovery",
-									"route": "^/support/coronavirus/funding/scottish-government/recovery$",
+									"path": "/support/coronavirus/funding/scottish-government/community-recovery",
+									"route": "^/support/coronavirus/funding/scottish-government/community-recovery$",
 									"description": "<div class=\"label label-warning label-rounded b-margin\">Opening soon</div><br />Helping organisations to adapt and change so they can re-open and operate sustainably post-COVID",
-									"icon": "tasks"
+									"icon": "tasks",
+									"__new_children": [
+										{
+											"label": "Adapt & Thrive",
+											"path": "/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive",
+											"route": "^/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive$",
+											"__new_children": [
+												{
+													"label": "Support available",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/support",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/support$"
+												},
+												{
+													"label": "Eligibility criteria",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/eligibility",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/eligibility$"
+												},
+												{
+													"label": "Guidance notes",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/guidance",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/guidance$"
+												},
+												{
+													"label": "Guidance notes",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/faqs",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/faqs$"
+												},
+												{
+													"label": "How to apply",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/how-to-apply",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/adapt-thrive/how-to-apply$"
+												}
+											]
+										}
+									]
 								},
 								{
 									"label": "Supporting Communities Fund",
