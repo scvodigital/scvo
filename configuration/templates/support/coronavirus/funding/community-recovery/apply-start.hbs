@@ -1,46 +1,46 @@
-<div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
-  <p>
-    The Community & Third Sector Recovery Programme, part of Scottish Government’s £350m emergency response to coronavirus, is helping organisations to adapt and change so they can re-open and operate sustainably post-COVID.
-  </p>
-  <p>
-    Please enter the details below to continue your application process.
-  </p>
-
-  <div class="b-padding-full v-margin-full">
-    {{#if @root.request.params.charity_number ~}}
-    <div class="label label-error x-padding t-margin-full">
-      <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
-      The charity number you entered could not be matched with an OSCR record
-    </div>
-    <p class="t-margin b-margin-full form-input-hint text-secondary">
-      Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+<div class="container">
+  <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
+    <p>
+      The Community & Third Sector Recovery Programme, part of Scottish Government’s £350m emergency response to coronavirus, is helping organisations to adapt and change so they can re-open and operate sustainably post-COVID.
     </p>
-    {{/if ~}}
+    <p>
+      Please enter the details below to continue your application process.
+    </p>
+
     <div class="columns">
-      <div class="column col-sm-12 col-xs-12">
-        <div class="form-group">
-          <label for="charity_number" class="form-label">Scottish Charity Number</label>
-          <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
-          <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> to confirm</p>
+      <div class="column col-8 col-xl-10 col-lg-12 col-mx-auto">
+        <div class="b-padding-full v-margin-full">
+          {{#if @root.request.params.charity_number ~}}
+          <div class="label label-error x-padding t-margin-full">
+            <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
+            The charity number you entered could not be matched with an OSCR record
+          </div>
+          <p class="t-margin b-margin-full form-input-hint text-secondary">
+            Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+          </p>
+          {{/if ~}}
+          <div class="columns">
+            <div class="column col-sm-12 col-xs-12">
+              <div class="form-group">
+                <label for="charity_number" class="form-label">Scottish Charity Number</label>
+                <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
+                <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> to confirm</p>
+              </div>
+              <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
+                Apply now
+              </a>
+            </div>
+            <div class="divider-vert hide-sm" data-content="OR"></div>
+            <div class="divider text-center show-sm col-12" data-content="OR"></div>
+            <div class="column col-sm-12 col-xs-12 align-centre">
+              <a href="/support/coronavirus/funding/scottish-government/community-recovery/apply/not-a-charity" class="btn btn-block">
+                Not a registered charity
+              </a>
+            </div>
+          </div>
         </div>
-        <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
-          Apply now
-        </a>
-      </div>
-      <div class="divider-vert hide-sm" data-content="OR"></div>
-      <div class="divider text-center show-sm col-12" data-content="OR"></div>
-      <div class="column col-sm-12 col-xs-12 align-centre">
-        {{!-- <p>
-        If you are not a registered charity you can still apply. Click the link below to continue.
-        </p> --}}
-        <a href="/support/coronavirus/funding/scottish-government/community-recovery/apply/not-a-charity" class="btn btn-block">
-          Not a registered charity
-        </a>
       </div>
     </div>
-    {{!-- <p class="t-margin-full">
-      <a href="{{@root.request.url.pathname}}" class="no-underline"><span class="far fa-chevron-circle-left r-margin" aria-hidden="true"></span> Back to eligibility checker</a>
-    </p> --}}
   </div>
 </div>
 

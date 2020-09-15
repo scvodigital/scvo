@@ -119,10 +119,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
+              "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_edit-header",
               "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form",
-              "rightSidebar": ">context.metaData.handlebars.templates.support_coronavirus_page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"
