@@ -941,6 +941,14 @@ input[type=button],
   // transition-timing-function: ease-in-out;
   background: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 .btn.btn-link {
   transition: background $slow-transition-speed, border $slow-transition-speed, color $slow-transition-speed !important;
 }
