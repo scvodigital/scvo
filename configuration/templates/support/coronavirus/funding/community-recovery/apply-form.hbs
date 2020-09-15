@@ -721,7 +721,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_2274-D">
-                  <input type="text" id="tfa_2274" name="tfa_2274" maxlength="150" value="{{#if defaults.application_editing}}••••••••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true"  {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                  <input type="text" id="tfa_2274" name="tfa_2274" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
                 </div>
               </div>
             </div>
@@ -733,7 +733,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_2273-D">
-                  <input type="text" id="tfa_2273" name="tfa_2273" maxlength="150" value="{{#if defaults.application_editing}}••-••-••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true"  {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                  <input type="text" id="tfa_2273" name="tfa_2273" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
                 </div>
               </div>
             </div>
