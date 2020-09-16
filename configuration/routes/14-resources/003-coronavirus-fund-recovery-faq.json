@@ -1,11 +1,7 @@
 {
-  "name": "resource_coronavirus_fund_faq",
+  "name": "resource_coronavirus_fund_recovery_faq",
   "debug": true,
-  "pattern": "/support/coronavirus/funding/scottish-government/:fund_slug/faq/:faq_slug",
-  "new_pattern": {
-    "main": "/support/coronavirus/funding/scottish-government/:fund_slug/faq/:faq_slug",
-    "crp": "/support/coronavirus/funding/scottish-government/community-recovery/:fund_slug/faq/:faq_slug"
-  },
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/:fund_slug/faq/:faq_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
