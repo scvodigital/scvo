@@ -250,7 +250,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <input type="number" min="1850" max="2020" id="tfa_2504" name="tfa_2504" value="{{defaults.tfa_2504}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="1850" max="{{momentFormat (moment) 'YYYY'}}" id="tfa_2504" name="tfa_2504" value="{{defaults.tfa_2504}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
             </div>
           </div>
 
@@ -276,12 +276,12 @@ wFORMS.behaviors.prefill.skip = false;
                     </th>
                     <td>
                       <div class="oneField field-container-D" id="tfa_2326-D">
-                        <input type="number" min="0" max="10000" id="tfa_2326" name="tfa_2326" value="{{defaults.tfa_2326}}" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                        <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="10000" id="tfa_2326" name="tfa_2326" value="{{defaults.tfa_2326}}" autocomplete="nope" data-lpignore="true" class="form-input required" required>
                       </div>
                     </td>
                     <td>
                       <div class="oneField field-container-D" id="tfa_2516-D">
-                        <input type="number" min="0" max="10000" id="tfa_2516" name="tfa_2516" value="{{defaults.tfa_2516}}" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                        <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="10000" id="tfa_2516" name="tfa_2516" value="{{defaults.tfa_2516}}" autocomplete="nope" data-lpignore="true" class="form-input required" required>
                       </div>
                     </td>
                   </tr>
@@ -949,14 +949,14 @@ wFORMS.behaviors.prefill.skip = false;
                       <tr id="tfa_2152" class="section">
                         <td>
                           <div class="oneField field-container-D text-center" id="tfa_2558-D" style="width:100%;">
-                            <input type="number" style="width:100%;" maxlength="4" min="2015" max="2020" id="tfa_2558" name="tfa_2558" value="{{defaults.tfa_2558}}" autocomplete="nope" data-lpignore="true" class="form-input required" required>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" style="width:100%;" maxlength="4" min="2015" max="{{momentFormat (moment) 'YYYY'}}" id="tfa_2558" name="tfa_2558" value="{{defaults.tfa_2558}}" autocomplete="nope" data-lpignore="true" class="form-input required" required>
                           </div>
                         </td>
                         <td>
                           <div class="oneField field-container-D" id="tfa_2559-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2559" name="tfa_2559" value="{{defaults.tfa_2559}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2559" name="tfa_2559" value="{{defaults.tfa_2559}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
                             </div>
                           </div>
                         </td>
@@ -964,7 +964,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2560-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2560" name="tfa_2560" value="{{defaults.tfa_2560}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2560" name="tfa_2560" value="{{defaults.tfa_2560}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
                             </div>
                           </div>
                         </td>
@@ -984,7 +984,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" min="0" max="100000000" id="tfa_2561" name="tfa_2561" value="{{defaults.tfa_2561}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2561" name="tfa_2561" value="{{defaults.tfa_2561}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
                     </div>
                   </div>
                 </div>
@@ -1000,7 +1000,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D" id="tfa_2562-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" min="0" max="100000000" max="100000000" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" max="100000000" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
                     </div>
                   </div>
                 </div>
@@ -1016,7 +1016,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" min="0" max="100000000" id="tfa_2563" name="tfa_2563" value="{{defaults.tfa_2563}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2563" name="tfa_2563" value="{{defaults.tfa_2563}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
                     </div>
                   </div>
                 </div>
@@ -1238,7 +1238,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2638-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1253,7 +1253,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2640-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1268,7 +1268,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2636-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1283,7 +1283,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2154-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1298,7 +1298,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2634-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1311,7 +1311,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2178-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" id="tfa_2178" name="tfa_2178" value="{{defaults.tfa_2178}}" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" id="tfa_2178" name="tfa_2178" value="{{defaults.tfa_2178}}" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1331,7 +1331,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D" id="tfa_2568-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" min="0" max="100000000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
                     </div>
                   </div>
                 </div>
@@ -1379,7 +1379,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2575-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2575" name="tfa_2575" value="{{defaults.tfa_2575}}" autocomplete="nope" data-lpignore="true" title="Funding requested" class="form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2575" name="tfa_2575" value="{{defaults.tfa_2575}}" autocomplete="nope" data-lpignore="true" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1415,7 +1415,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2659-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2659" name="tfa_2659" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2659}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2659" name="tfa_2659" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2659}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1451,7 +1451,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2666-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2666" name="tfa_2666" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2666}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2666" name="tfa_2666" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2666}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1487,7 +1487,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2673-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2673" name="tfa_2673" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2673}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2673" name="tfa_2673" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2673}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1523,7 +1523,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2680-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" min="0" max="100000000" id="tfa_2680" name="tfa_2680" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2680}}" min="0" title="Funding requested" class="form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2680" name="tfa_2680" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2680}}" min="0" title="Funding requested" class="form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1604,7 +1604,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <div class="oneField field-container-D" id="tfa_2595-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" min="0" max="100000000" id="tfa_2595" name="tfa_2595" value="{{defaults.tfa_2595}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2595" name="tfa_2595" value="{{defaults.tfa_2595}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
                           </div>
                         </div>
                       </td>
@@ -1635,7 +1635,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <div class="oneField field-container-D" id="tfa_2652-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" min="0" max="100000000" id="tfa_2652" name="tfa_2652" value="{{defaults.tfa_2652}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2652" name="tfa_2652" value="{{defaults.tfa_2652}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
                           </div>
                         </div>
                       </td>
@@ -1666,7 +1666,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <div class="oneField field-container-D" id="tfa_2648-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" min="0" max="100000000" id="tfa_2648" name="tfa_2648" value="{{defaults.tfa_2648}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2648" name="tfa_2648" value="{{defaults.tfa_2648}}" autocomplete="nope" data-lpignore="true" title="Amount" class="form-input text-right">
                           </div>
                         </div>
                       </td>
@@ -1979,6 +1979,11 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   {{/unless}}
 });
+
+function isNumberKey(evt){
+  var charCode = (evt.which) ? evt.which : evt.keyCode
+  return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
 
 function validate_filesize(file) {
   var filesize = file.files[0].size / 1024 / 1024; // in MB
