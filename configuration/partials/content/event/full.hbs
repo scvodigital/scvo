@@ -214,7 +214,6 @@
       </div>
       {{/each ~}}
       {{/if ~}}
-      {{!-- temporarily removed for covid-19 --}}
       <div class="columns">
         <div class="column col-2 col-lg-3 col-sm-12">
           <strong>Venue</strong>
@@ -247,6 +246,15 @@
         </div>
         {{/ifAll ~}}
       </div>
+      {{#compare course_type "Training Course"}}
+      {{#if show_in_house_training_info}}
+      <p>
+        <strong>In-house training</strong><br />
+        This course can be delivered in-house.
+      </p>
+      <a href="/support/training/in-house" class="btn">Find out more</a>
+      {{/if}}
+      {{/compare}}
     </div>
   </div>
 </div>
