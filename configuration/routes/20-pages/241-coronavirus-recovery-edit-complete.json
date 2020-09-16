@@ -1,0 +1,34 @@
+{
+  "name": "coronavirus_recovery_edit_complete",
+  "debug": true,
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/edit/complete",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_edit-header",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_edit-complete",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
