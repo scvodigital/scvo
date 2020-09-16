@@ -6,6 +6,7 @@
   type_of_support=@root.data.form_data.type_of_support
   supported_groups=@root.data.form_data.supported_groups
   funding_needs=@root.data.form_data.funding_needs
+  scf_previous_funder=@root.data.form_data.scf_previous_funder
   defaults=@root.data.form_data.defaults
 }}
 <script type="text/javascript">
@@ -839,14 +840,14 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
-                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
+                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Is the majority of your application focused on delivering ongoing support?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D">
+                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D">
                       <i class="form-icon"></i>
                       Are you looking for funding to support both types of activity?
                     </label>
@@ -1705,6 +1706,54 @@ wFORMS.behaviors.prefill.skip = false;
                     </label>
                   </div>
                   <textarea id="tfa_2598" name="tfa_2598" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2598}}</textarea>
+                </div>
+              </div>
+
+              <div class="form-group field-container-D b-margin-full" id="tfa_2719-D" role="radiogroup" aria-labelledby="tfa_2719-L" data-tfa-labelledby="tfa_2719-L" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+                <div class="col-7 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="form-group field-container-D">
+                    <label id="tfa_2719-L" class="preField reqMark r-margin">
+                      Have you previously received funding through the Supporting Communities Fund?
+                    </label>
+                  </div>
+                </div>
+                <div class="col-2 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <span id="tfa_2719" class="choices vertical required">
+                    <div class="form-group">
+                      <label class="form-radio" id="tfa_2720-L" for="tfa_2720">
+                        <input type="radio" value="tfa_2720" id="tfa_2720" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2720-L" data-conditionals="#tfa_2722-D" data-tfa-labelledby="tfa_2719-L tfa_2720-L"{{#compare defaults.tfa_2719 'Yes'}} checked{{/compare}}>
+                        <i class="form-icon"></i>
+                        Yes
+                      </label>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-radio" id="tfa_2721-L" for="tfa_2721">
+                        <input type="radio" value="tfa_2721" id="tfa_2721" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2721-L" data-tfa-labelledby="tfa_2719-L tfa_2721-L"{{#compare defaults.tfa_2719 'No'}} checked{{/compare}}>
+                        <i class="form-icon"></i>
+                        No
+                      </label>
+                    </div>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-group field-container-D b-margin-full" id="tfa_2722-D" data-condition="`#tfa_2720`">
+                <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                  <div class="form-group field-container-D">
+                    <label id="tfa_2722-L" class="preField reqMark r-margin" for="tfa_2722">
+                      Who was your funding partner?
+                    </label>
+                  </div>
+                </div>
+                <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                  <select id="tfa_2722" name="tfa_2722" aria-required="true" {{#if defaults.application_editing}}class="form-select"{{else}}class="form-select required" required{{/if}}>
+                    <option value="" disabled{{#unless defaults.tfa_2722}} selected{{/unless}}>
+                      Please select&hellip;
+                    </option>
+                    {{#each scf_previous_funder ~}}
+                    <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_2722 name)}} selected{{/if}}>{{name}}</option>
+                    {{/each ~}}
+                  </select>
                 </div>
               </div>
             </div>

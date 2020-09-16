@@ -473,6 +473,40 @@
       "id": "tfa_2591"
     }
   ],
+  "scf_previous_funder": [
+    {
+      "name": "Community Enterprise in Scotland",
+      "id": "tfa_2723"
+    },
+    {
+      "name": "Highlands and Islands Enterprise",
+      "id": "tfa_2724"
+    },
+    {
+      "name": "Corra",
+      "id": "tfa_2725"
+    },
+    {
+      "name": "Development Trusts Association Scotland",
+      "id": "tfa_2726"
+    },
+    {
+      "name": "Glasgow West of Scotland Housing Forum",
+      "id": "tfa_2727"
+    },
+    {
+      "name": "Scottish Federation of Housing Associations",
+      "id": "tfa_2728"
+    },
+    {
+      "name": "National Lotteries Community Fund",
+      "id": "tfa_2729"
+    },
+    {
+      "name": "Scottish Communities Development Centre",
+      "id": "tfa_2730"
+    }
+  ],
   "defaults": {
     {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant.records.[0] ~}}
     {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant.records.[0] oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
