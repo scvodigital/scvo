@@ -51,6 +51,12 @@ wFORMS.behaviors.prefill.skip = false;
 </script>
 <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=88d2338a3b7d98705a2271fea6a51efa46fffee6"></script>
 
+{{#unless defaults.application_editing}}
+<div class="container t-margin-full t-padding">
+  <span class="text-error">*</span> indicates a required field
+</div>
+{{/unless}}
+
 <div class="form-horizontal form b-margin-full b-padding-full">
   <div class="wFormContainer">
     <div class="wFormHeader"></div>
@@ -824,15 +830,15 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-9 col-xl-10 col-lg-12 col-md-12 col-sm-12">
                 <span id="fund_branching" class="choices vertical required">
                   <div class="form-group">
-                    <label class="form-radio" id="fund_branching_recovery-L" for="fund_branching_recovery">
-                      <input type="radio" value="fund_branching_recovery" id="fund_branching_recovery" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_recovery-L" data-tfa-labelledby="fund_branching-L fund_branching_recovery-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}>
+                    <label class="form-radio" id="fund_branching_atf-L" for="fund_branching_atf">
+                      <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Is the majority of your application focused on adapting for future delivery?
                     </label>
                   </div>
                   <div class="form-group">
-                    <label class="form-radio" id="fund_branching_community-L" for="fund_branching_community">
-                      <input type="radio" value="fund_branching_community" id="fund_branching_community" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_community-L" data-tfa-labelledby="fund_branching-L fund_branching_community-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
+                    <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
+                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Is the majority of your application focused on delivering ongoing support?
                     </label>
@@ -869,7 +875,7 @@ wFORMS.behaviors.prefill.skip = false;
               If you are struggling with this section then assistance can be provided.
             </p>
 
-            <div class="form-group field-container-D b-margin-full" id="tfa_2541-D" role="group" aria-labelledby="tfa_2541-L" data-tfa-labelledby="tfa_2541-L" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
+            <div class="form-group field-container-D b-margin-full" id="tfa_2541-D" role="group" aria-labelledby="tfa_2541-L" data-tfa-labelledby="tfa_2541-L" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D">
                   <label id="tfa_2541-L" class="preField reqMark r-margin">
@@ -892,7 +898,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="form-group field-container-D b-margin-full" id="tfa_2554-D" role="radiogroup" aria-labelledby="tfa_2554-L" data-tfa-labelledby="tfa_2554-L" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
+            <div class="form-group field-container-D b-margin-full" id="tfa_2554-D" role="radiogroup" aria-labelledby="tfa_2554-L" data-tfa-labelledby="tfa_2554-L" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
               <div class="col-7 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D">
                   <label id="tfa_2554-L" class="preField reqMark r-margin">
@@ -974,7 +980,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group" id="tfa_2561-D" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
+              <div class="form-group" id="tfa_2561-D" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-5 col-lg-5 col-md-6 col-sm-12">
                   <label id="tfa_2561-L" class="form-label r-margin preField reqMark" for="tfa_2561">
                     What is your current bank balance?
@@ -1006,7 +1012,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group" id="tfa_2563-D" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
+              <div class="form-group" id="tfa_2563-D" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-5 col-lg-5 col-md-6 col-sm-12">
                   <label id="tfa_2563-L" class="form-label r-margin preField reqMark" for="tfa_2563">
                     How much restricted and/or committed funds do you currently have?
@@ -1022,7 +1028,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group field-container-D t-margin" id="tfa_2564-D" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
+              <div class="form-group field-container-D t-margin" id="tfa_2564-D" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-9 col-xl-12">
                   <div class="form-group field-container-D">
                     <label id="tfa_2564-L" class="preField r-margin reqMark" for="tfa_2564">
@@ -1337,7 +1343,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group" id="tfa_2569-D" role="group" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
+              <div class="form-group" id="tfa_2569-D" role="group" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-9 col-xl-12">
                   <label class="form-checkbox" id="tfa_2569-L" for="tfa_2569">
                     <input type="checkbox" value="tfa_2569" id="tfa_2569" name="tfa_2569" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L"{{#if defaults.tfa_2569}} checked{{/if}}>
@@ -1347,7 +1353,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div id="tfa_2585" class="col-9 col-xl-12 b-margin-full section" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
+              <div id="tfa_2585" class="col-9 col-xl-12 b-margin-full section" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <p id="tfa_2585-L">Have you applied or are looking for other sources of funding to support this work? If yes, provide details i.e. funder, how much and expected outcome.</p>
                 <div id="tfa_2572" class="section group">
                   <table class="gridLayout" style="width:100%;">
@@ -1545,7 +1551,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group field-container-D t-margin" id="tfa_2587-D" data-condition="`#fund_branching_recovery` OR `#fund_branching_both`">
+              <div class="form-group field-container-D t-margin" id="tfa_2587-D" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-9 col-xl-12">
                   <div class="form-group field-container-D">
                     <label id="tfa_2587-L" class="preField r-margin reqMark" for="tfa_2587">
@@ -1557,7 +1563,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group field-container-D b-margin-full" id="tfa_2588-D" role="group" aria-labelledby="tfa_2588-L" data-tfa-labelledby="tfa_2588-L" data-condition="`#fund_branching_community` OR `#fund_branching_both`">
+              <div class="form-group field-container-D b-margin-full" id="tfa_2588-D" role="group" aria-labelledby="tfa_2588-L" data-tfa-labelledby="tfa_2588-L" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="form-group field-container-D">
                     <label id="tfa_2588-L" class="preField reqMark r-margin">
@@ -1580,7 +1586,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div id="tfa_2592" class="section col-9 col-xl-12" data-condition="`#fund_branching_community` OR `#fund_branching_both`">
+              <div id="tfa_2592" class="section col-9 col-xl-12" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
                 <h3 id="tfa_2592-L">Further detail</h3>
                 <table class="gridLayout" style="width:100%;">
                   <thead>
@@ -1689,7 +1695,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </table>
               </div>
 
-              <div class="form-group field-container-D t-margin" id="tfa_2598-D" data-condition="`#fund_branching_community` OR `#fund_branching_both`">
+              <div class="form-group field-container-D t-margin" id="tfa_2598-D" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
                 <div class="col-9 col-xl-12">
                   <div class="form-group field-container-D">
                     <label id="tfa_2598-L" class="preField r-margin reqMark" for="tfa_2598">
@@ -1910,13 +1916,13 @@ document.addEventListener("DOMContentLoaded", function() {
         $initialCommunityStatus.val('Applied');
         $initialCommunityType.val('0123z000000CFcxAAG');
         break;
-        case 'fund_branching_recovery':
+        case 'fund_branching_atf':
         $initialRecoveryStatus.val('Applied');
         $initialRecoveryType.val('0123z000000CFSJAA4');
         $initialCommunityStatus.val('Inactive');
         $initialCommunityType.val('0123z000000CFgkAAG');
         break;
-        case 'fund_branching_community':
+        case 'fund_branching_crf':
         $initialRecoveryStatus.val('Inactive');
         $initialRecoveryType.val('0123z000000CFgkAAG');
         $initialCommunityStatus.val('Applied');
