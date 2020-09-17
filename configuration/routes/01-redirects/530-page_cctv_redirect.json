@@ -1,0 +1,14 @@
+{
+  "name": "page_cctv_redirect",
+  "pattern": "/cctv-at-scvo",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/privacy/cctv",
+        "statusCode": 302
+      }
+    }
+  ]
+}
