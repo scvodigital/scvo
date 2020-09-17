@@ -63,7 +63,7 @@ wFORMS.behaviors.prefill.skip = false;
     <div class="wFormHeader"></div>
     <div class="wForm" id="4844638-WRPR" dir="ltr">
       <div class="codesection" id="code-4844638"></div>
-      <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsTooltip labelsAbove" id="4844638" role="form" {{#unless defaults.application_readonly}}enctype="multipart/form-data" data-component="FormBackup" data-FormBackup='{
+      <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="hintsTooltip labelsAbove" id="4844638" role="form" {{#unless defaults.application_readonly}}enctype="multipart/form-data" data-component="FormBackup" data-FormBackup='{
         "name": "community_recovery",
         "idsSelector": "#tfa_1876",
         "ignoreFields": ["tfa_2274", "tfa_2273"]
@@ -319,7 +319,7 @@ wFORMS.behaviors.prefill.skip = false;
               </select>
               <div class="oneField field-container-D" id="tfa_2539-D" data-condition="`#tfa_2718`" style="width:100%;">
                 <div class="inputWrapper t-margin" style="width:100%;">
-                  <input type="text" id="tfa_2539" name="tfa_2539" value="{{defaults.tfa_2539}}" maxlength="150" title="Please describe the main sector your organisation works in" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;">
+                  <input type="text" id="tfa_2539" name="tfa_2539" value="{{defaults.tfa_2539}}" maxlength="150" title="Please describe the main sector your organisation works in" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;" {{#if defaults.application_readonly}}readonly{{/if}}>
                 </div>
               </div>
             </div>
@@ -477,7 +477,7 @@ wFORMS.behaviors.prefill.skip = false;
                       {{#if id_multiple ~}}
                       <span class="form-group column col-6 col-md-12">
                         <label class="form-checkbox" id="{{id_multiple}}-L" for="{{id_multiple}}">
-                          <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (split ../defaults.tfa_2084 ";") name)}} checked{{/if}}>
+                          <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (split ../defaults.tfa_2084 ";") name)}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                           <i class="form-icon"></i> {{name}}
                         </label>
                       </span>
@@ -538,7 +538,7 @@ wFORMS.behaviors.prefill.skip = false;
                   {{#each target_communities}}
                   <div class="form-group">
                     <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                      <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L"{{#if (contains ../defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2348-D"{{/if}}>
+                      <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L"{{#if (contains ../defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2348-D"{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                       <i class="form-icon"></i>
                       {{name}}
                     </label>
@@ -546,7 +546,7 @@ wFORMS.behaviors.prefill.skip = false;
                   {{/each}}
                   <div class="oneField field-container-D" id="tfa_2348-D" data-condition="`#tfa_2515`" style="width:100%;">
                     <div class="inputWrapper" style="width:100%;">
-                      <input type="text" id="tfa_2348" name="tfa_2348" value="{{defaults.tfa_2348}}" maxlength="150" title="Please specify which other communities or protected characteristics your organisation works with" class="form-input required" autocomplete="nope" data-lpignore="true" required style="width:100%;">
+                      <input type="text" id="tfa_2348" name="tfa_2348" value="{{defaults.tfa_2348}}" maxlength="150" title="Please specify which other communities or protected characteristics your organisation works with" class="form-input required" autocomplete="nope" data-lpignore="true" required style="width:100%;" {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </span>
@@ -896,7 +896,7 @@ wFORMS.behaviors.prefill.skip = false;
                   {{#each income_generation}}
                   <div class="form-group">
                     <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                      <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2541-L {{id}}-L" {{#if (contains ../defaults.tfa_2541 name)}} checked{{/if}}>
+                      <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2541-L {{id}}-L" {{#if (contains ../defaults.tfa_2541 name)}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                       <i class="form-icon"></i>
                       {{name}}
                     </label>
@@ -918,14 +918,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2554" class="choices vertical required">
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2555-L" for="tfa_2555">
-                      <input type="radio" value="tfa_2555" id="tfa_2555" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2555-L" data-tfa-labelledby="tfa_2554-L tfa_2555-L"{{#if defaults.tfa_2554}} checked{{/if}}>
+                      <input type="radio" value="tfa_2555" id="tfa_2555" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2555-L" data-tfa-labelledby="tfa_2554-L tfa_2555-L"{{#if defaults.tfa_2554}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                       <i class="form-icon"></i>
                       Yes
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="tfa_2556-L" for="tfa_2556">
-                      <input type="radio" value="tfa_2556" id="tfa_2556" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2556-L" data-tfa-labelledby="tfa_2554-L tfa_2556-L">
+                      <input type="radio" value="tfa_2556" id="tfa_2556" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2556-L" data-tfa-labelledby="tfa_2554-L tfa_2556-L" {{#if defaults.application_readonly}}readonly{{/if}}>
                       <i class="form-icon"></i>
                       No
                     </label>
@@ -1017,7 +1017,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D" id="tfa_2562-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" max="100000000" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" max="100000000" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </div>
@@ -1033,7 +1033,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2563" name="tfa_2563" value="{{defaults.tfa_2563}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2563" name="tfa_2563" value="{{defaults.tfa_2563}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </div>
@@ -1088,7 +1088,7 @@ wFORMS.behaviors.prefill.skip = false;
                     {{#each type_of_support}}
                     <div class="form-group">
                       <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L"{{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}}>
+                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L"{{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                         <i class="form-icon"></i>
                         {{name}}
                       </label>
@@ -1191,7 +1191,7 @@ wFORMS.behaviors.prefill.skip = false;
                     {{#each supported_groups}}
                     <div class="form-group">
                       <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2614 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
+                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2614 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                         <i class="form-icon"></i>
                         {{name}}
                       </label>
@@ -1363,7 +1363,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="form-group" id="tfa_2569-D" role="group" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-9 col-xl-12">
                   <label class="form-checkbox" id="tfa_2569-L" for="tfa_2569">
-                    <input type="checkbox" value="tfa_2569" id="tfa_2569" name="tfa_2569" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L"{{#if defaults.tfa_2569}} checked{{/if}}>
+                    <input type="checkbox" value="tfa_2569" id="tfa_2569" name="tfa_2569" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L"{{#if defaults.tfa_2569}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                     <i class="form-icon"></i>
                     Check this box if you would consider taking part funding in the form of a 0% interest loan
                   </label>
@@ -1593,7 +1593,7 @@ wFORMS.behaviors.prefill.skip = false;
                     {{#each funding_needs}}
                     <div class="form-group">
                       <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2588-L {{id}}-L"{{#if (contains ../defaults.tfa_2588 name)}} checked{{/if}}>
+                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2588-L {{id}}-L"{{#if (contains ../defaults.tfa_2588 name)}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                         <i class="form-icon"></i>
                         {{name}}
                       </label>
@@ -1739,14 +1739,14 @@ wFORMS.behaviors.prefill.skip = false;
                   <span id="tfa_2719" class="choices vertical required">
                     <div class="form-group">
                       <label class="form-radio" id="tfa_2720-L" for="tfa_2720">
-                        <input type="radio" value="tfa_2720" id="tfa_2720" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2720-L" data-conditionals="#tfa_2722-D" data-tfa-labelledby="tfa_2719-L tfa_2720-L"{{#compare defaults.tfa_2719 'Yes'}} checked{{/compare}}>
+                        <input type="radio" value="tfa_2720" id="tfa_2720" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2720-L" data-conditionals="#tfa_2722-D" data-tfa-labelledby="tfa_2719-L tfa_2720-L"{{#compare defaults.tfa_2719 'Yes'}} checked{{/compare}} {{#if defaults.application_readonly}}readonly{{/if}}>
                         <i class="form-icon"></i>
                         Yes
                       </label>
                     </div>
                     <div class="form-group">
                       <label class="form-radio" id="tfa_2721-L" for="tfa_2721">
-                        <input type="radio" value="tfa_2721" id="tfa_2721" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2721-L" data-tfa-labelledby="tfa_2719-L tfa_2721-L"{{#compare defaults.tfa_2719 'No'}} checked{{/compare}}>
+                        <input type="radio" value="tfa_2721" id="tfa_2721" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2721-L" data-tfa-labelledby="tfa_2719-L tfa_2721-L"{{#compare defaults.tfa_2719 'No'}} checked{{/compare}} {{#if defaults.application_readonly}}readonly{{/if}}>
                         <i class="form-icon"></i>
                         No
                       </label>
