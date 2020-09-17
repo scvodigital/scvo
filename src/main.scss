@@ -2239,6 +2239,19 @@ aside {
     border-radius: $border-radius;
   }
 }
+.form {
+  .form-select:focus,
+  .form-input:not(:placeholder-shown):focus {
+    border-color: $secondary-color;
+    box-shadow: 0 0 0 0.1rem rgba(26, 75, 90, 0.2);
+  }
+  .form-select:invalid,
+  .form-input:not(:placeholder-shown):invalid {
+    border-color: $primary-color;
+    box-shadow: 0 0 0 0.1rem rgba(240, 56, 35, 0.2);
+  }
+}
+
 header {
   .form-group .form-input,
   .input-group .form-input,
