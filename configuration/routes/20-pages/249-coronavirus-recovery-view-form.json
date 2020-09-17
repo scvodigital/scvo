@@ -1,0 +1,76 @@
+{
+  "name": "coronavirus_recovery_view_form",
+  "debug": true,
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/view/:session_key",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "application_data",
+      "taskModule": "request",
+      "config": {
+        "optionsTemplates": {
+          "request": ">context.metaData.handlebars.templates.utilities_grantmanager-grant"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "check_for_application",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.totalSize"
+                  },
+                  1
+                ]
+              }
+            ]
+          },
+          "coronavirus_recovery_apply_missing",
+          false
+        ]
+      }
+    },
+    {
+      "name": "form_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form-data",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_view-header",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
