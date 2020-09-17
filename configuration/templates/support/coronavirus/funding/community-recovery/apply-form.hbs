@@ -231,7 +231,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <input type="url" pattern="https?://.+" id="tfa_1930" name="tfa_1930" value="{{defaults.tfa_1930}}" class="form-input" autocomplete="nope" data-lpignore="true">
               <p class="form-input-hint text-secondary">
-                If you have a website, please copy & paste the full address (beginning with http:// or https://)
+                If you have a website, please copy &amp; paste the full address (beginning with http:// or https://)
               </p>
             </div>
           </div>
@@ -470,7 +470,7 @@ wFORMS.behaviors.prefill.skip = false;
                       Across several Local Authority areas
                     </label>
                   </div>
-                  <div class="label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="-L tfa_2084-L">
+                  <div class="label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="tfa_2084-L">
                     <p class="b-padding">Please tick all that apply:</p>
                     <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2401`">
                       {{#each local_authorities ~}}
@@ -845,21 +845,21 @@ wFORMS.behaviors.prefill.skip = false;
                     <label class="form-radio" id="fund_branching_atf-L" for="fund_branching_atf">
                       <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
-                      Is the majority of your application focused on adapting for future delivery?
+                      Is most of your application focused on making changes to your organisation so it can adapt for the future (Adapt &amp; Thrive)?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
                       <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
-                      Is the majority of your application focused on delivering ongoing support?
+                      Is most of your application focused on supporting the reintroduction and/or delivery of services in communities (Communities Recovery Fund)?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
                       <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D">
                       <i class="form-icon"></i>
-                      Are you looking for funding to support both types of activity?
+                      Are you looking for funding and support for both types of activity?
                     </label>
                   </div>
                 </span>
@@ -1870,7 +1870,7 @@ wFORMS.behaviors.prefill.skip = false;
                   Please confirm that:
                 </p>
               </div>
-              <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="-L tfa_2186-L">
+              <div class="form-group" id="tfa_2186-D" role="group" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L">
                 <div class="col-9 col-xl-12">
                   <label class="form-checkbox" id="tfa_2186-L" for="tfa_2186">
                     <input type="checkbox" value="tfa_2186" id="tfa_2186" name="tfa_2186" aria-labelledby="tfa_2186-L" data-tfa-labelledby="tfa_2186-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
@@ -1879,12 +1879,39 @@ wFORMS.behaviors.prefill.skip = false;
                   </label>
                 </div>
               </div>
-              <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="-L tfa_2185-L">
+              <div class="form-group" id="tfa_2185-D" role="group" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L">
                 <div class="col-9 col-xl-12">
                   <label class="form-checkbox" id="tfa_2185-L" for="tfa_2185">
                     <input type="checkbox" value="tfa_2185" id="tfa_2185" name="tfa_2185" aria-labelledby="tfa_2185-L" data-tfa-labelledby="tfa_2185-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
                     <i class="form-icon"></i>
                     &hellip;you have either staff, directors and/or trustees/management committee members who are able to implement the plan and discuss the proposed changes
+                  </label>
+                </div>
+              </div>
+              <div class="form-group" id="gdpr-D" role="group" aria-labelledby="gdpr-L" data-tfa-labelledby="gdpr-L">
+                <div class="col-9 col-xl-12">
+                  <label class="form-checkbox" id="gdpr-L" for="gdpr">
+                    <input type="checkbox" value="gdpr" id="gdpr" name="gdpr" aria-labelledby="gdpr-L" data-tfa-labelledby="tfa_2185-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
+                    <i class="form-icon"></i>
+                    &hellip;by submitting your application, you confirm that you understand and accept our obligations under the General Data Protection Regulation (GDPR) set out in our <a href="/privacy/community-third-sector-recovery-programme" target="_blank">Privacy Policy</a>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group" id="sharing-D" role="group" aria-labelledby="sharing-L" data-tfa-labelledby="sharing-L">
+                <div class="col-9 col-xl-12">
+                  <label class="form-checkbox" id="sharing-L" for="sharing">
+                    <input type="checkbox" value="sharing" id="sharing" name="sharing" aria-labelledby="sharing-L" data-tfa-labelledby="tfa_2185-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
+                    <i class="form-icon"></i>
+                    &hellip;you also understand that by applying, the information you supplied will be shared with a range of national and local organisations for the purposes of verification and assessment. These include (but are not limited to) the Adapt and Thrive programme partners, the Recovery Communities Fund partners, relevant Scottish Government departments, Highlands &amp; Islands Enterprise, and the South of Scotland Enterprise Agency
+                  </label>
+                </div>
+              </div>
+              <div class="form-group" id="publishing-D" role="group" aria-labelledby="publishing-L" data-tfa-labelledby="publishing-L">
+                <div class="col-9 col-xl-12">
+                  <label class="form-checkbox" id="publishing-L" for="publishing">
+                    <input type="checkbox" value="publishing" id="publishing" name="publishing" aria-labelledby="publishing-L" data-tfa-labelledby="tfa_2185-L" {{#if defaults.application_editing}}checked disabled{{else}}required{{/if}}>
+                    <i class="form-icon"></i>
+                    &hellip;if your application is successful, we will publish details of the financial support provided openly on the internet (with the exception of the primary/secondary contact details), and in addition, we may use/publish information in news releases, case studies, publications and other publicity materials in hard copy and on the internet
                   </label>
                 </div>
               </div>
