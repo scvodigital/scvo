@@ -240,7 +240,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-9 col-xl-12">
               <div class="form-group field-container-D">
                 <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
-                  Organisation overview<br />
+                  Tell us briefly what your organisation is established to do and for whom<br />
                   (maximum 300 words)
                 </label>
               </div>
@@ -326,6 +326,9 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
 
           <h3>Organisation address</h3>
+          <p class="form-input-hint text-secondary">
+            Please enter your main address in Scotland
+          </p>
 
           <div class="form-group">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -746,7 +749,7 @@ wFORMS.behaviors.prefill.skip = false;
           <div class="bg-gray v-padding-full">
             <div id="tfa_2269-body" class="container section v-padding-full">
               <p>
-                To increase the speed of making payments to successful applicants, we are asking for your bank details at this stage. Please ensure the details are correct, and match the bank statement uploaded, to ensure money reaches the correct account.
+                To increase the speed of making payments to successful applicants, we are asking for your organisational bank details at this stage. Please ensure the details are correct, and match the bank statement uploaded, to ensure money reaches the correct account.
               </p>
 
               <div class="form-group">
@@ -769,7 +772,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="field-container-D" id="tfa_2274-D">
-                    <input type="text" id="tfa_2274" name="tfa_2274" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                    <input type="text" id="tfa_2274" name="tfa_2274" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" title="Please enter an 8 digit account number" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
                   </div>
                 </div>
               </div>
@@ -781,7 +784,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="field-container-D" id="tfa_2273-D">
-                    <input type="text" id="tfa_2273" name="tfa_2273" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                    <input type="text" id="tfa_2273" name="tfa_2273" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" title="Please enter a 6-digit sort code xx-xx-xx" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
                   </div>
                 </div>
               </div>
@@ -817,7 +820,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="field-container-D" id="tfa_2280-D">
-                    <input type="text" id="tfa_2280" name="tfa_2280" maxlength="150" value="{{defaults.tfa_2280}}" autocomplete="nope" data-lpignore="true" aria-required="true" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
+                    <input type="text" id="tfa_2280" name="tfa_2280" maxlength="150" value="{{defaults.tfa_2280}}" autocomplete="nope" data-lpignore="true" aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required" required{{/if}}>
                   </div>
                 </div>
               </div>
@@ -880,10 +883,6 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
           </div>
           <div id="tfa_2316-body" class="container section v-padding-full">
-            <p class="b-margin">
-              If you are struggling with this section then assistance can be provided.
-            </p>
-
             <div class="form-group field-container-D b-margin-full" id="tfa_2541-D" role="group" aria-labelledby="tfa_2541-L" data-tfa-labelledby="tfa_2541-L" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D">
@@ -945,7 +944,7 @@ wFORMS.behaviors.prefill.skip = false;
                       <tr class="headerRow">
                         <th scope="col" id="tfa_2558-GRID">
                           <label class="reqMark">
-                            Year-ending
+                            Year-ending (MM/YYYY)
                           </label>
                         </th>
                         <th scope="col" id="tfa_2559-GRID">
@@ -1219,7 +1218,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <div class="col-9 col-xl-12">
                       <div class="form-group field-container-D">
                         <label id="tfa_2369-L" class="preField r-margin reqMark" for="tfa_2369">
-                          What is the overall estimated cost of your activities? Provide a short description of item(s) and cost. For example, PPE, building contractor, HR consultant to help you implement your plans. If you are applying to Adapt and Thrive, remember to also attach a detailed budget for your recovery plan<br />
+                          What is the overall estimated cost of your activities? Provide a short description of item(s) and cost. For example, PPE, building contractor, HR consultant to help you implement your plans<br />
                           (maximum 300 words)
                         </label>
                       </div>
@@ -1231,6 +1230,9 @@ wFORMS.behaviors.prefill.skip = false;
 
               <div class="col-9 col-xl-12 b-margin-full">
                 <div id="tfa_2151" class="section group">
+                  <p>
+                    Please enter a detailed budget
+                  </p>
                   <table class="gridLayout" style="width:100%;">
                     <thead>
                       <tr class="headerRow">
