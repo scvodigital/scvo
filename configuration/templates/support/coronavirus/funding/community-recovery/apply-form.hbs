@@ -241,7 +241,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="form-group field-container-D">
                 <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
                   Tell us briefly what your organisation is established to do and for whom<br />
-                  (maximum 300 words)
+                  <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                 </label>
               </div>
               <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required count-words" required{{/if}}>{{defaults.tfa_2325}}</textarea>
@@ -518,7 +518,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2540-L" class="preField r-margin reqMark" for="tfa_2540">
                     How are the people and communities you seek to serve involved or able to influence how you deliver your services or support?<br />
-                    (maximum 150 words)
+                    <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                   </label>
                 </div>
                 <textarea id="tfa_2540" name="tfa_2540" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2540}}</textarea>
@@ -1000,6 +1000,9 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="input-group-addon">&pound;</span>
                       <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2561" name="tfa_2561" value="{{defaults.tfa_2561}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required>
                     </div>
+                    <p class="form-input-hint text-secondary">
+                      This should include all bank accounts you have including any subsidiary and associated companies where applicable
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1041,7 +1044,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2564-L" class="preField r-margin reqMark" for="tfa_2564">
                       Is there anything unusual about your current funding / income that you would like to explain? Or anything else that you would like to tell us about your organisation’s financial situation? Include details of any ringfenced or committed monies for specific work or project<br />
-                      (maximum 150 words)
+                      <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2564" name="tfa_2564" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2564}}</textarea>
@@ -1054,7 +1057,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2565-L" class="preField r-margin reqMark" for="tfa_2565">
                     Explain how you have been financially impacted as a result of COVID-19<br />
-                    (maximum 150 words)
+                    <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                   </label>
                 </div>
                 <textarea id="tfa_2565" name="tfa_2565" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2565}}</textarea>
@@ -1105,7 +1108,8 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2608-L" class="preField r-margin reqMark" for="tfa_2608">
                       Explain briefly how your organisation operated before coronavirus and any changes that you have already made to continue your activity<br />
-                      (maximum 300 words)
+                      <span class="form-input-hint text-secondary">This should include your  vision, governance structure, your core services and products and your capcity e.g. number of clients / no of hours / volume of products</span><br />
+                      <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2608" name="tfa_2608" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2608}}</textarea>
@@ -1117,7 +1121,8 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2609-L" class="preField r-margin reqMark" for="tfa_2609">
                       Tell us about your plans for the reopening or restructuring of your organisation and/or services<br />
-                      (maximum 300 words)
+                      <span class="form-input-hint text-secondary">This should include steps you are taking to re-open, any new services, resources, staff training or recruitment and a timeline</span><br />
+                      <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2609" name="tfa_2609" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2609}}</textarea>
@@ -1129,7 +1134,8 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2610-L" class="preField r-margin reqMark" for="tfa_2610">
                       Describe any physical changes you need to make to operate safely and sustainably in the recovery phase while continuing to have a positive impact for the people and communities you work with<br />
-                      (maximum 300 words)
+                      <span class="form-input-hint text-secondary">This should include equipment</span><br />
+                      <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2610" name="tfa_2610" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2610}}</textarea>
@@ -1141,7 +1147,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2611-L" class="preField r-margin reqMark" for="tfa_2611">
                       Describe how your organisation and future activities will contribute to assisting rebuilding the health and wellbeing of your community. Priority will be given to organisations who can evidence the impact for people and communities who have been disproportionately affected by COVID-19<br />
-                      (maximum 300 words)
+                      <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2611" name="tfa_2611" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2611}}</textarea>
@@ -1153,7 +1159,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2612-L" class="preField r-margin reqMark" for="tfa_2612">
                       Have any of the people or communities you work with been involved in your recovery or reopening plans? If yes, tell us how. If no, tell us why this wasn't possible<br />
-                      (maximum 150 words)
+                      <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2612" name="tfa_2612" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2612}}</textarea>
@@ -1165,7 +1171,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2613-L" class="preField r-margin reqMark" for="tfa_2613">
                       Please tell us about any aspects of your recovery plan you have concerns about<br />
-                      (maximum 150 words)
+                      <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2613" name="tfa_2613" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2613}}</textarea>
@@ -1219,7 +1225,7 @@ wFORMS.behaviors.prefill.skip = false;
                       <div class="form-group field-container-D">
                         <label id="tfa_2369-L" class="preField r-margin reqMark" for="tfa_2369">
                           What is the overall estimated cost of your activities? Provide a short description of item(s) and cost. For example, PPE, building contractor, HR consultant to help you implement your plans<br />
-                          (maximum 300 words)
+                          <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                         </label>
                       </div>
                       <textarea id="tfa_2369" name="tfa_2369" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2369}}</textarea>
@@ -1567,7 +1573,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2587-L" class="preField r-margin reqMark" for="tfa_2587">
                       How will this funding help with your overall fundraising and/or recovery plan?<br />
-                      (maximum 150 words)
+                      <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2587" name="tfa_2587" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2587}}</textarea>
@@ -1714,7 +1720,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D">
                     <label id="tfa_2598-L" class="preField r-margin reqMark" for="tfa_2598">
                       If funding is to deliver services and activity please describe how you are working in partnership with other community organisations and public sector to maximise resources?<br />
-                      (maximum 150 words)
+                      <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
                   <textarea id="tfa_2598" name="tfa_2598" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2598}}</textarea>
@@ -1845,7 +1851,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group b-margin-full">
                     <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12"></div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                      <p class="form-input-hint text-secondary ">
+                      <p class="form-input-hint text-secondary">
                         The maximum file size you can upload is 5Mb
                       </p>
                     </div>
