@@ -11,7 +11,7 @@
     <li class="breadcrumb-item"><a href="/support/coronavirus">Coronavirus Third Sector Information Hub</a></li>
     <li class="breadcrumb-item"><a href="/support/coronavirus/funding">Funding</a></li>
     <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government">Funds: Scottish Government</a></li>
-    <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government/community-recovery">Recovery Programme</a></li>
+    <li class="breadcrumb-item"><a href="/support/coronavirus/funding/scottish-government/community-recovery">Community & Third Sector Recovery Programme</a></li>
     <li class="breadcrumb-item">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "coronavirus_recovery_apply_complete")}}{{#compare @root.route.name "coronavirus_recovery_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Apply{{/ifAny}}</li>
   </ul>
 </div>
