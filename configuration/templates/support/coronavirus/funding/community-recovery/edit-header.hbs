@@ -17,7 +17,7 @@
   <div class="t-margin-full label label-primary h-padding-full">
     <h4>Editing instructions:</h4>
     <p class="b-padding text-white">
-      {{replace defaults.application_editing_instructions '\n' '<br />'}}
+      {{{regexReplace defaults.application_editing_instructions '\r?\n' 'g' '<br />'}}}
     </p>
   </div>
   {{/if}}
