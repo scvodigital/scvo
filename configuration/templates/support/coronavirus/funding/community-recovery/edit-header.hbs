@@ -1,9 +1,3 @@
-<div class="bg-error">
-  <div class="container v-padding-full v-margin-full text-white">
-    <strong>TEST FORM</strong>&emsp;This application form is currently in development and all responses will be deleted before the funds open on Monday 21st September
-  </div>
-</div>
-
 <div class="container">
   <ul class="breadcrumb breadcrumb-length-4" aria-hidden="true">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -23,7 +17,7 @@
   <div class="t-margin-full label label-primary h-padding-full">
     <h4>Editing instructions:</h4>
     <p class="b-padding text-white">
-      {{{replace defaults.application_editing_instructions '\n' '<br />'}}}
+      {{replace defaults.application_editing_instructions '\n' '<br />'}}
     </p>
   </div>
   {{/if}}

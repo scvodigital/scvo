@@ -216,7 +216,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="email" id="tfa_1939" name="tfa_1939" value="{{defaults.tfa_1939}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+              <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_1939" name="tfa_1939" value="{{defaults.tfa_1939}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
             </div>
           </div>
 
@@ -619,7 +619,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="email" id="tfa_1932" name="tfa_1932" maxlength="150" value="{{defaults.tfa_1932}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                  <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_1932" name="tfa_1932" maxlength="150" value="{{defaults.tfa_1932}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                 </div>
               </div>
 
@@ -703,7 +703,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="email" id="tfa_2332" name="tfa_2332" maxlength="150" value="{{defaults.tfa_2332}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_2332" name="tfa_2332" maxlength="150" value="{{defaults.tfa_2332}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
                 </div>
               </div>
 
