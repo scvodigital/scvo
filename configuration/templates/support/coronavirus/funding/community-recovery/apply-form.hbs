@@ -109,12 +109,12 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_1944-D">
                   {{#if defaults.tfa_1944}}
-                  <select id="organisation_type" name="organisation_type" class="form-select" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
+                  <select id="organisation_type" name="organisation_type" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}>
                     <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</option>
                   </select>
                   <input type="hidden" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}">
                   {{else}}
-                  <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true" {{#if defaults.application_readonly}}readonly{{/if}}>
+                  <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                     <option value="" disabled selected>Please select&hellip;</option>
                     {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
                     <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
@@ -160,12 +160,12 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D" id="tfa_1944-D">
                   {{!-- <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required> --}}
                   {{#if defaults.tfa_1944}}
-                  <select id="organisation_type" name="organisation_type" class="form-select" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
+                  <select id="organisation_type" name="organisation_type" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}>
                     <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</option>
                   </select>
                   <input type="hidden" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}">
                   {{else}}
-                  <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true" {{#if defaults.application_readonly}}readonly{{/if}}>
+                  <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                     <option value="" disabled selected>Please select&hellip;</option>
                     {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
                     <option id="{{slugify this}}" value="{{this}}"{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
@@ -309,7 +309,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <select id="tfa_2696" name="tfa_2696" aria-required="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
+              <select id="tfa_2696" name="tfa_2696" aria-required="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
                 <option value="" disabled{{#unless defaults.tfa_2696}} selected{{/unless}}>
                   Please select&hellip;
                 </option>
@@ -382,7 +382,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
             <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <select id="tfa_2438" name="tfa_2438" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
+              <select id="tfa_2438" name="tfa_2438" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
                 <option value="" disabled{{#unless ../defaults.tfa_2438}} selected{{/unless}}>
                   Please select&hellip;
                 </option>
@@ -422,8 +422,8 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <span id="tfa_2398" class="choices vertical required">
                   <div class="form-group">
-                    <label class="form-radio" id="tfa_2399-L" for="tfa_2399">
-                      <input type="radio" value="tfa_2399" id="tfa_2399" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2399-L" data-tfa-labelledby="tfa_2398-L tfa_2399-L" data-conditionals="#tfa_2505-D"{{#compare defaults.tfa_2398 "Within a specific community (e.g. town, village or neighbourhood)"}} checked{{/compare}} required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2399-L" for="tfa_2399">
+                      <input type="radio" value="tfa_2399" id="tfa_2399" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2399-L" data-tfa-labelledby="tfa_2398-L tfa_2399-L" data-conditionals="#tfa_2505-D"{{#compare defaults.tfa_2398 "Within a specific community (e.g. town, village or neighbourhood)"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       A local community or small number of local communities
                     </label>
@@ -442,14 +442,14 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
 
                   <div class="form-group">
-                    <label class="form-radio" id="tfa_2400-L" for="tfa_2400">
-                      <input type="radio" value="tfa_2400" id="tfa_2400" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2400-L" data-tfa-labelledby="tfa_2398-L tfa_2400-L" data-conditionals="#tfa_2051"{{#compare defaults.tfa_2398 "Across one local authority area"}} checked{{/compare}} required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2400-L" for="tfa_2400">
+                      <input type="radio" value="tfa_2400" id="tfa_2400" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2400-L" data-tfa-labelledby="tfa_2398-L tfa_2400-L" data-conditionals="#tfa_2051"{{#compare defaults.tfa_2398 "Across one local authority area"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       Across one Local Authority area
                     </label>
                   </div>
                   <div class="form-group field-container-D no-margin" id="tfa_2051-D">
-                    <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2400`" class="form-select b-margin-full" {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2400`" class="form-select b-margin-full" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                       <option value="" disabled{{#unless defaults.tfa_2051}} selected{{/unless}}>
                         Please select&hellip;
                       </option>
@@ -464,8 +464,8 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
 
                   <div class="form-group">
-                    <label class="form-radio" id="tfa_2401-L" for="tfa_2401">
-                      <input type="radio" value="tfa_2401" id="tfa_2401" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2401-L" data-tfa-labelledby="tfa_2398-L tfa_2401-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2398 "Across several local authority areas"}} checked{{/compare}} required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2401-L" for="tfa_2401">
+                      <input type="radio" value="tfa_2401" id="tfa_2401" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2401-L" data-tfa-labelledby="tfa_2398-L tfa_2401-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2398 "Across several local authority areas"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       Across several Local Authority areas
                     </label>
@@ -476,7 +476,7 @@ wFORMS.behaviors.prefill.skip = false;
                       {{#each local_authorities ~}}
                       {{#if id_multiple ~}}
                       <span class="form-group column col-6 col-md-12">
-                        <label class="form-checkbox" id="{{id_multiple}}-L" for="{{id_multiple}}">
+                        <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id_multiple}}-L" for="{{id_multiple}}">
                           <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (split ../defaults.tfa_2084 ";") name)}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                           <i class="form-icon"></i> {{name}}
                         </label>
@@ -487,24 +487,24 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
 
                   <div class="form-group">
-                    <label class="form-radio" id="tfa_2402-L" for="tfa_2402">
-                      <input type="radio" value="tfa_2402" id="tfa_2402" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2402-L" data-tfa-labelledby="tfa_2398-L tfa_2402-L" {{#compare defaults.tfa_2398 "Across Scotland"}} checked{{/compare}} required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2402-L" for="tfa_2402">
+                      <input type="radio" value="tfa_2402" id="tfa_2402" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2402-L" data-tfa-labelledby="tfa_2398-L tfa_2402-L" {{#compare defaults.tfa_2398 "Across Scotland"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       Nationally (Scotland)
                     </label>
                   </div>
 
                   <div class="form-group">
-                    <label class="form-radio" id="tfa_2403-L" for="tfa_2403">
-                      <input type="radio" value="tfa_2403" id="tfa_2403" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2403-L" data-tfa-labelledby="tfa_2398-L tfa_2403-L" {{#compare defaults.tfa_2398 "UK-wide"}} checked{{/compare}} required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2403-L" for="tfa_2403">
+                      <input type="radio" value="tfa_2403" id="tfa_2403" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2403-L" data-tfa-labelledby="tfa_2398-L tfa_2403-L" {{#compare defaults.tfa_2398 "UK-wide"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       UK-wide
                     </label>
                   </div>
 
                   <div class="form-group">
-                    <label class="form-radio" id="tfa_2404-L" for="tfa_2404">
-                      <input type="radio" value="tfa_2404" id="tfa_2404" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2404-L" data-tfa-labelledby="tfa_2398-L tfa_2404-L" data-conditionals="#tfa_2117"{{#compare defaults.tfa_2398 "Internationally (outwith Scotland)"}} checked{{/compare}} required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2404-L" for="tfa_2404">
+                      <input type="radio" value="tfa_2404" id="tfa_2404" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2404-L" data-tfa-labelledby="tfa_2398-L tfa_2404-L" data-conditionals="#tfa_2117"{{#compare defaults.tfa_2398 "Internationally (outwith Scotland)"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       Internationally (outwith Scotland)
                     </label>
@@ -537,7 +537,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2506" class="choices vertical required">
                   {{#each target_communities}}
                   <div class="form-group">
-                    <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
                       <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2506-L {{id}}-L"{{#if (contains ../defaults.tfa_2506 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2348-D"{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                       <i class="form-icon"></i>
                       {{name}}
@@ -895,8 +895,8 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2541" class="choices vertical required">
                   {{#each income_generation}}
                   <div class="form-group">
-                    <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                      <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2541-L {{id}}-L" {{#if (contains ../defaults.tfa_2541 name)}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
+                      <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2541-L {{id}}-L" {{#if (contains ../defaults.tfa_2541 name)}} checked{{/if}}>
                       <i class="form-icon"></i>
                       {{name}}
                     </label>
@@ -917,15 +917,15 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-2 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <span id="tfa_2554" class="choices vertical required">
                   <div class="form-group">
-                    <label class="form-radio" id="tfa_2555-L" for="tfa_2555">
-                      <input type="radio" value="tfa_2555" id="tfa_2555" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2555-L" data-tfa-labelledby="tfa_2554-L tfa_2555-L"{{#if defaults.tfa_2554}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2555-L" for="tfa_2555">
+                      <input type="radio" value="tfa_2555" id="tfa_2555" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2555-L" data-tfa-labelledby="tfa_2554-L tfa_2555-L"{{#if defaults.tfa_2554}} checked{{/if}}>
                       <i class="form-icon"></i>
                       Yes
                     </label>
                   </div>
                   <div class="form-group">
-                    <label class="form-radio" id="tfa_2556-L" for="tfa_2556">
-                      <input type="radio" value="tfa_2556" id="tfa_2556" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2556-L" data-tfa-labelledby="tfa_2554-L tfa_2556-L" {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2556-L" for="tfa_2556">
+                      <input type="radio" value="tfa_2556" id="tfa_2556" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2556-L" data-tfa-labelledby="tfa_2554-L tfa_2556-L">
                       <i class="form-icon"></i>
                       No
                     </label>
@@ -1087,8 +1087,8 @@ wFORMS.behaviors.prefill.skip = false;
                   <span id="tfa_2602" class="choices vertical required">
                     {{#each type_of_support}}
                     <div class="form-group">
-                      <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L"{{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
+                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2602-L {{id}}-L"{{#if (contains ../defaults.tfa_2602 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2632-D"{{/if}}>
                         <i class="form-icon"></i>
                         {{name}}
                       </label>
@@ -1190,8 +1190,8 @@ wFORMS.behaviors.prefill.skip = false;
                   <span id="tfa_2614" class="choices vertical required">
                     {{#each supported_groups}}
                     <div class="form-group">
-                      <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
-                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2614 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
+                        <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2614-L {{id}}-L" {{#if (contains ../defaults.tfa_2614 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2631-D"{{/if}}>
                         <i class="form-icon"></i>
                         {{name}}
                       </label>
@@ -1362,7 +1362,7 @@ wFORMS.behaviors.prefill.skip = false;
 
               <div class="form-group" id="tfa_2569-D" role="group" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-9 col-xl-12">
-                  <label class="form-checkbox" id="tfa_2569-L" for="tfa_2569">
+                  <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2569-L" for="tfa_2569">
                     <input type="checkbox" value="tfa_2569" id="tfa_2569" name="tfa_2569" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L"{{#if defaults.tfa_2569}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                     <i class="form-icon"></i>
                     Check this box if you would consider taking part funding in the form of a 0% interest loan
@@ -1409,7 +1409,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="oneField field-container-D" id="tfa_2576-D">
                             <div class="inputWrapper" style="width:100%;">
-                              <select id="tfa_2576" name="tfa_2576" title="Status" class="form-select" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <select id="tfa_2576" name="tfa_2576" title="Status" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                                 <option value="" disabled{{#unless defaults.tfa_2576}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2577" id="tfa_2577"{{#compare defaults.tfa_2576 'Applied'}} selected{{/compare}}>Applied</option>
                                 <option value="tfa_2578" id="tfa_2578"{{#compare defaults.tfa_2576 'Committed'}} selected{{/compare}}>Committed</option>
@@ -1445,7 +1445,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="oneField field-container-D" id="tfa_2660-D">
                             <div class="inputWrapper" style="width:100%;">
-                              <select id="tfa_2660" name="tfa_2660" title="Status" class="form-select" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <select id="tfa_2660" name="tfa_2660" title="Status" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                                 <option value="" disabled{{#unless defaults.tfa_2660}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2661" id="tfa_2661"{{#compare defaults.tfa_2660 'Applied'}} selected{{/compare}}>Applied</option>
                                 <option value="tfa_2662" id="tfa_2662"{{#compare defaults.tfa_2660 'Committed'}} selected{{/compare}}>Committed</option>
@@ -1481,7 +1481,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="oneField field-container-D" id="tfa_2667-D">
                             <div class="inputWrapper" style="width:100%;">
-                              <select id="tfa_2667" name="tfa_2667" title="Status" class="form-select" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <select id="tfa_2667" name="tfa_2667" title="Status" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                                 <option value="" disabled{{#unless defaults.tfa_2667}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2668" id="tfa_2668"{{#compare defaults.tfa_2667 'Applied'}} selected{{/compare}}>Applied</option>
                                 <option value="tfa_2669" id="tfa_2669"{{#compare defaults.tfa_2667 'Committed'}} selected{{/compare}}>Committed</option>
@@ -1517,7 +1517,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="oneField field-container-D" id="tfa_2674-D">
                             <div class="inputWrapper" style="width:100%;">
-                              <select id="tfa_2674" name="tfa_2674" title="Status" class="form-select" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <select id="tfa_2674" name="tfa_2674" title="Status" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                                 <option value="" disabled{{#unless defaults.tfa_2674}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2675" id="tfa_2675"{{#compare defaults.tfa_2674 'Applied'}} selected{{/compare}}>Applied</option>
                                 <option value="tfa_2676" id="tfa_2676"{{#compare defaults.tfa_2674 'Committed'}} selected{{/compare}}>Committed</option>
@@ -1553,7 +1553,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <td class="">
                           <div class="oneField field-container-D" id="tfa_2681-D">
                             <div class="inputWrapper" style="width:100%;">
-                              <select id="tfa_2681" name="tfa_2681" title="Status" class="form-select" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <select id="tfa_2681" name="tfa_2681" title="Status" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                                 <option value="" disabled{{#unless defaults.tfa_2681}} selected{{/unless}}>Please select&hellip;</option>
                                 <option value="tfa_2682" id="tfa_2682"{{#compare defaults.tfa_2681 'Applied'}} selected{{/compare}}>Applied</option>
                                 <option value="tfa_2683" id="tfa_2683"{{#compare defaults.tfa_2681 'Committed'}} selected{{/compare}}>Committed</option>
@@ -1592,7 +1592,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <span id="tfa_2588" class="choices vertical required">
                     {{#each funding_needs}}
                     <div class="form-group">
-                      <label class="form-checkbox" id="{{id}}-L" for="{{id}}">
+                      <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
                         <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2588-L {{id}}-L"{{#if (contains ../defaults.tfa_2588 name)}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                         <i class="form-icon"></i>
                         {{name}}
@@ -1738,15 +1738,15 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="col-2 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <span id="tfa_2719" class="choices vertical required">
                     <div class="form-group">
-                      <label class="form-radio" id="tfa_2720-L" for="tfa_2720">
-                        <input type="radio" value="tfa_2720" id="tfa_2720" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2720-L" data-conditionals="#tfa_2722-D" data-tfa-labelledby="tfa_2719-L tfa_2720-L"{{#compare defaults.tfa_2719 'Yes'}} checked{{/compare}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2720-L" for="tfa_2720">
+                        <input type="radio" value="tfa_2720" id="tfa_2720" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2720-L" data-conditionals="#tfa_2722-D" data-tfa-labelledby="tfa_2719-L tfa_2720-L"{{#compare defaults.tfa_2719 'Yes'}} checked{{/compare}}>
                         <i class="form-icon"></i>
                         Yes
                       </label>
                     </div>
                     <div class="form-group">
-                      <label class="form-radio" id="tfa_2721-L" for="tfa_2721">
-                        <input type="radio" value="tfa_2721" id="tfa_2721" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2721-L" data-tfa-labelledby="tfa_2719-L tfa_2721-L"{{#compare defaults.tfa_2719 'No'}} checked{{/compare}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2721-L" for="tfa_2721">
+                        <input type="radio" value="tfa_2721" id="tfa_2721" name="tfa_2719" aria-required="true" aria-labelledby="tfa_2721-L" data-tfa-labelledby="tfa_2719-L tfa_2721-L"{{#compare defaults.tfa_2719 'No'}} checked{{/compare}}>
                         <i class="form-icon"></i>
                         No
                       </label>
@@ -1764,7 +1764,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <select id="tfa_2722" name="tfa_2722" aria-required="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}readonly{{/if}}{{else}}class="form-select required" required{{/if}}>
+                  <select id="tfa_2722" name="tfa_2722" aria-required="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}{{else}}class="form-select required" required{{/if}}>
                     <option value="" disabled{{#unless defaults.tfa_2722}} selected{{/unless}}>
                       Please select&hellip;
                     </option>

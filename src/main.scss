@@ -949,6 +949,9 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.option-readonly {
+  pointer-events: none;
+}
 // input:read-only,
 // select:read-only,
 // textarea:read-only {
