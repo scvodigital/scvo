@@ -456,7 +456,7 @@ wFORMS.behaviors.prefill.skip = false;
                       </option>
                       {{#each local_authorities ~}}
                       {{#if id_single ~}}
-                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare (slugify (replace ../defaults.tfa_1884 ' and ' ' ')) (slugify name)) (compare defaults.tfa_2398 "!==" "Across one local authority area")}} selected{{/ifAll}}>
+                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare (slugify (replace ../defaults.tfa_1884 ' and ' ' ')) (slugify name)) (compare ../defaults.tfa_2398 "!==" "Across one local authority area")}} selected{{/ifAll}}>
                         {{name}}
                       </option>
                       {{/if ~}}
@@ -478,7 +478,7 @@ wFORMS.behaviors.prefill.skip = false;
                       {{#if id_multiple ~}}
                       <span class="form-group column col-6 col-md-12">
                         <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id_multiple}}-L" for="{{id_multiple}}">
-                          <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (split ../defaults.tfa_2084 ";") name)}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (slugify (replace ../defaults.tfa_2084 ' and ' ' ')) (slugify name))}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                           <i class="form-icon"></i> {{name}}
                         </label>
                       </span>
