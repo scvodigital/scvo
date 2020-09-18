@@ -16,5 +16,16 @@
   </ul>
 </div>
 <div class="container">
-  <h1 class="font-default">{{#ifAny @root.request.params.session_key @root.request.body.funder (compare @root.route.name "coronavirus_recovery_apply_complete")}}{{#compare @root.route.name "coronavirus_recovery_apply_complete"}}Thank you{{else}}{{#compare @root.route.name "coronavirus_recovery_apply_already_awarded"}}Sorry{{else}}Edit application{{/compare}}{{/compare}}{{else}}Edit application{{/ifAny}}</h1>
+  {{#with @root.data.form_data}}
+  <h1 class="font-default">{{#if defaults.application_fund}}{{{replace (replace defaults.application_fund "Recovery Fund" "Adapt &amp; Thrive") "Supporting Communities Fund" "Communities Recovery Fund"}}} application{{/if}}</h1>
+
+  {{#if defaults.application_editing_instructions}}
+  <div class="t-margin-full label label-primary h-padding-full">
+    <h4>Editing instructions:</h4>
+    <p class="b-padding text-white">
+      {{{replace defaults.application_editing_instructions '\n' '<br />'}}}
+    </p>
+  </div>
+  {{/if}}
+  {{/with}}
 </div>

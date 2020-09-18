@@ -16,5 +16,5 @@
   </ul>
 </div>
 <div class="container">
-  <h1 class="font-default">{{{replace (replace @root.data.form_data.defaults.application_fund "Recovery Fund" "Adapt &amp; Thrive") "Supporting Communities Fund" "Communities Recovery Fund"}}} application</h1>
+  <h1 class="font-default">{{#if @root.data.form_data.defaults.application_fund}}{{{replace (replace @root.data.form_data.defaults.application_fund "Recovery Fund" "Adapt &amp; Thrive") "Supporting Communities Fund" "Communities Recovery Fund"}}} application{{/if}}</h1>
 </div>

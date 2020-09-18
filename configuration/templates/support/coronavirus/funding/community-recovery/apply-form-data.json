@@ -511,11 +511,8 @@
     {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant.records.[0] ~}}
     {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant.records.[0] oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
     "application_editing": {{{json value=(default application.Id "")}}},
-    {{#compare @root.route.name "coronavirus_recovery_view_form"}}
-    "application_readonly": true,
-    {{else}}
-    "application_readonly": false,
-    {{/compare}}
+    "application_editing_instructions": {{#if application.Business_Advisor_Email_Text__c}}{{{json value=(default application.Business_Advisor_Email_Text__c "")}}},{{else}}{{#if application.Email_Text_CRF_Applicant_Update__c}}{{{json value=(default application.Email_Text_CRF_Applicant_Update__c "")}}},{{else}}{{{json value=""}}},{{/if}}{{/if}}
+    "application_readonly": {{#compare @root.route.name "coronavirus_recovery_view_form"}}true{{else}}false{{/compare}},
     "application_fund": {{{json value=(default application.Fund_Name__c "")}}},
     "application_call": {{{json value=(default application.Call__c "")}}},
     "application_status": {{{json value=(default application.Status__c "")}}},
