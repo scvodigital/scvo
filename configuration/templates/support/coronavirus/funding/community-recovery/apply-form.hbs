@@ -68,7 +68,7 @@ wFORMS.behaviors.prefill.skip = false;
         "idsSelector": "#tfa_1876",
         "ignoreFields": ["tfa_2274", "tfa_2273"]
       }'{{/unless}}>
-        <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{@root.request.params.session_key}}">
+        <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{#unless defaults.application_readonly}}{{@root.request.params.session_key}}{{/unless}}">
         <div class="bg-secondary">
           <div id="tfa_1883" class="container section v-margin-full v-padding-full">
             <h2 id="tfa_1883-L">
@@ -1796,7 +1796,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </p>
                   {{else}}
                   <p>
-                    Please upload the following documents to allow us to conduct due diligence checks on these criteria. There is a 5Mb limit, per document, on uploading.  If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
+                    Please upload the following documents to allow us to conduct due diligence checks on these criteria. There is a 4Mb limit, per document, on uploading.  If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
                   </p>
                   {{/if}}
 
@@ -1849,11 +1849,23 @@ wFORMS.behaviors.prefill.skip = false;
                       </div>
                     </div>
                   </div>
+                  <div class="form-group t-margin-full">
+                    <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                      <label id="tfa_2731-L" class="form-label r-margin preField" for="tfa_2731">
+                        Your cashflow forecast
+                      </label>
+                    </div>
+                    <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                      <div class="form-group field-container-D" id="tfa_2731-D">
+                        <input type="file" id="tfa_2731" name="tfa_2731" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
+                      </div>
+                    </div>
+                  </div>
                   <div class="form-group b-margin-full">
                     <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12"></div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                       <p class="form-input-hint text-secondary">
-                        The maximum file size you can upload is 5Mb
+                        The maximum file size you can upload is 4Mb
                       </p>
                     </div>
                   </div>
@@ -1948,7 +1960,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" value="4844638" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="76e570e6a1fe06dbcccebe0246bb3d7f" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="41" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="42" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         {{/unless}}
       </form>
@@ -2094,8 +2106,8 @@ function isNumberKey(evt){
 
 function validate_filesize(file) {
   var filesize = file.files[0].size / 1024 / 1024; // in MB
-  if (filesize >= 5) {
-    alert('Uploaded filesize exceeds 5Mb - please choose a smaller file');
+  if (filesize >= 4) {
+    alert('Uploaded filesize exceeds 4Mb - please choose a smaller file');
     $(file).val('');
   }
 }
