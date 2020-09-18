@@ -1783,7 +1783,6 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
           </div>
 
-          {{#unless defaults.application_readonly}}
           <div class="bg-secondary">
             <div class="container section v-padding-full">
               <h2 id="attachments-L" class="t-margin">
@@ -1796,6 +1795,56 @@ wFORMS.behaviors.prefill.skip = false;
             <div id="attachments-body" class="container section v-padding-full">
               <div class="form-group">
                 <div class="col-9 col-xl-12">
+                  {{#ifAny defaults.application_readonly defaults.application_editing}}
+                  <table style="width:100%;" class="b-margin-full">
+                    <thead>
+                      <tr>
+                        <th> </th>
+                        <th class="text-left">Filename</th>
+                        <th class="text-left">Size</th>
+                        <th class="text-left">Uploaded</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{#each defaults.application_attachments}}
+                      <tr>
+                        {{#with ContentDocument}}
+                        <td>
+                          {{#switch FileType}}
+                          {{#case (contains "WORD")}}
+                          <span class="far fa-fw fa-file-word"></span>
+                          {{/case}}
+                          {{#case (contains "PDF")}}
+                          <span class="far fa-fw fa-file-pdf"></span>
+                          {{/case}}
+                          {{#case (contains "CSV")}}
+                          <span class="far fa-fw fa-file-csv"></span>
+                          {{/case}}
+                          {{#case (contains "XLS")}}
+                          <span class="far fa-fw fa-file-excel"></span>
+                          {{/case}}
+                          {{#switchDefault}}
+                          <span class="far fa-fw fa-file-spreadsheet"></span>
+                          {{/switchDefault}}
+                          {{/switch}}
+                        </td>
+                        <td>
+                          {{Title}}
+                        </td>
+                        <td>
+                          {{addCommas (round (divide ContentSize 1024))}}Kb
+                        </td>
+                        <td>
+                          {{momentFormat (momentConvertTz (moment CreatedDate "YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0") "UTC" "Europe/Berlin") 'Do MMMM YYYY HH:mm:ss'}}
+                        </td>
+                        {{/with}}
+                      </tr>
+                      {{/each}}
+                    </tbody>
+                  </table>
+                  {{/ifAny}}
+
+                  {{#unless defaults.application_readonly}}
                   {{#if defaults.application_editing}}
                   <p>
                     You have already uploaded all four documents required. These options are available if you need to upload a new copy any of the documents.
@@ -1875,11 +1924,11 @@ wFORMS.behaviors.prefill.skip = false;
                       </p>
                     </div>
                   </div>
+                  {{/unless}}
                 </div>
               </div>
             </div>
           </div>
-          {{/unless}}
 
           <div id="confirmation">
             <div class="bg-secondary">
