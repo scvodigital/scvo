@@ -456,7 +456,7 @@ wFORMS.behaviors.prefill.skip = false;
                       </option>
                       {{#each local_authorities ~}}
                       {{#if id_single ~}}
-                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare ../defaults.tfa_1884 name) (compare defaults.tfa_2398 "!==" "Across one local authority area")}} selected{{/ifAll}}>
+                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare (slugify (replace ../defaults.tfa_1884 ' and ' ' ')) (slugify name)) (compare defaults.tfa_2398 "!==" "Across one local authority area")}} selected{{/ifAll}}>
                         {{name}}
                       </option>
                       {{/if ~}}
