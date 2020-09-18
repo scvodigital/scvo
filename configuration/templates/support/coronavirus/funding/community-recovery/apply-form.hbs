@@ -556,6 +556,7 @@ wFORMS.behaviors.prefill.skip = false;
         </div>
       </div>
 
+      {{#unless defaults.application_readonly}}
       <div id="tfa_1880" class="section">
         <div id="contact-details">
           <div class="bg-secondary">
@@ -735,6 +736,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
+      {{/unless}}
 
       <div id="tfa_2269" class="section">
         <div id="bank-details">
@@ -748,9 +750,13 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="bg-gray v-padding-full">
             <div id="tfa_2269-body" class="container section v-padding-full">
-              <p>
-                To increase the speed of making payments to successful applicants, we are asking for your organisational bank details at this stage. Please ensure the details are correct, and match the bank statement uploaded, to ensure money reaches the correct account.
-              </p>
+              <div class="form-group">
+                <div class="col-9 col-xl-12">
+                  <p>
+                    To increase the speed of making payments to successful applicants, we are asking for your organisational bank details at this stage. Please ensure the details are correct, and match the bank statement uploaded, to ensure money reaches the correct account.
+                  </p>
+                </div>
+              </div>
 
               <div class="form-group">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
