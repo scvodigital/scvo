@@ -443,19 +443,19 @@ wFORMS.behaviors.prefill.skip = false;
 
                   <div class="form-group">
                     <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2400-L" for="tfa_2400">
-                      <input type="radio" value="tfa_2400" id="tfa_2400" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2400-L" data-tfa-labelledby="tfa_2398-L tfa_2400-L" data-conditionals="#tfa_2051"{{#compare defaults.tfa_2398 "Across one local authority area"}} checked{{/compare}} required>
+                      <input type="radio" value="tfa_2400" id="tfa_2400" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2400-L" data-tfa-labelledby="tfa_2398-L tfa_2400-L" data-conditionals="#tfa_1884"{{#compare defaults.tfa_2398 "Across one local authority area"}} checked{{/compare}} required>
                       <i class="form-icon"></i>
                       Across one Local Authority area
                     </label>
                   </div>
-                  <div class="form-group field-container-D no-margin" id="tfa_2051-D">
-                    <select id="tfa_2051" name="tfa_2051" data-condition="`#tfa_2400`" class="form-select b-margin-full" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
-                      <option value="" disabled{{#unless defaults.tfa_2051}} selected{{/unless}}>
+                  <div class="form-group field-container-D no-margin" id="tfa_1884-D">
+                    <select id="tfa_1884" name="tfa_1884" data-condition="`#tfa_2400`" class="form-select b-margin-full" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
+                      <option value="" disabled{{#unless defaults.tfa_1884}} selected{{/unless}}>
                         Please select&hellip;
                       </option>
                       {{#each local_authorities ~}}
                       {{#if id_single ~}}
-                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare ../defaults.tfa_2051 name) (compare defaults.tfa_2398 "!==" "Across one local authority area")}} selected{{/ifAll}}>
+                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare ../defaults.tfa_1884 name) (compare defaults.tfa_2398 "!==" "Across one local authority area")}} selected{{/ifAll}}>
                         {{name}}
                       </option>
                       {{/if ~}}
@@ -931,7 +931,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                   <div class="form-group">
                     <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2556-L" for="tfa_2556">
-                      <input type="radio" value="tfa_2556" id="tfa_2556" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2556-L" data-tfa-labelledby="tfa_2554-L tfa_2556-L">
+                      <input type="radio" value="tfa_2556" id="tfa_2556" name="tfa_2554" aria-required="true" aria-labelledby="tfa_2556-L" data-tfa-labelledby="tfa_2554-L tfa_2556-L"{{#if defaults.application_editing}}{{#unless defaults.tfa_2554}} checked{{/unless}}{{/if}}>
                       <i class="form-icon"></i>
                       No
                     </label>
@@ -2132,7 +2132,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   $('input[type=radio][name=tfa_2398]').change(function() {
     $('#tfa_2505').val('');
-    $('#tfa_2051').val('');
+    $('#tfa_1884').val('');
     {{#each local_authorities ~}}
     {{#if id_multiple ~}}
     $('#{{id_multiple}}').prop('checked', false);
