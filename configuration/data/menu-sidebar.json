@@ -427,7 +427,7 @@
 								},
 								{
 									"label": "What we’re doing",
-									"path": "/support/coronavirus/what-scvo-is-doing",
+									"path": "/support/coronavirus",
 									"route": "^/policy/campaigns/never-more-needed/what-scvo-is-doing$",
 									"description": "",
 									"icon": ""
@@ -2617,16 +2617,83 @@
 											"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf$",
 											"children": [
 												{
+													"label": "Support available",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf/support",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/support$",
+													"description": "Adapt &amp; Thrive offers advice and funding",
+													"icon": "tasks"
+												},
+												{
+													"label": "Funding criteria",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf/criteria",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/criteria$",
+													"description": "Adapt &amp; Thrive is open to charities, community groups, social enterprises, and voluntary organisations",
+													"icon": "tasks"
+												},
+												{
+													"label": "Costs covered",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf/costs",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/costs$",
+													"description": "The funding aims to be flexible so it supports your recovery plan and it will be awarded on an unrestricted basis",
+													"icon": "tasks"
+												},
+												{
+													"label": "General guidance",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf/guidance",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/guidance$",
+													"description": "How to apply &amp; documents required",
+													"icon": "tasks"
+												},
+												{
 													"label": "Frequently asked questions",
 													"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf/faq",
-													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/faq$"
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/faq$",
+													"description": " ",
+													"icon": "question-circle"
 												}
 											]
 										},
 										{
 											"label": "Communities Recovery Fund",
 											"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf",
-											"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf$"
+											"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf$",
+											"children": [
+												{
+													"label": "Support available",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/support",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/support$",
+													"description": "The supports changes to facilities, services and activities",
+													"icon": "tasks"
+												},
+												{
+													"label": "Funding criteria",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/criteria",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/criteria$",
+													"description": "The Communities Recovery Fund is open to charities, community groups, social enterprises, and voluntary organisations",
+													"icon": "tasks"
+												},
+												{
+													"label": "Funding priorities",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/priorities",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/priorities$",
+													"description": "Costs that the funding can cover",
+													"icon": "tasks"
+												},
+												{
+													"label": "General guidance",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/guidance",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/guidance$",
+													"description": "How to apply &amp; documents required",
+													"icon": "tasks"
+												},
+												{
+													"label": "Frequently asked questions",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/faq",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/faq$",
+													"description": " ",
+													"icon": "question-circle"
+												}
+											]
 										}
 									]
 								},
