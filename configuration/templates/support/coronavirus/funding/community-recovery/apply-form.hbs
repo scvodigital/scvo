@@ -1362,7 +1362,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="form-group field-container-D" id="tfa_2568-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onblur="checkFundingAmount()" onkeypress="return isNumberKey(event);" min="5000" max="50000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="number" pattern="[0-9]*" onblur="checkFundingAmount()" onkeypress="return isNumberKey(event);" min="5000" max="10000000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </div>
@@ -2183,8 +2183,6 @@ function checkFundingAmount() {
   var amount_requested = $('#tfa_2568').val();
   if (amount_requested < 5000) {
     alert("The amount your are applying for is too low - the minimum funding award is £5,000")
-  } else if (amount_requested > 50000) {
-    alert("The amount your are applying for is too high - the maximum funding award is £50,000")
   }
 }
 
