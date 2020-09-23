@@ -1,0 +1,123 @@
+<div class="container">
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="form-horizontal form b-margin-full b-padding-full">
+    <input type=hidden name="orgid" value="00Db0000000KJWY">
+    <input type=hidden name="retURL" value="https://scvo.scot/services/hr/enquire/thanks">
+    <input type=hidden name="recordType" id="recordType" value="0123z00000084okAAA">
+    <input type=hidden name="type" id="type" value="HR Service">
+
+    {{!-- NOTE: These fields are optional debugging elements. Please uncomment these lines if you wish to test in debug mode. --}}
+    {{!-- <input type="hidden" name="debug" value=1>
+    <input type="hidden" name="debugEmail" value="calum.macuisdean@scvo.org.uk"> --}}
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="name">Name</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="name" maxlength="80" name="name" type="text" class="form-input" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="email">Email address</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="email" maxlength="80" name="email" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-input" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="phone">Phone number</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="phone" maxlength="15" name="company" type="text" autocomplete="nope" data-lpignore="true" class="form-input" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="company">Organisation</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="company" maxlength="80" name="company" type="text" autocomplete="nope" data-lpignore="true" class="form-input" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="00N0N00000AbXqu">Job title</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="00N0N00000AbXqu" maxlength="255" name="00N0N00000AbXqu" type="text" autocomplete="nope" data-lpignore="true" class="form-input" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="reason">Category</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <select id="reason" name="reason" class="form-select">
+          <option value="" disabled selected>Please select&hellip;</option>
+          {{!-- <option value="Additional Field Request">Additional field request</option> --}}
+          <option value="Equality and diversity">Equality and diversity</option>
+          <option value="Recruitment and starting employment">Recruitment and starting employment</option>
+          <option value="Salaries and benefits">Salaries and benefits</option>
+          <option value="Developing performance, managing underperformance">Developing performance, managing underperformance</option>
+          <option value="Flexible working and time off">Flexible working and time off</option>
+          <option value="Managing annual, parental and compassionate/dependants leave">Managing annual, parental and compassionate/dependants leave</option>
+          <option value="Sickness absence, wellbeing and stress">Sickness absence, wellbeing and stress</option>
+          <option value="Discipline, grievance and whistleblowing">Discipline, grievance and whistleblowing</option>
+          <option value="Health and safety and risk assessment">Health and safety and risk assessment</option>
+          <option value="Managing organisational change, TUPE">Managing organisational change, TUPE</option>
+          <option value="Leaving employment">Leaving employment</option>
+          <option value="Covid payroll: Furlough and SSP">COVID-19 payroll: Furlough and SSP</option>
+          <option value="Covid: changes to T+Cs and redundancy">COVID-19: changes to T+Cs and redundancy</option>
+          <option value="Covid: blended and remote working">COVID-19: blended and remote working</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="subject">Enquiry subject</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="subject" maxlength="80" name="subject" type="text" autocomplete="nope" data-lpignore="true" class="form-input" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <textarea name="description" rows="5" class="form-input"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group t-margin" id="coronavirus-D" role="group" aria-labelledby="coronavirus-L">
+      <div class="col-9 col-xl-12">
+        <label class="form-checkbox" id="coronavirus-L" for="00N3z00000Cqfbn">
+          <input type="checkbox" value="1" id="00N3z00000Cqfbn" name="00N3z00000Cqfbn" aria-labelledby="coronavirus-L" required>
+          <i class="form-icon"></i>
+          Is this request due to the coronavirus crisis?
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group t-margin" id="gdpr-D" role="group" aria-labelledby="gdpr-L">
+      <div class="col-9 col-xl-12">
+        <label class="form-checkbox" id="gdpr-L" for="gdpr">
+          <input type="checkbox" value="gdpr" id="gdpr" name="gdpr" aria-labelledby="gdpr-L" required>
+          <i class="form-icon"></i>
+          By submitting your enquiry, you confirm that you understand and accept our obligations under the General Data Protection Regulation (GDPR) set out in our <a href="/privacy/enquiries" target="_blank">Privacy Policy</a>
+        </label>
+      </div>
+    </div>
+
+    <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+  </form>
+</div>
