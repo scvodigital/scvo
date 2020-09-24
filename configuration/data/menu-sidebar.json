@@ -1852,11 +1852,48 @@
 									"icon": ""
 								},
 								{
-									"label": "Saltire Users",
-									"path": "/support/milo/training/saltire-users",
-									"route": "^/support/milo/training/saltire-users$",
+									"label": "Saltire Awards Objects",
+									"path": "/support/milo/training/saltire-awards-objects",
+									"route": "^/support/milo/training/saltire-awards-objects$",
 									"description": "",
-									"icon": ""
+									"icon": "",
+									"children": [
+										{
+											"label": "Saltire Users",
+											"path": "/support/milo/training/saltire-awards-objects/saltire-users",
+											"route": "^/support/milo/training/saltire-awards-objects/saltire-users$",
+											"description": "",
+											"icon": ""
+										},
+										{
+											"label": "Saltire Awards",
+											"path": "/support/milo/training/saltire-awards-objects/saltire-awards",
+											"route": "^/support/milo/training/saltire-awards-objects/saltire-awards$",
+											"description": "",
+											"icon": ""
+										},
+										{
+											"label": "Saltire Task Hours",
+											"path": "/support/milo/training/saltire-awards-objects/saltire-task-hours",
+											"route": "^/support/milo/training/saltire-awards-objects/saltire-task-hours$",
+											"description": "",
+											"icon": ""
+										},
+										{
+											"label": "Saltire Volunteering Task",
+											"path": "/support/milo/training/saltire-awards-objects/saltire-volunteering-task",
+											"route": "^/support/milo/training/saltire-awards-objects/saltire-volunteering-task$",
+											"description": "",
+											"icon": ""
+										},
+										{
+											"label": "Summit Nominations",
+											"path": "/support/milo/training/saltire-awards-objects/summit-nominations",
+											"route": "^/support/milo/training/saltire-awards-objects/summit-nominations$",
+											"description": "",
+											"icon": ""
+										}
+									]
 								},
 								{
 									"label": "Interactions",
