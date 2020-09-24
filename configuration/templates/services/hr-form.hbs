@@ -1,8 +1,14 @@
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500);
+</script>
+
 <div class="container">
   <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="form-horizontal form b-margin-full b-padding-full">
+    <input type=hidden name='captcha_settings' value='{"keyname":"SCVO","fallback":"true","orgId":"00D3z000002LkgS","ts":""}'>
     <input type=hidden name="orgid" value="00Db0000000KJWY">
-    <input type=hidden name="retURL" value="https://scvo.scot/services/hr/enquire/thanks">
     <input type=hidden name="recordType" id="recordType" value="0123z00000084okAAA">
+    <input type=hidden name="retURL" value="https://scvo.scot/services/hr/enquire/thanks">
     <input type=hidden name="type" id="type" value="HR Service">
 
     {{!-- NOTE: These fields are optional debugging elements. Please uncomment these lines if you wish to test in debug mode. --}}
@@ -117,6 +123,8 @@
         </label>
       </div>
     </div>
+
+    <div class="g-recaptcha b-margin-full" data-sitekey="6LeRg88ZAAAAAALWhEw7nGFTL-u78xSr3Dhkp82e"></div>
 
     <input type="submit" name="submit" value="Submit" class="btn btn-primary">
   </form>
