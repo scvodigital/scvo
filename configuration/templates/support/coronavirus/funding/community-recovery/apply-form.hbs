@@ -850,21 +850,21 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="fund_branching" class="choices vertical required">
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_atf-L" for="fund_branching_atf">
-                      <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}>
+                      <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#amount_requested_atf,#budget_atf"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Is most of your application focused on making changes to your organisation so it can adapt for the future (Adapt &amp; Thrive)?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
-                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
+                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_crf,#budget_crf"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       Is most of your application focused on supporting the reintroduction and/or delivery of services in communities (Communities Recovery Fund)?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D">
+                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf">
                       <i class="form-icon"></i>
                       Are you looking for funding and support for both types of activity?
                     </label>
@@ -1241,11 +1241,12 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="col-9 col-xl-12 b-margin-full">
-                <div id="tfa_2151" class="section group">
+              <div class="col-9 col-xl-12 b-margin-full" id="budget_atf" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
+                <div class="section group">
                   <p>
-                    Please enter a detailed budget<br />
-                    <span class="form-input-hint text-secondary">If you are applying to both funding streams please state in the description which fund each line is for</span>
+                    Please enter a detailed budget for the activities covered by the Adapt &amp; Thrive Programme
+                    {{!-- <br /> --}}
+                    {{!-- <span class="form-input-hint text-secondary">If you are applying to both funding streams please state in the description which fund each line is for</span> --}}
                   </p>
                   <table class="gridLayout" style="width:100%;">
                     <thead>
@@ -1269,7 +1270,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2638-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmount form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountA form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -1284,7 +1285,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2640-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -1299,7 +1300,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2636-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -1314,7 +1315,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2154-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -1329,7 +1330,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2634-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-BudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -1342,7 +1343,7 @@ wFORMS.behaviors.prefill.skip = false;
                           <div class="oneField field-container-D" id="tfa_2178-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" id="tfa_2178" name="tfa_2178" value="{{defaults.tfa_2178}}" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetAmount+BudgetAmountB+BudgetAmountC+BudgetAmountD+BudgetAmountE readonly form-input text-right">
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" id="tfa_2178" name="tfa_2178" value="{{defaults.tfa_2178}}" readonly autocomplete="nope" data-lpignore="true" class="formula=ATFBudgetAmountA+ATFBudgetAmountB+ATFBudgetAmountC+ATFBudgetAmountD+ATFBudgetAmountE readonly form-input text-right">
                             </div>
                           </div>
                         </td>
@@ -1352,10 +1353,10 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group">
+              <div class="form-group" id="amount_requested_atf" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-6 col-lg-5 col-md-6 col-sm-12">
                   <label id="tfa_2568-L" class="form-label r-margin preField reqMark" for="tfa_2568">
-                    How much money are you applying for?<br />
+                    How much money are you applying for from the Adapt &amp; Thrive Programme?<br />
                     <span class="form-input-hint text-secondary">The minimum funding award is £5,000</span>
                   </label>
                 </div>
@@ -1364,6 +1365,135 @@ wFORMS.behaviors.prefill.skip = false;
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
                       <input type="number" pattern="[0-9]*" onblur="checkFundingAmount()" onkeypress="return isNumberKey(event);" min="5000" max="10000000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-9 col-xl-12 b-margin-full" id="budget_crf" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+                <div class="section group">
+                  <p>
+                    Please enter a detailed budget for the activities covered by the Communities Recovery Fund
+                    {{!-- <br /> --}}
+                    {{!-- <span class="form-input-hint text-secondary">If you are applying to both funding streams please state in the description which fund each line is for</span> --}}
+                  </p>
+                  <table class="gridLayout" style="width:100%;">
+                    <thead>
+                      <tr class="headerRow">
+                        <th scope="col" id="tfa_2153-GRID" style="width:50%;">
+                          Budget description
+                        </th>
+                        <th scope="col" id="tfa_2154-GRID" style="width:50%;">
+                          Amount
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr id="tfa_2152" class="section">
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2753-D">
+                            <input type="text" id="tfa_2753" name="tfa_2753" maxlength="150" value="{{defaults.tfa_2753}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2754-D">
+                            <div class="input-group" style="width:100%;">
+                              <span class="input-group-addon">&pound;</span>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2754" name="tfa_2754" value="{{defaults.tfa_2754}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountA form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="tfa_2156" class="section">
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2756-D">
+                            <input type="text" id="tfa_2756" name="tfa_2756" maxlength="150" value="{{defaults.tfa_2756}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2757-D">
+                            <div class="input-group" style="width:100%;">
+                              <span class="input-group-addon">&pound;</span>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2757" name="tfa_2757" value="{{defaults.tfa_2757}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="tfa_2160" class="section">
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2759-D">
+                            <input type="text" id="tfa_2759" name="tfa_2759" maxlength="150" value="{{defaults.tfa_2759}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2760-D">
+                            <div class="input-group" style="width:100%;">
+                              <span class="input-group-addon">&pound;</span>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2760" name="tfa_2760" value="{{defaults.tfa_2760}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="tfa_2164" class="section">
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2762-D">
+                            <input type="text" id="tfa_2762" name="tfa_2762" maxlength="150" value="{{defaults.tfa_2762}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2763-D">
+                            <div class="input-group" style="width:100%;">
+                              <span class="input-group-addon">&pound;</span>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2763" name="tfa_2763" value="{{defaults.tfa_2763}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="tfa_2168" class="section">
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2765-D">
+                            <input type="text" id="tfa_2765" name="tfa_2765" maxlength="150" value="{{defaults.tfa_2765}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          </div>
+                        </td>
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2766-D">
+                            <div class="input-group" style="width:100%;">
+                              <span class="input-group-addon">&pound;</span>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2766" name="tfa_2766" value="{{defaults.tfa_2766}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr id="tfa_2176" class="section">
+                        <th scope="row" id="tfa_2176-L" class="headerCol text-left">
+                          <strong>Budget total</strong>
+                        </th>
+                        <td>
+                          <div class="oneField field-container-D" id="tfa_2767-D">
+                            <div class="input-group" style="width:100%;">
+                              <span class="input-group-addon">&pound;</span>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" id="tfa_2767" name="tfa_2767" value="{{defaults.tfa_2767}}" readonly autocomplete="nope" data-lpignore="true" class="formula=CRFBudgetAmountA+CRFBudgetAmountB+CRFBudgetAmountC+CRFBudgetAmountD+CRFBudgetAmountE readonly form-input text-right">
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="form-group" id="amount_requested_crf" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+                <div class="col-6 col-lg-5 col-md-6 col-sm-12">
+                  <label id="tfa_2769-L" class="form-label r-margin preField reqMark" for="tfa_2769">
+                    How much money are you applying for from the Communities Recovery Fund?<br />
+                    <span class="form-input-hint text-secondary">The minimum funding award is £5,000</span>
+                  </label>
+                </div>
+                <div class="col-3 col-lg-4 col-md-6 col-sm-12">
+                  <div class="form-group field-container-D" id="tfa_2769-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onblur="checkFundingAmount()" onkeypress="return isNumberKey(event);" min="5000" max="10000000" id="tfa_2769" name="tfa_2769" value="{{defaults.tfa_2769}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </div>
@@ -2184,7 +2314,7 @@ function isNumberKey(evt){
 function checkFundingAmount() {
   var amount_requested = $('#tfa_2568').val();
   if (amount_requested < 5000) {
-    alert("The amount your are applying for is too low - the minimum funding award is £5,000")
+    alert("The amount you are applying for is too low - the minimum funding award is £5,000")
   }
 }
 
