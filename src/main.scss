@@ -2280,6 +2280,28 @@ header {
     width: 100%;
   }
 }
+.feedback-radio {
+  .form-radio {
+    input[type="radio"] {
+      width: 66px;
+      height: 66px;
+      border: 11px solid transparent;
+      background: transparent;
+      appearance: inherit;
+      border-radius: 50%;
+      top: 0px;
+      left: 0px;
+      clip: unset;
+      cursor: pointer;
+      mix-blend-mode: lighten;
+    }
+    input[type="radio"]:focus,
+    input[type="radio"]:checked {
+      border-color: $primary-color;
+      outline: none;
+    }
+  }
+}
 
 // .events-warning:hover,
 // .events-warning:hover p {
