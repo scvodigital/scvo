@@ -2294,6 +2294,7 @@ header {
       clip: unset;
       cursor: pointer;
       mix-blend-mode: lighten;
+      transition: border $fast-transition-speed;
     }
     input[type="radio"]:focus,
     input[type="radio"]:checked {
