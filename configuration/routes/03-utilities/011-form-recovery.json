@@ -1,0 +1,44 @@
+{
+  "name": "form_recovery_redirect",
+  "pattern": "/form-recovery/:form/:id/:date/:uid",
+  "tasks": [
+    {
+      "name": "recovery_link",
+      "taskModule": "firebaseRtbGet",
+      "renderer": "handlebars",
+      "config": {
+        "appName": "scvo",
+        "pathTemplate": "/form_backups/{{{request.params.form}}}/{{{request.params.id}}}/{{{request.params.date}}}/{{{request.params.uid}}}/restoreUrl"
+      }
+    },
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "{{{default @root.data.recovery_link '/form_backups/no_such_form'}}}"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": "<html><body><h1>Recovering form</h1><p>Please wait...</p><script>setTimeout(function() { window.location.href = {{{json value=@root.data.url}}}; }, 5000);</script></body></html>",
+            "parts": {},
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
