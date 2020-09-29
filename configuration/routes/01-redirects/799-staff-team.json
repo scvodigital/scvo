@@ -1,12 +1,12 @@
 {
-  "name": "tfn",
-  "pattern": "/tfn",
+  "name": "redirect_staff_team",
+  "pattern": "/about/staff-team",
   "tasks": [
     {
       "name": "destination",
       "taskModule": "redirect",
       "config": {
-        "location": "https://tfn.scot?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic",
+        "location": "/about/contacts/staff",
         "statusCode": 302
       }
     }

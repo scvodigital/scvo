@@ -13,12 +13,23 @@
 				{
 					"label": "Contacts",
 					"path": "/about/contacts",
-					"route": "^/about/contacts$"
-				},
-				{
-					"label": "Staff team",
-					"path": "/about/staff-team",
-					"route": "^/about/staff-team"
+					"route": "^/about/contacts$",
+					"children": [
+						{
+							"label": "Teams",
+							"path": "/about/contacts/teams",
+							"route": "^/about/contacts/teams$",
+							"description": "Details for contacting a specific team",
+							"icon": "users"
+						},
+						{
+							"label": "Staff",
+							"path": "/about/contacts/staff",
+							"route": "^/about/contacts/staff",
+							"description": "Details for contacting a specific member of staff",
+							"icon": "user"
+						}
+					]
 				},
 				{
 					"label": "Board of trustees",
