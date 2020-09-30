@@ -1,6 +1,6 @@
 {
   "name": "resource",
-  "debug": true,
+  "debug": false,
   "pattern": "/p/resource/:slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

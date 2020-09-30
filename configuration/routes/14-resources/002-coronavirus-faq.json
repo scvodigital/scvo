@@ -1,6 +1,6 @@
 {
   "name": "resource_coronavirus_faq",
-  "debug": true,
+  "debug": false,
   "pattern": "/support/coronavirus/faq/:faq_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

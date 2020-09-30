@@ -1,6 +1,6 @@
 {
   "name": "coronavirus_recovery_apply_form",
-  "debug": true,
+  "debug": false,
   "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

@@ -1,6 +1,6 @@
 {
   "name": "resource_membership_faq",
-  "debug": true,
+  "debug": false,
   "pattern": "/about/membership/faq/:faq_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

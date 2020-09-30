@@ -1,6 +1,6 @@
 {
   "name": "resource_coronavirus_fund_faq",
-  "debug": true,
+  "debug": false,
   "pattern": "/support/coronavirus/funding/scottish-government/:fund_slug/faq/:faq_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

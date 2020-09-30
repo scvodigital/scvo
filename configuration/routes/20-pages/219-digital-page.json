@@ -1,6 +1,6 @@
 {
   "name": "digital_page",
-  "debug": true,
+  "debug": false,
   "pattern": "/support/digital(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)(:/seven)(:/eight)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

@@ -1,7 +1,7 @@
 {
   "name": "cjs_sign_out",
   "pattern": "/sign-out-cjs",
-  "debug": true,
+  "debug": false,
   "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.cjsAuthRequired",

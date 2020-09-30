@@ -1,14 +1,24 @@
 {
   "name": "form_recovery_redirect",
   "pattern": "/form-recovery/:form/:id/:date/:uid",
+  "debug": true,
   "tasks": [
+    {
+      "name": "path",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/form_backups/{{{@root.request.params.form}}}/{{{@root.request.params.id}}}/{{{@root.request.params.date}}}/{{{@root.request.params.uid}}}/restoreUrl"
+      }
+    },
     {
       "name": "recovery_link",
       "taskModule": "firebaseRtbGet",
       "renderer": "handlebars",
       "config": {
         "appName": "scvo",
-        "pathTemplate": "/form_backups/{{@root.request.params.form}}/{{@root.request.params.id}}/{{@root.request.params.date}}/{{@root.request.params.uid}}/restoreUrl"
+        "pathTemplate": "{{{@root.data.path}}}"
       }
     },
     {
@@ -33,7 +43,7 @@
         "output": "body",
         "layouts": {
           "default": {
-            "layout": "<html><body><h1>Recovering form</h1><p>Please wait...</p><script>setTimeout(function() { window.location.href={{{json value=(replace @root.data.url 'scvo.org.uk' 'scvo.scot')}}}; }, 2000);</script></body></html>",
+            "layout": ">context.metaData.handlebars.templates.utilities_form-recovery",
             "parts": {},
             "contentType": "text/html"
           }
