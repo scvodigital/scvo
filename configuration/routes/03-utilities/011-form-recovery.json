@@ -1,6 +1,7 @@
 {
   "name": "form_recovery_redirect",
   "pattern": "/form-recovery/:form/:id/:date/:uid",
+  "debug": true,
   "tasks": [
     {
       "name": "recovery_link",
