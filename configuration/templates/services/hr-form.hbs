@@ -4,6 +4,10 @@
 </script>
 
 <div class="container">
+  <p>
+    Please complete this form to tell us about your HR support need.
+  </p>
+
   <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="form-horizontal form b-margin-full b-padding-full">
     <input type=hidden name='captcha_settings' value='{"keyname":"SCVO","fallback":"true","orgId":"00D3z000002LkgS","ts":""}'>
     <input type=hidden name="orgid" value="00Db0000000KJWY">
@@ -86,18 +90,19 @@
       </div>
     </div>
 
-    <div class="form-group">
+    {{!-- <div class="form-group">
       <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
         <label for="subject">Enquiry subject</label>
       </div>
       <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
         <input id="subject" maxlength="80" name="subject" type="text" autocomplete="nope" data-lpignore="true" class="form-input" required />
       </div>
-    </div>
+    </div> --}}
+    <input id="subject" name="subject" type="hidden" value="Web HR service enquiry" />
 
     <div class="form-group">
       <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-        <label for="description">Description</label>
+        <label for="description">Please tell us about the problem you need support with. You can write up to 250 words. Only include details you are happy to have stored in line with our privacy policy</label>
       </div>
       <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
         <textarea name="description" rows="5" class="form-input"></textarea>
@@ -109,8 +114,20 @@
         <label class="form-checkbox" id="coronavirus-L" for="00N3z00000Cqfbn">
           <input type="checkbox" value="1" id="00N3z00000Cqfbn" name="00N3z00000Cqfbn" aria-labelledby="coronavirus-L" required>
           <i class="form-icon"></i>
-          Is this request due to the coronavirus crisis?
+          Please tick this box if your support request is due to the coronavirus crisis – this is for our internal reporting and will not impact on the support we provide.
         </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="referral">How did you find out about this service?</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <select id="referral" name="referral" class="form-select">
+          <option value="" selected>Please select&hellip;</option>
+          {{!-- <option value=""></option> --}}
+        </select>
       </div>
     </div>
 
