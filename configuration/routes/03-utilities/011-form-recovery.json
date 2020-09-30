@@ -32,22 +32,12 @@
     },
     {
       "name": "destination",
-      "taskModule": "renderLayout",
+      "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "logic": {
-          "if": [
-            "default"
-          ]
-        },
+        "template": ">context.metaData.handlebars.templates.utilities_form-recovery",
         "output": "body",
-        "layouts": {
-          "default": {
-            "layout": ">context.metaData.handlebars.templates.utilities_form-recovery",
-            "parts": {},
-            "contentType": "text/html"
-          }
-        }
+        "contentType": "text/html"
       }
     }
   ]
