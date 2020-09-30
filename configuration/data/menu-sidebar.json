@@ -20,7 +20,122 @@
 							"path": "/about/contacts/teams",
 							"route": "^/about/contacts/teams$",
 							"description": "Details for contacting a specific team",
-							"icon": "users"
+							"icon": "users",
+							"children": [
+								{
+									"label": "Information Service",
+									"path": "/support/information-service",
+									"route": "^/about/contacts/teams/information-service$",
+									"description": "The SCVO Information Service is an online knowledge bank and enquiry service delivered by experts.<br /><br /><a href='mailto:enquiries@scvo.org.uk'>enquiries@scvo.org.uk</a> 0800 169 0022. Calls go to voicemail and one of our Information Officers will call you back as soon as they can.",
+									"icon": "info-circle"
+								},
+								{
+									"label": "Managed IT",
+									"path": "/services/managed-it",
+									"route": "^/about/contacts/teams/managed-it$",
+									"description": "Email <a href='mailto:ithelpdesk@scvo.org.uk'>ithelpdesk@scvo.org.uk</a><br /><br />Current clients should use the usual email and helpline number.",
+									"icon": "sitemap"
+								},
+								{
+									"label": "Workspace",
+									"path": "/services/workspace",
+									"route": "^/about/contacts/teams/workspace$",
+									"description": "Email <a href='mailto:facilities@scvo.org.uk'>facilities@scvo.org.uk</a>",
+									"icon": "building"
+								},
+								{
+									"label": "Payroll",
+									"path": "/services/payroll",
+									"route": "^/about/contacts/teams/payroll$",
+									"description": "Email <a href='mailto:payroll@scvo.org.uk'>payroll@scvo.org.uk</a>",
+									"icon": "money-check-edit"
+								},
+								{
+									"label": "SCVO Credit Union",
+									"path": "/services/credit-union",
+									"route": "^/about/contacts/teams/credit-union$",
+									"description": "Email <a href='mailto:credit.union@scvo.org.uk'>credit.union@scvo.org.uk</a>",
+									"icon": "money-bill-wave"
+								},
+								{
+									"label": "Community Jobs Scotland",
+									"path": "/jobs/community-jobs-scotland",
+									"route": "^/about/contacts/teams/community-jobs-scotland$",
+									"description": "Email <a href='mailto:communityjobsscotland@scvo.org.uk'>communityjobsscotland@scvo.org.uk</a><br />Phone 0141 559 5026",
+									"icon": "id-badge"
+								},
+								{
+									"label": "Funding Scotland",
+									"path": "https://funding.scot",
+									"route": "^/about/contacts/teams/funding-scotland$",
+									"description": "Email <a href='mailto:fundingscotland@scvo.org.uk'>fundingscotland@scvo.org.uk</a>",
+									"icon": "search-plus"
+								},
+								{
+									"label": "Goodmoves",
+									"path": "https://goodmoves.com",
+									"route": "^/about/contacts/teams/goodmoves$",
+									"description": "Email <a href='mailto:sales@goodmoves.org.uk'>sales@goodmoves.org.uk</a><br />Phone 0800 019 2149",
+									"icon": "laptop-house"
+								},
+								{
+									"label": "Scottish Charity Awards",
+									"path": "/scottish-charity-awards",
+									"route": "^/about/contacts/teams/scottish-charity-awards$",
+									"description": "Email <a href='mailto:awards@scvo.org.uk'>awards@scvo.org.uk</a>",
+									"icon": "stars"
+								},
+								{
+									"label": "SCVO Digital team",
+									"path": "/about/digital",
+									"route": "^/about/contacts/teams/digital$",
+									"description": "Email <a href='mailto:digital@scvo.org.uk'>digital@scvo.org.uk</a>",
+									"icon": "video"
+								},
+								{
+									"label": "SCVO Membership team",
+									"path": "/support/membership",
+									"route": "^/about/contacts/teams/membership$",
+									"description": "Email <a href='mailto:membership@scvo.org.uk'>membership@scvo.org.uk</a>",
+									"icon": "badge-check"
+								},
+								{
+									"label": "SCVO Policy team",
+									"path": "/policy",
+									"route": "^/about/contacts/teams/policy$",
+									"description": "Email <a href='mailto:scvopolicyandresearch@scvo.org.uk'>scvopolicyandresearch@scvo.org.uk</a>",
+									"icon": "person-sign"
+								},
+								{
+									"label": "The Gathering",
+									"path": "/the-gathering",
+									"route": "^/about/contacts/teams/the-gathering$",
+									"description": "Email <a href='mailto:thegathering@scvo.org.uk'>thegathering@scvo.org.uk</a>",
+									"icon": "users-class"
+								},
+								{
+									"label": "Third Force News",
+									"path": "https://tfn.scot",
+									"route": "^/about/contacts/teams/tfn$",
+									"description": "Email <a href='mailto:tfn@scvo.org.uk'>tfn@scvo.org.uk</a>",
+									"icon": "comment-lines"
+								},
+								{
+									"label": "Training",
+									"path": "/support/training",
+									"route": "^/about/contacts/teams/training$",
+									"description": "Email <a href='mailto:training@scvo.org.uk'>training@scvo.org.uk</a>",
+									"icon": "user-headset"
+								},
+								{
+									"label": "SCVO Finance",
+									"path": "/about/contacts/staff?department=finance",
+									"route": "^/about/contacts/teams/scvo-finance$",
+									"description": "Email <a href='mailto:finance@scvo.org.uk'>finance@scvo.org.uk</a><br /><br />Purchase ledger enquiries 0131 474 8012<br />Please send invoices electronically if possible<br /><br />Sales ledger 0131 474 6169<br />Please note we are unable to make cheque payments at this time",
+									"link_label": "Staff details",
+									"icon": "money-bill"
+								}
+							]
 						},
 						{
 							"label": "Staff",
