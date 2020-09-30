@@ -456,7 +456,7 @@ wFORMS.behaviors.prefill.skip = false;
                       </option>
                       {{#each local_authorities ~}}
                       {{#if id_single ~}}
-                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare (slugify (replace ../defaults.tfa_1884 ' and ' ' ')) (slugify name)) (compare ../defaults.tfa_2398 "!==" "Across one local authority area")}} selected{{/ifAll}}>
+                      <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare (slugify (replace ../defaults.tfa_1884 ' and ' ' ')) (slugify name)) (compare ../defaults.tfa_2398 "Across one local authority area")}} selected{{/ifAll}}>
                         {{name}}
                       </option>
                       {{/if ~}}
@@ -840,7 +840,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="container section b-margin-full v-padding-full">
               <h2 id="branching-L" class="t-margin">
                 <span class="pull-left fal fa-map-signs r-margin-full" style="margin-top:-.5rem;font-size:2.2rem;"></span>
-                Application type
+                What type of support are you looking for?
               </h2>
             </div>
           </div>
@@ -852,21 +852,21 @@ wFORMS.behaviors.prefill.skip = false;
                     <label class="form-radio" id="fund_branching_atf-L" for="fund_branching_atf">
                       <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#amount_requested_atf,#budget_atf"{{#compare defaults.application_fund 'Recovery Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
-                      Is most of your application focused on making changes to your organisation so it can adapt for the future (Adapt &amp; Thrive)?
+                      We need support to make changes to our organisation so it can adapt for the future (Adapt &amp; Thrive)
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
                       <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_crf,#budget_crf"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
-                      Is most of your application focused on supporting the reintroduction and/or delivery of services in communities (Communities Recovery Fund)?
+                      We need funding to reintroduce and/or deliver services in our communities (Communities Recovery Fund)
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
                       <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf">
                       <i class="form-icon"></i>
-                      Are you looking for funding and support for both types of activity?
+                      We need support for both types of activity
                     </label>
                   </div>
                 </span>

@@ -1,7 +1,7 @@
 {{> content_page_full @root.data.primaryResponse.hits.hits.[0]._source}}
 
 <h2>Staff directory</h2>
-<form action="/about/staff-team" method="GET" [searchroute]="'staff_search'" data-auto-search="true" class="t-margin-full">
+<form action="/about/contacts/staff" method="GET" [searchroute]="'staff_search'" data-auto-search="true" class="t-margin-full">
   <div class="mdc-layout-grid filter">
     <div class="columns">
       <div class="column col-4 col-xl-4 col-md-4 col-sm-12">
@@ -44,7 +44,7 @@
         {{/if ~}}
       </div>
       <div class="column col-4 col-xl-4 col-md-5 col-sm-5 name_full">
-        <a href="/about/staff-team/{{Id}}/{{slugify name_full}}">
+        <a href="/about/contacts/staff/{{Id}}/{{slugify name_full}}">
           {{!-- <img src="{{og_image}}" /> --}}
           {{trim name_full}}
         </a>

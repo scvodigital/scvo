@@ -16,10 +16,10 @@
               {{!-- {{#compare (replace directorate ' &amp; ' ' and ') (replace department ' &amp; ' ' and ')}}
               {{#compare directorate "Directorate"}}
               {{else}} --}}
-              {{#if department}}<a href="/about/staff-team?department={{slugify department}}">{{{department}}}</a>{{/if}}
+              {{#if department}}<a href="/about/contacts/staff?department={{slugify department}}">{{{department}}}</a>{{/if}}
               {{!-- {{/compare}}
               {{else}}
-              {{#if department}}<a href="/about/staff-team?department={{slugify department}}">{{{department}}}</a>{{/if}}
+              {{#if department}}<a href="/about/contacts/staff?department={{slugify department}}">{{{department}}}</a>{{/if}}
               {{#if directorate}} ({{{directorate}}}){{/if}}
               {{/compare}} --}}
             </dd>
@@ -29,7 +29,7 @@
               City
             </dt>
             <dd>
-              <a href="/about/staff-team?city={{slugify city}}">{{city}}</a>
+              <a href="/about/contacts/staff?city={{slugify city}}">{{city}}</a>
             </dd>
             {{/if ~}}
             {{#if about ~}}
