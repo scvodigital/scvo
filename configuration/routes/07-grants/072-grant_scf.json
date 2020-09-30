@@ -1,6 +1,6 @@
 {
   "name": "grant_scf",
-  "debug": true,
+  "debug": false,
   "pattern": "/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

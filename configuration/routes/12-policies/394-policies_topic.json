@@ -1,6 +1,6 @@
 {
   "name": "page_policies_topic",
-  "debug": true,
+  "debug": false,
   "pattern": "/policy/policies/:topic",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

@@ -1,6 +1,6 @@
 {
   "name": "grant_recovery",
-  "debug": true,
+  "debug": false,
   "pattern": "/support/coronavirus/funding/scottish-government/recovery-fund/recipients/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

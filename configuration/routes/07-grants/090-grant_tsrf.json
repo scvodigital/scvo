@@ -1,6 +1,6 @@
 {
   "name": "grant_tsrf",
-  "debug": true,
+  "debug": false,
   "pattern": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/recipients/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

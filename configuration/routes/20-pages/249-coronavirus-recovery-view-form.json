@@ -1,6 +1,6 @@
 {
   "name": "coronavirus_recovery_view_form",
-  "debug": true,
+  "debug": false,
   "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

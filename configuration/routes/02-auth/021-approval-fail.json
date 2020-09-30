@@ -1,7 +1,7 @@
 {
   "name": "approval-fail",
   "pattern": "approval-fail",
-  "debug": true,
+  "debug": false,
   "errorRoute": "five_hundred",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",

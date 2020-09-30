@@ -1,6 +1,6 @@
 {
   "name": "organisation_page",
-  "debug": true,
+  "debug": false,
   "pattern": "/policy/organisations/:id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
