@@ -3066,7 +3066,7 @@ form {
 .accordion {
   background-color: transparent;
   cursor: pointer;
-  padding: $unit/2;
+  padding: $unit/2 $unit*1.5 $unit/2 $unit/2;
   width: 100%;
   text-align: left;
   border: none;
@@ -3074,7 +3074,7 @@ form {
   transition: 0.4s;
   border-radius: $thick-line;
   position: relative;
-  color: $secondary-color-dark;
+  color: $secondary-color;
 }
 .accordion:before {
   transition: opacity $slow-transition-speed;
@@ -3086,8 +3086,9 @@ form {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(100deg, $secondary-color, $primary-color);
-  opacity: 0.222;
+  // background-image: linear-gradient(100deg, $secondary-color, $primary-color);
+  background-color: $primary-color;
+  opacity: 0.1;
 }
 .accordion.active, .accordion:hover {
   background-color: $gray-color-light;
@@ -3111,8 +3112,9 @@ form {
   font-family: 'Font Awesome\ 5 Pro';
   font-weight: 400;
   color: $secondary-color;
-  float: right;
-  margin-left: 5px;
+  position: absolute;
+  right: .5rem;
+  top: .333rem;
 }
 .accordion.active:after {
   content: "\f106";
