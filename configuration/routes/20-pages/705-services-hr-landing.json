@@ -1,7 +1,7 @@
 {
-  "name": "services_hr_enquiry",
+  "name": "hr_landing",
   "debug": false,
-  "pattern": "/services/hr/enquire",
+  "pattern": "/services/hr",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -21,8 +21,6 @@
       },
       "renderer": "handlebars"
     },
-    "context.metaData.commonTasks.postsLatest",
-    "context.metaData.commonTasks.postsRelated",
     {
       "name": "destination",
       "taskModule": "renderLayout",
@@ -40,9 +38,9 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.services_hr-form",
+              "body": ">context.metaData.handlebars.templates.page-menu",
               "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
-              "footer": ">context.metaData.handlebars.templates.page-footer"
+              "footer": ">context.metaData.handlebars.templates.services_hr-footer"
             },
             "contentType": "text/html"
           }

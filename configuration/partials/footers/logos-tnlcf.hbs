@@ -1,0 +1,10 @@
+{{#if (contains @root.request.url.pathname "services/hr") ~}}
+<p class="card-footer">
+  <strong>Funded by the <a href="https://www.tnlcommunityfund.org.uk">National Lottery Community Fund</a></strong>
+</p>
+<div class="columns">
+  <div class="column col-3 col-md-6 align-centre">
+    <a href="https://www.tnlcommunityfund.org.uk" class="no-ext no-underline"><img src="{{~>asset_url url='images/logos/organisations/tnlcf.png'~}}" alt="The National Lottery Community Fund" class="img-responsive" /></a>
+  </div>
+</div>
+{{/if ~}}
