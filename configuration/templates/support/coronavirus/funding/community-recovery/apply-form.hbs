@@ -857,14 +857,14 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
-                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_crf,#budget_crf"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
+                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_crf,#budget_crf,#attachments_crf"{{#compare defaults.application_fund 'Supporting Communities Fund'}} checked{{/compare}}>
                       <i class="form-icon"></i>
                       We need funding to reintroduce and/or deliver services in our communities (Communities Recovery Fund)
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf">
+                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2541-D,#tfa_2554-D,#tfa_2561-D,#tfa_2563-D,#tfa_2564-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf,#attachments_crf">
                       <i class="form-icon"></i>
                       We need support for both types of activity
                     </label>
@@ -2013,18 +2013,6 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                   <div class="form-group t-margin-full">
                     <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                      <label id="tfa_2189-L" class="form-label r-margin preField{{#unless defaults.application_editing}} reqMark{{/unless}}" for="tfa_2189">
-                        Your latest bank statement
-                      </label>
-                    </div>
-                    <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                      <div class="form-group field-container-D" id="tfa_2189-D">
-                        <input type="file" id="tfa_2189" name="tfa_2189" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="form-group t-margin-full">
-                    <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                       <label id="tfa_2187-L" class="form-label r-margin preField" for="tfa_2187">
                         Your latest annual accounts
                       </label>
@@ -2059,7 +2047,57 @@ wFORMS.behaviors.prefill.skip = false;
                       </div>
                     </div>
                   </div>
-                  <div class="form-group b-margin-full">
+                  <div class="form-group t-margin-full">
+                    <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                      <label id="tfa_2189-L" class="form-label r-margin preField{{#unless defaults.application_editing}} reqMark{{/unless}}" for="tfa_2189">
+                        Your latest bank statement
+                      </label>
+                    </div>
+                    <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                      <div class="form-group field-container-D" id="tfa_2189-D">
+                        <input type="file" id="tfa_2189" name="tfa_2189" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="attachments_crf" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+                    <div class="form-group t-margin-full">
+                      <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                        <label id="tfa_2770-L" class="form-label r-margin preField{{#unless defaults.application_editing}} reqMark{{/unless}}" for="tfa_2770">
+                          Your Dec 2019 bank statement
+                        </label>
+                      </div>
+                      <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                        <div class="form-group field-container-D" id="tfa_2770-D">
+                          <input type="file" id="tfa_2770" name="tfa_2770" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group t-margin-full">
+                      <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                        <label id="tfa_2771-L" class="form-label r-margin preField{{#unless defaults.application_editing}} reqMark{{/unless}}" for="tfa_2771">
+                          Your Jan 2020 bank statement
+                        </label>
+                      </div>
+                      <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                        <div class="form-group field-container-D" id="tfa_2771-D">
+                          <input type="file" id="tfa_2771" name="tfa_2771" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group t-margin-full">
+                      <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                        <label id="tfa_2772-L" class="form-label r-margin preField{{#unless defaults.application_editing}} reqMark{{/unless}}" for="tfa_2772">
+                          Your Feb 2020 bank statement
+                        </label>
+                      </div>
+                      <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                        <div class="form-group field-container-D" id="tfa_2772-D">
+                          <input type="file" id="tfa_2772" name="tfa_2772" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group v-margin-full">
                     <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12"></div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                       <progress class="progress" id="file-upload-limit-progress" value="0" max="20971520" style="width: 100%;"></progress>
