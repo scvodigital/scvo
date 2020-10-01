@@ -2006,7 +2006,7 @@ wFORMS.behaviors.prefill.skip = false;
                     </div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                       <div class="form-group field-container-D" id="tfa_2303-D">
-                        <input type="file" id="tfa_2303" name="tfa_2303" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
+                        <input type="file" id="tfa_2303" name="tfa_2303" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
                       </div>
                     </div>
                   </div>
@@ -2018,7 +2018,7 @@ wFORMS.behaviors.prefill.skip = false;
                     </div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                       <div class="form-group field-container-D" id="tfa_2189-D">
-                        <input type="file" id="tfa_2189" name="tfa_2189" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                        <input type="file" id="tfa_2189" name="tfa_2189" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input required" required{{/if}}>
                       </div>
                     </div>
                   </div>
@@ -2030,7 +2030,7 @@ wFORMS.behaviors.prefill.skip = false;
                     </div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                       <div class="form-group field-container-D" id="tfa_2187-D">
-                        <input type="file" id="tfa_2187" name="tfa_2187" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
+                        <input type="file" id="tfa_2187" name="tfa_2187" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
                       </div>
                     </div>
                   </div>
@@ -2042,7 +2042,7 @@ wFORMS.behaviors.prefill.skip = false;
                     </div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                       <div class="form-group field-container-D" id="tfa_2390-D">
-                        <input type="file" id="tfa_2390" name="tfa_2390" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
+                        <input type="file" id="tfa_2390" name="tfa_2390" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
                       </div>
                     </div>
                   </div>
@@ -2054,15 +2054,16 @@ wFORMS.behaviors.prefill.skip = false;
                     </div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                       <div class="form-group field-container-D" id="tfa_2731-D">
-                        <input type="file" id="tfa_2731" name="tfa_2731" size="" onchange="validate_filesize(this)" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
+                        <input type="file" id="tfa_2731" name="tfa_2731" size="" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input"{{else}}class="form-input"{{/if}}>
                       </div>
                     </div>
                   </div>
                   <div class="form-group b-margin-full">
                     <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12"></div>
                     <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                      <progress class="progress" id="file-upload-limit-progress" value="0" max="20971520" style="width: 100%;"></progress>
                       <p class="form-input-hint text-secondary">
-                        The maximum file size you can upload is 4Mb
+                        You have selected <span id="file-upload-limit-total">0</span>MB of a maximum 20MB
                       </p>
                     </div>
                   </div>
@@ -2304,6 +2305,35 @@ document.addEventListener("DOMContentLoaded", function() {
     numericOnly: true
   });
   {{/unless}}
+
+
+  var fileFields = $('input[type="file"]');
+  fileFields.on('change', function(event){
+    validateFileSize(event.currentTarget);
+  });
+
+  function validateFileSize(target) {
+    var total = 0;
+    fileFields.each(function(i, fileField) {
+      if (fileField.files && fileField.files[0]) {
+        total += fileField.files[0].size;
+      }
+    });
+
+    var megs = total / 1024 / 1024;
+    if (megs > 20 && target) {
+      alert('Total uploads filesize exceeds 20MB - please choose a smaller file');
+      $(target).val('');
+
+      total -= target.files[0].size;
+    }
+
+    var megsWithDecimal = Math.round(((total / 1024 / 1024) + Number.EPSILON) * 100) / 100;
+    $('#file-upload-limit-total').html('' + megsWithDecimal);
+    $('#file-upload-limit-progress').attr('value', ''+total);
+  }
+
+  validateFileSize();
 });
 
 function isNumberKey(evt){
@@ -2321,14 +2351,6 @@ function checkFundingAmountCRF() {
   var amount_requested = $('#tfa_2769').val();
   if (amount_requested < 5000) {
     alert("The amount you are applying for is too low - the minimum funding award is £5,000")
-  }
-}
-
-function validate_filesize(file) {
-  var filesize = file.files[0].size / 1024 / 1024; // in MB
-  if (filesize >= 4) {
-    alert('Uploaded filesize exceeds 4Mb - please choose a smaller file');
-    $(file).val('');
   }
 }
 </script>
