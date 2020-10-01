@@ -1993,7 +1993,8 @@ wFORMS.behaviors.prefill.skip = false;
                   </p>
                   {{else}}
                   <p>
-                    Please upload the following documents to allow us to conduct due diligence checks on these criteria. There is a 4Mb limit, per document, on uploading.  If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
+                    Please upload the following documents to allow us to conduct due diligence checks on these criteria.
+                    There is a 20MB combined filesize limit for this form. If your annual review and accounts is a larger document we will accept the accounts extracted and pasted into a new file.
                   </p>
                   {{/if}}
 
@@ -2322,7 +2323,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var megs = total / 1024 / 1024;
     if (megs > 20 && target) {
-      alert('Total uploads filesize exceeds 20MB - please choose a smaller file');
+      alert('The combined filesize upload limit is 20MB. The file you are trying to attach exceeds this limit, please choose a smaller file.');
       $(target).val('');
 
       total -= target.files[0].size;
