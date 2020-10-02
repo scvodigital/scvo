@@ -2130,16 +2130,26 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="form-group" id="tfa_2600-D" role="group" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L">
                 <div class="col-9 col-xl-12">
                   <label class="form-checkbox" id="tfa_2600-L" for="tfa_2600">
-                    <input type="checkbox" value="tfa_2600" id="tfa_2600" name="tfa_2600" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L" {{#if defaults.tfa_2600}}checked disabled{{else}}required{{/if}}>
+                    {{#if defaults.tfa_2600}}
+                    <input type="hidden" id="tfa_2600" name="tfa_2600" value="1" checked />
+                    <input type="checkbox" value="tfa_2600" id="tfa_2600_hidden" name="tfa_2600_hidden" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
+                    {{else}}
+                    <input type="checkbox" value="tfa_2600" id="tfa_2600" name="tfa_2600" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
+                    {{/if}}
                     <i class="form-icon"></i>
-                    &hellip;you {{defaults.tfa_2600}} have read and accept the <a href="/support/coronavirus/funding/scottish-government/community-recovery/terms" target="_blank">Terms &amp; Conditions</a> (opens in new tab)
+                    &hellip;you have read and accept the <a href="/support/coronavirus/funding/scottish-government/community-recovery/terms" target="_blank">Terms &amp; Conditions</a> (opens in new tab)
                   </label>
                 </div>
               </div>
               <div class="form-group" id="tfa_2601-D" role="group" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L">
                 <div class="col-9 col-xl-12">
                   <label class="form-checkbox" id="tfa_2601-L" for="tfa_2601">
-                    <input type="checkbox" value="tfa_2601" id="tfa_2601" name="tfa_2601" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L" {{#if defaults.tfa_2601}}checked disabled{{else}}required{{/if}}>
+                    {{#if defaults.tfa_2601}}
+                    <input type="hidden" id="tfa_2601" name="tfa_2601" value="1" checked />
+                    <input type="checkbox" value="tfa_2601" id="tfa_2601_hidden" name="tfa_2601_hidden" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
+                    {{else}}
+                    <input type="checkbox" value="tfa_2601" id="tfa_2601" name="tfa_2601" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
+                    {{/if}}
                     <i class="form-icon"></i>
                     &hellip;you understand and accept our obligations under the General Data Protection Regulation (GDPR) set out in our <a href="/privacy/community-third-sector-recovery-programme" target="_blank">Privacy Policy</a> (opens in new tab)
                   </label>
@@ -2148,7 +2158,12 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="form-group" id="tfa_2773-D" role="group" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L">
                 <div class="col-9 col-xl-12">
                   <label class="form-checkbox" id="tfa_2773-L" for="tfa_2773">
-                    <input type="checkbox" value="tfa_2773" id="tfa_2773" name="tfa_2773" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L" {{#if defaults.tfa_2773}}checked disabled{{else}}required{{/if}}>
+                    {{#if defaults.tfa_2773}}
+                    <input type="hidden" id="tfa_2773" name="tfa_2773" value="1" checked />
+                    <input type="checkbox" value="tfa_2773" id="tfa_2773_hidden" name="tfa_2773_hidden" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
+                    {{else}}
+                    <input type="checkbox" value="tfa_2773" id="tfa_2773" name="tfa_2773" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
+                    {{/if}}
                     <i class="form-icon"></i>
                     &hellip;you understand that by applying, the information you supplied will be shared with a range of national and local organisations for the purposes of verification and assessment. These include (but are not limited to) the Adapt and Thrive programme partners, the Recovery Communities Fund partners, relevant Scottish Government departments, Highlands &amp; Islands Enterprise, and the South of Scotland Enterprise Agency
                   </label>
