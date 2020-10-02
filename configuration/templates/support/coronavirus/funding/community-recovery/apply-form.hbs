@@ -69,6 +69,7 @@ wFORMS.behaviors.prefill.skip = false;
         "ignoreFields": ["tfa_2274", "tfa_2273"]
       }'{{/unless}}>
         <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{#unless defaults.application_readonly}}{{@root.request.params.session_key}}{{/unless}}">
+        {{#unless defaults.application_confirm}}
         <div class="bg-secondary">
           <div id="tfa_1883" class="container section v-margin-full v-padding-full">
             <h2 id="tfa_1883-L">
@@ -196,213 +197,204 @@ wFORMS.behaviors.prefill.skip = false;
                   {{else}}
                   <input type="text" id="tfa_1876" name="tfa_1876" value="{{defaults.tfa_1876}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required{{#if defaults.application_readonly}} readonly{{/if}}>
                   {{/ifAny}}
-                  {{!-- {{#unless defaults.application_editing}}
-                  {{#if defaults.is_charity}}
-                  <p class="form-input-hint text-secondary">
-                  If any of the information below about your registered office is incorrect please amend it
-                </p>
-                {{/if}}
-                {{/unless}} --}}
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <div class="form-group field-container-D" id="tfa_1939-D">
-                <label id="tfa_1939-L" class="form-label r-margin preField reqMark" for="tfa_1939">
-                  Organisation email address
-                </label>
-              </div>
-            </div>
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_1939" name="tfa_1939" value="{{defaults.tfa_1939}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <div class="form-group field-container-D" id="tfa_1930-D">
-                <label id="tfa_1930-L" class="form-label r-margin preField" for="tfa_1930">
-                  Website address
-                </label>
-              </div>
-            </div>
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="url" pattern="https?://.+" id="tfa_1930" name="tfa_1930" value="{{defaults.tfa_1930}}" class="form-input" autocomplete="nope" data-lpignore="true" {{#if defaults.application_readonly}}readonly{{/if}}>
-              <p class="form-input-hint text-secondary">
-                If you have a website, please copy &amp; paste the full address (beginning with http:// or https://)
-              </p>
-            </div>
-          </div>
-
-          <div class="form-group field-container-D t-margin" id="tfa_2325-D">
-            <div class="col-9 col-xl-12">
-              <div class="form-group field-container-D">
-                <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
-                  Tell us briefly what your organisation is established to do and for whom<br />
-                  <span class="form-input-hint text-secondary">This should include your vision, governance structure and core activity</span><br />
-                  <span class="form-input-hint text-secondary">(maximum 300 words)</span>
-                </label>
-              </div>
-              <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required count-words" required{{/if}}>{{defaults.tfa_2325}}</textarea>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="form-group field-container-D" id="tfa_2504-D">
-                <label id="tfa_2504-L" class="form-label r-margin preField reqMark" for="tfa_2504">
-                  In which year was your organisation established?
-                </label>
-              </div>
-            </div>
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="1850" max="{{momentFormat (moment) 'YYYY'}}" id="tfa_2504" name="tfa_2504" value="{{defaults.tfa_2504}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-            </div>
-          </div>
-
-          <div class="col-9 col-xl-12 b-margin-full">
-            <div class="section group">
-              <table class="gridLayout" style="width:100%;">
-                <thead>
-                  <tr class="headerRow">
-                    <th style="width:20%;"> </th>
-                    <th scope="col" id="tfa_2326-GRID" style="width:40%;">
-                      <div class="reqMark">
-                        Full Time Equivalent (FTE)
-                      </div>
-                    </th>
-                    <th scope="col" id="tfa_2516-GRID" style="width:40%;">
-                      <div class="reqMark">
-                        Volunteers
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr id="tfa_2152" class="section">
-                    <th scope="row" id="tfa_2152-L" class="headerCol text-left" style="font-weight:normal;">
-                      Staff numbers
-                    </th>
-                    <td>
-                      <div class="oneField field-container-D" id="tfa_2326-D">
-                        <input type="number" step="0.5" min="0" max="10000" id="tfa_2326" name="tfa_2326" value="{{defaults.tfa_2326}}" autocomplete="nope" data-lpignore="true" class="form-input required" required {{#if defaults.application_readonly}}readonly{{/if}}>
-                      </div>
-                    </td>
-                    <td>
-                      <div class="oneField field-container-D" id="tfa_2516-D">
-                        <input type="number" step="0.5" min="0" max="10000" id="tfa_2516" name="tfa_2516" value="{{defaults.tfa_2516}}" autocomplete="nope" data-lpignore="true" class="form-input required" required {{#if defaults.application_readonly}}readonly{{/if}}>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-
-          <div class="form-group field-container-D b-margin-full" id="tfa_2696-D">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <div class="form-group field-container-D">
-                <label id="tfa_2696-L" class="preField reqMark r-margin" for="tfa_2696">
-                  Select the main sector your organisation works in
-                </label>
-              </div>
-            </div>
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <select id="tfa_2696" name="tfa_2696" aria-required="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
-                <option value="" disabled{{#unless defaults.tfa_2696}} selected{{/unless}}>
-                  Please select&hellip;
-                </option>
-                {{#each main_sector ~}}
-                <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_2696 name)}} selected{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2539-D"{{/if}}>{{name}}</option>
-                {{/each ~}}
-              </select>
-              <div class="oneField field-container-D" id="tfa_2539-D" data-condition="`#tfa_2718`" style="width:100%;">
-                <div class="inputWrapper t-margin" style="width:100%;">
-                  <input type="text" id="tfa_2539" name="tfa_2539" value="{{defaults.tfa_2539}}" maxlength="150" title="Please describe the main sector your organisation works in" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;" {{#if defaults.application_readonly}}readonly{{/if}}>
                 </div>
               </div>
             </div>
-          </div>
 
-          <h3>Organisation address</h3>
-          <p class="form-input-hint text-secondary">
-            Please enter your main address in Scotland
-          </p>
-
-          <div class="form-group">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <div class="form-group field-container-D" id="tfa_1925-D">
-                <label id="tfa_1925-L" class="form-label r-margin preField reqMark" for="tfa_1925">
-                  Postcode
-                </label>
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="form-group field-container-D" id="tfa_1939-D">
+                  <label id="tfa_1939-L" class="form-label r-margin preField reqMark" for="tfa_1939">
+                    Organisation email address
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_1939" name="tfa_1939" value="{{defaults.tfa_1939}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
               </div>
             </div>
-            <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <div id="postcode-wrapper" class="form-group has-icon-right">
-                <input type="text" id="tfa_1925" name="tfa_1925" value="{{defaults.tfa_1925}}" aria-required="true" autocomplete="nope" data-lpignore="true" style="text-transform: uppercase;" id="postcode-wrapper" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-                <span class="form-icon far" id="postcode_validation_icon"></span>
-                <p id="postcode_validation_message" class="form-input-hint text-secondary"></p>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="form-group field-container-D" id="tfa_1930-D">
+                  <label id="tfa_1930-L" class="form-label r-margin preField" for="tfa_1930">
+                    Website address
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="url" pattern="https?://.+" id="tfa_1930" name="tfa_1930" value="{{defaults.tfa_1930}}" class="form-input" autocomplete="nope" data-lpignore="true" {{#if defaults.application_readonly}}readonly{{/if}}>
+                <p class="form-input-hint text-secondary">
+                  If you have a website, please copy &amp; paste the full address (beginning with http:// or https://)
+                </p>
+              </div>
+            </div>
+
+            <div class="form-group field-container-D t-margin" id="tfa_2325-D">
+              <div class="col-9 col-xl-12">
+                <div class="form-group field-container-D">
+                  <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
+                    Tell us briefly what your organisation is established to do and for whom<br />
+                    <span class="form-input-hint text-secondary">This should include your vision, governance structure and core activity</span><br />
+                    <span class="form-input-hint text-secondary">(maximum 300 words)</span>
+                  </label>
+                </div>
+                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required count-words" required{{/if}}>{{defaults.tfa_2325}}</textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <div class="form-group field-container-D" id="tfa_2504-D">
+                  <label id="tfa_2504-L" class="form-label r-margin preField reqMark" for="tfa_2504">
+                    In which year was your organisation established?
+                  </label>
+                </div>
+              </div>
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="1850" max="{{momentFormat (moment) 'YYYY'}}" id="tfa_2504" name="tfa_2504" value="{{defaults.tfa_2504}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+              </div>
+            </div>
+
+            <div class="col-9 col-xl-12 b-margin-full">
+              <div class="section group">
+                <table class="gridLayout" style="width:100%;">
+                  <thead>
+                    <tr class="headerRow">
+                      <th style="width:20%;"> </th>
+                      <th scope="col" id="tfa_2326-GRID" style="width:40%;">
+                        <div class="reqMark">
+                          Full Time Equivalent (FTE)
+                        </div>
+                      </th>
+                      <th scope="col" id="tfa_2516-GRID" style="width:40%;">
+                        <div class="reqMark">
+                          Volunteers
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="tfa_2152" class="section">
+                      <th scope="row" id="tfa_2152-L" class="headerCol text-left" style="font-weight:normal;">
+                        Staff numbers
+                      </th>
+                      <td>
+                        <div class="oneField field-container-D" id="tfa_2326-D">
+                          <input type="number" step="0.5" min="0" max="10000" id="tfa_2326" name="tfa_2326" value="{{defaults.tfa_2326}}" autocomplete="nope" data-lpignore="true" class="form-input required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="oneField field-container-D" id="tfa_2516-D">
+                          <input type="number" step="0.5" min="0" max="10000" id="tfa_2516" name="tfa_2516" value="{{defaults.tfa_2516}}" autocomplete="nope" data-lpignore="true" class="form-input required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="form-group field-container-D b-margin-full" id="tfa_2696-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="form-group field-container-D">
+                  <label id="tfa_2696-L" class="preField reqMark r-margin" for="tfa_2696">
+                    Select the main sector your organisation works in
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <select id="tfa_2696" name="tfa_2696" aria-required="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
+                  <option value="" disabled{{#unless defaults.tfa_2696}} selected{{/unless}}>
+                    Please select&hellip;
+                  </option>
+                  {{#each main_sector ~}}
+                  <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_2696 name)}} selected{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_2539-D"{{/if}}>{{name}}</option>
+                  {{/each ~}}
+                </select>
+                <div class="oneField field-container-D" id="tfa_2539-D" data-condition="`#tfa_2718`" style="width:100%;">
+                  <div class="inputWrapper t-margin" style="width:100%;">
+                    <input type="text" id="tfa_2539" name="tfa_2539" value="{{defaults.tfa_2539}}" maxlength="150" title="Please describe the main sector your organisation works in" autocomplete="nope" data-lpignore="true" class="form-input required" required style="width:100%;" {{#if defaults.application_readonly}}readonly{{/if}}>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h3>Organisation address</h3>
+            <p class="form-input-hint text-secondary">
+              Please enter your main address in Scotland
+            </p>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="form-group field-container-D" id="tfa_1925-D">
+                  <label id="tfa_1925-L" class="form-label r-margin preField reqMark" for="tfa_1925">
+                    Postcode
+                  </label>
+                </div>
+              </div>
+              <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div id="postcode-wrapper" class="form-group has-icon-right">
+                  <input type="text" id="tfa_1925" name="tfa_1925" value="{{defaults.tfa_1925}}" aria-required="true" autocomplete="nope" data-lpignore="true" style="text-transform: uppercase;" id="postcode-wrapper" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                  <span class="form-icon far" id="postcode_validation_icon"></span>
+                  <p id="postcode_validation_message" class="form-input-hint text-secondary"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="form-group field-container-D" id="tfa_1922-D">
+                  <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">
+                    Street
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1922" name="tfa_1922" value="{{defaults.tfa_1922}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+              </div>
+            </div>
+
+            <div class="form-group b-margin">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="form-group field-container-D" id="tfa_1923-D">
+                  <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">
+                    Town/city
+                  </label>
+                </div>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_1923" name="tfa_1923" value="{{defaults.tfa_1923}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="form-group field-container-D" id="tfa_2438-D">
+                  <label id="tfa_2438-L" class="form-label r-margin preField reqMark" for="tfa_2438">
+                    Local Authority
+                  </label>
+                </div>
+              </div>
+              <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <select id="tfa_2438" name="tfa_2438" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
+                  <option value="" disabled{{#unless ../defaults.tfa_2438}} selected{{/unless}}>
+                    Please select&hellip;
+                  </option>
+                  {{#each local_authorities ~}}
+                  {{#if this.id_organisation}}
+                  <option value="{{id_organisation}}" id="{{id_organisation}}"{{#compare name ../defaults.tfa_2438}} selected{{/compare}}>
+                    {{name}}
+                  </option>
+                  {{/if}}
+                  {{/each ~}}
+                </select>
               </div>
             </div>
           </div>
-
-          <div class="form-group">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <div class="form-group field-container-D" id="tfa_1922-D">
-                <label id="tfa_1922-L" class="form-label r-margin preField reqMark" for="tfa_1922">
-                  Street
-                </label>
-              </div>
-            </div>
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="text" id="tfa_1922" name="tfa_1922" value="{{defaults.tfa_1922}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-            </div>
-          </div>
-
-          <div class="form-group b-margin">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <div class="form-group field-container-D" id="tfa_1923-D">
-                <label id="tfa_1923-L" class="form-label r-margin preField reqMark" for="tfa_1923">
-                  Town/city
-                </label>
-              </div>
-            </div>
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="text" id="tfa_1923" name="tfa_1923" value="{{defaults.tfa_1923}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <div class="form-group field-container-D" id="tfa_2438-D">
-                <label id="tfa_2438-L" class="form-label r-margin preField reqMark" for="tfa_2438">
-                  Local Authority
-                </label>
-              </div>
-            </div>
-            <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <select id="tfa_2438" name="tfa_2438" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
-                <option value="" disabled{{#unless ../defaults.tfa_2438}} selected{{/unless}}>
-                  Please select&hellip;
-                </option>
-                {{#each local_authorities ~}}
-                {{#if this.id_organisation}}
-                <option value="{{id_organisation}}" id="{{id_organisation}}"{{#compare name ../defaults.tfa_2438}} selected{{/compare}}>
-                  {{name}}
-                </option>
-                {{/if}}
-                {{/each ~}}
-              </select>
-            </div>
-          </div>
-
         </div>
-      </div>
 
-      <div id="tfa_1882" class="section">
-        <div id="interest-details">
+        <div id="tfa_1882" class="section">
           <div class="bg-secondary">
             <div class="container section v-margin-full v-padding-full">
               <h2 id="tfa_1882-L">
@@ -555,11 +547,9 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
           </div>
         </div>
-      </div>
 
-      {{#unless defaults.application_readonly}}
-      <div id="tfa_1880" class="section">
-        <div id="contact-details">
+        {{#unless defaults.application_readonly}}
+        <div id="tfa_1880" class="section">
           <div class="bg-secondary">
             <div class="container section t-margin-full v-padding-full">
               <h2 id="tfa_1880-L" class="t-margin">
@@ -736,11 +726,9 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
           </div>
         </div>
-      </div>
-      {{/unless}}
+        {{/unless}}
 
-      <div id="tfa_2269" class="section">
-        <div id="bank-details">
+        <div id="tfa_2269" class="section">
           <div class="bg-secondary">
             <div class="container section v-padding-full">
               <h2 id="tfa_2269-L" class="t-margin">
@@ -2111,76 +2099,77 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+        </div>
+        {{/unless}}
 
-          <div id="confirmation">
-            <div class="bg-secondary">
-              <div class="container section b-margin-full v-padding-full">
-                <h2 id="confirmation-L" class="t-margin">
-                  <span class="pull-left fal fa-user-check r-margin-full" style="margin-top:-.5rem;font-size:2.2rem;"></span>
-                  Confirmation
-                </h2>
-              </div>
+        <div id="confirmation">
+          <div class="bg-secondary">
+            <div class="container section b-margin-full v-padding-full">
+              <h2 id="confirmation-L" class="t-margin">
+                <span class="pull-left fal fa-user-check r-margin-full" style="margin-top:-.5rem;font-size:2.2rem;"></span>
+                Confirmation
+              </h2>
             </div>
-            <div id="confirmation-body" class="container section v-padding-full">
-              <div class="col-9 col-xl-12">
-                <p>
-                  Please confirm that:
-                </p>
-              </div>
-              <div class="form-group" id="tfa_2600-D" role="group" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L">
-                <div class="col-9 col-xl-12">
-                  <label class="form-checkbox" id="tfa_2600-L" for="tfa_2600">
-                    {{#if defaults.tfa_2600}}
-                    <input type="hidden" id="tfa_2600" name="tfa_2600" value="1" checked />
-                    <input type="checkbox" value="tfa_2600" id="tfa_2600_hidden" name="tfa_2600_hidden" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
-                    {{else}}
-                    <input type="checkbox" value="tfa_2600" id="tfa_2600" name="tfa_2600" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
-                    {{/if}}
-                    <i class="form-icon"></i>
-                    &hellip;you have read and accept the <a href="/support/coronavirus/funding/scottish-government/community-recovery/terms" target="_blank">Terms &amp; Conditions</a> (opens in new tab)
-                  </label>
-                </div>
-              </div>
-              <div class="form-group" id="tfa_2601-D" role="group" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L">
-                <div class="col-9 col-xl-12">
-                  <label class="form-checkbox" id="tfa_2601-L" for="tfa_2601">
-                    {{#if defaults.tfa_2601}}
-                    <input type="hidden" id="tfa_2601" name="tfa_2601" value="1" checked />
-                    <input type="checkbox" value="tfa_2601" id="tfa_2601_hidden" name="tfa_2601_hidden" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
-                    {{else}}
-                    <input type="checkbox" value="tfa_2601" id="tfa_2601" name="tfa_2601" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
-                    {{/if}}
-                    <i class="form-icon"></i>
-                    &hellip;you understand and accept our obligations under the General Data Protection Regulation (GDPR) set out in our <a href="/privacy/community-third-sector-recovery-programme" target="_blank">Privacy Policy</a> (opens in new tab)
-                  </label>
-                </div>
-              </div>
-              <div class="form-group" id="tfa_2773-D" role="group" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L">
-                <div class="col-9 col-xl-12">
-                  <label class="form-checkbox" id="tfa_2773-L" for="tfa_2773">
-                    {{#if defaults.tfa_2773}}
-                    <input type="hidden" id="tfa_2773" name="tfa_2773" value="1" checked />
-                    <input type="checkbox" value="tfa_2773" id="tfa_2773_hidden" name="tfa_2773_hidden" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
-                    {{else}}
-                    <input type="checkbox" value="tfa_2773" id="tfa_2773" name="tfa_2773" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
-                    {{/if}}
-                    <i class="form-icon"></i>
-                    &hellip;you understand that by applying, the information you supplied will be shared with a range of national and local organisations for the purposes of verification and assessment. These include (but are not limited to) the Adapt and Thrive programme partners, the Recovery Communities Fund partners, relevant Scottish Government departments, Highlands &amp; Islands Enterprise, and the South of Scotland Enterprise Agency
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            {{#unless defaults.application_readonly}}
-            <div class="container">
-              <div class="actions columns" id="4844638-A">
-                <div class="column col-9 col-xl-12 v-margin-full">
-                  <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg b-margin-full" id="submit_button" value="Submit">
-                </div>
-              </div>
-            </div>
-            {{/unless}}
           </div>
+          <div id="confirmation-body" class="container section v-padding-full">
+            <div class="col-9 col-xl-12">
+              <p>
+                Please confirm that:
+              </p>
+            </div>
+            <div class="form-group" id="tfa_2600-D" role="group" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L">
+              <div class="col-9 col-xl-12">
+                <label class="form-checkbox" id="tfa_2600-L" for="tfa_2600">
+                  {{#if defaults.tfa_2600}}
+                  <input type="hidden" id="tfa_2600" name="tfa_2600" value="1" checked />
+                  <input type="checkbox" value="tfa_2600" id="tfa_2600_hidden" name="tfa_2600_hidden" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
+                  {{else}}
+                  <input type="checkbox" value="tfa_2600" id="tfa_2600" name="tfa_2600" aria-labelledby="tfa_2600-L" data-tfa-labelledby="tfa_2600-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
+                  {{/if}}
+                  <i class="form-icon"></i>
+                  &hellip;you have read and accept the <a href="/support/coronavirus/funding/scottish-government/community-recovery/terms" target="_blank">Terms &amp; Conditions</a> (opens in new tab)
+                </label>
+              </div>
+            </div>
+            <div class="form-group" id="tfa_2601-D" role="group" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L">
+              <div class="col-9 col-xl-12">
+                <label class="form-checkbox" id="tfa_2601-L" for="tfa_2601">
+                  {{#if defaults.tfa_2601}}
+                  <input type="hidden" id="tfa_2601" name="tfa_2601" value="1" checked />
+                  <input type="checkbox" value="tfa_2601" id="tfa_2601_hidden" name="tfa_2601_hidden" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
+                  {{else}}
+                  <input type="checkbox" value="tfa_2601" id="tfa_2601" name="tfa_2601" aria-labelledby="tfa_2601-L" data-tfa-labelledby="tfa_2601-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
+                  {{/if}}
+                  <i class="form-icon"></i>
+                  &hellip;you understand and accept our obligations under the General Data Protection Regulation (GDPR) set out in our <a href="/privacy/community-third-sector-recovery-programme" target="_blank">Privacy Policy</a> (opens in new tab)
+                </label>
+              </div>
+            </div>
+            <div class="form-group" id="tfa_2773-D" role="group" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L">
+              <div class="col-9 col-xl-12">
+                <label class="form-checkbox" id="tfa_2773-L" for="tfa_2773">
+                  {{#if defaults.tfa_2773}}
+                  <input type="hidden" id="tfa_2773" name="tfa_2773" value="1" checked />
+                  <input type="checkbox" value="tfa_2773" id="tfa_2773_hidden" name="tfa_2773_hidden" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L" checked disabled{{#if defaults.application_readonly}} disabled{{/if}}>
+                  {{else}}
+                  <input type="checkbox" value="tfa_2773" id="tfa_2773" name="tfa_2773" aria-labelledby="tfa_2773-L" data-tfa-labelledby="tfa_2773-L" required{{#if defaults.application_readonly}} disabled{{/if}}>
+                  {{/if}}
+                  <i class="form-icon"></i>
+                  &hellip;you understand that by applying, the information you supplied will be shared with a range of national and local organisations for the purposes of verification and assessment. These include (but are not limited to) the Adapt and Thrive programme partners, the Recovery Communities Fund partners, relevant Scottish Government departments, Highlands &amp; Islands Enterprise, and the South of Scotland Enterprise Agency
+                </label>
+              </div>
+            </div>
+          </div>
+
+          {{#unless defaults.application_readonly}}
+          <div class="container">
+            <div class="actions columns" id="4844638-A">
+              <div class="column col-9 col-xl-12 v-margin-full">
+                <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg b-margin-full" id="submit_button" value="Submit">
+              </div>
+            </div>
+          </div>
+          {{/unless}}
         </div>
 
         <div style="clear:both;"></div>
