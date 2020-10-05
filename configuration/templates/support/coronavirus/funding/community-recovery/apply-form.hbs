@@ -2187,6 +2187,7 @@ wFORMS.behaviors.prefill.skip = false;
 
         <div style="clear:both;"></div>
         {{#unless defaults.application_readonly}}
+        <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_confirm}}Confirm{{else}}{{#if defaults.application_editing}}Edit{{else}}New{{/if}}{{/if}}" class="Edit type">
         <input type="hidden" id="tfa_1946" name="tfa_1946" value="{{defaults.tfa_1946}}" title="Charity Status">
         <input type="hidden" id="tfa_1936" name="tfa_1936" value="{{defaults.tfa_1936}}" title="Constituency">
         <input type="hidden" id="tfa_1934" name="tfa_1934" value="{{defaults.tfa_1934}}" title="Ward">
@@ -2196,7 +2197,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" value="4844638" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="76e570e6a1fe06dbcccebe0246bb3d7f" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="45" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="47" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         {{/unless}}
       </form>
