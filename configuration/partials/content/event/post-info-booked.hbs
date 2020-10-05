@@ -1,6 +1,6 @@
-{{#unless places_available ~}}
+{{#compare places_available "<" 1 ~}}
 <div class="post-info-item post-info-booked">
   <span class="far fa-ban" aria-hidden="true"></span>
   <strong>Fully booked</strong>
 </div>
-{{/unless ~}}
+{{/compare}}
