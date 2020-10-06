@@ -28,7 +28,7 @@
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
       "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-url.txt}",
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },

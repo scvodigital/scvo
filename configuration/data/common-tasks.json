@@ -98,7 +98,7 @@
     "name": "organisationInfo",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$elasticsearch-legacy-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
@@ -163,7 +163,7 @@
     "name": "postsLatest",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$elasticsearch-legacy-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
@@ -179,7 +179,7 @@
     "name": "postsBlog",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$elasticsearch-legacy-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
@@ -195,7 +195,7 @@
     "name": "postsRelated",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$elasticsearch-legacy-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
@@ -211,7 +211,7 @@
     "name": "organisation",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$elasticsearch-legacy-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
@@ -227,7 +227,7 @@
     "name": "organisationResponses",
     "taskModule": "elasticsearch",
     "config": {
-      "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+      "connectionStringTemplate": "{$../data/elasticsearch-legacy-url.txt}",
       "elasticsearchConfig": {
         "apiVersion": "5.6"
       },
