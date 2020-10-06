@@ -1,15 +1,16 @@
 {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
 <div class="related-posts v-padding-full bg-tfn">
   <div class="container v-padding-full">
-    <h3 class="no-margin">
-      Latest TFN news&ensp;
-      <a href="https://thirdforcenews.org.uk/tfn-news?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" class="caption">See more</a>
+    <h3>
+      <a href="https://tfn.scot?utm_source=scvo&utm_medium=website&utm_campaign=footer"><img src="{{~>asset_url url='images/logos/tfn-lochan.svg'~}}" alt="Third Force News" class="img-responsive" /></a>
+      Latest news&ensp;
+      <a href="https://tfn.scot/news?utm_source=scvo&utm_medium=website&utm_campaign=footer" class="caption">See more</a>
     </h3>
     <div class="columns">
       {{#each (split "0,1,2" ",") ~}}
       {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
       <div class="column col-4 col-lg-6 col-sm-12 b-margin">
-        {{> content_featured name="latest-tfn" link=(trim url) heading="h4" title=(trim title) body=(momentFormat (moment date_published 'x') "Do MMMM YYYY") ratio="16:9" image=image}}
+        {{> content_featured name="latest-tfn" link=(replace (replace (replace (trim url) 'utm_source=tfn' 'utm_source=scvo') 'utm_medium=bulletin' 'utm_medium=website') 'utm_campaign=list' 'utm_campaign=footer') heading="h4" title=(trim title) body=(momentFormat (moment date_published 'x') "Do MMMM YYYY") ratio="16:9" image=image hide_read_more=true}}
       </div>
       {{/with ~}}
       {{/each ~}}

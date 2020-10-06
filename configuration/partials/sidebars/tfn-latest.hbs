@@ -1,17 +1,17 @@
 {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
 <div class="bg-tfn tfn-posts x-padding-full">
-  <a href="https://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic" title="Third Force News - The voice of Scotland's third sector"><img src="{{~>asset_url url='images/logos/tfn.png'}}" class="service-logo" /></a>
+  <a href="https://tfn.scot/news?utm_source=scvo&utm_medium=website&utm_campaign=sidebar" title="Third Force News - The voice of Scotland's third sector"><img src="{{~>asset_url url='images/logos/tfn.png'}}" class="service-logo" /></a>
   <h4>Latest news</h4>
   <ul>
     {{#each (split "0,1,2" ",") ~}}
     {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
     <li>
-      <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
+      <a href="{{url}}?utm_source=scvo&utm_medium=website&utm_campaign=sidebar">{{{trim title}}}</a>
       <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div>
     </li>
     {{/with ~}}
     {{/each ~}}
   </ul>
-  <a href="https://thirdforcenews.org.uk?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">Read more on TFN</a>
+  <a href="https://tfn.scot/?utm_source=scvo&utm_medium=website&utm_campaign=sidebar">Read more on TFN</a>
 </div>
 {{/compare ~}}

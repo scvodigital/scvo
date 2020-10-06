@@ -32,7 +32,7 @@ $credit-union-color-light-var: F6F5F9;
 $goodmoves-legacy-color: rgb(68, 133, 50);
 $goodmoves-color: #A8D91B;
 $tfn-legacy-color: #3b9db1;
-$tfn-color: #00FFFF;
+$tfn-color: #22E5EB;
 $fs-legacy-color: #537F2C;
 $fs-color: #537F2C;
 
@@ -774,7 +774,7 @@ footer a {
 }
 
 .bg-tfn {
-  background-color: $tfn-legacy-color !important;
+  background-color: $tfn-color !important;
   h1,
   h2,
   h3,
@@ -782,17 +782,28 @@ footer a {
   p,
   .caption,
   a {
-    color: white;
+    color: $secondary-color;
   }
+  h3 img {
+    max-width: 175px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: $unit;
+  }
+  .card-footer a,
+  .card-footer a.no-underline,
   a.no-underline,
   a {
     background: none;
-    color: white;
+    color: $secondary-color !important;
   }
   .card-image-link:hover .card-title,
   a.no-underline:hover,
   a:hover {
-    color: $secondary-color-dark !important;
+    color: $secondary-color-light !important;
+  }
+  .card-image-link .card-image:after {
+    background-image: none;
   }
 }
 
