@@ -2,27 +2,37 @@
   "size": 6,
   "_source": [
     "title",
-    "url",
+    "site",
+    "path",
     "description",
-    "image",
-    "image_portrait_small",
-    "date_published"
+    "image.small",
+    "image.medium",
+    "d_published"
   ],
   "query": {
     "bool": {
-      "must": {
-        "match_all": {}
-      },
-      "filter":  [
+      "must": [
         {
-          "exists": {
-            "field": "image"
+          "term": {
+            "k_post_status": "publish"
+          }
+        },
+        {
+          "term": {
+            "type": "tfn-post"
+          }
+        },
+        {
+          "terms": {
+            "k_post_type": [
+              "news"
+            ]
           }
         }
       ]
     }
   },
   "sort": {
-    "date_published": "desc"
+    "d_published": "desc"
   }
 }

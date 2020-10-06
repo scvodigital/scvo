@@ -95,12 +95,6 @@
         },
         "queryTemplates": [
           {
-            "name": "tfn_related_posts",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
-            "template": ">context.metaData.handlebars.queries.posts_tfn-related-coronavirus"
-          },
-          {
             "name": "postcode_data",
             "index": "geo_lookup",
             "type": "postcode",
@@ -110,6 +104,7 @@
       },
       "renderer": "handlebars"
     },
+    "context.metaData.commonTasks.tfnCoronavirusRelatedPosts",
     {
       "name": "postcode_data",
       "taskModule": "render",

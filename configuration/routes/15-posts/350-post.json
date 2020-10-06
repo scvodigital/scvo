@@ -44,17 +44,12 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
             "template": ">context.metaData.handlebars.queries.posts_category-posts"
-          },
-          {
-            "name": "tfn_related_posts",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
-            "template": ">context.metaData.handlebars.queries.posts_tfn-related"
           }
         ]
       },
       "renderer": "handlebars"
     },
+    "context.metaData.commonTasks.tfnCoronavirusRelatedPosts",
     {
       "name": "destination",
       "taskModule": "renderLayout",

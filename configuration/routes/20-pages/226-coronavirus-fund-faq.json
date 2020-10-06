@@ -31,12 +31,6 @@
         },
         "queryTemplates": [
           {
-            "name": "tfn_related_posts",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
-            "template": ">context.metaData.handlebars.queries.posts_tfn-related-coronavirus"
-          },
-          {
             "name": "faqs",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "funder-faq",
@@ -46,6 +40,7 @@
       },
       "renderer": "handlebars"
     },
+    "context.metaData.commonTasks.tfnCoronavirusRelatedPosts",
     {
       "name": "destination",
       "taskModule": "renderLayout",

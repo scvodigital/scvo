@@ -17,7 +17,7 @@
   }
   body {
     width: 100vw;
-    background-color: rgba(59,157,177,1);
+    background-color: rgba(34,229,235,1);
   }
   li,
   span,
@@ -124,9 +124,9 @@
     height: 100vh;
     width: 100vw;
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3b9db1+0,3b9db1+100&0+38,1+64 */
-    background: -moz-linear-gradient(left,  rgba(59,157,177,0) 0%, rgba(59,157,177,0) 38%, rgba(59,157,177,1) 63%, rgba(59,157,177,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  rgba(59,157,177,0) 0%,rgba(59,157,177,0) 38%,rgba(59,157,177,1) 63%,rgba(59,157,177,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  rgba(59,157,177,0) 0%,rgba(59,157,177,0) 38%,rgba(59,157,177,1) 63%,rgba(59,157,177,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(left,  rgba(34,229,235,0) 0%, rgba(34,229,235,0) 38%, rgba(34,229,235,1) 63%, rgba(34,229,235,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(34,229,235,0) 0%,rgba(34,229,235,0) 38%,rgba(34,229,235,1) 63%,rgba(34,229,235,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(34,229,235,0) 0%,rgba(34,229,235,0) 38%,rgba(34,229,235,1) 63%,rgba(34,229,235,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#003b9db1', endColorstr='#3b9db1',GradientType=1 ); /* IE6-9 */
   }
 
@@ -147,7 +147,7 @@
     bottom: 2rem;
     left: 2rem;
     padding: 1rem;
-    background-color: rgba(59,157,177,1);
+    background-color: rgba(34,229,235,1);
   }
 
   .owl-slide-text {
@@ -199,21 +199,21 @@ if (document.location.search.match(/type=embed/gi)) {
 </head>
 <body translate="no">
   <div class="owl-carousel owl-theme">
-    {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
+    {{#compare @root.data.primaryResponse.hits.total.value ">" 0 ~}}
     {{#each @root.data.primaryResponse.hits.hits ~}}
     {{#with _source ~}}
-    <div class="owl-slide d-flex align-items-center cover" style="background-image: url('{{image}}');">
+    <div class="owl-slide d-flex align-items-center cover" style="background-image: url('{{image.original}}');">
       <div class="overlay">
-        <img src="{{~>asset_url url='images/logos/tfn-strapline.png'}}" class="footer" />
+        {{!-- <img src="{{~>asset_url url='images/logos/tfn-cyan.png'}}" class="footer" /> --}}
         <div class="owl-slide-block">
           <div class="owl-slide-text">
-            <img src="{{~>asset_url url='images/logos/tfn.png'}}" class="top" />
+            <img src="{{~>asset_url url='images/logos/tfn-white.png'}}" class="top" />
             <h2 class="owl-slide-animated owl-slide-title">{{{trim title}}}</h2>
             <div class="owl-slide-animated owl-slide-subtitle mb-3 story-summary">
               {{{trim description}}}
             </div>
             <div class="owl-slide-animated owl-slide-date mb-3 story-date">
-              {{replace (momentFromNow date_published) 'a day ago' 'yesterday'}}
+              {{replace (momentFromNow d_published) 'a day ago' 'yesterday'}}
             </div>
           </div>
         </div>

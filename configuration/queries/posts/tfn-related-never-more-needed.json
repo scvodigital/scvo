@@ -1,42 +1,43 @@
 {
   "size": 4,
   "_source": [
-    "Id",
-    "url",
+    "site",
+    "path",
     "title",
-    "image",
-    "date_published"
+    "image.medium",
+    "d_published"
   ],
   "query": {
     "function_score": {
       "query": {
         "bool": {
-          "must_not": [
+          "must": [
             {
-              "match_phrase": {
-                "title": "Daily coronavirus roundup for third sector"
+              "term": {
+                "k_post_status": "publish"
               }
             },
             {
-              "match_phrase": {
-                "title": "edition is out now"
+              "term": {
+                "type": "tfn-post"
               }
-            }
-          ],
-          "filter":  [
+            },
             {
-              "exists": {
-                "field": "image"
+              "terms": {
+                "k_post_type": [
+                  "news"
+                ]
               }
             }
           ],
           "should": [
             {
-              "simple_query_string": {
+              "multi_match": {
+                "fields": [ "textbag", "textbag_boost_1^5" ],
                 "query": "#NeverMoreNeeded",
-                "default_operator": "OR",
-                "fields": ["text_bag"],
-                "analyzer": "snowball"
+                "type": "most_fields",
+                "tie_breaker": 0.3,
+                "operator": "OR"
               }
             }
           ],
@@ -46,7 +47,7 @@
       "functions": [
         {
           "gauss": {
-            "date_published": {
+            "d_published": {
               "scale": "14d",
               "decay": 0.1
             }

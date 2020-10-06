@@ -1,26 +1,36 @@
 {
   "size": 20,
   "_source": [
+    "site",
+    "path",
     "title",
-    "description",
-    "image",
-    "date_published"
+    "image.original",
+    "d_published"
   ],
   "query": {
     "bool": {
-      "must": {
-        "match_all": {}
-      },
-      "filter":  [
+      "must": [
         {
-          "exists": {
-            "field": "image"
+          "term": {
+            "k_post_status": "publish"
+          }
+        },
+        {
+          "term": {
+            "type": "tfn-post"
+          }
+        },
+        {
+          "terms": {
+            "k_post_type": [
+              "news"
+            ]
           }
         }
       ]
     }
   },
   "sort": {
-    "date_published": "desc"
+    "d_published": "desc"
   }
 }

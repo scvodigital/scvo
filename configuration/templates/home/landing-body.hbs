@@ -90,14 +90,14 @@
 <div class="bg-secondary useful-content">
   <div class="container v-padding-full">
     <div class="columns linked-cards v-margin-full">
-      {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
+      {{#compare @root.data.tfnResponses.tfn_latest.hits.total.value ">" 0 ~}}
       <div class="column col-4 col-md-12">
         <h3 class="no-margin">
           Latest news on TFN
           <a href="https://tfn.scot/news?utm_source=scvo&utm_medium=website&utm_campaign=home" class="caption l-margin">See more</a>
         </h3>
-        {{#with @root.data.supplimentaryResponses.tfn_latest.hits.hits.[0]._source ~}}
-        {{> content_featured name="latest-tfn" link=(replace (replace (replace (trim url) 'utm_source=tfn' 'utm_source=scvo') 'utm_medium=bulletin' 'utm_medium=website') 'utm_campaign=list' 'utm_campaign=home') heading="h4" title=(trim title) body=(truncate description 280) ratio="16:9" image=image}}
+        {{#with @root.data.tfnResponses.tfn_latest.hits.hits.[0]._source ~}}
+        {{> content_featured name="latest-tfn" link=(concat site path '?utm_source=scvo&utm_medium=website&utm_campaign=home') heading="h4" title=(trim title) body=(truncate description 280) ratio="16:9" image=image.medium}}
         {{/with ~}}
       </div>
       {{/compare ~}}

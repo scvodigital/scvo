@@ -4,25 +4,7 @@
   "pattern": "/support/coronavirus/funding/scottish-government/wellbeing-fund/apply/re-upload",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
-    {
-      "name": "supplimentaryResponses",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": [
-          {
-            "name": "tfn_related_posts",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "tfn-legacy-post-news,tfn-legacy-post-blog,tfn-legacy-feature",
-            "template": ">context.metaData.handlebars.queries.posts_tfn-related-coronavirus"
-          }
-        ]
-      },
-      "renderer": "handlebars"
-    },
+    "context.metaData.commonTasks.tfnCoronavirusRelatedPosts",
     {
       "name": "check_for_session_key",
       "taskModule": "reroute",
