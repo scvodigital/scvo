@@ -784,12 +784,6 @@ footer a {
   a {
     color: $secondary-color;
   }
-  h3 img {
-    max-width: 175px;
-    vertical-align: middle;
-    display: inline-block;
-    margin-right: $unit;
-  }
   .card-footer a,
   .card-footer a.no-underline,
   a.no-underline,
@@ -804,6 +798,15 @@ footer a {
   }
   .card-image-link .card-image:after {
     background-image: none;
+  }
+}
+.home-tfn,
+.bg-tfn {
+  h3 img {
+    max-width: 175px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: $unit;
   }
 }
 

@@ -36,7 +36,7 @@
       </div>
       {{/compare ~}}
       {{#compare @root.data.supplimentaryResponses.tfn_latest.hits.total ">" 0 ~}}
-      <div class="column col-6 col-md-12">
+      <div class="column col-6 col-md-12 home-tfn">
         <h3 class="b-margin-full">
           <a href="https://tfn.scot?utm_source=scvo&utm_medium=website&utm_campaign=footer"><img src="{{~>asset_url url='images/logos/tfn-lochan.svg'~}}" alt="Third Force News" class="img-responsive" /></a>
           Recent stories
@@ -45,8 +45,8 @@
           {{#each (split "1,2,3,4,5" ",") ~}}
           {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
           <li class="clearfix b-margin-full">
-            <a href="{{replace (replace (replace (trim url) 'utm_source=tfn' 'utm_source=scvo') 'utm_medium=bulletin' 'utm_medium=website'}}" class="pull-left r-margin no-underline"><img src="{{image_portrait_small}}" alt="{{{trim title}}}" class="avatar avatar-lg" /></a>
-            <a href="{{url}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
+            <a href="{{replace (replace (replace (trim url) 'utm_source=tfn' 'utm_source=scvo') 'utm_medium=bulletin' 'utm_medium=website') 'utm_campaign=list' 'utm_campaign=footer'}}" class="pull-left r-margin no-underline"><img src="{{image_portrait_small}}" alt="{{{trim title}}}" class="avatar avatar-lg" /></a>
+            <a href="{{replace (replace (replace (trim url) 'utm_source=tfn' 'utm_source=scvo') 'utm_medium=bulletin' 'utm_medium=website') 'utm_campaign=list' 'utm_campaign=footer'}}?utm_source=Widget&utm_medium=Widget&utm_campaign=Widget-Traffic">{{{trim title}}}</a>
             <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
           </li>
           {{/with ~}}
