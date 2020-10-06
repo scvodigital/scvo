@@ -2711,7 +2711,7 @@ blockquote {
     font-size: 115%;
     font-weight: $body-bold-weight;
     background: linear-gradient(to bottom, $light-color 0%, $light-color 100%);
-    background-size: 5px 15px;
+    background-size: 5px 16px;
     background-position: 0 100%;
     background-repeat: repeat-x;
   }
@@ -2719,8 +2719,10 @@ blockquote {
     font-weight: $body-font-weight;
     display: block;
     font-style: normal;
+    font-weight: normal;
     font-size: 85%;
     margin-top: $unit/2;
+    margin-bottom: $unit;
     text-align: right;
   }
 }

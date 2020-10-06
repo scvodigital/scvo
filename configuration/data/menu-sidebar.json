@@ -2186,35 +2186,42 @@
 						{
 							"label": "FAQs & general information",
 							"path": "/services/credit-union/faqs",
-							"route": "^/services/credit-union/faqs",
+							"route": "^/services/credit-union/faqs$",
 							"description": "",
 							"icon": "question-circle"
 						},
 						{
+							"label": "Testimonials",
+							"path": "/services/credit-union/testimonials",
+							"route": "^/services/credit-union/testimonials$",
+							"description": "",
+							"icon": "comments"
+						},
+						{
 							"label": "Members area",
 							"path": "/services/credit-union/members-guide",
-							"route": "^/services/credit-union/members-guide",
+							"route": "^/services/credit-union/members-guide$",
 							"description": "",
 							"icon": "user-lock"
 						},
 						{
 							"label": "Employers area",
 							"path": "/services/credit-union/employers-guide",
-							"route": "^/services/credit-union/employers-guide",
+							"route": "^/services/credit-union/employers-guide$",
 							"description": "",
 							"icon": "users"
 						},
 						{
 							"label": "Loans calculator and APR & interest rates",
 							"path": "/services/credit-union/loan-calculator",
-							"route": "^/services/credit-union/loan-calculator",
+							"route": "^/services/credit-union/loan-calculator$",
 							"description": "",
 							"icon": "calculator"
 						},
 						{
 							"label": "Joining, information & application forms",
 							"path": "/services/credit-union/forms",
-							"route": "^/services/credit-union/forms",
+							"route": "^/services/credit-union/forms$",
 							"description": "",
 							"icon": "file-alt"
 						}
