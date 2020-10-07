@@ -1,7 +1,7 @@
 <div class="card card-no-padding {{name}}">
   <a href="{{link}}" class="no-underline">
     <div class="card-image-link">
-      <div class="card-image-wrapper">
+      <div class="card-image-wrapper s-rounded">
         <div class="card-image" style="{{#if ratio}}--aspect-ratio: {{replace ratio ':' '/'}};{{/if}}background-image: url('{{#if (contains image 'http')}}{{replace image 'http://' 'https://'}}{{else}}{{~>asset_url url=image~}}{{/if}}')">
           {{#if logo ~}}
           <img src="{{#if (contains logo 'http')}}{{logo}}{{else}}{{~>asset_url url=logo~}}{{/if}}" class="img-responsive logo" {{#if logo_style}}style="{{logo_style}}"{{/if}} />
@@ -30,12 +30,12 @@
   </a>
   {{#unless hide_read_more ~}}
   <div class="card-footer">
-    <a href="{{link}}" class="no-underline r-margin-full">{{{default read_more_text 'Read more'}}}</a>
+    <a href="{{link}}" class="r-margin-full">{{{default read_more_text 'Read more'}}}</a>
     {{#ifAll link_2 link_2_text ~}}
-    <a href="{{link_2}}" class="no-underline">{{{link_2_text}}}</a>
+    <a href="{{link_2}}" class="">{{{link_2_text}}}</a>
     {{/ifAll ~}}
     {{#ifAll link_3 link_3_text ~}}
-    <a href="{{link_3}}" class="no-underline">{{{link_3_text}}}</a>
+    <a href="{{link_3}}" class="">{{{link_3_text}}}</a>
     {{/ifAll ~}}
   </div>
   {{/unless ~}}

@@ -1,64 +1,53 @@
 <div class="latest-content bg-white t-padding">
   <div class="container v-padding-full">
+    <div class="columns v-padding-full">
+      <div class="column col-4 col-md-12">
+        {{> content_featured name="never-more-needed" link="/policy/campaigns/never-more-needed" heading="h4" title="#NeverMoreNeeded" body="We are exploring how the voluntary sector has responded and continues to respond to coronavirus through a series of articles and discussions, and we are collating content from across the sector that tells this story." logo="images/nmn/NMN_Scotland_logomark_NMN_logo_stacked_all_white.png" logo_style="padding:1rem;" ratio="16:9" image="images/nmn/NMN_Scotland_gradient_NMN_gradient-16x9_LRG.png" hide_read_more=true}}
+      </div>
+      <div class="column col-4 col-md-12">
+        {{> content_featured name="senior-leaders-programme" link="/support/digital/evolution/senior-leaders-2021" heading="h4" title="Senior Leaders Programme" body="We know we have hard times ahead. Widespread redundancies are expected, and the economy will take years to recover. The voluntary sector has never been more needed." logo_style="padding:1rem;" ratio="16:9" image="https://storage.googleapis.com/scvo-cms/scvo-cms/wp-content/uploads/2020/08/image-1.jpg" hide_read_more=true}}
+      </div>
+      <div class="column col-4 col-md-12">
+        <div class="bg-secondary s-rounded">
+          <div class="x-padding-full">
+            <div class="h3 b-padding-full">
+              What can we help you with?
+            </div>
+            {{> site_search_form id='home'}}
+
+            <div class="t-margin-full">
+              {{> useful_links hide_title=true}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="/support/coronavirus" class="banner banner-coronavirus-info-hub bg-yellow">
+  <div class="container v-padding-full">
+    <ul class="fa-ul">
+      <li>
+        <span class="fa-li" aria-hidden="true"><span class="fal fa-exclamation-triangle fa-3x fa-fw"></span></span>
+        <div class="banner-content">
+          <h3 class="no-margin">
+            Coronavirus Third Sector Information Hub
+          </h3>
+          <p class="no-margin">
+            Find guidance and funding to help your organisation respond to the crisis
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</a>
+
+<div class="bg-secondary">
+  <div class="container t-padding-full">
     <div class="columns">
-      <div class="column col-4 col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title h2">
-              Latest blog post
-            </div>
-          </div>
-          <div class="card-body">
-            {{#with @root.data.supplimentaryResponses.posts_latest.hits.hits.[0]._source ~}}
-            <h4>
-              <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
-            </h4>
-            <p>
-              {{{truncate description 200}}}
-              <a href="/{{replace post_slug '_' '/'}}">Read more</a>
-            </p>
-            <p>
-              <span class="text-primary r-margin"><a href="/post/author/{{author_slug}}" class="author">{{{author_name_full}}}</a></span>
-              {{momentFormat (moment publish_on 'x') 'Do MMMM YYYY'}}
-            </p>
-            {{/with ~}}
-          </div>
-          <div class="card-footer">
-            <h4 class="no-margin">Blogs</h4>
-            <p class="t-margin">
-              <a href="/about/blog">SCVO news</a><br />
-              <a href="/support/blog">Support & learning</a><br />
-              <a href="/funding/blog">Funding</a><br />
-              <a href="/policy/blog">Policy</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="column col-4 col-md-12">
-        <div class="card">
-          <div class="card-header">
-            <div class="card-title h2">
-              Latest press release
-            </div>
-          </div>
-          <div class="card-body">
-            {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
-            <h4>
-              <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
-            </h4>
-            <p>
-              {{{truncate description 400}}}
-              <a href="/{{replace post_slug '_' '/'}}">Read more</a>
-            </p>
-            {{/with ~}}
-          </div>
-          <div class="card-footer">
-            <a href="/about/press-media">All press releases</a>
-          </div>
-        </div>
-      </div>
-      <div class="column col-4 col-md-12">
-        <div class="card">
+      <div class="column col-7 col-md-12">
+        <div class="card v-margin-full b-padding-full">
           <div class="card-header">
             <div class="card-title h2">Become a member</div>
           </div>
@@ -75,70 +64,146 @@
             <p>
               SCVO membership also gives you access to vital support services that can help your group or organisation run smoothly.
             </p>
+          </div>
+        </div>
+      </div>
+      <div class="column col-5 hide-md" style="background-image:url('{{~>asset_url url='images/headers/montage_fourperson.png'~}}');background-position-y: bottom;background-size: contain;background-repeat: no-repeat;">
+        <div class="t-margin-full t-padding-full text-center">
+          <a href="/about/membership" class="btn btn-primary btn-lg">Join our community</a>
+        </div>
+      </div>
+      <div class="column col-5 col-md-12 show-md">
+        <div class="b-margin-full b-padding-full text-center">
+          <a href="/about/membership" class="btn btn-primary btn-lg">Join our community</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-            {{!-- Our community of {{addCommas @root.data.supplimentaryResponses.members_total.hits.total}} members believe that charities, community groups, social enterprises and voluntary organisations help make Scotland a better place; and our shared voice has the power and influence to tackle pressing issues, and create a better future for the people and communities we care about. --}}
+<div class="useful-content">
+  <div class="container v-padding-full v-margin-full">
+    <div class="columns linked-cards v-margin-full">
+      {{!-- <div class="column col-8 col-lg-12">
+        <div class="b-margin-full">
+          {{> adverts_office_space}}
+        </div>
+        <div class="b-margin-full">
+          {{> adverts_payroll}}
+        </div>
+      </div> --}}
+      <div class="column col-4 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h2">
+              Latest blog post
+            </div>
+          </div>
+          <div class="card-body">
+            {{#with @root.data.supplimentaryResponses.posts_latest.hits.hits.[0]._source ~}}
+              <a href="/{{replace post_slug '_' '/'}}" style="text-decoration:none;">
+                <h4 class="hover-primary">
+                  {{{trim title}}}
+                </h4>
+                <p>
+                  {{{truncate description 200}}}
+                </p>
+                <p>
+                  <strong class="text-primary r-margin author">{{{author_name_full}}}</strong>
+                  {{momentFormat (moment publish_on 'x') 'Do MMMM YYYY'}}
+                </p>
+              </a>
+            {{/with ~}}
           </div>
           <div class="card-footer">
-            <a href="/about/membership" class="btn btn-primary btn-lg">SCVO membership</a>
+            <h4 class="no-margin">Blogs</h4>
+            <p class="t-margin">
+              <a href="/about/blog">SCVO news</a><br />
+              <a href="/support/blog">Support & learning</a><br />
+              <a href="/funding/blog">Funding</a><br />
+              <a href="/policy/blog">Policy</a>
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      <div class="column col-4 col-md-12">
 
-<div class="bg-secondary useful-content">
-  <div class="container v-padding-full">
-    <div class="columns linked-cards v-margin-full">
-      {{#compare @root.data.tfnResponses.tfn_latest.hits.total.value ">" 0 ~}}
-      <div class="column col-4 col-md-12">
-        <h3 class="no-margin">
-          Latest news on TFN
-          <a href="https://tfn.scot/news?utm_source=scvo&utm_medium=website&utm_campaign=home" class="caption l-margin">See more</a>
-        </h3>
-        {{#with @root.data.tfnResponses.tfn_latest.hits.hits.[0]._source ~}}
-        {{> content_featured name="latest-tfn" link=(concat site path '?utm_source=scvo&utm_medium=website&utm_campaign=home') heading="h4" title=(trim title) body=(truncate description 280) ratio="16:9" image=image.original}}
-        {{/with ~}}
-      </div>
-      {{/compare ~}}
-      <div class="column col-4 col-md-12">
-        <h3 class="no-margin">
-          Featured campaign
-          <a href="/policy/campaigns" class="caption l-margin">See more</a>
-        </h3>
-        {{> content_featured name="never-more-needed" link="/policy/campaigns/never-more-needed" heading="h4" title="#NeverMoreNeeded" body="We are exploring how the voluntary sector has responded and continues to respond to coronavirus through a series of articles and discussions, and we are collating content from across the sector that tells this story." logo="images/nmn/NMN_Scotland_logomark_NMN_logo_stacked_all_white.png" logo_style="padding:1rem;" ratio="16:9" image="images/nmn/NMN_Scotland_gradient_NMN_gradient-16x9_LRG.png" read_more_text="Find out more"}}
-        {{!-- {{> content_featured name="featured-campaign" link="/policy/campaigns/eu-are-valued" heading="h4" title="#EUareValued" body="We believe every person who works to make a difference to Scottish communities should be valued, and that includes our colleagues who have come from other EU countries to live and work here. Scotland’s voluntary sector is strengthened thanks to their contribution." ratio="16:9" logo="images/home/eu-are-valued-logo.png" logo_style="padding:2rem; position:relative; width:100%;" image="images/home/eu-are-valued-bg.jpg"}} --}}
-      </div>
-      <div class="column col-4 col-md-12">
-        <div class="h3" style="padding-bottom: 0.8rem;">
-          What can we help you with?
+        {{!-- <div class="card b-padding-full">
+          <div class="card-header">
+            <div class="card-title h2">
+              Campaigns
+              <a href="/policy/campaigns" class="caption l-margin">See more</a>
+            </div>
+          </div>
+          <div class="card-body">
+            {{> content_featured name="featured-campaign" link="/policy/campaigns/eu-are-valued" heading="h4" title="#EUareValued" body="We believe every person who works to make a difference to Scottish communities should be valued, and that includes our colleagues who have come from other EU countries to live and work here. Scotland’s voluntary sector is strengthened thanks to their contribution." ratio="16:9" logo="images/home/eu-are-valued-logo.png" logo_style="padding:2rem; position:relative; width:100%;" image="images/home/eu-are-valued-bg.jpg" hide_read_more=true}}
+          </div>
+        </div> --}}
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h2">
+              Latest press release
+            </div>
+          </div>
+          <div class="card-body">
+            {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
+              <a href="/{{replace post_slug '_' '/'}}" style="text-decoration:none;">
+                <h4 class="hover-primary">
+                  {{{trim title}}}
+                </h4>
+                <p>
+                  {{{truncate description 400}}}
+                </p>
+              </a>
+            {{/with ~}}
+          </div>
+          <div class="card-footer">
+            <a href="/about/press-media">All press releases</a>
+          </div>
         </div>
-        {{> site_search_form id='home'}}
+      </div>
+      <div class="column col-4 col-md-12">
 
-        {{> useful_links}}
+        {{!--
+        {{#compare @root.data.tfnResponses.tfn_latest.hits.total.value ">" 0 ~}}
+          <div class="b-margin-full">
+            <h3 class="no-margin">
+              Latest news on TFN
+              <a href="https://tfn.scot/news?utm_source=scvo&utm_medium=website&utm_campaign=home" class="caption l-margin">See more</a>
+            </h3>
+            {{#with @root.data.tfnResponses.tfn_latest.hits.hits.[0]._source ~}}
+            {{> content_featured name="latest-tfn" link=(concat site path '?utm_source=scvo&utm_medium=website&utm_campaign=home') heading="h4" title=(trim title) body=(truncate description 280) ratio="16:9" image=image.original}}
+            {{/with ~}}
+          </div>
+        {{/compare ~}} --}}
+
+        <div class="">
+          {{> sidebars_goodmoves_latest}}
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="promoted-content v-padding-full">
+{{!-- <div class="promoted-content v-padding-full">
   <div class="container v-padding-full">
     <div class="columns">
       <div class="column col-6 col-md-12">
-        {{!-- {{> content_featured name="the-gathering" link="/the-gathering-2020" heading="h3" title="The Gathering" subtitle="19th & 20th February 2020" body="The Gathering is the largest free voluntary sector event in the UK, a place for all the amazing people working in the voluntary sector to network, showcase what they do and learn from each other." logo="images/gathering/logo_2020_colour.svg" ratio="4.5:1" image="images/gathering/header_2020.svg" read_more_text="Find out more" link_2="/the-gathering-2020/event-programme" link_2_text="Event programme"}} --}}
+        {{!-- {{> content_featured name="the-gathering" link="/the-gathering-2020" heading="h3" title="The Gathering" subtitle="19th & 20th February 2020" body="The Gathering is the largest free voluntary sector event in the UK, a place for all the amazing people working in the voluntary sector to network, showcase what they do and learn from each other." logo="images/gathering/logo_2020_colour.svg" ratio="4.5:1" image="images/gathering/header_2020.svg" read_more_text="Find out more" link_2="/the-gathering-2020/event-programme" link_2_text="Event programme"}} - -}}
         {{> content_featured name="charity-awards" link="/scottish-charity-awards" heading="h3" title="Scottish Charity Awards" subtitle="Friday 25th September 2020" body="Now in its 14th year, the Scottish Charity Awards highlight the best, most innovative and effective charity organisations and individuals from the past year, and celebrate those who make a difference in our communities." logo="images/awards/logo_2020_stacked_reverse.svg" ratio="16:9" image="images/home/charityawards-bg.jpg" read_more_text="Find out more"}}
       </div>
       <div class="column col-6 col-md-12">
-        {{!-- {{> content_featured name="twenty-years" link="/policy/campaigns/20-years-delivering-change" heading="h3" title="Charities, Scotland & Holyrood" subtitle="Twenty years delivering change" body="To celebrate the Scottish Parliament marking its 20th anniversary, SCVO has produced a limited-edition book - Charities, Scotland & Holyrood: Twenty Years Delivering Change." logo="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/banners/20yrs.png" ratio="4.5:1" image="https://storage.googleapis.com/scvo-cms/scvo-cms/scvo-cms-content/images/banners/20yrs-bg.png" read_more_text="Take a look"}} --}}
+        {{!-- {{> content_featured name="twenty-years" link="/policy/campaigns/20-years-delivering-change" heading="h3" title="Charities, Scotland & Holyrood" subtitle="Twenty years delivering change" body="To celebrate the Scottish Parliament marking its 20th anniversary, SCVO has produced a limited-edition book - Charities, Scotland & Holyrood: Twenty Years Delivering Change." logo="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/banners/20yrs.png" ratio="4.5:1" image="https://storage.googleapis.com/scvo-cms/scvo-cms/scvo-cms-content/images/banners/20yrs-bg.png" read_more_text="Take a look"}} - -}}
         {{> content_featured name="eu-are-valued" link="/policy/campaigns/eu-are-valued" heading="h4" title="#EUareValued" body="We believe every person who works to make a difference to Scottish communities should be valued, and that includes our colleagues who have come from other EU countries to live and work here. Scotland’s voluntary sector is strengthened thanks to their contribution." ratio="16:9" logo="images/home/eu-are-valued-logo.png" image="images/home/eu-are-valued-bg.jpg"}}
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 
-{{> sections_information}}
+{{!-- {{> sections_information}} --}}
 
-<div class="scvo-services v-padding-full">
+{{!-- <div class="scvo-services v-padding-full">
   <div class="container v-padding-full">
     <div class="columns">
       <div class="column col-8 col-md-12">
@@ -156,4 +221,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}

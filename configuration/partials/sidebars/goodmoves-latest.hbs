@@ -1,13 +1,28 @@
 {{#compare @root.data.supplimentaryResponses.goodmoves_latest.hits.total ">" 0 ~}}
 <div class="bg-goodmoves goodmoves-vacancies x-padding-full">
   <a href="https://goodmoves.com?utm_source=scvo&utm_campaign=list&utm_medium=website" title="Goodmoves - Charity and voluntary sector recruitment"><img src="{{~>asset_url url='images/logos/goodmoves.png'}}" class="service-logo" /></a>
-  <h4>Latest jobs</h4>
-  <ul>
+  <p class="caption text-white t-margin">
+    Charity and voluntary sector recruitment
+  </p>
+  <h3>Latest jobs</h3>
+  <ul class="b-margin-full">
     {{#each @root.data.supplimentaryResponses.goodmoves_latest.hits.hits ~}}
     {{#with _source ~}}
     <li>
-      <a href="https://goodmoves.com/vacancy/{{Id}}/{{slugify title}}?utm_source=scvo&utm_campaign=list&utm_medium=website">{{{trim title}}} – {{trim organisation.name}}</a>
-      <div class="caption">Closing {{momentFormat (moment closing_date 'x') "Do MMMM YYYY"}}</div>
+      <a href="https://goodmoves.com/vacancy/{{Id}}/{{slugify title}}?utm_source=scvo&utm_campaign=list&utm_medium=website" style="font-weight:normal;">
+        <strong>{{{trim title}}}</strong>{{#if organisation.name}} at {{trim organisation.name}}{{/if}}
+        <div class="text-white caption">
+          {{#ifAll (compare _score "<" 1) home_based}}
+            Home based
+          {{else}}
+            {{location}}
+          {{/ifAll}}
+        </div>
+        <div class="text-white caption">
+          Posted {{momentFromNow start_at}}
+          {{!-- Posted {{dateDistance start_at (dateParse null) addSuffix=true}} --}}
+        </div>
+      </a>
     </li>
     {{/with ~}}
     {{/each ~}}

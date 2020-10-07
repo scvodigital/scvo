@@ -1,11 +1,10 @@
-<div class="latest-posts b-padding-full bg-gray">
+{{!-- <div class="latest-posts b-padding-full bg-gray">
   <div class="container v-padding-full">
     <div class="columns">
       {{#compare @root.data.supplimentaryResponses.posts_latest.hits.total ">" 0 ~}}
       <div class="column col-6 col-md-12">
         <h3 class="b-margin-full">
           Recent SCVO blog posts
-          {{!-- <a href="/about/blog" class="caption l-margin">Read more</a> --}}
         </h3>
         <ul>
           {{#each (split "1,2,3,4" ",") ~}}
@@ -45,16 +44,9 @@
           {{#each (split "1,2,3" ",") ~}}
           {{#with (getProperty @root.data.tfnResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
           <li class="clearfix b-margin-full">
-            {{!-- <a href="{{concat site path '?utm_source=scvo&utm_medium=website&utm_campaign=footer'}}" class="pull-left r-margin no-underline"><img src="{{image.small}}" alt="{{{trim title}}}" class="avatar avatar-lg" /></a> --}}
             <a href="{{concat site path '?utm_source=scvo&utm_medium=website&utm_campaign=footer'}}">{{{trim title}}}</a>
             <div>{{{truncate description 140}}}</div>
             <div class="caption">{{momentFormat (moment d_published 'x') "Do MMMM YYYY"}}</div>
-            {{!-- <a href="{{concat site path '?utm_source=scvo&utm_medium=website&utm_campaign=footer'}}" style="background-image:url('{{image.large}}');background-size:cover;display:block;">
-              <div class="x-padding-full">
-                <h5>{{{trim title}}}</h5>
-                <div class="caption">{{momentFormat (moment d_published 'x') "Do MMMM YYYY"}}</div>
-              </div>
-            </a> --}}
           </li>
           {{/with ~}}
           {{/each ~}}
@@ -64,6 +56,8 @@
       {{/compare ~}}
     </div>
   </div>
-</div>
+</div> --}}
 
-{{> footers_image image="images/home/home-footer.jpg"}}
+{{> footers_tfn_latest}}
+
+{{!-- {{> footers_image image="images/home/home-footer.jpg"}} --}}

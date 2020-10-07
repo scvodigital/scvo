@@ -43,7 +43,7 @@ $blue-color-light-var: f4fbfc;
 $blue-color-dark: #6f9dae;
 $purple-color: #C0B5DA;
 $green-color: #AFD5A6;
-$yellow-color: #FFDB02;
+$yellow-color: #F9DA18;
 $pink-color: #FEB3B4;
 $orange-color: #F8AB23;
 
@@ -89,6 +89,10 @@ $fast-transition-speed: 0.12s;
     left: 0;
     height: 100%;
   }
+}
+
+.s-rounded {
+  border-radius: 0.1rem;
 }
 
 ::-moz-selection {
@@ -628,6 +632,9 @@ a:visited {
   transition: background-size $slow-transition-speed, color $slow-transition-speed, border $slow-transition-speed, background-color $slow-transition-speed;
   // transition-timing-function: ease-in-out;
 }
+a .hover-primary {
+  transition: color $slow-transition-speed;
+}
 h1 a:link,
 h1 a:visited,
 .h1 a:link,
@@ -663,6 +670,7 @@ footer a:link,
 footer a:visited {
   color: white;
 }
+a:hover .hover-primary,
 h1 a:hover,
 .h1 a:hover,
 h2 a:hover,
@@ -894,7 +902,8 @@ footer a {
   position: absolute;
   top: 0;
   left: 0;
-  background-image: linear-gradient(100deg, $secondary-color, transparent, $primary-color);
+  // background-image: linear-gradient(100deg, $secondary-color, transparent, $primary-color);
+  background-image: none;
   opacity: 0.3333;
   z-index: 2;
   -webkit-transition: $slow-transition-speed ease-in-out;
@@ -2286,6 +2295,11 @@ header {
   .form-group .form-select,
   .input-group .form-select {
     border-color: $primary-color;
+  }
+  .btn.btn-primary.btn-cta {
+    background-color: $yellow-color;
+    border-color: $yellow-color;
+    color: $secondary-color;
   }
 }
 .input-group.input-inline {
