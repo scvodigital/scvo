@@ -11,22 +11,57 @@
     "function_score": {
       "query": {
         "bool": {
-          "must": [
+          "filter": [
             {
-              "term": {
-                "k_post_status": "publish"
-              }
-            },
-            {
-              "term": {
-                "type": "tfn-post"
-              }
-            },
-            {
-              "terms": {
-                "k_post_type": [
-                  "news"
-                ]
+              "bool": {
+                "filter": [
+                  {
+                    "term": {
+                      "type": "tfn-post"
+                    }
+                  },
+                  {
+                    "terms": {
+                      "k_post_type": [
+                        "news"
+                      ]
+                    }
+                  }
+                ],
+                "must_not": [
+                  {
+                    "term": {
+                      "visibility.search_hide": {
+                        "value": true
+                      }
+                    }
+                  }
+                ],
+                "should": [
+                  {
+                    "bool": {
+                      "must_not": {
+                        "exists": {
+                          "field": "visibility.search_range"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "visibility.search_range": {
+                              "value": "now"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
               }
             }
           ],
