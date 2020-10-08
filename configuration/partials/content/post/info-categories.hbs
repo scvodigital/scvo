@@ -22,7 +22,7 @@
   <ul class="inline-list">
     {{#each post_tags ~}}
     <li>
-      {{#ifAny (compare this "Press Release") ~}}
+      {{#ifAny (compare this "Press release") ~}}
       <a href="/about/press-media" class="chip">Press release</a>
       {{else}}
       {{#ifAny (compare this "SCVO") (compare this "SCVO news") (compare this "SCVO Labs") (compare this "SCVO blog") ~}}
