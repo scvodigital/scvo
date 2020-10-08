@@ -25,8 +25,8 @@
   </div>
 </div>
 
-<a href="/support/coronavirus" class="banner banner-coronavirus-info-hub bg-yellow">
-  <div class="container v-padding-full">
+<a href="/support/coronavirus" class="banner banner-coronavirus-info-hub bg-yellow" style="background-color:#FFDC38 !important;background-image:url('{{~>asset_url url='images/home/covid_graphic_strip.svg'~}}') !important; background-size: cover !important;background-repeat: no-repeat !important;background-position: center center !important;">
+  <div class="container v-padding-full" style="display: flex;align-items: center;justify-content: left;height: 20vh;min-height: 180px;">
     <ul class="fa-ul">
       <li>
         <span class="fa-li" aria-hidden="true"><span class="fal fa-exclamation-triangle fa-3x fa-fw"></span></span>
@@ -46,7 +46,7 @@
 <div class="bg-secondary">
   <div class="container t-padding-full">
     <div class="columns">
-      <div class="column col-7 col-md-12">
+      <div class="column col-6 col-xl-7 col-md-12">
         <div class="card v-margin-full b-padding-full">
           <div class="card-header">
             <div class="card-title h2">Become a member</div>
@@ -67,6 +67,7 @@
           </div>
         </div>
       </div>
+      <div class="column col-1 hide-xl">&nbsp;</div>
       <div class="column col-5 hide-md" style="background-image:url('{{~>asset_url url='images/headers/montage_fourperson.png'~}}');background-position-y: bottom;background-size: contain;background-repeat: no-repeat;">
         <div class="t-margin-full t-padding-full text-center">
           <a href="/about/membership" class="btn btn-primary btn-lg">Join our community</a>
@@ -154,7 +155,7 @@
                   {{{trim title}}}
                 </h4>
                 <p>
-                  {{{truncate description 400}}}
+                  {{{truncate description 350}}}
                 </p>
               </a>
             {{/with ~}}
