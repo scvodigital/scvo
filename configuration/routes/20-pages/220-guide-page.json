@@ -1,7 +1,7 @@
 {
   "name": "support_guide_page",
   "debug": false,
-  "pattern": "/support/running-your-organisation/leaving-lockdown/:sub_section",
+  "pattern": "/support/running-your-organisation/coronavirus-restrictions/:sub_section",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -32,7 +32,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-resource",
-          "template": ">context.metaData.handlebars.queries.resources_guide-leaving-lockdown"
+          "template": ">context.metaData.handlebars.queries.resources_guide-coronavirus-restrictions"
         }
       },
       "renderer": "handlebars"
