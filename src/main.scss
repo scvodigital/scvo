@@ -1842,6 +1842,18 @@ body.services.credit-union {
 .bg-white {
   background: white;
 }
+.label-warning,
+.label-error,
+.label-success {
+  a:link,
+  a:visited {
+    color: white !important;
+  }
+  a:hover {
+    background: none !important;
+    text-decoration: underline;
+  }
+}
 .text-white {
   color: white;
 }
