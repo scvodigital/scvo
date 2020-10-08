@@ -53,6 +53,7 @@ $thick-line: 5px;
 $medium-line: 2px;
 $thin-line: 0.05rem;
 $border-radius: 6px;
+$border-radius-small: 0.1rem;
 $heading-font-family: 'Asap';
 $heading-font-weight: 800;
 $heading-link-weight: 600;
@@ -92,7 +93,7 @@ $fast-transition-speed: 0.12s;
 }
 
 .s-rounded {
-  border-radius: 0.1rem;
+  border-radius: $border-radius-small;
 }
 
 ::-moz-selection {
@@ -1769,8 +1770,8 @@ body.services.credit-union {
       color: white;
     }
     .btn:hover {
-      background-color: $secondary-color-dark;
-      border-color: $secondary-color-dark;
+      background-color: $secondary-color-light;
+      border-color: $secondary-color-light;
       color: white;
     }
   }
@@ -2707,6 +2708,12 @@ header.toolbar {
     background-size: 0 0;
     background-color: $primary-color;
     color: white;
+  }
+  .btn:hover,
+  .btn:focus,
+  .btn.active,
+  .btn.active:hover {
+    border-radius: $border-radius-small $border-radius-small 0 0;
   }
 }
 
