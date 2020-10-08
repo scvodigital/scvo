@@ -1,22 +1,26 @@
-<div class="container" id="helpful-options">
+<div class="container" id="helpful_options">
   <div class="b-margin-full b-padding-full">
     <p class="caption b-margin">Was this page helpful?</p>
     <a href="javascript:helpful('yes');" class="btn btn-lg btn-primary"><span class="far fa-fw fa-thumbs-up"></span></a>
     <a href="javascript:helpful('no');" class="btn btn-lg btn-primary"><span class="far fa-fw fa-thumbs-down"></span></a>
   </div>
 </div>
+<div class="container" id="helpful_thanks">
+  <p class="caption b-margin-full">Thanks for your feedback!</p>
+</div>
 <script>
   function helpful(decision) {
     var path = {{{stringify (default @root.request.url.pathname '')}}};
-    var cookieName = 'helpful'+path.replace(/\//ig, '_');
-    var cookie = scvo.getCookie(cookieName);
-    if (path && !cookie) {
-      scvo.setCookie(cookieName, decision, 90);
-      alert('helpful_'+decision + ' for ' + path+ ' and cookie name: '+cookieName);
-      gtag('event', 'helpful', {
-        event_category: decision,
+    // var cookieName = 'helpful'+path.replace(/\//ig, '_');
+    // var cookie = scvo.getCookie(cookieName);
+    if (path) {
+      // scvo.setCookie(cookieName, decision, 90);
+      gtag('event', decision, {
+        event_category: 'helpful',
         event_label: path
       });
+      $('#helpful_options').hide();
+      $('#helpful_thanks').show();
     }
   }
 </script>
