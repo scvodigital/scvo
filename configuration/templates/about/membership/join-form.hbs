@@ -37,7 +37,9 @@ document.addEventListener("DOMContentLoaded", function(){
     var q2 = $('#tfa_6').prop('checked');
     var q3 = $('#tfa_7').prop('checked');
     var q4 = $('#tfa_8').prop('checked');
-    if (q1 && q2 && q3 && q4) {
+    var q5 = $('#tfa_99').prop('checked');
+    var q6 = $('#tfa_100').prop('checked');
+    if (q1 && q2 && q3 && q4 && q5 && q6) {
       $('#tfa_286').val("Member");
     }
     this.submit();
@@ -577,14 +579,14 @@ wFORMS.behaviors.prefill.skip = false;
             <span id="tfa_98" class="choices vertical required">
               <span class="input-group">
                 <label class="form-checkbox postField" id="tfa_99-L" for="tfa_99">
-                  <input type="checkbox" value="tfa_99" class="required" id="tfa_99" name="tfa_99" aria-labelledby="tfa_99-L" data-tfa-labelledby="tfa_98-L tfa_99-L" required>
+                  <input type="checkbox" value="tfa_99" class="" id="tfa_99" name="tfa_99" aria-labelledby="tfa_99-L" data-tfa-labelledby="tfa_98-L tfa_99-L">
                   <i class="form-icon"></i>
                   My organisation is intended to be long-term e.g. NOT a fixed term project of less than 3 years
                 </label>
               </span>
               <span class="input-group">
                 <label class="form-checkbox postField" id="tfa_100-L" for="tfa_100">
-                  <input type="checkbox" value="tfa_100" class="required" id="tfa_100" name="tfa_100" aria-labelledby="tfa_100-L" data-tfa-labelledby="tfa_98-L tfa_100-L" required>
+                  <input type="checkbox" value="tfa_100" class="" id="tfa_100" name="tfa_100" aria-labelledby="tfa_100-L" data-tfa-labelledby="tfa_98-L tfa_100-L">
                   <i class="form-icon"></i>
                   My organisation is not party-political
                 </label>
