@@ -1,0 +1,63 @@
+{{#with @root.data.primaryResponse.hits.hits.[0] ~}}
+<div class="b-margin-full">
+  {{{replace (replace (replace (replace _source.content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+</div>
+{{/with ~}}
+
+<div class="b-margin-full b-padding-full">
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3 ~}}
+  <div class="caption pull-right">
+    <button class="btn btn-sm" id="accordions_expand">
+      Expand all
+    </button>
+    <button class="btn btn-sm" id="accordions_collapse">
+      Collapse all
+    </button>
+  </div>
+  {{/compare ~}}
+
+  {{#if @root.request.params.section ~}}
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3 ~}}
+  <div class="b-margin-full">
+    <br />
+  </div>
+  {{/compare ~}}
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
+  {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
+  {{#with _source ~}}
+  {{#ifAll title description ~}}
+  <h4 class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion{{/compare}}" aria-expanded="false">{{{title}}}</h4>
+  <div class="{{#compare @root.data.supplimentaryResponses.faqs.hits.total '>' 3}}accordion-content hidden{{/compare}}">
+    {{{description}}}
+  </div>
+  {{/ifAll ~}}
+  {{/with ~}}
+  {{/each ~}}
+  {{/compare ~}}
+  {{else}}
+  {{#each @root.data.supplimentaryResponses.faqs.aggregations.query.buckets ~}}
+  {{#ifNone (compare key "Kickstart scheme") (compare key "FAQ") ~}}
+  {{#compare key "!==" "General"}}
+  <h2>{{{key}}}</h2>
+  {{else}}
+  <br />
+  <br />
+  {{/compare}}
+  {{#each faqs.hits.hits ~}}
+  {{#with _source ~}}
+  {{#ifAll title description ~}}
+  <h4 class="accordion" aria-expanded="false">{{{title}}}</h4>
+  <p class="accordion-content hidden">
+    {{{description}}}
+    <br />
+    <br />
+  </p>
+  {{/ifAll ~}}
+  {{/with ~}}
+  {{/each ~}}
+  {{/ifNone ~}}
+  {{/each ~}}
+  {{/if ~}}
+</div>
+
+<script src="{{~>asset_url url='js/accordion.js'~}}"></script>
