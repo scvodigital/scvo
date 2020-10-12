@@ -2082,67 +2082,56 @@
 			"icon": "",
 			"children": [
 				{
-					"label": "Workspace",
-					"path": "/services/workspace",
-					"route": "^/services/workspace$",
-					"description": "Join us in one of our affordable shared office space locations in Glasgow, Edinburgh and Inverness.",
-					"icon": "building",
+					"label": "HR Service",
+					"path": "/services/hr",
+					"route": "^/services/hr$",
+					"description": "This service provides voluntary sector organisations across Scotland with expert HR and Employment Support guidance.",
+					"icon": "clipboard-list-check",
 					"children": [
 						{
-							"label": "Office space - Mansfield Traquair Centre, Edinburgh",
-							"path": "/services/workspace/mansfield-traquair-centre",
-							"route": "^/services/workspace/mansfield-traquair-centre$",
-							"description": "",
-							"icon": ""
+							"label": "Coronavirus restrictions guide",
+							"path": "/support/running-your-organisation/coronavirus-restrictions",
+							"description": "How voluntary organisations can comply with guidelines and safely support staff, users and volunteers",
+							"icon": "map-marker-question"
 						},
 						{
-							"label": "Office space - Brunswick House, Glasgow",
-							"path": "/services/workspace/brunswick-house",
-							"route": "^/services/workspace/brunswick-house$",
-							"description": "",
-							"icon": ""
+							"label": "Remote working guide",
+							"path": "/support/digital/guides/remote-working",
+							"description": "Guide for organisations supporting employees and volunteers to work from home. Includes tech, software and communication.",
+							"icon": "laptop-house"
 						},
 						{
-							"label": "Office space - Edward House, Glasgow",
-							"path": "/services/workspace/edward-house",
-							"route": "^/services/workspace/edward-house$",
-							"description": "",
-							"icon": ""
+							"label": "Managing staff and volunteers guide",
+							"path": "/support/running-your-organisation/staff-volunteers",
+							"description": "Resources to help you with HR issues and SJC pay scale information",
+							"icon": "hand-holding-heart"
 						},
 						{
-							"label": "Office space - Fairways House, Inverness",
-							"path": "/services/workspace/fairways-house",
-							"route": "^/services/workspace/fairways-house$",
-							"description": "",
-							"icon": ""
+							"label": "Mediation",
+							"path": "/support/running-your-organisation/governance/mediation",
+							"description": "Key areas voluntary organisations need to consider, with links to practical resources and sources of further support",
+							"icon": "book-reader"
 						},
 						{
-							"label": "Meeting space - Mansfield Traquair Centre, Edinburgh",
-							"path": "/services/workspace/mansfield-traquair-centre/meetings",
-							"route": "^/services/workspace/mansfield-traquair-centre/meetings$",
-							"description": "",
-							"icon": ""
+							"label": "Insurance/Liability",
+							"path": "/services/hr/insurance-liability",
+							"route": "^/services/hr/insurance-liability$",
+							"description": " ",
+							"icon": "balance-scale"
 						},
 						{
-							"label": "Meeting space - Brunswick House, Glasgow",
-							"path": "/services/workspace/brunswick-house/meetings",
-							"route": "^/services/workspace/brunswick-house/meetings$",
-							"description": "",
-							"icon": ""
+							"label": "Data protection/GDPR",
+							"path": "/services/hr/gdpr",
+							"route": "^/services/hr/gdpr$",
+							"description": " ",
+							"icon": "shield-check"
 						},
 						{
-							"label": "Meeting space - Fairways House, Inverness",
-							"path": "/services/workspace/fairways-house/meetings",
-							"route": "^/services/workspace/fairways-house/meetings$",
-							"description": "",
-							"icon": ""
-						},
-						{
-							"label": "Enquiry form",
-							"path": "/services/workspace/enquire",
-							"route": "^/services/workspace/enquire",
-							"description": "",
-							"icon": ""
+							"hidden_label": "Enquiry form",
+							"hidden_path": "/services/hr/enquire",
+							"hidden_route": "^/services/hr/enquire",
+							"hidden_description": " ",
+							"hidden_icon": "info-circle"
 						}
 					]
 				},
@@ -2233,57 +2222,67 @@
 					]
 				},
 				{
-					"label": "HR Service",
-					"path": "/services/hr",
-					"route": "^/services/hr$",
-					"menu_hidden": true,
-					"description": "This service provides voluntary sector organisations across Scotland with expert HR and Employment Support guidance.",
-					"icon": "clipboard-list-check",
+					"label": "Workspace",
+					"path": "/services/workspace",
+					"route": "^/services/workspace$",
+					"description": "Join us in one of our affordable shared office space locations in Glasgow, Edinburgh and Inverness.",
+					"icon": "building",
 					"children": [
 						{
-							"label": "Coronavirus restrictions guide",
-							"path": "/support/running-your-organisation/coronavirus-restrictions",
-							"description": "How voluntary organisations can comply with guidelines and safely support staff, users and volunteers",
-							"icon": "map-marker-question"
+							"label": "Office space - Mansfield Traquair Centre, Edinburgh",
+							"path": "/services/workspace/mansfield-traquair-centre",
+							"route": "^/services/workspace/mansfield-traquair-centre$",
+							"description": "",
+							"icon": ""
 						},
 						{
-							"label": "Remote working guide",
-							"path": "/support/digital/guides/remote-working",
-							"description": "Guide for organisations supporting employees and volunteers to work from home. Includes tech, software and communication.",
-							"icon": "laptop-house"
+							"label": "Office space - Brunswick House, Glasgow",
+							"path": "/services/workspace/brunswick-house",
+							"route": "^/services/workspace/brunswick-house$",
+							"description": "",
+							"icon": ""
 						},
 						{
-							"label": "Managing staff and volunteers guide",
-							"path": "/support/running-your-organisation/staff-volunteers",
-							"description": "Resources to help you with HR issues and SJC pay scale information",
-							"icon": "hand-holding-heart"
+							"label": "Office space - Edward House, Glasgow",
+							"path": "/services/workspace/edward-house",
+							"route": "^/services/workspace/edward-house$",
+							"description": "",
+							"icon": ""
 						},
 						{
-							"label": "Mediation",
-							"path": "/support/running-your-organisation/governance/mediation",
-							"description": "Key areas voluntary organisations need to consider, with links to practical resources and sources of further support",
-							"icon": "book-reader"
+							"label": "Office space - Fairways House, Inverness",
+							"path": "/services/workspace/fairways-house",
+							"route": "^/services/workspace/fairways-house$",
+							"description": "",
+							"icon": ""
 						},
 						{
-							"label": "Insurance/Liability",
-							"path": "/services/hr/insurance-liability",
-							"route": "^/services/hr/insurance-liability$",
-							"description": " ",
-							"icon": "balance-scale"
+							"label": "Meeting space - Mansfield Traquair Centre, Edinburgh",
+							"path": "/services/workspace/mansfield-traquair-centre/meetings",
+							"route": "^/services/workspace/mansfield-traquair-centre/meetings$",
+							"description": "",
+							"icon": ""
 						},
 						{
-							"label": "Data protection/GDPR",
-							"path": "/services/hr/gdpr",
-							"route": "^/services/hr/gdpr$",
-							"description": " ",
-							"icon": "shield-check"
+							"label": "Meeting space - Brunswick House, Glasgow",
+							"path": "/services/workspace/brunswick-house/meetings",
+							"route": "^/services/workspace/brunswick-house/meetings$",
+							"description": "",
+							"icon": ""
 						},
 						{
-							"hidden_label": "Enquiry form",
-							"hidden_path": "/services/hr/enquire",
-							"hidden_route": "^/services/hr/enquire",
-							"hidden_description": " ",
-							"hidden_icon": "info-circle"
+							"label": "Meeting space - Fairways House, Inverness",
+							"path": "/services/workspace/fairways-house/meetings",
+							"route": "^/services/workspace/fairways-house/meetings$",
+							"description": "",
+							"icon": ""
+						},
+						{
+							"label": "Enquiry form",
+							"path": "/services/workspace/enquire",
+							"route": "^/services/workspace/enquire",
+							"description": "",
+							"icon": ""
 						}
 					]
 				}
