@@ -10,27 +10,31 @@
 </div>
 <script>
   function helpful(decision) {
-    var path = {{{stringify (default @root.request.url.pathname '')}}};
-    var cookieName = 'helpful'+path.replace(/\//ig, '_');
-    var cookie = getCookie(cookieName);
+    try {
+      var path = {{{stringify (default @root.request.url.pathname '')}}};
+      var cookieName = 'helpful'+path.replace(/\//ig, '_');
+      var cookie = getCookie(cookieName);
 
-    if (path && (!cookie || cookie !== decision)) {
-      setCookie(cookieName, decision, 90);
-      gtag('event', decision, {
-        event_category: 'helpful',
-        event_label: path
-      });
+      if (path && (!cookie || cookie !== decision)) {
+        setCookie(cookieName, decision, 90);
+        gtag('event', decision, {
+          event_category: 'helpful',
+          event_label: path
+        });
 
-      $.ajax('/helpful-feedback', {
-        method: 'POST',
-        data: {
-          path: path,
-          choice: decision
-        },
-        complete: function(xhr, status) {
-          console.log('Feedback logged', xhr, status);
-        }
-      });
+        $.ajax('/helpful-feedback', {
+          method: 'POST',
+          data: {
+            path: path,
+            choice: decision
+          },
+          complete: function(xhr, status) {
+            console.log('Feedback logged', xhr, status);
+          }
+        });
+      }
+    } catch(err) {
+      console.error('Failed to give feedback', err);
     }
 
     $('#helpful_options').hide();
