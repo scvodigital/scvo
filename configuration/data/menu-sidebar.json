@@ -1502,7 +1502,7 @@
 					"label": "Digital",
 					"path": "/support/digital",
 					"route": "^/support/digital$",
-					"children": [
+					"old_children": [
 						{
 							"label": "Participation",
 							"label_full": "People:<br />Digital Participation",
@@ -1511,26 +1511,6 @@
 							"description": "How to deliver digital inclusion projects. Includes Connecting Scotland, Digital Participation Charter, Essential Digital Skills and Digital Champions.",
 							"icon": "hand-paper",
 							"children": [
-								{
-									"label": "Connecting Scotland",
-									"path": "https://connecting.scot",
-									"description": "Supporting the most vulnerable to get online. We’re working with Scottish Government and partners to connect up people who don’t have the confidence, kit and connectivity at home.",
-									"icon": "chart-network"
-								},
-								{
-									"label": "Digital Participation Charter",
-									"label_full": "Sign the Digital Participation Charter",
-									"path": "https://digitalparticipation.scot",
-									"description": "Sign Up & Skill Up for a Digitally Smarter Scotland - any organisation operating in Scotland can sign the Charter to take a step towards becoming digitally smarter.",
-									"icon": "file-signature"
-								},
-								{
-									"label": "Essential Digital Skills",
-									"path": "/support/digital/participation/skills",
-									"route": "^/support/digital/participation/skills$",
-									"description": "Understand how to measure essential digital skills with our toolkit.",
-									"icon": "wifi"
-								},
 								{
 									"label": "Digital Champions",
 									"label_full": "Become a Digital Champion",
@@ -1553,140 +1533,41 @@
 									"route": "^/support/digital/participation/digital-champions-in-social-housing$",
 									"description": "SCVO are working with several partners across the housing sector to develop a network of Digital Champions working in social housing around Scotland.",
 									"icon": "house"
-								},
-								{
-									"label": "Senior Leaders Programme",
-									"path": "/support/digital/evolution/senior-leaders-2021",
-									"__disabled__route": "^/support/digital/evolution/senior-leaders-2021$",
-									"description": "SCVO are helping voluntary sector leaders grow their skills, confidence and understanding of digital opportunities.",
-									"icon": "graduation-cap"
 								}
 							]
+						}
+					],
+					"children": [
+						{
+							"label": "Events",
+							"path": "/support/events?team=digital",
+							"description": "Zoom calls, webinars and events from SCVO digital team.",
+							"icon": "users-class"
 						},
 						{
-							"label": "Evolution",
-							"label_full": "Organisations:<br />Digital Evolution",
-							"path": "/support/digital/evolution",
-							"route": "^/support/digital/evolution$",
-							"description": "Creating a digitally confident third sector. Includes DigiShift, digital services, remote working, digital checkup and senior leaders programme.",
-							"icon": "laptop-house",
-							"children": [
-								{
-									"label": "DigiShift",
-									"path": "/support/digital/evolution/digishift",
-									"route": "^/support/digital/evolution/digishift$",
-									"description": "Shift your service delivery into digital and remote channels.",
-									"icon": "signal-stream",
-									"children": [
-										{
-											"label": "Events",
-											"path": "/support/digital/evolution/digishift/events",
-											"route": "^/support/digital/evolution/digishift/events$",
-											"description": "",
-											"icon": "video"
-										},
-										{
-											"label": "Remote working",
-											"path": "/support/digital/evolution/digishift/remote-working",
-											"route": "^/support/digital/evolution/digishift/remote-working$",
-											"description": "",
-											"icon": "microphone-alt-slash"
-										},
-										{
-											"label": "Content design",
-											"path": "/support/digital/evolution/digishift/content-design",
-											"route": "^/support/digital/evolution/digishift/content-design$",
-											"description": "",
-											"icon": "thumbs-up"
-										},
-										{
-											"label": "Service design",
-											"path": "/support/digital/evolution/digishift/service-design",
-											"route": "^/support/digital/evolution/digishift/service-design$",
-											"description": "",
-											"icon": "user-headset"
-										},
-										{
-											"label": "Inclusion & accessibility",
-											"path": "/support/digital/evolution/digishift/inclusion-accessibility",
-											"route": "^/support/digital/evolution/digishift/inclusion-accessibility$",
-											"description": "",
-											"icon": "user-check"
-										},
-										{
-											"label": "Building communities online",
-											"path": "/support/digital/evolution/digishift/communities",
-											"route": "^/support/digital/evolution/digishift/communities$",
-											"description": "",
-											"icon": "chart-network"
-										},
-										{
-											"label": "Risk & security",
-											"path": "/support/digital/evolution/digishift/risk",
-											"route": "^/support/digital/evolution/digishift/risk$",
-											"description": "",
-											"icon": "lock-alt"
-										}
-									]
-								},
-								{
-									"label": "Service delivery",
-									"label-full": "New service delivery models",
-									"path": "/support/digital/guides/digital-services",
-									"route": "",
-									"description": "An overview of some key principles behind digital service delivery, and how to guides for digital technology you may want to use.",
-									"icon": "house-signal"
-								},
-								{
-									"label": "Digital Check-up",
-									"path": "https://digitalcheckup.org",
-									"description": "Take our simple Digital Check-up to assess your organisation’s current digital maturity and plot a route ahead.",
-									"icon": "shield-check"
-								},
-								{
-									"label": "Essential skills",
-									"path": "/support/digital/participation/skills",
-									"__disabled__route": "^/support/digital/participation/skills$",
-									"description": "Understand and measure essential skills in your organisation.",
-									"icon": "wifi"
-								},
-								{
-									"label": "DigiHelp",
-									"path": "/support/digital/evolution/digihelp",
-									"route": "^/support/digital/evolution/digihelp$",
-									"description": "Help from our digital team.",
-									"icon": "user-headset"
-								},
-								{
-									"label": "Cyber resilience",
-									"path": "/support/digital/evolution/cyber-resilience",
-									"__disabled__route": "^/support/digital/evolution/cyber-resilience$",
-									"description": "We’re working with the Scottish Government to help organisations improve their cyber resilience.",
-									"icon": "shield-alt"
-								},
-								{
-									"label": "Senior Leaders Programme",
-									"path": "/support/digital/evolution/senior-leaders-2021",
-									"route": "^/support/digital/evolution/senior-leaders-2021$",
-									"description": "SCVO are helping voluntary sector leaders grow their skills, confidence and understanding of digital opportunities.",
-									"icon": "graduation-cap",
-									"children": [
-										{
-											"label": "Application form",
-											"path": "/support/digital/evolution/senior-leaders-2021/apply",
-											"route": "^/support/digital/evolution/senior-leaders-2021/apply$",
-											"description": "",
-											"icon": "cap"
-										}
-									]
-								}
-							]
+							"label": "Digital services: How to guide",
+							"path": "/support/digital/guides/digital-services",
+							"description": "How to deliver your services using digital tools. Includes popular tools and useful resources.",
+							"icon": "question-circle"
+						},
+						{
+							"label": "Digital inclusion: How to guide",
+							"path": "/support/digital/guides/digital-inclusion",
+							"description": "How to develop projects to help your users with their digital skills. Includes best practice, case studies and useful resources.",
+							"icon": "users"
+						},
+						{
+							"label": "Remote working: How to guide",
+							"path": "/support/digital/guides/remote-working",
+							"description": "How to support your employees and volunteers to work from home. Includes tech, software and communication.",
+							"icon": "laptop-house"
 						},
 						{
 							"label": "How to guides",
 							"path": "/support/digital/guides",
 							"route": "^/support/digital/guides$",
 							"description": "How to guides.",
+							"menu_hidden": true,
 							"icon": "question-circle",
 							"children": [
 								{
@@ -1916,11 +1797,99 @@
 							]
 						},
 						{
-							"label": "Events",
-							"path": "/support/events?team=digital",
-							"route": "^/support/events?team=digital$",
-							"description": "Zoom calls, webinars and events from SCVO digital team.",
-							"icon": "users-class"
+							"label": "DigiShift",
+							"path": "/support/digital/digishift",
+							"route": "^/support/digital/digishift$",
+							"description": "Shift your service delivery into digital and remote channels.",
+							"icon": "signal-stream",
+							"children": [
+								{
+									"label": "DigiShift recordings",
+									"path": "https://www.youtube.com/playlist?list=PLD_XS4xNFQV4Do1CBXl6cIb8eHpC_i0fE",
+									"description": "All our big Zoom calls are recorded and you can binge watch them on our YouTube Channel",
+									"icon": "video"
+								},
+								{
+									"label": "DigiListen podcasts",
+									"path": "https://anchor.fm/scvo-digital",
+									"description": "In our series of podcasts, we hear advice from experts and talk to voluntary organisations about what they’re learning and how charities can make use of digital and tech to reach and help people",
+									"icon": "podcast"
+								},
+								{
+									"label": "Digital evolution blogs",
+									"path": "/post/tags/digital-evolution",
+									"description": "The SCVO Digital team, expert advisers, and our colleagues across third sector share advice on how you can evolve digitally",
+									"icon": "blog"
+								},
+								{
+									"label": "Safety blogs",
+									"path": "/post/tags/cyber-resilience",
+									"description": "The SCVO Digital team and expert cyber security advisers share advice on cyber security and cyber resilience",
+									"icon": "key"
+								},
+								{
+									"label": "Events",
+									"path": "/support/events?team=digital",
+									"description": "Networking meetups, training webinars and events from SCVO digital team",
+									"icon": "users-class"
+								}
+							]
+						},
+						{
+							"label": "Connecting Scotland",
+							"path": "https://connecting.scot",
+							"description": "Supporting the most vulnerable to get online. We’re working with Scottish Government and partners to connect up people who don’t have the confidence, kit and connectivity at home.",
+							"icon": "chart-network"
+						},
+						{
+							"label": "Senior Leaders Programme",
+							"path": "/support/digital/senior-leaders-2021",
+							"route": "^/support/digital/senior-leaders-2021$",
+							"description": "SCVO are helping voluntary sector leaders grow their skills, confidence and understanding of digital opportunities.",
+							"icon": "graduation-cap",
+							"children": [
+								{
+									"label": "Application form",
+									"path": "/support/digital/senior-leaders-2021/apply",
+									"route": "^/support/digital/senior-leaders-2021/apply$",
+									"description": "",
+									"icon": "cap"
+								}
+							]
+						},
+						{
+							"label": "Essential Digital Skills",
+							"path": "/support/digital/skills",
+							"route": "^/support/digital/skills$",
+							"description": "Understand how to measure essential digital skills with our toolkit.",
+							"icon": "wifi"
+						},
+						{
+							"label": "Digital Check-up",
+							"path": "https://digitalcheckup.org",
+							"description": "Take our simple Digital Check-up to assess your organisation’s current digital maturity and plot a route ahead.",
+							"icon": "shield-check"
+						},
+						{
+							"label": "Cyber resilience",
+							"path": "/support/digital/cyber-resilience",
+							"route": "^/support/digital/cyber-resilience$",
+							"description": "We’re working with the Scottish Government to help organisations improve their cyber resilience.",
+							"icon": "shield-alt"
+						},
+						{
+							"label": "DigiHelp",
+							"path": "/support/digital/digihelp",
+							"route": "^/support/digital/digihelp$",
+							"description": "Help from our digital team.",
+							"icon": "user-headset"
+						},
+						{
+							"label": "Digital Participation Charter",
+							"label_full": "Sign the Digital Participation Charter",
+							"path": "https://digitalparticipation.scot",
+							"description": "Sign Up & Skill Up for a Digitally Smarter Scotland - any organisation operating in Scotland can sign the Charter to take a step towards becoming digitally smarter.",
+							"icon": "file-signature"
 						}
 					]
 				},
@@ -2868,7 +2837,7 @@
 						},
 						{
 							"label": "DigiShift",
-							"path": "/support/digital/evolution/digishift",
+							"path": "/support/digital/digishift",
 							"description": "Shift your service delivery into digital and remote channels",
 							"icon": "signal-stream"
 						}
