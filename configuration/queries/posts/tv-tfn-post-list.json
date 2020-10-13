@@ -26,6 +26,49 @@
                     "feature"
                   ]
                 }
+              },
+              {
+                "nested": {
+                  "path": "visibility",
+                  "query": {
+                    "bool": {
+                      "must_not": [
+                        {
+                          "term": {
+                            "visibility.search_hide": {
+                              "value": true
+                            }
+                          }
+                        }
+                      ],
+                      "should": [
+                        {
+                          "bool": {
+                            "must_not": {
+                              "exists": {
+                                "field": "visibility.search_range"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "bool": {
+                            "filter": [
+                              {
+                                "term": {
+                                  "visibility.search_range": {
+                                    "value": "now"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "minimum_should_match": 1
+                    }
+                  }
+                }
               }
             ],
             "must_not": [
