@@ -4,6 +4,9 @@
 </script>
 
 <div class="container">
+  <p class="label label-error">
+    Please note: this form is in test mode
+  </p>
   <p>
     Please complete this form to tell us about your HR support need.
   </p>
@@ -16,8 +19,8 @@
     <input type=hidden name="type" id="type" value="HR Service">
 
     {{!-- NOTE: These fields are optional debugging elements. Please uncomment these lines if you wish to test in debug mode. --}}
-    {{!-- <input type="hidden" name="debug" value=1>
-    <input type="hidden" name="debugEmail" value="calum.macuisdean@scvo.org.uk"> --}}
+    <input type="hidden" name="debug" value=1>
+    <input type="hidden" name="debugEmail" value="colette.osborne@scvo.org.uk">
 
     <div class="form-group">
       <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -83,14 +86,13 @@
     </div>
     {{!-- <input id="subject" name="subject" type="hidden" value="Web HR service enquiry" /> --}}
 
-    <div class="form-group">
+    {{!-- <div class="form-group">
       <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
         <label for="reason">Please choose the category that best describes your problem</label>
       </div>
       <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
         <select id="reason" name="reason" class="form-select">
           <option value="" disabled selected>Please select&hellip;</option>
-          {{!-- <option value="Additional Field Request">Additional field request</option> --}}
           <option value="Equality and diversity">Equality and diversity</option>
           <option value="Recruitment and starting employment">Recruitment and starting employment</option>
           <option value="Salaries and benefits">Salaries and benefits</option>
@@ -107,18 +109,18 @@
           <option value="Covid: blended and remote working">COVID-19: blended and remote working</option>
         </select>
       </div>
-    </div>
+    </div> --}}
 
     <div class="form-group">
       <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-        <label for="description">Please tell us about the problem you need support with. You can write up to 250 words. Only include details you are happy to have stored in line with our <a href="/privacy/hr-employment-service" target="_blank">privacy policy</a></label>
+        <label for="description">Your enquiry</label>
       </div>
       <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-        <textarea name="description" rows="5" class="form-input"></textarea>
+        <textarea name="description" rows="5" maxlength="1000" class="form-input"></textarea>
       </div>
     </div>
 
-    <div class="form-group t-margin" id="coronavirus-D" role="group" aria-labelledby="coronavirus-L">
+    {{!-- <div class="form-group t-margin" id="coronavirus-D" role="group" aria-labelledby="coronavirus-L">
       <div class="col-9 col-xl-12">
         <label class="form-checkbox" id="coronavirus-L" for="00N3z00000Cqfbn">
           <input type="checkbox" value="1" id="00N3z00000Cqfbn" name="00N3z00000Cqfbn" aria-labelledby="coronavirus-L">
@@ -126,18 +128,25 @@
           Please tick this box if your support request is due to the coronavirus crisis – this is for our internal reporting and will not impact on the support we provide
         </label>
       </div>
-    </div>
+    </div> --}}
 
     <div class="form-group">
       <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-        <label for="referral">How did you find out about this service?</label>
+        <label for="referral">How did you hear about SCVO?</label>
       </div>
       <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
         <select id="referral" name="referral" class="form-select">
           <option value="" selected>Please select&hellip;</option>
-          <option value="Word of mouth">Word of mouth</option>
-          <option value="Website">Website</option>
-          <option value="Email">Email</option>
+          <option value="E-bulletin">E-bulletin</option>
+          <option value="Social media">Social media</option>
+          <option value="Mailing">Mailing</option>
+          <option value="SCVO live event">SCVO live event</option>
+          <option value="SCVO online event">SCVO online event</option>
+          <option value="SCVO website">SCVO website</option>
+          <option value="Third Force News (TFN)">Third Force News (TFN)</option>
+          <option value="Recommended by another voluntary organisation">Recommended by another voluntary organisation</option>
+          <option value="Referred by your local TSI">Referred by your local TSI</option>
+          <option value="Referred by OSCR">Referred by OSCR</option>
           <option value="Other">Other</option>
         </select>
       </div>
