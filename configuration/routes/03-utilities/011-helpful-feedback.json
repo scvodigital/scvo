@@ -19,9 +19,9 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": "{{{json value=@root.data.sendEmail}}}",
+        "template": "cheers",
         "output": "body",
-        "contentType": "application/json"
+        "contentType": "text/plain"
       }
     }
   ]
