@@ -1,0 +1,40 @@
+[
+  {{#ifAll @root.request.body.path @root.request.body.choice ~}}
+  {{!-- Don't try to send if there is no email --}}
+  {
+    "from": "{{@root.context.metaData.title}} <{{@root.context.metaData.contacts.noreply}}>",
+    "h:sender": "{{@root.context.metaData.title}} <{{@root.context.metaData.contacts.noreply}}>",
+    "to": "tonicblue@gmail.com",
+    "o:tag": "helpful_feedback",
+    "o:tracking": true,
+    {{!-- "o:testmode": true, --}}
+    "tag":  "helpful_feedback",
+    "id":  "helpful_feedback",
+    "connectionName": "mg_scvo",
+    "subject": "Page feedback on {{@root.request.body.path}}. Positive? {{#compare @root.request.body.choice "yes"}}Yes{{else}}No{{/compare}}",
+    "html":
+    {{~#blockStringify this ~}}
+      <p>There has been some new page helpfulness feedback</p>
+      <ul>
+        <li>
+          <strong>Page: </strong>
+          <a href="https://scvo.scot{{@root.request.body.path}}">{{@root.request.body.path}}</a>
+        </li>
+        <li>
+          <strong>Was it helpful: </strong>
+          {{#compare @root.request.body.choice "yes"}}Yes{{else}}No{{/compare}}
+        </li>
+        <li>
+          <strong>Client IP: </strong>
+          {{@root.request.clientIp}}
+        </li>
+        <li>
+          <strong>User Agent: </strong>
+          {{default @root.request.headers.user-agent "none"}}
+        </li>
+      </ul>
+      <p>Cheers</p>
+    {{~/blockStringify ~}}
+  }
+  {{/ifAll ~}}
+]

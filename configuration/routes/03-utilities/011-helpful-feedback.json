@@ -1,0 +1,28 @@
+{
+  "name": "helpful_feedback",
+  "pattern": "/helpful-feedback",
+  "acceptedVerbs": "POST",
+  "debug": true,
+  "tasks": [
+    {
+      "name": "sendEmail",
+      "taskModule": "mailgun",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "parseJson": true,
+        "template": ">context.metaData.handlebars.templates.utilities_helpful-feedback-email"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": "{{{json value=@root.data.sendEmail}}}",
+        "output": "body",
+        "contentType": "application/json"
+      }
+    }
+  ]
+}

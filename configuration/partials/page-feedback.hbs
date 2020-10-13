@@ -20,6 +20,17 @@
         event_category: 'helpful',
         event_label: path
       });
+
+      $.ajax('/helpful-feedback', {
+        method: 'POST',
+        data: {
+          path: path,
+          choice: decision
+        },
+        complete: function(xhr, status) {
+          console.log('Feedback logged', xhr, status);
+        }
+      });
     }
 
     $('#helpful_options').hide();
