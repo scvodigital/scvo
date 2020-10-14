@@ -1,0 +1,211 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+  let formElement = document.getElementById("tfa_0");
+  if (null === formElement) {
+    formElement = document.getElementById("0");
+  }
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+    let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+    if (null !== cumulatedTimeElement) {
+      let cumulatedTime = parseInt(cumulatedTimeElement.value);
+      if (null !== cumulatedTime && cumulatedTime > 0) {
+        formTimeDiff += cumulatedTime;
+      }
+    }
+    let jsTimeInput = document.createElement("input");
+    jsTimeInput.setAttribute("type", "hidden");
+    jsTimeInput.setAttribute("value", formTimeDiff.toString());
+    jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("autocomplete", "off");
+    if (null !== formElement) {
+      formElement.appendChild(jsTimeInput);
+    }
+  };
+  if (null !== formElement) {
+    if(formElement.addEventListener){
+      formElement.addEventListener('submit', appendJsTimerElement, false);
+    } else if(formElement.attachEvent){
+      formElement.attachEvent('onsubmit', appendJsTimerElement);
+    }
+  }
+});
+</script>
+
+<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=7b41ae89a3222ed35d2bc01a921225bf3941e2c2" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=7b41ae89a3222ed35d2bc01a921225bf3941e2c2"></script>
+<script type="text/javascript">
+wFORMS.behaviors.prefill.skip = false;
+</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=7b41ae89a3222ed35d2bc01a921225bf3941e2c2"></script>
+
+{{#withExtend this registration=@root.data.registration_data.request.data.data_object.get_data.records.[0]}}
+<div class="form-horizontal form b-margin-full b-padding-full">
+  <div class="wFormContainer">
+    <div class="wFormHeader"></div>
+    <div class="wForm" id="4858267-WRPR" dir="ltr">
+      <div class="codesection" id="code-4858267"></div>
+      <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsTooltip labelsAbove" id="4858267" role="form" enctype="multipart/form-data">
+        <div id="tfa_1883" class="section">
+          <h3 id="tfa_1883-L">Organisation details</h3>
+          <div id="tfa_2788" class="section inline group">
+            <input type="hidden" id="tfa_2324" name="tfa_2324" value="{{registration.Id}}" class="">
+            <input type="hidden" id="tfa_2787" name="tfa_2787" value="{{registration.Contact__c}}" class="">
+            <input type="hidden" id="tfa_2790" name="tfa_2790" value="{{registration.Organisation__c}}" class="">
+          </div>
+          <div class="form-group field-container-D" id="tfa_1876-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_1876-L" class="form-label preField" for="tfa_1876">Organisation name</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_1876_dummy" name="tfa_1876_dummy" value="{{registration.Organisation_name__c}}" maxlength="150" class="form-input" disabled>
+              <input type="hidden" id="tfa_1876" name="tfa_1876" value="{{registration.Organisation_name__c}}" />
+            </div>
+          </div>
+        </div>
+        <div id="tfa_2784" class="section">
+          <h3 id="tfa_2784-L">Lead contact</h3>
+          <div id="tfa_2786" class="section inline group">
+            <div class="form-group field-container-D" id="tfa_2733-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_2733-L" class="form-label preField" for="tfa_2733">First name</label>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_2733_dummy" name="tfa_2733_dummy" value="{{registration.Contact_FirstName__c}}" class="form-input" disabled>
+                <input type="hidden" id="tfa_2733" name="tfa_2733" value="{{registration.Contact_FirstName__c}}" />
+              </div>
+            </div>
+            <div class="form-group field-container-D" id="tfa_2735-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_2735-L" class="form-label preField" for="tfa_2735">Last name</label>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <input type="text" id="tfa_2735_dummy" name="tfa_2735_dummy" value="{{registration.Contact_LastName__c}}" class="form-input" disabled>
+                <input type="hidden" id="tfa_2735" name="tfa_2735" value="{{registration.Contact_LastName__c}}" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tfa_2567" class="section">
+        <h4 id="tfa_2567-L">Job information</h4>
+        <div class="htmlSection" id="tfa_2792">
+          <div class="htmlContent col-9 col-xl-12" id="tfa_2792-HTML">
+            <p>We need to evidence that all the job placements are new and do not:</p>
+            <ul>
+              <li>replace existing or planned vacancies</li>
+              <li>cause existing employees, apprentices or contractors to lose or reduce their employment</li>
+            </ul>
+
+            <p>Can you consider the following:</p>
+
+            <ul>
+              <li>changes to your workforce in the last 6 months and why (for example redundancies and changes to hours worked by existing staff)</li>
+              <li>the number of people affected by changes to your workforce in the last 6 months</li>
+              <li>the kinds of roles, functions and average salary of those who were made redundant or who had their hours reduced in the last 6 months</li>
+              <li>if you would be able to create these job placements without Kickstart Scheme funding and what funding source you would use</li>
+              <li>what recruitment you have completed, started or paused in the last 6 months, including how similar these vacancies are or were to the roles you are creating for the Kickstart Scheme</li>
+              <li>if the job placements will be similar to existing or planned roles or the roles previously done by those made redundant or with fewer working hours, why you are using Kickstart Scheme funding to create similar roles</li>
+            </ul>
+          </div>
+        </div>
+        <div class="form-group field-container-D" id="tfa_2793-D">
+          <div class="col-9 col-xl-12">
+            <label id="tfa_2793-L" class="form-label preField reqMark" for="tfa_2793">Can you provide any detail relating to the above to confirm that your jobs are new and would not exist without the Kickstart funding</label>
+            <textarea cols="100%" rows="10%" aria-required="true" maxlength="15000" id="tfa_2793" name="tfa_2793" class="form-input" required></textarea>
+          </div>
+        </div>
+
+        <div class="form-group field-container-D t-margin-full" id="tfa_1925-D">
+          <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+            <label id="tfa_1925-L" class="form-label preField " for="tfa_1925">Job title</label>
+          </div>
+          <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+            <input type="text" id="tfa_1925" name="tfa_1925" maxlength="150" value="" autocomplete="nope" data-lpignore="true" class="form-input" required>
+          </div>
+        </div>
+
+        <div id="tfa_2779" class="section inline form-group">
+          <div class="col-3 col-xl-4 col-lg-12 form-group field-container-D r-padding b-margin" id="tfa_2721-D">
+            <label id="tfa_2721-L" class="form-label preField reqMark" for="tfa_2721">Nos<br />&nbsp;</label>
+            <input type="text" id="tfa_2721" name="tfa_2721" value="" maxlength="12" aria-required="true" title="Nos" class="form-input validate-integer required" required>
+          </div>
+          <div class="col-3 col-xl-4 col-lg-12 form-group field-container-D r-padding b-margin" id="tfa_2776-D">
+            <label id="tfa_2776-L" class="form-label preField reqMark" for="tfa_2776">No. hrs worked (wk) (25 hrs funded)</label>
+            <input type="text" id="tfa_2776" name="tfa_2776" value="" maxlength="12" aria-required="true" title="No. hrs worked (wk) (25 hrs funded)" class="form-input required" required>
+          </div>
+          <div class="col-3 col-xl-4 col-lg-12 form-group field-container-D b-margin" id="tfa_2778-D">
+            <label id="tfa_2778-L" class="form-label preField reqMark" for="tfa_2778">Hrly wage rate (NMW rate for age funded)</label>
+            <input type="text" id="tfa_2778" name="tfa_2778" value="" maxlength="15" aria-required="true" title="Hrly wage rate (NMW rate for age funded)" class="form-input required" required>
+          </div>
+        </div>
+        <div id="tfa_2781" class="section inline group t-margin">
+          <div class="form-group field-container-D" id="tfa_2780-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-padding b-margin">
+              <label id="tfa_2780-L" class="form-label preField reqMark" for="tfa_2780">Town/area(s)</label>
+              <input type="text" id="tfa_2780" name="tfa_2780" value="" maxlength="150" aria-required="true" title="Town/Area(s)" class="form-input required" required>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12 b-margin">
+              <label id="tfa_2632-L" class="form-label preField reqMark" for="tfa_2632">Local Authority area</label>
+              <select id="tfa_2632" name="tfa_2632" title="Local Authority areas" aria-required="true" class="form-select required" required>
+                <option value="">Please select...</option>
+                <option value="tfa_2741" id="tfa_2741" class="">Aberdeen</option>
+                <option value="tfa_2742" id="tfa_2742" class="">Aberdeenshire</option>
+                <option value="tfa_2743" id="tfa_2743" class="">Angus</option>
+                <option value="tfa_2744" id="tfa_2744" class="">Argyll &amp; Bute</option>
+                <option value="tfa_2745" id="tfa_2745" class="">Clackmannanshire</option>
+                <option value="tfa_2746" id="tfa_2746" class="">Dumfries &amp; Galloway</option>
+                <option value="tfa_2747" id="tfa_2747" class="">Dundee</option>
+                <option value="tfa_2748" id="tfa_2748" class="">East Ayrshire</option>
+                <option value="tfa_2749" id="tfa_2749" class="">East Dunbartonshire</option>
+                <option value="tfa_2750" id="tfa_2750" class="">East Lothian</option>
+                <option value="tfa_2751" id="tfa_2751" class="">East Renfrewshire</option>
+                <option value="tfa_2752" id="tfa_2752" class="">Edinburgh</option>
+                <option value="tfa_2753" id="tfa_2753" class="">Falkirk</option>
+                <option value="tfa_2754" id="tfa_2754" class="">Fife</option>
+                <option value="tfa_2755" id="tfa_2755" class="">Glasgow</option>
+                <option value="tfa_2756" id="tfa_2756" class="">Highland</option>
+                <option value="tfa_2757" id="tfa_2757" class="">Inverclyde</option>
+                <option value="tfa_2758" id="tfa_2758" class="">Midlothian</option>
+                <option value="tfa_2759" id="tfa_2759" class="">Na h-Eileanan Siar</option>
+                <option value="tfa_2760" id="tfa_2760" class="">Moray</option>
+                <option value="tfa_2761" id="tfa_2761" class="">North Ayrshire</option>
+                <option value="tfa_2762" id="tfa_2762" class="">North Lanarkshire</option>
+                <option value="tfa_2763" id="tfa_2763" class="">Orkney</option>
+                <option value="tfa_2764" id="tfa_2764" class="">Perth &amp; Kinross</option>
+                <option value="tfa_2765" id="tfa_2765" class="">Renfrewshire</option>
+                <option value="tfa_2766" id="tfa_2766" class="">Scottish Borders</option>
+                <option value="tfa_2767" id="tfa_2767" class="">Shetland</option>
+                <option value="tfa_2768" id="tfa_2768" class="">South Ayrshire</option>
+                <option value="tfa_2769" id="tfa_2769" class="">South Lanarkshire</option>
+                <option value="tfa_2770" id="tfa_2770" class="">Stirling</option>
+                <option value="tfa_2771" id="tfa_2771" class="">West Dunbartonshire</option>
+                <option value="tfa_2772" id="tfa_2772" class="">West Lothian</option>
+                <option value="tfa_2773" id="tfa_2773" class="">Other UK</option>
+                <option value="tfa_2774" id="tfa_2774" class="">Outwith UK</option>
+                <option value="tfa_2775" id="tfa_2775" class="">Not Known</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="form-group field-container-D t-margin" id="tfa_2782-D">
+          <div class="col-9 col-xl-12">
+            <label id="tfa_2782-L" class="form-label preField reqMark" for="tfa_2782">Job start month between Nov 20 and Dec 21</label>
+            <input type="text" id="tfa_2782" name="tfa_2782" value="" maxlength="150" aria-required="true" title="Job start month between Nov 20 and Dec 21" class="form-input required" required>
+          </div>
+        </div>
+      </div>
+      <div class="actions v-margin-full" id="4858267-A">
+        <input type="submit" data-label="Submit" class="btn btn-primary" id="submit_button" value="Submit">
+      </div>
+
+      <input type="hidden" value="4858267" name="tfa_dbFormId" id="tfa_dbFormId">
+      <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
+      <input type="hidden" value="ce49adc6f1da8c8b3046615e715418e0" name="tfa_dbControl" id="tfa_dbControl">
+      <input type="hidden" value="25" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+    </div>
+  </div>
+  {{/withExtend}}
