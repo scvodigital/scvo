@@ -7,11 +7,12 @@
   </p>
 
   <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="form-horizontal form b-margin-full b-padding-full">
-    <input type=hidden name='captcha_settings' value='{"keyname":"SCVO","fallback":"true","orgId":"00Db0000000KJWY","ts":""}'>
-    <input type=hidden name="orgid" value="00Db0000000KJWY">
-    <input type=hidden name="recordType" id="recordType" value="0123z00000084okAAA">
-    <input type=hidden name="retURL" value="https://scvo.scot/services/hr/enquire/thanks">
-    <input type=hidden name="type" id="type" value="HR Service">
+    <input type="hidden" name='captcha_settings' value='{"keyname":"SCVO","fallback":"true","orgId":"00Db0000000KJWY","ts":""}' />
+    <input type="hidden" name="orgid" value="00Db0000000KJWY" />
+    <input type="hidden" name="recordType" id="recordType" value="0123z00000084okAAA" />
+    <input type="hidden" name="retURL" value="https://scvo.scot/services/hr/enquire/thanks" />
+    <input type="hidden" name="type" id="type" value="HR Service" />
+    <input type="hidden" name="external" id="external" value="1" />
 
     {{!-- NOTE: These fields are optional debugging elements. Please uncomment these lines if you wish to test in debug mode. --}}
     {{!-- <input type="hidden" name="debug" value=1>
@@ -127,10 +128,10 @@
 
     <div class="form-group">
       <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-        <label for="referral">How did you hear about SCVO?</label>
+        <label for="00N3z00000Cqi0z">How did you hear about this service?</label>
       </div>
       <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-        <select id="referral" name="referral" class="form-select">
+        <select id="00N3z00000Cqi0z" name="00N3z00000Cqi0z" class="form-select">
           <option value="" selected>Please select&hellip;</option>
           <option value="E-bulletin">E-bulletin</option>
           <option value="Social media">Social media</option>
