@@ -50,11 +50,10 @@ wFORMS.behaviors.prefill.skip = false;
       <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsTooltip labelsAbove" id="4858267" role="form" enctype="multipart/form-data">
         <div id="tfa_1883" class="section">
           <h3 id="tfa_1883-L">Organisation details</h3>
-          <div id="tfa_2788" class="section inline group">
-            <input type="hidden" id="tfa_2324" name="tfa_2324" value="{{registration.Id}}" class="">
-            <input type="hidden" id="tfa_2787" name="tfa_2787" value="{{registration.Contact__c}}" class="">
-            <input type="hidden" id="tfa_2790" name="tfa_2790" value="{{registration.Organisation__c}}" class="">
-          </div>
+          <input type="hidden" id="tfa_2324" name="tfa_2324" value="{{registration.Id}}" />
+          <input type="hidden" id="tfa_2787" name="tfa_2787" value="{{registration.Contact__c}}" />
+          <input type="hidden" id="tfa_2790" name="tfa_2790" value="{{registration.Organisation__c}}" />
+          <input type="hidden" id="tfa_2794" name="tfa_2794" value="{{@root.request.params.session_key}}" />
           <div class="form-group field-container-D" id="tfa_1876-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
               <label id="tfa_1876-L" class="form-label preField" for="tfa_1876">Organisation name</label>
@@ -151,41 +150,41 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_2632-L" class="form-label preField reqMark" for="tfa_2632">Local Authority area</label>
               <select id="tfa_2632" name="tfa_2632" title="Local Authority areas" aria-required="true" class="form-select required" required>
                 <option value="">Please select...</option>
-                <option value="tfa_2741" id="tfa_2741" class="">Aberdeen</option>
-                <option value="tfa_2742" id="tfa_2742" class="">Aberdeenshire</option>
-                <option value="tfa_2743" id="tfa_2743" class="">Angus</option>
-                <option value="tfa_2744" id="tfa_2744" class="">Argyll &amp; Bute</option>
-                <option value="tfa_2745" id="tfa_2745" class="">Clackmannanshire</option>
-                <option value="tfa_2746" id="tfa_2746" class="">Dumfries &amp; Galloway</option>
-                <option value="tfa_2747" id="tfa_2747" class="">Dundee</option>
-                <option value="tfa_2748" id="tfa_2748" class="">East Ayrshire</option>
-                <option value="tfa_2749" id="tfa_2749" class="">East Dunbartonshire</option>
-                <option value="tfa_2750" id="tfa_2750" class="">East Lothian</option>
-                <option value="tfa_2751" id="tfa_2751" class="">East Renfrewshire</option>
-                <option value="tfa_2752" id="tfa_2752" class="">Edinburgh</option>
-                <option value="tfa_2753" id="tfa_2753" class="">Falkirk</option>
-                <option value="tfa_2754" id="tfa_2754" class="">Fife</option>
-                <option value="tfa_2755" id="tfa_2755" class="">Glasgow</option>
-                <option value="tfa_2756" id="tfa_2756" class="">Highland</option>
-                <option value="tfa_2757" id="tfa_2757" class="">Inverclyde</option>
-                <option value="tfa_2758" id="tfa_2758" class="">Midlothian</option>
-                <option value="tfa_2759" id="tfa_2759" class="">Na h-Eileanan Siar</option>
-                <option value="tfa_2760" id="tfa_2760" class="">Moray</option>
-                <option value="tfa_2761" id="tfa_2761" class="">North Ayrshire</option>
-                <option value="tfa_2762" id="tfa_2762" class="">North Lanarkshire</option>
-                <option value="tfa_2763" id="tfa_2763" class="">Orkney</option>
-                <option value="tfa_2764" id="tfa_2764" class="">Perth &amp; Kinross</option>
-                <option value="tfa_2765" id="tfa_2765" class="">Renfrewshire</option>
-                <option value="tfa_2766" id="tfa_2766" class="">Scottish Borders</option>
-                <option value="tfa_2767" id="tfa_2767" class="">Shetland</option>
-                <option value="tfa_2768" id="tfa_2768" class="">South Ayrshire</option>
-                <option value="tfa_2769" id="tfa_2769" class="">South Lanarkshire</option>
-                <option value="tfa_2770" id="tfa_2770" class="">Stirling</option>
-                <option value="tfa_2771" id="tfa_2771" class="">West Dunbartonshire</option>
-                <option value="tfa_2772" id="tfa_2772" class="">West Lothian</option>
-                <option value="tfa_2773" id="tfa_2773" class="">Other UK</option>
-                <option value="tfa_2774" id="tfa_2774" class="">Outwith UK</option>
-                <option value="tfa_2775" id="tfa_2775" class="">Not Known</option>
+                <option value="tfa_2741" id="tfa_2741">Aberdeen</option>
+                <option value="tfa_2742" id="tfa_2742">Aberdeenshire</option>
+                <option value="tfa_2743" id="tfa_2743">Angus</option>
+                <option value="tfa_2744" id="tfa_2744">Argyll &amp; Bute</option>
+                <option value="tfa_2745" id="tfa_2745">Clackmannanshire</option>
+                <option value="tfa_2746" id="tfa_2746">Dumfries &amp; Galloway</option>
+                <option value="tfa_2747" id="tfa_2747">Dundee</option>
+                <option value="tfa_2748" id="tfa_2748">East Ayrshire</option>
+                <option value="tfa_2749" id="tfa_2749">East Dunbartonshire</option>
+                <option value="tfa_2750" id="tfa_2750">East Lothian</option>
+                <option value="tfa_2751" id="tfa_2751">East Renfrewshire</option>
+                <option value="tfa_2752" id="tfa_2752">Edinburgh</option>
+                <option value="tfa_2753" id="tfa_2753">Falkirk</option>
+                <option value="tfa_2754" id="tfa_2754">Fife</option>
+                <option value="tfa_2755" id="tfa_2755">Glasgow</option>
+                <option value="tfa_2756" id="tfa_2756">Highland</option>
+                <option value="tfa_2757" id="tfa_2757">Inverclyde</option>
+                <option value="tfa_2758" id="tfa_2758">Midlothian</option>
+                <option value="tfa_2759" id="tfa_2759">Na h-Eileanan Siar</option>
+                <option value="tfa_2760" id="tfa_2760">Moray</option>
+                <option value="tfa_2761" id="tfa_2761">North Ayrshire</option>
+                <option value="tfa_2762" id="tfa_2762">North Lanarkshire</option>
+                <option value="tfa_2763" id="tfa_2763">Orkney</option>
+                <option value="tfa_2764" id="tfa_2764">Perth &amp; Kinross</option>
+                <option value="tfa_2765" id="tfa_2765">Renfrewshire</option>
+                <option value="tfa_2766" id="tfa_2766">Scottish Borders</option>
+                <option value="tfa_2767" id="tfa_2767">Shetland</option>
+                <option value="tfa_2768" id="tfa_2768">South Ayrshire</option>
+                <option value="tfa_2769" id="tfa_2769">South Lanarkshire</option>
+                <option value="tfa_2770" id="tfa_2770">Stirling</option>
+                <option value="tfa_2771" id="tfa_2771">West Dunbartonshire</option>
+                <option value="tfa_2772" id="tfa_2772">West Lothian</option>
+                <option value="tfa_2773" id="tfa_2773">Other UK</option>
+                <option value="tfa_2774" id="tfa_2774">Outwith UK</option>
+                <option value="tfa_2775" id="tfa_2775">Not Known</option>
               </select>
             </div>
           </div>
@@ -201,11 +200,11 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="submit" data-label="Submit" class="btn btn-primary" id="submit_button" value="Submit">
       </div>
 
-      <input type="hidden" value="4858267" name="tfa_dbFormId" id="tfa_dbFormId">
-      <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
-      <input type="hidden" value="ce49adc6f1da8c8b3046615e715418e0" name="tfa_dbControl" id="tfa_dbControl">
-      <input type="hidden" value="25" name="tfa_dbVersionId" id="tfa_dbVersionId">
-      <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+      <input type="hidden" value="4858267" name="tfa_dbFormId" id="tfa_dbFormId" />
+      <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId" />
+      <input type="hidden" value="ce49adc6f1da8c8b3046615e715418e0" name="tfa_dbControl" id="tfa_dbControl" />
+      <input type="hidden" value="26" name="tfa_dbVersionId" id="tfa_dbVersionId" />
+      <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff" />
     </div>
   </div>
   {{/withExtend}}
