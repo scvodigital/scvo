@@ -3459,11 +3459,15 @@ footer {
 
 .alignright {
   float: right;
-  margin-left: $padding !important;
+  img {
+    margin-left: $padding !important;
+  }
 }
 .alignleft {
   float: left;
-  margin-right: $padding !important;
+  img {
+    margin-right: $padding !important;
+  }
 }
 
 .text-left {
