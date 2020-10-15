@@ -29,6 +29,22 @@
                   },
                   {
                     "nested": {
+                      "path": "term_post_tag",
+                      "query": {
+                        "bool": {
+                          "must": [
+                            {
+                              "term": {
+                                "term_post_tag.slug": "nevermoreneeded"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "nested": {
                       "path": "visibility",
                       "query": {
                         "bool": {
@@ -112,19 +128,7 @@
                 "minimum_should_match": 1
               }
             }
-          ],
-          "should": [
-            {
-              "multi_match": {
-                "fields": [ "textbag", "textbag_boost_1^5" ],
-                "query": "#NeverMoreNeeded",
-                "type": "most_fields",
-                "tie_breaker": 0.3,
-                "operator": "OR"
-              }
-            }
-          ],
-          "minimum_should_match": 1
+          ]
         }
       },
       "functions": [
