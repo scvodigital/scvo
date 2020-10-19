@@ -1,7 +1,7 @@
 {{> footers_logos_digishift}}
 
 {{#ifAny (compare @root.data.supplimentaryResponses.latest_participation.hits.total ">" 0) (compare @root.data.supplimentaryResponses.latest_evolution.hits.total ">" 0) (compare @root.data.supplimentaryResponses.latest_cyber.hits.total ">" 0) ~}}
-<div class="related-posts b-padding-full bg-white">
+<div class="b-padding-full bg-white">
   <div class="container v-padding-full">
     <h3 class="b-margin-full">
       Latest posts
@@ -9,7 +9,7 @@
     <div class="columns">
       {{#with @root.data.supplimentaryResponses.latest_participation.hits.hits.[0]._source ~}}
       <div class="column col-4 col-lg-6 col-sm-12">
-        <div class="columns b-margin">
+        <div class="columns b-margin related-posts">
           <div class="column col-2 col-lg-3 col-md-4">
             <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
           </div>
@@ -18,12 +18,15 @@
             <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
           </div>
         </div>
+        <p class="card-footer t-margin-full">
+          <a href="/post/tags/digital-participation">Read more digital participation posts</a>
+        </p>
       </div>
       {{/with ~}}
-      {{#compare @root.data.supplimentaryResponses.latest_participation.hits.hits.[0]._id @root.data.supplimentaryResponses.latest_evolution.hits.hits.[0]._id ~}}
+      {{#compare @root.data.supplimentaryResponses.latest_evolution.hits.hits.[0]._id @root.data.supplimentaryResponses.latest_evolution.hits.hits.[0]._id ~}}
         {{#with @root.data.supplimentaryResponses.latest_evolution.hits.hits.[1]._source ~}}
         <div class="column col-4 col-lg-6 col-sm-12">
-          <div class="columns b-margin">
+          <div class="columns b-margin related-posts">
             <div class="column col-2 col-lg-3 col-md-4">
               <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
             </div>
@@ -32,12 +35,15 @@
               <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
             </div>
           </div>
+          <p class="card-footer t-margin-full">
+            <a href="/post/tags/digital-participation">Read more digital evolution posts</a>
+          </p>
         </div>
         {{/with ~}}
       {{else}}
         {{#with @root.data.supplimentaryResponses.latest_evolution.hits.hits.[0]._source ~}}
         <div class="column col-4 col-lg-6 col-sm-12">
-          <div class="columns b-margin">
+          <div class="columns b-margin related-posts">
             <div class="column col-2 col-lg-3 col-md-4">
               <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
             </div>
@@ -46,12 +52,15 @@
               <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
             </div>
           </div>
+          <p class="card-footer t-margin-full">
+            <a href="/post/tags/digital-evolution">Read more digital evolution posts</a>
+          </p>
         </div>
         {{/with ~}}
       {{/compare ~}}
       {{#with @root.data.supplimentaryResponses.latest_cyber.hits.hits.[0]._source ~}}
       <div class="column col-4 col-lg-6 col-sm-12">
-        <div class="columns b-margin">
+        <div class="columns b-margin related-posts">
           <div class="column col-2 col-lg-3 col-md-4">
             <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
           </div>
@@ -60,6 +69,9 @@
             <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
           </div>
         </div>
+        <p class="card-footer t-margin-full">
+          <a href="/post/tags/cyber-resilience">Read more cyber resilience posts</a>
+        </p>
       </div>
       {{/with ~}}
     </div>
@@ -106,16 +118,16 @@
           <img src="{{~>asset_url url='images/logos/organisations/digital-scotland.png'~}}" alt="Digital Scotland" class="p-centered r-padding-full l-padding-full" />
         </a>
       </div>
-      <div class="column col-3 col-md-6 align-centre r-padding-full l-padding-full b-padding-full">
+      {{!-- <div class="column col-3 col-md-6 align-centre r-padding-full l-padding-full b-padding-full">
         <a href="https://www.tnlcommunityfund.org.uk/" class="no-ext no-underline r-padding-full l-padding-full">
           <img src="https://onedigitaluk.com/wp-content/uploads/2019/01/NationalLotteryCommunityFundLogo.png" alt="National Lottery Community Fund" class="p-centered r-padding-full l-padding-full" />
         </a>
-      </div>
-      <div class="column col-3 col-md-6 align-centre r-padding-full l-padding-full b-padding-full">
+      </div> --}}
+      {{!-- <div class="column col-3 col-md-6 align-centre r-padding-full l-padding-full b-padding-full">
         <a href="http://onedigitaluk.com" class="no-ext no-underline r-padding-full l-padding-full">
           <img src="https://storage.googleapis.com/scvo-cms/scvo-cms-content/images/logos/onedigital.png" alt="OneDigital" class="p-centered r-padding-full l-padding-full" />
         </a>
-      </div>
+      </div> --}}
     </div>
   </div>
 </div>
