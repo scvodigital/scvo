@@ -42,6 +42,7 @@ wFORMS.behaviors.prefill.skip = false;
 <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=7b41ae89a3222ed35d2bc01a921225bf3941e2c2"></script>
 
 {{#withExtend this registration=@root.data.registration_data.request.data.data_object.get_data.records.[0]}}
+{{#if registration}}
 <div class="form-horizontal form b-margin-full b-padding-full">
   <div class="wFormContainer">
     <div class="wFormHeader"></div>
@@ -207,4 +208,10 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff" />
     </div>
   </div>
+  {{else}}
+  <h2>Error</h2>
+  <p>
+    Unfortunately your enquiry could not be found, please double check the URL provided and try again then contact us if it still does not work.
+  </p>
+  {{/if}}
   {{/withExtend}}
