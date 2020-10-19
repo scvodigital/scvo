@@ -1,0 +1,40 @@
+{
+  "size": 4,
+  "_source": [
+    "categories_id",
+    "title",
+    "publish_on",
+    "updated",
+    "path",
+    "url",
+    "wpid",
+    "description",
+    "description_truncated",
+    "is_press_release",
+    "author_slug",
+    "author_name_full",
+    "og_image",
+    "author_avatar",
+    "staff_profile",
+    "og_image",
+    "categories",
+    "categories_slug",
+    "post_tags",
+    "post_tags_slug",
+    "post_slug"
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "post_tags_slug": "never-more-needed"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "publish_on": "desc"
+  }
+}

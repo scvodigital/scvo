@@ -1,0 +1,20 @@
+{{#compare @root.data.tfnResponses.tfn_latest.hits.total.value ">" 0 ~}}
+<div class="related-posts v-padding-full bg-tfn">
+  <div class="container v-padding-full">
+    <h3>
+      <a href="https://tfn.scot?utm_source=scvo&utm_medium=website&utm_campaign=footer"><img src="{{~>asset_url url='images/logos/tfn-lochan.svg'~}}" alt="Third Force News" class="img-responsive" /></a>
+      Latest news&ensp;
+      <a href="https://tfn.scot/news?utm_source=scvo&utm_medium=website&utm_campaign=footer" class="caption">See more</a>
+    </h3>
+    <div class="columns">
+      {{#each @root.data.tfnResponses.tfn_latest.hits.hits ~}}
+      {{#with _source ~}}
+      <div class="column col-4 col-lg-6 col-sm-12 b-margin">
+        {{> content_featured name="latest-tfn" link=(concat site path '?utm_source=scvo&utm_medium=website&utm_campaign=footer') heading="h4" title=(trim title) body=(momentFormat (moment d_published 'x') "Do MMMM YYYY") ratio="16:9" image=image.original hide_read_more=true}}
+      </div>
+      {{/with ~}}
+      {{/each ~}}
+    </div>
+  </div>
+</div>
+{{/compare ~}}

@@ -34,17 +34,17 @@
         },
         "queryTemplates": [
           {
-            "name": "tfn_related_posts",
+            "name": "tfn_latest",
             "index": "",
             "type": "",
-            "template": ">context.metaData.handlebars.queries.posts_tfn-related-never-more-needed"
+            "template": ">context.metaData.handlebars.queries.posts_tfn-latest-never-more-needed"
           }
         ]
       },
       "renderer": "handlebars"
     },
     {
-      "name": "postsRelated",
+      "name": "postsLatest",
       "taskModule": "elasticsearch",
       "config": {
         "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
@@ -54,7 +54,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-post",
-          "template": ">context.metaData.handlebars.queries.posts_related-never-more-needed"
+          "template": ">context.metaData.handlebars.queries.posts_latest-never-more-needed"
         }
       },
       "renderer": "handlebars"
@@ -78,7 +78,7 @@
               "header": ">context.metaData.handlebars.templates.page-header",
               "body": ">context.metaData.handlebars.templates.page-body",
               "rightSidebar": ">context.metaData.handlebars.templates.policy_campaigns_never-more-needed-sidebar",
-              "footer": ">context.metaData.handlebars.templates.page-posts-news-footer"
+              "footer": ">context.metaData.handlebars.templates.policy_campaigns_never-more-needed-footer"
             },
             "contentType": "text/html"
           }
