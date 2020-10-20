@@ -239,7 +239,11 @@ wFORMS.behaviors.prefill.skip = false;
                     <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                   </label>
                 </div>
-                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required count-words" required{{/if}}>{{defaults.tfa_2325}}</textarea>
+                {{#if defaults.application_readonly}}
+                <div class="faux-textarea">{{replace defaults.tfa_2325}}</div>
+                {{else}}
+                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" {{#if defaults.application_editing}}class="form-input" disabled{{else}}class="form-input required count-words" required{{/if}}>{{defaults.tfa_2325}}</textarea>
+                {{/if}}
               </div>
             </div>
 
@@ -514,7 +518,11 @@ wFORMS.behaviors.prefill.skip = false;
                     <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                   </label>
                 </div>
-                <textarea id="tfa_2540" name="tfa_2540" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2540}}</textarea>
+                {{#if defaults.application_readonly}}
+                <div class="faux-textarea">{{replace defaults.tfa_2540}}</div>
+                {{else}}
+                <textarea id="tfa_2540" name="tfa_2540" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2540}}</textarea>
+                {{/if}}
               </div>
             </div>
 
@@ -1042,7 +1050,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2564" name="tfa_2564" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2564}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2564}}</div>
+                  {{else}}
+                  <textarea id="tfa_2564" name="tfa_2564" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2564}}</textarea>
+                  {{/if}}
                 </div>
               </div>
             </div>
@@ -1055,7 +1067,11 @@ wFORMS.behaviors.prefill.skip = false;
                     <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                   </label>
                 </div>
-                <textarea id="tfa_2565" name="tfa_2565" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2565}}</textarea>
+                {{#if defaults.application_readonly}}
+                <div class="faux-textarea">{{replace defaults.tfa_2565}}</div>
+                {{else}}
+                <textarea id="tfa_2565" name="tfa_2565" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2565}}</textarea>
+                {{/if}}
               </div>
             </div>
           </div>
@@ -1107,7 +1123,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2608" name="tfa_2608" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2608}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2608}}</div>
+                  {{else}}
+                  <textarea id="tfa_2608" name="tfa_2608" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2608}}</textarea>
+                  {{/if}}
                 </div>
               </div>
 
@@ -1120,7 +1140,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2609" name="tfa_2609" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2609}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2609}}</div>
+                  {{else}}
+                  <textarea id="tfa_2609" name="tfa_2609" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2609}}</textarea>
+                  {{/if}}
                 </div>
               </div>
 
@@ -1133,7 +1157,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2610" name="tfa_2610" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2610}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2610}}</div>
+                  {{else}}
+                  <textarea id="tfa_2610" name="tfa_2610" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2610}}</textarea>
+                  {{/if}}
                 </div>
               </div>
 
@@ -1145,7 +1173,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2611" name="tfa_2611" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2611}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2611}}</div>
+                  {{else}}
+                  <textarea id="tfa_2611" name="tfa_2611" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2611}}</textarea>
+                  {{/if}}
                 </div>
               </div>
 
@@ -1157,7 +1189,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2612" name="tfa_2612" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2612}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2612}}</div>
+                  {{else}}
+                  <textarea id="tfa_2612" name="tfa_2612" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2612}}</textarea>
+                  {{/if}}
                 </div>
               </div>
 
@@ -1169,7 +1205,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2613" name="tfa_2613" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2613}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2613}}</div>
+                  {{else}}
+                  <textarea id="tfa_2613" name="tfa_2613" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2613}}</textarea>
+                  {{/if}}
                 </div>
               </div>
 
@@ -1223,7 +1263,11 @@ wFORMS.behaviors.prefill.skip = false;
                           <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                         </label>
                       </div>
-                      <textarea id="tfa_2369" name="tfa_2369" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2369}}</textarea>
+                      {{#if defaults.application_readonly}}
+                      <div class="faux-textarea">{{replace defaults.tfa_2369}}</div>
+                      {{else}}
+                      <textarea id="tfa_2369" name="tfa_2369" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2369}}</textarea>
+                      {{/if}}
                     </div>
                   </div>
                 </div>
@@ -1703,7 +1747,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2587" name="tfa_2587" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2587}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2587}}</div>
+                  {{else}}
+                  <textarea id="tfa_2587" name="tfa_2587" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2587}}</textarea>
+                  {{/if}}
                 </div>
               </div>
 
@@ -1850,7 +1898,11 @@ wFORMS.behaviors.prefill.skip = false;
                       <span class="form-input-hint text-secondary">(maximum 150 words)</span>
                     </label>
                   </div>
-                  <textarea id="tfa_2598" name="tfa_2598" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required {{#if defaults.application_readonly}}readonly{{/if}}>{{defaults.tfa_2598}}</textarea>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2598}}</div>
+                  {{else}}
+                  <textarea id="tfa_2598" name="tfa_2598" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2598}}</textarea>
+                  {{/if}}
                 </div>
               </div>
 
