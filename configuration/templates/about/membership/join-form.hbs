@@ -129,10 +129,10 @@ wFORMS.behaviors.prefill.skip = false;
               Additional confirmation statements
             </h3>
             <div class="form-group field-container-D" id="tfa_98-D" role="group" aria-labelledby="tfa_98-L" data-tfa-labelledby="-L tfa_98-L">
-              <label id="tfa_98-L" class="form-label r-margin preField reqMark" aria-label="Please confirm the following statements are true" style="width:100%;">
+              <label id="tfa_98-L" class="form-label r-margin preField" aria-label="Please confirm the following statements are true" style="width:100%;">
                 Please confirm the following statements are true
               </label>
-              <span id="tfa_98" class="choices vertical required">
+              <span id="tfa_98" class="choices vertical">
                 <span class="input-group">
                   <label class="form-checkbox postField" id="tfa_99-L" for="tfa_99">
                     <input type="checkbox" value="tfa_99" id="tfa_99" name="tfa_99" aria-labelledby="tfa_99-L" data-tfa-labelledby="tfa_98-L tfa_99-L" data-conditionals="#tfa_10,#tfa_12,#membership-contact-L,#supporter-contact-L">
@@ -148,37 +148,6 @@ wFORMS.behaviors.prefill.skip = false;
                   </label>
                 </span>
               </span>
-            </div>
-            <div class="form-group field-container-D" id="tfa_101-D" role="radiogroup" aria-labelledby="tfa_101-L" data-tfa-labelledby="-L tfa_101-L">
-              <label id="tfa_101-L" class="form-label r-margin preField reqMark" style="width:100%;">
-                Is your organisation a faith-based group?
-              </label>
-              <span id="tfa_101" class="choices vertical required">
-                <span class="input-group">
-                  <label class="form-radio postField" id="tfa_102-L" for="tfa_102">
-                    <input type="radio" value="tfa_102" class="" id="tfa_102" name="tfa_101" aria-required="true" data-conditionals="#tfa_104-D" aria-labelledby="tfa_102-L" data-tfa-labelledby="tfa_101-L tfa_102-L">
-                    <i class="form-icon"></i>
-                    Yes
-                  </label>
-                </span>
-                <span class="input-group">
-                  <label class="form-radio postField" id="tfa_103-L" for="tfa_103">
-                    <input type="radio" value="tfa_103" class="" id="tfa_103" name="tfa_101" aria-required="true" aria-labelledby="tfa_103-L" data-tfa-labelledby="tfa_101-L tfa_103-L">
-                    <i class="form-icon"></i>
-                    No
-                  </label>
-                </span>
-              </span>
-            </div>
-            <div class="form-group field-container-D" id="tfa_104-D" data-condition="`#tfa_102`">
-              <div class="col-9 col-xl-12">
-                <label id="tfa_104-L" class="form-label r-margin preField reqMark" for="tfa_104">
-                  Please provide further details of the activities you provide beyond the promotion of religion
-                </label>
-              </div>
-              <div class="col-9 col-xl-12">
-                <textarea aria-required="true" id="tfa_104" name="tfa_104" title="Please provide further details of the activities you provide beyond the promotion of religion" class="form-input required" required></textarea>
-              </div>
             </div>
           </div>
         </div>
@@ -632,6 +601,37 @@ wFORMS.behaviors.prefill.skip = false;
           <h2 id="tfa_105-T">
             About your organisation
           </h2>
+          <div class="form-group field-container-D" id="tfa_101-D" role="radiogroup" aria-labelledby="tfa_101-L" data-tfa-labelledby="-L tfa_101-L">
+            <label id="tfa_101-L" class="form-label r-margin preField reqMark" style="width:100%;">
+              Is your organisation a faith-based group?
+            </label>
+            <span id="tfa_101" class="choices vertical required">
+              <span class="input-group">
+                <label class="form-radio postField" id="tfa_102-L" for="tfa_102">
+                  <input type="radio" value="tfa_102" class="" id="tfa_102" name="tfa_101" aria-required="true" data-conditionals="#tfa_104-D" aria-labelledby="tfa_102-L" data-tfa-labelledby="tfa_101-L tfa_102-L">
+                  <i class="form-icon"></i>
+                  Yes
+                </label>
+              </span>
+              <span class="input-group">
+                <label class="form-radio postField" id="tfa_103-L" for="tfa_103">
+                  <input type="radio" value="tfa_103" class="" id="tfa_103" name="tfa_101" aria-required="true" aria-labelledby="tfa_103-L" data-tfa-labelledby="tfa_101-L tfa_103-L">
+                  <i class="form-icon"></i>
+                  No
+                </label>
+              </span>
+            </span>
+          </div>
+          <div class="form-group field-container-D" id="tfa_104-D" data-condition="`#tfa_102`">
+            <div class="col-9 col-xl-12">
+              <label id="tfa_104-L" class="form-label r-margin preField reqMark" for="tfa_104">
+                Please provide further details of the activities you provide beyond the promotion of religion
+              </label>
+            </div>
+            <div class="col-9 col-xl-12">
+              <textarea aria-required="true" id="tfa_104" name="tfa_104" title="Please provide further details of the activities you provide beyond the promotion of religion" class="form-input required" required></textarea>
+            </div>
+          </div>
           <div class="form-group field-container-D" id="tfa_106-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
               <label id="tfa_106-L" class="form-label r-margin preField reqMark" for="tfa_106">
