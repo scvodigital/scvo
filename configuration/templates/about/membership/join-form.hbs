@@ -44,6 +44,35 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     this.submit();
   });
+  var MY_SELECTOR = "#wfPageNextId5" // Could be any selector
+
+  var observer = new MutationObserver(function(mutations){
+    for (var i=0; i < mutations.length; i++){
+      for (var j=0; j < mutations[i].addedNodes.length; j++){
+        // We're iterating through _all_ the elements as the parser parses them,
+        // deciding if they're the one we're looking for.
+        if (mutations[i].addedNodes[j].matches(MY_SELECTOR)){
+          $("#wfPageNextId5").click(function(e){
+            console.log(e);
+            var q5 = $('#tfa_99').prop('checked');
+            var q6 = $('#tfa_100').prop('checked');
+            if (q5 && q6) {
+              $('#additional-confirmation-supporter').addClass("hidden");
+            }
+          });
+
+          // We found our element, we're done:
+          observer.disconnect();
+        };
+      }
+    }
+  });
+
+  observer.observe(document.documentElement, {
+    childList: true,
+    subtree: true
+  });
+
 });
 </script>
 <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=c3b9cbcedf4034fce2cb803518bc10b2c688cc53" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
@@ -581,14 +610,14 @@ wFORMS.behaviors.prefill.skip = false;
             <span id="tfa_98" class="choices vertical required">
               <span class="input-group">
                 <label class="form-checkbox postField" id="tfa_99-L" for="tfa_99">
-                  <input type="checkbox" value="tfa_99" class="required" id="tfa_99" name="tfa_99" aria-labelledby="tfa_99-L" data-tfa-labelledby="tfa_98-L tfa_99-L" required>
+                  <input type="checkbox" value="tfa_99" id="tfa_99" name="tfa_99" aria-labelledby="tfa_99-L" data-tfa-labelledby="tfa_98-L tfa_99-L">
                   <i class="form-icon"></i>
                   My organisation is intended to be long-term e.g. NOT a fixed term project of less than 3 years
                 </label>
               </span>
               <span class="input-group">
                 <label class="form-checkbox postField" id="tfa_100-L" for="tfa_100">
-                  <input type="checkbox" value="tfa_100" class="required" id="tfa_100" name="tfa_100" aria-labelledby="tfa_100-L" data-tfa-labelledby="tfa_98-L tfa_100-L" required>
+                  <input type="checkbox" value="tfa_100" id="tfa_100" name="tfa_100" aria-labelledby="tfa_100-L" data-tfa-labelledby="tfa_98-L tfa_100-L">
                   <i class="form-icon"></i>
                   My organisation is not party-political
                 </label>
@@ -630,6 +659,18 @@ wFORMS.behaviors.prefill.skip = false;
       </div>
       <div class="wfPage" id="wfPgIndex-6">
         <div class="section pageSection" id="tfa_105">
+          <div id="additional-confirmation-supporter">
+            <p>
+              Based on your answers, you are not eligible for SCVO membership. However, you can join us as an <a href="/about/membership/supporters" target="_blank">SCVO supporter</a>.
+            </p>
+            <p>
+              Supporter offers the same benefits as membership, with the exception that your organisation will not be able to nominate a candidate to stand for election to our Board of Trustees or participate in any voting.
+            </p>
+            <p>
+              In order for the membership team to process your application please answer the following questions.
+            </p>
+          </div>
+
           <h2 id="tfa_105-T">
             About your organisation
           </h2>
