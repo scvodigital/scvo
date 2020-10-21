@@ -44,35 +44,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     this.submit();
   });
-  var MY_SELECTOR = "#wfPageNextId5" // Could be any selector
-
-  var observer = new MutationObserver(function(mutations){
-    for (var i=0; i < mutations.length; i++){
-      for (var j=0; j < mutations[i].addedNodes.length; j++){
-        // We're iterating through _all_ the elements as the parser parses them,
-        // deciding if they're the one we're looking for.
-        if (mutations[i].addedNodes[j].matches(MY_SELECTOR)){
-          $("#wfPageNextId5").click(function(e){
-            console.log(e);
-            var q5 = $('#tfa_99').prop('checked');
-            var q6 = $('#tfa_100').prop('checked');
-            if (q5 && q6) {
-              $('#additional-confirmation-supporter').addClass("hidden");
-            }
-          });
-
-          // We found our element, we're done:
-          observer.disconnect();
-        };
-      }
-    }
-  });
-
-  observer.observe(document.documentElement, {
-    childList: true,
-    subtree: true
-  });
-
 });
 </script>
 <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=c3b9cbcedf4034fce2cb803518bc10b2c688cc53" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
@@ -152,10 +123,68 @@ wFORMS.behaviors.prefill.skip = false;
               </span>
             </div>
           </div>
+
+          <div class="section pageSection" id="tfa_97">
+            <h3 id="tfa_97-T">
+              Additional confirmation statements
+            </h3>
+            <div class="form-group field-container-D" id="tfa_98-D" role="group" aria-labelledby="tfa_98-L" data-tfa-labelledby="-L tfa_98-L">
+              <label id="tfa_98-L" class="form-label r-margin preField reqMark" aria-label="Please confirm the following statements are true" style="width:100%;">
+                Please confirm the following statements are true
+              </label>
+              <span id="tfa_98" class="choices vertical required">
+                <span class="input-group">
+                  <label class="form-checkbox postField" id="tfa_99-L" for="tfa_99">
+                    <input type="checkbox" value="tfa_99" id="tfa_99" name="tfa_99" aria-labelledby="tfa_99-L" data-tfa-labelledby="tfa_98-L tfa_99-L" data-conditionals="#tfa_10,#tfa_12,#membership-contact-L,#supporter-contact-L">
+                    <i class="form-icon"></i>
+                    My organisation is intended to be long-term e.g. NOT a fixed term project of less than 3 years
+                  </label>
+                </span>
+                <span class="input-group">
+                  <label class="form-checkbox postField" id="tfa_100-L" for="tfa_100">
+                    <input type="checkbox" value="tfa_100" id="tfa_100" name="tfa_100" aria-labelledby="tfa_100-L" data-tfa-labelledby="tfa_98-L tfa_100-L" data-conditionals="#tfa_10,#tfa_12,#membership-contact-L,#supporter-contact-L">
+                    <i class="form-icon"></i>
+                    My organisation is not party-political
+                  </label>
+                </span>
+              </span>
+            </div>
+            <div class="form-group field-container-D" id="tfa_101-D" role="radiogroup" aria-labelledby="tfa_101-L" data-tfa-labelledby="-L tfa_101-L">
+              <label id="tfa_101-L" class="form-label r-margin preField reqMark" style="width:100%;">
+                Is your organisation a faith-based group?
+              </label>
+              <span id="tfa_101" class="choices vertical required">
+                <span class="input-group">
+                  <label class="form-radio postField" id="tfa_102-L" for="tfa_102">
+                    <input type="radio" value="tfa_102" class="" id="tfa_102" name="tfa_101" aria-required="true" data-conditionals="#tfa_104-D" aria-labelledby="tfa_102-L" data-tfa-labelledby="tfa_101-L tfa_102-L">
+                    <i class="form-icon"></i>
+                    Yes
+                  </label>
+                </span>
+                <span class="input-group">
+                  <label class="form-radio postField" id="tfa_103-L" for="tfa_103">
+                    <input type="radio" value="tfa_103" class="" id="tfa_103" name="tfa_101" aria-required="true" aria-labelledby="tfa_103-L" data-tfa-labelledby="tfa_101-L tfa_103-L">
+                    <i class="form-icon"></i>
+                    No
+                  </label>
+                </span>
+              </span>
+            </div>
+            <div class="form-group field-container-D" id="tfa_104-D" data-condition="`#tfa_102`">
+              <div class="col-9 col-xl-12">
+                <label id="tfa_104-L" class="form-label r-margin preField reqMark" for="tfa_104">
+                  Please provide further details of the activities you provide beyond the promotion of religion
+                </label>
+              </div>
+              <div class="col-9 col-xl-12">
+                <textarea aria-required="true" id="tfa_104" name="tfa_104" title="Please provide further details of the activities you provide beyond the promotion of religion" class="form-input required" required></textarea>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-2">
-        <div class="section pageSection" id="tfa_10" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`)">
+        <div class="section pageSection" id="tfa_10" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`) OR NOT (`#tfa_99`) OR NOT (`#tfa_100`)">
           <h2 id="tfa_10-T">
             Supporter
           </h2>
@@ -182,7 +211,7 @@ wFORMS.behaviors.prefill.skip = false;
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-3">
-        <div class="section pageSection" id="tfa_12" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8`">
+        <div class="section pageSection" id="tfa_12" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8` AND `#tfa_99` AND `#tfa_100`">
           <h2 id="tfa_12-T">
             Member
           </h2>
@@ -391,8 +420,8 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
           </div>
 
-          <h2 id="supporter-contact-L" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`)">Supporter contact</h2>
-          <h2 id="membership-contact-L" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8`">Membership contact</h2>
+          <h2 id="supporter-contact-L" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`) OR NOT (`#tfa_99`) OR NOT (`#tfa_100`)">Supporter contact</h2>
+          <h2 id="membership-contact-L" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8` AND `#tfa_99` AND `#tfa_100`">Membership contact</h2>
 
           <div class="form-group field-container-D" id="tfa_71-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -599,78 +628,7 @@ wFORMS.behaviors.prefill.skip = false;
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-5">
-        <div class="section pageSection" id="tfa_97">
-          <h2 id="tfa_97-T">
-            Additional confirmation statements
-          </h2>
-          <div class="form-group field-container-D" id="tfa_98-D" role="group" aria-labelledby="tfa_98-L" data-tfa-labelledby="-L tfa_98-L">
-            <label id="tfa_98-L" class="form-label r-margin preField reqMark" aria-label="Please confirm the following statements are true" style="width:100%;">
-              Please confirm the following statements are true
-            </label>
-            <span id="tfa_98" class="choices vertical required">
-              <span class="input-group">
-                <label class="form-checkbox postField" id="tfa_99-L" for="tfa_99">
-                  <input type="checkbox" value="tfa_99" id="tfa_99" name="tfa_99" aria-labelledby="tfa_99-L" data-tfa-labelledby="tfa_98-L tfa_99-L">
-                  <i class="form-icon"></i>
-                  My organisation is intended to be long-term e.g. NOT a fixed term project of less than 3 years
-                </label>
-              </span>
-              <span class="input-group">
-                <label class="form-checkbox postField" id="tfa_100-L" for="tfa_100">
-                  <input type="checkbox" value="tfa_100" id="tfa_100" name="tfa_100" aria-labelledby="tfa_100-L" data-tfa-labelledby="tfa_98-L tfa_100-L">
-                  <i class="form-icon"></i>
-                  My organisation is not party-political
-                </label>
-              </span>
-            </span>
-          </div>
-          <div class="form-group field-container-D" id="tfa_101-D" role="radiogroup" aria-labelledby="tfa_101-L" data-tfa-labelledby="-L tfa_101-L">
-            <label id="tfa_101-L" class="form-label r-margin preField reqMark" style="width:100%;">
-              Is your organisation a faith-based group?
-            </label>
-            <span id="tfa_101" class="choices vertical required">
-              <span class="input-group">
-                <label class="form-radio postField" id="tfa_102-L" for="tfa_102">
-                  <input type="radio" value="tfa_102" class="" id="tfa_102" name="tfa_101" aria-required="true" data-conditionals="#tfa_104-D" aria-labelledby="tfa_102-L" data-tfa-labelledby="tfa_101-L tfa_102-L">
-                  <i class="form-icon"></i>
-                  Yes
-                </label>
-              </span>
-              <span class="input-group">
-                <label class="form-radio postField" id="tfa_103-L" for="tfa_103">
-                  <input type="radio" value="tfa_103" class="" id="tfa_103" name="tfa_101" aria-required="true" aria-labelledby="tfa_103-L" data-tfa-labelledby="tfa_101-L tfa_103-L">
-                  <i class="form-icon"></i>
-                  No
-                </label>
-              </span>
-            </span>
-          </div>
-          <div class="form-group field-container-D" id="tfa_104-D" data-condition="`#tfa_102`">
-            <div class="col-9 col-xl-12">
-              <label id="tfa_104-L" class="form-label r-margin preField reqMark" for="tfa_104">
-                Please provide further details of the activities you provide beyond the promotion of religion
-              </label>
-            </div>
-            <div class="col-9 col-xl-12">
-              <textarea aria-required="true" id="tfa_104" name="tfa_104" title="Please provide further details of the activities you provide beyond the promotion of religion" class="form-input required" required></textarea>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="wfPage" id="wfPgIndex-6">
         <div class="section pageSection" id="tfa_105">
-          <div id="additional-confirmation-supporter">
-            <p>
-              Based on your answers, you are not eligible for SCVO membership. However, you can join us as an <a href="/about/membership/supporters" target="_blank">SCVO supporter</a>.
-            </p>
-            <p>
-              Supporter offers the same benefits as membership, with the exception that your organisation will not be able to nominate a candidate to stand for election to our Board of Trustees or participate in any voting.
-            </p>
-            <p>
-              In order for the membership team to process your application please answer the following questions.
-            </p>
-          </div>
-
           <h2 id="tfa_105-T">
             About your organisation
           </h2>
@@ -1270,7 +1228,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-7">
+      <div class="wfPage" id="wfPgIndex-6">
         <div class="section pageSection" id="tfa_156">
           <h2 id="tfa_156-T">Authorisation</h2>
           <input type="hidden" id="tfa_157" name="tfa_157" value="{{momentFormat (moment) 'YYYY-MM-DD'}}" class="">
