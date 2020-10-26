@@ -43,7 +43,6 @@ wFORMS.behaviors.prefill.skip = false;
 
 {{#withExtend this registration=@root.data.registration_data.request.data.data_object.get_data.records.[0]}}
 {{#if registration}}
-{{#compare registration.Status__c "Information requested"}}
 <div class="form-horizontal form b-margin-full b-padding-full">
   <div class="wFormContainer">
     <div class="wFormHeader"></div>
@@ -209,16 +208,6 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff" />
     </div>
   </div>
-  {{else}}
-  <h2>Form cannot be loaded</h2>
-  <p>
-    {{#compare registration.Status__c "Information provided"}}
-    You have already provided responses, thank you.
-    {{else}}
-    The form is not at a status that allows you to edit.
-    {{/compare}}
-  </p>
-  {{/compare}}
   {{else}}
   <h2>Error</h2>
   <p>
