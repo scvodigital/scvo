@@ -26,16 +26,12 @@
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  var currentTimestamp = {{momentFormat (moment now) 'x'}} * 1000;
-// 1603716133000
-  // $.getJSON( "https://icanhazepoch.com/", function(data) {
-  //   currentTimestamp = data * 1000;
-  // });
+  var currentTimestamp = {{momentFormat (momentConvertTz (moment now) "UTC" "Europe/London") "x"}};
   setInterval(timestamp, 500);
 
   function timestamp() {
-    console.log(currentTimestamp);
     currentTimestamp += 500;
+    console.log(currentTimestamp)
 
     var response = document.getElementById("g-recaptcha-response");
     if (response == null || response.value.trim() == "") {
