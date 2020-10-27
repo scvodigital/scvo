@@ -30,9 +30,10 @@ $credit-union-color-var: 8066AC;
 $credit-union-color-light-var: F6F5F9;
 
 $goodmoves-legacy-color: rgb(68, 133, 50);
-$goodmoves-color: #A8D91B;
+$goodmoves-color: #537F2C;
 $tfn-legacy-color: #3b9db1;
 $tfn-color: #22E5EB;
+$tfn-color-alt: #00A2BC;
 $fs-legacy-color: #537F2C;
 $fs-color: #537F2C;
 
@@ -1284,38 +1285,42 @@ ul.list-lg {
     height: 40px;
     line-height: 40px;
     border-bottom: $thick-line solid transparent;
-    // margin-right: $unit*(3/4);
-    // padding: 0 $unit/2;
     padding: 0 0.4rem;
     color: $secondary-color;
   }
-  // .text-link.active,
-  // .text-link:active,
-  // .text-link:focus,
-  // .text-link:hover {
-  //   border-bottom: $thick-line solid $secondary-color;
-  //   text-decoration: none;
-  //   // background-color: $primary-color;
-  //   // color: white;
-  // }
-  // .text-link.funding-scotland:hover {
-  //   background-color: $fs-color;
-  // }
-  // .text-link.goodmoves:hover {
-  //   background-color: $goodmoves-color;
-  //   color: $secondary-color;
-  // }
-  // .text-link.tfn:hover {
-  //   background-color: $tfn-color;
-  //   color: $secondary-color;
-  // }
+  .brand-coronavirus .text-link:hover {
+    background-color: $primary-color;
+    color: white;
+  }
+  .brand-fundingscotland .text-link:hover {
+    background-color: $fs-color;
+    color: white;
+  }
+  .brand-goodmoves .text-link:hover {
+    background-color: $goodmoves-color;
+    color: white;
+  }
+  .brand-tfn .text-link:hover {
+    background-color: $tfn-color-alt;
+    color: white;
+  }
+  .brand-scvo .brand-logo.active,
+  .brand-scvo .brand-logo:hover,
+  .brand-scvo .text-link:hover {
+    background-color: $primary-color;
+    color: white;
+  }
   .brand-logo {
-    // margin-left: $unit/4;
     line-height: 38px;
     width: 90px;
+    padding: 0 0.4rem;
     img {
       vertical-align: middle;
     }
+  }
+  .brand-scvo .brand-logo:hover img,
+  .brand-scvo .brand-logo.active img {
+    filter: invert(1) contrast(100);
   }
 }
 

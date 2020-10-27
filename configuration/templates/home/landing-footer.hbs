@@ -1,64 +1,70 @@
-{{!-- <div class="latest-posts b-padding-full bg-gray">
-  <div class="container v-padding-full">
-    <div class="columns">
-      {{#compare @root.data.supplimentaryResponses.posts_latest.hits.total ">" 0 ~}}
-      <div class="column col-6 col-md-12">
-        <h3 class="b-margin-full">
-          Recent SCVO blog posts
-        </h3>
-        <ul>
-          {{#each (split "1,2,3,4" ",") ~}}
-          {{#with (getProperty @root.data.supplimentaryResponses.posts_latest.hits.hits (concat this '._source')) ~}}
-          <li class="clearfix b-margin-full">
-            <a href="/{{replace post_slug '_' '/'}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
-            <a href="/{{replace post_slug '_' '/'}}">{{{trim title}}}</a>
-            <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
-          </li>
-          {{/with ~}}
-          {{/each ~}}
-        </ul>
-        <h3 class="t-margin-full">Blogs</h3>
-        <div class="columns">
-          <div class="column col-3 col-xl-6 col-lg-12 b-margin">
-            <a href="/about/blog" class="">SCVO news</a>
+<div class="useful-content">
+  <div class="container v-padding-full v-margin-full">
+    <div class="columns linked-cards t-margin b-margin-full">
+      <div class="column col-4 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h2 t-margin-full">
+              Latest blog post
+            </div>
           </div>
-          <div class="column col-3 col-xl-6 col-lg-12 b-margin">
-            <a href="/support/blog" class="">Support & learning</a>
+          <div class="card-body">
+            {{#with @root.data.supplimentaryResponses.posts_latest.hits.hits.[0]._source ~}}
+              <a href="/{{replace post_slug '_' '/'}}" style="text-decoration:none;">
+                <h4 class="hover-primary">
+                  {{{trim title}}}
+                </h4>
+                <p>
+                  {{{truncate description 200}}}
+                </p>
+                <p>
+                  <strong class="text-primary r-margin author">{{{author_name_full}}}</strong>
+                  {{momentFormat (moment publish_on 'x') 'Do MMMM YYYY'}}
+                </p>
+              </a>
+            {{/with ~}}
           </div>
-          <div class="column col-3 col-xl-6 col-lg-12 b-margin">
-            <a href="/funding/blog" class="">Funding</a>
-          </div>
-          <div class="column col-3 col-xl-6 col-lg-12 b-margin">
-            <a href="/policy/blog" class="">Policy</a>
+          <div class="card-footer">
+            <h4 class="no-margin">Blogs</h4>
+            <p class="t-margin">
+              <a href="/about/blog">SCVO news</a><br />
+              <a href="/support/blog">Support & learning</a><br />
+              <a href="/funding/blog">Funding</a><br />
+              <a href="/policy/blog">Policy</a>
+            </p>
           </div>
         </div>
       </div>
-      {{/compare ~}}
-      {{#compare @root.data.tfnResponses.tfn_latest.hits.total.value ">" 0 ~}}
-      <div class="column col-6 col-md-12 home-tfn">
-        <h3 class="b-margin-full">
-          <a href="https://tfn.scot?utm_source=scvo&utm_medium=website&utm_campaign=footer"><img src="{{~>asset_url url='images/logos/tfn-lochan.svg'~}}" alt="Third Force News" class="img-responsive" /></a>
-          Recent stories
-        </h3>
-        <ul>
-          {{#each (split "1,2,3" ",") ~}}
-          {{#with (getProperty @root.data.tfnResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
-          <li class="clearfix b-margin-full">
-            <a href="{{concat site path '?utm_source=scvo&utm_medium=website&utm_campaign=footer'}}">{{{trim title}}}</a>
-            <div>{{{truncate description 140}}}</div>
-            <div class="caption">{{momentFormat (moment d_published 'x') "Do MMMM YYYY"}}</div>
-          </li>
-          {{/with ~}}
-          {{/each ~}}
-        </ul>
-        <a href="https://tfn.scot?utm_source=scvo&utm_medium=website&utm_campaign=footer">Read more on TFN</a>
+      <div class="column col-4 col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title h2 t-margin-full">
+              Latest press release
+            </div>
+          </div>
+          <div class="card-body">
+            {{#with @root.data.supplimentaryResponses.press_latest.hits.hits.[0]._source ~}}
+              <a href="/{{replace post_slug '_' '/'}}" style="text-decoration:none;">
+                <h4 class="hover-primary">
+                  {{{trim title}}}
+                </h4>
+                <p>
+                  {{{truncate description 350}}}
+                </p>
+              </a>
+            {{/with ~}}
+          </div>
+          <div class="card-footer">
+            <a href="/about/press-media">All press releases</a>
+          </div>
+        </div>
       </div>
-      {{/compare ~}}
+      <div class="column col-4 col-md-12">
+        {{> sidebars_goodmoves_latest}}
+      </div>
     </div>
   </div>
-</div> --}}
-
-{{> sections_coronavirus title="Coronavirus Third Sector Information Hub" icon="exclamation-triangle" description="Find guidance and funding to help your organisation respond to the crisis" link="/support/coronavirus"}}
+</div>
 
 {{> footers_tfn_latest}}
 
