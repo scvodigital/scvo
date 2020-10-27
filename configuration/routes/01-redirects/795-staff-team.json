@@ -1,12 +1,21 @@
 {
   "name": "staff_team",
-  "pattern": "/staff-team",
+  "pattern": "/staff-team(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
   "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/about/contacts/staff{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
+      }
+    },
     {
       "name": "destination",
       "taskModule": "redirect",
       "config": {
-        "location": "/about/staff-team",
+        "location": ">data.url",
         "statusCode": 302
       }
     }
