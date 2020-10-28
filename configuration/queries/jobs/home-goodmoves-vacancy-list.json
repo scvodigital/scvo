@@ -1,6 +1,6 @@
 {
   "size": 3,
-  "_source": ["title", "start_at", "url", "location", "organisation", "home_based"],
+  "_source": ["title", "start_at", "url", "Id", "location", "organisation", "home_based"],
   "query": {
     "bool": {
       "filter": [
