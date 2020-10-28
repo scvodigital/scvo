@@ -33,8 +33,8 @@
     </div>
   </a>
   {{#unless hide_read_more ~}}
-  <div class="card-footer">
-    <a href="{{link}}" class="r-margin-full">{{{default read_more_text 'Read more'}}}</a>
+  <div class="{{#unless read_more_button}}card-footer{{/unless}}">
+    <a href="{{link}}" class="r-margin-full{{#if read_more_button}} btn btn-primary no-ext{{/if}}">{{{default read_more_text 'Read more'}}}</a>
     {{#ifAll link_2 link_2_text ~}}
     <a href="{{link_2}}" class="">{{{link_2_text}}}</a>
     {{/ifAll ~}}
