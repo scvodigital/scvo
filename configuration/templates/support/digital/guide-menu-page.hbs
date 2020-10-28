@@ -1,0 +1,164 @@
+{{#*inline "childMenu" ~}}
+{{#ifAll path (ifAny description icon) ~}}
+{{#unless menu_hidden}}
+<div class="column col-6 col-xl-12">
+  <div class="card b-padding-full">
+    {{#ifAny label label_full ~}}
+    <div class="card-heading">
+      <h2 class="card-title">
+        <a href="{{path}}">{{#if icon}}<span class="fal fa-fw fa-{{icon}} fa-2x">&nbsp;</span>{{/if}}{{#if label_full}}{{{label_full}}}{{else}}{{{label}}}{{/if}}</a>
+      </h2>
+    </div>
+    {{/ifAny ~}}
+    {{#if description ~}}
+    <div class="card-body">{{{description}}}</div>
+    {{/if ~}}
+    <div class="card-footer">
+      <a href="{{path}}">{{default link_label "Find out more"}}</a>
+    </div>
+  </div>
+</div>
+{{/unless}}
+{{/ifAll ~}}
+{{/inline ~}}
+
+<div class="b-margin-full b-padding-full">
+  {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
+    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+
+    <div class="linked-cards support support-organisation{{#if content}} t-margin-full t-padding-full{{/if}}">
+      {{#each @root.context.metaData.sidebarMenus ~}}
+        {{#each this ~}}
+          {{#if children ~}}
+            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+              <div class="columns">
+                {{#each this.children ~}}
+                {{> childMenu this level=2}}
+                {{/each ~}}
+              </div>
+            {{else}}
+              {{#each children ~}}
+                {{#if children ~}}
+                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                    <div class="columns">
+                      {{#each this.children ~}}
+                      {{> childMenu this level=3}}
+                      {{/each ~}}
+                    </div>
+                  {{else}}
+                    {{#each children ~}}
+                      {{#if children ~}}
+                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                          <div class="columns">
+                            {{#each this.children ~}}
+                            {{> childMenu this level=4}}
+                            {{/each ~}}
+                          </div>
+                        {{else}}
+                          {{#each children ~}}
+                            {{#if children ~}}
+                              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                <div class="columns">
+                                  {{#each this.children ~}}
+                                  {{> childMenu this level=5}}
+                                  {{/each ~}}
+                                </div>
+                              {{else}}
+                              {{#each children ~}}
+                                {{#if children ~}}
+                                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                    <div class="columns">
+                                      {{#each this.children ~}}
+                                      {{> childMenu this level=6}}
+                                      {{/each ~}}
+                                    </div>
+                                  {{else}}
+                                    {{#each children ~}}
+                                      {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                      <div class="columns">
+                                        {{#each ../this.children ~}}
+                                        {{> childMenu this level=6}}
+                                        {{/each ~}}
+                                      </div>
+                                      {{/ifAll ~}}
+                                    {{/each ~}}
+                                  {{/ifAll ~}}
+                                {{else}}
+                                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                    <div class="columns">
+                                      {{#each ../this.children ~}}
+                                      {{> childMenu this level=5}}
+                                      {{/each ~}}
+                                    </div>
+                                  {{/ifAll ~}}
+                                {{/if ~}}
+                              {{/each ~}}
+                              {{/ifAll ~}}
+                            {{else}}
+                              {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                                <div class="columns">
+                                  {{#each ../this.children ~}}
+                                  {{> childMenu this level=4}}
+                                  {{/each ~}}
+                                </div>
+                              {{/ifAll ~}}
+                            {{/if ~}}
+                          {{/each ~}}
+                        {{/ifAll ~}}
+                      {{else}}
+                        {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                          <div class="columns">
+                            {{#each ../this.children ~}}
+                            {{> childMenu this level=3}}
+                            {{/each ~}}
+                          </div>
+                        {{/ifAll ~}}
+                      {{/if ~}}
+                    {{/each ~}}
+                  {{/ifAll ~}}
+                {{else}}
+                  {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+                  <div class="columns">
+                    {{#each ../this.children ~}}
+                    {{> childMenu this level=2}}
+                    {{/each ~}}
+                  </div>
+                  {{/ifAll ~}}
+                {{/if ~}}
+              {{/each ~}}
+            {{/ifAll ~}}
+          {{else}}
+            {{#ifAll route (regexMatch @root.request.url.pathname route "gi") ~}}
+            {{/ifAll ~}}
+          {{/if ~}}
+        {{/each ~}}
+      {{/each ~}}
+    </div>
+  </div>
+
+  {{#with quotation}}
+  <div class="wp-block-media-text alignwide is-stacked-on-mobile clearfix t-margin-full t-padding-full" style="grid-template-columns:15% auto">
+    <figure class="wp-block-media-text__media">
+      <img src="{{headshot}}" alt="" class="wp-image img-responsive" sizes="(max-width: 225px) 100vw, 225px">
+    </figure>
+    <div class="wp-block-media-text__content">
+      <blockquote class="wp-block-quote">
+        <p>
+          {{{text}}}
+        </p>
+        <cite>
+          {{#if author_url}}<a href="{{author_url}}">{{/if}}
+          {{{author}}}{{#if author_title}}{{#if author}}, {{/if}}{{author_title}}{{/if}}
+          {{#if author_url}}</a>{{/if}}
+        </cite>
+      </blockquote>
+    </div>
+  </div>
+  {{/with}}
+
+  {{/with ~}}
+  {{/if ~}}
+</div>
+
