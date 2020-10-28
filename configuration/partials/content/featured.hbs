@@ -1,5 +1,5 @@
 <div class="card card-no-padding {{name}}">
-  <a href="{{link}}" class="no-underline">
+  <a href="{{link}}" class="no-underline no-ext">
     <div class="card-image-link">
       <div class="card-image-wrapper s-rounded">
         <div class="card-image" style="{{#if ratio}}--aspect-ratio: {{replace ratio ':' '/'}};{{/if}}background-image: url('{{#if (contains image 'http')}}{{replace image 'http://' 'https://'}}{{else}}{{~>asset_url url=image~}}{{/if}}')">
