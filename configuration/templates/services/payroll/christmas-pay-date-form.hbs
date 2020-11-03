@@ -1,0 +1,133 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+  let formElement = document.getElementById("tfa_0");
+  if (null === formElement) {
+    formElement = document.getElementById("0");
+  }
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+    let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+    if (null !== cumulatedTimeElement) {
+      let cumulatedTime = parseInt(cumulatedTimeElement.value);
+      if (null !== cumulatedTime && cumulatedTime > 0) {
+        formTimeDiff += cumulatedTime;
+      }
+    }
+    let jsTimeInput = document.createElement("input");
+    jsTimeInput.setAttribute("type", "hidden");
+    jsTimeInput.setAttribute("value", formTimeDiff.toString());
+    jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("autocomplete", "off");
+    if (null !== formElement) {
+      formElement.appendChild(jsTimeInput);
+    }
+  };
+  if (null !== formElement) {
+    if(formElement.addEventListener){
+      formElement.addEventListener('submit', appendJsTimerElement, false);
+    } else if(formElement.attachEvent){
+      formElement.attachEvent('onsubmit', appendJsTimerElement);
+    }
+  }
+});
+</script>
+
+<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=1915a563ce254820c5835180e21c94c3877ecf99" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=1915a563ce254820c5835180e21c94c3877ecf99"></script>
+<script type="text/javascript">
+wFORMS.behaviors.prefill.skip = false;
+</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=1915a563ce254820c5835180e21c94c3877ecf99"></script>
+
+{{#withExtend this data=@root.data.payroll_data.request.data.data_object.get_data.records.[0]}}
+{{#if data}}
+{{#if data.Christmas_payroll_date_confirmed__c}}
+<div class="form-horizontal form b-margin-full b-padding-full">
+  <div class="wFormContainer">
+    <div class="wFormHeader"></div>
+    <div class="wForm" id="4863680-WRPR" dir="ltr">
+      <div class="codesection" id="code-4863680"></div>
+      <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsTooltip labelsAbove" id="4863680" role="form" enctype="multipart/form-data">
+
+        <div id="tfa_1883" class="section">
+          <h3 id="tfa_1883-L">Organisation details</h3>
+          <input type="hidden" id="tfa_2794" name="tfa_2794" value="{{@root.request.params.session_key}}" />
+          <div class="form-group field-container-D" id="tfa_1876-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_1876-L" class="form-label preField" for="tfa_1876">Organisation name</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_1876_dummy" name="tfa_1876_dummy" value="{{data.Account_Name__c}}" maxlength="150" class="form-input" disabled>
+              <input type="hidden" id="tfa_1876" name="tfa_1876" value="{{data.Account_Name__c}}" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tfa_2781" class="section inline group t-margin">
+        <div class="form-group field-container-D" id="tfa_2780-D">
+          <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12 b-margin">
+            <label id="tfa_6-L" class="form-label preField reqMark" for="tfa_6">Please select your desired December pay date</label>
+            <select id="tfa_6" name="tfa_6" aria-required="true" class="form-select required" required>
+              <option value="">Please select...</option>
+              <option value="tfa_7" id="tfa_7" class="">01/12/2020</option>
+              <option value="tfa_8" id="tfa_8" class="">02/12/2020</option>
+              <option value="tfa_9" id="tfa_9" class="">03/12/2020</option>
+              <option value="tfa_10" id="tfa_10" class="">04/12/2020</option>
+              <option value="tfa_13" id="tfa_13" class="">07/12/2020</option>
+              <option value="tfa_14" id="tfa_14" class="">08/12/2020</option>
+              <option value="tfa_15" id="tfa_15" class="">09/12/2020</option>
+              <option value="tfa_16" id="tfa_16" class="">10/12/2020</option>
+              <option value="tfa_17" id="tfa_17" class="">11/12/2020</option>
+              <option value="tfa_20" id="tfa_20" class="">14/12/2020</option>
+              <option value="tfa_21" id="tfa_21" class="">15/12/2020</option>
+              <option value="tfa_22" id="tfa_22" class="">16/12/2020</option>
+              <option value="tfa_23" id="tfa_23" class="">17/12/2020</option>
+              <option value="tfa_24" id="tfa_24" class="">18/12/2020</option>
+              <option value="tfa_27" id="tfa_27" class="">21/12/2020</option>
+              <option value="tfa_28" id="tfa_28" class="">22/12/2020</option>
+              <option value="tfa_29" id="tfa_29" class="">23/12/2020</option>
+              <option value="tfa_30" id="tfa_30" class="">24/12/2020</option>
+              <option value="tfa_35" id="tfa_35" class="">29/12/2020</option>
+              <option value="tfa_36" id="tfa_36" class="">30/12/2020</option>
+              <option value="tfa_37" id="tfa_37" class="">31/12/2020</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="oneField field-container-D    " id="tfa_4-D" role="group" aria-labelledby="tfa_4-L" data-tfa-labelledby="-L tfa_4-L">
+      <label id="tfa_4-L" class="label preField ">Please tick to confirm that you agree with the date selected.</label><br><div class="inputWrapper"><span id="tfa_4" class="choices vertical "><span class="oneChoice"><input type="checkbox" value="tfa_5" class="" id="tfa_5" name="tfa_5" aria-labelledby="tfa_5-L" data-tfa-labelledby="tfa_4-L tfa_5-L"><label class="label postField" id="tfa_5-L" for="tfa_5"><span class="input-checkbox-faux"></span>I coinfirm</label></span></span></div>
+      </div>
+      <div class="oneField field-container-D    " id="tfa_49-D">
+      <label id="tfa_49-L" class="label preField " for="tfa_49">Name</label><br><div class="inputWrapper"><input type="text" id="tfa_49" name="tfa_49" value="" title="Name" class=""></div>
+      </div>
+      <div class="oneField field-container-D    " id="tfa_50-D">
+      <label id="tfa_50-L" class="label preField " for="tfa_50">Email</label><br><div class="inputWrapper"><input type="text" id="tfa_50" name="tfa_50" value="" title="Email" class=""></div>
+      </div>
+
+      <div class="actions v-margin-full" id="4863680-A">
+        <input type="submit" data-label="Submit" class="btn btn-primary" id="submit_button" value="Submit">
+      </div>
+
+      <input type="hidden" value="4863680" name="tfa_dbFormId" id="tfa_dbFormId" />
+      <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId" />
+      <input type="hidden" value="979a891bf244f69887631b3916cda3ad" name="tfa_dbControl" id="tfa_dbControl" />
+      <input type="hidden" value="6" name="tfa_dbVersionId" id="tfa_dbVersionId" />
+      <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff" />
+    </div>
+  </div>
+  {{else}}
+  <h2>Thank you</h2>
+  <p class="b-margin-full b-padding-full">
+    Your Christmas pay date has already been set.
+  </p>
+  {{/if}}
+  {{else}}
+  <h2>Error</h2>
+  <p class="b-margin-full b-padding-full">
+    Unfortunately your data could not be found, please double check the URL provided and try again then contact us if it still does not work.
+  </p>
+  {{/if}}
+  {{/withExtend}}
