@@ -54,13 +54,14 @@ wFORMS.behaviors.prefill.skip = false;
         <div id="tfa_1883" class="section">
           <h3 id="tfa_1883-L">Organisation details</h3>
           <input type="hidden" id="tfa_51" name="tfa_51" value="{{@root.request.params.session_key}}" />
-          <div class="form-group field-container-D" id="tfa_1876-D">
+          <div class="form-group field-container-D" id="tfa_org-name-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_1876-L" class="form-label preField r-margin" for="tfa_1876">Organisation name</label>
+              <label id="tfa_org-name-L" class="form-label preField r-margin" for="tfa_org-name">Organisation name</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="text" id="tfa_1876_dummy" name="tfa_1876_dummy" value="{{data.Account_Name__c}}" maxlength="150" class="form-input" disabled>
-              <input type="hidden" id="tfa_1876" name="tfa_1876" value="{{data.Account_Name__c}}" />
+              <input type="text" id="tfa_org-name_dummy" name="tfa_org-name_dummy" value="{{data.Account_Name__c}}" maxlength="150" class="form-input" disabled>
+              <input type="hidden" id="tfa_org-name" name="tfa_org-name" value="{{data.Account_Name__c}}" />
+              <div class="caption">If this is not your organisation name please <a href="mailto:payroll@scvo.org.uk">contact us</a> and close this page.</div>
             </div>
           </div>
         </div>
@@ -72,47 +73,44 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
             <select id="tfa_6" name="tfa_6" aria-required="true" class="form-select required" required>
-              <option value="">Please select&hellip;</option>
-              <option value="tfa_7" id="tfa_7" class="">01/12/2020</option>
-              <option value="tfa_8" id="tfa_8" class="">02/12/2020</option>
-              <option value="tfa_9" id="tfa_9" class="">03/12/2020</option>
-              <option value="tfa_10" id="tfa_10" class="">04/12/2020</option>
-              <option value="tfa_13" id="tfa_13" class="">07/12/2020</option>
-              <option value="tfa_14" id="tfa_14" class="">08/12/2020</option>
-              <option value="tfa_15" id="tfa_15" class="">09/12/2020</option>
-              <option value="tfa_16" id="tfa_16" class="">10/12/2020</option>
-              <option value="tfa_17" id="tfa_17" class="">11/12/2020</option>
-              <option value="tfa_20" id="tfa_20" class="">14/12/2020</option>
-              <option value="tfa_21" id="tfa_21" class="">15/12/2020</option>
-              <option value="tfa_22" id="tfa_22" class="">16/12/2020</option>
-              <option value="tfa_23" id="tfa_23" class="">17/12/2020</option>
-              <option value="tfa_24" id="tfa_24" class="">18/12/2020</option>
-              <option value="tfa_27" id="tfa_27" class="">21/12/2020</option>
-              <option value="tfa_28" id="tfa_28" class="">22/12/2020</option>
-              <option value="tfa_29" id="tfa_29" class="">23/12/2020</option>
-              <option value="tfa_30" id="tfa_30" class="">24/12/2020</option>
-              <option value="tfa_35" id="tfa_35" class="">29/12/2020</option>
-              <option value="tfa_36" id="tfa_36" class="">30/12/2020</option>
-              <option value="tfa_37" id="tfa_37" class="">31/12/2020</option>
+              <option value=""{{#unless data.Christmas_Paydate__c}} selected disabled{{/unless}}>Please select&hellip;</option>
+              <option value="tfa_7" id="tfa_7"{{#if (contains data.Christmas_Paydate__c '-12-01')}} selected{{/if}}>01/12/2020</option>
+              <option value="tfa_8" id="tfa_8"{{#if (contains data.Christmas_Paydate__c '-12-02')}} selected{{/if}}>02/12/2020</option>
+              <option value="tfa_9" id="tfa_9"{{#if (contains data.Christmas_Paydate__c '-12-03')}} selected{{/if}}>03/12/2020</option>
+              <option value="tfa_10" id="tfa_10"{{#if (contains data.Christmas_Paydate__c '-12-04')}} selected{{/if}}>04/12/2020</option>
+              <option value="tfa_13" id="tfa_13"{{#if (contains data.Christmas_Paydate__c '-12-07')}} selected{{/if}}>07/12/2020</option>
+              <option value="tfa_14" id="tfa_14"{{#if (contains data.Christmas_Paydate__c '-12-08')}} selected{{/if}}>08/12/2020</option>
+              <option value="tfa_15" id="tfa_15"{{#if (contains data.Christmas_Paydate__c '-12-09')}} selected{{/if}}>09/12/2020</option>
+              <option value="tfa_16" id="tfa_16"{{#if (contains data.Christmas_Paydate__c '-12-10')}} selected{{/if}}>10/12/2020</option>
+              <option value="tfa_17" id="tfa_17"{{#if (contains data.Christmas_Paydate__c '-12-11')}} selected{{/if}}>11/12/2020</option>
+              <option value="tfa_20" id="tfa_20"{{#if (contains data.Christmas_Paydate__c '-12-14')}} selected{{/if}}>14/12/2020</option>
+              <option value="tfa_21" id="tfa_21"{{#if (contains data.Christmas_Paydate__c '-12-15')}} selected{{/if}}>15/12/2020</option>
+              <option value="tfa_22" id="tfa_22"{{#if (contains data.Christmas_Paydate__c '-12-16')}} selected{{/if}}>16/12/2020</option>
+              <option value="tfa_23" id="tfa_23"{{#if (contains data.Christmas_Paydate__c '-12-17')}} selected{{/if}}>17/12/2020</option>
+              <option value="tfa_24" id="tfa_24"{{#if (contains data.Christmas_Paydate__c '-12-18')}} selected{{/if}}>18/12/2020</option>
+              <option value="tfa_27" id="tfa_27"{{#if (contains data.Christmas_Paydate__c '-12-21')}} selected{{/if}}>21/12/2020</option>
+              <option value="tfa_28" id="tfa_28"{{#if (contains data.Christmas_Paydate__c '-12-22')}} selected{{/if}}>22/12/2020</option>
+              <option value="tfa_29" id="tfa_29"{{#if (contains data.Christmas_Paydate__c '-12-23')}} selected{{/if}}>23/12/2020</option>
+              <option value="tfa_30" id="tfa_30"{{#if (contains data.Christmas_Paydate__c '-12-24')}} selected{{/if}}>24/12/2020</option>
+              <option value="tfa_35" id="tfa_35"{{#if (contains data.Christmas_Paydate__c '-12-29')}} selected{{/if}}>29/12/2020</option>
+              <option value="tfa_36" id="tfa_36"{{#if (contains data.Christmas_Paydate__c '-12-30')}} selected{{/if}}>30/12/2020</option>
+              <option value="tfa_37" id="tfa_37"{{#if (contains data.Christmas_Paydate__c '-12-31')}} selected{{/if}}>31/12/2020</option>
             </select>
           </div>
         </div>
       </div>
 
-      <div class="oneField field-container-D" id="tfa_4-D" role="group" aria-labelledby="tfa_4-L" data-tfa-labelledby="-L tfa_4-L">
+      <div class="form-group" id="tfa_5-D" role="group" aria-labelledby="tfa_5-L" data-tfa-labelledby="tfa_5-L">
         <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">&nbsp;</div>
         <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-          <label id="tfa_4-L" class="preField r-margin">Please tick to confirm that you agree with the date selected.</label>
-          <span id="tfa_4" class="choices vertical ">
-            <span class="oneChoice">
-              <input type="checkbox" value="tfa_5" class="required" id="tfa_5" name="tfa_5" aria-labelledby="tfa_5-L" data-tfa-labelledby="tfa_4-L tfa_5-L" required>
-              <label class="postField" id="tfa_5-L" for="tfa_5">
-                <span class="input-checkbox-faux"></span> I confirm
-              </label>
-            </span>
-          </span>
+          <label class="form-checkbox" id="tfa_5-L" for="tfa_5">
+            <input type="checkbox" value="tfa_5" id="tfa_5" name="tfa_5" aria-labelledby="tfa_5-L" data-tfa-labelledby="tfa_5-L">
+            <i class="form-icon"></i>
+            Please tick to confirm that you agree with the date selected
+          </label>
         </div>
       </div>
+
       <div class="form-group oneField field-container-D" id="tfa_49-D">
         <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
           <label id="tfa_49-L" class="preField " for="tfa_49">Name</label>
@@ -131,13 +129,16 @@ wFORMS.behaviors.prefill.skip = false;
       </div>
 
       <div class="actions v-margin-full" id="4863680-A">
-        <input type="submit" data-label="Submit" class="btn btn-primary" id="submit_button" value="Submit">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">&nbsp;</div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <input type="submit" data-label="Submit" class="btn btn-primary" id="submit_button" value="Submit">
+        </div>
       </div>
 
       <input type="hidden" value="4863680" name="tfa_dbFormId" id="tfa_dbFormId" />
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId" />
       <input type="hidden" value="979a891bf244f69887631b3916cda3ad" name="tfa_dbControl" id="tfa_dbControl" />
-      <input type="hidden" value="6" name="tfa_dbVersionId" id="tfa_dbVersionId" />
+      <input type="hidden" value="7" name="tfa_dbVersionId" id="tfa_dbVersionId" />
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff" />
     </div>
   </div>
