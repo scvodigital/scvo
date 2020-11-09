@@ -1,0 +1,44 @@
+{
+  "name": "page_kickstart-edit-job-description",
+  "debug": false,
+  "pattern": "/jobs/kickstart-scheme/register/job/edit/:session_key",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "job_data",
+      "taskModule": "request",
+      "config": {
+        "optionsTemplates": {
+          "request": ">context.metaData.handlebars.templates.utilities_scvo-kickstart-job"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.jobs_kickstart_job-description-header",
+              "body": ">context.metaData.handlebars.templates.jobs_kickstart_job-description-form",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.page-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
