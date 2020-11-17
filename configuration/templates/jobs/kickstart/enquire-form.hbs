@@ -140,6 +140,16 @@ wFORMS.behaviors.prefill.skip = false;
               <textarea rows="5" id="tfa_2773" name="tfa_2773" title="Area of work other" class="form-input"></textarea>
             </div>
           </div>
+          <div class="form-group" id="tfa_2820-D" role="group" aria-labelledby="tfa_2820-L" data-tfa-labelledby="tfa_2820-L">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">&nbsp;</div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <label class="form-checkbox" id="tfa_2820-L" for="tfa_2820">
+                <input type="checkbox" value="tfa_2820" id="tfa_2820" name="tfa_2820" aria-labelledby="tfa_2820-L" data-tfa-labelledby="tfa_2820-L">
+                <i class="form-icon"></i>
+                Associated with SPFL/SFA/SFP
+              </label>
+            </div>
+          </div>
           <div class="form-group oneField field-container-D" id="tfa_2681-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
               <label id="tfa_2681-L" class="form-label preField reqMark" for="tfa_2681">Status of organisation</label>
@@ -313,6 +323,26 @@ wFORMS.behaviors.prefill.skip = false;
               <input type="number" id="tfa_2721" name="tfa_2721" value="" maxlength="12" aria-required="true" autocomplete="nope" data-lpignore="true" title="Equivalent full time paid staff" class="form-input validate-integer required" required>
             </div>
           </div>
+          <div class="form-group oneField field-container-D" id="tfa_2824-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_2824-L" class="form-label preField reqMark" for="tfa_2824">Data Protection Policy</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <select id="tfa_2824" name="tfa_2824" title="Data Protection Policy" aria-required="true" class="form-select required" required>
+                <option value="" selected disabled>Please select&hellip;</option>
+                <option value="tfa_2825" id="tfa_2825" class="" data-conditionals="#tfa_2827-D">Yes</option>
+                <option value="tfa_2826" id="tfa_2826" class="">No</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group oneField field-container-D" id="tfa_2827-D" data-condition="`#tfa_2825`">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_2827-L" class="form-label preField " for="tfa_2827">Data Protection Policy last review date</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_2827" name="tfa_2827" value="" title="Data Protection Policy Last Review Date" autocomplete="nope" data-lpignore="true" class="form-input validate-datecal">
+            </div>
+          </div>
         </div>
         <div id="tfa_1880" class="section">
           <h3 id="tfa_1880-L">Contact information</h3>
@@ -476,7 +506,7 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="4850786" name="tfa_dbFormId" id="tfa_dbFormId">
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="a9267ec2c5d4477897374dacb6b5d9d4" name="tfa_dbControl" id="tfa_dbControl">
-      <input type="hidden" value="68" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="69" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
     </form>
   </div>
