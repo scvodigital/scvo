@@ -5,7 +5,6 @@
   {{> layout_head_cu}}
 </head>
 <body class="{{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
-  {{!-- {{> layout_sites_bar}} --}}
   <div class="hide-lg">
     {{> components_scvo_bar}}
   </div>
