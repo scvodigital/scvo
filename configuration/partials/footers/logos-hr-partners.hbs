@@ -1,0 +1,16 @@
+{{#if (contains @root.request.url.pathname "services/hr") ~}}
+<p class="card-footer">
+  <strong>Supported by:</strong>
+</p>
+<div class="columns b-padding-full">
+  <div class="column col-3 col-md-6 align-centre">
+    <a href="https://www.burnesspaull.com" class="no-ext no-underline"><img src="{{~>asset_url url='images/logos/organisations/burness-paull.png'~}}" alt="Burness Paull" class="img-responsive" /></a>
+  </div>
+  <div class="column col-3 col-md-6 align-centre">
+    <a href="https://www.gillespiemacandrew.co.uk" class="no-ext no-underline"><img src="{{~>asset_url url='images/logos/organisations/gillespie-macandrew.png'~}}" alt="Gillespie MacAndrew" class="img-responsive" /></a>
+  </div>
+  <div class="column col-3 col-md-6 align-centre">
+    <a href="https://www.macroberts.com" class="no-ext no-underline"><img src="{{~>asset_url url='images/logos/organisations/macroberts.png'~}}" alt="Macroberts" class="img-responsive" /></a>
+  </div>
+</div>
+{{/if ~}}
