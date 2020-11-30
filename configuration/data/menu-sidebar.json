@@ -992,8 +992,8 @@
 							"children": [
 								{
 									"label": "Supporting staff & volunteers",
-									"path": "/support/running-your-organisation/coronavirus-restrictions/supporting-staff-volunteers",
-									"route": "^/support/running-your-organisation/coronavirus-restrictions/supporting-staff-volunteers$",
+									"path": "/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees",
+									"route": "",
 									"description": "How to ensure people feel safe and supported as they begin to return to work",
 									"icon": "hand-holding-heart"
 								},
@@ -1319,31 +1319,68 @@
 							"icon": "hand-holding-heart",
 							"children": [
 								{
+									"label": "Coronavirus and your employees",
+									"path": "/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees",
+									"route": "^/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees$",
+									"description": "Guide to help voluntary organisations support employees and make fair and legal changes in response to the coronavirus crisis",
+									"icon": "",
+									"children": [
+										{
+											"label": "Financial support",
+											"path": "/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees/financial-support",
+											"route": "^/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees/financial-support$",
+											"description": "Funding available to support your employees and organisation through coronavirus.",
+											"icon": ""
+										},
+										{
+											"label": "Employee rights",
+											"path": "/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees/employee-rights",
+											"route": "^/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees/employee-rights$",
+											"description": "If someone in your staff is unable to work due to Coronavirus, there are things you need to do to support them. This guide has information about these things and employees’ rights. It also includes suggestions of ways you can support your staff while they are away from work.",
+											"icon": ""
+										},
+										{
+											"label": "Organisational change",
+											"path": "/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees/organisational-change",
+											"route": "^/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees/organisational-change$",
+											"description": "Information on organisational restructure, redundancy and TUPE (transfer of undertakings).",
+											"icon": ""
+										},
+										{
+											"label": "Mental health and wellbeing",
+											"path": "/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees/mental-health-and-wellbeing",
+											"route": "^/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees/mental-health-and-wellbeing$",
+											"description": "Coronavirus has impacted everyone, and everyone’s experience has been different. This section includes information and resources to help you support your team’s mental health and wellbeing.",
+											"icon": ""
+										}
+									]
+								},
+								{
 									"label": "Staff",
 									"path": "/support/running-your-organisation/staff-volunteers/staff",
 									"route": "^/support/running-your-organisation/staff-volunteers/staff",
-									"description": "Information on managing your organisation’s staff.",
+									"description": "Information on managing your organisation’s staff",
 									"icon": ""
 								},
 								{
 									"label": "Volunteers",
 									"path": "/support/running-your-organisation/staff-volunteers/volunteers",
 									"route": "^/support/running-your-organisation/staff-volunteers/volunteers",
-									"description": "Advice on managing your volunteers.",
+									"description": "Advice on managing your volunteers",
 									"icon": ""
 								},
 								{
 									"label": "Safeguarding",
 									"path": "/support/running-your-organisation/staff-volunteers/safeguarding",
 									"route": "^/support/running-your-organisation/staff-volunteers/safeguarding",
-									"description": "Information about safeguarding.",
+									"description": "Information about safeguarding",
 									"icon": ""
 								},
 								{
 									"label": "More information",
 									"path": "/support/running-your-organisation/staff-volunteers/more-information",
 									"route": "^/support/running-your-organisation/staff-volunteers/more-information",
-									"description": "Links to useful resources.",
+									"description": "Links to useful resources",
 									"icon": ""
 								}
 							]
@@ -2828,16 +2865,11 @@
 					"icon": "map-marker-question"
 				},
 				{
-					"label": "Digital services: How to",
-					"path": "/support/digital/guides/digital-services",
-					"description": "Overview of main topics to explore when moving services to digital channels. Includes popular tools and useful resources",
-					"icon": "house-signal"
-				},
-				{
-					"label": "Remote working: How to",
-					"path": "/support/digital/guides/remote-working",
-					"description": "Guide for organisations supporting employees and volunteers to work from home. Includes tech, software and communication.",
-					"icon": "laptop-house"
+					"label": "Coronavirus and your employees",
+					"path": "/support/running-your-organisation/staff-volunteers/coronavirus-and-your-employees",
+					"route": "",
+					"description": "Guide to help voluntary organisations support employees and make fair and legal changes in response to the coronavirus crisis",
+					"icon": "user-headset"
 				},
 				{
 					"label": "Events",
@@ -2866,6 +2898,18 @@
 							"icon": "signal-stream"
 						}
 					]
+				},
+				{
+					"label": "Digital services: How to",
+					"path": "/support/digital/guides/digital-services",
+					"description": "Overview of main topics to explore when moving services to digital channels. Includes popular tools and useful resources",
+					"icon": "house-signal"
+				},
+				{
+					"label": "Remote working: How to",
+					"path": "/support/digital/guides/remote-working",
+					"description": "Guide for organisations supporting employees and volunteers to work from home. Includes tech, software and communication.",
+					"icon": "laptop-house"
 				},
 				{
 					"label": "Coronavirus policy &amp; research",
