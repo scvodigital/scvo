@@ -1479,76 +1479,78 @@
 							"icon": "dumpster-fire"
 						},
 						{
+							"label": "SCOPE e-learning platform",
+							"path": "/support/running-your-organisation/scope-elearning-platform",
+							"route": "^/support/running-your-organisation/scope-elearning-platform$",
+							"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations",
+							"icon": "users-class"
+						}
+					],
+					"archived": [
+						{
 							"label": "KeyStone",
 							"path": "/support/running-your-organisation/keystone",
-							"route": "^/support/running-your-organisation/keystone$",
+							"route": "__disabled__^/support/running-your-organisation/keystone$",
 							"description": "A quality award and management toolkit for the people who manage village halls and community buildings.",
 							"icon": "trophy",
 							"children": [
 								{
 									"label": "Governance",
 									"path": "/support/running-your-organisation/keystone/governance",
-									"route": "^/support/running-your-organisation/keystone/governance$",
+									"route": "__disabled__^/support/running-your-organisation/keystone/governance$",
 									"description": "",
 									"icon": ""
 								},
 								{
 									"label": "Managing people",
 									"path": "/support/running-your-organisation/keystone/managing-people",
-									"route": "^/support/running-your-organisation/keystone/managing-people$",
+									"route": "__disabled__^/support/running-your-organisation/keystone/managing-people$",
 									"description": "",
 									"icon": ""
 								},
 								{
 									"label": "Managing money",
 									"path": "/support/running-your-organisation/keystone/managing-money",
-									"route": "^/support/running-your-organisation/keystone/managing-money$",
+									"route": "__disabled__^/support/running-your-organisation/keystone/managing-money$",
 									"description": "",
 									"icon": ""
 								},
 								{
 									"label": "Managing resources",
 									"path": "/support/running-your-organisation/keystone/managing-resources",
-									"route": "^/support/running-your-organisation/keystone/managing-resources$",
+									"route": "__disabled__^/support/running-your-organisation/keystone/managing-resources$",
 									"description": "",
 									"icon": ""
 								},
 								{
 									"label": "Working with users",
 									"path": "/support/running-your-organisation/keystone/working-with-users",
-									"route": "^/support/running-your-organisation/keystone/working-with-users$",
+									"route": "__disabled__^/support/running-your-organisation/keystone/working-with-users$",
 									"description": "",
 									"icon": ""
 								},
 								{
 									"label": "Legislation &#038; regulation",
 									"path": "/support/running-your-organisation/keystone/legislation-regulation",
-									"route": "^/support/running-your-organisation/keystone/legislation-regulation$",
+									"route": "__disabled__^/support/running-your-organisation/keystone/legislation-regulation$",
 									"description": "",
 									"icon": ""
 								},
 								{
 									"label": "How to use the KeyStone toolkit",
 									"path": "/support/running-your-organisation/keystone/how-to-use-the-keystone-toolkit",
-									"route": "^/support/running-your-organisation/keystone/how-to-use-the-keystone-toolkit$",
+									"route": "__disabled__^/support/running-your-organisation/keystone/how-to-use-the-keystone-toolkit$",
 									"description": "",
 									"icon": ""
 								},
 								{
 									"label": "Glossary",
 									"path": "/support/running-your-organisation/keystone/glossary",
-									"route": "^/support/running-your-organisation/keystone/glossary$",
+									"route": "__disabled__^/support/running-your-organisation/keystone/glossary$",
 									"description": "",
 									"icon": ""
 								}
 							]
-						},
-						{
-							"label": "SCOPE e-learning platform",
-							"path": "/support/running-your-organisation/scope-elearning-platform",
-							"route": "^/support/running-your-organisation/scope-elearning-platform$",
-							"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations",
-							"icon": "users-class"
 						}
 					]
 				},
