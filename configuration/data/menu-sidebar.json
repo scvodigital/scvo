@@ -337,6 +337,21 @@
 					"route": "^/jobs/kickstart-scheme$",
 					"children": [
 						{
+							"label": "Wraparound support",
+							"path": "/jobs/kickstart-scheme/wraparound-support",
+							"route": "^/jobs/kickstart-scheme/wraparound-support$"
+						},
+						{
+							"label": "Funding",
+							"path": "/jobs/kickstart-scheme/funding",
+							"route": "^/jobs/kickstart-scheme/funding$"
+						},
+						{
+							"label": "Employer eligibility",
+							"path": "/jobs/kickstart-scheme/employer-eligibility",
+							"route": "^/jobs/kickstart-scheme/employer-eligibility$"
+						},
+						{
 							"label": "Registration form",
 							"path": "/jobs/kickstart-scheme/register",
 							"route": "^/jobs/kickstart-scheme/register"
