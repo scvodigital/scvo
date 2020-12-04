@@ -1,5 +1,0 @@
-{
-  {{#each (filter (keyValue @root.data.scoresIndividual) "key" "testIn" "answers-section-") ~}}
-  {{{safeStringify (replace key 'answers-section-' 'scores-')}}}: {{{safeStringify (sumArray (split value ';'))}}}{{#unless @last}},{{/unless}}
-  {{/each ~}}
-}
