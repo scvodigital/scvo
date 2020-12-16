@@ -1,2 +1,7 @@
+{{~#compare @root.request.url.hostname "===" "scvo.scot"~}}
 User-agent: *
-Disallow:
+Allow: /
+{{~else~}}
+User-agent: *
+Disallow: /
+{{~/compare~}}
