@@ -849,21 +849,21 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="fund_branching" class="choices vertical required">
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_atf-L" for="fund_branching_atf">
-                      <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2602-D.#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#amount_requested_atf,#budget_atf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#confirmation"{{#ifAny (compare defaults.application_fund 'Recovery Fund') (compare defaults.application_fund 'Adapt and Thrive')}} checked{{/ifAny}}>
+                      <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2602-D.#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2611-D,#amount_requested_atf,#budget_atf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#confirmation"{{#ifAny (compare defaults.application_fund 'Recovery Fund') (compare defaults.application_fund 'Adapt and Thrive')}} checked{{/ifAny}}>
                       <i class="form-icon"></i>
                       Is most of your application focused on making changes to your organisation so it can adapt for the future (Adapt and Thrive)?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
-                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2784-D,#tfa_2786-D,#tfa_2719-D,#amount_requested_crf,#budget_crf,#attachments_crf,#confirmation"{{#ifAny (compare defaults.application_fund 'Supporting Communities Fund') (compare defaults.application_fund 'Communities Recovery Fund')}} checked{{/ifAny}}>
+                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2784-D,#tfa_2786-D,#tfa_2719-D,#tfa_2787-D,#amount_requested_crf,#budget_crf,#attachments_crf,#confirmation"{{#ifAny (compare defaults.application_fund 'Supporting Communities Fund') (compare defaults.application_fund 'Communities Recovery Fund')}} checked{{/ifAny}}>
                       <i class="form-icon"></i>
                       Is most of your application focused on supporting the reintroduction and / or delivery of services in communities (Communities Recovery Fund)?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2602-D,#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2784-D,#tfa_2786-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#attachments_crf,#confirmation">
+                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2602-D,#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2784-D,#tfa_2786-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#tfa_2611-D,#tfa_2787-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#attachments_crf,#confirmation">
                       <i class="form-icon"></i>
                       Are you looking for funding and support for both types of activity?
                     </label>
@@ -1278,11 +1278,27 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              <div class="form-group field-container-D t-margin" id="tfa_2611-D">
+              <div class="form-group field-container-D t-margin" id="tfa_2787-D" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+                <div class="col-9 col-xl-12">
+                  <div class="form-group field-container-D">
+                    <label id="tfa_2787-L" class="preField r-margin reqMark" for="tfa_2787">
+                      Describe how your organisation and future activities will contribute to assisting rebuilding the health and wellbeing of your community.  Priority will be given to organisations who can evidence the impact for people and communities who have been disproportionately affected by COVID-19<br />
+                      <span class="form-input-hint text-secondary">(maximum 300 words)</span>
+                    </label>
+                  </div>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2787}}</div>
+                  {{else}}
+                  <textarea id="tfa_2787" name="tfa_2787" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2787}}</textarea>
+                  {{/if}}
+                </div>
+              </div>
+
+              <div class="form-group field-container-D t-margin" id="tfa_2611-D" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-9 col-xl-12">
                   <div class="form-group field-container-D">
                     <label id="tfa_2611-L" class="preField r-margin reqMark" for="tfa_2611">
-                      Describe how your organisation and future activities will contribute to assisting rebuilding the health and wellbeing of your community. Priority will be given to organisations who can evidence the impact for people and communities who have been disproportionately affected by COVID-19<br />
+                      Tell us how your recovery plan will contribute to the health and wellbeing of your community. Priority for Adapt and Thrive will be given to organisations who can evidence the impact for people and communities who have been disproportionately affected by COVID-19<br />
                       <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
