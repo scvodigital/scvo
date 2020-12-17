@@ -849,7 +849,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="fund_branching" class="choices vertical required">
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_atf-L" for="fund_branching_atf">
-                      <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2602-D.#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2611-D,#amount_requested_atf,#budget_atf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#confirmation"{{#ifAny (compare defaults.application_fund 'Recovery Fund') (compare defaults.application_fund 'Adapt and Thrive')}} checked{{/ifAny}}>
+                      <input type="radio" value="fund_branching_atf" id="fund_branching_atf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_atf-L" data-tfa-labelledby="fund_branching-L fund_branching_atf-L" data-conditionals="#tfa_2602-D.#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2611-D,#total_cost_recovery,#amount_requested_atf,#budget_atf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#confirmation"{{#ifAny (compare defaults.application_fund 'Recovery Fund') (compare defaults.application_fund 'Adapt and Thrive')}} checked{{/ifAny}}>
                       <i class="form-icon"></i>
                       Is most of your application focused on making changes to your organisation so it can adapt for the future (Adapt and Thrive)?
                     </label>
@@ -863,7 +863,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2602-D,#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2784-D,#tfa_2786-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#tfa_2611-D,#tfa_2787-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#attachments_crf,#confirmation">
+                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2602-D,#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2784-D,#tfa_2786-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#tfa_2611-D,#tfa_2787-D,#total_cost_recovery,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#attachments_crf,#confirmation">
                       <i class="form-icon"></i>
                       Are you looking for funding and support for both types of activity?
                     </label>
@@ -1371,6 +1371,24 @@ wFORMS.behaviors.prefill.skip = false;
                 </h2>
               </div>
             </div>
+
+            <div class="form-group" id="total_cost_recovery" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
+              <div class="col-6 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_2788-L" class="form-label r-margin preField reqMark" for="tfa_2788">
+                  What is the total cost of your recovery plan?<br />
+                  <span class="form-input-hint text-secondary">This should add up to your budget below and include the amount you are looking for through Adapt &amp; Thrive and any additional funds you have received or looking for elsewhere</span>
+                </label>
+              </div>
+              <div class="col-3 col-lg-4 col-md-6 col-sm-12">
+                <div class="form-group field-container-D" id="tfa_2788-D">
+                  <div class="input-group" style="width:100%;">
+                    <span class="input-group-addon">&pound;</span>
+                    <input type="number" pattern="[0-9]*" onblur="checkFundingAmountATF()" onkeypress="return isNumberKey(event);" min="5000" max="10000000" id="tfa_2788" name="tfa_2788" value="{{defaults.tfa_2788}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div id="tfa_2566-body" class="container section v-padding-full">
               <div class="col-9 col-xl-12 b-margin-full" id="budget_atf" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="section group">
