@@ -856,14 +856,14 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
-                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_crf,#budget_crf,#attachments_crf,#confirmation"{{#ifAny (compare defaults.application_fund 'Supporting Communities Fund') (compare defaults.application_fund 'Communities Recovery Fund')}} checked{{/ifAny}}>
+                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2784-D,#tfa_2786-D,#tfa_2719-D,#amount_requested_crf,#budget_crf,#attachments_crf,#confirmation"{{#ifAny (compare defaults.application_fund 'Supporting Communities Fund') (compare defaults.application_fund 'Communities Recovery Fund')}} checked{{/ifAny}}>
                       <i class="form-icon"></i>
                       Is most of your application focused on supporting the reintroduction and / or delivery of services in communities (Communities Recovery Fund)?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2602-D,#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#attachments_crf,#confirmation">
+                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2602-D,#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2784-D,#tfa_2786-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#attachments_crf,#confirmation">
                       <i class="form-icon"></i>
                       Are you looking for funding and support for both types of activity?
                     </label>
@@ -1226,6 +1226,38 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="faux-textarea">{{replace defaults.tfa_2782}}</div>
                   {{else}}
                   <textarea id="tfa_2782" name="tfa_2782" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2782}}</textarea>
+                  {{/if}}
+                </div>
+              </div>
+
+              <div class="form-group field-container-D t-margin" id="tfa_2784-D" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+                <div class="col-9 col-xl-12">
+                  <div class="form-group field-container-D">
+                    <label id="tfa_2784-L" class="preField r-margin reqMark" for="tfa_2784">
+                      Tell us what you are looking for funding from the Communities Recovery Fund to do and how it will have a positive impact for the people and communities you work with.<br />
+                      <span class="form-input-hint text-secondary">(maximum 300 words)</span>
+                    </label>
+                  </div>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2784}}</div>
+                  {{else}}
+                  <textarea id="tfa_2784" name="tfa_2784" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2784}}</textarea>
+                  {{/if}}
+                </div>
+              </div>
+
+              <div class="form-group field-container-D t-margin" id="tfa_2786-D" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+                <div class="col-9 col-xl-12">
+                  <div class="form-group field-container-D">
+                    <label id="tfa_2786-L" class="preField r-margin reqMark" for="tfa_2786">
+                      If you are applying as part of a partnership for Communities Recovery Fund, please tell us who you are working with and how you will work together<br />
+                      <span class="form-input-hint text-secondary">(maximum 300 words)</span>
+                    </label>
+                  </div>
+                  {{#if defaults.application_readonly}}
+                  <div class="faux-textarea">{{replace defaults.tfa_2786}}</div>
+                  {{else}}
+                  <textarea id="tfa_2786" name="tfa_2786" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2786}}</textarea>
                   {{/if}}
                 </div>
               </div>
