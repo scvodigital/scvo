@@ -1,7 +1,7 @@
 {
-  "name": "coronavirus_recovery_view_form",
+  "name": "coronavirus_recovery_view-uplift_form",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/view/:session_key",
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -109,8 +109,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_view-header",
-              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form",
+              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-uplift-header",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-uplift-form",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

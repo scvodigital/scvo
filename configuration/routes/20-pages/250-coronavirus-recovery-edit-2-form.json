@@ -1,7 +1,7 @@
 {
-  "name": "coronavirus_recovery_view_form",
+  "name": "coronavirus_recovery_edit-2_form",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/view/:session_key",
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply-2/edit/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -13,6 +13,42 @@
         }
       },
       "renderer": "handlebars"
+    },
+    {
+      "name": "award_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "sg-grant-recovery",
+          "template": ">context.metaData.handlebars.queries.grants_recovery-awarded"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "check_for_awarded",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  { "var": "data.award_data.hits.total" },
+                  0
+                ]
+              }
+            ]
+          },
+          "coronavirus_recovery_apply_already_awarded",
+          false
+        ]
+      }
     },
     {
       "name": "check_for_application",
@@ -48,6 +84,22 @@
                   {
                     "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
                   },
+                  "Recovery - Call 1"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
+                  "Supporting Communities Fund - Call 1"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
                   "Adapt and Thrive - Uplift"
                 ]
               },
@@ -58,21 +110,27 @@
                   },
                   "Communities Recovery Fund - Uplift"
                 ]
-              },
+              }
+            ]
+          },
+          "coronavirus_recovery_apply_unauthorised",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_for_authorisation",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
               {
-                "==": [
+                "!=": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Status__c"
                   },
-                  "Adapt and Thrive - Call 2"
-                ]
-              },
-              {
-                "==": [
-                  {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
-                  },
-                  "Communities Recovery Fund - Call 2"
+                  "Information Requested"
                 ]
               }
             ]
@@ -109,8 +167,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_view-header",
-              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form",
+              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_edit-header",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-2-form",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

@@ -1,7 +1,11 @@
 {
   "name": "coronavirus_recovery_confirm_already_complete",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/confirm/complete-already",
+  "pattern": {
+    "call1": "/support/coronavirus/funding/scottish-government/community-recovery/apply/confirm/complete-already",
+    "uplift": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/confirm/complete-already",
+    "call2": "/support/coronavirus/funding/scottish-government/community-recovery/apply-2/confirm/complete-already"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

@@ -1,7 +1,7 @@
 {
-  "name": "coronavirus_recovery_view_form",
-  "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/view/:session_key",
+  "name": "coronavirus_recovery_edit-uplift_form",
+  "debug": true,
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -13,6 +13,42 @@
         }
       },
       "renderer": "handlebars"
+    },
+    {
+      "name": "award_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "sg-grant-recovery",
+          "template": ">context.metaData.handlebars.queries.grants_recovery-awarded"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "check_for_awarded",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  { "var": "data.award_data.hits.total" },
+                  0
+                ]
+              }
+            ]
+          },
+          "coronavirus_recovery_apply_already_awarded",
+          false
+        ]
+      }
     },
     {
       "name": "check_for_application",
@@ -83,6 +119,28 @@
       }
     },
     {
+      "name": "check_for_authorisation",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Status__c"
+                  },
+                  "Information Requested"
+                ]
+              }
+            ]
+          },
+          "coronavirus_recovery_apply_unauthorised",
+          false
+        ]
+      }
+    },
+    {
       "name": "form_data",
       "taskModule": "render",
       "renderer": "handlebars",
@@ -109,8 +167,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_view-header",
-              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form",
+              "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-uplift-header",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-uplift-form",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

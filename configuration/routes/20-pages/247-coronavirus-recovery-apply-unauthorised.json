@@ -1,7 +1,11 @@
 {
   "name": "coronavirus_recovery_apply_unauthorised",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/unauthorised",
+  "pattern": {
+    "call1": "/support/coronavirus/funding/scottish-government/community-recovery/apply/unauthorised",
+    "uplift": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/unauthorised",
+    "call2": "/support/coronavirus/funding/scottish-government/community-recovery/apply-2/unauthorised"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

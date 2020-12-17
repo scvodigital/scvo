@@ -1,7 +1,11 @@
 {
   "name": "coronavirus_recovery_apply_already_applied",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/already-applied",
+  "pattern": {
+    "call1": "/support/coronavirus/funding/scottish-government/community-recovery/apply/already-applied",
+    "uplift": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/already-applied",
+    "call2": "/support/coronavirus/funding/scottish-government/community-recovery/apply-2/already-applied"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

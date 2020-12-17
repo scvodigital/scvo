@@ -1,7 +1,7 @@
 {
-  "name": "coronavirus_recovery_view_form",
+  "name": "coronavirus_recovery_view-2_form",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/view/:session_key",
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply-2/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -48,6 +48,22 @@
                   {
                     "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
                   },
+                  "Recovery - Call 1"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
+                  "Supporting Communities Fund - Call 1"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
                   "Adapt and Thrive - Uplift"
                 ]
               },
@@ -57,22 +73,6 @@
                     "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
                   },
                   "Communities Recovery Fund - Uplift"
-                ]
-              },
-              {
-                "==": [
-                  {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
-                  },
-                  "Adapt and Thrive - Call 2"
-                ]
-              },
-              {
-                "==": [
-                  {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
-                  },
-                  "Communities Recovery Fund - Call 2"
                 ]
               }
             ]
@@ -110,7 +110,7 @@
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_view-header",
-              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form",
+              "body": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-2-form",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

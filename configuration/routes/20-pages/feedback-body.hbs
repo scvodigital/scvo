@@ -1,0 +1,117 @@
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+  let formElement = document.getElementById("tfa_0");
+  if (null === formElement) {
+    formElement = document.getElementById("0");
+  }
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+    let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+    if (null !== cumulatedTimeElement) {
+      let cumulatedTime = parseInt(cumulatedTimeElement.value);
+      if (null !== cumulatedTime && cumulatedTime > 0) {
+        formTimeDiff += cumulatedTime;
+      }
+    }
+    let jsTimeInput = document.createElement("input");
+    jsTimeInput.setAttribute("type", "hidden");
+    jsTimeInput.setAttribute("value", formTimeDiff.toString());
+    jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("autocomplete", "off");
+    if (null !== formElement) {
+      formElement.appendChild(jsTimeInput);
+    }
+  };
+  if (null !== formElement) {
+    if(formElement.addEventListener){
+      formElement.addEventListener('submit', appendJsTimerElement, false);
+    } else if(formElement.attachEvent){
+      formElement.attachEvent('onsubmit', appendJsTimerElement);
+    }
+  }
+});
+</script>
+
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=0246591584232a6325b1af88966a271ab79612dc"></script>
+<script type="text/javascript">
+wFORMS.behaviors.prefill.skip = false;
+</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=0246591584232a6325b1af88966a271ab79612dc"></script>
+
+<div class="wFormContainer">
+  <div class="wFormHeader"></div>
+  <div class="wForm" id="4849249-WRPR" dir="ltr">
+    <div class="codesection" id="code-4849249"></div>
+    <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove" id="4849249" role="form">
+      <input type="hidden" id="tfa_11" name="tfa_11" value="{{@root.request.params.sid}}" />
+      <div class="form-group field-container-D" id="tfa_4-D" role="radiogroup" aria-labelledby="tfa_4-L" data-tfa-labelledby="-L tfa_4-L">
+        <label id="tfa_4-L" class="form-label preField ">
+          <h2>How did we do today?</h2>
+        </label>
+        <div class="inputWrapper feedback-radio">
+          <span id="tfa_4" class="choices horizontal ">
+            <span class="form-group" style="display:inline-block;">
+              <label style="padding:0;margin-right:.5rem;" class="form-radio postField" id="tfa_9-L" for="tfa_9">
+                <input type="radio" value="tfa_9" required id="tfa_9" name="tfa_4" aria-labelledby="tfa_9-L" data-tfa-labelledby="tfa_4-L tfa_9-L">
+                {{!-- <i class="form-icon"></i> --}}
+                <img src="//www.tfaforms.com/forms/get_image/215691/WQScKzpIsOT3vtxY9YOWfVtPS21X2ZLvc2uEmvcgGGpuGcOGn7G2cWCM57BnpPBA-hateit.png" alt="Hated it" style="max-width: 100%;">
+              </label>
+            </span>
+            <span class="form-group" style="display:inline-block;">
+              <label style="padding:0;margin-right:.5rem;" class="form-radio postField" id="tfa_8-L" for="tfa_8">
+                <input type="radio" value="tfa_8" required id="tfa_8" name="tfa_4" aria-labelledby="tfa_8-L" data-tfa-labelledby="tfa_4-L tfa_8-L">
+                {{!-- <i class="form-icon"></i> --}}
+                <img src="//www.tfaforms.com/forms/get_image/215691/pYqe6lCVfmROSQYagrB99LVMfGxbbcdGkPVtTFJIVHl30rhOyY8FOpWTcaNgD7iM-sad1.png" alt="Sad" style="max-width: 100%;">
+              </label>
+            </span>
+            <span class="form-group" style="display:inline-block;">
+              <label style="padding:0;margin-right:.5rem;" class="form-radio postField" id="tfa_7-L" for="tfa_7">
+                <input type="radio" value="tfa_7" required id="tfa_7" name="tfa_4" aria-labelledby="tfa_7-L" data-tfa-labelledby="tfa_4-L tfa_7-L">
+                {{!-- <i class="form-icon"></i> --}}
+                <img src="//www.tfaforms.com/forms/get_image/215691/Sz5E0LGda9AjMSDmJ2K7RRysG5ZZdNlAfYVEo52lfNoYEXyxJH8alazmMRo9bD7s-ok.png" alt="OK" style="max-width: 100%;">
+              </label>
+            </span>
+            <span class="form-group" style="display:inline-block;">
+              <label style="padding:0;margin-right:.5rem;" class="form-radio postField" id="tfa_6-L" for="tfa_6">
+                <input type="radio" value="tfa_6" required id="tfa_6" name="tfa_4" aria-labelledby="tfa_6-L" data-tfa-labelledby="tfa_4-L tfa_6-L">
+                {{!-- <i class="form-icon"></i> --}}
+                <img src="//www.tfaforms.com/forms/get_image/215691/LLtFe3pbsKIct3a49f5Z12iIiUiPhUybTWz9rki3C2UsZt9NLAiSNNomaeEbbq6h-happy.png" alt="Happy" style="max-width: 100%;">
+              </label>
+            </span>
+            <span class="form-group" style="display:inline-block;">
+              <label style="padding:0;margin-right:.5rem;" class="form-radio postField" id="tfa_5-L" for="tfa_5">
+                <input type="radio" value="tfa_5" required id="tfa_5" name="tfa_4" aria-labelledby="tfa_5-L" data-tfa-labelledby="tfa_4-L tfa_5-L">
+                {{!-- <i class="form-icon"></i> --}}
+                <img src="//www.tfaforms.com/forms/get_image/215691/IcSrZiZVhirrwXge20zuwgdTyt4iiQkZskFrvFlivlG3notVfyj8gG8BGoRe4Qo7-in-love.png" alt="Love it" style="max-width: 100%;">
+              </label>
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="form-group field-container-D" id="tfa_10-D">
+        <label id="tfa_10-L" class="form-label preField " for="tfa_10">
+          <h2>Anything else you would like to let us know?</h2>
+        </label>
+        <div class="inputWrapper">
+          <textarea id="tfa_10" rows="5" name="tfa_10" title="Anything else you would like to let us know?" class="form-input"></textarea>
+        </div>
+      </div>
+      <div class="actions b-margin-full" id="4849249-A">
+        <input type="submit" data-label="Submit" id="submit_button" value="Submit" class="btn btn-lg btn-primary primaryAction" />
+      </div>
+      <div style="clear:both"></div>
+      <input type="hidden" value="4849249" name="tfa_dbFormId" id="tfa_dbFormId" />
+      <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId" />
+      <input type="hidden" value="02c74335fa9b2da139d21125ded25ae3" name="tfa_dbControl" id="tfa_dbControl" />
+      <input type="hidden" value="11" name="tfa_dbVersionId" id="tfa_dbVersionId" />
+      <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff" />
+    </form>
+  </div>
+  <div class="wFormFooter b-margin-full b-padding-full">
+    <p class="supportInfo b-margin-full">
+      <a target="new" class="contactInfoLink" href="/privacy">Privacy policy</a>
+    </p>
+  </div>
+</div>

@@ -1,7 +1,11 @@
 {
   "name": "coronavirus_recovery_apply_missing",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/missing",
+  "pattern": {
+    "call1": "/support/coronavirus/funding/scottish-government/community-recovery/apply/missing",
+    "uplift": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/missing",
+    "call2": "/support/coronavirus/funding/scottish-government/community-recovery/apply-2/missing"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
