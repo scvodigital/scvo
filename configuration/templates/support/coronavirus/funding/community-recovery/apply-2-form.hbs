@@ -856,14 +856,14 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_crf-L" for="fund_branching_crf">
-                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2784-D,#tfa_2786-D,#tfa_2719-D,#tfa_2787-D,#tfa_2369-D,#amount_requested_crf,#budget_crf,#attachments_crf,#confirmation"{{#ifAny (compare defaults.application_fund 'Supporting Communities Fund') (compare defaults.application_fund 'Communities Recovery Fund')}} checked{{/ifAny}}>
+                      <input type="radio" value="fund_branching_crf" id="fund_branching_crf" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_crf-L" data-tfa-labelledby="fund_branching-L fund_branching_crf-L" data-conditionals="#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2784-D,#tfa_2786-D,#tfa_2719-D,#tfa_2787-D,#tfa_2369-D,#amount_requested_crf,#funding_period,#budget_crf,#attachments_crf,#confirmation"{{#ifAny (compare defaults.application_fund 'Supporting Communities Fund') (compare defaults.application_fund 'Communities Recovery Fund')}} checked{{/ifAny}}>
                       <i class="form-icon"></i>
                       Is most of your application focused on supporting the reintroduction and / or delivery of services in communities (Communities Recovery Fund)?
                     </label>
                   </div>
                   <div class="form-group">
                     <label class="form-radio" id="fund_branching_both-L" for="fund_branching_both">
-                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2602-D,#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2784-D,#tfa_2786-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#tfa_2611-D,#tfa_2787-D,#tfa_2369-D,#total_cost_recovery,#amount_requested_atf,#budget_atf,#amount_requested_crf,#budget_crf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#attachments_crf,#confirmation">
+                      <input type="radio" value="fund_branching_both" id="fund_branching_both" name="fund_branching" aria-required="true" aria-labelledby="fund_branching_both-L" data-tfa-labelledby="fund_branching-L fund_branching_both-L" data-conditionals="#tfa_2602-D,#org_finances,#tfa_2609-D,#tfa_2781-D,#tfa_2782-D,#tfa_2784-D,#tfa_2786-D,#tfa_2569-D,#tfa_2585,#tfa_2587-D,#tfa_2588-D,#tfa_2592,#tfa_2598-D,#tfa_2719-D,#tfa_2611-D,#tfa_2787-D,#tfa_2369-D,#total_cost_recovery,#amount_requested_atf,#budget_atf,#amount_requested_crf,#funding_period,#budget_crf,#tfa_2303-D,#tfa_2390-D,#tfa_2731-D,#attachments_crf,#confirmation">
                       <i class="form-icon"></i>
                       Are you looking for funding and support for both types of activity?
                     </label>
@@ -1372,12 +1372,12 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div id="tfa_2369-D" class="section" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+            <div id="tfa_2369-D" class="container section" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
               <div class="form-group field-container-D t-margin">
                 <div class="col-9 col-xl-12">
-                  <div class="form-group field-container-D">
+                  <div class="field-container-D">
                     <label id="tfa_2369-L" class="preField r-margin reqMark" for="tfa_2369">
-                      What is the total estimated cost of your activities?  Provide a short description of item(s) and cost.  For example PPE, staff training, venue hire.  If you are applying for funding as part of a partnership please provide details of all partners and a breakdown of costs for each partner.<br />
+                      What is the total estimated cost of your activities? Provide a short description of item(s) and cost.  For example PPE, staff training, venue hire.  If you are applying for funding as part of a partnership please provide details of all partners and a breakdown of costs for each partner.<br />
                       <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
                   </div>
@@ -1390,7 +1390,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="form-group" id="total_cost_recovery" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
+            <div class="container form-group" id="total_cost_recovery" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
               <div class="col-6 col-lg-5 col-md-6 col-sm-12">
                 <label id="tfa_2788-L" class="form-label r-margin preField reqMark" for="tfa_2788">
                   What is the total cost of your recovery plan?<br />
@@ -1665,9 +1665,37 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
 
-              {{!-- What period are you requesting funding for? Funding is available from 1 October and can support activity for a period of up to 8 months on a reducing scale to 3 months, depending on when your activity starts/ends.
-
-              TODO --}}
+              <div class="section v-margin-full" id="funding_period" data-condition="`#fund_branching_crf` OR `#fund_branching_both`">
+                <div class="form-group">
+                  <div class="col-9 col-xl-12">
+                    What period are you requesting funding for? Funding is available from 1 October and can support activity for a period of up to 8 months on a reducing scale to 3 months, depending on when your activity starts/ends.
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                    <div class="field-container-D" id="tfa_2789-D">
+                      <label id="tfa_2789-L" class="form-label r-margin preField" for="tfa_2789">
+                        Start – Month and Year
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                    <input type="text" id="tfa_2789" name="tfa_2789" maxlength="150" value="{{defaults.tfa_2789}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                    <div class="field-container-D" id="tfa_2790-D">
+                      <label id="tfa_2790-L" class="form-label r-margin preField" for="tfa_2790">
+                        End – Month and Year
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                    <input type="text" id="tfa_2790" name="tfa_2790" maxlength="150" value="{{defaults.tfa_2790}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  </div>
+                </div>
+              </div>
 
               <div class="form-group" id="tfa_2569-D" role="group" aria-labelledby="tfa_2569-L" data-tfa-labelledby="tfa_2569-L" data-condition="`#fund_branching_atf` OR `#fund_branching_both`">
                 <div class="col-9 col-xl-12">
