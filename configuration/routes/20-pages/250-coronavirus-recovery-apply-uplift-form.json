@@ -1,7 +1,7 @@
 {
-  "name": "coronavirus_recovery_edit-uplift_form",
+  "name": "coronavirus_recovery_apply-uplift_form",
   "debug": true,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/edit/:session_key",
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
