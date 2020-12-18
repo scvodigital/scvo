@@ -1265,7 +1265,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="form-group field-container-D t-margin" id="tfa_2610-D">
                 <div class="col-9 col-xl-12">
                   <div class="form-group field-container-D">
-                    <label id="tfa_2610-L" class="preField r-margin reqMark" for="tfa_2610">
+                    <label id="tfa_2610-L" class="preField r-margin" for="tfa_2610">
                       If you need to make any physical changes to your building, tell us how this will ensure the safety and wellbeing for the people and communities you work with.<br />
                       <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                     </label>
@@ -1273,7 +1273,7 @@ wFORMS.behaviors.prefill.skip = false;
                   {{#if defaults.application_readonly}}
                   <div class="faux-textarea">{{replace defaults.tfa_2610}}</div>
                   {{else}}
-                  <textarea id="tfa_2610" name="tfa_2610" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input required count-words" required>{{defaults.tfa_2610}}</textarea>
+                  <textarea id="tfa_2610" name="tfa_2610" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input count-words">{{defaults.tfa_2610}}</textarea>
                   {{/if}}
                 </div>
               </div>
