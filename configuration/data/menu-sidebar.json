@@ -1971,6 +1971,22 @@
 					]
 				},
 				{
+					"label": "SCVO Trustee Network",
+					"path": "/support/trustees-network",
+					"route": "^/support/trustees-network$",
+					"description": "",
+					"icon": "",
+					"children": [
+						{
+							"label": "Search for a trustee position",
+							"path": "/support/trustees-network/search",
+							"route": "^/support/trustees-network/search$",
+							"description": "",
+							"icon": ""
+						}
+					]
+				},
+				{
 					"label": "Milo",
 					"path": "/support/milo",
 					"route": "^/support/milo$",
