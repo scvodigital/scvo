@@ -66,7 +66,7 @@ wFORMS.behaviors.prefill.skip = false;
       <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="hintsTooltip labelsAbove" id="4844638" role="form" {{#unless defaults.application_readonly}}enctype="multipart/form-data" data-component="FormBackup" data-FormBackup='{
         "name": "community_recovery",
         "idsSelector": "#tfa_1876",
-        "ignoreFields": ["tfa_2274", "tfa_2273"]
+        "ignoreFields": ["#tfa_2274", "#tfa_2273"]
       }'{{/unless}}>
         <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{#unless defaults.application_readonly}}{{@root.request.params.session_key}}{{/unless}}">
         {{#unless defaults.application_confirm}}
