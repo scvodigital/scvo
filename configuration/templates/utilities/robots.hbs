@@ -1,7 +1,7 @@
-{{~#compare @root.request.url.hostname "===" "scvo.scot"~}}
-User-agent: *
-Allow: /
-{{~else~}}
+{{~#compare @root.request.url.hostname "===" "scvo-frontend-dot-scvo-net.appspot.com"~}}
 User-agent: *
 Disallow: /
+{{~else~}}
+User-agent: *
+Allow: /
 {{~/compare~}}
