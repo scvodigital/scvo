@@ -127,33 +127,11 @@
       }
     },
     {
-      "name": "check_for_authorisation",
-      "taskModule": "reroute",
-      "config": {
-        "if": [
-          {
-            "and": [
-              {
-                "!=": [
-                  {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Status__c"
-                  },
-                  "Information Requested"
-                ]
-              }
-            ]
-          },
-          "coronavirus_recovery_apply_unauthorised",
-          false
-        ]
-      }
-    },
-    {
       "name": "form_data",
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-form-data",
+        "template": ">context.metaData.handlebars.templates.support_coronavirus_funding_community-recovery_apply-uplift-form-data",
         "output": "data",
         "parseJson": true
       }

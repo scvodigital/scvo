@@ -60,7 +60,7 @@ wFORMS.behaviors.prefill.skip = false;
         "idsSelector": "#tfa_1876",
         "ignoreFields": ["#tfa_2274", "#tfa_2273"]
       }'{{/unless}}>
-        <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{#unless defaults.application_readonly}}{{@root.request.params.session_key}}{{/unless}}">
+        <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{#unless (compare @root.data.application_data.request.data.data_object.get_grant.records.[0].Call__c 'Recovery - Call 1')}}{{@root.request.params.session_key}}{{/unless}}">
         <div class="bg-secondary">
           <div id="tfa_1883" class="container section v-margin-full v-padding-full">
             <h2 id="tfa_1883-L">
@@ -137,7 +137,6 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_1944-D">
-                  {{!-- <input type="text" id="tfa_1944" name="tfa_1944" value="{{defaults.tfa_1944}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required> --}}
                   {{#if defaults.tfa_1944}}
                   <select id="organisation_type" name="organisation_type" class="form-select" style="pointer-events:none;" readonly>
                     <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</option>
@@ -201,7 +200,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D" id="tfa_2568-D">
                   <div class="input-group" style="width:100%;">
                     <span class="input-group-addon">&pound;</span>
-                    <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="10000000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="10000000" id="tfa_2568" name="tfa_2568" value="{{#if defaults.application_editing}}{{defaults.tfa_2568}}{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                   </div>
                 </div>
               </div>
@@ -227,14 +226,14 @@ wFORMS.behaviors.prefill.skip = false;
                     <tr id="tfa_2152" class="section">
                       <td>
                         <div class="oneField field-container-D" id="tfa_2635-D">
-                          <input type="text" id="tfa_2635" name="tfa_2635" maxlength="150" value="{{defaults.tfa_2635}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <input type="text" id="tfa_2635" name="tfa_2635" maxlength="150" value="{{#if defaults.application_editing}}{{defaults.tfa_2635}}{{/if}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                         </div>
                       </td>
                       <td>
                         <div class="oneField field-container-D" id="tfa_2638-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountA form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{#if defaults.application_editing}}{{defaults.tfa_2638}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountA form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -242,14 +241,14 @@ wFORMS.behaviors.prefill.skip = false;
                     <tr id="tfa_2156" class="section">
                       <td>
                         <div class="oneField field-container-D" id="tfa_2639-D">
-                          <input type="text" id="tfa_2639" name="tfa_2639" maxlength="150" value="{{defaults.tfa_2639}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <input type="text" id="tfa_2639" name="tfa_2639" maxlength="150" value="{{#if defaults.application_editing}}{{defaults.tfa_2639}}{{/if}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                         </div>
                       </td>
                       <td>
                         <div class="oneField field-container-D" id="tfa_2640-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{#if defaults.application_editing}}{{defaults.tfa_2640}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -257,14 +256,14 @@ wFORMS.behaviors.prefill.skip = false;
                     <tr id="tfa_2160" class="section">
                       <td>
                         <div class="oneField field-container-D" id="tfa_2637-D">
-                          <input type="text" id="tfa_2637" name="tfa_2637" maxlength="150" value="{{defaults.tfa_2637}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <input type="text" id="tfa_2637" name="tfa_2637" maxlength="150" value="{{#if defaults.application_editing}}{{defaults.tfa_2637}}{{/if}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                         </div>
                       </td>
                       <td>
                         <div class="oneField field-container-D" id="tfa_2636-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{#if defaults.application_editing}}{{defaults.tfa_2636}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -272,14 +271,14 @@ wFORMS.behaviors.prefill.skip = false;
                     <tr id="tfa_2164" class="section">
                       <td>
                         <div class="oneField field-container-D" id="tfa_2153-D">
-                          <input type="text" id="tfa_2153" name="tfa_2153" maxlength="150" value="{{defaults.tfa_2153}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <input type="text" id="tfa_2153" name="tfa_2153" maxlength="150" value="{{#if defaults.application_editing}}{{defaults.tfa_2153}}{{/if}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                         </div>
                       </td>
                       <td>
                         <div class="oneField field-container-D" id="tfa_2154-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{#if defaults.application_editing}}{{defaults.tfa_2154}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -287,14 +286,14 @@ wFORMS.behaviors.prefill.skip = false;
                     <tr id="tfa_2168" class="section">
                       <td>
                         <div class="oneField field-container-D" id="tfa_2633-D">
-                          <input type="text" id="tfa_2633" name="tfa_2633" maxlength="150" value="{{defaults.tfa_2633}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <input type="text" id="tfa_2633" name="tfa_2633" maxlength="150" value="{{#if defaults.application_editing}}{{defaults.tfa_2633}}{{/if}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                         </div>
                       </td>
                       <td>
                         <div class="oneField field-container-D" id="tfa_2634-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{#if defaults.application_editing}}{{defaults.tfa_2634}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -307,7 +306,7 @@ wFORMS.behaviors.prefill.skip = false;
                         <div class="oneField field-container-D" id="tfa_2178-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" id="tfa_2178" name="tfa_2178" value="{{defaults.tfa_2178}}" readonly autocomplete="nope" data-lpignore="true" class="formula=ATFBudgetAmountA+ATFBudgetAmountB+ATFBudgetAmountC+ATFBudgetAmountD+ATFBudgetAmountE readonly form-input text-right">
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" id="tfa_2178" name="tfa_2178" value="{{#if defaults.application_editing}}{{defaults.tfa_2178}}{{/if}}" readonly autocomplete="nope" data-lpignore="true" class="formula=ATFBudgetAmountA+ATFBudgetAmountB+ATFBudgetAmountC+ATFBudgetAmountD+ATFBudgetAmountE readonly form-input text-right">
                           </div>
                         </div>
                       </td>
