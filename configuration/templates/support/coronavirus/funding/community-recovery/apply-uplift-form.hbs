@@ -337,7 +337,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-9 col-xl-12">
                 <div class="form-group field-container-D">
                   <label id="tfa_2784-L" class="preField r-margin reqMark" for="tfa_2784">
-                    Tell us how these activities or adaptations will contribute to your RecoveryPlan over the next 12 months and assist your organisation in creating positive impact for the people and communities you work with<br />
+                    Tell us how these activities or adaptations will contribute to your Recovery Plan over the next 12 months and assist your organisation in creating positive impact for the people and communities you work with<br />
                     <span class="form-input-hint text-secondary">(maximum 300 words)</span>
                   </label>
                 </div>
@@ -379,7 +379,19 @@ wFORMS.behaviors.prefill.skip = false;
 
         <div style="clear:both;"></div>
         {{#unless defaults.application_readonly}}
-        <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_editing}}Edit{{else}}New{{/if}}" class="Edit type">
+        <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_editing}}Edit{{else}}New{{/if}}" title="Edit type">
+        {{#if defaults.tfa_2791}}
+        <input type="hidden" id="tfa_2791" name="tfa_2791" value="{{defaults.tfa_2791}}" class="Organisation ID">
+        {{/if}}
+        {{#if defaults.tfa_2793}}
+        <input type="hidden" id="tfa_2793" name="tfa_2793" value="{{defaults.tfa_2793}}" class="Main Contact ID">
+        {{/if}}
+        {{#if defaults.tfa_2794}}
+        <input type="hidden" id="tfa_2794" name="tfa_2794" value="{{defaults.tfa_2794}}" class="Second Contact ID">
+        {{/if}}
+        {{#if defaults.tfa_2792}}
+        <input type="hidden" id="tfa_2792" name="tfa_2792" value="{{defaults.tfa_2792}}" class="Call 1 ID">
+        {{/if}}
         <input type="hidden" value="4844638" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="76e570e6a1fe06dbcccebe0246bb3d7f" name="tfa_dbControl" id="tfa_dbControl">

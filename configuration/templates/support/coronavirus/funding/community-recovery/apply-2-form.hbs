@@ -2204,7 +2204,7 @@ wFORMS.behaviors.prefill.skip = false;
 
         <div style="clear:both;"></div>
         {{#unless defaults.application_readonly}}
-        <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_confirm}}Confirm{{else}}{{#if defaults.application_editing}}Edit{{else}}New{{/if}}{{/if}}" class="Edit type">
+        <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_confirm}}Confirm{{else}}{{#if defaults.application_editing}}Edit{{else}}New{{/if}}{{/if}}" title="Edit type">
         <input type="hidden" id="tfa_1946" name="tfa_1946" value="{{defaults.tfa_1946}}" title="Charity Status">
         <input type="hidden" id="tfa_1936" name="tfa_1936" value="{{defaults.tfa_1936}}" title="Constituency">
         <input type="hidden" id="tfa_1934" name="tfa_1934" value="{{defaults.tfa_1934}}" title="Ward">
