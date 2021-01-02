@@ -1,5 +1,5 @@
 <div class="search grant-search grant-cyber-search">
-  {{{replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "http://scvo.org.uk/" "") "https://scvo.org.uk/" "") "http://cms.scvo.org/" "/"}}}
+  {{{replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "http://scvo.org.uk" "") "https://scvo.org.uk" "") "http://cms.scvo.org/" "/"}}}
 
   {{#compare (length @root.data.supplimentaryResponses.grants.aggregations.calls.buckets) ">" "0" ~}}
   {{#each @root.data.supplimentaryResponses.grants.aggregations.calls.buckets ~}}

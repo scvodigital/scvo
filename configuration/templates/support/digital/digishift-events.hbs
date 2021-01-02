@@ -2,7 +2,7 @@
   {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
   {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
   <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
-    {{{replace (replace (replace (replace content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+    {{{replace (replace (replace (replace (replace content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
 
     {{#compare @root.data.events.hits.total ">" 0 ~}}
     {{#each @root.data.events.hits.hits ~}}
