@@ -7,6 +7,16 @@
   "organizer": {
     "@type": "Organization",
     "name": "Scottish Council for Voluntary Organisations",
+    "url": "https://scvo.scot",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}"
+    }
+  },
+  "performer": {
+    "@type": "Organization",
+    "name": "Scottish Council for Voluntary Organisations",
+    "url": "https://scvo.scot",
     "logo": {
       "@type": "ImageObject",
       "url": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}"
@@ -25,16 +35,19 @@
       "postalCode": "{{event_venue.postcode}}"
     }
   },
+  "eventAttendanceMode": "OfflineEventAttendanceMode",
   {{else}}
   "location": "{{venue_alt}}",
+  "eventAttendanceMode": "OnlineEventAttendanceMode",
   {{/if ~}}
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{url}}"
   },
+  "eventStatus": "EventScheduled",
   "startDate": "{{momentFormat (moment date_start 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
   "endDate": "{{momentFormat (moment date_end 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
-  "description": {{{stringify (concat '' (truncate (striptags description) 280))}}},
+  "description": {{{stringify (concat '' (truncate (striptags (default description course_overview)) 280))}}},
   {{#if trainer ~}}
   "performer": {
     "@type": "Person",
@@ -42,9 +55,10 @@
   },
   {{/if ~}}
   "offers": {
-    "availability": "{{#if places_available}}Places available{{else}}Fully booked{{/if}}",
+    "availability": "{{#if places_available}}InStock{{else}}OutOfStock{{/if}}",
     "url": "{{#if booking_url}}{{booking_url}}{{else}}{{url}}/book{{/if}}",
     "validFrom": "{{momentFormat (moment date_start 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
+    "price": "{{#if costs}}{{costs}}{{else}}0{{/if}}",
     "priceCurrency": "GBP"
   }
 }
