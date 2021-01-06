@@ -47,7 +47,11 @@
   "eventStatus": "EventScheduled",
   "startDate": "{{momentFormat (moment date_start 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
   "endDate": "{{momentFormat (moment date_end 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
+  {{#ifAny description course_overview}}
   "description": {{{stringify (concat '' (truncate (striptags (default description course_overview)) 280))}}},
+  {{else}}
+  "description": "Detailed information has not yet been provided on this event.",
+  {{/ifAny}}
   {{#if trainer ~}}
   "performer": {
     "@type": "Person",
