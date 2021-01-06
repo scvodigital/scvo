@@ -5,42 +5,6 @@
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
-      "name": "award_data",
-      "taskModule": "elasticsearch",
-      "config": {
-        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
-        "elasticsearchConfig": {
-          "apiVersion": "5.6"
-        },
-        "queryTemplates": {
-          "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "sg-grant-recovery",
-          "template": ">context.metaData.handlebars.queries.grants_recovery-awarded"
-        }
-      },
-      "renderer": "handlebars"
-    },
-    {
-      "name": "check_for_awarded",
-      "taskModule": "reroute",
-      "config": {
-        "if": [
-          {
-            "and": [
-              {
-                "!=": [
-                  { "var": "data.award_data.hits.total" },
-                  0
-                ]
-              }
-            ]
-          },
-          "coronavirus_recovery_apply_already_awarded",
-          false
-        ]
-      }
-    },
-    {
       "name": "oscr_data",
       "taskModule": "elasticsearch",
       "config": {
