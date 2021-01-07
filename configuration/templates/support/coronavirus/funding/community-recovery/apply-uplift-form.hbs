@@ -391,6 +391,7 @@ wFORMS.behaviors.prefill.skip = false;
         {{#if defaults.tfa_2792}}
         <input type="hidden" id="tfa_2792" name="tfa_2792" value="{{defaults.tfa_2792}}" class="Call 1 ID">
         {{/if}}
+        <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd0AAG" class="Record Type ID">
         <input type="hidden" value="4874762" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="765d766d495399ef565e92592d65cdaa" name="tfa_dbControl" id="tfa_dbControl">
@@ -410,15 +411,9 @@ document.addEventListener("DOMContentLoaded", function() {
   $postcodeIcon = $('#postcode_validation_icon'),
   $postcodeWrapper = $('#postcode-wrapper'),
   $postcodeValidationMessage = $('#postcode_validation_message'),
-  $fundBranching = $('input[name=fund_branching]'),
-  $branches = $('#fund_branches'),
   $organisationType = $('#tfa_1944'),
   $organisationTypeOther = $('#org_type_other'),
   $organisationTypeOtherBlock = $('#org_type_other-D'),
-  $initialRecoveryStatus = $('#tfa_2689'),
-  $initialRecoveryType = $('#tfa_2692'),
-  $initialCommunityStatus = $('#tfa_2690'),
-  $initialCommunityType = $('#tfa_2693');
 
   $organisationTypeOther.blur(function(e) {
     var organisation_type_other = $organisationTypeOther.val();
@@ -449,37 +444,6 @@ document.addEventListener("DOMContentLoaded", function() {
       clearLocationData();
     }
   }
-
-  $fundBranching.on('change', branching);
-  function branching() {
-    var checked = $('input[name=fund_branching]:checked').val();
-    if (!checked) {
-      $branches.addClass('hidden');
-    } else {
-      switch ($('input[name=fund_branching]:checked').val()) {
-        case 'fund_branching_both':
-        $initialRecoveryStatus.val('Applied');
-        $initialRecoveryType.val('0123z000000CFSJAA4');
-        $initialCommunityStatus.val('Applied');
-        $initialCommunityType.val('0123z000000CFcxAAG');
-        break;
-        case 'fund_branching_atf':
-        $initialRecoveryStatus.val('Applied');
-        $initialRecoveryType.val('0123z000000CFSJAA4');
-        $initialCommunityStatus.val('Inactive');
-        $initialCommunityType.val('0123z000000CFgkAAG');
-        break;
-        case 'fund_branching_crf':
-        $initialRecoveryStatus.val('Inactive');
-        $initialRecoveryType.val('0123z000000CFgkAAG');
-        $initialCommunityStatus.val('Applied');
-        $initialCommunityType.val('0123z000000CFcxAAG');
-        break;
-      }
-      $branches.removeClass('hidden');
-    }
-  }
-  branching();
 
   function setLocationData(data) {
     console.log(data);
