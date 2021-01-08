@@ -361,9 +361,13 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" id="tfa_2689" name="tfa_2689" value="Applied" title="Status">
         <input type="hidden" id="tfa_2695" name="tfa_2695" value="Applied" title="Editing status">
         <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_editing}}Edit{{else}}New{{/if}}" title="Edit type">
+        {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}
+        <input type="hidden" id="tfa_2795" name="tfa_2795" value="0053z00000C4SZaAAN" title="Owner ID">
+        {{else}}
         {{#if defaults.tfa_2795}}
         <input type="hidden" id="tfa_2795" name="tfa_2795" value="{{defaults.tfa_2795}}" title="Owner ID">
         {{/if}}
+        {{/ifAny}}
         {{#if defaults.tfa_2791}}
         <input type="hidden" id="tfa_2791" name="tfa_2791" value="{{defaults.tfa_2791}}" title="Organisation ID">
         {{/if}}
