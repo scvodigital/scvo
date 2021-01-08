@@ -99,18 +99,6 @@ wFORMS.behaviors.prefill.skip = false;
                     <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</option>
                   </select>
                   <input type="hidden" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}">
-                  {{else}}
-                  <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true" style="pointer-events:none;" readonly>
-                    <option value="" disabled selected>Please select&hellip;</option>
-                    {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
-                    <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_1944}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
-                    {{/each}}
-                  </select>
-                  <div class="oneField field-container-D" id="org_type_other-D" data-condition="`#other-please-specify`" style="width:100%;">
-                    <div class="inputWrapper t-margin" style="width:100%;">
-                      <input type="text" id="org_type_other" name="org_type_other" value="{{defaults.tfa_1944}}" maxlength="150" title="Please specify your organisation type" autocomplete="nope" data-lpignore="true" class="form-input" readonly style="width:100%;">
-                    </div>
-                  </div>
                   {{/if}}
                 </div>
               </div>
@@ -142,18 +130,6 @@ wFORMS.behaviors.prefill.skip = false;
                     <option value="{{defaults.tfa_1944}}" selected>{{defaults.tfa_1944}}</option>
                   </select>
                   <input type="hidden" id="tfa_1944" name="tfa_1944" class="form-input" value="{{defaults.tfa_1944}}">
-                  {{else}}
-                  <select id="tfa_1944" name="tfa_1944" class="form-select required" required="true" style="pointer-events:none;" readonly>
-                    <option value="" disabled selected>Please select&hellip;</option>
-                    {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
-                    <option id="{{slugify this}}" value="{{this}}"{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
-                    {{/each}}
-                  </select>
-                  <div class="oneField field-container-D" id="org_type_other-D" data-condition="`#other-please-specify`" style="width:100%;">
-                    <div class="inputWrapper t-margin" style="width:100%;">
-                      <input type="text" id="org_type_other" name="org_type_other" value="" maxlength="150" title="Please specify your organisation type" autocomplete="nope" data-lpignore="true"  class="form-input" readonly style="width:100%;">
-                    </div>
-                  </div>
                   {{/if}}
                 </div>
               </div>
@@ -206,6 +182,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
+            {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}
             <div class="col-9 col-xl-12 b-margin-full" id="budget_atf">
               <div class="section group">
                 <p>
@@ -315,6 +292,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </table>
               </div>
             </div>
+            {{/ifAny}}
 
             <div class="form-group field-container-D t-margin" id="tfa_2369-D">
               <div class="col-9 col-xl-12">
@@ -332,6 +310,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
+            {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}
             <div class="form-group field-container-D t-margin" id="tfa_2784-D">
               <div class="col-9 col-xl-12">
                 <div class="form-group field-container-D">
@@ -363,6 +342,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{/if}}
               </div>
             </div>
+            {{/ifAny}}
           </div>
         </div>
 
@@ -379,6 +359,9 @@ wFORMS.behaviors.prefill.skip = false;
         <div style="clear:both;"></div>
         {{#unless defaults.application_readonly}}
         <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_editing}}Edit{{else}}New{{/if}}" title="Edit type">
+        {{#if defaults.tfa_2795}}
+        <input type="hidden" id="tfa_2795" name="tfa_2795" value="{{defaults.tfa_2795}}" class="Owner ID">
+        {{/if}}
         {{#if defaults.tfa_2791}}
         <input type="hidden" id="tfa_2791" name="tfa_2791" value="{{defaults.tfa_2791}}" class="Organisation ID">
         {{/if}}
@@ -392,7 +375,11 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" id="tfa_2792" name="tfa_2792" value="{{defaults.tfa_2792}}" class="Call 1 ID">
         {{/if}}
         <input type="hidden" id="tfa_2689" name="tfa_2689" value="Applied" class="">
-        <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd0AAG" class="Record Type ID">
+        {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}
+        <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd0AAG" class="Record Type ID - ATF">
+        {{else}}
+        <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd5AAG" class="Record Type ID - CRF">
+        {{/ifAny}}
         <input type="hidden" value="4874762" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="765d766d495399ef565e92592d65cdaa" name="tfa_dbControl" id="tfa_dbControl">
@@ -404,145 +391,18 @@ wFORMS.behaviors.prefill.skip = false;
   </div>
 </div>
 
-<script src="{{~>asset_url url='js/cleave.min.js'~}}"></script>
 <script type="text/javascript">
-document.addEventListener("DOMContentLoaded", function() {
-  var $form = $('#4874762'),
-  $postcode = $('#tfa_1925'),
-  $postcodeIcon = $('#postcode_validation_icon'),
-  $postcodeWrapper = $('#postcode-wrapper'),
-  $postcodeValidationMessage = $('#postcode_validation_message'),
-  $organisationType = $('#tfa_1944'),
-  $organisationTypeOther = $('#org_type_other'),
-  $organisationTypeOtherBlock = $('#org_type_other-D'),
-
-  $organisationTypeOther.blur(function(e) {
-    var organisation_type_other = $organisationTypeOther.val();
-    if (organisation_type_other) {
-      $organisationType.append('<option value="'+organisation_type_other+'">'+organisation_type_other+'</option>');
-      $organisationType.val(organisation_type_other);
-      $organisationTypeOtherBlock.addClass('offstate');
-    }
-  });
-
-  function checkPostcode() {
-    var postcode = $('#tfa_1925').val().toUpperCase();
-    if (postcode.match(/[a-z]{1,2}[0-9]{1,2}[a-z]?\s?[0-9][a-z]{2}/ig)) {
-      $postcodeIcon
-      .addClass("loading text-primary")
-      .removeClass("fa-times fa-check text-error text-success");
-      $.ajax({
-        url: '/postcode-lookup?q=' + postcode,
-        success: function(data) {
-          if (Array.isArray(data) && data.length > 0) {
-            setLocationData(data);
-          } else {
-            clearLocationData();
-          }
-        }
-      })
-    } else {
-      clearLocationData();
-    }
-  }
-
-  function setLocationData(data) {
-    console.log(data);
-    $('#tfa_1925').val(data[0].place);
-    $('#tfa_1936').val(data[0].constituency);
-    $('#tfa_1934').val(data[0].ward);
-    $('#tfa_1953').val(data[0].simd_datazone);
-    $('#tfa_1955').val(data[0].simd_rank);
-    $('#postcode_validation_message').html('');
-    $('#postcode-wrapper').removeClass("has-error")
-    $('#postcode_validation_icon')
-    .addClass("fa-check text-success")
-    .removeClass("loading fa-times text-primary text-error");
-  }
-
-  function clearLocationData() {
-    $postcodeWrapper.addClass('has-error');
-    $postcodeValidationMessage.html('');
-    $postcodeIcon
-    .addClass("fa-times text-error")
-    .removeClass("loading fa-check text-primary text-success");
-    $('#tfa_1936').val('');
-    $('#tfa_1934').val('');
-    $('#tfa_1953').val('');
-    $('#tfa_1955').val('');
-  }
-
-  $postcode.on('keyup', checkPostcode);
-
-  $('input[type=radio][name=tfa_2398]').change(function() {
-    $('#tfa_2505').val('');
-    $('#tfa_1884').val('');
-    {{#each local_authorities ~}}
-    {{#if id_multiple ~}}
-    $('#{{id_multiple}}').prop('checked', false);
-    {{/if ~}}
-    {{/each ~}}
-  });
-
-  {{#unless defaults.application_editing}}
-  var cleave_sort_code = new Cleave('#tfa_2273', {
-    delimiter: '-',
-    blocks: [2,2,2],
-    numericOnly: true,
-    delimiterLazyShow: true
-  });
-  var cleave_account_number = new Cleave('#tfa_2274', {
-    blocks: [8],
-    numericOnly: true
-  });
-  {{/unless}}
-
-
-  var fileFields = $('input[type="file"]');
-  fileFields.on('change', function(event){
-    validateFileSize(event.currentTarget);
-  });
-
-  function validateFileSize(target) {
-    var total = 0;
-    fileFields.each(function(i, fileField) {
-      if (fileField.files && fileField.files[0]) {
-        total += fileField.files[0].size;
-      }
-    });
-
-    var megs = total / 1024 / 1024;
-    if (megs > 20 && target) {
-      alert('The combined filesize upload limit is 20MB. The file you are trying to attach exceeds this limit, please choose a smaller file.');
-      $(target).val('');
-
-      total -= target.files[0].size;
-    }
-
-    var megsWithDecimal = Math.round(((total / 1024 / 1024) + Number.EPSILON) * 100) / 100;
-    $('#file-upload-limit-total').html('' + megsWithDecimal);
-    $('#file-upload-limit-progress').attr('value', ''+total);
-  }
-
-  validateFileSize();
-});
-
-function isNumberKey(evt){
-  var charCode = (evt.which) ? evt.which : evt.keyCode
-  return !(charCode > 31 && (charCode < 48 || charCode > 57));
-}
-
-function checkFundingAmountATF() {
-  var amount_requested = $('#tfa_2568').val();
-  if (amount_requested < 5000) {
-    alert("The amount you are applying for is too low - the minimum funding award is £5,000")
-  }
-}
-function checkFundingAmountCRF() {
-  var amount_requested = $('#tfa_2769').val();
-  if (amount_requested < 5000) {
-    alert("The amount you are applying for is too low - the minimum funding award is £5,000")
-  }
-}
+// function checkFundingAmountATF() {
+//   var amount_requested = $('#tfa_2568').val();
+//   if (amount_requested < 5000) {
+//     alert("The amount you are applying for is too low - the minimum funding award is £5,000")
+//   }
+// }
+// function checkFundingAmountCRF() {
+//   var amount_requested = $('#tfa_2769').val();
+//   if (amount_requested < 5000) {
+//     alert("The amount you are applying for is too low - the minimum funding award is £5,000")
+//   }
+// }
 </script>
 {{/withExtend}}
