@@ -376,14 +376,18 @@ wFORMS.behaviors.prefill.skip = false;
         {{/if}}
         <input type="hidden" id="tfa_2689" name="tfa_2689" value="Applied" class="">
         {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}
+        <input type="hidden" id="tfa_2697" name="tfa_2697" value="Adapt and Thrive" class="Fund Name">
+        <input type="hidden" id="tfa_2696" name="tfa_2696" value="Adapt and Thrive - Uplift" class="Call">
         <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd0AAG" class="Record Type ID - ATF">
         {{else}}
+        <input type="hidden" id="tfa_2697" name="tfa_2697" value="Communities Recovery Fund" class="Fund Name">
+        <input type="hidden" id="tfa_2696" name="tfa_2696" value="Communities Recovery Fund - Uplift" class="Call">
         <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd5AAG" class="Record Type ID - CRF">
         {{/ifAny}}
         <input type="hidden" value="4874762" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="765d766d495399ef565e92592d65cdaa" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="5" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="7" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         {{/unless}}
       </form>
