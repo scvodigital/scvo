@@ -60,7 +60,7 @@ wFORMS.behaviors.prefill.skip = false;
         "idsSelector": "#tfa_1876",
         "ignoreFields": ["#tfa_2274", "#tfa_2273"]
       }'{{/unless}}>
-        <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{#unless (compare @root.data.application_data.request.data.data_object.get_grant.records.[0].Call__c 'Recovery - Call 1')}}{{@root.request.params.session_key}}{{/unless}}">
+        <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{@root.request.params.session_key}}">
         <div class="bg-secondary">
           <div id="tfa_1883" class="container section v-margin-full v-padding-full">
             <h2 id="tfa_1883-L">
