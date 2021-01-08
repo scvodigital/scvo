@@ -358,31 +358,31 @@ wFORMS.behaviors.prefill.skip = false;
 
         <div style="clear:both;"></div>
         {{#unless defaults.application_readonly}}
+        <input type="hidden" id="tfa_2689" name="tfa_2689" value="Applied" title="Status">
         <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_editing}}Edit{{else}}New{{/if}}" title="Edit type">
         {{#if defaults.tfa_2795}}
-        <input type="hidden" id="tfa_2795" name="tfa_2795" value="{{defaults.tfa_2795}}" class="Owner ID">
+        <input type="hidden" id="tfa_2795" name="tfa_2795" value="{{defaults.tfa_2795}}" title="Owner ID">
         {{/if}}
         {{#if defaults.tfa_2791}}
-        <input type="hidden" id="tfa_2791" name="tfa_2791" value="{{defaults.tfa_2791}}" class="Organisation ID">
+        <input type="hidden" id="tfa_2791" name="tfa_2791" value="{{defaults.tfa_2791}}" title="Organisation ID">
         {{/if}}
         {{#if defaults.tfa_2793}}
-        <input type="hidden" id="tfa_2793" name="tfa_2793" value="{{defaults.tfa_2793}}" class="Main Contact ID">
+        <input type="hidden" id="tfa_2793" name="tfa_2793" value="{{defaults.tfa_2793}}" title="Main Contact ID">
         {{/if}}
         {{#if defaults.tfa_2794}}
-        <input type="hidden" id="tfa_2794" name="tfa_2794" value="{{defaults.tfa_2794}}" class="Second Contact ID">
+        <input type="hidden" id="tfa_2794" name="tfa_2794" value="{{defaults.tfa_2794}}" title="Second Contact ID">
         {{/if}}
         {{#if defaults.tfa_2792}}
-        <input type="hidden" id="tfa_2792" name="tfa_2792" value="{{defaults.tfa_2792}}" class="Call 1 ID">
+        <input type="hidden" id="tfa_2792" name="tfa_2792" value="{{defaults.tfa_2792}}" title="Call 1 Application ID">
         {{/if}}
-        <input type="hidden" id="tfa_2689" name="tfa_2689" value="Applied" class="">
         {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}
-        <input type="hidden" id="tfa_2697" name="tfa_2697" value="Adapt and Thrive" class="Fund Name">
-        <input type="hidden" id="tfa_2696" name="tfa_2696" value="Adapt and Thrive - Uplift" class="Call">
-        <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd0AAG" class="Record Type ID - ATF">
+        <input type="hidden" id="tfa_2697" name="tfa_2697" value="Adapt and Thrive" title="Fund Name">
+        <input type="hidden" id="tfa_2696" name="tfa_2696" value="Adapt and Thrive - Uplift" title="Call">
+        <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd0AAG" title="Record Type ID">
         {{else}}
-        <input type="hidden" id="tfa_2697" name="tfa_2697" value="Communities Recovery Fund" class="Fund Name">
-        <input type="hidden" id="tfa_2696" name="tfa_2696" value="Communities Recovery Fund - Uplift" class="Call">
-        <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd5AAG" class="Record Type ID - CRF">
+        <input type="hidden" id="tfa_2697" name="tfa_2697" value="Communities Recovery Fund" title="Fund Name">
+        <input type="hidden" id="tfa_2696" name="tfa_2696" value="Communities Recovery Fund - Uplift" title="Call">
+        <input type="hidden" id="tfa_2692" name="tfa_2692" value="0123z000000CGd5AAG" title="Record Type ID">
         {{/ifAny}}
         <input type="hidden" value="4874762" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
