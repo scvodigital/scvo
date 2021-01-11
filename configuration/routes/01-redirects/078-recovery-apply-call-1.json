@@ -1,0 +1,23 @@
+{
+  "name": "redirect_recovery-apply-call-1",
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply(/:cno)",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/support/coronavirus/funding/scottish-government/community-recovery/apply-2{{#if request.params.cno}}/{{request.params.cno}}{{/if}}"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
