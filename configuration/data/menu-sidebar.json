@@ -192,11 +192,6 @@
 					"route": "^/about/european-projects$",
 					"children": [
 						{
-							"label": "SCOPE",
-							"path": "/about/european-projects/scope",
-							"route": "^/about/european-projects/scope$"
-						},
-						{
 							"label": "Food, poverty and social inclusion",
 							"path": "/about/european-projects/food-poverty-social-inclusion",
 							"route": "^/about/european-projects/food-poverty-social-inclusion$"
@@ -1267,8 +1262,15 @@
 								},
 								{
 									"label": "SCOPE e-learning platform",
-									"path": "/support/running-your-organisation/scope-elearning-platform",
-									"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations"
+									"path": "/support/running-your-organisation/scope",
+									"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations",
+									"children": [
+										{
+											"label": "About the programme",
+											"path": "/support/running-your-organisation/scope/programme",
+											"route": "^/support/running-your-organisation/scope/programme"
+										}
+									]
 								},
 								{
 									"label": "Roles &#038; responsibilities",
@@ -1501,8 +1503,8 @@
 						},
 						{
 							"label": "SCOPE e-learning platform",
-							"path": "/support/running-your-organisation/scope-elearning-platform",
-							"route": "^/support/running-your-organisation/scope-elearning-platform$",
+							"path": "/support/running-your-organisation/scope",
+							"route": "^/support/running-your-organisation/scope$",
 							"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations",
 							"icon": "users-class"
 						}
