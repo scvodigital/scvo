@@ -182,8 +182,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}
-            <div class="col-9 col-xl-12 b-margin-full" id="budget_atf">
+            <div class="col-9 col-xl-12 b-margin-full" id="budget">
               <div class="section group">
                 <p>
                   Please provide details of what you intend to spend this on. Enter as much information as you can; e.g. dedicated/backfilling staff time, equipment, building works, consultants, premises/venue costs. As with your previous application, the Business Advisors will discuss this with you.
@@ -292,7 +291,6 @@ wFORMS.behaviors.prefill.skip = false;
                 </table>
               </div>
             </div>
-            {{/ifAny}}
 
             <div class="form-group field-container-D t-margin" id="tfa_2369-D">
               <div class="col-9 col-xl-12">
@@ -350,6 +348,9 @@ wFORMS.behaviors.prefill.skip = false;
         <div class="container">
           <div class="actions columns" id="4874762-A">
             <div class="column col-9 col-xl-12 v-margin-full">
+              <p class="b-margin-full">
+                In submitting this supplementary application it is subject to the terms and conditions you have agreed to in your original application.
+              </p>
               <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg b-margin-full" id="submit_button" value="Submit">
             </div>
           </div>
