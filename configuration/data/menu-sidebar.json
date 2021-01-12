@@ -1263,14 +1263,7 @@
 								{
 									"label": "SCOPE e-learning platform",
 									"path": "/support/running-your-organisation/scope",
-									"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations",
-									"children": [
-										{
-											"label": "About the programme",
-											"path": "/support/running-your-organisation/scope/programme",
-											"route": "^/support/running-your-organisation/scope/programme"
-										}
-									]
+									"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations"
 								},
 								{
 									"label": "Roles &#038; responsibilities",
@@ -1506,7 +1499,14 @@
 							"path": "/support/running-your-organisation/scope",
 							"route": "^/support/running-your-organisation/scope$",
 							"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations",
-							"icon": "users-class"
+							"icon": "users-class",
+							"children": [
+								{
+									"label": "About the programme",
+									"path": "/support/running-your-organisation/scope/programme",
+									"route": "^/support/running-your-organisation/scope/programme"
+								}
+							]
 						}
 					],
 					"archived": [
