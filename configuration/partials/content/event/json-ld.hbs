@@ -62,7 +62,7 @@
     "availability": "{{#if places_available}}InStock{{else}}OutOfStock{{/if}}",
     "url": "{{#if booking_url}}{{booking_url}}{{else}}{{url}}/book{{/if}}",
     "validFrom": "{{momentFormat (moment date_start 'x') 'YYYY-MM-DDTHH:mm:ssZ'}}",
-    "price": "{{#if costs}}{{costs}}{{else}}0{{/if}}",
+    "price": "{{#if costs}}{{#ifAny (contains costs 'Free') (contains costs 'free')}}0{{else}}{{costs}}{{/ifAny}}{{else}}0{{/if}}",
     "priceCurrency": "GBP"
   }
 }
