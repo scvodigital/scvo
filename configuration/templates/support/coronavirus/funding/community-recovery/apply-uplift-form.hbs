@@ -185,7 +185,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-9 col-xl-12 b-margin-full" id="budget">
               <div class="section group">
                 <p>
-                  Please provide details of what you intend to spend this on. Enter as much information as you can; e.g. dedicated/backfilling staff time, equipment, building works, consultants, premises/venue costs. As with your previous application, the Business Advisors will discuss this with you.
+                  Please provide details of what you intend to spend this on. {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}Enter as much information as you can; e.g. dedicated/backfilling staff time, equipment, building works, consultants, premises/venue costs. As with your previous application, the Business Advisors will discuss this with you.{{/ifAny}}
                 </p>
                 <table class="gridLayout" style="width:100%;">
                   <thead>
