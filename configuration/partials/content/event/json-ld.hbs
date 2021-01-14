@@ -13,15 +13,6 @@
       "url": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}"
     }
   },
-  "performer": {
-    "@type": "Organization",
-    "name": "Scottish Council for Voluntary Organisations",
-    "url": "https://scvo.scot",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}"
-    }
-  },
   {{#if event_venue ~}}
   "location": {
     "@type": "Place",
@@ -56,6 +47,16 @@
   "performer": {
     "@type": "Person",
     "name": "{{trainer}}"
+  },
+  {{else}}
+  "performer": {
+    "@type": "Organization",
+    "name": "Scottish Council for Voluntary Organisations",
+    "url": "https://scvo.scot",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}"
+    }
   },
   {{/if ~}}
   "offers": {
