@@ -33,11 +33,32 @@
       ],
       "filter": [
         {{#if @root.request.params.query.team ~}}
+        {{!-- don't ask... --}}
+        {{#compare @root.request.params.query.team 'digital'}}
+        {
+          "bool": {
+            "should": [
+              {
+                "term": {
+                  "team": "digital"
+                }
+              },
+              {
+                "term": {
+                  "Id": "a1v3z00000INxCkAAL"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        },
+        {{else}}
         {
           "term": {
             "team": "{{@root.request.params.query.team}}"
           }
         },
+        {{/compare}}
         {{/if ~}}
         {{#if @root.request.params.query.type ~}}
         {
