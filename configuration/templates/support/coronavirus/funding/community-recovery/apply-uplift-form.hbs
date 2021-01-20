@@ -379,7 +379,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" id="tfa_2794" name="tfa_2794" value="{{defaults.tfa_2794}}" title="Second Contact ID">
         {{/if}}
         {{#if defaults.tfa_2792}}
-        <input type="hidden" id="tfa_2792" name="tfa_2792" value="{{defaults.tfa_2792}}" title="Call 1 Application ID">
+        <input type="hidden" id="tfa_2792" name="tfa_2792" value="{{defaults.tfa_2792}}" title="Parent Application ID">
         {{/if}}
         {{#ifAny (compare defaults.application_fund "Recovery Fund") (compare defaults.application_fund "Adapt and Thrive")}}
         <input type="hidden" id="tfa_2797" name="tfa_2797" value="Adapt and Thrive" title="Fund Name">
