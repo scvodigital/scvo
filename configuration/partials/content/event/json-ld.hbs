@@ -13,7 +13,7 @@
       "url": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}"
     }
   },
-  {{#if event_venue.name ~}}
+  {{#ifAll event_venue.name (compare event_venue.name "!==" "SCVO Zoom meeting") ~}}
   "location": {
     "@type": "Place",
     "name": "{{event_venue.name}}",
@@ -34,7 +34,7 @@
     "address": "{{#if booking_url}}{{booking_url}}{{else}}{{url}}/book{{/if}}"
   },
   "eventAttendanceMode": "OnlineEventAttendanceMode",
-  {{/if ~}}
+  {{/ifAll ~}}
   "mainEntityOfPage": {
     "@type": "WebPage",
     "@id": "{{url}}"
