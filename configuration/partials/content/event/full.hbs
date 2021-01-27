@@ -239,7 +239,7 @@
           {{/if ~}}
           {{else}}
           {{#if venue_alt ~}}
-          {{{replace venue_alt 'style=' 'data-style='}}}
+          {{{replace (stripTags venue_alt) 'style=' 'data-style='}}}
           {{else}}
           TBC
           {{#if city ~}}({{city}}){{else}}{{#if event_venue.address_2 ~}}({{event_venue.address_2}}){{/if ~}}{{/if ~}}
@@ -256,7 +256,7 @@
       </div>
       {{#compare course_type "Training Course"}}
       {{#if show_in_house_training_info}}
-      <p>
+      <p class="t-margin">
         <strong>In-house training service</strong><br />
         This course can be delivered in-house.
       </p>

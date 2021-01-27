@@ -13,7 +13,7 @@
       "url": "{{~>asset_url url='images/icons/apple-touch-icon.png'~}}"
     }
   },
-  {{#if event_venue ~}}
+  {{#if event_venue.name ~}}
   "location": {
     "@type": "Place",
     "name": "{{event_venue.name}}",
@@ -28,7 +28,11 @@
   },
   "eventAttendanceMode": "OfflineEventAttendanceMode",
   {{else}}
-  "location": "{{venue_alt}}",
+  "location": {
+    "@type": "Place",
+    "name": "{{stripTags venue_alt}}",
+    "address": "{{#if booking_url}}{{booking_url}}{{else}}{{url}}/book{{/if}}"
+  },
   "eventAttendanceMode": "OnlineEventAttendanceMode",
   {{/if ~}}
   "mainEntityOfPage": {
