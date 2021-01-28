@@ -26,7 +26,7 @@
         </select>
       </div>
     </div>
-    <div class="column col-3 col-lg-6 col-md-12">
+    {{!-- <div class="column col-3 col-lg-6 col-md-12">
       <div class="form-group">
         <select class="form-select" id="grant-recovery-main_issue" name="main_issue" onchange="this.form.submit()">
           <option value=""{{#if @root.request.params.query.main_issue}}{{else}} selected{{/if}}>Main issue</option>
@@ -45,7 +45,7 @@
           {{/each ~}}
         </select>
       </div>
-    </div>
+    </div> --}}
     <div class="column col-3 col-lg-6 col-md-12">
       <div class="form-group">
         <select class="form-select" id="grant-recovery-call" name="call" onchange="this.form.submit()">
@@ -105,10 +105,10 @@
               {{/if ~}}
               {{/if ~}}
               {{/if ~}}
-              via <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?call={{slugify call}}">{{call}}</a>
-              {{#unless paid_by_funder ~}}
+              via <a href="/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients?call={{slugify call}}">{{call}}</a>
+              {{!-- {{#unless paid_by_funder ~}}
               but not yet paid
-              {{/unless ~}}
+              {{/unless ~}} --}}
               {{#each @root.data.organisationResponses.grants.hits.hits ~}}
               {{#if (contains _type 'sg-grant-recovery') ~}}
               {{#unless (ifAll (compare _type @root.data.primaryResponse.hits.hits.[0]._type) (compare _source.call_slug @root.data.primaryResponse.hits.hits.[0]._source.call_slug)) ~}}
@@ -116,7 +116,7 @@
               {{#if paid_by_funder ~}}
               and
               &pound;{{addCommas (default amount_awarded amount_requested)}}
-              via <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?call={{slugify call}}">{{call}}</a>
+              via <a href="/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients?call={{slugify call}}">{{call}}</a>
               {{/if ~}}
               {{/with ~}}
               {{/unless ~}}
@@ -130,7 +130,7 @@
               <ul class="inline-list">
                 {{#each main_issue ~}}
                 <li>
-                  <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?main_issue={{slugify this}}" class="chip" title="Main issue: {{replace this ' (please describe)' ''}}">{{replace this ' (please describe)' ''}}</a>
+                  <a href="/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients?main_issue={{slugify this}}" class="chip" title="Main issue: {{replace this ' (please describe)' ''}}">{{replace this ' (please describe)' ''}}</a>
                 </li>
                 {{/each ~}}
               </ul>
@@ -143,7 +143,7 @@
               <ul class="inline-list">
                 {{#each target_group ~}}
                 <li>
-                  <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?target_group={{slugify (replace this ' (please describe below)' '')}}" class="chip" title="Target group: {{replace this ' (please describe below)' ''}}">{{replace this ' (please describe below)' ''}}</a>
+                  <a href="/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients?target_group={{slugify (replace this ' (please describe below)' '')}}" class="chip" title="Target group: {{replace this ' (please describe below)' ''}}">{{replace this ' (please describe below)' ''}}</a>
                 </li>
                 {{/each ~}}
               </ul>

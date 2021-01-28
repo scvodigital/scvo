@@ -2,15 +2,6 @@
   "size": 0,
   "_source": false,
   "query": {
-    "bool": {
-      "filter": [
-        {
-          "term": {
-            "paid_by_funder": true
-          }
-        }
-      ]
-    }
   },
   "aggs": {
     "calls": {

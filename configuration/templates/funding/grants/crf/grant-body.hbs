@@ -38,10 +38,10 @@
       {{/if ~}}
       {{/if ~}}
       {{/if ~}}
-      via <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?call={{slugify call}}">{{call}}</a>
-      {{#unless paid_by_funder ~}}
+      via <a href="/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients?call={{slugify call}}">{{call}}</a>
+      {{!-- {{#unless paid_by_funder ~}}
       but not yet paid
-      {{/unless ~}}
+      {{/unless ~}} --}}
       {{#each @root.data.organisationResponses.grants.hits.hits ~}}
       {{#if (contains _type 'sg-grant-recovery') ~}}
       {{#unless (ifAll (compare _type @root.data.primaryResponse.hits.hits.[0]._type) (compare _source.call_slug @root.data.primaryResponse.hits.hits.[0]._source.call_slug)) ~}}
@@ -49,7 +49,7 @@
       {{#if paid_by_funder ~}}
       and
       &pound;{{addCommas (default amount_awarded amount_requested)}}
-      via <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?call={{slugify call}}">{{call}}</a>
+      via <a href="/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients?call={{slugify call}}">{{call}}</a>
       {{/if ~}}
       {{/with ~}}
       {{/unless ~}}
@@ -85,7 +85,7 @@
       <ul class="inline-list">
         {{#each main_issue ~}}
         <li>
-          <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?main_issue={{slugify this}}" class="chip" title="Main issue: {{replace this ' (please describe)' ''}}">{{replace this ' (please describe)' ''}}</a>
+          <a href="/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients?main_issue={{slugify this}}" class="chip" title="Main issue: {{replace this ' (please describe)' ''}}">{{replace this ' (please describe)' ''}}</a>
         </li>
         {{/each ~}}
       </ul>
@@ -97,7 +97,7 @@
       <ul class="inline-list">
         {{#each target_group ~}}
         <li>
-          <a href="/support/coronavirus/funding/scottish-government/recovery-fund/recipients?target_group={{slugify this}}" class="chip" title="Target group: {{replace this ' (please describe below)' ''}}">{{replace this ' (please describe below)' ''}}</a>
+          <a href="/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients?target_group={{slugify this}}" class="chip" title="Target group: {{replace this ' (please describe below)' ''}}">{{replace this ' (please describe below)' ''}}</a>
         </li>
         {{/each ~}}
       </ul>

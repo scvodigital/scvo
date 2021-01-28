@@ -1,0 +1,76 @@
+{
+  "name": "grant_atf_search",
+  "debug": false,
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "grants",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "sg-grant-atf",
+            "template": ">context.metaData.handlebars.queries.grants_atf-search"
+          },
+          {
+            "name": "types",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "sg-grant-atf",
+            "template": ">context.metaData.handlebars.queries.grants_atf-aggs"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    "context.metaData.commonTasks.tfnCoronavirusRelatedPosts",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.page-header",
+              "body": ">context.metaData.handlebars.templates.funding_grants_atf_search-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

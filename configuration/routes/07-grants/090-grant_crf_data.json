@@ -1,7 +1,7 @@
 {
-  "name": "grant_recovery_data",
+  "name": "grant_crf_data",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/recovery-fund/recipients/data.json",
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients/data.json",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -14,8 +14,8 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "sg-grant-recovery",
-          "template": ">context.metaData.handlebars.queries.grants_recovery-data",
+          "type": "sg-grant-crf",
+          "template": ">context.metaData.handlebars.queries.grants_crf-data",
           "noResultsRoute": "four_oh_four"
         }
       },
@@ -33,8 +33,8 @@
           {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "sg-grant-recovery",
-            "template": ">context.metaData.handlebars.queries.grants_recovery-aggs"
+            "type": "sg-grant-crf",
+            "template": ">context.metaData.handlebars.queries.grants_crf-aggs"
           }
         ]
       },
@@ -55,7 +55,7 @@
           "data": {
             "layout": ">context.metaData.handlebars.layouts.data",
             "parts": {
-              "content": ">context.metaData.handlebars.templates.funding_grants_recovery_data"
+              "content": ">context.metaData.handlebars.templates.funding_grants_crf_data"
             },
             "contentType": "application/json"
           }

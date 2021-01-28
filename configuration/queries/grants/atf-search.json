@@ -18,13 +18,6 @@
   ],
   "query": {
     "bool": {
-      "filter": [
-        {
-          "term": {
-            "paid_by_funder": true
-          }
-        }
-      ],
       "must": [
         {{#ifAny @root.request.params.query.area @root.request.params.query.main_issue @root.request.params.query.target_group @root.request.params.query.call @root.request.params.query.q ~}}
         {{#if @root.request.params.query.area ~}}

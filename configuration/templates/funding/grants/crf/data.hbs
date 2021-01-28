@@ -214,7 +214,7 @@
     "fromOpenCall": {{#if (contains call "Invited")}}"No"{{else}}"Yes"{{/if}},
     {{/if ~}}
     "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}",
-    "dataSource": "https://scvo.scot/support/coronavirus/funding/scottish-government/recovery-fund/recipients/data.json"
+    "dataSource": "https://scvo.scot/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients/data.json"
   }{{#unless @last}},{{/unless}}
   {{/with}}
   {{/each}}
