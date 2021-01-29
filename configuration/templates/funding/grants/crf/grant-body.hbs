@@ -43,7 +43,7 @@
       but not yet paid
       {{/unless ~}} --}}
       {{#each @root.data.organisationResponses.grants.hits.hits ~}}
-      {{#if (contains _type 'sg-grant-recovery') ~}}
+      {{#ifAny (contains _type 'sg-grant-atf') (contains _type 'sg-grant-crf') ~}}
       {{#unless (ifAll (compare _type @root.data.primaryResponse.hits.hits.[0]._type) (compare _source.call_slug @root.data.primaryResponse.hits.hits.[0]._source.call_slug)) ~}}
       {{#with _source ~}}
       {{#if paid_by_funder ~}}
@@ -53,7 +53,7 @@
       {{/if ~}}
       {{/with ~}}
       {{/unless ~}}
-      {{/if ~}}
+      {{/ifAny ~}}
       {{/each ~}}
     </li>
     {{/if ~}}
