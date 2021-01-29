@@ -2127,7 +2127,7 @@ wFORMS.behaviors.prefill.skip = false;
           {{#with @root.data.primaryResponse.hits.hits.[0]._source}}
           <h2>{{{title}}}</h2>
 
-          {{{replace (replace (replace (replace (replace content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+          {{{replace (replace (replace (replace (replace content "_DISABLED_@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
           {{/with}}
         </div>
         {{/if}}
