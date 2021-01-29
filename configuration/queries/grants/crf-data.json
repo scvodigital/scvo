@@ -46,6 +46,11 @@
         },
         {
           "exists": {
+            "field": "amount_recommended"
+          }
+        },
+        {
+          "exists": {
             "field": "amount_awarded"
           }
         }
