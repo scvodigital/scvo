@@ -11,10 +11,14 @@
     {{#if amount_awarded ~}}
     "amountAwarded": {{amount_awarded}},
     {{else}}
+    {{#if amount_recommended ~}}
+    "amountAwarded": {{amount_recommended}},
+    {{else}}
     {{#if amount_requested ~}}
     "amountAwarded": {{amount_requested}},
     {{else}}
     "amountAwarded": 0,
+    {{/if ~}}
     {{/if ~}}
     {{/if ~}}
     {{#ifAll paid_by_funder (ifAny amount_requested amount_awarded) ~}}
