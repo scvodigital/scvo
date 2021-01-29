@@ -97,11 +97,15 @@
               {{#if amount_awarded ~}}
               Award: &pound;{{addCommas amount_awarded}}
               {{else}}
+              {{#if amount_recommended ~}}
+              Award: &pound;{{addCommas amount_recommended}}
+              {{else}}
               {{#if amount_requested_total ~}}
               Award: &pound;{{addCommas amount_requested_total}}
               {{else}}
               {{#if amount_requested ~}}
               Award: &pound;{{addCommas amount_requested}}
+              {{/if ~}}
               {{/if ~}}
               {{/if ~}}
               {{/if ~}}
