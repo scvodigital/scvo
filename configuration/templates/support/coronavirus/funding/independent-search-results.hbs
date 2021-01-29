@@ -1,7 +1,7 @@
 <div class="b-margin-full b-padding-full">
   {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
   {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-  {{{replace (replace (replace (replace (replace content "_DISABLED_@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+  {{{replace (replace (replace (replace (replace content "@scvo.scot" "@scvo.org.uk") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
   {{/with ~}}
   {{/if ~}}
 
