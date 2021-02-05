@@ -1,4 +1,4 @@
-<form class="b-margin" autocomplete="off" action="{{default target '/search'}}" method="GET">
+<form autocomplete="off" action="{{default target '/search'}}" method="GET">
   <div class="input-group input-inline">
     <input type="text" class="form-input" placeholder="{{default placeholder 'Search SCVO'}}" id="{{id}}-q" name="q" aria-label="Search keywords" value="{{@root.request.params.query.q}}" />
     {{#ifAny type @root.request.params.query.type ~}}

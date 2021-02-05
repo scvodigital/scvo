@@ -13,16 +13,16 @@
     {{!-- style="background-image:url('/rouleaux.svg?color=FEF9F9&style={{itemAt (split 'solid,stripes,dots' ',') (random 0 2)}}');" --}}
     <div class="bg-rouleaux">
       <div class="container">
-        <header class="navbar header v-padding">
+        <header class="navbar header b-padding-full b-margin-full">
           <section class="navbar-section">
-            <a href="/" class="navbar-brand b-margin-full" title="Scottish Council for Voluntary Organisations">
+            <a href="/" class="navbar-brand b-margin-full t-padding" title="Scottish Council for Voluntary Organisations">
               <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
             </a>
           </section>
           <section class="navbar-section">
             <div class="form-horizontal hide-lg">
               {{> site_search_form id='header'}}
-              <a href="/about/membership" class="btn btn-primary btn-lg btn-cta float-right">Join our community</a>
+              <a href="/about/membership" class="btn btn-primary btn-lg btn-cta mt float-right">Join our community</a>
             </div>
             <div class="mobile-header-buttons show-lg">
               <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"

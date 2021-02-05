@@ -106,6 +106,129 @@ $fast-transition-speed: 0.12s;
   background: $primary-color-dark;
 }
 
+
+.mt {
+  margin-top: $padding/2 !important;
+}
+.mt-1 {
+  margin-top: $padding !important;
+}
+.mt-2 {
+  margin-top: $padding * 2 !important;
+}
+.mb {
+  margin-bottom: $padding/2 !important;
+}
+.mb-1 {
+  margin-bottom: $padding !important;
+}
+.mb-2 {
+  margin-bottom: $padding * 2 !important;
+}
+.ml {
+  margin-left: $padding/2 !important;
+}
+.ml-1 {
+  margin-left: $padding !important;
+}
+.ml-2 {
+  margin-left: $padding * 2 !important;
+}
+.mr {
+  margin-right: $padding/2 !important;
+}
+.mr-1 {
+  margin-right: $padding !important;
+}
+.mr-2 {
+  margin-right: $padding * 2 !important;
+}
+.my {
+  margin-top: $padding/2 !important;
+  margin-bottom: $padding/2 !important;
+}
+.my-1 {
+  margin-top: $padding !important;
+  margin-bottom: $padding !important;
+}
+.my-2 {
+  margin-top: $padding * 2 !important;
+  margin-bottom: $padding * 2 !important;
+}
+.mx {
+  margin-left: $padding/2 !important;
+  margin-right: $padding/2 !important;
+}
+.mx-1 {
+  margin-left: $padding !important;
+  margin-right: $padding !important;
+}
+.mx-2 {
+  margin-left: $padding * 2 !important;
+  margin-right: $padding * 2 !important;
+}
+
+.pt {
+  padding-top: $padding/2 !important;
+}
+.pt-1 {
+  padding-top: $padding !important;
+}
+.pt-2 {
+  padding-top: $padding * 2 !important;
+}
+.pb {
+  padding-bottom: $padding/2 !important;
+}
+.pb-1 {
+  padding-bottom: $padding !important;
+}
+.pb-2 {
+  padding-bottom: $padding * 2 !important;
+}
+.pl {
+  padding-left: $padding/2 !important;
+}
+.pl-1 {
+  padding-left: $padding !important;
+}
+.pl-2 {
+  padding-left: $padding * 2 !important;
+}
+.pr {
+  padding-right: $padding/2 !important;
+}
+.pr-1 {
+  padding-right: $padding !important;
+}
+.pr-2 {
+  padding-right: $padding * 2 !important;
+}
+.py {
+  padding-top: $padding/2 !important;
+  padding-bottom: $padding/2 !important;
+}
+.py-1 {
+  padding-top: $padding !important;
+  padding-bottom: $padding !important;
+}
+.py-2 {
+  padding-top: $padding * 2 !important;
+  padding-bottom: $padding * 2 !important;
+}
+.px {
+  padding-left: $padding/2 !important;
+  padding-right: $padding/2 !important;
+}
+.px-1 {
+  padding-left: $padding !important;
+  padding-right: $padding !important;
+}
+.px-2 {
+  padding-left: $padding * 2 !important;
+  padding-right: $padding * 2 !important;
+}
+
 .container {
   padding: 0 $padding*2;
   margin: 0 auto;
@@ -350,7 +473,7 @@ body.the-gathering-2021 {
 
 .page {
   background-color: white;
-  padding-top: $unit;
+  padding-top: $unit*1.2;
   .full {
     img {
       max-width: 100%;
@@ -1312,7 +1435,7 @@ ul.list-lg {
     color: white;
   }
   .brand-logo {
-    line-height: 38px;
+    line-height: 40px;
     width: 90px;
     padding: 0 0.4rem;
     img {
@@ -2703,6 +2826,7 @@ header {
   min-width: 240px;
 }
 header.header {
+  padding-top: $unit*0.7;
   .navbar-brand {
     line-height: 1;
     img {
