@@ -1446,6 +1446,16 @@ ul.list-lg {
   .brand-scvo .brand-logo.active img {
     filter: invert(1) contrast(100);
   }
+  .dropdown {
+    .menu {
+      border-radius: $unit/10;
+      width: 100%;
+      min-width: 295px;
+      a {
+        font-weight: normal;
+      }
+    }
+  }
 }
 
 .hero {
