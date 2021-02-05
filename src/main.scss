@@ -1435,7 +1435,7 @@ ul.list-lg {
     color: white;
   }
   .brand-logo {
-    line-height: 40px;
+    line-height: 38px;
     width: 90px;
     padding: 0 0.4rem;
     img {
@@ -1448,11 +1448,16 @@ ul.list-lg {
   }
   .dropdown {
     .menu {
+      background: white;
       border-radius: $unit/10;
       width: 100%;
       min-width: 295px;
-      a {
-        font-weight: normal;
+      .menu-item {
+        padding: 0 $unit*.4;
+        display: block;
+        a {
+          font-weight: normal;
+        }
       }
     }
   }
