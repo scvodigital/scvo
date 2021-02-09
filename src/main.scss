@@ -607,16 +607,17 @@ h1.font-default,
   line-height: 1.4rem !important;
   // transition-timing-function: ease-in-out;
 }
-.btn.btn-lg:hover,
-.btn.btn-primary.btn-lg:hover {
-  color: white;
-  background-color: $secondary-color-light;
-  border-color: $secondary-color-light;
-}
 .btn.btn-primary.btn-cta {
   background-color: $yellow-color;
   border-color: $yellow-color;
   color: $secondary-color;
+}
+.btn.btn-lg:hover,
+.btn.btn-primary.btn-cta:hover,
+.btn.btn-primary.btn-lg:hover {
+  color: white;
+  background-color: $secondary-color-light;
+  border-color: $secondary-color-light;
 }
 
 p {
