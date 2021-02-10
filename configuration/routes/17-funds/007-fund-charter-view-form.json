@@ -1,0 +1,122 @@
+{
+  "name": "fund_charter_view_form",
+  "debug": true,
+  "pattern": "/funding/digital-participation-charter-fund/apply/view/:session_key",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "application_data",
+      "taskModule": "request",
+      "config": {
+        "optionsTemplates": {
+          "request": ">context.metaData.handlebars.templates.utilities_scvo-grant"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "check_for_application",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.totalSize"
+                  },
+                  1
+                ]
+              }
+            ]
+          },
+          "fund_charter_apply_missing",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_call",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "or": [
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
+                  "Recovery - Call 1"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
+                  "Supporting Communities Fund - Call 1"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
+                  "Adapt and Thrive - Uplift"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
+                  "Communities Recovery Fund - Uplift"
+                ]
+              }
+            ]
+          },
+          "fund_charter_apply_unauthorised",
+          false
+        ]
+      }
+    },
+    {
+      "name": "form_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.funding_charter_apply-form-data",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_charter_view-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_apply-form",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
