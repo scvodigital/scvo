@@ -1,7 +1,7 @@
 <div class="container">
   <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
     <p>
-      Content TBC
+      This is the online application form for the Edinburgh & Lothians Health Foundation Connecting Communities Fund.
     </p>
     <p>
       Please enter the details below to continue your application process.
@@ -33,7 +33,7 @@
             <div class="divider-vert hide-sm" data-content="OR"></div>
             <div class="divider text-center show-sm col-12" data-content="OR"></div>
             <div class="column col-sm-12 align-centre">
-              <a href="/funding/elhf/apply/not-a-charity" class="btn btn-block">
+              <a href="/funding/elhf-connecting-communities-fund/apply/not-a-charity" class="btn btn-block">
                 Not a registered charity
               </a>
             </div>
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
 
     if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
-      var url = '/funding/elhf/apply/' + charityNumber;
+      var url = '/funding/elhf-connecting-communities-fund/apply/' + charityNumber;
       $('#charity_number_submit')
       .removeAttr('disabled', false)
       .attr('href', url);
