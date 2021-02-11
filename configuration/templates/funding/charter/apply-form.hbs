@@ -346,9 +346,9 @@ wFORMS.behaviors.prefill.skip = false;
                         </option>
                         {{#each local_authorities ~}}
                         {{#if id_single ~}}
-                        {{!-- <option value="{{id_single}}" id="{{id_single}}"{{#ifAll (compare (slugify (replace ../defaults.tfa_1884 ' and ' ' ')) (slugify name)) (compare ../defaults.tfa_2398 "Across one local authority area")}} selected{{/ifAll}}>
+                        <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2398 "Across one local authority area"}} selected{{/compare}}>
                           {{name}}
-                        </option> --}}
+                        </option>
                         {{/if ~}}
                         {{/each ~}}
                       </select>
@@ -366,12 +366,12 @@ wFORMS.behaviors.prefill.skip = false;
                       <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2401`">
                         {{#each local_authorities ~}}
                         {{#if id_multiple ~}}
-                        {{!-- <span class="form-group column col-6 col-md-12">
+                        <span class="form-group column col-6 col-md-12">
                           <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id_multiple}}-L" for="{{id_multiple}}">
                             <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (slugify (replace ../defaults.tfa_2084 ' and ' ' ')) (slugify name))}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                             <i class="form-icon"></i> {{name}}
                           </label>
-                        </span> --}}
+                        </span>
                         {{/if ~}}
                         {{/each ~}}
                       </span>
@@ -443,8 +443,8 @@ wFORMS.behaviors.prefill.skip = false;
               </h2>
             </div>
           </div>
-          <div class="bg-gray b-padding-full t-padding">
-            <div class="container section b-padding-full">
+          <div class="bg-gray v-padding-full">
+            <div class="container section v-padding-full">
               {{!-- <h3 class="t-margin">Main contact</h3> --}}
 
               <div class="form-group">
@@ -522,7 +522,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group field-container-D">
               <div class="col-9 col-xl-12">
                 <p>
-                  In the next set of questions, we’d like you to tell us more about your specific project idea.  Most of the questions have a word limit, it might be helpful if you draft your text in Word (or similar) before pasting your final crafted answer. There is a word count indicator under each question for guidance.
+                  In the next set of questions, we’d like you to tell us more about your specific project idea.  Most of the questions have a word limit, it might be helpful if you draft your text in the downloadable Word template before pasting your final crafted answer. There is a word count indicator under each question for guidance.
                 </p>
               </div>
             </div>
@@ -580,7 +580,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2819-L" class="preField r-margin reqMark" for="tfa_2819">
                     Project detail<br />
-                    <span class="form-input-hint text-secondary">We'd like to get a clear understanding of your project. Please explain your proposal and how it will support people who don’t have essential digital skills.  Think about things such as (but not limited to): who you are supporting; how will you deliver the activity during current coronavirus restrictions; who will be running the project; what type of activities you will be doing to support people’s learning; what devices will be used (if any) (N.B. There is a 400-word limit for this answer – you might like to refine your answer in a Word document (or similar) first.)</span>
+                    <span class="form-input-hint text-secondary">We'd like to get a clear understanding of your project. Please explain your proposal and how it will support people who don’t have essential digital skills.  Think about things such as (but not limited to): who you are supporting; how will you deliver the activity during current coronavirus restrictions; who will be running the project; what type of activities you will be doing to support people’s learning; what devices will be used (if any) (N.B. There is a 400-word limit for this answer)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -634,7 +634,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2822-L" class="preField r-margin reqMark" for="tfa_2822">
                     Embedding the activity<br />
-                    <span class="form-input-hint text-secondary">Our evidence tells us that greater success is achieved if the importance of developing essential digital skills levels is understood across an organisation and embedded in its day-to-day activity. Please use this space to tell us how you will embed your proposed digital skills activity across the work of your organisation. Please give some examples of the activities you already do in this area or, if you’re at the beginning of your digital journey, let us know what your plans are in terms of organisational development and what would be looking to implement. (N.B. There is a 400-word limit for this answer)</span>
+                    <span class="form-input-hint text-secondary">Our evidence tells us that greater success is achieved if the importance of developing essential digital skills levels is understood across an organisation and embedded in its day-to-day activity. Please use this space to tell us how you will embed your proposed digital skills activity across the work of your organisation. Please give some examples of the activities you already do in this area or, if you’re at the beginning of your digital journey, let us know what your plans are in terms of organisational development and what you would be looking to implement. (N.B. There is a 400-word limit for this answer)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -823,7 +823,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="form-group field-container-D">
                 <div class="col-9 col-xl-12">
                   <p>
-                    These milestones should form your project plan and should be detailed enough to allow us to understand your approach to developing, implementing and delivering your project successfully.
+                    These milestones should form your planned project delivery and should be detailed enough to allow us to understand your approach to developing, implementing and delivering your project successfully. However, with the ongoing coronavirus pandemic still a clear external factor to consider we appreciate your plans may need to change a little - or a lot - and are therefore happy to view what is detailed below as a flexible framework.
                   </p>
                   <p>
                     Project plan - we would like you to outline the key milestones of the project. You can add up to <strong>4 milestones</strong>.
