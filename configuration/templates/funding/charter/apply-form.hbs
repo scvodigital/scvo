@@ -85,7 +85,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_1941-D">
-                  {{!-- <input type="text" id="tfa_1941" name="tfa_1941" value="{{defaults.tfa_1941}}" class="form-input" readonly> --}}
+
                   <p class="no-margin" style="padding: .3rem 0 !important;"><strong>{{defaults.tfa_1941}}</strong></p>
                   <input type="hidden" id="tfa_1941" name="tfa_1941" value="{{defaults.tfa_1941}}" title="Scottish Charity Number" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                 </div>
@@ -150,7 +150,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_2801-D">
-                  {{!-- <input type="text" id="tfa_2801" name="tfa_2801" value="{{defaults.tfa_2801}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required> --}}
+
                   {{#if defaults.tfa_2801}}
                   <select id="organisation_type" name="organisation_type" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}>
                     <option value="{{defaults.tfa_2801}}" selected>{{defaults.tfa_2801}}</option>
@@ -227,9 +227,6 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group">
               <div class="col-9 col-xl-12">
                 <h3>Organisation postal address</h3>
-                {{!-- <p class="form-input-hint text-secondary">
-                  <strong>Please enter your main address in Scotland</strong> (this will be pre-populated if you completed your Scottish Charity Registration number – but can be over-written if required)</span>
-                </p> --}}
               </div>
             </div>
 
@@ -445,8 +442,6 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="bg-gray v-padding-full">
             <div class="container section v-padding-full">
-              {{!-- <h3 class="t-margin">Main contact</h3> --}}
-
               <div class="form-group">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="field-container-D" id="tfa_1-D">
@@ -635,89 +630,6 @@ wFORMS.behaviors.prefill.skip = false;
                 </span>
               </div>
             </div>
-
-            {{!-- <div class="form-group field-container-D b-margin-full" id="tfa_2872-D" role="radiogroup" aria-labelledby="tfa_2872-L" data-tfa-labelledby="tfa_2872-L">
-              <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="form-group field-container-D">
-                  <label id="tfa_2872-L" class="preField reqMark r-margin">
-                    Target themes<br />
-                    <span class="form-input-hint text-secondary">Which of the key Digital Participation Charter Fund targets will your project seek to address:</span>
-                  </label>
-                </div>
-              </div>
-              <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <span id="tfa_2872" class="choices vertical required">
-                  {{#each target_themes}}
-                  <div class="form-group">
-                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="tfa_2872">
-                      <input type="radio" value="{{id}}" id="{{id}}" name="tfa_2872" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2872-L {{id}}-L" data-conditionals="#{{linked}}-D"{{#compare defaults.target_themes name}} checked{{/compare}} required>
-                      <i class="form-icon"></i>
-                      {{name}}
-                      {{#if description}}<br />
-                      <span class="form-input-hint text-secondary">{{description}}</span>
-                      {{/if}}
-                    </label>
-                  </div>
-                  {{/each}}
-                </span>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group field-container-D b-margin-full" id="tfa_2875-D" role="radiogroup" aria-labelledby="tfa_2875-L" data-tfa-labelledby="tfa_2875-L" data-condition="`#tfa_2873`">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="form-group field-container-D">
-                  <label id="tfa_2875-L" class="preField reqMark r-margin">
-                    Choose the relevant options
-                  </label>
-                </div>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <span id="tfa_2875" class="choices vertical required">
-                  {{#each target_themes_isolation}}
-                  <div class="form-group">
-                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2875-L" for="tfa_2875">
-                      <input type="radio" value="{{id}}" id="{{id}}" name="tfa_2875" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2875-L"{{#compare name 'Other'}} data-conditionals="#{{linked}}-D"{{/compare}}{{#compare defaults.tfa_2875 name}} checked{{/compare}} required>
-                      <i class="form-icon"></i>
-                      {{name}}
-                    </label>
-                  </div>
-                  {{/each}}
-                </span>
-                <div class="form-group oneField field-container-D" id="tfa_2885-D" data-condition="`#tfa_2879`">
-                  <div class="inputWrapper t-margin" style="width:100%;">
-                    <input type="text" id="tfa_2885" name="tfa_2885" value="{{defaults.tfa_2885}}" maxlength="150" title="" autocomplete="nope" data-lpignore="true" class="form-input required" required {{#if defaults.application_readonly}}readonly{{/if}}>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
-
-            {{!-- <div class="form-group field-container-D b-margin-full" id="tfa_2880-D" role="radiogroup" aria-labelledby="tfa_2880-L" data-tfa-labelledby="tfa_2880-L" data-condition="`#tfa_2874`">
-              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="form-group field-container-D">
-                  <label id="tfa_2880-L" class="preField reqMark r-margin">
-                    Choose the relevant options
-                  </label>
-                </div>
-              </div>
-              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <span id="tfa_2880" class="choices vertical required">
-                  {{#each target_themes_economic}}
-                  <div class="form-group">
-                    <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2880-L" for="tfa_2880">
-                      <input type="radio" value="{{id}}" id="{{id}}" name="tfa_2880" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_2880-L" {{#compare name 'Other'}} data-conditionals="#{{linked}}-D"{{/compare}}{{#compare defaults.tfa_2880 name}} checked{{/compare}} required>
-                      <i class="form-icon"></i>
-                      {{name}}
-                    </label>
-                  </div>
-                  {{/each}}
-                </span>
-                <div class="form-group oneField field-container-D" id="tfa_2886-D" data-condition="`#tfa_2884`">
-                  <div class="inputWrapper t-margin" style="width:100%;">
-                    <input type="text" id="tfa_2886" name="tfa_2886" value="{{defaults.tfa_2886}}" maxlength="150" title="" autocomplete="nope" data-lpignore="true" class="form-input required" required {{#if defaults.application_readonly}}readonly{{/if}}>
-                  </div>
-                </div>
-              </div>
-            </div> --}}
 
             <div class="form-group oneField field-container-D b-margin-full" id="tfa_2875-D" role="group" aria-labelledby="tfa_2875-L" data-tfa-labelledby="-L tfa_2875-L">
               <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">

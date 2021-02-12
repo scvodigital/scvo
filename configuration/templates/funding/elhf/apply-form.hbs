@@ -87,7 +87,6 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_1941-D">
-                  {{!-- <input type="text" id="tfa_1941" name="tfa_1941" value="{{defaults.tfa_1941}}" class="form-input" readonly> --}}
                   <p class="no-margin" style="padding: .3rem 0 !important;"><strong>{{defaults.tfa_1941}}</strong></p>
                   <input type="hidden" id="tfa_1941" name="tfa_1941" value="{{defaults.tfa_1941}}" title="Scottish Charity Number" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                 </div>
@@ -152,7 +151,6 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_2801-D">
-                  {{!-- <input type="text" id="tfa_2801" name="tfa_2801" value="{{defaults.tfa_2801}}" aria-required="true" class="form-input" autocomplete="nope" data-lpignore="true" required> --}}
                   {{#if defaults.tfa_2801}}
                   <select id="organisation_type" name="organisation_type" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}>
                     <option value="{{defaults.tfa_2801}}" selected>{{defaults.tfa_2801}}</option>
@@ -229,9 +227,6 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group">
               <div class="col-9 col-xl-12">
                 <h3>Organisation postal address</h3>
-                {{!-- <p class="form-input-hint text-secondary">
-                  <strong>Please enter your main address in Scotland</strong> (this will be pre-populated if you completed your Scottish Charity Registration number – but can be over-written if required)</span>
-                </p> --}}
               </div>
             </div>
 
@@ -447,8 +442,6 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="bg-gray v-padding-full">
             <div class="container section v-padding-full">
-              {{!-- <h3 class="t-margin">Main contact</h3> --}}
-
               <div class="form-group">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                   <div class="field-container-D" id="tfa_1-D">
