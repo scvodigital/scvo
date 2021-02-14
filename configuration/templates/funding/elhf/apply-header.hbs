@@ -1,0 +1,11 @@
+<div class="container">
+  <ul class="breadcrumb breadcrumb-length-4" aria-hidden="true">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/funding">Funding</a></li>
+    <li class="breadcrumb-item"><a href="/funding/elhf-connecting-communities-fund">ELHF Connecting Communities Fund</a></li>
+    <li class="breadcrumb-item">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_charter_apply_complete")}}{{#compare @root.route.name "fund_charter_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Apply{{/ifAny}}</li>
+  </ul>
+</div>
+<div class="container">
+  <h1 class="font-default">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_charter_apply_complete")}}{{#compare @root.route.name "fund_charter_apply_complete"}}Thank you{{else}}{{#compare @root.route.name "fund_charter_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{/compare}}{{else}}Apply{{/ifAny}}</h1>
+</div>

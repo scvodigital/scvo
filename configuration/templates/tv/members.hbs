@@ -148,6 +148,9 @@
             {{#if type}}as a {{{lowercase type}}}{{/if}}
           </strong>
         </p>
+        {{#if join_reason ~}}
+          <p>“{{{truncate (trim join_reason) 280}}}”</p>
+        {{/if ~}}
       </div>
       {{/if ~}}
     </div>
