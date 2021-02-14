@@ -2385,6 +2385,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   validateFileSize();
+
+  setTimeout(function() {
+    $('#fund_branching_atf').prop('checked', true).trigger('click');
+    $('#fund_branching_crf').prop('disabled', true);
+    $('#fund_branching_both').prop('disabled', true);
+    $('#branching').hide();
+    branching();
+  }, 100);
 });
 
 function isNumberKey(evt){
