@@ -44,6 +44,9 @@ document.addEventListener("DOMContentLoaded", function(){
 wFORMS.behaviors.prefill.skip = false;
 </script>
 <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=b9d863f1a63c801b754c933121026f1ba3afb96b"></script>
+<link rel="stylesheet" type="text/css" href="https://www.tfaforms.com/css/kalendae.css" />
+<script type="text/javascript" src="https://www.tfaforms.com/js/kalendae/kalendae.standalone.min.js" ></script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms_calendar.js"></script>
 
 {{#unless defaults.application_editing}}
 <div class="container t-margin-full t-padding">
@@ -848,12 +851,12 @@ wFORMS.behaviors.prefill.skip = false;
                     <tbody>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2827-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2827-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2827" name="tfa_2827" value="{{defaults.tfa_2827}}" autocomplete="nope" data-lpignore="true" class="form-input required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D" id="tfa_2828-D">
+                          <div class="oneField field-container-D" id="tfa_2828-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
                               <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2828" name="tfa_2828" value="{{defaults.tfa_2828}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
@@ -863,12 +866,12 @@ wFORMS.behaviors.prefill.skip = false;
                       </tr>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2830-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2830-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2830" name="tfa_2830" value="{{defaults.tfa_2830}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D" id="tfa_2835-D">
+                          <div class="oneField field-container-D" id="tfa_2835-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
                               <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2835" name="tfa_2835" value="{{defaults.tfa_2835}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
@@ -878,12 +881,12 @@ wFORMS.behaviors.prefill.skip = false;
                       </tr>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2831-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2831-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2831" name="tfa_2831" value="{{defaults.tfa_2831}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D" id="tfa_2836-D">
+                          <div class="oneField field-container-D" id="tfa_2836-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
                               <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2836" name="tfa_2836" value="{{defaults.tfa_2836}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
@@ -893,12 +896,12 @@ wFORMS.behaviors.prefill.skip = false;
                       </tr>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2832-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2832-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2832" name="tfa_2832" value="{{defaults.tfa_2832}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D" id="tfa_2837-D">
+                          <div class="oneField field-container-D" id="tfa_2837-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
                               <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2837" name="tfa_2837" value="{{defaults.tfa_2837}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
@@ -908,12 +911,12 @@ wFORMS.behaviors.prefill.skip = false;
                       </tr>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2833-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2833-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2833" name="tfa_2833" value="{{defaults.tfa_2833}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D" id="tfa_2838-D">
+                          <div class="oneField field-container-D" id="tfa_2838-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
                               <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2838" name="tfa_2838" value="{{defaults.tfa_2838}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
@@ -923,12 +926,12 @@ wFORMS.behaviors.prefill.skip = false;
                       </tr>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2834-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2834-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2834" name="tfa_2834" value="{{defaults.tfa_2834}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D" id="tfa_2839-D">
+                          <div class="oneField field-container-D" id="tfa_2839-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
                               <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2839" name="tfa_2839" value="{{defaults.tfa_2839}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
@@ -964,12 +967,12 @@ wFORMS.behaviors.prefill.skip = false;
                   <table class="gridLayout" style="width:100%;">
                     <thead>
                       <tr class="headerRow">
-                        <th scope="col">
+                        <th scope="col" width="66%">
                           <label class="">
                             Milestone
                           </label>
                         </th>
-                        <th scope="col">
+                        <th scope="col" width="33%">
                           <label class="">
                             Date
                           </label>
@@ -979,49 +982,49 @@ wFORMS.behaviors.prefill.skip = false;
                     <tbody>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2855-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2855-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2855" name="tfa_2855" value="{{defaults.tfa_2855}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2856-D" style="width:100%;">
-                            <input type="text" style="width:100%;" maxlength="255" id="tfa_2856" name="tfa_2856" value="{{defaults.tfa_2856}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <div class="oneField field-container-D text-center" id="tfa_2856-D" style="width:100%;">
+                            <input type="text" style="width:100%;" maxlength="255" id="tfa_2856" name="tfa_2856" value="{{defaults.tfa_2856}}" autocomplete="nope" data-lpignore="true" class="form-input validate-datecal" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                       </tr>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2854-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2854-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2854" name="tfa_2854" value="{{defaults.tfa_2854}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2857-D" style="width:100%;">
-                            <input type="text" style="width:100%;" maxlength="255" id="tfa_2857" name="tfa_2857" value="{{defaults.tfa_2857}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <div class="oneField field-container-D text-center" id="tfa_2857-D" style="width:100%;">
+                            <input type="text" style="width:100%;" maxlength="255" id="tfa_2857" name="tfa_2857" value="{{defaults.tfa_2857}}" autocomplete="nope" data-lpignore="true" class="form-input validate-datecal" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                       </tr>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2858-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2858-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2858" name="tfa_2858" value="{{defaults.tfa_2858}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2859-D" style="width:100%;">
-                            <input type="text" style="width:100%;" maxlength="255" id="tfa_2859" name="tfa_2859" value="{{defaults.tfa_2859}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <div class="oneField field-container-D text-center" id="tfa_2859-D" style="width:100%;">
+                            <input type="text" style="width:100%;" maxlength="255" id="tfa_2859" name="tfa_2859" value="{{defaults.tfa_2859}}" autocomplete="nope" data-lpignore="true" class="form-input validate-datecal" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                       </tr>
                       <tr class="section">
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2860-D" style="width:100%;">
+                          <div class="oneField field-container-D text-center" id="tfa_2860-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2860" name="tfa_2860" value="{{defaults.tfa_2860}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                         <td>
-                          <div class="form-group oneField field-container-D text-center" id="tfa_2861-D" style="width:100%;">
-                            <input type="text" style="width:100%;" maxlength="255" id="tfa_2861" name="tfa_2861" value="{{defaults.tfa_2861}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                          <div class="oneField field-container-D text-center" id="tfa_2861-D" style="width:100%;">
+                            <input type="text" style="width:100%;" maxlength="255" id="tfa_2861" name="tfa_2861" value="{{defaults.tfa_2861}}" autocomplete="nope" data-lpignore="true" class="form-input validate-datecal" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </td>
                       </tr>
