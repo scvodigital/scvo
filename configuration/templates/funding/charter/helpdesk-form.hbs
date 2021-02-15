@@ -23,11 +23,14 @@
 
 <div class="container">
   <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="form-horizontal form b-margin-full b-padding-full">
-    <input type=hidden name='captcha_settings' value='{"keyname":"SCVO","fallback":"true","orgId":"00D3z000002LkgS","ts":""}'>
-    <input type=hidden name="orgid" value="00D3z000002LkgS">
+    <input type=hidden name='captcha_settings' value='{"keyname":"SCVO","fallback":"true","orgId":"00Db0000000KJWY","ts":""}'>
+    <input type=hidden name="orgid" value="00Db0000000KJWY">
     <input type=hidden name="recordType" id="recordType" value="0123z00000085DGAAY">
     <input type=hidden name="retURL" value="https://scvo.scot/funding/digital-participation-charter-fund/helpdesk/thanks">
     <input type=hidden name="subject" value="Charter Fund Call 8">
+    <input type=hidden name="type" value="Funding">
+    <input type=hidden name="status" value="New">
+    <input type=hidden name="external" value="1">
 
     {{!-- NOTE: These fields are optional debugging elements. Please uncomment these lines if you wish to test in debug mode. --}}
     {{!-- <input type="hidden" name="debug" value=1>
@@ -82,7 +85,6 @@
       </div>
       <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
         <textarea name="description" rows="5" class="form-input b-margin"></textarea>
-        <div class="g-recaptcha" data-sitekey="6LeRg88ZAAAAAALWhEw7nGFTL-u78xSr3Dhkp82e"></div>
       </div>
     </div>
 
@@ -93,6 +95,7 @@
           <i class="form-icon"></i>
           By submitting your enquiry, you confirm that you understand and accept our obligations under the General Data Protection Regulation (GDPR) set out in our <a href="/privacy" target="_blank">Privacy Policy</a>
         </label>
+        <div class="t-margin g-recaptcha" data-sitekey="6Lejg88ZAAAAAKw0FTDLw3Uj_4dCr_6Od4Erp9_o"></div>
       </div>
     </div>
 
