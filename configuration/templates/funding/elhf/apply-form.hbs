@@ -496,7 +496,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_1949" name="tfa_1949" maxlength="255" value="{{defaults.tfa_1949}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                  <input type="text" id="tfa_1949" name="tfa_1949" minlength="11" maxlength="15" value="{{defaults.tfa_1949}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                   <p class="form-input-hint text-secondary">Please tell us what the best telephone number is to contact you if we need to</p>
                 </div>
               </div>
