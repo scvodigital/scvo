@@ -91,7 +91,9 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_1941-D">
                   <p class="no-margin" style="padding: .3rem 0 !important;"><strong>{{defaults.tfa_1941}}</strong></p>
-                  <input type="hidden" id="tfa_1941" name="tfa_1941" value="{{defaults.tfa_1941}}" title="Scottish Charity Number" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                  <input type="hidden" id="tfa_1941" name="tfa_1941" value="{{defaults.tfa_1941}}" title="Scottish Charity Number" {{#if defaults.application_readonly}}readonly{{/if}}>
+                  <input type="hidden" id="tfa_2915" name="tfa_2915" title="Lookup Charity Number" value="{{defaults.tfa_1941}}">
+                  <input type="hidden" id="tfa_2916" name="tfa_2916" title="Lookup Company Number" value="ignore_this">
                 </div>
               </div>
             </div>
@@ -134,7 +136,9 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_2324-D">
-                  <input type="text" id="tfa_2324" name="tfa_2324" maxlength="12" value="{{defaults.tfa_2324}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input"{{/if}}>
+                  <input type="text" id="tfa_2324" name="tfa_2324" maxlength="12" value="{{defaults.tfa_2324}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input"{{/if}} onchange="window.tfa_2916.value=this.value">
+                  <input type="hidden" id="tfa_2915" name="tfa_2915" title="Lookup Charity Number" value="ignore_this">
+                  <input type="hidden" id="tfa_2916" name="tfa_2916" title="Lookup Company Number" value="{{defaults.tfa_2324}}">
                 </div>
                 {{#unless defaults.application_editing}}
                 <div class="form-group">
