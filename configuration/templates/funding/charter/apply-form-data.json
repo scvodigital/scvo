@@ -208,7 +208,7 @@
     "tfa_1876": {{{json value=(default (default application.Organisation_Name__r.Name oscr.charity_name) "")}}},
     "tfa_1941": {{{json value=(default (default application.Organisation_Name__r.Charity_Number__c oscr.charity_number) "")}}},
     "tfa_2324": {{{json value=(default application.Organisation_Name__r.Company_House_No__c "")}}},
-    "tfa_2801": {{{json value=(default (default application.Organisation_Name__r.Constitutional_form__c oscr.constitutional_form) "")}}},
+    "tfa_2801": {{{json value=(default (default application.Organisation_Type__c oscr.constitutional_form) "")}}},
     "tfa_1946": {{{json value=(default (default application.Organisation_Name__r.Charity_status__c oscr.charity_status) "")}}},
     "tfa_1930": {{{json value=(default (default application.Organisation_Name__r.Website (if (contains 'http' oscr.website) oscr.website)) "")}}},
     "tfa_1957": {{{json value=(default (default application.Organisation_Name__r.NHS_Health_Board__c oscr.geo.nhs_ha) "")}}},

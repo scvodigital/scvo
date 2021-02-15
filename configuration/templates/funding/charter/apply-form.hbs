@@ -618,14 +618,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2872" class="choices vertical">
                   <span class="oneChoice">
                     <label class="form-checkbox postField" id="tfa_2873-L" for="tfa_2873">
-                      <input type="checkbox" value="tfa_2873" class="" id="tfa_2873" name="tfa_2872" data-conditionals="#tfa_2875" aria-labelledby="tfa_2873-L" data-tfa-labelledby="tfa_2872-L tfa_2873-L" required>
+                      <input type="checkbox" value="tfa_2873" class="" id="tfa_2873" name="tfa_2872" data-conditionals="#tfa_2875" aria-labelledby="tfa_2873-L" data-tfa-labelledby="tfa_2872-L tfa_2873-L">
                       <span class="form-icon"></span>
                       Reducing social isolation
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-checkbox postField" id="tfa_2874-L" for="tfa_2874">
-                      <input type="checkbox" value="tfa_2874" class="" id="tfa_2874" name="tfa_2872" data-conditionals="#tfa_2880" aria-labelledby="tfa_2874-L" data-tfa-labelledby="tfa_2872-L tfa_2874-L" required>
+                      <input type="checkbox" value="tfa_2874" class="" id="tfa_2874" name="tfa_2872" data-conditionals="#tfa_2880" aria-labelledby="tfa_2874-L" data-tfa-labelledby="tfa_2872-L tfa_2874-L">
                       <span class="form-icon"></span>
                       Increasing economic prospects
                     </label>
@@ -781,7 +781,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-4 col-lg-5 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2823" name="tfa_2823" minlength="11" maxlength="15" value="{{defaults.tfa_2823}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="text" id="tfa_2823" name="tfa_2823" maxlength="255" value="{{defaults.tfa_2823}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                 <p class="form-input-hint text-secondary">How many people will be supported to gain essential digital skills?</p>
               </div>
             </div>
@@ -972,7 +972,7 @@ wFORMS.behaviors.prefill.skip = false;
                             Milestone
                           </label>
                         </th>
-                        <th scope="col" width="33%">
+                        <th scope="col" width="34%">
                           <label class="">
                             Date
                           </label>
