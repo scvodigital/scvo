@@ -534,7 +534,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2816" name="tfa_2816" minlength="11" maxlength="15" value="{{defaults.tfa_2816}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="text" id="tfa_2816" name="tfa_2816" maxlength="255" value="{{defaults.tfa_2816}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                 <p class="form-input-hint text-secondary">A short, snappy title for your project</p>
               </div>
             </div>
