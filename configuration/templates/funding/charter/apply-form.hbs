@@ -195,18 +195,18 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
-            <div class="form-group field-container-D t-margin" id="tfa_2798-D">
+            <div class="form-group field-container-D t-margin" id="tfa_2325-D">
               <div class="col-9 col-xl-12">
                 <div class="form-group field-container-D">
-                  <label id="tfa_2798-L" class="preField r-margin reqMark" for="tfa_2798">
+                  <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
                     Organisation overview<br />
                     <span class="form-input-hint text-secondary">Please give us a succinct overview of the work of your organisation. (Max 150 words)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
-                <div class="faux-textarea">{{defaults.tfa_2798}}</div>
+                <div class="faux-textarea">{{defaults.tfa_2325}}</div>
                 {{else}}
-                <textarea id="tfa_2798" name="tfa_2798" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2798}}</textarea>
+                <textarea id="tfa_2325" name="tfa_2325" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="150" class="form-input required count-words" required>{{defaults.tfa_2325}}</textarea>
                 {{/if}}
               </div>
             </div>
@@ -215,7 +215,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-9 col-xl-12">
                 <div class="form-group field-container-D">
                   <label id="tfa_2798-L" class="preField r-margin reqMark" for="tfa_2798">
-                    Client Group<br />
+                    Client group<br />
                     <span class="form-input-hint text-secondary">Please briefly tell us about the type of people you work with and how you support them (in the context of this application). (Max 250 words)</span>
                   </label>
                 </div>
@@ -617,14 +617,14 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <span id="tfa_2872" class="choices vertical">
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2873-L" for="tfa_2873">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2873-L" for="tfa_2873">
                       <input type="checkbox" value="tfa_2873" class="" id="tfa_2873" name="tfa_2872" data-conditionals="#tfa_2875" aria-labelledby="tfa_2873-L" data-tfa-labelledby="tfa_2872-L tfa_2873-L">
                       <span class="form-icon"></span>
                       Reducing social isolation
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2874-L" for="tfa_2874">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2874-L" for="tfa_2874">
                       <input type="checkbox" value="tfa_2874" class="" id="tfa_2874" name="tfa_2872" data-conditionals="#tfa_2880" aria-labelledby="tfa_2874-L" data-tfa-labelledby="tfa_2872-L tfa_2874-L">
                       <span class="form-icon"></span>
                       Increasing economic prospects
@@ -643,28 +643,28 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <span id="tfa_2875" class="choices vertical " data-condition="`#tfa_2873`">
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2876-L" for="tfa_2876">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2876-L" for="tfa_2876">
                       <input type="checkbox" value="tfa_2876" class="" id="tfa_2876" name="tfa_2875" aria-labelledby="tfa_2876-L" data-tfa-labelledby="tfa_2875-L tfa_2876-L">
                       <span class="form-icon"></span>
                       Members of the BAME community
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2877-L" for="tfa_2877">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2877-L" for="tfa_2877">
                       <input type="checkbox" value="tfa_2877" class="" id="tfa_2877" name="tfa_2875" aria-labelledby="tfa_2877-L" data-tfa-labelledby="tfa_2875-L tfa_2877-L">
                       <span class="form-icon"></span>
                       Older people
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2878-L" for="tfa_2878">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2878-L" for="tfa_2878">
                       <input type="checkbox" value="tfa_2878" class="" id="tfa_2878" name="tfa_2875" aria-labelledby="tfa_2878-L" data-tfa-labelledby="tfa_2875-L tfa_2878-L">
                       <span class="form-icon"></span>
                       People living with disabilities
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2879-L" for="tfa_2879">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2879-L" for="tfa_2879">
                       <input type="checkbox" value="tfa_2879" class="" id="tfa_2879" name="tfa_2875" data-conditionals="#tfa_2885" aria-labelledby="tfa_2879-L" data-tfa-labelledby="tfa_2875-L tfa_2879-L">
                       <span class="form-icon"></span>
                       Other
@@ -696,28 +696,28 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <span id="tfa_2880" class="choices vertical " data-condition="`#tfa_2874`">
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2881-L" for="tfa_2881">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2881-L" for="tfa_2881">
                       <input type="checkbox" value="tfa_2881" class="" id="tfa_2881" name="tfa_2880" aria-labelledby="tfa_2881-L" data-tfa-labelledby="tfa_2880-L tfa_2881-L">
                       <span class="form-icon"></span>
                       Members of the BAME community
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2882-L" for="tfa_2882">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2882-L" for="tfa_2882">
                       <input type="checkbox" value="tfa_2882" class="" id="tfa_2882" name="tfa_2880" aria-labelledby="tfa_2882-L" data-tfa-labelledby="tfa_2880-L tfa_2882-L">
                       <span class="form-icon"></span>
                       Older people
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2883-L" for="tfa_2883">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2883-L" for="tfa_2883">
                       <input type="checkbox" value="tfa_2883" class="" id="tfa_2883" name="tfa_2880" aria-labelledby="tfa_2883-L" data-tfa-labelledby="tfa_2880-L tfa_2883-L">
                       <span class="form-icon"></span>
                       People living with disabilities
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_2884-L" for="tfa_2884">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2884-L" for="tfa_2884">
                       <input type="checkbox" value="tfa_2884" class="" id="tfa_2884" name="tfa_2880" data-conditionals="#tfa_2886" aria-labelledby="tfa_2884-L" data-tfa-labelledby="tfa_2880-L tfa_2884-L">
                       <span class="form-icon"></span>
                       Other
@@ -1119,6 +1119,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
 
+                {{#unless defaults.application_readonly}}
                 <div class="form-group field-container-D">
                   <div class="col-9 col-xl-12">
                     <p>
@@ -1129,6 +1130,7 @@ wFORMS.behaviors.prefill.skip = false;
                     </p>
                   </div>
                 </div>
+                {{/unless}}
               </div>
             </div>
           </div>
