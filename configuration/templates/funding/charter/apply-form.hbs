@@ -289,7 +289,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <select id="tfa_2438" name="tfa_2438" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
-                  <option value="" disabled{{#unless ../defaults.tfa_2438}} selected{{/unless}}>
+                  <option value="" disabled{{#unless defaults.tfa_2438}} selected{{/unless}}>
                     Please select&hellip;
                   </option>
                   {{#each local_authorities ~}}
@@ -618,14 +618,14 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <span id="tfa_2872" class="choices vertical">
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2873-L" for="tfa_2873">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2873-L" for="tfa_2873">
                       <input type="checkbox" value="tfa_2873" id="tfa_2873" name="tfa_2873" data-conditionals="#tfa_2875" aria-labelledby="tfa_2873-L" data-tfa-labelledby="tfa_2872-L tfa_2873-L"{{#if defaults.tfa_2873}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Reducing social isolation
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2874-L" for="tfa_2874">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2874-L" for="tfa_2874">
                       <input type="checkbox" value="tfa_2874" id="tfa_2874" name="tfa_2874" data-conditionals="#tfa_2880" aria-labelledby="tfa_2874-L" data-tfa-labelledby="tfa_2872-L tfa_2874-L"{{#if defaults.tfa_2874}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Increasing economic prospects
@@ -644,28 +644,28 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <span id="tfa_2875" class="choices vertical " data-condition="`#tfa_2873`">
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2876-L" for="tfa_2876">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2876-L" for="tfa_2876">
                       <input type="checkbox" value="tfa_2876" id="tfa_2876" name="tfa_2875" aria-labelledby="tfa_2876-L" data-tfa-labelledby="tfa_2875-L tfa_2876-L"{{#if (contains defaults.tfa_2875 'Members of the BAME community')}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Members of the BAME community
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2877-L" for="tfa_2877">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2877-L" for="tfa_2877">
                       <input type="checkbox" value="tfa_2877" id="tfa_2877" name="tfa_2875" aria-labelledby="tfa_2877-L" data-tfa-labelledby="tfa_2875-L tfa_2877-L"{{#if (contains defaults.tfa_2875 'Older people')}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Older people
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2878-L" for="tfa_2878">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2878-L" for="tfa_2878">
                       <input type="checkbox" value="tfa_2878" id="tfa_2878" name="tfa_2875" aria-labelledby="tfa_2878-L" data-tfa-labelledby="tfa_2875-L tfa_2878-L"{{#if (contains defaults.tfa_2875 'People living with disabilities')}} checked{{/if}}>
                       <span class="form-icon"></span>
                       People living with disabilities
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2879-L" for="tfa_2879">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2879-L" for="tfa_2879">
                       <input type="checkbox" value="tfa_2879" id="tfa_2879" name="tfa_2875" data-conditionals="#tfa_2885" aria-labelledby="tfa_2879-L" data-tfa-labelledby="tfa_2875-L tfa_2879-L"{{#if (contains defaults.tfa_2875 'Other (text option)')}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Other
@@ -697,28 +697,28 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <span id="tfa_2880" class="choices vertical " data-condition="`#tfa_2874`">
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2881-L" for="tfa_2881">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2881-L" for="tfa_2881">
                       <input type="checkbox" value="tfa_2881" id="tfa_2881" name="tfa_2881" aria-labelledby="tfa_2881-L" data-tfa-labelledby="tfa_2880-L tfa_2881-L"{{#if (contains defaults.tfa_2880 'members of the BAME community')}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Members of the BAME community
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2882-L" for="tfa_2882">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2882-L" for="tfa_2882">
                       <input type="checkbox" value="tfa_2882" id="tfa_2882" name="tfa_2882" aria-labelledby="tfa_2882-L" data-tfa-labelledby="tfa_2880-L tfa_2882-L"{{#if (contains defaults.tfa_2880 'Older people')}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Older people
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2883-L" for="tfa_2883">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2883-L" for="tfa_2883">
                       <input type="checkbox" value="tfa_2883" id="tfa_2883" name="tfa_2883" aria-labelledby="tfa_2883-L" data-tfa-labelledby="tfa_2880-L tfa_2883-L"{{#if (contains defaults.tfa_2880 'People living with disabilities')}} checked{{/if}}>
                       <span class="form-icon"></span>
                       People living with disabilities
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2884-L" for="tfa_2884">
+                    <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2884-L" for="tfa_2884">
                       <input type="checkbox" value="tfa_2884" id="tfa_2884" name="tfa_2884" data-conditionals="#tfa_2886" aria-labelledby="tfa_2884-L" data-tfa-labelledby="tfa_2880-L tfa_2884-L"{{#if (contains defaults.tfa_2880 'other (text option)')}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Other

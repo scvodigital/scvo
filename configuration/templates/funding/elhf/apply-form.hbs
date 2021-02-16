@@ -290,7 +290,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-3 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <select id="tfa_2438" name="tfa_2438" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}{{else}}class="form-select required" required{{/if}}>
-                  <option value="" disabled{{#unless ../defaults.tfa_2438}} selected{{/unless}}>
+                  <option value="" disabled{{#unless defaults.tfa_2438}} selected{{/unless}}>
                     Please select&hellip;
                   </option>
                   {{#each local_authorities ~}}
@@ -749,7 +749,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group">
               <div class="col-9 col-xl-12">
                 <label class="form-checkbox" id="tfa_2904-L" for="tfa_2904">
-                  <input type="checkbox" value="tfa_2904" id="tfa_2904" name="tfa_2904" aria-required="true" aria-labelledby="tfa_2904-L" data-tfa-labelledby="tfa_2904-L"{{#if ../defaults.tfa_2878}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}} data-conditionals="#outcome_1_indicators">
+                  <input type="checkbox" value="tfa_2904" id="tfa_2904" name="tfa_2904" aria-required="true" aria-labelledby="tfa_2904-L" data-tfa-labelledby="tfa_2904-L"{{#if defaults.tfa_2904}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}} data-conditionals="#outcome_1_indicators">
                   <i class="form-icon"></i>
                   Supporting people to manage their health and wellbeing through digital tools;
                 </label>
@@ -797,7 +797,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group">
               <div class="col-9 col-xl-12">
                 <label class="form-checkbox" id="tfa_2910-L" for="tfa_2910">
-                  <input type="checkbox" value="tfa_2910" id="tfa_2910" name="tfa_2910" aria-required="true" aria-labelledby="tfa_2910-L" data-tfa-labelledby="tfa_2910-L"{{#if ../defaults.tfa_2878}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}} data-conditionals="#outcome_2_indicators">
+                  <input type="checkbox" value="tfa_2910" id="tfa_2910" name="tfa_2910" aria-required="true" aria-labelledby="tfa_2910-L" data-tfa-labelledby="tfa_2910-L"{{#if defaults.tfa_2910}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}} data-conditionals="#outcome_2_indicators">
                   <i class="form-icon"></i>
                   Supporting people to manage their health and wellbeing through improving access to digital health and social care services;
                 </label>
@@ -845,7 +845,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group">
               <div class="col-9 col-xl-12">
                 <label class="form-checkbox" id="tfa_2914-L" for="tfa_2914">
-                  <input type="checkbox" value="tfa_2914" id="tfa_2914" name="tfa_2914" aria-required="true" aria-labelledby="tfa_2914-L" data-tfa-labelledby="tfa_2914-L"{{#if ../defaults.tfa_2878}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}} data-conditionals="#outcome_3_indicators">
+                  <input type="checkbox" value="tfa_2914" id="tfa_2914" name="tfa_2914" aria-required="true" aria-labelledby="tfa_2914-L" data-tfa-labelledby="tfa_2914-L"{{#if defaults.tfa_2914}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}} data-conditionals="#outcome_3_indicators">
                   <i class="form-icon"></i>
                   Supporting people to reduce social isolation and loneliness
                 </label>
