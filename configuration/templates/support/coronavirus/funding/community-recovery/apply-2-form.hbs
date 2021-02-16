@@ -2386,7 +2386,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   validateFileSize();
 
-  {{#if defaults.application_editing}}
+  {{#unless defaults.application_editing}}
     setTimeout(function() {
       $('#fund_branching_atf').prop('checked', true).trigger('click');
       $('#fund_branching_crf').prop('disabled', true);
@@ -2394,7 +2394,7 @@ document.addEventListener("DOMContentLoaded", function() {
       $('#branching').hide();
       branching();
     }, 100);
-  {{/if}}
+  {{/unless}}
 });
 
 function isNumberKey(evt){
