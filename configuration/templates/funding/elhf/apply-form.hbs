@@ -338,7 +338,7 @@ wFORMS.behaviors.prefill.skip = false;
 
                     <div class="form-group">
                       <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2400-L" for="tfa_2400">
-                        <input type="radio" value="tfa_2400" id="tfa_2400" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2400-L" data-tfa-labelledby="tfa_2398-L tfa_2400-L" data-conditionals="#tfa_1884"{{#compare defaults.tfa_2398 "Across one local authority area"}} checked{{/compare}} required>
+                        <input type="radio" value="tfa_2400" id="tfa_2400" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2400-L" data-tfa-labelledby="tfa_2398-L tfa_2400-L" data-conditionals="#tfa_1884"{{#compare defaults.tfa_2398 "Across one Local Authority area"}} checked{{/compare}} required>
                         <i class="form-icon"></i>
                         Across one Local Authority area
                       </label>
@@ -350,7 +350,7 @@ wFORMS.behaviors.prefill.skip = false;
                         </option>
                         {{#each local_authorities ~}}
                         {{#if id_single ~}}
-                        <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2398 "Across one local authority area"}} selected{{/compare}}>
+                        <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2398 "Across one Local Authority area"}} selected{{/compare}}>
                           {{name}}
                         </option>
                         {{/if ~}}
@@ -360,7 +360,7 @@ wFORMS.behaviors.prefill.skip = false;
 
                     <div class="form-group">
                       <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2401-L" for="tfa_2401">
-                        <input type="radio" value="tfa_2401" id="tfa_2401" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2401-L" data-tfa-labelledby="tfa_2398-L tfa_2401-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2398 "Across several local authority areas"}} checked{{/compare}} required>
+                        <input type="radio" value="tfa_2401" id="tfa_2401" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2401-L" data-tfa-labelledby="tfa_2398-L tfa_2401-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2398 "Across several Local Authority areas"}} checked{{/compare}} required>
                         <i class="form-icon"></i>
                         Across several Local Authority areas
                       </label>
