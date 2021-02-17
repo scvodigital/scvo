@@ -1867,6 +1867,44 @@
 											"icon": "balance-scale-right"
 										}
 									]
+								},
+								{
+									"label": "Lean & Agile",
+									"label_full": "Lean & Agile Working – made simple",
+									"path": "/support/digital/guides/lean-agile",
+									"route": "^/support/digital/guides/lean-agile$",
+									"description": "What is lean & agile working?",
+									"icon": "recycle",
+									"children": [
+										{
+											"label": "Sprints",
+											"path": "/support/digital/guides/lean-agile/sprints",
+											"route": "^/support/digital/guides/lean-agile/sprints$",
+											"description": "Sprints are a collaborative project management tool that create short, time-boxed periods for teams to complete set amounts of work.",
+											"icon": "recycle"
+										},
+										{
+											"label": "Standups",
+											"path": "/support/digital/guides/lean-agile/standups",
+											"route": "^/support/digital/guides/lean-agile/standups$",
+											"description": "A short, structured daily meeting of the project team to discuss progress, co-ordinate efforts, identify barriers to success and discuss solutions.",
+											"icon": "recycle"
+										},
+										{
+											"label": "Testing",
+											"path": "/support/digital/guides/lean-agile/testing",
+											"route": "^/support/digital/guides/lean-agile/testing$",
+											"description": "Testing is the process of evaluating the programme or project you are working on.",
+											"icon": "recycle"
+										},
+										{
+											"label": "Retrospectives",
+											"path": "/support/digital/guides/lean-agile/retrospectives",
+											"route": "^/support/digital/guides/lean-agile/retrospectives$",
+											"description": "A practice used by teams to reflect on their way of working, to enable them to become better at what they do.",
+											"icon": "recycle"
+										}
+									]
 								}
 							]
 						},
