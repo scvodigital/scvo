@@ -550,7 +550,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_2817" name="tfa_2817" maxlength="150" value="{{defaults.tfa_2817}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" min="2021-07-01" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  <input type="text" id="tfa_2817" name="tfa_2817" min="2021-07-01" value="{{defaults.tfa_2817}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
                 </div>
               </div>
               <div class="form-group">
@@ -562,7 +562,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_2818" name="tfa_2818" maxlength="150" value="{{defaults.tfa_2818}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" min="2021-07-01" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  <input type="text" id="tfa_2818" name="tfa_2818" min="2021-07-01" value="{{defaults.tfa_2818}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
                 </div>
               </div>
             </div>
@@ -585,7 +585,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{#if defaults.application_readonly}}
                 <div class="faux-textarea">{{defaults.tfa_2819}}</div>
                 {{else}}
-                <textarea id="tfa_2819" name="tfa_2819" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words">{{defaults.tfa_2819}}</textarea>
+                <textarea id="tfa_2819" name="tfa_2819" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words required" required>{{defaults.tfa_2819}}</textarea>
                 {{/if}}
               </div>
             </div>
@@ -684,7 +684,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2885" name="tfa_2885" value="{{defaults.tfa_2885}}" data-condition="`#tfa_2879`" title="Reducing social isolation Other" class="form-input">
+                <input type="text" id="tfa_2885" name="tfa_2885" value="{{defaults.tfa_2885}}" data-condition="`#tfa_2879`" title="Reducing social isolation - Other" class="form-input">
               </div>
             </div>
 
@@ -752,7 +752,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{#if defaults.application_readonly}}
                 <div class="faux-textarea">{{defaults.tfa_2821}}</div>
                 {{else}}
-                <textarea id="tfa_2821" name="tfa_2821" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words">{{defaults.tfa_2821}}</textarea>
+                <textarea id="tfa_2821" name="tfa_2821" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words required" required>{{defaults.tfa_2821}}</textarea>
                 {{/if}}
               </div>
             </div>
@@ -768,7 +768,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{#if defaults.application_readonly}}
                 <div class="faux-textarea">{{defaults.tfa_2822}}</div>
                 {{else}}
-                <textarea id="tfa_2822" name="tfa_2822" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words">{{defaults.tfa_2822}}</textarea>
+                <textarea id="tfa_2822" name="tfa_2822" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words required" required>{{defaults.tfa_2822}}</textarea>
                 {{/if}}
               </div>
             </div>
@@ -798,7 +798,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{#if defaults.application_readonly}}
                 <div class="faux-textarea">{{defaults.tfa_2824}}</div>
                 {{else}}
-                <textarea id="tfa_2824" name="tfa_2824" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input count-words">{{defaults.tfa_2824}}</textarea>
+                <textarea id="tfa_2824" name="tfa_2824" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="300" class="form-input count-words required" required>{{defaults.tfa_2824}}</textarea>
                 {{/if}}
               </div>
             </div>
