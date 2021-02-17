@@ -601,7 +601,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{#if defaults.application_readonly}}
                 <div class="faux-textarea">{{defaults.tfa_2820}}</div>
                 {{else}}
-                <textarea id="tfa_2820" name="tfa_2820" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words">{{defaults.tfa_2820}}</textarea>
+                <textarea id="tfa_2820" name="tfa_2820" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words required" required>{{defaults.tfa_2820}}</textarea>
                 {{/if}}
               </div>
             </div>

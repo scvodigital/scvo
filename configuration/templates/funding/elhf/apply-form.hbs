@@ -641,7 +641,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group field-container-D t-margin" id="tfa_2820-D">
               <div class="col-9 col-xl-12">
                 <div class="form-group field-container-D">
-                  <label id="tfa_2820-L" class="preField r-margin" for="tfa_2820">
+                  <label id="tfa_2820-L" class="preField r-margin reqMark" for="tfa_2820">
                     Project delivery<br />
                     <span class="form-input-hint text-secondary">Please tell us where this specific project will be delivered in terms of local communities or neighbourhoods. We’d also like to know how you’ll deliver remotely or through a blended approach, depending on lockdown restrictions. (Max 400 words)</span>
                   </label>
@@ -649,7 +649,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{#if defaults.application_readonly}}
                 <div class="faux-textarea">{{defaults.tfa_2820}}</div>
                 {{else}}
-                <textarea id="tfa_2820" name="tfa_2820" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words">{{defaults.tfa_2820}}</textarea>
+                <textarea id="tfa_2820" name="tfa_2820" rows="5" placeholder="" autocomplete="nope" data-lpignore="true" data-maxwords="400" class="form-input count-words required" required>{{defaults.tfa_2820}}</textarea>
                 {{/if}}
               </div>
             </div>
