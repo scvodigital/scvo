@@ -472,7 +472,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1875" name="tfa_1875" maxlength="150" value="{{defaults.tfa_1875}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-                  <p class="form-input-hint text-secondary">or surname (just in case there is more than one person with the same first name)</p>
+                  <p class="form-input-hint text-secondary">or surname (just in case there is more than one person with the same first name).</p>
                 </div>
               </div>
 
@@ -500,7 +500,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1949" name="tfa_1949" minlength="11" maxlength="15" value="{{defaults.tfa_1949}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-                  <p class="form-input-hint text-secondary">Please tell us what the best telephone number is to contact you if we need to</p>
+                  <p class="form-input-hint text-secondary">Please tell us what the best telephone number is to contact you if we need to.</p>
                 </div>
               </div>
 
@@ -537,7 +537,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <input type="text" id="tfa_2816" name="tfa_2816" maxlength="255" value="{{defaults.tfa_2816}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-                <p class="form-input-hint text-secondary">A short, snappy title for your project</p>
+                <p class="form-input-hint text-secondary">A short, snappy title for your project.</p>
               </div>
             </div>
 
@@ -687,7 +687,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
 
             <div class="form-group">
-              <div class="col-5 col-lg-5 col-md-6 col-sm-12">
+              <div class="col-3 col-lg-5 col-md-6 col-sm-12">
                 <div class="field-container-D" id="tfa_2823-D">
                   <label id="tfa_2823-L" class="form-label r-margin preField reqMark" for="tfa_2823">
                     Number of people supported
@@ -695,7 +695,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-4 col-lg-5 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2823" name="tfa_2823" maxlength="255" value="{{defaults.tfa_2823}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="number" min="0" id="tfa_2823" name="tfa_2823" maxlength="255" value="{{defaults.tfa_2823}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                 <p class="form-input-hint text-secondary">How many people will you support through this project?</p>
               </div>
             </div>
@@ -913,12 +913,12 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
 
             <div class="form-group" id="tfa_2825-D">
-              <div class="col-5 col-lg-5 col-md-6 col-sm-12">
+              <div class="col-3 col-lg-4 col-md-6 col-sm-12">
                 <label id="tfa_2825-L" class="form-label r-margin preField reqMark" for="tfa_2825">
                   Total amount of funding you are applying for
                 </label>
               </div>
-              <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="col-6 col-lg-8 col-md-6 col-sm-12">
                 <div class="form-group field-container-D">
                   <div class="input-group" style="width:100%;">
                     <span class="input-group-addon">&pound;</span>
