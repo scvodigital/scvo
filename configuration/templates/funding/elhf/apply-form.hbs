@@ -551,7 +551,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_2817" name="tfa_2817" maxlength="150" value="{{defaults.tfa_2817}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" min="2021-07-01" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  <input type="text" id="tfa_2817" name="tfa_2817" maxlength="150" value="{{defaults.tfa_2817}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" min="2021-05-17" max="2021-05-31" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
                    <p class="form-input-hint text-secondary">You should be prepared to start delivery on 17 May 2021, and no later than 31 May 2021.</p>
                 </div>
               </div>
@@ -564,7 +564,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_2818" name="tfa_2818" maxlength="150" value="{{defaults.tfa_2818}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" min="2021-07-01" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  <input type="text" id="tfa_2818" name="tfa_2818" maxlength="150" value="{{defaults.tfa_2818}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" min="2021-05-17" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
                   <p class="form-input-hint text-secondary">Project delivery should be for 6 months, ending in November 2021.</p>
                 </div>
               </div>
@@ -922,7 +922,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <div class="input-group" style="width:100%;">
                     <span class="input-group-addon">&pound;</span>
-                    <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="500" max="5000" id="tfa_2825" name="tfa_2825" value="{{defaults.tfa_2825}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="500" max="1000000" id="tfa_2825" name="tfa_2825" value="{{defaults.tfa_2825}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                   </div>
                   <p class="form-input-hint text-secondary">
                     Please note, <strong>the minimum that can be applied for is £500 with a maximum up to £5,000</strong>. Any projects seeking a larger investment <strong>must</strong> contact SCVO Digital Team in advance of applying to discuss further.
