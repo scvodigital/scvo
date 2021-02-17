@@ -128,13 +128,13 @@ wFORMS.behaviors.prefill.skip = false;
             {{else}}
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2324-L" class="form-label r-margin preField reqMark" for="tfa_2324">
+                <label id="tfa_2324-L" class="form-label r-margin preField" for="tfa_2324">
                   Company Number
                 </label>
               </div>
               <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="form-group field-container-D" id="tfa_2324-D">
-                  <input type="text" id="tfa_2324" name="tfa_2324" maxlength="12" value="{{defaults.tfa_2324}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}} onchange="copyCompanyNumber(this)">
+                  <input type="text" id="tfa_2324" name="tfa_2324" maxlength="12" value="{{defaults.tfa_2324}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input"{{/if}} onchange="copyCompanyNumber(this)">
                   <input type="hidden" id="tfa_2887" name="tfa_2887" title="Lookup Charity Number" value="NO_MATCH">
                   <input type="hidden" id="tfa_2888" name="tfa_2888" title="Lookup Company Number" value="{{#if defaults.tfa_2324}}{{defaults.tfa_2324}}{{else}}NO_MATCH{{/if}}">
                 </div>
