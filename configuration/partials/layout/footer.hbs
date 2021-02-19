@@ -1,11 +1,13 @@
 <footer>
   <div class="footer-main v-padding-full">
     <div class="container v-padding-full">
+      {{#unless (contains @root.request.url.pathname '/apply')}}
       <div class="columns">
         <div class="column col-12 col-ml-auto membership">
           <a href="/about/membership" class="btn btn-primary btn-lg btn-cta pull-right b-margin">Join our community</a>
         </div>
       </div>
+      {{/unless}}
       <div class="columns b-margin">
         <div class="column col-3 col-lg-6 col-md-12 contact">
           <h4>Contact</h4>

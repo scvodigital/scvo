@@ -247,7 +247,9 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div id="postcode-wrapper" class="form-group has-icon-right">
                   <input type="text" id="tfa_1925" name="tfa_1925" value="{{defaults.tfa_1925}}" aria-required="true" autocomplete="nope" data-lpignore="true" style="text-transform: uppercase;" id="postcode-wrapper" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-                  <span class="form-icon far" id="postcode_validation_icon"></span>
+                  {{#unless defaults.application_readonly}}
+                    <span class="form-icon far" id="postcode_validation_icon"></span>
+                  {{/unless}}
                   <p id="postcode_validation_message" class="form-input-hint text-secondary"></p>
                 </div>
               </div>
