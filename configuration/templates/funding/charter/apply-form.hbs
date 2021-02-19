@@ -619,14 +619,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_2872" class="choices vertical">
                   <span class="oneChoice">
                     <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2873-L" for="tfa_2873">
-                      <input type="checkbox" value="tfa_2873" id="tfa_2873" name="tfa_2873" data-conditionals="#tfa_2875" aria-labelledby="tfa_2873-L" data-tfa-labelledby="tfa_2872-L tfa_2873-L"{{#if defaults.tfa_2873}} checked{{/if}}>
+                      <input type="checkbox" value="tfa_2873" id="tfa_2873" name="tfa_2872" data-conditionals="#tfa_2875" aria-labelledby="tfa_2873-L" data-tfa-labelledby="tfa_2872-L tfa_2873-L"{{#if defaults.tfa_2873}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Reducing social isolation
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2874-L" for="tfa_2874">
-                      <input type="checkbox" value="tfa_2874" id="tfa_2874" name="tfa_2874" data-conditionals="#tfa_2880" aria-labelledby="tfa_2874-L" data-tfa-labelledby="tfa_2872-L tfa_2874-L"{{#if defaults.tfa_2874}} checked{{/if}}>
+                      <input type="checkbox" value="tfa_2874" id="tfa_2874" name="tfa_2872" data-conditionals="#tfa_2880" aria-labelledby="tfa_2874-L" data-tfa-labelledby="tfa_2872-L tfa_2874-L"{{#if defaults.tfa_2874}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Increasing economic prospects
                     </label>
@@ -637,7 +637,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group oneField field-container-D b-margin-full" id="tfa_2875-D" role="group" aria-labelledby="tfa_2875-L" data-tfa-labelledby="-L tfa_2875-L">
               <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="form-group field-container-D">
+                <div class="form-group field-container-D reqMark">
                   Reducing social isolation - select themes
                 </div>
               </div>
@@ -678,19 +678,19 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D b-margin-full" id="tfa_2885-D">
               <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D">
-                  <label id="tfa_2885-L" class="form-label preField " for="tfa_2885">
+                  <label id="tfa_2885-L" class="form-label preField reqMark" for="tfa_2885">
                     Please describe
                   </label>
                 </div>
               </div>
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2885" name="tfa_2885" value="{{defaults.tfa_2885}}" data-condition="`#tfa_2879`" title="Reducing social isolation - Other" class="form-input">
+                <input type="text" id="tfa_2885" name="tfa_2885" value="{{defaults.tfa_2885}}" data-condition="`#tfa_2879`" title="Reducing social isolation - Other" class="form-input required" required>
               </div>
             </div>
 
             <div class="form-group oneField field-container-D b-margin-full" id="tfa_2880-D" role="group" aria-labelledby="tfa_2880-L" data-tfa-labelledby="-L tfa_2880-L">
               <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <div class="form-group field-container-D">
+                <div class="form-group field-container-D reqMark">
                   Increasing economic prospects - select themes
                 </div>
               </div>
@@ -731,13 +731,13 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D" id="tfa_2886-D">
               <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D">
-                  <label id="tfa_2886-L" class="form-label preField " for="tfa_2886">
+                  <label id="tfa_2886-L" class="form-label preField reqMark" for="tfa_2886">
                     Please describe
                   </label>
                 </div>
               </div>
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                <input type="text" id="tfa_2886" name="tfa_2886" value="{{defaults.tfa_2886}}" data-condition="`#tfa_2884`" title="Increasing economic prospects Other" class="form-input">
+                <input type="text" id="tfa_2886" name="tfa_2886" value="{{defaults.tfa_2886}}" data-condition="`#tfa_2884`" title="Increasing economic prospects Other" class="form-input required" required>
               </div>
             </div>
 
