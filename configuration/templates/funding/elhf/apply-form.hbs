@@ -220,7 +220,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
                     Client group<br />
-                    <span class="form-input-hint text-secondary">Please briefly tell us about the type of people you work with and how you support them (in the context of this application). (Max 250 words)</span>
+                    <span class="form-input-hint text-secondary">Please tell us about the user groups you currently work with and how you support them (in the context of this application). (Max 250 words)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -472,7 +472,6 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1875" name="tfa_1875" maxlength="150" value="{{defaults.tfa_1875}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-                  <p class="form-input-hint text-secondary">or surname (just in case there is more than one person with the same first name).</p>
                 </div>
               </div>
 
@@ -551,7 +550,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_2817" name="tfa_2817" maxlength="150" value="{{defaults.tfa_2817}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" min="2021-05-17" max="2021-05-31" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  <input type="text" id="tfa_2817" name="tfa_2817" min="2021-05-17" max="2021-05-31" maxlength="150" value="{{defaults.tfa_2817}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
                    <p class="form-input-hint text-secondary">You should be prepared to start delivery on 17 May 2021, and no later than 31 May 2021.</p>
                 </div>
               </div>
@@ -564,7 +563,7 @@ wFORMS.behaviors.prefill.skip = false;
                   </div>
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                  <input type="text" id="tfa_2818" name="tfa_2818" maxlength="150" value="{{defaults.tfa_2818}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" min="2021-05-17" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
+                  <input type="text" id="tfa_2818" name="tfa_2818" min="2021-05-17" max="2021-11-30" maxlength="150" value="{{defaults.tfa_2818}}" autocomplete="nope" data-lpignore="true" class="validate-datecal form-input required" required {{#if defaults.application_editing}}{{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{/if}}>
                   <p class="form-input-hint text-secondary">Project delivery should be for 6 months, ending in November 2021.</p>
                 </div>
               </div>
@@ -643,7 +642,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2820-L" class="preField r-margin reqMark" for="tfa_2820">
                     Project delivery<br />
-                    <span class="form-input-hint text-secondary">Please tell us where this specific project will be delivered in terms of local communities or neighbourhoods. We’d also like to know how you’ll deliver remotely or through a blended approach, depending on lockdown restrictions. (Max 400 words)</span>
+                    <span class="form-input-hint text-secondary">Depending on lockdown restrictions, there may be a need for remote delivery or a blended approach. Tell us how you will do that. (Max 400 words)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
