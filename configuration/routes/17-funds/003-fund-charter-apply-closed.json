@@ -1,7 +1,7 @@
 {
   "name": "fund_charter_apply_closed",
   "debug": false,
-  "pattern": "/funding/digital-participation-charter-fund/apply/closed",
+  "pattern": "/funding/digital-participation-charter-fund/round-8/apply/closed",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -21,8 +21,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_charter_apply-header",
-              "body": ">context.metaData.handlebars.templates.funding_charter_apply-closed",
+              "header": ">context.metaData.handlebars.templates.funding_charter_round-8_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_round-8_apply-closed",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

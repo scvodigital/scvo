@@ -1,7 +1,7 @@
 {
   "name": "fund_elhf_apply_form",
   "debug": false,
-  "pattern": "/funding/elhf-connecting-communities-fund/apply/:charity_number",
+  "pattern": "/funding/digital-participation-charter-fund/elhf-connecting-communities/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -96,7 +96,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.funding_elhf_apply-form-data",
+        "template": ">context.metaData.handlebars.templates.funding_charter_elhf_apply-form-data",
         "output": "data",
         "parseJson": true
       }
@@ -118,8 +118,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_elhf_apply-header",
-              "body": ">context.metaData.handlebars.templates.funding_elhf_apply-form",
+              "header": ">context.metaData.handlebars.templates.funding_charter_elhf_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_elhf_apply-form",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

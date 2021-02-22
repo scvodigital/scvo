@@ -1,7 +1,7 @@
 {
   "name": "fund_elhf_helpdesk_thanks",
   "debug": false,
-  "pattern": "/funding/elhf-connecting-communities-fund/helpdesk/thanks",
+  "pattern": "/funding/digital-participation-charter-fund/elhf-connecting-communities/helpdesk/thanks",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -21,8 +21,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_elhf_helpdesk-header",
-              "body": ">context.metaData.handlebars.templates.funding_elhf_helpdesk-thanks",
+              "header": ">context.metaData.handlebars.templates.funding_charter_elhf_helpdesk-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_elhf_helpdesk-thanks",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

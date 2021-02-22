@@ -1,7 +1,7 @@
 {
   "name": "fund_charter_helpdesk",
   "debug": false,
-  "pattern": "/funding/digital-participation-charter-fund/helpdesk",
+  "pattern": "/funding/digital-participation-charter-fund/round-8/helpdesk",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -20,8 +20,8 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_charter_helpdesk-header",
-              "body": ">context.metaData.handlebars.templates.funding_charter_helpdesk-form",
+              "header": ">context.metaData.handlebars.templates.funding_charter_round-8_helpdesk-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_round-8_helpdesk-form",
               "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },

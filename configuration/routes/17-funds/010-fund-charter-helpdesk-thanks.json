@@ -1,7 +1,7 @@
 {
   "name": "fund_charter_helpdesk_thanks",
   "debug": false,
-  "pattern": "/funding/digital-participation-charter-fund/helpdesk/thanks",
+  "pattern": "/funding/digital-participation-charter-fund/round-8/helpdesk/thanks",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -21,8 +21,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_charter_helpdesk-header",
-              "body": ">context.metaData.handlebars.templates.funding_charter_helpdesk-thanks",
+              "header": ">context.metaData.handlebars.templates.funding_charter_round-8_helpdesk-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_round-8_helpdesk-thanks",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

@@ -1,7 +1,7 @@
 {
   "name": "fund_elhf_apply_complete",
   "debug": false,
-  "pattern": "/funding/elhf-connecting-communities-fund/apply/complete",
+  "pattern": "/funding/digital-participation-charter-fund/elhf-connecting-communities/apply/complete",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -21,8 +21,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_elhf_apply-header",
-              "body": ">context.metaData.handlebars.templates.funding_elhf_apply-complete",
+              "header": ">context.metaData.handlebars.templates.funding_charter_elhf_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_elhf_apply-complete",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

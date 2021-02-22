@@ -1,7 +1,7 @@
 {
   "name": "fund_elhf_view_form",
   "debug": true,
-  "pattern": "/funding/elhf-connecting-communities-fund/apply/view/:session_key",
+  "pattern": "/funding/digital-participation-charter-fund/elhf-connecting-communities/apply/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -63,7 +63,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.funding_elhf_apply-form-data",
+        "template": ">context.metaData.handlebars.templates.funding_charter_elhf_apply-form-data",
         "output": "data",
         "parseJson": true
       }
@@ -85,8 +85,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_elhf_view-header",
-              "body": ">context.metaData.handlebars.templates.funding_elhf_apply-form",
+              "header": ">context.metaData.handlebars.templates.funding_charter_elhf_view-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_elhf_apply-form",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"
