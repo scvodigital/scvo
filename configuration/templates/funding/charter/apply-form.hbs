@@ -203,7 +203,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2798-L" class="preField r-margin reqMark" for="tfa_2798">
                     Organisation overview<br />
-                    <span class="form-input-hint text-secondary">Please give us a succinct overview of the work of your organisation. (Max 150 words)</span>
+                    <span class="form-input-hint text-secondary">Please give us a brief overview of the work of your organisation. (Max 150 words)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -219,7 +219,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
                     Client group<br />
-                    <span class="form-input-hint text-secondary">Please tell us about the user groups you currently work with and how you support them (in the context of this application). (Max 250 words)</span>
+                    <span class="form-input-hint text-secondary">Please tell us about the people you currently work with and how you support them (in the context of this application). (Max 250 words)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -459,7 +459,6 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1" name="tfa_1" maxlength="150" value="{{defaults.tfa_1}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-                  <p class="form-input-hint text-secondary">This is the preferred name of your lead contact and what we’ll call them if we need to ask for clarification.</p>
                 </div>
               </div>
 
@@ -473,6 +472,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1875" name="tfa_1875" maxlength="150" value="{{defaults.tfa_1875}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                  <p class="form-input-hint text-secondary">This is the preferred name of your lead contact and what we’ll call them if we need to ask for clarification.</p>
                 </div>
               </div>
 
@@ -541,6 +541,13 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
 
+            <div class="form-group field-container-D">
+              <div class="col-9 col-xl-12">
+                <p>
+                  The earliest start date for your project under Round 8 will be Thursday 1st July 2021. In the past we have had projects ranging from 6 months to 15 months, but the average delivery period has generally been 9/12 months which works well with wider cohort interaction and final reporting.
+                </p>
+              </div>
+            </div>
             <div class="section v-margin-full" id="funding_period">
               <div class="form-group">
                 <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -567,13 +574,6 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
             </div>
-            <div class="form-group field-container-D">
-              <div class="col-9 col-xl-12">
-                <p>
-                  The earliest start date for your project under Round 8 will be Thursday 1st July 2021. In the past we have had projects ranging from 6 months to 15 months, but the average delivery period has generally been 9/12 months which works well with wider cohort interaction and final reporting.
-                </p>
-              </div>
-            </div>
 
             <div class="form-group field-container-D t-margin" id="tfa_2819-D">
               <div class="col-9 col-xl-12">
@@ -596,7 +596,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2820-L" class="preField r-margin reqMark" for="tfa_2820">
                     Project delivery<br />
-                    <span class="form-input-hint text-secondary">Please tell us where this specific project will be delivered in terms of local authority area, including detail right down to the community or neighbourhood that is being targeted. Covid-19 restrictions currently limit face-to-face contact and your activity will therefore need to be online. Please let us know how you have adapted or designed your project to be delivered flexibly. We would also like to know what spaces/buildings you may seek to incorporate for blended learning, should this be a future aim. (N.B. There is a 400-word limit for this answer)</span>
+                    <span class="form-input-hint text-secondary">Depending on lockdown restrictions, there may be a need for remote delivery or a blended approach. Tell us how you will do that. (Max 400 words)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -828,7 +828,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="form-group field-container-D">
                 <div class="col-9 col-xl-12">
                   <p>
-                    Please list up to six principle items of expenditure (a minimum of one must be given) – we will need to see a description of the item and the budgeted cost. Please check your figures carefully!
+                    Please list up to six principal items of expenditure (a minimum of one must be given) – we will need to see a description of the item and the budgeted cost. Please check your figures carefully!
                   </p>
                 </div>
               </div>

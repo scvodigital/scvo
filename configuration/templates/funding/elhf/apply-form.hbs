@@ -100,7 +100,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2801-L" class="form-label r-margin preField reqMark" for="tfa_2801">
+                <label id="tfa_2801-L" class="form-label r-margin preField{{#unless defaults.tfa_2801}} reqMark{{/unless}}" for="tfa_2801">
                   Organisation type
                 </label>
               </div>
@@ -152,7 +152,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2801-L" class="form-label r-margin preField reqMark" for="tfa_2801">
+                <label id="tfa_2801-L" class="form-label r-margin preField{{#unless defaults.tfa_2801}} reqMark{{/unless}}" for="tfa_2801">
                   Organisation type
                 </label>
               </div>
@@ -183,7 +183,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_1876-L" class="form-label r-margin preField reqMark" for="tfa_1876">
+                <label id="tfa_1876-L" class="form-label r-margin preField{{#unless defaults.tfa_1876}} reqMark{{/unless}}" for="tfa_1876">
                   Organisation name
                 </label>
               </div>
@@ -204,7 +204,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2798-L" class="preField r-margin reqMark" for="tfa_2798">
                     Organisation overview<br />
-                    <span class="form-input-hint text-secondary">Please give us a succinct overview of the work of your organisation. (Max 150 words)</span>
+                    <span class="form-input-hint text-secondary">Please give us a brief overview of the work of your organisation. (Max 150 words)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -220,7 +220,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group field-container-D">
                   <label id="tfa_2325-L" class="preField r-margin reqMark" for="tfa_2325">
                     Client group<br />
-                    <span class="form-input-hint text-secondary">Please tell us about the user groups you currently work with and how you support them (in the context of this application). (Max 250 words)</span>
+                    <span class="form-input-hint text-secondary">Please tell us about the people you currently work with and how you support them (in the context of this application). (Max 250 words)</span>
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -458,7 +458,6 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1" name="tfa_1" maxlength="150" value="{{defaults.tfa_1}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
-                  <p class="form-input-hint text-secondary">This is the preferred name of your lead contact and what we’ll call them if we need to ask for clarification.</p>
                 </div>
               </div>
 
@@ -472,6 +471,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
                 <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                   <input type="text" id="tfa_1875" name="tfa_1875" maxlength="150" value="{{defaults.tfa_1875}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                  <p class="form-input-hint text-secondary">This is the preferred name of your lead contact and what we’ll call them if we need to ask for clarification.</p>
                 </div>
               </div>
 
@@ -694,7 +694,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-4 col-lg-5 col-md-6 col-sm-12">
-                <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="10000000" id="tfa_2823" name="tfa_2823" maxlength="255" value="{{defaults.tfa_2823}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="20" max="10000000" id="tfa_2823" name="tfa_2823" maxlength="255" value="{{defaults.tfa_2823}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                 <p class="form-input-hint text-secondary">How many people will you support through this project?</p>
               </div>
             </div>
@@ -935,7 +935,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="form-group field-container-D">
                 <div class="col-9 col-xl-12">
                   <p>
-                    Please list up to six principle items of expenditure (a minimum of one must be given) – we will need to see a description of the item and the budgeted cost. Please check your figures carefully!
+                    Please list up to six principal items of expenditure (a minimum of one must be given) – we will need to see a description of the item and the budgeted cost. Please check your figures carefully!
                   </p>
                 </div>
               </div>
