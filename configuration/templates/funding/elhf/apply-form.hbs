@@ -380,6 +380,14 @@ wFORMS.behaviors.prefill.skip = false;
                         {{/each ~}}
                       </span>
                     </div>
+
+                    <div class="form-group">
+                      <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2917-L" for="tfa_2917">
+                        <input type="radio" value="tfa_2917" id="tfa_2917" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2917-L" data-tfa-labelledby="tfa_2398-L tfa_2917-L" {{#compare defaults.tfa_2398 "Nationally (Scotland)"}} checked{{/compare}} required>
+                        <i class="form-icon"></i>
+                        Nationally (across Scotland)
+                      </label>
+                    </div>
                   </span>
                 </div>
               </div>
@@ -1170,7 +1178,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" value="4883960" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="ede0c455d963ff9903b697fca3b556ac" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="8" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="9" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         {{/unless}}
       </form>
