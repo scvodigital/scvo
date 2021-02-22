@@ -77,7 +77,7 @@ wFORMS.behaviors.prefill.skip = false;
             {{#if defaults.is_charity ~}}
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_1941-L" class="form-label r-margin preField reqMark" for="tfa_1941">
+                <label id="tfa_1941-L" class="form-label r-margin preField" for="tfa_1941">
                   Scottish Charity Number
                 </label>
                 {{#unless defaults.application_editing}}
@@ -98,7 +98,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2801-L" class="form-label r-margin preField reqMark" for="tfa_2801">
+                <label id="tfa_2801-L" class="form-label r-margin preField{{#unless defaults.tfa_2801}} reqMark{{/unless}}" for="tfa_2801">
                   Organisation type
                 </label>
               </div>
@@ -150,7 +150,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_2801-L" class="form-label r-margin preField reqMark" for="tfa_2801">
+                <label id="tfa_2801-L" class="form-label r-margin preField{{#unless defaults.tfa_2801}} reqMark{{/unless}}" for="tfa_2801">
                   Organisation type
                 </label>
               </div>
@@ -182,7 +182,7 @@ wFORMS.behaviors.prefill.skip = false;
 
             <div class="form-group">
               <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-                <label id="tfa_1876-L" class="form-label r-margin preField reqMark" for="tfa_1876">
+                <label id="tfa_1876-L" class="form-label r-margin preField{{#unless defaults.tfa_1876}} reqMark{{/unless}}" for="tfa_1876">
                   Organisation name
                 </label>
               </div>
