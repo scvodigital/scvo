@@ -1,0 +1,34 @@
+{
+  "name": "fund_device-refurb_apply_complete",
+  "debug": false,
+  "pattern": "/funding/digital-participation-charter-fund/device-refurbishment-support/apply/complete",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_charter_device-refurb_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_charter_device-refurb_apply-complete",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
