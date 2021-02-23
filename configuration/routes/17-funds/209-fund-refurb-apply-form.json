@@ -1,7 +1,7 @@
 {
   "name": "fund_device-refurb_apply_form",
   "debug": false,
-  "pattern": "/funding/digital-participation-charter/device-refurbishment-support-fund/apply/:charity_number",
+  "pattern": "/funding/digital-participation/device-refurbishment-support-fund/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

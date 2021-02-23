@@ -1,7 +1,7 @@
 {
   "name": "fund_device-refurb_view_form",
   "debug": true,
-  "pattern": "/funding/digital-participation-charter/device-refurbishment-support-fund/apply/view/:session_key",
+  "pattern": "/funding/digital-participation/device-refurbishment-support-fund/apply/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

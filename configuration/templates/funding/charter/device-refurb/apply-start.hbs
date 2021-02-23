@@ -33,7 +33,7 @@
             <div class="divider-vert hide-sm" data-content="OR"></div>
             <div class="divider text-center show-sm col-12" data-content="OR"></div>
             <div class="column col-sm-12 align-centre">
-              <a href="/funding/digital-participation-charter/device-refurbishment-support-fund/apply/not-a-charity" class="btn btn-block">
+              <a href="/funding/digital-participation/device-refurbishment-support-fund/apply/not-a-charity" class="btn btn-block">
                 Not a registered charity
               </a>
             </div>
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
 
     if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
-      var url = '/funding/digital-participation-charter/device-refurbishment-support-fund/apply/' + charityNumber;
+      var url = '/funding/digital-participation/device-refurbishment-support-fund/apply/' + charityNumber;
       $('#charity_number_submit')
       .removeAttr('disabled', false)
       .attr('href', url);

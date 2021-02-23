@@ -1,7 +1,7 @@
 {
   "name": "fund_charter_apply_form",
   "debug": false,
-  "pattern": "/funding/digital-participation-charter/charter-fund/apply/:charity_number",
+  "pattern": "/funding/digital-participation/charter-fund/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

@@ -14,7 +14,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/funding/digital-participation-charter/charter-fund{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
+        "template": "/funding/digital-participation/charter-fund{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
       }
     },
     {

@@ -1,7 +1,7 @@
 {
   "name": "fund_elhf_apply_form",
   "debug": false,
-  "pattern": "/funding/digital-participation-charter/elhf-connecting-communities-fund/apply/:charity_number",
+  "pattern": "/funding/digital-participation/elhf-connecting-communities-fund/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
