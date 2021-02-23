@@ -2573,55 +2573,64 @@
 					]
 				},
 				{
-					"label": "Digital participation charter fund",
-					"path": "/funding/digital-participation-charter-fund",
-					"route": "^/funding/digital-participation-charter-fund$",
+					"label": "Digital Participation Charter",
+					"path": "/funding/digital-participation-charter",
+					"route": "^/funding/digital-participation-charter$",
 					"description": "",
 					"icon": "",
 					"children": [
 						{
-							"label": "Supported projects",
-							"path": "/funding/digital-participation-charter-fund/projects",
-							"route": "^/funding/digital-participation-charter-fund/projects$",
-							"description": "",
-							"icon": ""
-						}
-					],
-					"___children": [
-						{
-							"label": "Call for funding",
-							"path": "/funding/digital-participation-charter-fund/call-for-funding",
-							"route": "^/funding/digital-participation-charter-fund/call-for-funding$",
-							"description": "",
-							"icon": ""
-						},
-						{
-							"label": "Key criteria",
-							"path": "/funding/digital-participation-charter-fund/call-for-funding/key-criteria",
-							"route": "^/funding/digital-participation-charter-fund/call-for-funding/key-criteria$",
-							"description": "",
-							"icon": ""
-						},
-						{
-							"label": "FAQs",
-							"path": "/funding/digital-participation-charter-fund/call-for-funding/faqs",
-							"route": "^/funding/digital-participation-charter-fund/call-for-funding/faqs$",
-							"description": "",
-							"icon": ""
-						},
-						{
-							"label": "Apply",
-							"path": "/funding/digital-participation-charter-fund/apply",
-							"route": "^/funding/digital-participation-charter-fund/apply$",
-							"description": "",
-							"icon": ""
-						},
-						{
-							"label": "Projects",
-							"path": "/funding/digital-participation-charter-fund/projects",
-							"route": "^/funding/digital-participation-charter-fund/projects$",
-							"description": "",
-							"icon": ""
+							"label": "Charter Fund",
+							"path": "/funding/digital-participation-charter/charter-fund",
+							"route": "^/funding/digital-participation-charter/charter-fund$",
+							"description": " ",
+							"icon": "",
+							"children": [
+								{
+									"label": "Supported projects",
+									"path": "/funding/digital-participation-charter/charter-fund/projects",
+									"route": "^/funding/digital-participation-charter/charter-fund/projects$",
+									"description": "",
+									"icon": ""
+								}
+							],
+							"___children": [
+								{
+									"label": "Call for funding",
+									"path": "/funding/digital-participation-charter/charter-fund/call-for-funding",
+									"route": "^/funding/digital-participation-charter/charter-fund/call-for-funding$",
+									"description": "",
+									"icon": ""
+								},
+								{
+									"label": "Key criteria",
+									"path": "/funding/digital-participation-charter/charter-fund/call-for-funding/key-criteria",
+									"route": "^/funding/digital-participation-charter/charter-fund/call-for-funding/key-criteria$",
+									"description": "",
+									"icon": ""
+								},
+								{
+									"label": "FAQs",
+									"path": "/funding/digital-participation-charter/charter-fund/call-for-funding/faqs",
+									"route": "^/funding/digital-participation-charter/charter-fund/call-for-funding/faqs$",
+									"description": "",
+									"icon": ""
+								},
+								{
+									"label": "Apply",
+									"path": "/funding/digital-participation-charter/charter-fund/apply",
+									"route": "^/funding/digital-participation-charter/charter-fund/apply$",
+									"description": "",
+									"icon": ""
+								},
+								{
+									"label": "Projects",
+									"path": "/funding/digital-participation-charter/charter-fund/projects",
+									"route": "^/funding/digital-participation-charter/charter-fund/projects$",
+									"description": "",
+									"icon": ""
+								}
+							]
 						}
 					]
 				}

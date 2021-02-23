@@ -1,7 +1,7 @@
 {
   "name": "grant_charter",
   "debug": false,
-  "pattern": "/funding/digital-participation-charter-fund/projects/:grant_id(/:junk)",
+  "pattern": "/funding/digital-participation-charter/charter-fund/projects/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

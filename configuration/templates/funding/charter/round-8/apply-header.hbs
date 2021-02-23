@@ -2,8 +2,8 @@
   <ul class="breadcrumb breadcrumb-length-4" aria-hidden="true">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item"><a href="/funding">Funding</a></li>
-    <li class="breadcrumb-item"><a href="/funding/digital-participation-charter-fund">Charter fund</a></li>
-    <li class="breadcrumb-item"><a href="/funding/digital-participation-charter-fund/round-8">Round 8</a></li>
+    <li class="breadcrumb-item"><a href="/funding/digital-participation-charter">Digital Participation Charter</a></li>
+    <li class="breadcrumb-item"><a href="/funding/digital-participation-charter/charter-fund">Charter Fund</a></li>
     <li class="breadcrumb-item">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_charter_apply_complete")}}{{#compare @root.route.name "fund_charter_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Apply{{/ifAny}}</li>
   </ul>
 </div>
