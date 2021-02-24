@@ -30,11 +30,11 @@
   <h2>{{{key}}}</h2>
   {{#each faqs.hits.hits ~}}
   {{#with _source ~}}
-  {{#ifAll title description ~}}
+  {{#ifAll title content ~}}
   <h4 class="accordion" aria-expanded="false">{{{title}}}</h4>
   <div class="accordion-content hidden">
     <p>
-      {{{replace description "\n" '<br />'}}}
+      {{{replace content "\n" '<br />'}}}
     </p>
   </div>
   {{/ifAll ~}}
@@ -45,11 +45,11 @@
   {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
   {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
   {{#with _source ~}}
-  {{#ifAll title description ~}}
+  {{#ifAll title content ~}}
   <h4 class="accordion" aria-expanded="false">{{{title}}}</h4>
   <div class="accordion-content hidden">
     <p>
-      {{{replace description "\n" '<br />'}}}
+      {{{replace content "\n" '<br />'}}}
     </p>
   </div>
   {{/ifAll ~}}
