@@ -1,0 +1,65 @@
+{
+  "size": 100,
+  "_source": [
+    "title",
+    "description",
+    "category"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "post_tags_slug": "faq"
+          }
+        },
+        {
+          "term": {
+            "categories_slug": "funding"
+          }
+        },
+        {{#if @root.request.params.fund ~}}
+        {
+          "term": {
+            "post_tags_slug": "{{@root.request.params.fund}}"
+          }
+        }
+        {{else}}
+        {
+          "match_none": {}
+        }
+        {{/if ~}}
+      ]
+    }
+  },
+  "sort": {
+    "weight": "asc"
+  },
+  "aggs": {
+    "query": {
+      "terms": {
+        "field": "category",
+        "order": {
+          "_term": "asc"
+        },
+        "size": 1000
+      },
+      "aggs": {
+        "faqs": {
+          "top_hits": {
+            "size": 1000,
+            "sort": {
+              "title_sort": "asc"
+            },
+            "_source": {
+              "includes": [
+                "title",
+                "description"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

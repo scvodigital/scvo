@@ -1,0 +1,63 @@
+{{#with @root.data.primaryResponse.hits.hits.[0] ~}}
+<div class="b-margin-full">
+  {{{replace (replace (replace (replace _source.content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+</div>
+{{/with ~}}
+
+{{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
+<div class="caption pull-right">
+  <button class="btn btn-sm" id="accordions_expand">
+    Expand all
+  </button>
+  <button class="btn btn-sm" id="accordions_collapse">
+    Collapse all
+  </button>
+</div>
+
+<div class="b-margin-full">
+  <br />
+</div>
+{{else}}
+<p>
+  FAQs will be added shortly
+</p>
+{{/compare}}
+
+<div class="b-margin-full b-padding-full">
+  {{#if @root.request.params.fund ~}}
+  {{#compare (length @root.data.supplimentaryResponses.faqs.aggregations.query.buckets) ">" 0 ~}}
+  {{#each @root.data.supplimentaryResponses.faqs.aggregations.query.buckets ~}}
+  <h2>{{{key}}}</h2>
+  {{#each faqs.hits.hits ~}}
+  {{#with _source ~}}
+  {{#ifAll title description ~}}
+  <h4 class="accordion" aria-expanded="false">{{{title}}}</h4>
+  <div class="accordion-content hidden">
+    <p>
+      {{{replace description "\n" '<br />'}}}
+    </p>
+  </div>
+  {{/ifAll ~}}
+  {{/with ~}}
+  {{/each ~}}
+  {{/each ~}}
+  {{else}}
+  {{#compare @root.data.supplimentaryResponses.faqs.hits.total ">" 0 ~}}
+  {{#each @root.data.supplimentaryResponses.faqs.hits.hits ~}}
+  {{#with _source ~}}
+  {{#ifAll title description ~}}
+  <h4 class="accordion" aria-expanded="false">{{{title}}}</h4>
+  <div class="accordion-content hidden">
+    <p>
+      {{{replace description "\n" '<br />'}}}
+    </p>
+  </div>
+  {{/ifAll ~}}
+  {{/with ~}}
+  {{/each ~}}
+  {{/compare ~}}
+  {{/compare ~}}
+  {{/if ~}}
+</div>
+
+<script src="{{~>asset_url url='js/accordion.js'~}}"></script>
