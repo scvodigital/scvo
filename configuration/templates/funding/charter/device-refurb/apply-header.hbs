@@ -4,7 +4,12 @@
     <li class="breadcrumb-item"><a href="/funding">Funding</a></li>
     <li class="breadcrumb-item"><a href="/funding/digital-participation">Digital Participation</a></li>
     <li class="breadcrumb-item"><a href="/funding/digital-participation/device-refurbishment-support-fund">Device Refurbishment Support Fund</a></li>
-    <li class="breadcrumb-item">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_charter_apply_complete")}}{{#compare @root.route.name "fund_charter_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{else}}Apply{{/ifAny}}</li>
+    {{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_charter_apply_complete")}}
+      <li class="breadcrumb-item"><a href="/funding/digital-participation/device-refurbishment-support-fund/apply">Apply</a></li>
+      <li class="breadcrumb-item">Application form</li>
+    {{else}}
+      <li class="breadcrumb-item">{{#compare @root.route.name "fund_charter_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}</li>
+    {{/ifAny}}
   </ul>
 </div>
 <div class="container">
