@@ -1,0 +1,26 @@
+{{#if (contains @root.request.url.pathname '/funding/digital-participation')}}
+  <div class="bg-gray">
+    <div class="container logos v-padding-full">
+      <h4 class="v-padding-full">Supported by:</h4>
+      <div class="columns v-margin-full">
+        <div class="column col-3 col-md-6 align-centre r-padding-full l-padding-full b-padding-full">
+          <a href="http://gov.scot" class="no-ext no-underline r-padding-full l-padding-full">
+            <img src="{{~>asset_url url='images/logos/organisations/SG_Quaternary_govscot_RGB.png'~}}" alt="The Scottish Government" class="p-centered r-padding-full l-padding-full" />
+          </a>
+        </div>
+        <div class="column col-3 col-md-6 align-centre r-padding-full l-padding-full b-padding-full">
+          <a href="https://www.gov.scot/policies/digital" class="no-ext no-underline r-padding-full l-padding-full">
+            <img src="{{~>asset_url url='images/logos/organisations/digital-scotland.png'~}}" alt="Digital Scotland" class="p-centered r-padding-full l-padding-full" />
+          </a>
+        </div>
+        {{#if (contains @root.request.url.pathname 'elhf-connecting-communities-fund')}}
+          <div class="column col-4 col-md-6 align-centre r-padding-full l-padding-full b-padding-full">
+            <a href="https://www.elhf.co.uk" class="no-ext no-underline r-padding-full l-padding-full">
+              <img src="{{~>asset_url url='images/logos/organisations/elhf.svg'~}}" alt="Edinburgh & Lothians Health Foundation" class="p-centered r-padding-full l-padding-full" style="width:100%;" />
+            </a>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+{{/if}}

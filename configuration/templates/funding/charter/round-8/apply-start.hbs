@@ -1,7 +1,8 @@
 <div class="container">
   <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
-    <p>
-      We strongly recommend that you use the relevant word template below to plan your draft before completing the online form as there will be no option to save your application and return to complete later.
+    The application form will be made available before noon on Thursday 25th February 2021.
+    {{!-- <p>
+      <strong>We strongly recommend that you use the relevant word template below to plan your draft before completing the online form as there will be no option to save your application and return to complete later.</strong>
     </p>
     <p>
       Please also ensure that you have signed up to the <a href="https://digitalparticipation.scot/charter" target="_blank">Digital Participation Charter</a> prior to submitting your application.
@@ -9,7 +10,8 @@
     <p>
       Charter Fund will be running a short series of information webinars, this page will be updated with details when they are announced.
     </p>
-    <h2>Word templates</h2>
+
+    <h2>Word template</h2>
     <p>
       <a href="">Charter Fund Round 8 application form template [TBC]</a>
     </p>
@@ -22,40 +24,36 @@
       Please enter the details below to start your application.
     </p>
 
-    <div class="columns">
-      <div class="column col-8 col-xl-10 col-lg-12 col-mx-auto">
-        <div class="b-padding-full v-margin-full">
-          {{#if @root.request.params.charity_number ~}}
-          <div class="label label-error x-padding t-margin-full">
-            <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
-            The charity number you entered could not be matched with an OSCR record
+    <div class="b-padding-full v-margin-full">
+      {{#if @root.request.params.charity_number ~}}
+      <div class="label label-error x-padding t-margin-full">
+        <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
+        The charity number you entered could not be matched with an OSCR record
+      </div>
+      <p class="t-margin b-margin-full form-input-hint text-secondary">
+        Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+      </p>
+      {{/if ~}}
+      <div class="columns">
+        <div class="column col-sm-12 t-padding b-padding-full">
+          <div class="form-group">
+            <label for="charity_number" class="form-label">Scottish Charity Number</label>
+            <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
+            <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
           </div>
-          <p class="t-margin b-margin-full form-input-hint text-secondary">
-            Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
-          </p>
-          {{/if ~}}
-          <div class="columns">
-            <div class="column col-sm-12 t-padding b-padding-full">
-              <div class="form-group">
-                <label for="charity_number" class="form-label">Scottish Charity Number</label>
-                <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
-                <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
-              </div>
-              <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
-                Apply now
-              </a>
-            </div>
-            <div class="divider-vert hide-sm" data-content="OR"></div>
-            <div class="divider text-center show-sm col-12" data-content="OR"></div>
-            <div class="column col-sm-12 align-centre">
-              <a href="/funding/digital-participation/charter-fund/apply/not-a-charity" class="btn btn-block">
-                Not a registered charity
-              </a>
-            </div>
-          </div>
+          <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
+            Apply now
+          </a>
+        </div>
+        <div class="divider-vert hide-sm" data-content="OR"></div>
+        <div class="divider text-center show-sm col-12" data-content="OR"></div>
+        <div class="column col-sm-12 align-centre">
+          <a href="/funding/digital-participation/charter-fund/apply/not-a-charity" class="btn btn-block">
+            Not a registered charity
+          </a>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>
 

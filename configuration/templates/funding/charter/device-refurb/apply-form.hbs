@@ -50,6 +50,9 @@ wFORMS.behaviors.prefill.skip = false;
 
 {{#unless defaults.application_editing}}
 <div class="container t-margin-full t-padding">
+  <p class="b-margin-full">
+    The text fields in this application form have word limits which vary from question to question. Please check to make sure your content will fit the field - anything over the word limit will be cut off. Once you have all of your information collated and to hand in the Word document template we anticipate the application form will take you roughly 15 minutes to complete.
+  </p>
   <span class="text-error">*</span> indicates a required field
 </div>
 {{/unless}}
@@ -775,7 +778,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </div>
               </div>
               <div class="col-4 col-lg-8 col-md-6 col-sm-12">
-                <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="10000000" id="tfa_2823" name="tfa_2823" maxlength="255" value="{{defaults.tfa_2823}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="1" max="10000000" id="tfa_2823" name="tfa_2823" maxlength="255" value="{{defaults.tfa_2823}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                 <p class="form-input-hint text-secondary">How many people do you plan to support through this project?</p>
               </div>
             </div>

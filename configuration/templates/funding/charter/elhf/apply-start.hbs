@@ -1,5 +1,19 @@
 <div class="container">
   <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
+    The application form will be made available before noon on Thursday 25th February 2021.
+    {{!-- <p>
+      <strong>We strongly recommend that you use the relevant word template below to plan your draft before completing the online form as there will be no option to save your application and return to complete later.</strong>
+    </p>
+    <p>
+      SCVO will be running an information webinar for anyone who’d like to learn more before applying, this page will be updated with details when it is announced.
+    </p>
+
+    <h2>Word template</h2>
+    <p>
+      <a href="">Edinburgh & Lothians Health Foundation: Connecting Communities application form template [TBC]</a>
+    </p>
+
+    <h2>Application form</h2>
     <p>
       This is the online application form for the Edinburgh & Lothians Health Foundation Connecting Communities Fund.
     </p>
@@ -7,40 +21,36 @@
       Please enter the details below to start your application.
     </p>
 
-    <div class="columns">
-      <div class="column col-8 col-xl-10 col-lg-12 col-mx-auto">
-        <div class="b-padding-full v-margin-full">
-          {{#if @root.request.params.charity_number ~}}
-          <div class="label label-error x-padding t-margin-full">
-            <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
-            The charity number you entered could not be matched with an OSCR record
+    <div class="b-padding-full v-margin-full">
+      {{#if @root.request.params.charity_number ~}}
+      <div class="label label-error x-padding t-margin-full">
+        <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
+        The charity number you entered could not be matched with an OSCR record
+      </div>
+      <p class="t-margin b-margin-full form-input-hint text-secondary">
+        Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+      </p>
+      {{/if ~}}
+      <div class="columns">
+        <div class="column col-sm-12 t-padding b-padding-full">
+          <div class="form-group">
+            <label for="charity_number" class="form-label">Scottish Charity Number</label>
+            <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
+            <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
           </div>
-          <p class="t-margin b-margin-full form-input-hint text-secondary">
-            Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
-          </p>
-          {{/if ~}}
-          <div class="columns">
-            <div class="column col-sm-12 t-padding b-padding-full">
-              <div class="form-group">
-                <label for="charity_number" class="form-label">Scottish Charity Number</label>
-                <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
-                <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
-              </div>
-              <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
-                Apply now
-              </a>
-            </div>
-            <div class="divider-vert hide-sm" data-content="OR"></div>
-            <div class="divider text-center show-sm col-12" data-content="OR"></div>
-            <div class="column col-sm-12 align-centre">
-              <a href="/funding/digital-participation/elhf-connecting-communities-fund/apply/not-a-charity" class="btn btn-block">
-                Not a registered charity
-              </a>
-            </div>
-          </div>
+          <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
+            Apply now
+          </a>
+        </div>
+        <div class="divider-vert hide-sm" data-content="OR"></div>
+        <div class="divider text-center show-sm col-12" data-content="OR"></div>
+        <div class="column col-sm-12 align-centre">
+          <a href="/funding/digital-participation/elhf-connecting-communities-fund/apply/not-a-charity" class="btn btn-block">
+            Not a registered charity
+          </a>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>
 

@@ -53,7 +53,7 @@
               }
             }
           ],
-          {{#if @root.data.primaryResponse.hits.hits.[0]._source.categories_id ~}}
+          {{!-- #if @root.data.primaryResponse.hits.hits.[0]._source.categories_id}}
           "filter": [
             {
               "terms": {
@@ -63,7 +63,7 @@
               }
             }
           ],
-          {{/if ~}}
+          {{/if --}}
           "must": [
             {
               "more_like_this": {

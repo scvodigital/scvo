@@ -19,11 +19,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
-              "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.funding_charter_round-8_apply-header",
               "body": ">context.metaData.handlebars.templates.funding_charter_round-8_apply-start",
-              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.page-footer"
             },
             "contentType": "text/html"
           }

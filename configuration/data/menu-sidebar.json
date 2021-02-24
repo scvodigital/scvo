@@ -2583,37 +2583,35 @@
 							"label": "Charter Fund",
 							"path": "/funding/digital-participation/charter-fund",
 							"route": "^/funding/digital-participation/charter-fund$",
-							"description": " ",
+							"description": "<div class=\"label label-warning label-rounded b-margin\">Opening soon</div><br />The Digital Participation Charter Fund invests in community digital inclusion projects across Scotland. It provides small grants to help a range of organisations tackle poverty, social isolation and other forms of inequality in society through embedding digital skills development work in day-to-day activity with their service users.",
 							"icon": "",
 							"children": [
 								{
-									"label": "Supported projects",
-									"path": "/funding/digital-participation/charter-fund/projects",
-									"route": "^/funding/digital-participation/charter-fund/projects$",
-									"description": "",
-									"icon": ""
-								}
-							],
-							"___children": [
-								{
-									"label": "Call for funding",
-									"path": "/funding/digital-participation/charter-fund/call-for-funding",
-									"route": "^/funding/digital-participation/charter-fund/call-for-funding$",
-									"description": "",
+									"label": "About the programme",
+									"path": "/funding/digital-participation/charter-fund/about-the-programme",
+									"route": "^/funding/digital-participation/charter-fund/about-the-programme$",
+									"description": " ",
 									"icon": ""
 								},
 								{
-									"label": "Key criteria",
-									"path": "/funding/digital-participation/charter-fund/call-for-funding/key-criteria",
-									"route": "^/funding/digital-participation/charter-fund/call-for-funding/key-criteria$",
-									"description": "",
+									"label": "Overall programme criteria",
+									"path": "/funding/digital-participation/charter-fund/overall-programme-criteria",
+									"route": "^/funding/digital-participation/charter-fund/overall-programme-criteria$",
+									"description": "Charter Fund 8 will focus on supporting projects operating within the voluntary and public sectors.",
 									"icon": ""
 								},
 								{
-									"label": "FAQs",
-									"path": "/funding/digital-participation/charter-fund/call-for-funding/faqs",
-									"route": "^/funding/digital-participation/charter-fund/call-for-funding/faqs$",
-									"description": "",
+									"label": "General guidance",
+									"path": "/funding/digital-participation/charter-fund/general-guidance",
+									"route": "^/funding/digital-participation/charter-fund/general-guidance$",
+									"description": "Helping you make the best of your application.",
+									"icon": ""
+								},
+								{
+									"label": "Frequently asked questions",
+									"path": "/funding/digital-participation/charter-fund/faq",
+									"route": "^/funding/digital-participation/charter-fund/faq$",
+									"description": "Answers to frequently asked questions about this fund.",
 									"icon": ""
 								},
 								{
@@ -2624,9 +2622,111 @@
 									"icon": ""
 								},
 								{
-									"label": "Projects",
+									"label": "Supported projects",
 									"path": "/funding/digital-participation/charter-fund/projects",
 									"route": "^/funding/digital-participation/charter-fund/projects$",
+									"description": "Information on previously awarded grants.",
+									"icon": ""
+								},
+								{
+									"label": "Helpdesk",
+									"path": "/funding/digital-participation/charter-fund/helpdesk",
+									"route": "^/funding/digital-participation/charter-fund/helpdesk$",
+									"description": "",
+									"icon": ""
+								}
+							]
+						},
+						{
+							"label": "Device Refurbishment Support Fund",
+							"path": "/funding/digital-participation/device-refurbishment-support-fund",
+							"route": "^/funding/digital-participation/device-refurbishment-support-fund$",
+							"description": "<div class=\"label label-warning label-rounded b-margin\">Opening soon</div><br />The Device Refurbishment Support Fund aims to support voluntary and community sector organisations with established device refurbishment and distribution programmes.",
+							"icon": "",
+							"children": [
+								{
+									"label": "About the programme",
+									"path": "/funding/digital-participation/device-refurbishment-support-fund/about-the-programme",
+									"route": "^/funding/digital-participation/device-refurbishment-support-fund/about-the-programme$",
+									"description": " ",
+									"icon": ""
+								},
+								{
+									"label": "Overall programme criteria",
+									"path": "/funding/digital-participation/device-refurbishment-support-fund/overall-programme-criteria",
+									"route": "^/funding/digital-participation/device-refurbishment-support-fund/overall-programme-criteria$",
+									"description": "The Device Refurbishment Support Fund will focus on supporting projects operating within the voluntary and community sectors that have an established programme of collecting, re-furbishing and distributing pre-loved devices.",
+									"icon": ""
+								},
+								{
+									"label": "Frequently asked questions",
+									"path": "/funding/digital-participation/device-refurbishment-support-fund/faq",
+									"route": "^/funding/digital-participation/device-refurbishment-support-fund/faq$",
+									"description": "Answers to frequently asked questions about this fund.",
+									"icon": ""
+								},
+								{
+									"label": "Apply",
+									"path": "/funding/digital-participation/device-refurbishment-support-fund/apply",
+									"route": "^/funding/digital-participation/device-refurbishment-support-fund/apply$",
+									"description": "",
+									"icon": ""
+								},
+								{
+									"label": "Helpdesk",
+									"path": "/funding/digital-participation/device-refurbishment-support-fund/helpdesk",
+									"route": "^/funding/digital-participation/device-refurbishment-support-fund/helpdesk$",
+									"description": "",
+									"icon": ""
+								}
+							]
+						},
+						{
+							"label": "ELHF Connecting Communities Fund",
+							"path": "/funding/digital-participation/elhf-connecting-communities-fund",
+							"route": "^/funding/digital-participation/elhf-connecting-communities-fund$",
+							"description": "<div class=\"label label-warning label-rounded b-margin\">Opening soon</div><br />Edinburgh & Lothians Health Foundation: Connecting Communities Fund is a small grants funding opportunity to tackle digital and health inequalities.",
+							"icon": "",
+							"children": [
+								{
+									"label": "About the programme",
+									"path": "/funding/digital-participation/elhf-connecting-communities-fund/about-the-programme",
+									"route": "^/funding/digital-participation/elhf-connecting-communities-fund/about-the-programme$",
+									"description": " ",
+									"icon": ""
+								},
+								{
+									"label": "Overall programme criteria",
+									"path": "/funding/digital-participation/elhf-connecting-communities-fund/overall-programme-criteria",
+									"route": "^/funding/digital-participation/elhf-connecting-communities-fund/overall-programme-criteria$",
+									"description": "The Edinburgh & Lothians Health Foundation: Connecting Communities Fund will focus on supporting projects operating within the voluntary and public sectors.",
+									"icon": ""
+								},
+								{
+									"label": "General guidance",
+									"path": "/funding/digital-participation/elhf-connecting-communities-fund/general-guidance",
+									"route": "^/funding/digital-participation/elhf-connecting-communities-fund/general-guidance$",
+									"description": "Helping you make the best of your application.",
+									"icon": ""
+								},
+								{
+									"label": "Frequently asked questions",
+									"path": "/funding/digital-participation/elhf-connecting-communities-fund/faq",
+									"route": "^/funding/digital-participation/elhf-connecting-communities-fund/faq$",
+									"description": "Answers to frequently asked questions about this fund.",
+									"icon": ""
+								},
+								{
+									"label": "Apply",
+									"path": "/funding/digital-participation/elhf-connecting-communities-fund/apply",
+									"route": "^/funding/digital-participation/elhf-connecting-communities-fund/apply$",
+									"description": "",
+									"icon": ""
+								},
+								{
+									"label": "Helpdesk",
+									"path": "/funding/digital-participation/elhf-connecting-communities-fund/helpdesk",
+									"route": "^/funding/digital-participation/elhf-connecting-communities-fund/helpdesk$",
 									"description": "",
 									"icon": ""
 								}
