@@ -1063,6 +1063,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
           </div>
 
+          {{#unless defaults.application_readonly}}
           <div class="section">
             <div class="bg-secondary">
               <div class="container section t-margin-full v-padding-full">
@@ -1089,7 +1090,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                     <div class="field-container-D" id="tfa_2866-D">
                       <label id="tfa_2866-L" class="form-label r-margin preField reqMark" for="tfa_2866">
-                        Name
+                        First name
                       </label>
                     </div>
                   </div>
@@ -1097,7 +1098,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <input type="text" id="tfa_2866" name="tfa_2866" maxlength="255" value="{{defaults.tfa_2866}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                   </div>
                 </div>
-                {{!-- <div class="form-group">
+                <div class="form-group">
                   <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                     <div class="field-container-D" id="tfa_2903-D">
                       <label id="tfa_2903-L" class="form-label r-margin preField reqMark" for="tfa_2903">
@@ -1120,7 +1121,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
                     <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_2902" name="tfa_2902" maxlength="255" value="{{defaults.tfa_2902}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
                   </div>
-                </div> --}}
+                </div>
                 <div class="form-group">
                   <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                     <div class="field-container-D" id="tfa_2867-D">
@@ -1161,6 +1162,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          {{/unless}}
 
           {{#unless defaults.application_readonly}}
           <div class="container">
