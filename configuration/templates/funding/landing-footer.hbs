@@ -1,4 +1,4 @@
-<div class="bg-primary">
+{{!-- <div class="bg-primary">
   <div class="container text-centre v-padding-full">
     <h3>
       <a href="/support/running-your-organisation/funding/step-by-step-guide">Step by step guide</a>
@@ -15,9 +15,9 @@
       </p>
     </div>
   </div>
-</div>
+</div> --}}
 
-{{#compare @root.data.supplimentaryResponses.recently_updated_funds.hits.total ">" 0 ~}}
+{{!-- {{#compare @root.data.supplimentaryResponses.recently_updated_funds.hits.total ">" 0 ~}}
 <div class="bg-white">
   <div class="container">
     <div class="v-padding-full">
@@ -35,6 +35,14 @@
     </div>
   </div>
 </div>
-{{/compare ~}}
+{{/compare ~}} --}}
 
 {{> footers_posts_blog}}
+
+{{> footers_posts_latest}}
+
+{{> footers_tfn_related}}
+
+{{> footers_tfn_latest}}
+
+{{!-- {{> footers_tfn_latest}} --}}
