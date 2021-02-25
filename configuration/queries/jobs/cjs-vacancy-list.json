@@ -26,8 +26,20 @@
               }
             },
             {
-              "wildcard" : {
-                "cjs_lookup": "CJS PH10*"
+              "bool": {
+                "should": [
+                  {
+                    "wildcard" : {
+                      "cjs_lookup": "CJS PH10*"
+                    }
+                  },
+                  {
+                    "wildcard" : {
+                      "cjs_lookup": "CJS Local*"
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
               }
             }
           ]
