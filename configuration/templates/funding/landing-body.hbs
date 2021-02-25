@@ -64,7 +64,7 @@
 {{> sections_coronavirus title="Funding, the voluntary sector & coronavirus" icon="chart-line-down" description="See our Coronavirus Third Sector Information Hub for information on dedicated funding in response to the COVID-19 pandemic" link="/support/coronavirus/funding"}} --}}
 
 <div class="bg-white">
-  <div class="container t-padding-full">
+  <div class="container v-padding-full b-margin-full">
     {{#*inline "childMenu" ~}}
     {{#ifAll path (ifAny description icon) ~}}
     {{#unless menu_hidden}}
@@ -89,8 +89,8 @@
     {{/ifAll ~}}
     {{/inline ~}}
 
-    <div class="v-padding-full">
-      <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
+    <div class="t-padding-full">
+      <div class="scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
         <div class="linked-cards support support-organisation">
           {{#each @root.context.metaData.sidebarMenus ~}}
             {{#each this ~}}
@@ -201,5 +201,43 @@
         </div>
       </div>
     </div>
+
+    <h2>
+      Funds SCVO manages
+    </h2>
+    <p>
+      We believe in being fully transparent when it comes to the funding opportunities we create/are part of - and we love celebrating the success stories of those who benefit! For details of the funds available right now, and information and evaluation of previously funded projects, see the following pages:
+    </p>
+    <div class="columns">
+      {{#each @root.data.supplimentaryResponses.scvo_funds.aggregations.funds.buckets ~}}
+        {{#compare funds.hits.total ">" 0 ~}}
+          <div class="column col-6 col-md-12">
+            <h3 class="t-margin-full">
+              {{#compare key "open"}}
+              Open funds
+              {{else}}
+              Currently closed funds &amp; successful projects
+              {{/compare ~}}
+            </h3>
+            <ul>
+              {{#each funds.hits.hits ~}}
+              {{#with _source ~}}
+              <li><a href="{{replace (replace (replace fund_url 'https://scvo.org/' '/') 'https://scvo.org.uk/' '/') 'https://scvo.scot/' '/'}}">{{{replace title "SCVO - " ""}}}</a></li>
+              {{/with ~}}
+              {{/each ~}}
+            </ul>
+            {{#compare @index 0}}
+              <h3 class="t-margin-full">Supported Programmes</h3>
+              <ul class="b-margin-full">
+                <li><a href="/funding/benefit-take-up-and-income-maximisation-fund">Scottish Benefits Take-Up Fund and Scottish Income Maximisation Fund</a></li>
+              </ul>
+            {{/compare}}
+          </div>
+        {{/compare ~}}
+      {{/each ~}}
+    </div>
+    {{!-- <p>
+      All our grants data are published openly via the <a href="http://www.threesixtygiving.org/support/standard/">360Giving Standard</a>.
+    </p> --}}
   </div>
 </div>
