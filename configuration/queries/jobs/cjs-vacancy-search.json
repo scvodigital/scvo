@@ -56,48 +56,11 @@
             "status": "Subbed"
           }
         },
-        {{#compare @root.request.params.phase 'p52' ~}}
         {
-          "bool": {
-            "should": [
-              {
-                "term" : {
-                  "cjs_lookup": "CJS PH10 PT 26wks"
-                }
-              },
-              {
-                "term" : {
-                  "cjs_lookup": "CJS Local 52wks - Scottish Borders"
-                }
-              }
-            ],
-            "minimum_should_match": 1
+          "term": {
+            "programme_type": "{{@root.request.params.phase}}"
           }
         }
-        {{else}}
-        {
-          "bool": {
-            "should": [
-              {
-                "term" : {
-                  "cjs_lookup": "CJS PH10"
-                }
-              },
-              {
-                "term" : {
-                  "cjs_lookup": "CJS PH10 PT 52wks"
-                }
-              },
-              {
-                "term" : {
-                  "cjs_lookup": "CJS Local PT 78wks - Scottish Borders"
-                }
-              }
-            ],
-            "minimum_should_match": 1
-          }
-        }
-        {{/compare ~}}
       ],
       "must": [
         {{#if @root.request.params.query.q ~}}
