@@ -1,0 +1,43 @@
+<div class="container v-padding-full">
+  {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+  {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
+  {{/if ~}}
+
+  <div class="columns">
+    {{#each @root.data.supplimentaryResponses.scvo_funds.aggregations.funds.buckets ~}}
+      {{#compare funds.hits.total ">" 0 ~}}
+        <div class="column col-6 col-md-12">
+          <h3 class="t-margin-full">
+            {{#compare key "open"}}
+            Open funds
+            {{else}}
+            Currently closed funds &amp; successful projects
+            {{/compare ~}}
+          </h3>
+          <ul>
+            {{#each funds.hits.hits ~}}
+            {{#with _source ~}}
+            <li><a href="{{replace (replace (replace fund_url 'https://scvo.org/' '/') 'https://scvo.org.uk/' '/') 'https://scvo.scot/' '/'}}">{{{replace title "SCVO - " ""}}}</a></li>
+            {{/with ~}}
+            {{/each ~}}
+            {{#compare key "currently-closed"}}
+            {{!-- these are listed as ceased so don't appear in FS --}}
+            <li><a href="/funding/cyber-essentials-fund">Cyber Resilience and Cyber Essentials Grants</a></li>
+            <li><a href="/funding/community-capacity-resilience-fund">Community Capacity & Resilience Fund</a></li>
+            <li><a href="/funding/carers-act-transformation-support-fund">Carers Act Transformation Support Fund</a></li>
+            {{/compare}}
+          </ul>
+          {{#compare @index 0}}
+            <h3 class="t-margin-full">Supported Programmes</h3>
+            <ul class="b-margin-full">
+              <li><a href="/funding/benefit-take-up-and-income-maximisation-fund">Scottish Benefits Take-Up Fund and Scottish Income Maximisation Fund</a></li>
+            </ul>
+          {{/compare}}
+        </div>
+      {{/compare ~}}
+    {{/each ~}}
+  </div>
+  <p class="t-margin-full b-padding-full caption">
+    All our grants data are published openly via the <a href="http://www.threesixtygiving.org/support/standard/">360Giving Standard</a>. Find out more about our commitment to <a href="/transparency">open data and transparency</a>.
+  </p>
+</div>

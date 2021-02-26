@@ -278,5 +278,24 @@
       ]
     },
     "renderer": "handlebars"
+  },
+  "tfnFundingRelatedPosts": {
+    "name": "tfnResponses",
+    "taskModule": "elasticsearch",
+    "config": {
+      "connectionStringTemplate": "{$../data/elasticsearch-url.txt}",
+      "elasticsearchConfig": {
+        "apiVersion": "5.6"
+      },
+      "queryTemplates": [
+        {
+          "name": "tfn_related_posts",
+          "index": "",
+          "type": "",
+          "template": ">context.metaData.handlebars.queries.posts_tfn-related-funding"
+        }
+      ]
+    },
+    "renderer": "handlebars"
   }
 }

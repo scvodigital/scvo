@@ -1,0 +1,143 @@
+{
+  "size": 4,
+  "_source": [
+    "site",
+    "path",
+    "title",
+    "image",
+    "d_published"
+  ],
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "filter": [
+            {
+              "bool": {
+                "filter": [
+                  {
+                    "term": {
+                      "type": "tfn-post"
+                    }
+                  },
+                  {
+                    "terms": {
+                      "k_post_type": [
+                        "news"
+                      ]
+                    }
+                  },
+                  {
+                    "nested": {
+                      "path": "visibility",
+                      "query": {
+                        "bool": {
+                          "must_not": [
+                            {
+                              "term": {
+                                "visibility.search_hide": {
+                                  "value": true
+                                }
+                              }
+                            }
+                          ],
+                          "should": [
+                            {
+                              "bool": {
+                                "must_not": {
+                                  "exists": {
+                                    "field": "visibility.search_range"
+                                  }
+                                }
+                              }
+                            },
+                            {
+                              "bool": {
+                                "filter": [
+                                  {
+                                    "term": {
+                                      "visibility.search_range": {
+                                        "value": "now"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "minimum_should_match": 1
+                        }
+                      }
+                    }
+                  }
+                ],
+                "must_not": [
+                  {
+                    "term": {
+                      "k_post_status": "trash"
+                    }
+                  },
+                  {
+                    "term": {
+                      "visibility.search_hide": {
+                        "value": true
+                      }
+                    }
+                  }
+                ],
+                "should": [
+                  {
+                    "bool": {
+                      "must_not": {
+                        "exists": {
+                          "field": "visibility.search_range"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "bool": {
+                      "filter": [
+                        {
+                          "term": {
+                            "visibility.search_range": {
+                              "value": "now"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "minimum_should_match": 1
+              }
+            }
+          ],
+          "should": [
+            {
+              "multi_match": {
+                "fields": [ "textbag", "textbag_boost_1^5" ],
+                "query": "Funding",
+                "type": "most_fields",
+                "tie_breaker": 0.3,
+                "operator": "OR"
+              }
+            }
+          ],
+          "minimum_should_match": 0
+        }
+      },
+      "functions": [
+        {
+          "gauss": {
+            "d_published": {
+              "scale": "7d",
+              "decay": 0.1
+            }
+          }
+        }
+      ],
+      "score_mode": "multiply"
+    }
+  }
+}

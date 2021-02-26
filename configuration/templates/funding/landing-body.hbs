@@ -64,7 +64,7 @@
 {{> sections_coronavirus title="Funding, the voluntary sector & coronavirus" icon="chart-line-down" description="See our Coronavirus Third Sector Information Hub for information on dedicated funding in response to the COVID-19 pandemic" link="/support/coronavirus/funding"}} --}}
 
 <div class="bg-white">
-  <div class="container v-padding-full b-margin-full">
+  <div class="container v-padding-full">
     {{#*inline "childMenu" ~}}
     {{#ifAll path (ifAny description icon) ~}}
     {{#unless menu_hidden}}
@@ -202,7 +202,7 @@
       </div>
     </div>
 
-    <h2>
+    {{!-- <h2>
       Funds SCVO manages
     </h2>
     <p>
@@ -226,7 +226,7 @@
               {{/with ~}}
               {{/each ~}}
               {{#compare key "currently-closed"}}
-              {{!-- these are listed as ceased so don't appear in FS --}}
+              {{!-- these are listed as ceased so don't appear in FS -- }}
               <li><a href="/funding/cyber-essentials-fund">Cyber Resilience and Cyber Essentials Grants</a></li>
               <li><a href="/funding/community-capacity-resilience-fund">Community Capacity & Resilience Fund</a></li>
               <li><a href="/funding/carers-act-transformation-support-fund">Carers Act Transformation Support Fund</a></li>
@@ -241,7 +241,7 @@
           </div>
         {{/compare ~}}
       {{/each ~}}
-    </div>
+    </div> --}}
     {{!-- <p>
       All our grants data are published openly via the <a href="http://www.threesixtygiving.org/support/standard/">360Giving Standard</a>.
     </p> --}}

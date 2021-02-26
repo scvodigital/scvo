@@ -1,7 +1,7 @@
 {
-  "name": "page_funding_landing",
-  "debug": false,
-  "pattern": "/funding",
+  "name": "page_funding_opportunities",
+  "debug": true,
+  "pattern": "/funding/opportunities",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -22,6 +22,31 @@
       "renderer": "handlebars"
     },
     "context.metaData.commonTasks.postsBlog",
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "scvo_funds",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "fs-fund",
+            "template": ">context.metaData.handlebars.queries.funding_scvo-funds"
+          },
+          {
+            "name": "recently_updated_funds",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "fs-fund",
+            "template": ">context.metaData.handlebars.queries.funding_funding-latest"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
     "context.metaData.commonTasks.tfnFundingRelatedPosts",
     {
       "name": "destination",
@@ -40,8 +65,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_landing-header",
-              "body": ">context.metaData.handlebars.templates.funding_landing-body",
+              "header": ">context.metaData.handlebars.templates.page-header",
+              "body": ">context.metaData.handlebars.templates.funding_opportunities-body",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"
