@@ -1,0 +1,32 @@
+{
+  "size": 6,
+  "_source": [
+    "Id",
+    "slug",
+    "title",
+    "title_slug",
+    "path",
+    "wage_hourly_rate",
+    "total_hours_per_week",
+    "description_short",
+    "organisation.name",
+    "organisation.id",
+    "organisation.area_town",
+    "organisation.name_slug",
+    "geo_coords"
+  ],
+  "query": {
+    "function_score": {
+      "query": {
+        "bool": {
+          "must": []
+        }
+      },
+      "random_score": {},
+      "score_mode": "sum"
+    }
+  },
+  "sort": {
+    "_score": "desc"
+  }
+}

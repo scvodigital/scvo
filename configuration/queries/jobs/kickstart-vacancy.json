@@ -1,0 +1,52 @@
+{
+  "size": 1,
+  "_source": [
+    "path",
+    "Id",
+    "slug",
+    "title",
+    "sub_title",
+    "title_slug",
+    "job_number",
+    "organisation.name",
+    "organisation.description",
+    "organisation.id",
+    "organisation.area_town",
+    "organisation.name_slug",
+    "organisation.charity_number",
+    "organisation_website_url",
+    "organisation_twitter_url",
+    "organisation_facebook_url",
+    "supervisor",
+    "application_arrangements",
+    "application_notes",
+    "job_website",
+    "working_pattern",
+    "number_of_references",
+    "shifts_rota",
+    "person_specification",
+    "additional",
+    "additional_summary",
+    "wage_hourly_rate",
+    "total_hours_per_week",
+    "description",
+    "pvg_requirements"
+  ],
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "Id": "{{@root.request.params.id}}"
+          }
+        },
+        {
+          "term": {
+            "slug": "{{@root.request.params.id}}"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}

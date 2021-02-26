@@ -1,0 +1,115 @@
+{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+{{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+<div class="page-content">
+  <div class="full kickstart-job vacancy-details id-{{Id}}">
+    <a href="{{path}}/apply" class="btn pull-right apply-button" style="margin-left:1rem;">Enquire/Apply</a>
+    <a href="javascript:window.print();" class="btn btn-link pull-right print-button">Print</a>
+    <h4>Organisation information</h4>
+    <dl class="inline-dl span-2 clearfix">
+      <dt>Organisation</dt>
+      <dd>
+        {{organisation.name}}
+        {{> charity_info charity_number=organisation.charity_number}}
+      </dd>
+      {{#if job_website ~}}
+      <dt>Job website</dt>
+      <dd>
+        <a href="{{job_website}}">{{job_website}}</a>
+      </dd>
+      {{/if ~}}
+      {{#if organisation_website ~}}
+      <dt>Website</dt>
+      <dd>
+        <a href="{{organisation_website_url}}">{{organisation_website}}</a>
+      </dd>
+      {{/if ~}}
+      {{#if organisation_twitter ~}}
+      <dt>Twitter</dt>
+      <dd>
+        <a href="{{organisation_twitter_url}}">{{organisation_twitter}}</a>
+      </dd>
+      {{/if ~}}
+      {{#if organisation_facebook ~}}
+      <dt>Facebook</dt>
+      <dd>
+        <a href="{{organisation_facebook_url}}">{{organisation_facebook}}</a>
+      </dd>
+      {{/if ~}}
+    </dl>
+
+    <div class="divider"></div>
+
+    <h4>Aims &amp; objectives</h4>
+    {{default organisation.description "Not supplied"}}
+
+    <div class="divider"></div>
+
+    <div class="columns">
+      <div class="column col-6 col-md-12">
+        <dl class="inline-dl span-2 clearfix">
+          <dt>Job number</dt>
+          <dd>
+            {{default job_number "Not supplied"}}
+          </dd>
+          <dt>Location</dt>
+          <dd>
+            {{default organisation.area_town "Not supplied"}}
+          </dd>
+          <dt>Time of attendance</dt>
+          <dd>
+            {{default working_pattern "Not supplied"}}
+          </dd>
+          <dt>No of references</dt>
+          <dd>
+            {{default number_of_references "Not supplied"}}
+          </dd>
+        </dl>
+      </div>
+      <div class="column col-6 col-md-12">
+        <dl class="inline-dl span-2 clearfix">
+          <dt>Hours (per week)</dt>
+          <dd>
+            {{default total_hours_per_week "Not supplied"}}
+          </dd>
+          <dt>Shifts/rota</dt>
+          <dd>
+            {{default shifts_rota "Not supplied"}}
+          </dd>
+          <dt>Salary (£/hr)</dt>
+          <dd>
+            {{default wage_hourly_rate "Not supplied"}}
+          </dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h4>Job description</h4>
+    {{{default description "Not supplied"}}}
+
+    <div class="divider"></div>
+
+    <h4>Person specification</h4>
+    {{{default person_specification "Not supplied"}}}
+
+    <div class="divider"></div>
+
+    {{#if additional ~}}
+    <h4>Additional information</h4>
+    {{{additional}}}
+    <div class="divider"></div>
+    {{else}}
+    {{#if additional_summary ~}}
+    <h4>Additional information</h4>
+    {{{additional_summary}}}
+    <div class="divider"></div>
+    {{/if}}
+    {{/if}}
+
+    <h4>PVG/disclosure requirements</h4>
+    {{{default pvg_requirements "Not supplied"}}}
+  </div>
+</div>
+{{/with ~}}
+{{/if ~}}

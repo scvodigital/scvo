@@ -1,0 +1,70 @@
+{
+  "name": "kickstart_job",
+  "debug": false,
+  "pattern": "/jobs/kickstart-scheme/vacancies/:id(/:junk)",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "kickstart-vacancy",
+          "template": ">context.metaData.handlebars.queries.jobs_kickstart-vacancy",
+          "noResultsRoute": "four_oh_four"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "types",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "kickstart-vacancy",
+            "template": ">context.metaData.handlebars.queries.jobs_kickstart-vacancy-aggs"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.jobs_kickstart_vacancies_vacancy-header",
+              "body": ">context.metaData.handlebars.templates.jobs_kickstart_vacancies_vacancy-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.jobs_kickstart_vacancies_search-sidebar",
+              "footer": ">context.metaData.handlebars.templates.jobs_kickstart_footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
