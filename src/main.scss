@@ -513,6 +513,7 @@ h1, h2, h3, h4, h5, h6,
   font-weight: $heading-link-weight;
   letter-spacing: -0.05rem;
   line-height: 1.2;
+  outline: none;
   .caption {
     font-size: 70%;
   }
@@ -622,6 +623,7 @@ h1.font-default,
 
 p {
   font-size: 100%;
+  outline: none;
 }
 p.text-small {
   font-size: 90%;
@@ -3199,6 +3201,9 @@ form.disabled {
 
 .label.label-secondary {
   color: white;
+}
+label {
+  outline: none;
 }
 
 form {
