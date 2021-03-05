@@ -346,6 +346,9 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <input type="url" pattern="https?://.+" id="tfa_57" name="tfa_57" maxlength="255" title="Website address" class="form-input validate-custom /^(http:|https:)+[^\s]+[\w]/g">
+              <p class="form-input-hint text-secondary">
+                If you have a website, please copy &amp; paste the full address (beginning with http:// or https://)
+              </p>
             </div>
           </div>
           <div class="oneField field-container-D form-group" id="tfa_58-D">
@@ -375,8 +378,8 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
           </div>
 
-          <h2 id="supporter-contact-L" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`) OR NOT (`#tfa_99`) OR NOT (`#tfa_100`)">Supporter contact</h2>
-          <h2 id="membership-contact-L" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8` AND `#tfa_99` AND `#tfa_100`">Membership contact</h2>
+          <h2 id="supporter-contact-L" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`) OR NOT (`#tfa_312`) OR NOT (`#tfa_313`)">Supporter contact</h2>
+          <h2 id="membership-contact-L" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8` AND `#tfa_312` AND `#tfa_313`">Membership contact</h2>
 
           <div class="oneField field-container-D form-group" id="tfa_71-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
@@ -400,12 +403,12 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="oneField field-container-D form-group" id="tfa_73-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_73-L" class="form-label preField " for="tfa_73">
+              <label id="tfa_73-L" class="form-label preField reqMark" for="tfa_73">
                 Job title
               </label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="text" id="tfa_73" name="tfa_73" maxlength="255" title="Contact job title" class="form-input">
+              <input type="text" id="tfa_73" name="tfa_73" maxlength="255" title="Contact job title" class="form-input required" required>
             </div>
           </div>
           <div class="oneField field-container-D  labelsRemoved  " id="tfa_74-D" role="group" aria-labelledby="tfa_74-L" data-tfa-labelledby="-L tfa_74-L">
