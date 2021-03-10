@@ -301,7 +301,7 @@ wFORMS.behaviors.prefill.skip = false;
                     Please select&hellip;
                   </option>
                   {{#each local_authorities ~}}
-                  {{#if this.id_organisation}}
+                  {{#if id_organisation}}
                   <option value="{{id_organisation}}" id="{{id_organisation}}"{{#compare name ../defaults.tfa_2438}} selected{{/compare}}>
                     {{name}}
                   </option>
@@ -1176,7 +1176,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" value="4883804" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="1b17b555a1b97d29ac2b56f5c10a35d5" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="15" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="16" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         {{/unless}}
       </form>
