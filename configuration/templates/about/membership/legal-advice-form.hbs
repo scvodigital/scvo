@@ -1,0 +1,152 @@
+<meta name="referrer" content="no-referrer-when-downgrade">
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+  let formElement = document.getElementById("tfa_0");
+  if (null === formElement) {
+    formElement = document.getElementById("0");
+  }
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+    let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+    if (null !== cumulatedTimeElement) {
+      let cumulatedTime = parseInt(cumulatedTimeElement.value);
+      if (null !== cumulatedTime && cumulatedTime > 0) {
+        formTimeDiff += cumulatedTime;
+      }
+    }
+    let jsTimeInput = document.createElement("input");
+    jsTimeInput.setAttribute("type", "hidden");
+    jsTimeInput.setAttribute("value", formTimeDiff.toString());
+    jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("autocomplete", "off");
+    if (null !== formElement) {
+      formElement.appendChild(jsTimeInput);
+    }
+  };
+  if (null !== formElement) {
+    if(formElement.addEventListener){
+      formElement.addEventListener('submit', appendJsTimerElement, false);
+    } else if(formElement.attachEvent){
+      formElement.attachEvent('onsubmit', appendJsTimerElement);
+    }
+  }
+});
+</script>
+
+<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=39f1e5125715df3bf645da2128501cd31674ce8f" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=39f1e5125715df3bf645da2128501cd31674ce8f">
+</script>
+<script type="text/javascript">
+wFORMS.behaviors.prefill.skip = false;
+</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=39f1e5125715df3bf645da2128501cd31674ce8f">
+</script>
+
+<div class="wFormContainer" >
+  <div class="wFormHeader">
+    <p>
+      <strong>The SCVO Legal Advice Service – up to 2 hours free for SCVO Member Organisations</strong>
+    </p>
+    <p>
+      This service is available to <strong>SCVO Member Organisations</strong> with an income of less than £500,000.
+    </p>
+    <p>
+      <strong>By filling in this form you are confirming that you have permission to access Legal Advice on behalf of your organisation.</strong>
+    </p>
+    <p>
+      Please fill in as much detail as you can. By completing this form, you are consenting to SCVO forwarding your query on to one of the legal firms we work with: Brodies, Burness Paull, Gillespie Macandrew, MacRoberts, or Turcan Connell.
+    </p>
+    <p>
+      They will contact you directly within five working days to provide up to two hours of free legal advice on your query.
+      SCVO's discrete role is the coordination of members with the legal firms. Matters discussed between those firms and our members are private.
+    </p>
+    <p>
+      <strong>**Please do not disclose personal or sensitive data within this request.**</strong>
+    </p>
+  </div>
+  <div class="wForm" id="4891112-WRPR" dir="ltr">
+    <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove form form-horizontal" id="4891112" role="form">
+      <div class="form-group field-container-D    " id="tfa_1-D">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-margin">
+          <label id="tfa_1-L" class="form-label preField reqMark" for="tfa_1">Organisation name</label>
+        </div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <input type="text" id="tfa_1" name="tfa_1" value="" aria-required="true" title="Organisation name" class="form-input required" required>
+        </div>
+      </div>
+      <div class="form-group field-container-D    " id="tfa_2-D">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-margin">
+          <label id="tfa_2-L" class="form-label preField reqMark" for="tfa_2">Your full name</label>
+        </div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <input type="text" id="tfa_2" name="tfa_2" value="" aria-required="true" title="Your full name" class="form-input required" required>
+        </div>
+      </div>
+      <div class="form-group field-container-D    " id="tfa_3-D">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-margin">
+          <label id="tfa_3-L" class="form-label preField reqMark" for="tfa_3">Please confirm your position/role within this organisation</label>
+        </div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <input type="text" id="tfa_3" name="tfa_3" value="" aria-required="true" title="Please confirm your position/role within this organisation" class="form-input required" required>
+        </div>
+      </div>
+      <div class="form-group field-container-D    " id="tfa_5-D">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-margin">
+          <label id="tfa_5-L" class="form-label preField reqMark" for="tfa_5">Email address</label>
+        </div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <input type="text" id="tfa_5" name="tfa_5" value="" aria-required="true" title="Email address" class="validate-email form-input required" required>
+        </div>
+      </div>
+      <div class="form-group field-container-D    " id="tfa_4-D">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-margin">
+          <label id="tfa_4-L" class="form-label preField reqMark" for="tfa_4">Phone number</label>
+        </div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <input type="text" id="tfa_4" name="tfa_4" value="" aria-required="true" title="Phone number" class="form-input required" required>
+        </div>
+      </div>
+      <div class="form-group field-container-D    " id="tfa_6-D">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-margin">
+          <label id="tfa_6-L" class="form-label preField reqMark" for="tfa_6">What is the nature of your enquiry?<span class="caption">(For example a governance, employment, property related enquiry etc.)</span>
+          </label>
+        </div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <input type="text" id="tfa_6" name="tfa_6" value="" aria-required="true" title="What is the nature of your enquiry?(For example a governance, employment, property related enquiry etc.)" class="form-input required" required>
+        </div>
+      </div>
+      <div class="form-group field-container-D    " id="tfa_7-D">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-margin">
+          <label id="tfa_7-L" class="form-label preField reqMark" for="tfa_7">Please outline your enquiry in more detail.</label>
+        </div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <textarea aria-required="true" id="tfa_7" name="tfa_7" title="Please outline your enquiry in more detail." class="form-input required" required></textarea>
+        </div>
+      </div>
+      <div class="form-group field-container-D    " id="tfa_8-D">
+        <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 r-margin">
+          <label id="tfa_8-L" class="form-label preField " for="tfa_8">Any other Information that we may need.</label>
+        </div>
+        <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+          <textarea id="tfa_8" name="tfa_8" title="Any other Information that we may need." class="form-input"></textarea>
+        </div>
+      </div>
+      <div class="htmlSection" id="tfa_9">
+        <div class="htmlContent" id="tfa_9-HTML">If we refer your query to any of the legal firms who may have a conflict of interest in providing advice to your organisation, we will refer your query to another firm.</div>
+      </div>
+      <div class="actions" id="4891112-A">
+        <input type="submit" data-label="Submit" class="primaryAction btn btn-primary btn-lg t-margin b-margin-full" id="submit_button" value="Submit">
+      </div>
+      <div style="clear:both">
+      </div>
+      <input type="hidden" value="4891112" name="tfa_dbFormId" id="tfa_dbFormId">
+      <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
+      <input type="hidden" value="95816e9dde0c2489428b6c8174ec4e9f" name="tfa_dbControl" id="tfa_dbControl">
+      <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
+      <input type="hidden" value="2" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+    </form>
+  </div>
+</div>
