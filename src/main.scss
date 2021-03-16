@@ -1742,11 +1742,15 @@ ul.list-lg {
 .scvo-cms-page-41881 .page-info,
 .scvo-cms-page-36386 .page-info,
 .projects-campaigns.eu-are-valued .body h2,
+.policy.campaigns.social-economy-pledge .bg-header h1,
 .credit-union-news .post-info-categories,
 .press-media .post-info-categories,
 .post-author .post-info-author,
 .staff-profile .post-info-author {
   display: none !important;
+}
+.policy.campaigns.social-economy-pledge .bg-header {
+  min-height: 40vh;
 }
 .scvo-cms-page-40041.full {
   padding-bottom: 0;
@@ -2280,6 +2284,11 @@ body.support.digital.landing .page-body {
   background: white;
   border-radius: 0;
 }
+
+.align-center {
+  align-items: center;
+}
+
 a.rss {
   color: $warning-color;
 }

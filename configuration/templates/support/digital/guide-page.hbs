@@ -11,7 +11,7 @@
     </div>
     {{/if ~}}
 
-    {{{replace (replace (replace (replace (replace content "@scvo.scot" "@scvo.org.uk") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
+    {{{replace (replace (replace (replace (replace content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
 
     {{#compare @root.data.resources.hits.total ">" 0 ~}}
     <h2>Resources</h2>
