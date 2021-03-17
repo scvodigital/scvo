@@ -5,7 +5,7 @@
   {{> layout_head}}
 </head>
 <body class="{{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
-  <div class="hide-lg">
+  <div class="link-bar hide-lg">
     {{> components_scvo_bar}}
   </div>
   {{> layout_header_upper}}
@@ -22,7 +22,9 @@
           <section class="navbar-section">
             <div class="form-horizontal hide-lg">
               {{> site_search_form id='header'}}
-              <a href="/about/membership" class="btn btn-primary btn-lg btn-cta mt float-right">Join our community</a>
+              <div class="header-button">
+                <a href="/about/membership" class="btn btn-primary btn-lg btn-cta mt float-right">Join our community</a>
+              </div>
             </div>
             <div class="mobile-header-buttons show-lg">
               <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
