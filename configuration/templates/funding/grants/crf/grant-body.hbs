@@ -27,11 +27,11 @@
     {{#if call ~}}
     <li>
       <span class="fa-li"><span class="fal fa-money-bill"></span></span>
+      {{#if amount_recommended ~}}
+      Award: &pound;{{addCommas amount_recommended}}
+      {{else}}
       {{#if amount_awarded ~}}
       Award: &pound;{{addCommas amount_awarded}}
-      {{else}}
-      {{#if amount_recommendedl ~}}
-      Award: &pound;{{addCommas amount_requested_total}}
       {{else}}
       {{#if amount_requested_total ~}}
       Award: &pound;{{addCommas amount_requested_total}}

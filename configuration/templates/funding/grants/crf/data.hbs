@@ -8,11 +8,11 @@
     {{else}}
     "amountAppliedFor": {{default amount_requested 0}},
     {{/if ~}}
-    {{#if amount_awarded ~}}
-    "amountAwarded": {{amount_awarded}},
-    {{else}}
     {{#if amount_recommended ~}}
     "amountAwarded": {{amount_recommended}},
+    {{else}}
+    {{#if amount_awarded ~}}
+    "amountAwarded": {{amount_awarded}},
     {{else}}
     {{#if amount_requested ~}}
     "amountAwarded": {{amount_requested}},
