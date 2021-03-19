@@ -1244,8 +1244,8 @@
 									]
 								},
 								{
-									"label": "SCOPE e-learning platform",
-									"path": "/support/running-your-organisation/scope",
+									"label": "SCOPE eLearning platform",
+									"path": "/support/elearning/scope",
 									"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations"
 								},
 								{
@@ -1491,18 +1491,10 @@
 							"icon": "dumpster-fire"
 						},
 						{
-							"label": "SCOPE e-learning platform",
-							"path": "/support/running-your-organisation/scope",
-							"route": "^/support/running-your-organisation/scope$",
+							"label": "SCOPE eLearning platform",
+							"path": "/support/elearning/scope",
 							"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations",
-							"icon": "users-class",
-							"children": [
-								{
-									"label": "About the project",
-									"path": "/support/running-your-organisation/scope/project",
-									"route": "^/support/running-your-organisation/scope/project$"
-								}
-							]
+							"icon": "users-class"
 						}
 					],
 					"archived": [
@@ -1570,6 +1562,34 @@
 									"icon": ""
 								}
 							]
+						}
+					]
+				},
+				{
+					"label": "Self-study eLearning",
+					"path": "/support/elearning",
+					"route": "^/support/elearning$",
+					"children": [
+						{
+							"label": "SCOPE eLearning platform",
+							"path": "/support/elearning/scope",
+							"route": "^/support/elearning/scope$",
+							"description": "The platform provides entry-level information and learning to help trustees, volunteers and staff run their voluntary organisations.",
+							"icon": "users-class",
+							"children": [
+								{
+									"label": "About the project",
+									"path": "/support/elearning/scope/project",
+									"route": "^/support/elearning/scope/project$"
+								}
+							]
+						},
+						{
+							"label": "Skills for Work portal",
+							"path": "/support/elearning/cjs-portal",
+							"route": "^/support/elearning/cjs-portal$",
+							"description": "The portal aims to give young people the skills they need to enter the world of work, with a particular focus on the voluntary sector as a career path.",
+							"icon": "user-headset"
 						}
 					]
 				},
