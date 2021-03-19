@@ -91,6 +91,12 @@
         </section>
         <section class="card-footer">
           <ul class="fa-ul post-info">
+            {{#if area}}
+            <li class="post-info-item">
+              <span class="fa-li"><span class="far fa-map-marker-alt fa-fw"></span></span>
+              {{area}}
+            </li>
+            {{/if}}
             {{#if call ~}}
             <li class="post-info-item">
               <span class="fa-li"><span class="fal fa-money-bill"></span></span>

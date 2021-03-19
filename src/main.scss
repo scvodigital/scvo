@@ -3151,6 +3151,11 @@ blockquote.twitter-tweet {
     margin-right: 0;
   }
 }
+.post-info.fa-ul {
+  li.post-info-item {
+    margin-right: $unit*2;
+  }
+}
 
 span.count-words {
   font-size: 90%;

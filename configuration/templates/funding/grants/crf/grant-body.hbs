@@ -1,25 +1,21 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
-<div class="full scvo-grant scvo-grant-charter">
-  {{!-- {{#if recipient_name ~}}
-  <h3 class="black-text">{{{recipient_name}}}</h3>
-  {{/if ~}} --}}
-  {{#if recipient_charity_number ~}}
-  <div class="post-info">
-    <div class="post-info-item">
-      <span class="far fa-badge-check"></span>
-      Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}" class="charity_number">{{recipient_charity_number}}</a>
-    </div>
-  </div>
-  {{/if ~}}
-  {{#if recipient_overview ~}}
-  <div class="black-text">
-    {{{markdown recipient_overview}}}
-  </div>
-  {{/if ~}}
+<div class="full scvo-grant sg-grant-crf">
   <ul class="fa-ul">
+    {{#if recipient_charity_number ~}}
+    <li>
+      <span class="fa-li"><span class="far fa-badge-check fa-fw"></span></span>
+      Charity registered in Scotland <a href="http://www.oscr.org.uk/about-charities/search-the-register/charity-details?number={{recipient_charity_number}}" class="charity_number">{{recipient_charity_number}}</a>
+    </li>
+    {{/if}}
+    {{#if area}}
+    <li>
+      <span class="fa-li"><span class="far fa-map-marker-alt fa-fw"></span></span>
+      {{area}}
+    </li>
+    {{/if}}
     {{#ifAll planned_start planned_end ~}}
     <li>
-      <span class="fa-li"><span class="far fa-calendar-alt"></span></span>
+      <span class="fa-li"><span class="far fa-calendar-alt fa-fw"></span></span>
       From {{momentFormat (moment planned_start 'x') "Do MMMM YYYY"}}
       to {{momentFormat (moment planned_end 'x') "Do MMMM YYYY"}}
     </li>
