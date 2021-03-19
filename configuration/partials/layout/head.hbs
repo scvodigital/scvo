@@ -57,14 +57,16 @@ piHostname = 'pi.pardot.com';
 	else { window.addEventListener('load', async_load, false); }
 })();
 
-{{#ifAny @root.request.params.query.debug (compare @root.request.url.hostname "scvo.local") ~}}
-console.log('#### DEBUG MODE ON ####');
-console.log('Request:', {{{regexReplace (regexReplace (stringify @root.request) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Context:', {{{regexReplace (regexReplace (stringify @root.context) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Route:', {{{regexReplace (regexReplace (stringify @root.route) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Data:', {{{regexReplace (regexReplace (stringify @root.data) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Menus:', {{{regexReplace (regexReplace (stringify @root.context.metaData.layoutMenus) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-{{/ifAny ~}}
+{{#unless @root.request.headers.scvo-proxy}}
+	{{#ifAny @root.request.params.query.debug (compare @root.request.url.hostname "scvo.local") ~}}
+	console.log('#### DEBUG MODE ON ####');
+	console.log('Request:', {{{regexReplace (regexReplace (stringify @root.request) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+	console.log('Context:', {{{regexReplace (regexReplace (stringify @root.context) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+	console.log('Route:', {{{regexReplace (regexReplace (stringify @root.route) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+	console.log('Data:', {{{regexReplace (regexReplace (stringify @root.data) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+	console.log('Menus:', {{{regexReplace (regexReplace (stringify @root.context.metaData.layoutMenus) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+	{{/ifAny ~}}
+{{/unless}}
 </script>
 
 <script>

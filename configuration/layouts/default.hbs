@@ -5,9 +5,13 @@
   {{> layout_head}}
 </head>
 <body class="{{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
-  <div class="link-bar hide-lg">
-    {{> components_scvo_bar}}
-  </div>
+  {{#if @root.request.headers.scvo-proxy}}
+    <!-- INJECT LINK BAR -->
+  {{else}}
+    <div class="link-bar hide-lg">
+      {{> components_scvo_bar}}
+    </div>
+  {{/if}}
   {{> layout_header_upper}}
   <div class="page">
     {{!-- style="background-image:url('/rouleaux.svg?color=FEF9F9&style={{itemAt (split 'solid,stripes,dots' ',') (random 0 2)}}');" --}}
@@ -23,9 +27,13 @@
             <div class="form-horizontal hide-lg">
               {{> site_search_form id='header'}}
               <div class="mt">
-                <div class="header-button">
-                  <a href="/about/membership" class="btn btn-primary btn-lg btn-cta float-right">Join our community</a>
-                </div>
+                {{#if @root.request.headers.scvo-proxy}}
+                  <!-- INJECT CTA -->
+                {{else}}
+                  <div class="header-button">
+                    <a href="/about/membership" class="btn btn-primary btn-lg btn-cta float-right">Join our community</a>
+                  </div>
+                {{/if}}
               </div>
             </div>
             <div class="mobile-header-buttons show-lg">

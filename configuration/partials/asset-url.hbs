@@ -1,5 +1,5 @@
-{{~#if @root.context.metaData.live~}}
+{{~#ifAny @root.context.metaData.live @root.request.headers.scvo-proxy~}}
 {{@root.context.metaData.assetsBase}}{{{url}}}?version={{{@root.context.metaData.assetsVersion}}}
 {{~else~}}
 /assets/{{{url}}}
-{{~/if~}}
+{{~/ifAny~}}
