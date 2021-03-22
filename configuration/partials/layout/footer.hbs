@@ -4,9 +4,13 @@
       {{#unless (contains @root.request.url.pathname '/apply')}}
       <div class="columns">
         <div class="column col-12 col-ml-auto membership">
-          <div class="footer-button">
-            <a href="/about/membership" class="btn btn-primary btn-lg btn-cta pull-right b-margin">Join our community</a>
-          </div>
+          {{#if @root.request.headers.scvo-proxy}}
+            <!-- INJECT CTA -->
+          {{else}}
+            <div class="footer-button">
+              <a href="/about/membership" class="btn btn-primary btn-lg btn-cta pull-right b-margin">Join our community</a>
+            </div>
+          {{/if}}
         </div>
       </div>
       {{/unless}}
