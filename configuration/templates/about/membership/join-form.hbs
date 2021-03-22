@@ -1429,11 +1429,14 @@ wFORMS.behaviors.prefill.skip = false;
       <div class="actions" id="4859763-A">
         <input type="submit" data-label="Submit" class="primaryAction btn btn-primary" id="submit_button" value="Submit">
       </div>
+      {{!-- Membership offer --}}
+      <input type="hidden" value="{{@root.request.params.offer}}" name="tfa_367" id="tfa_367">
+      {{!-- FormAssembly  --}}
       <input type="hidden" value="4859763" name="tfa_dbFormId" id="tfa_dbFormId">
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="7e3c80a17a001ad807266b91a77a7bb8" name="tfa_dbControl" id="tfa_dbControl">
       <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
-      <input type="hidden" value="43" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="44" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
     </form>
   </div>
