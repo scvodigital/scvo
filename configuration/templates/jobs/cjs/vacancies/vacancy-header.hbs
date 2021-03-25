@@ -4,7 +4,7 @@
     <li class="breadcrumb-item"><a href="/jobs">Jobs &amp; employability</a></li>
     <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland">Community Jobs Scotland</a></li>
     <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland/vacancies">Vacancies</a></li>
-    <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}">16–29 year olds {{#compare @root.request.params.phase "===" "part-time"}}(part-time){{/compare}}</a></li>
+    <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}">{{#compare @root.request.params.phase "part-time"}}Part-time{{else}}Full-time{{/compare}}</a></li>
     <li class="breadcrumb-item">{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</li>
   </ul>
 
