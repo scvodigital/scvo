@@ -5,12 +5,18 @@
   <p>
     CJS is targeted at more vulnerable young people and in particular, is focused on groups of young people who are more disadvantaged in the labour market.
   </p>
-  {{#if @root.data.cjsAuth ~}}
+  {{#ifAny @root.data.cjsAuth (contains @root.request.headers.scvo-roles "cjs") ~}}
   {{else}}
   <p>
-    If you work for SDS or JCP please <a href="/jobs/community-jobs-scotland/vacancies/sign-in">sign in</a>.
+    {{#if @root.request.headers.scvo-proxy}}
+      {{#unless @root.request.headers.scvo-roles}}
+        If you work for SDS or JCP please <a href="#scvo-account-modal-sign-in">sign in</a>.
+      {{/unless}}
+    {{else}}
+      If you work for SDS or JCP please <a href="/jobs/community-jobs-scotland/vacancies/sign-in">sign in</a>.
+    {{/if}}
   </p>
-  {{/if ~}}
+  {{/ifAny ~}}
 
   <h2>Start your search using the following links</h2>
   <div class="columns">
