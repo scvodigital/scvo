@@ -63,7 +63,13 @@
           </p>
           <p class="card-footer">
             <a href="/jobs/community-jobs-scotland">Find out more</a>&ensp;
-            <a href="/jobs/community-jobs-scotland/vacancies/sign-in">JCP & SDS vacancy access</a>
+            {{#if @root.request.headers.scvo-proxy}}
+              {{#unless @root.request.headers.scvo-roles}}
+                <a href="#scvo-account-modal-sign-in">JCP & SDS vacancy access</a>
+              {{/unless}}
+            {{else}}
+              <a href="/jobs/community-jobs-scotland/vacancies/sign-in">JCP & SDS vacancy access</a>
+            {{/if}}
           </p>
         </div>
       </div>

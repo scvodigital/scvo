@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
+  <!--
+    {{#if @root.request.headers.scvo-proxy}}
+      SCVO Proxy -> {{default @root.request.headers.scvo-roles "none"}}
+    {{else}}
+      No Proxy
+    {{/if}}
+  -->
   {{{layoutParts.head}}}
   {{> layout_head}}
 </head>
