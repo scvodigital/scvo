@@ -204,93 +204,90 @@
 					"route": "^/about/membership$",
 					"children": [
 						{
-							"label": "Meet our members",
-							"path": "/about/membership/meet-our-members",
-							"route": "^/about/membership/meet-our-members$"
-						},
-						{
-							"label": "Review",
-							"path": "/about/membership/review",
-							"route": "^/about/membership/review$"
-						},
-						{
-							"label": "Eligibility",
+							"label": "Membership eligibility",
 							"path": "/about/membership/eligibility",
-							"route": "^/about/membership/eligibility$"
+							"route": "^/about/membership/eligibility$",
+							"description": "Find out if your organisation meets our eligibility criteria before applying."
 						},
 						{
 							"label": "Eligibility guidance",
-							"path": "/about/membership/eligibility-guidance",
-							"route": "^/about/membership/eligibility-guidance$"
+							"path": "/about/membership/eligibility-guidance"
 						},
 						{
 							"label": "Fees",
 							"path": "/about/membership/fees",
-							"route": "^/about/membership/fees$"
-						},
-						{
-							"label": "Members",
-							"path": "/about/membership/members",
-							"route": "^/about/membership/members$"
-						},
-						{
-							"label": "Supporters",
-							"path": "/about/membership/supporters",
-							"route": "^/about/membership/supporters$"
-						},
-						{
-							"label": "Supply partners",
-							"path": "/about/membership/supply-partners",
-							"route": "^/about/membership/supply-partners$",
+							"route": "^/about/membership/fees$",
+							"description": "All the information you need about membership categories, annual fees and benefits.",
 							"children": [
 								{
-									"label": "Selection process",
-									"path": "/about/membership/supply-partners/selection-process",
-									"route": "^/about/membership/supply-partners/selection-process$"
+									"label": "Free",
+									"path": "/about/membership/fees/scvo-member-free",
+									"route": "^/about/membership/fees/scvo-member-free$",
+									"description": "Income under £100k"
 								},
 								{
-									"label": "ExecSpace",
-									"path": "/about/membership/supply-partners/exec-space",
-									"route": "^/about/membership/supply-partners/exec-space$"
+									"label": "Small",
+									"path": "/about/membership/fees/scvo-member-small",
+									"route": "^/about/membership/fees/scvo-member-small$",
+									"description": "Income £100k - £500k"
 								},
 								{
-									"label": "Housebrands Toolkits",
-									"path": "/about/membership/supply-partners/housebrands-toolkits",
-									"route": "^/about/membership/supply-partners/housebrands-toolkits$"
+									"label": "Medium",
+									"path": "/about/membership/fees/scvo-member-medium",
+									"route": "^/about/membership/fees/scvo-member-medium$",
+									"description": "Income £500k - £3m"
 								},
 								{
-									"label": "Phoenix Software",
-									"path": "/about/membership/supply-partners/phoenix-software",
-									"route": "^/about/membership/supply-partners/phoenix-software$"
+									"label": "Large",
+									"path": "/about/membership/fees/scvo-member-large",
+									"route": "^/about/membership/fees/scvo-member-large$",
+									"description": "Income over £3m"
 								},
 								{
-									"label": "Code of conduct",
-									"path": "/about/membership/supply-partners/code-of-conduct",
-									"route": "^/about/membership/supply-partners/code-of-conduct$"
+									"label": "Individuals",
+									"path": "/about/membership/fees/scvo-supporter-individual",
+									"route": "^/about/membership/fees/scvo-supporter-individual$",
+									"description": " "
 								},
 								{
-									"label": "Complaints procedure",
-									"path": "/about/membership/supply-partners/complaints-procedure",
-									"route": "^/about/membership/supply-partners/complaints-procedure$"
+									"label": "Organisations",
+									"path": "/about/membership/fees/scvo-supporter-organisations-with-income-under-500k",
+									"route": "^/about/membership/fees/scvo-supporter-organisations-with-income-under-500k$",
+									"description": "Income under £500k"
+								},
+								{
+									"label": "Organisations",
+									"path": "/about/membership/fees/scvo-supporter-organisations-with-income-over-500k",
+									"route": "^/about/membership/fees/scvo-supporter-organisations-with-income-over-500k$",
+									"description": "Income over £500k"
 								}
 							]
 						},
 						{
-							"label": "Join us",
-							"path": "/about/membership/join",
-							"route": "^/about/membership/join$"
-						},
-						{
 							"label": "Frequently asked questions",
 							"path": "/about/membership/faq",
-							"route": "^/about/membership/faq$"
+							"route": "^/about/membership/faq$",
+							"description": "Take a look at our most frequently asked questions."
+						},
+						{
+							"label": "Join us",
+							"path": "/about/membership/join",
+							"route": "^/about/membership/join$",
+							"description": "Apply for membership now and join our community!"
+						},
+						{
+							"label": "Meet our members",
+							"path": "/about/membership/meet-our-members",
+							"route": "^/about/membership/meet-our-members$",
+							"description": "Find out more about some of the organisations who are members and supporters of SCVO."
+						},
+						{
+							"label": "Member directory",
+							"path": "/about/membership/members",
+							"route": "^/about/membership/members",
+							"description": "Search our database of over 2,000 SCVO member organisations."
 						}
 					]
-				},
-				{
-					"label": "Our members",
-					"path": "/about/members",
-					"route": "^/about/members$|^/about/members/"
 				},
 				{
 					"label": "Networks",
