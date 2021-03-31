@@ -4,23 +4,23 @@
     <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
     {{#if @root.request.params.category ~}}
     <li class="breadcrumb-item">
-      <a href="/scottish-charity-awards/finalists-2020">Finalists 2020</a>
+      <a href="/scottish-charity-awards/finalists-2021">Finalists 2021</a>
     </li>
     <li class="breadcrumb-item">
       {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
     </li>
     {{else}}
     <li class="breadcrumb-item">
-      Finalists 2020
+      Finalists 2021
     </li>
     {{/if ~}}
   </ul>
 
   <h1>
     {{#if @root.request.params.category}}
-      Finalists 2020 - {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
+      Finalists 2021 - {{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}
     {{else}}
-      Finalists 2020
+      Finalists 2021
     {{/if}}
   </h1>
 </div>

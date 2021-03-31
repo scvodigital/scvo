@@ -20,7 +20,7 @@
           <section class="card-header">
             <h4 class="card-title no-padding">
               {{!-- <i class="fas fa-caret-right fa-fw"></i> --}}
-              <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}" title="Find out more about {{{title}}}">
+              <a href="/scottish-charity-awards/finalists-2021/{{category}}/{{replace slug 'p_award_'}}" title="Find out more about {{{title}}}">
                 {{{title}}}
               </a>
             </h4>
@@ -30,7 +30,7 @@
           </section>
           <section class="card-footer">
             <p>
-              <a href="/scottish-charity-awards/finalists-2020/{{category}}/{{replace slug 'p_award_'}}">
+              <a href="/scottish-charity-awards/finalists-2021/{{category}}/{{replace slug 'p_award_'}}">
                 Find out more
                 {{#unless @root.request.cookies.charity_awards_already_voted}}
                 &amp; vote
@@ -41,7 +41,7 @@
           <section class="card-category" style="padding-left:.8rem;padding-right:.8rem;">
             {{#unless @root.request.params.category}}
               <span class="chip-set">
-                <a href="/scottish-charity-awards/finalists-2020/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category '.title')}}" class="chip {{slugify (getProperty @root.route.metaData.awards-info (concat category '.title'))}}">
+                <a href="/scottish-charity-awards/finalists-2021/{{category}}" title="Category: {{getProperty @root.route.metaData.awards-info (concat category '.title')}}" class="chip {{slugify (getProperty @root.route.metaData.awards-info (concat category '.title'))}}">
                   {{{getProperty @root.route.metaData.awards-info (concat category ".title")}}}
                 </a>
               </span>

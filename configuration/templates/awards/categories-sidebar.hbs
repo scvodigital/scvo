@@ -1,11 +1,11 @@
 <ul class="menu t-margin-full">
   {{!-- <li class="divider" data-content="Categories"></li> --}}
   <li class="menu-item">
-    <a href="/scottish-charity-awards/finalists-2020"{{#unless @root.request.params.category}} class="active"{{/unless}}>All categories</a>
+    <a href="/scottish-charity-awards/finalists-2021"{{#unless @root.request.params.category}} class="active"{{/unless}}>All categories</a>
   </li>
   {{#each @root.data.search.categories.aggregations.categories.buckets ~}}
     <li class="menu-item">
-      <a href="/scottish-charity-awards/finalists-2020/{{key}}" class="{{key}}{{#if (regexMatch @root.request.url.pathname key 'gi')}}  active{{/if}}">{{{getProperty @root.route.metaData.awards-info (concat key ".title")}}}</a>
+      <a href="/scottish-charity-awards/finalists-2021/{{key}}" class="{{key}}{{#if (regexMatch @root.request.url.pathname key 'gi')}}  active{{/if}}">{{{getProperty @root.route.metaData.awards-info (concat key ".title")}}}</a>
     </li>
   {{/each}}
 </ul>

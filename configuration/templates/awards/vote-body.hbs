@@ -9,7 +9,7 @@
 
       {{!--
       {{#unless @root.request.cookies.charity_awards_already_voted}}
-        <script type="text/javascript">document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90258391/Scottish-Charity-Awards-2020-voting?__output=embedjs&vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}&__ref=' + escape(document.location.href) + '" type="text/javascript" ></scr' + 'ipt>');</script>
+        <script type="text/javascript">document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90258391/Scottish-Charity-Awards-2021-voting?__output=embedjs&vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}&__ref=' + escape(document.location.href) + '" type="text/javascript" ></scr' + 'ipt>');</script>
         <style>.sg-survey{display:none; }</style>
       {{else}}
         {{#compare @root.request.params.vote @root.request.cookies.charity_awards_already_voted}}
@@ -37,7 +37,7 @@
 {{/with ~}}
 {{!--
 <script>
-  gtag('event', 'charity-awards-2020-hit', {
+  gtag('event', 'charity-awards-2021-hit', {
     event_category: 'entrant',
     event_label: {{{stringify (default @root.request.params.vote 'unknown')}}}
   });
@@ -66,16 +66,16 @@
           setCookie('charity_awards_already_voted', slug, 90);
           if (!cookie) {
             console.log('As there was no previous cookie, firing GA event');
-            gtag('event', 'charity-awards-2020', {
+            gtag('event', 'charity-awards-2021', {
               event_category: category,
               event_label: slug
             });
           }
           console.log('Redirecting back to finalist page');
-          window.location.href = '/scottish-charity-awards/finalists-2020/' + category + '/' + slug + '#vote';
+          window.location.href = '/scottish-charity-awards/finalists-2021/' + category + '/' + slug + '#vote';
         } else {
           console.log('No slug or category specified. Redirecting to main finalist list');
-          window.location.href = '/scottish-charity-awards/finalists-2020';
+          window.location.href = '/scottish-charity-awards/finalists-2021';
         }
       }
     }, 5000);
