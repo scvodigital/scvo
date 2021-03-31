@@ -1,0 +1,34 @@
+{
+  "name": "page_digital_housing-application",
+  "debug": false,
+  "pattern": "/support/digital/digital-champions-in-social-housing/apply",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.support_digital_page-header",
+              "body": ">context.metaData.handlebars.templates.support_digital_housing-application-form",
+              "footer": ">context.metaData.handlebars.templates.support_digital_footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
