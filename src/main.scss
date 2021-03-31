@@ -4123,3 +4123,10 @@ figure:not(.wp-block-table),
     display: none !important;
   }
 }
+
+.form-autocomplete-input .form-input {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  height: auto;
+}
