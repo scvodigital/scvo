@@ -1440,7 +1440,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="submit" data-label="Submit" class="primaryAction btn btn-primary" id="submit_button" value="Submit">
       </div>
       {{!-- Membership offer --}}
-      <input type="hidden" value="{{@root.request.params.query.offer}}" name="tfa_367" id="tfa_367">
+      <input type="hidden" value="{{replace @root.request.params.query.offer 'complimentary-3-months' 'Funding Scotland Members Offer'}}" name="tfa_367" id="tfa_367">
       {{!-- FormAssembly  --}}
       <input type="hidden" value="4859763" name="tfa_dbFormId" id="tfa_dbFormId">
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
