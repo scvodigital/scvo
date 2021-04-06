@@ -1,6 +1,9 @@
 {
   "name": "redirect_about-member-benefits",
-  "pattern": "/about/membership/members/professional-services(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "one": "/about/membership/members/professional-services(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "two": "/about/membership/benefits/professional-services(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
