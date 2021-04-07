@@ -1,0 +1,23 @@
+{
+  "name": "redirect_cjs-sign-in",
+  "pattern": "/jobs/community-jobs-scotland/vacancies/sign-in",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/jobs/community-jobs-scotland/vacancies"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
