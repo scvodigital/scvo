@@ -1,67 +1,69 @@
 {{> sidebars_menu}}
 
-{{#if (regexMatch @root.request.url.pathname '^/support/training' "gi") ~}}
-  <div class="v-margin-full b-padding-full">
-    <h5>Sign up for our Events & Training bulletin</h5>
-    <p>
-      If you would like to receive regular updates on events we run, please enter your details below:
-    </p>
-    <iframe src="https://go.scvo.scot/l/566562/2020-12-04/kjp56" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
-  </div>
-{{/if}}
-
-{{#if (regexMatch @root.request.url.pathname '^/jobs/community-jobs-scotland' "gi") ~}}
-  <div class="v-margin-full b-padding-full">
-    <h5>About Community Jobs Scotland</h5>
-    <p>
-      Creating jobs in Scotland's voluntary sector for unemployed vulnerable young people.
-    </p>
-    <p>
-      <strong>Contact</strong>
-      <ul class="fa-ul">
-        <li>
-          <span class="fa-li"><span class="fas fa-envelope-square"></span></span>
-          <a href="mailto:communityjobsscotland@scvo.org.uk">communityjobsscotland@scvo.org.uk</a>
-        </li>
-        <li>
-          <span class="fa-li"><span class="fas fa-phone-square fa-flip-horizontal"></span></span>
-          <a href="tel:+441415595026">0141 559 5026</a>
-        </li>
-        <li>
-          <span class="fa-li"><span class="fab fa-twitter-square"></span></span>
-          <a href="https://twitter.com/_cjs_">Twitter</a><br />
-        </li>
-        <li>
-          <span class="fa-li"><span class="fab fa-facebook-square"></span></span>
-          <a href="https://www.facebook.com/CommunityJobsScotland/">Facebook</a>
-        </li>
-      </ul>
-    </p>
-  </div>
-{{/if}}
-
-{{#if (regexMatch @root.request.url.pathname '^/support/coronavirus' "gi") ~}}
-  <div class="t-margin-full">
-    {{> site_search_form placeholder='Search the Hub' target='/support/coronavirus/search' id='coronavirus'}}
-  </div>
-
-  {{#unless (ifAny (compare @root.request.url.pathname "/support/coronavirus/what-scvo-is-doing/bulletin") (contains @root.request.url.pathname "support/coronavirus/funding/scottish-government/wellbeing-fund/apply") (contains @root.request.url.pathname "support/coronavirus/funding/scottish-government/community-recovery"))  ~}}
+{{#unless (regexMatch @root.request.url.pathname '/apply$' "gi") ~}}
+  {{#if (regexMatch @root.request.url.pathname '^/support/training' "gi") ~}}
     <div class="v-margin-full b-padding-full">
-      <h5>Sign up for the Coronavirus Third Sector Bulletin</h5>
+      <h5>Sign up for our Events & Training bulletin</h5>
       <p>
-        If you would like to receive essential updates on coronavirus (COVID-19) via our Coronavirus Third Sector Bulletin, please enter your details below:
+        If you would like to receive regular updates on events we run, please enter your details below:
       </p>
-      <iframe src="https://go.scvo.org.uk/l/566562/2020-03-17/7x585" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+      <iframe src="https://go.scvo.scot/l/566562/2020-12-04/kjp56" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
     </div>
-  {{/unless ~}}
-{{/if}}
+  {{/if}}
 
-{{#if (regexMatch @root.request.url.pathname '^/support/digital' "gi") ~}}
-  <div class="v-margin-full b-padding-full">
-    <h5>Sign up for our Digital bulletin</h5>
-    <p>
-      Once a month we send out a short email bulletin rounding up the latest news on digital participation, evolution and innovation in Scotland and beyond. Sign up here:
-    </p>
-    <iframe src="https://go.scvo.org.uk/l/566562/2018-09-25/3tv26" width="100%" height="410" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
-  </div>
-{{/if}}
+  {{#if (regexMatch @root.request.url.pathname '^/jobs/community-jobs-scotland' "gi") ~}}
+    <div class="v-margin-full b-padding-full">
+      <h5>About Community Jobs Scotland</h5>
+      <p>
+        Creating jobs in Scotland's voluntary sector for unemployed vulnerable young people.
+      </p>
+      <p>
+        <strong>Contact</strong>
+        <ul class="fa-ul">
+          <li>
+            <span class="fa-li"><span class="fas fa-envelope-square"></span></span>
+            <a href="mailto:communityjobsscotland@scvo.org.uk">communityjobsscotland@scvo.org.uk</a>
+          </li>
+          <li>
+            <span class="fa-li"><span class="fas fa-phone-square fa-flip-horizontal"></span></span>
+            <a href="tel:+441415595026">0141 559 5026</a>
+          </li>
+          <li>
+            <span class="fa-li"><span class="fab fa-twitter-square"></span></span>
+            <a href="https://twitter.com/_cjs_">Twitter</a><br />
+          </li>
+          <li>
+            <span class="fa-li"><span class="fab fa-facebook-square"></span></span>
+            <a href="https://www.facebook.com/CommunityJobsScotland/">Facebook</a>
+          </li>
+        </ul>
+      </p>
+    </div>
+  {{/if}}
+
+  {{#if (regexMatch @root.request.url.pathname '^/support/coronavirus' "gi") ~}}
+    <div class="t-margin-full">
+      {{> site_search_form placeholder='Search the Hub' target='/support/coronavirus/search' id='coronavirus'}}
+    </div>
+
+    {{#unless (ifAny (compare @root.request.url.pathname "/support/coronavirus/what-scvo-is-doing/bulletin") (contains @root.request.url.pathname "support/coronavirus/funding/scottish-government/wellbeing-fund/apply") (contains @root.request.url.pathname "support/coronavirus/funding/scottish-government/community-recovery"))  ~}}
+      <div class="v-margin-full b-padding-full">
+        <h5>Sign up for the Coronavirus Third Sector Bulletin</h5>
+        <p>
+          If you would like to receive essential updates on coronavirus (COVID-19) via our Coronavirus Third Sector Bulletin, please enter your details below:
+        </p>
+        <iframe src="https://go.scvo.org.uk/l/566562/2020-03-17/7x585" width="100%" height="500" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+      </div>
+    {{/unless ~}}
+  {{/if}}
+
+  {{#if (regexMatch @root.request.url.pathname '^/support/digital' "gi") ~}}
+    <div class="v-margin-full b-padding-full">
+      <h5>Sign up for our Digital bulletin</h5>
+      <p>
+        Once a month we send out a short email bulletin rounding up the latest news on digital participation, evolution and innovation in Scotland and beyond. Sign up here:
+      </p>
+      <iframe src="https://go.scvo.org.uk/l/566562/2018-09-25/3tv26" width="100%" height="410" type="text/html" frameborder="0" allowTransparency="true" style="border: 0"></iframe>
+    </div>
+  {{/if}}
+{{/unless}}
