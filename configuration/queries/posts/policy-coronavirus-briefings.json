@@ -37,30 +37,27 @@
           }
         }
       ],
-      "should": [
+      "filter": [
         {
           "term": {
             "post_tags_slug": "coronavirus"
           }
-        },
+        }
+      ],
+      "should": [
         {
           "term": {
-            "post_tags_slug": "covid19"
+            "post_tags_slug": "policy-briefing"
           }
         },
         {
           "term": {
-            "post_tags_slug": "covid-19"
+            "post_tags_slug": "consultation-response"
           }
         },
         {
           "term": {
-            "post_tags_slug": "furlough"
-          }
-        },
-        {
-          "term": {
-            "post_tags_slug": "research"
+            "post_tags_slug": "policy-blog"
           }
         }
       ],

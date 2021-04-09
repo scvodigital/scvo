@@ -1,4 +1,4 @@
-{{> sections_coronavirus title="Coronavirus policy & research" icon="house-user" description="Policy & research in response to the COVID-19 pandemic" link="/policy/coronavirus"}}
+{{!-- {{> sections_coronavirus title="Coronavirus policy & research" icon="house-user" description="Policy & research in response to the COVID-19 pandemic" link="/policy/coronavirus"}} --}}
 
 <div class="bg-white">
   <div class="container v-padding-full">
@@ -66,9 +66,143 @@
   </div>
 </div>
 
-<div class="bg-gray">
+<div class="bg-white">
   <div class="container v-padding-full">
     <div class="columns b-padding-full">
+      <div class="column col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header no-padding">
+            <div class="card-title h2 b-margin-full">
+              <a href="/policy/posts/coronavirus">
+                <span class="r-margin far fa-fw fa-viruses">&nbsp;</span>
+                Coronavirus
+              </a>
+            </div>
+          </section>
+          <section class="card-body no-padding">
+            {{#each @root.data.supplimentaryResponses.latest_coronavirus.hits.hits ~}}
+              {{#unless (compare @index ">=" 3)}}
+                {{> content_post_gist _source}}
+              {{/unless}}
+            {{/each ~}}
+          </section>
+          <section class="card-footer no-padding">
+            <a href="/policy/posts/coronavirus">Read more</a>
+          </section>
+        </div>
+      </div>
+      <div class="column col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header no-padding">
+            <div class="card-title h2 b-margin-full">
+              <a href="/policy/posts/europe">
+                <span class="r-margin far fa-fw fa-globe-europe">&nbsp;</span>
+                Europe
+              </a>
+            </div>
+          </section>
+          <section class="card-body no-padding">
+            {{#each @root.data.supplimentaryResponses.latest_europe.hits.hits ~}}
+              {{#unless (compare @index ">=" 3)}}
+                {{> content_post_gist _source}}
+              {{/unless}}
+            {{/each ~}}
+          </section>
+          <section class="card-footer no-padding">
+            <a href="/policy/posts/europe">Read more</a>
+          </section>
+        </div>
+      </div>
+      <div class="column col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header no-padding">
+            <div class="card-title h2 b-margin-full">
+              <a href="/policy/posts/economic-actor">
+                <span class="r-margin far fa-fw fa-chart-pie">&nbsp;</span>
+                Economic actor
+              </a>
+            </div>
+          </section>
+          <section class="card-body no-padding">
+            {{#each @root.data.supplimentaryResponses.latest_economic_actor.hits.hits ~}}
+              {{#unless (compare @index ">=" 3)}}
+                {{> content_post_gist _source}}
+              {{/unless}}
+            {{/each ~}}
+          </section>
+          <section class="card-footer no-padding">
+            <a href="/policy/posts/economic-actor">Read more</a>
+          </section>
+        </div>
+      </div>
+      <div class="column col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header no-padding">
+            <div class="card-title h2 b-margin-full">
+              <a href="/policy/posts/employment">
+                <span class="r-margin far fa-fw fa-briefcase">&nbsp;</span>
+                Employment
+              </a>
+            </div>
+          </section>
+          <section class="card-body no-padding">
+            {{#each @root.data.supplimentaryResponses.latest_employment.hits.hits ~}}
+              {{#unless (compare @index ">=" 3)}}
+                {{> content_post_gist _source}}
+              {{/unless}}
+            {{/each ~}}
+          </section>
+          <section class="card-footer no-padding">
+            <a href="/policy/posts/employment">Read more</a>
+          </section>
+        </div>
+      </div>
+      <div class="column col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header no-padding">
+            <div class="card-title h2 b-margin-full">
+              <a href="/policy/posts/partnerships">
+                <span class="r-margin far fa-fw fa-chart-network">&nbsp;</span>
+                Partnerships
+              </a>
+            </div>
+          </section>
+          <section class="card-body no-padding">
+            {{#each @root.data.supplimentaryResponses.latest_partnerships.hits.hits ~}}
+              {{#unless (compare @index ">=" 3)}}
+                {{> content_post_gist _source}}
+              {{/unless}}
+            {{/each ~}}
+          </section>
+          <section class="card-footer no-padding">
+            <a href="/policy/posts/partnerships">Read more</a>
+          </section>
+        </div>
+      </div>
+      <div class="column col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header no-padding">
+            <div class="card-title h2 b-margin-full">
+              <a href="/policy/posts/regulations">
+                <span class="r-margin far fa-fw fa-gavel">&nbsp;</span>
+                Regulations
+              </a>
+            </div>
+          </section>
+          <section class="card-body no-padding">
+            {{#each @root.data.supplimentaryResponses.latest_regulations.hits.hits ~}}
+              {{#unless (compare @index ">=" 3)}}
+                {{> content_post_gist _source}}
+              {{/unless}}
+            {{/each ~}}
+          </section>
+          <section class="card-footer no-padding">
+            <a href="/policy/posts/regulations">Read more</a>
+          </section>
+        </div>
+      </div>
+    </div>
+    {{!-- <div class="columns b-padding-full">
       <div class="column col-4 col-lg-6 col-md-12">
         <h3 class="b-padding">Briefings</h3>
 
@@ -95,7 +229,7 @@
           <a href="/policy/consultation-responses">More consultation responses</a>
         </div>
       </div>
-      <div class="column col-4 col-lg-6 col-md-12 no-border">
+      <div class="column col-4 col-lg-6 col-md-12">
         <h3 class="b-padding">Research</h3>
 
         {{#if @root.data.supplimentaryResponses.latest_research.hits.hits ~}}
@@ -108,6 +242,6 @@
           <a href="/policy/research">More research</a>
         </div>
       </div>
-    </div>
+    </div> --}}
   </div>
 </div>

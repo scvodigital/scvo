@@ -31,6 +31,40 @@
         },
         "queryTemplates": [
           {
+            "name": "latest_coronavirus",
+            "template": ">context.metaData.handlebars.queries.posts_policy-coronavirus"
+          },
+          {
+            "name": "latest_europe",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-europe"
+          },
+          {
+            "name": "latest_economic_actor",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-economic-actor"
+          },
+          {
+            "name": "latest_employment",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-employment"
+          },
+          {
+            "name": "latest_partnerships",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-partnerships"
+          },
+          {
+            "name": "latest_regulations",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-regulations"
+          },
+          {
             "name": "latest_briefings",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
