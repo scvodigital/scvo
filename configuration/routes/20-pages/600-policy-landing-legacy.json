@@ -1,7 +1,7 @@
 {
-  "name": "page_policy",
+  "name": "page_policy-legacy",
   "debug": false,
-  "pattern": "/policy-new",
+  "pattern": "/policy",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -15,7 +15,8 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-page",
-          "template": ">context.metaData.handlebars.queries.pages_page"
+          "template": ">context.metaData.handlebars.queries.pages_page",
+          "noResultsRoute": "four_oh_four"
         }
       },
       "renderer": "handlebars"
@@ -76,8 +77,8 @@
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.policy_landing-header",
-              "body": ">context.metaData.handlebars.templates.policy_landing-body",
-              "footer": ">context.metaData.handlebars.templates.policy_landing-footer"
+              "body": ">context.metaData.handlebars.templates.policy_landing-legacy-body",
+              "footer": ">context.metaData.handlebars.templates.policy_landing-legacy-footer"
             },
             "contentType": "text/html"
           }
