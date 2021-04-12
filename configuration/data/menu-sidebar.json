@@ -1909,9 +1909,9 @@
 								{
 									"label": "Lean & Agile",
 									"label_full": "Lean & Agile Working – made simple",
-									"path": "/support/digital/guides/lean-agile",
-									"route": "^/support/digital/guides/lean-agile$",
-									"description": "What is lean & agile working?",
+									"_disabled_path": "/support/digital/guides/lean-agile",
+									"_disabled_route": "^/support/digital/guides/lean-agile$",
+									"_disabled_description": "What is lean & agile working?",
 									"icon": "recycle",
 									"children": [
 										{
@@ -2015,39 +2015,38 @@
 							"icon": "wifi"
 						},
 						{
-							"label": "Digital Champions - social housing",
-							"label_full": "Digital Champions in Social Housing",
-							"path": "/support/digital/digital-champions-in-social-housing",
-							"route": "^/support/digital/digital-champions-in-social-housing$",
+							"label": "Digital in the House",
+							"path": "/support/digital/digital-in-the-house",
+							"route": "^/support/digital/digital-in-the-house$",
 							"description": "SCVO are working with several partners across the housing sector to develop a network of Digital Champions working in social housing around Scotland.",
 							"icon": "house",
-							"_hidden_children": [
+							"children": [
 								{
 									"label": "2021 Programme",
-									"label_full": "Digital Champions in Social Housing 2021",
-									"path": "/support/digital/digital-champions-in-social-housing/2021-programme",
-									"route": "^/support/digital/digital-champions-in-social-housing/2021-programme",
+									"label_full": "Digital in the House 2021",
+									"path": "/support/digital/digital-in-the-house/2021-programme",
+									"route": "^/support/digital/digital-in-the-house/2021-programme",
 									"description": "Applications for the latest round of the programme are now open.",
 									"icon": "edit"
 								},
 								{
 									"label": "Digital Inclusion Qualifications",
-									"path": "/support/digital/digital-champions-in-social-housing/digital-inclusion-in-housing-qualifications",
-									"route": "^/support/digital/digital-champions-in-social-housing/digital-inclusion-in-housing-qualifications$",
+									"path": "/support/digital/digital-in-the-house/digital-inclusion-in-housing-qualifications",
+									"route": "^/support/digital/digital-in-the-house/digital-inclusion-in-housing-qualifications$",
 									"description": "In partnership with Glasgow Kelvin College we have launched three new free SCQF credit rated qualifications.",
 									"icon": "graduation-cap"
 								},
 								{
 									"label": "Project Evaluation and Learning",
-									"path": "/support/digital/digital-champions-in-social-housing/evaluation-learning",
-									"route": "^/support/digital/digital-champions-in-social-housing/evaluation-learning$",
+									"path": "/support/digital/digital-in-the-house/evaluation-learning",
+									"route": "^/support/digital/digital-in-the-house/evaluation-learning$",
 									"description": "What we learned from the first round of the programme.",
 									"icon": "clipboard-list"
 								},
 								{
 									"label": "Reflections, blogs and case studies",
-									"path": "/support/digital/digital-champions-in-social-housing/case-studies",
-									"route": "^/support/digital/digital-champions-in-social-housing/case-studies$",
+									"path": "/support/digital/digital-in-the-house/case-studies",
+									"route": "^/support/digital/digital-in-the-house/case-studies$",
 									"description": "What our participants had to say.",
 									"icon": "books"
 								}
