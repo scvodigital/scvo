@@ -3,7 +3,13 @@
   "_source": false,
   "query": {
     "bool": {
-      "must": []
+      "must": [
+        {
+          "exists": {
+            "field": "title"
+          }
+        }
+      ]
     }
   },
   "aggs": {
