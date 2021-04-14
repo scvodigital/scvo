@@ -5,9 +5,13 @@
   {{> layout_head}}
 </head>
 <body class="{{#if request.params.path}}{{replace request.params.path '_' ' '}}{{else}}home{{/if}}">
-  <div class="hide-lg">
-    {{> components_scvo_bar}}
-  </div>
+  {{#if @root.request.headers.scvo-proxy}}
+    <!-- INJECT LINK BAR -->
+  {{else}}
+    <div class="link-bar hide-lg">
+      {{> components_scvo_bar}}
+    </div>
+  {{/if}}
   {{!-- {{> layout_header_upper}} --}}
   <div class="page">
     <div class="bg-rouleaux">
