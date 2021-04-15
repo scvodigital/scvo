@@ -44,10 +44,14 @@ $blue-color-alt: #f4fbfc;
 $blue-color-light-var: f4fbfc;
 $blue-color-dark: #6f9dae;
 $purple-color: #C0B5DA;
+$purple-color-light: #B3B1D0;
+$purple-color-dark: #A18399;
 $green-color: #AFD5A6;
+$green-color-dark: #74A86B;
 $yellow-color: #F9DA18;
 $pink-color: #FEB3B4;
 $orange-color: #F8AB23;
+$red-color: #F31E31;
 
 $unit: 1rem;
 $padding: 1.2rem;
@@ -467,6 +471,55 @@ body.the-gathering-2021 {
     border-color: #8f9b36;
   }
 }
+
+.scottish-charity-awards {
+  .charity-of-the-year {
+    h3 {
+      color: $blue-color;
+    }
+  }
+  .employee-of-the-year {
+    h3 {
+      color: $yellow-color;
+    }
+  }
+  .community-action {
+    h3 {
+      color: $green-color-dark;
+    }
+  }
+  .campaign-of-the-year {
+    h3 {
+      color: $orange-color;
+    }
+  }
+  .trustee-of-the-year {
+    h3 {
+      color: $purple-color-light;
+    }
+  }
+  .pioneering-project {
+    h3 {
+      color: $blue-color-dark;
+    }
+  }
+  .volunteer-of-the-year {
+    h3 {
+      color: $purple-color-dark;
+    }
+  }
+  .digital-citizens {
+    h3 {
+      color: $red-color;
+    }
+  }
+  .climate-conscious {
+    h3 {
+      color: $green-color;
+    }
+  }
+}
+
 .icon-rouleaux {
   background-size: contain;
   height: $unit*5;
