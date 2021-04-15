@@ -1,7 +1,7 @@
 {
-  "name": "membership_join-legacy",
+  "name": "membership_fees",
   "debug": false,
-  "pattern": "/about/membership/join-old",
+  "pattern": "/about/membership/fees",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -37,7 +37,7 @@
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.about_membership_join-form-legacy",
+              "body": ">context.metaData.handlebars.templates.about_membership_fees-body",
               "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },

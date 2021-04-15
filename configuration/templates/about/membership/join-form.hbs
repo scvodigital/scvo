@@ -632,120 +632,15 @@ wFORMS.behaviors.prefill.skip = false;
       </div>
       <div class="wfPage" id="wfPgIndex-6">
         <div class="section pageSection" id="tfa_105">
-          <div id="membership-fees" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8` AND `#tfa_312` AND `#tfa_313`">
+          <div id="membership-fees" data-condition="`#tfa_5` AND `#tfa_6` AND `#tfa_7` AND `#tfa_8` AND `#tfa_312` AND `#tfa_313`" style="outline:none!important;">
             <h2>Membership fees</h2>
 
-            <p>
-              SCVO membership fees are based on the most recent annual income figure for your organisation. Details of our membership bands and the fees involved are outlined below:
-            </p>
-
-            <table border="0" cellspacing="0" cellpadding="0" class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th>Income Band</th>
-                  <th>Member Category</th>
-                  <th>Membership Fee</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    £0k - £100K
-                  </td>
-                  <td>
-                    Free
-                  </td>
-                  <td>
-                    £0.00
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    £100k - £500k
-                  </td>
-                  <td>
-                    Small
-                  </td>
-                  <td>
-                    £279.00
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    £500k - £3million
-                  </td>
-                  <td>
-                    Medium
-                  </td>
-                  <td>
-                    £449.00
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    £3million+
-                  </td>
-                  <td>
-                    Large
-                  </td>
-                  <td>
-                    £749.00
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            {{> content_fees_table_member}}
           </div>
-          <div id="supporter-fees" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`) OR NOT (`#tfa_312`) OR NOT (`#tfa_313`)">
+          <div id="supporter-fees" data-condition="NOT (`#tfa_5`) OR NOT (`#tfa_6`) OR NOT (`#tfa_7`) OR NOT (`#tfa_8`) OR NOT (`#tfa_312`) OR NOT (`#tfa_313`)" style="outline:none!important;">
             <h2>Supporter fees</h2>
 
-            <p>
-              SCVO supporter fees are based on the most recent annual income figure for your organisation. Details of our supporter bands and the fees involved are outlined below:
-            </p>
-
-            <table border="0" cellspacing="0" cellpadding="0" class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th>Income Band</th>
-                  <th>Supporter Category</th>
-                  <th>Membership Fee</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    Individuals
-                  </td>
-                  <td>
-                    Individuals
-                  </td>
-                  <td>
-                    £119.00
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Organisations with income under £500k
-                  </td>
-                  <td>
-                    Organisations £0k-£500k
-                  </td>
-                  <td>
-                    £299.00
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Organisations with income £500k+
-                  </td>
-                  <td>
-                    Organisations £500k+
-                  </td>
-                  <td>
-                    £899.00
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            {{> content_fees_table_supporter}}
           </div>
 
           <h2 id="tfa_105-T">About your organisation</h2>
