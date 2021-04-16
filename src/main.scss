@@ -46,9 +46,12 @@ $blue-color-dark: #6f9dae;
 $purple-color: #C0B5DA;
 $purple-color-light: #B3B1D0;
 $purple-color-dark: #A18399;
+$purple-color-darker: #615D9D;
 $green-color: #AFD5A6;
 $green-color-dark: #74A86B;
+$green-color-darker: #447149;
 $yellow-color: #F9DA18;
+$yellow-color-dark: #DEBA05;
 $pink-color: #FEB3B4;
 $orange-color: #F8AB23;
 $red-color: #F31E31;
@@ -480,12 +483,12 @@ body.the-gathering-2021 {
   }
   .employee-of-the-year {
     h3 {
-      color: $yellow-color;
+      color: $yellow-color-dark;
     }
   }
   .community-action {
     h3 {
-      color: $green-color-dark;
+      color: $green-color-darker;
     }
   }
   .campaign-of-the-year {
@@ -495,7 +498,7 @@ body.the-gathering-2021 {
   }
   .trustee-of-the-year {
     h3 {
-      color: $purple-color-light;
+      color: $purple-color-dark;
     }
   }
   .pioneering-project {
@@ -505,7 +508,7 @@ body.the-gathering-2021 {
   }
   .volunteer-of-the-year {
     h3 {
-      color: $purple-color-dark;
+      color: $purple-color-darker;
     }
   }
   .digital-citizens {
@@ -515,7 +518,7 @@ body.the-gathering-2021 {
   }
   .climate-conscious {
     h3 {
-      color: $green-color;
+      color: $green-color-dark;
     }
   }
 }
