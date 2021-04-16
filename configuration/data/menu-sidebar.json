@@ -3229,16 +3229,42 @@
 			]
 		}
 	],
-	"account": [
+	"awards": [
 		{
-			"label": "My account",
-			"path": "/account",
-			"route": "^/account|^/sign-up-details|^/scvo-account",
+			"label": "Scottish Charity Awards",
+			"path": "/scottish-charity-awards",
+			"route": "^/scottish-charity-awards$",
 			"children": [
 				{
-					"label": "Explore",
-					"path": "/explore",
-					"route": "^/explore"
+					"label": "Previous winners",
+					"path": "/scottish-charity-awards/previous-winners",
+					"route": "^/scottish-charity-awards/previous-winners$",
+					"children": [
+						{
+							"label": "2020 winners",
+							"path": "/scottish-charity-awards/previous-winners/winners-2020",
+							"route": "^/scottish-charity-awards/previous-winners/winners-2020$",
+							"description": " "
+						},
+						{
+							"label": "2019 winners",
+							"path": "/scottish-charity-awards/previous-winners/winners-2019",
+							"route": "^/scottish-charity-awards/previous-winners/winners-2019$",
+							"description": " "
+						},
+						{
+							"label": "2018 winners",
+							"path": "/scottish-charity-awards/previous-winners/winners-2018",
+							"route": "^/scottish-charity-awards/previous-winners/winners-2018$",
+							"description": " "
+						},
+						{
+							"label": "2017 winners",
+							"path": "/scottish-charity-awards/previous-winners/winners-2017",
+							"route": "^/scottish-charity-awards/previous-winners/winners-2017$",
+							"description": " "
+						}
+					]
 				}
 			]
 		}

@@ -1,7 +1,7 @@
 {
-  "name": "page_charity_awards",
+  "name": "page_charity_awards_menu",
   "debug": false,
-  "pattern": "/scottish-charity-awards/*path",
+  "pattern": "/scottish-charity-awards/previous-winners",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -39,7 +39,7 @@
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.awards_landing-header",
               "footer": ">context.metaData.handlebars.templates.awards_footer",
-              "body": ">context.metaData.handlebars.templates.awards_landing-body"
+              "body": ">context.metaData.handlebars.templates.page-menu"
             },
             "contentType": "text/html"
           }
