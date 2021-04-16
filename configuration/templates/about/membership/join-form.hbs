@@ -60,7 +60,7 @@ wFORMS.behaviors.prefill.skip = false;
 <!-- FORM: BODY SECTION -->
 <div class="wFormContainer b-margin-full">
   <div class="wForm" id="4859763-WRPR" dir="ltr">
-    <button type="button" class="btn btn-primary show-form-recovery-modal">Get a recovery link</button>
+    <button type="button" class="btn btn-primary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles "root")}}d-none{{/unless}}">Get a recovery link</button>
 
     <div class="codesection" id="code-4859763">
     </div>
