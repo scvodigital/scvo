@@ -60,10 +60,15 @@ wFORMS.behaviors.prefill.skip = false;
 <!-- FORM: BODY SECTION -->
 <div class="wFormContainer b-margin-full">
   <div class="wForm" id="4859763-WRPR" dir="ltr">
+    <button type="button" class="btn btn-primary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles "root")}}d-none{{/unless}}">Get a recovery link</button>
+
     <div class="codesection" id="code-4859763">
     </div>
+
     <form method="post" action="https://www.tfaforms.com/responses/processor" class="form form-horizontal hintsBelow labelsAbove" id="4859763" role="form" data-component="FormBackup" data-FormBackup='{
-      "name": "scvo_membership",
+      "slug": "scvo_membership",
+      "name": "SCVO Membership application form",
+      "recoveryLinkButtonSelector": ".show-form-recovery-modal",
       "idsSelector": "#tfa_17",
       "ignoreFields": ["#tfa_9999"]
     }'>
