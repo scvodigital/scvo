@@ -1,5 +1,5 @@
 {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-{{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
+  {{{replace (replace (replace (replace _source.content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
 {{/if ~}}
 
 <p>

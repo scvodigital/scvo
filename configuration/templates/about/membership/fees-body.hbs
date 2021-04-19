@@ -1,6 +1,6 @@
 {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
   <div class="full scvo-cms scvo-cms-page scvo-cms-page-42775">
-    {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
+    {{{replace (replace (replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
 
     <h3>Member categories</h3>
     {{> content_fees_table_member link=true}}

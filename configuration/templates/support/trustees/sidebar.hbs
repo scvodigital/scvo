@@ -2,4 +2,4 @@
   {{> site_search_form target="/support/trustees-network/search" placeholder="Keywords" id='trustee'}}
 </div>
 
-{{{@root.data.supplimentaryResponses.page.hits.hits.[0]._source.content}}}
+{{{replace (replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
