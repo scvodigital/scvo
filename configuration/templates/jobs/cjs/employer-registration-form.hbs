@@ -55,7 +55,7 @@ wFORMS.behaviors.prefill.skip = false;
         <div class="htmlContent form-group" id="tfa_164-HTML">
           <div class="col-9 col-xl-12">
             {{!-- <h1>{{{@root.data.primaryResponse.hits.hits.0._source.title}}}</h1> --}}
-            {{{@root.data.primaryResponse.hits.hits.0._source.content}}}
+            {{{replace (replace (replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
           </div>
         </div>
       </div>

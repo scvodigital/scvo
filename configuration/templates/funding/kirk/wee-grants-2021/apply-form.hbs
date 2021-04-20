@@ -1,0 +1,168 @@
+<!-- FORM: HEAD SECTION -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="no-referrer-when-downgrade">
+            <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+            let formElement = document.getElementById("tfa_0");
+            if (null === formElement) {
+                formElement = document.getElementById("0");
+            }
+            let appendJsTimerElement = function(){
+                let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+                let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+                if (null !== cumulatedTimeElement) {
+                    let cumulatedTime = parseInt(cumulatedTimeElement.value);
+                    if (null !== cumulatedTime && cumulatedTime > 0) {
+                        formTimeDiff += cumulatedTime;
+                    }
+                }
+                let jsTimeInput = document.createElement("input");
+                jsTimeInput.setAttribute("type", "hidden");
+                jsTimeInput.setAttribute("value", formTimeDiff.toString());
+                jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+                jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+                jsTimeInput.setAttribute("autocomplete", "off");
+                if (null !== formElement) {
+                    formElement.appendChild(jsTimeInput);
+                }
+            };
+            if (null !== formElement) {
+                if(formElement.addEventListener){
+                    formElement.addEventListener('submit', appendJsTimerElement, false);
+                } else if(formElement.attachEvent){
+                    formElement.attachEvent('onsubmit', appendJsTimerElement);
+                }
+            }
+        });
+    </script>
+
+    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b" rel="stylesheet" type="text/css" />
+
+    <link href="https://www.tfaforms.com/uploads/themes/theme-68007.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b"></script>
+    <script type="text/javascript">
+        wFORMS.behaviors.prefill.skip = false;
+    </script>
+        <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b"></script>
+
+<!-- FORM: BODY SECTION -->
+<div class="wFormContainer" >
+    <div class="wFormHeader"></div>
+    <style type="text/css"></style><div class=""><div class="wForm" id="4899045-WRPR" dir="ltr">
+<div class="codesection" id="code-4899045"></div>
+<form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove" id="4899045" role="form" enctype="multipart/form-data">
+<div class="wfPage" id="wfPgIndex-1"><div class="section pageSection" id="tfa_30">
+<h4 id="tfa_30-T">Page 1</h4>
+<div class="oneField field-container-D    " id="tfa_1-D">
+<label id="tfa_1-L" class="label preField " for="tfa_1">Scottish Charity Number</label><br><div class="inputWrapper"><input type="text" id="tfa_1" name="tfa_1" value="" title="Scottish Charity Number" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_2-D">
+<label id="tfa_2-L" class="label preField " for="tfa_2">Organisation name</label><br><div class="inputWrapper"><input type="text" id="tfa_2" name="tfa_2" value="" title="Organisation name" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_29-D">
+<label id="tfa_29-L" class="label preField " for="tfa_29">How did you hear about the 2021 Small Grants Fund?</label><br><div class="inputWrapper"><textarea id="tfa_29" name="tfa_29" title="How did you hear about the 2021 Small Grants Fund?" class=""></textarea></div>
+</div>
+</div></div>
+<div class="wfPage" id="wfPgIndex-2"><div class="section pageSection" id="tfa_34">
+<h4 id="tfa_34-T">Page 2</h4>
+<div class="oneField field-container-D    " id="tfa_3-D">
+<label id="tfa_3-L" class="label preField " for="tfa_3">Bank account name</label><br><div class="inputWrapper"><input type="text" id="tfa_3" name="tfa_3" value="" title="Bank account name" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_4-D">
+<label id="tfa_4-L" class="label preField " for="tfa_4">Bank account number</label><br><div class="inputWrapper"><input type="text" id="tfa_4" name="tfa_4" value="" title="Bank account number" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_5-D">
+<label id="tfa_5-L" class="label preField " for="tfa_5">Bank account sort code</label><br><div class="inputWrapper"><input type="text" id="tfa_5" name="tfa_5" value="" title="Bank account sort code" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_6-D">
+<label id="tfa_6-L" class="label preField " for="tfa_6">Bank name</label><br><div class="inputWrapper"><input type="text" id="tfa_6" name="tfa_6" value="" title="Bank name" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_8-D">
+<label id="tfa_8-L" class="label preField " for="tfa_8">Bank address</label><br><div class="inputWrapper"><textarea id="tfa_8" name="tfa_8" title="Bank address" class=""></textarea></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_7-D">
+<label id="tfa_7-L" class="label preField " for="tfa_7">Bank postcode</label><br><div class="inputWrapper"><input type="text" id="tfa_7" name="tfa_7" value="" title="Bank postcode" class=""></div>
+</div>
+</div></div>
+<div class="wfPage" id="wfPgIndex-3"><div class="section pageSection" id="tfa_31">
+<h4 id="tfa_31-T">Page 3</h4>
+<div class="oneField field-container-D    " id="tfa_9-D">
+<label id="tfa_9-L" class="label preField " for="tfa_9">Presbytery</label><br><div class="inputWrapper"><select id="tfa_9" name="tfa_9" title="Presbytery" class=""><option value="">Please select...</option>
+<option value="tfa_10" id="tfa_10" class="">Choice A</option>
+<option value="tfa_11" id="tfa_11" class="">Choice B</option>
+<option value="tfa_12" id="tfa_12" class="">Choice C</option></select></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_13-D">
+<label id="tfa_13-L" class="label preField " for="tfa_13">Name of project</label><br><div class="inputWrapper"><input type="text" id="tfa_13" name="tfa_13" value="" title="Name of project" class=""></div>
+</div>
+</div></div>
+<div class="wfPage" id="wfPgIndex-4"><div class="section pageSection" id="tfa_36">
+<h4 id="tfa_36-T">Page 4</h4>
+<div class="oneField field-container-D    " id="tfa_14-D">
+<label id="tfa_14-L" class="label preField " for="tfa_14">First name</label><br><div class="inputWrapper"><input type="text" id="tfa_14" name="tfa_14" value="" title="First name" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_15-D">
+<label id="tfa_15-L" class="label preField " for="tfa_15">Last name</label><br><div class="inputWrapper"><input type="text" id="tfa_15" name="tfa_15" value="" title="Last name" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_16-D">
+<label id="tfa_16-L" class="label preField " for="tfa_16">Role in church/project</label><br><div class="inputWrapper"><input type="text" id="tfa_16" name="tfa_16" value="" title="Role in church/project" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_17-D">
+<label id="tfa_17-L" class="label preField " for="tfa_17">Phone number</label><br><div class="inputWrapper"><input type="text" id="tfa_17" name="tfa_17" value="" title="Phone number" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_18-D">
+<label id="tfa_18-L" class="label preField " for="tfa_18">Mobile number</label><br><div class="inputWrapper"><input type="text" id="tfa_18" name="tfa_18" value="" title="Mobile number" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_19-D">
+<label id="tfa_19-L" class="label preField " for="tfa_19">Email address</label><br><div class="inputWrapper"><input type="text" id="tfa_19" name="tfa_19" value="" title="Email address" class="validate-email"></div>
+</div>
+</div></div>
+<div class="wfPage" id="wfPgIndex-5"><div class="section pageSection" id="tfa_33">
+<h4 id="tfa_33-T">Page 5</h4>
+<div class="oneField field-container-D    " id="tfa_20-D">
+<label id="tfa_20-L" class="label preField " for="tfa_20">For how many months do you intend this project to run?</label><br><div class="inputWrapper"><input type="text" id="tfa_20" name="tfa_20" value="" title="For how many months do you intend this project to run?" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_21-D">
+<label id="tfa_21-L" class="label preField " for="tfa_21">Who will benefit from this project and what are the reasons you want to work with them?</label><br><div class="inputWrapper"><textarea id="tfa_21" name="tfa_21" title="Who will benefit from this project and what are the reasons you want to work with them?" class=""></textarea></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_22-D">
+<label id="tfa_22-L" class="label preField " for="tfa_22">What difference do you hope to make for them?</label><br><div class="inputWrapper"><textarea id="tfa_22" name="tfa_22" title="What difference do you hope to make for them?" class=""></textarea></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_23-D">
+<label id="tfa_23-L" class="label preField " for="tfa_23">What do you intend to do?</label><br><div class="inputWrapper"><textarea id="tfa_23" name="tfa_23" title="What do you intend to do?" class=""></textarea></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_24-D">
+<label id="tfa_24-L" class="label preField " for="tfa_24">How does this fit with the 2021 Small Grants Fund criteria?</label><br><div class="inputWrapper"><textarea id="tfa_24" name="tfa_24" title="How does this fit with the 2021 Small Grants Fund criteria?" class=""></textarea></div>
+</div>
+</div></div>
+<div class="wfPage" id="wfPgIndex-6"><div class="section pageSection" id="tfa_37">
+<h4 id="tfa_37-T">Page 6</h4>
+<div id="tfa_38" class="section inline group">
+<div class="oneField field-container-D    " id="tfa_25-D">
+<label id="tfa_25-L" class="label preField " for="tfa_25">How will you monitor and evaluate this project?</label><br><div class="inputWrapper"><textarea id="tfa_25" name="tfa_25" title="How will you monitor and evaluate this project?" class=""></textarea></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_27-D">
+<label id="tfa_27-L" class="label preField " for="tfa_27">What steps will you taken to keep people safe?</label><br><div class="inputWrapper"><textarea id="tfa_27" name="tfa_27" title="What steps will you taken to keep people safe?" class=""></textarea></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_26-D">
+<label id="tfa_26-L" class="label preField " for="tfa_26">How will the project be managed to ensure good practice throughout?</label><br><div class="inputWrapper"><textarea id="tfa_26" name="tfa_26" title="How will the project be managed to ensure good practice throughout?" class=""></textarea></div>
+</div>
+</div>
+</div></div>
+<div class="wfPage" id="wfPgIndex-7"><div class="section pageSection" id="tfa_39">
+<h4 id="tfa_39-T">Page 7</h4>
+<div class="oneField field-container-D    " id="tfa_28-D">
+<label id="tfa_28-L" class="label preField " for="tfa_28">Signed extract minute from your church court</label><br><div class="inputWrapper"><input type="file" id="tfa_28" name="tfa_28" size="" title="Signed extract minute from your church court" class=""></div>
+</div>
+</div></div>
+<div class="actions" id="4899045-A"><input type="submit" data-label="Submit" class="primaryAction" id="submit_button" value="Submit"></div>
+<div style="clear:both"></div>
+<input type="hidden" value="4899045" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="a1b17f3f925ee4420d7cd3acc2a74823" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid"><input type="hidden" value="4" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+</form>
+</div></div><div class="wFormFooter"><p class="supportInfo"><a target="new" class="contactInfoLink" href="https://www.tfaforms.com/forms/help/4899045">Contact Information</a><br></p></div>
+  <p class="supportInfo" >
+      </p>
+ </div>

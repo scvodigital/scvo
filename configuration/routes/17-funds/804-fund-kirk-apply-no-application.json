@@ -1,16 +1,9 @@
 {
-  "name": "account",
-  "pattern": "__disabled__/account",
+  "name": "fund_kirk_apply_missing",
   "debug": false,
-  "errorRoute": "five_hundred",
-  "metaData": {
-    "title": "My account"
-  },
+  "pattern": "/funding/church-of-scotland-small-grants-2021/apply/missing",
   "tasks": [
-    "context.metaData.commonTasks.authRequired",
-    "context.metaData.commonTasks.getSignUpStatus",
-    "context.metaData.commonTasks.getAccountInfo",
-    "context.metaData.commonTasks.fullSignUpRequired",
+    "context.metaData.commonTasks.authNotRequired",
     {
       "name": "destination",
       "taskModule": "renderLayout",
@@ -24,16 +17,17 @@
         "output": "body",
         "layouts": {
           "default": {
-            "layout": ">context.metaData.handlebars.layouts.default",
+            "layout": ">context.metaData.handlebars.layouts.kirk",
             "parts": {
+              "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "body": ">context.metaData.handlebars.templates.account_account"
+              "body": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_apply-missing",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"
           }
         }
       }
     }
-
   ]
 }

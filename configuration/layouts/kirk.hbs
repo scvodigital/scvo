@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <!--
+    {{#if @root.request.headers.scvo-proxy}}
+      SCVO Proxy
+    {{else}}
+      No Proxy
+    {{/if}}
+  -->
+  {{{layoutParts.head}}}
+  {{> layout_head}}
+</head>
+<body class="{{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
+  {{> layout_header_upper}}
+  <div class="page">
+    <div class="bg-white">
+      <div class="container">
+        <header class="navbar header b-padding-full b-margin-full">
+          <section class="navbar-section" style="align-items:center;">
+            {{!-- <a href="/" class="navbar-brand b-margin-full t-padding" title="Scottish Council for Voluntary Organisations">
+              <img src="{{~>asset_url url='images/logos/scvo-primary.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+            </a> --}}
+            <p>
+              <img src="{{~>asset_url url='images/logos/organisations/kirk.png'~}}" alt="Church of Scotland" style="max-width:530px;" />
+            </p>
+            <p class="caption ml-1">
+              Powered by <a href="/" class="no-underline">SCVO</a>
+            </p>
+          </section>
+          {{!-- <section class="navbar-section">
+            <div class="mobile-header-buttons show-lg">
+              <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                data-TasksTrigger='{
+                  click: {
+                    tasks: [
+                      {
+                        type: "elementManipulator",
+                        config: {
+                          ".mobile-search": {
+                            "removeClass": "mobile-search_closed mobile-search_closing",
+                            "addClass": "mobile-search_open"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }'>
+                <span class="far fa-search fa-fw fa-2x" aria-hidden="true"></span>
+              </a>
+              <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                data-TasksTrigger='{
+                  click: {
+                    tasks: [
+                      {
+                        type: "elementManipulator",
+                        config: {
+                          ".mobile-menu": {
+                            "removeClass": "mobile-menu_closed mobile-menu_closing",
+                            "addClass": "mobile-menu_open"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }'>
+                <span class="far fa-bars fa-fw fa-2x" aria-hidden="true"></span>
+              </a>
+            </div>
+          </section> --}}
+        </header>
+        <header class="navbar toolbar hide-lg">
+          {{!-- <section class="navbar-section site-tab-bar">
+            {{#each context.metaData.layoutMenus.main ~}}
+            <a class="btn btn-link{{#if (regexMatch ../request.url.pathname route 'gi')}} active{{/if}}" href="{{stripTrailingSlash path}}">{{{label}}}</a>
+            {{/each ~}}
+          </section> --}}
+        </header>
+      </div>
+
+      {{!-- <div class="mobile-search mobile-search_closed">
+        <aside class="mobile-contents sidebar bg-primary">
+          <header class="navbar header">
+            <section class="navbar-section">
+              <a href="/" class="navbar-brand" title="Scottish Council for Voluntary Organisations">
+                <img src="{{~>asset_url url='images/logos/scvo-white.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+              </a>
+            </section>
+            <section class="navbar-section">
+              <div class="mobile-header-buttons">
+                <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                data-TasksTrigger='{
+                  click: {
+                    tasks: [
+                      {
+                        type: "elementManipulator",
+                        config: {
+                          ".mobile-search": {
+                            removeClass: "mobile-search_open",
+                            addClass: "mobile-search_closing"
+                          }
+                        }
+                      },
+                      {
+                        type: "delay",
+                        config: {
+                          "200": [
+                            {
+                              type: "elementManipulator",
+                              config: {
+                                ".mobile-search": {
+                                  addClass: "mobile-search_closed",
+                                  removeClass: "mobile-search_closing"
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }'>
+                  <span class="far fa-times fa-fw fa-2x" aria-hidden="true"></span>
+                </a>
+                <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                  data-TasksTrigger='{
+                    click: {
+                      tasks: [
+                        {
+                          type: "elementManipulator",
+                          config: {
+                            ".mobile-menu": {
+                              "removeClass": "mobile-menu_closed mobile-menu_closing",
+                              "addClass": "mobile-menu_open"
+                            }
+                          }
+                        },
+                        {
+                          type: "elementManipulator",
+                          config: {
+                            ".mobile-search": {
+                              "removeClass": "mobile-search_open",
+                              "addClass": "mobile-search_closed"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }'>
+                  <span class="far fa-bars fa-fw fa-2x" aria-hidden="true"></span>
+                </a>
+              </div>
+            </section>
+          </header>
+          <div class="b-margin-full v-padding-full">
+            {{> site_search_form id='mobile'}}
+          </div>
+        </aside>
+      </div> --}}
+
+      {{!-- <div class="mobile-menu mobile-menu_closed">
+        <aside class="mobile-contents sidebar bg-primary">
+          <header class="navbar header">
+            <section class="navbar-section">
+              <a href="/" class="navbar-brand" title="Scottish Council for Voluntary Organisations">
+                <img src="{{~>asset_url url='images/logos/scvo-white.svg'~}}" alt="Scottish Council for Voluntary Organisations" />
+              </a>
+            </section>
+            <section class="navbar-section">
+              <div class="mobile-header-buttons">
+                <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                  data-TasksTrigger='{
+                    click: {
+                      tasks: [
+                        {
+                          type: "elementManipulator",
+                          config: {
+                            ".mobile-search": {
+                              "removeClass": "mobile-search_closed mobile-search_closing",
+                              "addClass": "mobile-search_open"
+                            }
+                          }
+                        },
+                        {
+                          type: "elementManipulator",
+                          config: {
+                            ".mobile-menu": {
+                              "removeClass": "mobile-menu_open",
+                              "addClass": "mobile-menu_closed"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }'>
+                <span class="far fa-search fa-fw fa-2x" aria-hidden="true"></span>
+              </a>
+              <a href="#" class="btn btn-link" aria-label="Menu" data-component="TasksTrigger"
+                data-TasksTrigger='{
+                    click: {
+                      tasks: [
+                        {
+                          type: "elementManipulator",
+                          config: {
+                            ".mobile-menu": {
+                              removeClass: "mobile-menu_open",
+                              addClass: "mobile-menu_closing"
+                            }
+                          }
+                        },
+                        {
+                          type: "delay",
+                          config: {
+                            "200": [
+                              {
+                                type: "elementManipulator",
+                                config: {
+                                  ".mobile-menu": {
+                                    addClass: "mobile-menu_closed",
+                                    removeClass: "mobile-menu_closing"
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }'>
+                  <span class="far fa-times fa-fw fa-2x" aria-hidden="true"></span>
+                </a>
+              </div>
+            </section>
+          </header>
+          <div class="b-margin-full v-padding-full">
+            <ul class="menu b-padding-full">
+              <li class="menu-item">
+                <a href="/" class="{{#if (regexMatch @root.request.url.pathname '^/$' 'gi')}}active{{/if}}">
+                  <span class="far fa-fw fa-home" aria-hidden="true"></span>
+                  Home
+                </a>
+              </li>
+              {{#each @root.context.metaData.layoutMenus.main ~}}
+              <li class="menu-item">
+                <a href="{{stripTrailingSlash path}}" class="{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                  {{#if icon ~}}
+                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                  {{/if ~}}
+                  {{{label}}}
+                </a>
+              </li>
+              {{/each ~}}
+              {{#if @root.data.auth ~}}
+              {{#each @root.context.metaData.layoutMenus.user-signed-in ~}}
+              <li class="menu-item">
+                <a href="{{stripTrailingSlash path}}" class="{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                  {{#if icon ~}}
+                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                  {{/if ~}}
+                  {{{label}}}
+                </a>
+              </li>
+              {{/each ~}}
+              {{else}}
+              {{#each @root.context.metaData.layoutMenus.user-not-signed-in ~}}
+              {{!-- <li class="menu-item">
+                <a href="{{stripTrailingSlash path}}" class="{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
+                  {{#if icon ~}}
+                  <span class="far fa-fw fa-{{icon}}" aria-hidden="true"></span>
+                  {{/if ~}}
+                  {{{label}}}
+                </a>
+              </li> -- }}
+              {{/each ~}}
+              {{/if ~}}
+            </ul>
+            <h5 class="x-padding">Our sites</h5>
+            {{> components_scvo_bar}}
+          </div>
+        </aside>
+      </div> --}}
+
+      {{> layout_body}}
+
+      {{> layout_footer_kirk}}
+    </div>
+  </div>
+
+  {{> layout_foot}}
+  {{{layoutParts.foot}}}
+</body>
+</html>
