@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
+    {{!-- <p>
+      <strong>We recommend that you use the relevant word template below to plan your draft before completing the online form.</strong>
+    </p>
+
+    <h2>Word template</h2>
+    <p>
+      <div class="wp-block-file">
+        <a href="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2021/02/Charter-Fund-8-Application-Form-Template.docx">Charter Fund Round 8 application form template</a><a href="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2021/02/Charter-Fund-8-Application-Form-Template.docx" class="wp-block-file__button" download="">Download</a>
+      </div>
+    </p> --}}
+
+    <h2>Application form</h2>
+    <p>
+      This is the online application form for Church of Scotland Small Grants 2021.
+    </p>
+    <p>
+      Please enter the details below to start your application.
+    </p>
+
+    <div class="b-padding-full v-margin-full">
+      {{#if @root.request.params.charity_number ~}}
+      <div class="label label-error x-padding t-margin-full">
+        <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
+        The charity number you entered could not be matched with an OSCR record
+      </div>
+      <p class="t-margin b-margin-full form-input-hint text-secondary">
+        Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+      </p>
+      {{/if ~}}
+      <div class="columns">
+        <div class="column col-sm-12 t-padding b-padding-full">
+          <div class="form-group">
+            <label for="charity_number" class="form-label">Scottish Charity Number</label>
+            <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
+            <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
+          </div>
+          <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
+            Apply now
+          </a>
+        </div>
+        <div class="divider-vert hide-sm" data-content="OR"></div>
+        <div class="divider text-center show-sm col-12" data-content="OR"></div>
+        <div class="column col-sm-12 align-centre">
+          <a href="/funding/church-of-scotland-small-grants-2021/apply/not-a-charity" class="btn btn-block">
+            Not a registered charity
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var valid = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 67, 83, 99, 115, 37, 39, 111, 79, 46, 35, 36];
+  $('#charity_number')
+  .on('keydown', function(evt) {
+    if (evt.ctrlKey) {
+      return;
+    }
+
+    if (valid.indexOf(evt.which) === -1 && evt.which > 31) {
+      evt.preventDefault();
+    }
+  })
+  .on('keyup', checkCN)
+  .on('change', checkCN)
+  .on('paste', function(evt) {
+    setTimeout(function() {
+      checkCN(evt);
+    }, 0);
+  })
+  .select();
+
+  function checkCN(evt) {
+    var matches = evt.target.value.replace(/[^sco0-9]/img, '');
+    var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
+
+    if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
+      var url = '/funding/church-of-scotland-small-grants-2021/apply/' + charityNumber;
+      $('#charity_number_submit')
+      .removeAttr('disabled', false)
+      .attr('href', url);
+      if (evt.which === 13) {
+        window.location.href = url;
+      }
+    } else {
+      $('#charity_number_submit')
+      .attr('disabled', true)
+      .attr('href', '');
+    }
+  }
+
+})
+</script>

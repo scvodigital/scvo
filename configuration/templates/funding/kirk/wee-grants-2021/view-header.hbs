@@ -1,0 +1,13 @@
+<div class="container">
+  <ul class="breadcrumb breadcrumb-length-4" aria-hidden="true">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/funding">Funding</a></li>
+    <li class="breadcrumb-item"><a href="/funding/church-of-scotland-small-grants-2021">Church of Scotland Small Grants 2021</a></li>
+    <li class="breadcrumb-item">{{#ifAny @root.request.params.session_key @root.request.body.funder (compare @root.route.name "fund_kirk_apply_complete")}}{{#compare @root.route.name "fund_kirk_apply_already_awarded"}}Sorry{{else}}View application{{/compare}}{{else}}View application{{/ifAny}}</li>
+  </ul>
+</div>
+<div class="container">
+  {{#with @root.data.form_data}}
+  <h1 class="font-default">Your application</h1>
+  {{/with}}
+</div>
