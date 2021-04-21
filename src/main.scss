@@ -2973,6 +2973,19 @@ header {
     }
   }
 }
+.modal-scvo-account {
+  .modal-container {
+    .modal-title {
+      align-items: center;
+      justify-content: left;
+      .scvo-logo {
+        width: 40%;
+        max-width: 150px;
+      }
+    }
+  }
+}
+
 .mobile-contents header .mobile-header-buttons {
   .btn.btn-link {
     padding: 0;
