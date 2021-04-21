@@ -56,6 +56,8 @@ $pink-color: #FEB3B4;
 $orange-color: #F8AB23;
 $red-color: #F31E31;
 
+$kirk-color: #003663;
+
 $unit: 1rem;
 $padding: 1.2rem;
 $thick-line: 5px;
@@ -520,6 +522,17 @@ body.the-gathering-2021 {
     h3 {
       color: $green-color-dark;
     }
+  }
+}
+
+.funding.church-of-scotland-small-grants-2021 {
+  header.toolbar {
+    border-bottom-color: $kirk-color;
+  }
+  .breadcrumb .breadcrumb-item:nth-child(1),
+  .breadcrumb .breadcrumb-item:nth-child(2),
+  .breadcrumb .breadcrumb-item:nth-child(3)::before {
+    display: none;
   }
 }
 

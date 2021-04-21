@@ -1,168 +1,432 @@
-<!-- FORM: HEAD SECTION -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{{#withExtend this
+  defaults=@root.data.form_data.defaults
+}}
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(){
+  const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+  let formElement = document.getElementById("tfa_0");
+  if (null === formElement) {
+    formElement = document.getElementById("0");
+  }
+  let appendJsTimerElement = function(){
+    let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+    let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+    if (null !== cumulatedTimeElement) {
+      let cumulatedTime = parseInt(cumulatedTimeElement.value);
+      if (null !== cumulatedTime && cumulatedTime > 0) {
+        formTimeDiff += cumulatedTime;
+      }
+    }
+    let jsTimeInput = document.createElement("input");
+    jsTimeInput.setAttribute("type", "hidden");
+    jsTimeInput.setAttribute("value", formTimeDiff.toString());
+    jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+    jsTimeInput.setAttribute("autocomplete", "off");
+    if (null !== formElement) {
+      formElement.appendChild(jsTimeInput);
+    }
+  };
+  if (null !== formElement) {
+    if(formElement.addEventListener){
+      formElement.addEventListener('submit', appendJsTimerElement, false);
+    } else if(formElement.attachEvent){
+      formElement.attachEvent('onsubmit', appendJsTimerElement);
+    }
+  }
+});
+</script>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="referrer" content="no-referrer-when-downgrade">
-            <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function(){
-            const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
-            let formElement = document.getElementById("tfa_0");
-            if (null === formElement) {
-                formElement = document.getElementById("0");
-            }
-            let appendJsTimerElement = function(){
-                let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
-                let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
-                if (null !== cumulatedTimeElement) {
-                    let cumulatedTime = parseInt(cumulatedTimeElement.value);
-                    if (null !== cumulatedTime && cumulatedTime > 0) {
-                        formTimeDiff += cumulatedTime;
-                    }
-                }
-                let jsTimeInput = document.createElement("input");
-                jsTimeInput.setAttribute("type", "hidden");
-                jsTimeInput.setAttribute("value", formTimeDiff.toString());
-                jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
-                jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
-                jsTimeInput.setAttribute("autocomplete", "off");
-                if (null !== formElement) {
-                    formElement.appendChild(jsTimeInput);
-                }
-            };
-            if (null !== formElement) {
-                if(formElement.addEventListener){
-                    formElement.addEventListener('submit', appendJsTimerElement, false);
-                } else if(formElement.attachEvent){
-                    formElement.attachEvent('onsubmit', appendJsTimerElement);
-                }
-            }
-        });
-    </script>
-
-    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b" rel="stylesheet" type="text/css" />
-
-    <link href="https://www.tfaforms.com/uploads/themes/theme-68007.css" rel="stylesheet" type="text/css" />
-    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
-    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b"></script>
-    <script type="text/javascript">
-        wFORMS.behaviors.prefill.skip = false;
-    </script>
-        <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b"></script>
+<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b">
+</script>
+<script type="text/javascript">
+wFORMS.behaviors.prefill.skip = false;
+</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b">
+</script>
 
 <!-- FORM: BODY SECTION -->
-<div class="wFormContainer" >
-    <div class="wFormHeader"></div>
-    <style type="text/css"></style><div class=""><div class="wForm" id="4899045-WRPR" dir="ltr">
-<div class="codesection" id="code-4899045"></div>
-<form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove" id="4899045" role="form" enctype="multipart/form-data">
-<div class="wfPage" id="wfPgIndex-1"><div class="section pageSection" id="tfa_30">
-<h4 id="tfa_30-T">Page 1</h4>
-<div class="oneField field-container-D    " id="tfa_1-D">
-<label id="tfa_1-L" class="label preField " for="tfa_1">Scottish Charity Number</label><br><div class="inputWrapper"><input type="text" id="tfa_1" name="tfa_1" value="" title="Scottish Charity Number" class=""></div>
+<div class="container mb-2">
+  <div class="wForm" id="4899045-WRPR" dir="ltr">
+    <form method="post" action="https://www.tfaforms.com/responses/processor" class="form form-horizontal hintsBelow labelsAbove" id="4899045" role="form" enctype="multipart/form-data">
+      <div class="wfPage" id="wfPgIndex-1">
+        <div class="section pageSection" id="tfa_30">
+          <h2 id="tfa_30-T">Your organisation</h2>
+          {{!-- <div class="form-group field-container-D    " id="tfa_1-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_1-L" class="form-label mr preField " for="tfa_1">Scottish Charity Number</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_1" name="tfa_1" value="" title="Scottish Charity Number" class="form-input">
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_2-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_2-L" class="form-label mr preField " for="tfa_2">Organisation name</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_2" name="tfa_2" value="" title="Organisation name" class="form-input">
+            </div>
+          </div> --}}
+          {{#if defaults.is_charity ~}}
+          <div class="form-group">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_1-L" class="form-label mr preField reqMark" for="tfa_1">
+                Scottish Charity Number
+              </label>
+              {{#unless defaults.application_editing}}
+              <p class="form-input-hint text-secondary">
+                <a href="/funding/church-of-scotland-small-grants-2021/apply/not-a-charity">Not a registered charity?</a>
+              </p>
+              {{/unless}}
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="form-group field-container-D" id="tfa_1-D">
+                <p class="no-margin" style="padding: .3rem 0 !important;"><strong>{{defaults.tfa_1}}</strong></p>
+                <input type="hidden" id="tfa_1" name="tfa_1" value="{{defaults.tfa_1}}" title="Scottish Charity Number" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+              </div>
+            </div>
+          </div>
+          {{/if ~}}
+
+          <div class="form-group">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_2-L" class="form-label mr preField reqMark" for="tfa_2">
+                Organisation name
+              </label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="form-group field-container-D" id="tfa_2-D">
+                {{#ifAny defaults.application_editing defaults.tfa_2}}
+                <input type="text" id="organisation_name" name="organisation_name" value="{{defaults.tfa_2}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
+                <input type="hidden" id="tfa_2" name="tfa_2" class="form-input" value="{{defaults.tfa_2}}">
+                {{else}}
+                <input type="text" id="tfa_2" name="tfa_2" value="{{defaults.tfa_2}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required{{#if defaults.application_readonly}} readonly{{/if}}>
+                {{/ifAny}}
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group field-container-D    " id="tfa_29-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_29-L" class="form-label mr preField " for="tfa_29">How did you hear about the 2021 Small Grants Fund?</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <textarea id="tfa_29" name="tfa_29" title="How did you hear about the 2021 Small Grants Fund?" class="form-input"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wfPage" id="wfPgIndex-2">
+        <div class="section pageSection" id="tfa_34">
+          <h2 id="tfa_34-T">Organisation bank account details</h2>
+          <p>
+            If successful, this is the account into which the grant will be paid.
+          </p>
+          <div class="form-group field-container-D    " id="tfa_3-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_3-L" class="form-label mr preField reqMark" for="tfa_3">Name on account</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_3" name="tfa_3" value="" title="Bank account name" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_4-L" class="form-label mr preField reqMark" for="tfa_4">
+                Account number
+              </label>
+            </div>
+            <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="field-container-D" id="tfa_4-D">
+                <input type="text" id="tfa_4" name="tfa_4" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" title="Please enter an 8 digit account number" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_5-L" class="form-label mr preField reqMark" for="tfa_5">
+                Sort code
+              </label>
+            </div>
+            <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="field-container-D" id="tfa_5-D">
+                <input type="text" id="tfa_5" name="tfa_5" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" title="Please enter a 6-digit sort code xx-xx-xx" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+              </div>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_6-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_6-L" class="form-label mr preField reqMark" for="tfa_6">Bank name</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_6" name="tfa_6" value="" title="Bank name" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_8-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_8-L" class="form-label mr preField reqMark" for="tfa_8">Bank address</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <textarea id="tfa_8" name="tfa_8" title="Bank address" class="form-input required" required></textarea>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_7-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_7-L" class="form-label mr preField " for="tfa_7">Bank postcode</label>
+            </div>
+            <div class="col-2 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <input type="text" id="tfa_7" name="tfa_7" maxlength="150" value="{{defaults.tfa_7}}" autocomplete="nope" data-lpignore="true" aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wfPage" id="wfPgIndex-3">
+        <div class="section pageSection" id="tfa_31">
+          <h2 id="tfa_31-T">About the project</h2>
+          <div class="form-group field-container-D    " id="tfa_9-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_9-L" class="form-label mr preField reqMark" for="tfa_9">Presbytery</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <select id="tfa_9" name="tfa_9" title="Presbytery" class="form-select required" required>
+                <option value="" selected default>Please select&hellip;</option>
+                <option value="tfa_40" id="tfa_40">Aberdeen and Shetland</option>
+                <option value="tfa_41" id="tfa_41">Abernethy</option>
+                <option value="tfa_42" id="tfa_42">Angus</option>
+                <option value="tfa_43" id="tfa_43">Annandale and Eskdale</option>
+                <option value="tfa_44" id="tfa_44">Ardrossan</option>
+                <option value="tfa_45" id="tfa_45">Argyll</option>
+                <option value="tfa_46" id="tfa_46">Ayr</option>
+                <option value="tfa_47" id="tfa_47">Buchan</option>
+                <option value="tfa_48" id="tfa_48">Caithness</option>
+                <option value="tfa_49" id="tfa_49">Clyde </option>
+                <option value="tfa_50" id="tfa_50">Dumfries and Kirkcudbright</option>
+                <option value="tfa_51" id="tfa_51">Dundee</option>
+                <option value="tfa_52" id="tfa_52">Dunkeld and Meigle</option>
+                <option value="tfa_53" id="tfa_53">Duns</option>
+                <option value="tfa_54" id="tfa_54">Edinburgh</option>
+                <option value="tfa_55" id="tfa_55">England</option>
+                <option value="tfa_56" id="tfa_56">Falkirk</option>
+                <option value="tfa_57" id="tfa_57">Fife</option>
+                <option value="tfa_58" id="tfa_58">Glasgow</option>
+                <option value="tfa_59" id="tfa_59">Gordon</option>
+                <option value="tfa_60" id="tfa_60">Hamilton</option>
+                <option value="tfa_62" id="tfa_62">Inverness</option>
+                <option value="tfa_63" id="tfa_63">Irvine and Kilmarnock</option>
+                <option value="tfa_64" id="tfa_64">Jedburgh</option>
+                <option value="tfa_66" id="tfa_66">Kincardine and Deeside</option>
+                <option value="tfa_67" id="tfa_67">Lanark</option>
+                <option value="tfa_68" id="tfa_68">Lewis</option>
+                <option value="tfa_69" id="tfa_69">Lochaber</option>
+                <option value="tfa_70" id="tfa_70">Lochcarron-Skye</option>
+                <option value="tfa_71" id="tfa_71">Lothian</option>
+                <option value="tfa_72" id="tfa_72">Melrose and Peebles</option>
+                <option value="tfa_73" id="tfa_73">Moray</option>
+                <option value="tfa_74" id="tfa_74">Orkney</option>
+                <option value="tfa_75" id="tfa_75">Perth</option>
+                <option value="tfa_76" id="tfa_76">Ross</option>
+                <option value="tfa_77" id="tfa_77">Stirling</option>
+                <option value="tfa_78" id="tfa_78">Sutherland</option>
+                <option value="tfa_79" id="tfa_79">Uist</option>
+                <option value="tfa_80" id="tfa_80">West Lothian</option>
+                <option value="tfa_81" id="tfa_81">Wigtown and Stranraer</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_13-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_13-L" class="form-label mr preField reqMark" for="tfa_13">Name of project</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_13" name="tfa_13" value="" title="Name of project" class="form-input required" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wfPage" id="wfPgIndex-4">
+        <div class="section pageSection" id="tfa_36">
+          <h2 id="tfa_36-T">About you</h2>
+          <div class="form-group field-container-D    " id="tfa_14-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_14-L" class="form-label mr preField reqMark" for="tfa_14">First name</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_14" name="tfa_14" value="" title="First name" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_15-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_15-L" class="form-label mr preField reqMark" for="tfa_15">Last name</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_15" name="tfa_15" value="" title="Last name" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_16-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_16-L" class="form-label mr preField " for="tfa_16">Role in church/project</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_16" name="tfa_16" value="" title="Role in church/project" class="form-input">
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_17-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_17-L" class="form-label mr preField reqMark" for="tfa_17">Phone number</label>
+              <p class="form-input-hint text-secondary">
+                Please give us the best number to reach you on, this number will be used to call you as part of the assessment process.
+              </p>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_17" name="tfa_17" value="" title="Phone number" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_18-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_18-L" class="form-label mr preField" for="tfa_18">Mobile number</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_18" name="tfa_18" value="" title="Mobile number" class="form-input">
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_19-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_19-L" class="form-label mr preField reqMark" for="tfa_19">Email address</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_19" name="tfa_19" value="{{defaults.tfa_19}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input validate-email" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input validate-email required" required{{/if}}>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wfPage" id="wfPgIndex-5">
+        <div class="section pageSection" id="tfa_33">
+          <h2 id="tfa_33-T">Project details</h2>
+          <div class="form-group field-container-D    " id="tfa_20-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_20-L" class="form-label mr preField reqMark" for="tfa_20">For how many months do you intend this project to run?</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_20" name="tfa_20" value="" title="For how many months do you intend this project to run?" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_21-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_21-L" class="form-label mr preField reqMark" for="tfa_21">Who will benefit from this project and what are the reasons you want to work with them?</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <textarea id="tfa_21" name="tfa_21" title="Who will benefit from this project and what are the reasons you want to work with them?" class="form-input required" required></textarea>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_22-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_22-L" class="form-label mr preField reqMark" for="tfa_22">What difference do you hope to make for them?</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <textarea id="tfa_22" name="tfa_22" title="What difference do you hope to make for them?" class="form-input required" required></textarea>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_23-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_23-L" class="form-label mr preField reqMark" for="tfa_23">What do you intend to do?</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <textarea id="tfa_23" name="tfa_23" title="What do you intend to do?" class="form-input required" required></textarea>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_24-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_24-L" class="form-label mr preField reqMark" for="tfa_24">How does this fit with the 2021 Small Grants Fund criteria?</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <textarea id="tfa_24" name="tfa_24" title="How does this fit with the 2021 Small Grants Fund criteria?" class="form-input required" required></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wfPage" id="wfPgIndex-6">
+        <div class="section pageSection" id="tfa_37">
+          <h2 id="tfa_37-T">Monitoring/evaluation</h2>
+          <p>
+            Please provide a breakdown of project costs and where the money will come from by completing the following sections.
+          </p>
+          <div id="tfa_38" class="section inline group">
+            <div class="form-group field-container-D    " id="tfa_25-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_25-L" class="form-label mr preField reqMark" for="tfa_25">How will you monitor and evaluate this project?</label>
+                <p class="form-input-hint text-secondary">
+                  The <a href="https://evaluationsupportscotland.org.uk" target="_blank">Evaluation Support Scotland website</a> (opens in new tab) explains how to assess projects.
+                </p>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_25" name="tfa_25" title="How will you monitor and evaluate this project?" class="form-input required" required></textarea>
+              </div>
+            </div>
+            <div class="form-group field-container-D    " id="tfa_26-D">
+              <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <label id="tfa_26-L" class="form-label mr preField reqMark" for="tfa_26">How will the project be managed to ensure good practice throughout?</label>
+              </div>
+              <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <textarea id="tfa_26" name="tfa_26" title="How will the project be managed to ensure good practice throughout?" class="form-input required" required></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wfPage" id="wfPgIndex-7">
+        <div class="section pageSection" id="tfa_39">
+          <h2 id="tfa_39-T">Keeping everyone safe</h2>
+          <div class="form-group field-container-D    " id="tfa_27-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_27-L" class="form-label mr preField reqMark" for="tfa_27">What steps will you taken to keep people safe?</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <textarea id="tfa_27" name="tfa_27" title="What steps will you taken to keep people safe?" class="form-input required" required></textarea>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_28-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_28-L" class="form-label mr preField reqMark" for="tfa_28">Upload completed, signed extract minute from your church court (kirk session or presbytery as appropriate)</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="file" id="tfa_28" name="tfa_28" size="" title="Signed extract minute from your church court" class="form-input required" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="actions" id="4899045-A">
+        <input type="submit" data-label="Submit" class="primaryAction btn btn-lg btn-primary" id="submit_button" value="Submit">
+      </div>
+      <div style="clear:both">
+      </div>
+      <input type="hidden" value="4899045" name="tfa_dbFormId" id="tfa_dbFormId">
+      <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
+      <input type="hidden" value="a1b17f3f925ee4420d7cd3acc2a74823" name="tfa_dbControl" id="tfa_dbControl">
+      <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
+      <input type="hidden" value="5" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+    </form>
+  </div>
 </div>
-<div class="oneField field-container-D    " id="tfa_2-D">
-<label id="tfa_2-L" class="label preField " for="tfa_2">Organisation name</label><br><div class="inputWrapper"><input type="text" id="tfa_2" name="tfa_2" value="" title="Organisation name" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_29-D">
-<label id="tfa_29-L" class="label preField " for="tfa_29">How did you hear about the 2021 Small Grants Fund?</label><br><div class="inputWrapper"><textarea id="tfa_29" name="tfa_29" title="How did you hear about the 2021 Small Grants Fund?" class=""></textarea></div>
-</div>
-</div></div>
-<div class="wfPage" id="wfPgIndex-2"><div class="section pageSection" id="tfa_34">
-<h4 id="tfa_34-T">Page 2</h4>
-<div class="oneField field-container-D    " id="tfa_3-D">
-<label id="tfa_3-L" class="label preField " for="tfa_3">Bank account name</label><br><div class="inputWrapper"><input type="text" id="tfa_3" name="tfa_3" value="" title="Bank account name" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_4-D">
-<label id="tfa_4-L" class="label preField " for="tfa_4">Bank account number</label><br><div class="inputWrapper"><input type="text" id="tfa_4" name="tfa_4" value="" title="Bank account number" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_5-D">
-<label id="tfa_5-L" class="label preField " for="tfa_5">Bank account sort code</label><br><div class="inputWrapper"><input type="text" id="tfa_5" name="tfa_5" value="" title="Bank account sort code" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_6-D">
-<label id="tfa_6-L" class="label preField " for="tfa_6">Bank name</label><br><div class="inputWrapper"><input type="text" id="tfa_6" name="tfa_6" value="" title="Bank name" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_8-D">
-<label id="tfa_8-L" class="label preField " for="tfa_8">Bank address</label><br><div class="inputWrapper"><textarea id="tfa_8" name="tfa_8" title="Bank address" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_7-D">
-<label id="tfa_7-L" class="label preField " for="tfa_7">Bank postcode</label><br><div class="inputWrapper"><input type="text" id="tfa_7" name="tfa_7" value="" title="Bank postcode" class=""></div>
-</div>
-</div></div>
-<div class="wfPage" id="wfPgIndex-3"><div class="section pageSection" id="tfa_31">
-<h4 id="tfa_31-T">Page 3</h4>
-<div class="oneField field-container-D    " id="tfa_9-D">
-<label id="tfa_9-L" class="label preField " for="tfa_9">Presbytery</label><br><div class="inputWrapper"><select id="tfa_9" name="tfa_9" title="Presbytery" class=""><option value="">Please select...</option>
-<option value="tfa_10" id="tfa_10" class="">Choice A</option>
-<option value="tfa_11" id="tfa_11" class="">Choice B</option>
-<option value="tfa_12" id="tfa_12" class="">Choice C</option></select></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_13-D">
-<label id="tfa_13-L" class="label preField " for="tfa_13">Name of project</label><br><div class="inputWrapper"><input type="text" id="tfa_13" name="tfa_13" value="" title="Name of project" class=""></div>
-</div>
-</div></div>
-<div class="wfPage" id="wfPgIndex-4"><div class="section pageSection" id="tfa_36">
-<h4 id="tfa_36-T">Page 4</h4>
-<div class="oneField field-container-D    " id="tfa_14-D">
-<label id="tfa_14-L" class="label preField " for="tfa_14">First name</label><br><div class="inputWrapper"><input type="text" id="tfa_14" name="tfa_14" value="" title="First name" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_15-D">
-<label id="tfa_15-L" class="label preField " for="tfa_15">Last name</label><br><div class="inputWrapper"><input type="text" id="tfa_15" name="tfa_15" value="" title="Last name" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_16-D">
-<label id="tfa_16-L" class="label preField " for="tfa_16">Role in church/project</label><br><div class="inputWrapper"><input type="text" id="tfa_16" name="tfa_16" value="" title="Role in church/project" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_17-D">
-<label id="tfa_17-L" class="label preField " for="tfa_17">Phone number</label><br><div class="inputWrapper"><input type="text" id="tfa_17" name="tfa_17" value="" title="Phone number" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_18-D">
-<label id="tfa_18-L" class="label preField " for="tfa_18">Mobile number</label><br><div class="inputWrapper"><input type="text" id="tfa_18" name="tfa_18" value="" title="Mobile number" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_19-D">
-<label id="tfa_19-L" class="label preField " for="tfa_19">Email address</label><br><div class="inputWrapper"><input type="text" id="tfa_19" name="tfa_19" value="" title="Email address" class="validate-email"></div>
-</div>
-</div></div>
-<div class="wfPage" id="wfPgIndex-5"><div class="section pageSection" id="tfa_33">
-<h4 id="tfa_33-T">Page 5</h4>
-<div class="oneField field-container-D    " id="tfa_20-D">
-<label id="tfa_20-L" class="label preField " for="tfa_20">For how many months do you intend this project to run?</label><br><div class="inputWrapper"><input type="text" id="tfa_20" name="tfa_20" value="" title="For how many months do you intend this project to run?" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_21-D">
-<label id="tfa_21-L" class="label preField " for="tfa_21">Who will benefit from this project and what are the reasons you want to work with them?</label><br><div class="inputWrapper"><textarea id="tfa_21" name="tfa_21" title="Who will benefit from this project and what are the reasons you want to work with them?" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_22-D">
-<label id="tfa_22-L" class="label preField " for="tfa_22">What difference do you hope to make for them?</label><br><div class="inputWrapper"><textarea id="tfa_22" name="tfa_22" title="What difference do you hope to make for them?" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_23-D">
-<label id="tfa_23-L" class="label preField " for="tfa_23">What do you intend to do?</label><br><div class="inputWrapper"><textarea id="tfa_23" name="tfa_23" title="What do you intend to do?" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_24-D">
-<label id="tfa_24-L" class="label preField " for="tfa_24">How does this fit with the 2021 Small Grants Fund criteria?</label><br><div class="inputWrapper"><textarea id="tfa_24" name="tfa_24" title="How does this fit with the 2021 Small Grants Fund criteria?" class=""></textarea></div>
-</div>
-</div></div>
-<div class="wfPage" id="wfPgIndex-6"><div class="section pageSection" id="tfa_37">
-<h4 id="tfa_37-T">Page 6</h4>
-<div id="tfa_38" class="section inline group">
-<div class="oneField field-container-D    " id="tfa_25-D">
-<label id="tfa_25-L" class="label preField " for="tfa_25">How will you monitor and evaluate this project?</label><br><div class="inputWrapper"><textarea id="tfa_25" name="tfa_25" title="How will you monitor and evaluate this project?" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_27-D">
-<label id="tfa_27-L" class="label preField " for="tfa_27">What steps will you taken to keep people safe?</label><br><div class="inputWrapper"><textarea id="tfa_27" name="tfa_27" title="What steps will you taken to keep people safe?" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_26-D">
-<label id="tfa_26-L" class="label preField " for="tfa_26">How will the project be managed to ensure good practice throughout?</label><br><div class="inputWrapper"><textarea id="tfa_26" name="tfa_26" title="How will the project be managed to ensure good practice throughout?" class=""></textarea></div>
-</div>
-</div>
-</div></div>
-<div class="wfPage" id="wfPgIndex-7"><div class="section pageSection" id="tfa_39">
-<h4 id="tfa_39-T">Page 7</h4>
-<div class="oneField field-container-D    " id="tfa_28-D">
-<label id="tfa_28-L" class="label preField " for="tfa_28">Signed extract minute from your church court</label><br><div class="inputWrapper"><input type="file" id="tfa_28" name="tfa_28" size="" title="Signed extract minute from your church court" class=""></div>
-</div>
-</div></div>
-<div class="actions" id="4899045-A"><input type="submit" data-label="Submit" class="primaryAction" id="submit_button" value="Submit"></div>
-<div style="clear:both"></div>
-<input type="hidden" value="4899045" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="a1b17f3f925ee4420d7cd3acc2a74823" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid"><input type="hidden" value="4" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
-</form>
-</div></div><div class="wFormFooter"><p class="supportInfo"><a target="new" class="contactInfoLink" href="https://www.tfaforms.com/forms/help/4899045">Contact Information</a><br></p></div>
-  <p class="supportInfo" >
-      </p>
- </div>
+
+<script src="{{~>asset_url url='js/cleave.min.js'~}}"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  {{#unless defaults.application_editing}}
+  var cleave_account_number = new Cleave('#tfa_4', {
+    blocks: [8],
+    numericOnly: true
+  });
+  var cleave_sort_code = new Cleave('#tfa_5', {
+    delimiter: '-',
+    blocks: [2,2,2],
+    numericOnly: true,
+    delimiterLazyShow: true
+  });
+  {{/unless}}
+});
+</script>
+{{/withExtend}}
