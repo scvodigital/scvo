@@ -119,7 +119,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{else}}
                 <select id="tfa_82" name="tfa_82" class="form-select required" required="true" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                   <option value="" disabled selected>Please select&hellip;</option>
-                  {{#each (split 'Constituted Group,Social Enterprise,Voluntary Group,Community Group,Community Housing Association,Community trust / Community development trust,Other (please specify)' ',')}}
+                  {{#each (split 'Community Group,Constituted Group,Voluntary Group,Other (please specify)' ',')}}
                   <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_82}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                   {{/each}}
                 </select>
@@ -228,7 +228,7 @@ wFORMS.behaviors.prefill.skip = false;
           <h2 id="tfa_31-T">About the project</h2>
           <div class="form-group mb-1 field-container-D    " id="tfa_9-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_9-L" class="form-label mr preField reqMark" for="tfa_9">Presbytery</label>
+              <label id="tfa_9-L" class="form-label mr preField reqMark" for="tfa_9">Q5. Presbytery</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <select id="tfa_9" name="tfa_9" title="Presbytery" class="form-select required" required>
@@ -280,7 +280,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group mb-1 field-container-D    " id="tfa_13-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_13-L" class="form-label mr preField reqMark" for="tfa_13">Name of project</label>
+              <label id="tfa_13-L" class="form-label mr preField reqMark" for="tfa_13">Q6. Name of project</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <input type="text" id="tfa_13" name="tfa_13" value="" title="Name of project" class="form-input required" required>

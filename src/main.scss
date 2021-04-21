@@ -530,6 +530,23 @@ body.the-gathering-2021 {
   header.toolbar {
     border-bottom-color: $kirk-color;
   }
+  header.navbar {
+    .navbar-section {
+      align-items: center;
+      .header-brand {
+        width: 100%;
+        max-width: 900px;
+      }
+      .caption {
+        display: flex;
+        flex: 0 0 auto;
+        img {
+          margin-left: .75rem;
+          margin-top: -3px;
+        }
+      }
+    }
+  }
   .breadcrumb .breadcrumb-item:nth-child(1),
   .breadcrumb .breadcrumb-item:nth-child(2),
   .breadcrumb .breadcrumb-item:nth-child(3)::before {
@@ -1629,6 +1646,15 @@ ul.list-lg {
   .hero .hero-text h1.smaller {
     font-size: 2.3rem;
     letter-spacing: -0.1rem;
+  }
+  .funding.church-of-scotland-2021-small-grants-fund {
+    header.navbar .navbar-section {
+      display: block;
+      .caption {
+        margin-top: $unit;
+        max-width: 95px;
+      }
+    }
   }
 }
 

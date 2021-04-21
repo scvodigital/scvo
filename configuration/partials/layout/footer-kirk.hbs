@@ -2,9 +2,12 @@
   <div class="bg-secondary t-padding">
     <div class="container t-padding-full">
       <div class="columns">
-        <div class="copyright mb column col-10 col-lg-12">
+        <div class="copyright mb-1 column col-10 col-lg-12">
           <p>
             This application form is powered by SCVO in partnership with Church of Scotland.
+          </p>
+          <p>
+            <a href="https://www.churchofscotland.org.uk/using-our-site/privacy-centre/privacy-notice" target="_blank">Church of Scotland Privacy Notice</a>&ensp;|&ensp;<a href="/privacy" target="_blank">SCVO Privacy Notice</a>
           </p>
           <p>
             &copy; {{momentFormat (moment) "YYYY"}}. The Scottish Council for Voluntary Organisations (SCVO) is a Scottish Charitable Incorporated Organisation.<br />
@@ -12,9 +15,9 @@
           </p>
         </div>
         <div class="logos column col-2 col-md-4 col-sm-5 col-xs-6 col-mr-auto">
-          <a href="/" class="scvo-logo no-underline" title="Scottish Council for Voluntary Organisations">
+          {{!-- <a href="/" class="scvo-logo no-underline" title="Scottish Council for Voluntary Organisations"> --}}
             <img src="{{~>asset_url url='images/logos/scvo-white.svg'~}}" alt="Scottish Council for Voluntary Organisations" class="t-margin b-padding-full" />
-          </a>
+          {{!-- </a> --}}
         </div>
       </div>
     </div>
