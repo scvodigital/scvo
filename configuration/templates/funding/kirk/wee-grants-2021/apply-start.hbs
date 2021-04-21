@@ -13,8 +13,15 @@
 
     {{!-- <h2>Application form</h2> --}}
     <p>
-      This is the online application form for Church of Scotland Small Grants 2021.
+      Before you complete this online form please note the following:
     </p>
+
+    <ul>
+      <li>Only Church of Scotland congregations and presbyteries are eligible to apply for this Fund.</li>
+      <li>We strongly recommend that you use the Microsoft Word template [provide link here] to plan your draft before completing this online form as there will be no option to save your application and return to complete later.</li>
+      <li>Ensure that in completing the form you have referred to the 2021 Small Grants Fund Guidance Notes available from [provide link here]</li>
+      <li>At the end of the form you will need to upload a signed extract minute from the relevant church court supporting the application, indicating acceptance of the General Conditions of Award.</li>
+    </ul>
     <p>
       Please enter the details below to start your application.
     </p>
@@ -34,7 +41,7 @@
           <div class="form-group">
             <label for="charity_number" class="form-label">Scottish Charity Number</label>
             <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
-            <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
+            <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits of the church/presbytery making this application, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
           </div>
           <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
             Apply now
@@ -43,7 +50,7 @@
         <div class="divider-vert hide-sm" data-content="OR"></div>
         <div class="divider text-center show-sm col-12" data-content="OR"></div>
         <div class="column col-sm-12 align-centre">
-          <a href="/funding/church-of-scotland-small-grants-2021/apply/not-a-charity" class="btn btn-block">
+          <a href="/funding/church-of-scotland-2021-small-grants-fund/apply/not-a-charity" class="btn btn-block">
             Not a registered charity
           </a>
         </div>
@@ -79,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
 
     if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
-      var url = '/funding/church-of-scotland-small-grants-2021/apply/' + charityNumber;
+      var url = '/funding/church-of-scotland-2021-small-grants-fund/apply/' + charityNumber;
       $('#charity_number_submit')
       .removeAttr('disabled', false)
       .attr('href', url);

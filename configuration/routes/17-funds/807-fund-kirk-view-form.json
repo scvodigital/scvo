@@ -1,7 +1,7 @@
 {
   "name": "fund_kirk_view_form",
   "debug": true,
-  "pattern": "/funding/church-of-scotland-small-grants-2021/apply/view/:session_key",
+  "pattern": "/funding/church-of-scotland-2021-small-grants-fund/apply/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

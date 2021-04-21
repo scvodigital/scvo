@@ -1,7 +1,7 @@
 {
   "name": "fund_kirk_apply_form",
   "debug": false,
-  "pattern": "/funding/church-of-scotland-small-grants-2021/apply/:charity_number",
+  "pattern": "/funding/church-of-scotland-2021-small-grants-fund/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
