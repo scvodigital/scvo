@@ -163,7 +163,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <select id="tfa_127" name="tfa_127" title="Local authority" class="form-select">
                 <option value="" disabled{{#unless defaults.tfa_127}} selected{{/unless}}>Please select&hellip;</option>
-                {{#each (split 'Aberdeen,Aberdeenshire,Angus,Argyll & Bute,Clackmannanshire,Dumfries & Galloway,Dundee,East Ayrshire,East Dunbartonshire,East Lothian,East Renfrewshire,Edinburgh,Falkirk,Fife,Glasgow,Highland,Inverclyde,Midlothian,Moray,Na h-Eileanan Siar,North Ayrshire,North Lanarkshire,Orkney,Perth & Kinross,Renfrewshire,Scottish Borders,Shetland,South Ayrshire,South Lanarkshire,Stirling,West Dunbartonshire,West Lothian' ',')}}
+                {{#each (split 'Aberdeen,Aberdeenshire,Angus,Argyll and Bute,Clackmannanshire,Dumfries and Galloway,Dundee,East Ayrshire,East Dunbartonshire,East Lothian,East Renfrewshire,Edinburgh,Falkirk,Fife,Glasgow,Highland,Inverclyde,Midlothian,Moray,Na h-Eileanan Siar,North Ayrshire,North Lanarkshire,Orkney,Perth and Kinross,Renfrewshire,Scottish Borders,Shetland,South Ayrshire,South Lanarkshire,Stirling,West Dunbartonshire,West Lothian' ',')}}
                 <option value="{{this}}"{{#compare this ../defaults.tfa_127}} selected{{/compare}}>{{this}}</option>
                 {{/each}}
               </select>
