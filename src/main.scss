@@ -3688,6 +3688,12 @@ footer {
   .mobile-menu .mobile-contents {
     padding: $unit $unit/2;
   }
+  .sponsors {
+    display: block !important;
+    .sponsor {
+      margin-bottom: $unit;
+    }
+  }
 }
 
 .sponsors {
