@@ -651,13 +651,13 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <label id="tfa_106-L" class="form-label preField reqMark" for="tfa_106">
                 Please provide a note of the most recent annual income figure for your organisation<br />
-                <span class="caption">(N.B. this should include both earned income &amp; grants received)</span>
+                <span class="caption">(N.B. this should be a whole number and include both earned income &amp; grants received)</span>
               </label>
             </div>
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 pr">
               <div class="input-group" style="width:100%;">
                 <span class="input-group-addon">&pound;</span>
-                <input type="number" pattern="[0-9]*" id="tfa_106" name="tfa_106" value="" aria-required="true" title="Please provide a note of the most recent annual income figure for your organisation (N.B. this should include both earned income &amp; grants received)" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
+                <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" id="tfa_106" name="tfa_106" value="" aria-required="true" title="Please provide a note of the most recent annual income figure for your organisation (N.B. this should include both earned income &amp; grants received)" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required>
               </div>
             </div>
           </div>
@@ -1355,7 +1355,7 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="46" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
     </form>
-    <button type="button" class="btn btn-primary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles "root")}}d-none{{/unless}}">Get a recovery link</button>
+    <button type="button" class="btn btn-secondary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles "root")}}d-none{{/unless}}">Get a recovery link</button>
   </div>
 </div>
 
@@ -1366,3 +1366,10 @@ wFORMS.behaviors.prefill.skip = false;
     The information you provide will be stored to allow us to process your application and manage your membership of SCVO. <a href="/privacy/membership">Read our full privacy notice</a>.
   </p>
 </div>
+
+<script type="text/javascript">
+function isNumberKey(evt){
+  var charCode = (evt.which) ? evt.which : evt.keyCode
+  return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
+</script>
