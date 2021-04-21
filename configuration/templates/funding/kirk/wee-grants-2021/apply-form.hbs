@@ -63,22 +63,6 @@ wFORMS.behaviors.prefill.skip = false;
               <textarea id="tfa_29" name="tfa_29" title="How did you hear about the 2021 Small Grants Fund?" class="form-input"></textarea>
             </div>
           </div>
-          {{!-- <div class="form-group mb-1 field-container-D    " id="tfa_1-D">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_1-L" class="form-label mr preField " for="tfa_1">Scottish Charity Number</label>
-            </div>
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="text" id="tfa_1" name="tfa_1" value="" title="Scottish Charity Number" class="form-input">
-            </div>
-          </div>
-          <div class="form-group mb-1 field-container-D    " id="tfa_2-D">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_2-L" class="form-label mr preField " for="tfa_2">Organisation name</label>
-            </div>
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="text" id="tfa_2" name="tfa_2" value="" title="Organisation name" class="form-input">
-            </div>
-          </div> --}}
           <p>
             Q2. Organisation information
           </p>
@@ -180,7 +164,7 @@ wFORMS.behaviors.prefill.skip = false;
               <select id="tfa_127" name="tfa_127" title="Local authority" class="form-select">
                 <option value="" disabled{{#unless defaults.tfa_127}} selected{{/unless}}>Please select&hellip;</option>
                 {{#each (split 'Aberdeen,Aberdeenshire,Angus,Argyll & Bute,Clackmannanshire,Dumfries & Galloway,Dundee,East Ayrshire,East Dunbartonshire,East Lothian,East Renfrewshire,Edinburgh,Falkirk,Fife,Glasgow,Highland,Inverclyde,Midlothian,Moray,Na h-Eileanan Siar,North Ayrshire,North Lanarkshire,Orkney,Perth & Kinross,Renfrewshire,Scottish Borders,Shetland,South Ayrshire,South Lanarkshire,Stirling,West Dunbartonshire,West Lothian' ',')}}
-                  <option value="{{this}}"{{#compare this ../defaults.tfa_127}} selected{{/compare}}>{{this}}</option>
+                <option value="{{this}}"{{#compare this ../defaults.tfa_127}} selected{{/compare}}>{{this}}</option>
                 {{/each}}
               </select>
             </div>
@@ -206,7 +190,8 @@ wFORMS.behaviors.prefill.skip = false;
           <div class="form-group field-container-D    " id="tfa_3-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
               <label id="tfa_3-L" class="form-label mr preField reqMark" for="tfa_3">
-                Name on account</label>
+                Name on account
+              </label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <input type="text" id="tfa_3" name="tfa_3" value="" title="Bank account name" class="form-input required" required>
@@ -479,7 +464,7 @@ wFORMS.behaviors.prefill.skip = false;
             </p>
           </div>
           <div class="oneField field-container-D    " id="tfa_136-D" role="group" aria-labelledby="tfa_136-L" data-tfa-labelledby="-L tfa_136-L">
-            <label id="tfa_136-L" class="form-labellabel preField ">Projects will bring about change in at least one of the following areas:</label>
+            <label id="tfa_136-L" class="form-labellabel preField reqMark">Projects will bring about change in at least one of the following areas:</label>
             <div class="inputWrapper">
               <span id="tfa_136" class="choices vertical ">
                 <span class="oneChoice">
@@ -491,8 +476,8 @@ wFORMS.behaviors.prefill.skip = false;
                 </span>
                 <div class="form-group oneField field-container-D    " id="tfa_141-D" data-condition="`#tfa_137`">
                   <div class="col-9 col-xl-12">
-                    <label id="tfa_141-L" class="form-label preField " for="tfa_141">Describe how your project fits this criterion</label>
-                    <textarea id="tfa_141" name="tfa_141" title="Developing mission - describe" class="form-input"></textarea>
+                    <label id="tfa_141-L" class="form-label preField reqMark" for="tfa_141">Describe how your project fits this criterion</label>
+                    <textarea id="tfa_141" name="tfa_141" title="Developing mission - describe" class="form-input required" required></textarea>
                   </div>
                 </div>
                 <span class="oneChoice">
@@ -505,7 +490,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group oneField field-container-D    " id="tfa_142-D" data-condition="`#tfa_138`">
                   <div class="col-9 col-xl-12">
                     <label id="tfa_142-L" class="form-label preField " for="tfa_142">Describe how your project fits this criterion</label>
-                    <textarea id="tfa_142" name="tfa_142" title="Engaging and attracting - describe" class="form-input"></textarea>
+                    <textarea id="tfa_142" name="tfa_142" title="Engaging and attracting - describe" class="form-input required" required></textarea>
                   </div>
                 </div>
                 <span class="oneChoice">
@@ -518,21 +503,197 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group oneField field-container-D    " id="tfa_143-D" data-condition="`#tfa_139`">
                   <div class="col-9 col-xl-12">
                     <label id="tfa_143-L" class="form-label preField " for="tfa_143">Describe how your project fits this criterion</label>
-                    <textarea id="tfa_143" name="tfa_143" title="Addressing pressing issues - describe" class="form-input"></textarea>
+                    <textarea id="tfa_143" name="tfa_143" title="Addressing pressing issues - describe" class="form-input required" required></textarea>
                   </div>
                 </div>
               </span>
             </div>
           </div>
-
-
-          <p>
-            Q13
-          </p>
-
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-6">
+        <div class="section pageSection" id="tfa_144">
+          <h4 id="tfa_144-T">Budget and funding</h4>
+          <div class="htmlSection" id="tfa_145">
+            <p class="htmlContent" id="tfa_145-HTML">
+              Q13. Please provide a breakdown of project costs and where the money will come from by completing the following sections. (Maximum of £1000 from the 2021 Small Grants Fund per applicant)
+            </p>
+          </div>
+          <div class="htmlSection" id="tfa_146">
+            <p class="htmlContent" id="tfa_146-HTML">
+              Please enter a detailed budget of the elements/items required for the project:
+            </p>
+          </div>
+          <table class="gridLayout" style="width:100%;">
+            <thead>
+              <tr class="headerRow">
+                <th scope="col" style="width:50%;">
+                  Budget description
+                </th>
+                <th scope="col" style="width:50%;">
+                  Amount
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="section">
+                <td>
+                  <div class="form-group oneField field-container-D    " id="tfa_147-D">
+                    <input type="text" id="tfa_147" name="tfa_147" value="" title="Budget 1 description" class="form-input required" required>
+                  </div>
+                </td>
+                <td>
+                  <div class="oneField field-container-D" id="tfa_148-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_148" name="tfa_148" value="" title="Budget 1 amount" class="form-input calc-BudgetA text-right required" required>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="section">
+                <td>
+                  <div class="form-group oneField field-container-D    " id="tfa_149-D">
+                    <input type="text" id="tfa_149" name="tfa_149" value="" title="Budget 2 description" class="form-input">
+                  </div>
+                </td>
+                <td>
+                  <div class="oneField field-container-D    " id="tfa_150-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_150" name="tfa_150" value="" title="Budget 2 amount" class="form-input calc-BudgetB text-right">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="section">
+                <td>
+                  <div class="form-group oneField field-container-D    " id="tfa_151-D">
+                    <input type="text" id="tfa_151" name="tfa_151" value="" title="Budget 3 description" class="form-input">
+                  </div>
+                </td>
+                <td>
+                  <div class=" oneField field-container-D    " id="tfa_152-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_152" name="tfa_152" value="" title="Budget 3 amount" class="form-input calc-BudgetC text-right">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="section">
+                <td>
+                  <div class="form-group oneField field-container-D    " id="tfa_153-D">
+                    <input type="text" id="tfa_153" name="tfa_153" value="" title="Budget 4 description" class="form-input">
+                  </div>
+                </td>
+                <td>
+                  <div class="oneField field-container-D    " id="tfa_154-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_154" name="tfa_154" value="" title="Budget 4 amount" class="form-input calc-BudgetD text-right">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="section">
+                <td>
+                  <div class="form-group oneField field-container-D    " id="tfa_155-D">
+                    <input type="text" id="tfa_155" name="tfa_155" value="" title="Budget 5 description" class="form-input">
+                  </div>
+                </td>
+                <td>
+                  <div class="oneField field-container-D    " id="tfa_156-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_156" name="tfa_156" value="" title="Budget 5 amount" class="form-input calc-BudgetE text-right">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr id="tfa_2176" class="section">
+                <th scope="row" id="tfa_2176-L" class="headerCol text-left">
+                  <strong>Budget total</strong>
+                </th>
+                <td>
+                  <div class="oneField field-container-D" id="tfa_2178-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" id="tfa_2178" name="tfa_2178" value="{{defaults.tfa_2178}}" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetA+BudgetB+BudgetC+BudgetD+BudgetE readonly form-input text-right">
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="htmlSection" id="tfa_158">
+            <p class="htmlContent" id="tfa_158-HTML">
+              Please enter the sources of funding to cover the above:
+            </p>
+          </div>
+          <table class="gridLayout" style="width:100%;">
+            <thead>
+              <tr class="headerRow">
+                <th scope="col" style="width:50%;">
+                  Funder
+                </th>
+                <th scope="col" style="width:50%;">
+                  Amount requested
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="section">
+                <td>
+                  <div class="oneField field-container-D" id="fund-D">
+                    2021 Small Grants Fund (£1000 max)
+                  </div>
+                </td>
+                <td>
+                  <div class="oneField field-container-D" id="tfa_159-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="1000" id="tfa_159" name="tfa_159" value="{{defaults.tfa_159}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="section">
+                <td>
+                  <div class="oneField field-container-D" id="tfa_160-D">
+                    <input type="text" id="tfa_160" name="tfa_160" maxlength="150" value="{{defaults.tfa_160}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                  </div>
+                </td>
+                <td>
+                  <div class="oneField field-container-D" id="tfa_161-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_161" name="tfa_161" value="{{defaults.tfa_161}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              <tr class="section">
+                <td>
+                  <div class="oneField field-container-D" id="tfa_162-D">
+                    <input type="text" id="tfa_162" name="tfa_162" maxlength="150" value="{{defaults.tfa_162}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                  </div>
+                </td>
+                <td>
+                  <div class="oneField field-container-D" id="tfa_163-D">
+                    <div class="input-group" style="width:100%;">
+                      <span class="input-group-addon">&pound;</span>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_163" name="tfa_163" value="{{defaults.tfa_163}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="wfPage" id="wfPgIndex-7">
         <div class="section pageSection" id="tfa_37">
           <h2 id="tfa_37-T">Monitoring and evaluation</h2>
           <div id="tfa_38" class="section inline group">
@@ -558,7 +719,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-7">
+      <div class="wfPage" id="wfPgIndex-8">
         <div class="section pageSection" id="tfa_39">
           <h2 id="tfa_39-T">Keeping everyone safe</h2>
           <div class="form-group mb-1 field-container-D    " id="tfa_27-D">
@@ -585,7 +746,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label class="form-checkbox" id="confirmation-L" for="confirmation">
                 <input type="checkbox" value="confirmation" id="confirmation" name="confirmation" aria-labelledby="confirmation-L" data-tfa-labelledby="confirmation-L" required>
                 <i class="form-icon"></i>
-                I declare on behalf of [ORG NAME] that the information I have provided is true and accurate to the best of my knowledge
+                I declare on behalf of <span id="org_name">my organisation</span> that the information I have provided is true and accurate to the best of my knowledge
               </label>
             </div>
           </div>
@@ -609,6 +770,11 @@ wFORMS.behaviors.prefill.skip = false;
 <script src="{{~>asset_url url='js/cleave.min.js'~}}"></script>
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
+  $('#org_name').val($('#tfa_2').val());
+  $("#tfa_2").change(function(){
+    $('#org_name').val($('#tfa_2').val());
+  });
+
   {{#unless defaults.application_editing}}
   var cleave_account_number = new Cleave('#tfa_4', {
     blocks: [8],
@@ -622,5 +788,9 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   {{/unless}}
 });
+function isNumberKey(evt){
+  var charCode = (evt.which) ? evt.which : evt.keyCode
+  return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
 </script>
 {{/withExtend}}
