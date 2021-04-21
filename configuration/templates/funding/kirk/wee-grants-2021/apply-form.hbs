@@ -151,19 +151,58 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
           </div>
 
-          <div class="form-group mb-1">
+          <div class="col-9 col-xl-12">
             <p>
-              Q3. [missing]
+              Q3. Organisation address <strong>Please enter the organisation's main address in Scotland</strong> {{#if defaults.is_charity}}(this may be pre-populated as you completed your Scottish Charity Registration number – but can be over-written if required){{/if}}
             </p>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_125-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_125-L" class="form-label preField " for="tfa_125">Street</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_125" name="tfa_125" value="{{defaults.tfa_125}}" title="Street" class="form-input">
+            </div>
+          </div>
+          <div class="form-group oneField field-container-D    " id="tfa_126-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_126-L" class="form-label preField " for="tfa_126">Town/city</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_126" name="tfa_126" value="{{defaults.tfa_126}}" title="Town/city" class="form-input">
+            </div>
+          </div>
+          <div class="form-group oneField field-container-D    " id="tfa_127-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_127-L" class="form-label preField " for="tfa_127">Local authority</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <select id="tfa_127" name="tfa_127" title="Local authority" class="form-select">
+                <option value="" disabled{{#unless defaults.tfa_127}} selected{{/unless}}>Please select&hellip;</option>
+                {{#each (split 'Aberdeen,Aberdeenshire,Angus,Argyll & Bute,Clackmannanshire,Dumfries & Galloway,Dundee,East Ayrshire,East Dunbartonshire,East Lothian,East Renfrewshire,Edinburgh,Falkirk,Fife,Glasgow,Highland,Inverclyde,Midlothian,Moray,Na h-Eileanan Siar,North Ayrshire,North Lanarkshire,Orkney,Perth & Kinross,Renfrewshire,Scottish Borders,Shetland,South Ayrshire,South Lanarkshire,Stirling,West Dunbartonshire,West Lothian' ',')}}
+                  <option value="{{this}}"{{#compare this ../defaults.tfa_127}} selected{{/compare}}>{{this}}</option>
+                {{/each}}
+              </select>
+            </div>
+          </div>
+          <div class="form-group oneField field-container-D    " id="tfa_128-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_128-L" class="form-label preField " for="tfa_128">Postcode</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_128" name="tfa_128" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" value="{{defaults.tfa_128}}" class="form-input">
+            </div>
           </div>
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-2">
         <div class="section pageSection" id="tfa_34">
           <h2 id="tfa_34-T">Organisation bank account</h2>
-          <p>
-            Q4. Organisation bank account details. If successful, this is the account into which the grant will be paid.
-          </p>
+          <div class="col-9 col-xl-12">
+            <p>
+              Q4. Organisation bank account details. If successful, this is the account into which the grant will be paid.
+            </p>
+          </div>
           <div class="form-group field-container-D    " id="tfa_3-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
               <label id="tfa_3-L" class="form-label mr preField reqMark" for="tfa_3">
@@ -290,7 +329,15 @@ wFORMS.behaviors.prefill.skip = false;
       </div>
       <div class="wfPage" id="wfPgIndex-4">
         <div class="section pageSection" id="tfa_36">
-          <h2 id="tfa_36-T">About you</h2>
+          <h2 id="tfa_36-T">Contact details</h2>
+          <div class="col-9 col-xl-12">
+            <p>
+              Q7. Give us the names of two people (not related to each other) connected to the project in your organisation who we can contact Please note all correspondence will be sent to the first named contact:
+            </p>
+            <p>
+              Primary contact (you):
+            </p>
+          </div>
           <div class="form-group field-container-D    " id="tfa_14-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
               <label id="tfa_14-L" class="form-label mr preField reqMark" for="tfa_14">First name</label>
@@ -309,7 +356,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group field-container-D    " id="tfa_16-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_16-L" class="form-label mr preField " for="tfa_16">Role in church/project</label>
+              <label id="tfa_16-L" class="form-label mr preField " for="tfa_16">Position or role in the church/project</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <input type="text" id="tfa_16" name="tfa_16" value="" title="Role in church/project" class="form-input">
@@ -317,7 +364,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group field-container-D    " id="tfa_17-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_17-L" class="form-label mr preField reqMark" for="tfa_17">Phone number</label>
+              <label id="tfa_17-L" class="form-label mr preField reqMark" for="tfa_17">Primary phone number</label>
               <p class="form-input-hint text-secondary">
                 Please give us the best number to reach you on, this number will be used to call you as part of the assessment process.
               </p>
@@ -328,7 +375,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group field-container-D    " id="tfa_18-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_18-L" class="form-label mr preField" for="tfa_18">Mobile number</label>
+              <label id="tfa_18-L" class="form-label mr preField" for="tfa_18">Alternative phone number</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <input type="text" id="tfa_18" name="tfa_18" value="" title="Mobile number" class="form-input">
@@ -342,6 +389,52 @@ wFORMS.behaviors.prefill.skip = false;
               <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_19" name="tfa_19" value="{{defaults.tfa_19}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input validate-email" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input validate-email required" required{{/if}}>
             </div>
           </div>
+
+          <div class="col-9 col-xl-12">
+            <p>
+              Contact 2:
+            </p>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_131-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_131-L" class="form-label mr preField reqMark" for="tfa_131">First name</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_131" name="tfa_131" value="" title="First name" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_132-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_132-L" class="form-label mr preField reqMark" for="tfa_132">Last name</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_132" name="tfa_132" value="" title="Last name" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_133-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_133-L" class="form-label mr preField " for="tfa_133">Position or role in the church/project</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_133" name="tfa_133" value="" title="Role in church/project" class="form-input">
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_134-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_134-L" class="form-label mr preField reqMark" for="tfa_134">Contact phone number</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="text" id="tfa_134" name="tfa_134" value="" title="Phone number" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group field-container-D    " id="tfa_135-D">
+            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_135-L" class="form-label mr preField reqMark" for="tfa_135">Email address</label>
+            </div>
+            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+              <input type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" id="tfa_135" name="tfa_135" value="{{defaults.tfa_135}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input validate-email" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input validate-email required" required{{/if}}>
+            </div>
+          </div>
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-5">
@@ -349,7 +442,7 @@ wFORMS.behaviors.prefill.skip = false;
           <h2 id="tfa_33-T">Project details</h2>
           <div class="form-group mb-1 field-container-D    " id="tfa_20-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_20-L" class="form-label mr preField reqMark" for="tfa_20">For how many months do you intend this project to run?</label>
+              <label id="tfa_20-L" class="form-label mr preField reqMark" for="tfa_20">Q8. For how many months do you intend this project to run?</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <input type="text" id="tfa_20" name="tfa_20" value="" title="For how many months do you intend this project to run?" class="form-input required" required>
@@ -357,7 +450,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group mb-1 field-container-D    " id="tfa_21-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_21-L" class="form-label mr preField reqMark" for="tfa_21">Who will benefit from this project and what are the reasons you want to work with them?</label>
+              <label id="tfa_21-L" class="form-label mr preField reqMark" for="tfa_21">Q9. Please describe who will benefit from this project and what are the reasons you want to work with them.</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <textarea id="tfa_21" name="tfa_21" title="Who will benefit from this project and what are the reasons you want to work with them?" class="form-input required" required></textarea>
@@ -365,7 +458,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group mb-1 field-container-D    " id="tfa_22-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_22-L" class="form-label mr preField reqMark" for="tfa_22">What difference do you hope to make for them?</label>
+              <label id="tfa_22-L" class="form-label mr preField reqMark" for="tfa_22">Q10. What difference do you hope to make for them through this project?</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <textarea id="tfa_22" name="tfa_22" title="What difference do you hope to make for them?" class="form-input required" required></textarea>
@@ -373,25 +466,70 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group mb-1 field-container-D    " id="tfa_23-D">
             <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_23-L" class="form-label mr preField reqMark" for="tfa_23">What do you intend to do?</label>
+              <label id="tfa_23-L" class="form-label mr preField reqMark" for="tfa_23">Q11. What do you intend to do?</label>
             </div>
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <textarea id="tfa_23" name="tfa_23" title="What do you intend to do?" class="form-input required" required></textarea>
             </div>
           </div>
 
+          <div class="col-9 col-xl-12">
+            <p>
+              Q12. Select which of the 2021 Small Grants Fund criteria the project fits with and describe how it fits.
+            </p>
+          </div>
+          <div class="oneField field-container-D    " id="tfa_136-D" role="group" aria-labelledby="tfa_136-L" data-tfa-labelledby="-L tfa_136-L">
+            <label id="tfa_136-L" class="form-labellabel preField ">Projects will bring about change in at least one of the following areas:</label>
+            <div class="inputWrapper">
+              <span id="tfa_136" class="choices vertical ">
+                <span class="oneChoice">
+                  <label class="form-checkbox postField" id="tfa_137-L" for="tfa_137">
+                    <input type="checkbox" value="tfa_137" class="" id="tfa_137" name="tfa_137" data-conditionals="#tfa_141-D" aria-labelledby="tfa_137-L" data-tfa-labelledby="tfa_136-L tfa_137-L">
+                    <span class="form-icon"></span>
+                    Developing mission through new worshipping communities (including online worship)
+                  </label>
+                </span>
+                <div class="form-group oneField field-container-D    " id="tfa_141-D" data-condition="`#tfa_137`">
+                  <div class="col-9 col-xl-12">
+                    <label id="tfa_141-L" class="form-label preField " for="tfa_141">Describe how your project fits this criterion</label>
+                    <textarea id="tfa_141" name="tfa_141" title="Developing mission - describe" class="form-input"></textarea>
+                  </div>
+                </div>
+                <span class="oneChoice">
+                  <label class="form-checkbox postField" id="tfa_138-L" for="tfa_138">
+                    <input type="checkbox" value="tfa_138" class="" id="tfa_138" name="tfa_138" data-conditionals="#tfa_142-D" aria-labelledby="tfa_138-L" data-tfa-labelledby="tfa_136-L tfa_138-L">
+                    <span class="form-icon"></span>
+                    Engaging and attracting those aged 40 and under including children, young people and families
+                  </label>
+                </span>
+                <div class="form-group oneField field-container-D    " id="tfa_142-D" data-condition="`#tfa_138`">
+                  <div class="col-9 col-xl-12">
+                    <label id="tfa_142-L" class="form-label preField " for="tfa_142">Describe how your project fits this criterion</label>
+                    <textarea id="tfa_142" name="tfa_142" title="Engaging and attracting - describe" class="form-input"></textarea>
+                  </div>
+                </div>
+                <span class="oneChoice">
+                  <label class="form-checkbox postField" id="tfa_139-L" for="tfa_139">
+                    <input type="checkbox" value="tfa_139" class="" id="tfa_139" name="tfa_139" data-conditionals="#tfa_143-D" aria-labelledby="tfa_139-L" data-tfa-labelledby="tfa_136-L tfa_139-L">
+                    <span class="form-icon"></span>
+                    Addressing pressing issues in the church that have been brought about by the pandemic.
+                  </label>
+                </span>
+                <div class="form-group oneField field-container-D    " id="tfa_143-D" data-condition="`#tfa_139`">
+                  <div class="col-9 col-xl-12">
+                    <label id="tfa_143-L" class="form-label preField " for="tfa_143">Describe how your project fits this criterion</label>
+                    <textarea id="tfa_143" name="tfa_143" title="Addressing pressing issues - describe" class="form-input"></textarea>
+                  </div>
+                </div>
+              </span>
+            </div>
+          </div>
+
+
           <p>
             Q13
           </p>
 
-          <div class="form-group mb-1 field-container-D    " id="tfa_24-D">
-            <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
-              <label id="tfa_24-L" class="form-label mr preField reqMark" for="tfa_24">How does this fit with the 2021 Small Grants Fund criteria?</label>
-            </div>
-            <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-              <textarea id="tfa_24" name="tfa_24" title="How does this fit with the 2021 Small Grants Fund criteria?" class="form-input required" required></textarea>
-            </div>
-          </div>
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-6">
