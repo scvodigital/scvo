@@ -550,8 +550,14 @@ body.the-gathering-2021 {
     border-color: $kirk-color-light !important;
     background-color: $kirk-color-light !important;
   }
+  .btn.btn-primary:disabled {
+    filter: grayscale(1);
+  }
   footer .copyright p {
     color: white;
+  }
+  .divider-vert::before {
+    border-color: $kirk-color-light
   }
 }
 
