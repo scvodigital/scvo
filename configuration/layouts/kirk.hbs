@@ -12,6 +12,13 @@
   {{> layout_head}}
 </head>
 <body class="{{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
+  {{#if @root.request.headers.scvo-proxy}}
+    <!-- INJECT LINK BAR -->
+  {{else}}
+    <div class="link-bar hide-lg">
+      {{> components_scvo_bar}}
+    </div>
+  {{/if}}
   {{> layout_header_upper}}
   <div class="page">
     <div class="bg-white">
