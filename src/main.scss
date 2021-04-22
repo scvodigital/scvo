@@ -547,6 +547,7 @@ body.the-gathering-2021 {
       }
     }
   }
+  .sidebar .menu .menu-level-1,
   .breadcrumb .breadcrumb-item:nth-child(1),
   .breadcrumb .breadcrumb-item:nth-child(2),
   .breadcrumb .breadcrumb-item:nth-child(3)::before {
@@ -555,6 +556,10 @@ body.the-gathering-2021 {
   body, div, li, td, th, p, h1, h2, h3, h4 {
     color: $kirk-color;
   }
+  .menu .menu-item>a:active,
+  .menu .menu-item>a.active,
+  .menu .menu-item a:hover,
+  .sidebar .menu .menu-item>a:focus,
   .breadcrumb .breadcrumb-item:not(:first-child)::before,
   .breadcrumb .breadcrumb-item a {
     color: $kirk-color-light !important;

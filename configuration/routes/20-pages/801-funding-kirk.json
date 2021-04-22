@@ -1,7 +1,11 @@
 {
   "name": "page_funding_kirk",
   "debug": false,
-  "pattern": "/funding/church-of-scotland-2021-small-grants-fund",
+  "pattern": {
+    "landing": "/funding/church-of-scotland-2021-small-grants-fund",
+    "section": "/funding/church-of-scotland-2021-small-grants-fund/*path",
+    "subsection": "/funding/church-of-scotland-2021-small-grants-fund/*path/*path2"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -15,8 +19,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-page",
-          "template": ">context.metaData.handlebars.queries.pages_page",
-          "noResultsRoute": "four_oh_four"
+          "template": ">context.metaData.handlebars.queries.pages_page"
         }
       },
       "renderer": "handlebars"
@@ -36,10 +39,10 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.kirk",
             "parts": {
-              "style": "fullWidth",
-              "head": ">context.metaData.handlebars.templates.head-tags",
+              "head": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",
-              "body": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_page-body"
+              "body": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_page-body",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar"
             },
             "contentType": "text/html"
           }
