@@ -68,7 +68,7 @@ wFORMS.behaviors.prefill.skip = false;
         "slug": "community_recovery_call_2",
         "name": "The Community & Third Sector Recovery Programme call 2 application form",
         "idsSelector": "#tfa_1876",
-        "ignoreFields": ["#tfa_2274", "#tfa_2273"]
+        "ignoreFields": ["tfa_2274", "tfa_2273"]
       }'{{/unless}}>
         <input type="hidden" id="tfa_2393" name="tfa_2393" value="{{#unless defaults.application_readonly}}{{@root.request.params.session_key}}{{/unless}}">
         {{#unless defaults.application_confirm}}
