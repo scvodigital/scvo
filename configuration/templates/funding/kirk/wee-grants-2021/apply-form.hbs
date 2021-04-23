@@ -770,7 +770,7 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="10" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
     </form>
-    <button type="button" class="btn btn-secondary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles 'root')}}d-none{{/unless}}">Get a recovery link</button>
+    <button type="button" class="btn btn-tertiary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles 'root')}}d-none{{/unless}}">Get a recovery link</button>
   </div>
 </div>
 
