@@ -211,7 +211,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_4-D">
-                <input type="text" id="tfa_4" name="tfa_4" maxlength="8" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" title="Please enter an 8 digit account number" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="text" id="tfa_4" name="tfa_4" minlength="8" maxlength="8" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" title="Please enter an 8 digit account number" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
               </div>
             </div>
           </div>
@@ -323,7 +323,7 @@ wFORMS.behaviors.prefill.skip = false;
           <h2 id="tfa_36-T">Contact details</h2>
           <div class="col-12">
             <p>
-              Q7. Give us the names of two people (not related to each other) connected to the project in your organisation who we can contact Please note all correspondence will be sent to the first named contact:
+              Q7. Give us the names of two people (not related to each other) connected to the project in your organisation who we can contact. Please note all correspondence will be sent to the first named contact:
             </p>
             <p>
               Primary contact (you):
@@ -660,7 +660,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_159-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="1000" id="tfa_159" name="tfa_159" value="{{defaults.tfa_159}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="number" pattern="^([1-9][0-9]{0,2}|1000)$" onkeypress="return isNumberKey(event);" min="1" max="1000" id="tfa_159" name="tfa_159" title="Please enter a value between 1 and 1000" value="{{defaults.tfa_159}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </td>
