@@ -625,7 +625,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_157-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" id="tfa_157" maxlength="10" name="tfa_157" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetA+BudgetB+BudgetC+BudgetD+BudgetE readonly form-input text-right">
+                      <input type="number" id="tfa_157" name="tfa_157" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetA+BudgetB+BudgetC+BudgetD+BudgetE readonly form-input text-right">
                     </div>
                   </div>
                 </td>
@@ -794,6 +794,12 @@ document.addEventListener("DOMContentLoaded", function() {
   $("#tfa_2").change(function(){
     $('#org_name').text($('#tfa_2').val());
   });
+
+  var checkBoxes = $(".form-checkbox input");
+  checkBoxes.prop("checked", checkBoxes.prop("checked"));
+  $('#tfa_148').blur();
+  $('#tfa_159').blur();
+  $('#tfa_29').focus();
 
   {{#unless defaults.application_editing}}
   var cleave_account_number = new Cleave('#tfa_4', {
