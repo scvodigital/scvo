@@ -130,7 +130,7 @@ wFORMS.behaviors.prefill.skip = false;
               </label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="form-group field-container-D" id="tfa_2-D">
+              <div class="field-container-D" id="tfa_2-D">
                 {{#ifAny defaults.application_editing defaults.tfa_2}}
                 <input type="text" id="organisation_name" maxlength="255" name="organisation_name" value="{{defaults.tfa_2}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
                 <input type="hidden" id="tfa_2" name="tfa_2" class="form-input" value="{{defaults.tfa_2}}">
