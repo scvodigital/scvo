@@ -733,7 +733,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_159-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="^([1-9][0-9]{0,2}|1000)$" onblur="checkFundingAmount()" onkeypress="return isNumberKey(event);" min="1" max="1000" id="tfa_159" name="tfa_159" title="Please enter a value between 1 and 1000" value="{{defaults.tfa_159}}" autocomplete="nope" data-lpignore="true" class="form-input text-right validate-integer calc-RequestedA required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="number" pattern="^([1-9][0-9]{0,2}|1000)$" onkeypress="return isNumberKey(event);" min="1" max="1000" id="tfa_159" name="tfa_159" title="Please enter a value between 1 and 1000" value="{{defaults.tfa_159}}" autocomplete="nope" data-lpignore="true" class="form-input text-right validate-integer calc-RequestedA required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </td>
@@ -853,7 +853,7 @@ wFORMS.behaviors.prefill.skip = false;
         </div>
       </div>
       <div class="actions" id="4899045-A">
-        <input type="submit" data-label="Submit" class="primaryAction btn btn-lg btn-primary" id="submit_button" value="Submit">
+        <input type="submit" data-label="Submit" class="primaryAction btn btn-lg mb-1 btn-primary" id="submit_button" value="Submit">
       </div>
       <div style="clear:both">
       </div>
@@ -904,11 +904,11 @@ function isNumberKey(evt){
   var charCode = (evt.which) ? evt.which : evt.keyCode
   return !(charCode > 31 && (charCode < 48 || charCode > 57));
 }
-function checkFundingAmount() {
-  var amount_requested = $('#tfa_159').val();
-  if (amount_requested > 1000) {
-    alert("The amount you are applying for is too high - the maximum funding award is £1,000")
-  }
-}
+// function checkFundingAmount() {
+//   var amount_requested = $('#tfa_159').val();
+//   if (amount_requested > 1000) {
+//     alert("The amount you are applying for is too high - the maximum funding award is £1,000")
+//   }
+// }
 </script>
 {{/withExtend}}
