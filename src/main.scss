@@ -1277,9 +1277,10 @@ fieldset {
     font-size: .8rem;
   }
 }
-.errMsg {
+.errMsg,
+.errMsg span {
   line-height: 1.8rem;
-  margin-left: .5rem;
+  // margin-left: .5rem;
   font-size: .7rem;
   color: $error-color;
   outline: none;
