@@ -236,7 +236,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_5-D">
-                <input type="text" id="tfa_5" name="tfa_5" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" title="Please enter a 6-digit sort code xx-xx-xx" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="text" id="tfa_5" name="tfa_5" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" title="Please enter a 6-digit sort code xx-xx-xx" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input validate-integer" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input validate-integer required" required{{/if}}>
               </div>
             </div>
           </div>
