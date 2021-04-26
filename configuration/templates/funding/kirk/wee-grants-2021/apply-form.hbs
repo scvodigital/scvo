@@ -224,7 +224,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_4-D">
-                <input type="text" id="tfa_4" name="tfa_4" minlength="8" maxlength="8" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••••••••{{/if}}" title="Please enter an 8 digit account number" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="text" id="tfa_4" name="tfa_4" minlength="8" maxlength="8" pattern=".{8}" value="{{#if defaults.application_editing}}••••••••{{/if}}" title="Please enter an 8 digit account number" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input validate-integer" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input validate-integer required" required{{/if}}>
               </div>
             </div>
           </div>
@@ -236,7 +236,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_5-D">
-                <input type="text" id="tfa_5" name="tfa_5" maxlength="8" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" title="Please enter a 6-digit sort code xx-xx-xx" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
+                <input type="text" id="tfa_5" name="tfa_5" pattern=".{8}" minlength="8" maxlength="8" value="{{#if defaults.application_editing}}••-••-••{{/if}}" title="Please enter a 6-digit sort code xx-xx-xx" autocomplete="nope" data-lpignore="true" aria-required="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required" required{{/if}}>
               </div>
             </div>
           </div>
@@ -573,7 +573,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_148-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_148" name="tfa_148" value="" title="Budget 1 amount" class="form-input calc-BudgetA text-right required" required>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_148" name="tfa_148" value="" title="Budget 1 amount" class="form-input calc-BudgetA text-right validate-integer required" required>
                     </div>
                   </div>
                 </td>
@@ -588,7 +588,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_150-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_150" name="tfa_150" value="" title="Budget 2 amount" class="form-input calc-BudgetB text-right">
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_150" name="tfa_150" value="" title="Budget 2 amount" class="form-input calc-BudgetB validate-integer text-right">
                     </div>
                   </div>
                 </td>
@@ -603,7 +603,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class=" oneField field-container-D" id="tfa_152-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_152" name="tfa_152" value="" title="Budget 3 amount" class="form-input calc-BudgetC text-right">
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_152" name="tfa_152" value="" title="Budget 3 amount" class="form-input calc-BudgetC validate-integer text-right">
                     </div>
                   </div>
                 </td>
@@ -618,7 +618,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_154-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_154" name="tfa_154" value="" title="Budget 4 amount" class="form-input calc-BudgetD text-right">
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_154" name="tfa_154" value="" title="Budget 4 amount" class="form-input calc-BudgetD validate-integer text-right">
                     </div>
                   </div>
                 </td>
@@ -633,7 +633,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_156-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_156" name="tfa_156" value="" title="Budget 5 amount" class="form-input calc-BudgetE text-right">
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_156" name="tfa_156" value="" title="Budget 5 amount" class="form-input calc-BudgetE validate-integer text-right">
                     </div>
                   </div>
                 </td>
@@ -696,7 +696,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_161-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_161" name="tfa_161" value="{{defaults.tfa_161}}" autocomplete="nope" data-lpignore="true" class="form-input text-right calc-RequestedB" {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_161" name="tfa_161" value="{{defaults.tfa_161}}" autocomplete="nope" data-lpignore="true" class="form-input validate-integer text-right calc-RequestedB" {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </td>
@@ -711,7 +711,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <div class="oneField field-container-D" id="tfa_163-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_163" name="tfa_163" value="{{defaults.tfa_163}}" autocomplete="nope" data-lpignore="true" class="form-input text-right calc-RequestedC" {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_163" name="tfa_163" value="{{defaults.tfa_163}}" autocomplete="nope" data-lpignore="true" class="form-input validate-integer text-right calc-RequestedC" {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </td>
