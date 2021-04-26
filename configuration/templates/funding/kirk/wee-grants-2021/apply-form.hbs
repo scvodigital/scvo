@@ -39,13 +39,18 @@ document.addEventListener("DOMContentLoaded", function(){
 </script>
 
 <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
-<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b">
-</script>
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b"></script>
 <script type="text/javascript">
 wFORMS.behaviors.prefill.skip = false;
 </script>
 <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=2d75efa6edab3f755bc0cfb7e121993f94b7f16b">
 </script>
+
+{{#unless defaults.application_editing}}
+<div class="container t-margin-full t-padding">
+  <span class="text-error">*</span> indicates a required field
+</div>
+{{/unless}}
 
 <!-- FORM: BODY SECTION -->
 <div class="container mb-2">
@@ -180,7 +185,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_128-L" class="form-label preField " for="tfa_128">Postcode</label>
             </div>
             <div class="col-3 col-lg-5 col-md-6 col-sm-12 field-container-D">
-              <input type="text" id="tfa_128" name="tfa_128" maxlength="12" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" value="{{defaults.tfa_128}}" class="form-input validate-custom ^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$">
+              <input type="text" id="tfa_128" name="tfa_128" maxlength="12" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" value="{{defaults.tfa_128}}" class="form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g">
               <script type="text/javascript">
                 if(typeof wFORMS != 'undefined') {
                     if(wFORMS.behaviors.validation) {
@@ -256,7 +261,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_7-L" class="form-label mr preField reqMark" for="tfa_7">Bank postcode</label>
             </div>
             <div class="col-3 col-lg-5 col-md-6 col-sm-12 field-container-D">
-              <input type="text" id="tfa_7" name="tfa_7" maxlength="12" value="{{defaults.tfa_7}}" autocomplete="nope" data-lpignore="true" aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required validate-custom ^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" required{{/if}}>
+              <input type="text" id="tfa_7" name="tfa_7" maxlength="12" value="{{defaults.tfa_7}}" autocomplete="nope" data-lpignore="true" aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g" required{{/if}}>
               <script type="text/javascript">
                 if(typeof wFORMS != 'undefined') {
                     if(wFORMS.behaviors.validation) {
