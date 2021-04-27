@@ -1,7 +1,10 @@
 {
-  "name": "policy_coronavirus_landing",
+  "name": "page_policy-coronavirus",
   "debug": false,
   "pattern": "/policy/coronavirus",
+  "metaData": {
+    "title": "Coronavirus"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -21,6 +24,7 @@
       },
       "renderer": "handlebars"
     },
+    "context.metaData.commonTasks.postsBlog",
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
@@ -31,22 +35,28 @@
         },
         "queryTemplates": [
           {
-            "name": "coronavirus_posts",
+            "name": "latest_briefings",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-coronavirus"
+            "template": ">context.metaData.handlebars.queries.posts_policy-briefings"
           },
           {
-            "name": "evidence_library",
+            "name": "latest_consultation_responses",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-document-evidence",
-            "template": ">context.metaData.handlebars.queries.evidence-library_document-search-coronavirus"
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-consultation-responses"
           },
           {
-            "name": "types",
+            "name": "latest_research",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-document-evidence",
-            "template": ">context.metaData.handlebars.queries.evidence-library_document-aggs"
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-research"
+          },
+          {
+            "name": "events_total",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-event",
+            "template": ">context.metaData.handlebars.queries.events_policy-total"
           }
         ]
       },
@@ -67,9 +77,11 @@
           "default": {
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
+              "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.policy_coronavirus_landing-header",
-              "footer": ">context.metaData.handlebars.templates.policy_coronavirus_landing-footer"
+              "header": ">context.metaData.handlebars.templates.policy_topic-header",
+              "body": ">context.metaData.handlebars.templates.policy_topic-body",
+              "footer": ">context.metaData.handlebars.templates.policy_topic-footer"
             },
             "contentType": "text/html"
           }
