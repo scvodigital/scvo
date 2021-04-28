@@ -1,10 +1,14 @@
 {{> footers_posts_topic}}
 
-<div class="container b-padding-full b-margin-full">
-  <h2>
-    Our achievements
-  </h2>
-  <p>
-    Text TBC
-  </p>
-</div>
+{{#with @root.data.primaryResponse.hits.hits.[0]._source.quotation}}
+  {{#ifAll author_title text}}
+    <div class="container b-padding-full b-margin-full">
+      <h2>
+        {{{author_title}}}
+      </h2>
+      <p>
+        {{{text}}}
+      </p>
+    </div>
+  {{/ifAll}}
+{{/with}}
