@@ -5,7 +5,7 @@
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
-      "name": "primaryResponse",
+      "name": "posts",
       "taskModule": "elasticsearch",
       "config": {
         "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",

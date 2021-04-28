@@ -1,12 +1,12 @@
 <div class="container v-margin-full">
-  {{#compare @root.data.primaryResponse.hits.total ">" 0 ~}}
-  {{> search_info paging=@root.data.primaryResponse.pagination}}
+  {{#compare @root.data.posts.hits.total ">" 0 ~}}
+  {{> search_info paging=@root.data.posts.pagination}}
   <ul class="supplimentary-list">
-    {{#each @root.data.primaryResponse.hits.hits ~}}
+    {{#each @root.data.posts.hits.hits ~}}
     {{> content_post_list _source}}
     {{/each ~}}
   </ul>
-  {{> pagination paging=@root.data.primaryResponse.pagination}}
+  {{> pagination paging=@root.data.posts.pagination}}
   {{else}}
   <p>
     No posts in this category could be loaded.

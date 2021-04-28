@@ -1,7 +1,7 @@
-{{#if @root.data.primaryResponse.hits.hits.[0] ~}}
-<title>{{#each @root.data.primaryResponse.hits.hits.[0]._source.categories_slug}}{{#compare this "===" (lastItem (split (replace @root.request.params.path '_posts' '') '_'))}}{{{lookup @root.data.primaryResponse.hits.hits.[0]._source.categories @index}}}{{/compare}}{{/each}} posts – SCVO</title>
-<meta property="og:title" content="Posts about {{#each @root.data.primaryResponse.hits.hits.[0]._source.categories_slug}}{{#compare this "===" (lastItem (split @root.request.params.path '_'))}}{{{lookup @root.data.primaryResponse.hits.hits.[0]._source.categories @index}}}{{/compare}}{{/each}} – SCVO" data-dynamic="true">
-<link rel="alternate" type="application/rss+xml" title="Posts about {{#each @root.data.primaryResponse.hits.hits.[0]._source.categories_slug}}{{#compare this "===" (lastItem (split @root.request.params.path '_'))}}{{{lookup @root.data.primaryResponse.hits.hits.[0]._source.categories @index}}}{{/compare}}{{/each}} – SCVO" href="https://scvo.scot{{@root.request.params.uri.pathname}}?_view=rss" />
+{{#if @root.data.posts.hits.hits.[0] ~}}
+<title>{{#each @root.data.posts.hits.hits.[0]._source.categories_slug}}{{#compare this "===" (lastItem (split (replace @root.request.params.path '_posts' '') '_'))}}{{{lookup @root.data.posts.hits.hits.[0]._source.categories @index}}}{{/compare}}{{/each}} posts – SCVO</title>
+<meta property="og:title" content="Posts about {{#each @root.data.posts.hits.hits.[0]._source.categories_slug}}{{#compare this "===" (lastItem (split @root.request.params.path '_'))}}{{{lookup @root.data.posts.hits.hits.[0]._source.categories @index}}}{{/compare}}{{/each}} – SCVO" data-dynamic="true">
+<link rel="alternate" type="application/rss+xml" title="Posts about {{#each @root.data.posts.hits.hits.[0]._source.categories_slug}}{{#compare this "===" (lastItem (split @root.request.params.path '_'))}}{{{lookup @root.data.posts.hits.hits.[0]._source.categories @index}}}{{/compare}}{{/each}} – SCVO" href="https://scvo.scot{{@root.request.params.uri.pathname}}?_view=rss" />
 {{else}}
 <title>Scottish Council for Voluntary Organisations – SCVO</title>
 <meta property="og:title" content="Scottish Council for Voluntary Organisations – SCVO" data-dynamic="true">

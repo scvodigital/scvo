@@ -1,6 +1,6 @@
 <div class="container">
-  {{#if @root.data.primaryResponse.hits.hits.[0]._source.staff_profile ~}}
-  {{#with @root.data.primaryResponse.hits.hits.[0]._source.staff_profile ~}}
+  {{#if @root.data.posts.hits.hits.[0]._source.staff_profile ~}}
+  {{#with @root.data.posts.hits.hits.[0]._source.staff_profile ~}}
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
@@ -18,7 +18,7 @@
   </div>
   {{/with ~}}
   {{else}}
-  {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+  {{#with @root.data.posts.hits.hits.[0]._source ~}}
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item"><a href="/posts">Posts</a></li>

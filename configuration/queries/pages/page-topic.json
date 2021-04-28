@@ -1,0 +1,33 @@
+{
+  "size": 1,
+  "_source": [
+    "wpid",
+    "slug",
+    "title",
+    "sub_title",
+    "og_title",
+    "og_summary",
+    "description",
+    "content",
+    "breadcrumb",
+    "categories_id",
+    "categories_slug",
+    "post_tags_id",
+    "post_tags_slug",
+    "author",
+    "hide_overlay",
+    "hide_related_posts",
+    "highlight_last_updated",
+    "text_bag_boost",
+    "quotation",
+    "header_background",
+    "header_text",
+    "updated",
+    "publish_on"
+  ],
+  "query": {
+    "term": {
+      "path": "/{{replace (replace (replace (replace @root.request.params.path '/research') '/briefings' '') '/consultation-responses' '') '_' '/'}}"
+    }
+  }
+}

@@ -22,21 +22,18 @@
       "renderer": "handlebars"
     },
     {
-      "name": "supplimentaryResponses",
+      "name": "posts",
       "taskModule": "elasticsearch",
       "config": {
         "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
         "elasticsearchConfig": {
           "apiVersion": "5.6"
         },
-        "queryTemplates": [
-          {
-            "name": "posts",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_credit-union"
-          }
-        ]
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-post",
+          "template": ">context.metaData.handlebars.queries.posts_credit-union"
+        }
       },
       "renderer": "handlebars"
     },

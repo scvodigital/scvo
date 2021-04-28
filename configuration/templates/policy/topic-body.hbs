@@ -2,6 +2,10 @@
   {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
 </div>
 
+{{#compare @root.route.name "page_policy-coronavirus"}}
+  {{> sections_coronavirus title="Coronavirus research" icon="house-user" description="Research in response to the COVID-19 pandemic" link="/policy/research/coronavirus"}}
+{{/compare}}
+
 <div class="bg-gray">
   <div class="container v-padding-full">
     <div class="columns b-padding-full">

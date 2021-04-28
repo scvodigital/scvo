@@ -1,64 +1,64 @@
 {{> wee_search title="Search posts" searchPath="/search" searchRoute="main_search" extraParams='{ "type": "scvo-post" }'}}
 
-{{#unless @root.data.primaryResponse.hits.hits.[0]._source.hide_related_posts ~}}
-{{#if @root.data.primaryResponse.hits.hits.[0]._source.is_press_release ~}}
+{{#unless @root.data.posts.hits.hits.[0]._source.hide_related_posts ~}}
+{{#if @root.data.posts.hits.hits.[0]._source.is_press_release ~}}
 <ul class="supplimentary-list">
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 50 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[0] ~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 170 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[1] ~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 300 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[2] ~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 430 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[3] ~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 600 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[4] ~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
 </ul>
 {{else}}
-{{#if @root.data.primaryResponse.hits.hits.[0]._source.categories ~}}
+{{#if @root.data.posts.hits.hits.[0]._source.categories ~}}
 {{#compare @root.data.supplimentaryResponses.authors_posts.hits.total ">" 0 ~}}
 {{#compare @root.data.supplimentaryResponses.staff_profile.hits.total ">" 0 ~}}
 <h4 class="author static-sidebar">
-  More posts by <a href="/post/author/{{@root.data.primaryResponse.hits.hits.[0]._source.author_slug}}">{{@root.data.primaryResponse.hits.hits.[0]._source.author_name_full}}</a>
+  More posts by <a href="/post/author/{{@root.data.posts.hits.hits.[0]._source.author_slug}}">{{@root.data.posts.hits.hits.[0]._source.author_name_full}}</a>
 </h4>
 {{/compare ~}}
 <ul class="supplimentary-list">
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 50 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[0]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 170 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[1]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 300 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[2]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 430 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[3]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 600 ~}}
   {{#with @root.data.supplimentaryResponses.authors_posts.hits.hits.[4]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
@@ -66,27 +66,27 @@
 </ul>
 {{else}}
 <ul class="supplimentary-list">
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 50 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 50 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[0]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 170 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 170 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[1]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 300 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 300 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[2]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 430 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 430 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[3]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}
   {{/compare ~}}
-  {{#compare (wordCount @root.data.primaryResponse.hits.hits.[0]._source.content) ">" 600 ~}}
+  {{#compare (wordCount @root.data.posts.hits.hits.[0]._source.content) ">" 600 ~}}
   {{#with @root.data.supplimentaryResponses.category_posts.hits.hits.[4]~}}
   {{> content_post_sidebar _source}}
   {{/with ~}}

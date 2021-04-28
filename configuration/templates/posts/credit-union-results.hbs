@@ -1,10 +1,10 @@
-{{#compare @root.data.supplimentaryResponses.posts.hits.total ">" 0 ~}}
+{{#compare @root.data.posts.hits.total ">" 0 ~}}
 <ul class="supplimentary-list credit-union-news">
-  {{#each @root.data.supplimentaryResponses.posts.hits.hits ~}}
+  {{#each @root.data.posts.hits.hits ~}}
   {{> content_post_list _source}}
   {{/each ~}}
 </ul>
-{{> pagination paging=@root.data.supplimentaryResponses.posts.pagination}}
+{{> pagination paging=@root.data.posts.pagination}}
 {{else}}
 <p>
   No Credit Union news could be loaded.
