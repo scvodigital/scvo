@@ -32,22 +32,10 @@
         },
         "queryTemplates": [
           {
-            "name": "latest_briefings",
+            "name": "events_total",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-briefings"
-          },
-          {
-            "name": "latest_consultation_responses",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-consultation-responses"
-          },
-          {
-            "name": "latest_research",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-research"
+            "type": "scvo-event",
+            "template": ">context.metaData.handlebars.queries.events_policy-total"
           }
         ]
       },
