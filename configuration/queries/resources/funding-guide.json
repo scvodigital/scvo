@@ -38,6 +38,13 @@
           }
         },
         {{/compare ~}}
+        {{#compare @root.request.params.section "other-sources" ~}}
+        {
+          "term": {
+            "post_tags_slug": "other-sources-of-funding"
+          }
+        },
+        {{/compare ~}}
         {
           "term": {
             "post_tags_slug": "guide"
