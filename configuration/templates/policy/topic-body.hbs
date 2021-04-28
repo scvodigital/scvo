@@ -5,45 +5,51 @@
 <div class="bg-gray">
   <div class="container v-padding-full">
     <div class="columns b-padding-full">
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h3 class="b-padding">Briefings</h3>
+      {{#compare @root.data.supplimentaryResponses.latest_briefings.hits.total ">" 0 ~}}
+        <div class="column col-4 col-lg-6 col-md-12">
+          <h3 class="b-padding">Briefings</h3>
 
-        {{#if @root.data.supplimentaryResponses.latest_briefings.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[2]._source}}
-        {{/if ~}}
+          {{#each @root.data.supplimentaryResponses.latest_briefings.hits.hits ~}}
+            {{#compare @index "<" 3}}
+              {{> content_post_gist _source}}
+            {{/compare}}
+          {{/each ~}}
 
-        <div class="card-footer">
-          <a href="{{@root.request.url.pathname}}/briefings">More briefings</a>
+          <div class="card-footer">
+            <a href="{{@root.request.url.pathname}}/briefings">More briefings</a>
+          </div>
         </div>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h3 class="b-padding">Consultation responses</h3>
+      {{/compare}}
+      {{#compare @root.data.supplimentaryResponses.latest_consultation_responses.hits.total ">" 0 ~}}
+        <div class="column col-4 col-lg-6 col-md-12">
+          <h3 class="b-padding">Consultation responses</h3>
 
-        {{#if @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[2]._source}}
-        {{/if ~}}
+          {{#each @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits ~}}
+            {{#compare @index "<" 3}}
+              {{> content_post_gist _source}}
+            {{/compare}}
+          {{/each ~}}
 
-        <div class="card-footer">
-          <a href="{{@root.request.url.pathname}}/consultation-responses">More consultation responses</a>
+          <div class="card-footer">
+            <a href="{{@root.request.url.pathname}}/consultation-responses">More consultation responses</a>
+          </div>
         </div>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12 no-border">
-        <h3 class="b-padding">Research</h3>
+      {{/compare}}
+      {{#compare @root.data.supplimentaryResponses.latest_research.hits.total ">" 0 ~}}
+        <div class="column col-4 col-lg-6 col-md-12 no-border">
+          <h3 class="b-padding">Research</h3>
 
-        {{#if @root.data.supplimentaryResponses.latest_research.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[2]._source}}
-        {{/if ~}}
+          {{#each @root.data.supplimentaryResponses.latest_research.hits.hits ~}}
+            {{#compare @index "<" 3}}
+              {{> content_post_gist _source}}
+            {{/compare}}
+          {{/each ~}}
 
-        <div class="card-footer">
-          <a href="{{@root.request.url.pathname}}/research">More research</a>
+          <div class="card-footer">
+            <a href="{{@root.request.url.pathname}}/research">More research</a>
+          </div>
         </div>
-      </div>
+      {{/compare}}
     </div>
   </div>
 </div>

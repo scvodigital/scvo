@@ -20,6 +20,20 @@
   ],
   "query": {
     "bool": {
+      {{#if @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
+      "should": [
+        {
+          "terms": {
+            "post_tags_slug": [
+              {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
+              "{{this}}"{{#unless @last}},{{/unless}}
+              {{/each}}
+            ]
+          }
+        }
+      ],
+      "minimum_should_match": 1,
+      {{/if}}
       "must_not": [
         {
           "term": {

@@ -1,7 +1,10 @@
 {
   "name": "post_reports",
   "debug": false,
-  "pattern": "/policy/research",
+  "pattern": {
+    "top": "/policy/research",
+    "topic": "/policy/:topic/research"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

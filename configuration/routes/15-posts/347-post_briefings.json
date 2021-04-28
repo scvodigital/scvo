@@ -1,7 +1,10 @@
 {
   "name": "post_briefings",
   "debug": false,
-  "pattern": "/policy/briefings",
+  "pattern": {
+    "top": "/policy/briefings",
+    "topic": "/policy/:topic/briefings"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

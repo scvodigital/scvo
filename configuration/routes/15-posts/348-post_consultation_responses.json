@@ -1,7 +1,10 @@
 {
   "name": "post_consultation_responses",
   "debug": false,
-  "pattern": "/policy/consultation-responses",
+  "pattern": {
+    "top": "/policy/consultation-responses",
+    "topic": "/policy/:topic/consultation-responses"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

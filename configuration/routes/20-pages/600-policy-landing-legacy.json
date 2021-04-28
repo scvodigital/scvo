@@ -1,7 +1,10 @@
 {
   "name": "page_policy-legacy",
-  "debug": false,
+  "debug": true,
   "pattern": "/policy",
+  "metaData": {
+    "title": "Policy"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
