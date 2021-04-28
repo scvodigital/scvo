@@ -1,0 +1,56 @@
+{
+  "size": 10,
+  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 10}},
+  "_source": [
+    "categories_id",
+    "title",
+    "publish_on",
+    "updated",
+    "path",
+    "url",
+    "wpid",
+    "description",
+    "description_truncated",
+    "is_press_release",
+    "author_slug",
+    "author_name_full",
+    "author_avatar",
+    "staff_profile",
+    "og_image",
+    "categories",
+    "categories_slug",
+    "post_tags",
+    "post_tags_slug"
+  ],
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "terms": {
+            "post_tags_slug": [
+              {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
+              "{{this}}"{{#unless @last}},{{/unless}}
+              {{/each}}
+            ]
+          }
+        }
+      ],
+      "minimum_should_match": 1,
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "term": {
+            "hide_from_search": "1"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "publish_on": "desc"
+  }
+}
