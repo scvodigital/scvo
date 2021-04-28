@@ -881,12 +881,6 @@ document.addEventListener("DOMContentLoaded", function() {
   //   e.preventDefault();
   // });
 
-  var checkBoxes = $(".form-checkbox input");
-  checkBoxes.prop("checked", checkBoxes.prop("checked"));
-  $('#tfa_148').blur();
-  $('#tfa_159').blur();
-  $('#tfa_29').focus();
-
   {{#unless defaults.application_editing}}
   var cleave_account_number = new Cleave('#tfa_4', {
     blocks: [8],
