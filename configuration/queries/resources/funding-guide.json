@@ -1,0 +1,57 @@
+{
+  "size": 100,
+  "_source": [
+    "wpid",
+    "slug",
+    "title",
+    "og_title",
+    "og_image",
+    "og_summary",
+    "publish_on",
+    "updated",
+    "content",
+    "link",
+    "weblink",
+    "icon",
+    "author_attribution",
+    "categories",
+    "categories_slug",
+    "categories_id",
+    "post_tags",
+    "post_tags_slug",
+    "post_tags_id"
+  ],
+  "query": {
+    "bool": {
+      "must": [
+        {{#compare @root.request.params.section "strategy" ~}}
+        {
+          "term": {
+            "post_tags_slug": "fundraising-strategy"
+          }
+        },
+        {{/compare ~}}
+        {{#compare @root.request.params.section "support" ~}}
+        {
+          "term": {
+            "post_tags_slug": "case-for-support"
+          }
+        },
+        {{/compare ~}}
+        {
+          "term": {
+            "post_tags_slug": "guide"
+          }
+        },
+        {
+          "term": {
+            "post_tags_slug": "funding"
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "weight": "asc"
+  }
+}
