@@ -1,10 +1,7 @@
 {
-  "name": "page_policy-legacy",
-  "debug": true,
-  "pattern": "/policy",
-  "metaData": {
-    "title": "Policy"
-  },
+  "name": "page_policy-get-involved",
+  "debug": false,
+  "pattern": "/policy/get-involved",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -24,7 +21,7 @@
       },
       "renderer": "handlebars"
     },
-    "context.metaData.commonTasks.postsBlog",
+    "context.metaData.commonTasks.postsTopic",
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
@@ -51,12 +48,6 @@
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
             "template": ">context.metaData.handlebars.queries.posts_policy-research"
-          },
-          {
-            "name": "events_total",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-event",
-            "template": ">context.metaData.handlebars.queries.events_policy-total"
           }
         ]
       },
@@ -79,9 +70,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.policy_landing-legacy-header",
-              "body": ">context.metaData.handlebars.templates.policy_landing-legacy-body",
-              "footer": ">context.metaData.handlebars.templates.policy_landing-legacy-footer"
+              "header": ">context.metaData.handlebars.templates.page-header",
+              "body": ">context.metaData.handlebars.templates.policy_get-involved-body"
             },
             "contentType": "text/html"
           }

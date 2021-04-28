@@ -1,68 +1,3 @@
-{{!-- {{> sections_coronavirus title="Coronavirus policy & research" icon="house-user" description="Policy & research in response to the COVID-19 pandemic" link="/policy/coronavirus"}} --}}
-
-{{!-- <div class="bg-white">
-  <div class="container v-padding-full">
-    <div class="columns linked-cards">
-      <div class="column col-6 col-lg-12">
-        <div class="card card-no-padding">
-          <section class="card-title">
-            <h2>
-              About
-            </h2>
-            <p>
-              <strong>SCVO's policy team works to ensure that the needs and concerns of the voluntary sector in Scotland are represented in the Scottish, United Kingdom and European Parliaments.</strong>
-            </p>
-            <p>
-              By acting as an authoritative and trusted voice for the sector, SCVO's policy and research output is delivered through a strong evidence base and an engaged membership.
-            </p>
-          </section>
-        </div>
-      </div>
-      <div class="column col-3 col-lg-6 col-sm-12 linked-cards">
-        <div class="card card-no-padding">
-          <section class="card-title">
-            <h2>
-              <a href="/policy/campaigns">
-                <span class="far fa-fw fa-person-sign"></span>
-                Campaigns
-              </a>
-            </h2>
-          </section>
-          <section class="card-footer">
-            <a href="/policy/campaigns">Find out more</a>
-          </section>
-        </div>
-      </div>
-      <div class="column col-3 col-lg-6 col-sm-12 linked-cards">
-        <div class="card card-no-padding">
-          <section class="card-title">
-            <h2>
-              <a href="/policy/events">
-                <span class="far fa-fw fa-users"></span>
-                Events
-              </a>
-            </h2>
-          </section>
-          {{#with @root.data.supplimentaryResponses.events_total.hits ~}}
-          <section class="card-body b-margin">
-            {{#compare total ">" 0 ~}}
-            We have {{inflect total "upcoming event" "upcoming events" true}}
-            {{else}}
-            We don't have any upcoming events
-            {{/compare ~}}
-          </section>
-          {{#compare total ">" 0 ~}}
-          <section class="card-footer">
-            <a href="/policy/events">See {{inflect total "event" "events"}}</a>
-          </section>
-          {{/compare ~}}
-          {{/with ~}}
-        </div>
-      </div>
-    </div>
-  </div>
-</div> --}}
-
 <div class="bg-white">
   <div class="container v-padding-full">
     <div class="columns v-padding-full">
@@ -77,11 +12,6 @@
             </div>
           </section>
           <section class="card-body no-padding">
-            {{!-- {{#each @root.data.supplimentaryResponses.latest_coronavirus.hits.hits ~}}
-              {{#unless (compare @index ">=" 3)}}
-                {{> content_post_gist _source}}
-              {{/unless}}
-            {{/each ~}} --}}
             <p>
               We will ensure that action is taken to mitigate the impact of COVID-19 on the voluntary sector.
             </p>
@@ -102,11 +32,6 @@
             </div>
           </section>
           <section class="card-body no-padding">
-            {{!-- {{#each @root.data.supplimentaryResponses.latest_europe.hits.hits ~}}
-              {{#unless (compare @index ">=" 3)}}
-                {{> content_post_gist _source}}
-              {{/unless}}
-            {{/each ~}} --}}
             <p>
               We will ensure that the consequences of Brexit for the Scottish Voluntary sector are understood and addressed.
             </p>
@@ -127,11 +52,6 @@
             </div>
           </section>
           <section class="card-body no-padding">
-            {{!-- {{#each @root.data.supplimentaryResponses.latest_economic_actor.hits.hits ~}}
-              {{#unless (compare @index ">=" 3)}}
-                {{> content_post_gist _source}}
-              {{/unless}}
-            {{/each ~}} --}}
             <p>
               We will ensure that the Scottish Voluntary sector is recognised as a significant social and economic actor.
             </p>
@@ -152,11 +72,6 @@
             </div>
           </section>
           <section class="card-body no-padding">
-            {{!-- {{#each @root.data.supplimentaryResponses.latest_employment.hits.hits ~}}
-              {{#unless (compare @index ">=" 3)}}
-                {{> content_post_gist _source}}
-              {{/unless}}
-            {{/each ~}} --}}
             <p>
               We will ensure that the sector is recognised as both a significant employer and a contributor to the employability landscape.
             </p>
@@ -177,11 +92,6 @@
             </div>
           </section>
           <section class="card-body no-padding">
-            {{!-- {{#each @root.data.supplimentaryResponses.latest_partnerships.hits.hits ~}}
-              {{#unless (compare @index ">=" 3)}}
-                {{> content_post_gist _source}}
-              {{/unless}}
-            {{/each ~}} --}}
             <p>
               We will ensure that the sector is recognised a strategic partner in public service planning, delivery and evaluation.
             </p>
@@ -202,11 +112,6 @@
             </div>
           </section>
           <section class="card-body no-padding">
-            {{!-- {{#each @root.data.supplimentaryResponses.latest_regulations.hits.hits ~}}
-              {{#unless (compare @index ">=" 3)}}
-                {{> content_post_gist _source}}
-              {{/unless}}
-            {{/each ~}} --}}
             <p>
               We work with colleagues across the voluntary sector to ensure the impacts of regulation on the sector is fully considered and understood.
             </p>
@@ -216,52 +121,6 @@
           </section>
         </div>
       </div>
-      {{!-- <div class="column col-12">
-        <p>
-          Collaborate with us to develop voluntary sector policy perspectives for Scotland.
-        </p>
-      </div> --}}
     </div>
-    {{!-- <div class="columns b-padding-full">
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h3 class="b-padding">Briefings</h3>
-
-        {{#if @root.data.supplimentaryResponses.latest_briefings.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[2]._source}}
-        {{/if ~}}
-
-        <div class="card-footer">
-          <a href="/policy/briefings">More briefings</a>
-        </div>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h3 class="b-padding">Consultation responses</h3>
-
-        {{#if @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[2]._source}}
-        {{/if ~}}
-
-        <div class="card-footer">
-          <a href="/policy/consultation-responses">More consultation responses</a>
-        </div>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h3 class="b-padding">Research</h3>
-
-        {{#if @root.data.supplimentaryResponses.latest_research.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[2]._source}}
-        {{/if ~}}
-
-        <div class="card-footer">
-          <a href="/policy/research">More research</a>
-        </div>
-      </div>
-    </div> --}}
   </div>
 </div>
