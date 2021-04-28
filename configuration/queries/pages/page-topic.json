@@ -27,7 +27,7 @@
   ],
   "query": {
     "term": {
-      "path": "/{{replace (replace (replace (replace @root.request.params.path '/research') '/briefings' '') '/consultation-responses' '') '_' '/'}}"
+      "path": "/{{replace (replace (replace (replace @root.request.params.path '_research' '') '_briefings' '') '_consultation-responses' '') '_' '/'}}"
     }
   }
 }

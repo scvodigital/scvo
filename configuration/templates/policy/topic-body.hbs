@@ -19,9 +19,11 @@
             {{/compare}}
           {{/each ~}}
 
-          <div class="card-footer">
-            <a href="{{@root.request.url.pathname}}/briefings">More briefings</a>
-          </div>
+          {{#compare @root.data.supplimentaryResponses.latest_briefings.hits.total ">" 3 ~}}
+            <div class="card-footer">
+              <a href="{{@root.request.url.pathname}}/briefings">More briefings</a>
+            </div>
+          {{/compare}}
         </div>
       {{/compare}}
       {{#compare @root.data.supplimentaryResponses.latest_consultation_responses.hits.total ">" 0 ~}}
@@ -34,9 +36,11 @@
             {{/compare}}
           {{/each ~}}
 
-          <div class="card-footer">
-            <a href="{{@root.request.url.pathname}}/consultation-responses">More consultation responses</a>
-          </div>
+          {{#compare @root.data.supplimentaryResponses.latest_consultation_responses.hits.total ">" 3 ~}}
+            <div class="card-footer">
+              <a href="{{@root.request.url.pathname}}/consultation-responses">More consultation responses</a>
+            </div>
+          {{/compare}}
         </div>
       {{/compare}}
       {{#compare @root.data.supplimentaryResponses.latest_research.hits.total ">" 0 ~}}
@@ -49,9 +53,11 @@
             {{/compare}}
           {{/each ~}}
 
-          <div class="card-footer">
-            <a href="{{@root.request.url.pathname}}/research">More research</a>
-          </div>
+          {{#compare @root.data.supplimentaryResponses.latest_research.hits.total ">" 3 ~}}
+            <div class="card-footer">
+              <a href="{{@root.request.url.pathname}}/research">More research</a>
+            </div>
+          {{/compare}}
         </div>
       {{/compare}}
     </div>
