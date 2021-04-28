@@ -1,7 +1,7 @@
 {
   "name": "evidence_library_document-coronavirus",
   "debug": false,
-  "pattern": "/policy/coronavirus/:library_slug",
+  "pattern": "/policy/research/coronavirus/:library_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

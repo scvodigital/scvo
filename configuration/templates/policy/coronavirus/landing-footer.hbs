@@ -39,7 +39,7 @@
   <h2>Coronavirus evidence library</h2>
   <div class="columns">
     <div class="column col-3 col-lg-4 col-md-12">
-      <form action="/policy/coronavirus" method="GET" autocomplete="off" class="v-margin-full">
+      <form action="/policy/research/coronavirus" method="GET" autocomplete="off" class="v-margin-full">
         <div class="form-group has-icon-left">
           <span class="far fa-search form-icon" tabindex="0"></span>
           <input type="text" id="evidence-library-keywords" name="q" class="form-input" value="{{@root.request.params.query.q}}" placeholder="Keywords">
@@ -75,7 +75,7 @@
       <div class="list scvo-document scvo-document-evidence scvo-document-evidence-{{Id}} mdc-card">
         <section class="mdc-card__primary">
           <h3 class="mdc-card__title mdc-card__title--large">
-            <a href="/policy/coronavirus/{{slug}}">{{{trim title}}}</a>
+            <a href="/policy/research/coronavirus/{{slug}}">{{{trim title}}}</a>
           </h3>
           <div class="post-info">
             {{#if author_name ~}}
@@ -97,7 +97,7 @@
             {{#if description}}
             {{{truncate description 280}}}
             {{/if}}hits
-            <a href="/policy/coronavirus/{{slug}}">Read more</a>
+            <a href="/policy/research/coronavirus/{{slug}}">Read more</a>
           </p>
         </section>
       </div>
