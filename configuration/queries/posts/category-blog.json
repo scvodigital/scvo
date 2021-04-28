@@ -105,6 +105,20 @@
       ],
       "minimum_should_match": 1,
       {{/case ~}}
+      {{#case "policy-new" ~}}
+      "should": [
+        {
+          "terms": {
+            "post_tags_slug": [
+              "campaign-blog",
+              "policy-blog",
+              "research-blog"
+            ]
+          }
+        }
+      ],
+      "minimum_should_match": 1,
+      {{/case ~}}
       {{#switchDefault ~}}
       "should": [
         {

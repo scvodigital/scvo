@@ -1438,55 +1438,10 @@
 							"icon": "chart-bar",
 							"children": [
 								{
-									"label": "Finding funding step by step",
-									"path": "/support/running-your-organisation/funding/step-by-step-guide",
-									"route": "^/support/running-your-organisation/funding/step-by-step-guide$",
+									"label": "Guide to finding funding",
+									"path": "/funding/guide",
 									"description": "Finding your way through all the options there are for funding your organisation can be daunting. That’s why we have created a handy guide to the most important things you have to consider.",
-									"icon": "",
-									"children": [
-										{
-											"label": "Get ready",
-											"path": "/support/running-your-organisation/funding/step-by-step-guide/get-ready",
-											"route": "^/support/running-your-organisation/funding/step-by-step-guide/get-ready$",
-											"description": "",
-											"icon": ""
-										},
-										{
-											"label": "Find your funds",
-											"path": "/support/running-your-organisation/funding/step-by-step-guide/find-your-funds",
-											"route": "^/support/running-your-organisation/funding/step-by-step-guide/find-your-funds$",
-											"description": "",
-											"icon": ""
-										},
-										{
-											"label": "Make the ask",
-											"path": "/support/running-your-organisation/funding/step-by-step-guide/make-the-ask",
-											"route": "^/support/running-your-organisation/funding/step-by-step-guide/make-the-ask$",
-											"description": "",
-											"icon": ""
-										},
-										{
-											"label": "Success & sustainability",
-											"path": "/support/running-your-organisation/funding/step-by-step-guide/success-and-sustainability",
-											"route": "^/support/running-your-organisation/funding/step-by-step-guide/success-and-sustainability$",
-											"description": "",
-											"icon": ""
-										},
-										{
-											"label": "Other sources",
-											"path": "/support/running-your-organisation/funding/step-by-step-guide/other-sources",
-											"route": "^/support/running-your-organisation/funding/step-by-step-guide/other-sources$",
-											"description": "",
-											"icon": ""
-										},
-										{
-											"label": "Jargon buster",
-											"path": "/support/running-your-organisation/funding/step-by-step-guide/jargon-buster",
-											"route": "^/support/running-your-organisation/funding/step-by-step-guide/jargon-buster$",
-											"description": "",
-											"icon": ""
-										}
-									]
+									"icon": ""
 								},
 								{
 									"label": "Funding Scotland",
@@ -2496,10 +2451,64 @@
 					"icon": "viruses"
 				},
 				{
-					"label": "Step by step guide to winning funding",
-					"path": "/support/running-your-organisation/funding/step-by-step-guide",
-					"description": "A handy guide to the most important things you have to consider when finding funding your organisation.",
-					"icon": "map-signs"
+					"label": "Guide to finding funding",
+					"path": "/funding/guide",
+					"route": "^/funding/guide$",
+					"description": "In this section you will find a handy guide to the most important things to consider when finding funding your organisation.",
+					"icon": "map-signs",
+					"children": [
+						{
+							"label": "Steps for successful grant funding",
+							"path": "/funding/guide/steps",
+							"route": "^/funding/guide/steps$",
+							"description": "Applying for grant funding can feel daunting. These four steps can help you feel more prepared.",
+							"icon": "clipboard-list-check",
+							"children": [
+								{
+									"label": "1. Get ready",
+									"path": "/funding/guide/steps/get-ready",
+									"route": "^/funding/guide/steps/get-ready$",
+									"description": " ",
+									"icon": "file-edit"
+								},
+								{
+									"label": "2. Find your funds",
+									"path": "/funding/guide/steps/find-your-funds",
+									"route": "^/funding/guide/steps/find-your-funds$",
+									"description": " ",
+									"icon": "search"
+								},
+								{
+									"label": "3. Make the ask",
+									"path": "/funding/guide/steps/make-the-ask",
+									"route": "^/funding/guide/steps/make-the-ask$",
+									"description": " ",
+									"icon": "question-square"
+								},
+								{
+									"label": "4. Stay in touch",
+									"path": "/funding/guide/steps/stay-in-touch",
+									"route": "^/funding/guide/steps/stay-in-touch$",
+									"description": " ",
+									"icon": "comments"
+								}
+							]
+						},
+						{
+							"label": "Developing your fundraising strategy",
+							"path": "/funding/guide/strategy",
+							"route": "^/funding/guide/strategy$",
+							"description": "This section looks at how to develop a fundraising strategy to help you plan your activities and achieve your fundraising goals.",
+							"icon": "person-sign"
+						},
+						{
+							"label": "Creating your case for support",
+							"path": "/funding/guide/support",
+							"route": "^/funding/guide/support$",
+							"description": "A case for support helps people to understand the benefits of your work and why they should support it. This section looks at what to include in your case for support.",
+							"icon": "business-time"
+						}
+					]
 				},
 				{
 					"label": "Carers Act Transformation Support Fund",
