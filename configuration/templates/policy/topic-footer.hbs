@@ -1,23 +1,5 @@
 <div class="container t-margin-full">
   <div class="columns v-padding-full">
-    <div class="column col-6 col-md-12">
-      <div class="card">
-        <section class="card-header">
-          <div class="card-title h3">
-            <a href="{{@root.request.url.pathname}}/get-involved">
-              <span class="r-margin far fa-fw fa-info-circle"> </span>
-              Get involved
-            </a>
-          </div>
-        </section>
-        <section class="card-body">
-          Collaborate with us to develop voluntary sector policy perspectives for Scotland.
-        </section>
-        <section class="card-footer">
-          <a href="{{@root.request.url.pathname}}/get-involved">Find out more</a>
-        </section>
-      </div>
-    </div>
     {{#compare @root.route.name "page_policy-partnerships"}}
       <div class="column col-6 col-md-12">
         <div class="card">
@@ -38,6 +20,24 @@
         </div>
       </div>
     {{/compare}}
+    <div class="column col-6 col-md-12">
+      <div class="card">
+        <section class="card-header">
+          <div class="card-title h3">
+            <a href="{{@root.request.url.pathname}}/get-involved">
+              <span class="r-margin far fa-fw fa-info-circle"> </span>
+              Get involved
+            </a>
+          </div>
+        </section>
+        <section class="card-body">
+          Collaborate with us to develop voluntary sector policy perspectives for Scotland.
+        </section>
+        <section class="card-footer">
+          <a href="{{@root.request.url.pathname}}/get-involved">Find out more</a>
+        </section>
+      </div>
+    </div>
     <div class="column col-6 col-md-12">
       <div class="card">
         <section class="card-header">
