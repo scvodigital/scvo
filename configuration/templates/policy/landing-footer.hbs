@@ -1,9 +1,70 @@
+<div class="bg-gray">
+  <div class="container t-padding-full">
+    <div class="columns t-padding-full">
+      <div class="col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header">
+            <div class="card-title h2">
+              <a href="/policy/get-involved">
+                <span class="r-margin far fa-fw fa-info-circle"> </span>
+                Get involved
+              </a>
+            </div>
+          </section>
+          <section class="card-body">
+            Collaborate with us to develop voluntary sector policy perspectives for Scotland.
+          </section>
+          <section class="card-footer">
+            <a href="/policy/get-involved">Find out more</a>
+          </section>
+        </div>
+      </div>
+      <div class="col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header">
+            <div class="card-title h2">
+              <a href="/policy/achievements">
+                <span class="r-margin far fa-fw fa-award"> </span>
+                Our achievements
+              </a>
+            </div>
+          </section>
+          <section class="card-body">
+            Find out more about what SCVO has been doing.
+          </section>
+          <section class="card-footer">
+            <a href="/policy/achievements">Find out more</a>
+          </section>
+        </div>
+      </div>
+      <div class="col-4 col-lg-6 col-md-12 b-margin-full b-padding-full">
+        <div class="card">
+          <section class="card-header">
+            <div class="card-title h2">
+              <a href="/policy/team">
+                <span class="r-margin far fa-fw fa-users"> </span>
+                Our team
+              </a>
+            </div>
+          </section>
+          <section class="card-body">
+            Find out more about our policy team.
+          </section>
+          <section class="card-footer">
+            <a href="/policy/team">Find out more</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 {{> sections_stats}}
 
 <div class="bg-white">
   <div class="container t-margin-full">
     <div class="columns v-padding-full">
-      <div class="column col-4 col-lg-6 col-md-12">
+      <div class="col-4 col-lg-6 col-md-12">
         <div class="card">
           <section class="card-header">
             <div class="card-title h3">
@@ -21,7 +82,7 @@
           </section>
         </div>
       </div>
-      <div class="column col-4 col-lg-6 col-md-12">
+      <div class="col-4 col-lg-6 col-md-12">
         <div class="card">
           <section class="card-header">
             <div class="card-title h3">
@@ -39,50 +100,22 @@
           </section>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      <div class="col-4 col-lg-6 col-md-12">
+        <div class="card">
+          <section class="card-header">
+            <div class="card-title h3">
+              <a href="/policy/posts">
+                <span class="r-margin far fa-fw fa-file-search"> </span>
+                Previous work
+              </a>
+            </div>
+          </section>
+          <section class="card-body">
 
-<div class="bg-gray">
-  <div class="container v-padding-full">
-    <div class="columns b-padding-full">
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h3 class="b-padding">Briefings</h3>
-
-        {{#if @root.data.supplimentaryResponses.latest_briefings.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_briefings.hits.hits.[2]._source}}
-        {{/if ~}}
-
-        <div class="card-footer">
-          <a href="/policy/briefings">All briefings</a>
-        </div>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h3 class="b-padding">Consultation responses</h3>
-
-        {{#if @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits.[2]._source}}
-        {{/if ~}}
-
-        <div class="card-footer">
-          <a href="/policy/consultation-responses">All consultation responses</a>
-        </div>
-      </div>
-      <div class="column col-4 col-lg-6 col-md-12">
-        <h3 class="b-padding">Research</h3>
-
-        {{#if @root.data.supplimentaryResponses.latest_research.hits.hits ~}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[0]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[1]._source}}
-        {{> content_post_gist @root.data.supplimentaryResponses.latest_research.hits.hits.[2]._source}}
-        {{/if ~}}
-
-        <div class="card-footer">
-          <a href="/policy/research">All research</a>
+          </section>
+          <section class="card-footer">
+            <a href="/policy/posts">Find out more</a>
+          </section>
         </div>
       </div>
     </div>
