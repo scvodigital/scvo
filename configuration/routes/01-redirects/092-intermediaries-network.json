@@ -1,6 +1,9 @@
 {
   "name": "redirect_policy_intermediaries",
-  "pattern": "/policy/intermediaries(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "old": "/policy/intermediaries(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "new": "/policy/intermediaries-network(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
