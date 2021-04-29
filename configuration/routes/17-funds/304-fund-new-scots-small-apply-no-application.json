@@ -1,0 +1,33 @@
+{
+  "name": "fund_new-scots_apply-small_missing",
+  "debug": false,
+  "pattern": "/funding/new-scots-fund/apply-small/missing",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.funding_new-scots_small-grants_head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_new-scots_small-grants_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_new-scots_small-grants_apply-missing"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

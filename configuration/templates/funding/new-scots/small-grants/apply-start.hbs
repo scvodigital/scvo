@@ -1,28 +1,5 @@
 <div class="container">
   <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
-    {{!-- <p>
-      <strong>We recommend that you use the relevant word template below to plan your draft before completing the online form.</strong>
-    </p>
-
-    <h2>Word template</h2>
-    <p>
-      <div class="wp-block-file">
-        <a href="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2021/02/Charter-Fund-8-Application-Form-Template.docx">Charter Fund Round 8 application form template</a><a href="https://storage.googleapis.com/scvo-cms/wp-content/uploads/2021/02/Charter-Fund-8-Application-Form-Template.docx" class="wp-block-file__button" download="">Download</a>
-      </div>
-    </p> --}}
-
-    {{!-- <h2>Application form</h2> --}}
-    <p>
-      Before you complete this online form please note the following:
-    </p>
-
-    <ul>
-      <li>Only Church of Scotland congregations and presbyteries are eligible to apply for this Fund.</li>
-      <li>We recommend that you use the <a href="https://cms.scvo.org/wp-content/uploads/2021/04/2021-Small-Grants-Fund-Application-Form-Issue-1.0.docx">Microsoft Word template</a> to plan your draft before completing this online form.</li>
-       {{!-- as there will be no option to save your application and return to complete later --}}
-      <li>Ensure that in completing the form you have referred to the <a href="/funding/church-of-scotland-2021-small-grants-fund/guidance">2021 Small Grants Fund Guidance Notes</a>.</li>
-      <li>At the end of the form you will need to upload a signed extract minute from the relevant church court supporting the application, indicating acceptance of the General Conditions of Award.</li>
-    </ul>
     <p>
       Please enter the details below to start your application.
     </p>
@@ -42,7 +19,7 @@
           <div class="form-group">
             <label for="charity_number" class="form-label">Scottish Charity Number</label>
             <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
-            <p class="form-input-hint text-secondary">Please enter the full Scottish Charity Number beginning with 'SC' then six digits of the church/presbytery making this application, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
+            <p class="form-input-hint text-secondary">Please enter the full Scottish Charity Number beginning with 'SC' then six digits of the organisation making this application, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
           </div>
           <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
             Apply now
@@ -51,7 +28,7 @@
         <div class="divider-vert hide-sm" data-content="OR"></div>
         <div class="divider text-center show-sm col-12" data-content="OR"></div>
         <div class="column col-sm-12 align-centre">
-          <a href="/funding/church-of-scotland-2021-small-grants-fund/apply/not-a-charity" class="btn btn-lg btn-block">
+          <a href="/funding/new-scots-fund/apply-small/not-a-charity" class="btn btn-lg btn-block">
             Not a registered charity
           </a>
         </div>
@@ -87,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
 
     if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
-      var url = '/funding/church-of-scotland-2021-small-grants-fund/apply/' + charityNumber;
+      var url = '/funding/new-scots-fund/apply-small/' + charityNumber;
       $('#charity_number_submit')
       .removeAttr('disabled', false)
       .attr('href', url);

@@ -1,0 +1,20 @@
+{
+  "defaults": {
+    {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant.records.[0] ~}}
+    {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant.records.[0] oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
+    "application_editing": {{{json value=(default application.Id "")}}},
+    "application_readonly": {{#if (contains @root.route.name "fund_kirk_view_form")}}true{{else}}false{{/if}},
+    "application_call": {{{json value=(default application.Call__c "")}}},
+    "application_status": {{{json value=(default application.Application_Satus__c "")}}},
+    "is_charity": {{{json value=(default (default application.Charity_Number__c oscr.charity_number) "")}}},
+    "tfa_1": {{{json value=(default (default application.Charity_Number__c oscr.charity_number) "")}}},
+    "tfa_82": {{{json value=(default (default application.Organisation_Type__c oscr.constitutional_form) "")}}},
+    "tfa_2": {{{json value=(default (default application.Web_App_Organisation__c oscr.charity_name) "")}}},
+    "tfa_125": {{{json value=(default (default application.Web_App_Street__c milo.location_street) "")}}},
+    "tfa_126": {{{json value=(default (default application.Web_App_Area_Town__c (default milo.location_city milo.location_region)) "")}}},
+    "tfa_127": {{{json value=(default (default application.Web_App_Local_Authority__c postcode.local_authority) "")}}},
+    "tfa_128": {{{json value=(default (default application.Web_App_PostCode__c (default oscr.postcode postcode.place)) "")}}}
+    {{/withExtend}}
+    {{/ifAny}}
+  }
+}
