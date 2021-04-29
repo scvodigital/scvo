@@ -1009,13 +1009,13 @@ footer a {
 .bg-gray {
   a {
     color: $secondary-color;
-    background: none;
+    // background: none;
     border: none;
     text-decoration: none;
   }
-  a:hover {
-    color: $primary-color;
-  }
+  // a:hover {
+  //   color: $primary-color;
+  // }
   .form-input:focus {
     box-shadow: none;
   }
