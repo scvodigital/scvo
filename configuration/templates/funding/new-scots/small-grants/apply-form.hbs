@@ -267,7 +267,7 @@ wFORMS.behaviors.prefill.skip = false;
           <div class="form-group">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <label id="tfa_20-L" class="form-label r-margin preField reqMark" for="tfa_20">
-                Organisation type
+                1.4&ensp;Type of organisation
               </label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
@@ -335,7 +335,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_24-L" class="form-label preField reqMark" for="tfa_24">Year organisation established</label>
+              <label id="tfa_24-L" class="form-label preField reqMark" for="tfa_24">Year your organisation was established</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_24-D">
@@ -352,7 +352,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_25" class="choices vertical required" required>
                   <span class="oneChoice">
                     <label class="form-radio postField" id="tfa_26-L" for="tfa_26">
-                      <input type="radio" value="tfa_26" id="tfa_26" name="tfa_25" aria-required="true" data-conditionals="#tfa_28" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_25-L tfa_26-L">
+                      <input type="radio" value="tfa_26" id="tfa_26" name="tfa_25" aria-required="true" data-conditionals="#tfa_28-D" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_25-L tfa_26-L">
                       <span class="form-icon"></span>
                       Yes
                     </label>
@@ -368,16 +368,19 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
-          <div class="form-group oneField">
+          <div class="form-group oneField" id="tfa_28-D" data-condition="`#tfa_26`">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_28-L" class="form-label preField reqMark" for="tfa_28">Name of your parent company or body</label>
+              <label id="tfa_28-L" class="form-label preField reqMark" for="tfa_28">What is the name of your parent company or body?</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_28-D">
-                <input type="text" id="tfa_28" name="tfa_28" value="" data-condition="`#tfa_26`" title="Name of your parent company or body" class="form-input required" required>
+              <div class="field-container-D">
+                <input type="text" id="tfa_28" name="tfa_28" value="" title="Name of your parent company or body" class="form-input required" required>
               </div>
             </div>
           </div>
+          <p>
+            1.5&ensp;Separation of duties
+          </p>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_29-L" data-tfa-labelledby="-L tfa_29-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_29-L" class="form-label preField" aria-label="Please confirm, by ticking the box, that you have procedures that ensure one person cannot authorise, make, and record payments" required></label>
@@ -396,6 +399,9 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          <p>
+            1.6&ensp;Governance
+          </p>
           <div class="form-group oneField" role="radiogroup" aria-labelledby="tfa_31-L" data-tfa-labelledby="-L tfa_31-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_31-L" class="form-label preField reqMark">Does your organisation have a management committee or governance board?</label>
@@ -460,9 +466,12 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          <p>
+            1.7&ensp;Numbers of full-time equivalent staff and volunteers in your organisation.
+          </p>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_37-L" class="form-label preField reqMark" for="tfa_37">Number of staff</label>
+              <label id="tfa_37-L" class="form-label preField reqMark" for="tfa_37">Full-time equivalent</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_37-D">
@@ -479,7 +488,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_49-L" class="form-label preField reqMark" for="tfa_49">Number of volunteers</label>
+              <label id="tfa_49-L" class="form-label preField reqMark" for="tfa_49">Volunteers</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_49-D">
@@ -494,6 +503,14 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          <p>
+            1.8&ensp;Annual income and expenditure
+          </p>
+          <p>
+            What was your financial position at the 31 December 2020 or at the most recent point to which your accounts are made up?
+            <br />
+            <strong>NOTE: REVIEW THIS - NOT CLEAR WHICH FIELD IT RELATES TO</strong>
+          </p>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_55-L" data-tfa-labelledby="-L tfa_55-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_55-L" class="form-label preField "></label>
@@ -525,7 +542,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
-          <div class="form-group oneField" id="tfa_58-D" data-condition="`#tfa_56`">
+          <div class="form-group oneField mb" id="tfa_58-D" data-condition="`#tfa_56`">
             <div class="col-12">
               <label id="tfa_58-L" class="form-label preField reqMark" for="tfa_58">If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes.</label>
               <div class="field-container-D">
@@ -535,7 +552,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_281-L" class="label preField reqMark" for="tfa_281">1.9&ensp;Amount applied for</label>
+              <label id="tfa_281-L" class="form-label preField reqMark" for="tfa_281">1.9&ensp;Amount applied for</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_281-D">
@@ -553,7 +570,7 @@ wFORMS.behaviors.prefill.skip = false;
           <h3 id="tfa_59-T">About the work you would like funded</h3>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_60-L" class="form-label preField reqMark" for="tfa_60">Name of your project</label>
+              <label id="tfa_60-L" class="form-label preField reqMark" for="tfa_60">2.1&ensp;Name of your project</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_60-D">
@@ -561,6 +578,9 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          <p>
+            2.2&ensp;When will your project start and finish?
+          </p>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_61-L" class="form-label preField reqMark" for="tfa_61">Start date</label>
@@ -583,7 +603,10 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_63-L" class="form-label preField reqMark" for="tfa_63">Which TOPIC are you applying for?</label>
+              <label id="tfa_63-L" class="form-label preField reqMark" for="tfa_63">2.3&ensp;Which TOPIC are you applying for?</label>
+              <p>
+                <strong>NOTE: IS ALL CAPS NECESSARY HERE?</strong>
+              </p>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_63-D">
@@ -618,14 +641,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_80" class="choices vertical required" required>
                   <span class="oneChoice">
                     <label class="form-radio postField" id="tfa_81-L" for="tfa_81">
-                      <input type="radio" value="tfa_81" id="tfa_81" name="tfa_80" aria-required="true" data-conditionals="#tfa_85" aria-labelledby="tfa_81-L" data-tfa-labelledby="tfa_80-L tfa_81-L">
+                      <input type="radio" value="tfa_81" id="tfa_81" name="tfa_80" aria-required="true" data-conditionals="#tfa_85-D" aria-labelledby="tfa_81-L" data-tfa-labelledby="tfa_80-L tfa_81-L">
                       <span class="form-icon"></span>
                       Spreading good practice: widening the impact of successful integration approaches, practices and tools
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-radio postField" id="tfa_82-L" for="tfa_82">
-                      <input type="radio" value="tfa_82" id="tfa_82" name="tfa_80" aria-required="true" data-conditionals="#tfa_86" aria-labelledby="tfa_82-L" data-tfa-labelledby="tfa_80-L tfa_82-L">
+                      <input type="radio" value="tfa_82" id="tfa_82" name="tfa_80" aria-required="true" data-conditionals="#tfa_86-D" aria-labelledby="tfa_82-L" data-tfa-labelledby="tfa_80-L tfa_82-L">
                       <span class="form-icon"></span>
                       Supporting innovation: piloting new approaches, practices and tools that support integration
                     </label>
@@ -636,7 +659,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_83-L" class="form-label preField reqMark" for="tfa_83">Please give us a summary of your proposed project</label>
+              <label id="tfa_83-L" class="form-label preField reqMark" for="tfa_83">2.5&ensp;Please give us a summary of your proposed project</label>
               <div class="field-container-D" id="tfa_83-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_83" name="tfa_83" title="Please give us a summary of your proposed project" class="required form-input count-words" required></textarea>
               </div>
@@ -644,31 +667,34 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_84-L" class="form-label preField reqMark" for="tfa_84">Please describe how refugees have been involved in the development of this idea and how they will participate in the delivery of the project</label>
+              <label id="tfa_84-L" class="form-label preField reqMark" for="tfa_84">2.6&ensp;Please describe how refugees have been involved in the development of this idea and how they will participate in the delivery of the project</label>
               <div class="field-container-D" id="tfa_84-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_84" name="tfa_84" title="Please describe how refugees have been involved in the development of this idea and how they will participate in the delivery of the project" class="required form-input count-words" required></textarea>
               </div>
             </div>
           </div>
-          <div class="form-group oneField">
+          <div class="form-group oneField" id="tfa_85-D" data-condition="`#tfa_81`">
             <div class="col-12">
-              <label id="tfa_85-L" class="form-label preField reqMark" for="tfa_85">Please explain how your project will widen the impact of successful integration approaches, practices and tools</label>
-              <div class="field-container-D" id="tfa_85-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_85" name="tfa_85" data-condition="`#tfa_81`" title="Please explain how your project will widen the impact of successful integration approaches, practices and tools" class="required form-input count-words" required></textarea>
+              <label id="tfa_85-L" class="form-label preField reqMark" for="tfa_85">2.7&ensp;Please explain how your project will widen the impact of successful integration approaches, practices and tools</label>
+              <div class="field-container-D">
+                <textarea aria-required="true" data-maxwords="150" id="tfa_85" name="tfa_85" title="Please explain how your project will widen the impact of successful integration approaches, practices and tools" class="required form-input count-words" required></textarea>
               </div>
             </div>
           </div>
-          <div class="form-group oneField">
+          <div class="form-group oneField" id="tfa_86-D" data-condition="`#tfa_82`">
             <div class="col-12">
-              <label id="tfa_86-L" class="form-label preField reqMark" for="tfa_86">Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration</label>
-              <div class="field-container-D" id="tfa_86-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_86" name="tfa_86" data-condition="`#tfa_82`" title="Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration" class="required form-input count-words" required></textarea>
+              <label id="tfa_86-L" class="form-label preField reqMark" for="tfa_86">2.7&ensp;Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration</label>
+              <div class="field-container-D">
+                <textarea aria-required="true" data-maxwords="150" id="tfa_86" name="tfa_86" title="Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration" class="required form-input count-words" required></textarea>
               </div>
             </div>
           </div>
+          <p>
+            2.8&ensp;Location of your project
+          </p>
           <div class="form-group oneField" role="radiogroup" aria-labelledby="tfa_87-L" data-tfa-labelledby="-L tfa_87-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_87-L" class="form-label preField reqMark">Location of your project</label>
+              <label id="tfa_87-L" class="form-label preField reqMark">Where will the proposed work be delivered?</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_87-D">
@@ -1219,6 +1245,9 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          <p>
+            2.9&ensp;Collaboration
+          </p>
           <div class="form-group oneField" role="radiogroup" aria-labelledby="tfa_191-L" data-tfa-labelledby="-L tfa_191-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_191-L" class="form-label preField reqMark">Is this an individual or partnership project?</label>
@@ -1293,7 +1322,7 @@ wFORMS.behaviors.prefill.skip = false;
         <div class="section pageSection" id="tfa_198">
           <h3 id="tfa_198-T">Project/activities</h3>
           <p>
-            Proposed project/activities (detail about your project activities)
+            2.10&ensp;Proposed project/activities (detail about your project activities)
           </p>
           <div id="tfa_246" class="section group">
             <label class="form-label preField" id="tfa_246-L">Proposed project/activity 1</label>
@@ -1405,10 +1434,10 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField field-container-D    " id="tfa_279-D">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_279-L" class="form-label preField " for="tfa_279">Estimate of the total number of participants that you expect to work with over the lifetime of the project</label>
+              <label id="tfa_279-L" class="form-label preField " for="tfa_279">Please give an estimate of the total number of participants that you expect to work with over the lifetime of the project.</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <input type="text" id="tfa_279" name="tfa_279" value="" min="0" max="1000000" title="Estimate of the total number of participants that you expect to work with over the lifetime of the project" class="form-input validate-integer">
+              <input type="number" id="tfa_279" name="tfa_279" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="1000000" title="Estimate of the total number of participants that you expect to work with over the lifetime of the project" class="form-input validate-integer">
             </div>
           </div>
         </div>
@@ -1418,7 +1447,7 @@ wFORMS.behaviors.prefill.skip = false;
           <h3 id="tfa_199-T">Monitoring</h3>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_201-L" class="form-label preField reqMark" for="tfa_201">Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?</label>
+              <label id="tfa_201-L" class="form-label preField reqMark" for="tfa_201">2.11&ensp;Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?</label>
               <div class="field-container-D" id="tfa_201-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_201" name="tfa_201" title="Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?" class="required form-input count-words" required></textarea>
               </div>
@@ -1426,7 +1455,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_202-L" class="form-label preField reqMark" for="tfa_202">Please describe how you know this work is needed</label>
+              <label id="tfa_202-L" class="form-label preField reqMark" for="tfa_202">2.12&ensp;Please describe how you know this work is needed</label>
               <div class="field-container-D" id="tfa_202-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_202" name="tfa_202" title="Please describe how you know this work is needed" class="required form-input count-words" required></textarea>
               </div>
@@ -1434,7 +1463,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_203-L" class="form-label preField reqMark" for="tfa_203">Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future</label>
+              <label id="tfa_203-L" class="form-label preField reqMark" for="tfa_203">2.13&ensp;Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future</label>
               <div class="field-container-D" id="tfa_203-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_203" name="tfa_203" title="Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future" class="required form-input count-words" required></textarea>
               </div>
@@ -1444,10 +1473,10 @@ wFORMS.behaviors.prefill.skip = false;
       </div>
       <div class="wfPage" id="wfPgIndex-7">
         <div class="section pageSection" id="tfa_204">
-          <h3 id="tfa_204-T">Impact</h3>
+          <h3 id="tfa_204-T">People and communities who will benefit from your activity</h3>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_206-L" class="form-label preField reqMark" for="tfa_206">Please describe the people and communities who will benefit from the project you plan to do</label>
+              <label id="tfa_206-L" class="form-label preField reqMark" for="tfa_206">2.14&ensp;Please describe the people and communities who will benefit from the project you plan to do</label>
               <div class="field-container-D" id="tfa_206-D">
                 <textarea aria-required="true" data-maxwords="250" id="tfa_206" name="tfa_206" title="Please describe the people and communities who will benefit from the project you plan to do" class="required form-input count-words" required></textarea>
               </div>
@@ -1455,7 +1484,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_207-L" data-tfa-labelledby="-L tfa_207-L">
             <div class="col-12">
-              <label id="tfa_207-L" class="form-label preField reqMark" aria-label="Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]   required" required>Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]</label>
+              <label id="tfa_207-L" class="form-label preField reqMark" aria-label="Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]   required" required>2.15&ensp;Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]</label>
               <div class="field-container-D" id="tfa_207-D">
                 <span id="tfa_207" class="choices vertical required" required>
                   <span class="oneChoice">
@@ -1536,6 +1565,12 @@ wFORMS.behaviors.prefill.skip = false;
       <div class="wfPage" id="wfPgIndex-8">
         <div class="section pageSection" id="tfa_200">
           <h3 id="tfa_200-T">Proposed budget</h3>
+          <p>
+            3.1&ensp;Associated budget
+          </p>
+          <p>
+            Please provide a short description of each element and estimated cost.
+          </p>
           <table class="gridLayout" style="width:100%;">
             <thead>
               <tr class="headerRow">
@@ -1642,7 +1677,7 @@ wFORMS.behaviors.prefill.skip = false;
       </div>
       <div class="wfPage" id="wfPgIndex-9">
         <div class="section pageSection" id="tfa_229">
-          <h3 id="tfa_229-T">Page 9</h3>
+          <h3 id="tfa_229-T">Declaration</h3>
           <div class="form-group oneField field-container-D    " id="tfa_230-D" role="group" aria-labelledby="tfa_230-L" data-tfa-labelledby="-L tfa_230-L">
             <div class="col-12">
               <label id="tfa_230-L" class="form-label preField "></label>
@@ -1657,9 +1692,30 @@ wFORMS.behaviors.prefill.skip = false;
               </span>
             </div>
           </div>
+          <p>
+            "By signing this declaration you are confirming that you are an authorised signatory for the organisation applying to the ‘New Scots’ Fund. You are also confirming that the statement below is accurate.
+          </p>
+          <p>
+            I confirm that I have read the accompanying guidance note in advance of completing the application form.
+          </p>
+          <p>
+            As far as we know and believe, all of the information in this application form is true, accurate and complete. We are authorised to allow this proposal to go ahead. We are happy for the Scottish Government to:
+          </p>
+          <ul>
+            <li>publish details of the financial support they are giving to this proposal;</li>
+            <li>give any details they have about our proposal from this application or from future assessments to Scottish Government colleagues, other agencies, including other grant-making bodies;</li>
+            <li>store and use the data from our application to support monitoring, analysis and insight relating to the project; and</li>
+            <li>use any of these details in news releases, case studies, publications and other publicity materials.</li>
+          </ul>
+          <p>
+            The Scottish Government can do these things without asking us again for our agreement and will not use any of these details for commercial purposes.
+          </p>
+          <p>
+            Authorised Signatory Details
+          </p>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_232-L" class="form-label preField reqMark" for="tfa_232">Signatory first name</label>
+              <label id="tfa_232-L" class="form-label preField reqMark" for="tfa_232">First name</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_232-D">
@@ -1669,7 +1725,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_233-L" class="form-label preField reqMark" for="tfa_233">Signatory last name</label>
+              <label id="tfa_233-L" class="form-label preField reqMark" for="tfa_233">Last name</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_233-D">
@@ -1689,7 +1745,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_235-L" class="form-label preField reqMark" for="tfa_235">Address 1</label>
+              <label id="tfa_235-L" class="form-label preField reqMark" for="tfa_235">Contact address 1</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_235-D">
@@ -1699,7 +1755,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_236-L" class="form-label preField " for="tfa_236">Address 2</label>
+              <label id="tfa_236-L" class="form-label preField " for="tfa_236">Contact address 2</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_236-D">
@@ -1709,7 +1765,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_237-L" class="form-label preField " for="tfa_237">Address 3</label>
+              <label id="tfa_237-L" class="form-label preField " for="tfa_237">Contact address 3</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_237-D">
@@ -1719,7 +1775,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_238-L" class="form-label preField reqMark" for="tfa_238">Address town/city</label>
+              <label id="tfa_238-L" class="form-label preField reqMark" for="tfa_238">Town/city</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_238-D">
@@ -1729,7 +1785,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_239-L" class="form-label preField reqMark" for="tfa_239">Address postcode</label>
+              <label id="tfa_239-L" class="form-label preField reqMark" for="tfa_239">Postcode</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_239-D">
@@ -1766,6 +1822,9 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
+      <p>
+        Your pressing 'Submit' for this application is your signatory for this application.
+      </p>
       <div class="actions" id="4899064-A">
         <input type="submit" data-label="Submit" class="primaryAction btn btn-lg btn-primary mt mb-2" id="submit_button" value="Submit">
       </div>
