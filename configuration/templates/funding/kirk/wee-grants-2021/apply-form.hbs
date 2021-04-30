@@ -868,16 +868,6 @@ wFORMS.behaviors.prefill.skip = false;
 <script src="{{~>asset_url url='js/cleave.min.js'~}}"></script>
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
-  $('#org_name').text($('#tfa_2').val());
-  $("#tfa_2").change(function(){
-    $('#org_name').text($('#tfa_2').val());
-  });
-
-  // $(".wfPageNextButton").click(function(e){
-  //   console.log('here')
-  //   e.preventDefault();
-  // });
-
   {{#unless defaults.application_editing}}
   var cleave_account_number = new Cleave('#tfa_4', {
     blocks: [8],
@@ -890,7 +880,19 @@ document.addEventListener("DOMContentLoaded", function() {
     delimiterLazyShow: true
   });
   {{/unless}}
+
+  setOrgName();
+  $("#tfa_2").change(function(){
+    setOrgName();
+  });
 });
+function setOrgName() {
+  var org_name = $('#tfa_2').val();
+  if (!org_name) {
+    org_name = 'my organisation'
+  }
+  $('#org_name').text(org_name);
+}
 function isNumberKey(evt){
   var charCode = (evt.which) ? evt.which : evt.keyCode
   return !(charCode > 31 && (charCode < 48 || charCode > 57));
