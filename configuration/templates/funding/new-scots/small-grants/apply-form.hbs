@@ -1,3 +1,6 @@
+{{#withExtend this
+  defaults=@root.data.form_data.defaults
+}}
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function(){
   const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
@@ -56,20 +59,28 @@ wFORMS.behaviors.prefill.skip = false;
     <form method="post" action="https://www.tfaforms.com/responses/processor" class="form form-horizontal hintsBelow labelsAbove" id="4899064" role="form" enctype="multipart/form-data">
       <div class="wfPage" id="wfPgIndex-1">
         <div class="section pageSection" id="tfa_1">
-          <h3 id="tfa_1-T">Organisation details</h3>
+          <h3 id="tfa_1-T">Tell us about your organisation</h3>
+          <p>
+            1.1&ensp;Organisation name
+          </p>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_3-L" class="form-label preField reqMark" for="tfa_3">Organisation name</label>
+              <label id="tfa_3-L" class="form-label preField reqMark" for="tfa_3">Legal name of your organisation</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_3-D">
-                <input type="text" id="tfa_3" name="tfa_3" value="" aria-required="true" title="Organisation name" class="form-input required" required>
+                {{#ifAny defaults.application_editing defaults.tfa_3}}
+                <input type="text" id="organisation_name" maxlength="255" name="organisation_name" value="{{defaults.tfa_3}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
+                <input type="hidden" id="tfa_3" name="tfa_3" class="form-input" value="{{defaults.tfa_3}}">
+                {{else}}
+                <input type="text" id="tfa_3" name="tfa_3" maxlength="255" value="{{defaults.tfa_3}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required{{#if defaults.application_readonly}} readonly{{/if}}>
+                {{/ifAny}}
               </div>
             </div>
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_4-L" class="form-label preField " for="tfa_4">Organisation alias</label>
+              <label id="tfa_4-L" class="form-label preField " for="tfa_4">Other known name of your organisation (if applicable)</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_4-D">
@@ -77,23 +88,16 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          <p>
+            1.2&ensp;Registered address for your organisation
+          </p>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_5-L" class="form-label preField reqMark" for="tfa_5">Registerered address</label>
-            </div>
-            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_5-D">
-                <input type="text" id="tfa_5" name="tfa_5" value="" aria-required="true" title="Registerered address" class="form-input required" required>
-              </div>
-            </div>
-          </div>
-          <div class="form-group oneField">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_6-L" class="form-label preField " for="tfa_6">Street</label>
+              <label id="tfa_6-L" class="form-label preField reqMark" for="tfa_6">Street</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_6-D">
-                <input type="text" id="tfa_6" name="tfa_6" value="" title="Street" class="form-input">
+                <input type="text" id="tfa_6" name="tfa_6" value="{{defaults.tfa_6}}" title="Street" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -103,7 +107,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_7-D">
-                <input type="text" id="tfa_7" name="tfa_7" value="" aria-required="true" title="Town/city" class="form-input required" required>
+                <input type="text" id="tfa_7" name="tfa_7" value="{{defaults.tfa_7}}" aria-required="true" title="Town/city" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -113,7 +117,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_8-D">
-                <input type="text" id="tfa_8" name="tfa_8" value="" aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="required form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g" required>
+                <input type="text" id="tfa_8" name="tfa_8" value="{{defaults.tfa_8}}" aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="required form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g" required>
               </div>
             </div>
             <script type="text/javascript">
@@ -130,7 +134,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_9-D">
-                <input type="url" pattern="https?://.+" id="tfa_9" name="tfa_9" value="" aria-required="true" title="Website address" class="required form-input validate-custom /https?://.+/g" required>
+                <input type="url" pattern="https?://.+" id="tfa_9" name="tfa_9" value="{{defaults.tfa_9}}" aria-required="true" title="Website address" class="required form-input validate-custom /https?://.+/g" required>
               </div>
             </div>
             <script type="text/javascript">
@@ -180,6 +184,9 @@ wFORMS.behaviors.prefill.skip = false;
       <div class="wfPage" id="wfPgIndex-2">
         <div class="section pageSection" id="tfa_2">
           <h3 id="tfa_2-T">Contact</h3>
+          <p>
+            1.3&ensp;Main contact for this application
+          </p>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_12-L" class="form-label preField reqMark" for="tfa_12">First name</label>
@@ -242,7 +249,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_18-L" class="form-label preField " for="tfa_18">Address (if different from organisation address provided)</label>
+              <label id="tfa_18-L" class="form-label preField " for="tfa_18">Correspondence address (if different from organisation address provided)</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_18-D">
@@ -257,29 +264,58 @@ wFORMS.behaviors.prefill.skip = false;
           <h3 id="tfa_19-T">
             More about your organisation
           </h3>
-          <div class="form-group oneField">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_20-L" class="form-label preField reqMark" for="tfa_20">Organisation type</label>
+          <div class="form-group">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_20-L" class="form-label r-margin preField reqMark" for="tfa_20">
+                Organisation type
+              </label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_20-D">
-                <input type="text" id="tfa_20" name="tfa_20" value="" aria-required="true" title="Organisation type" class="form-input required" required>
+              <div class="form-group field-container-D" id="tfa_20-D">
+                {{#if defaults.tfa_20}}
+                <select id="organisation_type" name="organisation_type" class="form-select" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{else}}disabled{{/if}}>
+                  <option value="{{defaults.tfa_20}}" selected>{{defaults.tfa_20}}</option>
+                </select>
+                <input type="hidden" id="tfa_20" name="tfa_20" class="form-input" value="{{defaults.tfa_20}}">
+                {{else}}
+                <select id="tfa_20" name="tfa_20" class="form-select required" required="true" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
+                  <option value="" disabled selected>Please select&hellip;</option>
+                  {{#each (split 'Community Group,Constituted Group,Voluntary Group,Other (please specify)' ',')}}
+                  <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_20}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
+                  {{/each}}
+                </select>
+                <div class="oneField field-container-D" id="org_type_other-D" data-condition="`#other-please-specify`" style="width:100%;">
+                  <div class="inputWrapper t-margin" style="width:100%;">
+                    <input type="text" id="org_type_other" maxlength="255" name="org_type_other" value="{{defaults.tfa_20}}" maxlength="150" title="Please specify your organisation type" autocomplete="nope" data-lpignore="true" {{#if defaults.application_readonly}}class="form-input" style="pointer-events:none;" readonly{{else}}class="form-input required" required{{/if}} style="width:100%;">
+                  </div>
+                </div>
+                {{/if}}
               </div>
             </div>
           </div>
-          <div class="form-group oneField">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_21-L" class="form-label preField " for="tfa_21">Scottish Charity Number</label>
+          {{#if defaults.is_charity ~}}
+          <div class="form-group">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <label id="tfa_21-L" class="form-label mr preField reqMark" for="tfa_21">
+                Scottish Charity Number
+              </label>
+              {{#unless defaults.application_editing}}
+              <p class="form-input-hint text-secondary">
+                <a href="/funding/new-scots-fund/apply-small/not-a-charity">Not a registered charity?</a>
+              </p>
+              {{/unless}}
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_21-D">
-                <input type="text" id="tfa_21" name="tfa_21" value="" title="Scottish Charity Number" class="form-input">
+              <div class="form-group field-container-D" id="tfa_21-D">
+                <p class="no-margin" style="padding: .3rem 0 !important;"><strong>{{defaults.tfa_21}}</strong></p>
+                <input type="hidden" id="tfa_21" name="tfa_21" maxlength="8" value="{{defaults.tfa_21}}" title="Scottish Charity Number">
               </div>
             </div>
           </div>
+          {{/if}}
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_22-L" class="form-label preField " for="tfa_22">Company number</label>
+              <label id="tfa_22-L" class="form-label preField " for="tfa_22">Company number (if applicable)</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_22-D">
@@ -289,7 +325,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_23-L" class="form-label preField " for="tfa_23">Charity number (rUK)</label>
+              <label id="tfa_23-L" class="form-label preField " for="tfa_23">rUK Charity number (if applicable)</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_23-D">
@@ -482,7 +518,10 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
-                <input type="text" id="tfa_57" name="tfa_57" value="" aria-required="true" title="Annual income or turnover" class="form-input required" required>
+                <div class="input-group" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_57" name="tfa_57" value="" title="Annual income or turnover" class="form-input text-right validate-integer required" required>
+                </div>
               </div>
             </div>
           </div>
@@ -491,6 +530,19 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_58-L" class="form-label preField reqMark" for="tfa_58">If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes.</label>
               <div class="field-container-D">
                 <textarea aria-required="true" id="tfa_58" name="tfa_58" title="If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes." class="form-input required" required></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_281-L" class="label preField reqMark" for="tfa_281">1.9&ensp;Amount applied for</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D" id="tfa_281-D">
+                <div class="input-group" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_281" name="tfa_281" value="" title="Amount applied for" class="form-input text-right validate-integer required" required>
+                </div>
               </div>
             </div>
           </div>
@@ -1721,8 +1773,18 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="d021345304532a0c24a11f02d4435952" name="tfa_dbControl" id="tfa_dbControl">
       <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
-      <input type="hidden" value="20" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="23" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
     </form>
   </div>
 </div>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+});
+function isNumberKey(evt){
+  var charCode = (evt.which) ? evt.which : evt.keyCode
+  return !(charCode > 31 && (charCode < 48 || charCode > 57));
+}
+</script>
+{{/withExtend}}

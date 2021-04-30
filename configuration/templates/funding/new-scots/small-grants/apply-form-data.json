@@ -7,13 +7,16 @@
     "application_call": {{{json value=(default application.Call__c "")}}},
     "application_status": {{{json value=(default application.Application_Satus__c "")}}},
     "is_charity": {{{json value=(default (default application.Charity_Number__c oscr.charity_number) "")}}},
-    "tfa_1": {{{json value=(default (default application.Charity_Number__c oscr.charity_number) "")}}},
-    "tfa_82": {{{json value=(default (default application.Organisation_Type__c oscr.constitutional_form) "")}}},
-    "tfa_2": {{{json value=(default (default application.Web_App_Organisation__c oscr.charity_name) "")}}},
-    "tfa_125": {{{json value=(default (default application.Web_App_Street__c milo.location_street) "")}}},
-    "tfa_126": {{{json value=(default (default application.Web_App_Area_Town__c (default milo.location_city milo.location_region)) "")}}},
-    "tfa_127": {{{json value=(default (default application.Web_App_Local_Authority__c postcode.local_authority) "")}}},
-    "tfa_128": {{{json value=(default (default application.Web_App_PostCode__c (default oscr.postcode postcode.place)) "")}}}
+    "tfa_21": {{{json value=(default oscr.charity_number "")}}},
+    "tfa_20": {{{json value=(default oscr.constitutional_form "")}}},
+    "tfa_3": {{{json value=(default oscr.charity_name "")}}},
+    "tfa_6": {{{json value=(default milo.location_street "")}}},
+    "tfa_7": {{{json value=(default (default milo.location_city milo.location_region) "")}}},
+    "tfa_x": {{{json value=(default postcode.local_authority "")}}},
+    "tfa_8": {{{json value=(default (default oscr.postcode postcode.place) "")}}},
+    "tfa_9": {{{json value=(default (if (contains 'http' oscr.website) oscr.website) "")}}},
+    "tfa_10": {{{json value=(default (if (contains 'http' milo.twitter) milo.twitter) "")}}},
+    "tfa_11": {{{json value=(default (if (contains 'http' milo.facebook) milo.facebook) "")}}}
     {{/withExtend}}
     {{/ifAny}}
   }
