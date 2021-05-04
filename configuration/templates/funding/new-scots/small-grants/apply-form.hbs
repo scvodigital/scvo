@@ -325,16 +325,6 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_23-L" class="form-label preField " for="tfa_23">rUK Charity number (if applicable)</label>
-            </div>
-            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_23-D">
-                <input type="text" id="tfa_23" name="tfa_23" value="" title="Charity number (rUK)" class="form-input">
-              </div>
-            </div>
-          </div>
-          <div class="form-group oneField">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_24-L" class="form-label preField reqMark" for="tfa_24">Year your organisation was established</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
@@ -505,8 +495,6 @@ wFORMS.behaviors.prefill.skip = false;
           </p>
           <p>
             What was your financial position at the 31 December 2020 or at the most recent point to which your accounts are made up?
-            <br />
-            <strong>NOTE: REVIEW THIS - NOT CLEAR WHICH FIELD IT RELATES TO</strong>
           </p>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_55-L" data-tfa-labelledby="-L tfa_55-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
@@ -526,7 +514,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
-          <div class="form-group oneField" id="tfa_57-D" data-condition="`#tfa_56`">
+          <div class="form-group oneField" id="tfa_57-D" data-condition="NOT (`#tfa_56`)">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_57-L" class="form-label preField reqMark" for="tfa_57">Annual income or turnover</label>
             </div>
@@ -539,7 +527,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
-          <div class="form-group oneField mb" id="tfa_58-D" data-condition="`#tfa_56`">
+          <div class="form-group oneField mb" id="tfa_58-D" data-condition="NOT (`#tfa_56`)">
             <div class="col-12">
               <label id="tfa_58-L" class="form-label preField reqMark" for="tfa_58">If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes.</label>
               <div class="field-container-D">
@@ -698,28 +686,28 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_87" class="choices vertical required" required>
                   <span class="oneChoice">
                     <label class="form-radio postField" id="tfa_88-L" for="tfa_88">
-                      <input type="radio" value="tfa_88" id="tfa_88" name="tfa_87" aria-required="true" aria-labelledby="tfa_88-L" data-tfa-labelledby="tfa_87-L tfa_88-L">
+                      <input type="radio" value="tfa_88" id="tfa_88" name="tfa_87" aria-required="true" data-conditionals="#tfa_282-D" aria-labelledby="tfa_88-L" data-tfa-labelledby="tfa_87-L tfa_88-L">
                       <span class="form-icon"></span>
                       A local community or small number of local communities
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-radio postField" id="tfa_89-L" for="tfa_89">
-                      <input type="radio" value="tfa_89" id="tfa_89" name="tfa_87" aria-required="true" data-conditionals="#tfa_92" aria-labelledby="tfa_89-L" data-tfa-labelledby="tfa_87-L tfa_89-L">
+                      <input type="radio" value="tfa_89" id="tfa_89" name="tfa_87" aria-required="true" data-conditionals="#tfa_92-D" aria-labelledby="tfa_89-L" data-tfa-labelledby="tfa_87-L tfa_89-L">
                       <span class="form-icon"></span>
                       Across one Local Authority area
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-radio postField" id="tfa_90-L" for="tfa_90">
-                      <input type="radio" value="tfa_90" id="tfa_90" name="tfa_87" aria-required="true" data-conditionals="#tfa_125" aria-labelledby="tfa_90-L" data-tfa-labelledby="tfa_87-L tfa_90-L">
+                      <input type="radio" value="tfa_90" id="tfa_90" name="tfa_87" aria-required="true" data-conditionals="#tfa_125-D" aria-labelledby="tfa_90-L" data-tfa-labelledby="tfa_87-L tfa_90-L">
                       <span class="form-icon"></span>
                       Across several Local Authority areas
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-radio postField" id="tfa_91-L" for="tfa_91">
-                      <input type="radio" value="tfa_91" id="tfa_91" name="tfa_87" aria-required="true" aria-labelledby="tfa_91-L" data-tfa-labelledby="tfa_87-L tfa_91-L">
+                      <input type="radio" value="tfa_91" id="tfa_91" name="tfa_87" aria-required="true" data-conditionals="#tfa_283-D" aria-labelledby="tfa_91-L" data-tfa-labelledby="tfa_87-L tfa_91-L">
                       <span class="form-icon"></span>
                       Nationally (across Scotland)
                     </label>
@@ -728,13 +716,23 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
-          <div class="form-group oneField">
+          <div class="form-group oneField" id="tfa_282-D" data-condition="`#tfa_88`">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_282-L" class="form-label preField reqMark" for="tfa_92">Please provide the first half of the postcode the work will be delivered in, if different from where your organisation is based, and list the local area(s) involved</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <input type="text" id="tfa_282" name="tfa_282" value="" maxlength="255" aria-required="true" title="Areas covered" class="form-input required" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_92-D" data-condition="`#tfa_89`">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_92-L" class="form-label preField reqMark" for="tfa_92">Local authority</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_92-D">
-                <select id="tfa_92" name="tfa_92" data-condition="`#tfa_89`" title="Local authority" aria-required="true" class="form-select required" required>
+              <div class="field-container-D">
+                <select id="tfa_92" name="tfa_92" title="Local authority" aria-required="true" class="form-select required" required>
                   <option value="">Please select...</option>
                   <option value="tfa_93" id="tfa_93">Aberdeen</option>
                   <option value="tfa_94" id="tfa_94">Aberdeenshire</option>
@@ -772,13 +770,13 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
-          <div class="form-group oneField" role="group" aria-labelledby="tfa_125-L" data-tfa-labelledby="-L tfa_125-L">
+          <div class="form-group oneField" role="group" aria-labelledby="tfa_125-L" data-tfa-labelledby="-L tfa_125-L" id="tfa_125-D" data-condition="`#tfa_90`">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_125-L" class="form-label preField reqMark" aria-label="Local authorities   required" required>Local authorities</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_125-D">
-                <span id="tfa_125" class="choices vertical required" required data-condition="`#tfa_90`">
+              <div class="field-container-D">
+                <span id="tfa_125" class="choices vertical required" required>
                   <span class="oneChoice">
                     <label class="form-checkbox postField" id="tfa_126-L" for="tfa_126">
                       <input type="checkbox" value="tfa_126" id="tfa_126" name="tfa_126" aria-labelledby="tfa_126-L" data-tfa-labelledby="tfa_125-L tfa_126-L">
@@ -1005,6 +1003,14 @@ wFORMS.behaviors.prefill.skip = false;
                   </span>
                 </span>
               </div>
+            </div>
+          </div>
+          <div class="form-group oneField field-container-D" id="tfa_283-D" data-condition="`#tfa_91`">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_283-L" class="form-label preField reqMark" for="tfa_283">Please provide details on how the project has a national reach</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <textarea aria-required="true" data-maxwords="150" id="tfa_283" name="tfa_283" title="National reach" class="form-input required count-words" required></textarea>
             </div>
           </div>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_158-L" data-tfa-labelledby="-L tfa_158-L">
@@ -1682,7 +1688,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label class="form-checkbox postField" id="tfa_231-L" for="tfa_231">
                     <input type="checkbox" value="tfa_231" id="tfa_231" name="tfa_231" aria-labelledby="tfa_231-L" data-tfa-labelledby="tfa_230-L tfa_231-L">
                     <span class="form-icon"></span>
-                    Please tick this box if you are happy for the New Scots Refugee Integration Delivery Project panel to contact you
+                    <strong>Please tick this box if you are happy for the New Scots Refugee Integration Delivery Project panel to contact you</strong>
                   </label>
                 </span>
               </span>
