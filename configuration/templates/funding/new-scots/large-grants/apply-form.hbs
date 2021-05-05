@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 
-<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=2e9f1d9e0da37161b48ef0210c02234ee05cd715" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
-<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=2e9f1d9e0da37161b48ef0210c02234ee05cd715">
+<link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=b84a544cc9398c82fb87c57e86388f8eb83ef9b4" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=b84a544cc9398c82fb87c57e86388f8eb83ef9b4">
 </script>
 <script type="text/javascript">
 wFORMS.behaviors.prefill.skip = false;
@@ -48,15 +48,15 @@ wFORMS.behaviors.prefill.skip = false;
 </script>
 <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms_calendar.js">
 </script>
-<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=2e9f1d9e0da37161b48ef0210c02234ee05cd715">
+<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=b84a544cc9398c82fb87c57e86388f8eb83ef9b4">
 </script>
 
 <!-- FORM: BODY SECTION -->
 <div class="wFormContainer" >
-  <div class="wForm" id="4899064-WRPR" dir="ltr">
-    <div class="codesection" id="code-4899064">
+  <div class="wForm" id="4903538-WRPR" dir="ltr">
+    <div class="codesection" id="code-4903538">
     </div>
-    <form method="post" action="https://www.tfaforms.com/responses/processor" class="form form-horizontal hintsBelow labelsAbove" id="4899064" role="form" enctype="multipart/form-data">
+    <form method="post" action="https://www.tfaforms.com/responses/processor" class="form form-horizontal hintsBelow labelsAbove" id="4903538" role="form" enctype="multipart/form-data">
       <div class="wfPage" id="wfPgIndex-1">
         <div class="section pageSection" id="tfa_1">
           <h3 id="tfa_1-T">Tell us about your organisation</h3>
@@ -84,7 +84,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_4-D">
-                <input type="text" id="tfa_4" name="tfa_4" value="" title="Organisation alias" class="form-input">
+                <input type="text" id="tfa_4" name="tfa_4" value="{{defaults.tfa_4}}" title="Organisation alias" class="form-input">
               </div>
             </div>
           </div>
@@ -151,7 +151,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_10-D">
-                <input type="url" pattern="https?://.+" id="tfa_10" name="tfa_10" value="" title="Twitter address" class="form-input validate-custom /https?://.+/g">
+                <input type="url" pattern="https?://.+" id="tfa_10" name="tfa_10" value="{{defaults.tfa_10}}" title="Twitter address" class="form-input validate-custom /https?://.+/g">
               </div>
             </div>
             <script type="text/javascript">
@@ -168,7 +168,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_11-D">
-                <input type="url" pattern="https?://.+" id="tfa_11" name="tfa_11" value="" title="Facebook address" class="form-input validate-custom /https?://.+/g">
+                <input type="url" pattern="https?://.+" id="tfa_11" name="tfa_11" value="{{defaults.tfa_11}}" title="Facebook address" class="form-input validate-custom /https?://.+/g">
               </div>
             </div>
             <script type="text/javascript">
@@ -193,7 +193,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_12-D">
-                <input type="text" id="tfa_12" name="tfa_12" value="" aria-required="true" title="First name" class="form-input required" required>
+                <input type="text" id="tfa_12" name="tfa_12" value="{{defaults.tfa_12}}" aria-required="true" title="First name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -203,7 +203,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_13-D">
-                <input type="text" id="tfa_13" name="tfa_13" value="" aria-required="true" title="Last name" class="form-input required" required>
+                <input type="text" id="tfa_13" name="tfa_13" value="{{defaults.tfa_13}}" aria-required="true" title="Last name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_14-D">
-                <input type="text" id="tfa_14" name="tfa_14" value="" title="Position" class="form-input">
+                <input type="text" id="tfa_14" name="tfa_14" value="{{defaults.tfa_14}}" title="Position" class="form-input">
               </div>
             </div>
           </div>
@@ -223,7 +223,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_15-D">
-                <input type="text" id="tfa_15" name="tfa_15" value="" title="Phone number" class="form-input">
+                <input type="text" id="tfa_15" name="tfa_15" value="{{defaults.tfa_15}}" title="Phone number" class="form-input">
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_16-D">
-                <input type="text" id="tfa_16" name="tfa_16" value="" title="Mobile number" class="form-input">
+                <input type="text" id="tfa_16" name="tfa_16" value="{{defaults.tfa_16}}" title="Mobile number" class="form-input">
               </div>
             </div>
           </div>
@@ -243,7 +243,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_17-D">
-                <input type="email" id="tfa_17" name="tfa_17" value="" aria-required="true" title="Email address" class="validate-email form-input required" required>
+                <input type="email" id="tfa_17" name="tfa_17" value="{{defaults.tfa_17}}" aria-required="true" title="Email address" class="validate-email form-input required" required>
               </div>
             </div>
           </div>
@@ -253,7 +253,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_18-D">
-                <textarea id="tfa_18" name="tfa_18" title="Address (if different from organisation address provided)" class="form-input"></textarea>
+                <textarea id="tfa_18" name="tfa_18" title="Address (if different from organisation address provided)" class="form-input">{{defaults.tfa_18}}</textarea>
               </div>
             </div>
           </div>
@@ -301,7 +301,7 @@ wFORMS.behaviors.prefill.skip = false;
               </label>
               {{#unless defaults.application_editing}}
               <p class="form-input-hint text-secondary">
-                <a href="/funding/new-scots-fund/apply-small/not-a-charity">Not a registered charity?</a>
+                <a href="/funding/new-scots-fund/apply-large/not-a-charity">Not a registered charity?</a>
               </p>
               {{/unless}}
             </div>
@@ -319,7 +319,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_22-D">
-                <input type="text" id="tfa_22" name="tfa_22" value="" title="Company number" class="form-input">
+                <input type="text" id="tfa_22" name="tfa_22" value="{{defaults.tfa_22}}" title="Company number" class="form-input">
               </div>
             </div>
           </div>
@@ -329,7 +329,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-3 col-lg-4 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_24-D">
-                <input type="text" id="tfa_24" name="tfa_24" value="" maxlength="4" aria-required="true" min="0" max="2021" title="Year organisation established" class="form-input validate-integer required" required>
+                <input type="text" id="tfa_24" name="tfa_24" value="{{defaults.tfa_24}}" maxlength="4" aria-required="true" min="0" max="2021" title="Year organisation established" class="form-input validate-integer required" required>
               </div>
             </div>
           </div>
@@ -364,7 +364,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
-                <input type="text" id="tfa_28" name="tfa_28" value="" title="Name of your parent company or body" class="form-input required" required>
+                <input type="text" id="tfa_28" name="tfa_28" value="{{defaults.tfa_28}}" title="Name of your parent company or body" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -463,7 +463,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-3 col-lg-4 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_37-D">
                 <select id="tfa_37" name="tfa_37" title="Number of staff" aria-required="true" class="form-select required" required>
-                  <option value="">Please select...</option>
+                  <option value="" disabled selected>Please select&hellip;</option>
                   <option value="tfa_38" id="tfa_38">0</option>
                   <option value="tfa_39" id="tfa_39">1-10</option>
                   <option value="tfa_40" id="tfa_40">11-50</option>
@@ -480,7 +480,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-3 col-lg-4 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_49-D">
                 <select id="tfa_49" name="tfa_49" title="Number of volunteers" aria-required="true" class="form-select required" required>
-                  <option value="">Please select...</option>
+                  <option value="" disabled selected>Please select&hellip;</option>
                   <option value="tfa_50" id="tfa_50">0</option>
                   <option value="tfa_51" id="tfa_51">1-10</option>
                   <option value="tfa_52" id="tfa_52">11-50</option>
@@ -490,8 +490,33 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          <div class="form-group oneField" id="tfa_284-D" role="radiogroup" aria-labelledby="tfa_284-L" data-tfa-labelledby="-L tfa_284-L">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_284-L" class="form-label preField reqMark">1.8&ensp;Does your organisation have HR procedures?</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <span id="tfa_284" class="choices vertical required" required>
+                  <span class="oneChoice">
+                    <label class="form-radio postField" id="tfa_285-L" for="tfa_285">
+                      <input type="radio" value="tfa_285" id="tfa_285" name="tfa_284" aria-required="true" aria-labelledby="tfa_285-L" data-tfa-labelledby="tfa_284-L tfa_285-L">
+                      <span class="form-icon"></span>
+                      Yes
+                    </label>
+                  </span>
+                  <span class="oneChoice">
+                    <label class="form-radio postField" id="tfa_286-L" for="tfa_286">
+                      <input type="radio" value="tfa_36" id="tfa_286" name="tfa_284" aria-required="true" aria-labelledby="tfa_286-L" data-tfa-labelledby="tfa_284-L tfa_286-L">
+                      <span class="form-icon"></span>
+                      No
+                    </label>
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
           <p>
-            1.8&ensp;Annual income and expenditure
+            1.9&ensp;Annual income and expenditure
           </p>
           <p>
             What was your financial position at the 31 December 2020 or at the most recent point to which your accounts are made up?
@@ -505,7 +530,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_55" class="choices vertical ">
                   <span class="oneChoice">
                     <label class="form-checkbox postField" id="tfa_56-L" for="tfa_56">
-                      <input type="checkbox" value="tfa_56" id="tfa_56" name="tfa_56" data-conditionals="#tfa_57-D,#tfa_58-D" aria-labelledby="tfa_56-L" data-tfa-labelledby="tfa_55-L tfa_56-L">
+                      <input type="checkbox" value="tfa_56" id="tfa_56" name="tfa_56" data-conditionals="#tfa_57-D,#tfa_287-D,#tfa_288-D,#tfa_289-D,#tfa_290-D,#tfa_291-D,#tfa_292-D,#tfa_58-D" aria-labelledby="tfa_56-L" data-tfa-labelledby="tfa_55-L tfa_56-L">
                       <span class="form-icon"></span>
                       If you are a local authority please tick this box
                     </label>
@@ -522,7 +547,85 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D">
                 <div class="input-group" style="width:100%;">
                   <span class="input-group-addon">&pound;</span>
-                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_57" name="tfa_57" value="" title="Annual income or turnover" class="form-input text-right validate-integer required" required>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_57" name="tfa_57" value="{{defaults.tfa_57}}" title="Annual income or turnover" class="form-input text-right validate-integer required" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_287-D" data-condition="NOT (`#tfa_56`)">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_287-L" class="form-label preField reqMark" for="tfa_287">Fixed assets</label>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <div class="input-group" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_287" name="tfa_287" value="{{defaults.tfa_287}}" title="Fixed assets" class="form-input text-right validate-integer required" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_288-D" data-condition="NOT (`#tfa_56`)">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_288-L" class="form-label preField reqMark" for="tfa_288">Current assets</label>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <div class="input-group" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_288" name="tfa_288" value="{{defaults.tfa_288}}" title="Current assets" class="form-input text-right validate-integer required" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_289-D" data-condition="NOT (`#tfa_56`)">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_289-L" class="form-label preField reqMark" for="tfa_289">Current liabilities</label>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <div class="input-group" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_289" name="tfa_289" value="{{defaults.tfa_289}}" title="Current liabilities" class="form-input text-right validate-integer required" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_290-D" data-condition="NOT (`#tfa_56`)">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_290-L" class="form-label preField reqMark" for="tfa_290">Other liabilities</label>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <div class="input-group" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_290" name="tfa_290" value="{{defaults.tfa_290}}" title="Other liabilities" class="form-input text-right validate-integer required" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_291-D" data-condition="NOT (`#tfa_56`)">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_291-L" class="form-label preField reqMark" for="tfa_291">Net current assets</label>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <div class="input-group" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_291" name="tfa_291" value="{{defaults.tfa_291}}" title="Net current assets" class="form-input text-right validate-integer required" required>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_292-D" data-condition="NOT (`#tfa_56`)">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_292-L" class="form-label preField reqMark" for="tfa_292">Net assets</label>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <div class="input-group" style="width:100%;">
+                  <span class="input-group-addon">&pound;</span>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_292" name="tfa_292" value="{{defaults.tfa_292}}" title="Net assets" class="form-input text-right validate-integer required" required>
                 </div>
               </div>
             </div>
@@ -531,20 +634,30 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-12">
               <label id="tfa_58-L" class="form-label preField reqMark" for="tfa_58">If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes.</label>
               <div class="field-container-D">
-                <textarea aria-required="true" id="tfa_58" name="tfa_58" title="If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes." class="form-input required" required></textarea>
+                <textarea aria-required="true" id="tfa_58" name="tfa_58" title="If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes." class="form-input required" required>{{defaults.tfa_58}}</textarea>
               </div>
             </div>
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_281-L" class="form-label preField reqMark" for="tfa_281">1.9&ensp;Amount applied for</label>
+              <label id="tfa_281-L" class="form-label preField reqMark" for="tfa_281">1.10&ensp;Amount applied for</label>
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_281-D">
                 <div class="input-group" style="width:100%;">
                   <span class="input-group-addon">&pound;</span>
-                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_281" name="tfa_281" value="" title="Amount applied for" class="form-input text-right validate-integer required" required>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_281" name="tfa_281" value="{{defaults.tfa_281}}" title="Amount applied for" class="form-input text-right validate-integer required" required>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_293-L" class="form-label preField " for="tfa_293">Please explain how your organisation intends to oversee the management of this project (Please complete if grant requested is above £25,000)</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D" id="tfa_293-D">
+                <textarea data-maxwords="250" id="tfa_293" name="tfa_293" title="Please explain how your organisation intends to oversee the management of this project (Please complete if grant requested is above £25,000)" class="form-input count-words">{{defaults.tfa_293}}</textarea>
               </div>
             </div>
           </div>
@@ -559,7 +672,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_60-D">
-                <input type="text" id="tfa_60" name="tfa_60" value="" aria-required="true" title="Name of your project" class="form-input required" required>
+                <input type="text" id="tfa_60" name="tfa_60" value="{{defaults.tfa_60}}" aria-required="true" title="Name of your project" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -572,7 +685,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_61-D">
-                <input type="text" id="tfa_61" name="tfa_61" value="" autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="Start date" class="validate-datecal form-input required" required>
+                <input type="text" id="tfa_61" name="tfa_61" value="{{defaults.tfa_61}}" autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="Start date" class="validate-datecal form-input required" required>
               </div>
             </div>
           </div>
@@ -582,7 +695,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_62-D">
-                <input type="text" id="tfa_62" name="tfa_62" value="" autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="End date" class="validate-datecal form-input required" required>
+                <input type="text" id="tfa_62" name="tfa_62" value="{{defaults.tfa_62}}" autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="End date" class="validate-datecal form-input required" required>
               </div>
             </div>
           </div>
@@ -596,7 +709,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_63-D">
                 <select id="tfa_63" name="tfa_63" title="Which TOPIC are you applying for?" aria-required="true" class="form-select required" required>
-                  <option value="">Please select...</option>
+                  <option value="" disabled selected>Please select&hellip;</option>
                   <option value="tfa_64" id="tfa_64">1. LANGUAGE / EDUCATION (SOCIAL CONNECTIONS)</option>
                   <option value="tfa_65" id="tfa_65">2. LANGUAGE / EDUCATION (EMPLOYMENT)</option>
                   <option value="tfa_66" id="tfa_66">3. LANGUAGE / EDUCATION (YOUNG REFUGEES)</option>
@@ -646,7 +759,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-12">
               <label id="tfa_83-L" class="form-label preField reqMark" for="tfa_83">2.5&ensp;Please give us a summary of your proposed project</label>
               <div class="field-container-D" id="tfa_83-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_83" name="tfa_83" title="Please give us a summary of your proposed project" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="150" id="tfa_83" name="tfa_83" title="Please give us a summary of your proposed project" class="required form-input count-words" required>{{defaults.tfa_83}}</textarea>
               </div>
             </div>
           </div>
@@ -654,7 +767,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-12">
               <label id="tfa_84-L" class="form-label preField reqMark" for="tfa_84">2.6&ensp;Please describe how refugees have been involved in the development of this idea and how they will participate in the delivery of the project</label>
               <div class="field-container-D" id="tfa_84-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_84" name="tfa_84" title="Please describe how refugees have been involved in the development of this idea and how they will participate in the delivery of the project" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="150" id="tfa_84" name="tfa_84" title="Please describe how refugees have been involved in the development of this idea and how they will participate in the delivery of the project" class="required form-input count-words" required>{{defaults.tfa_84}}</textarea>
               </div>
             </div>
           </div>
@@ -662,7 +775,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-12">
               <label id="tfa_85-L" class="form-label preField reqMark" for="tfa_85">2.7&ensp;Please explain how your project will widen the impact of successful integration approaches, practices and tools</label>
               <div class="field-container-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_85" name="tfa_85" title="Please explain how your project will widen the impact of successful integration approaches, practices and tools" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="150" id="tfa_85" name="tfa_85" title="Please explain how your project will widen the impact of successful integration approaches, practices and tools" class="required form-input count-words" required>{{defaults.tfa_85}}</textarea>
               </div>
             </div>
           </div>
@@ -670,7 +783,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-12">
               <label id="tfa_86-L" class="form-label preField reqMark" for="tfa_86">2.7&ensp;Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration</label>
               <div class="field-container-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_86" name="tfa_86" title="Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="150" id="tfa_86" name="tfa_86" title="Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration" class="required form-input count-words" required>{{defaults.tfa_86}}</textarea>
               </div>
             </div>
           </div>
@@ -688,7 +801,7 @@ wFORMS.behaviors.prefill.skip = false;
                     <label class="form-radio postField" id="tfa_88-L" for="tfa_88">
                       <input type="radio" value="tfa_88" id="tfa_88" name="tfa_87" aria-required="true" data-conditionals="#tfa_282-D" aria-labelledby="tfa_88-L" data-tfa-labelledby="tfa_87-L tfa_88-L">
                       <span class="form-icon"></span>
-                      A local community or small number of local communities
+                      A local community or large number of local communities
                     </label>
                   </span>
                   <span class="oneChoice">
@@ -722,7 +835,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
-                <input type="text" id="tfa_282" name="tfa_282" value="" maxlength="255" aria-required="true" title="Areas covered" class="form-input required" required>
+                <input type="text" id="tfa_282" name="tfa_282" value="{{defaults.tfa_282}}" maxlength="255" aria-required="true" title="Areas covered" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -733,7 +846,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
                 <select id="tfa_92" name="tfa_92" title="Local authority" aria-required="true" class="form-select required" required>
-                  <option value="">Please select...</option>
+                  <option value="" disabled selected>Please select&hellip;</option>
                   <option value="tfa_93" id="tfa_93">Aberdeen</option>
                   <option value="tfa_94" id="tfa_94">Aberdeenshire</option>
                   <option value="tfa_95" id="tfa_95">Angus</option>
@@ -1010,7 +1123,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_283-L" class="form-label preField reqMark" for="tfa_283">Please provide details on how the project has a national reach</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <textarea aria-required="true" data-maxwords="150" id="tfa_283" name="tfa_283" title="National reach" class="form-input required count-words" required></textarea>
+              <textarea aria-required="true" data-maxwords="150" id="tfa_283" name="tfa_283" title="National reach" class="form-input required count-words" required>{{defaults.tfa_283}}</textarea>
             </div>
           </div>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_158-L" data-tfa-labelledby="-L tfa_158-L">
@@ -1280,7 +1393,15 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-12">
               <label id="tfa_194-L" class="form-label preField reqMark" for="tfa_194">Please describe who the partners working on the project are and why you have decided to collaborate</label>
               <div class="field-container-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_194" name="tfa_194" title="Please describe who the partners working on the project are and why you have decided to collaborate" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="150" id="tfa_194" name="tfa_194" title="Please describe who the partners working on the project are and why you have decided to collaborate" class="required form-input count-words" required>{{defaults.tfa_194}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_294-D">
+            <div class="col-12">
+              <label id="tfa_294-L" class="form-label preField reqMark" for="tfa_294">Please indicate if your project will impact on the work of other organisations working with refugees in your area and if so, which organisations</label>
+              <div class="field-container-D">
+                <textarea aria-required="true" data-maxwords="150" id="tfa_294" name="tfa_294" title="Please indicate if your project will impact on the work of other organisations working with refugees in your area and if so, which organisations" class="required form-input count-words" required>{{defaults.tfa_294}}</textarea>
               </div>
             </div>
           </div>
@@ -1293,6 +1414,9 @@ wFORMS.behaviors.prefill.skip = false;
                 <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
               </div>
             </div>
+            <p>
+              <a href="#" class="btn btn-primary" download>Project partners template download (XLS)</a>
+            </p>
           </div>
           <div class="form-group oneField" id="tfa_195-D" data-condition="`#tfa_193`" role="radiogroup" aria-labelledby="tfa_195-L" data-tfa-labelledby="-L tfa_195-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
@@ -1327,30 +1451,41 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             2.10&ensp;Proposed project/activities (detail about your project activities)
           </p>
+          <div class="form-group oneField" id="tfa_295-D">
+            <div class="col-12">
+              <label id="tfa_295-L" class="form-label preField reqMark" for="tfa_295">Please tell us the main objectives of your project. Be as specific as you can. What does your project intend to achieve, for whom, and how?</label>
+              <div class="field-container-D">
+                <textarea aria-required="true" data-maxwords="300" id="tfa_295" name="tfa_295" title="Please tell us the main objectives of your project. Be as specific as you can. What does your project intend to achieve, for whom, and how?" class="required form-input count-words" required>{{defaults.tfa_295}}</textarea>
+              </div>
+            </div>
+          </div>
+          <p>
+            2.11&ensp;Detail about your project activities and intended outcomes
+          </p>
           <div id="tfa_246" class="section group mt mb-1">
             <label class="form-label preField" id="tfa_246-L">Proposed project/activity 1</label>
             <div class="form-group oneField field-container-D" id="tfa_242-D">
               <div class="col-12">
                 <label id="tfa_242-L" class="form-label preField reqMark" for="tfa_242">Activity</label>
-                <textarea aria-required="true" data-maxwords="250" id="tfa_242" name="tfa_242" title="Activity 1" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="250" id="tfa_242" name="tfa_242" title="Activity 1" class="required form-input count-words" required>{{defaults.tfa_242}}</textarea>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_243-D">
               <div class="col-12">
                 <label id="tfa_243-L" class="form-label preField reqMark" for="tfa_243">Who are the target groups for this activity?</label>
-                <textarea aria-required="true" data-maxwords="150" id="tfa_243" name="tfa_243" title="Target group 1" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="150" id="tfa_243" name="tfa_243" title="Target group 1" class="required form-input count-words" required>{{defaults.tfa_243}}</textarea>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_244-D">
               <div class="col-12">
                 <label id="tfa_244-L" class="form-label preField reqMark" for="tfa_244">How many people do you estimate you will reach through this activity?</label>
-                <input type="text" id="tfa_244" name="tfa_244" value="" maxlength="6" aria-required="true" title="People reach 1" class="form-input validate-integer required" required>
+                <input type="text" id="tfa_244" name="tfa_244" value="{{defaults.tfa_244}}" maxlength="6" aria-required="true" title="People reach 1" class="form-input validate-integer required" required>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_245-D">
               <div class="col-12">
                 <label id="tfa_245-L" class="form-label preField reqMark" for="tfa_245">When will it take place?</label>
-                <input type="text" id="tfa_245" name="tfa_245" value="" maxlength="255" aria-required="true" title="Date of activity 1" class="form-input required" required>
+                <input type="text" id="tfa_245" name="tfa_245" value="{{defaults.tfa_245}}" maxlength="255" aria-required="true" title="Date of activity 1" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -1359,25 +1494,25 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D" id="tfa_253-D">
               <div class="col-12">
                 <label id="tfa_253-L" class="form-label preField " for="tfa_253">Activity</label>
-                <textarea data-maxwords="250" id="tfa_253" name="tfa_253" title="Activity 2" class="form-input count-words"></textarea>
+                <textarea data-maxwords="250" id="tfa_253" name="tfa_253" title="Activity 2" class="form-input count-words">{{defaults.tfa_253}}</textarea>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_254-D">
               <div class="col-12">
                 <label id="tfa_254-L" class="form-label preField " for="tfa_254">Who are the target groups for this activity?</label>
-                <textarea data-maxwords="150" id="tfa_254" name="tfa_254" title="Target group 2" class="form-input count-words"></textarea>
+                <textarea data-maxwords="150" id="tfa_254" name="tfa_254" title="Target group 2" class="form-input count-words">{{defaults.tfa_254}}</textarea>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_255-D">
               <div class="col-12">
                 <label id="tfa_255-L" class="form-label preField " for="tfa_255">How many people do you estimate you will reach through this activity?</label>
-                <input type="text" id="tfa_255" name="tfa_255" value="" maxlength="6" title="People reach 2" class="form-input validate-integer">
+                <input type="text" id="tfa_255" name="tfa_255" value="{{defaults.tfa_255}}" maxlength="6" title="People reach 2" class="form-input validate-integer">
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_256-D">
               <div class="col-12">
                 <label id="tfa_256-L" class="form-label preField " for="tfa_256">When will it take place?</label>
-                <input type="text" id="tfa_256" name="tfa_256" value="" maxlength="255" title="Date of activity 2" class="form-input">
+                <input type="text" id="tfa_256" name="tfa_256" value="{{defaults.tfa_256}}" maxlength="255" title="Date of activity 2" class="form-input">
               </div>
             </div>
           </div>
@@ -1386,25 +1521,25 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D" id="tfa_263-D">
               <div class="col-12">
                 <label id="tfa_263-L" class="form-label preField " for="tfa_263">Activity</label>
-                <textarea data-maxwords="250" id="tfa_263" name="tfa_263" title="Activity 3" class="form-input count-words"></textarea>
+                <textarea data-maxwords="250" id="tfa_263" name="tfa_263" title="Activity 3" class="form-input count-words">{{defaults.tfa_263}}</textarea>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_264-D">
               <div class="col-12">
                 <label id="tfa_264-L" class="form-label preField " for="tfa_264">Who are the target groups for this activity?</label>
-                <textarea data-maxwords="150" id="tfa_264" name="tfa_264" title="Target group 3" class="form-input count-words"></textarea>
+                <textarea data-maxwords="150" id="tfa_264" name="tfa_264" title="Target group 3" class="form-input count-words">{{defaults.tfa_264}}</textarea>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_265-D">
               <div class="col-12">
                 <label id="tfa_265-L" class="form-label preField " for="tfa_265">How many people do you estimate you will reach through this activity?</label>
-                <input type="text" id="tfa_265" name="tfa_265" value="" maxlength="6" title="People reach 3" class="form-input validate-integer">
+                <input type="text" id="tfa_265" name="tfa_265" value="{{defaults.tfa_265}}" maxlength="6" title="People reach 3" class="form-input validate-integer">
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_266-D">
               <div class="col-12">
                 <label id="tfa_266-L" class="form-label preField " for="tfa_266">When will it take place?</label>
-                <input type="text" id="tfa_266" name="tfa_266" value="" maxlength="255" title="Date of activity 3" class="form-input">
+                <input type="text" id="tfa_266" name="tfa_266" value="{{defaults.tfa_266}}" maxlength="255" title="Date of activity 3" class="form-input">
               </div>
             </div>
           </div>
@@ -1413,61 +1548,112 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D" id="tfa_273-D">
               <div class="col-12">
                 <label id="tfa_273-L" class="form-label preField " for="tfa_273">Activity</label>
-                <textarea data-maxwords="250" id="tfa_273" name="tfa_273" title="Activity 4" class="form-input count-words"></textarea>
+                <textarea data-maxwords="250" id="tfa_273" name="tfa_273" title="Activity 4" class="form-input count-words">{{defaults.tfa_273}}</textarea>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_274-D">
               <div class="col-12">
                 <label id="tfa_274-L" class="form-label preField " for="tfa_274">Who are the target groups for this activity?</label>
-                <textarea data-maxwords="150" id="tfa_274" name="tfa_274" title="Target group 4" class="form-input count-words"></textarea>
+                <textarea data-maxwords="150" id="tfa_274" name="tfa_274" title="Target group 4" class="form-input count-words">{{defaults.tfa_274}}</textarea>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_275-D">
               <div class="col-12">
                 <label id="tfa_275-L" class="form-label preField " for="tfa_275">How many people do you estimate you will reach through this activity?</label>
-                <input type="text" id="tfa_275" name="tfa_275" value="" maxlength="6" title="People reach 4" class="form-input validate-integer">
+                <input type="text" id="tfa_275" name="tfa_275" value="{{defaults.tfa_275}}" maxlength="6" title="People reach 4" class="form-input validate-integer">
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_276-D">
               <div class="col-12">
                 <label id="tfa_276-L" class="form-label preField " for="tfa_276">When will it take place?</label>
-                <input type="text" id="tfa_276" name="tfa_276" value="" maxlength="255" title="Date of activity 4" class="form-input">
+                <input type="text" id="tfa_276" name="tfa_276" value="{{defaults.tfa_276}}" maxlength="255" title="Date of activity 4" class="form-input">
               </div>
-            </div>
-          </div>
-          <div class="form-group oneField field-container-D" id="tfa_279-D">
-            <div class="col-8 col-lg-7 col-md-6 col-sm-12 pr">
-              <label id="tfa_279-L" class="form-label preField reqMark" for="tfa_279">Please give an estimate of the total number of participants that you expect to work with over the lifetime of the project.</label>
-            </div>
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
-              <input type="number" id="tfa_279" name="tfa_279" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="1000000" title="Estimate of the total number of participants that you expect to work with over the lifetime of the project" class="form-input validate-integer required" required>
             </div>
           </div>
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-6">
         <div class="section pageSection" id="tfa_199">
+          <p>
+            2.12&ensp;Please provide the Project Plan.
+          </p>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_201-L" class="form-label preField reqMark" for="tfa_201">2.11&ensp;Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?</label>
+              <label id="tfa_296-L" class="form-label preField reqMark" for="tfa_296">July – Sept 2021</label>
+              <div class="field-container-D" id="tfa_296-D">
+                <textarea aria-required="true" data-maxwords="250" id="tfa_296" name="tfa_296" title="July – Sept 2021" class="form-input count-words">{{defaults.tfa_296}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-12">
+              <label id="tfa_298-L" class="form-label preField reqMark" for="tfa_298">October – December 2021</label>
+              <div class="field-container-D" id="tfa_298-D">
+                <textarea aria-required="true" data-maxwords="250" id="tfa_298" name="tfa_298" title="October – December 2021" class="form-input count-words">{{defaults.tfa_298}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-12">
+              <label id="tfa_300-L" class="form-label preField reqMark" for="tfa_300">January – March 2022</label>
+              <div class="field-container-D" id="tfa_300-D">
+                <textarea aria-required="true" data-maxwords="250" id="tfa_300" name="tfa_300" title="January – March 2022" class="form-input count-words">{{defaults.tfa_300}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-12">
+              <label id="tfa_302-L" class="form-label preField reqMark" for="tfa_302">April – June 2022</label>
+              <div class="field-container-D" id="tfa_302-D">
+                <textarea aria-required="true" data-maxwords="250" id="tfa_302" name="tfa_302" title="April – June 2022" class="form-input count-words">{{defaults.tfa_302}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-12">
+              <label id="tfa_304-L" class="form-label preField reqMark" for="tfa_304">July – September 2022</label>
+              <div class="field-container-D" id="tfa_304-D">
+                <textarea aria-required="true" data-maxwords="250" id="tfa_304" name="tfa_304" title="July – September 2022" class="form-input count-words">{{defaults.tfa_304}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-12">
+              <label id="tfa_306-L" class="form-label preField reqMark" for="tfa_306">October – December 2022</label>
+              <div class="field-container-D" id="tfa_306-D">
+                <textarea aria-required="true" data-maxwords="250" id="tfa_306" name="tfa_306" title="October – December 2022" class="form-input count-words">{{defaults.tfa_306}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-12">
+              <label id="tfa_201-L" class="form-label preField reqMark" for="tfa_201">2.13&ensp;Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?</label>
               <div class="field-container-D" id="tfa_201-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_201" name="tfa_201" title="Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="300" id="tfa_201" name="tfa_201" title="Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?" class="required form-input count-words" required>{{defaults.tfa_201}}</textarea>
               </div>
             </div>
           </div>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_202-L" class="form-label preField reqMark" for="tfa_202">2.12&ensp;Please describe how you know this work is needed</label>
+              <label id="tfa_307-L" class="form-label preField reqMark" for="tfa_307">2.14&ensp;Please describe how your project reflects the topic selected in question 2.3</label>
+              <div class="field-container-D" id="tfa_307-D">
+                <textarea aria-required="true" data-maxwords="250" id="tfa_307" name="tfa_307" title="Please describe how your project reflects the topic selected in question 2.3" class="required form-input count-words" required>{{defaults.tfa_307}}</textarea>
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-12">
+              <label id="tfa_202-L" class="form-label preField reqMark" for="tfa_202">2.15&ensp;Please describe how you know this work is needed</label>
               <div class="field-container-D" id="tfa_202-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_202" name="tfa_202" title="Please describe how you know this work is needed" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="250" id="tfa_202" name="tfa_202" title="Please describe how you know this work is needed" class="required form-input count-words" required>{{defaults.tfa_202}}</textarea>
               </div>
             </div>
           </div>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_203-L" class="form-label preField reqMark" for="tfa_203">2.13&ensp;Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future</label>
+              <label id="tfa_203-L" class="form-label preField reqMark" for="tfa_203">2.16&ensp;Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future</label>
               <div class="field-container-D" id="tfa_203-D">
-                <textarea aria-required="true" data-maxwords="150" id="tfa_203" name="tfa_203" title="Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="150" id="tfa_203" name="tfa_203" title="Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future" class="required form-input count-words" required>{{defaults.tfa_203}}</textarea>
               </div>
             </div>
           </div>
@@ -1478,15 +1664,29 @@ wFORMS.behaviors.prefill.skip = false;
           <h3 id="tfa_204-T">People and communities who will benefit from your activity</h3>
           <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_206-L" class="form-label preField reqMark" for="tfa_206">2.14&ensp;Please describe the people and communities who will benefit from the project you plan to do</label>
+              <label id="tfa_206-L" class="form-label preField reqMark" for="tfa_206">2.17&ensp;Please describe the people and communities who will benefit from the project you plan to do</label>
               <div class="field-container-D" id="tfa_206-D">
-                <textarea aria-required="true" data-maxwords="250" id="tfa_206" name="tfa_206" title="Please describe the people and communities who will benefit from the project you plan to do" class="required form-input count-words" required></textarea>
+                <textarea aria-required="true" data-maxwords="250" id="tfa_206" name="tfa_206" title="Please describe the people and communities who will benefit from the project you plan to do" class="required form-input count-words" required>{{defaults.tfa_206}}</textarea>
               </div>
+            </div>
+          </div>
+          <div class="form-group oneField field-container-D" id="tfa_217-D" data-condition="`#tfa_216`">
+            <div class="col-12">
+              <label id="tfa_217-L" class="form-label preField reqMark" for="tfa_217">Please specify</label>
+              <input type="text" id="tfa_217" name="tfa_217" value="{{defaults.tfa_217}}" aria-required="true" title="Please specify" class="form-input required" required>
+            </div>
+          </div>
+          <div class="form-group oneField field-container-D" id="tfa_279-D">
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12 pr">
+              <label id="tfa_279-L" class="form-label preField reqMark" for="tfa_279">2.18&ensp;Please give an estimate of the total number of participants that you expect to work with over the lifetime of the project.</label>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12">
+              <input type="number" id="tfa_279" name="tfa_279" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="1000000" title="Estimate of the total number of participants that you expect to work with over the lifetime of the project" class="form-input validate-integer required" required>
             </div>
           </div>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_207-L" data-tfa-labelledby="-L tfa_207-L">
             <div class="col-12">
-              <label id="tfa_207-L" class="form-label preField reqMark" aria-label="Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]   required" required>2.15&ensp;Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]</label>
+              <label id="tfa_207-L" class="form-label preField reqMark" aria-label="Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]   required" required>2.19&ensp;Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]</label>
               <div class="field-container-D" id="tfa_207-D">
                 <span id="tfa_207" class="choices vertical required" required>
                   <span class="oneChoice">
@@ -1556,10 +1756,12 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
-          <div class="form-group oneField field-container-D" id="tfa_217-D" data-condition="`#tfa_216`">
+          <div class="form-group oneField">
             <div class="col-12">
-              <label id="tfa_217-L" class="form-label preField reqMark" for="tfa_217">Please specify</label>
-              <input type="text" id="tfa_217" name="tfa_217" value="" aria-required="true" title="Please specify" class="form-input required" required>
+              <label id="tfa_309-L" class="form-label preField reqMark" for="tfa_309">2.20&ensp;Please describe if you have considered how you will sustain the impact of your project when the funding ends</label>
+              <div class="field-container-D" id="tfa_309-D">
+                <textarea aria-required="true" data-maxwords="250" id="tfa_309" name="tfa_309" title="Please describe if you have considered how you will sustain the impact of your project when the funding ends" class="required form-input count-words" required>{{defaults.tfa_309}}</textarea>
+              </div>
             </div>
           </div>
         </div>
@@ -1570,111 +1772,19 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             3.1&ensp;Associated budget
           </p>
+          <div class="form-group oneField" id="tfa_310-D">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_310-L" class="form-label preField reqMark" for="tfa_310">Please upload a file containing your budget details based on the template provided</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <input type="file" id="tfa_310" name="tfa_310" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
+              </div>
+            </div>
+          </div>
           <p>
-            Please provide a short description of each element and estimated cost.
+            <a href="#" class="btn btn-primary" download>Budget template download (XLS)</a>
           </p>
-          <table class="gridLayout" style="width:100%;">
-            <thead>
-              <tr class="headerRow">
-                <th scope="col" style="width:50%;">
-                  Budget description
-                </th>
-                <th scope="col" style="width:50%;">
-                  Amount
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="section">
-                <td>
-                  <div class="oneField field-container-D" id="tfa_219-D">
-                    <input type="text" id="tfa_219" maxlength="255" name="tfa_219" value="" title="Budget 1 description" class="form-input required" required>
-                  </div>
-                </td>
-                <td>
-                  <div class="oneField field-container-D" id="tfa_218-D">
-                    <div class="input-group" style="width:100%;">
-                      <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_218" name="tfa_218" value="" title="Budget 1 amount" class="form-input calc-BudgetA text-right validate-integer required" required>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="section">
-                <td>
-                  <div class="oneField field-container-D" id="tfa_221-D">
-                    <input type="text" id="tfa_221" name="tfa_221" maxlength="255" value="" title="Budget 2 description" class="form-input">
-                  </div>
-                </td>
-                <td>
-                  <div class="oneField field-container-D" id="tfa_220-D">
-                    <div class="input-group" style="width:100%;">
-                      <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_220" name="tfa_220" value="" title="Budget 2 amount" class="form-input calc-BudgetB validate-integer text-right">
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="section">
-                <td>
-                  <div class="oneField field-container-D" id="tfa_223-D">
-                    <input type="text" id="tfa_223" maxlength="255" name="tfa_223" value="" title="Budget 3 description" class="form-input">
-                  </div>
-                </td>
-                <td>
-                  <div class=" oneField field-container-D" id="tfa_222-D">
-                    <div class="input-group" style="width:100%;">
-                      <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_222" name="tfa_222" value="" title="Budget 3 amount" class="form-input calc-BudgetC validate-integer text-right">
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="section">
-                <td>
-                  <div class="oneField field-container-D" id="tfa_225-D">
-                    <input type="text" id="tfa_225" name="tfa_225" maxlength="255" value="" title="Budget 4 description" class="form-input">
-                  </div>
-                </td>
-                <td>
-                  <div class="oneField field-container-D" id="tfa_224-D">
-                    <div class="input-group" style="width:100%;">
-                      <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_224" name="tfa_224" value="" title="Budget 4 amount" class="form-input calc-BudgetD validate-integer text-right">
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="section">
-                <td>
-                  <div class="oneField field-container-D" id="tfa_227-D">
-                    <input type="text" id="tfa_227" name="tfa_227" maxlength="255" value="" title="Budget 5 description" class="form-input">
-                  </div>
-                </td>
-                <td>
-                  <div class="oneField field-container-D" id="tfa_226-D">
-                    <div class="input-group" style="width:100%;">
-                      <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_226" name="tfa_226" value="" title="Budget 5 amount" class="form-input calc-BudgetE validate-integer text-right">
-                    </div>
-                  </div>
-                </td>
-              </tr>
-              <tr class="section">
-                <th scope="row" class="headerCol text-left">
-                  <strong>Budget total</strong>
-                </th>
-                <td>
-                  <div class="oneField field-container-D" id="tfa_228-D">
-                    <div class="input-group" style="width:100%;">
-                      <span class="input-group-addon">&pound;</span>
-                      <input type="number" id="tfa_228" name="tfa_228" readonly autocomplete="nope" data-lpignore="true" class="formula=BudgetA+BudgetB+BudgetC+BudgetD+BudgetE readonly form-input text-right">
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-9">
@@ -1721,7 +1831,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_232-D">
-                <input type="text" id="tfa_232" name="tfa_232" value="" title="Signatory first name" class="form-input required" required>
+                <input type="text" id="tfa_232" name="tfa_232" value="{{defaults.tfa_232}}" title="Signatory first name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -1731,7 +1841,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_233-D">
-                <input type="text" id="tfa_233" name="tfa_233" value="" title="Signatory last name" class="form-input required" required>
+                <input type="text" id="tfa_233" name="tfa_233" value="{{defaults.tfa_233}}" title="Signatory last name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -1741,7 +1851,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_234-D">
-                <input type="text" id="tfa_234" name="tfa_234" value="" title="Designation in Applicant Organisation" class="form-input required" required>
+                <input type="text" id="tfa_234" name="tfa_234" value="{{defaults.tfa_234}}" title="Designation in Applicant Organisation" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -1751,7 +1861,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_235-D">
-                <input type="text" id="tfa_235" name="tfa_235" value="" title="Address 1" class="form-input required" required>
+                <input type="text" id="tfa_235" name="tfa_235" value="{{defaults.tfa_235}}" title="Address 1" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -1761,7 +1871,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_236-D">
-                <input type="text" id="tfa_236" name="tfa_236" value="" title="Address 2" class="form-input">
+                <input type="text" id="tfa_236" name="tfa_236" value="{{defaults.tfa_236}}" title="Address 2" class="form-input">
               </div>
             </div>
           </div>
@@ -1771,7 +1881,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_237-D">
-                <input type="text" id="tfa_237" name="tfa_237" value="" title="Address 3" class="form-input">
+                <input type="text" id="tfa_237" name="tfa_237" value="{{defaults.tfa_237}}" title="Address 3" class="form-input">
               </div>
             </div>
           </div>
@@ -1781,7 +1891,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_238-D">
-                <input type="text" id="tfa_238" name="tfa_238" value="" title="Address town/city" class="form-input required" required>
+                <input type="text" id="tfa_238" name="tfa_238" value="{{defaults.tfa_238}}" title="Address town/city" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -1791,7 +1901,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_239-D">
-                <input type="text" id="tfa_239" name="tfa_239" value="" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="form-input required validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))/g" required>
+                <input type="text" id="tfa_239" name="tfa_239" value="{{defaults.tfa_239}}" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="form-input required validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))/g" required>
               </div>
             </div>
             <script type="text/javascript">
@@ -1808,7 +1918,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_240-D">
-                <input type="text" id="tfa_240" name="tfa_240" value="" title="Phone number" class="form-input required" required>
+                <input type="text" id="tfa_240" name="tfa_240" value="{{defaults.tfa_240}}" title="Phone number" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -1818,7 +1928,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_241-D">
-                <input type="email" id="tfa_241" name="tfa_241" value="" title="Email address" class="validate-email form-input required" required>
+                <input type="email" id="tfa_241" name="tfa_241" value="{{defaults.tfa_241}}" title="Email address" class="validate-email form-input required" required>
               </div>
             </div>
           </div>
@@ -1827,14 +1937,14 @@ wFORMS.behaviors.prefill.skip = false;
           </p>
         </div>
       </div>
-      <div class="actions" id="4899064-A">
+      <div class="actions" id="4903538-A">
         <input type="submit" data-label="Submit" class="primaryAction btn btn-lg btn-primary mt mb-2" id="submit_button" value="Submit">
       </div>
-      <input type="hidden" value="4899064" name="tfa_dbFormId" id="tfa_dbFormId">
+      <input type="hidden" value="4903538" name="tfa_dbFormId" id="tfa_dbFormId">
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
-      <input type="hidden" value="d021345304532a0c24a11f02d4435952" name="tfa_dbControl" id="tfa_dbControl">
+      <input type="hidden" value="7bdc7b1b855f950ea0af8899f6f2b4a0" name="tfa_dbControl" id="tfa_dbControl">
       <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
-      <input type="hidden" value="23" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="7" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
     </form>
   </div>

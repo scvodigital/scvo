@@ -1,0 +1,34 @@
+{
+  "name": "fund_new-scots_apply-large",
+  "debug": false,
+  "pattern": "/funding/new-scots-fund/apply-large",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.funding_new-scots_large-grants_head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_new-scots_large-grants_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_new-scots_large-grants_apply-start",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
+              "footer": ">context.metaData.handlebars.templates.page-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

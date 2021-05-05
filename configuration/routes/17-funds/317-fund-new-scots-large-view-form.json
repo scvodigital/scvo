@@ -1,0 +1,97 @@
+{
+  "name": "fund_new-scots_view-large_form",
+  "debug": true,
+  "pattern": "/funding/new-scots-fund/apply-large/view/:session_key",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "application_data",
+      "taskModule": "request",
+      "config": {
+        "optionsTemplates": {
+          "request": ">context.metaData.handlebars.templates.utilities_scvo-grant"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "check_for_application",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.totalSize"
+                  },
+                  1
+                ]
+              }
+            ]
+          },
+          "fund_new-scots_apply-large_missing",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_call",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "or": [
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                  },
+                  "PLACEHOLDER - IGNORE UNLESS MULTIPLE CONCURRENT CALLS"
+                ]
+              }
+            ]
+          },
+          "fund_new-scots_apply-large_unauthorised",
+          false
+        ]
+      }
+    },
+    {
+      "name": "form_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.funding_new-scots_large-grants_apply-form-data",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.funding_new-scots_large-grants_head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_new-scots_large-grants_view-header",
+              "body": ">context.metaData.handlebars.templates.funding_new-scots_large-grants_apply-form",
+              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
