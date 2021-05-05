@@ -239,69 +239,70 @@
   ],
   "topic": [
     {
-      "name": "1. LANGUAGE / EDUCATION (SOCIAL CONNECTIONS)",
+      "name": "1. Language / education (social connections)",
       "id": "tfa_64"
     },
     {
-      "name": "2. LANGUAGE / EDUCATION (EMPLOYMENT)",
+      "name": "2. Language / education (employment)",
       "id": "tfa_65"
     },
     {
-      "name": "3. LANGUAGE / EDUCATION (YOUNG REFUGEES)",
+      "name": "3. Language / education (young refugees)",
       "id": "tfa_66"
     },
     {
-      "name": "4. HEALTH &amp; WELLBEING (MENTAL HEALTH)",
+      "name": "4. Health &amp; wellbeing (mental health)",
       "id": "tfa_67"
     },
     {
-      "name": ">5. HEALTH &amp; WELLBEING (PHYSICAL HEALTH &amp; ACCESS TO HEALTH)",
+      "name": ">5. Health &amp; wellbeing (physical health &amp; access to health)",
       "id": "tfa_68"
     },
     {
-      "name": "6. EMPLOYABILITY &amp; WELFARE RIGHTS (EMPLOYERS)",
+      "name": "6. Employability &amp; welfare rights (employers)",
       "id": "tfa_69"
     },
     {
-      "name": "7. EMPLOYABILITY &amp; WELFARE RIGHTS (PROFESSIONAL OCCUPATIONS)",
+      "name": "7. Employability &amp; welfare rights (professional occupations)",
       "id": "tfa_70"
     },
     {
-      "name": "8. EMPLOYABILITY &amp; WELFARE RIGHTS (VOCATIONAL QUALIFICATIONS)",
+      "name": "8. Employability &amp; welfare rights (vocational qualifications)",
       "id": "tfa_71"
     },
     {
-      "name": "9. EMPLOYABILITY &amp; WELFARE RIGHTS (ENTREPRENEURSHIP)",
+      "name": "9. Employability &amp; welfare rights (entrepreneurship)",
       "id": "tfa_72"
     },
     {
-      "name": "10. DIGITAL INCLUSION",
+      "name": "10. Digital inclusion",
       "id": "tfa_73"
     },
     {
-      "name": "11. COMMUNITIES &amp; SOCIAL CONNECTIONS (REFUGEE COMMUNITY DEVELOPMENT)",
+      "name": "11. Communities &amp; social connections (refugee community development)",
       "id": "tfa_74"
     },
     {
-      "name": "12. COMMUNITIES &amp; SOCIAL CONNECTIONS (SAFER COMMUNITIES)",
+      "name": "12. Communities &amp; social connections (safer communities)",
       "id": "tfa_75"
     },
     {
-      "name": "13. COMMUNITIES &amp; SOCIAL CONNECTIONS (BUILDING SOCIAL CONNECTIONS)",
+      "name": "13. Communities &amp; social connections (building social connections)",
       "id": "tfa_76"
     },
     {
-      "name": "14. ARTS / CULTURE / SPORT",
+      "name": "14. Arts / culture / sport",
       "id": "tfa_77"
     },
     {
-      "name": "15. HOUSING",
+      "name": "15. Housing",
       "id": "tfa_78"
     },
     {
-      "name": "16. LEGAL RIGHTS &amp; CITIZENSHIP",
+      "name": "16. Legal rights &amp; citizenship",
       "id": "tfa_79"
     }
+
   ],
   "defaults": {
     {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant.records.[0] ~}}

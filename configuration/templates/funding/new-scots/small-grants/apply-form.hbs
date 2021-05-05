@@ -1,4 +1,8 @@
 {{#withExtend this
+  local_authorities=@root.data.form_data.local_authorities
+  topic=@root.data.form_data.topic
+  number_of_staff=@root.data.form_data.number_of_staff
+  number_of_volunteers=@root.data.form_data.number_of_volunteers
   defaults=@root.data.form_data.defaults
 }}
 <script type="text/javascript">
@@ -529,15 +533,15 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField mb" id="tfa_58-D" data-condition="NOT (`#tfa_56`)">
             <div class="col-12">
-              <label id="tfa_58-L" class="form-label preField reqMark" for="tfa_58">If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes.</label>
+              <label id="tfa_58-L" class="form-label preField" for="tfa_58">If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes.</label>
               <div class="field-container-D">
-                <textarea aria-required="true" id="tfa_58" name="tfa_58" title="If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes." class="form-input required" required></textarea>
+                <textarea aria-required="true" id="tfa_58" name="tfa_58" title="If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes." class="form-input"></textarea>
               </div>
             </div>
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_281-L" class="form-label preField reqMark" for="tfa_281">1.9&ensp;Amount applied for</label>
+              <label id="tfa_281-L" class="form-label preField reqMark" for="tfa_281">1.9&ensp;Amount applied for (&pound;)</label>
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_281-D">
@@ -553,6 +557,9 @@ wFORMS.behaviors.prefill.skip = false;
       <div class="wfPage" id="wfPgIndex-4">
         <div class="section pageSection" id="tfa_59">
           <h3 id="tfa_59-T">About the work you would like funded</h3>
+          <p>
+            Please refer to the Fund Guidance (link on the right) for help on how to complete this form.
+          </p>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_60-L" class="form-label preField reqMark" for="tfa_60">2.1&ensp;Name of your project</label>
@@ -588,38 +595,22 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_63-L" class="form-label preField reqMark" for="tfa_63">2.3&ensp;Which TOPIC are you applying for?</label>
-              <p>
-                <strong>NOTE: IS ALL CAPS NECESSARY HERE?</strong>
-              </p>
+              <label id="tfa_63-L" class="form-label preField reqMark" for="tfa_63">2.3&ensp;Which topic are you applying for?</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_63-D">
-                <select id="tfa_63" name="tfa_63" title="Which TOPIC are you applying for?" aria-required="true" class="form-select required" required>
+                <select id="tfa_63" name="tfa_63" title="Which topic are you applying for?" aria-required="true" class="form-select required" required>
                   <option value="">Please select...</option>
-                  <option value="tfa_64" id="tfa_64">1. LANGUAGE / EDUCATION (SOCIAL CONNECTIONS)</option>
-                  <option value="tfa_65" id="tfa_65">2. LANGUAGE / EDUCATION (EMPLOYMENT)</option>
-                  <option value="tfa_66" id="tfa_66">3. LANGUAGE / EDUCATION (YOUNG REFUGEES)</option>
-                  <option value="tfa_67" id="tfa_67">4. HEALTH &amp; WELLBEING (MENTAL HEALTH)</option>
-                  <option value="tfa_68" id="tfa_68">5. HEALTH &amp; WELLBEING (PHYSICAL HEALTH &amp; ACCESS TO HEALTH)</option>
-                  <option value="tfa_69" id="tfa_69">6. EMPLOYABILITY &amp; WELFARE RIGHTS (EMPLOYERS)</option>
-                  <option value="tfa_70" id="tfa_70">7. EMPLOYABILITY &amp; WELFARE RIGHTS (PROFESSIONAL OCCUPATIONS)</option>
-                  <option value="tfa_71" id="tfa_71">8. EMPLOYABILITY &amp; WELFARE RIGHTS (VOCATIONAL QUALIFICATIONS)</option>
-                  <option value="tfa_72" id="tfa_72">9. EMPLOYABILITY &amp; WELFARE RIGHTS (ENTREPRENEURSHIP)</option>
-                  <option value="tfa_73" id="tfa_73">10. DIGITAL INCLUSION</option>
-                  <option value="tfa_74" id="tfa_74">11. COMMUNITIES &amp; SOCIAL CONNECTIONS (REFUGEE COMMUNITY DEVELOPMENT)</option>
-                  <option value="tfa_75" id="tfa_75">12. COMMUNITIES &amp; SOCIAL CONNECTIONS (SAFER COMMUNITIES)</option>
-                  <option value="tfa_76" id="tfa_76">13. COMMUNITIES &amp; SOCIAL CONNECTIONS (BUILDING SOCIAL CONNECTIONS)</option>
-                  <option value="tfa_77" id="tfa_77">14. ARTS / CULTURE / SPORT</option>
-                  <option value="tfa_78" id="tfa_78">15. HOUSING</option>
-                  <option value="tfa_79" id="tfa_79">16. LEGAL RIGHTS &amp; CITIZENSHIP</option>
+                  {{#each topic}}
+                  <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_63 name)}} selected{{/if}}>{{{name}}}</option>
+                  {{/each ~}}
                 </select>
               </div>
             </div>
           </div>
           <div class="form-group oneField" role="radiogroup" aria-labelledby="tfa_80-L" data-tfa-labelledby="-L tfa_80-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_80-L" class="form-label preField reqMark">Which TYPE of project are you applying for?</label>
+              <label id="tfa_80-L" class="form-label preField reqMark">Which type of project are you applying for?</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_80-D">
@@ -705,18 +696,18 @@ wFORMS.behaviors.prefill.skip = false;
                       Across several Local Authority areas
                     </label>
                   </span>
-                  <span class="oneChoice">
+                  {{!-- <span class="oneChoice">
                     <label class="form-radio postField" id="tfa_91-L" for="tfa_91">
                       <input type="radio" value="tfa_91" id="tfa_91" name="tfa_87" aria-required="true" data-conditionals="#tfa_283-D" aria-labelledby="tfa_91-L" data-tfa-labelledby="tfa_87-L tfa_91-L">
                       <span class="form-icon"></span>
                       Nationally (across Scotland)
                     </label>
-                  </span>
+                  </span> --}}
                 </span>
               </div>
             </div>
           </div>
-          <div class="form-group oneField" id="tfa_282-D" data-condition="`#tfa_88`">
+          {{!-- <div class="form-group oneField" id="tfa_282-D" data-condition="`#tfa_88`">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_282-L" class="form-label preField reqMark" for="tfa_92">Please provide the first half of the postcode the work will be delivered in, if different from where your organisation is based, and list the local area(s) involved</label>
             </div>
@@ -725,7 +716,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <input type="text" id="tfa_282" name="tfa_282" value="" maxlength="255" aria-required="true" title="Areas covered" class="form-input required" required>
               </div>
             </div>
-          </div>
+          </div> --}}
           <div class="form-group oneField" id="tfa_92-D" data-condition="`#tfa_89`">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_92-L" class="form-label preField reqMark" for="tfa_92">Local authority</label>
@@ -1284,23 +1275,6 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
-          {{#unless defaults.application_readonly}}
-          <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>
-            </div>
-            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D">
-                <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
-              </div>
-            </div>
-            <div class="col-12">
-              <p>
-                <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Med-Large%20Grants%20Budget%20Table.xlsx" class="btn btn-primary btn-cta" download>Project partners template download (XLS)</a>
-              </p>
-            </div>
-          </div>
-          {{/unless}}
           <div class="form-group oneField" id="tfa_195-D" data-condition="`#tfa_193`" role="radiogroup" aria-labelledby="tfa_195-L" data-tfa-labelledby="-L tfa_195-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_195-L" class="form-label preField reqMark">Please indicate if you have contacted the relevant organisation(s)</label>
@@ -1504,13 +1478,6 @@ wFORMS.behaviors.prefill.skip = false;
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_209-L" for="tfa_209">
-                      <input type="checkbox" value="tfa_209" id="tfa_209" name="tfa_209" aria-labelledby="tfa_209-L" data-tfa-labelledby="tfa_207-L tfa_209-L">
-                      <span class="form-icon"></span>
-                      Religion / belief / faith
-                    </label>
-                  </span>
-                  <span class="oneChoice">
                     <label class="form-checkbox postField" id="tfa_210-L" for="tfa_210">
                       <input type="checkbox" value="tfa_210" id="tfa_210" name="tfa_210" aria-labelledby="tfa_210-L" data-tfa-labelledby="tfa_207-L tfa_210-L">
                       <span class="form-icon"></span>
@@ -1518,24 +1485,10 @@ wFORMS.behaviors.prefill.skip = false;
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_211-L" for="tfa_211">
-                      <input type="checkbox" value="tfa_211" id="tfa_211" name="tfa_211" aria-labelledby="tfa_211-L" data-tfa-labelledby="tfa_207-L tfa_211-L">
-                      <span class="form-icon"></span>
-                      Sexual Orientation and / or gender identity
-                    </label>
-                  </span>
-                  <span class="oneChoice">
                     <label class="form-checkbox postField" id="tfa_212-L" for="tfa_212">
                       <input type="checkbox" value="tfa_212" id="tfa_212" name="tfa_212" aria-labelledby="tfa_212-L" data-tfa-labelledby="tfa_207-L tfa_212-L">
                       <span class="form-icon"></span>
                       Disability
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_213-L" for="tfa_213">
-                      <input type="checkbox" value="tfa_213" id="tfa_213" name="tfa_213" aria-labelledby="tfa_213-L" data-tfa-labelledby="tfa_207-L tfa_213-L">
-                      <span class="form-icon"></span>
-                      Socio-economic disadvantage
                     </label>
                   </span>
                   <span class="oneChoice">
@@ -1550,6 +1503,27 @@ wFORMS.behaviors.prefill.skip = false;
                       <input type="checkbox" value="tfa_215" id="tfa_215" name="tfa_215" aria-labelledby="tfa_215-L" data-tfa-labelledby="tfa_207-L tfa_215-L">
                       <span class="form-icon"></span>
                       Race
+                    </label>
+                  </span>
+                  <span class="oneChoice">
+                    <label class="form-checkbox postField" id="tfa_209-L" for="tfa_209">
+                      <input type="checkbox" value="tfa_209" id="tfa_209" name="tfa_209" aria-labelledby="tfa_209-L" data-tfa-labelledby="tfa_207-L tfa_209-L">
+                      <span class="form-icon"></span>
+                      Religion / belief / faith
+                    </label>
+                  </span>
+                  <span class="oneChoice">
+                    <label class="form-checkbox postField" id="tfa_211-L" for="tfa_211">
+                      <input type="checkbox" value="tfa_211" id="tfa_211" name="tfa_211" aria-labelledby="tfa_211-L" data-tfa-labelledby="tfa_207-L tfa_211-L">
+                      <span class="form-icon"></span>
+                      Sexual Orientation and / or gender identity
+                    </label>
+                  </span>
+                  <span class="oneChoice">
+                    <label class="form-checkbox postField" id="tfa_213-L" for="tfa_213">
+                      <input type="checkbox" value="tfa_213" id="tfa_213" name="tfa_213" aria-labelledby="tfa_213-L" data-tfa-labelledby="tfa_207-L tfa_213-L">
+                      <span class="form-icon"></span>
+                      Socio-economic disadvantage
                     </label>
                   </span>
                   <span class="oneChoice">
@@ -1587,7 +1561,7 @@ wFORMS.behaviors.prefill.skip = false;
                   Budget description
                 </th>
                 <th scope="col" style="width:50%;">
-                  Amount
+                  Amount (&pound;)
                 </th>
               </tr>
             </thead>
@@ -1682,6 +1656,24 @@ wFORMS.behaviors.prefill.skip = false;
               </tr>
             </tbody>
           </table>
+
+          {{#unless defaults.application_readonly}}
+          <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
+              </div>
+            </div>
+            <div class="col-12">
+              <p>
+                <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Med-Large%20Grants%20Budget%20Table.xlsx" class="btn btn-primary btn-cta" download>Project partners template download (XLS)</a>
+              </p>
+            </div>
+          </div>
+          {{/unless}}
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-9">
