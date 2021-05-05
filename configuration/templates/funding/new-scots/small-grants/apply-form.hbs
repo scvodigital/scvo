@@ -284,7 +284,7 @@ wFORMS.behaviors.prefill.skip = false;
                 {{else}}
                 <select id="tfa_20" name="tfa_20" class="form-select required" required="true" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                   <option value="" disabled selected>Please select&hellip;</option>
-                  {{#each (split 'Community Group,Constituted Group,Voluntary Group,Other (please specify)' ',')}}
+                  {{#each (split 'Company Limited by Guarantee,Community Interest by Guarantee,Public Body,Community Benefit Society,Limited Liability Partnership,Co-operative Society,Constituted Group,Social Enterprise,Voluntary Group,Community Housing Association,Community Trust/Community Development Trust,Local Authority,Health Board,Other (please specify)' ',')}}
                   <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_20}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                   {{/each}}
                 </select>
