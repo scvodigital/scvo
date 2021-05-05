@@ -1405,6 +1405,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          {{#unless defaults.application_readonly}}
           <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>
@@ -1418,6 +1419,7 @@ wFORMS.behaviors.prefill.skip = false;
               <a href="#" class="btn btn-primary" download>Project partners template download (XLS)</a>
             </p>
           </div>
+          {{/unless}}
           <div class="form-group oneField" id="tfa_195-D" data-condition="`#tfa_193`" role="radiogroup" aria-labelledby="tfa_195-L" data-tfa-labelledby="-L tfa_195-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_195-L" class="form-label preField reqMark">Please indicate if you have contacted the relevant organisation(s)</label>
@@ -1681,7 +1683,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_279-L" class="form-label preField reqMark" for="tfa_279">2.18&ensp;Please give an estimate of the total number of participants that you expect to work with over the lifetime of the project.</label>
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
-              <input type="number" id="tfa_279" name="tfa_279" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="1000000" title="Estimate of the total number of participants that you expect to work with over the lifetime of the project" class="form-input validate-integer required" required>
+              <input type="number" id="tfa_279" name="tfa_279" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="1000000" value="{{defaults.tfa_279}}" title="Estimate of the total number of participants that you expect to work with over the lifetime of the project" class="form-input validate-integer required" required>
             </div>
           </div>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_207-L" data-tfa-labelledby="-L tfa_207-L">
@@ -1772,6 +1774,7 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             3.1&ensp;Associated budget
           </p>
+          {{#unless defaults.application_readonly}}
           <div class="form-group oneField" id="tfa_310-D">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_310-L" class="form-label preField reqMark" for="tfa_310">Please upload a file containing your budget details based on the template provided</label>
@@ -1785,6 +1788,7 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             <a href="#" class="btn btn-primary" download>Budget template download (XLS)</a>
           </p>
+          {{/unless}}
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-9">
