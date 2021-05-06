@@ -60,7 +60,7 @@
               {
                 "!=": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.totalSize"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.totalSize"
                   },
                   1
                 ]
@@ -82,7 +82,7 @@
               {
                 "==": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Confirmation_terms__c"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Confirmation_terms__c"
                   },
                   true
                 ]
@@ -90,7 +90,7 @@
               {
                 "==": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Confirmation_GDPR__c"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Confirmation_GDPR__c"
                   },
                   true
                 ]
@@ -98,7 +98,7 @@
               {
                 "==": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Confirmation_sharing__c"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Confirmation_sharing__c"
                   },
                   true
                 ]

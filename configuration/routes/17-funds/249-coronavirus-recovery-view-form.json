@@ -24,7 +24,7 @@
               {
                 "!=": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.totalSize"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.totalSize"
                   },
                   1
                 ]
@@ -46,7 +46,7 @@
               {
                 "==": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
                   },
                   "Adapt and Thrive - Uplift"
                 ]
@@ -54,7 +54,7 @@
               {
                 "==": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
                   },
                   "Communities Recovery Fund - Uplift"
                 ]
@@ -62,7 +62,7 @@
               {
                 "==": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
                   },
                   "Adapt and Thrive - Call 2"
                 ]
@@ -70,7 +70,7 @@
               {
                 "==": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
                   },
                   "Communities Recovery Fund - Call 2"
                 ]
