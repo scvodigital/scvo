@@ -42,18 +42,18 @@
       "config": {
         "if": [
           {
-            "or": [
+            "and": [
               {
-                "==": [
+                "!=": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
+                    "var": "data.application_data.request.data.data_object.get_grant.Fund_Name__c"
                   },
-                  "PLACEHOLDER - IGNORE UNLESS MULTIPLE CONCURRENT CALLS"
+                  "New Scots Med-Large Grants"
                 ]
               }
             ]
           },
-          "fund_new-scots_apply-large_unauthorised",
+          "fund_new-scots_apply-large_missing",
           false
         ]
       }
