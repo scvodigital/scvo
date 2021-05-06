@@ -534,7 +534,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_55" class="choices vertical ">
                   <span class="oneChoice">
                     <label class="form-checkbox postField" id="tfa_56-L" for="tfa_56">
-                      <input type="checkbox" value="tfa_56" id="tfa_56" name="tfa_56" data-conditionals="#tfa_57-D,#tfa_287-D,#tfa_288-D,#tfa_289-D,#tfa_290-D,#tfa_291-D,#tfa_292-D,#tfa_58-D" aria-labelledby="tfa_56-L" data-tfa-labelledby="tfa_55-L tfa_56-L">
+                      <input type="checkbox" value="tfa_56" id="tfa_56" name="tfa_56" data-conditionals="#tfa_57-D,#tfa_287-D,#tfa_288-D,#tfa_289-D,#tfa_290-D,#tfa_291-D,#tfa_292-D,#tfa_58-D,#tfa_312-D" aria-labelledby="tfa_56-L" data-tfa-labelledby="tfa_55-L tfa_56-L">
                       <span class="form-icon"></span>
                       If you are a local authority please tick this box
                     </label>
@@ -650,7 +650,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_281-D">
                 <div class="input-group" style="width:100%;">
                   <span class="input-group-addon">&pound;</span>
-                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_281" name="tfa_281" value="{{defaults.tfa_281}}" title="Amount applied for" class="form-input text-right validate-integer required" required>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="115000" id="tfa_281" name="tfa_281" value="{{defaults.tfa_281}}" title="Amount applied for" class="form-input text-right validate-integer required" required>
                 </div>
               </div>
             </div>
@@ -1429,6 +1429,9 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             2.10&ensp;Proposed project/activities (detail about your project activities)
           </p>
+          <p>
+            You are able to add up to 4 activities. If you have more than 4, you can add 2 activities in each box. This will allow you to include up to 8 activities.
+          </p>
           <div class="form-group oneField" id="tfa_295-D">
             <div class="col-12">
               <label id="tfa_295-L" class="form-label preField reqMark" for="tfa_295">Please tell us the main objectives of your project. Be as specific as you can. What does your project intend to achieve, for whom, and how?</label>
@@ -1554,6 +1557,9 @@ wFORMS.behaviors.prefill.skip = false;
         <div class="section pageSection" id="tfa_199">
           <p>
             2.12&ensp;Please provide the Project Plan.
+          </p>
+          <p>
+            Please provide a short timeline which identifies the key milestones for your project (when you are going to do your activities). Only fill in for the date ranges that apply to your project.
           </p>
           <div class="form-group oneField">
             <div class="col-12">
@@ -1753,32 +1759,32 @@ wFORMS.behaviors.prefill.skip = false;
           </p>
           {{#unless defaults.application_readonly}}
           <div class="form-group oneField" id="tfa_310-D">
+            <div class="col-12">
+              <p>
+                <a href="" class="btn btn-primary btn-cta" target="_blank" download>Budget template download (XLS)</a>
+              </p>
+            </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_310-L" class="form-label preField reqMark" for="tfa_310">Please upload a file containing your budget details based on the template provided</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
-                <input type="file" id="tfa_310" name="tfa_310" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
+                <input type="file" id="tfa_310" name="tfa_310" size="" title="Please upload a file containing your budget details based on the template provided" class="form-input required" required>
               </div>
             </div>
           </div>
-          <p>
-            <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Med-Large%20Grants%20Budget%20Table.xlsx" class="btn btn-primary btn-cta" download>Budget template download (XLS)</a>
-          </p>
 
-          <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
+          <h3>
+            Upload accounts
+          </h3>
+          <div class="form-group oneField" id="tfa_312-D" data-condition="NOT (`#tfa_56`)">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>
+              <label id="tfa_312-L" class="form-label preField reqMark" for="tfa_312">Accounts</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
-                <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
+                <input type="file" id="tfa_312" name="tfa_312" size="" title="Accounts" class="form-input required" required>
               </div>
-            </div>
-            <div class="col-12">
-              <p>
-                <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Med-Large%20Grants%20Budget%20Table.xlsx" class="btn btn-primary btn-cta" download>Project partners template download (XLS)</a>
-              </p>
             </div>
           </div>
           {{/unless}}
@@ -1932,6 +1938,26 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             Your pressing 'Submit' for this application is your signatory for this application.
           </p>
+          {{#unless defaults.application_readonly}}
+          <h3>
+            Project partners
+          </h3>
+          <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
+            <div class="col-12">
+              <p>
+                <a href="" class="btn btn-primary btn-cta" target="_blank" download>Project partners template download (XLS)</a>
+              </p>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
+              </div>
+            </div>
+          </div>
+          {{/unless}}
         </div>
       </div>
       <div class="actions" id="4903538-A">

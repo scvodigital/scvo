@@ -1311,6 +1311,9 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             2.10&ensp;Proposed project/activities (detail about your project activities)
           </p>
+          <p>
+            You are able to add up to 4 activities. If you have more than 4, you can add 2 activities in each box. This will allow you to include up to 8 activities.
+          </p>
           <div id="tfa_246" class="section group mt mb-1">
             <label class="form-label preField" id="tfa_246-L">Proposed project/activity 1</label>
             <div class="form-group oneField field-container-D" id="tfa_242-D">
@@ -1659,24 +1662,6 @@ wFORMS.behaviors.prefill.skip = false;
               </tr>
             </tbody>
           </table>
-
-          {{#unless defaults.application_readonly}}
-          <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>
-            </div>
-            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D">
-                <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
-              </div>
-            </div>
-            <div class="col-12">
-              <p>
-                <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Med-Large%20Grants%20Budget%20Table.xlsx" class="btn btn-primary btn-cta" download>Project partners template download (XLS)</a>
-              </p>
-            </div>
-          </div>
-          {{/unless}}
         </div>
       </div>
       <div class="wfPage" id="wfPgIndex-9">
@@ -1827,6 +1812,26 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             Your pressing 'Submit' for this application is your signatory for this application.
           </p>
+          {{#unless defaults.application_readonly}}
+          <h3>
+            Partner details
+          </h3>
+          <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
+            <div class="col-12">
+              <p>
+                <a href="" class="btn btn-primary btn-cta" target="_blank" download>Project partners template download (XLS)</a>
+              </p>
+            </div>
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
+              </div>
+            </div>
+          </div>
+          {{/unless}}
         </div>
       </div>
       <div class="actions" id="4899064-A">
