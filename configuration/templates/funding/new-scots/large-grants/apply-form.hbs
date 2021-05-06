@@ -134,11 +134,11 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_9-L" class="form-label preField reqMark" for="tfa_9">Website address</label>
+              <label id="tfa_9-L" class="form-label preField" for="tfa_9">Website address</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_9-D">
-                <input type="url" pattern="https?://.+" id="tfa_9" name="tfa_9" value="{{defaults.tfa_9}}" aria-required="true" title="Website address" class="required form-input validate-custom /https?://.+/g" required>
+                <input type="url" pattern="https?://.+" id="tfa_9" name="tfa_9" value="{{defaults.tfa_9}}" aria-required="true" title="Website address" class="form-input validate-custom /https?://.+/g">
               </div>
             </div>
             <script type="text/javascript">
@@ -692,7 +692,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_61-D">
-                <input type="text" id="tfa_61" name="tfa_61" value="{{defaults.tfa_61}}" autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="Start date" class="validate-datecal form-input required" required>
+                <input type="text" id="tfa_61" name="tfa_61" placeholder="DD/MM/YYYY" value="{{defaults.tfa_61}}" autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="Start date" class="validate-datecal form-input required" required>
               </div>
             </div>
           </div>
@@ -702,7 +702,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_62-D">
-                <input type="text" id="tfa_62" name="tfa_62" value="{{defaults.tfa_62}}" autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="End date" class="validate-datecal form-input required" required>
+                <input type="text" id="tfa_62" name="tfa_62" placeholder="DD/MM/YYYY" value="{{defaults.tfa_62}}" autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="End date" class="validate-datecal form-input required" required>
               </div>
             </div>
           </div>
@@ -1117,7 +1117,7 @@ wFORMS.behaviors.prefill.skip = false;
               <textarea aria-required="true" data-maxwords="150" id="tfa_283" name="tfa_283" title="National reach" class="form-input required count-words" required>{{defaults.tfa_283}}</textarea>
             </div>
           </div>
-          <div class="form-group oneField" role="group" aria-labelledby="tfa_158-L" data-tfa-labelledby="-L tfa_158-L">
+          {{!-- <div class="form-group oneField" role="group" aria-labelledby="tfa_158-L" data-tfa-labelledby="-L tfa_158-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_158-L" class="form-label preField reqMark" aria-label="Please select the main Scottish local authority areas where your project will take place   required" required>Please select the main Scottish local authority areas where your project will take place</label>
             </div>
@@ -1351,7 +1351,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </span>
               </div>
             </div>
-          </div>
+          </div> --}}
           <p>
             2.9&ensp;Collaboration
           </p>
