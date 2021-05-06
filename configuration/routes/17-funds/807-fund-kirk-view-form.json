@@ -42,18 +42,18 @@
       "config": {
         "if": [
           {
-            "or": [
+            "and": [
               {
-                "==": [
+                "!=": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
+                    "var": "data.application_data.request.data.data_object.get_grant.Fund_Name__c"
                   },
-                  "PLACEHOLDER - IGNORE UNLESS MULTIPLE CONCURRENT CALLS"
+                  "Church of Scotland Small Grants"
                 ]
               }
             ]
           },
-          "fund_kirk_apply_unauthorised",
+          "fund_kirk_apply_missing",
           false
         ]
       }
