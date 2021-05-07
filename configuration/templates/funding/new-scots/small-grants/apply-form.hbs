@@ -1,6 +1,8 @@
 {{#withExtend this
   local_authorities=@root.data.form_data.local_authorities
   topic=@root.data.form_data.topic
+  type=@root.data.form_data.type
+  target_communities=@root.data.form_data.target_communities
   number_of_staff=@root.data.form_data.number_of_staff
   number_of_volunteers=@root.data.form_data.number_of_volunteers
   defaults=@root.data.form_data.defaults
@@ -345,14 +347,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_25" class="choices vertical required"{{#if defaults.application_readonly}} readonly{{/if}} required>
                   <span class="oneChoice">
                     <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_26-L" for="tfa_26">
-                      <input type="radio" value="tfa_26" id="tfa_26" name="tfa_25" aria-required="true" data-conditionals="#tfa_28-D" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_25-L tfa_26-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#if defaults.tfa_25}} checked{{/if}}>
+                      <input type="radio" value="tfa_26" id="tfa_26" name="tfa_25" aria-required="true" data-conditionals="#tfa_28-D" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_25-L tfa_26-L"{{#if defaults.application_readonly}} readonly{{#if defaults.tfa_25}} checked{{/if}}{{/if}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_27-L" for="tfa_27">
-                      <input type="radio" value="tfa_27" id="tfa_27" name="tfa_25" aria-required="true" aria-labelledby="tfa_27-L" data-tfa-labelledby="tfa_25-L tfa_27-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#unless defaults.tfa_25}} checked{{/unless}}>
+                      <input type="radio" value="tfa_27" id="tfa_27" name="tfa_25" aria-required="true" aria-labelledby="tfa_27-L" data-tfa-labelledby="tfa_25-L tfa_27-L"{{#if defaults.application_readonly}} readonly{{#unless defaults.tfa_25}} checked{{/unless}}{{/if}}>
                       <span class="form-icon"></span>
                       No
                     </label>
@@ -550,7 +552,7 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_281-D">
                 <div class="input-group" style="width:100%;">
                   <span class="input-group-addon">&pound;</span>
-                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="5001" max="115000" id="tfa_281" name="tfa_281" value="{{defaults.tfa_281}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Amount applied for" class="form-input text-right validate-integer required" required>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="1" max="5000" id="tfa_281" name="tfa_281" value="{{defaults.tfa_281}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Amount applied for" class="form-input text-right validate-integer required" required>
                 </div>
                 <p class="form-input-hint text-secondary">
                   If you are seeking funds for more than &pound;5,000 please see the <a href="/funding/new-scots-fund/apply-large">medium/large grants application</a>.
@@ -616,7 +618,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField" role="radiogroup" aria-labelledby="tfa_80-L" data-tfa-labelledby="-L tfa_80-L">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_80-L" class="form-label preField reqMark">Which type of project are you applying for?</label>
+              <label id="tfa_80-L" class="form-label preField reqMark">2.4&ensp;Which type of project are you applying for?</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_80-D">
@@ -624,7 +626,7 @@ wFORMS.behaviors.prefill.skip = false;
                   {{#each type}}
                   <span class="oneChoice">
                     <label class="form-radio{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
-                      <input type="radio" value="{{id}}" id="{{id}}" name="tfa_80" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_80-L {{id}}-L"{{#if (contains (slugify ../defaults.tfa_80) (slugify name))}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="radio" value="{{id}}" id="{{id}}" name="tfa_80" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_80-L {{id}}-L"{{#if (contains (slugify ../defaults.tfa_80) (slugify name))}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}} data-conditionals="#{{conditional}}-D">
                       <i class="form-icon"></i> {{name}}
                     </label>
                   </span>
@@ -790,14 +792,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_195" class="choices vertical required" required>
                   <span class="oneChoice">
                     <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_196-L" for="tfa_196">
-                      <input type="radio" value="tfa_196" id="tfa_196" name="tfa_195" aria-required="true" aria-labelledby="tfa_196-L" data-tfa-labelledby="tfa_195-L tfa_196-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#if defaults.tfa_195}} checked{{/if}}>
+                      <input type="radio" value="tfa_196" id="tfa_196" name="tfa_195" aria-required="true" aria-labelledby="tfa_196-L" data-tfa-labelledby="tfa_195-L tfa_196-L"{{#if defaults.application_readonly}} readonly{{#if defaults.tfa_195}} checked{{/if}}{{/if}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_197-L" for="tfa_197">
-                      <input type="radio" value="tfa_197" id="tfa_197" name="tfa_195" aria-required="true" aria-labelledby="tfa_197-L" data-tfa-labelledby="tfa_195-L tfa_197-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#unless defaults.tfa_195}} checked{{/unless}}>
+                      <input type="radio" value="tfa_197" id="tfa_197" name="tfa_195" aria-required="true" aria-labelledby="tfa_197-L" data-tfa-labelledby="tfa_195-L tfa_197-L"{{#if defaults.application_readonly}} readonly{{#unless defaults.tfa_195}} checked{{/unless}}{{/if}}>
                       <span class="form-icon"></span>
                       No
                     </label>
@@ -968,7 +970,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_207-L" data-tfa-labelledby="-L tfa_207-L">
             <div class="col-12">
-              <label id="tfa_207-L" class="form-label preField reqMark" aria-label="Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]" required>2.19&ensp;Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]</label>
+              <label id="tfa_207-L" class="form-label preField reqMark" aria-label="Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]" required>2.15&ensp;Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]</label>
               <div class="field-container-D" id="tfa_207-D">
                 <span id="tfa_207" class="choices vertical required" required>
                   {{#each target_communities}}
