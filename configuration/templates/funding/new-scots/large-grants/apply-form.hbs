@@ -1,6 +1,8 @@
 {{#withExtend this
   local_authorities=@root.data.form_data.local_authorities
   topic=@root.data.form_data.topic
+  type=@root.data.form_data.type
+  target_communities=@root.data.form_data.target_communities
   number_of_staff=@root.data.form_data.number_of_staff
   number_of_volunteers=@root.data.form_data.number_of_volunteers
   defaults=@root.data.form_data.defaults
@@ -61,7 +63,7 @@ wFORMS.behaviors.prefill.skip = false;
     <div class="codesection" id="code-4903538">
     </div>
     <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4903538" role="form" enctype="multipart/form-data">
-      <div class="wfPage" id="wfPgIndex-1">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-1">
         <div class="section pageSection" id="tfa_1">
           <h3 id="tfa_1-T">Tell us about your organisation</h3>
           <p>
@@ -185,7 +187,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-2">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-2">
         <div class="section pageSection" id="tfa_2">
           <h3 id="tfa_2-T">Contact</h3>
           <p>
@@ -263,7 +265,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-3">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-3">
         <div class="section pageSection" id="tfa_19">
           <h3 id="tfa_19-T">
             More about your organisation
@@ -345,15 +347,15 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_25-D">
                 <span id="tfa_25" class="choices vertical required"{{#if defaults.application_readonly}} readonly{{/if}} required>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_26-L" for="tfa_26">
-                      <input type="radio" value="tfa_26" id="tfa_26" name="tfa_25" aria-required="true" data-conditionals="#tfa_28-D" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_25-L tfa_26-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_26-L" for="tfa_26">
+                      <input type="radio" value="tfa_26" id="tfa_26" name="tfa_25" aria-required="true" data-conditionals="#tfa_28-D" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_25-L tfa_26-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#if defaults.tfa_25}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_27-L" for="tfa_27">
-                      <input type="radio" value="tfa_27" id="tfa_27" name="tfa_25" aria-required="true" aria-labelledby="tfa_27-L" data-tfa-labelledby="tfa_25-L tfa_27-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_27-L" for="tfa_27">
+                      <input type="radio" value="tfa_27" id="tfa_27" name="tfa_25" aria-required="true" aria-labelledby="tfa_27-L" data-tfa-labelledby="tfa_25-L tfa_27-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#unless defaults.tfa_25}} checked{{/unless}}>
                       <span class="form-icon"></span>
                       No
                     </label>
@@ -380,8 +382,8 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_29-D">
                 <span id="tfa_29" class="choices vertical required" required>
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_30-L" for="tfa_30">
-                      <input type="checkbox" value="tfa_30" id="tfa_30" name="tfa_30" aria-labelledby="tfa_30-L" data-tfa-labelledby="tfa_29-L tfa_30-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-checkbox postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_30-L" for="tfa_30">
+                      <input type="checkbox" value="tfa_30" id="tfa_30" name="tfa_30" aria-labelledby="tfa_30-L" data-tfa-labelledby="tfa_29-L tfa_30-L"{{#if defaults.application_readonly}} readonly checked{{/if}}>
                       <span class="form-icon"></span>
                       Please confirm, by ticking the box, that you have procedures that ensure one person cannot authorise, make, and record payments
                     </label>
@@ -401,22 +403,22 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_31-D">
                 <span id="tfa_31" class="choices vertical required" required>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_32-L" for="tfa_32">
-                      <input type="radio" value="tfa_32" id="tfa_32" name="tfa_31" aria-required="true" data-conditionals="#tfa_34-D" aria-labelledby="tfa_32-L" data-tfa-labelledby="tfa_31-L tfa_32-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_32-L" for="tfa_32">
+                      <input type="radio" value="tfa_32" id="tfa_32" name="tfa_31" aria-required="true" data-conditionals="#tfa_34-D" aria-labelledby="tfa_32-L" data-tfa-labelledby="tfa_31-L tfa_32-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_31 "Yes"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_33-L" for="tfa_33">
-                      <input type="radio" value="tfa_33" id="tfa_33" name="tfa_31" aria-required="true" aria-labelledby="tfa_33-L" data-tfa-labelledby="tfa_31-L tfa_33-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_33-L" for="tfa_33">
+                      <input type="radio" value="tfa_33" id="tfa_33" name="tfa_31" aria-required="true" aria-labelledby="tfa_33-L" data-tfa-labelledby="tfa_31-L tfa_33-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_31 "No"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       No
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_277-L" for="tfa_277">
-                      <input type="radio" value="tfa_277" id="tfa_277" name="tfa_31" aria-required="true" aria-labelledby="tfa_277-L" data-tfa-labelledby="tfa_31-L tfa_277-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_277-L" for="tfa_277">
+                      <input type="radio" value="tfa_277" id="tfa_277" name="tfa_31" aria-required="true" aria-labelledby="tfa_277-L" data-tfa-labelledby="tfa_31-L tfa_277-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_31 "N/A"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       N/A
                     </label>
@@ -433,22 +435,22 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D">
                 <span id="tfa_34" class="choices vertical required" required>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_35-L" for="tfa_35">
-                      <input type="radio" value="tfa_35" id="tfa_35" name="tfa_34" aria-required="true" aria-labelledby="tfa_35-L" data-tfa-labelledby="tfa_34-L tfa_35-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_35-L" for="tfa_35">
+                      <input type="radio" value="tfa_35" id="tfa_35" name="tfa_34" aria-required="true" aria-labelledby="tfa_35-L" data-tfa-labelledby="tfa_34-L tfa_35-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_31 "Yes"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_36-L" for="tfa_36">
-                      <input type="radio" value="tfa_36" id="tfa_36" name="tfa_34" aria-required="true" aria-labelledby="tfa_36-L" data-tfa-labelledby="tfa_34-L tfa_36-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_36-L" for="tfa_36">
+                      <input type="radio" value="tfa_36" id="tfa_36" name="tfa_34" aria-required="true" aria-labelledby="tfa_36-L" data-tfa-labelledby="tfa_34-L tfa_36-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_31 "No"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       No
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_278-L" for="tfa_278">
-                      <input type="radio" value="tfa_278" id="tfa_278" name="tfa_34" aria-required="true" aria-labelledby="tfa_278-L" data-tfa-labelledby="tfa_34-L tfa_278-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_278-L" for="tfa_278">
+                      <input type="radio" value="tfa_278" id="tfa_278" name="tfa_34" aria-required="true" aria-labelledby="tfa_278-L" data-tfa-labelledby="tfa_34-L tfa_278-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_31 "N/A"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       N/A
                     </label>
@@ -466,13 +468,15 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-3 col-lg-4 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_37-D">
-                <select id="tfa_37" name="tfa_37" title="Number of staff" aria-required="true" class="form-select required"{{#if defaults.application_readonly}} readonly{{/if}} required>
+                <select id="tfa_37" name="tfa_37" title="Number of staff" aria-required="true" class="form-select required" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}} required>
                   <option value="" disabled selected>Please select&hellip;</option>
-                  <option value="tfa_38" id="tfa_38">0</option>
-                  <option value="tfa_39" id="tfa_39">1-10</option>
-                  <option value="tfa_40" id="tfa_40">11-50</option>
-                  <option value="tfa_41" id="tfa_41">51-100</option>
-                  <option value="tfa_42" id="tfa_42">101+</option>
+                  {{#each number_of_staff ~}}
+                  {{#if id ~}}
+                  <option value="{{id}}" id="{{id}}"{{#compare name ../defaults.tfa_37}} selected{{/compare}}>
+                    {{name}}
+                  </option>
+                  {{/if ~}}
+                  {{/each ~}}
                 </select>
               </div>
             </div>
@@ -483,13 +487,15 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-3 col-lg-4 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_49-D">
-                <select id="tfa_49" name="tfa_49" title="Number of volunteers" aria-required="true" class="form-select required"{{#if defaults.application_readonly}} readonly{{/if}} required>
+                <select id="tfa_49" name="tfa_49" title="Number of volunteers" aria-required="true" class="form-select required" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}} required>
                   <option value="" disabled selected>Please select&hellip;</option>
-                  <option value="tfa_50" id="tfa_50">0</option>
-                  <option value="tfa_51" id="tfa_51">1-10</option>
-                  <option value="tfa_52" id="tfa_52">11-50</option>
-                  <option value="tfa_53" id="tfa_53">51-100</option>
-                  <option value="tfa_54" id="tfa_54">101+</option>
+                  {{#each number_of_volunteers ~}}
+                  {{#if id ~}}
+                  <option value="{{id}}" id="{{id}}"{{#compare name ../defaults.tfa_49}} selected{{/compare}}>
+                    {{name}}
+                  </option>
+                  {{/if ~}}
+                  {{/each ~}}
                 </select>
               </div>
             </div>
@@ -502,15 +508,15 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D">
                 <span id="tfa_284" class="choices vertical required" required>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_285-L" for="tfa_285">
-                      <input type="radio" value="tfa_285" id="tfa_285" name="tfa_284" aria-required="true" aria-labelledby="tfa_285-L" data-tfa-labelledby="tfa_284-L tfa_285-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_285-L" for="tfa_285">
+                      <input type="radio" value="tfa_285" id="tfa_285" name="tfa_284" aria-required="true" aria-labelledby="tfa_285-L" data-tfa-labelledby="tfa_284-L tfa_285-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_284 "Yes"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_286-L" for="tfa_286">
-                      <input type="radio" value="tfa_36" id="tfa_286" name="tfa_284" aria-required="true" aria-labelledby="tfa_286-L" data-tfa-labelledby="tfa_284-L tfa_286-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_286-L" for="tfa_286">
+                      <input type="radio" value="tfa_36" id="tfa_286" name="tfa_284" aria-required="true" aria-labelledby="tfa_286-L" data-tfa-labelledby="tfa_284-L tfa_286-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_284 "No"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       No
                     </label>
@@ -533,8 +539,8 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_55-D">
                 <span id="tfa_55" class="choices vertical ">
                   <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_56-L" for="tfa_56">
-                      <input type="checkbox" value="tfa_56" id="tfa_56" name="tfa_56" data-conditionals="#tfa_57-D,#tfa_287-D,#tfa_288-D,#tfa_289-D,#tfa_290-D,#tfa_291-D,#tfa_292-D,#tfa_58-D,#tfa_312-D" aria-labelledby="tfa_56-L" data-tfa-labelledby="tfa_55-L tfa_56-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-checkbox postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_56-L" for="tfa_56">
+                      <input type="checkbox" value="tfa_56" id="tfa_56" name="tfa_56" data-conditionals="#tfa_57-D,#tfa_287-D,#tfa_288-D,#tfa_289-D,#tfa_290-D,#tfa_291-D,#tfa_292-D,#tfa_58-D,#tfa_312-D" aria-labelledby="tfa_56-L" data-tfa-labelledby="tfa_55-L tfa_56-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#if defaults.tfa_55}} checked{{/if}}>
                       <span class="form-icon"></span>
                       If you are a local authority please tick this box
                     </label>
@@ -667,7 +673,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-4">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-4">
         <div class="section pageSection" id="tfa_59">
           <h3 id="tfa_59-T">About the work you would like funded</h3>
           <p>
@@ -712,10 +718,10 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_63-D">
-                <select id="tfa_63" name="tfa_63" title="Which topic are you applying for?" aria-required="true" class="form-select required" required{{#if defaults.application_readonly}} readonly{{/if}}>
+                <select id="tfa_63" name="tfa_63" title="Which topic are you applying for?" aria-required="true" class="form-select required" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
                   <option value="" disabled selected>Please select&hellip;</option>
                   {{#each topic}}
-                  <option value="{{id}}" id="{{id}}"{{#if (contains ../defaults.tfa_63 name)}} selected{{/if}}>{{{name}}}</option>
+                  <option value="{{id}}" id="{{id}}"{{#if (contains (slugify ../defaults.tfa_63) (slugify name))}} selected{{/if}}>{{{name}}}</option>
                   {{/each ~}}
                 </select>
               </div>
@@ -728,20 +734,14 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_80-D">
                 <span id="tfa_80" class="choices vertical required" required>
+                  {{#each type}}
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_81-L" for="tfa_81">
-                      <input type="radio" value="tfa_81" id="tfa_81" name="tfa_80" aria-required="true" data-conditionals="#tfa_85-D" aria-labelledby="tfa_81-L" data-tfa-labelledby="tfa_80-L tfa_81-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Spreading good practice: widening the impact of successful integration approaches, practices and tools
+                    <label class="form-radio{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
+                      <input type="radio" value="{{id}}" id="{{id}}" name="tfa_80" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_80-L {{id}}-L"{{#if (contains (slugify ../defaults.tfa_80) (slugify name))}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <i class="form-icon"></i> {{name}}
                     </label>
                   </span>
-                  <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_82-L" for="tfa_82">
-                      <input type="radio" value="tfa_82" id="tfa_82" name="tfa_80" aria-required="true" data-conditionals="#tfa_86-D" aria-labelledby="tfa_82-L" data-tfa-labelledby="tfa_80-L tfa_82-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Supporting innovation: piloting new approaches, practices and tools that support integration
-                    </label>
-                  </span>
+                  {{/each}}
                 </span>
               </div>
             </div>
@@ -789,29 +789,29 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_87-D">
                 <span id="tfa_87" class="choices vertical required" required>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_88-L" for="tfa_88">
-                      <input type="radio" value="tfa_88" id="tfa_88" name="tfa_87" aria-required="true" data-conditionals="#tfa_282-D" aria-labelledby="tfa_88-L" data-tfa-labelledby="tfa_87-L tfa_88-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_88-L" for="tfa_88">
+                      <input type="radio" value="tfa_88" id="tfa_88" name="tfa_87" aria-required="true" data-conditionals="#tfa_282-D" aria-labelledby="tfa_88-L" data-tfa-labelledby="tfa_87-L tfa_88-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_87 "Within a specific community (e.g. town, village or neighbourhood)"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       A local community or large number of local communities
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_89-L" for="tfa_89">
-                      <input type="radio" value="tfa_89" id="tfa_89" name="tfa_87" aria-required="true" data-conditionals="#tfa_92-D" aria-labelledby="tfa_89-L" data-tfa-labelledby="tfa_87-L tfa_89-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_89-L" for="tfa_89">
+                      <input type="radio" value="tfa_89" id="tfa_89" name="tfa_87" aria-required="true" data-conditionals="#tfa_92-D" aria-labelledby="tfa_89-L" data-tfa-labelledby="tfa_87-L tfa_89-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_87 "Across one local authority area"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       Across one Local Authority area
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_90-L" for="tfa_90">
-                      <input type="radio" value="tfa_90" id="tfa_90" name="tfa_87" aria-required="true" data-conditionals="#tfa_125-D" aria-labelledby="tfa_90-L" data-tfa-labelledby="tfa_87-L tfa_90-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_90-L" for="tfa_90">
+                      <input type="radio" value="tfa_90" id="tfa_90" name="tfa_87" aria-required="true" data-conditionals="#tfa_125-D" aria-labelledby="tfa_90-L" data-tfa-labelledby="tfa_87-L tfa_90-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_87 "Across several local authority areas"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       Across several Local Authority areas
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_91-L" for="tfa_91">
-                      <input type="radio" value="tfa_91" id="tfa_91" name="tfa_87" aria-required="true" data-conditionals="#tfa_283-D" aria-labelledby="tfa_91-L" data-tfa-labelledby="tfa_87-L tfa_91-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_91-L" for="tfa_91">
+                      <input type="radio" value="tfa_91" id="tfa_91" name="tfa_87" aria-required="true" data-conditionals="#tfa_283-D" aria-labelledby="tfa_91-L" data-tfa-labelledby="tfa_87-L tfa_91-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_87 "Across Scotland"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       Nationally (across Scotland)
                     </label>
@@ -836,275 +836,34 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
-                <select id="tfa_92" name="tfa_92" title="Local authority" aria-required="true" class="form-select required"{{#if defaults.application_readonly}} readonly{{/if}} required>
+                <select id="tfa_92" name="tfa_92" title="Local authority" aria-required="true" class="form-select required" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}} required>
                   <option value="" disabled selected>Please select&hellip;</option>
-                  <option value="tfa_93" id="tfa_93">Aberdeen</option>
-                  <option value="tfa_94" id="tfa_94">Aberdeenshire</option>
-                  <option value="tfa_95" id="tfa_95">Angus</option>
-                  <option value="tfa_96" id="tfa_96">Argyll &amp; Bute</option>
-                  <option value="tfa_97" id="tfa_97">Clackmannanshire</option>
-                  <option value="tfa_98" id="tfa_98">Dumfries &amp; Galloway</option>
-                  <option value="tfa_99" id="tfa_99">Dundee</option>
-                  <option value="tfa_100" id="tfa_100">East Ayrshire</option>
-                  <option value="tfa_101" id="tfa_101">East Dunbartonshire</option>
-                  <option value="tfa_102" id="tfa_102">East Lothian</option>
-                  <option value="tfa_103" id="tfa_103">East Renfrewshire</option>
-                  <option value="tfa_104" id="tfa_104">Edinburgh</option>
-                  <option value="tfa_105" id="tfa_105">Falkirk</option>
-                  <option value="tfa_106" id="tfa_106">Fife</option>
-                  <option value="tfa_107" id="tfa_107">Glasgow</option>
-                  <option value="tfa_108" id="tfa_108">Highland</option>
-                  <option value="tfa_109" id="tfa_109">Inverclyde</option>
-                  <option value="tfa_110" id="tfa_110">Midlothian</option>
-                  <option value="tfa_111" id="tfa_111">Moray</option>
-                  <option value="tfa_112" id="tfa_112">Na h-Eileanan Siar</option>
-                  <option value="tfa_113" id="tfa_113">North Ayrshire</option>
-                  <option value="tfa_114" id="tfa_114">North Lanarkshire</option>
-                  <option value="tfa_115" id="tfa_115">Orkney</option>
-                  <option value="tfa_116" id="tfa_116">Perth &amp; Kinross</option>
-                  <option value="tfa_117" id="tfa_117">Renfrewshire</option>
-                  <option value="tfa_118" id="tfa_118">Scottish Borders</option>
-                  <option value="tfa_119" id="tfa_119">Shetland</option>
-                  <option value="tfa_120" id="tfa_120">South Ayrshire</option>
-                  <option value="tfa_121" id="tfa_121">South Lanarkshire</option>
-                  <option value="tfa_122" id="tfa_122">Stirling</option>
-                  <option value="tfa_123" id="tfa_123">West Dunbartonshire</option>
-                  <option value="tfa_124" id="tfa_124">West Lothian</option>
+                  {{#each local_authorities ~}}
+                  {{#if this.id_single}}
+                  <option value="{{id_single}}" id="{{id_single}}"{{#compare name ../defaults.tfa_92}} selected{{/compare}}>
+                    {{name}}
+                  </option>
+                  {{/if}}
+                  {{/each ~}}
                 </select>
               </div>
             </div>
           </div>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_125-L" data-tfa-labelledby="-L tfa_125-L" id="tfa_125-D" data-condition="`#tfa_90`">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_125-L" class="form-label preField reqMark" aria-label="Local authorities   required" required>Local authorities</label>
+              <label id="tfa_125-L" class="form-label preField reqMark" aria-label="Local authorities" required>Local authorities</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
-                <span id="tfa_125" class="choices vertical required" required>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_126-L" for="tfa_126">
-                      <input type="checkbox" value="tfa_126" id="tfa_126" name="tfa_126" aria-labelledby="tfa_126-L" data-tfa-labelledby="tfa_125-L tfa_126-L">
-                      <span class="form-icon"></span>
-                      Aberdeen
+                <span id="tfa_125" class="choices vertical columns required" required>
+                  {{#each local_authorities ~}}
+                  <span class="form-group column col-6 col-md-12">
+                    <label class="form-checkbox {{#if ../defaults.application_readonly}}option-readonly{{/if}}" id="{{id_multiple}}-L" for="{{id_multiple}}">
+                      <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_125-L {{id_multiple}}-L"{{#if (contains (slugify (replace ../defaults.tfa_125 ' and ' ' ')) (slugify name))}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <i class="form-icon"></i> {{name}}
                     </label>
                   </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_127-L" for="tfa_127">
-                      <input type="checkbox" value="tfa_127" id="tfa_127" name="tfa_127" aria-labelledby="tfa_127-L" data-tfa-labelledby="tfa_125-L tfa_127-L">
-                      <span class="form-icon"></span>
-                      Aberdeenshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_128-L" for="tfa_128">
-                      <input type="checkbox" value="tfa_128" id="tfa_128" name="tfa_128" aria-labelledby="tfa_128-L" data-tfa-labelledby="tfa_125-L tfa_128-L">
-                      <span class="form-icon"></span>
-                      Angus
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_129-L" for="tfa_129">
-                      <input type="checkbox" value="tfa_129" id="tfa_129" name="tfa_129" aria-labelledby="tfa_129-L" data-tfa-labelledby="tfa_125-L tfa_129-L">
-                      <span class="form-icon"></span>
-                      Argyll &amp; Bute
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_130-L" for="tfa_130">
-                      <input type="checkbox" value="tfa_130" id="tfa_130" name="tfa_130" aria-labelledby="tfa_130-L" data-tfa-labelledby="tfa_125-L tfa_130-L">
-                      <span class="form-icon"></span>
-                      Clackmannanshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_131-L" for="tfa_131">
-                      <input type="checkbox" value="tfa_131" id="tfa_131" name="tfa_131" aria-labelledby="tfa_131-L" data-tfa-labelledby="tfa_125-L tfa_131-L">
-                      <span class="form-icon"></span>
-                      Dumfries &amp; Galloway
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_132-L" for="tfa_132">
-                      <input type="checkbox" value="tfa_132" id="tfa_132" name="tfa_132" aria-labelledby="tfa_132-L" data-tfa-labelledby="tfa_125-L tfa_132-L">
-                      <span class="form-icon"></span>
-                      Dundee
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_133-L" for="tfa_133">
-                      <input type="checkbox" value="tfa_133" id="tfa_133" name="tfa_133" aria-labelledby="tfa_133-L" data-tfa-labelledby="tfa_125-L tfa_133-L">
-                      <span class="form-icon"></span>
-                      East Ayrshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_134-L" for="tfa_134">
-                      <input type="checkbox" value="tfa_134" id="tfa_134" name="tfa_134" aria-labelledby="tfa_134-L" data-tfa-labelledby="tfa_125-L tfa_134-L">
-                      <span class="form-icon"></span>
-                      East Dunbartonshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_135-L" for="tfa_135">
-                      <input type="checkbox" value="tfa_135" id="tfa_135" name="tfa_135" aria-labelledby="tfa_135-L" data-tfa-labelledby="tfa_125-L tfa_135-L">
-                      <span class="form-icon"></span>
-                      East Lothian
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_136-L" for="tfa_136">
-                      <input type="checkbox" value="tfa_136" id="tfa_136" name="tfa_136" aria-labelledby="tfa_136-L" data-tfa-labelledby="tfa_125-L tfa_136-L">
-                      <span class="form-icon"></span>
-                      East Renfrewshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_137-L" for="tfa_137">
-                      <input type="checkbox" value="tfa_137" id="tfa_137" name="tfa_137" aria-labelledby="tfa_137-L" data-tfa-labelledby="tfa_125-L tfa_137-L">
-                      <span class="form-icon"></span>
-                      Edinburgh
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_138-L" for="tfa_138">
-                      <input type="checkbox" value="tfa_138" id="tfa_138" name="tfa_138" aria-labelledby="tfa_138-L" data-tfa-labelledby="tfa_125-L tfa_138-L">
-                      <span class="form-icon"></span>
-                      Falkirk
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_139-L" for="tfa_139">
-                      <input type="checkbox" value="tfa_139" id="tfa_139" name="tfa_139" aria-labelledby="tfa_139-L" data-tfa-labelledby="tfa_125-L tfa_139-L">
-                      <span class="form-icon"></span>
-                      Fife
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_140-L" for="tfa_140">
-                      <input type="checkbox" value="tfa_140" id="tfa_140" name="tfa_140" aria-labelledby="tfa_140-L" data-tfa-labelledby="tfa_125-L tfa_140-L">
-                      <span class="form-icon"></span>
-                      Glasgow
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_141-L" for="tfa_141">
-                      <input type="checkbox" value="tfa_141" id="tfa_141" name="tfa_141" aria-labelledby="tfa_141-L" data-tfa-labelledby="tfa_125-L tfa_141-L">
-                      <span class="form-icon"></span>
-                      Highland
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_142-L" for="tfa_142">
-                      <input type="checkbox" value="tfa_142" id="tfa_142" name="tfa_142" aria-labelledby="tfa_142-L" data-tfa-labelledby="tfa_125-L tfa_142-L">
-                      <span class="form-icon"></span>
-                      Inverclyde
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_143-L" for="tfa_143">
-                      <input type="checkbox" value="tfa_143" id="tfa_143" name="tfa_143" aria-labelledby="tfa_143-L" data-tfa-labelledby="tfa_125-L tfa_143-L">
-                      <span class="form-icon"></span>
-                      Midlothian
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_144-L" for="tfa_144">
-                      <input type="checkbox" value="tfa_144" id="tfa_144" name="tfa_144" aria-labelledby="tfa_144-L" data-tfa-labelledby="tfa_125-L tfa_144-L">
-                      <span class="form-icon"></span>
-                      Moray
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_145-L" for="tfa_145">
-                      <input type="checkbox" value="tfa_145" id="tfa_145" name="tfa_145" aria-labelledby="tfa_145-L" data-tfa-labelledby="tfa_125-L tfa_145-L">
-                      <span class="form-icon"></span>
-                      Na h-Eileanan Siar
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_146-L" for="tfa_146">
-                      <input type="checkbox" value="tfa_146" id="tfa_146" name="tfa_146" aria-labelledby="tfa_146-L" data-tfa-labelledby="tfa_125-L tfa_146-L">
-                      <span class="form-icon"></span>
-                      North Ayrshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_147-L" for="tfa_147">
-                      <input type="checkbox" value="tfa_147" id="tfa_147" name="tfa_147" aria-labelledby="tfa_147-L" data-tfa-labelledby="tfa_125-L tfa_147-L">
-                      <span class="form-icon"></span>
-                      North Lanarkshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_148-L" for="tfa_148">
-                      <input type="checkbox" value="tfa_148" id="tfa_148" name="tfa_148" aria-labelledby="tfa_148-L" data-tfa-labelledby="tfa_125-L tfa_148-L">
-                      <span class="form-icon"></span>
-                      Orkney
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_149-L" for="tfa_149">
-                      <input type="checkbox" value="tfa_149" id="tfa_149" name="tfa_149" aria-labelledby="tfa_149-L" data-tfa-labelledby="tfa_125-L tfa_149-L">
-                      <span class="form-icon"></span>
-                      Perth &amp; Kinross
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_150-L" for="tfa_150">
-                      <input type="checkbox" value="tfa_150" id="tfa_150" name="tfa_150" aria-labelledby="tfa_150-L" data-tfa-labelledby="tfa_125-L tfa_150-L">
-                      <span class="form-icon"></span>
-                      Renfrewshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_151-L" for="tfa_151">
-                      <input type="checkbox" value="tfa_151" id="tfa_151" name="tfa_151" aria-labelledby="tfa_151-L" data-tfa-labelledby="tfa_125-L tfa_151-L">
-                      <span class="form-icon"></span>
-                      Scottish Borders
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_152-L" for="tfa_152">
-                      <input type="checkbox" value="tfa_152" id="tfa_152" name="tfa_152" aria-labelledby="tfa_152-L" data-tfa-labelledby="tfa_125-L tfa_152-L">
-                      <span class="form-icon"></span>
-                      Shetland
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_153-L" for="tfa_153">
-                      <input type="checkbox" value="tfa_153" id="tfa_153" name="tfa_153" aria-labelledby="tfa_153-L" data-tfa-labelledby="tfa_125-L tfa_153-L">
-                      <span class="form-icon"></span>
-                      South Ayrshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_154-L" for="tfa_154">
-                      <input type="checkbox" value="tfa_154" id="tfa_154" name="tfa_154" aria-labelledby="tfa_154-L" data-tfa-labelledby="tfa_125-L tfa_154-L">
-                      <span class="form-icon"></span>
-                      South Lanarkshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_155-L" for="tfa_155">
-                      <input type="checkbox" value="tfa_155" id="tfa_155" name="tfa_155" aria-labelledby="tfa_155-L" data-tfa-labelledby="tfa_125-L tfa_155-L">
-                      <span class="form-icon"></span>
-                      Stirling
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_156-L" for="tfa_156">
-                      <input type="checkbox" value="tfa_156" id="tfa_156" name="tfa_156" aria-labelledby="tfa_156-L" data-tfa-labelledby="tfa_125-L tfa_156-L">
-                      <span class="form-icon"></span>
-                      West Dunbartonshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_157-L" for="tfa_157">
-                      <input type="checkbox" value="tfa_157" id="tfa_157" name="tfa_157" aria-labelledby="tfa_157-L" data-tfa-labelledby="tfa_125-L tfa_157-L">
-                      <span class="form-icon"></span>
-                      West Lothian
-                    </label>
-                  </span>
+                  {{/each ~}}
                 </span>
               </div>
             </div>
@@ -1117,241 +876,6 @@ wFORMS.behaviors.prefill.skip = false;
               <textarea aria-required="true" data-maxwords="150" id="tfa_283" name="tfa_283" title="National reach" class="form-input required count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_283}}</textarea>
             </div>
           </div>
-          {{!-- <div class="form-group oneField" role="group" aria-labelledby="tfa_158-L" data-tfa-labelledby="-L tfa_158-L">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_158-L" class="form-label preField reqMark" aria-label="Please select the main Scottish local authority areas where your project will take place   required" required>Please select the main Scottish local authority areas where your project will take place</label>
-            </div>
-            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_158-D">
-                <span id="tfa_158" class="choices vertical required" required>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_159-L" for="tfa_159">
-                      <input type="checkbox" value="tfa_159" id="tfa_159" name="tfa_159" aria-labelledby="tfa_159-L" data-tfa-labelledby="tfa_158-L tfa_159-L">
-                      <span class="form-icon"></span>
-                      Aberdeen
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_160-L" for="tfa_160">
-                      <input type="checkbox" value="tfa_160" id="tfa_160" name="tfa_160" aria-labelledby="tfa_160-L" data-tfa-labelledby="tfa_158-L tfa_160-L">
-                      <span class="form-icon"></span>
-                      Aberdeenshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_161-L" for="tfa_161">
-                      <input type="checkbox" value="tfa_161" id="tfa_161" name="tfa_161" aria-labelledby="tfa_161-L" data-tfa-labelledby="tfa_158-L tfa_161-L">
-                      <span class="form-icon"></span>
-                      Angus
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_162-L" for="tfa_162">
-                      <input type="checkbox" value="tfa_162" id="tfa_162" name="tfa_162" aria-labelledby="tfa_162-L" data-tfa-labelledby="tfa_158-L tfa_162-L">
-                      <span class="form-icon"></span>
-                      Argyll &amp; Bute
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_163-L" for="tfa_163">
-                      <input type="checkbox" value="tfa_163" id="tfa_163" name="tfa_163" aria-labelledby="tfa_163-L" data-tfa-labelledby="tfa_158-L tfa_163-L">
-                      <span class="form-icon"></span>
-                      Clackmannanshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_164-L" for="tfa_164">
-                      <input type="checkbox" value="tfa_164" id="tfa_164" name="tfa_164" aria-labelledby="tfa_164-L" data-tfa-labelledby="tfa_158-L tfa_164-L">
-                      <span class="form-icon"></span>
-                      Dumfries &amp; Galloway
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_165-L" for="tfa_165">
-                      <input type="checkbox" value="tfa_165" id="tfa_165" name="tfa_165" aria-labelledby="tfa_165-L" data-tfa-labelledby="tfa_158-L tfa_165-L">
-                      <span class="form-icon"></span>
-                      Dundee
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_166-L" for="tfa_166">
-                      <input type="checkbox" value="tfa_166" id="tfa_166" name="tfa_166" aria-labelledby="tfa_166-L" data-tfa-labelledby="tfa_158-L tfa_166-L">
-                      <span class="form-icon"></span>
-                      East Ayrshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_167-L" for="tfa_167">
-                      <input type="checkbox" value="tfa_167" id="tfa_167" name="tfa_167" aria-labelledby="tfa_167-L" data-tfa-labelledby="tfa_158-L tfa_167-L">
-                      <span class="form-icon"></span>
-                      East Dunbartonshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_168-L" for="tfa_168">
-                      <input type="checkbox" value="tfa_168" id="tfa_168" name="tfa_168" aria-labelledby="tfa_168-L" data-tfa-labelledby="tfa_158-L tfa_168-L">
-                      <span class="form-icon"></span>
-                      East Lothian
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_169-L" for="tfa_169">
-                      <input type="checkbox" value="tfa_169" id="tfa_169" name="tfa_169" aria-labelledby="tfa_169-L" data-tfa-labelledby="tfa_158-L tfa_169-L">
-                      <span class="form-icon"></span>
-                      East Renfrewshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_170-L" for="tfa_170">
-                      <input type="checkbox" value="tfa_170" id="tfa_170" name="tfa_170" aria-labelledby="tfa_170-L" data-tfa-labelledby="tfa_158-L tfa_170-L">
-                      <span class="form-icon"></span>
-                      Edinburgh
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_171-L" for="tfa_171">
-                      <input type="checkbox" value="tfa_171" id="tfa_171" name="tfa_171" aria-labelledby="tfa_171-L" data-tfa-labelledby="tfa_158-L tfa_171-L">
-                      <span class="form-icon"></span>
-                      Falkirk
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_172-L" for="tfa_172">
-                      <input type="checkbox" value="tfa_172" id="tfa_172" name="tfa_172" aria-labelledby="tfa_172-L" data-tfa-labelledby="tfa_158-L tfa_172-L">
-                      <span class="form-icon"></span>
-                      Fife
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_173-L" for="tfa_173">
-                      <input type="checkbox" value="tfa_173" id="tfa_173" name="tfa_173" aria-labelledby="tfa_173-L" data-tfa-labelledby="tfa_158-L tfa_173-L">
-                      <span class="form-icon"></span>
-                      Glasgow
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_174-L" for="tfa_174">
-                      <input type="checkbox" value="tfa_174" id="tfa_174" name="tfa_174" aria-labelledby="tfa_174-L" data-tfa-labelledby="tfa_158-L tfa_174-L">
-                      <span class="form-icon"></span>
-                      Highland
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_175-L" for="tfa_175">
-                      <input type="checkbox" value="tfa_175" id="tfa_175" name="tfa_175" aria-labelledby="tfa_175-L" data-tfa-labelledby="tfa_158-L tfa_175-L">
-                      <span class="form-icon"></span>
-                      Inverclyde
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_176-L" for="tfa_176">
-                      <input type="checkbox" value="tfa_176" id="tfa_176" name="tfa_176" aria-labelledby="tfa_176-L" data-tfa-labelledby="tfa_158-L tfa_176-L">
-                      <span class="form-icon"></span>
-                      Midlothian
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_177-L" for="tfa_177">
-                      <input type="checkbox" value="tfa_177" id="tfa_177" name="tfa_177" aria-labelledby="tfa_177-L" data-tfa-labelledby="tfa_158-L tfa_177-L">
-                      <span class="form-icon"></span>
-                      Moray
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_178-L" for="tfa_178">
-                      <input type="checkbox" value="tfa_178" id="tfa_178" name="tfa_178" aria-labelledby="tfa_178-L" data-tfa-labelledby="tfa_158-L tfa_178-L">
-                      <span class="form-icon"></span>
-                      Na h-Eileanan Siar
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_179-L" for="tfa_179">
-                      <input type="checkbox" value="tfa_179" id="tfa_179" name="tfa_179" aria-labelledby="tfa_179-L" data-tfa-labelledby="tfa_158-L tfa_179-L">
-                      <span class="form-icon"></span>
-                      North Ayrshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_180-L" for="tfa_180">
-                      <input type="checkbox" value="tfa_180" id="tfa_180" name="tfa_180" aria-labelledby="tfa_180-L" data-tfa-labelledby="tfa_158-L tfa_180-L">
-                      <span class="form-icon"></span>
-                      North Lanarkshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_181-L" for="tfa_181">
-                      <input type="checkbox" value="tfa_181" id="tfa_181" name="tfa_181" aria-labelledby="tfa_181-L" data-tfa-labelledby="tfa_158-L tfa_181-L">
-                      <span class="form-icon"></span>
-                      Orkney
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_182-L" for="tfa_182">
-                      <input type="checkbox" value="tfa_182" id="tfa_182" name="tfa_182" aria-labelledby="tfa_182-L" data-tfa-labelledby="tfa_158-L tfa_182-L">
-                      <span class="form-icon"></span>
-                      Perth &amp; Kinross
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_183-L" for="tfa_183">
-                      <input type="checkbox" value="tfa_183" id="tfa_183" name="tfa_183" aria-labelledby="tfa_183-L" data-tfa-labelledby="tfa_158-L tfa_183-L">
-                      <span class="form-icon"></span>
-                      Renfrewshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_184-L" for="tfa_184">
-                      <input type="checkbox" value="tfa_184" id="tfa_184" name="tfa_184" aria-labelledby="tfa_184-L" data-tfa-labelledby="tfa_158-L tfa_184-L">
-                      <span class="form-icon"></span>
-                      Scottish Borders
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_185-L" for="tfa_185">
-                      <input type="checkbox" value="tfa_185" id="tfa_185" name="tfa_185" aria-labelledby="tfa_185-L" data-tfa-labelledby="tfa_158-L tfa_185-L">
-                      <span class="form-icon"></span>
-                      Shetland
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_186-L" for="tfa_186">
-                      <input type="checkbox" value="tfa_186" id="tfa_186" name="tfa_186" aria-labelledby="tfa_186-L" data-tfa-labelledby="tfa_158-L tfa_186-L">
-                      <span class="form-icon"></span>
-                      South Ayrshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_187-L" for="tfa_187">
-                      <input type="checkbox" value="tfa_187" id="tfa_187" name="tfa_187" aria-labelledby="tfa_187-L" data-tfa-labelledby="tfa_158-L tfa_187-L">
-                      <span class="form-icon"></span>
-                      South Lanarkshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_188-L" for="tfa_188">
-                      <input type="checkbox" value="tfa_188" id="tfa_188" name="tfa_188" aria-labelledby="tfa_188-L" data-tfa-labelledby="tfa_158-L tfa_188-L">
-                      <span class="form-icon"></span>
-                      Stirling
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_189-L" for="tfa_189">
-                      <input type="checkbox" value="tfa_189" id="tfa_189" name="tfa_189" aria-labelledby="tfa_189-L" data-tfa-labelledby="tfa_158-L tfa_189-L">
-                      <span class="form-icon"></span>
-                      West Dunbartonshire
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_190-L" for="tfa_190">
-                      <input type="checkbox" value="tfa_190" id="tfa_190" name="tfa_190" aria-labelledby="tfa_190-L" data-tfa-labelledby="tfa_158-L tfa_190-L">
-                      <span class="form-icon"></span>
-                      West Lothian
-                    </label>
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div> --}}
           <p>
             2.9&ensp;Collaboration
           </p>
@@ -1363,15 +887,15 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_191-D">
                 <span id="tfa_191" class="choices vertical required" required>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_192-L" for="tfa_192">
-                      <input type="radio" value="tfa_192" id="tfa_192" name="tfa_191" aria-required="true" aria-labelledby="tfa_192-L" data-tfa-labelledby="tfa_191-L tfa_192-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_192-L" for="tfa_192">
+                      <input type="radio" value="tfa_192" id="tfa_192" name="tfa_191" aria-required="true" aria-labelledby="tfa_192-L" data-tfa-labelledby="tfa_191-L tfa_192-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_191 "Individual"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       Individual
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_193-L" for="tfa_193">
-                      <input type="radio" value="tfa_193" id="tfa_193" name="tfa_191" aria-required="true" data-conditionals="#tfa_194-D,#tfa_195-D,#tfa_280-D" aria-labelledby="tfa_193-L" data-tfa-labelledby="tfa_191-L tfa_193-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_193-L" for="tfa_193">
+                      <input type="radio" value="tfa_193" id="tfa_193" name="tfa_191" aria-required="true" data-conditionals="#tfa_194-D,#tfa_195-D,#tfa_280-D" aria-labelledby="tfa_193-L" data-tfa-labelledby="tfa_191-L tfa_193-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#compare defaults.tfa_191 "Partnership"}} checked{{/compare}}>
                       <span class="form-icon"></span>
                       Partnership
                     </label>
@@ -1404,15 +928,15 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D">
                 <span id="tfa_195" class="choices vertical required" required>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_196-L" for="tfa_196">
-                      <input type="radio" value="tfa_196" id="tfa_196" name="tfa_195" aria-required="true" aria-labelledby="tfa_196-L" data-tfa-labelledby="tfa_195-L tfa_196-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_196-L" for="tfa_196">
+                      <input type="radio" value="tfa_196" id="tfa_196" name="tfa_195" aria-required="true" aria-labelledby="tfa_196-L" data-tfa-labelledby="tfa_195-L tfa_196-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#if defaults.tfa_195}} checked{{/if}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
-                    <label class="form-radio postField" id="tfa_197-L" for="tfa_197">
-                      <input type="radio" value="tfa_197" id="tfa_197" name="tfa_195" aria-required="true" aria-labelledby="tfa_197-L" data-tfa-labelledby="tfa_195-L tfa_197-L"{{#if defaults.application_readonly}} readonly{{/if}}>
+                    <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_197-L" for="tfa_197">
+                      <input type="radio" value="tfa_197" id="tfa_197" name="tfa_195" aria-required="true" aria-labelledby="tfa_197-L" data-tfa-labelledby="tfa_195-L tfa_197-L"{{#if defaults.application_readonly}} readonly{{/if}}{{#unless defaults.tfa_195}} checked{{/unless}}>
                       <span class="form-icon"></span>
                       No
                     </label>
@@ -1423,7 +947,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-5">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-5">
         <div class="section pageSection" id="tfa_198">
           <h3 id="tfa_198-T">Project/activities</h3>
           <p>
@@ -1553,7 +1077,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-6">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-6">
         <div class="section pageSection" id="tfa_199">
           <p>
             2.12&ensp;Please provide the Project Plan.
@@ -1643,7 +1167,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-7">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-7">
         <div class="section pageSection" id="tfa_204">
           <h3 id="tfa_204-T">People and communities who will benefit from your activity</h3>
           <div class="form-group oneField">
@@ -1664,72 +1188,17 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField" role="group" aria-labelledby="tfa_207-L" data-tfa-labelledby="-L tfa_207-L">
             <div class="col-12">
-              <label id="tfa_207-L" class="form-label preField reqMark" aria-label="Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]   required" required>2.19&ensp;Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]</label>
+              <label id="tfa_207-L" class="form-label preField reqMark" aria-label="Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]" required>2.19&ensp;Please indicate if your project will include targeted work with any of the following communities, underrepresented groups or protected characteristics. [Select all that are relevant]</label>
               <div class="field-container-D" id="tfa_207-D">
                 <span id="tfa_207" class="choices vertical required" required>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_208-L" for="tfa_208">
-                      <input type="checkbox" value="tfa_208" id="tfa_208" name="tfa_208" aria-labelledby="tfa_208-L" data-tfa-labelledby="tfa_207-L tfa_208-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Age (older people)
+                  {{#each target_communities}}
+                  <div class="form-group">
+                    <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
+                      <input type="checkbox" value="{{id}}" id="{{id}}" name="{{id}}" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_207-L {{id}}-L"{{#if (contains ../defaults.tfa_207 name)}} checked{{/if}}{{#if (contains name 'Other')}} data-conditionals="#tfa_217-D"{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <i class="form-icon"></i> {{name}}
                     </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_210-L" for="tfa_210">
-                      <input type="checkbox" value="tfa_210" id="tfa_210" name="tfa_210" aria-labelledby="tfa_210-L" data-tfa-labelledby="tfa_207-L tfa_210-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Age (younger people)
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_212-L" for="tfa_212">
-                      <input type="checkbox" value="tfa_212" id="tfa_212" name="tfa_212" aria-labelledby="tfa_212-L" data-tfa-labelledby="tfa_207-L tfa_212-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Disability
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_214-L" for="tfa_214">
-                      <input type="checkbox" value="tfa_214" id="tfa_214" name="tfa_214" aria-labelledby="tfa_214-L" data-tfa-labelledby="tfa_207-L tfa_214-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Gender
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_215-L" for="tfa_215">
-                      <input type="checkbox" value="tfa_215" id="tfa_215" name="tfa_215" aria-labelledby="tfa_215-L" data-tfa-labelledby="tfa_207-L tfa_215-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Race
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_209-L" for="tfa_209">
-                      <input type="checkbox" value="tfa_209" id="tfa_209" name="tfa_209" aria-labelledby="tfa_209-L" data-tfa-labelledby="tfa_207-L tfa_209-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Religion / belief / faith
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_211-L" for="tfa_211">
-                      <input type="checkbox" value="tfa_211" id="tfa_211" name="tfa_211" aria-labelledby="tfa_211-L" data-tfa-labelledby="tfa_207-L tfa_211-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Sexual Orientation and / or gender identity
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_213-L" for="tfa_213">
-                      <input type="checkbox" value="tfa_213" id="tfa_213" name="tfa_213" aria-labelledby="tfa_213-L" data-tfa-labelledby="tfa_207-L tfa_213-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Socio-economic disadvantage
-                    </label>
-                  </span>
-                  <span class="oneChoice">
-                    <label class="form-checkbox postField" id="tfa_216-L" for="tfa_216">
-                      <input type="checkbox" value="tfa_216" id="tfa_216" name="tfa_216" data-conditionals="#tfa_217-D" aria-labelledby="tfa_216-L" data-tfa-labelledby="tfa_207-L tfa_216-L"{{#if defaults.application_readonly}} readonly{{/if}}>
-                      <span class="form-icon"></span>
-                      Other
-                    </label>
-                  </span>
+                  </div>
+                  {{/each}}
                 </span>
               </div>
             </div>
@@ -1751,7 +1220,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-8">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-8">
         <div class="section pageSection" id="tfa_200">
           <h3 id="tfa_200-T">Proposed budget</h3>
           <p>
@@ -1794,7 +1263,7 @@ wFORMS.behaviors.prefill.skip = false;
           {{/unless}}
         </div>
       </div>
-      <div class="wfPage" id="wfPgIndex-9">
+      <div class="DISABLEDwfPage" id="DISABLEDwfPgIndex-9">
         <div class="section pageSection" id="tfa_229">
           <h3 id="tfa_229-T">Declaration</h3>
           <div class="form-group oneField field-container-D" id="tfa_230-D" role="group" aria-labelledby="tfa_230-L" data-tfa-labelledby="-L tfa_230-L">
@@ -1802,7 +1271,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_230-L" class="form-label preField "></label>
               <span id="tfa_230" class="choices vertical ">
                 <span class="oneChoice">
-                  <label class="form-checkbox postField" id="tfa_231-L" for="tfa_231">
+                  <label class="form-checkbox postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_231-L" for="tfa_231">
                     <input type="checkbox" value="tfa_231" id="tfa_231" name="tfa_231" aria-labelledby="tfa_231-L" data-tfa-labelledby="tfa_230-L tfa_231-L"{{#if defaults.application_readonly}} readonly{{/if}}>
                     <span class="form-icon"></span>
                     <strong>Please tick this box if you are happy for the New Scots Refugee Integration Delivery Project panel to contact you</strong>
