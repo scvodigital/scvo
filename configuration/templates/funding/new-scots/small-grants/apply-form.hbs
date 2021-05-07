@@ -258,7 +258,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_18-L" class="label preField " for="tfa_18">Correspondence address (if different from organisation address provided)</label>
+              <label id="tfa_18-L" class="form-label preField " for="tfa_18">Correspondence address (if different from organisation address provided)</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="oneField field-container-D" id="tfa_18-D">
@@ -268,7 +268,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_282-L" class="label preField " for="tfa_282">Town/city</label>
+              <label id="tfa_282-L" class="form-label preField " for="tfa_282">Town/city</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="oneField field-container-D" id="tfa_282-D">
@@ -278,7 +278,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_283-L" class="label preField " for="tfa_283">Postcode</label>
+              <label id="tfa_283-L" class="form-label preField " for="tfa_283">Postcode</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="oneField field-container-D" id="tfa_283-D">
@@ -619,7 +619,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_61-D">
-                <input type="text" id="tfa_61" name="tfa_61" placeholder="DD/MM/YYYY" value="{{defaults.tfa_61}}"{{#if defaults.application_readonly}} readonly{{/if}} autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="Start date" class="validate-datecal form-input required" required>
+                <input type="text" id="tfa_61" name="tfa_61" placeholder="DD/MM/YYYY" value="{{defaults.tfa_61}}"{{#if defaults.application_readonly}} readonly{{/if}} autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="Start date" class="{{#unless defaults.application_readonly}}validate-datecal{{/unless}} form-input required" required>
               </div>
             </div>
           </div>
@@ -629,7 +629,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_62-D">
-                <input type="text" id="tfa_62" name="tfa_62" placeholder="DD/MM/YYYY" value="{{defaults.tfa_62}}"{{#if defaults.application_readonly}} readonly{{/if}} autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="End date" class="validate-datecal form-input required" required>
+                <input type="text" id="tfa_62" name="tfa_62" placeholder="DD/MM/YYYY" value="{{defaults.tfa_62}}"{{#if defaults.application_readonly}} readonly{{/if}} autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="End date" class="{{#unless defaults.application_readonly}}validate-datecal{{/unless}} form-input required" required>
               </div>
             </div>
           </div>
@@ -1286,6 +1286,10 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+          {{else}}
+          <p>
+            <span class="label label-info">File uploads have been attached</span>
+          </p>
           {{/unless}}
         </div>
       </div>
