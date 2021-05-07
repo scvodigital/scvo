@@ -62,7 +62,7 @@ wFORMS.behaviors.prefill.skip = false;
   <div class="wForm" id="4903538-WRPR" dir="ltr">
     <div class="codesection" id="code-4903538"></div>
     <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4903538" role="form" enctype="multipart/form-data">
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-1"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-1"{{/unless}}>
         <div class="section pageSection" id="tfa_1">
           <h3 id="tfa_1-T">Tell us about your organisation</h3>
           <p>
@@ -131,7 +131,8 @@ wFORMS.behaviors.prefill.skip = false;
                 wFORMS.behaviors.validation.rules['customtfa_8'] =  { selector: '*[id="tfa_8"]', check: 'validateCustom'};
                 wFORMS.behaviors.validation.messages['customtfa_8'] = "Please enter a valid UK postcode";
               }
-            }</script>
+            }
+            </script>
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
@@ -148,7 +149,8 @@ wFORMS.behaviors.prefill.skip = false;
                 wFORMS.behaviors.validation.rules['customtfa_9'] =  { selector: '*[id="tfa_9"]', check: 'validateCustom'};
                 wFORMS.behaviors.validation.messages['customtfa_9'] = "Please enter a valid URL starting with http:// or https://";
               }
-            }</script>
+            }
+            </script>
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
@@ -165,7 +167,8 @@ wFORMS.behaviors.prefill.skip = false;
                 wFORMS.behaviors.validation.rules['customtfa_10'] =  { selector: '*[id="tfa_10"]', check: 'validateCustom'};
                 wFORMS.behaviors.validation.messages['customtfa_10'] = "Please enter a valid URL starting with http:// or https://";
               }
-            }</script>
+            }
+            </script>
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
@@ -182,11 +185,12 @@ wFORMS.behaviors.prefill.skip = false;
                 wFORMS.behaviors.validation.rules['customtfa_11'] =  { selector: '*[id="tfa_11"]', check: 'validateCustom'};
                 wFORMS.behaviors.validation.messages['customtfa_11'] = "Please enter a valid URL starting with http:// or https://";
               }
-            }</script>
+            }
+            </script>
           </div>
         </div>
       </div>
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-2"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-2"{{/unless}}>
         <div class="section pageSection" id="tfa_2">
           <h3 id="tfa_2-T">Contact</h3>
           <p>
@@ -254,17 +258,45 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_18-L" class="form-label preField" for="tfa_18">Correspondence address (if different from organisation address provided)</label>
+              <label id="tfa_18-L" class="label preField " for="tfa_18">Correspondence address (if different from organisation address provided)</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_18-D">
-                <textarea id="tfa_18" name="tfa_18" title="Address (if different from organisation address provided)"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input">{{defaults.tfa_18}}</textarea>
+              <div class="oneField field-container-D" id="tfa_18-D">
+                <input type="text" id="tfa_18" name="tfa_18" value="{{defaults.tfa_18}}" maxlength="255" title="Address (if different from organisation address provided)"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input">
               </div>
             </div>
           </div>
+          <div class="form-group oneField">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_313-L" class="label preField " for="tfa_313">Town/city</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="oneField field-container-D" id="tfa_313-D">
+                <input type="text" id="tfa_313" name="tfa_313" value="{{defaults.tfa_313}}" maxlength="255" title="Town/city"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input">
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_314-L" class="label preField " for="tfa_314">Postcode</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="oneField field-container-D" id="tfa_314-D">
+                <input type="text" id="tfa_314" name="tfa_314" value="{{defaults.tfa_314}}" maxlength="10" title="Postcode"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))/g">
+              </div>
+            </div>
+          </div>
+          <script type="text/javascript">
+          if(typeof wFORMS != 'undefined') {
+            if(wFORMS.behaviors.validation) {
+              wFORMS.behaviors.validation.rules['customtfa_314'] =  { selector: '*[id="tfa_314"]', check: 'validateCustom'};
+              wFORMS.behaviors.validation.messages['customtfa_314'] = "Please enter a valid UK postcode";
+            }
+          }
+          </script>
         </div>
       </div>
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-3"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-3"{{/unless}}>
         <div class="section pageSection" id="tfa_19">
           <h3 id="tfa_19-T">
             More about your organisation
@@ -675,7 +707,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-4"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-4"{{/unless}}>
         <div class="section pageSection" id="tfa_59">
           <h3 id="tfa_59-T">About the work you would like funded</h3>
           <p>
@@ -949,7 +981,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-5"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-5"{{/unless}}>
         <div class="section pageSection" id="tfa_198">
           <h3 id="tfa_198-T">Project/activities</h3>
           <p>
@@ -1079,7 +1111,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-6"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-6"{{/unless}}>
         <div class="section pageSection" id="tfa_199">
           <p>
             2.12&ensp;Please provide the Project Plan.
@@ -1169,7 +1201,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-7"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-7"{{/unless}}>
         <div class="section pageSection" id="tfa_204">
           <h3 id="tfa_204-T">People and communities who will benefit from your activity</h3>
           <div class="form-group oneField">
@@ -1222,7 +1254,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
         </div>
       </div>
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-8"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-8"{{/unless}}>
         <div class="section pageSection" id="tfa_200">
           <h3 id="tfa_200-T">Proposed budget</h3>
           <p>
@@ -1260,12 +1292,12 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           {{else}}
           <p>
-            <span class="label label-info">File uploads have been attached</label>
+            <span class="label label-info">File uploads have been attached</span>
           </p>
           {{/unless}}
         </div>
       </div>
-      <div{{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-9"{{/unless}}>
+      <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-9"{{/unless}}>
         <div class="section pageSection" id="tfa_229">
           <h3 id="tfa_229-T">Declaration</h3>
           <div class="form-group oneField field-container-D" id="tfa_230-D" role="group" aria-labelledby="tfa_230-L" data-tfa-labelledby="-L tfa_230-L">
@@ -1335,31 +1367,11 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_235-L" class="form-label preField reqMark" for="tfa_235">Contact address 1</label>
+              <label id="tfa_235-L" class="form-label preField reqMark" for="tfa_235">Contact address</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_235-D">
                 <input type="text" id="tfa_235" name="tfa_235" value="{{defaults.tfa_235}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Address 1" class="form-input required" required>
-              </div>
-            </div>
-          </div>
-          <div class="form-group oneField">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_236-L" class="form-label preField " for="tfa_236">Contact address 2</label>
-            </div>
-            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_236-D">
-                <input type="text" id="tfa_236" name="tfa_236" value="{{defaults.tfa_236}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Address 2" class="form-input">
-              </div>
-            </div>
-          </div>
-          <div class="form-group oneField">
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_237-L" class="form-label preField " for="tfa_237">Contact address 3</label>
-            </div>
-            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
-              <div class="field-container-D" id="tfa_237-D">
-                <input type="text" id="tfa_237" name="tfa_237" value="{{defaults.tfa_237}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Address 3" class="form-input">
               </div>
             </div>
           </div>
@@ -1388,7 +1400,8 @@ wFORMS.behaviors.prefill.skip = false;
                 wFORMS.behaviors.validation.rules['customtfa_239'] =  { selector: '*[id="tfa_239"]', check: 'validateCustom'};
                 wFORMS.behaviors.validation.messages['customtfa_239'] = "Please enter a valid UK postcode";
               }
-            }</script>
+            }
+            </script>
           </div>
           <div class="form-group oneField">
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
@@ -1434,7 +1447,7 @@ wFORMS.behaviors.prefill.skip = false;
           </div>
           {{else}}
           <p>
-            <span class="label label-info">File uploads have been attached</label>
+            <span class="label label-info">File uploads have been attached</span>
           </p>
           {{/unless}}
         </div>
@@ -1447,7 +1460,7 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="7bdc7b1b855f950ea0af8899f6f2b4a0" name="tfa_dbControl" id="tfa_dbControl">
       <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
-      <input type="hidden" value="9" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="10" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
       {{/unless}}
     </form>
