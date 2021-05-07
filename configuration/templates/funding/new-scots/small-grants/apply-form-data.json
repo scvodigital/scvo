@@ -237,6 +237,44 @@
       "id": "tfa_54"
     }
   ],
+  "target_communities": [
+    {
+      "name": "Age (older people)",
+      "id": "tfa_208"
+    },
+    {
+      "name": "Age (younger people)",
+      "id": "tfa_210"
+    },
+    {
+      "name": "Disability",
+      "id": "tfa_212"
+    },
+    {
+      "name": "Gender",
+      "id": "tfa_214"
+    },
+    {
+      "name": "Race",
+      "id": "tfa_215"
+    },
+    {
+      "name": "Religion / belief / faith",
+      "id": "tfa_209"
+    },
+    {
+      "name": "Sexual Orientation and / or gender identity",
+      "id": "tfa_211"
+    },
+    {
+      "name": "Socio-economic disadvantage",
+      "id": "tfa_213"
+    },
+    {
+      "name": "Other",
+      "id": "tfa_216"
+    }
+  ],
   "topic": [
     {
       "name": "1. Language / education (social connections)",
@@ -251,27 +289,27 @@
       "id": "tfa_66"
     },
     {
-      "name": "4. Health &amp; wellbeing (mental health)",
+      "name": "4. Health & wellbeing (mental health)",
       "id": "tfa_67"
     },
     {
-      "name": ">5. Health &amp; wellbeing (physical health &amp; access to health)",
+      "name": "5. Health & wellbeing (physical health & access to health)",
       "id": "tfa_68"
     },
     {
-      "name": "6. Employability &amp; welfare rights (employers)",
+      "name": "6. Employability & welfare rights (employers)",
       "id": "tfa_69"
     },
     {
-      "name": "7. Employability &amp; welfare rights (professional occupations)",
+      "name": "7. Employability & welfare rights (professional occupations)",
       "id": "tfa_70"
     },
     {
-      "name": "8. Employability &amp; welfare rights (vocational qualifications)",
+      "name": "8. Employability & welfare rights (vocational qualifications)",
       "id": "tfa_71"
     },
     {
-      "name": "9. Employability &amp; welfare rights (entrepreneurship)",
+      "name": "9. Employability & welfare rights (entrepreneurship)",
       "id": "tfa_72"
     },
     {
@@ -279,15 +317,15 @@
       "id": "tfa_73"
     },
     {
-      "name": "11. Communities &amp; social connections (refugee community development)",
+      "name": "11. Communities & social connections (refugee community development)",
       "id": "tfa_74"
     },
     {
-      "name": "12. Communities &amp; social connections (safer communities)",
+      "name": "12. Communities & social connections (safer communities)",
       "id": "tfa_75"
     },
     {
-      "name": "13. Communities &amp; social connections (building social connections)",
+      "name": "13. Communities & social connections (building social connections)",
       "id": "tfa_76"
     },
     {
@@ -299,18 +337,27 @@
       "id": "tfa_78"
     },
     {
-      "name": "16. Legal rights &amp; citizenship",
+      "name": "16. Legal rights & citizenship",
       "id": "tfa_79"
+    }
+  ],
+  "type": [
+    {
+      "name": "Spreading good practice: widening the impact of successful integration approaches, practices and tools",
+      "id": "tfa_81"
+    },
+    {
+      "name": "Supporting innovation: piloting new approaches, practices and tools that support integration",
+      "id": "tfa_82"
     }
   ],
   "defaults": {
     {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant ~}}
     {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
     "application_editing": {{{json value=(default application.Id "")}}},
-    "application_readonly": {{#if (contains @root.route.name "fund_new-scots_view-large_form")}}true{{else}}false{{/if}},
+    "application_readonly": {{#if (contains @root.route.name "fund_new-scots_view-small_form")}}true{{else}}false{{/if}},
     "application_call": {{{json value=(default application.Call__c "")}}},
     "application_status": {{{json value=(default application.Status__c "")}}},
-    "is_charity": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}},
     "tfa_21": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}},
     "tfa_20": {{{json value=(default (default application.Account__r.Constitutional_form__c oscr.constitutional_form) "")}}},
     "tfa_3": {{{json value=(default (default application.Account__r.Name oscr.charity_name) "")}}},
@@ -328,11 +375,19 @@
     "tfa_16": {{{json value=(default application.Contact__r.MobilePhone "")}}},
     "tfa_17": {{{json value=(default application.Contact__r.Email "")}}},
     "tfa_18": {{{json value=(default application.Contact__r.Address "")}}},
+    "tfa_232": {{{json value=(default application.Second_Contact__r.FirstName "")}}},
+    "tfa_233": {{{json value=(default application.Second_Contact__r.LastName "")}}},
+    "tfa_234": {{{json value=(default application.Second_Contact__r.Title "")}}},
+    "tfa_240": {{{json value=(default application.Second_Contact__r.npe01__WorkPhone__c "")}}},
+    "tfa_241": {{{json value=(default application.Second_Contact__r.Email "")}}},
+    "tfa_235": {{{json value=(default application.Second_Contact__r.Address "")}}},
     "tfa_22": {{{json value=(default application.Account__r.Company_Number__c "")}}},
     "tfa_24": {{{json value=(default application.Account__r.Organisation_established__c "")}}},
     "tfa_25": {{{json value=(default application.Branch_of_Another_Org__c "")}}},
     "tfa_28": {{{json value=(default application.Parent_Company_Organisation__c "")}}},
     "tfa_55": {{{json value=(default application.Are_a_Local_Authority__c "")}}},
+    "tfa_31": {{{json value=(default application.Management_Committee_or_Governance_Board__c "")}}},
+    "tfa_34": {{{json value=(default application.Representation_on_Board__c "")}}},
     "tfa_57": {{{json value=(default application.Total_annual_income__c "")}}},
     "tfa_287": {{{json value=(default application.Fixed_Assets__c "")}}},
     "tfa_288": {{{json value=(default application.Current_Assets__c "")}}},
@@ -341,7 +396,72 @@
     "tfa_291": {{{json value=(default application.Net_current_assets__c "")}}},
     "tfa_292": {{{json value=(default application.Net_assets__c "")}}},
     "tfa_58": {{{json value=(default application.Financial_Position__c "")}}},
-    "tfa_281": {{{json value=(default application.New_field_Amount_requested_c_number__c "")}}}
+    "tfa_281": {{{json value=(default application.New_field_Amount_requested_c_number__c "")}}},
+    "tfa_92": {{{json value=(default application.Where_do_you_provide_services_LA__c " ")}}},
+    "tfa_125": {{{json value=(default application.Where_do_you_provide_services_LAs__c " ")}}},
+    "tfa_37": {{{json value=(default application.Workforce_staff_description__c "")}}},
+    "tfa_49": {{{json value=(default application.Workforce_volunteers_description__c "")}}},
+    "tfa_284": {{{json value=(default application.HR_procedures__c "")}}},
+    "tfa_293": {{{json value=(default application.Management_of_Project__c "")}}},
+    "tfa_60": {{{json value=(default application.Project_Name__c "")}}},
+    "tfa_61": {{{json value=(default application.Activity_start_date__c "")}}},
+    "tfa_62": {{{json value=(default application.Activity_end_date__c "")}}},
+    "tfa_63": {{{json value=(default application.topic_applied_for__c "")}}},
+    "tfa_80": {{{json value=(default application.Type_of_project__c "")}}},
+    "tfa_83": {{{json value=(default application.Activity_Description__c "")}}},
+    "tfa_84": {{{json value=(default application.Community_involvement__c "")}}},
+    "tfa_85": {{{json value=(default application.Spreading_good_practice__c "")}}},
+    "tfa_86": {{{json value=(default application.Supporting_Innovation__c "")}}},
+    "tfa_87": {{{json value=(default application.Where_do_you_provide_services__c "")}}},
+    "tfa_282": {{{json value=(default application.Areas_covered__c "")}}},
+    "tfa_283": {{{json value=(default application.National_Reach__c "")}}},
+    "tfa_191": {{{json value=(default application.Individual_or_Partnership_Application__c "")}}},
+    "tfa_194": {{{json value=(default application.Partnership_Who_are_you_working_with__c "")}}},
+    "tfa_294": {{{json value=(default application.Impact_on_other_organisations__c "")}}},
+    "tfa_195": {{{json value=(default application.Contacted_partners__c "")}}},
+    "tfa_295": {{{json value=(default application.Please_give_us_some_more_detail_about_th__c "")}}},
+    "tfa_242": {{{json value=(default application.Activity_1__c "")}}},
+    "tfa_243": {{{json value=(default application.Target_Group_1__c "")}}},
+    "tfa_244": {{{json value=(default application.People_reach_1__c "")}}},
+    "tfa_245": {{{json value=(default application.Outcome_1__c "")}}},
+    "tfa_253": {{{json value=(default application.Activity_2__c "")}}},
+    "tfa_254": {{{json value=(default application.Target_Group_2__c "")}}},
+    "tfa_255": {{{json value=(default application.People_reach_2__c "")}}},
+    "tfa_256": {{{json value=(default application.Outcome_2__c "")}}},
+    "tfa_263": {{{json value=(default application.Activity_3__c "")}}},
+    "tfa_264": {{{json value=(default application.Target_Group_3__c "")}}},
+    "tfa_265": {{{json value=(default application.People_reach_3__c "")}}},
+    "tfa_266": {{{json value=(default application.Outcome_3__c "")}}},
+    "tfa_273": {{{json value=(default application.Activity_4__c "")}}},
+    "tfa_274": {{{json value=(default application.Target_Group_4__c "")}}},
+    "tfa_275": {{{json value=(default application.People_reach_4__c "")}}},
+    "tfa_276": {{{json value=(default application.Outcome_4__c "")}}},
+    "tfa_296": {{{json value=(default application.Project_Plan_1__c "")}}},
+    "tfa_298": {{{json value=(default application.Project_Plan_2__c "")}}},
+    "tfa_300": {{{json value=(default application.Project_Plan_3__c "")}}},
+    "tfa_302": {{{json value=(default application.Project_Plan_4__c "")}}},
+    "tfa_304": {{{json value=(default application.Project_Plan_5__c "")}}},
+    "tfa_306": {{{json value=(default application.Project_Plan_6__c "")}}},
+    "tfa_201": {{{json value=(default application.Monitor_Progress__c "")}}},
+    "tfa_307": {{{json value=(default application.Project_reflects_topic__c "")}}},
+    "tfa_202": {{{json value=(default application.Why_work_is_needed__c "")}}},
+    "tfa_203": {{{json value=(default application.Demonstrate_change_adaptation__c "")}}},
+    "tfa_206": {{{json value=(default application.Positive_Impact_on_people_communities__c "")}}},
+    "tfa_279": {{{json value=(default application.Total_number_of_participants__c "")}}},
+    "tfa_207": {{{json value=(default application.Target_communities__c "")}}},
+    "tfa_217": {{{json value=(default application.Target_communities_other__c "")}}},
+    "tfa_309": {{{json value=(default application.Impact_sustained_when_funding_ends__c "")}}},
+    "tfa_230": {{{json value=(default application.Contact_by_Panel_OK__c "")}}},
+    "tfa_219": {{{json value=(default application.Contact_by_Panel_OK__c "")}}},
+    "tfa_218": {{{json value=(default application.Budget_1_Description__c "")}}},
+    "tfa_221": {{{json value=(default application.Budget_1_Amount__c "")}}},
+    "tfa_220": {{{json value=(default application.Budget_2_Description__c "")}}},
+    "tfa_223": {{{json value=(default application.Budget_2_Amount__c "")}}},
+    "tfa_222": {{{json value=(default application.Budget_3_Description__c "")}}},
+    "tfa_225": {{{json value=(default application.Budget_3_Amount__c "")}}},
+    "tfa_227": {{{json value=(default application.Budget_4_Description__c "")}}},
+    "tfa_226": {{{json value=(default application.Budget_4_Amount__c "")}}},
+    "is_charity": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}}
     {{/withExtend}}
     {{/ifAny}}
   }
