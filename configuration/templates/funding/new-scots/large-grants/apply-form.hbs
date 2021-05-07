@@ -732,7 +732,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_61-D">
-                <input type="text" id="tfa_61" name="tfa_61" placeholder="DD/MM/YYYY" value="{{defaults.tfa_61}}"{{#if defaults.application_readonly}} readonly{{/if}} autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="Start date" class="validate-datecal form-input required" required>
+                <input type="text" id="tfa_61" name="tfa_61" placeholder="DD/MM/YYYY" value="{{defaults.tfa_61}}"{{#if defaults.application_readonly}} readonly{{/if}} autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="Start date" class="{{#unless defaults.application_readonly}}validate-datecal{{/unless}} form-input required" required>
               </div>
             </div>
           </div>
@@ -742,7 +742,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_62-D">
-                <input type="text" id="tfa_62" name="tfa_62" placeholder="DD/MM/YYYY" value="{{defaults.tfa_62}}"{{#if defaults.application_readonly}} readonly{{/if}} autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="End date" class="validate-datecal form-input required" required>
+                <input type="text" id="tfa_62" name="tfa_62" placeholder="DD/MM/YYYY" value="{{defaults.tfa_62}}"{{#if defaults.application_readonly}} readonly{{/if}} autocomplete="off" aria-required="true" min="2021-06-25" max="2022-10-31" title="End date" class="{{#unless defaults.application_readonly}}validate-datecal{{/unless}} form-input required" required>
               </div>
             </div>
           </div>
