@@ -379,14 +379,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_25" class="choices vertical required"{{#if defaults.application_readonly}} readonly{{/if}} required>
                   <span class="oneChoice">
                     <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_26-L" for="tfa_26">
-                      <input type="radio" value="tfa_26" id="tfa_26" name="tfa_25" aria-required="true" data-conditionals="#tfa_28-D" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_25-L tfa_26-L"{{#if defaults.application_readonly}} readonly{{#if defaults.tfa_25}} checked{{/if}}{{/if}}>
+                      <input type="radio" value="tfa_26" id="tfa_26" name="tfa_25" aria-required="true" data-conditionals="#tfa_28-D" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_25-L tfa_26-L"{{#if defaults.application_readonly}} readonly{{#compare defaults.tfa_25 "Yes"}} checked{{/compare}}{{/if}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_27-L" for="tfa_27">
-                      <input type="radio" value="tfa_27" id="tfa_27" name="tfa_25" aria-required="true" aria-labelledby="tfa_27-L" data-tfa-labelledby="tfa_25-L tfa_27-L"{{#if defaults.application_readonly}} readonly{{#unless defaults.tfa_25}} checked{{/unless}}{{/if}}>
+                      <input type="radio" value="tfa_27" id="tfa_27" name="tfa_25" aria-required="true" aria-labelledby="tfa_27-L" data-tfa-labelledby="tfa_25-L tfa_27-L"{{#if defaults.application_readonly}} readonly{{#compare defaults.tfa_25 "No"}} checked{{/compare}}{{/if}}>
                       <span class="form-icon"></span>
                       No
                     </label>
