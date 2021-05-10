@@ -58,7 +58,7 @@ wFORMS.behaviors.prefill.skip = false;
 </script>
 
 <!-- FORM: BODY SECTION -->
-<div class="wFormContainer" >
+<div class="wFormContainer b-padding-full" >
   <div class="wForm" id="4903538-WRPR" dir="ltr">
     <div class="codesection" id="code-4903538"></div>
     <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4903538" role="form" enctype="multipart/form-data">
@@ -1260,7 +1260,6 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             3.1&ensp;Associated budget
           </p>
-          {{#unless defaults.application_readonly}}
           <div class="form-group oneField" id="tfa_310-D">
             <div class="col-12">
               <p>
@@ -1272,7 +1271,13 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
+                {{#unless defaults.application_readonly}}
                 <input type="file" id="tfa_310" name="tfa_310" size="" title="Please upload a file containing your budget details based on the template provided" class="form-input required" required>
+                {{else}}
+                <p class="t-margin">
+                  <span class="label label-info">File upload has been attached</span>
+                </p>
+                {{/unless}}
               </div>
             </div>
           </div>
@@ -1286,15 +1291,16 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
+                {{#unless defaults.application_readonly}}
                 <input type="file" id="tfa_312" name="tfa_312" size="" title="Accounts" class="form-input required" required>
+                {{else}}
+                <p class="t-margin">
+                  <span class="label label-info">File upload has been attached</span>
+                </p>
+                {{/unless}}
               </div>
             </div>
           </div>
-          {{else}}
-          <p>
-            <span class="label label-info">File uploads have been attached</span>
-          </p>
-          {{/unless}}
         </div>
       </div>
       <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-9"{{/unless}}>
@@ -1427,6 +1433,7 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             Your pressing 'Submit' for this application is your signatory for this application.
           </p>
+          {{/unless}}
           <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
             <div class="col-12">
               <h3>
@@ -1441,15 +1448,16 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
+                {{#unless defaults.application_readonly}}
                 <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
+                {{else}}
+                <p>
+                  <span class="label label-info">File upload has been attached</span>
+                </p>
+                {{/unless}}
               </div>
             </div>
           </div>
-          {{else}}
-          <p>
-            <span class="label label-info">File uploads have been attached</span>
-          </p>
-          {{/unless}}
         </div>
       </div>
       {{#unless defaults.application_readonly}}

@@ -1,19 +1,34 @@
 {
   "defaults": {
-    {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant.records.[0] ~}}
-    {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant.records.[0] oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
+    {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant ~}}
+    {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
     "application_editing": {{{json value=(default application.Id "")}}},
     "application_readonly": {{#if (contains @root.route.name "fund_kirk_view_form")}}true{{else}}false{{/if}},
     "application_call": {{{json value=(default application.Call__c "")}}},
-    "application_status": {{{json value=(default application.Application_Satus__c "")}}},
-    "is_charity": {{{json value=(default (default application.Charity_Number__c oscr.charity_number) "")}}},
-    "tfa_1": {{{json value=(default (default application.Charity_Number__c oscr.charity_number) "")}}},
-    "tfa_82": {{{json value=(default (default application.Organisation_Type__c oscr.constitutional_form) "")}}},
-    "tfa_2": {{{json value=(default (default application.Web_App_Organisation__c oscr.charity_name) "")}}},
-    "tfa_125": {{{json value=(default (default application.Web_App_Street__c milo.location_street) "")}}},
-    "tfa_126": {{{json value=(default (default application.Web_App_Area_Town__c (default milo.location_city milo.location_region)) "")}}},
-    "tfa_127": {{{json value=(default (default application.Web_App_Local_Authority__c postcode.local_authority) "")}}},
-    "tfa_128": {{{json value=(default (default application.Web_App_PostCode__c (default oscr.postcode postcode.place)) "")}}}
+    "application_status": {{{json value=(default application.Status "")}}},
+    "application_call": {{{json value=(default application.Call__c "")}}},
+    "application_status": {{{json value=(default application.Status__c "")}}},
+    "tfa_29": {{{json value=(default application.How_did_you_hear_about_this_fund__c "")}}},
+    "tfa_1": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}},
+    "tfa_82": {{{json value=(default (default application.Account__r.Constitutional_form__c oscr.constitutional_form) "")}}},
+    "tfa_2": {{{json value=(default (default application.Account__r.Name oscr.charity_name) "")}}},
+    "tfa_125": {{{json value=(default (default application.Account__r.BillingAddress.street milo.location_street) "")}}},
+    "tfa_126": {{{json value=(default (default application.Account__r.BillingAddress.city milo.location_city) "")}}},
+    "tfa_127": {{{json value=(default (default application.Account__r.Local_authority__c milo.location_region) "")}}},
+    "tfa_128": {{{json value=(default (default application.Account__r.BillingAddress.postalCode (default oscr.postcode postcode.place)) "")}}},
+    "tfa_9": {{{json value=(default (default application.Account__r.Website (if (contains 'http' oscr.website) oscr.website)) "")}}},
+    "tfa_10": {{{json value=(default (default application.Account__r.Twitter_URL__c (if (contains 'http' milo.twitter) milo.twitter)) "")}}},
+    "tfa_11": {{{json value=(default (default application.Account__r.Facebook_URL__c (if (contains 'http' milo.facebook) milo.facebook)) "")}}},
+    "tfa_12": {{{json value=(default application.Contact__r.FirstName "")}}},
+    "tfa_13": {{{json value=(default application.Contact__r.LastName "")}}},
+    "tfa_14": {{{json value=(default application.Contact__r.Title "")}}},
+    "tfa_15": {{{json value=(default application.Contact__r.npe01__WorkPhone__c "")}}},
+    "tfa_16": {{{json value=(default application.Contact__r.MobilePhone "")}}},
+    "tfa_17": {{{json value=(default application.Contact__r.Email "")}}},
+    "tfa_18": {{{json value=(default application.Contact_Street__c "")}}},
+    "tfa_282": {{{json value=(default application.Contact_City__c "")}}},
+    "tfa_283": {{{json value=(default application.Contact_Postcode__c "")}}},
+    "is_charity": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}}
     {{/withExtend}}
     {{/ifAny}}
   }

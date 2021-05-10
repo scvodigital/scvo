@@ -58,7 +58,7 @@ wFORMS.behaviors.prefill.skip = false;
 </script>
 
 <!-- FORM: BODY SECTION -->
-<div class="wFormContainer" >
+<div class="wFormContainer b-padding-full" >
   <div class="wForm" id="4899064-WRPR" dir="ltr">
     <div class="codesection" id="code-4899064"></div>
     <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4899064" role="form" enctype="multipart/form-data">
@@ -1268,6 +1268,7 @@ wFORMS.behaviors.prefill.skip = false;
           <p>
             Your pressing 'Submit' for this application is your signatory for this application.
           </p>
+          {{/unless}}
           <h3>
             Partner details
           </h3>
@@ -1282,15 +1283,16 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
+                {{#unless defaults.application_readonly}}
                 <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
+                {{else}}
+                <p class="t-margin">
+                  <span class="label label-info">File upload has been attached</span>
+                </p>
+                {{/unless}}
               </div>
             </div>
           </div>
-          {{else}}
-          <p>
-            <span class="label label-info">File uploads have been attached</span>
-          </p>
-          {{/unless}}
         </div>
       </div>
       {{#unless defaults.application_readonly}}

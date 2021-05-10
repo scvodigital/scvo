@@ -55,7 +55,7 @@ wFORMS.behaviors.prefill.skip = false;
 <!-- FORM: BODY SECTION -->
 <div class="container mb-2">
   <div class="wForm" id="4899045-WRPR" dir="ltr">
-    <form method="post" action="https://www.tfaforms.com/responses/processor" class="form form-horizontal hintsBelow labelsAbove" id="4899045" role="form" enctype="multipart/form-data" data-fa-form-backup='{
+    <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4899045" role="form" enctype="multipart/form-data" data-fa-form-backup='{
       "slug": "kirk_small_grants_2021",
       "name": "Church of Scotland 2021 Small Grants Fund",
       "recoveryLinkButtonSelector": ".show-form-recovery-modal",
@@ -72,7 +72,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_29-D">
-                <textarea id="tfa_29" name="tfa_29" maxlength="10000" title="How did you hear about the 2021 Small Grants Fund?" class="form-input"></textarea>
+                <textarea id="tfa_29" name="tfa_29" maxlength="10000" title="How did you hear about the 2021 Small Grants Fund?" class="form-input">{{defaults.tfa_29}}</textarea>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ wFORMS.behaviors.prefill.skip = false;
                 </select>
                 <div class="oneField field-container-D" id="org_type_other-D" data-condition="`#other-please-specify`" style="width:100%;">
                   <div class="inputWrapper t-margin" style="width:100%;">
-                    <input type="text" id="org_type_other" maxlength="255" name="org_type_other" value="{{defaults.tfa_82}}" maxlength="150" title="Please specify your organisation type" autocomplete="nope" data-lpignore="true" {{#if defaults.application_readonly}}class="form-input" style="pointer-events:none;" readonly{{else}}class="form-input required" required{{/if}} style="width:100%;">
+                    <input type="text" id="org_type_other" maxlength="150" name="org_type_other" value="{{defaults.tfa_82}}" maxlength="150" title="Please specify your organisation type" autocomplete="nope" data-lpignore="true" {{#if defaults.application_readonly}}class="form-input" style="pointer-events:none;" readonly{{else}}class="form-input required" required{{/if}} style="width:100%;">
                   </div>
                 </div>
                 {{/if}}
@@ -139,10 +139,10 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_2-D">
                 {{#ifAny defaults.application_editing defaults.tfa_2}}
-                <input type="text" id="organisation_name" maxlength="255" name="organisation_name" value="{{defaults.tfa_2}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
+                <input type="text" id="organisation_name" maxlength="150" name="organisation_name" value="{{defaults.tfa_2}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
                 <input type="hidden" id="tfa_2" name="tfa_2" class="form-input" value="{{defaults.tfa_2}}">
                 {{else}}
-                <input type="text" id="tfa_2" name="tfa_2" maxlength="255" value="{{defaults.tfa_2}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required{{#if defaults.application_readonly}} readonly{{/if}}>
+                <input type="text" id="tfa_2" name="tfa_2" maxlength="150" value="{{defaults.tfa_2}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required{{#if defaults.application_readonly}} readonly{{/if}}>
                 {{/ifAny}}
               </div>
             </div>
@@ -159,7 +159,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_125-D">
-                <input type="text" id="tfa_125" name="tfa_125" maxlength="255" value="{{defaults.tfa_125}}" title="Street" class="form-input">
+                <input type="text" id="tfa_125" name="tfa_125" maxlength="150" value="{{defaults.tfa_125}}" title="Street"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input">
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_126-D">
-                <input type="text" id="tfa_126" name="tfa_126" maxlength="255" value="{{defaults.tfa_126}}" title="Town/city" class="form-input">
+                <input type="text" id="tfa_126" name="tfa_126" maxlength="150" value="{{defaults.tfa_126}}" title="Town/city"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input">
               </div>
             </div>
           </div>
@@ -179,7 +179,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_127-D">
-                <select id="tfa_127" name="tfa_127" title="Local authority" class="form-select">
+                <select id="tfa_127" name="tfa_127" title="Local authority" class="form-select"{{#if defaults.application_readonly}} style="pointer-events:none;" readonly{{/if}}>
                   <option value="" disabled{{#unless defaults.tfa_127}} selected{{/unless}}>Please select&hellip;</option>
                   {{#each (split 'Aberdeen,Aberdeenshire,Angus,Argyll and Bute,Clackmannanshire,Dumfries and Galloway,Dundee,East Ayrshire,East Dunbartonshire,East Lothian,East Renfrewshire,Edinburgh,Falkirk,Fife,Glasgow,Highland,Inverclyde,Midlothian,Moray,Na h-Eileanan Siar,North Ayrshire,North Lanarkshire,Orkney,Perth and Kinross,Renfrewshire,Scottish Borders,Shetland,South Ayrshire,South Lanarkshire,Stirling,West Dunbartonshire,West Lothian' ',')}}
                   <option value="{{this}}"{{#compare this ../defaults.tfa_127}} selected{{/compare}}>{{{replace this ' and ' ' &amp; '}}}</option>
@@ -194,7 +194,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-3 col-lg-5 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_128-D">
-                <input type="text" id="tfa_128" name="tfa_128" maxlength="12" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" value="{{defaults.tfa_128}}" class="form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g">
+                <input type="text" id="tfa_128" name="tfa_128" maxlength="12" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$"{{#if defaults.application_readonly}} readonly{{/if}} value="{{defaults.tfa_128}}" class="form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g">
                 <script type="text/javascript">
                   if(typeof wFORMS != 'undefined') {
                       if(wFORMS.behaviors.validation) {
@@ -224,7 +224,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_3-D">
-                <input type="text" id="tfa_3" name="tfa_3" maxlength="255" value="" title="Bank account name" class="form-input required" required>
+                <input type="text" id="tfa_3" name="tfa_3" maxlength="150" value="{{defaults.tfa_3}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Bank account name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -258,7 +258,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_6-D">
-                <input type="text" id="tfa_6" name="tfa_6" maxlength="255" value="" title="Bank name" class="form-input required" required>
+                <input type="text" id="tfa_6" name="tfa_6" maxlength="150" value="{{defaults.tfa_6}}" title="Bank name"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input required" required>
               </div>
             </div>
           </div>
@@ -268,7 +268,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_8-D">
-                <textarea id="tfa_8" name="tfa_8" maxlength="10000" title="Bank address" class="form-input required" required></textarea>
+                <textarea id="tfa_8" name="tfa_8" maxlength="10000" title="Bank address"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input required" required>{{defaults.tfa_8}}</textarea>
               </div>
             </div>
           </div>
@@ -301,7 +301,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_9-D">
-                <select id="tfa_9" name="tfa_9" title="Presbytery" class="form-select required" required>
+                <select id="tfa_9" name="tfa_9" title="Presbytery"{{#if defaults.application_readonly}} style="pointer-events:none;" readonly{{/if}} class="form-select required" required>
                   <option value="" disabled selected>Please select&hellip;</option>
                   <option value="tfa_83" id="tfa_83">Edinburgh 1</option>
                   <option value="tfa_84" id="tfa_84">West Lothian 2</option>
@@ -355,7 +355,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_12-D">
-                <input type="text" id="tfa_13" name="tfa_13" value="" title="Name of project" class="form-input required" required>
+                <input type="text" id="tfa_13" name="tfa_13" value="{{defaults.tfa_13}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Name of project" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -378,7 +378,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_14-D">
-                <input type="text" id="tfa_14" name="tfa_14" value="" title="First name" class="form-input required" required>
+                <input type="text" id="tfa_14" name="tfa_14" value="{{defaults.tfa_14}}"{{#if defaults.application_readonly}} readonly{{/if}} title="First name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -388,7 +388,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_15-D">
-                <input type="text" id="tfa_15" name="tfa_15" value="" title="Last name" class="form-input required" required>
+                <input type="text" id="tfa_15" name="tfa_15" value="{{defaults.tfa_15}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Last name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -398,7 +398,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_16-D">
-                <input type="text" id="tfa_16" name="tfa_16" value="" title="Role in church/project" class="form-input required" required>
+                <input type="text" id="tfa_16" name="tfa_16" value="{{defaults.tfa_16}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Role in church/project" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -411,7 +411,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_17-D">
-                <input type="text" id="tfa_17" name="tfa_17" value="" title="Phone number" class="form-input required" required>
+                <input type="text" id="tfa_17" name="tfa_17" value="{{defaults.tfa_17}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Phone number" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -421,7 +421,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_18-D">
-                <input type="text" id="tfa_18" name="tfa_18" value="" title="Mobile number" class="form-input">
+                <input type="text" id="tfa_18" name="tfa_18" value="{{defaults.tfa_18}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Mobile number" class="form-input">
               </div>
             </div>
           </div>
@@ -447,7 +447,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_131-D">
-                <input type="text" id="tfa_131" name="tfa_131" value="" title="First name" class="form-input required" required>
+                <input type="text" id="tfa_131" name="tfa_131" value="{{defaults.tfa_131}}"{{#if defaults.application_readonly}} readonly{{/if}} title="First name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -457,7 +457,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_132-D">
-                <input type="text" id="tfa_132" name="tfa_132" value="" title="Last name" class="form-input required" required>
+                <input type="text" id="tfa_132" name="tfa_132" value="{{defaults.tfa_132}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Last name" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -467,7 +467,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_133-D">
-                <input type="text" id="tfa_133" name="tfa_133" value="" title="Role in church/project" class="form-input required" required>
+                <input type="text" id="tfa_133" name="tfa_133" value="{{defaults.tfa_133}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Role in church/project" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -477,7 +477,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_134-D">
-                <input type="text" id="tfa_134" name="tfa_134" value="" title="Phone number" class="form-input required" required>
+                <input type="text" id="tfa_134" name="tfa_134" value="{{defaults.tfa_134}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Phone number" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -502,7 +502,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_20-D">
-                <input type="text" id="tfa_20" name="tfa_20" maxlength="255" value="" title="For how many months do you intend this project to run?" class="form-input required" required>
+                <input type="text" id="tfa_20" name="tfa_20" maxlength="150" value="{{defaults.tfa_20}}" title="For how many months do you intend this project to run?"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input required" required>
               </div>
             </div>
           </div>
@@ -512,7 +512,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_21-D">
-                <textarea id="tfa_21" name="tfa_21" data-maxwords="200" title="Who will benefit from this project and what are the reasons you want to work with them?" class="form-input count-words required" required></textarea>
+                <textarea id="tfa_21" name="tfa_21" data-maxwords="200" title="Who will benefit from this project and what are the reasons you want to work with them?"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_21}}</textarea>
               </div>
             </div>
           </div>
@@ -522,7 +522,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_22-D">
-                <textarea id="tfa_22" name="tfa_22" data-maxwords="200" title="What difference do you hope to make for them?" class="form-input count-words required" required></textarea>
+                <textarea id="tfa_22" name="tfa_22" data-maxwords="200" title="What difference do you hope to make for them?"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_22}}</textarea>
               </div>
             </div>
           </div>
@@ -532,7 +532,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_23-D">
-                <textarea id="tfa_23" name="tfa_23" data-maxwords="200" title="What do you intend to do?" class="form-input count-words required" required></textarea>
+                <textarea id="tfa_23" name="tfa_23" data-maxwords="200" title="What do you intend to do?"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_23}}</textarea>
               </div>
             </div>
           </div>
@@ -547,8 +547,8 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="inputWrapper">
               <span id="tfa_136" class="choices vertical ">
                 <span class="oneChoice">
-                  <label class="form-checkbox postField" id="tfa_137-L" for="tfa_137">
-                    <input type="checkbox" value="tfa_137" class="" id="tfa_137" name="tfa_137" data-conditionals="#tfa_141-D" aria-labelledby="tfa_137-L" data-tfa-labelledby="tfa_136-L tfa_137-L">
+                  <label class="form-checkbox postField{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_137-L" for="tfa_137">
+                    <input type="checkbox" value="tfa_137" class="" id="tfa_137" name="tfa_137" data-conditionals="#tfa_141-D" aria-labelledby="tfa_137-L" data-tfa-labelledby="tfa_136-L tfa_137-L"{{#if defaults.application_readonly}} readonly{{/if}} {{#if defaults.tfa_137}} checked{{/if}}>
                     <span class="form-icon"></span>
                     Developing mission through new worshipping communities (including online worship)
                   </label>
@@ -556,12 +556,12 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group oneField field-container-D" id="tfa_141-D" data-condition="`#tfa_137`">
                   <div class="col-12">
                     <label id="tfa_141-L" class="form-label preField reqMark" for="tfa_141">Describe how your project fits this criterion</label>
-                    <textarea id="tfa_141" name="tfa_141" data-maxwords="50" title="Developing mission - describe" class="form-input count-words required" required></textarea>
+                    <textarea id="tfa_141" name="tfa_141" data-maxwords="50" title="Developing mission - describe"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_141}}</textarea>
                   </div>
                 </div>
                 <span class="oneChoice">
-                  <label class="form-checkbox postField" id="tfa_138-L" for="tfa_138">
-                    <input type="checkbox" value="tfa_138" class="" id="tfa_138" name="tfa_138" data-conditionals="#tfa_142-D" aria-labelledby="tfa_138-L" data-tfa-labelledby="tfa_136-L tfa_138-L">
+                  <label class="form-checkbox postField{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_138-L" for="tfa_138">
+                    <input type="checkbox" value="tfa_138" class="" id="tfa_138" name="tfa_138" data-conditionals="#tfa_142-D" aria-labelledby="tfa_138-L" data-tfa-labelledby="tfa_136-L tfa_138-L"{{#if defaults.application_readonly}} readonly{{/if}} {{#if defaults.tfa_138}} checked{{/if}}>
                     <span class="form-icon"></span>
                     Engaging and attracting those aged 40 and under including children, young people and families
                   </label>
@@ -569,12 +569,12 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group oneField field-container-D" id="tfa_142-D" data-condition="`#tfa_138`">
                   <div class="col-12">
                     <label id="tfa_142-L" class="form-label preField " for="tfa_142">Describe how your project fits this criterion</label>
-                    <textarea id="tfa_142" name="tfa_142" data-maxwords="50" title="Engaging and attracting - describe" class="form-input count-words required" required></textarea>
+                    <textarea id="tfa_142" name="tfa_142" data-maxwords="50" title="Engaging and attracting - describe"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_142}}</textarea>
                   </div>
                 </div>
                 <span class="oneChoice">
-                  <label class="form-checkbox postField" id="tfa_139-L" for="tfa_139">
-                    <input type="checkbox" value="tfa_139" class="" id="tfa_139" name="tfa_139" data-conditionals="#tfa_143-D" aria-labelledby="tfa_139-L" data-tfa-labelledby="tfa_136-L tfa_139-L">
+                  <label class="form-checkbox postField{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_139-L" for="tfa_139">
+                    <input type="checkbox" value="tfa_139" class="" id="tfa_139" name="tfa_139" data-conditionals="#tfa_143-D" aria-labelledby="tfa_139-L" data-tfa-labelledby="tfa_136-L tfa_139-L"{{#if defaults.application_readonly}} readonly{{/if}} {{#if defaults.tfa_139}} checked{{/if}}>
                     <span class="form-icon"></span>
                     Addressing pressing issues in the church that have been brought about by the pandemic
                   </label>
@@ -582,7 +582,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <div class="form-group oneField field-container-D" id="tfa_143-D" data-condition="`#tfa_139`">
                   <div class="col-12">
                     <label id="tfa_143-L" class="form-label preField " for="tfa_143">Describe how your project fits this criterion</label>
-                    <textarea id="tfa_143" name="tfa_143" data-maxwords="50" title="Addressing pressing issues - describe" class="form-input count-words required" required></textarea>
+                    <textarea id="tfa_143" name="tfa_143" data-maxwords="50" title="Addressing pressing issues - describe"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_143}}</textarea>
                   </div>
                 </div>
               </span>
@@ -618,14 +618,14 @@ wFORMS.behaviors.prefill.skip = false;
               <tr class="section">
                 <td>
                   <div class="oneField field-container-D" id="tfa_147-D">
-                    <input type="text" id="tfa_147" maxlength="255" name="tfa_147" value="" title="Budget 1 description" class="form-input required" required>
+                    <input type="text" id="tfa_147" maxlength="250" name="tfa_147" value="{{defaults.tfa_147}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 1 description" class="form-input required" required>
                   </div>
                 </td>
                 <td>
                   <div class="oneField field-container-D" id="tfa_148-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_148" name="tfa_148" value="" title="Budget 1 amount" class="form-input calc-BudgetA text-right validate-integer required" required>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_148" name="tfa_148" value="{{defaults.tfa_148}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 1 amount" class="form-input calc-BudgetA text-right validate-integer required" required>
                     </div>
                   </div>
                 </td>
@@ -633,14 +633,14 @@ wFORMS.behaviors.prefill.skip = false;
               <tr class="section">
                 <td>
                   <div class="oneField field-container-D" id="tfa_149-D">
-                    <input type="text" id="tfa_149" name="tfa_149" maxlength="255" value="" title="Budget 2 description" class="form-input">
+                    <input type="text" id="tfa_149" name="tfa_149" maxlength="250" value="{{defaults.tfa_149}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 2 description" class="form-input">
                   </div>
                 </td>
                 <td>
                   <div class="oneField field-container-D" id="tfa_150-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_150" name="tfa_150" value="" title="Budget 2 amount" class="form-input calc-BudgetB validate-integer text-right">
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_150" name="tfa_150" value="{{defaults.tfa_150}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 2 amount" class="form-input calc-BudgetB validate-integer text-right">
                     </div>
                   </div>
                 </td>
@@ -648,14 +648,14 @@ wFORMS.behaviors.prefill.skip = false;
               <tr class="section">
                 <td>
                   <div class="oneField field-container-D" id="tfa_151-D">
-                    <input type="text" id="tfa_151" maxlength="255" name="tfa_151" value="" title="Budget 3 description" class="form-input">
+                    <input type="text" id="tfa_151" maxlength="250" name="tfa_151" value="{{defaults.tfa_151}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 3 description" class="form-input">
                   </div>
                 </td>
                 <td>
                   <div class=" oneField field-container-D" id="tfa_152-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_152" name="tfa_152" value="" title="Budget 3 amount" class="form-input calc-BudgetC validate-integer text-right">
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_152" name="tfa_152" value="{{defaults.tfa_152}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 3 amount" class="form-input calc-BudgetC validate-integer text-right">
                     </div>
                   </div>
                 </td>
@@ -663,14 +663,14 @@ wFORMS.behaviors.prefill.skip = false;
               <tr class="section">
                 <td>
                   <div class="oneField field-container-D" id="tfa_153-D">
-                    <input type="text" id="tfa_153" name="tfa_153" maxlength="255" value="" title="Budget 4 description" class="form-input">
+                    <input type="text" id="tfa_153" name="tfa_153" maxlength="250" value="{{defaults.tfa_153}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 4 description" class="form-input">
                   </div>
                 </td>
                 <td>
                   <div class="oneField field-container-D" id="tfa_154-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_154" name="tfa_154" value="" title="Budget 4 amount" class="form-input calc-BudgetD validate-integer text-right">
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_154" name="tfa_154" value="{{defaults.tfa_154}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 4 amount" class="form-input calc-BudgetD validate-integer text-right">
                     </div>
                   </div>
                 </td>
@@ -678,14 +678,14 @@ wFORMS.behaviors.prefill.skip = false;
               <tr class="section">
                 <td>
                   <div class="oneField field-container-D" id="tfa_155-D">
-                    <input type="text" id="tfa_155" name="tfa_155" maxlength="255" value="" title="Budget 5 description" class="form-input">
+                    <input type="text" id="tfa_155" name="tfa_155" maxlength="250" value="{{defaults.tfa_155}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 5 description" class="form-input">
                   </div>
                 </td>
                 <td>
                   <div class="oneField field-container-D" id="tfa_156-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_156" name="tfa_156" value="" title="Budget 5 amount" class="form-input calc-BudgetE validate-integer text-right">
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_156" name="tfa_156" value="{{defaults.tfa_156}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Budget 5 amount" class="form-input calc-BudgetE validate-integer text-right">
                     </div>
                   </div>
                 </td>
@@ -741,7 +741,7 @@ wFORMS.behaviors.prefill.skip = false;
               <tr class="section">
                 <td>
                   <div class="oneField field-container-D" id="tfa_160-D">
-                    <input type="text" placeholder="Funding source 2" id="tfa_160" name="tfa_160" maxlength="255" maxlength="150" value="{{defaults.tfa_160}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <input type="text" placeholder="Funding source 2" id="tfa_160" name="tfa_160" maxlength="250" value="{{defaults.tfa_160}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
                   </div>
                 </td>
                 <td>
@@ -795,7 +795,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="field-container-D" id="tfa_25-D">
-                  <textarea id="tfa_25" name="tfa_25" data-maxwords="100" title="How will you monitor and evaluate this project?" class="form-input count-words required" required></textarea>
+                  <textarea id="tfa_25" name="tfa_25" data-maxwords="100" title="How will you monitor and evaluate this project?"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_25}}</textarea>
                 </div>
               </div>
             </div>
@@ -805,7 +805,7 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
               <div class="col-8 col-lg-7 col-md-6 col-sm-12">
                 <div class="field-container-D" id="tfa_26-D">
-                  <textarea id="tfa_26" name="tfa_26" data-maxwords="100" title="How will the project be managed to ensure good practice throughout?" class="form-input count-words required" required></textarea>
+                  <textarea id="tfa_26" name="tfa_26" data-maxwords="100" title="How will the project be managed to ensure good practice throughout?"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_26}}</textarea>
                 </div>
               </div>
             </div>
@@ -821,7 +821,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_27-D">
-                <textarea id="tfa_27" name="tfa_27" data-maxwords="100" title="What steps will you taken to keep people safe?" class="form-input count-words required" required></textarea>
+                <textarea id="tfa_27" name="tfa_27" data-maxwords="100" title="What steps will you taken to keep people safe?"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_27}}</textarea>
               </div>
             </div>
           </div>
@@ -830,9 +830,15 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_28-L" class="form-label pr preField reqMark" for="tfa_28">Upload completed, signed extract minute from your church court (kirk session or presbytery as appropriate)</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              {{#unless defaults.application_readonly}}
               <div class="field-container-D" id="tfa_28-D">
-                <input type="file" id="tfa_28" name="tfa_28" size="" title="Signed extract minute from your church court" class="form-input required" required>
+                <input type="file" id="tfa_28" name="tfa_28" size="" title="Signed extract minute from your church court"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input required" required>
               </div>
+              {{else}}
+              <p>
+                <span class="label label-info">File upload has been attached</span>
+              </p>
+              {{/unless}}
             </div>
           </div>
           <p>
@@ -840,26 +846,28 @@ wFORMS.behaviors.prefill.skip = false;
           </p>
           <div class="form-group mb-1" id="confirmation-D" role="group" aria-labelledby="confirmation-L" data-tfa-labelledby="confirmation-L">
             <div class="col-12">
-              <label class="form-checkbox" id="confirmation-L" for="confirmation">
-                <input type="checkbox" value="confirmation" id="confirmation" name="confirmation" aria-labelledby="confirmation-L" data-tfa-labelledby="confirmation-L" required>
+              <label class="form-checkbox{{#if defaults.application_readonly}} option-readonly{{/if}}" id="confirmation-L" for="confirmation">
+                <input type="checkbox" value="confirmation" id="confirmation" name="confirmation" aria-labelledby="confirmation-L" data-tfa-labelledby="confirmation-L" {{#if defaults.application_readonly}} checked readonly{{/if}} required>
                 <i class="form-icon"></i>
                 I declare that the information I have provided on behalf of <span id="org_name">my organisation</span> is true and accurate to the best of my knowledge
               </label>
             </div>
           </div>
+          {{#unless defaults.application_readonly}}
+          <div class="actions" id="4899045-A">
+            <input type="submit" data-label="Submit" class="primaryAction btn btn-lg mb-1 btn-primary" id="submit_button" value="Submit">
+          </div>
+          {{/unless}}
         </div>
       </div>
-      <div class="actions" id="4899045-A">
-        <input type="submit" data-label="Submit" class="primaryAction btn btn-lg mb-1 btn-primary" id="submit_button" value="Submit">
-      </div>
-      <div style="clear:both">
-      </div>
+      {{#unless defaults.application_readonly}}
       <input type="hidden" value="4899045" name="tfa_dbFormId" id="tfa_dbFormId">
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="a1b17f3f925ee4420d7cd3acc2a74823" name="tfa_dbControl" id="tfa_dbControl">
       <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
       <input type="hidden" value="11" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+      {{/unless}}
     </form>
     <button type="button" class="btn btn-tertiary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles 'root')}}d-none{{/unless}}">Get a recovery link</button>
   </div>

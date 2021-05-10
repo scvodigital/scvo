@@ -119,28 +119,6 @@
       }
     },
     {
-      "name": "check_for_authorisation",
-      "taskModule": "reroute",
-      "config": {
-        "if": [
-          {
-            "and": [
-              {
-                "!=": [
-                  {
-                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Status__c"
-                  },
-                  "Information Requested"
-                ]
-              }
-            ]
-          },
-          "coronavirus_recovery_apply_unauthorised",
-          false
-        ]
-      }
-    },
-    {
       "name": "form_data",
       "taskModule": "render",
       "renderer": "handlebars",
