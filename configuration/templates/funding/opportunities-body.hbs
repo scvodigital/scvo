@@ -15,6 +15,10 @@
             {{/compare ~}}
           </h3>
           <ul>
+            {{#compare key "open"}}
+            {{!-- managed by us but we're not the funder --}}
+            <li><a href="/funding/new-scots-fund">New Scots Refugee Integration Delivery Project</a></li>
+            {{/compare}}
             {{#each funds.hits.hits ~}}
             {{#with _source ~}}
             <li><a href="{{replace (replace (replace fund_url 'https://scvo.org/' '/') 'https://scvo.org.uk/' '/') 'https://scvo.scot/' '/'}}">{{{replace title "SCVO - " ""}}}</a></li>
