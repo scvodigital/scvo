@@ -771,7 +771,7 @@ wFORMS.behaviors.prefill.skip = false;
                   {{#each type}}
                   <span class="oneChoice">
                     <label class="form-radio{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id}}-L" for="{{id}}">
-                      <input type="radio" value="{{id}}" id="{{id}}" name="tfa_80" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_80-L {{id}}-L" {{#if defaults.application_readonly}}readonly {{#if (contains (slugify ../defaults.tfa_80) (slugify name))}} checked{{/if}}{{/if}} data-conditionals="#{{conditional}}-D">
+                      <input type="radio" value="{{id}}" id="{{id}}" name="tfa_80" aria-required="true" aria-labelledby="{{id}}-L" data-tfa-labelledby="tfa_80-L {{id}}-L" {{#if defaults.application_readonly}}readonly {{/if}} {{#if (contains (replace (slugify name) '-' ' ') (replace (slugify ../defaults.tfa_80) '-' ' '))}} checked{{/if}} data-conditionals="#{{conditional}}-D">
                       <i class="form-icon"></i> {{name}}
                     </label>
                   </span>
