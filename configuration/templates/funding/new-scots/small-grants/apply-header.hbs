@@ -11,5 +11,5 @@
   </ul>
 </div>
 <div class="container">
-  <h1 class="font-default">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_new-scots_apply-small_complete")}}{{#compare @root.route.name "fund_new-scots_apply-small_complete"}}Thank you{{else}}{{#compare @root.route.name "fund_new-scots_apply-small_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{/compare}}{{else}}Apply{{/ifAny}}</h1>
+  <h1 class="font-default">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_new-scots_apply-small_complete")}}{{#compare @root.route.name "fund_new-scots_apply-small_complete"}}Thank you{{else}}{{#compare @root.route.name "fund_new-scots_apply-small_already_awarded"}}Sorry{{else}}Apply for a small grant{{/compare}}{{/compare}}{{else}}Apply for a small grant{{/ifAny}}</h1>
 </div>
