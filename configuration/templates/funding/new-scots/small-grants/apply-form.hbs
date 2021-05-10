@@ -75,10 +75,10 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_3-D">
                 {{#ifAny defaults.application_editing defaults.tfa_3}}
-                <input type="text" id="organisation_name" maxlength="255" name="organisation_name" value="{{defaults.tfa_3}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
+                <input type="text" id="organisation_name" maxlength="150" name="organisation_name" value="{{defaults.tfa_3}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}>
                 <input type="hidden" id="tfa_3" name="tfa_3" class="form-input" value="{{defaults.tfa_3}}">
                 {{else}}
-                <input type="text" id="tfa_3" name="tfa_3" maxlength="255" value="{{defaults.tfa_3}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required{{#if defaults.application_readonly}} readonly{{/if}}>
+                <input type="text" id="tfa_3" name="tfa_3" maxlength="150" value="{{defaults.tfa_3}}" aria-required="true" autocomplete="nope" data-lpignore="true" class="form-input required" required{{#if defaults.application_readonly}} readonly{{/if}}>
                 {{/ifAny}}
               </div>
             </div>
@@ -89,7 +89,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_4-D">
-                <input type="text" id="tfa_4" name="tfa_4" value="{{defaults.tfa_4}}"{{#if defaults.application_readonly}} readonly{{/if}}  title="Organisation alias" class="form-input">
+                <input type="text" id="tfa_4" name="tfa_4" maxlength="150" value="{{defaults.tfa_4}}"{{#if defaults.application_readonly}} readonly{{/if}}  title="Organisation alias" class="form-input">
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_6-D">
-                <input type="text" id="tfa_6" name="tfa_6" value="{{defaults.tfa_6}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Street" class="form-input required" required>
+                <input type="text" id="tfa_6" name="tfa_6" maxlength="150" value="{{defaults.tfa_6}}"{{#if defaults.application_readonly}} readonly{{/if}} title="Street" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -112,7 +112,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_7-D">
-                <input type="text" id="tfa_7" name="tfa_7" value="{{defaults.tfa_7}}"{{#if defaults.application_readonly}} readonly{{/if}} aria-required="true" title="Town/city" class="form-input required" required>
+                <input type="text" id="tfa_7" name="tfa_7" maxlength="150" value="{{defaults.tfa_7}}"{{#if defaults.application_readonly}} readonly{{/if}} aria-required="true" title="Town/city" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ wFORMS.behaviors.prefill.skip = false;
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_8-D">
-                <input type="text" id="tfa_8" name="tfa_8" value="{{defaults.tfa_8}}"{{#if defaults.application_readonly}} readonly{{/if}} aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="required form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g" required>
+                <input type="text" id="tfa_8" name="tfa_8" maxlength="15" value="{{defaults.tfa_8}}"{{#if defaults.application_readonly}} readonly{{/if}} aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" class="required form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g" required>
               </div>
             </div>
             <script type="text/javascript">
@@ -874,7 +874,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D" id="tfa_245-D">
               <div class="col-12">
                 <label id="tfa_245-L" class="form-label preField reqMark" for="tfa_245">When will this activity take place?</label>
-                <input type="text" id="tfa_245" name="tfa_245" value="{{defaults.tfa_245}}"{{#if defaults.application_readonly}} readonly{{/if}} maxlength="255" aria-required="true" title="Outcome 1" class="form-input required" required>
+                <input type="text" id="tfa_245" name="tfa_245" value="{{defaults.tfa_245}}"{{#if defaults.application_readonly}} readonly{{/if}} maxlength="255" aria-required="true" title="Date of activity 1" class="form-input required" required>
               </div>
             </div>
           </div>
@@ -901,7 +901,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D" id="tfa_256-D">
               <div class="col-12">
                 <label id="tfa_256-L" class="form-label preField " for="tfa_256">When will this activity take place?</label>
-                <input type="text" id="tfa_256" name="tfa_256" value="{{defaults.tfa_256}}"{{#if defaults.application_readonly}} readonly{{/if}} maxlength="255" title="Outcome 2" class="form-input">
+                <input type="text" id="tfa_256" name="tfa_256" value="{{defaults.tfa_256}}"{{#if defaults.application_readonly}} readonly{{/if}} maxlength="255" title="Date of activity 2" class="form-input">
               </div>
             </div>
           </div>
@@ -928,7 +928,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D" id="tfa_266-D">
               <div class="col-12">
                 <label id="tfa_266-L" class="form-label preField " for="tfa_266">When will this activity take place?</label>
-                <input type="text" id="tfa_266" name="tfa_266" value="{{defaults.tfa_266}}"{{#if defaults.application_readonly}} readonly{{/if}} maxlength="255" title="Outcome 3" class="form-input">
+                <input type="text" id="tfa_266" name="tfa_266" value="{{defaults.tfa_266}}"{{#if defaults.application_readonly}} readonly{{/if}} maxlength="255" title="Date of activity 3" class="form-input">
               </div>
             </div>
           </div>
@@ -955,7 +955,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="form-group oneField field-container-D" id="tfa_276-D">
               <div class="col-12">
                 <label id="tfa_276-L" class="form-label preField " for="tfa_276">When will this activity take place?</label>
-                <input type="text" id="tfa_276" name="tfa_276" value="{{defaults.tfa_276}}"{{#if defaults.application_readonly}} readonly{{/if}} maxlength="255" title="Outcome 4" class="form-input">
+                <input type="text" id="tfa_276" name="tfa_276" value="{{defaults.tfa_276}}"{{#if defaults.application_readonly}} readonly{{/if}} maxlength="255" title="Date of activity 4" class="form-input">
               </div>
             </div>
           </div>
