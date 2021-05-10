@@ -963,14 +963,14 @@ wFORMS.behaviors.prefill.skip = false;
                 <span id="tfa_195" class="choices vertical required" required>
                   <span class="oneChoice">
                     <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_196-L" for="tfa_196">
-                      <input type="radio" value="tfa_196" id="tfa_196" name="tfa_195" aria-required="true" aria-labelledby="tfa_196-L" data-tfa-labelledby="tfa_195-L tfa_196-L"{{#if defaults.application_readonly}} readonly{{#if defaults.tfa_195}} checked{{/if}}{{/if}}>
+                      <input type="radio" value="tfa_196" id="tfa_196" name="tfa_195" aria-required="true" aria-labelledby="tfa_196-L" data-tfa-labelledby="tfa_195-L tfa_196-L"{{#if defaults.application_readonly}} readonly{{#compare defaults.tfa_195 "Yes"}} checked{{/compare}}{{/if}}>
                       <span class="form-icon"></span>
                       Yes
                     </label>
                   </span>
                   <span class="oneChoice">
                     <label class="form-radio postField {{#if defaults.application_readonly}}option-readonly{{/if}}" id="tfa_197-L" for="tfa_197">
-                      <input type="radio" value="tfa_197" id="tfa_197" name="tfa_195" aria-required="true" aria-labelledby="tfa_197-L" data-tfa-labelledby="tfa_195-L tfa_197-L"{{#if defaults.application_readonly}} readonly{{#unless defaults.tfa_195}} checked{{/unless}}{{/if}}>
+                      <input type="radio" value="tfa_197" id="tfa_197" name="tfa_195" aria-required="true" aria-labelledby="tfa_197-L" data-tfa-labelledby="tfa_195-L tfa_197-L"{{#if defaults.application_readonly}} readonly{{#compare defaults.tfa_195 "No"}} checked{{/compare}}{{/if}}>
                       <span class="form-icon"></span>
                       No
                     </label>
