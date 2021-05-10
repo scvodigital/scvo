@@ -316,7 +316,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <input type="hidden" id="tfa_20" name="tfa_20" class="form-input" value="{{defaults.tfa_20}}">
                 {{else}}
                 <select id="tfa_20" name="tfa_20" class="form-select required" required="true" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
-                  <option value="" disabled selected>Please select&hellip;</option>
+                  <option value="" disabled{{#unless defaults.tfa_20}} selected{{/unless}}>Please select&hellip;</option>
                   {{#each (split 'Company Limited by Guarantee,Community Interest by Guarantee,Public Body,Community Benefit Society,Limited Liability Partnership,Co-operative Society,Constituted Group,Social Enterprise,Voluntary Group,Community Housing Association,Community Trust/Community Development Trust,Local Authority,Health Board,Other (please specify)' ',')}}
                   <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_20}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                   {{/each}}
@@ -500,7 +500,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-3 col-lg-4 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_37-D">
                 <select id="tfa_37" name="tfa_37" title="Number of staff" aria-required="true" class="form-select required" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}} required>
-                  <option value="" disabled selected>Please select&hellip;</option>
+                  <option value="" disabled{{#unless defaults.tfa_37}} selected{{/unless}}>Please select&hellip;</option>
                   {{#each number_of_staff ~}}
                   {{#if id ~}}
                   <option value="{{id}}" id="{{id}}"{{#compare name ../defaults.tfa_37}} selected{{/compare}}>
@@ -519,7 +519,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-3 col-lg-4 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_49-D">
                 <select id="tfa_49" name="tfa_49" title="Number of volunteers" aria-required="true" class="form-select required" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}} required>
-                  <option value="" disabled selected>Please select&hellip;</option>
+                  <option value="" disabled{{#unless defaults.tfa_49}} selected{{/unless}}>Please select&hellip;</option>
                   {{#each number_of_volunteers ~}}
                   {{#if id ~}}
                   <option value="{{id}}" id="{{id}}"{{#compare name ../defaults.tfa_49}} selected{{/compare}}>
@@ -640,7 +640,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_63-D">
                 <select id="tfa_63" name="tfa_63" title="Which topic are you applying for?" aria-required="true" class="form-select required" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
-                  <option value="" disabled selected>Please select&hellip;</option>
+                  <option value="" disabled{{#unless defaults.tfa_63}} selected{{/unless}}>Please select&hellip;</option>
                   {{#each topic}}
                   <option value="{{id}}" id="{{id}}"{{#if (contains (slugify ../defaults.tfa_63) (slugify name))}} selected{{/if}}>{{{name}}}</option>
                   {{/each ~}}
@@ -748,7 +748,7 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
                 <select id="tfa_92" name="tfa_92" title="Local authority" aria-required="true" class="form-select required" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}} required>
-                  <option value="" disabled selected>Please select&hellip;</option>
+                  <option value="" disabled{{#unless defaults.tfa_92}} selected{{/unless}}>Please select&hellip;</option>
                   {{#each local_authorities ~}}
                   {{#if this.id_single}}
                   <option value="{{id_single}}" id="{{id_single}}"{{#compare name ../defaults.tfa_92}} selected{{/compare}}>

@@ -1,4 +1,178 @@
 {
+  "presbyteries": [
+    {
+      "id": "",
+      "name": ""
+    },
+    {
+      "id": "tfa_83",
+      "name": "Edinburgh 1"
+    },
+    {
+      "id": "tfa_84",
+      "name": "West Lothian 2"
+    },
+    {
+      "id": "tfa_85",
+      "name": "Lothian 3"
+    },
+    {
+      "id": "tfa_86",
+      "name": "Melrose and Peebles 4"
+    },
+    {
+      "id": "tfa_87",
+      "name": "Duns 5"
+    },
+    {
+      "id": "tfa_88",
+      "name": "Jedburgh 6"
+    },
+    {
+      "id": "tfa_89",
+      "name": "Annandale and Eskdale 7"
+    },
+    {
+      "id": "tfa_90",
+      "name": "Dumfries and Kirkcudbright 8"
+    },
+    {
+      "id": "tfa_91",
+      "name": "Wigtown and Stranraer 9"
+    },
+    {
+      "id": "tfa_92",
+      "name": "Ayr 10"
+    },
+    {
+      "id": "tfa_93",
+      "name": "Irvine and Kilmarnock 11"
+    },
+    {
+      "id": "tfa_94",
+      "name": "Ardrossan 12"
+    },
+    {
+      "id": "tfa_95",
+      "name": "Lanark 13"
+    },
+    {
+      "id": "tfa_96",
+      "name": "Clyde 14"
+    },
+    {
+      "id": "tfa_97",
+      "name": "Glasgow 16"
+    },
+    {
+      "id": "tfa_98",
+      "name": "Hamilton 17"
+    },
+    {
+      "id": "tfa_99",
+      "name": "Argyll 19"
+    },
+    {
+      "id": "tfa_100",
+      "name": "Falkirk 22"
+    },
+    {
+      "id": "tfa_101",
+      "name": "Stirling 23"
+    },
+    {
+      "id": "tfa_102",
+      "name": "Fife 24"
+    },
+    {
+      "id": "tfa_103",
+      "name": "Dunkeld and Meigle 27"
+    },
+    {
+      "id": "tfa_104",
+      "name": "Perth 28"
+    },
+    {
+      "id": "tfa_105",
+      "name": "Dundee 29"
+    },
+    {
+      "id": "tfa_106",
+      "name": "Angus 30"
+    },
+    {
+      "id": "tfa_107",
+      "name": "Aberdeen and Shetland 31"
+    },
+    {
+      "id": "tfa_108",
+      "name": "Kincardine and Deeside 32"
+    },
+    {
+      "id": "tfa_109",
+      "name": "Gordon 33"
+    },
+    {
+      "id": "tfa_110",
+      "name": "Buchan 34"
+    },
+    {
+      "id": "tfa_111",
+      "name": "Moray 35"
+    },
+    {
+      "id": "tfa_112",
+      "name": "Abernethy 36"
+    },
+    {
+      "id": "tfa_113",
+      "name": "Inverness 37"
+    },
+    {
+      "id": "tfa_114",
+      "name": "Lochaber 38"
+    },
+    {
+      "id": "tfa_115",
+      "name": "Ross 39"
+    },
+    {
+      "id": "tfa_116",
+      "name": "Sutherland 40"
+    },
+    {
+      "id": "tfa_117",
+      "name": "Caithness 41"
+    },
+    {
+      "id": "tfa_118",
+      "name": "Lochcarron-Skye 42"
+    },
+    {
+      "id": "tfa_119",
+      "name": ">Uist 43"
+    },
+    {
+      "id": "tfa_120",
+      "name": "Lewis 44"
+    },
+    {
+      "id": "tfa_121",
+      "name": "Orkney 45"
+    },
+    {
+      "id": "tfa_122",
+      "name": "England 47"
+    },
+    {
+      "id": "tfa_123",
+      "name": "International 48"
+    },
+    {
+      "id": "tfa_124",
+      "name": "Jerusalem 49"
+    }
+  ],
   "defaults": {
     {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant ~}}
     {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
@@ -34,6 +208,13 @@
     "tfa_9": {{{json value=(default application.Presbytery__c "")}}},
     "tfa_13": {{{json value=(default application.Project_Name__c "")}}},
     "tfa_20": {{{json value=(default application.How_long_will_this_project_run__c "")}}},
+    "tfa_21": {{{json value=(default application.Community_involvement__c "")}}},
+    "tfa_22": {{{json value=(default application.Positive_Impact_on_people_communities__c "")}}},
+    "tfa_23": {{{json value=(default application.Activity_Description__c "")}}},
+    "tfa_136": {{{json value=(default application.Projects_will_bring_about_change__c "")}}},
+    "tfa_141": {{{json value=(default application.Developing_mission_describe__c "")}}},
+    "tfa_142": {{{json value=(default application.Engaging_and_attracting_describe__c "")}}},
+    "tfa_143": {{{json value=(default application.Addressing_pressing_issues_describe__c "")}}},
     "is_charity": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}}
     {{/withExtend}}
     {{/ifAny}}

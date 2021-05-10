@@ -1,6 +1,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {{#withExtend this
   defaults=@root.data.form_data.defaults
+  presbyteries=@root.data.form_data.presbyteries
 }}
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function(){
@@ -115,7 +116,7 @@ wFORMS.behaviors.prefill.skip = false;
                 <input type="hidden" id="tfa_82" name="tfa_82" class="form-input" value="{{defaults.tfa_82}}">
                 {{else}}
                 <select id="tfa_82" name="tfa_82" class="form-select required" required="true" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
-                  <option value="" disabled selected>Please select&hellip;</option>
+                  <option value="" disabled{{#unless defaults.tfa_82}} selected{{/unless}}>Please select&hellip;</option>
                   {{#each (split 'Community Group,Constituted Group,Voluntary Group,Other (please specify)' ',')}}
                   <option id="{{slugify this}}" value="{{this}}"{{#compare this defaults.tfa_82}} selected{{/compare}}{{#if (contains this 'Other')}} data-conditionals="#org_type_other-D"{{/if}}>{{this}}</option>
                   {{/each}}
@@ -302,49 +303,14 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D" id="tfa_9-D">
                 <select id="tfa_9" name="tfa_9" title="Presbytery"{{#if defaults.application_readonly}} style="pointer-events:none;" readonly{{/if}} class="form-select required" required>
-                  <option value="" disabled selected>Please select&hellip;</option>
-                  <option value="tfa_83" id="tfa_83">Edinburgh 1</option>
-                  <option value="tfa_84" id="tfa_84">West Lothian 2</option>
-                  <option value="tfa_85" id="tfa_85">Lothian 3</option>
-                  <option value="tfa_86" id="tfa_86">Melrose and Peebles 4</option>
-                  <option value="tfa_87" id="tfa_87">Duns 5</option>
-                  <option value="tfa_88" id="tfa_88">Jedburgh 6</option>
-                  <option value="tfa_89" id="tfa_89">Annandale and Eskdale 7</option>
-                  <option value="tfa_90" id="tfa_90">Dumfries and Kirkcudbright 8</option>
-                  <option value="tfa_91" id="tfa_91">Wigtown and Stranraer 9</option>
-                  <option value="tfa_92" id="tfa_92">Ayr 10</option>
-                  <option value="tfa_93" id="tfa_93">Irvine and Kilmarnock 11</option>
-                  <option value="tfa_94" id="tfa_94">Ardrossan 12</option>
-                  <option value="tfa_95" id="tfa_95">Lanark 13</option>
-                  <option value="tfa_96" id="tfa_96">Clyde 14</option>
-                  <option value="tfa_97" id="tfa_97">Glasgow 16</option>
-                  <option value="tfa_98" id="tfa_98">Hamilton 17</option>
-                  <option value="tfa_99" id="tfa_99">Argyll 19</option>
-                  <option value="tfa_100" id="tfa_100">Falkirk 22</option>
-                  <option value="tfa_101" id="tfa_101">Stirling 23</option>
-                  <option value="tfa_102" id="tfa_102">Fife 24</option>
-                  <option value="tfa_103" id="tfa_103">Dunkeld and Meigle 27</option>
-                  <option value="tfa_104" id="tfa_104">Perth 28</option>
-                  <option value="tfa_105" id="tfa_105">Dundee 29</option>
-                  <option value="tfa_106" id="tfa_106">Angus 30</option>
-                  <option value="tfa_107" id="tfa_107">Aberdeen and Shetland 31</option>
-                  <option value="tfa_108" id="tfa_108">Kincardine and Deeside 32</option>
-                  <option value="tfa_109" id="tfa_109">Gordon 33</option>
-                  <option value="tfa_110" id="tfa_110">Buchan 34</option>
-                  <option value="tfa_111" id="tfa_111">Moray 35</option>
-                  <option value="tfa_112" id="tfa_112">Abernethy 36</option>
-                  <option value="tfa_113" id="tfa_113">Inverness 37</option>
-                  <option value="tfa_114" id="tfa_114">Lochaber 38</option>
-                  <option value="tfa_115" id="tfa_115">Ross 39</option>
-                  <option value="tfa_116" id="tfa_116">Sutherland 40</option>
-                  <option value="tfa_117" id="tfa_117">Caithness 41</option>
-                  <option value="tfa_118" id="tfa_118">Lochcarron-Skye 42</option>
-                  <option value="tfa_119" id="tfa_119">Uist 43</option>
-                  <option value="tfa_120" id="tfa_120">Lewis 44</option>
-                  <option value="tfa_121" id="tfa_121">Orkney 45</option>
-                  <option value="tfa_122" id="tfa_122">England 47</option>
-                  <option value="tfa_123" id="tfa_123">International 48</option>
-                  <option value="tfa_124" id="tfa_124">Jerusalem 49</option>
+                  <option value="" disabled{{#unless defaults.tfa_9}} selected{{/unless}}>Please select&hellip;</option>
+                  {{#each presbyteries ~}}
+                  {{#if id ~}}
+                  <option value="{{id}}" id="{{id}}"{{#compare name ../defaults.tfa_9}} selected{{/compare}}>
+                    {{name}}
+                  </option>
+                  {{/if ~}}
+                  {{/each ~}}
                 </select>
               </div>
             </div>
