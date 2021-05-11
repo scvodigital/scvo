@@ -61,7 +61,12 @@ wFORMS.behaviors.prefill.skip = false;
 <div class="wFormContainer b-padding-full" >
   <div class="wForm" id="4899064-WRPR" dir="ltr">
     <div class="codesection" id="code-4899064"></div>
-    <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4899064" role="form" enctype="multipart/form-data">
+    <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4899064" data-fa-form-backup='{
+      "slug": "new_scots_2021_small",
+      "name": "New Scots 2021 Small Grants",
+      "recoveryLinkButtonSelector": ".show-form-recovery-modal",
+      "idsSelector": "#tfa_3",
+      "ignoreFields": ["tfa_9999"] }' role="form" enctype="multipart/form-data">
       <div {{#unless defaults.application_readonly}} class="wfPage" id="wfPgIndex-1"{{/unless}}>
         <div class="section pageSection" id="tfa_1">
           <h3 id="tfa_1-T">Tell us about your organisation</h3>
@@ -1287,7 +1292,10 @@ wFORMS.behaviors.prefill.skip = false;
                 <input type="file" id="tfa_280" name="tfa_280" size="" title="Please upload a file containing details of the project partners based on the template provided" class="form-input required" required>
                 {{else}}
                 <p class="t-margin">
-                  <span class="label label-info">File upload has been attached</span>
+                  <span class="label label-info">
+                    <span class="far fa-paperclip fa-fw mr"></span>
+                    File upload has been attached
+                  </span>
                 </p>
                 {{/unless}}
               </div>

@@ -56,13 +56,13 @@ wFORMS.behaviors.prefill.skip = false;
 <!-- FORM: BODY SECTION -->
 <div class="container mb-2">
   <div class="wForm" id="4899045-WRPR" dir="ltr">
-    <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4899045" role="form" enctype="multipart/form-data" data-fa-form-backup='{
+    <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="form form-horizontal hintsBelow labelsAbove" id="4899045"
+    data-fa-form-backup='{
       "slug": "kirk_small_grants_2021",
       "name": "Church of Scotland 2021 Small Grants Fund",
       "recoveryLinkButtonSelector": ".show-form-recovery-modal",
       "idsSelector": "#tfa_2",
-      "ignoreFields": ["tfa_4", "tfa_5"]
-    }'>
+      "ignoreFields": ["tfa_4", "tfa_5"] }' role="form" enctype="multipart/form-data">
       <div class="wfPageDisabled" id="wfPgDisabledIndex-1">
         <div class="section pageSectionDisabled" id="tfa_30">
           <h2 id="tfa_30-T">Your organisation</h2>
@@ -197,12 +197,12 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_128-D">
                 <input type="text" id="tfa_128" name="tfa_128" maxlength="12" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$"{{#if defaults.application_readonly}} readonly{{/if}} value="{{defaults.tfa_128}}" class="form-input validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g">
                 <script type="text/javascript">
-                  if(typeof wFORMS != 'undefined') {
-                      if(wFORMS.behaviors.validation) {
-                          wFORMS.behaviors.validation.rules['customtfa_128'] =  { selector: '*[id="tfa_128"]', check: 'validateCustom'};
-                          wFORMS.behaviors.validation.messages['customtfa_128'] = "Please enter a valid UK postcode";
-                      }
+                if(typeof wFORMS != 'undefined') {
+                  if(wFORMS.behaviors.validation) {
+                    wFORMS.behaviors.validation.rules['customtfa_128'] =  { selector: '*[id="tfa_128"]', check: 'validateCustom'};
+                    wFORMS.behaviors.validation.messages['customtfa_128'] = "Please enter a valid UK postcode";
                   }
+                }
                 </script>
               </div>
             </div>
@@ -281,12 +281,12 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="field-container-D" id="tfa_7-D">
                 <input type="text" id="tfa_7" name="tfa_7" maxlength="12" value="{{defaults.tfa_7}}" autocomplete="nope" data-lpignore="true" aria-required="true" title="Please enter a valid UK postcode" pattern="^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input required validate-custom /^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$/g" required{{/if}}>
                 <script type="text/javascript">
-                  if(typeof wFORMS != 'undefined') {
-                      if(wFORMS.behaviors.validation) {
-                          wFORMS.behaviors.validation.rules['customtfa_7'] =  { selector: '*[id="tfa_7"]', check: 'validateCustom'};
-                          wFORMS.behaviors.validation.messages['customtfa_7'] = "Please enter a valid UK postcode";
-                      }
+                if(typeof wFORMS != 'undefined') {
+                  if(wFORMS.behaviors.validation) {
+                    wFORMS.behaviors.validation.rules['customtfa_7'] =  { selector: '*[id="tfa_7"]', check: 'validateCustom'};
+                    wFORMS.behaviors.validation.messages['customtfa_7'] = "Please enter a valid UK postcode";
                   }
+                }
                 </script>
               </div>
             </div>
@@ -801,8 +801,11 @@ wFORMS.behaviors.prefill.skip = false;
                 <input type="file" id="tfa_28" name="tfa_28" size="" title="Signed extract minute from your church court"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input required" required>
               </div>
               {{else}}
-              <p>
-                <span class="label label-info">File upload has been attached</span>
+              <p class="t-margin">
+                <span class="label label-info">
+                  <span class="far fa-paperclip fa-fw mr"></span>
+                  File upload has been attached
+                </span>
               </p>
               {{/unless}}
             </div>
