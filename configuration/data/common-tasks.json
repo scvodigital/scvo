@@ -191,22 +191,6 @@
     },
     "renderer": "handlebars"
   },
-  "postsTopic": {
-    "name": "postsTopic",
-    "taskModule": "elasticsearch",
-    "config": {
-      "connectionStringTemplate": "{$elasticsearch-legacy-url.txt}",
-      "elasticsearchConfig": {
-        "apiVersion": "5.6"
-      },
-      "queryTemplates": {
-        "index": "{$elasticsearch-index.txt}",
-        "type": "scvo-post",
-        "template": ">context.metaData.handlebars.queries.posts_category-topic"
-      }
-    },
-    "renderer": "handlebars"
-  },
   "postsRelated": {
     "name": "postsRelated",
     "taskModule": "elasticsearch",

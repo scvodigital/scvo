@@ -1,9 +1,28 @@
 {
-  "name": "post_employment",
+  "name": "post_blog",
   "debug": false,
-  "pattern": "/policy/posts/employment",
+  "pattern": {
+    "top": "/policy/blog",
+    "topic": "/policy/:topic/blog"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page-topic"
+        }
+      },
+      "renderer": "handlebars"
+    },
     {
       "name": "posts",
       "taskModule": "elasticsearch",
@@ -15,7 +34,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-post",
-          "template": ">context.metaData.handlebars.queries.posts_policy-employment",
+          "template": ">context.metaData.handlebars.queries.posts_policy-topic-blog",
           "noResultsRoute": "four_oh_four"
         }
       },
@@ -54,7 +73,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.posts_tag-head-tags",
-              "header": ">context.metaData.handlebars.templates.policy_employment-header",
+              "header": ">context.metaData.handlebars.templates.policy_blog-header",
               "body": ">context.metaData.handlebars.templates.posts_tag-results"
             },
             "contentType": "text/html"

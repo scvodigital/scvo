@@ -1,6 +1,6 @@
 {
   "name": "page_policy-europe",
-  "debug": false,
+  "debug": true,
   "pattern": "/policy/europe",
   "metaData": {
     "title": "Europe"
@@ -24,7 +24,6 @@
       },
       "renderer": "handlebars"
     },
-    "context.metaData.commonTasks.postsTopic",
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
@@ -35,22 +34,28 @@
         },
         "queryTemplates": [
           {
-            "name": "latest_briefings",
+            "name": "latest_blog",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-briefings"
+            "template": ">context.metaData.handlebars.queries.posts_policy-topic-blog"
           },
           {
-            "name": "latest_consultation_responses",
+            "name": "latest_press",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-consultation-responses"
+            "template": ">context.metaData.handlebars.queries.posts_policy-topic-press"
+          },
+          {
+            "name": "latest_briefings_consultations",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-topic-briefings-consultations"
           },
           {
             "name": "latest_research",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-research"
+            "template": ">context.metaData.handlebars.queries.posts_policy-topic-research"
           }
         ]
       },

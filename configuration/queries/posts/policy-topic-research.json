@@ -1,6 +1,6 @@
 {
   "size": 10,
-  "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
+  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 10}},
   "_source": [
     "categories",
     "categories_id",
@@ -20,6 +20,25 @@
   ],
   "query": {
     "bool": {
+      {{#if @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
+      "should": [
+        {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
+        {
+          "term": {
+            "post_tags_slug": "{{this}}"
+          }
+        }{{#unless @last}},{{/unless}}
+        {{/each}}
+      ],
+      "minimum_should_match": 1,
+      {{/if}}
+      "filter": [
+        {
+          "term": {
+            "post_tags_slug": "research"
+          }
+        }
+      ],
       "must_not": [
         {
           "term": {
@@ -36,35 +55,7 @@
             "is_press_release": true
           }
         }
-      ],
-      "should": [
-        {
-          "term": {
-            "post_tags_slug": "coronavirus"
-          }
-        },
-        {
-          "term": {
-            "post_tags_slug": "covid19"
-          }
-        },
-        {
-          "term": {
-            "post_tags_slug": "covid-19"
-          }
-        },
-        {
-          "term": {
-            "post_tags_slug": "furlough"
-          }
-        },
-        {
-          "term": {
-            "post_tags_slug": "research"
-          }
-        }
-      ],
-      "minimum_should_match": 1
+      ]
     }
   },
   "sort": {

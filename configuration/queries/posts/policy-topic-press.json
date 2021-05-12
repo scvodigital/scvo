@@ -1,6 +1,6 @@
 {
   "size": 10,
-  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 10}},
+  "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
     "categories",
     "categories_id",
@@ -22,18 +22,28 @@
     "bool": {
       {{#if @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
       "should": [
+        {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
         {
-          "terms": {
-            "post_tags_slug": [
-              {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
-              "{{this}}"{{#unless @last}},{{/unless}}
-              {{/each}}
-            ]
+          "term": {
+            "post_tags_slug": "{{this}}"
           }
-        }
+        }{{#unless @last}},{{/unless}}
+        {{/each}}
       ],
       "minimum_should_match": 1,
       {{/if}}
+      "filter": [
+        {
+          "term": {
+            "is_press_release": true
+          }
+        },
+        {
+          "term": {
+            "post_tags_slug": "press-release"
+          }
+        }
+      ],
       "must_not": [
         {
           "term": {
@@ -43,18 +53,6 @@
         {
           "term": {
             "hide_from_search": "1"
-          }
-        },
-        {
-          "term": {
-            "is_press_release": true
-          }
-        }
-      ],
-      "must": [
-        {
-          "term": {
-            "post_tags_slug": "research"
           }
         }
       ]

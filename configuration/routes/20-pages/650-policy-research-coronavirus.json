@@ -1,6 +1,6 @@
 {
   "name": "policy_research_coronavirus",
-  "debug": false,
+  "debug": true,
   "pattern": "/policy/research/coronavirus",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -34,7 +34,7 @@
             "name": "coronavirus_posts",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-coronavirus"
+            "template": ">context.metaData.handlebars.queries.posts_policy-coronavirus-briefings"
           },
           {
             "name": "evidence_library",

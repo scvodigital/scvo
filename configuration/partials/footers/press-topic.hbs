@@ -1,12 +1,13 @@
-{{#compare @root.data.postsRelated.hits.total ">" 0 ~}}
-<div class="related-posts v-padding-full bg-gray">
-  <div class="container v-padding-full">
+{{#compare @root.data.supplimentaryResponses.latest_press.hits.total ">" 0 ~}}
+<div class="related-posts">
+  <div class="container t-padding b-padding-full">
     <h3 class="b-margin-full">
-      Related posts
+      Latest press releases&ensp;
+      <a href="{{@root.request.url.pathname}}/press-releases" class="caption">See more</a>
     </h3>
     <div class="columns">
       {{#each (split "0,1,2,3" ",") ~}}
-      {{#with (getProperty @root.data.postsRelated.hits.hits (concat this '._source')) ~}}
+      {{#with (getProperty @root.data.supplimentaryResponses.latest_press.hits.hits (concat this '._source')) ~}}
       <div class="column col-3 col-lg-6 col-sm-12">
         <div class="columns b-margin">
           <div class="column col-3 col-md-4">

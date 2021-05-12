@@ -22,18 +22,40 @@
     "bool": {
       {{#if @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
       "should": [
+        {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
         {
-          "terms": {
-            "post_tags_slug": [
-              {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
-              "{{this}}"{{#unless @last}},{{/unless}}
-              {{/each}}
-            ]
+          "term": {
+            "post_tags_slug": "{{this}}"
           }
-        }
+        }{{#unless @last}},{{/unless}}
+        {{/each}}
       ],
       "minimum_should_match": 1,
       {{/if}}
+      "filter": [
+        {
+          "bool": {
+            "should": [
+              {
+                "term": {
+                  "post_tags_slug": "campaign-blog"
+                }
+              },
+              {
+                "term": {
+                  "post_tags_slug": "research-blog"
+                }
+              },
+              {
+                "term": {
+                  "post_tags_slug": "policy-blog"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ],
       "must_not": [
         {
           "term": {
@@ -48,13 +70,6 @@
         {
           "term": {
             "is_press_release": true
-          }
-        }
-      ],
-      "must": [
-        {
-          "term": {
-            "post_tags_slug": "policy-briefing"
           }
         }
       ]

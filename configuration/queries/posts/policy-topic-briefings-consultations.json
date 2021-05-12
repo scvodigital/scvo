@@ -1,6 +1,6 @@
 {
   "size": 10,
-  "from": {{multiply (subtract (default @root.request.params.query.page 1) 1) 10}},
+  "from": {{multiply (subtract (default request.params.query.page 1) 1) 10}},
   "_source": [
     "categories",
     "categories_id",
@@ -11,10 +11,10 @@
     "title",
     "path",
     "url",
-    "author_avatar",
     "og_image",
     "author_slug",
     "author_name_full",
+    "author_avatar",
     "publish_on",
     "updated"
   ],
@@ -22,18 +22,35 @@
     "bool": {
       {{#if @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
       "should": [
+        {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
         {
-          "terms": {
-            "post_tags_slug": [
-              {{#each @root.data.primaryResponse.hits.hits.[0]._source.post_tags_slug}}
-              "{{this}}"{{#unless @last}},{{/unless}}
-              {{/each}}
-            ]
+          "term": {
+            "post_tags_slug": "{{this}}"
           }
-        }
+        }{{#unless @last}},{{/unless}}
+        {{/each}}
       ],
       "minimum_should_match": 1,
       {{/if}}
+      "filter": [
+        {
+          "bool": {
+            "should": [
+              {
+                "term": {
+                  "post_tags_slug": "policy-briefing"
+                }
+              },
+              {
+                "term": {
+                  "post_tags_slug": "consultation-response"
+                }
+              }
+            ],
+            "minimum_should_match": 1
+          }
+        }
+      ],
       "must_not": [
         {
           "term": {
@@ -48,13 +65,6 @@
         {
           "term": {
             "is_press_release": true
-          }
-        }
-      ],
-      "must": [
-        {
-          "term": {
-            "post_tags_slug": "consultation-response"
           }
         }
       ]

@@ -6,41 +6,39 @@
   {{> sections_coronavirus title="Coronavirus research" icon="house-user" description="Research in response to the COVID-19 pandemic" link="/policy/research/coronavirus"}}
 {{/compare}}
 
-{{> footers_posts_topic}}
-
-<div class="bg-gray">
+<div class="bg-white">
   <div class="container v-padding-full">
     <div class="columns b-padding-full">
-      {{#compare @root.data.supplimentaryResponses.latest_briefings.hits.total ">" 0 ~}}
+      {{#compare @root.data.supplimentaryResponses.latest_blog.hits.total ">" 0 ~}}
         <div class="column col-4 col-lg-6 col-md-12">
-          <h3 class="b-padding">Briefings</h3>
+          <h3 class="b-padding">Blog posts</h3>
 
-          {{#each @root.data.supplimentaryResponses.latest_briefings.hits.hits ~}}
+          {{#each @root.data.supplimentaryResponses.latest_blog.hits.hits ~}}
             {{#compare @index "<" 3}}
               {{> content_post_gist _source}}
             {{/compare}}
           {{/each ~}}
 
-          {{#compare @root.data.supplimentaryResponses.latest_briefings.hits.total ">" 3 ~}}
+          {{#compare @root.data.supplimentaryResponses.latest_blog.hits.total ">" 3 ~}}
             <div class="card-footer">
-              <a href="{{@root.request.url.pathname}}/briefings">More briefings</a>
+              <a href="{{@root.request.url.pathname}}/blog">See more</a>
             </div>
           {{/compare}}
         </div>
       {{/compare}}
-      {{#compare @root.data.supplimentaryResponses.latest_consultation_responses.hits.total ">" 0 ~}}
+      {{#compare @root.data.supplimentaryResponses.latest_briefings_consultations.hits.total ">" 0 ~}}
         <div class="column col-4 col-lg-6 col-md-12">
-          <h3 class="b-padding">Consultation responses</h3>
+          <h3 class="b-padding">Briefings &amp; consultations</h3>
 
-          {{#each @root.data.supplimentaryResponses.latest_consultation_responses.hits.hits ~}}
+          {{#each @root.data.supplimentaryResponses.latest_briefings_consultations.hits.hits ~}}
             {{#compare @index "<" 3}}
               {{> content_post_gist _source}}
             {{/compare}}
           {{/each ~}}
 
-          {{#compare @root.data.supplimentaryResponses.latest_consultation_responses.hits.total ">" 3 ~}}
+          {{#compare @root.data.supplimentaryResponses.latest_briefings_consultations.hits.total ">" 3 ~}}
             <div class="card-footer">
-              <a href="{{@root.request.url.pathname}}/consultation-responses">More consultation responses</a>
+              <a href="{{@root.request.url.pathname}}/briefings">See more</a>
             </div>
           {{/compare}}
         </div>
@@ -57,7 +55,7 @@
 
           {{#compare @root.data.supplimentaryResponses.latest_research.hits.total ">" 3 ~}}
             <div class="card-footer">
-              <a href="{{@root.request.url.pathname}}/research">More research</a>
+              <a href="{{@root.request.url.pathname}}/research">See more</a>
             </div>
           {{/compare}}
         </div>

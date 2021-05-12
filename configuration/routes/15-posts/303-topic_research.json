@@ -1,9 +1,28 @@
 {
-  "name": "post_partnerships",
+  "name": "post_research",
   "debug": false,
-  "pattern": "/policy/posts/partnerships",
+  "pattern": {
+    "top": "/policy/research",
+    "topic": "/policy/:topic/research"
+  },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "primaryResponse",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "scvo-page",
+          "template": ">context.metaData.handlebars.queries.pages_page-topic"
+        }
+      },
+      "renderer": "handlebars"
+    },
     {
       "name": "posts",
       "taskModule": "elasticsearch",
@@ -15,7 +34,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-post",
-          "template": ">context.metaData.handlebars.queries.posts_policy-partnerships",
+          "template": ">context.metaData.handlebars.queries.posts_policy-topic-research",
           "noResultsRoute": "four_oh_four"
         }
       },
@@ -54,7 +73,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.posts_tag-head-tags",
-              "header": ">context.metaData.handlebars.templates.policy_partnerships-header",
+              "header": ">context.metaData.handlebars.templates.policy_research-header",
               "body": ">context.metaData.handlebars.templates.posts_tag-results"
             },
             "contentType": "text/html"

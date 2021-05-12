@@ -1,4 +1,4 @@
-{{#compare @root.data.postsTopic.hits.total ">" 0 ~}}
+{{#compare @root.data.supplimentaryResponses.latest_blog.hits.total ">" 0 ~}}
 <div class="related-posts bg-white">
   <div class="container v-padding-full">
     <h3 class="b-margin">
@@ -7,7 +7,7 @@
     </h3>
     <div class="columns">
       {{#each (split "0,1,2,3" ",") ~}}
-      {{#with (getProperty @root.data.postsTopic.hits.hits (concat this '._source')) ~}}
+      {{#with (getProperty @root.data.supplimentaryResponses.latest_blog.hits.hits (concat this '._source')) ~}}
       <div class="column col-3 col-lg-6 col-sm-12">
         <div class="columns b-margin">
           <div class="column col-3 col-md-4">

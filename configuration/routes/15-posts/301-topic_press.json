@@ -1,9 +1,9 @@
 {
-  "name": "post_briefings",
+  "name": "post_topic_press",
   "debug": false,
   "pattern": {
-    "top": "/policy/briefings",
-    "topic": "/policy/:topic/briefings"
+    "top": "/policy/press-releases",
+    "topic": "/policy/:topic/press-releases"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -34,7 +34,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-post",
-          "template": ">context.metaData.handlebars.queries.posts_policy-briefings",
+          "template": ">context.metaData.handlebars.queries.posts_policy-topic-press",
           "noResultsRoute": "four_oh_four"
         }
       },
@@ -73,7 +73,7 @@
             "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.posts_tag-head-tags",
-              "header": ">context.metaData.handlebars.templates.policy_briefings-header",
+              "header": ">context.metaData.handlebars.templates.policy_press-header",
               "body": ">context.metaData.handlebars.templates.posts_tag-results"
             },
             "contentType": "text/html"

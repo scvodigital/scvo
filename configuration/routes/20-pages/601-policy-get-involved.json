@@ -21,7 +21,6 @@
       },
       "renderer": "handlebars"
     },
-    "context.metaData.commonTasks.postsTopic",
     {
       "name": "supplimentaryResponses",
       "taskModule": "elasticsearch",
@@ -31,6 +30,12 @@
           "apiVersion": "5.6"
         },
         "queryTemplates": [
+          {
+            "name": "latest_blog",
+            "index": "{$../../data/elasticsearch-index.txt}",
+            "type": "scvo-post",
+            "template": ">context.metaData.handlebars.queries.posts_policy-topic-blog"
+          },
           {
             "name": "events_total",
             "index": "{$../../data/elasticsearch-index.txt}",
