@@ -487,67 +487,11 @@
 			"route": "^/policy$",
 			"children": [
 				{
-					"label": "Events",
-					"path": "/policy/events",
-					"route": "^/policy/events$",
-					"description": "",
-					"icon": ""
-				},
-				{
-					"label": "Evidence Library",
-					"path": "/policy/evidence-library",
-					"route": "^/policy/evidence-library$",
-					"description": "",
-					"icon": ""
-				},
-				{
-					"label": "Policy Forum",
-					"path": "/policy/forum",
-					"route": "^/policy/forum$",
-					"description": "",
-					"icon": "",
-					"children": [
-						{
-							"label": "Manifesto for the Future",
-							"path": "/policy/forum/manifesto-for-the-future",
-							"route": "^/policy/forum/manifesto-for-the-future$"
-						}
-					]
-				},
-				{
-					"label": "Positive partnerships",
-					"path": "/policy/positive-partnerships",
-					"route": "^/policy/positive-partnerships$",
-					"description": "",
-					"icon": ""
-				},
-				{
-					"label": "Intermediaries",
-					"path": "/policy/intermediaries",
-					"route": "^/policy/intermediaries$",
-					"description": "",
-					"icon": ""
-				},
-				{
-					"label": "Guide to working and volunteering in the sector",
-					"path": "/policy/guide-to-working-and-volunteering-in-the-sector",
-					"route": "^/policy/guide-to-working-and-volunteering-in-the-sector$",
-					"description": "",
-					"icon": ""
-				},
-				{
-					"label": "SCVO Core Grant Plan 2018-20",
-					"path": "https://app.powerbi.com/view?r=eyJrIjoiYzk1NTg3YmYtODU4Mi00ZjM4LWJiNjgtMjYxMjAxYmY3ZWVhIiwidCI6ImMyOTQ5NGY5LTNhY2EtNGE3MS05NWUyLWM4ODBjNWE1ZThmOSIsImMiOjh9",
-					"route": "^/policy/core-grant-plan$",
-					"description": "",
-					"icon": ""
-				},
-				{
 					"label": "Campaigns",
 					"path": "/policy/campaigns",
 					"route": "^/policy/campaigns$",
-					"description": "",
-					"icon": "",
+					"description": "What action we're taking to build a better future for Scottish voluntary organisations.",
+					"icon": "person-sign",
 					"children": [
 						{
 							"label": "The Social Economy Pledge",
@@ -817,6 +761,126 @@
 							"icon": ""
 						}
 					]
+				},
+				{
+					"label": "Events",
+					"path": "/policy/events",
+					"route": "^/policy/events$",
+					"description": "Upcoming events.",
+					"icon": "users-class"
+				},
+				{
+					"label": "Coronavirus",
+					"path": "/policy/coronavirus",
+					"route": "^/policy/coronavirus$",
+					"description": "We will ensure that action is taken to mitigate the impact of COVID-19 on the voluntary sector.",
+					"topic": true,
+					"icon": "viruses"
+				},
+				{
+					"label": "Europe",
+					"path": "/policy/europe",
+					"route": "^/policy/europe$",
+					"description": "We will ensure that the consequences of Brexit for the Scottish Voluntary sector are understood and addressed.",
+					"topic": true,
+					"icon": "globe-europe"
+				},
+				{
+					"label": "Economic actor",
+					"path": "/policy/economic-actor",
+					"route": "^/policy/economic-actor$",
+					"description": "We will ensure that the Scottish Voluntary sector is recognised as a significant social and economic actor.",
+					"topic": true,
+					"icon": "chart-pie"
+				},
+				{
+					"label": "Employment",
+					"path": "/policy/employment",
+					"route": "^/policy/employment$",
+					"description": "We will ensure that the sector is recognised as both a significant employer and a contributor to the employability landscape.",
+					"topic": true,
+					"icon": "briefcase"
+				},
+				{
+					"label": "Partnerships",
+					"path": "/policy/partnerships",
+					"route": "^/policy/partnerships$",
+					"description": "We will ensure that the sector is recognised a strategic partner in public service planning, delivery and evaluation.",
+					"topic": true,
+					"icon": "chart-network"
+				},
+				{
+					"label": "Regulation",
+					"path": "/policy/regulation",
+					"route": "^/policy/regulation$",
+					"description": "We work with colleagues across the voluntary sector to ensure the impacts of regulation on the sector is fully considered and understood.",
+					"topic": true,
+					"icon": "gavel"
+				},
+				{
+					"label": "Positive partnerships",
+					"path": "/policy/positive-partnerships",
+					"route": "^/policy/positive-partnerships$",
+					"description": "We recently asked our members and those working in charities, voluntary groups and social enterprises across Scotland to share any successful partnership projects they have with the public sector.",
+					"icon": "handshake-alt"
+				},
+				{
+					"label": "Get involved",
+					"path": "/policy/get-involved",
+					"route": "^/policy/get-involved$",
+					"description": "Collaborate with us to develop voluntary sector policy perspectives for Scotland.",
+					"icon": "info-circle",
+					"children": [
+						{
+							"label": "Intermediaries",
+							"path": "/policy/get-involved/intermediaries",
+							"route": "^/policy/get-involved/intermediaries$",
+							"description": "Details on everything from our intermediaries network to resources and directories for those working in intermediary bodies.",
+							"icon": "retweet"
+						},
+						{
+							"label": "Policy network",
+							"path": "/policy/get-involved/policy-network",
+							"route": "^/policy/get-involved/policy-network$",
+							"description": "Details on our policy network.",
+							"icon": "landmark"
+						}
+					]
+				},
+				{
+					"label": "Our achievements",
+					"path": "/policy/our-achievements",
+					"route": "^/policy/our-achievements$",
+					"description": "Find out more about what SCVO has been doing.",
+					"icon": "award"
+				},
+				{
+					"label": "Our team",
+					"path": "/policy/about",
+					"route": "^/policy/about$",
+					"description": "Find out more about our policy team.",
+					"icon": "users"
+				},
+				{
+					"label": "Evidence Library",
+					"path": "/policy/evidence-library",
+					"route": "^/policy/evidence-library$",
+					"description": "A resource for anyone interested in learning about the voluntary sector in Scotland.",
+					"icon": "folder-open"
+				},
+				{
+					"label": "Guide to working and volunteering in the sector",
+					"path": "/policy/guide-to-working-and-volunteering-in-the-sector",
+					"route": "^/policy/guide-to-working-and-volunteering-in-the-sector$",
+					"description": "With three new charities registered in Scotland every working day, the sector is vast, vibrant and varied – and changing all the time.",
+					"icon": "map-signs"
+				},
+				{
+					"label": "Guide to working and volunteering in the sector",
+					"path": "/policy/guide-to-working-and-volunteering-in-the-sector",
+					"route": "^/policy/guide-to-working-and-volunteering-in-the-sector$",
+					"description": " ",
+					"icon": "file-search"
 				}
 			]
 		}
