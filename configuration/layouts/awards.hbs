@@ -298,7 +298,7 @@
         </aside>
       </div>
 
-      {{#ifAny (compare @root.request.url.path "/scottish-charity-awards")}}
+      {{#ifAny (compare @root.request.url.pathname "/scottish-charity-awards")}}
       {{> awards_header}}
       {{/ifAny}}
 
