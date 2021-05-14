@@ -1274,17 +1274,13 @@ wFORMS.behaviors.prefill.skip = false;
             Your pressing 'Submit' for this application is your signatory for this application.
           </p>
           {{/unless}}
-          <h3>
-            Partner details
-          </h3>
+
+          <h3>Upload partner details</h3>
           <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
             <div class="col-12">
               <p>
                 <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Partners%20Spreadsheet.xlsx" class="btn btn-primary btn-cta" target="_blank" download>Project partners template download (Excel)</a>
               </p>
-            </div>
-            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
-              <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
@@ -1301,6 +1297,65 @@ wFORMS.behaviors.prefill.skip = false;
               </div>
             </div>
           </div>
+
+          <h3>Upload supplementary documents</h3>
+          <div class="form-group oneField" id="tfa_284-D">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_284-L" class="form-label preField" for="tfa_284">Supplementary document 1 (optional)</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                {{#unless defaults.application_readonly}}
+                <input type="file" id="tfa_284" name="tfa_284" size="" title="Supplementary document 1" class="form-input">
+                {{else}}
+                <p class="t-margin">
+                  <span class="label label-info">
+                    <span class="far fa-paperclip fa-fw mr"></span>
+                    Optional file upload may have been attached
+                  </span>
+                </p>
+                {{/unless}}
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_285-D">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_285-L" class="form-label preField" for="tfa_285">Supplementary document 2 (optional)</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                {{#unless defaults.application_readonly}}
+                <input type="file" id="tfa_285" name="tfa_285" size="" title="Supplementary document 2" class="form-input">
+                {{else}}
+                <p class="t-margin">
+                  <span class="label label-info">
+                    <span class="far fa-paperclip fa-fw mr"></span>
+                    Optional file upload may have been attached
+                  </span>
+                </p>
+                {{/unless}}
+              </div>
+            </div>
+          </div>
+          <div class="form-group oneField" id="tfa_286-D">
+            <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
+              <label id="tfa_286-L" class="form-label preField" for="tfa_286">Supplementary document 3 (optional)</label>
+            </div>
+            <div class="col-8 col-lg-7 col-md-6 col-sm-12">
+              <div class="field-container-D">
+                {{#unless defaults.application_readonly}}
+                <input type="file" id="tfa_286" name="tfa_286" size="" title="Supplementary document 3" class="form-input">
+                {{else}}
+                <p class="t-margin">
+                  <span class="label label-info">
+                    <span class="far fa-paperclip fa-fw mr"></span>
+                    Optional file upload may have been attached
+                  </span>
+                </p>
+                {{/unless}}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       {{#unless defaults.application_readonly}}
@@ -1311,7 +1366,7 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="d021345304532a0c24a11f02d4435952" name="tfa_dbControl" id="tfa_dbControl">
       <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
-      <input type="hidden" value="28" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="29" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
       {{/unless}}
     </form>
