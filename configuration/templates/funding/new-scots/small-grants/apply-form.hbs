@@ -1372,7 +1372,9 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
       {{/unless}}
     </form>
+    {{#unless defaults.application_readonly}}
     <button type="button" class="btn btn-tertiary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles 'root')}}d-none{{/unless}}">Get a recovery link</button>
+    {{/unless}}
   </div>
 </div>
 
