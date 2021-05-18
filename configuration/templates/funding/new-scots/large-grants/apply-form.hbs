@@ -1266,11 +1266,13 @@ wFORMS.behaviors.prefill.skip = false;
             3.1&ensp;Associated budget
           </p>
           <div class="form-group oneField" id="tfa_310-D">
+            {{#unless defaults.application_readonly}}
             <div class="col-12">
               <p>
                 <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Med-Large%20Grants%20Budget%20Table.xlsx" class="btn btn-primary btn-cta" target="_blank" download>Budget template download (Excel)</a>
               </p>
             </div>
+            {{/unless}}
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_310-L" class="form-label preField reqMark" for="tfa_310">Please upload a file containing your budget details based on the template provided</label>
             </div>
@@ -1508,9 +1510,11 @@ wFORMS.behaviors.prefill.skip = false;
           <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
             <div class="col-12">
               <h3>Upload partner details</h3>
+              {{#unless defaults.application_readonly}}
               <p>
                 <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Partners%20Spreadsheet.xlsx" class="btn btn-primary btn-cta" target="_blank" download>Project partners template download (Excel)</a>
               </p>
+              {{/unless}}
             </div>
             <div class="col-4 col-lg-5 col-md-6 col-sm-12 pr">
               <label id="tfa_280-L" class="form-label preField reqMark" for="tfa_280">Please upload a file containing details of the project partners based on the template provided</label>

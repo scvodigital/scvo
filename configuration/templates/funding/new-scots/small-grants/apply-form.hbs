@@ -1337,9 +1337,11 @@ wFORMS.behaviors.prefill.skip = false;
           <div class="form-group oneField" id="tfa_280-D" data-condition="`#tfa_193`">
             <div class="col-12">
               <h3>Upload partner details</h3>
+              {{#unless defaults.application_readonly}}
               <p>
                 <a href="https://storage.googleapis.com/scvo-net.appspot.com/funds/New%20Scots%20Partners%20Spreadsheet.xlsx" class="btn btn-primary btn-cta" target="_blank" download>Project partners template download (Excel)</a>
               </p>
+              {{/unless}}
             </div>
             <div class="col-8 col-lg-7 col-md-6 col-sm-12">
               <div class="field-container-D">
