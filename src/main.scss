@@ -3534,6 +3534,15 @@ form {
 }
 .categories-table .accordion:after {
   font-size: 1.1rem;
+  background-color: $primary-color;
+  color: white;
+  border-radius: 50%;
+  width: 36px;
+  text-align: center;
+  transition: background-color $fast-transition-speed;
+}
+.categories-table .accordion:hover:after {
+  background-color: $secondary-color-light;
 }
 .accordion.active:after {
   content: "\f106";
