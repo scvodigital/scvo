@@ -1,0 +1,15 @@
+{
+  "size": 20,
+  "_source": [
+    "wpid",
+    "path",
+    "title",
+    "content",
+    "breadcrumb"
+  ],
+  "query": {
+    "wildcard": {
+      "path": "/about/membership/fees/*"
+    }
+  }
+}

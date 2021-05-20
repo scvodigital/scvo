@@ -216,9 +216,9 @@
 						{
 							"label": "Categories & fees",
 							"path": "/about/membership/fees",
-							"route": "^/about/membership/fees$",
+							"route": "^/about/membership/fees",
 							"description": "All the information you need about membership categories, annual fees and benefits.",
-							"children": [
+							"_hide_children": [
 								{
 									"label": "Member - Free",
 									"path": "/about/membership/fees/scvo-member-free",

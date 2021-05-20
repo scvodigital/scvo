@@ -1,0 +1,55 @@
+{{#each @root.context.metaData.membershipCategories}}
+  <h3>{{title}}</h3>
+  <p>
+    {{description}}
+  </p>
+
+  <div class="categories-table">
+    <table border="0" cellspacing="0" cellpadding="0" class="table{{#unless ../link}} table-hover{{/unless}}">
+      <thead>
+        <tr>
+          <th width="{{#if ../link}}25{{else}}33{{/if}}%">Income band</th>
+          <th width="{{#if ../link}}25{{else}}33{{/if}}%">Member category</th>
+          <th width="{{#if ../link}}25{{else}}33{{/if}}%">Membership fee</th>
+          {{#if ../link}}<th width="25%">&nbsp;</th>{{/if}}
+        </tr>
+      </thead>
+    </table>
+    {{#each bands}}
+      <div {{#if ../../accordion}}class="accordion" aria-expanded="false" style="padding:0;"{{/if}}>
+        <table class="table" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td width="{{#if ../../link}}25{{else}}33{{/if}}%">
+                {{band}}
+              </td>
+              <td width="{{#if ../../link}}25{{else}}33{{/if}}%">
+                {{category}}
+              </td>
+              <td width="{{#if ../../link}}25{{else}}33{{/if}}%">
+                {{fee}}
+              </td>
+              {{#if ../../link}}
+                <td class="card-footer" width="25%">
+                  <a href="{{path}}">Details</a>
+                </td>
+              {{/if}}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      {{#if ../../accordion}}
+        {{#each @root.data.supplimentaryResponses.categories.hits.hits}}
+          {{#compare _source.path "===" ../path}}
+            <div class="accordion-content hidden" style="padding: 0;">
+              <div class="t-padding">
+                {{{_source.content}}}
+              </div>
+            </div>
+          {{/compare}}
+        {{/each}}
+      {{/if}}
+    {{/each}}
+  </div>
+
+{{/each}}

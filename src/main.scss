@@ -3532,6 +3532,9 @@ form {
   right: .5rem;
   top: .333rem;
 }
+.categories-table .accordion:after {
+  font-size: 1.1rem;
+}
 .accordion.active:after {
   content: "\f106";
 }
