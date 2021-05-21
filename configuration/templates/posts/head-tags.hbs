@@ -1,5 +1,5 @@
-{{#if @root.data.posts.hits.hits.[0] ~}}
-{{#with @root.data.posts.hits.hits.[0]._source ~}}
+{{#ifAny @root.data.posts.hits.hits.[0] @root.data.primaryResponse.hits.hits.[0] ~}}
+{{#with (default @root.data.posts.hits.hits.[0]._source @root.data.primaryResponse.hits.hits.[0]._source) ~}}
 {{#ifAny title og_title ~}}
 <title>{{{default title og_title}}} – SCVO</title>
 <meta property="og:title" content="{{{default title og_title}}} – SCVO" data-dynamic="true">
@@ -17,7 +17,7 @@
 {{else}}
 <title>Scottish Council for Voluntary Organisations – SCVO</title>
 <meta property="og:title" content="Scottish Council for Voluntary Organisations – SCVO" data-dynamic="true">
-{{/if ~}}
+{{/ifAny ~}}
 <meta property="og:image" content="{{~>asset_url url='images/icons/apple-touch-icon.png'~}}" data-dynamic="true">
 <meta property="og:image:width" content="180" data-dynamic="true">
 <meta property="og:image:height" content="180" data-dynamic="true">
