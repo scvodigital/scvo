@@ -59,6 +59,28 @@
       }
     },
     {
+      "name": "fix_for_kelsey",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.Session_Key__c"
+                  },
+                  "3a433b6d-f9b3-4e0e-b737-f6fdc0a7ee45"
+                ]
+              }
+            ]
+          },
+          "fund_new-scots_apply-large_missing",
+          false
+        ]
+      }
+    },
+    {
       "name": "form_data",
       "taskModule": "render",
       "renderer": "handlebars",
