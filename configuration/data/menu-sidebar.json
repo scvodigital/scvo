@@ -848,18 +848,27 @@
 					]
 				},
 				{
-					"label": "Our achievements",
-					"path": "/policy/our-achievements",
-					"route": "^/policy/our-achievements$",
-					"description": "Find out more about what SCVO has been doing.",
-					"icon": "award"
-				},
-				{
 					"label": "Our team",
 					"path": "/policy/about",
 					"route": "^/policy/about$",
 					"description": "Find out more about our policy team.",
-					"icon": "users"
+					"icon": "users",
+					"children": [
+						{
+							"label": "Our achievements",
+							"path": "/policy/about/our-achievements",
+							"route": "^/policy/about/our-achievements$",
+							"description": "Find out more about what SCVO has been doing.",
+							"icon": "award"
+						},
+						{
+							"label": "Our membership offer",
+							"path": "/policy/about/membership",
+							"route": "^/policy/about/membership$",
+							"description": "Find out more about the benefits of SCVO membership.",
+							"icon": "clipboard-check"
+						}
+					]
 				},
 				{
 					"label": "Evidence Library",

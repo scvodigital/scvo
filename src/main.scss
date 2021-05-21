@@ -5,6 +5,7 @@ $primary-color-dark: #C5143D;
 $secondary-color: #244B5A;
 $secondary-color-var: 244B5A;
 $secondary-color-light: lighten($secondary-color, 10%) !default;
+$secondary-color-light-var: 33697e;
 $secondary-color-dark: darken($secondary-color, 10%) !default;
 $secondary-color-dark-var: 152d36;
 $dark-color: #203139;
@@ -795,6 +796,12 @@ p.text-large {
 .card .card-title a:hover {
   .fa-fw {
     background-image: url('https://scvo.scot/rouleaux.svg?color=#{$primary-color-var}&opacity=1&style=solid');
+  }
+}
+
+.bg-primary .card .card-title a:hover {
+  .fa-fw {
+    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$secondary-color-light-var}&opacity=1&style=solid');
   }
 }
 
@@ -1921,7 +1928,7 @@ body.services.credit-union {
     color: $credit-union-color;
     .fa-fw {
       color: $credit-union-color;
-      background-image: url("https://scvo.scot/rouleaux.svg?color=#ffffff&opacity=1&style=solid")
+      background-image: url("https://scvo.scot/rouleaux.svg?color=ffffff&opacity=1&style=solid")
     }
   }
 }
@@ -2098,8 +2105,11 @@ body.services.credit-union {
     }
   }
   a:hover {
-    color: $secondary-color;
+    color: $secondary-color-light;
     background: none;
+  }
+  .card-footer a:hover:before {
+    background-color: $secondary-color-light;
   }
 }
 .bg-primary-light {
