@@ -66,9 +66,9 @@
           {
             "and": [
               {
-                "!=": [
+                "==": [
                   {
-                    "var": "data.application_data.request.data.data_object.get_grant.Session_Key__c"
+                    "var": "request.params.session_key"
                   },
                   "3a433b6d-f9b3-4e0e-b737-f6fdc0a7ee45"
                 ]
