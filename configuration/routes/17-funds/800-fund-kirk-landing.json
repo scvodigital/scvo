@@ -1,7 +1,7 @@
 {
-  "name": "fund_kirk_apply",
+  "name": "fund_kirk_landing",
   "debug": false,
-  "pattern": "/funding/church-of-scotland-2021-small-grants-fund/apply",
+  "pattern": "/funding/church-of-scotland-2021-small-grants-fund",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -20,8 +20,8 @@
             "layout": ">context.metaData.handlebars.layouts.kirk",
             "parts": {
               "head": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_apply-header",
-              "body": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_apply-start",
+              "header": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_landing-header",
+              "body": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_apply-landing",
               "footer": ">context.metaData.handlebars.templates.page-footer"
             },
             "contentType": "text/html"
