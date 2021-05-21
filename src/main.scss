@@ -3553,6 +3553,24 @@ form {
   }
 }
 
+ul.contacts {
+  margin-left: 1.5rem;
+  li {
+    position: relative;
+    list-style-type: none;
+  }
+  li:before {
+    content: '\f0e0';
+    font-family: 'Font Awesome\ 5 Pro';
+    font-weight: 400;
+    color: $secondary-color;
+    position: absolute;
+    left: -1.4rem;
+    top: 0;
+    margin-right: 1rem;
+  }
+}
+
 .sidebar {
   .menu {
     box-shadow: none;
