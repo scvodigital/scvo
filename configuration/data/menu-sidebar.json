@@ -2919,7 +2919,7 @@
 				{
 					"label": "Church of Scotland 2021 Small Grants Fund",
 					"path": "/funding/church-of-scotland-2021-small-grants-fund",
-					"route": "^/funding/church-of-scotland-2021-small-grants-fund$",
+					"_disabled_route": "^/funding/church-of-scotland-2021-small-grants-fund$",
 					"description": "",
 					"icon": "",
 					"children": [
@@ -2938,7 +2938,7 @@
 					"route": "^/funding/new-scots-fund$",
 					"description": "",
 					"icon": "",
-					"children": [
+					"_closed_children": [
 						{
 							"label": "Apply - small grants",
 							"path": "/funding/new-scots-fund/apply-small",
