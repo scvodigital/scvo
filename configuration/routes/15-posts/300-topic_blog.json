@@ -34,7 +34,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-post",
-          "template": ">context.metaData.handlebars.queries.posts_policy-topic-blog",
+          "template": ">context.metaData.handlebars.queries.posts_policy-topic-news",
           "noResultsRoute": "four_oh_four"
         }
       },
