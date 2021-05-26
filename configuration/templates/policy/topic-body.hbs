@@ -42,17 +42,17 @@
 <div class="bg-white">
   <div class="container v-padding-full">
     <div class="columns b-padding-full">
-      {{#compare @root.data.supplimentaryResponses.latest_blog.hits.total ">" 0 ~}}
+      {{#compare @root.data.supplimentaryResponses.latest_news.hits.total ">" 0 ~}}
         <div class="column col-4 col-lg-6 col-md-12">
-          <h3 class="b-padding">Blog posts</h3>
+          <h3 class="b-padding">Latest news</h3>
 
-          {{#each @root.data.supplimentaryResponses.latest_blog.hits.hits ~}}
+          {{#each @root.data.supplimentaryResponses.latest_news.hits.hits ~}}
             {{#compare @index "<" 3}}
               {{> content_post_gist _source}}
             {{/compare}}
           {{/each ~}}
 
-          {{#compare @root.data.supplimentaryResponses.latest_blog.hits.total ">" 3 ~}}
+          {{#compare @root.data.supplimentaryResponses.latest_news.hits.total ">" 3 ~}}
             <div class="card-footer">
               <a href="{{@root.request.url.pathname}}/blog">See more</a>
             </div>
@@ -60,11 +60,11 @@
         </div>
       {{/compare}}
       {{#ifAny (compare @root.data.supplimentaryResponses.latest_briefings_consultations.hits.total 0) (compare @root.data.supplimentaryResponses.latest_research.hits.total 0)}}
-        {{#compare @root.data.supplimentaryResponses.latest_blog.hits.total ">" 3 ~}}
+        {{#compare @root.data.supplimentaryResponses.latest_news.hits.total ">" 3 ~}}
           <div class="column col-4 col-lg-6 col-md-12">
             <h3 class="b-padding">&nbsp;</h3>
 
-            {{#each @root.data.supplimentaryResponses.latest_blog.hits.hits ~}}
+            {{#each @root.data.supplimentaryResponses.latest_news.hits.hits ~}}
               {{#ifAll (compare @index ">=" 3) (compare @index "<" 6)}}
                 {{> content_post_gist _source}}
               {{/ifAll}}

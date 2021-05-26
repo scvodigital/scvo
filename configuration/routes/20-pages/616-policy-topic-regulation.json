@@ -34,16 +34,10 @@
         },
         "queryTemplates": [
           {
-            "name": "latest_blog",
+            "name": "latest_news",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-topic-blog"
-          },
-          {
-            "name": "latest_press",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-topic-press"
+            "template": ">context.metaData.handlebars.queries.posts_policy-topic-news"
           },
           {
             "name": "latest_briefings_consultations",
