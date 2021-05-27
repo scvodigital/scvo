@@ -1,5 +1,12 @@
-<div class="container v-padding-full b-margin">
-  {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
+<div class="container b-margin">
+  <div class="columns">
+    <div class="column col-9 col-lg-12">
+      {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
+    </div>
+    <div class="sidebar column col-3 col-lg-12">
+      {{> sidebars_menu}}
+    </div>
+  </div>
 </div>
 
 {{> footers_posts_policy_howto}}
