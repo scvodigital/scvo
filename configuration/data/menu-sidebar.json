@@ -204,6 +204,12 @@
 					"route": "^/about/membership$",
 					"children": [
 						{
+							"label": "Membership benefits",
+							"path": "/about/membership/benefits",
+							"route": "^/about/membership/benefits$",
+							"description": "All the information you need about SCVO membership benefits."
+						},
+						{
 							"label": "Membership eligibility",
 							"path": "/about/membership/eligibility",
 							"route": "^/about/membership/eligibility$",
@@ -217,7 +223,7 @@
 							"label": "Categories & fees",
 							"path": "/about/membership/fees",
 							"route": "^/about/membership/fees",
-							"description": "All the information you need about membership categories, annual fees and benefits.",
+							"description": "All the information you need about membership categories and annual fees.",
 							"_hide_children": [
 								{
 									"label": "Member - Free",
