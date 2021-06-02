@@ -1,14 +1,10 @@
 <div class="container">
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item"><a href="/policy">Policy</a></li>
-    {{#if @root.request.params.topic}}
-      <li class="breadcrumb-item">
-        <a href="/policy/{{@root.request.params.topic}}" style="text-transform:capitalize;">{{replace @root.request.params.topic '-' ' '}}</a>
-      </li>
-    {{/if}}
-    <li class="breadcrumb-item">Research</li>
+    <li class="breadcrumb-item"><a href="/policy">Policy &amp; research</a></li>
+    <li class="breadcrumb-item"><a href="/policy/research">Research</a></li>
+    <li class="breadcrumb-item">Posts</li>
   </ul>
 
-  <h1>Research</h1>
+  <h1>Research posts</h1>
 </div>

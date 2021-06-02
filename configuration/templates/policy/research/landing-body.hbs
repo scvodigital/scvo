@@ -1,0 +1,55 @@
+<div class="container v-padding-full">
+  <div class="columns">
+    <main class="body column col-xs-auto">
+      {{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
+    </main>
+    <aside class="sidebar sidebar-right column col-3 col-xl-4 col-lg-12">
+      {{> sidebars_menu}}
+    </aside>
+  </div>
+</div>
+
+{{> sections_stats}}
+
+<div class="bg-gray">
+  <div class="container v-padding-full">
+    <div class="columns linked-cards">
+      <div class="column col-6 col-md-12 b-padding-full">
+        <div class="card card-no-padding">
+          <section class="card-title">
+            <h2>
+              <a href="/policy/research/posts">
+                <span class="far fa-fw fa-folder-open r-margin"></span>
+                Research posts
+              </a>
+            </h2>
+          </section>
+          <section class="card-body t-margin">
+            We ensure that research, evidence, and statistics about Scotland's voluntary sector are robust and accessible to everyone with an interest in the sector.
+          </section>
+          <section class="card-footer t-margin">
+            <a href="/policy/research/posts">Find out more</a>
+          </section>
+        </div>
+      </div>
+      <div class="column col-6 col-md-12 b-padding-full">
+        <div class="card card-no-padding">
+          <section class="card-title">
+            <h2>
+              <a href="/policy/research/evidence-library">
+                <span class="far fa-fw fa-folder-tree r-margin"></span>
+                Evidence Library
+              </a>
+            </h2>
+          </section>
+          <section class="card-body t-margin">
+            A resource for anyone interested in learning about the voluntary sector in Scotland.
+          </section>
+          <section class="card-footer t-margin">
+            <a href="/policy/research/evidence-library">Find out more</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

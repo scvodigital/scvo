@@ -1,4 +1,15 @@
 <div class="container">
+  <ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/policy">Policy &amp; research</a></li>
+    <li class="breadcrumb-item"><a href="/policy/research">Research</a></li>
+    {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
+    {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
+    <li class="breadcrumb-item">{{{title}}}</li>
+    {{/with ~}}
+    {{/if ~}}
+  </ul>
+
   <div class="hero">
     <div class="hero-body">
       <div class="columns">
