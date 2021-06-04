@@ -3568,6 +3568,10 @@ form {
   content: "\f106";
 }
 .categories-table {
+  thead th:last-child:after {
+    content: "Benefits";
+    float: right;
+  }
   .accordion:after {
     font-size: 1.1rem;
     background-color: $primary-color;
@@ -3814,6 +3818,9 @@ footer {
     th, td {
       display: block;
     }
+  }
+  .categories-table .accordion:after {
+    width: 28px;
   }
   footer .footer-copyright .logos {
     text-align: left;
