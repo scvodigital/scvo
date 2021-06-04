@@ -2,8 +2,10 @@
   "name": "page_digital_slp",
   "debug": false,
   "pattern": {
-    "main": "/support/digital/senior-leaders-2021",
-    "section": "/support/digital/senior-leaders-2021/:section"
+    "main_2021": "/support/digital/senior-leaders-2021",
+    "section_2021": "/support/digital/senior-leaders-2021/:section",
+    "main": "/support/digital/senior-leaders-programme",
+    "section": "/support/digital/senior-leaders-programme/:section"
   },
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
