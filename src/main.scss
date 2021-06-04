@@ -1696,6 +1696,27 @@ ul.list-lg {
     background-color: white;
   }
 }
+.wp-block-table.table {
+  margin: 0;
+  table {
+    tr:first-child td {
+      font-weight: bold;
+    }
+    tr td:first-child {
+      white-space: inherit;
+    }
+    tr:nth-child(even) {
+      background-color: $light-color;
+    }
+    tr:nth-child(odd) {
+      background-color: white;
+    }
+  }
+}
+
+.has-text-align-center {
+  text-align: center !important;
+}
 
 .card {
   border: none !important;
