@@ -1,0 +1,34 @@
+{
+  "name": "coronavirus_atf_apply_already_applied",
+  "debug": false,
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/atf/apply/already-applied",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_community-recovery_atf_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_community-recovery_atf_apply-already-applied",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}

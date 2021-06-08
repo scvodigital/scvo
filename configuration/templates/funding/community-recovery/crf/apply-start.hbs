@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
+    <p>
+      The Community & Third Sector Recovery Programme, part of <a href="https://www.gov.scot/news/helping-communities-affected-by-covid-19/" target="_blank">Scottish Government’s £350m emergency response to coronavirus</a>. This is the online form to complete for the Communities Recovery Fund.
+    </p>
+    <p>
+      Please enter the details below to continue your application process.
+    </p>
+
+    <div class="columns">
+      <div class="column col-8 col-xl-10 col-lg-12 col-mx-auto">
+        <div class="b-padding-full v-margin-full">
+          {{#if @root.request.params.charity_number ~}}
+          <div class="label label-error x-padding t-margin-full">
+            <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
+            The charity number you entered could not be matched with an OSCR record
+          </div>
+          <p class="t-margin b-margin-full form-input-hint text-secondary">
+            Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+          </p>
+          {{/if ~}}
+          <div class="columns">
+            <div class="column col-sm-12 t-padding b-padding-full">
+              <div class="form-group">
+                <label for="charity_number" class="form-label">Scottish Charity Number</label>
+                <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
+                <p class="form-input-hint text-secondary">Please enter your full Scottish Charity Number beginning with 'SC' then six digits, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
+              </div>
+              <a href="" id="charity_number_submit" class="btn btn-primary btn-block" disabled>
+                Apply now
+              </a>
+            </div>
+            <div class="divider-vert hide-sm" data-content="OR"></div>
+            <div class="divider text-center show-sm col-12" data-content="OR"></div>
+            <div class="column col-sm-12 align-centre">
+              <a href="/support/coronavirus/funding/scottish-government/community-recovery/crf/apply/not-a-charity" class="btn btn-block">
+                Not a registered charity
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var valid = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 67, 83, 99, 115, 37, 39, 111, 79, 46, 35, 36];
+  $('#charity_number')
+  .on('keydown', function(evt) {
+    if (evt.ctrlKey) {
+      return;
+    }
+
+    if (valid.indexOf(evt.which) === -1 && evt.which > 31) {
+      evt.preventDefault();
+    }
+  })
+  .on('keyup', checkCN)
+  .on('change', checkCN)
+  .on('paste', function(evt) {
+    setTimeout(function() {
+      checkCN(evt);
+    }, 0);
+  })
+  .select();
+
+  function checkCN(evt) {
+    var matches = evt.target.value.replace(/[^sco0-9]/img, '');
+    var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
+
+    if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
+      var url = '/support/coronavirus/funding/scottish-government/community-recovery/crf/apply/' + charityNumber;
+      $('#charity_number_submit')
+      .removeAttr('disabled', false)
+      .attr('href', url);
+      if (evt.which === 13) {
+        window.location.href = url;
+      }
+    } else {
+      $('#charity_number_submit')
+      .attr('disabled', true)
+      .attr('href', '');
+    }
+  }
+
+})
+</script>

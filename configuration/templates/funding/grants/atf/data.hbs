@@ -17,7 +17,7 @@
     "amountAwarded": 0,
     {{/if ~}}
     {{/if ~}}
-    {{#ifAll paid_by_funder (ifAny amount_requested amount_awarded) ~}}
+    {{#ifAny amount_requested amount_awarded) ~}}
     {{#if amount_awarded ~}}
     "amountDisbursed": {{amount_awarded}},
     {{else}}
@@ -29,7 +29,7 @@
     {{/if ~}}
     {{else}}
     "amountDisbursed": 0,
-    {{/ifAll ~}}
+    {{/ifAny ~}}
     {{#if date_awarded ~}}
     "awardDate": "{{momentFormat (moment date_awarded 'x') "YYYY-MM-DD"}}",
     {{else}}
