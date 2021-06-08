@@ -1,7 +1,7 @@
 {
-  "name": "coronavirus_atf_view-1_form",
+  "name": "coronavirus_crf_view-1_form",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply/view/:session_key",
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/crf/apply-1/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -31,7 +31,7 @@
               }
             ]
           },
-          "coronavirus_atf_apply_missing",
+          "coronavirus_crf_apply_missing",
           false
         ]
       }
@@ -77,7 +77,7 @@
               }
             ]
           },
-          "coronavirus_atf_apply_unauthorised",
+          "coronavirus_crf_apply_unauthorised",
           false
         ]
       }
@@ -87,7 +87,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.funding_community-recovery_atf_apply-form-data",
+        "template": ">context.metaData.handlebars.templates.funding_community-recovery_crf_apply-form-data",
         "output": "data",
         "parseJson": true
       }
@@ -109,8 +109,8 @@
             "parts": {
               "style": "fullWidth",
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_community-recovery_atf_view-header",
-              "body": ">context.metaData.handlebars.templates.funding_community-recovery_atf_apply-1-form",
+              "header": ">context.metaData.handlebars.templates.funding_community-recovery_crf_view-header",
+              "body": ">context.metaData.handlebars.templates.funding_community-recovery_crf_apply-1-form",
               "footer": ">context.metaData.handlebars.templates.page-news-footer"
             },
             "contentType": "text/html"

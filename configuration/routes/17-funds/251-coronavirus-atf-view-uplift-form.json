@@ -1,7 +1,7 @@
 {
   "name": "coronavirus_atf_view-uplift_form",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/apply-uplift/view/:session_key",
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/atf/apply-uplift/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
