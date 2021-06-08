@@ -1,0 +1,180 @@
+{
+  "name": "coronavirus_atf_edit-call-1_form",
+  "debug": false,
+  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/atf/apply-1/edit/:session_key",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "application_data",
+      "taskModule": "request",
+      "config": {
+        "optionsTemplates": {
+          "request": ">context.metaData.handlebars.templates.utilities_grantmanager-grant"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "award_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "sg-grant-atf",
+          "template": ">context.metaData.handlebars.queries.grants_recovery-awarded"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "check_for_awarded",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  { "var": "data.award_data.hits.total" },
+                  0
+                ]
+              }
+            ]
+          },
+          "coronavirus_atf_apply_already_awarded",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_for_application",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.totalSize"
+                  },
+                  1
+                ]
+              }
+            ]
+          },
+          "coronavirus_atf_apply_missing",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_call",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "or": [
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
+                  },
+                  "Supporting Communities Fund - Call 2"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
+                  },
+                  "Adapt and Thrive - Uplift"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
+                  },
+                  "Communities Recovery Fund - Uplift"
+                ]
+              },
+              {
+                "==": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Call__c"
+                  },
+                  "Communities Recovery Fund - Call 2"
+                ]
+              }
+            ]
+          },
+          "coronavirus_atf_apply_unauthorised",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_for_authorisation",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.records.0.Status__c"
+                  },
+                  "Information Requested"
+                ]
+              }
+            ]
+          },
+          "coronavirus_atf_apply_unauthorised",
+          false
+        ]
+      }
+    },
+    {
+      "name": "form_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.funding_community-recovery_atf_apply-form-data",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_community-recovery_atf_edit-header",
+              "body": ">context.metaData.handlebars.templates.funding_community-recovery_atf_apply-1-form",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
