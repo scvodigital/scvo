@@ -103,7 +103,14 @@
           </a>
         </span>
       </li>
-      {{else}}
+      {{/compare ~}}
+      {{/compare ~}}
+      {{/compare ~}}
+      {{/compare ~}}
+      {{/compare ~}}
+      {{/compare ~}}
+      {{/compare ~}}
+      {{/ifAny ~}}
       {{#compare organisation.name "Kibble" ~}}
       <li>
         <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
@@ -131,18 +138,10 @@
         </span>
       </li>
       {{/compare ~}}
-      {{/compare ~}}
-      {{/compare ~}}
-      {{/compare ~}}
-      {{/compare ~}}
-      {{/compare ~}}
-      {{/compare ~}}
-      {{/compare ~}}
-      {{/ifAny ~}}
       <li>
         <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
         <span class="file-download">
-          <a href="{{~>asset_url url='cjs/CJS%20Eligibility%20form.doc'~}}" target="_blank" download>
+          <a href="{{~>asset_url url='cjs/jcp-eligibility-referral.doc'~}}" target="_blank" download>
             <span class="title">JCP CJS Eligibility Referral</span>
           </a>
         </span>
@@ -150,7 +149,7 @@
       <li>
         <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
         <span class="file-download">
-          <a href="{{~>asset_url url='cjs/Vulnerable%20Group%20criteria.docx'~}}" target="_blank" download>
+          <a href="{{~>asset_url url='cjs/vulnerable-group-criteria.docx'~}}" target="_blank" download>
             <span class="title">Vulnerable Group Criteria</span>
           </a>
         </span>
@@ -158,8 +157,16 @@
       <li>
         <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
         <span class="file-download">
-          <a href="{{~>asset_url url='cjs/SDS%20CJS%20Elig%20Ref%20Appl%2010.doc'~}}" target="_blank" download>
+          <a href="{{~>asset_url url='cjs/SDS%20CJS%20Elig%20Ref%20Appl%10.doc'~}}" target="_blank" download>
             <span class="title">SDS CJS Eligibility Referral Application</span>
+          </a>
+        </span>
+      </li>
+      <li>
+        <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+        <span class="file-download">
+          <a href="{{~>asset_url url='cjs/key-worker-eligibility-referral.doc'~}}" target="_blank" download>
+            <span class="title">Key Worker CJS Eligibility Referral Application</span>
           </a>
         </span>
       </li>
