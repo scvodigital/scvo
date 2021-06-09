@@ -3860,7 +3860,11 @@ footer {
   display: flex;
   margin-left: -($unit/2);
   margin-right: -($unit/2);
+  .column {
+    margin: auto;
+  }
   .sponsor {
+    padding-bottom: $unit*1.5;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3876,8 +3880,11 @@ footer {
 .sponsors.awards .sponsor.scvo { flex: 1; }
 .sponsors.awards .sponsor.caf { flex: 1; }
 .sponsors.awards .sponsor.cld { flex: .75; }
+.sponsors.awards .cld { zoom: 2.5; }
 .sponsors.awards .sponsor.digital-scotland { flex: 1.5; }
+.sponsors.awards .sponsor.jacobs { flex: 1; }
 .sponsors.awards .sponsor.keegan-pennykid { flex: 0.85; }
+.sponsors.awards .keegan-pennykid { zoom: 2; }
 .sponsors.awards .sponsor.oscr { flex: 1.2; }
 .sponsors.awards .sponsor.rathbones { flex: 1.2; }
 .sponsors.awards .sponsor.sgn { flex: 1.45; }
