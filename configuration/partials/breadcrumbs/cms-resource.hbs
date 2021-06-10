@@ -16,9 +16,10 @@
   {{/ifAny ~}}
   {{#ifAny (ifAll (contains categories_slug "about") (contains post_tags_slug "faq")) ~}}
   <li class="breadcrumb-item"><a href="/about/">About</a></li>
-  <li class="breadcrumb-item"><a href="/about/membership">Membership</a></li>
+  <li class="breadcrumb-item"><a href="/about/community">Our community</a></li>
+  <li class="breadcrumb-item"><a href="/about/community/membership">Membership</a></li>
   {{#ifAll (contains categories_slug "about") (contains post_tags_slug "faq") ~}}
-  <li class="breadcrumb-item"><a href="/about/membership/faq">Frequently asked questions</a></li>
+  <li class="breadcrumb-item"><a href="/about/community/membership/faq">Frequently asked questions</a></li>
   {{/ifAll ~}}
   {{/ifAny ~}}
   <li class="breadcrumb-item">{{{striptags title}}}</li>

@@ -3,10 +3,11 @@
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
-    <li class="breadcrumb-item"><a href="/about/contacts">Contacts</a></li>
-    <li class="breadcrumb-item"><a href="/about/contacts/staff">Staff</a></li>
+    <li class="breadcrumb-item"><a href="/about/people">Our people</a></li>
+    <li class="breadcrumb-item"><a href="/about/people/contacts">Contacts</a></li>
+    <li class="breadcrumb-item"><a href="/about/people/contacts/staff">Staff</a></li>
     {{#if department ~}}
-    <li class="breadcrumb-item"><a href="/about/contacts/staff?department={{slugify department}}">{{{department}}}</a></li>
+    <li class="breadcrumb-item"><a href="/about/people/contacts/staff?department={{slugify department}}">{{{department}}}</a></li>
     {{/if ~}}
     <li class="breadcrumb-item">{{{name_full}}}</li>
   </ul>

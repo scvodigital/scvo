@@ -1,7 +1,7 @@
 {
   "name": "resource_membership_faq",
   "debug": false,
-  "pattern": "/about/membership/faq/:faq_slug",
+  "pattern": "/about/community/membership/faq/:faq_slug",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

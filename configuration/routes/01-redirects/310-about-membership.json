@@ -1,6 +1,6 @@
 {
-  "name": "redirect_membership2",
-  "pattern": "/membership(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "name": "redirect_about-membership",
+  "pattern": "/about/membership(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
   "tasks": [
     {
       "name": "url",
@@ -16,7 +16,7 @@
       "taskModule": "redirect",
       "config": {
         "location": ">data.url",
-        "statusCode": 301
+        "statusCode": 302
       }
     }
   ]

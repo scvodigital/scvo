@@ -6,299 +6,319 @@
 			"route": "^/about$",
 			"children": [
 				{
-					"label": "Constitution",
-					"path": "/about/constitution",
-					"route": "^/about/constitution"
-				},
-				{
-					"label": "Contacts",
-					"path": "/about/contacts",
-					"route": "^/about/contacts$",
+					"label": "Our people",
+					"path": "/about/people",
+					"route": "^/about/people$",
 					"children": [
 						{
-							"label": "Teams",
-							"path": "/about/contacts/teams",
-							"route": "^/about/contacts/teams$",
-							"description": "Details for contacting a specific team",
-							"icon": "users",
+							"label": "Contacts",
+							"path": "/about/people/contacts",
+							"route": "^/about/people/contacts$",
+							"description": " ",
 							"children": [
 								{
-									"label": "Information Service",
-									"path": "/support/information-service",
-									"route": "^/about/contacts/teams/information-service$",
-									"description": "The SCVO Information Service is an online knowledge bank and enquiry service delivered by experts.<br /><br /><a href='mailto:enquiries@scvo.scot'>enquiries@scvo.scot</a> 0800 169 0022. Calls go to voicemail and one of our Information Officers will call you back as soon as they can.",
-									"icon": "info-circle"
+									"label": "Teams",
+									"path": "/about/people/contacts/teams",
+									"route": "^/about/people/contacts/teams$",
+									"description": "Details for contacting a specific team",
+									"icon": "users",
+									"children": [
+										{
+											"label": "Information Service",
+											"path": "/support/information-service",
+											"route": "^/about/people/contacts/teams/information-service$",
+											"description": "The SCVO Information Service is an online knowledge bank and enquiry service delivered by experts.<br /><br /><a href='mailto:enquiries@scvo.scot'>enquiries@scvo.scot</a> 0800 169 0022. Calls go to voicemail and one of our Information Officers will call you back as soon as they can.",
+											"icon": "info-circle"
+										},
+										{
+											"label": "Managed IT",
+											"path": "/services/managed-it",
+											"route": "^/about/people/contacts/teams/managed-it$",
+											"description": "Email <a href='mailto:ithelpdesk@scvo.scot'>ithelpdesk@scvo.scot</a><br /><br />Current clients should use the usual email and helpline number.",
+											"icon": "sitemap"
+										},
+										{
+											"label": "Workspace",
+											"path": "/services/workspace",
+											"route": "^/about/people/contacts/teams/workspace$",
+											"description": "Email <a href='mailto:facilities@scvo.scot'>facilities@scvo.scot</a>",
+											"icon": "building"
+										},
+										{
+											"label": "Payroll",
+											"path": "/services/payroll",
+											"route": "^/about/people/contacts/teams/payroll$",
+											"description": "Email <a href='mailto:payroll@scvo.scot'>payroll@scvo.scot</a>",
+											"icon": "money-check-edit"
+										},
+										{
+											"label": "SCVO Credit Union",
+											"path": "/services/credit-union",
+											"route": "^/about/people/contacts/teams/credit-union$",
+											"description": "Email <a href='mailto:credit.union@scvo.scot'>credit.union@scvo.scot</a>",
+											"icon": "money-bill-wave"
+										},
+										{
+											"label": "Community Jobs Scotland",
+											"path": "/jobs/community-jobs-scotland",
+											"route": "^/about/people/contacts/teams/community-jobs-scotland$",
+											"description": "Email <a href='mailto:communityjobsscotland@scvo.scot'>communityjobsscotland@scvo.scot</a><br />Phone 0141 559 5026",
+											"icon": "id-badge"
+										},
+										{
+											"label": "Funding Scotland",
+											"path": "https://funding.scot",
+											"route": "^/about/people/contacts/teams/funding-scotland$",
+											"description": "Email <a href='mailto:fundingscotland@scvo.scot'>fundingscotland@scvo.scot</a>",
+											"icon": "search-plus"
+										},
+										{
+											"label": "Goodmoves",
+											"path": "https://goodmoves.com",
+											"route": "^/about/people/contacts/teams/goodmoves$",
+											"description": "Email <a href='mailto:sales@goodmoves.org.uk'>sales@goodmoves.org.uk</a><br />Phone 0800 019 2149",
+											"icon": "laptop-house"
+										},
+										{
+											"label": "Scottish Charity Awards",
+											"path": "/scottish-charity-awards",
+											"route": "^/about/people/contacts/teams/scottish-charity-awards$",
+											"description": "Email <a href='mailto:awards@scvo.scot'>awards@scvo.scot</a>",
+											"icon": "stars"
+										},
+										{
+											"label": "SCVO Digital team",
+											"path": "/support/digital",
+											"route": "^/about/people/contacts/teams/digital$",
+											"description": "Email <a href='mailto:digital@scvo.scot'>digital@scvo.scot</a>",
+											"icon": "video"
+										},
+										{
+											"label": "SCVO Membership team",
+											"path": "/about/community/membership",
+											"route": "^/about/people/contacts/teams/membership$",
+											"description": "Email <a href='mailto:membership@scvo.scot'>membership@scvo.scot</a>",
+											"icon": "badge-check"
+										},
+										{
+											"label": "SCVO Policy team",
+											"path": "/policy",
+											"route": "^/about/people/contacts/teams/policy$",
+											"description": "Email <a href='mailto:scvopolicyandresearch@scvo.scot'>scvopolicyandresearch@scvo.scot</a>",
+											"icon": "person-sign"
+										},
+										{
+											"label": "The Gathering",
+											"path": "/the-gathering",
+											"route": "^/about/people/contacts/teams/the-gathering$",
+											"description": "Email <a href='mailto:thegathering@scvo.scot'>thegathering@scvo.scot</a>",
+											"icon": "users-class"
+										},
+										{
+											"label": "Third Force News",
+											"path": "https://tfn.scot",
+											"route": "^/about/people/contacts/teams/tfn$",
+											"description": "Email <a href='mailto:tfn@scvo.scot'>tfn@scvo.scot</a>",
+											"icon": "comment-lines"
+										},
+										{
+											"label": "Training",
+											"path": "/support/training",
+											"route": "^/about/people/contacts/teams/training$",
+											"description": "Email <a href='mailto:training@scvo.scot'>training@scvo.scot</a>",
+											"icon": "user-headset"
+										},
+										{
+											"label": "SCVO Finance",
+											"path": "/about/people/contacts/staff?department=finance",
+											"route": "^/about/people/contacts/teams/scvo-finance$",
+											"description": "Email <a href='mailto:finance@scvo.scot'>finance@scvo.scot</a><br /><br />Purchase ledger enquiries 0131 474 8012<br />Please send invoices electronically if possible<br /><br />Sales ledger 0131 474 6169<br />Please note we are unable to make cheque payments at this time",
+											"link_label": "Staff details",
+											"icon": "money-bill"
+										}
+									]
 								},
 								{
-									"label": "Managed IT",
-									"path": "/services/managed-it",
-									"route": "^/about/contacts/teams/managed-it$",
-									"description": "Email <a href='mailto:ithelpdesk@scvo.scot'>ithelpdesk@scvo.scot</a><br /><br />Current clients should use the usual email and helpline number.",
-									"icon": "sitemap"
-								},
-								{
-									"label": "Workspace",
-									"path": "/services/workspace",
-									"route": "^/about/contacts/teams/workspace$",
-									"description": "Email <a href='mailto:facilities@scvo.scot'>facilities@scvo.scot</a>",
-									"icon": "building"
-								},
-								{
-									"label": "Payroll",
-									"path": "/services/payroll",
-									"route": "^/about/contacts/teams/payroll$",
-									"description": "Email <a href='mailto:payroll@scvo.scot'>payroll@scvo.scot</a>",
-									"icon": "money-check-edit"
-								},
-								{
-									"label": "SCVO Credit Union",
-									"path": "/services/credit-union",
-									"route": "^/about/contacts/teams/credit-union$",
-									"description": "Email <a href='mailto:credit.union@scvo.scot'>credit.union@scvo.scot</a>",
-									"icon": "money-bill-wave"
-								},
-								{
-									"label": "Community Jobs Scotland",
-									"path": "/jobs/community-jobs-scotland",
-									"route": "^/about/contacts/teams/community-jobs-scotland$",
-									"description": "Email <a href='mailto:communityjobsscotland@scvo.scot'>communityjobsscotland@scvo.scot</a><br />Phone 0141 559 5026",
-									"icon": "id-badge"
-								},
-								{
-									"label": "Funding Scotland",
-									"path": "https://funding.scot",
-									"route": "^/about/contacts/teams/funding-scotland$",
-									"description": "Email <a href='mailto:fundingscotland@scvo.scot'>fundingscotland@scvo.scot</a>",
-									"icon": "search-plus"
-								},
-								{
-									"label": "Goodmoves",
-									"path": "https://goodmoves.com",
-									"route": "^/about/contacts/teams/goodmoves$",
-									"description": "Email <a href='mailto:sales@goodmoves.org.uk'>sales@goodmoves.org.uk</a><br />Phone 0800 019 2149",
-									"icon": "laptop-house"
-								},
-								{
-									"label": "Scottish Charity Awards",
-									"path": "/scottish-charity-awards",
-									"route": "^/about/contacts/teams/scottish-charity-awards$",
-									"description": "Email <a href='mailto:awards@scvo.scot'>awards@scvo.scot</a>",
-									"icon": "stars"
-								},
-								{
-									"label": "SCVO Digital team",
-									"path": "/support/digital",
-									"route": "^/about/contacts/teams/digital$",
-									"description": "Email <a href='mailto:digital@scvo.scot'>digital@scvo.scot</a>",
-									"icon": "video"
-								},
-								{
-									"label": "SCVO Membership team",
-									"path": "/about/membership",
-									"route": "^/about/contacts/teams/membership$",
-									"description": "Email <a href='mailto:membership@scvo.scot'>membership@scvo.scot</a>",
-									"icon": "badge-check"
-								},
-								{
-									"label": "SCVO Policy team",
-									"path": "/policy",
-									"route": "^/about/contacts/teams/policy$",
-									"description": "Email <a href='mailto:scvopolicyandresearch@scvo.scot'>scvopolicyandresearch@scvo.scot</a>",
-									"icon": "person-sign"
-								},
-								{
-									"label": "The Gathering",
-									"path": "/the-gathering",
-									"route": "^/about/contacts/teams/the-gathering$",
-									"description": "Email <a href='mailto:thegathering@scvo.scot'>thegathering@scvo.scot</a>",
-									"icon": "users-class"
-								},
-								{
-									"label": "Third Force News",
-									"path": "https://tfn.scot",
-									"route": "^/about/contacts/teams/tfn$",
-									"description": "Email <a href='mailto:tfn@scvo.scot'>tfn@scvo.scot</a>",
-									"icon": "comment-lines"
-								},
-								{
-									"label": "Training",
-									"path": "/support/training",
-									"route": "^/about/contacts/teams/training$",
-									"description": "Email <a href='mailto:training@scvo.scot'>training@scvo.scot</a>",
-									"icon": "user-headset"
-								},
-								{
-									"label": "SCVO Finance",
-									"path": "/about/contacts/staff?department=finance",
-									"route": "^/about/contacts/teams/scvo-finance$",
-									"description": "Email <a href='mailto:finance@scvo.scot'>finance@scvo.scot</a><br /><br />Purchase ledger enquiries 0131 474 8012<br />Please send invoices electronically if possible<br /><br />Sales ledger 0131 474 6169<br />Please note we are unable to make cheque payments at this time",
-									"link_label": "Staff details",
-									"icon": "money-bill"
+									"label": "Staff",
+									"path": "/about/people/contacts/staff",
+									"route": "^/about/people/contacts/staff",
+									"description": "Details for contacting a specific member of staff",
+									"icon": "user"
 								}
 							]
 						},
 						{
-							"label": "Staff",
-							"path": "/about/contacts/staff",
-							"route": "^/about/contacts/staff",
-							"description": "Details for contacting a specific member of staff",
-							"icon": "user"
+							"label": "Board",
+							"label_full": "Board of trustees",
+							"path": "/about/people/board-of-trustees",
+							"route": "^/about/people/board-of-trustees",
+							"description": " "
+						},
+						{
+							"label": "Vacancies",
+							"path": "/about/people/vacancies",
+							"route": "^/about/people/vacancies",
+							"description": " "
+						},
+						{
+							"label": "Offices",
+							"path": "/about/people/offices",
+							"route": "^/about/people/offices"
 						}
 					]
 				},
 				{
-					"label": "Board of trustees",
-					"path": "/about/board-of-trustees",
-					"route": "^/about/board-of-trustees"
-				},
-				{
-					"label": "Work with us",
-					"path": "/about/work-with-us",
-					"route": "^/about/work-with-us"
-				},
-				{
-					"label": "Offices",
-					"path": "/about/offices",
-					"route": "^/about/offices"
-				},
-				{
-					"label": "Press releases",
-					"path": "/about/press-media",
-					"route": "^/about/press-media"
-				},
-				{
-					"label": "Blog",
-					"path": "/about/blog",
-					"route": "^/about/blog"
-				},
-				{
-					"label": "Annual review",
-					"path": "/about/annual-review",
-					"route": "^/about/annual-review"
-				},
-				{
-					"label": "Accounts",
-					"path": "/about/accounts",
-					"route": "^/about/accounts"
-				},
-				{
-					"label": "Strategy 2019-22",
-					"path": "/about/strategy",
-					"route": "^/about/strategy"
-				},
-				{
-					"label": "European projects",
-					"path": "/about/european-projects",
-					"route": "^/about/european-projects$",
+					"label": "Our work",
+					"path": "/about/work",
+					"route": "^/about/work$",
 					"children": [
 						{
-							"label": "mPower",
-							"path": "/about/european-projects/mpower",
-							"route": "^/about/european-projects/mpower$"
+							"label": "Constitution",
+							"path": "/about/work/constitution",
+							"route": "^/about/work/constitution"
+						},
+						{
+							"label": "Press releases",
+							"path": "/about/work/press-releases",
+							"route": "^/about/work/press-releases"
+						},
+						{
+							"label": "Annual review",
+							"path": "/about/work/annual-review",
+							"route": "^/about/work/annual-review"
+						},
+						{
+							"label": "Accounts",
+							"path": "/about/work/accounts",
+							"route": "^/about/work/accounts"
+						},
+						{
+							"label": "Strategy 2019-22",
+							"path": "/about/strategy",
+							"route": "^/about/strategy"
+						},
+						{
+							"label": "European projects",
+							"path": "/about/european-projects",
+							"route": "^/about/european-projects$",
+							"children": [
+								{
+									"label": "mPower",
+									"path": "/about/european-projects/mpower",
+									"route": "^/about/european-projects/mpower$"
+								}
+							]
 						}
 					]
 				},
 				{
-					"label": "Membership",
-					"path": "/about/membership",
-					"route": "^/about/membership$",
+					"label": "Our community",
+					"path": "/about/community",
+					"route": "^/about/community$",
 					"children": [
 						{
-							"label": "Membership benefits",
-							"path": "/about/membership/benefits",
-							"route": "^/about/membership/benefits$",
-							"description": "All the information you need about SCVO membership benefits."
-						},
-						{
-							"label": "Membership eligibility",
-							"path": "/about/membership/eligibility",
-							"route": "^/about/membership/eligibility$",
-							"description": "Find out if your organisation meets our eligibility criteria before applying."
-						},
-						{
-							"label": "Eligibility guidance",
-							"path": "/about/membership/eligibility-guidance"
-						},
-						{
-							"label": "Categories & fees",
-							"path": "/about/membership/fees",
-							"route": "^/about/membership/fees",
-							"description": "All the information you need about membership categories and annual fees.",
-							"_hide_children": [
+							"label": "Membership",
+							"path": "/about/community/membership",
+							"route": "^/about/community/membership$",
+							"children": [
 								{
-									"label": "Member - Free",
-									"path": "/about/membership/fees/scvo-member-free",
-									"route": "^/about/membership/fees/scvo-member-free$",
-									"description": "Income under £100k"
+									"label": "Membership benefits",
+									"path": "/about/community/membership/benefits",
+									"route": "^/about/community/membership/benefits$",
+									"description": "All the information you need about SCVO membership benefits."
 								},
 								{
-									"label": "Member - Small",
-									"path": "/about/membership/fees/scvo-member-small",
-									"route": "^/about/membership/fees/scvo-member-small$",
-									"description": "Income £100k - £500k"
+									"label": "Membership eligibility",
+									"path": "/about/community/membership/eligibility",
+									"route": "^/about/community/membership/eligibility$",
+									"description": "Find out if your organisation meets our eligibility criteria before applying."
 								},
 								{
-									"label": "Member - Medium",
-									"path": "/about/membership/fees/scvo-member-medium",
-									"route": "^/about/membership/fees/scvo-member-medium$",
-									"description": "Income £500k - £3m"
+									"label": "Eligibility guidance",
+									"path": "/about/community/membership/eligibility-guidance"
 								},
 								{
-									"label": "Member - Large",
-									"path": "/about/membership/fees/scvo-member-large",
-									"route": "^/about/membership/fees/scvo-member-large$",
-									"description": "Income over £3m"
+									"label": "Categories & fees",
+									"path": "/about/community/membership/fees",
+									"route": "^/about/community/membership/fees",
+									"description": "All the information you need about membership categories and annual fees.",
+									"_hide_children": [
+										{
+											"label": "Member - Free",
+											"path": "/about/community/membership/fees/scvo-member-free",
+											"route": "^/about/community/membership/fees/scvo-member-free$",
+											"description": "Income under £100k"
+										},
+										{
+											"label": "Member - Small",
+											"path": "/about/community/membership/fees/scvo-member-small",
+											"route": "^/about/community/membership/fees/scvo-member-small$",
+											"description": "Income £100k - £500k"
+										},
+										{
+											"label": "Member - Medium",
+											"path": "/about/community/membership/fees/scvo-member-medium",
+											"route": "^/about/community/membership/fees/scvo-member-medium$",
+											"description": "Income £500k - £3m"
+										},
+										{
+											"label": "Member - Large",
+											"path": "/about/community/membership/fees/scvo-member-large",
+											"route": "^/about/community/membership/fees/scvo-member-large$",
+											"description": "Income over £3m"
+										},
+										{
+											"label": "Supporter - Individuals",
+											"path": "/about/community/membership/fees/scvo-supporter-individual",
+											"route": "^/about/community/membership/fees/scvo-supporter-individual$",
+											"description": " "
+										},
+										{
+											"label": "Supporter - Organisations under £500k",
+											"path": "/about/community/membership/fees/scvo-supporter-organisations-with-income-under-500k",
+											"route": "^/about/community/membership/fees/scvo-supporter-organisations-with-income-under-500k$",
+											"description": "Income under £500k"
+										},
+										{
+											"label": "Supporter - Organisations over £500k",
+											"path": "/about/community/membership/fees/scvo-supporter-organisations-with-income-over-500k",
+											"route": "^/about/community/membership/fees/scvo-supporter-organisations-with-income-over-500k$",
+											"description": "Income over £500k"
+										}
+									]
 								},
 								{
-									"label": "Supporter - Individuals",
-									"path": "/about/membership/fees/scvo-supporter-individual",
-									"route": "^/about/membership/fees/scvo-supporter-individual$",
-									"description": " "
+									"label": "Frequently asked questions",
+									"path": "/about/community/membership/faq",
+									"route": "^/about/community/membership/faq$",
+									"description": "Take a look at our most frequently asked questions."
 								},
 								{
-									"label": "Supporter - Organisations under £500k",
-									"path": "/about/membership/fees/scvo-supporter-organisations-with-income-under-500k",
-									"route": "^/about/membership/fees/scvo-supporter-organisations-with-income-under-500k$",
-									"description": "Income under £500k"
+									"label": "Join us",
+									"path": "/about/community/membership/join",
+									"route": "^/about/community/membership/join$",
+									"description": "Apply for membership now and join our community!"
 								},
 								{
-									"label": "Supporter - Organisations over £500k",
-									"path": "/about/membership/fees/scvo-supporter-organisations-with-income-over-500k",
-									"route": "^/about/membership/fees/scvo-supporter-organisations-with-income-over-500k$",
-									"description": "Income over £500k"
+									"label": "Meet our members",
+									"path": "/about/community/membership/meet-our-members",
+									"route": "^/about/community/membership/meet-our-members$",
+									"description": "Find out more about some of the organisations who are members and supporters of SCVO."
+								},
+								{
+									"label": "Member directory",
+									"path": "/about/community/membership/members",
+									"route": "^/about/community/membership/members",
+									"description": "Search our database of over 2,000 SCVO member organisations."
 								}
 							]
 						},
 						{
-							"label": "Frequently asked questions",
-							"path": "/about/membership/faq",
-							"route": "^/about/membership/faq$",
-							"description": "Take a look at our most frequently asked questions."
-						},
-						{
-							"label": "Join us",
-							"path": "/about/membership/join",
-							"route": "^/about/membership/join$",
-							"description": "Apply for membership now and join our community!"
-						},
-						{
-							"label": "Meet our members",
-							"path": "/about/membership/meet-our-members",
-							"route": "^/about/membership/meet-our-members$",
-							"description": "Find out more about some of the organisations who are members and supporters of SCVO."
-						},
-						{
-							"label": "Member directory",
-							"path": "/about/membership/members",
-							"route": "^/about/membership/members",
-							"description": "Search our database of over 2,000 SCVO member organisations."
+							"label": "Networks",
+							"path": "/about/community/networks",
+							"route": "^/about/community/networks"
 						}
 					]
-				},
-				{
-					"label": "Networks",
-					"path": "/about/networks",
-					"route": "^/about/networks"
 				}
 			]
 		}
@@ -915,8 +935,8 @@
 						},
 						{
 							"label": "Our membership offer",
-							"path": "/policy/about/membership",
-							"route": "^/policy/about/membership$",
+							"path": "/policy/about/community/membership",
+							"route": "^/policy/about/community/membership$",
 							"description": "Find out more about the benefits of SCVO membership.",
 							"icon": "clipboard-check"
 						}

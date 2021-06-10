@@ -1,7 +1,7 @@
 {
   "name": "staff",
   "debug": false,
-  "pattern": "/about/contacts/staff/:id(/:junk)",
+  "pattern": "/about/people/contacts/staff/:id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

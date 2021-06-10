@@ -23,7 +23,7 @@
     {{#each post_tags ~}}
     <li>
       {{#ifAny (compare this "Press release") ~}}
-      <a href="/about/press-media" class="chip">Press release</a>
+      <a href="/about/work/press-releases" class="chip">Press release</a>
       {{else}}
       {{#ifAny (compare this "SCVO") (compare this "SCVO news") (compare this "SCVO Labs") (compare this "SCVO blog") ~}}
       <a href="/about/blog" class="chip">{{{this}}}</a>

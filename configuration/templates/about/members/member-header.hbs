@@ -2,8 +2,9 @@
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
-    <li class="breadcrumb-item"><a href="/about/membership">Membership</a></li>
-    <li class="breadcrumb-item"><a href="/about/membership/members">Our members</a></li>
+    <li class="breadcrumb-item"><a href="/about/community">Our community</a></li>
+    <li class="breadcrumb-item"><a href="/about/community/membership">Membership</a></li>
+    <li class="breadcrumb-item"><a href="/about/community/membership/members">Our members</a></li>
     {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
     <li class="breadcrumb-item">
       {{#if title}}{{{title}}}{{else}}{{Id}}{{/if}}
