@@ -151,19 +151,19 @@
 							"label": "Board",
 							"label_full": "Board of trustees",
 							"path": "/about/people/board-of-trustees",
-							"route": "^/about/people/board-of-trustees",
+							"route": "^/about/people/board-of-trustees$",
 							"description": " "
 						},
 						{
 							"label": "Vacancies",
 							"path": "/about/people/vacancies",
-							"route": "^/about/people/vacancies",
+							"route": "^/about/people/vacancies$",
 							"description": " "
 						},
 						{
 							"label": "Offices",
 							"path": "/about/people/offices",
-							"route": "^/about/people/offices"
+							"route": "^/about/people/offices$"
 						}
 					]
 				},
@@ -175,32 +175,32 @@
 						{
 							"label": "Constitution",
 							"path": "/about/work/constitution",
-							"route": "^/about/work/constitution"
+							"route": "^/about/work/constitution$"
 						},
 						{
 							"label": "Press releases",
 							"path": "/about/work/press-releases",
-							"route": "^/about/work/press-releases"
+							"route": "^/about/work/press-releases$"
 						},
 						{
 							"label": "Annual review",
 							"path": "/about/work/annual-review",
-							"route": "^/about/work/annual-review"
+							"route": "^/about/work/annual-review$"
 						},
 						{
 							"label": "Accounts",
 							"path": "/about/work/accounts",
-							"route": "^/about/work/accounts"
+							"route": "^/about/work/accounts$"
 						},
 						{
 							"label": "Strategy 2019-22",
-							"path": "/about/strategy",
-							"route": "^/about/strategy"
+							"path": "/about/work/strategy",
+							"route": "^/about/work/strategy$"
 						},
 						{
 							"label": "European projects",
-							"path": "/about/european-projects",
-							"route": "^/about/european-projects$",
+							"path": "/about/work/european-projects",
+							"route": "^/about/work/european-projects$",
 							"children": [
 								{
 									"label": "mPower",
