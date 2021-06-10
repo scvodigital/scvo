@@ -9,6 +9,7 @@
 					"label": "Our people",
 					"path": "/about/people",
 					"route": "^/about/people$",
+					"description": " ",
 					"children": [
 						{
 							"label": "Contacts",
@@ -163,7 +164,8 @@
 						{
 							"label": "Offices",
 							"path": "/about/people/offices",
-							"route": "^/about/people/offices$"
+							"route": "^/about/people/offices$",
+							"description": " "
 						}
 					]
 				},
@@ -171,31 +173,37 @@
 					"label": "Our work",
 					"path": "/about/work",
 					"route": "^/about/work$",
+					"description": " ",
 					"children": [
 						{
 							"label": "Constitution",
 							"path": "/about/work/constitution",
-							"route": "^/about/work/constitution$"
+							"route": "^/about/work/constitution$",
+							"description": " "
 						},
 						{
 							"label": "Press releases",
 							"path": "/about/work/press-releases",
-							"route": "^/about/work/press-releases$"
+							"route": "^/about/work/press-releases$",
+							"description": " "
 						},
 						{
 							"label": "Annual review",
 							"path": "/about/work/annual-review",
-							"route": "^/about/work/annual-review$"
+							"route": "^/about/work/annual-review$",
+							"description": " "
 						},
 						{
 							"label": "Accounts",
 							"path": "/about/work/accounts",
-							"route": "^/about/work/accounts$"
+							"route": "^/about/work/accounts$",
+							"description": " "
 						},
 						{
 							"label": "Strategy 2019-22",
 							"path": "/about/work/strategy",
-							"route": "^/about/work/strategy$"
+							"route": "^/about/work/strategy$",
+							"description": " "
 						},
 						{
 							"label": "European projects",
@@ -220,6 +228,7 @@
 							"label": "Membership",
 							"path": "/about/community/membership",
 							"route": "^/about/community/membership$",
+							"description": " ",
 							"children": [
 								{
 									"label": "Membership benefits",
@@ -316,7 +325,8 @@
 						{
 							"label": "Networks",
 							"path": "/about/community/networks",
-							"route": "^/about/community/networks"
+							"route": "^/about/community/networks",
+							"description": " "
 						}
 					]
 				}
