@@ -15,13 +15,13 @@
 							"label": "Contacts",
 							"path": "/about/people/contacts",
 							"route": "^/about/people/contacts$",
-							"description": " ",
+							"description": "Find out more about our staff, teams and how to get in touch.",
 							"children": [
 								{
 									"label": "Teams",
 									"path": "/about/people/contacts/teams",
 									"route": "^/about/people/contacts/teams$",
-									"description": "Details for contacting a specific team",
+									"description": "Details for contacting a specific team.",
 									"icon": "users",
 									"children": [
 										{
@@ -143,7 +143,7 @@
 									"label": "Staff",
 									"path": "/about/people/contacts/staff",
 									"route": "^/about/people/contacts/staff",
-									"description": "Details for contacting a specific member of staff",
+									"description": "Details for contacting a specific member of staff.",
 									"icon": "user"
 								}
 							]
@@ -153,19 +153,19 @@
 							"label_full": "Board of trustees",
 							"path": "/about/people/board-of-trustees",
 							"route": "^/about/people/board-of-trustees$",
-							"description": " "
+							"description": "Meet the trustees who sit on our board."
 						},
 						{
 							"label": "Vacancies",
 							"path": "/about/people/vacancies",
 							"route": "^/about/people/vacancies$",
-							"description": " "
+							"description": "All the latest job vacancies at SCVO."
 						},
 						{
 							"label": "Offices",
 							"path": "/about/people/offices",
 							"route": "^/about/people/offices$",
-							"description": " "
+							"description": "Details of our offices in Edinburgh, Glasgow & Inverness."
 						}
 					]
 				},
@@ -179,31 +179,31 @@
 							"label": "Constitution",
 							"path": "/about/work/constitution",
 							"route": "^/about/work/constitution$",
-							"description": " "
+							"description": "Here you can find our constitution - the governing document of SCVO detailing our purposes, rules & decision making structures."
 						},
 						{
 							"label": "Press releases",
 							"path": "/about/work/press-releases",
 							"route": "^/about/work/press-releases$",
-							"description": " "
+							"description": "All the latest news from SCVO."
 						},
 						{
 							"label": "Annual review",
 							"path": "/about/work/annual-review",
 							"route": "^/about/work/annual-review$",
-							"description": " "
+							"description": "Find out more about what we've been up to over the past 12 months."
 						},
 						{
 							"label": "Accounts",
 							"path": "/about/work/accounts",
 							"route": "^/about/work/accounts$",
-							"description": " "
+							"description": "All the stats and facts from our Annual Report for the past financial year."
 						},
 						{
 							"label": "Strategy 2019-22",
 							"path": "/about/work/strategy",
 							"route": "^/about/work/strategy$",
-							"description": " "
+							"description": "Take a look at our five year strategy which details our mission, values & future plans."
 						},
 						{
 							"label": "European projects",
@@ -228,7 +228,7 @@
 							"label": "Membership",
 							"path": "/about/community/membership",
 							"route": "^/about/community/membership$",
-							"description": " ",
+							"description": "Information on categories, fees & benefits for anyone looking to join SCVO as a member or supporter",
 							"children": [
 								{
 									"label": "Membership benefits",
@@ -318,7 +318,7 @@
 									"label": "Member directory",
 									"path": "/about/community/membership/members",
 									"route": "^/about/community/membership/members",
-									"description": "Search our database of over 2,000 SCVO member organisations."
+									"description": "Search our membership database & find out which organisations are part of our community."
 								}
 							]
 						},
@@ -326,7 +326,7 @@
 							"label": "Networks",
 							"path": "/about/community/networks",
 							"route": "^/about/community/networks",
-							"description": " "
+							"description": "Information on all of SCVO's networks, from policy to comms."
 						}
 					]
 				}
