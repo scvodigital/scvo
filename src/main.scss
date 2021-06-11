@@ -4346,6 +4346,14 @@ figure:not(.wp-block-table),
   h4 {
     font-size: 1.1rem;
   }
+  .textarea-print-helper {
+    width: 100%;
+    padding: .25rem .4rem;
+    border-radius: 6px;
+    border: .05rem solid #a5c0cc;
+    display: block !important;
+  }
+  textarea,
   header,
   .navbar,
   .apply-button,

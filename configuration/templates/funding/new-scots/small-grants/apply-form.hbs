@@ -578,6 +578,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_58-L" class="form-label preField" for="tfa_58">If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes.</label>
               <div class="field-container-D">
                 <textarea aria-required="true" id="tfa_58" name="tfa_58" title="If your financial position has changed significantly since your last set of annual accounts was finalised, please tell us about these changes." class="form-input"{{#if defaults.application_readonly}} readonly{{/if}}>{{defaults.tfa_58}}</textarea>
+                <div id="tfa_58_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -736,6 +737,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_83-L" class="form-label preField reqMark" for="tfa_83">2.5&ensp;Please give us a summary of your proposed project</label>
               <div class="field-container-D" id="tfa_83-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_83" name="tfa_83" title="Please give us a summary of your proposed project" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_83}}</textarea>
+                <div id="tfa_83_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -744,6 +746,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_84-L" class="form-label preField reqMark" for="tfa_84">2.6&ensp;Please describe how refugees have been involved in the development of this idea and how they will participate in the delivery of the project</label>
               <div class="field-container-D" id="tfa_84-D">
                 <textarea aria-required="true" data-maxwords="350" id="tfa_84" name="tfa_84" title="Please describe how refugees have been involved in the development of this idea and how they will participate in the delivery of the project" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_84}}</textarea>
+                <div id="tfa_84_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -752,6 +755,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_85-L" class="form-label preField reqMark" for="tfa_85">2.7&ensp;Please explain how your project will widen the impact of successful integration approaches, practices and tools</label>
               <div class="field-container-D">
                 <textarea aria-required="true" data-maxwords="350" id="tfa_85" name="tfa_85" title="Please explain how your project will widen the impact of successful integration approaches, practices and tools" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_85}}</textarea>
+                <div id="tfa_85_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -760,6 +764,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_86-L" class="form-label preField reqMark" for="tfa_86">2.7&ensp;Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration</label>
               <div class="field-container-D">
                 <textarea aria-required="true" data-maxwords="350" id="tfa_86" name="tfa_86" title="Please explain how your project will support innovation by piloting new approaches, practices and tools that support integration" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_86}}</textarea>
+                <div id="tfa_86_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -876,6 +881,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_194-L" class="form-label preField reqMark" for="tfa_194">Please describe who the partners working on the project are and why you have decided to collaborate</label>
               <div class="field-container-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_194" name="tfa_194" title="Please describe who the partners working on the project are and why you have decided to collaborate" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_194}}</textarea>
+                <div id="tfa_194_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -921,12 +927,14 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-12">
                 <label id="tfa_242-L" class="form-label preField reqMark" for="tfa_242">Activity</label>
                 <textarea aria-required="true" data-maxwords="500" id="tfa_242" name="tfa_242" title="Activity 1" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_242}}</textarea>
+                <div id="tfa_242_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_243-D">
               <div class="col-12">
                 <label id="tfa_243-L" class="form-label preField reqMark" for="tfa_243">Who are the target groups for this activity?</label>
                 <textarea aria-required="true" data-maxwords="150" id="tfa_243" name="tfa_243" title="Target group 1" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_243}}</textarea>
+                <div id="tfa_243_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_244-D">
@@ -948,12 +956,14 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-12">
                 <label id="tfa_253-L" class="form-label preField " for="tfa_253">Activity</label>
                 <textarea data-maxwords="500" id="tfa_253" name="tfa_253" title="Activity 2"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words">{{defaults.tfa_253}}</textarea>
+                <div id="tfa_253_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_254-D">
               <div class="col-12">
                 <label id="tfa_254-L" class="form-label preField " for="tfa_254">Who are the target groups for this activity?</label>
                 <textarea data-maxwords="150" id="tfa_254" name="tfa_254" title="Target group 2" class="form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}}>{{defaults.tfa_254}}</textarea>
+                <div id="tfa_254_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_255-D">
@@ -975,12 +985,14 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-12">
                 <label id="tfa_263-L" class="form-label preField " for="tfa_263">Activity</label>
                 <textarea data-maxwords="500" id="tfa_263" name="tfa_263" title="Activity 3"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words">{{defaults.tfa_263}}</textarea>
+                <div id="tfa_263_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_264-D">
               <div class="col-12">
                 <label id="tfa_264-L" class="form-label preField " for="tfa_264">Who are the target groups for this activity?</label>
                 <textarea data-maxwords="150" id="tfa_264" name="tfa_264" title="Target group 3" class="form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}}>{{defaults.tfa_264}}</textarea>
+                <div id="tfa_264_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_265-D">
@@ -1002,12 +1014,14 @@ wFORMS.behaviors.prefill.skip = false;
               <div class="col-12">
                 <label id="tfa_273-L" class="form-label preField " for="tfa_273">Activity</label>
                 <textarea data-maxwords="500" id="tfa_273" name="tfa_273" title="Activity 4" class="form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}}>{{defaults.tfa_273}}</textarea>
+                <div id="tfa_273_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_274-D">
               <div class="col-12">
                 <label id="tfa_274-L" class="form-label preField " for="tfa_274">Who are the target groups for this activity?</label>
                 <textarea data-maxwords="150" id="tfa_274" name="tfa_274" title="Target group 4" class="form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}}>{{defaults.tfa_274}}</textarea>
+                <div id="tfa_274_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
             <div class="form-group oneField field-container-D" id="tfa_275-D">
@@ -1032,6 +1046,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_201-L" class="form-label preField reqMark" for="tfa_201">2.11&ensp;Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?</label>
               <div class="field-container-D" id="tfa_201-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_201" name="tfa_201" title="Please tell us how you plan to monitor the progress and achievements of your project? What data and information do you plan to collect in order to track progress?" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_201}}</textarea>
+                <div id="tfa_201_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -1040,6 +1055,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_202-L" class="form-label preField reqMark" for="tfa_202">2.12&ensp;Please describe how you know this work is needed</label>
               <div class="field-container-D" id="tfa_202-D">
                 <textarea aria-required="true" data-maxwords="500" id="tfa_202" name="tfa_202" title="Please describe how you know this work is needed" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_202}}</textarea>
+                <div id="tfa_202_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -1048,6 +1064,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_203-L" class="form-label preField reqMark" for="tfa_203">2.13&ensp;Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future</label>
               <div class="field-container-D" id="tfa_203-D">
                 <textarea aria-required="true" data-maxwords="150" id="tfa_203" name="tfa_203" title="Please describe if you have considered how your project would be able to adapt to further COVID-19 restrictions in the future" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_203}}</textarea>
+                <div id="tfa_203_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
@@ -1061,6 +1078,7 @@ wFORMS.behaviors.prefill.skip = false;
               <label id="tfa_206-L" class="form-label preField reqMark" for="tfa_206">2.14&ensp;Please describe the people and communities who will benefit from the project you plan to do</label>
               <div class="field-container-D" id="tfa_206-D">
                 <textarea aria-required="true" data-maxwords="250" id="tfa_206" name="tfa_206" title="Please describe the people and communities who will benefit from the project you plan to do" class="required form-input count-words"{{#if defaults.application_readonly}} readonly{{/if}} required>{{defaults.tfa_206}}</textarea>
+                <div id="tfa_206_print" class="d-none textarea-print-helper"></div>
               </div>
             </div>
           </div>
