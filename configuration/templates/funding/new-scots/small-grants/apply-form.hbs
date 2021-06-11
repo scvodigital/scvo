@@ -1398,7 +1398,16 @@ wFORMS.behaviors.prefill.skip = false;
 
 <script type="text/javascript">
 document.addEventListener("DOMContentLoaded", function() {
+  $("textarea").each(function(){
+    $('#'+this.id).bind('keydown keyup keypress cut copy past blur change', function(){
+      copy_to_print_helper(this.id);
+    });
+    copy_to_print_helper(this.id);
+  });
 });
+function copy_to_print_helper(id){
+  $('#'+id+'_print').text($('#'+id).val());
+}
 function isNumberKey(evt){
   var charCode = (evt.which) ? evt.which : evt.keyCode
   return !(charCode > 31 && (charCode < 48 || charCode > 57));
