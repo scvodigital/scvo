@@ -992,7 +992,7 @@
                         <div class="oneField field-container-D" id="tfa_2754-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2754" name="tfa_2754" value="{{defaults.tfa_2754}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountA form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2754" name="tfa_2754" value="{{#if application_editing}}{{defaults.tfa_2754}}{{else}}{{default defaults.tfa_2754 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountA form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1007,7 +1007,7 @@
                         <div class="oneField field-container-D" id="tfa_2757-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2757" name="tfa_2757" value="{{defaults.tfa_2757}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2757" name="tfa_2757" value="{{#if application_editing}}{{defaults.tfa_2757}}{{else}}{{default defaults.tfa_2757 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1022,7 +1022,7 @@
                         <div class="oneField field-container-D" id="tfa_2760-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2760" name="tfa_2760" value="{{defaults.tfa_2760}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2760" name="tfa_2760" value="{{#if application_editing}}{{defaults.tfa_2760}}{{else}}{{default defaults.tfa_2760 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1037,7 +1037,7 @@
                         <div class="oneField field-container-D" id="tfa_2763-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2763" name="tfa_2763" value="{{defaults.tfa_2763}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2763" name="tfa_2763" value="{{#if application_editing}}{{defaults.tfa_2763}}{{else}}{{default defaults.tfa_2763 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1052,7 +1052,7 @@
                         <div class="oneField field-container-D" id="tfa_2766-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2766" name="tfa_2766" value="{{defaults.tfa_2766}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2766" name="tfa_2766" value="{{#if application_editing}}{{defaults.tfa_2766}}{{else}}{{default defaults.tfa_2766 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-CRFBudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1086,7 +1086,7 @@
                 <div class="form-group field-container-D" id="tfa_2769-D">
                   <div class="input-group" style="width:100%;">
                     <span class="input-group-addon">&pound;</span>
-                    <input type="number" pattern="[0-9]*" onblur="checkFundingAmountCRF()" onkeypress="return isNumberKey(event);" min="1" max="10000000" id="tfa_2769" name="tfa_2769" value="{{defaults.tfa_2769}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <input type="number" pattern="[0-9]*" onblur="checkFundingAmountCRF()" onkeypress="return isNumberKey(event);" min="1" max="10000000" id="tfa_2769" name="tfa_2769" value="{{#if application_editing}}{{defaults.tfa_2769}}{{else}}{{default defaults.tfa_2769 0}}{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                   </div>
                 </div>
               </div>

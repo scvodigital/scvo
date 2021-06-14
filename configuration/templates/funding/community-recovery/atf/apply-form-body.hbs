@@ -890,7 +890,7 @@
                           <div class="oneField field-container-D" id="tfa_2559-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2559" name="tfa_2559" value="{{defaults.tfa_2559}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2559" name="tfa_2559" value="{{#if application_editing}}{{defaults.tfa_2559}}{{else}}{{default defaults.tfa_2559 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -898,7 +898,7 @@
                           <div class="oneField field-container-D" id="tfa_2560-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2560" name="tfa_2560" value="{{defaults.tfa_2560}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2560" name="tfa_2560" value="{{#if application_editing}}{{defaults.tfa_2560}}{{else}}{{default defaults.tfa_2560 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -918,7 +918,7 @@
                   <div class="form-group field-container-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2561" name="tfa_2561" value="{{defaults.tfa_2561}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2561" name="tfa_2561" value="{{#if application_editing}}{{defaults.tfa_2561}}{{else}}{{default defaults.tfa_2561 0}}{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                     <p class="form-input-hint text-secondary">
                       This should include all bank accounts you have including any subsidiary and associated companies where applicable
@@ -937,7 +937,7 @@
                   <div class="form-group field-container-D" id="tfa_2562-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" max="100000000" id="tfa_2562" name="tfa_2562" value="{{defaults.tfa_2562}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2562" name="tfa_2562" value="{{#if application_editing}}{{defaults.tfa_2562}}{{else}}{{default defaults.tfa_2562 0}}{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </div>
@@ -953,7 +953,7 @@
                   <div class="form-group field-container-D">
                     <div class="input-group" style="width:100%;">
                       <span class="input-group-addon">&pound;</span>
-                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2563" name="tfa_2563" value="{{defaults.tfa_2563}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                      <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2563" name="tfa_2563" value="{{#if application_editing}}{{defaults.tfa_2563}}{{else}}{{default defaults.tfa_2563 0}}{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                     </div>
                   </div>
                 </div>
@@ -1242,7 +1242,7 @@
               <div class="form-group field-container-D" id="tfa_2788-D">
                 <div class="input-group" style="width:100%;">
                   <span class="input-group-addon">&pound;</span>
-                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="5000" max="10000000" id="tfa_2788" name="tfa_2788" value="{{defaults.tfa_2788}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                  <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="5000" max="10000000" id="tfa_2788" name="tfa_2788" value="{{#if application_editing}}{{defaults.tfa_2788}}{{else}}{{default defaults.tfa_2788 0}}{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                 </div>
               </div>
             </div>
@@ -1277,7 +1277,7 @@
                         <div class="oneField field-container-D" id="tfa_2638-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{defaults.tfa_2638}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountA form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2638" name="tfa_2638" value="{{#if application_editing}}{{defaults.tfa_2638}}{{else}}{{default defaults.tfa_2638 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountA form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1292,7 +1292,7 @@
                         <div class="oneField field-container-D" id="tfa_2640-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{defaults.tfa_2640}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2640" name="tfa_2640" value="{{#if application_editing}}{{defaults.tfa_2640}}{{else}}{{default defaults.tfa_2640 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountB form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1307,7 +1307,7 @@
                         <div class="oneField field-container-D" id="tfa_2636-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{defaults.tfa_2636}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2636" name="tfa_2636" value="{{#if application_editing}}{{defaults.tfa_2636}}{{else}}{{default defaults.tfa_2636 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountC form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1322,7 +1322,7 @@
                         <div class="oneField field-container-D" id="tfa_2154-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{defaults.tfa_2154}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2154" name="tfa_2154" value="{{#if application_editing}}{{defaults.tfa_2154}}{{else}}{{default defaults.tfa_2154 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountD form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1337,7 +1337,7 @@
                         <div class="oneField field-container-D" id="tfa_2634-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{defaults.tfa_2634}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2634" name="tfa_2634" value="{{#if application_editing}}{{defaults.tfa_2634}}{{else}}{{default defaults.tfa_2634 0}}{{/if}}" autocomplete="nope" data-lpignore="true" class="calc-ATFBudgetAmountE form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1372,7 +1372,7 @@
               <div class="form-group field-container-D" id="tfa_2568-D">
                 <div class="input-group" style="width:100%;">
                   <span class="input-group-addon">&pound;</span>
-                  <input type="number" pattern="[0-9]*" onblur="checkFundingAmountATF()" onkeypress="return isNumberKey(event);" min="5000" max="10000000" id="tfa_2568" name="tfa_2568" value="{{defaults.tfa_2568}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                  <input type="number" pattern="[0-9]*" onblur="checkFundingAmountATF()" onkeypress="return isNumberKey(event);" min="5000" max="10000000" id="tfa_2568" name="tfa_2568" value="{{#if application_editing}}{{defaults.tfa_2568}}{{else}}{{default defaults.tfa_2568 0}}{{/if}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                 </div>
               </div>
             </div>
@@ -1413,7 +1413,7 @@
                         <div class="oneField field-container-D" id="tfa_2575-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2575" name="tfa_2575" value="{{defaults.tfa_2575}}" autocomplete="nope" data-lpignore="true" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2575" name="tfa_2575" value="{{#if application_editing}}{{defaults.tfa_2575}}{{else}}{{default defaults.tfa_2575 0}}{{/if}}" autocomplete="nope" data-lpignore="true" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1442,7 +1442,7 @@
                         <div class="oneField field-container-D" id="tfa_2659-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2659" name="tfa_2659" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2659}}" min="0" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2659" name="tfa_2659" autocomplete="nope" data-lpignore="true" value="{{#if application_editing}}{{defaults.tfa_2659}}{{else}}{{default defaults.tfa_2659 0}}{{/if}}" min="0" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1471,7 +1471,7 @@
                         <div class="oneField field-container-D" id="tfa_2666-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2666" name="tfa_2666" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2666}}" min="0" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2666" name="tfa_2666" autocomplete="nope" data-lpignore="true" value="{{#if application_editing}}{{defaults.tfa_2666}}{{else}}{{default defaults.tfa_2666 0}}{{/if}}" min="0" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1500,7 +1500,7 @@
                         <div class="oneField field-container-D" id="tfa_2673-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2673" name="tfa_2673" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2673}}" min="0" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2673" name="tfa_2673" autocomplete="nope" data-lpignore="true" value="{{#if application_editing}}{{defaults.tfa_2673}}{{else}}{{default defaults.tfa_2673 0}}{{/if}}" min="0" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
@@ -1529,7 +1529,7 @@
                         <div class="oneField field-container-D" id="tfa_2680-D">
                           <div class="input-group" style="width:100%;">
                             <span class="input-group-addon">&pound;</span>
-                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2680" name="tfa_2680" autocomplete="nope" data-lpignore="true" value="{{defaults.tfa_2680}}" min="0" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2680" name="tfa_2680" autocomplete="nope" data-lpignore="true" value="{{#if application_editing}}{{defaults.tfa_2680}}{{else}}{{default defaults.tfa_2680 0}}{{/if}}" min="0" title="Funding requested" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                           </div>
                         </div>
                       </td>
