@@ -35,7 +35,20 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
-gtag('config', 'UA-3467930-2', { 'send_page_view': true, 'anonymize_ip': true });
+gtag('config', 'UA-3467930-2', {
+	'send_page_view': true,
+	'anonymize_ip': true,
+	dimension1:
+		{{~#if (contains @root.request.headers.scvo-roles "non_member")~}}
+			'non_member'
+		{{~else~}}
+			{{~#if (contains @root.request.headers.scvo-roles "member")~}}
+				'member'
+			{{~else~}}
+				'anonymous'
+			{{~/if~}}
+		{{~/if~}}
+});
 
 {{#each @root.route.primaryResponse.hits.hits ~}}
 gtag('event', 'document_hit', {
