@@ -1,0 +1,27 @@
+{
+  "defaults": {
+    {{#ifAny @root.request.params.charity_number @root.data.application_data.request.data.data_object.get_grant ~}}
+    {{#withExtend this application=@root.data.application_data.request.data.data_object.get_grant oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
+    "application_editing": {{#if (contains application.Call__c "Uplift")}}true{{else}}false{{/if}},
+    "application_editing_instructions": {{#if application.Business_Advisor_Email_Text__c}}{{{json value=(default application.Business_Advisor_Email_Text__c "")}}},{{else}}{{#if application.Email_Text_CRF_Applicant_Update__c}}{{{json value=(default application.Email_Text_CRF_Applicant_Update__c "")}}},{{else}}{{{json value=""}}},{{/if}}{{/if}}
+    "application_confirm": {{#if (contains @root.route.name "coronavirus_recovery_confirm")}}true{{else}}false{{/if}},
+    "application_readonly": {{#if (contains @root.route.name "coronavirus_recovery_view")}}true{{else}}false{{/if}},
+    "application_fund": {{{json value=(default application.Fund_Name__c "")}}},
+    "application_call": {{{json value=(default application.Call__c "")}}},
+    "application_status": {{{json value=(default application.Status__c "")}}},
+    "application_attachments": {{{json value=(default application.ContentDocumentLinks.records "")}}},
+    "is_charity": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}},
+    "tfa_2791": {{{json value=(default application.Account__r.Id "")}}},
+    "tfa_2793": {{{json value=(default application.Contact__r.Id "")}}},
+    "tfa_2794": {{{json value=(default application.Second_Contact__r.Id "")}}},
+    "tfa_2792": {{{json value=(default application.Id "")}}},
+    "tfa_2795": {{{json value=(default application.OwnerId "")}}},
+    "tfa_1876": {{{json value=(default (default application.Account__r.Name oscr.charity_name) "")}}},
+    "tfa_1941": {{{json value=(default (default application.Account__r.Scottish_Charity_Number__c oscr.charity_number) "")}}},
+    "tfa_2324": {{{json value=(default application.Account__r.Company_Number__c "")}}},
+    "tfa_1944": {{{json value=(default (default application.Account__r.Constitutional_form__c oscr.constitutional_form) "")}}},
+    "tfa_1946": {{{json value=(default (default application.Account__r.Charity_status__c oscr.charity_status) "")}}}
+    {{/withExtend}}
+    {{/ifAny}}
+  }
+}
