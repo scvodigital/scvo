@@ -2,8 +2,8 @@
   <div class="full scvo-cms scvo-cms-page scvo-cms-page-42775">
     {{{replace (replace (replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
 
-    {{> content_fees_table type="members"}}
-    {{> content_fees_table type="supporters"}}
+    {{> content_fees_table type="members" hide_description=true}}
+    {{> content_fees_table type="supporters" hide_description=true}}
   </div>
 {{/if ~}}
 {{> page_feedback}}

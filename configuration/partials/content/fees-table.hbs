@@ -1,11 +1,13 @@
 {{#each @root.context.metaData.membershipCategories}}
   {{#compare type ../type}}
-    {{#if ../accordion}}
-      <h3>{{title}}</h3>
-    {{/if}}
+    {{#ifAny ../accordion ../hide_description}}
+      <h4>{{title}}</h4>
+    {{/ifAny}}
+    {{#unless ../hide_description}}
     <p>
       {{description}}
     </p>
+    {{/unless}}
 
     <div class="categories-table{{#if ../accordion}} categories-table-accordion{{/if}} mb-1">
       <table border="0" cellspacing="0" cellpadding="0" class="table{{#unless ../accordion}} table-hover{{/unless}}">
