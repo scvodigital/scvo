@@ -1698,18 +1698,23 @@ ul.list-lg {
 }
 .wp-block-table.table {
   margin: 0;
+  width: 100%;
   table {
-    tr:first-child td {
-      font-weight: bold;
+    width: 100%;
+    tr:nth-child(even) {
+      background-color: white;
+    }
+    tr:nth-child(odd) {
+      background-color: $light-color;
+    }
+    tr:first-child {
+      background-color: transparent;
+      td {
+        font-weight: bold;
+      }
     }
     tr td:first-child {
       white-space: inherit;
-    }
-    tr:nth-child(even) {
-      background-color: $light-color;
-    }
-    tr:nth-child(odd) {
-      background-color: white;
     }
   }
 }
