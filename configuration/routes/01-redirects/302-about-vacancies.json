@@ -1,6 +1,9 @@
 {
   "name": "redirect_about-vacancies",
-  "pattern": "/about/work-with-us(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "old1": "/about/work-with-us(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "old2": "/about/people/work-with-us(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
