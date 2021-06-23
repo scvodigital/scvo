@@ -1681,33 +1681,6 @@
 					"label": "Digital",
 					"path": "/support/digital",
 					"route": "^/support/digital$",
-					"old_children": [
-						{
-							"label": "Participation",
-							"label_full": "People:<br />Digital Participation",
-							"path": "/support/digital/participation",
-							"route": "^/support/digital/participation$",
-							"description": "How to deliver digital inclusion projects. Includes Connecting Scotland, Digital Participation Charter, Essential Digital Skills and Digital Champions.",
-							"icon": "hand-paper",
-							"children": [
-								{
-									"label": "Digital Champions",
-									"label_full": "Become a Digital Champion",
-									"path": "/support/digital/participation/champions",
-									"route": "^/support/digital/participation/champions$",
-									"description": "We’ve created hundreds of Digital Champions across Scotland who are making a real difference by supporting people to develop essential digital skills.",
-									"icon": "user-ninja"
-								},
-								{
-									"label": "Why digital matters",
-									"path": "/support/digital/participation/why-digital-matters",
-									"route": "^/support/digital/participation/why-digital-matters$",
-									"description": "One in five people lack essential digital skills. Find out why that matters to be a part of modern society.",
-									"icon": "question-circle"
-								}
-							]
-						}
-					],
 					"children": [
 						{
 							"label": "Events & training",
@@ -2151,6 +2124,11 @@
 							"route": "^/support/digital/digihelp$",
 							"description": "Get free 1-1 help from our digital team",
 							"icon": "user-headset"
+						},
+						{
+							"label": "Bulletin",
+							"path": "/support/digital/bulletin",
+							"route": "^/support/digital/bulletin$"
 						}
 					]
 				},

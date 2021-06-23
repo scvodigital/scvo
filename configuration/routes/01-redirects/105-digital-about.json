@@ -1,0 +1,23 @@
+{
+  "name": "redirect_digital_about",
+  "pattern": "/support/digital/about(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/support/digital/bulletin"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
