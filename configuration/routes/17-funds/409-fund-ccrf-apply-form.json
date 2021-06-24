@@ -1,0 +1,131 @@
+{
+  "name": "fund_ccrf_apply_form",
+  "debug": false,
+  "pattern": "/funding/community-capacity-resilience-fund/apply/:charity_number",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "oscr_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "oscr-charity",
+          "template": ">context.metaData.handlebars.queries.utilities_search-oscr-lookup"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "check_charity",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "==": [
+                  { "var": "data.oscr_data.hits.total" },
+                  0
+                ]
+              },
+              {
+                "!=": [
+                  { "var": "request.params.charity_number" },
+                  "not-a-charity"
+                ]
+              }
+            ]
+          },
+          "fund_ccrf_apply",
+          false
+        ]
+      }
+    },
+    {
+      "name": "milo_data",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": {
+          "index": "{$../../data/elasticsearch-index.txt}",
+          "type": "milo-organisation",
+          "template": ">context.metaData.handlebars.queries.utilities_search-org-lookup"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "supplimentaryResponses",
+      "taskModule": "elasticsearch",
+      "config": {
+        "connectionStringTemplate": "{$../../data/elasticsearch-legacy-url.txt}",
+        "elasticsearchConfig": {
+          "apiVersion": "5.6"
+        },
+        "queryTemplates": [
+          {
+            "name": "postcode_data",
+            "index": "geo_lookup",
+            "type": "postcode",
+            "template": ">context.metaData.handlebars.queries.pages_oscr-postcode"
+          }
+        ]
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "postcode_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.utilities_search-postcode-lookup",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "form_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.funding_ccrf_2021_apply-form-data",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.funding_ccrf_2021_apply-form-head",
+              "header": ">context.metaData.handlebars.templates.funding_ccrf_2021_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_ccrf_2021_apply-form-body",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
