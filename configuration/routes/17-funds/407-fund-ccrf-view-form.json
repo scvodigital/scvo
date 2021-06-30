@@ -1,6 +1,6 @@
 {
   "name": "fund_ccrf_view_form",
-  "debug": true,
+  "debug": false,
   "pattern": "/funding/community-capacity-resilience-fund/apply/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
@@ -20,16 +20,7 @@
       "config": {
         "if": [
           {
-            "and": [
-              {
-                "!=": [
-                  {
-                    "var": "data.application_data.request.data.data_object.get_grant.totalSize"
-                  },
-                  1
-                ]
-              }
-            ]
+            "and": [ { "==": [ { "var": "data.application_data.request.grant_data" }, null ] } ]
           },
           "fund_ccrf_apply_missing",
           false
@@ -43,14 +34,7 @@
         "if": [
           {
             "or": [
-              {
-                "==": [
-                  {
-                    "var": "data.application_data.request.data.data_object.get_grant.records.0.Call__c"
-                  },
-                  "PLACEHOLDER - IGNORE UNLESS MULTIPLE CONCURRENT CALLS"
-                ]
-              }
+              { "==": [ { "var": "data.application_data.request.grant_data.Call__c" }, "PLACEHOLDER - IGNORE UNLESS MULTIPLE CONCURRENT CALLS" ] }
             ]
           },
           "fund_ccrf_apply_unauthorised",

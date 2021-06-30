@@ -235,7 +235,7 @@
                         </option>
                         {{#each local_authorities ~}}
                         {{#if id_single ~}}
-                        <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_2398 "Across one local authority area"}} selected{{/compare}}>
+                        <option value="{{id_single}}" id="{{id_single}}"{{#compare ../defaults.tfa_1884 name}} selected{{/compare}}>
                           {{name}}
                         </option>
                         {{/if ~}}
@@ -245,19 +245,19 @@
 
                     <div class="form-group">
                       <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2401-L" for="tfa_2401">
-                        <input type="radio" value="tfa_2401" id="tfa_2401" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2401-L" data-tfa-labelledby="tfa_2398-L tfa_2401-L" data-conditionals="#tfa_2084"{{#compare defaults.tfa_2398 "Across several Local Authority areas"}} checked{{/compare}} required>
+                        <input type="radio" value="tfa_2401" id="tfa_2401" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2401-L" data-tfa-labelledby="tfa_2398-L tfa_2401-L" data-conditionals="#tfa_2471"{{#compare defaults.tfa_2398 "Across several Local Authority areas"}} checked{{/compare}} required>
                         <i class="form-icon"></i>
                         Across several local authority areas
                       </label>
                     </div>
-                    <div class="form-label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2084-D" role="group" aria-labelledby="tfa_2084-L" data-tfa-labelledby="tfa_2084-L">
+                    <div class="form-label h-padding t-padding oneField field-container-D b-margin-full" id="tfa_2471-D" role="group" aria-labelledby="tfa_2471-L" data-tfa-labelledby="tfa_2471-L">
                       <p class="b-padding">Please tick all that apply:</p>
-                      <span id="tfa_2084" class="choices vertical columns" data-condition="`#tfa_2401`">
+                      <span id="tfa_2471" class="choices vertical columns" data-condition="`#tfa_2401`">
                         {{#each local_authorities ~}}
                         {{#if id_multiple ~}}
                         <span class="form-group column col-6 col-md-12">
                           <label class="form-checkbox{{#if ../defaults.application_readonly}} option-readonly{{/if}}" id="{{id_multiple}}-L" for="{{id_multiple}}">
-                            <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2084-L {{id_multiple}}-L"{{#if (contains (slugify (replace ../defaults.tfa_2084 ' and ' ' ')) (slugify name))}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
+                            <input type="checkbox" value="{{id_multiple}}" id="{{id_multiple}}" name="{{id_multiple}}" aria-labelledby="{{id_multiple}}-L" data-tfa-labelledby="tfa_2471-L {{id_multiple}}-L"{{#if (contains (slugify (default (replace ../defaults.tfa_2471 ' and ' ' ') "no-name")) (slugify (default name "no-name")))}} checked{{/if}} {{#if defaults.application_readonly}}readonly{{/if}}>
                             <i class="form-icon"></i> {{name}}
                           </label>
                         </span>
@@ -369,7 +369,7 @@
                 <div class="form-group field-container-D">
                   <div class="input-group" style="width:100%;">
                     <span class="input-group-addon">&pound;</span>
-                    <input type="number" id="tfa_2889" name="tfa_2889" min="0" max="200000"  value="{{defaults.tfa_2889}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input validate-integer required" required{{/if}}>
+                    <input type="number" id="tfa_2889" name="tfa_2889" min="0" max="200000"  value="{{defaults.tfa_2889}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input validate-integer text-right required" required{{/if}}>
                   </div>
                   <p class="form-input-hint text-secondary">Must not be greater than £200k.</p>
                 </div>
@@ -699,8 +699,8 @@
                             </div>
                           </div>
                         </td>
-                      {{!-- </tr>
-                      <tr class="section">
+                      </tr>
+                      {{!--<tr class="section">
                         <td>
                           <div class="oneField field-container-D text-center" id="tfa_2832-D" style="width:100%;">
                             <input type="text" style="width:100%;" maxlength="255" id="tfa_2832" name="tfa_2832" value="{{defaults.tfa_2832}}" autocomplete="nope" data-lpignore="true" class="form-input" {{#if defaults.application_readonly}}readonly{{/if}}>
@@ -744,7 +744,7 @@
                             </div>
                           </div>
                         </td>
-                      </tr> --}}
+                      </tr>--}}
                     </tbody>
                   </table>
                 </div>
