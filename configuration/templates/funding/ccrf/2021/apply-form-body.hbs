@@ -268,7 +268,7 @@
 
                     <div class="form-group">
                       <label class="form-radio{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_2920-L" for="tfa_2920">
-                        <input type="radio" value="tfa_2920" id="tfa_2920" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2920-L" data-tfa-labelledby="tfa_2398-L tfa_2920-L" data-conditionals="#tfa_2920"{{#compare defaults.tfa_2398 "Nationally (Scotland)"}} checked{{/compare}} required>
+                        <input type="radio" value="tfa_2920" id="tfa_2920" name="tfa_2398" aria-required="true" aria-labelledby="tfa_2920-L" data-tfa-labelledby="tfa_2398-L tfa_2920-L" {{#compare defaults.tfa_2398 "Nationally (Scotland)"}} checked{{/compare}} required>
                         <i class="form-icon"></i>
                         Nationally (Scotland)
                       </label>
@@ -965,7 +965,7 @@
         <input type="hidden" value="4914812" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="54e109939428f17b839579e7cbc75c58" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="10" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="14" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         {{/unless}}
       </form>
