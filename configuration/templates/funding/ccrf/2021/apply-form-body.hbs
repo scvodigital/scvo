@@ -1,3 +1,8 @@
+{{!--
+  TODO: Validation tests for item descriptions without a cost and costs without item descriptions
+--}}
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {{#withExtend this
   local_authorities=@root.data.form_data.local_authorities
@@ -989,220 +994,226 @@ document.addEventListener("DOMContentLoaded", function() {
   $organisationTypeOther = $('#org_type_other'),
   $organisationTypeOtherBlock = $('#org_type_other-D');
 
-  $organisationTypeOther.blur(function(e) {
-    var organisation_type_other = $organisationTypeOther.val();
-    if (organisation_type_other) {
-      $organisationType.append('<option value="'+organisation_type_other+'">'+organisation_type_other+'</option>');
-      $organisationType.val(organisation_type_other);
-      $organisationTypeOtherBlock.addClass('offstate');
-    }
-  });
+  {{#if defaults.application_readonly}}
+    $form.find('input, select, textarea, button, submit')
+      .prop('readonly', true)
+      .css('pointer-events', 'none');
+  {{else}}
+    $form.on('change', formUpdated);
+    formUpdated();
 
-  function checkPostcode() {
-    var postcode = $('#tfa_1925').val().toUpperCase();
-    if (postcode.match(/[a-z]{1,2}[0-9]{1,2}[a-z]?\s?[0-9][a-z]{2}/ig)) {
-      $postcodeIcon
-        .addClass("loading text-primary")
-        .removeClass("fa-times fa-check text-error text-success");
+    $organisationTypeOther.blur(function(e) {
+      var organisation_type_other = $organisationTypeOther.val();
+      if (organisation_type_other) {
+        $organisationType.append('<option value="'+organisation_type_other+'">'+organisation_type_other+'</option>');
+        $organisationType.val(organisation_type_other);
+        $organisationTypeOtherBlock.addClass('offstate');
+      }
+    });
 
-      $.ajax({
-        url: '/postcode-lookup?q=' + postcode,
-        success: function(data) {
-          if (Array.isArray(data) && data.length > 0) {
-            setLocationData(data);
-          } else {
-            clearLocationData();
+    function checkPostcode() {
+      var postcode = $('#tfa_1925').val().toUpperCase();
+      if (postcode.match(/[a-z]{1,2}[0-9]{1,2}[a-z]?\s?[0-9][a-z]{2}/ig)) {
+        $postcodeIcon
+          .addClass("loading text-primary")
+          .removeClass("fa-times fa-check text-error text-success");
+
+        $.ajax({
+          url: '/postcode-lookup?q=' + postcode,
+          success: function(data) {
+            if (Array.isArray(data) && data.length > 0) {
+              setLocationData(data);
+            } else {
+              clearLocationData();
+            }
           }
-        }
-      });
-    } else {
-      clearLocationData();
-    }
-  }
-
-  function setLocationData(data) {
-    console.log(data);
-    $('#tfa_1925').val(data[0].place);
-    $('#tfa_1936').val(data[0].constituency);
-    $('#tfa_1934').val(data[0].ward);
-    $('#tfa_1953').val(data[0].simd_datazone);
-    $('#tfa_1955').val(data[0].simd_rank);
-    $('#postcode_validation_message').html('');
-    $('#postcode-wrapper').removeClass("has-error")
-    $('#postcode_validation_icon')
-      .addClass("fa-check text-success")
-      .removeClass("loading fa-times text-primary text-error");
-  }
-
-  function clearLocationData() {
-    $postcodeWrapper.addClass('has-error');
-    $postcodeValidationMessage.html('');
-    $postcodeIcon
-      .addClass("fa-times text-error")
-      .removeClass("loading fa-check text-primary text-success");
-    $('#tfa_1936').val('');
-    $('#tfa_1934').val('');
-    $('#tfa_1953').val('');
-    $('#tfa_1955').val('');
-  }
-
-  $postcode.on('keyup', checkPostcode);
-
-  $('input[type="number"]').on('keypress', function(event) {
-    return (
-      (event.which < 32) ||
-      !(event.key.match(/[^0-9]/ig))
-    );
-  });
-
-  $form.on('change', formUpdated);
-
-  function formUpdated(event) {
-    if (Array.isArray(window.formsRecovering) && window.formsRecovering.length > 0) return;
-    clearAreas();
-    checkDateValidity();
-    checkTotalsValidity();
-    checkAreasCoveredValidity();
-    checkTargetGroupsValidity();
-    checkWordCountLimits();
-  }
-  formUpdated();
-
-  function clearAreas() {
-    if (!$('#tfa_2400').is(':checked')) {
-      $('#tfa_1884').val('');
+        });
+      } else {
+        clearLocationData();
+      }
     }
 
-    if (!$('#tfa_2401').is(':checked')) {
-      $('#tfa_2471 input[type=checkbox]').prop('checked', false);
-    }
-  }
-
-  function checkDateValidity() {
-    var $startDate = $('#tfa_2817');
-    var $endDate = $('#tfa_2818');
-
-    var startDateVal = $startDate.val();
-    var endDateVal = $endDate.val();
-
-    if (!startDateVal || !endDateVal) {
-      $startDate[0].setCustomValidity('');
-      $endDate[0].setCustomValidity('');
-      return;
+    function setLocationData(data) {
+      console.log(data);
+      $('#tfa_1925').val(data[0].place);
+      $('#tfa_1936').val(data[0].constituency);
+      $('#tfa_1934').val(data[0].ward);
+      $('#tfa_1953').val(data[0].simd_datazone);
+      $('#tfa_1955').val(data[0].simd_rank);
+      $('#postcode_validation_message').html('');
+      $('#postcode-wrapper').removeClass("has-error")
+      $('#postcode_validation_icon')
+        .addClass("fa-check text-success")
+        .removeClass("loading fa-times text-primary text-error");
     }
 
-    var startDate = parseDate(startDateVal);
-    var endDate = parseDate(endDateVal);
+    function clearLocationData() {
+      $postcodeWrapper.addClass('has-error');
+      $postcodeValidationMessage.html('');
+      $postcodeIcon
+        .addClass("fa-times text-error")
+        .removeClass("loading fa-check text-primary text-success");
+      $('#tfa_1936').val('');
+      $('#tfa_1934').val('');
+      $('#tfa_1953').val('');
+      $('#tfa_1955').val('');
+    }
 
-    if (startDate < endDate) {
-      $startDate[0].setCustomValidity('');
-      $endDate[0].setCustomValidity('');
-      return;
-    };
+    $postcode.on('keyup', checkPostcode);
 
-    $endDate[0].setCustomValidity('The end date must be before the start date');
-    $endDate[0].reportValidity();
-  }
-
-  function checkTotalsValidity() {
-    var $item1 = $('#tfa_2828');
-    var $item2 = $('#tfa_2835');
-    var $item3 = $('#tfa_2836');
-    var $total = $('#tfa_2825');
-
-    var item1 = parseInt($item1.val() || 0, 10);
-    var item2 = parseInt($item2.val() || 0, 10);
-    var item3 = parseInt($item3.val() || 0, 10);
-    var total = parseInt($total.val() || 0, 10);
-
-    var customValidity = (
-      item1 + item2 + item3 > total ?
-        'The total of your main items of expenditure should be less than your requested total amount (' +
-        total.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) +
-        ')' :
-        ''
-    );
-
-    $item1[0].setCustomValidity(customValidity);
-    $item2[0].setCustomValidity(customValidity);
-    $item3[0].setCustomValidity(customValidity);
-    $total[0].setCustomValidity(customValidity);
-  }
-
-  function checkAreasCoveredValidity() {
-    var $single = $('#tfa_2400');
-    var $multiple = $('#tfa_2401');
-    var selectedAreas = $('#tfa_2471 input[type="checkbox"]:checked').length;
-    var $singleSelect = $('#tfa_1884');
-
-    $multiple[0].setCustomValidity((
-      $multiple.is(':checked') && selectedAreas < 2 ?
-        'You must select more than one local authority area' :
-        ''
-    ));
-
-    $singleSelect.prop('required', $single.is(':checked'));
-  }
-
-  function checkTargetGroupsValidity() {
-    $('#tfa_2875 input[type=checkbox]')[0].setCustomValidity(
-      $('#tfa_2875 input[type=checkbox]:checked').length === 0 ?
-        'You must select at least one target group' :
-        ''
-    )
-  }
-
-  function checkWordCountLimits() {
-    $('[data-maxwords]').each(function(i, o) {
-      var $input = $(o);
-      var maxWords = parseInt($input.data('maxwords'), 10) || 0;
-      var value = $input.val() || '';
-      var wordCount = (value.match(/\b\S+\b/ig) || []).length;
-
-      $input[0].setCustomValidity(
-        maxWords > 0 && wordCount > maxWords ?
-        'You have entered ' + (wordCount - maxWords) + ' too many words' :
-        ''
+    $('input[type="number"]').on('keypress', function(event) {
+      return (
+        (event.which < 32) ||
+        !(event.key.match(/[^0-9]/ig))
       );
     });
-  }
 
-  function parseDate(dateVal) {
-    try {
-      if (!dateVal) return null;
-      var parts = dateVal.split('/');
-      if (parts.length !== 3) return null;
-      var date = new Date(
-        parseInt(parts[2], 10),
-        parseInt(parts[1], 10) - 1,
-        parseInt(parts[0], 10)
-      );
-      return date;
-    } catch (err) {
-      return null;
+    function formUpdated(event) {
+      if (Array.isArray(window.formsRecovering) && window.formsRecovering.length > 0) return;
+      clearAreas();
+      checkDateValidity();
+      checkTotalsValidity();
+      checkAreasCoveredValidity();
+      checkTargetGroupsValidity();
+      checkWordCountLimits();
     }
-  }
 
-  $('textarea').on('paste', function(e) {
-    e.preventDefault();
-    var text = '';
-
-    if (e.clipboardData || e.originalEvent.clipboardData) {
-      var clipboardData = (e.originalEvent || e).clipboardData;
-      text = clipboardData.getData('text/plain');
-      if ((clipboardData.types || []).length > 1) {
-        alert('It looks like you have pasted text that may contain additional formatting from external software such as MS Word or a website. This formatting will be stripped from the text area. Please check the pasted result');
+    function clearAreas() {
+      if (!$('#tfa_2400').is(':checked')) {
+        $('#tfa_1884').val('');
       }
-    } else if (window.clipboardData) {
-      text = window.clipboardData.getData('Text');
+
+      if (!$('#tfa_2401').is(':checked')) {
+        $('#tfa_2471 input[type=checkbox]').prop('checked', false);
+      }
     }
 
-    if (document.queryCommandSupported('insertText')) {
-      document.execCommand('insertText', false, text);
-    } else {
-      document.execCommand('paste', false, text);
+    function checkDateValidity() {
+      var $startDate = $('#tfa_2817');
+      var $endDate = $('#tfa_2818');
+
+      var startDateVal = $startDate.val();
+      var endDateVal = $endDate.val();
+
+      if (!startDateVal || !endDateVal) {
+        $startDate[0].setCustomValidity('');
+        $endDate[0].setCustomValidity('');
+        return;
+      }
+
+      var startDate = parseDate(startDateVal);
+      var endDate = parseDate(endDateVal);
+
+      if (startDate < endDate) {
+        $startDate[0].setCustomValidity('');
+        $endDate[0].setCustomValidity('');
+        return;
+      };
+
+      $endDate[0].setCustomValidity('The end date must be before the start date');
+      $endDate[0].reportValidity();
     }
-  });
+
+    function checkTotalsValidity() {
+      var $item1 = $('#tfa_2828');
+      var $item2 = $('#tfa_2835');
+      var $item3 = $('#tfa_2836');
+      var $total = $('#tfa_2825');
+
+      var item1 = parseInt($item1.val() || 0, 10);
+      var item2 = parseInt($item2.val() || 0, 10);
+      var item3 = parseInt($item3.val() || 0, 10);
+      var total = parseInt($total.val() || 0, 10);
+
+      var customValidity = (
+        item1 + item2 + item3 > total ?
+          'The total of your main items of expenditure should be less than your requested total amount (' +
+          total.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) +
+          ')' :
+          ''
+      );
+
+      $item1[0].setCustomValidity(customValidity);
+      $item2[0].setCustomValidity(customValidity);
+      $item3[0].setCustomValidity(customValidity);
+      $total[0].setCustomValidity(customValidity);
+    }
+
+    function checkAreasCoveredValidity() {
+      var $single = $('#tfa_2400');
+      var $multiple = $('#tfa_2401');
+      var selectedAreas = $('#tfa_2471 input[type="checkbox"]:checked').length;
+      var $singleSelect = $('#tfa_1884');
+
+      $multiple[0].setCustomValidity((
+        $multiple.is(':checked') && selectedAreas < 2 ?
+          'You must select more than one local authority area' :
+          ''
+      ));
+
+      $singleSelect.prop('required', $single.is(':checked'));
+    }
+
+    function checkTargetGroupsValidity() {
+      $('#tfa_2875 input[type=checkbox]')[0].setCustomValidity(
+        $('#tfa_2875 input[type=checkbox]:checked').length === 0 ?
+          'You must select at least one target group' :
+          ''
+      )
+    }
+
+    function checkWordCountLimits() {
+      $('[data-maxwords]').each(function(i, o) {
+        var $input = $(o);
+        var maxWords = parseInt($input.data('maxwords'), 10) || 0;
+        var value = $input.val() || '';
+        var wordCount = (value.match(/\b\S+\b/ig) || []).length;
+
+        $input[0].setCustomValidity(
+          maxWords > 0 && wordCount > maxWords ?
+          'You have entered ' + (wordCount - maxWords) + ' too many words' :
+          ''
+        );
+      });
+    }
+
+    function parseDate(dateVal) {
+      try {
+        if (!dateVal) return null;
+        var parts = dateVal.split('/');
+        if (parts.length !== 3) return null;
+        var date = new Date(
+          parseInt(parts[2], 10),
+          parseInt(parts[1], 10) - 1,
+          parseInt(parts[0], 10)
+        );
+        return date;
+      } catch (err) {
+        return null;
+      }
+    }
+
+    $('textarea').on('paste', function(e) {
+      e.preventDefault();
+      var text = '';
+
+      if (e.clipboardData || e.originalEvent.clipboardData) {
+        var clipboardData = (e.originalEvent || e).clipboardData;
+        text = clipboardData.getData('text/plain');
+        if ((clipboardData.types || []).length > 1) {
+          alert('It looks like you have pasted text that may contain additional formatting from external software such as MS Word or a website. This formatting will be stripped from the text area. Please check the pasted result');
+        }
+      } else if (window.clipboardData) {
+        text = window.clipboardData.getData('Text');
+      }
+
+      if (document.queryCommandSupported('insertText')) {
+        document.execCommand('insertText', false, text);
+      } else {
+        document.execCommand('paste', false, text);
+      }
+    });
+  {{/if}}
 });
 
 function copyCompanyNumber(field) {
