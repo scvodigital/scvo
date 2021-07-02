@@ -1,8 +1,3 @@
-{{!--
-  TODO: Validation tests for item descriptions without a cost and costs without item descriptions
---}}
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {{#withExtend this
   local_authorities=@root.data.form_data.local_authorities
@@ -1073,6 +1068,7 @@ document.addEventListener("DOMContentLoaded", function() {
       clearAreas();
       checkDateValidity();
       checkTotalsValidity();
+      checkItemDescriptionsAndCostsValidity();
       checkAreasCoveredValidity();
       checkTargetGroupsValidity();
       checkWordCountLimits();
@@ -1137,6 +1133,25 @@ document.addEventListener("DOMContentLoaded", function() {
       $item2[0].setCustomValidity(customValidity);
       $item3[0].setCustomValidity(customValidity);
       $total[0].setCustomValidity(customValidity);
+    }
+
+    function checkItemDescriptionsAndCostsValidity() {
+      var pairs = [
+        [$('#tfa_2830'), $('#tfa_2835')],
+        [$('#tfa_2831'), $('#tfa_2836')]
+      ];
+
+      for (var pair of pairs) {
+        if (!pair[0].val() && pair[1].val()) {
+          pair[0][0].setCustomValidity('You must enter a description for each item with a cost');
+          continue;
+        }
+        if (pair[0].val() && !pair[1].val()) {
+          pair[0][0].setCustomValidity('You must enter a cost for each item with a description');
+          continue;
+        }
+        pair[0][0].setCustomValidity('');
+      }
     }
 
     function checkAreasCoveredValidity() {
