@@ -229,7 +229,7 @@
                       </label>
                     </div>
                     <div class="form-group field-container-D no-margin" id="tfa_1884-D">
-                      <select id="tfa_1884" name="tfa_1884" data-condition="`#tfa_2400`" class="form-select b-margin-full" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}}>
+                      <select id="tfa_1884" name="tfa_1884" data-condition="`#tfa_2400`" class="form-select b-margin-full" {{#if defaults.application_readonly}}style="pointer-events:none;" readonly{{/if}} required>
                         <option value="" disabled{{#unless defaults.tfa_1884}} selected{{/unless}}>
                           Please select&hellip;
                         </option>
@@ -450,7 +450,7 @@
             <div class="form-group oneField field-container-D b-margin-full" id="tfa_2875-D" role="group" aria-labelledby="tfa_2875-L" data-tfa-labelledby="-L tfa_2875-L">
               <div class="col-4 col-xl-4 col-lg-5 col-md-6 col-sm-12">
                 <div class="form-group field-container-D reqMark">
-                  Target groups: Who will you support?
+                  Target groups: Tick the relevant boxes to tell us which specific groups of people your project will support?
                 </div>
               </div>
               <div class="col-5 col-xl-8 col-lg-7 col-md-6 col-sm-12">
@@ -566,7 +566,7 @@
                 <div class="form-group field-container-D">
                   <div class="input-group" style="width:100%;">
                     <span class="input-group-addon">&pound;</span>
-                    <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="8000" id="tfa_2825" name="tfa_2825" value="{{defaults.tfa_2825}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                    <input type="number" pattern="[0-9]*" min="0" max="8000" id="tfa_2825" name="tfa_2825" value="{{defaults.tfa_2825}}" autocomplete="nope" data-lpignore="true" aria-required="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                   </div>
                   <p class="form-input-hint text-secondary">
                     Maximum fund value is £8,000 - please check your figures carefully.
@@ -609,7 +609,7 @@
               <div class="col-9 col-xl-12">
                 <div class="form-group field-container-D">
                   <label id="tfa_2821-L" class="preField r-margin reqMark" for="tfa_2821">
-                    Project management: how the project will be managed and who will be responsible for reporting on progress
+                    Project management: how will the project be managed and who will be responsible for reporting on progress?
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -624,7 +624,7 @@
               <div class="col-9 col-xl-12">
                 <div class="form-group field-container-D">
                   <label id="tfa_2824-L" class="preField r-margin reqMark" for="tfa_2824">
-                    Measuring progress: How will you monitor and evaluate your activity?
+                    Measuring progress: how will you monitor and evaluate your activity?
                   </label>
                 </div>
                 {{#if defaults.application_readonly}}
@@ -673,7 +673,7 @@
                           <div class="oneField field-container-D" id="tfa_2828-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="8000" id="tfa_2828" name="tfa_2828" value="{{defaults.tfa_2828}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" min="0" max="8000" id="tfa_2828" name="tfa_2828" value="{{defaults.tfa_2828}}" autocomplete="nope" data-lpignore="true" class="form-input text-right required" required {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -688,7 +688,7 @@
                           <div class="oneField field-container-D" id="tfa_2835-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="8000" id="tfa_2835" name="tfa_2835" value="{{defaults.tfa_2835}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" min="0" max="8000" id="tfa_2835" name="tfa_2835" value="{{defaults.tfa_2835}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -703,7 +703,7 @@
                           <div class="oneField field-container-D" id="tfa_2836-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="8000" id="tfa_2836" name="tfa_2836" value="{{defaults.tfa_2836}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" min="0" max="8000" id="tfa_2836" name="tfa_2836" value="{{defaults.tfa_2836}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -718,7 +718,7 @@
                           <div class="oneField field-container-D" id="tfa_2837-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2837" name="tfa_2837" value="{{defaults.tfa_2837}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" min="0" max="100000000" id="tfa_2837" name="tfa_2837" value="{{defaults.tfa_2837}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -733,7 +733,7 @@
                           <div class="oneField field-container-D" id="tfa_2838-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2838" name="tfa_2838" value="{{defaults.tfa_2838}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" min="0" max="100000000" id="tfa_2838" name="tfa_2838" value="{{defaults.tfa_2838}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -748,7 +748,7 @@
                           <div class="oneField field-container-D" id="tfa_2839-D">
                             <div class="input-group" style="width:100%;">
                               <span class="input-group-addon">&pound;</span>
-                              <input type="number" pattern="[0-9]*" onkeypress="return isNumberKey(event);" min="0" max="100000000" id="tfa_2839" name="tfa_2839" value="{{defaults.tfa_2839}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
+                              <input type="number" pattern="[0-9]*" min="0" max="100000000" id="tfa_2839" name="tfa_2839" value="{{defaults.tfa_2839}}" autocomplete="nope" data-lpignore="true" class="form-input text-right" {{#if defaults.application_readonly}}readonly{{/if}}>
                             </div>
                           </div>
                         </td>
@@ -806,8 +806,11 @@
               <div class="container section v-padding-full">
                 <div class="form-group field-container-D">
                   <div class="col-9 col-xl-12">
+                    <p class="bg-warning border p-1 text-bold">
+                      This section should only be completed if you DO NOT have a charity or regulation number
+                    </p>
                     <p>
-                      This section should only be completed if you DO NOT have a charity or regulation number, please include a reference from an organisation who is regulated. <strong>Please ensure the organisation is happy to be contacted by SCVO.</strong>
+                      Please include a reference from an organisation who is regulated and <strong>ensure the organisation is happy to be contacted by SCVO.</strong>
                     </p>
                   </div>
                 </div>
@@ -984,11 +987,7 @@ document.addEventListener("DOMContentLoaded", function() {
   $branches = $('#fund_branches'),
   $organisationType = $('#tfa_2801'),
   $organisationTypeOther = $('#org_type_other'),
-  $organisationTypeOtherBlock = $('#org_type_other-D'),
-  $initialRecoveryStatus = $('#tfa_2689'),
-  $initialRecoveryType = $('#tfa_2692'),
-  $initialCommunityStatus = $('#tfa_2690'),
-  $initialCommunityType = $('#tfa_2693');
+  $organisationTypeOtherBlock = $('#org_type_other-D');
 
   $organisationTypeOther.blur(function(e) {
     var organisation_type_other = $organisationTypeOther.val();
@@ -1003,8 +1002,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var postcode = $('#tfa_1925').val().toUpperCase();
     if (postcode.match(/[a-z]{1,2}[0-9]{1,2}[a-z]?\s?[0-9][a-z]{2}/ig)) {
       $postcodeIcon
-      .addClass("loading text-primary")
-      .removeClass("fa-times fa-check text-error text-success");
+        .addClass("loading text-primary")
+        .removeClass("fa-times fa-check text-error text-success");
+
       $.ajax({
         url: '/postcode-lookup?q=' + postcode,
         success: function(data) {
@@ -1014,7 +1014,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clearLocationData();
           }
         }
-      })
+      });
     } else {
       clearLocationData();
     }
@@ -1030,16 +1030,16 @@ document.addEventListener("DOMContentLoaded", function() {
     $('#postcode_validation_message').html('');
     $('#postcode-wrapper').removeClass("has-error")
     $('#postcode_validation_icon')
-    .addClass("fa-check text-success")
-    .removeClass("loading fa-times text-primary text-error");
+      .addClass("fa-check text-success")
+      .removeClass("loading fa-times text-primary text-error");
   }
 
   function clearLocationData() {
     $postcodeWrapper.addClass('has-error');
     $postcodeValidationMessage.html('');
     $postcodeIcon
-    .addClass("fa-times text-error")
-    .removeClass("loading fa-check text-primary text-success");
+      .addClass("fa-times text-error")
+      .removeClass("loading fa-check text-primary text-success");
     $('#tfa_1936').val('');
     $('#tfa_1934').val('');
     $('#tfa_1953').val('');
@@ -1048,21 +1048,163 @@ document.addEventListener("DOMContentLoaded", function() {
 
   $postcode.on('keyup', checkPostcode);
 
-  $('input[type=radio][name=tfa_2398]').change(function() {
-    $('#tfa_2505').val('');
-    $('#tfa_1884').val('');
-    {{#each local_authorities ~}}
-    {{#if id_multiple ~}}
-    $('#{{id_multiple}}').prop('checked', false);
-    {{/if ~}}
-    {{/each ~}}
+  $('input[type="number"]').on('keypress', function(event) {
+    return (
+      (event.which < 32) ||
+      !(event.key.match(/[^0-9]/ig))
+    );
+  });
+
+  $form.on('change', formUpdated);
+
+  function formUpdated(event) {
+    if (Array.isArray(window.formsRecovering) && window.formsRecovering.length > 0) return;
+    clearAreas();
+    checkDateValidity();
+    checkTotalsValidity();
+    checkAreasCoveredValidity();
+    checkTargetGroupsValidity();
+    checkWordCountLimits();
+  }
+  formUpdated();
+
+  function clearAreas() {
+    if (!$('#tfa_2400').is(':checked')) {
+      $('#tfa_1884').val('');
+    }
+
+    if (!$('#tfa_2401').is(':checked')) {
+      $('#tfa_2471 input[type=checkbox]').prop('checked', false);
+    }
+  }
+
+  function checkDateValidity() {
+    var $startDate = $('#tfa_2817');
+    var $endDate = $('#tfa_2818');
+
+    var startDateVal = $startDate.val();
+    var endDateVal = $endDate.val();
+
+    if (!startDateVal || !endDateVal) {
+      $startDate[0].setCustomValidity('');
+      $endDate[0].setCustomValidity('');
+      return;
+    }
+
+    var startDate = parseDate(startDateVal);
+    var endDate = parseDate(endDateVal);
+
+    if (startDate < endDate) {
+      $startDate[0].setCustomValidity('');
+      $endDate[0].setCustomValidity('');
+      return;
+    };
+
+    $endDate[0].setCustomValidity('The end date must be before the start date');
+    $endDate[0].reportValidity();
+  }
+
+  function checkTotalsValidity() {
+    var $item1 = $('#tfa_2828');
+    var $item2 = $('#tfa_2835');
+    var $item3 = $('#tfa_2836');
+    var $total = $('#tfa_2825');
+
+    var item1 = parseInt($item1.val() || 0, 10);
+    var item2 = parseInt($item2.val() || 0, 10);
+    var item3 = parseInt($item3.val() || 0, 10);
+    var total = parseInt($total.val() || 0, 10);
+
+    var customValidity = (
+      item1 + item2 + item3 > total ?
+        'The total of your main items of expenditure should be less than your requested total amount (' +
+        total.toLocaleString('en-GB', { style: 'currency', currency: 'GBP' }) +
+        ')' :
+        ''
+    );
+
+    $item1[0].setCustomValidity(customValidity);
+    $item2[0].setCustomValidity(customValidity);
+    $item3[0].setCustomValidity(customValidity);
+    $total[0].setCustomValidity(customValidity);
+  }
+
+  function checkAreasCoveredValidity() {
+    var $single = $('#tfa_2400');
+    var $multiple = $('#tfa_2401');
+    var selectedAreas = $('#tfa_2471 input[type="checkbox"]:checked').length;
+    var $singleSelect = $('#tfa_1884');
+
+    $multiple[0].setCustomValidity((
+      $multiple.is(':checked') && selectedAreas < 2 ?
+        'You must select more than one local authority area' :
+        ''
+    ));
+
+    $singleSelect.prop('required', $single.is(':checked'));
+  }
+
+  function checkTargetGroupsValidity() {
+    $('#tfa_2875 input[type=checkbox]')[0].setCustomValidity(
+      $('#tfa_2875 input[type=checkbox]:checked').length === 0 ?
+        'You must select at least one target group' :
+        ''
+    )
+  }
+
+  function checkWordCountLimits() {
+    $('[data-maxwords]').each(function(i, o) {
+      var $input = $(o);
+      var maxWords = parseInt($input.data('maxwords'), 10) || 0;
+      var value = $input.val() || '';
+      var wordCount = (value.match(/\b\S+\b/ig) || []).length;
+
+      $input[0].setCustomValidity(
+        maxWords > 0 && wordCount > maxWords ?
+        'You have entered ' + (wordCount - maxWords) + ' too many words' :
+        ''
+      );
+    });
+  }
+
+  function parseDate(dateVal) {
+    try {
+      if (!dateVal) return null;
+      var parts = dateVal.split('/');
+      if (parts.length !== 3) return null;
+      var date = new Date(
+        parseInt(parts[2], 10),
+        parseInt(parts[1], 10) - 1,
+        parseInt(parts[0], 10)
+      );
+      return date;
+    } catch (err) {
+      return null;
+    }
+  }
+
+  $('textarea').on('paste', function(e) {
+    e.preventDefault();
+    var text = '';
+
+    if (e.clipboardData || e.originalEvent.clipboardData) {
+      var clipboardData = (e.originalEvent || e).clipboardData;
+      text = clipboardData.getData('text/plain');
+      if ((clipboardData.types || []).length > 1) {
+        alert('It looks like you have pasted text that may contain additional formatting from external software such as MS Word or a website. This formatting will be stripped from the text area. Please check the pasted result');
+      }
+    } else if (window.clipboardData) {
+      text = window.clipboardData.getData('Text');
+    }
+
+    if (document.queryCommandSupported('insertText')) {
+      document.execCommand('insertText', false, text);
+    } else {
+      document.execCommand('paste', false, text);
+    }
   });
 });
 
-function isNumberKey(evt){
-  var charCode = (evt.which) ? evt.which : evt.keyCode
-  return !(charCode > 31 && (charCode < 48 || charCode > 57));
-}
 function copyCompanyNumber(field) {
   if (field.value) {
     window.tfa_2916.value = field.value;
