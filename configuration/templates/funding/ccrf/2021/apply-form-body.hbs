@@ -794,7 +794,7 @@
           {{/unless}}
 
           {{#unless defaults.is_charity ~}}
-            <div id="tfa_2815" class="section">
+            <fieldset id="tfa_2815" class="section">
               <div class="bg-secondary">
                 <div class="container section v-padding-full">
                   <h2 class="t-margin">
@@ -855,7 +855,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </fieldset>
           {{/unless}}
 
           <div class="section">
@@ -1066,12 +1066,18 @@ document.addEventListener("DOMContentLoaded", function() {
     function formUpdated(event) {
       if (Array.isArray(window.formsRecovering) && window.formsRecovering.length > 0) return;
       clearAreas();
+      enableDisableReferences();
       checkDateValidity();
       checkTotalsValidity();
       checkItemDescriptionsAndCostsValidity();
       checkAreasCoveredValidity();
       checkTargetGroupsValidity();
       checkWordCountLimits();
+    }
+
+    function enableDisableReferences() {
+      var hide = (!$('#tfa_1941').val() && !$('#tfa_2324').val());
+      $('#tfa_2815').prop('disabled', hide).toggleClass('d-none', hide);
     }
 
     function clearAreas() {
