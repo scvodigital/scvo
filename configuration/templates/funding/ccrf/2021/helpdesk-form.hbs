@@ -1,0 +1,104 @@
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  var currentTimestamp = {{momentFormat (momentConvertTz (moment now) "UTC" "Europe/London") "x"}};
+  setInterval(timestamp, 500);
+
+  function timestamp() {
+    currentTimestamp += 500;
+    var response = document.getElementById("g-recaptcha-response");
+    if (response == null || response.value.trim() == "") {
+      var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);
+      elems["ts"] = JSON.stringify(currentTimestamp);
+      document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
+    }
+  }
+
+  window.onload = function() {
+    var recaptcha = document.querySelector('#g-recaptcha-response');
+    if (recaptcha) {
+      recaptcha.setAttribute("required", "required");
+    }
+  };
+</script>
+
+<div class="container">
+  <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" class="form-horizontal form b-margin-full b-padding-full">
+    <input type=hidden name='captcha_settings' value='{"keyname":"SCVO","fallback":"true","orgId":"00Db0000000KJWY","ts":""}'>
+    <input type=hidden name="orgid" value="00Db0000000KJWY">
+    <input type=hidden name="recordType" id="recordType" value="0123z00000085DGAAY">
+    <input type=hidden name="retURL" value="https://scvo.scot/funding/community-capacity-resilience-fund/helpdesk/thanks">
+    <input type=hidden name="subject" value="Community capacity & resilience fund">
+    <input type=hidden name="type" value="Funding">
+    <input type=hidden name="status" value="New">
+    <input type=hidden name="external" value="1">
+
+    {{!-- NOTE: These fields are optional debugging elements. Please uncomment these lines if you wish to test in debug mode. --}}
+    {{!-- <input type="hidden" name="debug" value=1>
+    <input type="hidden" name="debugEmail" value="calum.macuisdean@scvo.scot"> --}}
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="name">Name</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="name" maxlength="80" name="name" type="text" class="form-input" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="email">Email address</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="email" maxlength="80" name="email" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="form-input" required />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="phone">Phone number</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <input id="phone" maxlength="15" name="phone" type="text" class="form-input" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="reason">Issue type</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <select id="reason" name="reason" class="form-select" required>
+          <option value="" selected disabled>Please select&hellip;</option>
+          <option value="Difficulty submitting application">Difficulty submitting application</option>
+          <option value="Clarification of online form question">Clarification of online form question</option>
+          <option value="Guidance clarification">Guidance clarification</option>
+          <option value="FAQ clarification">FAQ clarification</option>
+          <option value="Question not covered by FAQs">Question not covered by FAQs</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12">
+        <label for="description">Description</label>
+      </div>
+      <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
+        <textarea name="description" rows="5" class="form-input b-margin"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group t-margin" id="gdpr-D" role="group" aria-labelledby="gdpr-L">
+      <div class="col-9 col-xl-12">
+        <label class="form-checkbox" id="gdpr-L" for="gdpr">
+          <input type="checkbox" value="gdpr" id="gdpr" name="gdpr" aria-labelledby="gdpr-L" required>
+          <i class="form-icon"></i>
+          By submitting your enquiry, you confirm that you understand and accept our obligations under the General Data Protection Regulation (GDPR) set out in our <a href="/privacy" target="_blank">Privacy Policy</a>
+        </label>
+        <div class="t-margin g-recaptcha" data-sitekey="6Lejg88ZAAAAAKw0FTDLw3Uj_4dCr_6Od4Erp9_o"></div>
+      </div>
+    </div>
+
+    <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+  </form>
+</div>
