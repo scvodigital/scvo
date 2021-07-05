@@ -996,6 +996,7 @@ document.addEventListener("DOMContentLoaded", function() {
   {{else}}
     $form.on('change', formUpdated);
     formUpdated();
+    enableDisableReferences();
 
     $organisationTypeOther.blur(function(e) {
       var organisation_type_other = $organisationTypeOther.val();
