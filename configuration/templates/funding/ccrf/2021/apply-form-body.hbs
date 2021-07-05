@@ -1076,7 +1076,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function enableDisableReferences() {
-      var hide = !(!$('#tfa_1941').val() && !$('#tfa_2324').val());
+      var hasCharityNumber = !!$('#tfa_1941').val();
+      var hasOrganisationNumber = !!$('#tfa_2324').val();
+      var hide = hasCharityNumber || hasOrganisationNumber;
       $('#tfa_2815').prop('disabled', hide).toggleClass('d-none', hide);
     }
 
