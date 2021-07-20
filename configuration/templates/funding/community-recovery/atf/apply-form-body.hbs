@@ -9,7 +9,7 @@
   scf_previous_funder=@root.data.form_data.scf_previous_funder
   defaults=@root.data.form_data.defaults
 }}
-{{#ifAny defaults.application_editing defaults.application_readonly}}
+{{#ifAny defaults.application_editing defaults.application_readonly (compare defaults.tfa_1941 "===" "SC038203")}}
   {{#unless defaults.application_editing}}
   <div class="container t-margin-full t-padding">
     <span class="text-error">*</span> indicates a required field
