@@ -416,66 +416,73 @@ body.the-gathering-2021 {
       a {
         color: $secondary-color;
       }
-      a.celebrating-communities {
-        color: #769f56;
+      a.climate-conscious {
+        color: $green-color-darker;
       }
-      a.charity-champion {
-        color: #a989a0;
+      a.campaign-of-the-year {
+        color: $orange-color;
       }
       a.charity-of-the-year {
-        color: #1f9fd6;
+        color: $blue-color;
       }
-      a.cracking-campaign {
-        color: #de790d;
+      a.community-action {
+        color: $green-color-darker;
       }
-      a.demonstrating-digital {
-        color: #e30613;
+      a.digital-citizens {
+        color: $red-color;
       }
-      a.leading-light {
-        color: #ad9310;
+      a.employee-of-the-year {
+        color: $yellow-color-dark;
       }
       a.pioneering-project {
-        color: #568da3;
+        color: $blue-color-dark;
       }
-      a.terrific-trustee {
-        color: #8f9b36;
+      a.trustee-of-the-year {
+        color: $purple-color-dark;
+      }
+      a.volunteer-of-the-year {
+        color: $purple-color-darker;
       }
       a:hover {
         color: $secondary-color;
       }
     }
   }
-  a.chip.celebrating-communities {
-    background-color: #769f56;
-    border-color: #769f56;
+  a.chip.climate-conscious {
+    background-color: $green-color-darker;
+    border-color: darken($green-color-darker, 10%);
   }
-  a.chip.charity-champion {
-    background-color: #a989a0;
-    border-color: #a989a0;
+  a.chip.campaign-of-the-year {
+    background-color: $orange-color;
+    border-color: darken($orange-color, 10%);
   }
   a.chip.charity-of-the-year {
-    background-color: #1f9fd6;
-    border-color: #1f9fd6;
+    background-color: $blue-color;
+    border-color: darken($blue-color, 10%);
   }
-  a.chip.cracking-campaign {
-    background-color: #de790d;
-    border-color: #de790d;
+  a.chip.community-action {
+    background-color: $green-color-darker;
+    border-color: darken($green-color-darker, 10%);
   }
-  a.chip.demonstrating-digital {
-    background-color: #e30613;
-    border-color: #e30613;
+  a.chip.digital-citizens {
+    background-color: $red-color;
+    border-color: darken($red-color, 10%);
   }
-  a.chip.leading-light {
-    background-color: #ad9310;
-    border-color: #ad9310;
+  a.chip.employee-of-the-year {
+    background-color: $yellow-color-dark;
+    border-color: darken($yellow-color-dark, 10%);
   }
   a.chip.pioneering-project {
-    background-color: #568da3;
-    border-color: #568da3;
+    background-color: $blue-color-dark;
+    border-color: darken($blue-color-dark, 10%);
   }
-  a.chip.terrific-trustee {
-    background-color: #8f9b36;
-    border-color: #8f9b36;
+  a.chip.trustee-of-the-year {
+    background-color: $purple-color-dark;
+    border-color: darken($purple-color-dark, 10%);
+  }
+  a.chip.volunteer-of-the-year {
+    background-color: $purple-color-darker;
+    border-color: darken($purple-color-darker, 10%);
   }
 }
 
