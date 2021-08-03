@@ -1000,10 +1000,13 @@ document.addEventListener("DOMContentLoaded", function() {
       .prop('readonly', true)
       .css('pointer-events', 'none');
   {{else}}
-    $('#tfa_2324').on('change', enableDisableReferences());
     $form.on('change', formUpdated);
-    formUpdated();
-    enableDisableReferences();
+    // This is a rubbish hack, however, I have no idea where formAssembly is loading from. It should trigger formUpdated,
+    // or just form.change itself after loading.
+    setTimeout(function() {
+      formUpdated();
+      enableDisableReferences();
+    }, 1000);
 
     $organisationTypeOther.blur(function(e) {
       var organisation_type_other = $organisationTypeOther.val();
