@@ -994,12 +994,13 @@ document.addEventListener("DOMContentLoaded", function() {
   $organisationType = $('#tfa_2801'),
   $organisationTypeOther = $('#org_type_other'),
   $organisationTypeOtherBlock = $('#org_type_other-D');
-  enableDisableReferences();
+  
   {{#if defaults.application_readonly}}
     $form.find('input, select, textarea, button, submit')
       .prop('readonly', true)
       .css('pointer-events', 'none');
   {{else}}
+    $('#tfa_2324').on('change', enableDisableReferences());
     $form.on('change', formUpdated);
     formUpdated();
     enableDisableReferences();
