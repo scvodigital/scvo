@@ -994,7 +994,7 @@ document.addEventListener("DOMContentLoaded", function() {
   $organisationType = $('#tfa_2801'),
   $organisationTypeOther = $('#org_type_other'),
   $organisationTypeOtherBlock = $('#org_type_other-D');
-
+  enableDisableReferences();
   {{#if defaults.application_readonly}}
     $form.find('input, select, textarea, button, submit')
       .prop('readonly', true)
@@ -1086,7 +1086,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var hasCharityNumber = !!$('#tfa_1941').val();
       var hasOrganisationNumber = !!$('#tfa_2324').val();
       var hide = hasCharityNumber || hasOrganisationNumber;
-      $('#tfa_2815').prop('disabled', true).toggleClass('d-none', hide);
+      $('#tfa_2815').prop('disabled', hide).toggleClass('d-none', hide);
     }
 
     function clearAreas() {
