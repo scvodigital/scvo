@@ -5,14 +5,14 @@
         {{{replace (replace (replace (replace (replace content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
       </div>
 
-      {{!-- <img src="{{~>asset_url url='images/awards/peoples-choice.svg'~}}" class="img-responsive" title="Peoples Choice Award" /> --}}
+      <img src="{{~>asset_url url='images/awards/peoples-choice.svg'~}}" class="img-responsive" title="Peoples Choice Award" />
       <p>
-        <span class="label label-info label-rounded">Voting function currently hidden</span>
+        <span class="label label-warning">The voting function is in <strong>test mode</strong> and your vote will not be counted for the 2021 awards - the record of votes will be reset before Thursday 12th</span>
       </p>
 
       {{#unless @root.request.cookies.charity_awards_already_voted}}
-        {{!-- <script type="text/javascript">document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90371663/Scottish-Charity-Awards-2021-voting?__output=embedjs&vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}&__ref=' + escape(document.location.href) + '" type="text/javascript" ></scr' + 'ipt>');</script>
-        <style>.sg-survey{display:none; }</style> --}}
+        <script type="text/javascript">document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90371663/Scottish-Charity-Awards-2021-voting?__output=embedjs&vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}&__ref=' + escape(document.location.href) + '" type="text/javascript" ></scr' + 'ipt>');</script>
+        <style>.sg-survey{display:none; }</style>
       {{else}}
         {{#compare @root.request.params.vote @root.request.cookies.charity_awards_already_voted}}
           <strong>Thanks for voting for {{{title}}}</strong>
