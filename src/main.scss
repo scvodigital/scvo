@@ -57,6 +57,25 @@ $pink-color: #FEB3B4;
 $orange-color: #F8AB23;
 $red-color: #F31E31;
 
+$awards-volunteer-color: #A989A0;
+$awards-volunteer-color-dark: #A989A0;
+$awards-charity-color: #2DA9E0;
+$awards-charity-color-dark: #1F9FD6;
+$awards-community-color: #78A667;
+$awards-community-color-dark: #70A15E;
+$awards-project-color: #548A9D;
+$awards-project-color-dark: #548A9D;
+$awards-trustee-color: #A4A1C7;
+$awards-trustee-color-dark: #9390BD;
+$awards-employee-color: #CFB62C;
+$awards-employee-color-dark: #A89324;
+$awards-campaign-color: #F58A28;
+$awards-campaign-color-dark: #E8750B;
+$awards-digital-color: #EC2127;
+$awards-digital-color-dark: #EC2127;
+$awards-climate-color: #A9BD56;
+$awards-climate-color-dark: #8A9C3D;
+
 $kirk-color: #003663;
 $kirk-color-light: #0092C6;
 
@@ -417,31 +436,31 @@ body.the-gathering-2021 {
         color: $secondary-color;
       }
       a.climate-conscious {
-        color: $green-color-darker;
+        color: $awards-climate-color-dark;
       }
       a.campaign-of-the-year {
-        color: $orange-color;
+        color: $awards-campaign-color-dark;
       }
       a.charity-of-the-year {
-        color: $blue-color;
+        color: $awards-charity-color-dark;
       }
       a.community-action {
-        color: $green-color-darker;
+        color: $awards-community-color-dark;
       }
       a.digital-citizens {
-        color: $red-color;
+        color: $awards-digital-color-dark;
       }
       a.employee-of-the-year {
-        color: $yellow-color-dark;
+        color: $awards-employee-color-dark;
       }
       a.pioneering-project {
-        color: $blue-color-dark;
+        color: $awards-project-color-dark;
       }
       a.trustee-of-the-year {
-        color: $purple-color-dark;
+        color: $awards-trustee-color-dark;
       }
       a.volunteer-of-the-year {
-        color: $purple-color-darker;
+        color: $awards-volunteer-color-dark;
       }
       a:hover {
         color: $secondary-color;
@@ -449,87 +468,87 @@ body.the-gathering-2021 {
     }
   }
   a.chip.climate-conscious {
-    background-color: $green-color-darker;
-    border-color: darken($green-color-darker, 10%);
+    background-color: $awards-climate-color-dark;
+    border-color: darken($awards-climate-color-dark, 10%);
   }
   a.chip.campaign-of-the-year {
-    background-color: $orange-color;
-    border-color: darken($orange-color, 10%);
+    background-color: $awards-campaign-color-dark;
+    border-color: darken($awards-campaign-color-dark, 10%);
   }
   a.chip.charity-of-the-year {
-    background-color: $blue-color;
-    border-color: darken($blue-color, 10%);
+    background-color: $awards-charity-color-dark;
+    border-color: darken($awards-charity-color-dark, 10%);
   }
   a.chip.community-action {
-    background-color: $green-color-darker;
-    border-color: darken($green-color-darker, 10%);
+    background-color: $awards-community-color-dark;
+    border-color: darken($awards-community-color-dark, 10%);
   }
   a.chip.digital-citizens {
-    background-color: $red-color;
-    border-color: darken($red-color, 10%);
+    background-color: $awards-digital-color-dark;
+    border-color: darken($awards-digital-color-dark, 10%);
   }
   a.chip.employee-of-the-year {
-    background-color: $yellow-color-dark;
-    border-color: darken($yellow-color-dark, 10%);
+    background-color: $awards-employee-color-dark;
+    border-color: darken($awards-employee-color-dark, 10%);
   }
   a.chip.pioneering-project {
-    background-color: $blue-color-dark;
-    border-color: darken($blue-color-dark, 10%);
+    background-color: $awards-project-color-dark;
+    border-color: darken($awards-project-color-dark, 10%);
   }
   a.chip.trustee-of-the-year {
-    background-color: $purple-color-dark;
-    border-color: darken($purple-color-dark, 10%);
+    background-color: $awards-trustee-color-dark;
+    border-color: darken($awards-trustee-color-dark, 10%);
   }
   a.chip.volunteer-of-the-year {
-    background-color: $purple-color-darker;
-    border-color: darken($purple-color-darker, 10%);
+    background-color: $awards-volunteer-color-dark;
+    border-color: darken($awards-volunteer-color-dark, 10%);
   }
 }
 
 .scottish-charity-awards.apply-2021 {
   .charity-of-the-year {
     h3 {
-      color: $blue-color;
+      color: $awards-charity-color-dark;
     }
   }
   .employee-of-the-year {
     h3 {
-      color: $yellow-color-dark;
+      color: $awards-employee-color-dark;
     }
   }
   .community-action {
     h3 {
-      color: $green-color-darker;
+      color: $awards-community-color-dark;
     }
   }
   .campaign-of-the-year {
     h3 {
-      color: $orange-color;
+      color: $awards-campaign-color-dark;
     }
   }
   .trustee-of-the-year {
     h3 {
-      color: $purple-color-dark;
+      color: $awards-trustee-color-dark;
     }
   }
   .pioneering-project {
     h3 {
-      color: $blue-color-dark;
+      color: $awards-project-color-dark;
     }
   }
   .volunteer-of-the-year {
     h3 {
-      color: $purple-color-darker;
+      color: $awards-volunteer-color-dark;
     }
   }
   .digital-citizens {
     h3 {
-      color: $red-color;
+      color: $awards-digital-color-dark;
     }
   }
   .climate-conscious {
     h3 {
-      color: $green-color-dark;
+      color: $awards-climate-color-dark;
     }
   }
 }
