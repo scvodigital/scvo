@@ -2,8 +2,8 @@
   <ul class="breadcrumb" aria-hidden="true">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     <li class="breadcrumb-item"><a href="/scottish-charity-awards">Scottish Charity Awards</a></li>
-    <li class="breadcrumb-item"><a href="/scottish-charity-awards/vote-2021">Vote</a></li>
-    <li class="breadcrumb-item"><a href="/scottish-charity-awards/vote-2021/{{@root.request.params.category}}">{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</a></li>
+    <li class="breadcrumb-item"><a href="/scottish-charity-awards/finalists-2021">Finalists 2021</a></li>
+    <li class="breadcrumb-item"><a href="/scottish-charity-awards/finalists-2021/{{@root.request.params.category}}">{{{getProperty @root.route.metaData.awards-info (concat @root.request.params.category ".title")}}}</a></li>
     {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
     <li class="breadcrumb-item">{{{title}}}</li>
     {{/with ~}}
