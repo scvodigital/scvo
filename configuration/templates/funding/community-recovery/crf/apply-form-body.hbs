@@ -24,6 +24,7 @@
       <form method="post" action="{{#unless defaults.application_readonly}}https://www.tfaforms.com/responses/processor{{/unless}}" class="hintsTooltip labelsAbove" id="4910789" role="form" {{#unless defaults.application_readonly}}enctype="multipart/form-data" data-fa-form-backup='{
         "slug": "crf_2021",
         "name": "Communities Recovery Fund application form",
+        "recoveryLinkButtonSelector": ".show-form-recovery-modal",
         "idsSelector": "#tfa_1876",
         "ignoreFields": ["tfa_2274", "tfa_2273"]
       }'{{/unless}}>
@@ -1399,6 +1400,11 @@
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         {{/unless}}
       </form>
+      {{#unless defaults.application_readonly}}
+        <div class="container section">
+          <button type="button" class="btn btn-tertiary show-form-recovery-modal {{#unless (contains @root.request.headers.scvo-roles 'root')}}d-none{{/unless}}">Get a recovery link</button>
+        </div>
+      {{/unless}}
     </div>
   </div>
 </div>
