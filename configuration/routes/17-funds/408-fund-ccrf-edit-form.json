@@ -43,6 +43,28 @@
       }
     },
     {
+      "name": "check_for_authorisation",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "or": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.grant_data.Application_Satus__c"
+                  },
+                  "Applied"
+                ]
+              }
+            ]
+          },
+          "fund_ccrf_apply_unauthorised",
+          false
+        ]
+      }
+    },
+    {
       "name": "form_data",
       "taskModule": "render",
       "renderer": "handlebars",

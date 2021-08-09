@@ -1,0 +1,34 @@
+{
+  "name": "fund_ccrf_apply_unauthorised",
+  "debug": false,
+  "pattern": "/funding/community-capacity-resilience-fund/apply/unauthorised",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.default",
+            "parts": {
+              "style": "fullWidth",
+              "head": ">context.metaData.handlebars.templates.head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_ccrf_2021_apply-header",
+              "body": ">context.metaData.handlebars.templates.funding_ccrf_2021_apply-missing",
+              "footer": ">context.metaData.handlebars.templates.page-news-footer"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
