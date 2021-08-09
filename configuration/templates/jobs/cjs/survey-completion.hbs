@@ -1,5 +1,540 @@
+<!-- FORM: HEAD SECTION -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="no-referrer-when-downgrade">
+            <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+            let formElement = document.getElementById("tfa_0");
+            if (null === formElement) {
+                formElement = document.getElementById("0");
+            }
+            let appendJsTimerElement = function(){
+                let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+                let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+                if (null !== cumulatedTimeElement) {
+                    let cumulatedTime = parseInt(cumulatedTimeElement.value);
+                    if (null !== cumulatedTime && cumulatedTime > 0) {
+                        formTimeDiff += cumulatedTime;
+                    }
+                }
+                let jsTimeInput = document.createElement("input");
+                jsTimeInput.setAttribute("type", "hidden");
+                jsTimeInput.setAttribute("value", formTimeDiff.toString());
+                jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+                jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+                jsTimeInput.setAttribute("autocomplete", "off");
+                if (null !== formElement) {
+                    formElement.appendChild(jsTimeInput);
+                }
+            };
+            if (null !== formElement) {
+                if(formElement.addEventListener){
+                    formElement.addEventListener('submit', appendJsTimerElement, false);
+                } else if(formElement.attachEvent){
+                    formElement.attachEvent('onsubmit', appendJsTimerElement);
+                }
+            }
+        });
+    </script>
+
+    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=1628538221" rel="stylesheet" type="text/css" />
+
+    <link href="https://www.tfaforms.com/uploads/themes/theme-68007.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=1628538221" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=1628538221"></script>
+    <script type="text/javascript">
+        wFORMS.behaviors.prefill.skip = false;
+    </script>
+        <link rel="stylesheet" type="text/css" href="https://www.tfaforms.com/css/kalendae.css" />
+	<script type="text/javascript" src="https://www.tfaforms.com/js/kalendae/kalendae.standalone.min.js" ></script>
+	<script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms_calendar.js"></script>
+    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=1628538221"></script>
+
+
+
 <div class="container">
-  <iframe src="https://www.surveygizmo.eu/s3/90127073/CJS-13-Week-Job-Completion-Survey?key={{@root.request.params.query.key}}" frameborder="0" width="100%" height="550" style="overflow:hidden" class="b-margin-full"></iframe>
+  <!-- FORM: BODY SECTION -->
+  <div class="" >
+      <div class="wFormHeader"></div>
+      <style type="text/css">
+                  #tfa_15,
+                  *[id^="tfa_15["] {
+                      width: 350px !important;
+                  }
+                  #tfa_15-D,
+                  *[id^="tfa_15["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_16,
+                  *[id^="tfa_16["] {
+                      width: 350px !important;
+                  }
+                  #tfa_16-D,
+                  *[id^="tfa_16["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_17,
+                  *[id^="tfa_17["] {
+                      width: 350px !important;
+                  }
+                  #tfa_17-D,
+                  *[id^="tfa_17["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_18,
+                  *[id^="tfa_18["] {
+                      width: 350px !important;
+                  }
+                  #tfa_18-D,
+                  *[id^="tfa_18["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_22,
+                  *[id^="tfa_22["] {
+                      width: 350px !important;
+                  }
+                  #tfa_22-D,
+                  *[id^="tfa_22["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_23,
+                  *[id^="tfa_23["] {
+                      width: 350px !important;
+                  }
+                  #tfa_23-D,
+                  *[id^="tfa_23["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_24,
+                  *[id^="tfa_24["] {
+                      width: 350px !important;
+                  }
+                  #tfa_24-D,
+                  *[id^="tfa_24["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_25,
+                  *[id^="tfa_25["] {
+                      width: 350px !important;
+                  }
+                  #tfa_25-D,
+                  *[id^="tfa_25["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_26,
+                  *[id^="tfa_26["] {
+                      width: 350px !important;
+                  }
+                  #tfa_26-D,
+                  *[id^="tfa_26["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_27-L,
+                  label[id^="tfa_27["] {
+                      width: 472px !important;
+                      min-width: 0px;
+                  }
+
+                  #tfa_30,
+                  *[id^="tfa_30["] {
+                      width: 350px !important;
+                  }
+                  #tfa_30-D,
+                  *[id^="tfa_30["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_30-L,
+                  label[id^="tfa_30["] {
+                      width: 392px !important;
+                      min-width: 0px;
+                  }
+
+                  #tfa_153,
+                  *[id^="tfa_153["] {
+                      width: 350px !important;
+                  }
+                  #tfa_153-D,
+                  *[id^="tfa_153["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_153-L,
+                  label[id^="tfa_153["] {
+                      width: 392px !important;
+                      min-width: 0px;
+                  }
+
+                  #tfa_31,
+                  *[id^="tfa_31["] {
+                      width: 350px !important;
+                  }
+                  #tfa_31-D,
+                  *[id^="tfa_31["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_32,
+                  *[id^="tfa_32["] {
+                      width: 350px !important;
+                  }
+                  #tfa_32-D,
+                  *[id^="tfa_32["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_6,
+                  *[id^="tfa_6["] {
+                      width: 100% !important;
+                  }
+                  #tfa_6-D,
+                  *[id^="tfa_6["][class~="field-container-D"] {
+                      width: auto !important;
+                  }
+
+                  #tfa_6,
+                  *[id^="tfa_6["] {
+                      height: 20%
+                  }
+                  #tfa_6-D,
+                  *[id^="tfa_6["][class~="field-container-D"] {
+                      height: auto !important;
+                  }
+                  #tfa_6-L,
+                  label[id^="tfa_6["],
+                  *[id^="tfa_6["][id$="-L"] {
+                      height: auto !important;
+                  }
+              </style><div class=""><div class="wForm" id="4921394-WRPR" dir="ltr">
+  <div class="codesection" id="code-4921394"></div>
+  <h3 class="wFormTitle" data-testid="form-title" id="4921394-T">CJS - 13 Week - Job Completion Survey</h3>
+  <form method="post" action="https://www.tfaforms.com/responses/processor" class=" labelsLeftAligned" id="4921394" role="form">
+  <fieldset id="tfa_200" class="section">
+  <legend id="tfa_200-L"><b>About your CJS Job</b></legend>
+  <div class="htmlSection" id="tfa_141"><div class="htmlContent" id="tfa_141-HTML"><h4><span style="font-size:20px;">Community Jobs Scotland (CJS) – follow up on programme leavers. Please complete this short&nbsp;survey to help us improve the CJS programme for future participants.</span></h4></div></div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_9-D" role="radiogroup" aria-labelledby="tfa_9-L" data-tfa-labelledby="-L tfa_9-L">
+  <label id="tfa_9-L" class="form-label preField reqMark"><b>1. Have you been in employment since your CJS Placement?</b></label><br><div class="inputWrapper"><span id="tfa_9" class="choices vertical required" aria-required="true"><span class="oneChoice"><input type="radio" value="tfa_10" class="" id="tfa_10" name="tfa_9" aria-required="true" data-conditionals="#tfa_145" aria-labelledby="tfa_10-L" data-tfa-labelledby="tfa_9-L tfa_10-L"><label class="form-radio postField" id="tfa_10-L" for="tfa_10"><span class="input-radio-faux"></span>Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_11" class="" id="tfa_11" name="tfa_9" aria-required="true" aria-labelledby="tfa_11-L" data-tfa-labelledby="tfa_9-L tfa_11-L"><label class="form-radio postField" id="tfa_11-L" for="tfa_11"><span class="input-radio-faux"></span>No</label></span></span></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_12-D" role="radiogroup" aria-labelledby="tfa_12-L" data-tfa-labelledby="-L tfa_12-L">
+  <label id="tfa_12-L" class="form-label preField "><b>2. Are you currently claiming out of work benefits?</b></label><br><div class="inputWrapper"><span id="tfa_12" class="choices vertical "><span class="oneChoice"><input type="radio" value="tfa_13" class="" id="tfa_13" name="tfa_12" aria-labelledby="tfa_13-L" data-tfa-labelledby="tfa_12-L tfa_13-L"><label class="form-radio postField" id="tfa_13-L" for="tfa_13"><span class="input-radio-faux"></span>Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_14" class="" id="tfa_14" name="tfa_12" aria-labelledby="tfa_14-L" data-tfa-labelledby="tfa_12-L tfa_14-L"><label class="form-radio postField" id="tfa_14-L" for="tfa_14"><span class="input-radio-faux"></span>No</label></span></span></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_145-D" role="radiogroup" aria-labelledby="tfa_145-L" data-tfa-labelledby="-L tfa_145-L">
+  <label id="tfa_145-L" class="form-label preField "><b>3. Are you still with the same employer as your Community Jobs Scotland Placement?</b></label><br><div class="inputWrapper"><span id="tfa_145" class="choices vertical " data-condition="`#tfa_10`"><span class="oneChoice"><input type="radio" value="tfa_146" class="" id="tfa_146" name="tfa_145" aria-labelledby="tfa_146-L" data-tfa-labelledby="tfa_145-L tfa_146-L"><label class="form-radio postField" id="tfa_146-L" for="tfa_146"><span class="input-radio-faux"></span>Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_147" class="" id="tfa_147" name="tfa_145" data-conditionals="#tfa_15,#tfa_17,#tfa_18" aria-labelledby="tfa_147-L" data-tfa-labelledby="tfa_145-L tfa_147-L"><label class="form-radio postField" id="tfa_147-L" for="tfa_147"><span class="input-radio-faux"></span>No</label></span></span></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_15-D">
+  <label id="tfa_15-L" class="form-label preField reqMark" for="tfa_15"><b>4. Name of New Employer</b></label><br><div class="inputWrapper"><input aria-required="true" type="text" id="tfa_15" name="tfa_15" value="" maxlength="255" data-condition="`#tfa_147`" title="4. Name of New Employer" class="required"></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_16-D">
+  <label id="tfa_16-L" class="form-label preField " for="tfa_16"><b>5.&nbsp;Job Title</b></label><br><div class="inputWrapper"><input type="text" id="tfa_16" name="tfa_16" value="" title="5. Job Title" class=""></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_17-D">
+  <label id="tfa_17-L" class="form-label preField reqMark" for="tfa_17"><b>6. Start Date</b></label><br><div class="inputWrapper"><input aria-required="true" type="text" id="tfa_17" name="tfa_17" value="" data-condition="`#tfa_147`" title="6. Start Date" class="validate-date required"></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_18-D">
+  <label id="tfa_18-L" class="form-label preField " for="tfa_18">7. End Date</label><br><div class="inputWrapper"><input type="text" id="tfa_18" name="tfa_18" value="" data-condition="`#tfa_147`" title="7. End Date" class="validate-date"></div>
+  </div>
+  </fieldset>
+  <fieldset id="tfa_149" class="section">
+  <legend id="tfa_149-L"><span style="font-size:20px;"><b>Have you been in Education / Training</b></span></legend>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_19-D" role="radiogroup" aria-labelledby="tfa_19-L" data-tfa-labelledby="-L tfa_19-L">
+  <label id="tfa_19-L" class="form-label preField ">8. Have you been in Education and Training</label><br><div class="inputWrapper"><span id="tfa_19" class="choices vertical "><span class="oneChoice"><input type="radio" value="tfa_20" class="" id="tfa_20" name="tfa_19" data-conditionals="#tfa_22,#tfa_23,#tfa_24,#tfa_25,#tfa_26" aria-labelledby="tfa_20-L" data-tfa-labelledby="tfa_19-L tfa_20-L"><label class="form-radio postField" id="tfa_20-L" for="tfa_20"><span class="input-radio-faux"></span>Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_21" class="" id="tfa_21" name="tfa_19" aria-labelledby="tfa_21-L" data-tfa-labelledby="tfa_19-L tfa_21-L"><label class="form-radio postField" id="tfa_21-L" for="tfa_21"><span class="input-radio-faux"></span>No</label></span></span></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_22-D">
+  <label id="tfa_22-L" class="form-label preField " for="tfa_22">9. Training Provider / College / University</label><br><div class="inputWrapper"><input type="text" id="tfa_22" name="tfa_22" value="" maxlength="255" data-condition="`#tfa_20`" title="9. Training Provider / College / University" class=""></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_23-D">
+  <label id="tfa_23-L" class="form-label preField " for="tfa_23">10. Course Title</label><br><div class="inputWrapper"><input type="text" id="tfa_23" name="tfa_23" value="" maxlength="255" data-condition="`#tfa_20`" title="10. Course Title" class=""></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_24-D">
+  <label id="tfa_24-L" class="form-label preField " for="tfa_24">11. Qualification</label><br><div class="inputWrapper"><input type="text" id="tfa_24" name="tfa_24" value="" maxlength="255" data-condition="`#tfa_20`" title="11. Qualification" class=""></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_25-D">
+  <label id="tfa_25-L" class="form-label preField " for="tfa_25">12. Start Date</label><br><div class="inputWrapper"><input type="text" id="tfa_25" name="tfa_25" value="" autocomplete="off" data-condition="`#tfa_20`" title="12. Start Date" class="validate-datecal"></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_26-D">
+  <label id="tfa_26-L" class="form-label preField " for="tfa_26">13. End Date</label><br><div class="inputWrapper"><input type="text" id="tfa_26" name="tfa_26" value="" autocomplete="off" data-condition="`#tfa_20`" title="13. End Date" class="validate-datecal"></div>
+  </div>
+  </fieldset>
+  <fieldset id="tfa_150" class="section">
+  <legend id="tfa_150-L"><span style="font-size:20px;"><b>Volunteering</b></span></legend>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_27-D" role="radiogroup" aria-labelledby="tfa_27-L" data-tfa-labelledby="-L tfa_27-L">
+  <label id="tfa_27-L" class="form-label preField "><b>14.&nbsp;Have volunteered since completing your CJS Placement?</b></label><br><div class="inputWrapper"><span id="tfa_27" class="choices vertical "><span class="oneChoice"><input type="radio" value="tfa_28" class="" id="tfa_28" name="tfa_27" data-conditionals="#tfa_30,#tfa_153,#tfa_31,#tfa_32" aria-labelledby="tfa_28-L" data-tfa-labelledby="tfa_27-L tfa_28-L"><label class="form-radio postField" id="tfa_28-L" for="tfa_28"><span class="input-radio-faux"></span>Yes</label></span><span class="oneChoice"><input type="radio" value="tfa_29" class="" id="tfa_29" name="tfa_27" aria-labelledby="tfa_29-L" data-tfa-labelledby="tfa_27-L tfa_29-L"><label class="form-radio postField" id="tfa_29-L" for="tfa_29"><span class="input-radio-faux"></span>No</label></span></span></div>
+  </div>
+  <div id="tfa_151" class="section inline group">
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_30-D">
+  <label id="tfa_30-L" class="form-label preField " for="tfa_30"><b>15.&nbsp;Organisation Name that you volunteered with?</b></label><br><div class="inputWrapper"><input type="text" id="tfa_30" name="tfa_30" value="" maxlength="255" data-condition="`#tfa_28`" title="15. Organisation Name that you volunteered with?" class=""></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_153-D">
+  <label id="tfa_153-L" class="form-label preField " for="tfa_153"><b>16.&nbsp;What did you volunteer as?</b></label><br><div class="inputWrapper"><input type="text" id="tfa_153" name="tfa_153" value="" maxlength="255" data-condition="`#tfa_28`" title="16. What did you volunteer as?" class=""></div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_31-D">
+  <label id="tfa_31-L" class="form-label preField " for="tfa_31"><b>17. Start Date</b></label><br><div class="inputWrapper"><input type="text" id="tfa_31" name="tfa_31" value="" autocomplete="off" data-condition="`#tfa_28`" title="17. Start Date" class="validate-datecal"></div>
+  </div>
+  </div>
+  <div class="oneField field-container-D  labelsAbove  " id="tfa_32-D">
+  <label id="tfa_32-L" class="form-label preField " for="tfa_32"><b>18. End Date</b></label><br><div class="inputWrapper"><input type="text" id="tfa_32" name="tfa_32" value="" autocomplete="off" data-condition="`#tfa_28`" title="18. End Date" class="validate-datecal"></div>
+  </div>
+  </fieldset>
+  <div class="htmlSection" id="tfa_162"><div class="htmlContent" id="tfa_162-HTML"><b>19 Before Starting CJS</b></div></div>
+  <table class="matrixLayout ">
+  <thead><tr class="headerRow" id="tfa_33-MTRX">
+  <th></th>
+  <th scope="col">Yes</th>
+  <th scope="col">No</th>
+  <th scope="col">Don't Know</th>
+  </tr></thead>
+  <tbody>
+  <tr id="tfa_33" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_33-L" data-tfa-labelledby="-L tfa_33-L">
+  <th scope="row" class="headerCol"><label id="tfa_33-L" for="tfa_33" class="form-label ">Was it the type of job you were looking to do?</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_34" class="" id="tfa_34" name="tfa_33" title="Yes"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_35" class="" id="tfa_35" name="tfa_33" title="No"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_36" class="" id="tfa_36" name="tfa_33" title="Don't Know"></span></td>
+  </tr>
+  <tr id="tfa_158" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_158-L" data-tfa-labelledby="-L tfa_158-L">
+  <th scope="row" class="headerCol"><label id="tfa_158-L" for="tfa_158" class="form-label ">Would you have applied for jobs in the Third Sector? (e.g. Charities)</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_159" class="" id="tfa_159" name="tfa_158" title="Yes"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_160" class="" id="tfa_160" name="tfa_158" title="No"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_161" class="" id="tfa_161" name="tfa_158" title="Don't Know"></span></td>
+  </tr>
+  </tbody>
+  </table>
+  <div class="htmlSection" id="tfa_164"><div class="htmlContent" id="tfa_164-HTML"><b>20.&nbsp;</b><span style="font-size:20px;"><b>Now, after your Community Jobs Scotland Job</b></span></div></div>
+  <table class="matrixLayout ">
+  <thead><tr class="headerRow" id="tfa_37-MTRX">
+  <th></th>
+  <th scope="col">Yes</th>
+  <th scope="col">No</th>
+  <th scope="col">Don't Know</th>
+  </tr></thead>
+  <tbody>
+  <tr id="tfa_37" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_37-L" data-tfa-labelledby="-L tfa_37-L">
+  <th scope="row" class="headerCol"><label id="tfa_37-L" for="tfa_37" class="form-label ">Would you consider applying for this type of job now?</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_38" class="" id="tfa_38" name="tfa_37" title="Yes"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_39" class="" id="tfa_39" name="tfa_37" title="No"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_40" class="" id="tfa_40" name="tfa_37" title="Don't Know"></span></td>
+  </tr>
+  <tr id="tfa_169" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_169-L" data-tfa-labelledby="-L tfa_169-L">
+  <th scope="row" class="headerCol"><label id="tfa_169-L" for="tfa_169" class="form-label ">Would you apply for other jobs in the Third Sector (e.g. Charities)</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_170" class="" id="tfa_170" name="tfa_169" title="Yes"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_171" class="" id="tfa_171" name="tfa_169" title="No"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_172" class="" id="tfa_172" name="tfa_169" title="Don't Know"></span></td>
+  </tr>
+  </tbody>
+  </table>
+  <div class="htmlSection" id="tfa_173"><div class="htmlContent" id="tfa_173-HTML"><h4><span style="font-size:20px;">From your own experience of Community Jobs Scotland, please rate the following elements:</span><br><br><strong style="Color:red">'5' being '<em>Very Good</em>' and '1' being '<em>Very Poor</em>'</strong></h4></div></div>
+  <div class="htmlSection" id="tfa_176"><div class="htmlContent" id="tfa_176-HTML"><b>21.&nbsp;CJS Recruitment</b></div></div>
+  <table class="matrixLayout ">
+  <thead><tr class="headerRow" id="tfa_45-MTRX">
+  <th></th>
+  <th scope="col">5</th>
+  <th scope="col">4</th>
+  <th scope="col">3</th>
+  <th scope="col">2</th>
+  <th scope="col">1</th>
+  <th scope="col">Not applicable</th>
+  </tr></thead>
+  <tbody>
+  <tr id="tfa_45" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_45-L" data-tfa-labelledby="-L tfa_45-L">
+  <th scope="row" class="headerCol"><label id="tfa_45-L" for="tfa_45" class="form-label ">IThe information you received about the job when applying&nbsp;</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_46" class="" id="tfa_46" name="tfa_45" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_47" class="" id="tfa_47" name="tfa_45" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_48" class="" id="tfa_48" name="tfa_45" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_49" class="" id="tfa_49" name="tfa_45" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_50" class="" id="tfa_50" name="tfa_45" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_51" class="" id="tfa_51" name="tfa_45" title="Not applicable"></span></td>
+  </tr>
+  <tr id="tfa_52" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_52-L" data-tfa-labelledby="-L tfa_52-L">
+  <th scope="row" class="headerCol"><label id="tfa_52-L" for="tfa_52" class="form-label ">Your CJS job interview/recruitment process</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_53" class="" id="tfa_53" name="tfa_52" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_54" class="" id="tfa_54" name="tfa_52" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_55" class="" id="tfa_55" name="tfa_52" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_56" class="" id="tfa_56" name="tfa_52" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_57" class="" id="tfa_57" name="tfa_52" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_58" class="" id="tfa_58" name="tfa_52" title="Not applicable"></span></td>
+  </tr>
+  <tr id="tfa_59" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_59-L" data-tfa-labelledby="-L tfa_59-L">
+  <th scope="row" class="headerCol"><label id="tfa_59-L" for="tfa_59" class="form-label ">The Induction to your job/employer</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_60" class="" id="tfa_60" name="tfa_59" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_61" class="" id="tfa_61" name="tfa_59" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_62" class="" id="tfa_62" name="tfa_59" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_63" class="" id="tfa_63" name="tfa_59" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_64" class="" id="tfa_64" name="tfa_59" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_65" class="" id="tfa_65" name="tfa_59" title="Not applicable"></span></td>
+  </tr>
+  </tbody>
+  </table>
+  <div class="htmlSection" id="tfa_178"><div class="htmlContent" id="tfa_178-HTML"><b>22.&nbsp;Your CJS Job</b></div></div>
+  <table class="matrixLayout ">
+  <thead><tr class="headerRow" id="tfa_66-MTRX">
+  <th></th>
+  <th scope="col">5</th>
+  <th scope="col">4</th>
+  <th scope="col">3</th>
+  <th scope="col">2</th>
+  <th scope="col">1</th>
+  <th scope="col">Not applicable</th>
+  </tr></thead>
+  <tbody>
+  <tr id="tfa_66" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_66-L" data-tfa-labelledby="-L tfa_66-L">
+  <th scope="row" class="headerCol"><label id="tfa_66-L" for="tfa_66" class="form-label ">Number of hours you worked per week&nbsp;</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_67" class="" id="tfa_67" name="tfa_66" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_68" class="" id="tfa_68" name="tfa_66" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_69" class="" id="tfa_69" name="tfa_66" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_70" class="" id="tfa_70" name="tfa_66" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_71" class="" id="tfa_71" name="tfa_66" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_72" class="" id="tfa_72" name="tfa_66" title="Not applicable"></span></td>
+  </tr>
+  <tr id="tfa_73" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_73-L" data-tfa-labelledby="-L tfa_73-L">
+  <th scope="row" class="headerCol"><label id="tfa_73-L" for="tfa_73" class="form-label ">Your wage level</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_74" class="" id="tfa_74" name="tfa_73" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_75" class="" id="tfa_75" name="tfa_73" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_76" class="" id="tfa_76" name="tfa_73" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_77" class="" id="tfa_77" name="tfa_73" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_78" class="" id="tfa_78" name="tfa_73" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_79" class="" id="tfa_79" name="tfa_73" title="Not applicable"></span></td>
+  </tr>
+  <tr id="tfa_80" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_80-L" data-tfa-labelledby="-L tfa_80-L">
+  <th scope="row" class="headerCol"><label id="tfa_80-L" for="tfa_80" class="form-label ">Contract length e.g. 6 mths</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_81" class="" id="tfa_81" name="tfa_80" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_82" class="" id="tfa_82" name="tfa_80" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_83" class="" id="tfa_83" name="tfa_80" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_84" class="" id="tfa_84" name="tfa_80" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_85" class="" id="tfa_85" name="tfa_80" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_86" class="" id="tfa_86" name="tfa_80" title="Not applicable"></span></td>
+  </tr>
+  <tr id="tfa_87" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_87-L" data-tfa-labelledby="-L tfa_87-L">
+  <th scope="row" class="headerCol"><label id="tfa_87-L" for="tfa_87" class="form-label ">Your CJS job - overall</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_88" class="" id="tfa_88" name="tfa_87" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_89" class="" id="tfa_89" name="tfa_87" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_90" class="" id="tfa_90" name="tfa_87" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_91" class="" id="tfa_91" name="tfa_87" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_92" class="" id="tfa_92" name="tfa_87" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_93" class="" id="tfa_93" name="tfa_87" title="Not applicable"></span></td>
+  </tr>
+  </tbody>
+  </table>
+  <div class="htmlSection" id="tfa_180"><div class="htmlContent" id="tfa_180-HTML"><b>23.&nbsp;In Work Support</b></div></div>
+  <table class="matrixLayout ">
+  <thead><tr class="headerRow" id="tfa_94-MTRX">
+  <th></th>
+  <th scope="col">5</th>
+  <th scope="col">4</th>
+  <th scope="col">3</th>
+  <th scope="col">2</th>
+  <th scope="col">1</th>
+  <th scope="col">Not applicable</th>
+  </tr></thead>
+  <tbody>
+  <tr id="tfa_94" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_94-L" data-tfa-labelledby="-L tfa_94-L">
+  <th scope="row" class="headerCol"><label id="tfa_94-L" for="tfa_94" class="form-label ">Support from your supervisor/work colleagues&nbsp;</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_95" class="" id="tfa_95" name="tfa_94" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_96" class="" id="tfa_96" name="tfa_94" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_97" class="" id="tfa_97" name="tfa_94" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_98" class="" id="tfa_98" name="tfa_94" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_99" class="" id="tfa_99" name="tfa_94" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_100" class="" id="tfa_100" name="tfa_94" title="Not applicable"></span></td>
+  </tr>
+  <tr id="tfa_188" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_188-L" data-tfa-labelledby="-L tfa_188-L">
+  <th scope="row" class="headerCol"><label id="tfa_188-L" for="tfa_188" class="form-label ">Support with your jobsearch</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_189" class="" id="tfa_189" name="tfa_188" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_190" class="" id="tfa_190" name="tfa_188" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_191" class="" id="tfa_191" name="tfa_188" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_192" class="" id="tfa_192" name="tfa_188" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_193" class="" id="tfa_193" name="tfa_188" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_194" class="" id="tfa_194" name="tfa_188" title="Not applicable"></span></td>
+  </tr>
+  <tr id="tfa_101" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_101-L" data-tfa-labelledby="-L tfa_101-L">
+  <th scope="row" class="headerCol"><label id="tfa_101-L" for="tfa_101" class="form-label ">Advice on what to do next/future career</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_102" class="" id="tfa_102" name="tfa_101" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_103" class="" id="tfa_103" name="tfa_101" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_104" class="" id="tfa_104" name="tfa_101" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_105" class="" id="tfa_105" name="tfa_101" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_106" class="" id="tfa_106" name="tfa_101" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_107" class="" id="tfa_107" name="tfa_101" title="Not applicable"></span></td>
+  </tr>
+  <tr id="tfa_108" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_108-L" data-tfa-labelledby="-L tfa_108-L">
+  <th scope="row" class="headerCol"><label id="tfa_108-L" for="tfa_108" class="form-label ">On-the-job training received</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_109" class="" id="tfa_109" name="tfa_108" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_110" class="" id="tfa_110" name="tfa_108" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_111" class="" id="tfa_111" name="tfa_108" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_112" class="" id="tfa_112" name="tfa_108" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_113" class="" id="tfa_113" name="tfa_108" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_114" class="" id="tfa_114" name="tfa_108" title="Not applicable"></span></td>
+  </tr>
+  </tbody>
+  </table>
+  <div class="htmlSection" id="tfa_196"><div class="htmlContent" id="tfa_196-HTML"><b>24.&nbsp;</b><b>CJS </b><b>programme&nbsp;</b></div></div>
+  <table class="matrixLayout ">
+  <thead><tr class="headerRow" id="tfa_115-MTRX">
+  <th></th>
+  <th scope="col">5</th>
+  <th scope="col">4</th>
+  <th scope="col">3</th>
+  <th scope="col">2</th>
+  <th scope="col">1</th>
+  <th scope="col">Not applicable</th>
+  </tr></thead>
+  <tbody><tr id="tfa_115" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_115-L" data-tfa-labelledby="-L tfa_115-L">
+  <th scope="row" class="headerCol"><label id="tfa_115-L" for="tfa_115" class="form-label ">Community Jobs Scotland programme as a whole/overall</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_116" class="" id="tfa_116" name="tfa_115" title="5"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_117" class="" id="tfa_117" name="tfa_115" title="4"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_118" class="" id="tfa_118" name="tfa_115" title="3"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_119" class="" id="tfa_119" name="tfa_115" title="2"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_120" class="" id="tfa_120" name="tfa_115" title="1"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_121" class="" id="tfa_121" name="tfa_115" title="Not applicable"></span></td>
+  </tr></tbody>
+  </table>
+  <div class="htmlSection" id="tfa_198"><div class="htmlContent" id="tfa_198-HTML"><b>25.&nbsp;About the Community Jobs Scotland Training Fund&nbsp;</b></div></div>
+  <table class="matrixLayout ">
+  <thead><tr class="headerRow" id="tfa_122-MTRX">
+  <th></th>
+  <th scope="col">Yes</th>
+  <th scope="col">No</th>
+  <th scope="col">Don't Know</th>
+  </tr></thead>
+  <tbody>
+  <tr id="tfa_122" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_122-L" data-tfa-labelledby="-L tfa_122-L">
+  <th scope="row" class="headerCol"><label id="tfa_122-L" for="tfa_122" class="form-label ">Were you informed about the CJS Training Fund</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_123" class="" id="tfa_123" name="tfa_122" title="Yes"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_124" class="" id="tfa_124" name="tfa_122" title="No"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_125" class="" id="tfa_125" name="tfa_122" title="Don't Know"></span></td>
+  </tr>
+  <tr id="tfa_126" class="oneField   alternate-1 " role="radiogroup" aria-labelledby="tfa_126-L" data-tfa-labelledby="-L tfa_126-L">
+  <th scope="row" class="headerCol"><label id="tfa_126-L" for="tfa_126" class="form-label ">Did you participate in any CJS funded training</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_127" class="" id="tfa_127" name="tfa_126" title="Yes"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_128" class="" id="tfa_128" name="tfa_126" title="No"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_129" class="" id="tfa_129" name="tfa_126" title="Don't Know"></span></td>
+  </tr>
+  <tr id="tfa_130" class="oneField   alternate-0 " role="radiogroup" aria-labelledby="tfa_130-L" data-tfa-labelledby="-L tfa_130-L">
+  <th scope="row" class="headerCol"><label id="tfa_130-L" for="tfa_130" class="form-label ">Was this training certificated</label></th>
+  <td><span class="oneChoice"><input type="radio" value="tfa_131" class="" id="tfa_131" name="tfa_130" title="Yes"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_132" class="" id="tfa_132" name="tfa_130" title="No"></span></td>
+  <td><span class="oneChoice"><input type="radio" value="tfa_133" class="" id="tfa_133" name="tfa_130" title="Don't Know"></span></td>
+  </tr>
+  </tbody>
+  </table>
+  <div class="oneField field-container-D    " id="tfa_6-D">
+  <label id="tfa_6-L" class="form-label preField " for="tfa_6"><b>26.&nbsp;How would you change Community Jobs Scotland to improve young peoples changes of getting a job at the end?</b></label><div class="inputWrapper"><textarea cols="100%" rows="20%" maxlength="5000" id="tfa_6" name="tfa_6" title="26. How would you change Community Jobs Scotland to improve young peoples changes of getting a job at the end?" class=""></textarea></div>
+  </div>
+  <input type="hidden" id="tfa_201" name="tfa_201" value="{{@root.request.params.query.key}}" title="Session Key"><div class="actions" id="4921394-A"><input type="submit" data-label="Submit" class="btn btn-primary primaryAction" style="color:white;" id="submit_button" value="Submit"></div>
+  <div style="clear:both"></div>
+  <input type="hidden" value="4921394" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="cb95469ec75d4140ab1968dc632ba034" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid"><input type="hidden" value="30" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+  </form>
+  </div></div>
+   </div>
+
+
+  {{!-- <iframe src="https://www.surveygizmo.eu/s3/90127073/CJS-13-Week-Job-Completion-Survey?key={{@root.request.params.query.key}}" frameborder="0" width="100%" height="550" style="overflow:hidden" class="b-margin-full"></iframe> --}}
   {{!-- <script type="text/javascript" >document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveydisabledgizmo.eu/s3/90127073/CJS-13-Week-Job-Completion-Survey?key={{@root.request.params.query.key}}&__output=embedjs&__ref=' + escape(document.location.origin + document.location.pathname) + '" type="text/javascript" ></scr' + 'ipt>');</script><style>.sg-survey{display:none; }</style> --}}
   {{!-- <iframe src="https://={{@root.request.params.query.key}}" frameborder="0" width="100%" height="500" style="overflow:hidden"></iframe> --}}
 </div>
