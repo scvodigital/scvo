@@ -201,8 +201,9 @@
     "test": "it_worked",
     {{#ifAny @root.request.params.charity_number @root.data.application_data.request.grant_data ~}}
     {{#withExtend this application=@root.data.application_data.request.grant_data oscr=@root.data.oscr_data.hits.hits.[0]._source milo=@root.data.milo_data.hits.hits.[0]._source postcode=@root.data.postcode_data.[0]}}
-    "application_editing": {{{json value=(default application.Id "")}}},
+    "application_editing": {{{json value=(default application.Name "")}}},
     "application_readonly": {{#if (contains @root.route.name "fund_ccrf_view_form")}}true{{else}}false{{/if}},
+    "application_attachments": {{{json value=(default application.ContentDocumentLinks.records "")}}},
     "application_call": {{{json value=(default application.Call__c "")}}},
     "application_status": {{{json value=(default application.Application_Satus__c "")}}},
     "is_charity": {{{json value=(default (default application.Charity_Number__c oscr.charity_number) "")}}},

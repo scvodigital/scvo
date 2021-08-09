@@ -378,7 +378,7 @@
                 <div class="form-group field-container-D">
                   <div class="input-group" style="width:100%;">
                     <span class="input-group-addon">&pound;</span>
-                    <input type="number" id="tfa_2889" name="tfa_2889" min="0" max="200000"  value="{{defaults.tfa_2889}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}disabled{{/if}}{{else}}class="form-input validate-integer text-right required" required{{/if}}>
+                    <input type="number" id="tfa_2889" name="tfa_2889" min="0" max="200000"  value="{{defaults.tfa_2889}}" aria-required="true" autocomplete="nope" data-lpignore="true" {{#if defaults.application_editing}}class="form-input" {{#if defaults.application_readonly}}readonly{{else}}{{/if}}{{else}}class="form-input validate-integer text-right required" required{{/if}}>
                   </div>
                   <p class="form-input-hint text-secondary">Must not be greater than £200k.</p>
                 </div>
@@ -773,20 +773,85 @@
               </div>
               <div class="bg-gray v-padding-full">
                 <div class="container section v-padding-full">
+                  {{#ifAny defaults.application_readonly defaults.application_editing}}
+                    <div class="col-9 col-xl-12">
+                      <table style="width:100%;" class="b-margin-full">
+                        <thead>
+                          <tr>
+                            <th> </th>
+                            <th class="text-left">Filename</th>
+                            <th class="text-left">Size</th>
+                            <th class="text-left">Uploaded</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {{#each defaults.application_attachments}}
+                          <tr>
+                            {{#with ContentDocument}}
+                            <td>
+                              {{#switch FileType}}
+                              {{#case "WORD"}}
+                              <span class="far fa-fw fa-file-word"></span>
+                              {{/case}}
+                              {{#case "WORD_X"}}
+                              <span class="far fa-fw fa-file-word"></span>
+                              {{/case}}
+                              {{#case "PDF"}}
+                              <span class="far fa-fw fa-file-pdf"></span>
+                              {{/case}}
+                              {{#case "CSV"}}
+                              <span class="far fa-fw fa-file-csv"></span>
+                              {{/case}}
+                              {{#case "EXCEL"}}
+                              <span class="far fa-fw fa-file-excel"></span>
+                              {{/case}}
+                              {{#case "EXCEL_X"}}
+                              <span class="far fa-fw fa-file-excel"></span>
+                              {{/case}}
+                              {{#case "ZIP"}}
+                              <span class="far fa-fw fa-file-archive"></span>
+                              {{/case}}
+                              {{#switchDefault}}
+                              <span class="far fa-fw fa-file-spreadsheet"></span>
+                              {{/switchDefault}}
+                              {{/switch}}
+                            </td>
+                            <td>
+                              {{Title}}
+                            </td>
+                            <td>
+                              {{addCommas (round (divide ContentSize 1024))}}Kb
+                            </td>
+                            <td>
+                              {{momentFormat (momentConvertTz (moment CreatedDate "YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0") "UTC" "Europe/Berlin") 'Do MMMM YYYY HH:mm:ss'}}
+                            </td>
+                            {{/with}}
+                          </tr>
+                          {{/each}}
+                        </tbody>
+                      </table>
+                      {{#if defaults.application_editing}}
+                        <p>
+                          You have already uploaded both documents required. These options are available if you need to upload a new copy any of the documents.
+                        </p>
+                      {{/if}}
+                    </div>
+                  {{/ifAny}}
+
                   <div class="form-group oneField field-container-D    " id="tfa_2902-D">
                     <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 pr">
-                      <label id="tfa_2902-L" class="form-label preField reqMark" for="tfa_2902">Last Audited or Independently Examined Accounts</label>
+                      <label id="tfa_2902-L" class="form-label preField{{#unless defaults.application_editing}} reqMark{{/unless}}" for="tfa_2902">Last Audited or Independently Examined Accounts</label>
                     </div>
                     <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                      <input type="file" id="tfa_2902" name="tfa_2902" size="" title="Last Audited or Independently Examined Accounts" class="form-input required" required>
+                      <input type="file" id="tfa_2902" name="tfa_2902" size="" title="Last Audited or Independently Examined Accounts" {{#unless defaults.application_editing}}class="form-input required" required{{else}}class="form-input"{{/unless}}>
                     </div>
                   </div>
                   <div class="form-group oneField field-container-D    " id="tfa_2904-D">
                     <div class="col-3 col-xl-4 col-lg-5 col-md-6 col-sm-12 pr">
-                      <label id="tfa_2904-L" class="form-label preField {{#unless defaults.is_charity}}reqMark{{/unless}}" for="tfa_2904">Constitution or Govering Document</label>
+                      <label id="tfa_2904-L" class="form-label preField {{#unless defaults.application_editing}}{{#unless defaults.is_charity}}reqMark{{/unless}}{{/unless}}" for="tfa_2904">Constitution or Govering Document</label>
                     </div>
                     <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
-                      <input type="file" id="tfa_2904" name="tfa_2904" size="" title="Constitution or Govering Document" {{#if defaults.is_charity}}class="form-input"{{else}}class="form-input required" required{{/if}}>
+                      <input type="file" id="tfa_2904" name="tfa_2904" size="" title="Constitution or Govering Document" {{#unless defaults.application_editing}}{{#if defaults.is_charity}}class="form-input"{{else}}class="form-input required" required{{/if}}{{else}}class="form-input"{{/unless}}>
                     </div>
                   </div>
                 </div>
@@ -959,6 +1024,7 @@
 
         <div style="clear:both;"></div>
         {{#unless defaults.application_readonly}}
+        <input type="hidden" id="tfa_2921" name="tfa_2921" value="{{@root.request.params.session_key}}" title="Session Key">
         <input type="hidden" id="tfa_2774" name="tfa_2774" value="{{#if defaults.application_confirm}}Confirm{{else}}{{#if defaults.application_editing}}Edit{{else}}New{{/if}}{{/if}}" title="Edit type">
         <input type="hidden" id="tfa_1946" name="tfa_1946" value="{{defaults.tfa_1946}}" title="Charity Status">
         <input type="hidden" id="tfa_1936" name="tfa_1936" value="{{defaults.tfa_1936}}" title="Constituency">
@@ -969,7 +1035,7 @@
         <input type="hidden" value="4914812" name="tfa_dbFormId" id="tfa_dbFormId">
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
         <input type="hidden" value="54e109939428f17b839579e7cbc75c58" name="tfa_dbControl" id="tfa_dbControl">
-        <input type="hidden" value="14" name="tfa_dbVersionId" id="tfa_dbVersionId">
+        <input type="hidden" value="15" name="tfa_dbVersionId" id="tfa_dbVersionId">
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
         {{/unless}}
       </form>
@@ -1078,7 +1144,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (Array.isArray(window.formsRecovering) && window.formsRecovering.length > 0) return;
       clearAreas();
       // enableDisableReferences();
-      checkDateValidity();
+      // checkDateValidity(); //disabled because logic makes no sense
       checkTotalsValidity();
       checkItemDescriptionsAndCostsValidity();
       checkAreasCoveredValidity();
@@ -1125,7 +1191,7 @@ document.addEventListener("DOMContentLoaded", function() {
         return;
       };
 
-      $endDate[0].setCustomValidity('The end date must be before the start date');
+      $endDate[0].setCustomValidity('The end date must be before the start date'); //what?
       $endDate[0].reportValidity();
     }
 
