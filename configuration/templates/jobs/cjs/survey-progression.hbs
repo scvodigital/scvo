@@ -1,4 +1,265 @@
+{{#if @root.request.params.query.key}}
+<!-- FORM: HEAD SECTION -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="no-referrer-when-downgrade">
+            <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(){
+            const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+            let formElement = document.getElementById("tfa_0");
+            if (null === formElement) {
+                formElement = document.getElementById("0");
+            }
+            let appendJsTimerElement = function(){
+                let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+                let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+                if (null !== cumulatedTimeElement) {
+                    let cumulatedTime = parseInt(cumulatedTimeElement.value);
+                    if (null !== cumulatedTime && cumulatedTime > 0) {
+                        formTimeDiff += cumulatedTime;
+                    }
+                }
+                let jsTimeInput = document.createElement("input");
+                jsTimeInput.setAttribute("type", "hidden");
+                jsTimeInput.setAttribute("value", formTimeDiff.toString());
+                jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+                jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+                jsTimeInput.setAttribute("autocomplete", "off");
+                if (null !== formElement) {
+                    formElement.appendChild(jsTimeInput);
+                }
+            };
+            if (null !== formElement) {
+                if(formElement.addEventListener){
+                    formElement.addEventListener('submit', appendJsTimerElement, false);
+                } else if(formElement.attachEvent){
+                    formElement.attachEvent('onsubmit', appendJsTimerElement);
+                }
+            }
+        });
+    </script>
+
+    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=1628535855" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=1628535855"></script>
+    <script type="text/javascript">
+        wFORMS.behaviors.prefill.skip = false;
+    </script>
+        <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_GB.js?v=1628535855"></script>
+
+
+
+        <!-- FORM: BODY SECTION -->
+        <div class="container wFormContainer" ><div class=""><div class="wForm" id="4924628-WRPR" dir="ltr">
+        <div class="codesection" id="code-4924628"></div>
+        <h1 class="wFormTitle" data-testid="form-title" id="4924628-T">CJS employee In Work Progression</h1>
+        <form method="post" action="https://www.tfaforms.com/responses/processor" class="hintsBelow labelsAbove form form-horizontal" id="4924628" role="form">
+        <div class="htmlSection" id="tfa_43"><div class="htmlContent" id="tfa_43-HTML"><div style="margin-bottom: 1rem; border-bottom: none;" class="" id="sgE-90127074-1-3-box">
+          <h2>Community Jobs Scotland (CJS) – follow up on Employees Progression</h2>
+          <h3>Please complete this short&nbsp;survey on employees&nbsp;progression through their CJS job</h3>
+        </div></div></div>
+        <div class="oneField field-container-D    " id="tfa_4-D" role="group" aria-labelledby="tfa_4-L" data-tfa-labelledby="-L tfa_4-L">
+        <label id="tfa_4-L" class="form-label preField "><strong>TEAMWORK<br><span>Please select a&nbsp;<span class="label label-warning">maximum of 3 statements</span>&nbsp;from the heading that best demonstrates your employees abilities in this area. &nbsp;They can:</span></strong></label><div class="inputWrapper"><span id="tfa_4" class="choices vertical "><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_5-L" for="tfa_5">
+  <input type="checkbox" value="tfa_5" class="" id="tfa_5" name="tfa_5" aria-labelledby="tfa_5-L" data-tfa-labelledby="tfa_4-L tfa_5-L">
+<span class="form-icon"></span>Work across different ages, gender etc.</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_6-L" for="tfa_6">
+  <input type="checkbox" value="tfa_6" class="" id="tfa_6" name="tfa_6" aria-labelledby="tfa_6-L" data-tfa-labelledby="tfa_4-L tfa_6-L">
+<span class="form-icon"></span>Motivate and direct others</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_7-L" for="tfa_7">
+  <input type="checkbox" value="tfa_7" class="" id="tfa_7" name="tfa_7" aria-labelledby="tfa_7-L" data-tfa-labelledby="tfa_4-L tfa_7-L">
+<span class="form-icon"></span>Work confidently in a group</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_8-L" for="tfa_8">
+  <input type="checkbox" value="tfa_8" class="" id="tfa_8" name="tfa_8" aria-labelledby="tfa_8-L" data-tfa-labelledby="tfa_4-L tfa_8-L">
+<span class="form-icon"></span>Be tactful and diplomatic</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_9-L" for="tfa_9">
+  <input type="checkbox" value="tfa_9" class="" id="tfa_9" name="tfa_9" aria-labelledby="tfa_9-L" data-tfa-labelledby="tfa_4-L tfa_9-L">
+<span class="form-icon"></span>Work on tasks in a group</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_10-L" for="tfa_10">
+  <input type="checkbox" value="tfa_10" class="" id="tfa_10" name="tfa_10" aria-labelledby="tfa_10-L" data-tfa-labelledby="tfa_4-L tfa_10-L">
+<span class="form-icon"></span>Be a good organiser</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_11-L" for="tfa_11">
+  <input type="checkbox" value="tfa_11" class="" id="tfa_11" name="tfa_11" aria-labelledby="tfa_11-L" data-tfa-labelledby="tfa_4-L tfa_11-L">
+<span class="form-icon"></span>Be very persuasive</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_12-L" for="tfa_12">
+  <input type="checkbox" value="tfa_12" class="" id="tfa_12" name="tfa_12" aria-labelledby="tfa_12-L" data-tfa-labelledby="tfa_4-L tfa_12-L">
+<span class="form-icon"></span>Support and praise other team members</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_13-L" for="tfa_13">
+  <input type="checkbox" value="tfa_13" class="" id="tfa_13" name="tfa_13" aria-labelledby="tfa_13-L" data-tfa-labelledby="tfa_4-L tfa_13-L">
+<span class="form-icon"></span>Suggest new ways of doing things</label></span></span></div>
+        </div>
+        <div class="oneField field-container-D    " id="tfa_14-D" role="group" aria-labelledby="tfa_14-L" data-tfa-labelledby="-L tfa_14-L">
+        <label id="tfa_14-L" class="form-label preField "><strong>COMMUNICATION<br><span>Please select a&nbsp;<span class="label label-warning">maximum of 3 statements</span>&nbsp;from the heading that best demonstrates your employees abilities in this area. &nbsp;They can:</span></strong></label><div class="inputWrapper"><span id="tfa_14" class="choices vertical "><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_15-L" for="tfa_15">
+  <input type="checkbox" value="tfa_15" class="" id="tfa_15" name="tfa_15" aria-labelledby="tfa_15-L" data-tfa-labelledby="tfa_14-L tfa_15-L">
+<span class="form-icon"></span>Deal with the public – good customer care</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_16-L" for="tfa_16">
+  <input type="checkbox" value="tfa_16" class="" id="tfa_16" name="tfa_16" aria-labelledby="tfa_16-L" data-tfa-labelledby="tfa_14-L tfa_16-L">
+<span class="form-icon"></span>Develop good working relationships</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_17-L" for="tfa_17">
+  <input type="checkbox" value="tfa_17" class="" id="tfa_17" name="tfa_17" aria-labelledby="tfa_17-L" data-tfa-labelledby="tfa_14-L tfa_17-L">
+<span class="form-icon"></span>Understand and follow instructions</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_18-L" for="tfa_18">
+  <input type="checkbox" value="tfa_18" class="" id="tfa_18" name="tfa_18" aria-labelledby="tfa_18-L" data-tfa-labelledby="tfa_14-L tfa_18-L">
+<span class="form-icon"></span>Communicate over the telephone</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_19-L" for="tfa_19">
+  <input type="checkbox" value="tfa_19" class="" id="tfa_19" name="tfa_19" aria-labelledby="tfa_19-L" data-tfa-labelledby="tfa_14-L tfa_19-L">
+<span class="form-icon"></span>Communicate confidently</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_20-L" for="tfa_20">
+  <input type="checkbox" value="tfa_20" class="" id="tfa_20" name="tfa_20" aria-labelledby="tfa_20-L" data-tfa-labelledby="tfa_14-L tfa_20-L">
+<span class="form-icon"></span>Express themselves well in writing</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_21-L" for="tfa_21">
+  <input type="checkbox" value="tfa_21" class="" id="tfa_21" name="tfa_21" aria-labelledby="tfa_21-L" data-tfa-labelledby="tfa_14-L tfa_21-L">
+<span class="form-icon"></span>Articulate - speak clearly and directly</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_22-L" for="tfa_22">
+  <input type="checkbox" value="tfa_22" class="" id="tfa_22" name="tfa_22" aria-labelledby="tfa_22-L" data-tfa-labelledby="tfa_14-L tfa_22-L">
+<span class="form-icon"></span>Be empathetic</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_23-L" for="tfa_23">
+  <input type="checkbox" value="tfa_23" class="" id="tfa_23" name="tfa_23" aria-labelledby="tfa_23-L" data-tfa-labelledby="tfa_14-L tfa_23-L">
+<span class="form-icon"></span>Understand the needs of internal and external customers</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_24-L" for="tfa_24">
+  <input type="checkbox" value="tfa_24" class="" id="tfa_24" name="tfa_24" aria-labelledby="tfa_24-L" data-tfa-labelledby="tfa_14-L tfa_24-L">
+<span class="form-icon"></span>Establish and use networks</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_25-L" for="tfa_25">
+  <input type="checkbox" value="tfa_25" class="" id="tfa_25" name="tfa_25" aria-labelledby="tfa_25-L" data-tfa-labelledby="tfa_14-L tfa_25-L">
+<span class="form-icon"></span>Share information</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_26-L" for="tfa_26">
+  <input type="checkbox" value="tfa_26" class="" id="tfa_26" name="tfa_26" aria-labelledby="tfa_26-L" data-tfa-labelledby="tfa_14-L tfa_26-L">
+<span class="form-icon"></span>Be assertive</label></span></span></div>
+        </div>
+        <div class="oneField field-container-D    " id="tfa_27-D" role="group" aria-labelledby="tfa_27-L" data-tfa-labelledby="-L tfa_27-L">
+        <label id="tfa_27-L" class="form-label preField "><strong>PROBLEM SOLVING<br><span>Please select a&nbsp;<span class="label label-warning">maximum of 3 statements</span>&nbsp;from the heading that best demonstrates your employees abilities in this area. &nbsp;They can:</span></strong></label>
+        <div class="inputWrapper"><span id="tfa_27" class="choices vertical "><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_28-L" for="tfa_28">
+  <input type="checkbox" value="tfa_28" class="" id="tfa_28" name="tfa_28" aria-labelledby="tfa_28-L" data-tfa-labelledby="tfa_27-L tfa_28-L">
+<span class="form-icon"></span>Define a problem clearly</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_29-L" for="tfa_29">
+  <input type="checkbox" value="tfa_29" class="" id="tfa_29" name="tfa_29" aria-labelledby="tfa_29-L" data-tfa-labelledby="tfa_27-L tfa_29-L">
+<span class="form-icon"></span>Plan problem resolutions</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_30-L" for="tfa_30">
+  <input type="checkbox" value="tfa_30" class="" id="tfa_30" name="tfa_30" aria-labelledby="tfa_30-L" data-tfa-labelledby="tfa_27-L tfa_30-L">
+<span class="form-icon"></span>Carry out plan to resolve a problem</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_31-L" for="tfa_31">
+  <input type="checkbox" value="tfa_31" class="" id="tfa_31" name="tfa_31" aria-labelledby="tfa_31-L" data-tfa-labelledby="tfa_27-L tfa_31-L">
+<span class="form-icon"></span>Understand and Overcome problems</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_32-L" for="tfa_32">
+  <input type="checkbox" value="tfa_32" class="" id="tfa_32" name="tfa_32" aria-labelledby="tfa_32-L" data-tfa-labelledby="tfa_27-L tfa_32-L">
+<span class="form-icon"></span>Use own initiative</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_33-L" for="tfa_33">
+  <input type="checkbox" value="tfa_33" class="" id="tfa_33" name="tfa_33" aria-labelledby="tfa_33-L" data-tfa-labelledby="tfa_27-L tfa_33-L">
+<span class="form-icon"></span>Ask for help</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_34-L" for="tfa_34">
+  <input type="checkbox" value="tfa_34" class="" id="tfa_34" name="tfa_34" aria-labelledby="tfa_34-L" data-tfa-labelledby="tfa_27-L tfa_34-L">
+<span class="form-icon"></span>Manage their own learning</label></span></span></div>
+        </div>
+        <div class="oneField field-container-D    " id="tfa_35-D" role="group" aria-labelledby="tfa_35-L" data-tfa-labelledby="-L tfa_35-L">
+        <label id="tfa_35-L" class="form-label preField "><strong>DEVELOPING PROFESSIONALISM<br><span>Please select a&nbsp;<span class="label label-warning">maximum of 3 statements</span>&nbsp;from the heading that best demonstrates your employees abilities in this area. &nbsp;They can:</span></strong></label><div class="inputWrapper"><span id="tfa_35" class="choices vertical "><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_36-L" for="tfa_36">
+  <input type="checkbox" value="tfa_36" class="" id="tfa_36" name="tfa_36" aria-labelledby="tfa_36-L" data-tfa-labelledby="tfa_35-L tfa_36-L">
+<span class="form-icon"></span>Accept responsibility for their views and actions</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_37-L" for="tfa_37">
+  <input type="checkbox" value="tfa_37" class="" id="tfa_37" name="tfa_37" aria-labelledby="tfa_37-L" data-tfa-labelledby="tfa_35-L tfa_37-L">
+<span class="form-icon"></span>Show the ability to work under their own direction and initiative</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_38-L" for="tfa_38">
+  <input type="checkbox" value="tfa_38" class="" id="tfa_38" name="tfa_38" aria-labelledby="tfa_38-L" data-tfa-labelledby="tfa_35-L tfa_38-L">
+<span class="form-icon"></span>Make choices based on their own judgement</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_39-L" for="tfa_39">
+  <input type="checkbox" value="tfa_39" class="" id="tfa_39" name="tfa_39" aria-labelledby="tfa_39-L" data-tfa-labelledby="tfa_35-L tfa_39-L">
+<span class="form-icon"></span>Pay care and attention to quality in all their work</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_40-L" for="tfa_40">
+  <input type="checkbox" value="tfa_40" class="" id="tfa_40" name="tfa_40" aria-labelledby="tfa_40-L" data-tfa-labelledby="tfa_35-L tfa_40-L">
+<span class="form-icon"></span>Take the opportunity to learn new skills</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_41-L" for="tfa_41">
+  <input type="checkbox" value="tfa_41" class="" id="tfa_41" name="tfa_41" aria-labelledby="tfa_41-L" data-tfa-labelledby="tfa_35-L tfa_41-L">
+<span class="form-icon"></span>Develop the drive and enthusiasm to achieve their goals</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_42-L" for="tfa_42">
+  <input type="checkbox" value="tfa_42" class="" id="tfa_42" name="tfa_42" aria-labelledby="tfa_42-L" data-tfa-labelledby="tfa_35-L tfa_42-L">
+<span class="form-icon"></span>Demonstrate good time management</label></span></span></div>
+        </div>
+        <div class="oneField field-container-D    " id="tfa_44-D" role="group" aria-labelledby="tfa_44-L" data-tfa-labelledby="-L tfa_44-L">
+        <label id="tfa_44-L" class="form-label preField "><strong>PERSONAL QUALITIES<br><span>Please select a&nbsp;<span class="label label-warning">maximum of 3 statements</span>&nbsp;from the heading that best demonstrates your employees abilities in this area. &nbsp;They can:</span></strong></label><div class="inputWrapper"><span id="tfa_44" class="choices vertical "><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_45-L" for="tfa_45">
+  <input type="checkbox" value="tfa_45" class="" id="tfa_45" name="tfa_45" aria-labelledby="tfa_45-L" data-tfa-labelledby="tfa_44-L tfa_45-L">
+<span class="form-icon"></span>Accept praise</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_46-L" for="tfa_46">
+  <input type="checkbox" value="tfa_46" class="" id="tfa_46" name="tfa_46" aria-labelledby="tfa_46-L" data-tfa-labelledby="tfa_44-L tfa_46-L">
+<span class="form-icon"></span>Be enthusiastic and motivated</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_47-L" for="tfa_47">
+  <input type="checkbox" value="tfa_47" class="" id="tfa_47" name="tfa_47" aria-labelledby="tfa_47-L" data-tfa-labelledby="tfa_44-L tfa_47-L">
+<span class="form-icon"></span>Be honest</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_48-L" for="tfa_48">
+  <input type="checkbox" value="tfa_48" class="" id="tfa_48" name="tfa_48" aria-labelledby="tfa_48-L" data-tfa-labelledby="tfa_44-L tfa_48-L">
+<span class="form-icon"></span>Always be on time or early</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_49-L" for="tfa_49">
+  <input type="checkbox" value="tfa_49" class="" id="tfa_49" name="tfa_49" aria-labelledby="tfa_49-L" data-tfa-labelledby="tfa_44-L tfa_49-L">
+<span class="form-icon"></span>Work hard and are willing to learn</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_50-L" for="tfa_50">
+  <input type="checkbox" value="tfa_50" class="" id="tfa_50" name="tfa_50" aria-labelledby="tfa_50-L" data-tfa-labelledby="tfa_44-L tfa_50-L">
+<span class="form-icon"></span>Be flexible</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_51-L" for="tfa_51">
+  <input type="checkbox" value="tfa_51" class="" id="tfa_51" name="tfa_51" aria-labelledby="tfa_51-L" data-tfa-labelledby="tfa_44-L tfa_51-L">
+<span class="form-icon"></span>Express their own ideas</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_52-L" for="tfa_52">
+  <input type="checkbox" value="tfa_52" class="" id="tfa_52" name="tfa_52" aria-labelledby="tfa_52-L" data-tfa-labelledby="tfa_44-L tfa_52-L">
+<span class="form-icon"></span>Respect equal opportunities</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_53-L" for="tfa_53">
+  <input type="checkbox" value="tfa_53" class="" id="tfa_53" name="tfa_53" aria-labelledby="tfa_53-L" data-tfa-labelledby="tfa_44-L tfa_53-L">
+<span class="form-icon"></span>Be responsible/reliable</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_54-L" for="tfa_54">
+  <input type="checkbox" value="tfa_54" class="" id="tfa_54" name="tfa_54" aria-labelledby="tfa_54-L" data-tfa-labelledby="tfa_44-L tfa_54-L">
+<span class="form-icon"></span>Show initiative with own workload</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_55-L" for="tfa_55">
+  <input type="checkbox" value="tfa_55" class="" id="tfa_55" name="tfa_55" aria-labelledby="tfa_55-L" data-tfa-labelledby="tfa_44-L tfa_55-L">
+<span class="form-icon"></span>Plan and organise tasks</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_56-L" for="tfa_56">
+  <input type="checkbox" value="tfa_56" class="" id="tfa_56" name="tfa_56" aria-labelledby="tfa_56-L" data-tfa-labelledby="tfa_44-L tfa_56-L">
+<span class="form-icon"></span>Dress appropriately</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_57-L" for="tfa_57">
+  <input type="checkbox" value="tfa_57" class="" id="tfa_57" name="tfa_57" aria-labelledby="tfa_57-L" data-tfa-labelledby="tfa_44-L tfa_57-L">
+<span class="form-icon"></span>Have a methodical approach to tasks</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_58-L" for="tfa_58">
+  <input type="checkbox" value="tfa_58" class="" id="tfa_58" name="tfa_58" aria-labelledby="tfa_58-L" data-tfa-labelledby="tfa_44-L tfa_58-L">
+<span class="form-icon"></span>Have a sense of humour</label></span></span></div>
+        </div>
+        <div class="oneField field-container-D    " id="tfa_59-D" role="group" aria-labelledby="tfa_59-L" data-tfa-labelledby="-L tfa_59-L">
+        <label id="tfa_59-L" class="form-label preField "><strong>INFORMATION TECHNOLOGY<br><span>Please select a&nbsp;<span class="label label-warning">maximum of 3 statements</span>&nbsp;from the heading that best demonstrates your employees abilities in this area. &nbsp;They can:</span></strong></label><div class="inputWrapper"><span id="tfa_59" class="choices vertical "><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_60-L" for="tfa_60">
+  <input type="checkbox" value="tfa_60" class="" id="tfa_60" name="tfa_60" aria-labelledby="tfa_60-L" data-tfa-labelledby="tfa_59-L tfa_60-L">
+<span class="form-icon"></span>Confidently use Microsoft Office packages</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_61-L" for="tfa_61">
+  <input type="checkbox" value="tfa_61" class="" id="tfa_61" name="tfa_61" aria-labelledby="tfa_61-L" data-tfa-labelledby="tfa_59-L tfa_61-L">
+<span class="form-icon"></span>Use IT to organise data</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_62-L" for="tfa_62">
+  <input type="checkbox" value="tfa_62" class="" id="tfa_62" name="tfa_62" aria-labelledby="tfa_62-L" data-tfa-labelledby="tfa_59-L tfa_62-L">
+<span class="form-icon"></span>Learn new IT skills</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_63-L" for="tfa_63">
+  <input type="checkbox" value="tfa_63" class="" id="tfa_63" name="tfa_63" aria-labelledby="tfa_63-L" data-tfa-labelledby="tfa_59-L tfa_63-L">
+<span class="form-icon"></span>Maintain/input to a Content Management System (CMS)</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_64-L" for="tfa_64">
+  <input type="checkbox" value="tfa_64" class="" id="tfa_64" name="tfa_64" aria-labelledby="tfa_64-L" data-tfa-labelledby="tfa_59-L tfa_64-L">
+<span class="form-icon"></span>Create and produce documents using graphics</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_65-L" for="tfa_65">
+  <input type="checkbox" value="tfa_65" class="" id="tfa_65" name="tfa_65" aria-labelledby="tfa_65-L" data-tfa-labelledby="tfa_59-L tfa_65-L">
+<span class="form-icon"></span>Access, forward and update business communications i.e. social media, emails etc.</label></span><span class="oneChoice">
+<label class="form-checkbox postField" id="tfa_66-L" for="tfa_66">
+  <input type="checkbox" value="tfa_66" class="" id="tfa_66" name="tfa_66" aria-labelledby="tfa_66-L" data-tfa-labelledby="tfa_59-L tfa_66-L">
+<span class="form-icon"></span>Maintain and update records - Databases and Customer Relationship Management (CRM)</label></span></span></div>
+        </div>
+        <input type="hidden" id="tfa_67" name="tfa_67" value="{{@root.request.params.query.key}}" title="Session Key"><div class="actions" id="4924628-A"><input type="submit" data-label="Submit" class="btn btn-primary primaryAction" id="submit_button" value="Submit"></div>
+        <div style="clear:both"></div>
+        <input type="hidden" value="4924628" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="bdcab81f70263a47f17f41423f011a9c" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid"><input type="hidden" value="2" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+        </form>
+        </div></div>
+         </div>
+
+
 <div class="container">
-  <iframe src="https://www.surveygizmo.eu/s3/90127074/CJS-employee-In-Work-Progression-V2-Web-Embedded?key={{@root.request.params.query.key}}" frameborder="0" width="100%" height="550" style="overflow:hidden" class="b-margin-full"></iframe>
-  {{!-- <script type="text/javascript" >document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90127074/CJS-employee-In-Work-Progression-V2-Web-Embedded?key={{@root.request.params.query.key}}&__output=embedjs&__ref=' + escape(document.location.origin + document.location.pathname) + '" type="text/javascript" ></scr' + 'ipt>');</script><style>.sg-survey{display:none; }</style> --}}
+  {{!-- <iframe src="https://www.surveydisabledgizmo.eu/s3/90127074/CJS-employee-In-Work-Progression-V2-Web-Embedded?key={{@root.request.params.query.key}}" frameborder="0" width="100%" height="550" style="overflow:hidden" class="b-margin-full"></iframe> --}}
+  {{!-- <script type="text/javascript" >document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveydisabledgizmo.eu/s3/90127074/CJS-employee-In-Work-Progression-V2-Web-Embedded?key={{@root.request.params.query.key}}&__output=embedjs&__ref=' + escape(document.location.origin + document.location.pathname) + '" type="text/javascript" ></scr' + 'ipt>');</script><style>.sg-survey{display:none; }</style> --}}
 </div>
+
+{{else}}
+  <h1>Error</h1>
+  <p>
+    <span class="form-label label-error">Cannot load form, key is missing - please contact support</span>
+  </p>
+{{/if}}

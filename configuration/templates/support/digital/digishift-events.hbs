@@ -13,7 +13,7 @@
       {{{default description course_overview}}}
     </p>
     <p class="book-now">
-      <a href="{{#if booking_url}}{{#if (contains booking_url 'https://www.surveygizmo.eu')}}{{path}}/book{{else}}{{{booking_url}}}{{/if}}{{else}}{{path}}/book{{/if}}" class="btn btn-primary btn-lg">Book now</a>
+      <a href="{{#if booking_url}}{{{booking_url}}}{{else}}{{path}}/book{{/if}}" class="btn btn-primary btn-lg">Book now</a>
     </p>
     {{/with ~}}
     {{/each ~}}
