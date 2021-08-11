@@ -1,0 +1,23 @@
+{
+  "name": "redirect_awards-2021-finalists",
+  "pattern": "/scottish-charity-awards",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/scottish-charity-awards/finalists-2021"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
