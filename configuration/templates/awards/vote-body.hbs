@@ -6,16 +6,16 @@
       </div>
 
       {{!-- <img src="{{~>asset_url url='images/awards/peoples-choice.svg'~}}" class="img-responsive" title="Peoples Choice Award" /> --}}
-      <p>
+      {{!-- <p>
         <span class="label label-warning">The voting function is in <strong>test mode</strong> and your vote will not be counted for the 2021 awards - the record of votes will be reset before Thursday 12th</span>
-      </p>
+      </p> --}}
 
-      {{#unless @root.request.cookies.charity_awards_already_voted}}
+      {{#unless @root.request.cookies.charity_awards_2021_already_voted}}
         {{!-- <iframe src="https://survey.alchemer.eu/s3/90371663/Scottish-Charity-Awards-2021-voting?vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}" frameborder="0" width="100%" height="700" style="overflow:hidden"></iframe> --}}
         <script type="text/javascript">document.write('<script src="http' + ( ("https:" == document.location.protocol) ? "s" : "") + '://www.surveygizmo.eu/s3/90371663/Scottish-Charity-Awards-2021-voting?__output=embedjs&vote={{@root.request.params.vote}}&category={{@root.request.params.category}}&host={{@root.request.uri.hostname}}&categoryTitle={{urlencode (getProperty @root.route.metaData.awards-info (concat @root.request.params.category '.title'))}}&candidateTitle={{urlencode @root.data.primaryResponse.hits.hits.[0]._source.title}}&__ref=' + escape(document.location.href) + '" type="text/javascript" ></scr' + 'ipt>');</script>
         <style>.sg-survey{display:none; }</style>
       {{else}}
-        {{#compare @root.request.params.vote @root.request.cookies.charity_awards_already_voted}}
+        {{#compare @root.request.params.vote @root.request.cookies.charity_awards_2021_already_voted}}
           <h3>Thanks for voting for {{{title}}}</h3>
         {{else}}
           <h3>You have already voted - you can only vote once</h3>
@@ -60,13 +60,13 @@
         var category = {{{stringify (default @root.request.params.category '')}}};
 
         console.log('Getting charity awards cookie');
-        var cookie = getCookie('charity_awards_already_voted');
+        var cookie = getCookie('charity_awards_2021_already_voted');
         console.log('Got cookie', cookie);
 
         if (slug && category) {
           console.log('Got a slug and category.', slug, category);
           console.log('Setting cookie');
-          setCookie('charity_awards_already_voted', slug, 90);
+          setCookie('charity_awards_2021_already_voted', slug, 90);
           if (!cookie) {
             console.log('As there was no previous cookie, firing GA event');
             gtag('event', 'charity-awards-2021', {
