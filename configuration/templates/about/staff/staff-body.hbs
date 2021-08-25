@@ -13,17 +13,9 @@
               Department
             </dt>
             <dd>
-              {{#if department}}<a href="/about/people/contacts/staff?department={{(replace (slugify department) '-amp-' '-'}}">{{{department}}}</a>{{/if}}
+              {{#if department}}<a href="/about/people/contacts/staff?department={{department_slug}}">{{{department}}}</a>{{/if}}
             </dd>
             {{/ifAny ~}}
-            {{#if city ~}}
-            <dt>
-              City
-            </dt>
-            <dd>
-              <a href="/about/people/contacts/staff?city={{slugify city}}">{{city}}</a>
-            </dd>
-            {{/if ~}}
             {{#if about ~}}
             <dt>
               About
