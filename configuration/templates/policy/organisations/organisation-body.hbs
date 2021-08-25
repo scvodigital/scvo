@@ -53,11 +53,11 @@
     </ul>
     {{/ifAny ~}}
 
-    {{#ifAll (compare type "Member") membership_number ~}}
+    {{#if membership_number ~}}
     <p>
       <span class="label label-info">If you work for this organisation, you can <a href="#scvo-account-modal-sign-up">sign up</a> for an SCVO Account to gain access to <span style="text-transform:lowercase;">{{type}}</span> benefits</span>
     </p>
-    {{/ifAll}}
+    {{/if}}
   {{/with ~}}
 
   {{#compare @root.data.organisationResponses.vacancies.hits.total ">" 0 ~}}
