@@ -1,4 +1,4 @@
-{{> content_page_full @root.data.primaryResponse.hits.hits.[0]._source}}
+{{{@root.data.primaryResponse.hits.hits.[0]._source.content}}}
 
 <h2>Staff directory</h2>
 <form action="/about/people/contacts/staff" method="GET" [searchroute]="'staff_search'" data-auto-search="true" class="t-margin-full">
@@ -10,7 +10,7 @@
             <option value="all"{{#if @root.request.params.query.department}}{{else}} selected{{/if}}>All departments</option>
             {{#each @root.data.supplimentaryResponses.departments.aggregations.departments.buckets ~}}
             {{#if key ~}}
-            <option value="{{slugify key}}" {{#compare ../request.params.query.department "===" (slugify key)}}selected{{/compare}}>{{{key}}}</option>
+            <option value="{{replace (slugify key) '-amp-' '-'}}" {{#compare ../request.params.query.department "===" (slugify key)}}selected{{/compare}}>{{{key}}}</option>
             {{/if ~}}
             {{/each ~}}
           </select>
@@ -32,18 +32,18 @@
 </form>
 
 {{#each @root.data.supplimentaryResponses.staff.aggregations.query.buckets ~}}
-<div class="b-margin-full staff-list">
+<div class="b-margin-full b-padding-full staff-list">
   <h3>{{{key}}}</h3>
   {{#each staff.hits.hits ~}}
   {{#with _source ~}}
   <div class="list scvo-staff mdc-layout-grid">
     <div class="columns">
-      <div class="column col-4 col-xl-4 col-md-5 col-sm-5 job_title">
+      <div class="column col-5 job_title">
         {{#if job_title ~}}
         {{{replace job_title "Job Title:	" ""}}}
         {{/if ~}}
       </div>
-      <div class="column col-4 col-xl-4 col-md-5 col-sm-5 name_full">
+      <div class="column col-4 name_full">
         <a href="/about/people/contacts/staff/{{Id}}/{{slugify name_full}}">
           {{!-- <img src="{{og_image}}" /> --}}
           {{trim name_full}}
@@ -59,7 +59,7 @@
         <a href="tel:{{replace work_phone " " ""}}">{{work_phone}}</a>
         {{/if ~}}
       </div> --}}
-      <div class="column col-4 col-xl-4 col-md-2 col-sm-2 contact">
+      <div class="column col-3 contact">
         {{!-- {{#if twitter ~}}
         <a href="{{#startsWith '@' twitter}}http://twitter.com/{{twitter}}{{else}}{{twitter}}{{/startsWith}}" class="no-ext no-underline"><span class="fab fa-twitter" aria-hidden="true"></span></a>
         {{/if ~}} --}}
