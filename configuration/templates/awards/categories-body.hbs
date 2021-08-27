@@ -1,4 +1,4 @@
-{{> awards_vote_header}}
+{{> awards_header}}
 
 {{{replace (replace (replace (replace (replace @root.data.primaryResponse.hits.hits.[0]._source.content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
 <p>
@@ -35,9 +35,9 @@
             <p>
               <a href="/scottish-charity-awards/finalists-2021/{{category}}/{{replace slug 'p_award_'}}">
                 Find out more
-                {{#unless @root.request.cookies.charity_awards_already_voted}}
+                {{!-- {{#unless @root.request.cookies.charity_awards_already_voted}}
                 &amp; vote
-                {{/unless}}
+                {{/unless}} --}}
               </a>
             </p>
           </section>
