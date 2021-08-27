@@ -1,13 +1,14 @@
 {{> footers_logos_digishift}}
 
-{{#ifAny (compare @root.data.supplimentaryResponses.latest_participation.hits.total ">" 0) (compare @root.data.supplimentaryResponses.latest_evolution.hits.total ">" 0) (compare @root.data.supplimentaryResponses.latest_cyber.hits.total ">" 0) ~}}
+{{#compare @root.data.supplimentaryResponses.latest_posts.hits.total ">" 0}}
 <div class="b-padding-full bg-white">
   <div class="container v-padding-full">
     <h3 class="b-margin-full">
       Latest posts
     </h3>
     <div class="columns">
-      {{#with @root.data.supplimentaryResponses.latest_participation.hits.hits.[0]._source ~}}
+      {{#each @root.data.supplimentaryResponses.latest_posts.hits.hits ~}}
+      {{#with _source}}
       <div class="column col-4 col-lg-6 col-sm-12">
         <div class="columns b-margin related-posts">
           <div class="column col-2 col-lg-3 col-md-4">
@@ -18,66 +19,18 @@
             <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
           </div>
         </div>
-        <p class="card-footer t-margin-full">
-          <a href="/post/tags/digital-participation">Read more digital participation posts</a>
-        </p>
       </div>
       {{/with ~}}
-      {{#compare @root.data.supplimentaryResponses.latest_participation.hits.hits.[0]._id @root.data.supplimentaryResponses.latest_evolution.hits.hits.[0]._id ~}}
-        {{#with @root.data.supplimentaryResponses.latest_evolution.hits.hits.[1]._source ~}}
-        <div class="column col-4 col-lg-6 col-sm-12">
-          <div class="columns b-margin related-posts">
-            <div class="column col-2 col-lg-3 col-md-4">
-              <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
-            </div>
-            <div class="column col-10 col-md-9 col-md-8">
-              <a href="{{path}}">{{{trim title}}}</a>
-              <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
-            </div>
-          </div>
-          <p class="card-footer t-margin-full">
-            <a href="/post/tags/digital-evolution">Read more digital evolution posts</a>
-          </p>
-        </div>
-        {{/with ~}}
-      {{else}}
-        {{#with @root.data.supplimentaryResponses.latest_evolution.hits.hits.[0]._source ~}}
-        <div class="column col-4 col-lg-6 col-sm-12">
-          <div class="columns b-margin related-posts">
-            <div class="column col-2 col-lg-3 col-md-4">
-              <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
-            </div>
-            <div class="column col-10 col-md-9 col-md-8">
-              <a href="{{path}}">{{{trim title}}}</a>
-              <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
-            </div>
-          </div>
-          <p class="card-footer t-margin-full">
-            <a href="/post/tags/digital-evolution">Read more digital evolution posts</a>
-          </p>
-        </div>
-        {{/with ~}}
-      {{/compare ~}}
-      {{#with @root.data.supplimentaryResponses.latest_cyber.hits.hits.[0]._source ~}}
-      <div class="column col-4 col-lg-6 col-sm-12">
-        <div class="columns b-margin related-posts">
-          <div class="column col-2 col-lg-3 col-md-4">
-            <a href="{{path}}" class="pull-left r-margin no-underline"><img src="{{default og_image author_avatar}}" alt="{{{author_name_full}}}" class="avatar avatar-lg" /></a>
-          </div>
-          <div class="column col-10 col-md-9 col-md-8">
-            <a href="{{path}}">{{{trim title}}}</a>
-            <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
-          </div>
-        </div>
-        <p class="card-footer t-margin-full">
-          <a href="/post/tags/cyber-resilience">Read more cyber resilience posts</a>
-        </p>
-      </div>
-      {{/with ~}}
+      {{/each}}
     </div>
+    <ul class="card-footer t-margin-full">
+      <li><a href="/post/tags/digital-participation">Read more digital participation posts</a></li>
+      <li><a href="/post/tags/digital-evolution">Read more digital evolution posts</a></li>
+      <li><a href="/post/tags/cyber-resilience">Read more cyber resilience posts</a></li>
+    </ul>
   </div>
 </div>
-{{/ifAny ~}}
+{{/compare}}
 
 <div class="bg-primary">
   <div class="container v-padding-full">

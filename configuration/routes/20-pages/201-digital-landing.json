@@ -31,22 +31,10 @@
         },
         "queryTemplates": [
           {
-            "name": "latest_participation",
+            "name": "latest_posts",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_latest-digital-participation"
-          },
-          {
-            "name": "latest_evolution",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_latest-digital-evolution"
-          },
-          {
-            "name": "latest_cyber",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_latest-cyber-security"
+            "template": ">context.metaData.handlebars.queries.posts_latest-digital"
           }
         ]
       },

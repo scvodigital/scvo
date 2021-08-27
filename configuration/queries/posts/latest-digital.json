@@ -1,0 +1,46 @@
+{
+  "size": 3,
+  "_source": [
+    "wpid",
+    "title",
+    "path",
+    "url",
+    "author_name_full",
+    "author_slug",
+    "author_avatar",
+    "og_image",
+    "publish_on",
+    "updated",
+    "description_truncated"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        },
+        {
+          "term": {
+            "hide_from_search": "1"
+          }
+        }
+      ],
+      "filter": [
+        {
+          "terms": {
+            "post_tags_slug": [
+              "digital-participation",
+              "digital-evolution",
+              "cyber-security"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "sort": {
+    "publish_on": "desc"
+  }
+}
