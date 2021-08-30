@@ -823,7 +823,7 @@
 				},
 				{
 					"label": "Events",
-					"path": "/policy/events",
+					"path": "/events?team=policy",
 					"route": "^/policy/events$",
 					"description": "Upcoming events.",
 					"icon": "users-class"
@@ -1698,7 +1698,7 @@
 					"children": [
 						{
 							"label": "Events & training",
-							"path": "/support/events?team=digital",
+							"path": "/events?team=digital",
 							"description": "Zoom calls, webinars, events, and training from SCVO digital team.",
 							"icon": "users-class"
 						},
@@ -2032,7 +2032,7 @@
 								},
 								{
 									"label": "Events",
-									"path": "/support/events?team=digital",
+									"path": "/events?team=digital",
 									"description": "Networking meetups, training webinars and events from SCVO digital team",
 									"icon": "users-class"
 								}
@@ -3256,7 +3256,7 @@
 					"children": [
 						{
 							"label": "Upcoming events",
-							"path": "/support/events",
+							"path": "/events",
 							"description": "Events from SCVO to help you respond to the crisis",
 							"icon": "calendar-alt"
 						},

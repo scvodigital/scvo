@@ -80,7 +80,7 @@
           </p>
         </div>
         <p class="card-footer">
-          <a href="/support/events?type=Training+Course" class="btn btn-primary mr">Training programme</a>
+          <a href="/events?type=training-course" class="btn btn-primary mr">Training programme</a>
           <a href="/support/training">Find out more</a>
         </p>
       </div>
@@ -139,7 +139,7 @@
       {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets}}
       <div class="column col-4 col-xl-6 col-md-12 b-padding-full text-center">
         <span class="fal fa-fw fa-{{itemAt (split 'users-class,user-headset,house-user,user,users' ',') @index}} fa-4x p-centered b-margin-full"></span>
-        <a href="/support/events?type={{replace key ' ' '+'}}" class="btn btn-block">List {{inflect doc_count (concat 'upcoming ' (lowercase (replace key "Workshops" "Workshop"))) (concat 'upcoming ' (lowercase (replace key "Workshops" "Workshop")) 's') true}}</a>
+        <a href="/events?type={{replace (slugify key) ' ' '-'}}" class="btn btn-block">List {{inflect doc_count (concat 'upcoming ' (lowercase (replace key "Workshops" "Workshop"))) (concat 'upcoming ' (lowercase (replace key "Workshops" "Workshop")) 's') true}}</a>
         {{!-- {{#if (compare key 'Training Course')}}
         <p class="t-margin">
         <a href="/support/training" class="btn btn-primary">Find out more</a>

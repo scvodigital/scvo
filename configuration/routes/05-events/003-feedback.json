@@ -1,7 +1,7 @@
 {
   "name": "event_feedback",
   "debug": false,
-  "pattern": "/support/events/:id(/:junk)/feedback(/:session_key)",
+  "pattern": "_disabled_/support/events/:id(/:junk)/feedback(/:session_key)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

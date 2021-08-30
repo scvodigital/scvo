@@ -1,7 +1,7 @@
 {
   "name": "event_booking",
   "debug": false,
-  "pattern": "/support/events/:id(/:junk)/book",
+  "pattern": "_disabled_/support/events/:id(/:junk)/book",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
