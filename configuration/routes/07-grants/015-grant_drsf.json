@@ -1,7 +1,7 @@
 {
   "name": "grant_drsf",
   "debug": false,
-  "pattern": "/funding/digital-participation/device-refurbishment-support-fund/projects/:grant_id(/:junk)",
+  "pattern": "/funding/digital-participation/device-refurbishment-support-fund/recipients/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
