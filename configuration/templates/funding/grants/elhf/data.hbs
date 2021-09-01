@@ -1,0 +1,161 @@
+{
+  "grants": [
+  {{#each @root.data.primaryResponse.hits.hits}}
+  {{#with _source}}
+  {
+    {{#if amount_requested_total ~}}
+    "amountAppliedFor": {{amount_requested_total}},
+    {{else}}
+    "amountAppliedFor": {{amount_requested}},
+    {{/if ~}}
+    {{#if amount_awarded ~}}
+    "amountAwarded": {{amount_awarded}},
+    {{else}}
+    {{#if amount_requested_total ~}}
+    "amountAwarded": {{amount_requested_total}},
+    {{else}}
+    "amountAwarded": {{amount_requested}},
+    {{/if ~}}
+    {{/if ~}}
+    {{#if date_awarded ~}}
+    "awardDate": "{{momentFormat (moment date_awarded 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if date_started ~}}
+    "awardDate": "{{momentFormat (moment date_started 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if actual_start ~}}
+    "awardDate": "{{momentFormat (moment actual_start 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if planned_start ~}}
+    "awardDate": "{{momentFormat (moment planned_start 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if decision_date ~}}
+    "awardDate": "{{momentFormat (moment decision_date 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if recommendation_agreed_date ~}}
+    "awardDate": "{{momentFormat (moment recommendation_agreed_date 'x') "YYYY-MM-DD"}}",
+    {{else}}
+    {{#if date_last_modified ~}}
+    "awardDate": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DD"}}",
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    {{/if ~}}
+    "description": {{{stringify (default description "Detailed information not yet available.")}}},
+    "title": {{{stringify title}}},
+    "id": "360G-SCVO-{{Id}}",
+    "currency": "GBP",
+    "plannedDates": [{
+      {{#if planned_start ~}}
+      "startDate": "{{momentFormat (moment planned_start 'x') "YYYY-MM-DD"}}",
+      {{/if ~}}
+      {{#if planned_end ~}}
+      "endDate": "{{momentFormat (moment planned_end 'x') "YYYY-MM-DD"}}",
+      {{/if ~}}
+      "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}"
+    }],
+    "recipientOrganization": [{
+      {{#if recipient_name ~}}
+      "name": {{{stringify recipient_name}}},
+      {{/if ~}}
+      {{#if recipient_charity_number ~}}
+      "id": "GB-SC-{{recipient_charity_number}}",
+      "charityNumber": "{{recipient_charity_number}}"
+      {{else}}
+      "id": "360G-SCVO-{{recipient_id}}"{{/if ~}}{{#if recipient_overview ~}},
+      "description": {{{stringify recipient_overview}}}{{/if ~}}{{#if recipient_address_street ~}},
+      "streetAddress": {{{stringify recipient_address_street}}}{{/if ~}}{{#if recipient_address_town ~}},
+      "addressLocality": {{{stringify recipient_address_town}}}{{/if ~}}{{#if recipient_address_region ~}},
+      "addressRegion": {{{stringify recipient_address_region}}}{{/if ~}}{{#if recipient_address_postcode ~}},
+      "postalCode": "{{recipient_address_postcode}}"{{/if ~}}{{#if geo_coords ~}},
+      "location": [{
+        "latitude": {{geo_coords.lat}},
+        "longitude": {{geo_coords.lon}}
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo.codes.admin_ward}}",
+        "geoCodeType": "WD"
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo.codes.parliamentary_constituency}}",
+        "geoCodeType": "WPC"
+      },
+      {
+        "countryCode": "GB",
+        "geoCode": "{{geo.codes.ccg}}",
+        "geoCodeType": "CCG"
+      }]
+      {{/if ~}}
+      {{#if recipient_address_postcode ~}},
+      "addressCountry": "Scotland"{{#if recipient_url ~}}{{/if ~}}
+      {{/if ~}}
+      {{#if recipient_url ~}}
+      {{#compare recipient_url "N/A" ~}}
+      {{else}}
+      {{#if (contains recipient_url "http") ~}}
+      ,"url": "{{recipient_url}}"
+      {{else}}
+      ,"url": "http://{{recipient_url}}"
+      {{/if ~}}
+      {{/compare}}
+      {{/if ~}}
+    }],
+    {{#if geo_coords ~}}
+    "beneficiaryLocation": [{
+      "latitude": {{geo_coords.lat}},
+      "longitude": {{geo_coords.lon}}
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.admin_ward}}",
+      "geoCodeType": "WD"
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.parliamentary_constituency}}",
+      "geoCodeType": "WPC"
+    },
+    {
+      "countryCode": "GB",
+      "geoCode": "{{geo.codes.ccg}}",
+      "geoCodeType": "CCG"
+    }],
+    {{/if ~}}
+    "fundingOrganization": [{
+      "name": "Scottish Council For Voluntary Organisations",
+      "id": "GB-SC-SC003558",
+      "charityNumber": "SC003558",
+      "department": "Digital",
+      "streetAddress": "Mansfield Traquair, 15 Mansfield Place",
+      "addressLocality": "Edinburgh",
+      "addressRegion": "City of Edinburgh",
+      "postalCode": "EH3 6BB",
+      "addressCountry": "Scotland",
+      "description": "The Scottish Council for Voluntary Organisations is the membership organisation for Scotland's charities, voluntary organisations and social enterprises.",
+      "url": "http://scvo.scot",
+      "location": [{
+        "latitude": 55.959611,
+        "longitude": -3.190946
+      }]
+    }],
+    {{#if call ~}}
+    "grantProgramme": [{
+      "code": "scvo-digital-elhf-{{slugify call}}",
+      "title": "ELHF: Connecting Communities Fund - {{call}}",
+      "description": "This programme can provide small grants of up to £5,000 for projects being delivered in City of Edinburgh, East Lothian, Midlothian or West Lothian. The support given through the Fund enables organisations to address digital exclusion through upskilling and the purchase of devices and/or connectivity to help local communities achieve better health outcomes.",
+      "url": "https://scvo.scot/funding/digital-participation/elhf-connecting-communities-fund"
+    }],
+    "fromOpenCall": "Yes",
+    {{/if ~}}
+    "dateModified": "{{momentFormat (moment date_last_modified 'YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0') "YYYY-MM-DDTHH:mm:ssZ"}}",
+    "dataSource": "https://scvo.scot/funding/digital-participation/elhf-connecting-communities-fund/projects/data.json"
+  }{{#unless @last}},{{/unless}}
+  {{/with}}
+  {{/each}}
+  ]
+}
