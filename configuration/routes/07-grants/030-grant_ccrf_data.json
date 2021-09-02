@@ -14,7 +14,7 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-grant-ccrf",
+          "type": "scvo-grant-ccrf,scvo-grant-ccrf-legacy",
           "template": ">context.metaData.handlebars.queries.grants_ccrf-data",
           "noResultsRoute": "four_oh_four"
         }
@@ -33,7 +33,7 @@
           {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-grant-ccrf",
+            "type": "scvo-grant-ccrf,scvo-grant-ccrf-legacy",
             "template": ">context.metaData.handlebars.queries.grants_ccrf-aggs"
           }
         ]

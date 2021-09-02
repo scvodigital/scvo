@@ -32,13 +32,13 @@
           {
             "name": "grants",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-grant-ccrf",
+            "type": "scvo-grant-ccrf,scvo-grant-ccrf-legacy",
             "template": ">context.metaData.handlebars.queries.grants_ccrf-search"
           },
           {
             "name": "types",
             "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-grant-ccrf",
+            "type": "scvo-grant-ccrf,scvo-grant-ccrf-legacy",
             "template": ">context.metaData.handlebars.queries.grants_ccrf-aggs"
           }
         ]
