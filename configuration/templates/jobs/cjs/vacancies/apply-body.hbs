@@ -26,6 +26,16 @@
         </span>
       </li>
       {{else}}
+      {{#compare job_number "13071" ~}}
+      <li>
+        <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
+        <span class="file-download">
+          <a href="{{~>asset_url url='cjs/apply-13071.doc'~}}" target="_blank" download>
+            <span class="title">Application Form</span>
+          </a>
+        </span>
+      </li>
+      {{else}}
       {{#compare job_number "9920" ~}}
       <li>
         <span class="fa-li"><span class="far fa-file fa-file-word" aria-hidden="true"></span></span>
@@ -113,6 +123,7 @@
           </a>
         </span>
       </li>
+      {{/compare ~}}
       {{/compare ~}}
       {{/compare ~}}
       {{/compare ~}}
