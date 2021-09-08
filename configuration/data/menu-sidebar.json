@@ -3111,7 +3111,14 @@
 											"label": "Adapt & Thrive",
 											"label_full": "Adapt & Thrive Programme",
 											"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf",
-											"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf$"
+											"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf$",
+											"children": [
+												{
+													"label": "Recipients",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients"
+												}
+											]
 										},
 										{
 											"label": "Communities Recovery Fund",
