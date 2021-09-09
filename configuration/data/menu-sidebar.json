@@ -250,51 +250,7 @@
 									"label": "Categories & fees",
 									"path": "/about/community/membership/fees",
 									"route": "^/about/community/membership/fees",
-									"description": "All the information you need about membership categories and annual fees",
-									"_hide_children": [
-										{
-											"label": "Member - Free",
-											"path": "/about/community/membership/fees/scvo-member-free",
-											"route": "^/about/community/membership/fees/scvo-member-free$",
-											"description": "Income under £100k"
-										},
-										{
-											"label": "Member - Small",
-											"path": "/about/community/membership/fees/scvo-member-small",
-											"route": "^/about/community/membership/fees/scvo-member-small$",
-											"description": "Income £100k - £500k"
-										},
-										{
-											"label": "Member - Medium",
-											"path": "/about/community/membership/fees/scvo-member-medium",
-											"route": "^/about/community/membership/fees/scvo-member-medium$",
-											"description": "Income £500k - £3m"
-										},
-										{
-											"label": "Member - Large",
-											"path": "/about/community/membership/fees/scvo-member-large",
-											"route": "^/about/community/membership/fees/scvo-member-large$",
-											"description": "Income over £3m"
-										},
-										{
-											"label": "Supporter - Individuals",
-											"path": "/about/community/membership/fees/scvo-supporter-individual",
-											"route": "^/about/community/membership/fees/scvo-supporter-individual$",
-											"description": " "
-										},
-										{
-											"label": "Supporter - Organisations under £500k",
-											"path": "/about/community/membership/fees/scvo-supporter-organisations-with-income-under-500k",
-											"route": "^/about/community/membership/fees/scvo-supporter-organisations-with-income-under-500k$",
-											"description": "Income under £500k"
-										},
-										{
-											"label": "Supporter - Organisations over £500k",
-											"path": "/about/community/membership/fees/scvo-supporter-organisations-with-income-over-500k",
-											"route": "^/about/community/membership/fees/scvo-supporter-organisations-with-income-over-500k$",
-											"description": "Income over £500k"
-										}
-									]
+									"description": "All the information you need about membership categories and annual fees"
 								},
 								{
 									"label": "Frequently asked questions",
@@ -575,29 +531,6 @@
 									"label": "What we’re doing",
 									"path": "/support/coronavirus",
 									"route": "^/policy/campaigns/never-more-needed/what-scvo-is-doing$",
-									"description": "",
-									"icon": ""
-								}
-							],
-							"_new_children": [
-								{
-									"label": "What SCVO is doing",
-									"path": "/policy/campaigns/never-more-needed/what-scvo-is-doing",
-									"route": "^/policy/campaigns/never-more-needed/what-scvo-is-doing$",
-									"description": "",
-									"icon": ""
-								},
-								{
-									"label": "How you can get involved",
-									"path": "/policy/campaigns/never-more-needed/get-involved",
-									"route": "^/policy/campaigns/never-more-needed/get-involved$",
-									"description": "",
-									"icon": ""
-								},
-								{
-									"label": "Resources",
-									"path": "/policy/campaigns/never-more-needed/resources",
-									"route": "^/policy/campaigns/never-more-needed/resources$",
 									"description": "",
 									"icon": ""
 								}
@@ -1362,29 +1295,7 @@
 									"path": "/support/running-your-organisation/governance/scottish-governance-code-checkup",
 									"route": "^/support/running-your-organisation/governance/scottish-governance-code-checkup$",
 									"description": "The Scottish Governance Code helps trustees understand what’s involved in good governance, and is a statement of best practice specifically for the voluntary sector in Scotland",
-									"icon": "",
-									"___children": [
-										{
-											"label": "Start",
-											"path": "/support/running-your-organisation/governance/checkup/questions",
-											"route": "^/support/running-your-organisation/governance/checkup/questions"
-										},
-										{
-											"label": "Results",
-											"path": "/support/running-your-organisation/governance/checkup/results",
-											"route": "^/support/running-your-organisation/governance/checkup/results"
-										},
-										{
-											"label": "Blogs",
-											"path": "/support/running-your-organisation/governance/checkup/blogs",
-											"route": "^/support/running-your-organisation/governance/checkup/blogs"
-										},
-										{
-											"label": "About",
-											"path": "/support/running-your-organisation/governance/checkup/about",
-											"route": "^/support/running-your-organisation/governance/checkup/about"
-										}
-									]
+									"icon": ""
 								},
 								{
 									"label": "SCOPE eLearning platform",
@@ -1902,9 +1813,6 @@
 								{
 									"label": "Lean & Agile",
 									"label_full": "Lean & Agile Working – made simple",
-									"_disabled_path": "/support/digital/guides/lean-agile",
-									"_disabled_route": "^/support/digital/guides/lean-agile$",
-									"_disabled_description": "What is lean & agile working?",
 									"icon": "recycle",
 									"children": [
 										{
@@ -2820,7 +2728,6 @@
 				{
 					"label": "Church of Scotland 2021 Small Grants Fund",
 					"path": "/funding/church-of-scotland-2021-small-grants-fund",
-					"_disabled_route": "^/funding/church-of-scotland-2021-small-grants-fund$",
 					"description": "",
 					"icon": "",
 					"children": [
