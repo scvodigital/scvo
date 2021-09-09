@@ -45,14 +45,16 @@ gtag('event', 'document_hit', {
 });
 {{/each ~}}
 
-{{#ifAny @root.request.params.query.debug (compare @root.request.url.hostname "scvo.local") ~}}
-console.log('#### DEBUG MODE ON ####');
-console.log('Request:', {{{regexReplace (regexReplace (stringify @root.request) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Context:', {{{regexReplace (regexReplace (stringify @root.context) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Route:', {{{regexReplace (regexReplace (stringify @root.route) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Data:', {{{regexReplace (regexReplace (stringify @root.data) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-console.log('Menus:', {{{regexReplace (regexReplace (stringify @root.context.metaData.layoutMenus) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
-{{/ifAny ~}}
+{{#unless @root.request.headers.scvo-proxy}}
+  {{#ifAny @root.request.params.query.debug (compare @root.request.url.hostname "scvo.local") ~}}
+  console.log('#### DEBUG MODE ON ####');
+  console.log('Request:', {{{regexReplace (regexReplace (stringify @root.request) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+  console.log('Context:', {{{regexReplace (regexReplace (stringify @root.context) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+  console.log('Route:', {{{regexReplace (regexReplace (stringify @root.route) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+  console.log('Data:', {{{regexReplace (regexReplace (stringify @root.data) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+  console.log('Menus:', {{{regexReplace (regexReplace (stringify @root.context.metaData.layoutMenus) "(<\/script)" "gi" '</scr\" + \"ipt') "(\r|\n)" "gi" ""}}});
+  {{/ifAny ~}}
+{{/unless}}
 </script>
 
 <script>(function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:1821721,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
