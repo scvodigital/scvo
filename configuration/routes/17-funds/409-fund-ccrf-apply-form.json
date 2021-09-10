@@ -1,7 +1,7 @@
 {
   "name": "fund_ccrf_apply_form",
   "debug": false,
-  "pattern": "/funding/community-capacity-resilience-fund/apply/:charity_number",
+  "pattern": "_disabled_/funding/community-capacity-resilience-fund/apply/:charity_number",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
