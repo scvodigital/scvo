@@ -3,12 +3,13 @@
   "_source": false,
   "query": {
     "bool": {
+      "filter": [
+        { "term": { "active": true } },
+        { "range": { "closing_date": { "gt": "now" } } },
+        { "range": { "start_at": { "lt": "now" } } },
+        { "range": { "end_at": { "gt": "now" } } }
+      ],
       "must": [
-        {
-          "term": {
-            "active": true
-          }
-        },
         {
           "term": {
             "vacancy_status": "vacancy-open"

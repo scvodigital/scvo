@@ -60,19 +60,15 @@
         {{/if}}
         {
           "term": {
-            "country_slug": "scotland"
-          }
-        },
-        {
-          "term": {
-            "active": true
-          }
-        },
-        {
-          "term": {
             "vacancy_status": "vacancy-open"
           }
         }
+      ],
+      "filter": [
+        { "term": { "active": true } },
+        { "range": { "closing_date": { "gt": "now" } } },
+        { "range": { "start_at": { "lt": "now" } } },
+        { "range": { "end_at": { "gt": "now" } } }
       ],
       "should": [
         {
