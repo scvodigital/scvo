@@ -26,11 +26,18 @@
             <div class="form-horizontal hide-lg">
               {{> site_search_form id='header'}}
               <div class="mt">
-                <div class="header-button">
+                {{#if @root.request.headers.scvo-proxy}}
+                  <!-- INJECT CTA -->
+                {{else}}
+                  <div class="header-button">
+                    <a href="/about/community/membership" class="btn btn-primary btn-lg btn-cta float-right">Join our community</a>
+                  </div>
+                {{/if}}
+                {{!-- <div class="header-button"> --}}
                   {{!-- <a href="/scottish-charity-awards/apply-2021" class="btn btn-primary btn-lg btn-cta float-right">Apply</a> --}}
                   {{!-- <a href="/scottish-charity-awards/finalists-2021" class="btn btn-primary btn-lg btn-cta float-right">Vote</a> --}}
-                  <a href="/scottish-charity-awards/book-2021" class="btn btn-primary btn-lg btn-cta float-right">Book to attend</a>
-                </div>
+                  {{!-- <a href="/scottish-charity-awards/book-2021" class="btn btn-primary btn-lg btn-cta float-right">Book to attend</a> --}}
+                {{!-- </div> --}}
               </div>
             </div>
             <div class="mobile-header-buttons show-lg">
