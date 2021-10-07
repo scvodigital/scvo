@@ -1,0 +1,23 @@
+{
+  "name": "redirect_board-elections",
+  "pattern": "/scvo-board-elections-2021(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/about/people/board-of-trustees/elections-2021"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
