@@ -68,14 +68,14 @@
 										},
 										{
 											"label": "Funding Scotland",
-											"path": "https://funding.scot",
+											"path": "https://funding.scot?utm_source=scvo&utm_campaign=page&utm_medium=website",
 											"route": "^/about/people/contacts/teams/funding-scotland$",
 											"description": "Email <a href='mailto:fundingscotland@scvo.scot'>fundingscotland@scvo.scot</a>",
 											"icon": "search-plus"
 										},
 										{
 											"label": "Goodmoves",
-											"path": "https://goodmoves.com",
+											"path": "https://goodmoves.com?utm_source=scvo&utm_campaign=page&utm_medium=website",
 											"route": "^/about/people/contacts/teams/goodmoves$",
 											"description": "Email <a href='mailto:sales@goodmoves.org.uk'>sales@goodmoves.org.uk</a><br />Phone 0800 019 2149",
 											"icon": "laptop-house"
@@ -153,19 +153,19 @@
 							"label_full": "Board of trustees",
 							"path": "/about/people/board-of-trustees",
 							"route": "^/about/people/board-of-trustees$",
-							"description": "Meet the trustees who sit on our board."
+							"description": "Meet the trustees who sit on our board"
 						},
 						{
 							"label": "Vacancies",
 							"path": "/about/people/vacancies",
 							"route": "^/about/people/vacancies$",
-							"description": "All the latest job vacancies at SCVO."
+							"description": "All the latest job vacancies at SCVO"
 						},
 						{
 							"label": "Offices",
 							"path": "/about/people/offices",
 							"route": "^/about/people/offices$",
-							"description": "Details of our offices in Edinburgh, Glasgow & Inverness."
+							"description": "Details of our offices in Edinburgh, Glasgow & Inverness"
 						}
 					]
 				},
@@ -179,31 +179,31 @@
 							"label": "Constitution",
 							"path": "/about/work/constitution",
 							"route": "^/about/work/constitution$",
-							"description": "Here you can find our constitution - the governing document of SCVO detailing our purposes, rules & decision making structures."
+							"description": "Here you can find our constitution - the governing document of SCVO detailing our purposes, rules & decision making structures"
 						},
 						{
 							"label": "Press releases",
 							"path": "/about/work/press-releases",
 							"route": "^/about/work/press-releases$",
-							"description": "All the latest news from SCVO."
+							"description": "All the latest news from SCVO"
 						},
 						{
 							"label": "Annual review",
 							"path": "/about/work/annual-review",
 							"route": "^/about/work/annual-review$",
-							"description": "Find out more about what we've been up to over the past 12 months."
+							"description": "Find out more about what we've been up to over the past 12 months"
 						},
 						{
 							"label": "Accounts",
 							"path": "/about/work/accounts",
 							"route": "^/about/work/accounts$",
-							"description": "All the stats and facts from our Annual Report for the past financial year."
+							"description": "All the stats and facts from our Annual Report for the past financial year"
 						},
 						{
 							"label": "Strategy 2019-22",
 							"path": "/about/work/strategy",
 							"route": "^/about/work/strategy$",
-							"description": "Take a look at our five year strategy which details our mission, values & future plans."
+							"description": "Take a look at our five year strategy which details our mission, values & future plans"
 						},
 						{
 							"label": "European projects",
@@ -234,13 +234,13 @@
 									"label": "Membership benefits",
 									"path": "/about/community/membership/benefits",
 									"route": "^/about/community/membership/benefits$",
-									"description": "All the information you need about SCVO membership benefits."
+									"description": "All the information you need about SCVO membership benefits"
 								},
 								{
 									"label": "Membership eligibility",
 									"path": "/about/community/membership/eligibility",
 									"route": "^/about/community/membership/eligibility$",
-									"description": "Find out if your organisation meets our eligibility criteria before applying."
+									"description": "Find out if your organisation meets our eligibility criteria before applying"
 								},
 								{
 									"label": "Eligibility guidance",
@@ -256,7 +256,7 @@
 									"label": "Frequently asked questions",
 									"path": "/about/community/membership/faq",
 									"route": "^/about/community/membership/faq$",
-									"description": "Take a look at our most frequently asked questions."
+									"description": "Take a look at our most frequently asked questions"
 								},
 								{
 									"label": "Join us",
@@ -268,13 +268,13 @@
 									"label": "Meet our members",
 									"path": "/about/community/membership/meet-our-members",
 									"route": "^/about/community/membership/meet-our-members$",
-									"description": "Find out more about some of the organisations who are members and supporters of SCVO."
+									"description": "Find out more about some of the organisations who are members and supporters of SCVO"
 								},
 								{
 									"label": "Member directory",
 									"path": "/about/community/membership/members",
 									"route": "^/about/community/membership/members",
-									"description": "Search our membership database & find out which organisations are part of our community."
+									"description": "Search our membership database & find out which organisations are part of our community"
 								}
 							]
 						},
@@ -282,7 +282,7 @@
 							"label": "Networks",
 							"path": "/about/community/networks",
 							"route": "^/about/community/networks",
-							"description": "Information on all of SCVO's networks, from policy to comms."
+							"description": "Information on all of SCVO's networks, from policy to comms"
 						}
 					]
 				}
@@ -1466,7 +1466,7 @@
 								},
 								{
 									"label": "Funding Scotland",
-									"path": "https://funding.scot",
+									"path": "https://funding.scot?utm_source=scvo&utm_campaign=page&utm_medium=website",
 									"description": "A free online search engine for funding opportunities across Scotland",
 									"icon": ""
 								},
@@ -2708,174 +2708,190 @@
 					"label": "Funding",
 					"path": "/support/coronavirus/funding",
 					"route": "^/support/coronavirus/funding$",
-					"description": "Funding available to support with the crisis",
+					"description": "Information about how funders responded to the crisis",
 					"icon": "chart-bar",
 					"children": [
 						{
-							"label": "Scottish Government",
-							"label_full": "Funds: Scottish Government",
-							"path": "/support/coronavirus/funding/scottish-government",
-							"route": "^/support/coronavirus/funding/scottish-government$",
-							"description": "Information about the Community & Third Sector Recovery Programme, the Third Sector Resilience, Wellbeing, Food, and Supporting Communities Funds",
-							"icon": "university",
+							"label": "Emergency Funds",
+							"label_full": "Information on Emergency Funds",
+							"path": "/support/coronavirus/funding/emergency",
+							"route": "^/support/coronavirus/funding/emergency$",
+							"description": "Find out more about some of the emergency funds",
+							"icon": "info-circle",
 							"children": [
 								{
-									"label": "Recovery Programme",
-									"label_full": "Community & Third Sector Recovery Programme",
-									"path": "/support/coronavirus/funding/scottish-government/community-recovery",
-									"route": "^/support/coronavirus/funding/scottish-government/community-recovery$",
-									"description": "<div class=\"label label-success label-rounded b-margin\">Currently open</div><br />Helping organisations to adapt and change so they can re-open and operate sustainably post-COVID",
-									"icon": "tasks",
+									"label": "Scottish Government",
+									"label_full": "Funds: Scottish Government",
+									"path": "/support/coronavirus/funding/scottish-government",
+									"route": "^/support/coronavirus/funding/scottish-government$",
+									"description": "Information about the Community & Third Sector Recovery Programme, the Third Sector Resilience, Wellbeing, Food, and Supporting Communities Funds",
+									"icon": "university",
 									"children": [
 										{
-											"label": "Adapt & Thrive",
-											"label_full": "Adapt & Thrive Programme",
-											"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf",
-											"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf$",
+											"label": "Recovery Programme",
+											"label_full": "Community & Third Sector Recovery Programme",
+											"path": "/support/coronavirus/funding/scottish-government/community-recovery",
+											"route": "^/support/coronavirus/funding/scottish-government/community-recovery$",
+											"description": "<div class=\"label label-success label-rounded b-margin\">Currently open</div><br />Helping organisations to adapt and change so they can re-open and operate sustainably post-COVID",
+											"icon": "tasks",
 											"children": [
 												{
-													"label": "Recipients",
-													"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients",
-													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients"
+													"label": "Adapt & Thrive",
+													"label_full": "Adapt & Thrive Programme",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf$",
+													"children": [
+														{
+															"label": "Recipients",
+															"path": "/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients",
+															"route": "^/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients"
+														}
+													]
+												},
+												{
+													"label": "Communities Recovery Fund",
+													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf",
+													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf$",
+													"children": [
+														{
+															"label": "Support available",
+															"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/support",
+															"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/support$",
+															"description": "The supports changes to facilities, services and activities",
+															"icon": "tasks"
+														},
+														{
+															"label": "Funding criteria",
+															"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/criteria",
+															"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/criteria$",
+															"description": "The Communities Recovery Fund is open to charities, community groups, social enterprises, and voluntary organisations",
+															"icon": "tasks"
+														},
+														{
+															"label": "Frequently asked questions",
+															"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/faq",
+															"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/faq$",
+															"description": "",
+															"icon": "question-circle"
+														},
+														{
+															"label": "Recipients",
+															"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients",
+															"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients"
+														}
+													]
 												}
 											]
 										},
 										{
-											"label": "Communities Recovery Fund",
-											"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf",
-											"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf$",
+											"label": "Enabling Neighbourhoods & Communities Fund",
+											"path": "/support/coronavirus/funding/scottish-government/enabling-neighbourhoods-communities-fund",
+											"route": "^/support/coronavirus/funding/scottish-government/enabling-neighbourhoods-communities-fund$",
+											"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Supporting community and voluntary groups across Scotland who are connecting and supporting people within their community",
+											"icon": "tasks"
+										},
+										{
+											"label": "Supporting Communities Fund",
+											"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund",
+											"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund$",
+											"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Funds for anchor organisations",
+											"icon": "tasks",
 											"children": [
 												{
-													"label": "Support available",
-													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/support",
-													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/support$",
-													"description": "The supports changes to facilities, services and activities",
-													"icon": "tasks"
-												},
-												{
-													"label": "Funding criteria",
-													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/criteria",
-													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/criteria$",
-													"description": "The Communities Recovery Fund is open to charities, community groups, social enterprises, and voluntary organisations",
-													"icon": "tasks"
-												},
-												{
-													"label": "Frequently asked questions",
-													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/faq",
-													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/faq$",
-													"description": "",
-													"icon": "question-circle"
-												},
-												{
 													"label": "Recipients",
-													"path": "/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients",
-													"route": "^/support/coronavirus/funding/scottish-government/community-recovery/crf/recipients"
+													"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients",
+													"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients"
 												}
 											]
-										}
-									]
-								},
-								{
-									"label": "Enabling Neighbourhoods & Communities Fund",
-									"path": "/support/coronavirus/funding/scottish-government/enabling-neighbourhoods-communities-fund",
-									"route": "^/support/coronavirus/funding/scottish-government/enabling-neighbourhoods-communities-fund$",
-									"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Supporting community and voluntary groups across Scotland who are connecting and supporting people within their community",
-									"icon": "tasks"
-								},
-								{
-									"label": "Supporting Communities Fund",
-									"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund",
-									"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund$",
-									"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Funds for anchor organisations",
-									"icon": "tasks",
-									"children": [
+										},
 										{
-											"label": "Recipients",
-											"path": "/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients",
-											"route": "^/support/coronavirus/funding/scottish-government/supporting-communities-fund/recipients"
-										}
-									]
-								},
-								{
-									"label": "Third Sector Resilience Fund",
-									"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund",
-									"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund$",
-									"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Funds to sustain your organisation",
-									"icon": "tasks",
-									"children": [
+											"label": "Third Sector Resilience Fund",
+											"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund",
+											"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund$",
+											"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Funds to sustain your organisation",
+											"icon": "tasks",
+											"children": [
+												{
+													"label": "Recipients",
+													"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/recipients",
+													"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/recipients"
+												}
+											]
+										},
 										{
-											"label": "Recipients",
-											"path": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/recipients",
-											"route": "^/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/recipients"
-										}
-									]
-								},
-								{
-									"label": "Wellbeing Fund",
-									"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund",
-									"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund$|^/support/coronavirus/funding/scottish-government/wellbeing-fund/apply",
-									"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Funds to support your community – includes the food fund",
-									"icon": "tasks",
-									"children": [
+											"label": "Wellbeing Fund",
+											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund",
+											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund$|^/support/coronavirus/funding/scottish-government/wellbeing-fund/apply",
+											"description": "<div class=\"label label-error label-rounded b-margin\">Currently closed</div><br />Funds to support your community – includes the food fund",
+											"icon": "tasks",
+											"children": [
+												{
+													"label": "Recipients",
+													"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients",
+													"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients"
+												}
+											]
+										},
 										{
-											"label": "Recipients",
-											"path": "/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients",
-											"route": "^/support/coronavirus/funding/scottish-government/wellbeing-fund/recipients"
+											"label": "Connecting Scotland",
+											"path": "/support/coronavirus/funding/scottish-government/connecting-scotland/",
+											"route": "^/support/coronavirus/funding/scottish-government/connecting-scotland",
+											"description": "iPads, Chromebooks and support to develop digital skills for people who are digitally excluded and on low incomes",
+											"icon": "tasks",
+											"chip_label": "Currently open",
+											"chip_class": "label label-success label-rounded"
 										}
 									]
 								},
 								{
-									"label": "Connecting Scotland",
-									"path": "/support/coronavirus/funding/scottish-government/connecting-scotland/",
-									"route": "^/support/coronavirus/funding/scottish-government/connecting-scotland",
-									"description": "iPads, Chromebooks and support to develop digital skills for people who are digitally excluded and on low incomes",
-									"icon": "tasks",
-									"chip_label": "Currently open",
-									"chip_class": "label label-success label-rounded"
+									"label": "National Emergencies Trust",
+									"label_full": "Funds: National Emergencies Trust",
+									"path": "/support/coronavirus/funding/national-emergencies-trust",
+									"route": "^/support/coronavirus/funding/national-emergencies-trust$",
+									"description": "Funds from the UK wide appeal. Managed by Foundation Scotland",
+									"icon": "exclamation-triangle"
+								},
+								{
+									"label": "Independent funders",
+									"label_full": "Funds: Independent funders",
+									"path": "/support/coronavirus/funding/independent",
+									"route": "^/support/coronavirus/funding/independent",
+									"description": "Coronavirus specific funds from independent funders",
+									"icon": "info-circle"
+								},
+								{
+									"label": "Other financial support",
+									"path": "/support/coronavirus/funding/other-financial-support",
+									"route": "^/support/coronavirus/funding/other-financial-support$",
+									"description": "Job retention scheme, business grants and business loans",
+									"icon": "info-circle"
+								},
+								{
+									"label": "Your regular funding",
+									"path": "/support/coronavirus/funding/your-regular-funding",
+									"route": "^/support/coronavirus/funding/your-regular-funding$",
+									"description": "Flexibility in how you might spend your regular funding",
+									"icon": "info-circle"
+								},
+								{
+									"label": "The voluntary sector & coronavirus",
+									"path": "/support/coronavirus/funding/the-voluntary-sector-and-coronavirus",
+									"route": "^/support/coronavirus/funding/the-voluntary-sector-and-coronavirus$"
+								},
+								{
+									"label": "Frequently asked questions",
+									"path": "/support/coronavirus/funding/faq",
+									"route": "^/support/coronavirus/funding/faq$",
+									"description": "Answers to commonly asked questions in this topic area",
+									"icon": "question-circle"
 								}
 							]
 						},
 						{
-							"label": "National Emergencies Trust",
-							"label_full": "Funds: National Emergencies Trust",
-							"path": "/support/coronavirus/funding/national-emergencies-trust",
-							"route": "^/support/coronavirus/funding/national-emergencies-trust$",
-							"description": "Funds from the UK wide appeal. Managed by Foundation Scotland",
-							"icon": "exclamation-triangle"
-						},
-						{
-							"label": "Independent funders",
-							"label_full": "Funds: Independent funders",
-							"path": "/support/coronavirus/funding/independent",
-							"route": "^/support/coronavirus/funding/independent",
-							"description": "Coronavirus specific funds from independent funders",
-							"icon": "info-circle"
-						},
-						{
-							"label": "Other financial support",
-							"path": "/support/coronavirus/funding/other-financial-support",
-							"route": "^/support/coronavirus/funding/other-financial-support$",
-							"description": "Job retention scheme, business grants and business loans",
-							"icon": "info-circle"
-						},
-						{
-							"label": "Your regular funding",
-							"path": "/support/coronavirus/funding/your-regular-funding",
-							"route": "^/support/coronavirus/funding/your-regular-funding$",
-							"description": "Flexibility in how you might spend your regular funding",
-							"icon": "info-circle"
-						},
-						{
-							"label": "The voluntary sector & coronavirus",
-							"path": "/support/coronavirus/funding/the-voluntary-sector-and-coronavirus",
-							"route": "^/support/coronavirus/funding/the-voluntary-sector-and-coronavirus$"
-						},
-						{
-							"label": "Frequently asked questions",
-							"path": "/support/coronavirus/funding/faq",
-							"route": "^/support/coronavirus/funding/faq$",
-							"description": "Answers to commonly asked questions in this topic area",
-							"icon": "question-circle"
+							"label": "Funding Scotland",
+							"path": "https://funding.scot?utm_source=scvo&utm_campaign=page&utm_medium=website",
+							"description": "Find funding for your charity, community groups or social enterprise using our free online search engine",
+							"icon": "search"
 						}
 					]
 				},
