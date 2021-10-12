@@ -2718,12 +2718,12 @@
 							"route": "^/support/coronavirus/funding/emergency$",
 							"description": "Find out more about some of the emergency funds",
 							"icon": "info-circle",
-							"children": [
+							"_disabled_children": [
 								{
 									"label": "Scottish Government",
 									"label_full": "Funds: Scottish Government",
 									"path": "/support/coronavirus/funding/scottish-government",
-									"route": "^/support/coronavirus/funding/scottish-government$",
+									"route": "_disabled_^/support/coronavirus/funding/scottish-government$",
 									"description": "Information about the Community & Third Sector Recovery Programme, the Third Sector Resilience, Wellbeing, Food, and Supporting Communities Funds",
 									"icon": "university",
 									"children": [
@@ -2847,7 +2847,7 @@
 									"label": "National Emergencies Trust",
 									"label_full": "Funds: National Emergencies Trust",
 									"path": "/support/coronavirus/funding/national-emergencies-trust",
-									"route": "^/support/coronavirus/funding/national-emergencies-trust$",
+									"route": "_disabled_^/support/coronavirus/funding/national-emergencies-trust$",
 									"description": "Funds from the UK wide appeal. Managed by Foundation Scotland",
 									"icon": "exclamation-triangle"
 								},
@@ -2855,33 +2855,33 @@
 									"label": "Independent funders",
 									"label_full": "Funds: Independent funders",
 									"path": "/support/coronavirus/funding/independent",
-									"route": "^/support/coronavirus/funding/independent",
+									"route": "_disabled_^/support/coronavirus/funding/independent",
 									"description": "Coronavirus specific funds from independent funders",
 									"icon": "info-circle"
 								},
 								{
 									"label": "Other financial support",
 									"path": "/support/coronavirus/funding/other-financial-support",
-									"route": "^/support/coronavirus/funding/other-financial-support$",
+									"route": "_disabled_^/support/coronavirus/funding/other-financial-support$",
 									"description": "Job retention scheme, business grants and business loans",
 									"icon": "info-circle"
 								},
 								{
 									"label": "Your regular funding",
 									"path": "/support/coronavirus/funding/your-regular-funding",
-									"route": "^/support/coronavirus/funding/your-regular-funding$",
+									"route": "_disabled_^/support/coronavirus/funding/your-regular-funding$",
 									"description": "Flexibility in how you might spend your regular funding",
 									"icon": "info-circle"
 								},
 								{
 									"label": "The voluntary sector & coronavirus",
 									"path": "/support/coronavirus/funding/the-voluntary-sector-and-coronavirus",
-									"route": "^/support/coronavirus/funding/the-voluntary-sector-and-coronavirus$"
+									"route": "_disabled_^/support/coronavirus/funding/the-voluntary-sector-and-coronavirus$"
 								},
 								{
 									"label": "Frequently asked questions",
 									"path": "/support/coronavirus/funding/faq",
-									"route": "^/support/coronavirus/funding/faq$",
+									"route": "_disabled_^/support/coronavirus/funding/faq$",
 									"description": "Answers to commonly asked questions in this topic area",
 									"icon": "question-circle"
 								}
