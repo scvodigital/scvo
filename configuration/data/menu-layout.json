@@ -1,5 +1,6 @@
 {
-	"main": [{
+	"main": [
+		{
 			"label": "About",
 			"path": "/about",
 			"route": "^/about"
@@ -35,7 +36,8 @@
 			"route": "^/policy"
 		}
 	],
-	"user-signed-in": [{
+	"user-signed-in": [
+		{
 			"label": "Explore",
 			"icon": "file-search",
 			"path": "/explore",
@@ -48,14 +50,16 @@
 			"route": "^/account|^/sign-up-details|^/scvo-account"
 		}
 	],
-	"user-not-signed-in": [{
+	"user-not-signed-in": [
+		{
 			"label": "My account",
 			"icon": "user-cog",
 			"path": "/account",
 			"route": "^/account|^/sign-up-details|^/scvo-account"
 		}
 	],
-  "footer": [{
+  "footer": [
+		{
 			"label": "Accessibility",
 			"path": "/accessibility",
 			"route": "^/accessibility"
@@ -91,8 +95,14 @@
 			"route": "^/feedback-complaints$"
 		}
 	],
-	"awards": [{
+	"awards": [
+		{
 			"label": "Scottish Charity Awards",
+			"path": "/scottish-charity-awards",
+			"route": "^/scottish-charity-awards$"
+		},
+		{
+			"label": "Finalists",
 			"path": "/scottish-charity-awards/finalists-2021",
 			"route": "^/scottish-charity-awards/finalists-2021"
 		},
@@ -107,7 +117,8 @@
 			"route": "^/scottish-charity-awards/faqs$"
 		}
 	],
-	"gathering": [{
+	"gathering": [
+		{
 			"label": "The Gathering 2020",
 			"path": "/the-gathering-2020",
 			"route": "^/the-gathering-2020$"

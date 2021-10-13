@@ -2988,6 +2988,12 @@
 					"route": "^/scottish-charity-awards/previous-winners$",
 					"children": [
 						{
+							"label": "2021 winners",
+							"path": "/scottish-charity-awards/previous-winners/winners-2021",
+							"route": "^/scottish-charity-awards/previous-winners/winners-2021$",
+							"description": " "
+						},
+						{
 							"label": "2020 winners",
 							"path": "/scottish-charity-awards/previous-winners/winners-2020",
 							"route": "^/scottish-charity-awards/previous-winners/winners-2020$",
