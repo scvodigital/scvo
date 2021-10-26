@@ -1,0 +1,26 @@
+{
+  "name": "redirect_climate-crisis",
+  "pattern": {
+    "one": "/climate-crisis",
+    "two": "/climatecrisis"
+  },
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/policy/campaigns/climate-crisis"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
