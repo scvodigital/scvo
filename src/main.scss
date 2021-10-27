@@ -39,22 +39,22 @@ $tfn-color-alt: #00A2BC;
 $fs-legacy-color: #537F2C;
 $fs-color: #5BA855;
 
-$blue-color: #4CBED5;
+$blue-color: #45CCE4;
 $blue-color-light: #edf8fa;
 $blue-color-alt: #f4fbfc;
 $blue-color-light-var: f4fbfc;
 $blue-color-dark: #6f9dae;
-$purple-color: #C0B5DA;
+$purple-color: #BFB4D9;
 $purple-color-light: #B3B1D0;
 $purple-color-dark: #A18399;
 $purple-color-darker: #615D9D;
-$green-color: #AFD5A6;
+$green-color: #AED5A7;
 $green-color-dark: #74A86B;
 $green-color-darker: #447149;
-$yellow-color: #F9DA18;
+$yellow-color: #FFDB00;
 $yellow-color-dark: #DEBA05;
 $pink-color: #FEB3B4;
-$orange-color: #F8AB23;
+$orange-color: #F8AC23;
 $red-color: #F31E31;
 
 $awards-volunteer-color: #A989A0;
@@ -737,6 +737,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1,
 .h1,
+.infographic h1,
+.infographic h2,
+.infographic h3,
+.infographic h4,
+.infographic h5,
 .splash-image-header .header-text {
   font-family: $heading-font-family;
   font-weight: $heading-font-weight;
@@ -2257,6 +2262,22 @@ body.services.credit-union {
 .text-secondary {
   color: $secondary-color !important;
 }
+.text-red {
+  color: $red-color;
+}
+.text-green {
+  color: $green-color;
+}
+.text-orange {
+  color: $orange-color;
+}
+.text-blue {
+  color: $blue-color;
+}
+.text-purple {
+  color: $purple-color;
+}
+
 .bg-primary,
 .bg-secondary {
   p,
