@@ -487,8 +487,8 @@
 					"children": [
 						{
 							"label": "Climate crisis",
-							"_disabled_path": "/policy/campaigns/climate-crisis",
-							"_disabled_route": "^/policy/campaigns/climate-crisis$",
+							"path": "/policy/campaigns/climate-crisis",
+							"route": "^/policy/campaigns/climate-crisis$",
 							"description": "SCVO recognises that climate change is the next big threat to our health and wellbeing. The Scottish Government has committed to turning Scotland into a carbon neutral country by 2045 and reducing emissions by 75% (compared to 1990) by 2030. This will mean big changes to the way we live our lives, run our homes and businesses",
 							"icon": "",
 							"children": [
@@ -544,6 +544,13 @@
 									"icon": ""
 								},
 								{
+									"label": "Climate Scotland",
+									"path": "/policy/campaigns/climate-crisis/climate-scotland",
+									"route": "^/policy/campaigns/climate-crisis/climate-scotland$",
+									"description": "SCVO is a proud partner of the Climate Scotland campaign. We’re joining with Stop Climate Chaos Scotland and others to show our leaders strong support for action on climate and nature in Scotland and around the world",
+									"icon": ""
+								},
+								{
 									"label": "COP26 free consultation offer",
 									"path": "/policy/campaigns/climate-crisis/consultation",
 									"route": "^/policy/campaigns/climate-crisis/consultation$",
@@ -558,13 +565,6 @@
 									"icon": ""
 								}
 							]
-						},
-						{
-							"label": "Climate Scotland",
-							"path": "/policy/campaigns/climate-scotland",
-							"route": "^/policy/campaigns/climate-scotland$",
-							"description": "SCVO is a proud partner of the Climate Scotland campaign. We’re joining with Stop Climate Chaos Scotland and others to show our leaders strong support for action on climate and nature in Scotland and around the world",
-							"icon": ""
 						},
 						{
 							"label": "The Social Economy Pledge",
