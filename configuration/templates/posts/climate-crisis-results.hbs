@@ -1,0 +1,12 @@
+{{#compare @root.data.posts.hits.total ">" 0 ~}}
+<ul class="supplimentary-list climate-crisis-posts">
+  {{#each @root.data.posts.hits.hits ~}}
+  {{> content_post_list _source}}
+  {{/each ~}}
+</ul>
+{{> pagination paging=@root.data.posts.pagination}}
+{{else}}
+<p>
+  No climate crisis campaign posts could be loaded.
+</p>
+{{/compare ~}}

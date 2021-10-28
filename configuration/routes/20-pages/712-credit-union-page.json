@@ -35,13 +35,6 @@
         "layouts": {
           "default": {
             "layout": ">context.metaData.handlebars.layouts.creditunion",
-            "old_parts": {
-              "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.services_credit-union_header",
-              "body": ">context.metaData.handlebars.templates.page-body",
-              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
-              "footer": ">context.metaData.handlebars.templates.services_credit-union_footer"
-            },
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
               "header": ">context.metaData.handlebars.templates.services_credit-union_page-header",

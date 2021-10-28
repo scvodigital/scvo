@@ -1,7 +1,7 @@
 {
-  "name": "credit_union_news",
+  "name": "climate_crisis_news",
   "debug": false,
-  "pattern": "/services/credit-union/important-news",
+  "pattern": "/policy/campaigns/climate-crisis/blogs",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -32,7 +32,7 @@
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
           "type": "scvo-post",
-          "template": ">context.metaData.handlebars.queries.posts_credit-union"
+          "template": ">context.metaData.handlebars.queries.posts_climate-crisis"
         }
       },
       "renderer": "handlebars"
@@ -67,13 +67,13 @@
             "contentType": "application/rss+xml"
           },
           "default": {
-            "layout": ">context.metaData.handlebars.layouts.creditunion",
+            "layout": ">context.metaData.handlebars.layouts.default",
             "parts": {
               "head": ">context.metaData.handlebars.templates.head-tags",
-              "header": ">context.metaData.handlebars.templates.services_credit-union_page-header",
-              "body": ">context.metaData.handlebars.templates.posts_credit-union-results",
-              "rightSidebar": ">context.metaData.handlebars.templates.page-sidebar",
-              "footer": ">context.metaData.handlebars.templates.services_credit-union_page-footer"
+              "header": ">context.metaData.handlebars.templates.page-header",
+              "body": ">context.metaData.handlebars.templates.posts_climate-crisis-results",
+              "rightSidebar": ">context.metaData.handlebars.templates.policy_campaigns_climate-crisis-sidebar",
+              "footer": ">context.metaData.handlebars.templates.policy_campaigns_climate-crisis-footer"
             },
             "contentType": "text/html"
           }
