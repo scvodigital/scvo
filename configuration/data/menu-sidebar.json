@@ -1705,6 +1705,44 @@
 							"icon": "question-circle",
 							"children": [
 								{
+									"label": "Making good use of data",
+									"label_full": "A guide to making good use of data",
+									"path": "/support/digital/guides/data",
+									"route": "^/support/digital/guides/data$",
+									"description": "Overview of main topics to explore when moving services to digital channels. Includes popular tools and useful resources",
+									"icon": "file-chart-pie",
+									"children": [
+										{
+											"label": "Introducing data",
+											"path": "/support/digital/guides/digital-services/introducing-data",
+											"route": "^/support/digital/guides/digital-services/introducing-data$",
+											"description": " ",
+											"icon": "database"
+										},
+										{
+											"label": "Two examples of how organisations used data to improve their effectiveness",
+											"path": "/support/digital/guides/digital-services/examples",
+											"route": "^/support/digital/guides/digital-services/examples$",
+											"description": " ",
+											"icon": "calendar-star"
+										},
+										{
+											"label": "Data ethics, risk, and privacy",
+											"path": "/support/digital/guides/digital-services/data-ethics-risk-and-privacy",
+											"route": "^/support/digital/guides/digital-services/data-ethics-risk-and-privacy$",
+											"description": " ",
+											"icon": "user-secret"
+										},
+										{
+											"label": "Don’t let your data gather dust",
+											"path": "/support/digital/guides/digital-services/dont-let-your-data-gather-dust",
+											"route": "^/support/digital/guides/digital-services/dont-let-your-data-gather-dust$",
+											"description": " ",
+											"icon": "scroll-old"
+										}
+									]
+								},
+								{
 									"label": "Digital services",
 									"label_full": "Digital services: How to",
 									"path": "/support/digital/guides/digital-services",
