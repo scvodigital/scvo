@@ -1,0 +1,26 @@
+{{#compare @root.data.eventsUpcoming.hits.total ">" 0 ~}}
+<div class="related-posts v-padding-full bg-gray">
+  <div class="container t-padding b-padding-full">
+    <h3 class="b-margin">
+      Upcoming events
+    </h3>
+    <div class="columns">
+      {{#each (split "0,1,2,3" ",") ~}}
+      {{#with (getProperty @root.data.eventsUpcoming.hits.hits (concat this '._source')) ~}}
+      <div class="column col-4 col-lg-6 col-sm-12">
+        <div class="columns b-margin col-gapless">
+          <div class="column col-3 col-md-4">
+            <a href="{{path}}" class="pull-left r-margin no-underline"><img src="https://storage.googleapis.com/scvo-assets/test/scvo/images/icons/android-chrome-192x192.png" alt="{{{trim title}}}" class="img-responsive" /></a>
+          </div>
+          <div class="column col-9 col-md-8">
+            <a href="{{path}}">{{{trim title}}}</a>
+            <div class="caption">{{momentFormat (moment publish_on 'x') "Do MMMM YYYY"}}</div>
+          </div>
+        </div>
+      </div>
+      {{/with ~}}
+      {{/each ~}}
+    </div>
+  </div>
+</div>
+{{/compare ~}}

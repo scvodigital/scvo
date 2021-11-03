@@ -1,0 +1,48 @@
+{
+  "size": 4,
+  "_source": [
+    "title",
+    "date_start",
+    "Id",
+    "path",
+    "places_available",
+    "city",
+    "description_short",
+    "course_overview_short",
+    "slug"
+  ],
+  "query": {
+    "bool": {
+      "must_not": [
+        {
+          "term": {
+            "hide_in_results": true
+          }
+        }
+      ],
+      "must": [
+        {
+          "range" : {
+            "date_start" : {
+              "gte" : "now/d"
+            }
+          }
+        }
+      ],
+      "should": [
+        {
+          "simple_query_string": {
+            "query": "net zero",
+            "default_operator": "and",
+            "fields": ["text_bag"],
+            "analyzer": "snowball"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  },
+  "sort": {
+    "date_start": "asc"
+  }
+}
