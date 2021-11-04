@@ -16,7 +16,7 @@
     {{/if}}
     {{{truncate (stripTags (default og_summary content)) 280}}}
   </section>
-  <section class="mdc-card__actions"><a href="{{@root.request.url.path}}/{{replace slug 'p_award_'}}">Find out more</a></section>
+  <section class="mdc-card__actions"><a href="{{@root.request.url.path}}/{{replace slug 'p_award_'}}" aria-label="Find out more about {{title}}">Find out more</a></section>
 </div>
 {{/with ~}}
 {{/each ~}}

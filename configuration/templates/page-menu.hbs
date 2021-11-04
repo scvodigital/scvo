@@ -19,7 +19,7 @@
     </div>
     {{/ifAny ~}}
     <div class="card-footer">
-      <a href="{{path}}">{{default link_label "Find out more"}}</a>
+      <a href="{{path}}" aria-label="{{default link_label 'Find out more'}} about {{#if label_full}}{{{label_full}}}{{else}}{{{label}}}{{/if}}">{{default link_label 'Find out more'}}</a>
     </div>
   </div>
 </div>

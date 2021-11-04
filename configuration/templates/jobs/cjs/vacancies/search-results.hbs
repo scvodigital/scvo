@@ -106,7 +106,7 @@
         </p>
         {{/if ~}}
         <p>
-          <a href="{{@root.request.url.pathname}}/{{Id}}/{{title_slug}}{{> query_search}}" class="no-underline">Find out more</a>
+          <a href="{{@root.request.url.pathname}}/{{Id}}/{{title_slug}}{{> query_search}}" class="no-underline" aria-label="Find out more about {{title}}">Find out more</a>
         </p>
       </div>
       {{/with ~}}
@@ -159,7 +159,7 @@
       {{{description_short}}}
     </p>
     <p>
-      <a href="{{path}}" class="no-underline">Find out more</a>
+      <a href="{{path}}" class="no-underline" aria-label="Find out more about {{title}}">Find out more</a>
     </p>
   </section>
 </div>
