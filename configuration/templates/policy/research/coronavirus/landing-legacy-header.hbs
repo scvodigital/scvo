@@ -35,14 +35,14 @@
 <div class="bg-white">
   <div class="container t-padding">
     <div class="v-padding-full">
-      {{!-- <div class="columns v-margin-full">
-        <div class="column col-8 col-lg-6 col-md-12"> --}}
+      <div class="columns v-margin-full">
+        <div class="column col-8 col-lg-6 col-md-12">
           {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
           {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
           {{{replace (replace (replace (replace (replace content "@scvo.org.uk" "@scvo.scot") "https://scvo.org.uk" "") "http://scvo.org.uk" "") "https://cms.scvo.org" "") "http://cms.scvo.org" ""}}}
           {{/with ~}}
           {{/if ~}}
-        {{!-- </div>
+        </div>
         <div class="column col-4 col-lg-6 col-md-12">
           <div class="columns">
             <div class="column col-5 col-lg-12">
@@ -57,7 +57,7 @@
               </p>
             </div>
           </div>
-        </div> --}}
+        </div>
       </div>
     </div>
   </div>

@@ -31,12 +31,6 @@
         },
         "queryTemplates": [
           {
-            "name": "coronavirus_posts",
-            "index": "{$../../data/elasticsearch-index.txt}",
-            "type": "scvo-post",
-            "template": ">context.metaData.handlebars.queries.posts_policy-coronavirus-briefings"
-          },
-          {
             "name": "evidence_library",
             "index": "{$../../data/elasticsearch-index.txt}",
             "type": "scvo-document-evidence",
