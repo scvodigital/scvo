@@ -1,0 +1,23 @@
+{
+  "name": "redirect_20-years",
+  "pattern": "/20-years-delivering-change",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/policy/past-campaigns/20-years-delivering-change"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 301
+      }
+    }
+  ]
+}
