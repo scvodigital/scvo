@@ -1,4 +1,4 @@
-<div class="b-margin-full b-padding-full">
+<div class="b-margin-full bg-white b-padding-full">
   {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
   {{> content_page_full @root.data.primaryResponse.hits.hits.[0]._source}}
   {{/if ~}}
