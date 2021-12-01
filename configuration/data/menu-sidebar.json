@@ -2838,12 +2838,12 @@
 	],
 	"help": [
 		{
-			"label": "Help",
+			"label": "Policies",
 			"path": "",
-			"route": "^/help$",
+			"route": "^/policies$",
 			"children": [
 				{
-					"label": "Accessibility",
+					"label": "Accessibility policy",
 					"path": "/accessibility",
 					"route": "^/accessibility$"
 				},
@@ -2853,12 +2853,17 @@
 					"route": "^/transparency$"
 				},
 				{
-					"label": "Privacy",
+					"label": "Environmental policy",
+					"path": "/environment",
+					"route": "^/environment$"
+				},
+				{
+					"label": "Privacy policy",
 					"path": "/privacy",
 					"route": "^/privacy$"
 				},
 				{
-					"label": "Cookies",
+					"label": "Cookies policy",
 					"path": "/cookies",
 					"route": "^/cookies$"
 				},
