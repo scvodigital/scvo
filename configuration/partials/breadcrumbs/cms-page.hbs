@@ -1,6 +1,6 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <ul class="breadcrumb breadcrumb-length-{{breadcrumb.length}} breadcrumb-{{wpid}}" aria-hidden="true">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/">SCVO</a></li>
   {{#each breadcrumb ~}}
   <li class="breadcrumb-item"><a href="{{replace (replace (replace url 'http://cms.scvo.org' '') 'https://cms.scvo.org' '') 'https://scvo.scot' ''}}">{{{striptags title}}}</a></li>
   {{/each ~}}

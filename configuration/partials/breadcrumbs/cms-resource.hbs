@@ -1,6 +1,6 @@
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 <ul class="breadcrumb breadcrumb-length-{{breadcrumb.length}}" aria-hidden="true">
-  <li class="breadcrumb-item"><a href="/">Home</a></li>
+  <li class="breadcrumb-item"><a href="/">SCVO</a></li>
   {{#ifAny (ifAll (contains categories_slug "coronavirus") (contains post_tags_slug "faq")) (compare @root.route.name "resource_coronavirus_fund_faq") ~}}
   <li class="breadcrumb-item"><a href="/support/">Support & learning</a></li>
   <li class="breadcrumb-item"><a href="/support/coronavirus">Coronavirus Third Sector Information Hub</a></li>

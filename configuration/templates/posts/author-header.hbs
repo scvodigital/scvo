@@ -2,7 +2,7 @@
   {{#if @root.data.posts.hits.hits.[0]._source.staff_profile ~}}
   {{#with @root.data.posts.hits.hits.[0]._source.staff_profile ~}}
   <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/">SCVO</a></li>
     <li class="breadcrumb-item"><a href="/about">About SCVO</a></li>
     <li class="breadcrumb-item"><a href="/about/people">Our people</a></li>
     <li class="breadcrumb-item"><a href="/about/people/contacts">Contacts</a></li>
@@ -21,7 +21,7 @@
   {{else}}
   {{#with @root.data.posts.hits.hits.[0]._source ~}}
   <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="/">SCVO</a></li>
     <li class="breadcrumb-item"><a href="/posts">Posts</a></li>
     <li class="breadcrumb-item">{{{author_name_full}}}</li>
   </ul>
