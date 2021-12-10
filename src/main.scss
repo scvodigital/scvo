@@ -309,7 +309,7 @@ body {
 }
 .icon-rouleaux,
 .bg-rouleaux {
-  background-image: url('https://scvo.scot/rouleaux.svg?color=#{$light-color-var}&style=solid');
+  background-image: url('https://scvo.scot/rouleaux.svg?color=f7fafb&style=solid');
   background-size: $page-width;
   background-position-x: center;
   background-position-y: top;
@@ -320,17 +320,17 @@ body.digital.guides,
 body.digital.participation,
 body.digital.evolution {
   .bg-rouleaux {
-    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$blue-color-light-var}&style=solid');
+    background-image: url('https://scvo.scot/rouleaux.svg?color=f7fafb&style=solid');
   }
 }
 body.services.credit-union {
   .bg-rouleaux {
-    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$credit-union-color-light-var}&style=solid');
+    background-image: url('https://scvo.scot/rouleaux.svg?color=f7fafb&style=solid');
   }
 }
 body.the-gathering-2021 {
   .bg-rouleaux {
-    background-image: url('https://scvo.scot/rouleaux.svg?color=#{$gathering-color-light-var}&style=solid');
+    background-image: url('https://scvo.scot/rouleaux.svg?color=f7fafb&style=solid');
   }
   .splash-image-header {
     background-size: cover;
