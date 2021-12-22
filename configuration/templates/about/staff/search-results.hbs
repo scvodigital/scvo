@@ -10,7 +10,7 @@
             <option value="all"{{#if @root.request.params.query.department}}{{else}} selected{{/if}}>All departments</option>
             {{#each @root.data.supplimentaryResponses.departments.aggregations.departments.buckets ~}}
             {{#if key ~}}
-            <option value="{{replace (slugify key) '-amp-' '-'}}" {{#compare ../request.params.query.department "===" (slugify key)}}selected{{/compare}}>{{{key}}}</option>
+            <option value="{{replace (slugify key) '-amp-' '-'}}" {{#compare ../request.params.query.department "===" (replace (slugify key) '-amp-' '-')}}selected{{/compare}}>{{{key}}}</option>
             {{/if ~}}
             {{/each ~}}
           </select>
