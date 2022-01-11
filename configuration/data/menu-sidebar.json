@@ -60,9 +60,9 @@
 											"icon": "money-bill-wave"
 										},
 										{
-											"label": "Community Jobs Scotland",
+											"label": "Employability support",
 											"path": "/jobs/employability-support",
-											"route": "^/about/people/contacts/teams/community-jobs-scotland$",
+											"route": "^/about/people/contacts/teams/employability-support$",
 											"description": "Email <a href='mailto:communityjobsscotland@scvo.scot'>communityjobsscotland@scvo.scot</a><br />Phone 0141 559 5026",
 											"icon": "id-badge"
 										},
@@ -345,7 +345,7 @@
 					"route": "^__hidden__/jobs/goodmoves$"
 				},
 				{
-					"label": "Community Jobs Scotland",
+					"label": "Employability support",
 					"path": "/jobs/employability-support",
 					"route": "^__hidden__/jobs/employability-support$"
 				},
@@ -384,9 +384,9 @@
 			]
 		}
 	],
-	"cjs": [
+	"employability-support": [
 		{
-			"label": "Community Jobs Scotland",
+			"label": "Employability support",
 			"path": "/jobs/employability-support",
 			"route": "^/jobs/employability-support$",
 			"children": [
