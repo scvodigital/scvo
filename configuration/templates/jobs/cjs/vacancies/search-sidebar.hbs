@@ -15,18 +15,18 @@
 
 {{!-- <h4>Search vacancies</h4> --}}
 
-<form action="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}" method="GET">
+<form action="/jobs/employability-support/vacancies/{{@root.request.params.phase}}" method="GET">
   <input type="hidden" name="view" value="{{@root.request.params.query.view}}" />
 
   <ul class="tab tab-block b-margin">
     <li class="tab-item{{#compare @root.request.params.query.view '!==' 'map'}} active{{/compare}}">
-      <a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}?{{querystringify @root.request.params.query view='list'}}">
+      <a href="/jobs/employability-support/vacancies/{{@root.request.params.phase}}?{{querystringify @root.request.params.query view='list'}}">
         <span class="far fa-list fa-fw"></span>
         List
       </a>
     </li>
     <li class="tab-item{{#compare @root.request.params.query.view 'map'}} active{{/compare}}">
-      <a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}?{{querystringify @root.request.params.query view='map'}}">
+      <a href="/jobs/employability-support/vacancies/{{@root.request.params.phase}}?{{querystringify @root.request.params.query view='map'}}">
         <span class="far fa-map-marker-alt fa-fw"></span>
         Map
       </a>

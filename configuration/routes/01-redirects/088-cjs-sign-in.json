@@ -1,6 +1,6 @@
 {
   "name": "redirect_cjs-sign-in",
-  "pattern": "/jobs/community-jobs-scotland/vacancies/sign-in",
+  "pattern": "/jobs/employability-support/vacancies/sign-in",
   "tasks": [
     {
       "name": "url",
@@ -8,7 +8,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/jobs/community-jobs-scotland/vacancies"
+        "template": "/jobs/employability-support/vacancies"
       }
     },
     {

@@ -1,7 +1,7 @@
 {
   "name": "cjs_job",
   "debug": false,
-  "pattern": "/jobs/community-jobs-scotland/vacancies/:phase/:id(/:junk)",
+  "pattern": "/jobs/employability-support/vacancies/:phase/:id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     "context.metaData.commonTasks.cjsAuthNotRequired",

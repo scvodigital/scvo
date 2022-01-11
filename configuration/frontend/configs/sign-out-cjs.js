@@ -7,7 +7,7 @@ return {
       },
       {
         type: "run",
-        config: { code: 'window.location.href = "/jobs/community-jobs-scotland/vacancies/sign-in"' }
+        config: { code: 'window.location.href = "/jobs/employability-support/vacancies/sign-in"' }
       }
     ]
   }

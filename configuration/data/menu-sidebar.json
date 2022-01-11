@@ -61,7 +61,7 @@
 										},
 										{
 											"label": "Community Jobs Scotland",
-											"path": "/jobs/community-jobs-scotland",
+											"path": "/jobs/employability-support",
 											"route": "^/about/people/contacts/teams/community-jobs-scotland$",
 											"description": "Email <a href='mailto:communityjobsscotland@scvo.scot'>communityjobsscotland@scvo.scot</a><br />Phone 0141 559 5026",
 											"icon": "id-badge"
@@ -346,8 +346,8 @@
 				},
 				{
 					"label": "Community Jobs Scotland",
-					"path": "/jobs/community-jobs-scotland",
-					"route": "^__hidden__/jobs/community-jobs-scotland$"
+					"path": "/jobs/employability-support",
+					"route": "^__hidden__/jobs/employability-support$"
 				},
 				{
 					"label": "Kickstart Scheme",
@@ -387,69 +387,69 @@
 	"cjs": [
 		{
 			"label": "Community Jobs Scotland",
-			"path": "/jobs/community-jobs-scotland",
-			"route": "^/jobs/community-jobs-scotland$",
+			"path": "/jobs/employability-support",
+			"route": "^/jobs/employability-support$",
 			"children": [
 				{
 					"label": "Get involved: Employers",
-					"path": "/jobs/community-jobs-scotland/information-for-employers",
-					"route": "^/jobs/community-jobs-scotland/information-for-employers$",
+					"path": "/jobs/employability-support/information-for-employers",
+					"route": "^/jobs/employability-support/information-for-employers$",
 					"description": "",
 					"icon": "",
 					"children": [
 						{
 							"label": "Become an employer",
-							"path": "/jobs/community-jobs-scotland/information-for-employers/become-an-employer",
-							"route": "^/jobs/community-jobs-scotland/information-for-employers/become-an-employer",
+							"path": "/jobs/employability-support/information-for-employers/become-an-employer",
+							"route": "^/jobs/employability-support/information-for-employers/become-an-employer",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Responsibilities",
-							"path": "/jobs/community-jobs-scotland/information-for-employers/responsibilities",
-							"route": "^/jobs/community-jobs-scotland/information-for-employers/responsibilities",
+							"path": "/jobs/employability-support/information-for-employers/responsibilities",
+							"route": "^/jobs/employability-support/information-for-employers/responsibilities",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Job criteria",
-							"path": "/jobs/community-jobs-scotland/information-for-employers/job-criteria",
-							"route": "^/jobs/community-jobs-scotland/information-for-employers/job-criteria",
+							"path": "/jobs/employability-support/information-for-employers/job-criteria",
+							"route": "^/jobs/employability-support/information-for-employers/job-criteria",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Funding",
-							"path": "/jobs/community-jobs-scotland/information-for-employers/funding",
-							"route": "^/jobs/community-jobs-scotland/information-for-employers/funding",
+							"path": "/jobs/employability-support/information-for-employers/funding",
+							"route": "^/jobs/employability-support/information-for-employers/funding",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Training",
-							"path": "/jobs/community-jobs-scotland/information-for-employers/training",
-							"route": "^/jobs/community-jobs-scotland/information-for-employers/training",
+							"path": "/jobs/employability-support/information-for-employers/training",
+							"route": "^/jobs/employability-support/information-for-employers/training",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Contacts",
-							"path": "/jobs/community-jobs-scotland/information-for-employers/contacts",
-							"route": "^/jobs/community-jobs-scotland/information-for-employers/contacts",
+							"path": "/jobs/employability-support/information-for-employers/contacts",
+							"route": "^/jobs/employability-support/information-for-employers/contacts",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Quarterly bulletins",
-							"path": "/jobs/community-jobs-scotland/information-for-employers/quarterly-bulletins",
-							"route": "^/jobs/community-jobs-scotland/information-for-employers/quarterly-bulletins",
+							"path": "/jobs/employability-support/information-for-employers/quarterly-bulletins",
+							"route": "^/jobs/employability-support/information-for-employers/quarterly-bulletins",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Vacancies",
-							"path": "/jobs/community-jobs-scotland/vacancies",
-							"route": "^/jobs/community-jobs-scotland/vacancies$",
+							"path": "/jobs/employability-support/vacancies",
+							"route": "^/jobs/employability-support/vacancies$",
 							"description": "",
 							"icon": ""
 						}
@@ -457,50 +457,50 @@
 				},
 				{
 					"label": "Get involved: Young people",
-					"path": "/jobs/community-jobs-scotland/information-for-employees",
-					"route": "^/jobs/community-jobs-scotland/information-for-employees$",
+					"path": "/jobs/employability-support/information-for-employees",
+					"route": "^/jobs/employability-support/information-for-employees$",
 					"description": "",
 					"icon": "",
 					"children": [
 						{
 							"label": "Applying for a job",
-							"path": "/jobs/community-jobs-scotland/information-for-employees/applying",
-							"route": "^/jobs/community-jobs-scotland/information-for-employees/applying",
+							"path": "/jobs/employability-support/information-for-employees/applying",
+							"route": "^/jobs/employability-support/information-for-employees/applying",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Responsibilities",
-							"path": "/jobs/community-jobs-scotland/information-for-employees/responsibilities",
-							"route": "^/jobs/community-jobs-scotland/information-for-employees/responsibilities",
+							"path": "/jobs/employability-support/information-for-employees/responsibilities",
+							"route": "^/jobs/employability-support/information-for-employees/responsibilities",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Training",
-							"path": "/jobs/community-jobs-scotland/information-for-employees/cjs-training",
-							"route": "^/jobs/community-jobs-scotland/information-for-employees/cjs-training",
+							"path": "/jobs/employability-support/information-for-employees/cjs-training",
+							"route": "^/jobs/employability-support/information-for-employees/cjs-training",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Aftercare information",
-							"path": "/jobs/community-jobs-scotland/information-for-employees/aftercare",
-							"route": "^/jobs/community-jobs-scotland/information-for-employees/aftercare",
+							"path": "/jobs/employability-support/information-for-employees/aftercare",
+							"route": "^/jobs/employability-support/information-for-employees/aftercare",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Success stories",
-							"path": "/jobs/community-jobs-scotland/information-for-employees/success-stories",
-							"route": "^/jobs/community-jobs-scotland/information-for-employees/success-stories",
+							"path": "/jobs/employability-support/information-for-employees/success-stories",
+							"route": "^/jobs/employability-support/information-for-employees/success-stories",
 							"description": "",
 							"icon": ""
 						},
 						{
 							"label": "Vacancies",
-							"path": "/jobs/community-jobs-scotland/vacancies",
-							"route": "^/jobs/community-jobs-scotland/vacancies",
+							"path": "/jobs/employability-support/vacancies",
+							"route": "^/jobs/employability-support/vacancies",
 							"description": "",
 							"icon": ""
 						}
@@ -508,8 +508,8 @@
 				},
 				{
 					"label": "Coronavirus update",
-					"path": "/jobs/community-jobs-scotland/coronavirus-update",
-					"route": "^/jobs/community-jobs-scotland/coronavirus-update",
+					"path": "/jobs/employability-support/coronavirus-update",
+					"route": "^/jobs/employability-support/coronavirus-update",
 					"description": "",
 					"icon": ""
 				}

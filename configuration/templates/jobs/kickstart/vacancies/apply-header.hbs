@@ -2,10 +2,10 @@
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">SCVO</a></li>
     <li class="breadcrumb-item"><a href="/jobs">Jobs &amp; employability</a></li>
-    <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland">Community Jobs Scotland</a></li>
-    <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland/vacancies">Vacancies</a></li>
-    <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}">16–29 year olds {{#compare @root.request.params.phase "part-time"}}(part-time){{/compare}}</a></li>
-    <li class="breadcrumb-item"><a href="/jobs/community-jobs-scotland/vacancies/{{@root.request.params.phase}}/{{@root.data.primaryResponse.hits.hits.[0]._id}}/{{@root.data.primaryResponse.hits.hits.[0]._source.title_slug}}">{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</a></li>
+    <li class="breadcrumb-item"><a href="/jobs/employability-support">Employability support</a></li>
+    <li class="breadcrumb-item"><a href="/jobs/employability-support/vacancies">Vacancies</a></li>
+    <li class="breadcrumb-item"><a href="/jobs/employability-support/vacancies/{{@root.request.params.phase}}">16–29 year olds {{#compare @root.request.params.phase "part-time"}}(part-time){{/compare}}</a></li>
+    <li class="breadcrumb-item"><a href="/jobs/employability-support/vacancies/{{@root.request.params.phase}}/{{@root.data.primaryResponse.hits.hits.[0]._id}}/{{@root.data.primaryResponse.hits.hits.[0]._source.title_slug}}">{{{@root.data.primaryResponse.hits.hits.[0]._source.title}}}</a></li>
     <li class="breadcrumb-item">Apply</li>
   </ul>
 
