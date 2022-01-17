@@ -1,7 +1,7 @@
 {
   "name": "page_gathering_2021_delegate",
   "debug": false,
-  "pattern": "/the-gathering-2021/delegate(/:delegate_id)",
+  "pattern": "_disabled_/the-gathering-2021/delegate(/:delegate_id)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     "context.metaData.commonTasks.postsLatest",

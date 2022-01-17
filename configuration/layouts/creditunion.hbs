@@ -114,12 +114,6 @@
           <a href="/sign-out-cjs" class="btn btn-link" data-component="TasksTrigger" data-taskstrigger="sign-out-cjs">
             Sign out
           </a>
-          {{else}}
-          {{#each context.metaData.layoutMenus.user-not-signed-in ~}}
-          {{!-- <a href="{{stripTrailingSlash path}}" class="btn btn-link{{#if (regexMatch @root.request.url.pathname route 'gi')}} active{{/if}}">
-            {{{label}}}
-          </a> --}}
-          {{/each ~}}
           {{/if ~}}
           {{/if ~}}
           </section>

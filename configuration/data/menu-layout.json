@@ -36,28 +36,6 @@
 			"route": "^/policy"
 		}
 	],
-	"user-signed-in": [
-		{
-			"label": "Explore",
-			"icon": "file-search",
-			"path": "/explore",
-			"route": "^/explore"
-		},
-		{
-			"label": "My account",
-			"icon": "user-cog",
-			"path": "/account",
-			"route": "^/account|^/sign-up-details|^/scvo-account"
-		}
-	],
-	"user-not-signed-in": [
-		{
-			"label": "My account",
-			"icon": "user-cog",
-			"path": "/account",
-			"route": "^/account|^/sign-up-details|^/scvo-account"
-		}
-	],
   "footer": [
 		{
 			"label": "Accessibility policy",
@@ -115,38 +93,6 @@
 			"label": "FAQs",
 			"path": "/scottish-charity-awards/faqs",
 			"route": "^/scottish-charity-awards/faqs$"
-		}
-	],
-	"gathering": [
-		{
-			"label": "The Gathering 2020",
-			"path": "/the-gathering-2020",
-			"route": "^/the-gathering-2020$"
-		},
-		{
-			"label": "About",
-			"path": "/the-gathering-2020/about",
-			"route": "^/the-gathering-2020/about"
-		},
-		{
-			"label": "Event programme",
-			"path": "/the-gathering-2020/event-programme",
-			"route": "^/the-gathering-2020/event-programme"
-		},
-		{
-			"label": "Exhibitors and event hosts",
-			"path": "/the-gathering-2020/exhibitors-and-event-hosts",
-			"route": "^/the-gathering-2020/exhibitors-and-event-hosts"
-		},
-		{
-			"label": "Resources",
-			"path": "/the-gathering-2020/resources",
-			"route": "^/the-gathering-2020/resources"
-		},
-		{
-			"label": "Contact",
-			"path": "/the-gathering-2020/contact-us",
-			"route": "^/the-gathering-2020/contact"
 		}
 	]
 }
