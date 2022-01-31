@@ -18,9 +18,9 @@ $success-color: #3BAA34;
 $warning-color: #F05B23;
 $error-color: #f03823;
 
-$gathering-color: #8C1C5D;
-$gathering-color-light: #EAE0E8;
-$gathering-color-alt: #ECCBCD;
+$gathering-color: #A41A5C;
+$gathering-color-light: #C47996;
+$gathering-color-alt: #FF5959;
 $gathering-color-light-var: FAF5F8;
 $awards-color-light-var: F9F4F5;
 
@@ -1588,8 +1588,12 @@ ul.list-lg {
     vertical-align: top;
     color: $secondary-color;
   }
-  .brand-coronavirus .text-link:hover {
+  .brand-awards .text-link:hover {
     background-color: $primary-color;
+    color: white;
+  }
+  .brand-gathering .text-link:hover {
+    background-color: $gathering-color;
     color: white;
   }
   .brand-fundingscotland .text-link:hover {
