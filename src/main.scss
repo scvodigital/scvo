@@ -1583,8 +1583,9 @@ ul.list-lg {
     display: inline-block;
     height: 40px;
     line-height: 40px;
-    border-bottom: $thick-line solid transparent;
+    border: none;
     padding: 0 0.4rem;
+    vertical-align: top;
     color: $secondary-color;
   }
   .brand-coronavirus .text-link:hover {
