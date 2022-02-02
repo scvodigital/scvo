@@ -3110,11 +3110,11 @@ header {
 }
 header.header {
   padding-top: $unit*0.7;
-  margin-bottom: $unit*0.85 !important;
+  margin-bottom: $unit*0.55 !important;
   .navbar-brand {
     line-height: 1;
     img {
-      width: 250px;
+      height: 90px;
     }
   }
   .form-horizontal {
