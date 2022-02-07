@@ -133,7 +133,7 @@
         {{/if ~}}
         {{#if twitter ~}}
         <ul class="fa-ul">
-          <li><span class="fa-li"><span class="fab fa-twitter"></span></span> @{{replace (replace (replace (replace (replace (replace (replace (trim twitter) 'https://' '') 'http://' '') 'm.twitter.com/' '') 'mobile.twitter.com/' '') 'twitter.com/' '') '?lang=en' '')}}</li>
+          <li><span class="fa-li"><span class="fab fa-twitter"></span></span> @{{replace (replace (replace (replace (replace (replace (replace (trim (itemAt (split twitter '?') 0)) 'https://' '') 'http://' '') 'm.twitter.com/' '') 'mobile.twitter.com/' '') 'twitter.com/' '') '?lang=en' '')}}</li>
         </ul>
         {{/if ~}}
         {{!-- {{#if facebook ~}}
