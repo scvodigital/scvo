@@ -74,7 +74,7 @@
       <span class="key-info-bit r-margin-full">
         <strong>Next deadline:</strong>
         {{#if @root.data.auth ~}}
-        {{{momentFormat (moment next_deadline 'x') 'Do MMM YYYY'}}}
+        {{{momentFormat (moment next_deadline 'x') 'D MMM YYYY'}}}
         {{else}}
         in {{{momentFormat (moment next_deadline 'x') 'MMMM YYYY'}}}
         {{/if ~}}
@@ -107,12 +107,12 @@
     </div>
     {{#ifAll (compare @root.route.name "!==" "fund") date_last_modified ~}}
     <span class="key-info-bit v-margin r-margin-full label label-warning">
-      Last reviewed {{{momentFromNow (moment date_last_modified "x") "Do MMMM YYYY"}}}
+      Last reviewed {{{momentFromNow (moment date_last_modified "x") "D MMMM YYYY"}}}
     </span>
     {{/ifAll ~}}
     {{#ifAll news date_news_last_updated ~}}
     <div class="fund-details mdc-typography--body1">
-      <strong>News - {{{momentFormat (moment date_news_last_updated 'x') 'Do MMM YYYY'}}}:</strong>
+      <strong>News - {{{momentFormat (moment date_news_last_updated 'x') 'D MMM YYYY'}}}:</strong>
       {{{news}}}
     </div>
     {{/ifAll ~}}

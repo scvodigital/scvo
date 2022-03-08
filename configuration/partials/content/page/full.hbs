@@ -3,9 +3,9 @@
 <div class="full scvo-cms scvo-cms-page scvo-cms-page-{{wpid}}">
   {{#if highlight_last_updated ~}}
   <div class="page-info b-margin-full">
-    <div class="page-info-item page-info-updated text-white label label-warning" title="{{#compare (momentFormat (moment publish_on 'x') 'Do MMMM YYYY') '===' (momentFormat (moment updated 'x') 'Do MMMM YYYY')}}Published{{else}}Last updated{{/compare}} on {{momentFormat (moment updated 'x') 'Do MMMM YYYY'}} at {{momentFormat (moment updated 'x') 'HH:mm:ss'}}">
+    <div class="page-info-item page-info-updated text-white label label-warning" title="{{#compare (momentFormat (moment publish_on 'x') 'D MMMM YYYY') '===' (momentFormat (moment updated 'x') 'D MMMM YYYY')}}Published{{else}}Last updated{{/compare}} on {{momentFormat (moment updated 'x') 'D MMMM YYYY'}} at {{momentFormat (moment updated 'x') 'HH:mm:ss'}}">
       <span class="far fa-calendar-alt" aria-hidden="true"></span>
-      Last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
+      Last modified on {{momentFormat (moment updated 'x') "D MMMM YYYY"}}
     </div>
   </div>
   {{/if ~}}
@@ -21,7 +21,7 @@
   <div class="page-info v-margin-full b-padding-full">
     <div class="page-info-item page-info-updated text-gray">
       <span class="far fa-calendar-alt" aria-hidden="true"></span>
-      Page last modified on {{momentFormat (moment updated 'x') "Do MMMM YYYY"}}
+      Page last modified on {{momentFormat (moment updated 'x') "D MMMM YYYY"}}
     </div>
   </div>
   {{/unless ~}}

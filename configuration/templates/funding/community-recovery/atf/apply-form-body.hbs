@@ -1614,7 +1614,7 @@
                           {{addCommas (round (divide ContentSize 1024))}}Kb
                         </td>
                         <td>
-                          {{momentFormat (momentConvertTz (moment CreatedDate "YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0") "UTC" "Europe/Berlin") 'Do MMMM YYYY HH:mm:ss'}}
+                          {{momentFormat (momentConvertTz (moment CreatedDate "YYYY-MM-DDTHH:mm:ss\.\0\0\0\+\0\0\0\0") "UTC" "Europe/Berlin") 'D MMMM YYYY HH:mm:ss'}}
                         </td>
                         {{/with}}
                       </tr>

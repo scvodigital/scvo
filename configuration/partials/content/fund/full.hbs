@@ -153,13 +153,13 @@
           {{#if next_deadline}}
             <span class="key-info-bit r-margin-full">
               <strong>Next deadline:</strong>
-              {{momentFormat (moment next_deadline "x") "Do MMM YYYY"}}
+              {{momentFormat (moment next_deadline "x") "D MMM YYYY"}}
             </span>
           {{/if}}
           {{#if date_due_to_open ~}}
             <span class="key-info-bit r-margin-full">
               <strong>Due to open:</strong>
-              {{momentFormat (moment date_due_to_open "x") "Do MMM YYYY"}}
+              {{momentFormat (moment date_due_to_open "x") "D MMM YYYY"}}
             </span>
           {{/if ~}}
         </div>

@@ -10,7 +10,7 @@
               <strong>Starts</strong>
             </div>
             <div class="column col-10 col-lg-9 col-sm-12">
-              {{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") 'Do MMMM YYYY HH:mm'}}
+              {{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") 'D MMMM YYYY HH:mm'}}
             </div>
           </div>
           {{/if ~}}
@@ -20,7 +20,7 @@
               <strong>Ends</strong>
             </div>
             <div class="column col-10 col-lg-9 col-sm-12">
-              {{momentFormat (momentConvertTz (moment date_end "x") "UTC" "Europe/London") 'Do MMMM YYYY HH:mm'}}
+              {{momentFormat (momentConvertTz (moment date_end "x") "UTC" "Europe/London") 'D MMMM YYYY HH:mm'}}
             </div>
           </div>
           {{/if ~}}

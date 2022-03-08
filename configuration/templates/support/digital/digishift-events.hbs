@@ -8,7 +8,7 @@
     {{#each @root.data.events.hits.hits ~}}
     {{#with _source ~}}
     <h3>{{{trim (replace (replace (replace (replace title 'DigiShift:' '') 'DigiShift :' '') 'DigiShift -' '') 'DigiShift Webinar: ' '')}}}</h3>
-    <h4>{{momentFormat (moment date_start 'x') "dddd Do MMMM"}} {{#compare (momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "mm") "00"}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "h"}}{{else}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "h:mm"}}{{/compare}}{{#compare date_start date_end}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") ":mma"}}{{else}}{{momentFormat (momentConvertTz (moment date_end "x") "UTC" "Europe/London") "\-h:mma"}}{{/compare}}</h4>
+    <h4>{{momentFormat (moment date_start 'x') "dddd D MMMM"}} {{#compare (momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "mm") "00"}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "h"}}{{else}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") "h:mm"}}{{/compare}}{{#compare date_start date_end}}{{momentFormat (momentConvertTz (moment date_start "x") "UTC" "Europe/London") ":mma"}}{{else}}{{momentFormat (momentConvertTz (moment date_end "x") "UTC" "Europe/London") "\-h:mma"}}{{/compare}}</h4>
     <p>
       {{{default description course_overview}}}
     </p>

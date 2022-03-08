@@ -20,8 +20,8 @@
     {{#ifAll planned_start planned_end ~}}
     <li>
       <span class="fa-li"><span class="far fa-calendar-alt"></span></span>
-      From {{momentFormat (moment planned_start 'x') "Do MMMM YYYY"}}
-      to {{momentFormat (moment planned_end 'x') "Do MMMM YYYY"}}
+      From {{momentFormat (moment planned_start 'x') "D MMMM YYYY"}}
+      to {{momentFormat (moment planned_end 'x') "D MMMM YYYY"}}
     </li>
     {{/ifAll ~}}
     {{#if call ~}}

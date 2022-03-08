@@ -66,19 +66,19 @@
           <p class="v-margin">
             <strong>Amount awarded:</strong> £{{addCommas amount_awarded}}
             {{!-- #ifAll actual_start actual_end ~}}
-            <strong>Project dates:</strong> {{momentFormat (moment actual_start 'x') "Do MMM YYYY"}} - {{momentFormat (moment actual_end 'x') "Do MMM YYYY"}}<br />
+            <strong>Project dates:</strong> {{momentFormat (moment actual_start 'x') "D MMM YYYY"}} - {{momentFormat (moment actual_end 'x') "D MMM YYYY"}}<br />
             {{/ifAll ~ --}}
             {{!-- #if date_awarded ~}}
-            <strong>Date awarded:</strong> {{momentFormat (moment date_awarded 'x') "Do MMM YYYY"}}
+            <strong>Date awarded:</strong> {{momentFormat (moment date_awarded 'x') "D MMM YYYY"}}
             {{/if ~ --}}
             {{!-- {{#if date_contracted ~}}<br />
-            <strong>Contracted:</strong> {{momentFormat (moment date_contracted 'x') "Do MMM YYYY"}}
+            <strong>Contracted:</strong> {{momentFormat (moment date_contracted 'x') "D MMM YYYY"}}
             {{/if ~}}
             {{#if date_payment_1 ~}}<br />
-            <strong>Payment{{#if date_payment_2}} 1{{/if}}:</strong> {{momentFormat (moment date_payment_1 'x') "Do MMM YYYY"}}
+            <strong>Payment{{#if date_payment_2}} 1{{/if}}:</strong> {{momentFormat (moment date_payment_1 'x') "D MMM YYYY"}}
             {{/if ~}}
             {{#if date_payment_2 ~}}<br />
-            <strong>Payment{{#if date_payment_1}} 2{{/if}}:</strong> {{momentFormat (moment date_payment_2 'x') "Do MMM YYYY"}}
+            <strong>Payment{{#if date_payment_1}} 2{{/if}}:</strong> {{momentFormat (moment date_payment_2 'x') "D MMM YYYY"}}
             {{/if ~}} --}}
           </p>
           {{/if ~}}

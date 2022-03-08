@@ -7,7 +7,7 @@
     {{#with (getProperty @root.data.supplimentaryResponses.tfn_latest.hits.hits (concat this '._source')) ~}}
     <li>
       <a href="{{url}}?utm_source=scvo&utm_medium=website&utm_campaign=sidebar">{{{trim title}}}</a>
-      <div class="caption">{{momentFormat (moment date_published 'x') "Do MMMM YYYY"}}</div>
+      <div class="caption">{{momentFormat (moment date_published 'x') "D MMMM YYYY"}}</div>
     </li>
     {{/with ~}}
     {{/each ~}}
