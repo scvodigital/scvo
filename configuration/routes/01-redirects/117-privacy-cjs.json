@@ -1,0 +1,23 @@
+{
+  "name": "redirect_privacy-cjs",
+  "pattern": "/privacy/community-jobs-scotland",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/privacy/employability-service"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
