@@ -1,0 +1,23 @@
+{
+  "name": "redirect_full-time-cjs",
+  "pattern": "/jobs/employability-support/vacancies",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/jobs/employability-support/vacancies/full-time"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
