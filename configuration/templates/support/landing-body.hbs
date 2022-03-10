@@ -159,7 +159,7 @@
       {{#each @root.data.supplimentaryResponses.event_types.aggregations.types.buckets}}
       <div class="column col-4 col-xl-6 col-md-12 b-padding-full text-center">
         <span class="fal fa-fw fa-{{#compare (slugify key) '===' 'training-course'}}users-class{{else}}{{#compare (slugify key) '===' 'network-event'}}users{{else}}{{#compare (slugify key) '===' 'seminar'}}user-headset{{else}}{{#compare (slugify key) '===' 'gala-dinner-awards-ceremony'}}stars{{else}}calendar-alt{{/compare}}{{/compare}}{{/compare}}{{/compare}} fa-4x p-centered b-margin-full"></span>
-        <a href="/events?type={{replace (slugify key) ' ' '-'}}" class="btn btn-block">List {{inflect doc_count (concat 'upcoming ' (lowercase (replace (replace key "Networking" "Networking event") "Workshops" "Workshop"))) (concat 'upcoming ' (lowercase (replace (replace key "Networking" "Networking event") "Workshops" "Workshop")) 's') true}}</a>
+        <a href="/events?type={{replace (slugify key) ' ' '-'}}" class="btn btn-block">{{inflect doc_count (concat 'upcoming ' (lowercase (replace (replace key "Networking" "Networking event") "Workshops" "Workshop"))) (concat 'upcoming ' (lowercase (replace (replace key "Networking" "Networking event") "Workshops" "Workshop")) 's') true}}</a>
       </div>
       {{/each}}
     </div>
