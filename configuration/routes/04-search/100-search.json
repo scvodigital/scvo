@@ -14,7 +14,7 @@
         },
         "queryTemplates": {
           "index": "{$../../data/elasticsearch-index.txt}",
-          "type": "scvo-page,scvo-post,scvo-staff,scvo-member,cjs-vacancy,goodmoves-vacancy,fs-fund,scvo-document-evidence,scvo-event",
+          "type": "scvo-page,scvo-post,scvo-staff,scvo-member,goodmoves-vacancy,fs-fund,scvo-document-evidence,scvo-event",
           "template": ">context.metaData.handlebars.queries.search_search"
         }
       },
