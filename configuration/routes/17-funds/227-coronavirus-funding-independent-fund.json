@@ -1,7 +1,7 @@
 {
   "name": "page_coronavirus_funding_independent_fund",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/independent/:fund_id(/:junk)",
+  "pattern": "_disabled_/support/coronavirus/funding/independent/:fund_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
