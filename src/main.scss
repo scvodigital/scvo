@@ -77,7 +77,8 @@ $awards-climate-color: #A9BD56;
 $awards-climate-color-dark: #8A9C3D;
 
 $kirk-color: #003663;
-$kirk-color-light: #0092C6;
+$kirk-color-2021: #0092C6;
+$kirk-color-2022: #a31466;
 
 $unit: 1rem;
 $padding: 1.2rem;
@@ -553,7 +554,8 @@ body.the-gathering-2021 {
   }
 }
 
-.funding.church-of-scotland-2021-small-grants-fund {
+.funding.church-of-scotland-2021-small-grants-fund,
+.funding.church-of-scotland-2022-small-grants-fund {
   header.toolbar {
     border-bottom-color: $kirk-color;
   }
@@ -589,15 +591,15 @@ body.the-gathering-2021 {
   .sidebar .menu .menu-item>a:focus,
   .breadcrumb .breadcrumb-item:not(:first-child)::before,
   .breadcrumb .breadcrumb-item a {
-    color: $kirk-color-light !important;
+    color: $kirk-color-2021 !important;
   }
   input[type=button], .btn:link, .btn:visited {
     border-color: $kirk-color !important;
     background-color: $kirk-color !important;
   }
   input[type=button].wfPageNextButton, .btn.btn-primary {
-    border-color: $kirk-color-light !important;
-    background-color: $kirk-color-light !important;
+    border-color: $kirk-color-2021 !important;
+    background-color: $kirk-color-2021 !important;
   }
   .btn.btn-primary:disabled {
     filter: grayscale(1);
@@ -607,7 +609,25 @@ body.the-gathering-2021 {
   }
   .divider::before,
   .divider-vert::before {
-    border-color: $kirk-color-light
+    border-color: $kirk-color-2021;
+  }
+}
+.funding.church-of-scotland-2022-small-grants-fund {
+  .menu .menu-item>a:active,
+  .menu .menu-item>a.active,
+  .menu .menu-item a:hover,
+  .sidebar .menu .menu-item>a:focus,
+  .breadcrumb .breadcrumb-item:not(:first-child)::before,
+  .breadcrumb .breadcrumb-item a {
+    color: $kirk-color-2022 !important;
+  }
+  input[type=button].wfPageNextButton, .btn.btn-primary {
+    border-color: $kirk-color-2022 !important;
+    background-color: $kirk-color-2022 !important;
+  }
+  .divider::before,
+  .divider-vert::before {
+    border-color: $kirk-color-2022;
   }
 }
 
@@ -1700,7 +1720,8 @@ ul.list-lg {
     font-size: 2.3rem;
     letter-spacing: -0.1rem;
   }
-  .funding.church-of-scotland-2021-small-grants-fund {
+  .funding.church-of-scotland-2021-small-grants-fund,
+  .funding.church-of-scotland-2022-small-grants-fund {
     header.navbar .navbar-section {
       display: block;
       .caption {

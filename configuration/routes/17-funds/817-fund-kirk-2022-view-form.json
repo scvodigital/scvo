@@ -1,7 +1,7 @@
 {
-  "name": "fund_kirk_view_form",
+  "name": "fund_kirk_2022_view_form",
   "debug": true,
-  "pattern": "/funding/church-of-scotland-2021-small-grants-fund/apply/view/:session_key",
+  "pattern": "/funding/church-of-scotland-2022-small-grants-fund/apply/view/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
@@ -31,7 +31,7 @@
               }
             ]
           },
-          "fund_kirk_apply_missing",
+          "fund_kirk_2022_apply_missing",
           false
         ]
       }
@@ -53,7 +53,7 @@
               }
             ]
           },
-          "fund_kirk_apply_missing",
+          "fund_kirk_2022_apply_missing",
           false
         ]
       }
@@ -63,7 +63,7 @@
       "taskModule": "render",
       "renderer": "handlebars",
       "config": {
-        "template": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_apply-form-data",
+        "template": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2022_apply-form-data",
         "output": "data",
         "parseJson": true
       }
@@ -81,11 +81,11 @@
         "output": "body",
         "layouts": {
           "default": {
-            "layout": ">context.metaData.handlebars.layouts.kirk",
+            "layout": ">context.metaData.handlebars.layouts.kirk-2022",
             "parts": {
-              "head": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_head-tags",
-              "header": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_view-header",
-              "body": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_apply-form"
+              "head": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2022_head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2022_view-header",
+              "body": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2022_apply-form"
             },
             "contentType": "text/html"
           }

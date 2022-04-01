@@ -1,5 +1,5 @@
 {
-  "name": "page_funding_kirk",
+  "name": "page_funding_kirk_2021",
   "debug": false,
   "pattern": {
     "landing": "/funding/church-of-scotland-2021-small-grants-fund",
@@ -37,7 +37,7 @@
         "output": "body",
         "layouts": {
           "default": {
-            "layout": ">context.metaData.handlebars.layouts.kirk",
+            "layout": ">context.metaData.handlebars.layouts.kirk-2021",
             "parts": {
               "head": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2021_head-tags",
               "header": ">context.metaData.handlebars.templates.page-header",

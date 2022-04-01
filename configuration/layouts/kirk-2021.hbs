@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <!--
+    {{#if @root.request.headers.scvo-proxy}}
+      SCVO Proxy
+    {{else}}
+      No Proxy
+    {{/if}}
+  -->
+  {{{layoutParts.head}}}
+  {{> layout_head}}
+</head>
+<body class="{{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
+  {{> layout_header_upper}}
+  <div class="page">
+    <div class="bg-white">
+      <div class="container">
+        <header class="navbar header b-padding-full b-margin-full">
+          <section class="navbar-section">
+            <a href="/funding/church-of-scotland-2021-small-grants-fund">
+              <img src="{{~>asset_url url='images/headers/small-grants-fund.png'~}}" alt="Church of Scotland 2021 Small Grants Fund" class="header-brand" />
+            </a>
+            <p class="caption ml-2 text-black">
+              Powered&nbsp;by <img src="{{~>asset_url url='images/logos/scvo-black.svg'~}}" alt="SCVO" />
+            </p>
+          </section>
+        </header>
+      </div>
+
+      {{> layout_body}}
+
+      {{> layout_footer_kirk_2021}}
+    </div>
+  </div>
+
+  {{> layout_foot}}
+  {{{layoutParts.foot}}}
+  <!-- INJECT JAVASCRIPT -->
+</body>
+</html>
