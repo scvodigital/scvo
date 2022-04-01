@@ -549,7 +549,7 @@ wFORMS.behaviors.prefill.skip = false;
                   <label class="form-checkbox postField{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_139-L" for="tfa_139">
                     <input type="checkbox" value="tfa_139" class="" id="tfa_139" name="tfa_139" data-conditionals="#tfa_143-D" aria-labelledby="tfa_139-L" data-tfa-labelledby="tfa_136-L tfa_139-L"{{#if defaults.application_readonly}} readonly{{/if}} {{#if (contains defaults.tfa_136 'Addressing pressing issues')}} checked{{/if}}>
                     <span class="form-icon"></span>
-                    Addressing pressing issues in the church that have been brought about by the pandemic
+                    Addressing pressing issues in the church
                   </label>
                 </span>
                 <div class="form-group oneField field-container-D" id="tfa_143-D" data-condition="`#tfa_139`">
@@ -557,6 +557,20 @@ wFORMS.behaviors.prefill.skip = false;
                     <label id="tfa_143-L" class="form-label preField " for="tfa_143">Describe how your project fits this criterion</label>
                     <textarea id="tfa_143" name="tfa_143" data-maxwords="50" title="Addressing pressing issues - describe"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_143}}</textarea>
                     <div id="tfa_143_print" class="d-none textarea-print-helper"></div>
+                  </div>
+                </div>
+                <span class="oneChoice">
+                  <label class="form-checkbox postField{{#if defaults.application_readonly}} option-readonly{{/if}}" id="tfa_176-L" for="tfa_176">
+                    <input type="checkbox" value="tfa_176" class="" id="tfa_176" name="tfa_176" data-conditionals="#tfa_178-D" aria-labelledby="tfa_176-L" data-tfa-labelledby="tfa_136-L tfa_176-L"{{#if defaults.application_readonly}} readonly{{/if}} {{#if (contains defaults.tfa_136 'Increasing experimentation')}} checked{{/if}}>
+                    <span class="form-icon"></span>
+                    Increasing experimentation with innovation in church practices
+                  </label>
+                </span>
+                <div class="form-group oneField field-container-D" id="tfa_178-D" data-condition="`#tfa_176`">
+                  <div class="col-12">
+                    <label id="tfa_178-L" class="form-label preField " for="tfa_178">Describe how your project fits this criterion</label>
+                    <textarea id="tfa_178" name="tfa_178" data-maxwords="50" title="Increasing experimentation - describe"{{#if defaults.application_readonly}} readonly{{/if}} class="form-input count-words required" required>{{defaults.tfa_178}}</textarea>
+                    <div id="tfa_178_print" class="d-none textarea-print-helper"></div>
                   </div>
                 </div>
               </span>
@@ -845,7 +859,7 @@ wFORMS.behaviors.prefill.skip = false;
       <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId">
       <input type="hidden" value="1813e028b322ecd3e8c9fba770fa36a0" name="tfa_dbControl" id="tfa_dbControl">
       <input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid">
-      <input type="hidden" value="1" name="tfa_dbVersionId" id="tfa_dbVersionId">
+      <input type="hidden" value="2" name="tfa_dbVersionId" id="tfa_dbVersionId">
       <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
       {{/unless}}
     </form>
