@@ -59,6 +59,28 @@
       }
     },
     {
+      "name": "check_year",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.Record_Type_Display_Only__c"
+                  },
+                  "Church of Scotland Small Grants 2022"
+                ]
+              }
+            ]
+          },
+          "fund_kirk_2022_apply_missing",
+          false
+        ]
+      }
+    },
+    {
       "name": "form_data",
       "taskModule": "render",
       "renderer": "handlebars",
