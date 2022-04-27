@@ -1,0 +1,23 @@
+{
+  "name": "redirect_vote_2022",
+  "pattern": "/scottish-charity-awards/vote",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/scottish-charity-awards/vote/2022"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
