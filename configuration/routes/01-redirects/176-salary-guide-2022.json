@@ -1,0 +1,23 @@
+{
+  "name": "redirect_salary-guide-2022",
+  "pattern": "/jobs/voluntary-sector-salaries-2022",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "https://my.scvo.scot/benefits/resources/voluntary-sector-salaries-2022"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
