@@ -1588,14 +1588,14 @@ ul.list-lg {
 }
 
 .scvo-link-bar {
-  background-color: $gray-color-light;
+  background-color: white;
   height: 40px;
   ul {
     margin: 0;
     list-style-type: none;
     li {
       margin: 0;
-      display: inline;
+      display: inline-block;
     }
   }
   .text-link {
@@ -1607,6 +1607,7 @@ ul.list-lg {
     padding: 0 0.4rem;
     vertical-align: top;
     color: $secondary-color;
+    border-radius: 0 0 0.2rem 0.2rem;
   }
   .brand-awards .text-link:hover {
     background-color: $primary-color;
@@ -1635,6 +1636,12 @@ ul.list-lg {
     background-color: $primary-color;
     color: white;
   }
+
+  .scvo-account-links {
+    background-color: $gray-color-light;
+    border-radius: 0 0 0.2rem 0.2rem;
+  }
+
   .brand-logo {
     line-height: 38px;
     width: 90px;
