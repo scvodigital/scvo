@@ -86,7 +86,9 @@ $thick-line: 5px;
 $medium-line: 2px;
 $thin-line: 0.05rem;
 $border-radius: 6px;
-$border-radius-small: 0.333rem;
+$border-radius-smaller: 0.1rem;
+$border-radius-small: 0.2rem;
+$border-radius: 0.333rem;
 $heading-font-family: 'Asap';
 $heading-font-weight: 800;
 $heading-link-weight: 600;
@@ -130,7 +132,7 @@ $fast-transition-speed: 0.12s;
 }
 
 .s-rounded {
-  border-radius: $border-radius-small;
+  border-radius: $border-radius;
 }
 
 ::-moz-selection {
