@@ -2,7 +2,11 @@
 <div class="related-posts b-padding-full bg-{{default bg 'white'}}">
   <div class="container v-padding-full">
     <h3 class="b-margin">
-      Latest posts&ensp;
+      {{#compare @root.request.url.pathname '/policy'}}
+        News &amp opinion&ensp;
+      {{else}}
+        Latest posts&ensp;
+      {{/compare}}
       <a href="{{@root.request.url.pathname}}/blog" class="caption">See more</a>
     </h3>
     <div class="columns">
