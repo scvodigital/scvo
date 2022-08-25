@@ -1,6 +1,11 @@
 {
   "name": "redirect_cost-of-living",
-  "pattern": "/cost-of-living(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": [
+    "one": "/cost-of-living(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "two": "/cost-of-living-crisis(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "three": "/running-costs-crisis(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "four": "/running-costs(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  ],
   "tasks": [
     {
       "name": "url",
@@ -8,7 +13,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/support/running-your-organisation/cost-of-living{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
+        "template": "/policy/campaigns/running-costs-crisis{{#if request.params.one}}/{{request.params.one}}{{/if}}{{#if request.params.two}}/{{request.params.two}}{{/if}}{{#if request.params.three}}/{{request.params.three}}{{/if}}{{#if request.params.four}}/{{request.params.four}}{{/if}}{{#if request.params.five}}/{{request.params.five}}{{/if}}{{#if request.params.six}}/{{request.params.six}}{{/if}}"
       }
     },
     {
