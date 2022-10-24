@@ -81,17 +81,26 @@ wFORMS.behaviors.prefill.skip = false;
             <div class="col-6 col-xl-8 col-lg-7 col-md-6 col-sm-12">
               <select id="tfa_6" name="tfa_6" aria-required="true" class="form-select required" required>
                 <option value=""{{#unless data.Christmas_Paydate__c}} selected disabled{{/unless}}>Please select&hellip;</option>
-                <option value="tfa_7" id="tfa_7"{{#if (contains data.Christmas_Paydate__c '-12-03')}} selected{{/if}}>03/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_8" id="tfa_8"{{#if (contains data.Christmas_Paydate__c '-12-04')}} selected{{/if}}>04/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_9" id="tfa_9"{{#if (contains data.Christmas_Paydate__c '-12-10')}} selected{{/if}}>10/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_10" id="tfa_10"{{#if (contains data.Christmas_Paydate__c '-12-11')}} selected{{/if}}>11/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_13" id="tfa_13"{{#if (contains data.Christmas_Paydate__c '-12-17')}} selected{{/if}}>17/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_14" id="tfa_14"{{#if (contains data.Christmas_Paydate__c '-12-18')}} selected{{/if}}>18/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_15" id="tfa_15"{{#if (contains data.Christmas_Paydate__c '-12-24')}} selected{{/if}}>24/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_16" id="tfa_16"{{#if (contains data.Christmas_Paydate__c '-12-25')}} selected{{/if}}>25/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_17" id="tfa_17"{{#if (contains data.Christmas_Paydate__c '-12-26')}} selected{{/if}}>26/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_53" id="tfa_53"{{#if (contains data.Christmas_Paydate__c '-12-27')}} selected{{/if}}>27/12/{{momentFormat (moment) "YYYY"}}</option>
-                <option value="tfa_52" id="tfa_52"{{#if (contains data.Christmas_Paydate__c '-12-31')}} selected{{/if}}>31/12/{{momentFormat (moment) "YYYY"}}</option>
+                <option value="tfa_7" id="tfa_7"{{#if (contains data.Christmas_Paydate__c '-12-01')}} selected{{/if}}>01/12/2022</option>
+                <option value="tfa_8" id="tfa_8"{{#if (contains data.Christmas_Paydate__c '-12-02')}} selected{{/if}}>02/12/2022</option>
+                <option value="tfa_9" id="tfa_9"{{#if (contains data.Christmas_Paydate__c '-12-05')}} selected{{/if}}>05/12/2022</option>
+                <option value="tfa_10" id="tfa_10"{{#if (contains data.Christmas_Paydate__c '-12-06')}} selected{{/if}}>06/12/2022</option>
+                <option value="tfa_13" id="tfa_13"{{#if (contains data.Christmas_Paydate__c '-12-07')}} selected{{/if}}>07/12/2022</option>
+                <option value="tfa_14" id="tfa_14"{{#if (contains data.Christmas_Paydate__c '-12-08')}} selected{{/if}}>08/12/2022</option>
+                <option value="tfa_15" id="tfa_15"{{#if (contains data.Christmas_Paydate__c '-12-09')}} selected{{/if}}>09/12/2022</option>
+                <option value="tfa_16" id="tfa_16"{{#if (contains data.Christmas_Paydate__c '-12-12')}} selected{{/if}}>12/12/2022</option>
+                <option value="tfa_17" id="tfa_17"{{#if (contains data.Christmas_Paydate__c '-12-13')}} selected{{/if}}>13/12/2022</option>
+                <option value="tfa_53" id="tfa_53"{{#if (contains data.Christmas_Paydate__c '-12-14')}} selected{{/if}}>14/12/2022</option>
+                <option value="tfa_52" id="tfa_52"{{#if (contains data.Christmas_Paydate__c '-12-15')}} selected{{/if}}>15/12/2022</option>
+                <option value="tfa_54" id="tfa_54"{{#if (contains data.Christmas_Paydate__c '-12-16')}} selected{{/if}}>16/12/2022</option>
+                <option value="tfa_55" id="tfa_55"{{#if (contains data.Christmas_Paydate__c '-12-19')}} selected{{/if}}>19/12/2022</option>
+                <option value="tfa_56" id="tfa_56"{{#if (contains data.Christmas_Paydate__c '-12-20')}} selected{{/if}}>20/12/2022</option>
+                <option value="tfa_57" id="tfa_57"{{#if (contains data.Christmas_Paydate__c '-12-21')}} selected{{/if}}>21/12/2022</option>
+                <option value="tfa_58" id="tfa_58"{{#if (contains data.Christmas_Paydate__c '-12-22')}} selected{{/if}}>22/12/2022</option>
+                <option value="tfa_59" id="tfa_59"{{#if (contains data.Christmas_Paydate__c '-12-23')}} selected{{/if}}>23/12/2022</option>
+                <option value="tfa_60" id="tfa_60"{{#if (contains data.Christmas_Paydate__c '-12-28')}} selected{{/if}}>28/12/2022</option>
+                <option value="tfa_61" id="tfa_61"{{#if (contains data.Christmas_Paydate__c '-12-29')}} selected{{/if}}>29/12/2022</option>
+                <option value="tfa_62" id="tfa_62"{{#if (contains data.Christmas_Paydate__c '-12-30')}} selected{{/if}}>30/12/2022</option>
               </select>
             </div>
           </div>
@@ -135,7 +144,7 @@ wFORMS.behaviors.prefill.skip = false;
         <input type="hidden" value="4863680" name="tfa_dbFormId" id="tfa_dbFormId" />
         <input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId" />
         <input type="hidden" value="979a891bf244f69887631b3916cda3ad" name="tfa_dbControl" id="tfa_dbControl" />
-        <input type="hidden" value="10" name="tfa_dbVersionId" id="tfa_dbVersionId" />
+        <input type="hidden" value="11" name="tfa_dbVersionId" id="tfa_dbVersionId" />
         <input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff" />
       </form>
     </div>
