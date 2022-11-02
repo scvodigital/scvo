@@ -1,6 +1,6 @@
 <div class="mdc-card search">
   <section class="mdc-card__primary">
-    <form action="/about/community/membership/members" method="GET">
+    <form action="/membership/members" method="GET">
       <div class="input-group">
         <input type="text" class="form-input" placeholder="Search SCVO's {{addCommas @root.data.supplimentaryResponses.total.hits.total}} member organisations" value="{{@root.request.params.query.q}}" name="q">
         <button type="submit" class="btn btn-primary input-group-btn" aria-label="Search" alt="Search">
@@ -22,7 +22,7 @@
   {{#with _source ~}}
   <div class="search-result scvo-member">
     <h3>
-      <a href="/about/members/{{membership_number}}{{#if title}}/{{slugify title}}{{/if}}">
+      <a href="/membership/members/{{membership_number}}{{#if title}}/{{slugify title}}{{/if}}">
         {{#if title}}{{{title}}}{{else}}{{Id}}{{/if}}
         {{#if alias ~}}
         {{#compare title "!==" alias ~}}
