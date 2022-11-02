@@ -1,12 +1,15 @@
 {
   "name": "professionalservices",
-  "pattern": "/professionalservices",
+  "pattern": {
+    "short": "/professionalservices",
+    "old": "/about/community/membership/member-benefits/professional-services(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "destination",
       "taskModule": "redirect",
       "config": {
-        "location": "/about/community/membership/member-benefits/professional-services",
+        "location": "/membership/professional-services",
         "statusCode": 301
       }
     }
