@@ -1,0 +1,23 @@
+{
+  "name": "redirect_guide-cyber-sec",
+  "pattern": "/guide-to-cyber-security",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/support/digital/guides/cyber-security"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 301
+      }
+    }
+  ]
+}
