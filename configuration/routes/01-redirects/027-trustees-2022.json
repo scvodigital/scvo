@@ -1,0 +1,14 @@
+{
+  "name": "redirect_trustees-2022",
+  "pattern": "/trustees-week-2022",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/support/trustee-network/trustees-week-2022",
+        "statusCode": 301
+      }
+    }
+  ]
+}
