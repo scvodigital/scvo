@@ -1,0 +1,23 @@
+{
+  "name": "redirect_professional_legal-advice",
+  "pattern": "/membership/professional-services/legal-advice-enquiry",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "https://my.scvo.scot/benefits/experts/legal-advice"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
