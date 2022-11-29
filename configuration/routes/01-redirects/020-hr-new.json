@@ -1,6 +1,10 @@
 {
   "name": "redirect_hr-new",
-  "pattern": "/services/hr-new(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "new": "/services/hr-new(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "uppercase": "/services/HR(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "uppercase_mess": "/Services/HR(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
