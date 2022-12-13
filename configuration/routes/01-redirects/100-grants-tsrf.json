@@ -1,0 +1,23 @@
+{
+  "name": "redirect_grants-tsrf",
+  "pattern": "/support/coronavirus/funding/scottish-government/third-sector-resilience-fund/recipients/data.json",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/funding/data/archive/third-sector-resilience-fund.json"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}

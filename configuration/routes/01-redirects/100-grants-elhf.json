@@ -1,0 +1,23 @@
+{
+  "name": "redirect_grants-elhf",
+  "pattern": "/funding/digital-participation/elhf-connecting-communities-fund/recipients/data.json",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/funding/data/archive/elhf-connecting-communities-fund.json"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}

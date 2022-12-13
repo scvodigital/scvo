@@ -1,0 +1,23 @@
+{
+  "name": "redirect_grants-charter-fund",
+  "pattern": "/funding/digital-participation/charter-fund/projects/data.json",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/funding/data/archive/digital-participation-charter-fund.json"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
