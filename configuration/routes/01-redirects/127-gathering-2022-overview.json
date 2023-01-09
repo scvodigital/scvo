@@ -1,6 +1,6 @@
 {
   "name": "redirect_gathering-2022-overview",
-  "pattern": "/the-gathering-2022-overview",
+  "pattern": "/the-gathering/overview",
   "tasks": [
     {
       "name": "url",
@@ -8,7 +8,7 @@
       "renderer": "handlebars",
       "config": {
         "output": "data",
-        "template": "/the-gathering/overview"
+        "template": "/the-gathering-2022"
       }
     },
     {
