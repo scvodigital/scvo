@@ -1,0 +1,14 @@
+{
+  "name": "redirect_support_setting-up_write-your-constitution_scottish-charitable-incorporated-organisation",
+  "pattern": "/support/setting-up/write-your-constitution/scottish-charitable-incorporated-organisation",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/support/setting-up/model-constitutions",
+        "statusCode": 301
+      }
+    }
+  ]
+}
