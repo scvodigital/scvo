@@ -1,0 +1,105 @@
+
+
+<div class="container">
+  <div class="form-horizontal form b-margin-full b-padding-full b-margin-full">
+    <p>
+      Before you complete the online form please note the following:
+    </p>
+    <ul>
+      <li>Only Church of Scotland congregations and presbyteries are eligible to apply for this fund but it is also possible to work with ecumenical partners</li>
+      <li>Applications can only be accepted via the online form but please use this Microsoft Word template to plan your draft before completing the online form as there will be no option to save your application and return to complete later</li>
+      <li>Ensure that in completing the form you have referred to the <a href="churchofscotland.org.uk/connect/small-grants-fund/how-to-apply#Guidance" target="_blank">Small Grants Fund Guidance Notes</a> This is particularly important if you are applying under the Winter Support Fund criterion which has an application of £5,000 rather than the usual £1,000.</li>
+      <li>At the end of the form you will need to upload a signed extract minute from the relevant church court supporting the application, indicating acceptance of the <a href="https://www.churchofscotland.org.uk/connect/small-grants-fund/how-to-apply#Conditions" target="_blank">General Conditions of Award</a> and acknowledging that no other application can be made while this grant is current. You can download a model minute from the <a href="https://www.churchofscotland.org.uk/connect/small-grants-fund/how-to-apply#ExtractMinute" target="_blank">Church of Scotland Small Grants Fund site</a>.</li>
+      <li>By completing the application form, the person completing and submitting it is undertaking that they have permission to disclose to us, and that we have permission to disclose to any third parties we may instruct for the purposes of administering the application and any grant, all of the personal data included in the application form. Personal data is any information that can be used to identify a living person.</li>
+      <li>We are contracting with SCVO for the purposes of administering the grant platform web site and grant-related processes.</li>
+      <li>Personal data that we, or any third parties instructed by us, process for the purpose the Small Grants Fund is processed on the basis of fulfilment of an agreement with you to process grant applications forms and to facilitate grants that are awarded. Links to The Church of Scotland and SCVO Privacy Notices can be found at the bottom of the online form.</li>
+      <li>If you have any questions about this form or any other aspect of the  Small Grants Fund please send them to: <a href="mailto:SGF@churchofscotland.org.uk">SGF@churchofscotland.org.uk</a></li>
+    </ul>
+    <div class="b-padding-full v-margin-full">
+      {{#if @root.request.params.charity_number ~}}
+      <div class="label label-error x-padding t-margin-full">
+        <span class="far fa-exclamation-triangle r-margin" aria-hidden="true"></span>
+        The charity number you entered could not be matched with an OSCR record
+      </div>
+      <p class="t-margin b-margin-full form-input-hint text-secondary">
+        Please <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">check the charity register</a> for your Scottish Charity Number then try again.
+      </p>
+      {{/if ~}}
+      <div class="columns">
+        <div class="column col-sm-12 t-padding b-padding-full">
+          <div class="form-group">
+            <label for="charity_number" class="form-label">Scottish Charity Number</label>
+            <input name="charity_number" id="charity_number" class="form-input" autocomplete="nope" data-lpignore="true" maxlength="8" style="text-transform: uppercase;" value="{{@root.request.params.charity_number}}" autofocus="true">
+            <p class="form-input-hint text-secondary">Please enter the full Scottish Charity Number beginning with 'SC' then six digits of the church/presbytery making this application, <a href="https://www.oscr.org.uk/about-charities/search-the-register/register-search" class="no-ext" target="_blank">search the OSCR register</a> if you need to find your number</p>
+          </div>
+          <a href="" id="charity_number_submit" class="btn btn-primary" disabled>
+            Apply now
+          </a>
+        </div>
+        <div class="divider-vert hide-sm" data-content="OR"></div>
+        <div class="divider text-center show-sm col-12" data-content="OR"></div>
+        <div class="column col-sm-12 align-centre">
+          <div class="block">
+            <p>
+              Church of Scotland Congregation or Presbytery outside Scotland?
+            </p>
+            <a href="/funding/church-of-scotland-small-grants-fund/apply/not-a-charity" class="btn">
+              Apply now
+            </a>
+          </div>
+        </div>
+      </div>
+      <h3>Help</h3>
+      <p>
+        For questions regarding guidance/criteria, email <a href="mailto:2023SGF@churchofscotland.org.uk">2023SGF@churchofscotland.org.uk</a>
+      </p>
+      <p>
+        If you're having technical difficulties while submitting or accessing the online application, email <a href="mailto:grantshelp@scvo.scot">grantshelp@scvo.scot</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var valid = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 67, 83, 99, 115, 37, 39, 111, 79, 46, 35, 36];
+  $('#charity_number')
+  .on('keydown', function(evt) {
+    if (evt.ctrlKey) {
+      return;
+    }
+
+    if (valid.indexOf(evt.which) === -1 && evt.which > 31) {
+      evt.preventDefault();
+    }
+  })
+  .on('keyup', checkCN)
+  .on('change', checkCN)
+  .on('paste', function(evt) {
+    setTimeout(function() {
+      checkCN(evt);
+    }, 0);
+  })
+  .select();
+
+  function checkCN(evt) {
+    var matches = evt.target.value.replace(/[^sco0-9]/img, '');
+    var charityNumber = evt.target.value = (matches || '').toUpperCase().replace(/o/ig, '0');
+
+    if (evt.ctrlKey || charityNumber.match(/SC[0-9]{6}/)) {
+      var url = '/funding/church-of-scotland-small-grants-fund/apply/' + charityNumber;
+      $('#charity_number_submit')
+      .removeAttr('disabled', false)
+      .attr('href', url);
+      if (evt.which === 13) {
+        window.location.href = url;
+      }
+    } else {
+      $('#charity_number_submit')
+      .attr('disabled', true)
+      .attr('href', '');
+    }
+  }
+
+})
+</script>

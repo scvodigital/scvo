@@ -1,0 +1,15 @@
+<div class="container">
+  <ul class="breadcrumb breadcrumb-length-4" aria-hidden="true">
+    <li class="breadcrumb-item"><a href="/">SCVO</a></li>
+    <li class="breadcrumb-item"><a href="/funding">Funding</a></li>
+    <li class="breadcrumb-item"><a href="/funding/church-of-scotland-small-grants-fund">Church of Scotland Small Grants Fund</a></li>
+    {{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_kirk_2023_apply_complete")}}
+      <li class="breadcrumb-item">Apply</li>
+    {{else}}
+      <li class="breadcrumb-item">{{#compare @root.route.name "fund_kirk_2023_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}</li>
+    {{/ifAny}}
+  </ul>
+</div>
+<div class="container">
+  <h1 class="font-default">{{#ifAny @root.request.params.charity_number @root.request.body.funder (compare @root.route.name "fund_kirk_2023_apply_complete")}}{{#compare @root.route.name "fund_kirk_2023_apply_complete"}}Thank you{{else}}{{#compare @root.route.name "fund_kirk_2023_apply_already_awarded"}}Sorry{{else}}Apply{{/compare}}{{/compare}}{{else}}Apply{{/ifAny}}</h1>
+</div>

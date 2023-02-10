@@ -1,0 +1,118 @@
+{
+  "name": "fund_kirk_2023_view_form",
+  "debug": true,
+  "pattern": "/funding/church-of-scotland-small-grants-fund/apply/view/:session_key",
+  "tasks": [
+    "context.metaData.commonTasks.authNotRequired",
+    {
+      "name": "application_data",
+      "taskModule": "request",
+      "config": {
+        "optionsTemplates": {
+          "request": ">context.metaData.handlebars.templates.utilities_grantmanager-grant"
+        }
+      },
+      "renderer": "handlebars"
+    },
+    {
+      "name": "check_for_application",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant_part_1.totalSize"
+                  },
+                  1
+                ]
+              }
+            ]
+          },
+          "fund_kirk_2023_apply_missing",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_call",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.Fund_Name__c"
+                  },
+                  "Church of Scotland Small Grants 2023"
+                ]
+              }
+            ]
+          },
+          "fund_kirk_2023_apply_missing",
+          false
+        ]
+      }
+    },
+    {
+      "name": "check_year",
+      "taskModule": "reroute",
+      "config": {
+        "if": [
+          {
+            "and": [
+              {
+                "!=": [
+                  {
+                    "var": "data.application_data.request.data.data_object.get_grant.Record_Type_Display_Only__c"
+                  },
+                  "Church of Scotland Small Grants 2023"
+                ]
+              }
+            ]
+          },
+          "fund_kirk_2023_apply_missing",
+          false
+        ]
+      }
+    },
+    {
+      "name": "form_data",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "template": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2023_apply-form-data",
+        "output": "data",
+        "parseJson": true
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "renderLayout",
+      "renderer": "handlebars",
+      "config": {
+        "logic": {
+          "if": [
+            "default"
+          ]
+        },
+        "output": "body",
+        "layouts": {
+          "default": {
+            "layout": ">context.metaData.handlebars.layouts.kirk-2023",
+            "parts": {
+              "head": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2023_head-tags",
+              "header": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2023_view-header",
+              "body": ">context.metaData.handlebars.templates.funding_kirk_wee-grants-2023_apply-form"
+            },
+            "contentType": "text/html"
+          }
+        }
+      }
+    }
+  ]
+}
