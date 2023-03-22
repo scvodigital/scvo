@@ -1,0 +1,14 @@
+{
+  "name": "test-data",
+  "pattern": "/funding/digital-participation/charter-fund/projects/a113z00000VY18FAAT/project-name",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/",
+        "statusCode": 302
+      }
+    }
+  ]
+}
