@@ -1,0 +1,14 @@
+{
+  "name": "essentialsector",
+  "pattern": "/essentialsector",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/policy/campaigns/essentialsector",
+        "statusCode": 302
+      }
+    }
+  ]
+}
