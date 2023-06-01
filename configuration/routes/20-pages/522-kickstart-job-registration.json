@@ -1,7 +1,7 @@
 {
   "name": "page_kickstart-register-job",
   "debug": false,
-  "pattern": "/jobs/kickstart-scheme/register/job/:session_key",
+  "pattern": "_disabled_/jobs/kickstart-scheme/register/job/:session_key",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

@@ -1,7 +1,7 @@
 {
   "name": "page_policy",
   "debug": true,
-  "pattern": "/policy",
+  "pattern": "_disabled_/policy",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

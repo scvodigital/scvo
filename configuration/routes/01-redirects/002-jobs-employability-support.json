@@ -1,0 +1,23 @@
+{
+  "name": "redirect_jobs_employability-support",
+  "pattern": "/jobs/employability-support(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "tasks": [
+    {
+      "name": "url",
+      "taskModule": "render",
+      "renderer": "handlebars",
+      "config": {
+        "output": "data",
+        "template": "/policy/past-campaigns/celebrating-10-years-of-cjs"
+      }
+    },
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": ">data.url",
+        "statusCode": 302
+      }
+    }
+  ]
+}
