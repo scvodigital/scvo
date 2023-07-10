@@ -93,7 +93,7 @@
                   {
                     "query_string": {
                       "query": {{{stringify (default request.params.query.q "")}}},
-                      "fields": ["text_bag_boost^10", "text_bag"],
+                      "fields": ["text_bag_boost^5", "text_bag"],
                       "default_operator": "AND",
                       "analyzer": "snowball"
                     }
@@ -102,7 +102,7 @@
                     "match_phrase": {
                       "title": {
                         "query": {{{stringify (default request.params.query.q "")}}},
-                        "boost": 20
+                        "boost": 5
                       }
                     }
                   }
@@ -138,6 +138,13 @@
               }
             },
             {
+              "wildcard": {
+                "url": {
+                  "value": "*/the-gathering/*"
+                }
+              }
+            },
+            {
               "terms": {
                 "team": [
                   "cjs",
@@ -161,7 +168,7 @@
               "term" : {
                 "_type" : {
                   "value" : "scvo-event",
-                  "boost" : 3.0
+                  "boost" : -5.0
                 }
               }
             },
@@ -169,7 +176,7 @@
               "term" : {
                 "_type" : {
                   "value" : "scvo-page",
-                  "boost" : 2.0
+                  "boost" : 20.0
                 }
               }
             },
@@ -177,7 +184,7 @@
               "term" : {
                 "_type" : {
                   "value" : "scvo-post",
-                  "boost" : 6.0
+                  "boost" : 2.0
                 }
               }
             },
@@ -185,7 +192,15 @@
               "term" : {
                 "_type" : {
                   "value" : "oscr-charity",
-                  "boost" : -5.0
+                  "boost" : -30.0
+                }
+              }
+            },
+            {
+              "term" : {
+                "_type" : {
+                  "value" : "goodmoves-vacancy",
+                  "boost" : -20.0
                 }
               }
             }
@@ -201,11 +216,11 @@
               "_type": "scvo-post"
             }
           },
-          "weight": 3,
+          "weight": 1,
           "gauss": {
             "publish_on": {
-              "scale": "120d",
-              "decay": 0.1
+              "scale": "180d",
+              "decay": 0.2
             }
           }
         }

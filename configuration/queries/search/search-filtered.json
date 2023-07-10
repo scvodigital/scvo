@@ -55,6 +55,11 @@
                 "term": {
                   "hide_in_results": true
                 }
+              },
+              {
+                "term": {
+                  "hide_from_search": "1"
+                }
               }
             ],
             "should": [
@@ -96,8 +101,22 @@
           }
         },
         {
+          "wildcard": {
+            "url": {
+              "value": "*/the-gathering/*"
+            }
+          }
+        },
+        {
           "term": {
             "hide_from_search": "1"
+          }
+        },
+        {
+          "query_string": {
+            "query": "/the-gathering",
+            "fields": ["url"],
+            "analyzer": "snowball"
           }
         }
       ]
