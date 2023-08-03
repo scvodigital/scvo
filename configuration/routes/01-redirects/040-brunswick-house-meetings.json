@@ -1,0 +1,14 @@
+{
+  "name": "redirect_brunswick-house-meetings",
+  "pattern": "/services/workspace/brunswick-house/meetings",
+  "tasks": [
+    {
+      "name": "destination",
+      "taskModule": "redirect",
+      "config": {
+        "location": "/services/workspace/brunswick-house",
+        "statusCode": 301
+      }
+    }
+  ]
+}
