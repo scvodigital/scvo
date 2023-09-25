@@ -1,7 +1,7 @@
 {
   "name": "grant_atf",
   "debug": false,
-  "pattern": "/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients/:grant_id(/:junk)",
+  "pattern": "_disabled_/support/coronavirus/funding/scottish-government/community-recovery/atf/recipients/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {

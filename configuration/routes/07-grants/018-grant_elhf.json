@@ -1,7 +1,7 @@
 {
   "name": "grant_elhf",
   "debug": false,
-  "pattern": "/funding/digital-participation/elhf-connecting-communities-fund/recipients/:grant_id(/:junk)",
+  "pattern": "_disabled_/funding/digital-participation/elhf-connecting-communities-fund/recipients/:grant_id(/:junk)",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
