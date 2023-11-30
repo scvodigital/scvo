@@ -1,7 +1,7 @@
 {
   "name": "feedback",
   "debug": false,
-  "pattern": "/feedback/:sid",
+  "pattern": "_disabled_/feedback/:sid",
   "tasks": [
     "context.metaData.commonTasks.authNotRequired",
     {
