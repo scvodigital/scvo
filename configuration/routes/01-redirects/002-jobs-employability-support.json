@@ -1,6 +1,9 @@
 {
   "name": "redirect_jobs_employability-support",
-  "pattern": "/jobs/employability-support(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "one": "/jobs/employability-support(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "two": "/privacy/employability-service"
+  },
   "tasks": [
     {
       "name": "url",
