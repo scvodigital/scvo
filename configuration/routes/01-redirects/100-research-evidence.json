@@ -1,6 +1,9 @@
 {
   "name": "redirect_research-evidence",
-  "pattern": "/policy/evidence-library(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+  "pattern": {
+    "old1": "/policy/evidence-library(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)",
+    "old2": "/policy/research/evidence-library(/:one)(/:two)(/:three)(:/four)(:/five)(:/six)"
+  },
   "tasks": [
     {
       "name": "url",
