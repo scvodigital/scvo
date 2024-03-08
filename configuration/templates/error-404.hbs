@@ -5,7 +5,7 @@
     The page may have been moved or deleted
   </h2>
 
-  {{#ifAll @root.data.not_found (compare @root.data.not_found.hits.total ">" 0) ~}}
+  <!-- {{#ifAll @root.data.not_found (compare @root.data.not_found.hits.total ">" 0) ~}}
   {{> site_search_form id='error'}}
 
   <h3>Did you mean?</h3>
@@ -29,7 +29,7 @@
       {{> site_search_form id='error'}}
     </div>
   </div>
-  {{/ifAll ~}}
+  {{/ifAll ~}} -->
   <script>
   gtag('event', '404', {
     event_category: '{{name}}',
