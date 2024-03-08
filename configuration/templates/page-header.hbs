@@ -1,6 +1,6 @@
 {{#if @root.data.primaryResponse.hits.hits.[0] ~}}
 <div class="container">
-  {{> breadcrumbs_cms_page}}
+  <!-- {{> breadcrumbs_cms_page}} -->
 </div>
 {{#with @root.data.primaryResponse.hits.hits.[0]._source ~}}
 {{#if header_background ~}}
@@ -25,7 +25,9 @@
 {{/if ~}}
 
 <div class="container">
-  <h1>{{{title}}}</h1>
+  <!-- <h1>{{{title}}}</h1> -->
+  <h1>Error 404: The requested page could not be found</h1>
+  <h2>The page may have been moved or deleted</h2>
 </div>
 {{/if ~}}
 {{/with ~}}
