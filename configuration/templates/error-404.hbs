@@ -5,31 +5,6 @@
     The page may have been moved or deleted
   </h2>
 
-  <!-- {{#ifAll @root.data.not_found (compare @root.data.not_found.hits.total ">" 0) ~}}
-  {{> site_search_form id='error'}}
-
-  <h3>Did you mean?</h3>
-  {{#with @root.data.not_found.hits.hits.[0] ~}}
-  {{> site_search_result this}}
-  {{/with ~}}
-  {{/ifAll ~}}
-  {{#ifAll @root.data.not_found (compare @root.data.not_found.hits.total ">" 1) ~}}
-
-  <h3>Other relevant content</h3>
-  {{#each @root.data.not_found.hits.hits ~}}
-  {{#compare @index "===" 0 ~}}
-  {{else}}
-  {{> site_search_result this}}
-  {{/compare ~}}
-  {{/each ~}}
-  {{else}}
-  <div class="b-padding-full columns">
-    <div class="column col-8 col-xl-9 col-lg-10 col-md-12 col-mx-auto bg-primary b-margin-full b-padding-full s-rounded">
-      <h3 class="text-white">Try searching for a topic</h3>
-      {{> site_search_form id='error'}}
-    </div>
-  </div>
-  {{/ifAll ~}} -->
   <script>
   gtag('event', '404', {
     event_category: '{{name}}',
@@ -37,5 +12,3 @@
   });
   </script>
 </div>
-
-{{!-- {{> page_feedback}} --}}
