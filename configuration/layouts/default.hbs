@@ -2,7 +2,7 @@
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
   {{#compare @root.request.url.hostname 'legacy.scvo.scot'}}
-    <meta http-equiv="refresh" content="0; url=https://scvo.scot{{@root.request.params.path}}">
+    <meta http-equiv="refresh" content="0; url=https://scvo.scot/{{@root.request.params.path}}">
   {{/compare}}
   <!--
     {{#if @root.request.headers.scvo-proxy}}
