@@ -1,6 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head prefix="og: http://ogp.me/ns#">
+  {{#compare @root.request.url.hostname 'legacy.scvo.scot'}}
+    <meta http-equiv="refresh" content="0; url=https://scvo.scot{{@root.request.params.path}}">
+  {{/compare}}
   <!--
     {{#if @root.request.headers.scvo-proxy}}
       SCVO Proxy
@@ -11,7 +14,7 @@
   {{{layoutParts.head}}}
   {{> layout_head}}
 </head>
-<body class="{{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
+<body class="legacy-server {{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
   {{#if @root.request.headers.scvo-proxy}}
     <!-- INJECT LINK BAR -->
   {{else}}
