@@ -1,9 +1,0 @@
-{{> search_info paging=@root.data.primaryResponse.pagination}}
-
-{{#each @root.data.primaryResponse.hits.hits ~}}
-<div class="b-margin-full">
-  {{> content_goodmoves_search_result _source}}
-</div>
-{{/each ~}}
-
-{{> pagination paging=@root.data.primaryResponse.pagination firstLastNavigation=true}}

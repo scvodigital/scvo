@@ -14,8 +14,10 @@
   {{{layoutParts.head}}}
   {{> layout_head}}
 </head>
-<body class="legacy-server {{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
-  {{#if @root.request.headers.scvo-proxy}}
+<body class="bg-white legacy-server {{#if @root.request.params.path}}{{#compare @root.request.params.path 'support_digital'}}support digital landing{{else}}{{replace (replace @root.request.params.path '20-years' 'twenty-years') '_' ' '}}{{/compare}}{{else}}home{{/if}}">
+
+<h1>Error 500: Server error</h1>
+  {{!-- {{#if @root.request.headers.scvo-proxy}}
     <!-- INJECT LINK BAR -->
   {{else}}
     <div class="link-bar hide-lg">
@@ -24,7 +26,7 @@
   {{/if}}
   {{> layout_header_upper}}
   <div class="page">
-    {{!-- style="background-image:url('/rouleaux.svg?color=FEF9F9&style={{itemAt (split 'solid,stripes,dots' ',') (random 0 2)}}');" --}}
+    {{!-- style="background-image:url('/rouleaux.svg?color=FEF9F9&style={{itemAt (split 'solid,stripes,dots' ',') (random 0 2)}}');" -- }}
     <div class="bg-rouleaux">
       <div class="container">
         <header class="navbar header b-padding-full b-margin-full">
@@ -344,6 +346,6 @@
 
   {{> layout_foot}}
   {{{layoutParts.foot}}}
-  <!-- INJECT JAVASCRIPT -->
+  <!-- INJECT JAVASCRIPT --> --}}
 </body>
 </html>
